@@ -52,7 +52,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of resource identifiers to retrieve flow associations.</p>
+     * <p>A list of resource identifiers to retrieve flow associations.</p> <ul> <li>
+     * <p>Amazon Web Services End User Messaging SMS phone number ARN when using
+     * <code>SMS_PHONE_NUMBER</code> </p> </li> <li> <p>Amazon Web Services End User
+     * Messaging Social phone number ARN when using
+     * <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }

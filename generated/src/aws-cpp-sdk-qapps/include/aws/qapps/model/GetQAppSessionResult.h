@@ -63,6 +63,37 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the Q App session.</p>
+     */
+    inline const Aws::String& GetSessionName() const{ return m_sessionName; }
+    inline void SetSessionName(const Aws::String& value) { m_sessionName = value; }
+    inline void SetSessionName(Aws::String&& value) { m_sessionName = std::move(value); }
+    inline void SetSessionName(const char* value) { m_sessionName.assign(value); }
+    inline GetQAppSessionResult& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
+    inline GetQAppSessionResult& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
+    inline GetQAppSessionResult& WithSessionName(const char* value) { SetSessionName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The version of the Q App used for the session.</p>
+     */
+    inline int GetAppVersion() const{ return m_appVersion; }
+    inline void SetAppVersion(int value) { m_appVersion = value; }
+    inline GetQAppSessionResult& WithAppVersion(int value) { SetAppVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The latest published version of the Q App used for the session.</p>
+     */
+    inline int GetLatestPublishedAppVersion() const{ return m_latestPublishedAppVersion; }
+    inline void SetLatestPublishedAppVersion(int value) { m_latestPublishedAppVersion = value; }
+    inline GetQAppSessionResult& WithLatestPublishedAppVersion(int value) { SetLatestPublishedAppVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current status of the Q App session.</p>
      */
     inline const ExecutionStatus& GetStatus() const{ return m_status; }
@@ -90,6 +121,16 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates whether the current user is the owner of the Q App data collection
+     * session.</p>
+     */
+    inline bool GetUserIsHost() const{ return m_userIsHost; }
+    inline void SetUserIsHost(bool value) { m_userIsHost = value; }
+    inline GetQAppSessionResult& WithUserIsHost(bool value) { SetUserIsHost(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -105,9 +146,17 @@ namespace Model
 
     Aws::String m_sessionArn;
 
+    Aws::String m_sessionName;
+
+    int m_appVersion;
+
+    int m_latestPublishedAppVersion;
+
     ExecutionStatus m_status;
 
     Aws::Map<Aws::String, CardStatus> m_cardStatus;
+
+    bool m_userIsHost;
 
     Aws::String m_requestId;
   };

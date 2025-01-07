@@ -42,6 +42,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the
+     * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+     */
+    inline const Aws::String& GetAnswerGenerationAIGuardrailId() const{ return m_answerGenerationAIGuardrailId; }
+    inline bool AnswerGenerationAIGuardrailIdHasBeenSet() const { return m_answerGenerationAIGuardrailIdHasBeenSet; }
+    inline void SetAnswerGenerationAIGuardrailId(const Aws::String& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = value; }
+    inline void SetAnswerGenerationAIGuardrailId(Aws::String&& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = std::move(value); }
+    inline void SetAnswerGenerationAIGuardrailId(const char* value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId.assign(value); }
+    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(const Aws::String& value) { SetAnswerGenerationAIGuardrailId(value); return *this;}
+    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(Aws::String&& value) { SetAnswerGenerationAIGuardrailId(std::move(value)); return *this;}
+    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(const char* value) { SetAnswerGenerationAIGuardrailId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The AI Prompt identifier for the Answer Generation prompt used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
@@ -86,6 +101,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>The locale to which specifies the language and region settings that determine
+     * the response language for <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+     *  <p>Changing this locale to anything other than <code>en_US</code> will
+     * turn off recommendations triggered by contact transcripts for agent assistance,
+     * as this feature is not supported in multiple languages.</p> 
+     */
+    inline const Aws::String& GetLocale() const{ return m_locale; }
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
+    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
+    inline AnswerRecommendationAIAgentConfiguration& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
+    inline AnswerRecommendationAIAgentConfiguration& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
+    inline AnswerRecommendationAIAgentConfiguration& WithLocale(const char* value) { SetLocale(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The AI Prompt identifier for the Query Reformulation prompt used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
@@ -100,6 +134,9 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_answerGenerationAIGuardrailId;
+    bool m_answerGenerationAIGuardrailIdHasBeenSet = false;
+
     Aws::String m_answerGenerationAIPromptId;
     bool m_answerGenerationAIPromptIdHasBeenSet = false;
 
@@ -108,6 +145,9 @@ namespace Model
 
     Aws::String m_intentLabelingGenerationAIPromptId;
     bool m_intentLabelingGenerationAIPromptIdHasBeenSet = false;
+
+    Aws::String m_locale;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_queryReformulationAIPromptId;
     bool m_queryReformulationAIPromptIdHasBeenSet = false;

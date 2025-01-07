@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcampaignsv2/model/EventTrigger.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,23 @@ namespace Model
     inline Source& WithCustomerProfilesSegmentArn(Aws::String&& value) { SetCustomerProfilesSegmentArn(std::move(value)); return *this;}
     inline Source& WithCustomerProfilesSegmentArn(const char* value) { SetCustomerProfilesSegmentArn(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const EventTrigger& GetEventTrigger() const{ return m_eventTrigger; }
+    inline bool EventTriggerHasBeenSet() const { return m_eventTriggerHasBeenSet; }
+    inline void SetEventTrigger(const EventTrigger& value) { m_eventTriggerHasBeenSet = true; m_eventTrigger = value; }
+    inline void SetEventTrigger(EventTrigger&& value) { m_eventTriggerHasBeenSet = true; m_eventTrigger = std::move(value); }
+    inline Source& WithEventTrigger(const EventTrigger& value) { SetEventTrigger(value); return *this;}
+    inline Source& WithEventTrigger(EventTrigger&& value) { SetEventTrigger(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_customerProfilesSegmentArn;
     bool m_customerProfilesSegmentArnHasBeenSet = false;
+
+    EventTrigger m_eventTrigger;
+    bool m_eventTriggerHasBeenSet = false;
   };
 
 } // namespace Model

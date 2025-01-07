@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>If the response to the previous <code>ListNotebookInstances</code> request
-     * was truncated, SageMaker returns this token. To retrieve the next set of
+     * was truncated, SageMaker AI returns this token. To retrieve the next set of
      * notebook instances, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }

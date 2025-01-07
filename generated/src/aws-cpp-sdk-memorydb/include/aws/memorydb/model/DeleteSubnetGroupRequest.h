@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the subnet group to delete</p>
+     * <p>The name of the subnet group to delete.</p>
      */
     inline const Aws::String& GetSubnetGroupName() const{ return m_subnetGroupName; }
     inline bool SubnetGroupNameHasBeenSet() const { return m_subnetGroupNameHasBeenSet; }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/DiskIopsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/OpenZFSReadCacheConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,19 @@ namespace Model
     inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(Aws::String&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(std::move(value)); return *this; }
     inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The configuration for the optional provisioned SSD read cache on file
+     * systems that use the Intelligent-Tiering storage class.</p>
+     */
+    inline const OpenZFSReadCacheConfiguration& GetReadCacheConfiguration() const{ return m_readCacheConfiguration; }
+    inline bool ReadCacheConfigurationHasBeenSet() const { return m_readCacheConfigurationHasBeenSet; }
+    inline void SetReadCacheConfiguration(const OpenZFSReadCacheConfiguration& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = value; }
+    inline void SetReadCacheConfiguration(OpenZFSReadCacheConfiguration&& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = std::move(value); }
+    inline UpdateFileSystemOpenZFSConfiguration& WithReadCacheConfiguration(const OpenZFSReadCacheConfiguration& value) { SetReadCacheConfiguration(value); return *this;}
+    inline UpdateFileSystemOpenZFSConfiguration& WithReadCacheConfiguration(OpenZFSReadCacheConfiguration&& value) { SetReadCacheConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_automaticBackupRetentionDays;
@@ -191,6 +205,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeRouteTableIds;
     bool m_removeRouteTableIdsHasBeenSet = false;
+
+    OpenZFSReadCacheConfiguration m_readCacheConfiguration;
+    bool m_readCacheConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

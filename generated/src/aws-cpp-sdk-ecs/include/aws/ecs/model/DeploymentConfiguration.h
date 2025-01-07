@@ -74,18 +74,26 @@ namespace Model
      * of 200%, the scheduler may start four new tasks before stopping the four older
      * tasks (provided that the cluster resources required to do this are available).
      * The default <code>maximumPercent</code> value for a service using the
-     * <code>REPLICA</code> service scheduler is 200%.</p> <p>If a service is using
-     * either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
-     * deployment types, and tasks in the service use the EC2 launch type, the
-     * <b>maximum percent</b> value is set to the default value. The <b>maximum
-     * percent</b> value is used to define the upper limit on the number of the tasks
-     * in the service that remain in the <code>RUNNING</code> state while the container
-     * instances are in the <code>DRAINING</code> state.</p>  <p>You can't
-     * specify a custom <code>maximumPercent</code> value for a service that uses
-     * either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
-     * deployment types and has tasks that use the EC2 launch type.</p>  <p>If
-     * the tasks in the service use the Fargate launch type, the maximum percent value
-     * is not used, although it is returned when describing your service.</p>
+     * <code>REPLICA</code> service scheduler is 200%.</p> <p>The Amazon ECS scheduler
+     * uses this parameter to replace unhealthy tasks by starting replacement tasks
+     * first and then stopping the unhealthy tasks, as long as cluster resources for
+     * starting replacement tasks are available. For more information about how the
+     * scheduler replaces unhealthy tasks, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon
+     * ECS services</a>.</p> <p>If a service is using either the blue/green
+     * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks
+     * in the service use the EC2 launch type, the <b>maximum percent</b> value is set
+     * to the default value. The <b>maximum percent</b> value is used to define the
+     * upper limit on the number of the tasks in the service that remain in the
+     * <code>RUNNING</code> state while the container instances are in the
+     * <code>DRAINING</code> state.</p>  <p>You can't specify a custom
+     * <code>maximumPercent</code> value for a service that uses either the blue/green
+     * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has
+     * tasks that use the EC2 launch type.</p>  <p>If the service uses either
+     * the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment
+     * types, and the tasks in the service use the Fargate launch type, the maximum
+     * percent value is not used. The value is still returned when describing your
+     * service.</p>
      */
     inline int GetMaximumPercent() const{ return m_maximumPercent; }
     inline bool MaximumPercentHasBeenSet() const { return m_maximumPercentHasBeenSet; }
@@ -103,33 +111,39 @@ namespace Model
      * cluster capacity. For example, if your service has a <code>desiredCount</code>
      * of four tasks and a <code>minimumHealthyPercent</code> of 50%, the service
      * scheduler may stop two existing tasks to free up cluster capacity before
-     * starting two new tasks. </p> <p>For services that <i>do not</i> use a load
-     * balancer, the following should be noted:</p> <ul> <li> <p>A service is
-     * considered healthy if all essential containers within the tasks in the service
-     * pass their health checks.</p> </li> <li> <p>If a task has no essential
-     * containers with a health check defined, the service scheduler will wait for 40
-     * seconds after a task reaches a <code>RUNNING</code> state before the task is
-     * counted towards the minimum healthy percent total.</p> </li> <li> <p>If a task
-     * has one or more essential containers with a health check defined, the service
-     * scheduler will wait for the task to reach a healthy status before counting it
-     * towards the minimum healthy percent total. A task is considered healthy when all
-     * essential containers within the task have passed their health checks. The amount
-     * of time the service scheduler can wait for is determined by the container health
-     * check settings. </p> </li> </ul> <p>For services that <i>do</i> use a load
-     * balancer, the following should be noted:</p> <ul> <li> <p>If a task has no
+     * starting two new tasks. </p> <p> If any tasks are unhealthy and if
+     * <code>maximumPercent</code> doesn't allow the Amazon ECS scheduler to start
+     * replacement tasks, the scheduler stops the unhealthy tasks one-by-one — using
+     * the <code>minimumHealthyPercent</code> as a constraint — to clear up capacity to
+     * launch replacement tasks. For more information about how the scheduler replaces
+     * unhealthy tasks, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon
+     * ECS services</a> . </p> <p>For services that <i>do not</i> use a load balancer,
+     * the following should be noted:</p> <ul> <li> <p>A service is considered healthy
+     * if all essential containers within the tasks in the service pass their health
+     * checks.</p> </li> <li> <p>If a task has no essential containers with a health
+     * check defined, the service scheduler will wait for 40 seconds after a task
+     * reaches a <code>RUNNING</code> state before the task is counted towards the
+     * minimum healthy percent total.</p> </li> <li> <p>If a task has one or more
      * essential containers with a health check defined, the service scheduler will
-     * wait for the load balancer target group health check to return a healthy status
-     * before counting the task towards the minimum healthy percent total.</p> </li>
-     * <li> <p>If a task has an essential container with a health check defined, the
-     * service scheduler will wait for both the task to reach a healthy status and the
+     * wait for the task to reach a healthy status before counting it towards the
+     * minimum healthy percent total. A task is considered healthy when all essential
+     * containers within the task have passed their health checks. The amount of time
+     * the service scheduler can wait for is determined by the container health check
+     * settings. </p> </li> </ul> <p>For services that <i>do</i> use a load balancer,
+     * the following should be noted:</p> <ul> <li> <p>If a task has no essential
+     * containers with a health check defined, the service scheduler will wait for the
      * load balancer target group health check to return a healthy status before
-     * counting the task towards the minimum healthy percent total.</p> </li> </ul>
-     * <p>The default value for a replica service for
-     * <code>minimumHealthyPercent</code> is 100%. The default
-     * <code>minimumHealthyPercent</code> value for a service using the
-     * <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web Services
-     * SDKs, and the APIs and 50% for the Amazon Web Services Management Console.</p>
-     * <p>The minimum number of healthy tasks during a deployment is the
+     * counting the task towards the minimum healthy percent total.</p> </li> <li>
+     * <p>If a task has an essential container with a health check defined, the service
+     * scheduler will wait for both the task to reach a healthy status and the load
+     * balancer target group health check to return a healthy status before counting
+     * the task towards the minimum healthy percent total.</p> </li> </ul> <p>The
+     * default value for a replica service for <code>minimumHealthyPercent</code> is
+     * 100%. The default <code>minimumHealthyPercent</code> value for a service using
+     * the <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web
+     * Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     * Console.</p> <p>The minimum number of healthy tasks during a deployment is the
      * <code>desiredCount</code> multiplied by the
      * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer
      * value.</p> <p>If a service is using either the blue/green

@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     load_balancer,
-    network_interface
+    network_interface,
+    rds,
+    cidr
   };
 
 namespace VerifiedAccessEndpointTypeMapper

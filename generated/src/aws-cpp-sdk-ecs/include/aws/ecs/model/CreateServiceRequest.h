@@ -259,7 +259,7 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
-     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+     * capacity provider strategy can contain a maximum of 20 capacity providers.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }

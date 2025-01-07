@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a source or destination email
+   * address</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EmailAddressInfo">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The display name of email address.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

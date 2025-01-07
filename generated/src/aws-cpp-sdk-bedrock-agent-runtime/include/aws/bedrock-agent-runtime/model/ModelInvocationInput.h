@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/InferenceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/InferenceConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/CreationMode.h>
 #include <aws/bedrock-agent-runtime/model/PromptType.h>
 #include <utility>
@@ -46,6 +46,20 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API ModelInvocationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The identifier of a foundation model.</p>
+     */
+    inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
+    inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
+    inline void SetFoundationModel(const Aws::String& value) { m_foundationModelHasBeenSet = true; m_foundationModel = value; }
+    inline void SetFoundationModel(Aws::String&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::move(value); }
+    inline void SetFoundationModel(const char* value) { m_foundationModelHasBeenSet = true; m_foundationModel.assign(value); }
+    inline ModelInvocationInput& WithFoundationModel(const Aws::String& value) { SetFoundationModel(value); return *this;}
+    inline ModelInvocationInput& WithFoundationModel(Aws::String&& value) { SetFoundationModel(std::move(value)); return *this;}
+    inline ModelInvocationInput& WithFoundationModel(const char* value) { SetFoundationModel(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -149,6 +163,9 @@ namespace Model
     inline ModelInvocationInput& WithType(PromptType&& value) { SetType(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_foundationModel;
+    bool m_foundationModelHasBeenSet = false;
 
     InferenceConfiguration m_inferenceConfiguration;
     bool m_inferenceConfigurationHasBeenSet = false;

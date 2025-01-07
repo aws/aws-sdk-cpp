@@ -56,6 +56,12 @@ StartEngagementByAcceptingInvitationTaskResult& StartEngagementByAcceptingInvita
 
   }
 
+  if(jsonValue.ValueExists("ResourceSnapshotJobId"))
+  {
+    m_resourceSnapshotJobId = jsonValue.GetString("ResourceSnapshotJobId");
+
+  }
+
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");

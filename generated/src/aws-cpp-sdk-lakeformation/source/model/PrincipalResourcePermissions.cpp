@@ -21,6 +21,7 @@ namespace Model
 PrincipalResourcePermissions::PrincipalResourcePermissions() : 
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
+    m_conditionHasBeenSet(false),
     m_permissionsHasBeenSet(false),
     m_permissionsWithGrantOptionHasBeenSet(false),
     m_additionalDetailsHasBeenSet(false),
@@ -49,6 +50,13 @@ PrincipalResourcePermissions& PrincipalResourcePermissions::operator =(JsonView 
     m_resource = jsonValue.GetObject("Resource");
 
     m_resourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Condition"))
+  {
+    m_condition = jsonValue.GetObject("Condition");
+
+    m_conditionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Permissions"))
@@ -108,6 +116,12 @@ JsonValue PrincipalResourcePermissions::Jsonize() const
   if(m_resourceHasBeenSet)
   {
    payload.WithObject("Resource", m_resource.Jsonize());
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithObject("Condition", m_condition.Jsonize());
 
   }
 

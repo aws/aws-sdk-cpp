@@ -23,6 +23,7 @@ AttributeCondition::AttributeCondition() :
     m_valueHasBeenSet(false),
     m_proficiencyLevel(0.0),
     m_proficiencyLevelHasBeenSet(false),
+    m_rangeHasBeenSet(false),
     m_matchCriteriaHasBeenSet(false),
     m_comparisonOperatorHasBeenSet(false)
 {
@@ -55,6 +56,13 @@ AttributeCondition& AttributeCondition::operator =(JsonView jsonValue)
     m_proficiencyLevel = jsonValue.GetDouble("ProficiencyLevel");
 
     m_proficiencyLevelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Range"))
+  {
+    m_range = jsonValue.GetObject("Range");
+
+    m_rangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MatchCriteria"))
@@ -93,6 +101,12 @@ JsonValue AttributeCondition::Jsonize() const
   if(m_proficiencyLevelHasBeenSet)
   {
    payload.WithDouble("ProficiencyLevel", m_proficiencyLevel);
+
+  }
+
+  if(m_rangeHasBeenSet)
+  {
+   payload.WithObject("Range", m_range.Jsonize());
 
   }
 

@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL of the Amazon Web Service that provides the operation, for example:
-     * s3.amazonaws.com.</p>
+     * <p>The URL of the Amazon Web Services service that provides the operation, for
+     * example: s3.amazonaws.com.</p>
      */
     inline const Aws::String& GetApiServiceName() const{ return m_apiServiceName; }
     inline bool ApiServiceNameHasBeenSet() const { return m_apiServiceNameHasBeenSet; }

@@ -19,6 +19,7 @@ namespace Model
 {
 
 ConfigurationRecorderStatus::ConfigurationRecorderStatus() : 
+    m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_lastStartTimeHasBeenSet(false),
     m_lastStopTimeHasBeenSet(false),
@@ -28,7 +29,8 @@ ConfigurationRecorderStatus::ConfigurationRecorderStatus() :
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTimeHasBeenSet(false)
+    m_lastStatusChangeTimeHasBeenSet(false),
+    m_servicePrincipalHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,13 @@ ConfigurationRecorderStatus::ConfigurationRecorderStatus(JsonView jsonValue)
 
 ConfigurationRecorderStatus& ConfigurationRecorderStatus::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -96,12 +105,25 @@ ConfigurationRecorderStatus& ConfigurationRecorderStatus::operator =(JsonView js
     m_lastStatusChangeTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("servicePrincipal"))
+  {
+    m_servicePrincipal = jsonValue.GetString("servicePrincipal");
+
+    m_servicePrincipalHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ConfigurationRecorderStatus::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -145,6 +167,12 @@ JsonValue ConfigurationRecorderStatus::Jsonize() const
   if(m_lastStatusChangeTimeHasBeenSet)
   {
    payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime.SecondsWithMSPrecision());
+  }
+
+  if(m_servicePrincipalHasBeenSet)
+  {
+   payload.WithString("servicePrincipal", m_servicePrincipal);
+
   }
 
   return payload;

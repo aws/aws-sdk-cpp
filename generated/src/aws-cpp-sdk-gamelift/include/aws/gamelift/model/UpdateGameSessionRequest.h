@@ -94,10 +94,10 @@ namespace Model
     ///@{
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * <li> <p> <code>NoProtection</code> -- The game session can be terminated during
+     * a scale-down event.</p> </li> <li> <p> <code>FullProtection</code> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
     inline bool ProtectionPolicyHasBeenSet() const { return m_protectionPolicyHasBeenSet; }

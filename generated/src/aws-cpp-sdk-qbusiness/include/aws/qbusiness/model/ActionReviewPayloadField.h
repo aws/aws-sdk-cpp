@@ -142,7 +142,7 @@ namespace Model
     ///@{
     /**
      * <p>Use to create a custom form with array fields (fields with nested objects
-     * inside an array). </p>
+     * inside an array).</p>
      */
     inline Aws::Utils::DocumentView GetArrayItemJsonSchema() const{ return m_arrayItemJsonSchema; }
     inline bool ArrayItemJsonSchemaHasBeenSet() const { return m_arrayItemJsonSchemaHasBeenSet; }

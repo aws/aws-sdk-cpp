@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
+#include <aws/logs/model/QueryLanguage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -35,6 +36,22 @@ namespace Model
 
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
+    ///@{
+    /**
+     * <p>Specify the query language to use for this query. The options are Logs
+     * Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the
+     * query languages that CloudWatch Logs supports, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+     * query languages</a>.</p>
+     */
+    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
+    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
+    inline PutQueryDefinitionRequest& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
+    inline PutQueryDefinitionRequest& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -77,8 +94,11 @@ namespace Model
     ///@{
     /**
      * <p>Use this parameter to include specific log groups as part of your query
-     * definition.</p> <p>If you are updating a query definition and you omit this
-     * parameter, then the updated definition will contain no log groups.</p>
+     * definition. If your query uses the OpenSearch Service query language, you
+     * specify the log group names inside the <code>querystring</code> instead of
+     * here.</p> <p>If you are updating an existing query definition for the Logs
+     * Insights QL or OpenSearch Service PPL and you omit this parameter, then the
+     * updated definition will contain no log groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogGroupNames() const{ return m_logGroupNames; }
     inline bool LogGroupNamesHasBeenSet() const { return m_logGroupNamesHasBeenSet; }
@@ -122,6 +142,9 @@ namespace Model
     inline PutQueryDefinitionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
   private:
+
+    QueryLanguage m_queryLanguage;
+    bool m_queryLanguageHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

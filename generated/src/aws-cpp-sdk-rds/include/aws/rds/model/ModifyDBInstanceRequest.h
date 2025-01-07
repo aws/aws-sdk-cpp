@@ -8,6 +8,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/AutomationMode.h>
@@ -860,6 +861,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+     * <p>This setting only applies to Amazon Aurora DB instances.</p> 
+     * <p>Currently, this value is inherited from the DB cluster and can't be
+     * changed.</p> 
+     */
+    inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
+    inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
+    inline void SetDatabaseInsightsMode(const DatabaseInsightsMode& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = value; }
+    inline void SetDatabaseInsightsMode(DatabaseInsightsMode&& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = std::move(value); }
+    inline ModifyDBInstanceRequest& WithDatabaseInsightsMode(const DatabaseInsightsMode& value) { SetDatabaseInsightsMode(value); return *this;}
+    inline ModifyDBInstanceRequest& WithDatabaseInsightsMode(DatabaseInsightsMode&& value) { SetDatabaseInsightsMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to enable Performance Insights for the DB instance.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
@@ -916,7 +932,20 @@ namespace Model
      * instance.</p> <p>A change to the <code>CloudwatchLogsExportConfiguration</code>
      * parameter is always applied to the DB instance immediately. Therefore, the
      * <code>ApplyImmediately</code> parameter has no effect.</p> <p>This setting
-     * doesn't apply to RDS Custom DB instances.</p>
+     * doesn't apply to RDS Custom DB instances.</p> <p>The following values are valid
+     * for each DB engine:</p> <ul> <li> <p>Aurora MySQL - <code>audit | error |
+     * general | slowquery</code> </p> </li> <li> <p>Aurora PostgreSQL -
+     * <code>postgresql</code> </p> </li> <li> <p>RDS for MySQL - <code>error | general
+     * | slowquery</code> </p> </li> <li> <p>RDS for PostgreSQL - <code>postgresql |
+     * upgrade</code> </p> </li> </ul> <p>For more information about exporting
+     * CloudWatch Logs for Amazon RDS, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+     * Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Amazon Aurora, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
     inline bool CloudwatchLogsExportConfigurationHasBeenSet() const { return m_cloudwatchLogsExportConfigurationHasBeenSet; }
@@ -1377,6 +1406,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+
+    DatabaseInsightsMode m_databaseInsightsMode;
+    bool m_databaseInsightsModeHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
     bool m_enablePerformanceInsightsHasBeenSet = false;

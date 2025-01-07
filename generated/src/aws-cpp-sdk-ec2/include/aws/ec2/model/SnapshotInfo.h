@@ -202,6 +202,22 @@ namespace Model
     inline SnapshotInfo& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
     inline SnapshotInfo& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone or Local Zone of the snapshots. For example,
+     * <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code>
+     * (Local Zone).</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+    inline SnapshotInfo& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline SnapshotInfo& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline SnapshotInfo& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -239,6 +255,9 @@ namespace Model
 
     SSEType m_sseType;
     bool m_sseTypeHasBeenSet = false;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

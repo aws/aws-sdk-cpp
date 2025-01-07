@@ -125,14 +125,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-     * created on the instance.</p>  <p>The value of <code>InstanceType</code>
-     * passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code>
-     * call overrides the value passed as part of the <code>ResourceSpec</code>
-     * configured for the user profile or the domain. If <code>InstanceType</code> is
-     * not specified in any of those three <code>ResourceSpec</code> values for a
-     * <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a
-     * request validation error.</p> 
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI
+     * image created on the instance.</p>  <p>The value of
+     * <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the
+     * <code>CreateApp</code> call overrides the value passed as part of the
+     * <code>ResourceSpec</code> configured for the user profile or the domain. If
+     * <code>InstanceType</code> is not specified in any of those three
+     * <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the
+     * <code>CreateApp</code> call fails with a request validation error.</p> 
      */
     inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
     inline bool ResourceSpecHasBeenSet() const { return m_resourceSpecHasBeenSet; }

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The cluster object that has been deleted</p>
+     * <p>The cluster object that has been deleted.</p>
      */
     inline const Cluster& GetCluster() const{ return m_cluster; }
     inline void SetCluster(const Cluster& value) { m_cluster = value; }

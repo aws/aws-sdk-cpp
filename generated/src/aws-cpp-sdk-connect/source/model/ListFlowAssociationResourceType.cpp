@@ -20,15 +20,21 @@ namespace Aws
       namespace ListFlowAssociationResourceTypeMapper
       {
 
+        static const int WHATSAPP_MESSAGING_PHONE_NUMBER_HASH = HashingUtils::HashString("WHATSAPP_MESSAGING_PHONE_NUMBER");
         static const int VOICE_PHONE_NUMBER_HASH = HashingUtils::HashString("VOICE_PHONE_NUMBER");
         static const int INBOUND_EMAIL_HASH = HashingUtils::HashString("INBOUND_EMAIL");
         static const int OUTBOUND_EMAIL_HASH = HashingUtils::HashString("OUTBOUND_EMAIL");
+        static const int ANALYTICS_CONNECTOR_HASH = HashingUtils::HashString("ANALYTICS_CONNECTOR");
 
 
         ListFlowAssociationResourceType GetListFlowAssociationResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == VOICE_PHONE_NUMBER_HASH)
+          if (hashCode == WHATSAPP_MESSAGING_PHONE_NUMBER_HASH)
+          {
+            return ListFlowAssociationResourceType::WHATSAPP_MESSAGING_PHONE_NUMBER;
+          }
+          else if (hashCode == VOICE_PHONE_NUMBER_HASH)
           {
             return ListFlowAssociationResourceType::VOICE_PHONE_NUMBER;
           }
@@ -39,6 +45,10 @@ namespace Aws
           else if (hashCode == OUTBOUND_EMAIL_HASH)
           {
             return ListFlowAssociationResourceType::OUTBOUND_EMAIL;
+          }
+          else if (hashCode == ANALYTICS_CONNECTOR_HASH)
+          {
+            return ListFlowAssociationResourceType::ANALYTICS_CONNECTOR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,12 +66,16 @@ namespace Aws
           {
           case ListFlowAssociationResourceType::NOT_SET:
             return {};
+          case ListFlowAssociationResourceType::WHATSAPP_MESSAGING_PHONE_NUMBER:
+            return "WHATSAPP_MESSAGING_PHONE_NUMBER";
           case ListFlowAssociationResourceType::VOICE_PHONE_NUMBER:
             return "VOICE_PHONE_NUMBER";
           case ListFlowAssociationResourceType::INBOUND_EMAIL:
             return "INBOUND_EMAIL";
           case ListFlowAssociationResourceType::OUTBOUND_EMAIL:
             return "OUTBOUND_EMAIL";
+          case ListFlowAssociationResourceType::ANALYTICS_CONNECTOR:
+            return "ANALYTICS_CONNECTOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

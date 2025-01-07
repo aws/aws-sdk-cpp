@@ -22,7 +22,8 @@ EksVolume::EksVolume() :
     m_nameHasBeenSet(false),
     m_hostPathHasBeenSet(false),
     m_emptyDirHasBeenSet(false),
-    m_secretHasBeenSet(false)
+    m_secretHasBeenSet(false),
+    m_persistentVolumeClaimHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,13 @@ EksVolume& EksVolume::operator =(JsonView jsonValue)
     m_secretHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("persistentVolumeClaim"))
+  {
+    m_persistentVolumeClaim = jsonValue.GetObject("persistentVolumeClaim");
+
+    m_persistentVolumeClaimHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +98,12 @@ JsonValue EksVolume::Jsonize() const
   if(m_secretHasBeenSet)
   {
    payload.WithObject("secret", m_secret.Jsonize());
+
+  }
+
+  if(m_persistentVolumeClaimHasBeenSet)
+  {
+   payload.WithObject("persistentVolumeClaim", m_persistentVolumeClaim.Jsonize());
 
   }
 

@@ -40,6 +40,7 @@ namespace Aws
         static const int INTERNAL_TRANSFER_IN_DOMAIN_HASH = HashingUtils::HashString("INTERNAL_TRANSFER_IN_DOMAIN");
         static const int RELEASE_TO_GANDI_HASH = HashingUtils::HashString("RELEASE_TO_GANDI");
         static const int TRANSFER_ON_RENEW_HASH = HashingUtils::HashString("TRANSFER_ON_RENEW");
+        static const int RESTORE_DOMAIN_HASH = HashingUtils::HashString("RESTORE_DOMAIN");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -125,6 +126,10 @@ namespace Aws
           {
             return OperationType::TRANSFER_ON_RENEW;
           }
+          else if (hashCode == RESTORE_DOMAIN_HASH)
+          {
+            return OperationType::RESTORE_DOMAIN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -181,6 +186,8 @@ namespace Aws
             return "RELEASE_TO_GANDI";
           case OperationType::TRANSFER_ON_RENEW:
             return "TRANSFER_ON_RENEW";
+          case OperationType::RESTORE_DOMAIN:
+            return "RESTORE_DOMAIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

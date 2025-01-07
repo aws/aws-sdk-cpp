@@ -197,6 +197,20 @@ namespace Model
     inline VpcEndpointConnection& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline VpcEndpointConnection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Region of the endpoint.</p>
+     */
+    inline const Aws::String& GetVpcEndpointRegion() const{ return m_vpcEndpointRegion; }
+    inline bool VpcEndpointRegionHasBeenSet() const { return m_vpcEndpointRegionHasBeenSet; }
+    inline void SetVpcEndpointRegion(const Aws::String& value) { m_vpcEndpointRegionHasBeenSet = true; m_vpcEndpointRegion = value; }
+    inline void SetVpcEndpointRegion(Aws::String&& value) { m_vpcEndpointRegionHasBeenSet = true; m_vpcEndpointRegion = std::move(value); }
+    inline void SetVpcEndpointRegion(const char* value) { m_vpcEndpointRegionHasBeenSet = true; m_vpcEndpointRegion.assign(value); }
+    inline VpcEndpointConnection& WithVpcEndpointRegion(const Aws::String& value) { SetVpcEndpointRegion(value); return *this;}
+    inline VpcEndpointConnection& WithVpcEndpointRegion(Aws::String&& value) { SetVpcEndpointRegion(std::move(value)); return *this;}
+    inline VpcEndpointConnection& WithVpcEndpointRegion(const char* value) { SetVpcEndpointRegion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_serviceId;
@@ -231,6 +245,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_vpcEndpointRegion;
+    bool m_vpcEndpointRegionHasBeenSet = false;
   };
 
 } // namespace Model

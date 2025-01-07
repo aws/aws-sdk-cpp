@@ -55,7 +55,9 @@ PostgreSQLSettings::PostgreSQLSettings() :
     m_mapLongVarcharAsHasBeenSet(false),
     m_databaseMode(DatabaseMode::NOT_SET),
     m_databaseModeHasBeenSet(false),
-    m_babelfishDatabaseNameHasBeenSet(false)
+    m_babelfishDatabaseNameHasBeenSet(false),
+    m_disableUnicodeSourceFilter(false),
+    m_disableUnicodeSourceFilterHasBeenSet(false)
 {
 }
 
@@ -235,6 +237,13 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_babelfishDatabaseNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableUnicodeSourceFilter"))
+  {
+    m_disableUnicodeSourceFilter = jsonValue.GetBool("DisableUnicodeSourceFilter");
+
+    m_disableUnicodeSourceFilterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -380,6 +389,12 @@ JsonValue PostgreSQLSettings::Jsonize() const
   if(m_babelfishDatabaseNameHasBeenSet)
   {
    payload.WithString("BabelfishDatabaseName", m_babelfishDatabaseName);
+
+  }
+
+  if(m_disableUnicodeSourceFilterHasBeenSet)
+  {
+   payload.WithBool("DisableUnicodeSourceFilter", m_disableUnicodeSourceFilter);
 
   }
 

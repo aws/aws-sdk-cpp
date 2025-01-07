@@ -17,6 +17,8 @@ CreateAccessLogSubscriptionRequest::CreateAccessLogSubscriptionRequest() :
     m_clientTokenHasBeenSet(true),
     m_destinationArnHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
+    m_serviceNetworkLogType(ServiceNetworkLogType::NOT_SET),
+    m_serviceNetworkLogTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -41,6 +43,11 @@ Aws::String CreateAccessLogSubscriptionRequest::SerializePayload() const
   {
    payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
+  }
+
+  if(m_serviceNetworkLogTypeHasBeenSet)
+  {
+   payload.WithString("serviceNetworkLogType", ServiceNetworkLogTypeMapper::GetNameForServiceNetworkLogType(m_serviceNetworkLogType));
   }
 
   if(m_tagsHasBeenSet)

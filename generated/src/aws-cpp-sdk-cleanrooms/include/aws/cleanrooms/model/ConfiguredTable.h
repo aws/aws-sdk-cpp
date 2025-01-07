@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Glue table that this configured table represents.</p>
+     * <p>The table that this configured table represents.</p>
      */
     inline const TableReference& GetTableReference() const{ return m_tableReference; }
     inline bool TableReferenceHasBeenSet() const { return m_tableReferenceHasBeenSet; }

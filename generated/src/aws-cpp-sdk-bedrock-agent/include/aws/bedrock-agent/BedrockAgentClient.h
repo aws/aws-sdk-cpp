@@ -78,6 +78,32 @@ namespace BedrockAgent
         virtual ~BedrockAgentClient();
 
         /**
+         * <p>Makes an agent a collaborator for another agent.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentCollaborator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateAgentCollaboratorOutcome AssociateAgentCollaborator(const Model::AssociateAgentCollaboratorRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateAgentCollaborator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateAgentCollaboratorRequestT = Model::AssociateAgentCollaboratorRequest>
+        Model::AssociateAgentCollaboratorOutcomeCallable AssociateAgentCollaboratorCallable(const AssociateAgentCollaboratorRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::AssociateAgentCollaborator, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateAgentCollaborator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateAgentCollaboratorRequestT = Model::AssociateAgentCollaboratorRequest>
+        void AssociateAgentCollaboratorAsync(const AssociateAgentCollaboratorRequestT& request, const AssociateAgentCollaboratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::AssociateAgentCollaborator, request, handler, context);
+        }
+
+        /**
          * <p>Associates a knowledge base with an agent. If a knowledge base is associated
          * and its <code>indexState</code> is set to <code>Enabled</code>, the agent
          * queries the knowledge base for information to augment its response to the
@@ -220,9 +246,11 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Creates a data source connector for a knowledge base.</p>  <p>You
-         * can't change the <code>chunkingConfiguration</code> after you create the data
-         * source connector.</p> <p><h3>See Also:</h3>   <a
+         * <p>Connects a knowledge base to a data source. You specify the configuration for
+         * the specific data source service in the <code>dataSourceConfiguration</code>
+         * field.</p>  <p>You can't change the
+         * <code>chunkingConfiguration</code> after you create the data source
+         * connector.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateDataSource">AWS
          * API Reference</a></p>
          */
@@ -685,6 +713,35 @@ namespace BedrockAgent
         }
 
         /**
+         * <p>Deletes documents from a data source and syncs the changes to the knowledge
+         * base that is connected to it. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKnowledgeBaseDocumentsOutcome DeleteKnowledgeBaseDocuments(const Model::DeleteKnowledgeBaseDocumentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKnowledgeBaseDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKnowledgeBaseDocumentsRequestT = Model::DeleteKnowledgeBaseDocumentsRequest>
+        Model::DeleteKnowledgeBaseDocumentsOutcomeCallable DeleteKnowledgeBaseDocumentsCallable(const DeleteKnowledgeBaseDocumentsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::DeleteKnowledgeBaseDocuments, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKnowledgeBaseDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKnowledgeBaseDocumentsRequestT = Model::DeleteKnowledgeBaseDocumentsRequest>
+        void DeleteKnowledgeBaseDocumentsAsync(const DeleteKnowledgeBaseDocumentsRequestT& request, const DeleteKnowledgeBaseDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::DeleteKnowledgeBaseDocuments, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a prompt or a version of it, depending on whether you include the
          * <code>promptVersion</code> field or not. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete
@@ -713,6 +770,31 @@ namespace BedrockAgent
         void DeletePromptAsync(const DeletePromptRequestT& request, const DeletePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::DeletePrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates an agent collaborator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentCollaborator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateAgentCollaboratorOutcome DisassociateAgentCollaborator(const Model::DisassociateAgentCollaboratorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateAgentCollaborator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateAgentCollaboratorRequestT = Model::DisassociateAgentCollaboratorRequest>
+        Model::DisassociateAgentCollaboratorOutcomeCallable DisassociateAgentCollaboratorCallable(const DisassociateAgentCollaboratorRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::DisassociateAgentCollaborator, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateAgentCollaborator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateAgentCollaboratorRequestT = Model::DisassociateAgentCollaboratorRequest>
+        void DisassociateAgentCollaboratorAsync(const DisassociateAgentCollaboratorRequestT& request, const DisassociateAgentCollaboratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::DisassociateAgentCollaborator, request, handler, context);
         }
 
         /**
@@ -814,6 +896,32 @@ namespace BedrockAgent
         void GetAgentAliasAsync(const GetAgentAliasRequestT& request, const GetAgentAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::GetAgentAlias, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about an agent's collaborator.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentCollaborator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAgentCollaboratorOutcome GetAgentCollaborator(const Model::GetAgentCollaboratorRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAgentCollaborator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAgentCollaboratorRequestT = Model::GetAgentCollaboratorRequest>
+        Model::GetAgentCollaboratorOutcomeCallable GetAgentCollaboratorCallable(const GetAgentCollaboratorRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::GetAgentCollaborator, request);
+        }
+
+        /**
+         * An Async wrapper for GetAgentCollaborator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAgentCollaboratorRequestT = Model::GetAgentCollaboratorRequest>
+        void GetAgentCollaboratorAsync(const GetAgentCollaboratorRequestT& request, const GetAgentCollaboratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::GetAgentCollaborator, request, handler, context);
         }
 
         /**
@@ -1029,6 +1137,35 @@ namespace BedrockAgent
         }
 
         /**
+         * <p>Retrieves specific documents from a data source that is connected to a
+         * knowledge base. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetKnowledgeBaseDocumentsOutcome GetKnowledgeBaseDocuments(const Model::GetKnowledgeBaseDocumentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetKnowledgeBaseDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetKnowledgeBaseDocumentsRequestT = Model::GetKnowledgeBaseDocumentsRequest>
+        Model::GetKnowledgeBaseDocumentsOutcomeCallable GetKnowledgeBaseDocumentsCallable(const GetKnowledgeBaseDocumentsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::GetKnowledgeBaseDocuments, request);
+        }
+
+        /**
+         * An Async wrapper for GetKnowledgeBaseDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetKnowledgeBaseDocumentsRequestT = Model::GetKnowledgeBaseDocumentsRequest>
+        void GetKnowledgeBaseDocumentsAsync(const GetKnowledgeBaseDocumentsRequestT& request, const GetKnowledgeBaseDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::GetKnowledgeBaseDocuments, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about the working draft (<code>DRAFT</code> version) of
          * a prompt or a version of it, depending on whether you include the
          * <code>promptVersion</code> field or not. For more information, see <a
@@ -1058,6 +1195,37 @@ namespace BedrockAgent
         void GetPromptAsync(const GetPromptRequestT& request, const GetPromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::GetPrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Ingests documents directly into the knowledge base that is connected to the
+         * data source. The <code>dataSourceType</code> specified in the content for each
+         * document must match the type of the data source that you specify in the header.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::IngestKnowledgeBaseDocumentsOutcome IngestKnowledgeBaseDocuments(const Model::IngestKnowledgeBaseDocumentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for IngestKnowledgeBaseDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename IngestKnowledgeBaseDocumentsRequestT = Model::IngestKnowledgeBaseDocumentsRequest>
+        Model::IngestKnowledgeBaseDocumentsOutcomeCallable IngestKnowledgeBaseDocumentsCallable(const IngestKnowledgeBaseDocumentsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::IngestKnowledgeBaseDocuments, request);
+        }
+
+        /**
+         * An Async wrapper for IngestKnowledgeBaseDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename IngestKnowledgeBaseDocumentsRequestT = Model::IngestKnowledgeBaseDocumentsRequest>
+        void IngestKnowledgeBaseDocumentsAsync(const IngestKnowledgeBaseDocumentsRequestT& request, const IngestKnowledgeBaseDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::IngestKnowledgeBaseDocuments, request, handler, context);
         }
 
         /**
@@ -1110,6 +1278,31 @@ namespace BedrockAgent
         void ListAgentAliasesAsync(const ListAgentAliasesRequestT& request, const ListAgentAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::ListAgentAliases, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve a list of an agent's collaborators.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentCollaborators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAgentCollaboratorsOutcome ListAgentCollaborators(const Model::ListAgentCollaboratorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAgentCollaborators that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAgentCollaboratorsRequestT = Model::ListAgentCollaboratorsRequest>
+        Model::ListAgentCollaboratorsOutcomeCallable ListAgentCollaboratorsCallable(const ListAgentCollaboratorsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ListAgentCollaborators, request);
+        }
+
+        /**
+         * An Async wrapper for ListAgentCollaborators that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAgentCollaboratorsRequestT = Model::ListAgentCollaboratorsRequest>
+        void ListAgentCollaboratorsAsync(const ListAgentCollaboratorsRequestT& request, const ListAgentCollaboratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ListAgentCollaborators, request, handler, context);
         }
 
         /**
@@ -1322,6 +1515,35 @@ namespace BedrockAgent
         void ListIngestionJobsAsync(const ListIngestionJobsRequestT& request, const ListIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::ListIngestionJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves all the documents contained in a data source that is connected to a
+         * knowledge base. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKnowledgeBaseDocumentsOutcome ListKnowledgeBaseDocuments(const Model::ListKnowledgeBaseDocumentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListKnowledgeBaseDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKnowledgeBaseDocumentsRequestT = Model::ListKnowledgeBaseDocumentsRequest>
+        Model::ListKnowledgeBaseDocumentsOutcomeCallable ListKnowledgeBaseDocumentsCallable(const ListKnowledgeBaseDocumentsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ListKnowledgeBaseDocuments, request);
+        }
+
+        /**
+         * An Async wrapper for ListKnowledgeBaseDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKnowledgeBaseDocumentsRequestT = Model::ListKnowledgeBaseDocumentsRequest>
+        void ListKnowledgeBaseDocumentsAsync(const ListKnowledgeBaseDocumentsRequestT& request, const ListKnowledgeBaseDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ListKnowledgeBaseDocuments, request, handler, context);
         }
 
         /**
@@ -1642,6 +1864,31 @@ namespace BedrockAgent
         void UpdateAgentAliasAsync(const UpdateAgentAliasRequestT& request, const UpdateAgentAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::UpdateAgentAlias, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an agent's collaborator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentCollaborator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAgentCollaboratorOutcome UpdateAgentCollaborator(const Model::UpdateAgentCollaboratorRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAgentCollaborator that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAgentCollaboratorRequestT = Model::UpdateAgentCollaboratorRequest>
+        Model::UpdateAgentCollaboratorOutcomeCallable UpdateAgentCollaboratorCallable(const UpdateAgentCollaboratorRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::UpdateAgentCollaborator, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAgentCollaborator that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAgentCollaboratorRequestT = Model::UpdateAgentCollaboratorRequest>
+        void UpdateAgentCollaboratorAsync(const UpdateAgentCollaboratorRequestT& request, const UpdateAgentCollaboratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::UpdateAgentCollaborator, request, handler, context);
         }
 
         /**

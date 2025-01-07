@@ -28,9 +28,15 @@ namespace Model
    * <p>A set of port ranges that can be opened on the container. A process that's
    * running in the container can bind to a port number, making it accessible to
    * inbound traffic. Container ports map to a container fleet's connection ports.
-   * </p> <p> <b>Part of:</b> <a>GameServerContainerDefinition</a>,
-   * <a>GameServerContainerDefinitionInput</a>, <a>SupportContainerDefinition</a>,
-   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
+   * </p> <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerPortConfiguration">AWS
    * API Reference</a></p>
    */

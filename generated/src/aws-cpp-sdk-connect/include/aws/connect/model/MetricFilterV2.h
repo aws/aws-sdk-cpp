@@ -73,7 +73,16 @@ namespace Model
      * the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for
      * the <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow
-     * outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p> <p>For
+     * valid values of the metric-level filter
+     * <code>BOT_CONVERSATION_OUTCOME_TYPE</code>, see the description for the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot
+     * conversations completed</a> in the <i>Amazon Connect Administrator
+     * Guide</i>.</p> <p>For valid values of the metric-level filter
+     * <code>BOT_INTENT_OUTCOME_TYPE</code>, see the description for the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot
+     * intents completed</a> metric in the <i>Amazon Connect Administrator
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricFilterValues() const{ return m_metricFilterValues; }
     inline bool MetricFilterValuesHasBeenSet() const { return m_metricFilterValuesHasBeenSet; }

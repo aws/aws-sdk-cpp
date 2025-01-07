@@ -21,7 +21,8 @@ namespace Model
 AudienceGenerationJobDataSource::AudienceGenerationJobDataSource() : 
     m_dataSourceHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_sqlParametersHasBeenSet(false)
+    m_sqlParametersHasBeenSet(false),
+    m_sqlComputeConfigurationHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,13 @@ AudienceGenerationJobDataSource& AudienceGenerationJobDataSource::operator =(Jso
     m_sqlParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sqlComputeConfiguration"))
+  {
+    m_sqlComputeConfiguration = jsonValue.GetObject("sqlComputeConfiguration");
+
+    m_sqlComputeConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +84,12 @@ JsonValue AudienceGenerationJobDataSource::Jsonize() const
   if(m_sqlParametersHasBeenSet)
   {
    payload.WithObject("sqlParameters", m_sqlParameters.Jsonize());
+
+  }
+
+  if(m_sqlComputeConfigurationHasBeenSet)
+  {
+   payload.WithObject("sqlComputeConfiguration", m_sqlComputeConfiguration.Jsonize());
 
   }
 

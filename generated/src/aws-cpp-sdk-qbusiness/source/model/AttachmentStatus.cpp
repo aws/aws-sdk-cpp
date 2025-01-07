@@ -21,7 +21,7 @@ namespace Aws
       {
 
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
 
 
         AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
@@ -31,9 +31,9 @@ namespace Aws
           {
             return AttachmentStatus::FAILED;
           }
-          else if (hashCode == SUCCEEDED_HASH)
+          else if (hashCode == SUCCESS_HASH)
           {
-            return AttachmentStatus::SUCCEEDED;
+            return AttachmentStatus::SUCCESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,8 +53,8 @@ namespace Aws
             return {};
           case AttachmentStatus::FAILED:
             return "FAILED";
-          case AttachmentStatus::SUCCEEDED:
-            return "SUCCEEDED";
+          case AttachmentStatus::SUCCESS:
+            return "SUCCESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

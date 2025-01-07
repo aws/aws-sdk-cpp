@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-data-automation/model/DataAutomationProjectStage.h>
+#include <aws/bedrock-data-automation/model/DataAutomationProjectStatus.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace BedrockDataAutomation
+{
+namespace Model
+{
+  /**
+   * <p>Update DataAutomationProject Response</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateDataAutomationProjectResponse">AWS
+   * API Reference</a></p>
+   */
+  class UpdateDataAutomationProjectResult
+  {
+  public:
+    AWS_BEDROCKDATAAUTOMATION_API UpdateDataAutomationProjectResult();
+    AWS_BEDROCKDATAAUTOMATION_API UpdateDataAutomationProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BEDROCKDATAAUTOMATION_API UpdateDataAutomationProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    
+    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
+    inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
+    inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
+    inline UpdateDataAutomationProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
+    inline UpdateDataAutomationProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
+    inline UpdateDataAutomationProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const DataAutomationProjectStage& GetProjectStage() const{ return m_projectStage; }
+    inline void SetProjectStage(const DataAutomationProjectStage& value) { m_projectStage = value; }
+    inline void SetProjectStage(DataAutomationProjectStage&& value) { m_projectStage = std::move(value); }
+    inline UpdateDataAutomationProjectResult& WithProjectStage(const DataAutomationProjectStage& value) { SetProjectStage(value); return *this;}
+    inline UpdateDataAutomationProjectResult& WithProjectStage(DataAutomationProjectStage&& value) { SetProjectStage(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const DataAutomationProjectStatus& GetStatus() const{ return m_status; }
+    inline void SetStatus(const DataAutomationProjectStatus& value) { m_status = value; }
+    inline void SetStatus(DataAutomationProjectStatus&& value) { m_status = std::move(value); }
+    inline UpdateDataAutomationProjectResult& WithStatus(const DataAutomationProjectStatus& value) { SetStatus(value); return *this;}
+    inline UpdateDataAutomationProjectResult& WithStatus(DataAutomationProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+    inline UpdateDataAutomationProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline UpdateDataAutomationProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline UpdateDataAutomationProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_projectArn;
+
+    DataAutomationProjectStage m_projectStage;
+
+    DataAutomationProjectStatus m_status;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace BedrockDataAutomation
+} // namespace Aws

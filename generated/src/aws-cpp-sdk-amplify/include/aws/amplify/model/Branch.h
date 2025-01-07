@@ -144,7 +144,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The creation date and time for a branch that is part of an Amplify app. </p>
+     * <p>A timestamp of when Amplify created the branch.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
@@ -156,8 +156,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The last updated date and time for a branch that is part of an Amplify app.
-     * </p>
+     * <p>A timestamp for the last updated time for a branch.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }

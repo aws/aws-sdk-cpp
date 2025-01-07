@@ -41,8 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool client from a server response to describe the user pool
-     * client.</p>
+     * <p>The details of the request app client.</p>
      */
     inline const UserPoolClientType& GetUserPoolClient() const{ return m_userPoolClient; }
     inline void SetUserPoolClient(const UserPoolClientType& value) { m_userPoolClient = value; }

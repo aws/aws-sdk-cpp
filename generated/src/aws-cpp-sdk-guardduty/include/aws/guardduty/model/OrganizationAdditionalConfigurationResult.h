@@ -42,7 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>The name of the additional configuration that is configured for the member
-     * accounts within the organization.</p>
+     * accounts within the organization. These values are applicable to only Runtime
+     * Monitoring protection plan.</p>
      */
     inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

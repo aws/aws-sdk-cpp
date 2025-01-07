@@ -28,8 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>The search criteria to be used to return contact flows.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The search criteria to be used to return flows.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowSearchCriteria">AWS
    * API Reference</a></p>
    */

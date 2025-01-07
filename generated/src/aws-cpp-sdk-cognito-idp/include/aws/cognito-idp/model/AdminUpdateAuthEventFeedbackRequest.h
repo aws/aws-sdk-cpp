@@ -37,7 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where you want to submit authentication-event
+     * feedback.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -69,7 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication event ID.</p>
+     * <p>The authentication event ID. To query authentication events for a user, see
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }

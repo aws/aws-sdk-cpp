@@ -937,6 +937,34 @@ namespace imagebuilder
         }
 
         /**
+         * <p>Verify the subscription and perform resource dependency checks on the
+         * requested Amazon Web Services Marketplace resource. For Amazon Web Services
+         * Marketplace components, the response contains fields to download the components
+         * and their artifacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMarketplaceResourceOutcome GetMarketplaceResource(const Model::GetMarketplaceResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMarketplaceResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMarketplaceResourceRequestT = Model::GetMarketplaceResourceRequest>
+        Model::GetMarketplaceResourceOutcomeCallable GetMarketplaceResourceCallable(const GetMarketplaceResourceRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::GetMarketplaceResource, request);
+        }
+
+        /**
+         * An Async wrapper for GetMarketplaceResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMarketplaceResourceRequestT = Model::GetMarketplaceResourceRequest>
+        void GetMarketplaceResourceAsync(const GetMarketplaceResourceRequestT& request, const GetMarketplaceResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::GetMarketplaceResource, request, handler, context);
+        }
+
+        /**
          * <p>Get a workflow resource object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow">AWS
          * API Reference</a></p>

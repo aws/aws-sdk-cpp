@@ -249,6 +249,51 @@ namespace Model
     inline CreateVpcEndpointRequest& AddSubnetConfigurations(const SubnetConfiguration& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations.push_back(value); return *this; }
     inline CreateVpcEndpointRequest& AddSubnetConfigurations(SubnetConfiguration&& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of a service network that will be associated
+     * with the VPC endpoint of type service-network.</p>
+     */
+    inline const Aws::String& GetServiceNetworkArn() const{ return m_serviceNetworkArn; }
+    inline bool ServiceNetworkArnHasBeenSet() const { return m_serviceNetworkArnHasBeenSet; }
+    inline void SetServiceNetworkArn(const Aws::String& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = value; }
+    inline void SetServiceNetworkArn(Aws::String&& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = std::move(value); }
+    inline void SetServiceNetworkArn(const char* value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn.assign(value); }
+    inline CreateVpcEndpointRequest& WithServiceNetworkArn(const Aws::String& value) { SetServiceNetworkArn(value); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceNetworkArn(Aws::String&& value) { SetServiceNetworkArn(std::move(value)); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceNetworkArn(const char* value) { SetServiceNetworkArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of a resource configuration that will be
+     * associated with the VPC endpoint of type resource.</p>
+     */
+    inline const Aws::String& GetResourceConfigurationArn() const{ return m_resourceConfigurationArn; }
+    inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }
+    inline void SetResourceConfigurationArn(const Aws::String& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = value; }
+    inline void SetResourceConfigurationArn(Aws::String&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::move(value); }
+    inline void SetResourceConfigurationArn(const char* value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn.assign(value); }
+    inline CreateVpcEndpointRequest& WithResourceConfigurationArn(const Aws::String& value) { SetResourceConfigurationArn(value); return *this;}
+    inline CreateVpcEndpointRequest& WithResourceConfigurationArn(Aws::String&& value) { SetResourceConfigurationArn(std::move(value)); return *this;}
+    inline CreateVpcEndpointRequest& WithResourceConfigurationArn(const char* value) { SetResourceConfigurationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Region where the service is hosted. The default is the current
+     * Region.</p>
+     */
+    inline const Aws::String& GetServiceRegion() const{ return m_serviceRegion; }
+    inline bool ServiceRegionHasBeenSet() const { return m_serviceRegionHasBeenSet; }
+    inline void SetServiceRegion(const Aws::String& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = value; }
+    inline void SetServiceRegion(Aws::String&& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = std::move(value); }
+    inline void SetServiceRegion(const char* value) { m_serviceRegionHasBeenSet = true; m_serviceRegion.assign(value); }
+    inline CreateVpcEndpointRequest& WithServiceRegion(const Aws::String& value) { SetServiceRegion(value); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceRegion(Aws::String&& value) { SetServiceRegion(std::move(value)); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceRegion(const char* value) { SetServiceRegion(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun;
@@ -292,6 +337,15 @@ namespace Model
 
     Aws::Vector<SubnetConfiguration> m_subnetConfigurations;
     bool m_subnetConfigurationsHasBeenSet = false;
+
+    Aws::String m_serviceNetworkArn;
+    bool m_serviceNetworkArnHasBeenSet = false;
+
+    Aws::String m_resourceConfigurationArn;
+    bool m_resourceConfigurationArnHasBeenSet = false;
+
+    Aws::String m_serviceRegion;
+    bool m_serviceRegionHasBeenSet = false;
   };
 
 } // namespace Model

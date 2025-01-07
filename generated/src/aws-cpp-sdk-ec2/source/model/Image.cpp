@@ -49,6 +49,8 @@ Image::Image() :
     m_sourceInstanceIdHasBeenSet(false),
     m_deregistrationProtectionHasBeenSet(false),
     m_lastLaunchedTimeHasBeenSet(false),
+    m_imageAllowed(false),
+    m_imageAllowedHasBeenSet(false),
     m_sourceImageIdHasBeenSet(false),
     m_sourceImageRegionHasBeenSet(false),
     m_imageIdHasBeenSet(false),
@@ -220,6 +222,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_lastLaunchedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastLaunchedTimeNode.GetText());
       m_lastLaunchedTimeHasBeenSet = true;
+    }
+    XmlNode imageAllowedNode = resultNode.FirstChild("imageAllowed");
+    if(!imageAllowedNode.IsNull())
+    {
+      m_imageAllowed = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageAllowedNode.GetText()).c_str()).c_str());
+      m_imageAllowedHasBeenSet = true;
     }
     XmlNode sourceImageIdNode = resultNode.FirstChild("sourceImageId");
     if(!sourceImageIdNode.IsNull())
@@ -437,6 +445,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
   }
 
+  if(m_imageAllowedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageAllowed=" << std::boolalpha << m_imageAllowed << "&";
+  }
+
   if(m_sourceImageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceImageId=" << StringUtils::URLEncode(m_sourceImageId.c_str()) << "&";
@@ -614,6 +627,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_lastLaunchedTimeHasBeenSet)
   {
       oStream << location << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
+  }
+  if(m_imageAllowedHasBeenSet)
+  {
+      oStream << location << ".ImageAllowed=" << std::boolalpha << m_imageAllowed << "&";
   }
   if(m_sourceImageIdHasBeenSet)
   {

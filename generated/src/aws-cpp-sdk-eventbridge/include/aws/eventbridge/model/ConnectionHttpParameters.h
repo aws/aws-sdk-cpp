@@ -27,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains additional parameters for the connection.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Any additional parameters for the connection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionHttpParameters">AWS
    * API Reference</a></p>
    */
@@ -43,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains additional header parameters for the connection.</p>
+     * <p>Any additional header parameters for the connection.</p>
      */
     inline const Aws::Vector<ConnectionHeaderParameter>& GetHeaderParameters() const{ return m_headerParameters; }
     inline bool HeaderParametersHasBeenSet() const { return m_headerParametersHasBeenSet; }
@@ -57,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains additional query string parameters for the connection.</p>
+     * <p>Any additional query string parameters for the connection.</p>
      */
     inline const Aws::Vector<ConnectionQueryStringParameter>& GetQueryStringParameters() const{ return m_queryStringParameters; }
     inline bool QueryStringParametersHasBeenSet() const { return m_queryStringParametersHasBeenSet; }
@@ -71,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains additional body string parameters for the connection.</p>
+     * <p>Any additional body string parameters for the connection.</p>
      */
     inline const Aws::Vector<ConnectionBodyParameter>& GetBodyParameters() const{ return m_bodyParameters; }
     inline bool BodyParametersHasBeenSet() const { return m_bodyParametersHasBeenSet; }

@@ -145,8 +145,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Input validation failed. Check your request parameters and retry the
-     * request.</p>
+     * <p>The input fails to satisfy the constraints specified by <i>Amazon
+     * Bedrock</i>. For troubleshooting this error, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+     * in the Amazon Bedrock User Guide</p>
      */
     inline const ValidationException& GetValidationException() const{ return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
@@ -158,7 +160,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     * <p>Your request was denied due to exceeding the account quotas for <i>Amazon
+     * Bedrock</i>. For troubleshooting this error, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+     * in the Amazon Bedrock User Guide</p>
      */
     inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
@@ -170,7 +175,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The service isn't currently available. Try again later.</p>
+     * <p>The service isn't currently available. For troubleshooting this error, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+     * in the Amazon Bedrock User Guide</p>
      */
     inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }

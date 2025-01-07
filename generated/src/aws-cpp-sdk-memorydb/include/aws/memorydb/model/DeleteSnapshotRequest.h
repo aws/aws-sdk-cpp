@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the snapshot to delete</p>
+     * <p>The name of the snapshot to delete.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }

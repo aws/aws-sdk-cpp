@@ -1619,6 +1619,37 @@ namespace EC2
         }
 
         /**
+         * <p>Cancels the generation of an account status report.</p> <p>You can only
+         * cancel a report while it has the <code>running</code> status. Reports with other
+         * statuses (<code>complete</code>, <code>cancelled</code>, or <code>error</code>)
+         * can't be canceled.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+         * the account status report for declarative policies</a> in the <i>Amazon Web
+         * Services Organizations User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelDeclarativePoliciesReportOutcome CancelDeclarativePoliciesReport(const Model::CancelDeclarativePoliciesReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelDeclarativePoliciesReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelDeclarativePoliciesReportRequestT = Model::CancelDeclarativePoliciesReportRequest>
+        Model::CancelDeclarativePoliciesReportOutcomeCallable CancelDeclarativePoliciesReportCallable(const CancelDeclarativePoliciesReportRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CancelDeclarativePoliciesReport, request);
+        }
+
+        /**
+         * An Async wrapper for CancelDeclarativePoliciesReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelDeclarativePoliciesReportRequestT = Model::CancelDeclarativePoliciesReportRequest>
+        void CancelDeclarativePoliciesReportAsync(const CancelDeclarativePoliciesReportRequestT& request, const CancelDeclarativePoliciesReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CancelDeclarativePoliciesReport, request, handler, context);
+        }
+
+        /**
          * <p>Cancels an active export task. The request removes all artifacts of the
          * export, including any partially-created Amazon S3 objects. If the export task is
          * complete or is in the process of transferring the final disk image, the command
@@ -3537,34 +3568,30 @@ namespace EC2
         /**
          * <p>Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use
          * snapshots for backups, to make copies of EBS volumes, and to save data before
-         * shutting down an instance.</p> <p>You can create snapshots of volumes in a
-         * Region and volumes on an Outpost. If you create a snapshot of a volume in a
-         * Region, the snapshot must be stored in the same Region as the volume. If you
-         * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
-         * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
-         * snapshot is created, any Amazon Web Services Marketplace product codes that are
-         * associated with the source volume are propagated to the snapshot.</p> <p>You can
-         * take a snapshot of an attached volume that is in use. However, snapshots only
-         * capture data that has been written to your Amazon EBS volume at the time the
-         * snapshot command is issued; this might exclude any data that has been cached by
-         * any applications or the operating system. If you can pause any file systems on
-         * the volume long enough to take a snapshot, your snapshot should be complete.
-         * However, if you cannot pause all file writes to the volume, you should unmount
-         * the volume from within the instance, issue the snapshot command, and then
-         * remount the volume to ensure a consistent and complete snapshot. You may remount
-         * and use your volume while the snapshot status is <code>pending</code>.</p>
-         * <p>When you create a snapshot for an EBS volume that serves as a root device, we
-         * recommend that you stop the instance before taking the snapshot.</p>
-         * <p>Snapshots that are taken from encrypted volumes are automatically encrypted.
-         * Volumes that are created from encrypted snapshots are also automatically
-         * encrypted. Your encrypted volumes and any associated snapshots always remain
-         * protected.</p> <p>You can tag your snapshots during creation. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
-         * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
-         * EBS</a> and <a
+         * shutting down an instance.</p> <p>The location of the source EBS volume
+         * determines where you can create the snapshot.</p> <ul> <li> <p>If the source
+         * volume is in a Region, you must create the snapshot in the same Region as the
+         * volume.</p> </li> <li> <p>If the source volume is in a Local Zone, you can
+         * create the snapshot in the same Local Zone or in parent Amazon Web Services
+         * Region.</p> </li> <li> <p>If the source volume is on an Outpost, you can create
+         * the snapshot on the same Outpost or in its parent Amazon Web Services
+         * Region.</p> </li> </ul> <p>When a snapshot is created, any Amazon Web Services
+         * Marketplace product codes that are associated with the source volume are
+         * propagated to the snapshot.</p> <p>You can take a snapshot of an attached volume
+         * that is in use. However, snapshots only capture data that has been written to
+         * your Amazon EBS volume at the time the snapshot command is issued; this might
+         * exclude any data that has been cached by any applications or the operating
+         * system. If you can pause any file systems on the volume long enough to take a
+         * snapshot, your snapshot should be complete. However, if you cannot pause all
+         * file writes to the volume, you should unmount the volume from within the
+         * instance, issue the snapshot command, and then remount the volume to ensure a
+         * consistent and complete snapshot. You may remount and use your volume while the
+         * snapshot status is <code>pending</code>.</p> <p>When you create a snapshot for
+         * an EBS volume that serves as a root device, we recommend that you stop the
+         * instance before taking the snapshot.</p> <p>Snapshots that are taken from
+         * encrypted volumes are automatically encrypted. Volumes that are created from
+         * encrypted snapshots are also automatically encrypted. Your encrypted volumes and
+         * any associated snapshots always remain protected. For more information, <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -3592,17 +3619,20 @@ namespace EC2
         }
 
         /**
-         * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
-         * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
-         * will produce one snapshot each that is crash-consistent across the instance.</p>
-         * <p>You can include all of the volumes currently attached to the instance, or you
-         * can exclude the root volume or specific data (non-root) volumes from the
-         * multi-volume snapshot set.</p> <p>You can create multi-volume snapshots of
-         * instances in a Region and instances on an Outpost. If you create snapshots from
-         * an instance in a Region, the snapshots must be stored in the same Region as the
-         * instance. If you create snapshots from an instance on an Outpost, the snapshots
-         * can be stored on the same Outpost as the instance, or in the Region for that
-         * Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates crash-consistent snapshots of multiple EBS volumes attached to an
+         * Amazon EC2 instance. Volumes are chosen by specifying an instance. Each volume
+         * attached to the specified instance will produce one snapshot that is
+         * crash-consistent across the instance. You can include all of the volumes
+         * currently attached to the instance, or you can exclude the root volume or
+         * specific data (non-root) volumes from the multi-volume snapshot set.</p> <p>The
+         * location of the source instance determines where you can create the
+         * snapshots.</p> <ul> <li> <p>If the source instance is in a Region, you must
+         * create the snapshots in the same Region as the instance.</p> </li> <li> <p>If
+         * the source instance is in a Local Zone, you can create the snapshots in the same
+         * Local Zone or in parent Amazon Web Services Region.</p> </li> <li> <p>If the
+         * source instance is on an Outpost, you can create the snapshots on the same
+         * Outpost or in its parent Amazon Web Services Region.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
          */
@@ -7760,6 +7790,42 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the metadata of an account status report, including the status of
+         * the report.</p> <p>To view the full report, download it from the Amazon S3
+         * bucket where it was saved. Reports are accessible only when they have the
+         * <code>complete</code> status. Reports with other statuses (<code>running</code>,
+         * <code>cancelled</code>, or <code>error</code>) are not available in the S3
+         * bucket. For more information about downloading objects from an S3 bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html">Downloading
+         * objects</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+         * the account status report for declarative policies</a> in the <i>Amazon Web
+         * Services Organizations User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDeclarativePoliciesReportsOutcome DescribeDeclarativePoliciesReports(const Model::DescribeDeclarativePoliciesReportsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeDeclarativePoliciesReports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDeclarativePoliciesReportsRequestT = Model::DescribeDeclarativePoliciesReportsRequest>
+        Model::DescribeDeclarativePoliciesReportsOutcomeCallable DescribeDeclarativePoliciesReportsCallable(const DescribeDeclarativePoliciesReportsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeDeclarativePoliciesReports, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDeclarativePoliciesReports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDeclarativePoliciesReportsRequestT = Model::DescribeDeclarativePoliciesReportsRequest>
+        void DescribeDeclarativePoliciesReportsAsync(const DescribeDeclarativePoliciesReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeclarativePoliciesReportsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeDeclarativePoliciesReports, request, handler, context);
+        }
+
+        /**
          * <p>Describes your DHCP option sets. The default is to describe all your DHCP
          * option sets. Alternatively, you can specify specific DHCP option set IDs or
          * filter the results to include only the DHCP option sets that match specific
@@ -8375,8 +8441,14 @@ namespace EC2
          * <p>Recently deregistered images appear in the returned results for a short
          * interval and then return empty results. After all instances that reference a
          * deregistered AMI are terminated, specifying the ID of the image will eventually
-         * return an error indicating that the AMI ID cannot be found.</p> 
-         * <p>We strongly recommend using only paginated requests. Unpaginated requests are
+         * return an error indicating that the AMI ID cannot be found.</p> <p>When Allowed
+         * AMIs is set to <code>enabled</code>, only allowed images are returned in the
+         * results, with the <code>imageAllowed</code> field set to <code>true</code> for
+         * each image. In <code>audit-mode</code>, the <code>imageAllowed</code> field is
+         * set to <code>true</code> for images that meet the account's Allowed AMIs
+         * criteria, and <code>false</code> for images that don't meet the criteria. For
+         * more information, see <a>EnableAllowedImagesSettings</a>.</p>  <p>We
+         * strongly recommend using only paginated requests. Unpaginated requests are
          * susceptible to throttling and timeouts.</p>   <p>The order of
          * the elements in the response, including those within nested structures, might
          * vary. Applications should not assume the elements appear in a particular
@@ -8620,22 +8692,22 @@ namespace EC2
 
         /**
          * <p>Describes the AMI that was used to launch an instance, even if the AMI is
-         * deprecated, deregistered, or made private (no longer public or shared with your
-         * account).</p> <p>If you specify instance IDs, the output includes information
-         * for only the specified instances. If you specify filters, the output includes
-         * information for only those instances that meet the filter criteria. If you do
-         * not specify instance IDs or filters, the output includes information for all
-         * instances, which can affect performance.</p> <p>If you specify an instance ID
-         * that is not valid, an instance that doesn't exist, or an instance that you do
-         * not own, an error (<code>InvalidInstanceID.NotFound</code>) is returned.</p>
-         * <p>Recently terminated instances might appear in the returned results. This
-         * interval is usually less than one hour.</p> <p>In the rare case where an
-         * Availability Zone is experiencing a service disruption and you specify instance
-         * IDs that are in the affected Availability Zone, or do not specify any instance
-         * IDs at all, the call fails. If you specify only instance IDs that are in an
-         * unaffected Availability Zone, the call works normally.</p>  <p>The order
-         * of the elements in the response, including those within nested structures, might
-         * vary. Applications should not assume the elements appear in a particular
+         * deprecated, deregistered, made private (no longer public or shared with your
+         * account), or not allowed.</p> <p>If you specify instance IDs, the output
+         * includes information for only the specified instances. If you specify filters,
+         * the output includes information for only those instances that meet the filter
+         * criteria. If you do not specify instance IDs or filters, the output includes
+         * information for all instances, which can affect performance.</p> <p>If you
+         * specify an instance ID that is not valid, an instance that doesn't exist, or an
+         * instance that you do not own, an error (<code>InvalidInstanceID.NotFound</code>)
+         * is returned.</p> <p>Recently terminated instances might appear in the returned
+         * results. This interval is usually less than one hour.</p> <p>In the rare case
+         * where an Availability Zone is experiencing a service disruption and you specify
+         * instance IDs that are in the affected Availability Zone, or do not specify any
+         * instance IDs at all, the call fails. If you specify only instance IDs that are
+         * in an unaffected Availability Zone, the call works normally.</p>  <p>The
+         * order of the elements in the response, including those within nested structures,
+         * might vary. Applications should not assume the elements appear in a particular
          * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">AWS
          * API Reference</a></p>
@@ -8720,10 +8792,10 @@ namespace EC2
          * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> |
          * <code>hpc7g.16xlarge</code> </p> </li> <li> <p> <code>p3dn.24xlarge</code> |
          * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
-         * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> </p> </li> <li> <p>
-         * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> |
-         * <code>trn1n.32xlarge</code> </p> </li> </ul> </li> </ul> <p>For more
-         * information, see <a
+         * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> |
+         * <code>p5en.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
+         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> </p> </li> </ul> </li>
+         * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -11477,6 +11549,33 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the VPC resources, VPC endpoint services, Amazon Lattice services,
+         * or service networks associated with the VPC endpoint.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcEndpointAssociationsOutcome DescribeVpcEndpointAssociations(const Model::DescribeVpcEndpointAssociationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcEndpointAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcEndpointAssociationsRequestT = Model::DescribeVpcEndpointAssociationsRequest>
+        Model::DescribeVpcEndpointAssociationsOutcomeCallable DescribeVpcEndpointAssociationsCallable(const DescribeVpcEndpointAssociationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeVpcEndpointAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcEndpointAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcEndpointAssociationsRequestT = Model::DescribeVpcEndpointAssociationsRequest>
+        void DescribeVpcEndpointAssociationsAsync(const DescribeVpcEndpointAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcEndpointAssociationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeVpcEndpointAssociations, request, handler, context);
+        }
+
+        /**
          * <p>Describes the connection notifications for VPC endpoints and VPC endpoint
          * services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">AWS
@@ -11958,6 +12057,41 @@ namespace EC2
         void DisableAddressTransferAsync(const DisableAddressTransferRequestT& request, const DisableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DisableAddressTransfer, request, handler, context);
+        }
+
+        /**
+         * <p>Disables Allowed AMIs for your account in the specified Amazon Web Services
+         * Region. When set to <code>disabled</code>, the image criteria in your Allowed
+         * AMIs settings do not apply, and no restrictions are placed on AMI
+         * discoverability or usage. Users in your account can launch instances using any
+         * public AMI or AMI shared with your account.</p>  <p>The Allowed AMIs
+         * feature does not restrict the AMIs owned by your account. Regardless of the
+         * criteria you set, the AMIs created by your account will always be discoverable
+         * and usable by users in your account.</p>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+         * the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon
+         * EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableAllowedImagesSettingsOutcome DisableAllowedImagesSettings(const Model::DisableAllowedImagesSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DisableAllowedImagesSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableAllowedImagesSettingsRequestT = Model::DisableAllowedImagesSettingsRequest>
+        Model::DisableAllowedImagesSettingsOutcomeCallable DisableAllowedImagesSettingsCallable(const DisableAllowedImagesSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DisableAllowedImagesSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DisableAllowedImagesSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableAllowedImagesSettingsRequestT = Model::DisableAllowedImagesSettingsRequest>
+        void DisableAllowedImagesSettingsAsync(const DisableAllowedImagesSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableAllowedImagesSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DisableAllowedImagesSettings, request, handler, context);
         }
 
         /**
@@ -12931,6 +13065,49 @@ namespace EC2
         }
 
         /**
+         * <p>Enables Allowed AMIs for your account in the specified Amazon Web Services
+         * Region. Two values are accepted:</p> <ul> <li> <p> <code>enabled</code>: The
+         * image criteria in your Allowed AMIs settings are applied. As a result, only AMIs
+         * matching these criteria are discoverable and can be used by your account to
+         * launch instances.</p> </li> <li> <p> <code>audit-mode</code>: The image criteria
+         * in your Allowed AMIs settings are not applied. No restrictions are placed on AMI
+         * discoverability or usage. Users in your account can launch instances using any
+         * public AMI or AMI shared with your account.</p> <p>The purpose of
+         * <code>audit-mode</code> is to indicate which AMIs will be affected when Allowed
+         * AMIs is <code>enabled</code>. In <code>audit-mode</code>, each AMI displays
+         * either <code>"ImageAllowed": true</code> or <code>"ImageAllowed": false</code>
+         * to indicate whether the AMI will be discoverable and available to users in the
+         * account when Allowed AMIs is enabled.</p> </li> </ul>  <p>The Allowed AMIs
+         * feature does not restrict the AMIs owned by your account. Regardless of the
+         * criteria you set, the AMIs created by your account will always be discoverable
+         * and usable by users in your account.</p>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+         * the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon
+         * EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableAllowedImagesSettingsOutcome EnableAllowedImagesSettings(const Model::EnableAllowedImagesSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableAllowedImagesSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableAllowedImagesSettingsRequestT = Model::EnableAllowedImagesSettingsRequest>
+        Model::EnableAllowedImagesSettingsOutcomeCallable EnableAllowedImagesSettingsCallable(const EnableAllowedImagesSettingsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableAllowedImagesSettings, request);
+        }
+
+        /**
+         * An Async wrapper for EnableAllowedImagesSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableAllowedImagesSettingsRequestT = Model::EnableAllowedImagesSettingsRequest>
+        void EnableAllowedImagesSettingsAsync(const EnableAllowedImagesSettingsRequestT& request, const EnableAllowedImagesSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableAllowedImagesSettings, request, handler, context);
+        }
+
+        /**
          * <p>Enables Infrastructure Performance subscriptions.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">AWS
@@ -13575,6 +13752,65 @@ namespace EC2
         }
 
         /**
+         * <p>Exports the client configuration for a Verified Access
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportVerifiedAccessInstanceClientConfigurationOutcome ExportVerifiedAccessInstanceClientConfiguration(const Model::ExportVerifiedAccessInstanceClientConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportVerifiedAccessInstanceClientConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportVerifiedAccessInstanceClientConfigurationRequestT = Model::ExportVerifiedAccessInstanceClientConfigurationRequest>
+        Model::ExportVerifiedAccessInstanceClientConfigurationOutcomeCallable ExportVerifiedAccessInstanceClientConfigurationCallable(const ExportVerifiedAccessInstanceClientConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ExportVerifiedAccessInstanceClientConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for ExportVerifiedAccessInstanceClientConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportVerifiedAccessInstanceClientConfigurationRequestT = Model::ExportVerifiedAccessInstanceClientConfigurationRequest>
+        void ExportVerifiedAccessInstanceClientConfigurationAsync(const ExportVerifiedAccessInstanceClientConfigurationRequestT& request, const ExportVerifiedAccessInstanceClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ExportVerifiedAccessInstanceClientConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the current state of the Allowed AMIs setting and the list of Allowed
+         * AMIs criteria at the account level in the specified Region.</p>  <p>The
+         * Allowed AMIs feature does not restrict the AMIs owned by your account.
+         * Regardless of the criteria you set, the AMIs created by your account will always
+         * be discoverable and usable by users in your account.</p>  <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+         * the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon
+         * EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAllowedImagesSettingsOutcome GetAllowedImagesSettings(const Model::GetAllowedImagesSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAllowedImagesSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAllowedImagesSettingsRequestT = Model::GetAllowedImagesSettingsRequest>
+        Model::GetAllowedImagesSettingsOutcomeCallable GetAllowedImagesSettingsCallable(const GetAllowedImagesSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::GetAllowedImagesSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetAllowedImagesSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAllowedImagesSettingsRequestT = Model::GetAllowedImagesSettingsRequest>
+        void GetAllowedImagesSettingsAsync(const GetAllowedImagesSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAllowedImagesSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::GetAllowedImagesSettings, request, handler, context);
+        }
+
+        /**
          * <p>Returns the IAM roles that are associated with the specified ACM (ACM)
          * certificate. It also returns the name of the Amazon S3 bucket and the Amazon S3
          * object key where the certificate, certificate chain, and encrypted private key
@@ -13769,6 +14005,42 @@ namespace EC2
         void GetConsoleScreenshotAsync(const GetConsoleScreenshotRequestT& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetConsoleScreenshot, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a summary of the account status report.</p> <p>To view the full
+         * report, download it from the Amazon S3 bucket where it was saved. Reports are
+         * accessible only when they have the <code>complete</code> status. Reports with
+         * other statuses (<code>running</code>, <code>cancelled</code>, or
+         * <code>error</code>) are not available in the S3 bucket. For more information
+         * about downloading objects from an S3 bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html">Downloading
+         * objects</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+         * the account status report for declarative policies</a> in the <i>Amazon Web
+         * Services Organizations User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeclarativePoliciesReportSummaryOutcome GetDeclarativePoliciesReportSummary(const Model::GetDeclarativePoliciesReportSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeclarativePoliciesReportSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDeclarativePoliciesReportSummaryRequestT = Model::GetDeclarativePoliciesReportSummaryRequest>
+        Model::GetDeclarativePoliciesReportSummaryOutcomeCallable GetDeclarativePoliciesReportSummaryCallable(const GetDeclarativePoliciesReportSummaryRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetDeclarativePoliciesReportSummary, request);
+        }
+
+        /**
+         * An Async wrapper for GetDeclarativePoliciesReportSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDeclarativePoliciesReportSummaryRequestT = Model::GetDeclarativePoliciesReportSummaryRequest>
+        void GetDeclarativePoliciesReportSummaryAsync(const GetDeclarativePoliciesReportSummaryRequestT& request, const GetDeclarativePoliciesReportSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetDeclarativePoliciesReportSummary, request, handler, context);
         }
 
         /**
@@ -14874,6 +15146,32 @@ namespace EC2
         void GetVerifiedAccessEndpointPolicyAsync(const GetVerifiedAccessEndpointPolicyRequestT& request, const GetVerifiedAccessEndpointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetVerifiedAccessEndpointPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the targets for the specified network CIDR endpoint for Verified
+         * Access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVerifiedAccessEndpointTargetsOutcome GetVerifiedAccessEndpointTargets(const Model::GetVerifiedAccessEndpointTargetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVerifiedAccessEndpointTargets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVerifiedAccessEndpointTargetsRequestT = Model::GetVerifiedAccessEndpointTargetsRequest>
+        Model::GetVerifiedAccessEndpointTargetsOutcomeCallable GetVerifiedAccessEndpointTargetsCallable(const GetVerifiedAccessEndpointTargetsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetVerifiedAccessEndpointTargets, request);
+        }
+
+        /**
+         * An Async wrapper for GetVerifiedAccessEndpointTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVerifiedAccessEndpointTargetsRequestT = Model::GetVerifiedAccessEndpointTargetsRequest>
+        void GetVerifiedAccessEndpointTargetsAsync(const GetVerifiedAccessEndpointTargetsRequestT& request, const GetVerifiedAccessEndpointTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetVerifiedAccessEndpointTargets, request, handler, context);
         }
 
         /**
@@ -16030,6 +16328,32 @@ namespace EC2
         }
 
         /**
+         * <p>Change the configuration of the network performance options for an existing
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceNetworkPerformanceOptionsOutcome ModifyInstanceNetworkPerformanceOptions(const Model::ModifyInstanceNetworkPerformanceOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyInstanceNetworkPerformanceOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyInstanceNetworkPerformanceOptionsRequestT = Model::ModifyInstanceNetworkPerformanceOptionsRequest>
+        Model::ModifyInstanceNetworkPerformanceOptionsOutcomeCallable ModifyInstanceNetworkPerformanceOptionsCallable(const ModifyInstanceNetworkPerformanceOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyInstanceNetworkPerformanceOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyInstanceNetworkPerformanceOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyInstanceNetworkPerformanceOptionsRequestT = Model::ModifyInstanceNetworkPerformanceOptionsRequest>
+        void ModifyInstanceNetworkPerformanceOptionsAsync(const ModifyInstanceNetworkPerformanceOptionsRequestT& request, const ModifyInstanceNetworkPerformanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyInstanceNetworkPerformanceOptions, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
          * following:</p> <ul> <li> <p>Modify the affinity between an instance and a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
@@ -17115,12 +17439,9 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the attributes of your VPC endpoint service configuration. You can
-         * change the Network Load Balancers or Gateway Load Balancers for your service,
-         * and you can specify whether acceptance is required for requests to connect to
-         * your endpoint service through an interface VPC endpoint.</p> <p>If you set or
-         * modify the private DNS name, you must prove that you own the private DNS domain
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the attributes of the specified VPC endpoint service
+         * configuration.</p> <p>If you set or modify the private DNS name, you must prove
+         * that you own the private DNS domain name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -18323,6 +18644,37 @@ namespace EC2
         }
 
         /**
+         * <p>Sets or replaces the criteria for Allowed AMIs.</p>  <p>The Allowed
+         * AMIs feature does not restrict the AMIs owned by your account. Regardless of the
+         * criteria you set, the AMIs created by your account will always be discoverable
+         * and usable by users in your account.</p>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+         * the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon
+         * EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplaceImageCriteriaInAllowedImagesSettingsOutcome ReplaceImageCriteriaInAllowedImagesSettings(const Model::ReplaceImageCriteriaInAllowedImagesSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ReplaceImageCriteriaInAllowedImagesSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReplaceImageCriteriaInAllowedImagesSettingsRequestT = Model::ReplaceImageCriteriaInAllowedImagesSettingsRequest>
+        Model::ReplaceImageCriteriaInAllowedImagesSettingsOutcomeCallable ReplaceImageCriteriaInAllowedImagesSettingsCallable(const ReplaceImageCriteriaInAllowedImagesSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::ReplaceImageCriteriaInAllowedImagesSettings, request);
+        }
+
+        /**
+         * An Async wrapper for ReplaceImageCriteriaInAllowedImagesSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReplaceImageCriteriaInAllowedImagesSettingsRequestT = Model::ReplaceImageCriteriaInAllowedImagesSettingsRequest>
+        void ReplaceImageCriteriaInAllowedImagesSettingsAsync(const ReplaceImageCriteriaInAllowedImagesSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ReplaceImageCriteriaInAllowedImagesSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::ReplaceImageCriteriaInAllowedImagesSettings, request, handler, context);
+        }
+
+        /**
          * <p>Changes which network ACL a subnet is associated with. By default when you
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information, see <a
@@ -19266,6 +19618,63 @@ namespace EC2
         void SendDiagnosticInterruptAsync(const SendDiagnosticInterruptRequestT& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::SendDiagnosticInterrupt, request, handler, context);
+        }
+
+        /**
+         * <p>Generates an account status report. The report is generated asynchronously,
+         * and can take several hours to complete.</p> <p>The report provides the current
+         * status of all attributes supported by declarative policies for the accounts
+         * within the specified scope. The scope is determined by the specified
+         * <code>TargetId</code>, which can represent an individual account, or all the
+         * accounts that fall under the specified organizational unit (OU) or root (the
+         * entire Amazon Web Services Organization).</p> <p>The report is saved to your
+         * specified S3 bucket, using the following path structure (with the <i>italicized
+         * placeholders</i> representing your specific values):</p> <p>
+         * <code>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</code>
+         * </p> <p class="title"> <b>Prerequisites for generating a report</b> </p> <ul>
+         * <li> <p>The <code>StartDeclarativePoliciesReport</code> API can only be called
+         * by the management account or delegated administrators for the organization.</p>
+         * </li> <li> <p>An S3 bucket must be available before generating the report (you
+         * can create a new one or use an existing one), it must be in the same Region
+         * where the report generation request is made, and it must have an appropriate
+         * bucket policy. For a sample S3 policy, see <i>Sample Amazon S3 policy</i> under
+         * .</p> </li> <li> <p>Trusted access must be enabled for the service for which the
+         * declarative policy will enforce a baseline configuration. If you use the Amazon
+         * Web Services Organizations console, this is done automatically when you enable
+         * declarative policies. The API uses the following service principal to identify
+         * the EC2 service: <code>ec2.amazonaws.com</code>. For more information on how to
+         * enable trusted access with the Amazon Web Services CLI and Amazon Web Services
+         * SDKs, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
+         * Organizations with other Amazon Web Services services</a> in the <i>Amazon Web
+         * Services Organizations User Guide</i>.</p> </li> <li> <p>Only one report per
+         * organization can be generated at a time. Attempting to generate a report while
+         * another is in progress will result in an error.</p> </li> </ul> <p>For more
+         * information, including the required IAM permissions to run this API, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+         * the account status report for declarative policies</a> in the <i>Amazon Web
+         * Services Organizations User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDeclarativePoliciesReportOutcome StartDeclarativePoliciesReport(const Model::StartDeclarativePoliciesReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDeclarativePoliciesReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDeclarativePoliciesReportRequestT = Model::StartDeclarativePoliciesReportRequest>
+        Model::StartDeclarativePoliciesReportOutcomeCallable StartDeclarativePoliciesReportCallable(const StartDeclarativePoliciesReportRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::StartDeclarativePoliciesReport, request);
+        }
+
+        /**
+         * An Async wrapper for StartDeclarativePoliciesReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDeclarativePoliciesReportRequestT = Model::StartDeclarativePoliciesReportRequest>
+        void StartDeclarativePoliciesReportAsync(const StartDeclarativePoliciesReportRequestT& request, const StartDeclarativePoliciesReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::StartDeclarativePoliciesReport, request, handler, context);
         }
 
         /**

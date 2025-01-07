@@ -253,8 +253,9 @@ namespace ServiceDiscovery
         }
 
         /**
-         * <p>Deletes a specified service. If the service still contains one or more
-         * registered instances, the request fails.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified service and all associated service attributes. If the
+         * service still contains one or more registered instances, the request
+         * fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -276,6 +277,32 @@ namespace ServiceDiscovery
         void DeleteServiceAsync(const DeleteServiceRequestT& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::DeleteService, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes specific attributes associated with a service.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteServiceAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServiceAttributesOutcome DeleteServiceAttributes(const Model::DeleteServiceAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteServiceAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteServiceAttributesRequestT = Model::DeleteServiceAttributesRequest>
+        Model::DeleteServiceAttributesOutcomeCallable DeleteServiceAttributesCallable(const DeleteServiceAttributesRequestT& request) const
+        {
+            return SubmitCallable(&ServiceDiscoveryClient::DeleteServiceAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteServiceAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteServiceAttributesRequestT = Model::DeleteServiceAttributesRequest>
+        void DeleteServiceAttributesAsync(const DeleteServiceAttributesRequestT& request, const DeleteServiceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceDiscoveryClient::DeleteServiceAttributes, request, handler, context);
         }
 
         /**
@@ -491,6 +518,32 @@ namespace ServiceDiscovery
         void GetServiceAsync(const GetServiceRequestT& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::GetService, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the attributes associated with a specified service.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetServiceAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceAttributesOutcome GetServiceAttributes(const Model::GetServiceAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetServiceAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetServiceAttributesRequestT = Model::GetServiceAttributesRequest>
+        Model::GetServiceAttributesOutcomeCallable GetServiceAttributesCallable(const GetServiceAttributesRequestT& request) const
+        {
+            return SubmitCallable(&ServiceDiscoveryClient::GetServiceAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for GetServiceAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetServiceAttributesRequestT = Model::GetServiceAttributesRequest>
+        void GetServiceAttributesAsync(const GetServiceAttributesRequestT& request, const GetServiceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceDiscoveryClient::GetServiceAttributes, request, handler, context);
         }
 
         /**
@@ -866,6 +919,32 @@ namespace ServiceDiscovery
         void UpdateServiceAsync(const UpdateServiceRequestT& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::UpdateService, request, handler, context);
+        }
+
+        /**
+         * <p>Submits a request to update a specified service to add service-level
+         * attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateServiceAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateServiceAttributesOutcome UpdateServiceAttributes(const Model::UpdateServiceAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateServiceAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateServiceAttributesRequestT = Model::UpdateServiceAttributesRequest>
+        Model::UpdateServiceAttributesOutcomeCallable UpdateServiceAttributesCallable(const UpdateServiceAttributesRequestT& request) const
+        {
+            return SubmitCallable(&ServiceDiscoveryClient::UpdateServiceAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateServiceAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateServiceAttributesRequestT = Model::UpdateServiceAttributesRequest>
+        void UpdateServiceAttributesAsync(const UpdateServiceAttributesRequestT& request, const UpdateServiceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceDiscoveryClient::UpdateServiceAttributes, request, handler, context);
         }
 
 

@@ -30,7 +30,12 @@ namespace Model
     Endpoints,
     Projects,
     InferenceOptimization,
-    PerformanceEvaluation
+    PerformanceEvaluation,
+    LakeraGuard,
+    Comet,
+    DeepchecksLLMEvaluation,
+    Fiddler,
+    HyperPodClusters
   };
 
 namespace MlToolsMapper

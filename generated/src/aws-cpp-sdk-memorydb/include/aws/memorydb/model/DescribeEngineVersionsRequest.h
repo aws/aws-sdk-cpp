@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The engine version to return. Valid values are either valkey or redis.</p>
+     * <p>The name of the engine for which to list available versions.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The engine version.</p>
+     * <p>The Redis OSS engine version</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

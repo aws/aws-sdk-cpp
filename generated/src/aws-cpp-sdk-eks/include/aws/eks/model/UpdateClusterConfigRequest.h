@@ -12,6 +12,9 @@
 #include <aws/eks/model/UpdateAccessConfigRequest.h>
 #include <aws/eks/model/UpgradePolicyRequest.h>
 #include <aws/eks/model/ZonalShiftConfigRequest.h>
+#include <aws/eks/model/ComputeConfigRequest.h>
+#include <aws/eks/model/KubernetesNetworkConfigRequest.h>
+#include <aws/eks/model/StorageConfigRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -149,6 +152,42 @@ namespace Model
     inline UpdateClusterConfigRequest& WithZonalShiftConfig(const ZonalShiftConfigRequest& value) { SetZonalShiftConfig(value); return *this;}
     inline UpdateClusterConfigRequest& WithZonalShiftConfig(ZonalShiftConfigRequest&& value) { SetZonalShiftConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Update the configuration of the compute capability of your EKS Auto Mode
+     * cluster. For example, enable the capability.</p>
+     */
+    inline const ComputeConfigRequest& GetComputeConfig() const{ return m_computeConfig; }
+    inline bool ComputeConfigHasBeenSet() const { return m_computeConfigHasBeenSet; }
+    inline void SetComputeConfig(const ComputeConfigRequest& value) { m_computeConfigHasBeenSet = true; m_computeConfig = value; }
+    inline void SetComputeConfig(ComputeConfigRequest&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::move(value); }
+    inline UpdateClusterConfigRequest& WithComputeConfig(const ComputeConfigRequest& value) { SetComputeConfig(value); return *this;}
+    inline UpdateClusterConfigRequest& WithComputeConfig(ComputeConfigRequest&& value) { SetComputeConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
+    inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
+    inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
+    inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
+    inline UpdateClusterConfigRequest& WithKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { SetKubernetesNetworkConfig(value); return *this;}
+    inline UpdateClusterConfigRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Update the configuration of the block storage capability of your EKS Auto
+     * Mode cluster. For example, enable the capability.</p>
+     */
+    inline const StorageConfigRequest& GetStorageConfig() const{ return m_storageConfig; }
+    inline bool StorageConfigHasBeenSet() const { return m_storageConfigHasBeenSet; }
+    inline void SetStorageConfig(const StorageConfigRequest& value) { m_storageConfigHasBeenSet = true; m_storageConfig = value; }
+    inline void SetStorageConfig(StorageConfigRequest&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::move(value); }
+    inline UpdateClusterConfigRequest& WithStorageConfig(const StorageConfigRequest& value) { SetStorageConfig(value); return *this;}
+    inline UpdateClusterConfigRequest& WithStorageConfig(StorageConfigRequest&& value) { SetStorageConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -171,6 +210,15 @@ namespace Model
 
     ZonalShiftConfigRequest m_zonalShiftConfig;
     bool m_zonalShiftConfigHasBeenSet = false;
+
+    ComputeConfigRequest m_computeConfig;
+    bool m_computeConfigHasBeenSet = false;
+
+    KubernetesNetworkConfigRequest m_kubernetesNetworkConfig;
+    bool m_kubernetesNetworkConfigHasBeenSet = false;
+
+    StorageConfigRequest m_storageConfig;
+    bool m_storageConfigHasBeenSet = false;
   };
 
 } // namespace Model

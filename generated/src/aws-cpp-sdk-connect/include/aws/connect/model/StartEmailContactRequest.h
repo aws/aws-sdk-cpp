@@ -43,7 +43,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -57,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address of the customer.</p>
      */
     inline const EmailAddressInfo& GetFromEmailAddress() const{ return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
@@ -69,7 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address associated with the instance.</p>
      */
     inline const Aws::String& GetDestinationEmailAddress() const{ return m_destinationEmailAddress; }
     inline bool DestinationEmailAddressHasBeenSet() const { return m_destinationEmailAddressHasBeenSet; }
@@ -83,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A description of the email contact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -97,7 +99,12 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Emails can have the following reference types at the time of creation:
+     * <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> |
+     * <code>DATE</code>. <code>EMAIL</code> | <code>EMAIL_MESSAGE</code>
+     * |<code>ATTACHMENT</code> are not a supported reference type during email
+     * creation.</p>
      */
     inline const Aws::Map<Aws::String, Reference>& GetReferences() const{ return m_references; }
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
@@ -115,7 +122,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The name of a email that is shown to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -129,7 +137,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email message body to be sent to the newly created email.</p>
      */
     inline const InboundEmailContent& GetEmailMessage() const{ return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
@@ -141,7 +149,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The addtional recipients address of the email.</p>
      */
     inline const InboundAdditionalRecipients& GetAdditionalRecipients() const{ return m_additionalRecipients; }
     inline bool AdditionalRecipientsHasBeenSet() const { return m_additionalRecipientsHasBeenSet; }
@@ -153,7 +161,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>List of S3 presigned URLs of email attachments and their file name. </p>
      */
     inline const Aws::Vector<EmailAttachment>& GetAttachments() const{ return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
@@ -167,7 +175,13 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the flow for initiating the emails. To see the
+     * ContactFlowId in the Amazon Connect admin website, on the navigation menu go to
+     * <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name
+     * of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
+     * is the last part of the ARN, shown here in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
@@ -181,7 +195,12 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The contactId that is related to this contact. Linking emails together by
+     * using <code>RelatedContactID</code> copies over contact attributes from the
+     * related email contact to the new email contact. All updates to user-defined
+     * attributes in the new email contact are limited to the individual contact ID.
+     * There are no limits to the number of contacts that can be linked by using
+     * <code>RelatedContactId</code>. </p>
      */
     inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
@@ -195,7 +214,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A custom key-value pair using an attribute map. The attributes are standard
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -214,7 +237,15 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>To set contact expiry, a
+     * <code>ValueMap</code> must be specified containing the integer number of minutes
+     * the contact will be active for before expiring, with
+     * <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry":
+     * {"ValueMap" : { "ExpiryDuration": { "ValueInteger":135}}}}</code>.</p> 
      */
     inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
@@ -232,7 +263,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

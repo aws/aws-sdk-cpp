@@ -35,6 +35,11 @@ namespace Aws
         static const int Projects_HASH = HashingUtils::HashString("Projects");
         static const int InferenceOptimization_HASH = HashingUtils::HashString("InferenceOptimization");
         static const int PerformanceEvaluation_HASH = HashingUtils::HashString("PerformanceEvaluation");
+        static const int LakeraGuard_HASH = HashingUtils::HashString("LakeraGuard");
+        static const int Comet_HASH = HashingUtils::HashString("Comet");
+        static const int DeepchecksLLMEvaluation_HASH = HashingUtils::HashString("DeepchecksLLMEvaluation");
+        static const int Fiddler_HASH = HashingUtils::HashString("Fiddler");
+        static const int HyperPodClusters_HASH = HashingUtils::HashString("HyperPodClusters");
 
 
         MlTools GetMlToolsForName(const Aws::String& name)
@@ -100,6 +105,26 @@ namespace Aws
           {
             return MlTools::PerformanceEvaluation;
           }
+          else if (hashCode == LakeraGuard_HASH)
+          {
+            return MlTools::LakeraGuard;
+          }
+          else if (hashCode == Comet_HASH)
+          {
+            return MlTools::Comet;
+          }
+          else if (hashCode == DeepchecksLLMEvaluation_HASH)
+          {
+            return MlTools::DeepchecksLLMEvaluation;
+          }
+          else if (hashCode == Fiddler_HASH)
+          {
+            return MlTools::Fiddler;
+          }
+          else if (hashCode == HyperPodClusters_HASH)
+          {
+            return MlTools::HyperPodClusters;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -146,6 +171,16 @@ namespace Aws
             return "InferenceOptimization";
           case MlTools::PerformanceEvaluation:
             return "PerformanceEvaluation";
+          case MlTools::LakeraGuard:
+            return "LakeraGuard";
+          case MlTools::Comet:
+            return "Comet";
+          case MlTools::DeepchecksLLMEvaluation:
+            return "DeepchecksLLMEvaluation";
+          case MlTools::Fiddler:
+            return "Fiddler";
+          case MlTools::HyperPodClusters:
+            return "HyperPodClusters";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SingleAvailabilityZone_HASH = HashingUtils::HashString("SingleAvailabilityZone");
+        static const int SingleLocalZone_HASH = HashingUtils::HashString("SingleLocalZone");
 
 
         DataRedundancy GetDataRedundancyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SingleAvailabilityZone_HASH)
           {
             return DataRedundancy::SingleAvailabilityZone;
+          }
+          else if (hashCode == SingleLocalZone_HASH)
+          {
+            return DataRedundancy::SingleLocalZone;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case DataRedundancy::SingleAvailabilityZone:
             return "SingleAvailabilityZone";
+          case DataRedundancy::SingleLocalZone:
+            return "SingleLocalZone";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

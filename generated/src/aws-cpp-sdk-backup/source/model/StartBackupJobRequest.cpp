@@ -23,7 +23,9 @@ StartBackupJobRequest::StartBackupJobRequest() :
     m_completeWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_backupOptionsHasBeenSet(false)
+    m_backupOptionsHasBeenSet(false),
+    m_index(Index::NOT_SET),
+    m_indexHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,11 @@ Aws::String StartBackupJobRequest::SerializePayload() const
    }
    payload.WithObject("BackupOptions", std::move(backupOptionsJsonMap));
 
+  }
+
+  if(m_indexHasBeenSet)
+  {
+   payload.WithString("Index", IndexMapper::GetNameForIndex(m_index));
   }
 
   return payload.View().WriteReadable();

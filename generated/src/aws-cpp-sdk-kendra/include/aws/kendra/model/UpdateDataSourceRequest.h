@@ -137,8 +137,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access the data
-     * source and required resources. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the
+     * data source and required resources. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */

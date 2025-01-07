@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains marketing details for the <code>Opportunity</code>.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains marketing details for the
+   * <code>Opportunity</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/Marketing">AWS
    * API Reference</a></p>
    */
@@ -45,7 +45,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates if the <code>Opportunity</code> is a marketing development fund
-     * (MDF) funded activity. </p>
+     * (MDF) funded activity.</p>
      */
     inline const AwsFundingUsed& GetAwsFundingUsed() const{ return m_awsFundingUsed; }
     inline bool AwsFundingUsedHasBeenSet() const { return m_awsFundingUsedHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
      * promotions, or activities. This field captures the identifier used to track and
      * categorize the <code>Opportunity</code> within marketing campaigns. If you don't
      * have a campaign code, contact your Amazon Web Services point of contact to
-     * obtain one. </p>
+     * obtain one.</p>
      */
     inline const Aws::String& GetCampaignName() const{ return m_campaignName; }
     inline bool CampaignNameHasBeenSet() const { return m_campaignNameHasBeenSet; }
@@ -79,7 +79,7 @@ namespace Model
      * <p>Specifies the <code>Opportunity</code>'s channel that the marketing activity
      * is associated with or was contacted through. This field provides information
      * about the specific marketing channel that contributed to the generation of the
-     * lead or contact. </p>
+     * lead or contact.</p>
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
@@ -93,12 +93,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> Indicates if the <code>Opportunity</code> was sourced from an Amazon Web
+     * <p>Indicates if the <code>Opportunity</code> was sourced from an Amazon Web
      * Services marketing activity. Use the value <code>Marketing Activity</code>. Use
      * <code>None</code> if it's not associated with an Amazon Web Services marketing
      * activity. This field helps Amazon Web Services track the return on marketing
-     * investments and enables better distribution of marketing budgets among partners.
-     * </p>
+     * investments and enables better distribution of marketing budgets among
+     * partners.</p>
      */
     inline const MarketingSource& GetSource() const{ return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
@@ -110,11 +110,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the marketing activity use case or purpose that led to the
+     * <p>Specifies the marketing activity use case or purpose that led to the
      * <code>Opportunity</code>'s creation or contact. This field captures the context
      * or marketing activity's execution's intention and the direct correlation to the
      * generated opportunity or contact. Must be empty when
-     * <code>Marketing.AWSFundingUsed = No</code>. </p> <p> Valid values: <code>AI/ML |
+     * <code>Marketing.AWSFundingUsed = No</code>.</p> <p>Valid values: <code>AI/ML |
      * Analytics | Application Integration | Blockchain | Business Applications | Cloud
      * Financial Management | Compute | Containers | Customer Engagement | Databases |
      * Developer Tools | End User Computing | Front End Web &amp; Mobile | Game Tech |

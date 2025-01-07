@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/backup/model/Index.h>
 #include <utility>
 
 namespace Aws
@@ -198,6 +199,26 @@ namespace Model
     inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
     inline StartBackupJobRequest& AddBackupOptions(const char* key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Include this parameter to enable index creation if your backup job has a
+     * resource type that supports backup indexes.</p> <p>Resource types that support
+     * backup indexes include:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic
+     * Block Store</p> </li> <li> <p> <code>S3</code> for Amazon Simple Storage Service
+     * (Amazon S3)</p> </li> </ul> <p>Index can have 1 of 2 possible values, either
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>To create a backup index
+     * for an eligible <code>ACTIVE</code> recovery point that does not yet have a
+     * backup index, set value to <code>ENABLED</code>.</p> <p>To delete a backup
+     * index, set value to <code>DISABLED</code>.</p>
+     */
+    inline const Index& GetIndex() const{ return m_index; }
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+    inline void SetIndex(const Index& value) { m_indexHasBeenSet = true; m_index = value; }
+    inline void SetIndex(Index&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
+    inline StartBackupJobRequest& WithIndex(const Index& value) { SetIndex(value); return *this;}
+    inline StartBackupJobRequest& WithIndex(Index&& value) { SetIndex(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_backupVaultName;
@@ -226,6 +247,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
     bool m_backupOptionsHasBeenSet = false;
+
+    Index m_index;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

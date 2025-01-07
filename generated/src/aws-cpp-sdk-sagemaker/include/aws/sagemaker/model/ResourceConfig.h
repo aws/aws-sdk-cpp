@@ -166,6 +166,21 @@ namespace Model
     inline ResourceConfig& AddInstanceGroups(const InstanceGroup& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
     inline ResourceConfig& AddInstanceGroups(InstanceGroup&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN); of the training plan to use for this resource
+     * configuration.</p>
+     */
+    inline const Aws::String& GetTrainingPlanArn() const{ return m_trainingPlanArn; }
+    inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
+    inline void SetTrainingPlanArn(const Aws::String& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = value; }
+    inline void SetTrainingPlanArn(Aws::String&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::move(value); }
+    inline void SetTrainingPlanArn(const char* value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn.assign(value); }
+    inline ResourceConfig& WithTrainingPlanArn(const Aws::String& value) { SetTrainingPlanArn(value); return *this;}
+    inline ResourceConfig& WithTrainingPlanArn(Aws::String&& value) { SetTrainingPlanArn(std::move(value)); return *this;}
+    inline ResourceConfig& WithTrainingPlanArn(const char* value) { SetTrainingPlanArn(value); return *this;}
+    ///@}
   private:
 
     TrainingInstanceType m_instanceType;
@@ -185,6 +200,9 @@ namespace Model
 
     Aws::Vector<InstanceGroup> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet = false;
+
+    Aws::String m_trainingPlanArn;
+    bool m_trainingPlanArnHasBeenSet = false;
   };
 
 } // namespace Model

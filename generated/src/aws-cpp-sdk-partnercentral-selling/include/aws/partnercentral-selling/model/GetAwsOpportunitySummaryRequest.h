@@ -36,10 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog in which the AWS Opportunity is located. Accepted
+     * <p>Specifies the catalog in which the AWS Opportunity is located. Accepted
      * values include <code>AWS</code> for production opportunities or
      * <code>Sandbox</code> for testing purposes. The catalog determines which
-     * environment the opportunity data is pulled from. </p>
+     * environment the opportunity data is pulled from.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier for the related partner opportunity. Use this field to
-     * correlate an AWS opportunity with its corresponding partner opportunity. </p>
+     * <p>The unique identifier for the related partner opportunity. Use this field to
+     * correlate an AWS opportunity with its corresponding partner opportunity.</p>
      */
     inline const Aws::String& GetRelatedOpportunityIdentifier() const{ return m_relatedOpportunityIdentifier; }
     inline bool RelatedOpportunityIdentifierHasBeenSet() const { return m_relatedOpportunityIdentifierHasBeenSet; }

@@ -40,6 +40,7 @@
 #include <aws/connectcampaignsv2/model/PauseCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/PutConnectInstanceIntegrationRequest.h>
 #include <aws/connectcampaignsv2/model/PutOutboundRequestBatchRequest.h>
+#include <aws/connectcampaignsv2/model/PutProfileOutboundRequestBatchRequest.h>
 #include <aws/connectcampaignsv2/model/ResumeCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/StartCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/StartInstanceOnboardingJobRequest.h>
@@ -827,6 +828,40 @@ PutOutboundRequestBatchOutcome ConnectCampaignsV2Client::PutOutboundRequestBatch
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-requests");
       return PutOutboundRequestBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutProfileOutboundRequestBatchOutcome ConnectCampaignsV2Client::PutProfileOutboundRequestBatch(const PutProfileOutboundRequestBatchRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutProfileOutboundRequestBatch);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutProfileOutboundRequestBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutProfileOutboundRequestBatch", "Required field: Id, is not set");
+    return PutProfileOutboundRequestBatchOutcome(Aws::Client::AWSError<ConnectCampaignsV2Errors>(ConnectCampaignsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutProfileOutboundRequestBatch, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutProfileOutboundRequestBatch, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutProfileOutboundRequestBatch",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutProfileOutboundRequestBatchOutcome>(
+    [&]()-> PutProfileOutboundRequestBatchOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutProfileOutboundRequestBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/campaigns/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/profile-outbound-requests");
+      return PutProfileOutboundRequestBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

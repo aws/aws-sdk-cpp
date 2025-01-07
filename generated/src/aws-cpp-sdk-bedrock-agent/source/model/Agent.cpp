@@ -20,6 +20,8 @@ namespace Model
 
 Agent::Agent() : 
     m_agentArnHasBeenSet(false),
+    m_agentCollaboration(AgentCollaboration::NOT_SET),
+    m_agentCollaborationHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentResourceRoleArnHasBeenSet(false),
@@ -28,6 +30,7 @@ Agent::Agent() :
     m_agentVersionHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_customOrchestrationHasBeenSet(false),
     m_customerEncryptionKeyArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_failureReasonsHasBeenSet(false),
@@ -37,6 +40,8 @@ Agent::Agent() :
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
     m_memoryConfigurationHasBeenSet(false),
+    m_orchestrationType(OrchestrationType::NOT_SET),
+    m_orchestrationTypeHasBeenSet(false),
     m_preparedAtHasBeenSet(false),
     m_promptOverrideConfigurationHasBeenSet(false),
     m_recommendedActionsHasBeenSet(false),
@@ -57,6 +62,13 @@ Agent& Agent::operator =(JsonView jsonValue)
     m_agentArn = jsonValue.GetString("agentArn");
 
     m_agentArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentCollaboration"))
+  {
+    m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
+
+    m_agentCollaborationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("agentId"))
@@ -106,6 +118,13 @@ Agent& Agent::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customOrchestration"))
+  {
+    m_customOrchestration = jsonValue.GetObject("customOrchestration");
+
+    m_customOrchestrationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customerEncryptionKeyArn"))
@@ -167,6 +186,13 @@ Agent& Agent::operator =(JsonView jsonValue)
     m_memoryConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("orchestrationType"))
+  {
+    m_orchestrationType = OrchestrationTypeMapper::GetOrchestrationTypeForName(jsonValue.GetString("orchestrationType"));
+
+    m_orchestrationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("preparedAt"))
   {
     m_preparedAt = jsonValue.GetString("preparedAt");
@@ -211,6 +237,11 @@ JsonValue Agent::Jsonize() const
 
   }
 
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
+
   if(m_agentIdHasBeenSet)
   {
    payload.WithString("agentId", m_agentId);
@@ -249,6 +280,12 @@ JsonValue Agent::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
+
   }
 
   if(m_customerEncryptionKeyArnHasBeenSet)
@@ -302,6 +339,11 @@ JsonValue Agent::Jsonize() const
   {
    payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
 
+  }
+
+  if(m_orchestrationTypeHasBeenSet)
+  {
+   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
   }
 
   if(m_preparedAtHasBeenSet)

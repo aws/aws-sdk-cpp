@@ -25,11 +25,12 @@ namespace Model
 
   /**
    * <p>Specifies the location where the bucket will be created.</p> <p>For directory
-   * buckets, the location type is Availability Zone. For more information about
-   * directory buckets, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-   * buckets</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality
-   * is only supported by directory buckets.</p> <p><h3>See Also:</h3>   <a
+   * buckets, the location type is Availability Zone or Local Zone. For more
+   * information about directory buckets, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Working
+   * with directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p> 
+   * <p>This functionality is only supported by directory buckets.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LocationInfo">AWS API
    * Reference</a></p>
    */
@@ -58,9 +59,9 @@ namespace Model
     ///@{
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
+     * directory buckets, the name of the location is the Zone ID of the Availability
+     * Zone (AZ) or Local Zone (LZ) where the bucket will be created. An example AZ ID
+     * value is <code>usw2-az1</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

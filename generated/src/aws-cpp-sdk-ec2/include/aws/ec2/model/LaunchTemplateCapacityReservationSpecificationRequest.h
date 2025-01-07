@@ -50,11 +50,14 @@ namespace Model
     ///@{
     /**
      * <p>Indicates the instance's Capacity Reservation preferences. Possible
-     * preferences include:</p> <ul> <li> <p> <code>open</code> - The instance can run
-     * in any <code>open</code> Capacity Reservation that has matching attributes
-     * (instance type, platform, Availability Zone).</p> </li> <li> <p>
-     * <code>none</code> - The instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity.</p> </li> </ul>
+     * preferences include:</p> <ul> <li> <p> <code>capacity-reservations-only</code> -
+     * The instance will only run in a Capacity Reservation or Capacity Reservation
+     * group. If capacity isn't available, the instance will fail to launch.</p> </li>
+     * <li> <p> <code>open</code> - The instance can run in any <code>open</code>
+     * Capacity Reservation that has matching attributes (instance type, platform,
+     * Availability Zone, tenancy).</p> </li> <li> <p> <code>none</code> - The instance
+     * avoids running in a Capacity Reservation even if one is available. The instance
+     * runs in On-Demand capacity.</p> </li> </ul>
      */
     inline const CapacityReservationPreference& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }

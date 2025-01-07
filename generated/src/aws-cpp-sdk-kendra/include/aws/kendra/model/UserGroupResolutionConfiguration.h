@@ -41,8 +41,10 @@ namespace Model
    * support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web
    * Services organization member account for your IAM Identity Center identify
    * source. You must create your index in the management account for the
-   * organization in order to use
-   * <code>UserGroupResolutionConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+   * organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
+   *  <p>If you're using an Amazon Kendra Gen AI Enterprise Edition index,
+   * <code>UserGroupResolutionConfiguration</code> isn't supported.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UserGroupResolutionConfiguration">AWS
    * API Reference</a></p>
    */

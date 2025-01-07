@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain from which you want to delete
-     * the specified tags.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain, data source, or application
+     * from which you want to delete the specified tags.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
@@ -54,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of tag keys to remove from the domain.</p>
+     * <p>The list of tag keys to remove from the domain, data source, or
+     * application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }

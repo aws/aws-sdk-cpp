@@ -568,6 +568,32 @@ namespace ConnectCampaignsV2
         }
 
         /**
+         * <p>Takes in a list of profile outbound requests to be placed as part of an
+         * outbound campaign. This API is idempotent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutProfileOutboundRequestBatchOutcome PutProfileOutboundRequestBatch(const Model::PutProfileOutboundRequestBatchRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutProfileOutboundRequestBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutProfileOutboundRequestBatchRequestT = Model::PutProfileOutboundRequestBatchRequest>
+        Model::PutProfileOutboundRequestBatchOutcomeCallable PutProfileOutboundRequestBatchCallable(const PutProfileOutboundRequestBatchRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCampaignsV2Client::PutProfileOutboundRequestBatch, request);
+        }
+
+        /**
+         * An Async wrapper for PutProfileOutboundRequestBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutProfileOutboundRequestBatchRequestT = Model::PutProfileOutboundRequestBatchRequest>
+        void PutProfileOutboundRequestBatchAsync(const PutProfileOutboundRequestBatchRequestT& request, const PutProfileOutboundRequestBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCampaignsV2Client::PutProfileOutboundRequestBatch, request, handler, context);
+        }
+
+        /**
          * <p>Stops a campaign for the specified Amazon Connect account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/ResumeCampaign">AWS

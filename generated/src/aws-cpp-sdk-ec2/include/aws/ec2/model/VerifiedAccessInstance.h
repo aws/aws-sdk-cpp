@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VerifiedAccessInstanceCustomSubDomain.h>
 #include <aws/ec2/model/VerifiedAccessTrustProviderCondensed.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -136,6 +137,18 @@ namespace Model
     inline void SetFipsEnabled(bool value) { m_fipsEnabledHasBeenSet = true; m_fipsEnabled = value; }
     inline VerifiedAccessInstance& WithFipsEnabled(bool value) { SetFipsEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The custom subdomain.</p>
+     */
+    inline const VerifiedAccessInstanceCustomSubDomain& GetCidrEndpointsCustomSubDomain() const{ return m_cidrEndpointsCustomSubDomain; }
+    inline bool CidrEndpointsCustomSubDomainHasBeenSet() const { return m_cidrEndpointsCustomSubDomainHasBeenSet; }
+    inline void SetCidrEndpointsCustomSubDomain(const VerifiedAccessInstanceCustomSubDomain& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = value; }
+    inline void SetCidrEndpointsCustomSubDomain(VerifiedAccessInstanceCustomSubDomain&& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = std::move(value); }
+    inline VerifiedAccessInstance& WithCidrEndpointsCustomSubDomain(const VerifiedAccessInstanceCustomSubDomain& value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
+    inline VerifiedAccessInstance& WithCidrEndpointsCustomSubDomain(VerifiedAccessInstanceCustomSubDomain&& value) { SetCidrEndpointsCustomSubDomain(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_verifiedAccessInstanceId;
@@ -158,6 +171,9 @@ namespace Model
 
     bool m_fipsEnabled;
     bool m_fipsEnabledHasBeenSet = false;
+
+    VerifiedAccessInstanceCustomSubDomain m_cidrEndpointsCustomSubDomain;
+    bool m_cidrEndpointsCustomSubDomainHasBeenSet = false;
   };
 
 } // namespace Model

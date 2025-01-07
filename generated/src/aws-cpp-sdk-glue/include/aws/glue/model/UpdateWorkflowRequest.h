@@ -66,7 +66,10 @@ namespace Model
     ///@{
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow.</p> <p>Run properties may be logged. Do not pass plaintext secrets as
+     * properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets
+     * Manager or other secret management mechanism if you intend to use them within
+     * the workflow run.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDefaultRunProperties() const{ return m_defaultRunProperties; }
     inline bool DefaultRunPropertiesHasBeenSet() const { return m_defaultRunPropertiesHasBeenSet; }

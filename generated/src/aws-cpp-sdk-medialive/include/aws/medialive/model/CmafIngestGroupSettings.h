@@ -9,6 +9,8 @@
 #include <aws/medialive/model/CmafNielsenId3Behavior.h>
 #include <aws/medialive/model/Scte35Type.h>
 #include <aws/medialive/model/CmafIngestSegmentLengthUnits.h>
+#include <aws/medialive/model/CmafKLVBehavior.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +113,72 @@ namespace Model
     inline void SetSendDelayMs(int value) { m_sendDelayMsHasBeenSet = true; m_sendDelayMs = value; }
     inline CmafIngestGroupSettings& WithSendDelayMs(int value) { SetSendDelayMs(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline const CmafKLVBehavior& GetKlvBehavior() const{ return m_klvBehavior; }
+    inline bool KlvBehaviorHasBeenSet() const { return m_klvBehaviorHasBeenSet; }
+    inline void SetKlvBehavior(const CmafKLVBehavior& value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = value; }
+    inline void SetKlvBehavior(CmafKLVBehavior&& value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = std::move(value); }
+    inline CmafIngestGroupSettings& WithKlvBehavior(const CmafKLVBehavior& value) { SetKlvBehavior(value); return *this;}
+    inline CmafIngestGroupSettings& WithKlvBehavior(CmafKLVBehavior&& value) { SetKlvBehavior(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Change the modifier that MediaLive automatically adds to the Streams() name that
+     * identifies a KLV track. The default is "klv", which means the default name will
+     * be Streams(klv.cmfm). Any string you enter here will replace the "klv"
+     * string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-),
+     * underscore (_) and period (.) and has a maximum length of 100 characters.
+     */
+    inline const Aws::String& GetKlvNameModifier() const{ return m_klvNameModifier; }
+    inline bool KlvNameModifierHasBeenSet() const { return m_klvNameModifierHasBeenSet; }
+    inline void SetKlvNameModifier(const Aws::String& value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier = value; }
+    inline void SetKlvNameModifier(Aws::String&& value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier = std::move(value); }
+    inline void SetKlvNameModifier(const char* value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier.assign(value); }
+    inline CmafIngestGroupSettings& WithKlvNameModifier(const Aws::String& value) { SetKlvNameModifier(value); return *this;}
+    inline CmafIngestGroupSettings& WithKlvNameModifier(Aws::String&& value) { SetKlvNameModifier(std::move(value)); return *this;}
+    inline CmafIngestGroupSettings& WithKlvNameModifier(const char* value) { SetKlvNameModifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Change the modifier that MediaLive automatically adds to the Streams() name that
+     * identifies a Nielsen ID3 track. The default is "nid3", which means the default
+     * name will be Streams(nid3.cmfm). Any string you enter here will replace the
+     * "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
+     * (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+     */
+    inline const Aws::String& GetNielsenId3NameModifier() const{ return m_nielsenId3NameModifier; }
+    inline bool NielsenId3NameModifierHasBeenSet() const { return m_nielsenId3NameModifierHasBeenSet; }
+    inline void SetNielsenId3NameModifier(const Aws::String& value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier = value; }
+    inline void SetNielsenId3NameModifier(Aws::String&& value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier = std::move(value); }
+    inline void SetNielsenId3NameModifier(const char* value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier.assign(value); }
+    inline CmafIngestGroupSettings& WithNielsenId3NameModifier(const Aws::String& value) { SetNielsenId3NameModifier(value); return *this;}
+    inline CmafIngestGroupSettings& WithNielsenId3NameModifier(Aws::String&& value) { SetNielsenId3NameModifier(std::move(value)); return *this;}
+    inline CmafIngestGroupSettings& WithNielsenId3NameModifier(const char* value) { SetNielsenId3NameModifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Change the modifier that MediaLive automatically adds to the Streams() name for
+     * a SCTE 35 track. The default is "scte", which means the default name will be
+     * Streams(scte.cmfm). Any string you enter here will replace the "scte"
+     * string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-),
+     * underscore (_) and period (.) and has a maximum length of 100 characters.
+     */
+    inline const Aws::String& GetScte35NameModifier() const{ return m_scte35NameModifier; }
+    inline bool Scte35NameModifierHasBeenSet() const { return m_scte35NameModifierHasBeenSet; }
+    inline void SetScte35NameModifier(const Aws::String& value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier = value; }
+    inline void SetScte35NameModifier(Aws::String&& value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier = std::move(value); }
+    inline void SetScte35NameModifier(const char* value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier.assign(value); }
+    inline CmafIngestGroupSettings& WithScte35NameModifier(const Aws::String& value) { SetScte35NameModifier(value); return *this;}
+    inline CmafIngestGroupSettings& WithScte35NameModifier(Aws::String&& value) { SetScte35NameModifier(std::move(value)); return *this;}
+    inline CmafIngestGroupSettings& WithScte35NameModifier(const char* value) { SetScte35NameModifier(value); return *this;}
+    ///@}
   private:
 
     OutputLocationRef m_destination;
@@ -130,6 +198,18 @@ namespace Model
 
     int m_sendDelayMs;
     bool m_sendDelayMsHasBeenSet = false;
+
+    CmafKLVBehavior m_klvBehavior;
+    bool m_klvBehaviorHasBeenSet = false;
+
+    Aws::String m_klvNameModifier;
+    bool m_klvNameModifierHasBeenSet = false;
+
+    Aws::String m_nielsenId3NameModifier;
+    bool m_nielsenId3NameModifierHasBeenSet = false;
+
+    Aws::String m_scte35NameModifier;
+    bool m_scte35NameModifierHasBeenSet = false;
   };
 
 } // namespace Model

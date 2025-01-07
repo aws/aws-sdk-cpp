@@ -46,7 +46,7 @@ namespace Model
     ///@{
     /**
      * <p>The total amount, in GiB, of ephemeral storage to set for the task. The
-     * minimum supported value is <code>20</code> GiB and the maximum supported value
+     * minimum supported value is <code>21</code> GiB and the maximum supported value
      * is <code>200</code> GiB.</p>
      */
     inline int GetSizeInGiB() const{ return m_sizeInGiB; }

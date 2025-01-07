@@ -36,7 +36,9 @@ KinesisSettings::KinesisSettings() :
     m_includeNullAndEmpty(false),
     m_includeNullAndEmptyHasBeenSet(false),
     m_noHexPrefix(false),
-    m_noHexPrefixHasBeenSet(false)
+    m_noHexPrefixHasBeenSet(false),
+    m_useLargeIntegerValue(false),
+    m_useLargeIntegerValueHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,13 @@ KinesisSettings& KinesisSettings::operator =(JsonView jsonValue)
     m_noHexPrefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseLargeIntegerValue"))
+  {
+    m_useLargeIntegerValue = jsonValue.GetBool("UseLargeIntegerValue");
+
+    m_useLargeIntegerValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +190,12 @@ JsonValue KinesisSettings::Jsonize() const
   if(m_noHexPrefixHasBeenSet)
   {
    payload.WithBool("NoHexPrefix", m_noHexPrefix);
+
+  }
+
+  if(m_useLargeIntegerValueHasBeenSet)
+  {
+   payload.WithBool("UseLargeIntegerValue", m_useLargeIntegerValue);
 
   }
 

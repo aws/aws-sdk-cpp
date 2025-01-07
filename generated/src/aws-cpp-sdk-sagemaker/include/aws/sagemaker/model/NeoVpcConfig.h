@@ -31,7 +31,7 @@ namespace Model
    * to connect to. For more information on controlling access to your Amazon S3
    * buckets used for compilation job, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Give Amazon
-   * SageMaker Compilation Jobs Access to Resources in Your Amazon
+   * SageMaker AI Compilation Jobs Access to Resources in Your Amazon
    * VPC</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NeoVpcConfig">AWS
    * API Reference</a></p>

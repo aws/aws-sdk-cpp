@@ -51,7 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A complex type that contains the new settings for the service.</p>
+     * <p>A complex type that contains the new settings for the service. You can
+     * specify a maximum of 30 attributes (key-value pairs).</p>
      */
     inline const ServiceChange& GetService() const{ return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }

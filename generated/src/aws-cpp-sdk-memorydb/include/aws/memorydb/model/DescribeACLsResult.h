@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of ACLs</p>
+     * <p>The list of ACLs.</p>
      */
     inline const Aws::Vector<ACL>& GetACLs() const{ return m_aCLs; }
     inline void SetACLs(const Aws::Vector<ACL>& value) { m_aCLs = value; }

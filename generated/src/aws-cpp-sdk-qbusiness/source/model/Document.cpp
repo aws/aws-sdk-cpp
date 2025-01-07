@@ -26,7 +26,8 @@ Document::Document() :
     m_contentTypeHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_accessConfigurationHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false)
+    m_documentEnrichmentConfigurationHasBeenSet(false),
+    m_mediaExtractionConfigurationHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,13 @@ Document& Document::operator =(JsonView jsonValue)
     m_documentEnrichmentConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mediaExtractionConfiguration"))
+  {
+    m_mediaExtractionConfiguration = jsonValue.GetObject("mediaExtractionConfiguration");
+
+    m_mediaExtractionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +148,12 @@ JsonValue Document::Jsonize() const
   if(m_documentEnrichmentConfigurationHasBeenSet)
   {
    payload.WithObject("documentEnrichmentConfiguration", m_documentEnrichmentConfiguration.Jsonize());
+
+  }
+
+  if(m_mediaExtractionConfigurationHasBeenSet)
+  {
+   payload.WithObject("mediaExtractionConfiguration", m_mediaExtractionConfiguration.Jsonize());
 
   }
 

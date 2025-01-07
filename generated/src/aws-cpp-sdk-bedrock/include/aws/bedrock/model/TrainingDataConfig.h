@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/InvocationLogsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,25 @@ namespace Model
     inline TrainingDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
     inline TrainingDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings for using invocation logs to customize a model.</p>
+     */
+    inline const InvocationLogsConfig& GetInvocationLogsConfig() const{ return m_invocationLogsConfig; }
+    inline bool InvocationLogsConfigHasBeenSet() const { return m_invocationLogsConfigHasBeenSet; }
+    inline void SetInvocationLogsConfig(const InvocationLogsConfig& value) { m_invocationLogsConfigHasBeenSet = true; m_invocationLogsConfig = value; }
+    inline void SetInvocationLogsConfig(InvocationLogsConfig&& value) { m_invocationLogsConfigHasBeenSet = true; m_invocationLogsConfig = std::move(value); }
+    inline TrainingDataConfig& WithInvocationLogsConfig(const InvocationLogsConfig& value) { SetInvocationLogsConfig(value); return *this;}
+    inline TrainingDataConfig& WithInvocationLogsConfig(InvocationLogsConfig&& value) { SetInvocationLogsConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
+
+    InvocationLogsConfig m_invocationLogsConfig;
+    bool m_invocationLogsConfigHasBeenSet = false;
   };
 
 } // namespace Model

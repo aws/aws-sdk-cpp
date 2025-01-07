@@ -58,16 +58,16 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
-     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
-     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * AI to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker AI needs your permission to:</p> <ul> <li> <p>Read input data from an
+     * S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
      * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
      * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
-     * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
-     * API must have the <code>iam:PassRole</code> permission. For more information,
-     * see <a
+     * tasks to an IAM role. To pass this role to Amazon SageMaker AI, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles.</a> </p>
+     * SageMaker AI Roles.</a> </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -143,8 +143,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies a limit to how long a model compilation job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
-     * to cap model training costs.</p>
+     * reaches the time limit, Amazon SageMaker AI ends the compilation job. Use this
+     * API to cap model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }

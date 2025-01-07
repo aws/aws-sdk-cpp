@@ -23,6 +23,7 @@ namespace Aws
         static const int Pending_HASH = HashingUtils::HashString("Pending");
         static const int Success_HASH = HashingUtils::HashString("Success");
         static const int Failure_HASH = HashingUtils::HashString("Failure");
+        static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
 
 
         RecorderStatus GetRecorderStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Failure_HASH)
           {
             return RecorderStatus::Failure;
+          }
+          else if (hashCode == NotApplicable_HASH)
+          {
+            return RecorderStatus::NotApplicable;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "Success";
           case RecorderStatus::Failure:
             return "Failure";
+          case RecorderStatus::NotApplicable:
+            return "NotApplicable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

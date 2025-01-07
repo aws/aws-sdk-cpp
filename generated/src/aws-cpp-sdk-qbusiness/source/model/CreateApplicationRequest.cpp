@@ -27,7 +27,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_clientTokenHasBeenSet(true),
     m_attachmentsConfigurationHasBeenSet(false),
     m_qAppsConfigurationHasBeenSet(false),
-    m_personalizationConfigurationHasBeenSet(false)
+    m_personalizationConfigurationHasBeenSet(false),
+    m_quickSightConfigurationHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_personalizationConfigurationHasBeenSet)
   {
    payload.WithObject("personalizationConfiguration", m_personalizationConfiguration.Jsonize());
+
+  }
+
+  if(m_quickSightConfigurationHasBeenSet)
+  {
+   payload.WithObject("quickSightConfiguration", m_quickSightConfiguration.Jsonize());
 
   }
 

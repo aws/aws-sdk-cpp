@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/InferenceConfig.h>
+#include <aws/bedrock-agent-runtime/model/PerformanceConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/PromptTemplate.h>
 #include <aws/bedrock-agent-runtime/model/QueryTransformationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -78,6 +79,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The latency configuration for the model.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
+    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
+    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
+    inline OrchestrationConfiguration& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
+    inline OrchestrationConfiguration& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the template for the prompt that's sent to the model. Orchestration
      * prompts must include the <code>$conversation_history$</code> and
      * <code>$output_format_instructions$</code> variables. For more information, see
@@ -112,6 +125,9 @@ namespace Model
 
     InferenceConfig m_inferenceConfig;
     bool m_inferenceConfigHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfig;
+    bool m_performanceConfigHasBeenSet = false;
 
     PromptTemplate m_promptTemplate;
     bool m_promptTemplateHasBeenSet = false;

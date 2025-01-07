@@ -26,7 +26,8 @@ UpdateDataSetRequest::UpdateDataSetRequest() :
     m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
     m_dataSetUsageConfigurationHasBeenSet(false),
-    m_datasetParametersHasBeenSet(false)
+    m_datasetParametersHasBeenSet(false),
+    m_performanceConfigurationHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,12 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
      datasetParametersJsonList[datasetParametersIndex].AsObject(m_datasetParameters[datasetParametersIndex].Jsonize());
    }
    payload.WithArray("DatasetParameters", std::move(datasetParametersJsonList));
+
+  }
+
+  if(m_performanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("PerformanceConfiguration", m_performanceConfiguration.Jsonize());
 
   }
 

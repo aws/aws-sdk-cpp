@@ -7,6 +7,7 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/model/AuthType.h>
+#include <aws/vpc-lattice/model/SharingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies if the service network is enabled for sharing.</p>
+     */
+    inline const SharingConfig& GetSharingConfig() const{ return m_sharingConfig; }
+    inline void SetSharingConfig(const SharingConfig& value) { m_sharingConfig = value; }
+    inline void SetSharingConfig(SharingConfig&& value) { m_sharingConfig = std::move(value); }
+    inline CreateServiceNetworkResult& WithSharingConfig(const SharingConfig& value) { SetSharingConfig(value); return *this;}
+    inline CreateServiceNetworkResult& WithSharingConfig(SharingConfig&& value) { SetSharingConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -102,6 +114,8 @@ namespace Model
     Aws::String m_id;
 
     Aws::String m_name;
+
+    SharingConfig m_sharingConfig;
 
     Aws::String m_requestId;
   };

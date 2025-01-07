@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the template attributes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TemplateAttributes">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>An object that specifies the custom attributes values to use for variables in
+     * the message template. This object contains different categories of key-value
+     * pairs. Each key defines a variable or placeholder in the message template. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomAttributes() const{ return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
@@ -59,7 +61,10 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>An object that specifies the customer profile attributes values to use for
+     * variables in the message template. This object contains different categories of
+     * key-value pairs. Each key defines a variable or placeholder in the message
+     * template. </p>
      */
     inline const Aws::String& GetCustomerProfileAttributes() const{ return m_customerProfileAttributes; }
     inline bool CustomerProfileAttributesHasBeenSet() const { return m_customerProfileAttributesHasBeenSet; }

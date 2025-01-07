@@ -879,7 +879,25 @@ namespace Model
     x8g_24xlarge,
     x8g_48xlarge,
     x8g_metal_24xl,
-    x8g_metal_48xl
+    x8g_metal_48xl,
+    i7ie_large,
+    i7ie_xlarge,
+    i7ie_2xlarge,
+    i7ie_3xlarge,
+    i7ie_6xlarge,
+    i7ie_12xlarge,
+    i7ie_18xlarge,
+    i7ie_24xlarge,
+    i7ie_48xlarge,
+    i8g_large,
+    i8g_xlarge,
+    i8g_2xlarge,
+    i8g_4xlarge,
+    i8g_8xlarge,
+    i8g_12xlarge,
+    i8g_16xlarge,
+    i8g_24xlarge,
+    i8g_metal_24xl
   };
 
 namespace InstanceTypeMapper

@@ -65,9 +65,11 @@ namespace Model
      * you're updating the fleet to the latest version of a container group definition,
      * you can use the name value. You can't remove a fleet's game server container
      * group definition, you can only update or replace it with another definition.</p>
-     * <p>Update a container group definition by calling
-     * <a>UpdateContainerGroupDefinition</a>. This operation creates a
-     * <a>ContainerGroupDefinition</a> resource with an incremented version. </p>
+     * <p>Update a container group definition by calling <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>.
+     * This operation creates a <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+     * resource with an incremented version. </p>
      */
     inline const Aws::String& GetGameServerContainerGroupDefinitionName() const{ return m_gameServerContainerGroupDefinitionName; }
     inline bool GameServerContainerGroupDefinitionNameHasBeenSet() const { return m_gameServerContainerGroupDefinitionNameHasBeenSet; }
@@ -86,10 +88,13 @@ namespace Model
      * container group definition, use the ARN value and include the version number. If
      * you're updating the fleet to the latest version of a container group definition,
      * you can use the name value.</p> <p>Update a container group definition by
-     * calling <a>UpdateContainerGroupDefinition</a>. This operation creates a
-     * <a>ContainerGroupDefinition</a> resource with an incremented version. </p> <p>To
-     * remove a fleet's per-instance container group definition, leave this parameter
-     * empty and use the parameter <code>RemoveAttributes</code>.</p>
+     * calling <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>.
+     * This operation creates a <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+     * resource with an incremented version. </p> <p>To remove a fleet's per-instance
+     * container group definition, leave this parameter empty and use the parameter
+     * <code>RemoveAttributes</code>.</p>
      */
     inline const Aws::String& GetPerInstanceContainerGroupDefinitionName() const{ return m_perInstanceContainerGroupDefinitionName; }
     inline bool PerInstanceContainerGroupDefinitionNameHasBeenSet() const { return m_perInstanceContainerGroupDefinitionNameHasBeenSet; }

@@ -31,8 +31,8 @@ namespace Model
    * exists and the attached policies are configured correctly. If there's an issue,
    * Macie returns an error. For information about addressing the issue, see <a
    * href="https://docs.aws.amazon.com/macie/latest/user/findings-retrieve-sd-options.html">Configuration
-   * options and requirements for retrieving sensitive data samples</a> in the
-   * <i>Amazon Macie User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * options for retrieving sensitive data samples</a> in the <i>Amazon Macie User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRetrievalConfiguration">AWS
    * API Reference</a></p>
    */

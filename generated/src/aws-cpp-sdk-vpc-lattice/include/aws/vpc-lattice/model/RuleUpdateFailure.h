@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+     * <p>The ID or ARN of the rule.</p>
      */
     inline const Aws::String& GetRuleIdentifier() const{ return m_ruleIdentifier; }
     inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }

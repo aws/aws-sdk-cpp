@@ -20,6 +20,8 @@ CreateEvaluationJobRequest::CreateEvaluationJobRequest() :
     m_roleArnHasBeenSet(false),
     m_customerEncryptionKeyIdHasBeenSet(false),
     m_jobTagsHasBeenSet(false),
+    m_applicationType(ApplicationType::NOT_SET),
+    m_applicationTypeHasBeenSet(false),
     m_evaluationConfigHasBeenSet(false),
     m_inferenceConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false)
@@ -69,6 +71,11 @@ Aws::String CreateEvaluationJobRequest::SerializePayload() const
    }
    payload.WithArray("jobTags", std::move(jobTagsJsonList));
 
+  }
+
+  if(m_applicationTypeHasBeenSet)
+  {
+   payload.WithString("applicationType", ApplicationTypeMapper::GetNameForApplicationType(m_applicationType));
   }
 
   if(m_evaluationConfigHasBeenSet)

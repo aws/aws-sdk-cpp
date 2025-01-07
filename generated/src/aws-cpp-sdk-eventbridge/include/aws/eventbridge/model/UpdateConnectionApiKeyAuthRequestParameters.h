@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value associated with teh API key to use for authorization.</p>
+     * <p>The value associated with the API key to use for authorization.</p>
      */
     inline const Aws::String& GetApiKeyValue() const{ return m_apiKeyValue; }
     inline bool ApiKeyValueHasBeenSet() const { return m_apiKeyValueHasBeenSet; }

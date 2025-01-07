@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/StreamingExperiencePreferredProtocolEnum.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/GlobalAcceleratorForDirectory.h>
 #include <aws/workspaces/model/UserSetting.h>
 #include <aws/workspaces/model/StorageConnector.h>
 #include <utility>
@@ -79,6 +80,18 @@ namespace Model
     inline StreamingProperties& AddStorageConnectors(const StorageConnector& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(value); return *this; }
     inline StreamingProperties& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the Global Accelerator properties.</p>
+     */
+    inline const GlobalAcceleratorForDirectory& GetGlobalAccelerator() const{ return m_globalAccelerator; }
+    inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
+    inline void SetGlobalAccelerator(const GlobalAcceleratorForDirectory& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = value; }
+    inline void SetGlobalAccelerator(GlobalAcceleratorForDirectory&& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = std::move(value); }
+    inline StreamingProperties& WithGlobalAccelerator(const GlobalAcceleratorForDirectory& value) { SetGlobalAccelerator(value); return *this;}
+    inline StreamingProperties& WithGlobalAccelerator(GlobalAcceleratorForDirectory&& value) { SetGlobalAccelerator(std::move(value)); return *this;}
+    ///@}
   private:
 
     StreamingExperiencePreferredProtocolEnum m_streamingExperiencePreferredProtocol;
@@ -89,6 +102,9 @@ namespace Model
 
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet = false;
+
+    GlobalAcceleratorForDirectory m_globalAccelerator;
+    bool m_globalAcceleratorHasBeenSet = false;
   };
 
 } // namespace Model

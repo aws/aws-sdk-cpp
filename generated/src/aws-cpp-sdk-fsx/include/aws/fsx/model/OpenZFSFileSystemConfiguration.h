@@ -9,6 +9,7 @@
 #include <aws/fsx/model/OpenZFSDeploymentType.h>
 #include <aws/fsx/model/DiskIopsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/OpenZFSReadCacheConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -219,6 +220,20 @@ namespace Model
     inline OpenZFSFileSystemConfiguration& WithEndpointIpAddress(Aws::String&& value) { SetEndpointIpAddress(std::move(value)); return *this;}
     inline OpenZFSFileSystemConfiguration& WithEndpointIpAddress(const char* value) { SetEndpointIpAddress(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Required when <code>StorageType</code> is set to
+     * <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read
+     * cache. </p>
+     */
+    inline const OpenZFSReadCacheConfiguration& GetReadCacheConfiguration() const{ return m_readCacheConfiguration; }
+    inline bool ReadCacheConfigurationHasBeenSet() const { return m_readCacheConfigurationHasBeenSet; }
+    inline void SetReadCacheConfiguration(const OpenZFSReadCacheConfiguration& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = value; }
+    inline void SetReadCacheConfiguration(OpenZFSReadCacheConfiguration&& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = std::move(value); }
+    inline OpenZFSFileSystemConfiguration& WithReadCacheConfiguration(const OpenZFSReadCacheConfiguration& value) { SetReadCacheConfiguration(value); return *this;}
+    inline OpenZFSFileSystemConfiguration& WithReadCacheConfiguration(OpenZFSReadCacheConfiguration&& value) { SetReadCacheConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_automaticBackupRetentionDays;
@@ -259,6 +274,9 @@ namespace Model
 
     Aws::String m_endpointIpAddress;
     bool m_endpointIpAddressHasBeenSet = false;
+
+    OpenZFSReadCacheConfiguration m_readCacheConfiguration;
+    bool m_readCacheConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

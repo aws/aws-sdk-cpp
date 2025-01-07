@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the email recipient</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EmailRecipient">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Address of the email recipient.</p> <p>Type: String</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
@@ -53,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Display name of the email recipient.</p> <p>Type: String</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

@@ -21,6 +21,7 @@ GetDimensionValuesRequest::GetDimensionValuesRequest() :
     m_contextHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_sortByHasBeenSet(false),
+    m_billingViewArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextPageTokenHasBeenSet(false)
@@ -67,6 +68,12 @@ Aws::String GetDimensionValuesRequest::SerializePayload() const
      sortByJsonList[sortByIndex].AsObject(m_sortBy[sortByIndex].Jsonize());
    }
    payload.WithArray("SortBy", std::move(sortByJsonList));
+
+  }
+
+  if(m_billingViewArnHasBeenSet)
+  {
+   payload.WithString("BillingViewArn", m_billingViewArn);
 
   }
 

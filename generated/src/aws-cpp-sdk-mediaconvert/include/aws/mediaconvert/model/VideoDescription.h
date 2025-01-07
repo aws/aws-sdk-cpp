@@ -14,6 +14,7 @@
 #include <aws/mediaconvert/model/RespondToAfd.h>
 #include <aws/mediaconvert/model/ScalingBehavior.h>
 #include <aws/mediaconvert/model/VideoTimecodeInsertion.h>
+#include <aws/mediaconvert/model/TimecodeTrack.h>
 #include <aws/mediaconvert/model/VideoPreprocessor.h>
 #include <utility>
 
@@ -129,7 +130,7 @@ namespace Model
      * Applies only to 29.97 fps outputs. When this feature is enabled, the service
      * will use drop-frame timecode on outputs. If it is not possible to use drop-frame
      * timecode, the system will fall back to non-drop-frame. This setting is enabled
-     * by default when Timecode insertion is enabled.
+     * by default when Timecode insertion or Timecode track is enabled.
      */
     inline const DropFrameTimecode& GetDropFrameTimecode() const{ return m_dropFrameTimecode; }
     inline bool DropFrameTimecodeHasBeenSet() const { return m_dropFrameTimecodeHasBeenSet; }
@@ -246,6 +247,22 @@ namespace Model
 
     ///@{
     /**
+     * To include a timecode track in your MP4 output: Choose Enabled. MediaConvert
+     * writes the timecode track in the Null Media Header box (NMHD), without any
+     * timecode text formatting information. You can also specify dropframe or
+     * non-dropframe timecode under the Drop Frame Timecode setting. To not include a
+     * timecode track: Keep the default value, Disabled.
+     */
+    inline const TimecodeTrack& GetTimecodeTrack() const{ return m_timecodeTrack; }
+    inline bool TimecodeTrackHasBeenSet() const { return m_timecodeTrackHasBeenSet; }
+    inline void SetTimecodeTrack(const TimecodeTrack& value) { m_timecodeTrackHasBeenSet = true; m_timecodeTrack = value; }
+    inline void SetTimecodeTrack(TimecodeTrack&& value) { m_timecodeTrackHasBeenSet = true; m_timecodeTrack = std::move(value); }
+    inline VideoDescription& WithTimecodeTrack(const TimecodeTrack& value) { SetTimecodeTrack(value); return *this;}
+    inline VideoDescription& WithTimecodeTrack(TimecodeTrack&& value) { SetTimecodeTrack(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Find additional transcoding features under Preprocessors. Enable the features at
      * each output individually. These features are disabled by default.
      */
@@ -310,6 +327,9 @@ namespace Model
 
     VideoTimecodeInsertion m_timecodeInsertion;
     bool m_timecodeInsertionHasBeenSet = false;
+
+    TimecodeTrack m_timecodeTrack;
+    bool m_timecodeTrackHasBeenSet = false;
 
     VideoPreprocessor m_videoPreprocessors;
     bool m_videoPreprocessorsHasBeenSet = false;

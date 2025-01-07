@@ -14,6 +14,7 @@
 #include <aws/bedrock/model/OutputDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/bedrock/model/CustomizationConfig.h>
 #include <aws/bedrock/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -245,6 +246,18 @@ namespace Model
     inline CreateModelCustomizationJobRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
     inline CreateModelCustomizationJobRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The customization configuration for the model customization job.</p>
+     */
+    inline const CustomizationConfig& GetCustomizationConfig() const{ return m_customizationConfig; }
+    inline bool CustomizationConfigHasBeenSet() const { return m_customizationConfigHasBeenSet; }
+    inline void SetCustomizationConfig(const CustomizationConfig& value) { m_customizationConfigHasBeenSet = true; m_customizationConfig = value; }
+    inline void SetCustomizationConfig(CustomizationConfig&& value) { m_customizationConfigHasBeenSet = true; m_customizationConfig = std::move(value); }
+    inline CreateModelCustomizationJobRequest& WithCustomizationConfig(const CustomizationConfig& value) { SetCustomizationConfig(value); return *this;}
+    inline CreateModelCustomizationJobRequest& WithCustomizationConfig(CustomizationConfig&& value) { SetCustomizationConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobName;
@@ -288,6 +301,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
+
+    CustomizationConfig m_customizationConfig;
+    bool m_customizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

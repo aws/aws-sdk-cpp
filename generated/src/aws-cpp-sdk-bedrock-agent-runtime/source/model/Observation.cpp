@@ -20,6 +20,7 @@ namespace Model
 
 Observation::Observation() : 
     m_actionGroupInvocationOutputHasBeenSet(false),
+    m_agentCollaboratorInvocationOutputHasBeenSet(false),
     m_codeInterpreterInvocationOutputHasBeenSet(false),
     m_finalResponseHasBeenSet(false),
     m_knowledgeBaseLookupOutputHasBeenSet(false),
@@ -43,6 +44,13 @@ Observation& Observation::operator =(JsonView jsonValue)
     m_actionGroupInvocationOutput = jsonValue.GetObject("actionGroupInvocationOutput");
 
     m_actionGroupInvocationOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentCollaboratorInvocationOutput"))
+  {
+    m_agentCollaboratorInvocationOutput = jsonValue.GetObject("agentCollaboratorInvocationOutput");
+
+    m_agentCollaboratorInvocationOutputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codeInterpreterInvocationOutput"))
@@ -97,6 +105,12 @@ JsonValue Observation::Jsonize() const
   if(m_actionGroupInvocationOutputHasBeenSet)
   {
    payload.WithObject("actionGroupInvocationOutput", m_actionGroupInvocationOutput.Jsonize());
+
+  }
+
+  if(m_agentCollaboratorInvocationOutputHasBeenSet)
+  {
+   payload.WithObject("agentCollaboratorInvocationOutput", m_agentCollaboratorInvocationOutput.Jsonize());
 
   }
 

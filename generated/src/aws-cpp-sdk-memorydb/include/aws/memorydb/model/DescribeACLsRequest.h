@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the ACL</p>
+     * <p>The name of the ACL.</p>
      */
     inline const Aws::String& GetACLName() const{ return m_aCLName; }
     inline bool ACLNameHasBeenSet() const { return m_aCLNameHasBeenSet; }

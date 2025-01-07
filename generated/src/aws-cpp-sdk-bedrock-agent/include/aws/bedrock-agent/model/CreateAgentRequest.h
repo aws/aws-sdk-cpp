@@ -6,9 +6,12 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
+#include <aws/bedrock-agent/model/AgentCollaboration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/CustomOrchestration.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryConfiguration.h>
+#include <aws/bedrock-agent/model/OrchestrationType.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -36,6 +39,18 @@ namespace Model
 
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The agent's collaboration role.</p>
+     */
+    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
+    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
+    inline CreateAgentRequest& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
+    inline CreateAgentRequest& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -82,6 +97,18 @@ namespace Model
     inline CreateAgentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
     inline CreateAgentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline CreateAgentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Contains details of the custom orchestration configured for the agent. </p>
+     */
+    inline const CustomOrchestration& GetCustomOrchestration() const{ return m_customOrchestration; }
+    inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
+    inline void SetCustomOrchestration(const CustomOrchestration& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = value; }
+    inline void SetCustomOrchestration(CustomOrchestration&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::move(value); }
+    inline CreateAgentRequest& WithCustomOrchestration(const CustomOrchestration& value) { SetCustomOrchestration(value); return *this;}
+    inline CreateAgentRequest& WithCustomOrchestration(CustomOrchestration&& value) { SetCustomOrchestration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,6 +235,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> Specifies the type of orchestration strategy for the agent. This is set to
+     * <code>DEFAULT</code> orchestration type, by default. </p>
+     */
+    inline const OrchestrationType& GetOrchestrationType() const{ return m_orchestrationType; }
+    inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
+    inline void SetOrchestrationType(const OrchestrationType& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
+    inline void SetOrchestrationType(OrchestrationType&& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = std::move(value); }
+    inline CreateAgentRequest& WithOrchestrationType(const OrchestrationType& value) { SetOrchestrationType(value); return *this;}
+    inline CreateAgentRequest& WithOrchestrationType(OrchestrationType&& value) { SetOrchestrationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations to override prompts in different parts of an agent
      * sequence. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
@@ -241,6 +281,9 @@ namespace Model
     ///@}
   private:
 
+    AgentCollaboration m_agentCollaboration;
+    bool m_agentCollaborationHasBeenSet = false;
+
     Aws::String m_agentName;
     bool m_agentNameHasBeenSet = false;
 
@@ -249,6 +292,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    CustomOrchestration m_customOrchestration;
+    bool m_customOrchestrationHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
@@ -270,6 +316,9 @@ namespace Model
 
     MemoryConfiguration m_memoryConfiguration;
     bool m_memoryConfigurationHasBeenSet = false;
+
+    OrchestrationType m_orchestrationType;
+    bool m_orchestrationTypeHasBeenSet = false;
 
     PromptOverrideConfiguration m_promptOverrideConfiguration;
     bool m_promptOverrideConfigurationHasBeenSet = false;

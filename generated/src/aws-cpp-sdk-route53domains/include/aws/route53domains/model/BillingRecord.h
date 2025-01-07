@@ -72,7 +72,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the invoice that is associated with the billing record.</p>
+     * <p>Deprecated property. This field is retained in report structure for backwards
+     * compatibility, but will appear blank.</p>
      */
     inline const Aws::String& GetInvoiceId() const{ return m_invoiceId; }
     inline bool InvoiceIdHasBeenSet() const { return m_invoiceIdHasBeenSet; }

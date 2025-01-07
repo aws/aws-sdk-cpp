@@ -8,6 +8,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/Tag.h>
 #include <aws/rds/model/ProcessorFeature.h>
@@ -478,6 +479,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The mode of Database Insights to enable for the read replica.</p> 
+     * <p>Currently, this setting is not supported.</p> 
+     */
+    inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
+    inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
+    inline void SetDatabaseInsightsMode(const DatabaseInsightsMode& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = value; }
+    inline void SetDatabaseInsightsMode(DatabaseInsightsMode&& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = std::move(value); }
+    inline CreateDBInstanceReadReplicaRequest& WithDatabaseInsightsMode(const DatabaseInsightsMode& value) { SetDatabaseInsightsMode(value); return *this;}
+    inline CreateDBInstanceReadReplicaRequest& WithDatabaseInsightsMode(DatabaseInsightsMode&& value) { SetDatabaseInsightsMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to enable Performance Insights for the read replica.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
@@ -814,9 +828,10 @@ namespace Model
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
-     * for your read replica so that the create operation can succeed. You can also
-     * allocate additional storage for future growth.</p> 
+     * <code>CreateDBInstance</code>.</p> <p>This setting isn't valid for RDS for SQL
+     * Server.</p>  <p>Be sure to allocate enough storage for your read replica
+     * so that the create operation can succeed. You can also allocate additional
+     * storage for future growth.</p> 
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
@@ -968,6 +983,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+
+    DatabaseInsightsMode m_databaseInsightsMode;
+    bool m_databaseInsightsModeHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
     bool m_enablePerformanceInsightsHasBeenSet = false;

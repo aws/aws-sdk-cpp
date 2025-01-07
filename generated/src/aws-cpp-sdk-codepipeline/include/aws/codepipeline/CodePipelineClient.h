@@ -732,7 +732,12 @@ namespace CodePipeline
         }
 
         /**
-         * <p>Lists the rules for the condition.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the rules for the condition. For more information about conditions, see
+         * <a
+         * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+         * conditions</a>. For more information about rules, see the <a
+         * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+         * rule reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">AWS
          * API Reference</a></p>
          */

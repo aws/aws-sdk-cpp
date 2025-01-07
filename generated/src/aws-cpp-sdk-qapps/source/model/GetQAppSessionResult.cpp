@@ -18,7 +18,10 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetQAppSessionResult::GetQAppSessionResult() : 
-    m_status(ExecutionStatus::NOT_SET)
+    m_appVersion(0),
+    m_latestPublishedAppVersion(0),
+    m_status(ExecutionStatus::NOT_SET),
+    m_userIsHost(false)
 {
 }
 
@@ -43,6 +46,24 @@ GetQAppSessionResult& GetQAppSessionResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("sessionName"))
+  {
+    m_sessionName = jsonValue.GetString("sessionName");
+
+  }
+
+  if(jsonValue.ValueExists("appVersion"))
+  {
+    m_appVersion = jsonValue.GetInteger("appVersion");
+
+  }
+
+  if(jsonValue.ValueExists("latestPublishedAppVersion"))
+  {
+    m_latestPublishedAppVersion = jsonValue.GetInteger("latestPublishedAppVersion");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
@@ -56,6 +77,12 @@ GetQAppSessionResult& GetQAppSessionResult::operator =(const Aws::AmazonWebServi
     {
       m_cardStatus[cardStatusItem.first] = cardStatusItem.second.AsObject();
     }
+  }
+
+  if(jsonValue.ValueExists("userIsHost"))
+  {
+    m_userIsHost = jsonValue.GetBool("userIsHost");
+
   }
 
 

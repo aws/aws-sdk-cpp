@@ -84,7 +84,10 @@ namespace Model
      * <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list
      * of other filters.</p> <p>The <code>AttributeFilter</code> parameter means you
      * can create a set of filtering rules that a document must satisfy to be included
-     * in the query results.</p>
+     * in the query results.</p>  <p>For Amazon Kendra Gen AI Enterprise Edition
+     * indices use <code>AttributeFilter</code> to enable document filtering for end
+     * users using <code>_email_id</code> or include public documents
+     * (<code>_email_id=null</code>).</p> 
      */
     inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }

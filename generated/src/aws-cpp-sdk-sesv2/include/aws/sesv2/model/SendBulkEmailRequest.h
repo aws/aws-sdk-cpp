@@ -41,6 +41,10 @@ namespace Model
 
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_SESV2_API EndpointParameters GetEndpointContextParams() const override;
 
     ///@{
     /**
@@ -196,6 +200,20 @@ namespace Model
     inline SendBulkEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
     inline SendBulkEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the multi-region endpoint (global-endpoint).</p>
+     */
+    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
+    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
+    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
+    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
+    inline SendBulkEmailRequest& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
+    inline SendBulkEmailRequest& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
+    inline SendBulkEmailRequest& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_fromEmailAddress;
@@ -224,6 +242,9 @@ namespace Model
 
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet = false;
+
+    Aws::String m_endpointId;
+    bool m_endpointIdHasBeenSet = false;
   };
 
 } // namespace Model

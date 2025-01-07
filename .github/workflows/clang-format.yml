@@ -29,23 +29,26 @@ jobs:
       # get names of the base and pr branches
       - name: Get the base and head branches
         id: fetchstep
+        env:
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
         run: |
-          echo "BASE_BRANCH=${{ github.event.pull_request.base.ref }}" >> $GITHUB_ENV
-          echo "HEAD_BRANCH=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
           echo "Base branch: $BASE_BRANCH"
           echo "Head branch: $HEAD_BRANCH"
-          git fetch origin ${{ env.BASE_BRANCH }}
-          git fetch origin ${{ env.HEAD_BRANCH }}
+          git fetch origin "$BASE_BRANCH"
+          git fetch origin "$HEAD_BRANCH"
 
       #get differences on the PR branch excluding generated folder in the root
       - name: git diff
         id: diffstep
         env:
           ACTIONS_RUNNER_DEBUG: true
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
         run: |
           # Format only the changed lines using clang-format-diff.py
           set -e
-          git diff -U0 --no-color origin/${{ env.BASE_BRANCH }}...origin/${{ env.HEAD_BRANCH }} -- . ':!generated/' > diff_output.patch
+          git diff -U0 --no-color origin/$BASE_BRANCH...origin/$HEAD_BRANCH -- . ':!generated/' > diff_output.patch
           cat diff_output.patch
           
       # run formatter on the differences if any

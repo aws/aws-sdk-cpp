@@ -311,6 +311,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect
+     * Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+     * <p>(Default = <code>false</code>)</p>
+     */
+    inline bool GetEfaEnabled() const{ return m_efaEnabled; }
+    inline bool EfaEnabledHasBeenSet() const { return m_efaEnabledHasBeenSet; }
+    inline void SetEfaEnabled(bool value) { m_efaEnabledHasBeenSet = true; m_efaEnabled = value; }
+    inline CreateFileSystemLustreConfiguration& WithEfaEnabled(bool value) { SetEfaEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre
      * file system. When logging is enabled, Lustre logs error and warning events for
      * data repositories associated with your file system to Amazon CloudWatch
@@ -387,6 +399,9 @@ namespace Model
 
     DataCompressionType m_dataCompressionType;
     bool m_dataCompressionTypeHasBeenSet = false;
+
+    bool m_efaEnabled;
+    bool m_efaEnabledHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet = false;

@@ -70,6 +70,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the compute type of the addon version.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetComputeTypes() const{ return m_computeTypes; }
+    inline bool ComputeTypesHasBeenSet() const { return m_computeTypesHasBeenSet; }
+    inline void SetComputeTypes(const Aws::Vector<Aws::String>& value) { m_computeTypesHasBeenSet = true; m_computeTypes = value; }
+    inline void SetComputeTypes(Aws::Vector<Aws::String>&& value) { m_computeTypesHasBeenSet = true; m_computeTypes = std::move(value); }
+    inline AddonVersionInfo& WithComputeTypes(const Aws::Vector<Aws::String>& value) { SetComputeTypes(value); return *this;}
+    inline AddonVersionInfo& WithComputeTypes(Aws::Vector<Aws::String>&& value) { SetComputeTypes(std::move(value)); return *this;}
+    inline AddonVersionInfo& AddComputeTypes(const Aws::String& value) { m_computeTypesHasBeenSet = true; m_computeTypes.push_back(value); return *this; }
+    inline AddonVersionInfo& AddComputeTypes(Aws::String&& value) { m_computeTypesHasBeenSet = true; m_computeTypes.push_back(std::move(value)); return *this; }
+    inline AddonVersionInfo& AddComputeTypes(const char* value) { m_computeTypesHasBeenSet = true; m_computeTypes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>An object representing the compatibilities of a version.</p>
      */
     inline const Aws::Vector<Compatibility>& GetCompatibilities() const{ return m_compatibilities; }
@@ -109,6 +124,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_architecture;
     bool m_architectureHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_computeTypes;
+    bool m_computeTypesHasBeenSet = false;
 
     Aws::Vector<Compatibility> m_compatibilities;
     bool m_compatibilitiesHasBeenSet = false;

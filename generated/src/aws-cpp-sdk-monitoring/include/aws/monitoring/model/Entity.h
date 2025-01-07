@@ -54,8 +54,8 @@ namespace Model
      * <code>ResourceType</code>, <code>Identifier</code>, <code>Name</code>, and
      * <code>Environment</code>.</p> <p>For details about how to use the key attributes
      * to specify an entity, see <a
-     * href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to
-     * add related information to telemetry</a> in the <i>CloudWatch User
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
+     * to add related information to telemetry</a> in the <i>CloudWatch User
      * Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
@@ -78,8 +78,8 @@ namespace Model
      * <p>Additional attributes of the entity that are not used to specify the identity
      * of the entity. A list of key-value pairs.</p> <p>For details about how to use
      * the attributes, see <a
-     * href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to
-     * add related information to telemetry</a> in the <i>CloudWatch User
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
+     * to add related information to telemetry</a> in the <i>CloudWatch User
      * Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }

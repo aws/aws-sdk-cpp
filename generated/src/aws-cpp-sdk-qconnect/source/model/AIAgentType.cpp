@@ -22,6 +22,7 @@ namespace Aws
 
         static const int MANUAL_SEARCH_HASH = HashingUtils::HashString("MANUAL_SEARCH");
         static const int ANSWER_RECOMMENDATION_HASH = HashingUtils::HashString("ANSWER_RECOMMENDATION");
+        static const int SELF_SERVICE_HASH = HashingUtils::HashString("SELF_SERVICE");
 
 
         AIAgentType GetAIAgentTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ANSWER_RECOMMENDATION_HASH)
           {
             return AIAgentType::ANSWER_RECOMMENDATION;
+          }
+          else if (hashCode == SELF_SERVICE_HASH)
+          {
+            return AIAgentType::SELF_SERVICE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "MANUAL_SEARCH";
           case AIAgentType::ANSWER_RECOMMENDATION:
             return "ANSWER_RECOMMENDATION";
+          case AIAgentType::SELF_SERVICE:
+            return "SELF_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

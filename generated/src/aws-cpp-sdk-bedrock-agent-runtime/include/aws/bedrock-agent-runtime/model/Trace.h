@@ -5,11 +5,13 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/CustomOrchestrationTrace.h>
 #include <aws/bedrock-agent-runtime/model/FailureTrace.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailTrace.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationTrace.h>
 #include <aws/bedrock-agent-runtime/model/PostProcessingTrace.h>
 #include <aws/bedrock-agent-runtime/model/PreProcessingTrace.h>
+#include <aws/bedrock-agent-runtime/model/RoutingClassifierTrace.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +47,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Trace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p> Details about the custom orchestration step in which the agent determines
+     * the order in which actions are executed. </p>
+     */
+    inline const CustomOrchestrationTrace& GetCustomOrchestrationTrace() const{ return m_customOrchestrationTrace; }
+    inline bool CustomOrchestrationTraceHasBeenSet() const { return m_customOrchestrationTraceHasBeenSet; }
+    inline void SetCustomOrchestrationTrace(const CustomOrchestrationTrace& value) { m_customOrchestrationTraceHasBeenSet = true; m_customOrchestrationTrace = value; }
+    inline void SetCustomOrchestrationTrace(CustomOrchestrationTrace&& value) { m_customOrchestrationTraceHasBeenSet = true; m_customOrchestrationTrace = std::move(value); }
+    inline Trace& WithCustomOrchestrationTrace(const CustomOrchestrationTrace& value) { SetCustomOrchestrationTrace(value); return *this;}
+    inline Trace& WithCustomOrchestrationTrace(CustomOrchestrationTrace&& value) { SetCustomOrchestrationTrace(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -108,7 +123,22 @@ namespace Model
     inline Trace& WithPreProcessingTrace(const PreProcessingTrace& value) { SetPreProcessingTrace(value); return *this;}
     inline Trace& WithPreProcessingTrace(PreProcessingTrace&& value) { SetPreProcessingTrace(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A routing classifier's trace.</p>
+     */
+    inline const RoutingClassifierTrace& GetRoutingClassifierTrace() const{ return m_routingClassifierTrace; }
+    inline bool RoutingClassifierTraceHasBeenSet() const { return m_routingClassifierTraceHasBeenSet; }
+    inline void SetRoutingClassifierTrace(const RoutingClassifierTrace& value) { m_routingClassifierTraceHasBeenSet = true; m_routingClassifierTrace = value; }
+    inline void SetRoutingClassifierTrace(RoutingClassifierTrace&& value) { m_routingClassifierTraceHasBeenSet = true; m_routingClassifierTrace = std::move(value); }
+    inline Trace& WithRoutingClassifierTrace(const RoutingClassifierTrace& value) { SetRoutingClassifierTrace(value); return *this;}
+    inline Trace& WithRoutingClassifierTrace(RoutingClassifierTrace&& value) { SetRoutingClassifierTrace(std::move(value)); return *this;}
+    ///@}
   private:
+
+    CustomOrchestrationTrace m_customOrchestrationTrace;
+    bool m_customOrchestrationTraceHasBeenSet = false;
 
     FailureTrace m_failureTrace;
     bool m_failureTraceHasBeenSet = false;
@@ -124,6 +154,9 @@ namespace Model
 
     PreProcessingTrace m_preProcessingTrace;
     bool m_preProcessingTraceHasBeenSet = false;
+
+    RoutingClassifierTrace m_routingClassifierTrace;
+    bool m_routingClassifierTraceHasBeenSet = false;
   };
 
 } // namespace Model

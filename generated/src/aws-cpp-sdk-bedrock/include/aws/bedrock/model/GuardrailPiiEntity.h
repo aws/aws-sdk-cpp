@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of PII entity. For exampvle, Social Security Number.</p>
+     * <p>The type of PII entity. For example, Social Security Number.</p>
      */
     inline const GuardrailPiiEntityType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

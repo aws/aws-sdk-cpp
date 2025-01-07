@@ -78,7 +78,7 @@ namespace Bedrock
         virtual ~BedrockClient();
 
         /**
-         * <p>Creates a batch deletion job. A model evaluation job can only be deleted if
+         * <p>Deletes a batch of evaluation jobs. An evaluation job can only be deleted if
          * it has following status <code>FAILED</code>, <code>COMPLETED</code>, and
          * <code>STOPPED</code>. You can request up to 25 model evaluation jobs be deleted
          * in a single request.</p><p><h3>See Also:</h3>   <a
@@ -106,11 +106,7 @@ namespace Bedrock
         }
 
         /**
-         * <p>API operation for creating and managing Amazon Bedrock automatic model
-         * evaluation jobs and model evaluation jobs that use human workers. To learn more
-         * about the requirements for creating a model evaluation job see, <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-         * evaluation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an evaluation job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -152,8 +148,8 @@ namespace Bedrock
          * configure the messages to be returned to the user if a user input or model
          * response is in violation of the policies defined in the guardrail.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
-         * for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon
+         * Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">AWS
          * API Reference</a></p>
@@ -236,6 +232,32 @@ namespace Bedrock
         void CreateInferenceProfileAsync(const CreateInferenceProfileRequestT& request, const CreateInferenceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::CreateInferenceProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an endpoint for a model from Amazon Bedrock Marketplace. The endpoint
+         * is hosted by Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateMarketplaceModelEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMarketplaceModelEndpointOutcome CreateMarketplaceModelEndpoint(const Model::CreateMarketplaceModelEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMarketplaceModelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMarketplaceModelEndpointRequestT = Model::CreateMarketplaceModelEndpointRequest>
+        Model::CreateMarketplaceModelEndpointOutcomeCallable CreateMarketplaceModelEndpointCallable(const CreateMarketplaceModelEndpointRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateMarketplaceModelEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMarketplaceModelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMarketplaceModelEndpointRequestT = Model::CreateMarketplaceModelEndpointRequest>
+        void CreateMarketplaceModelEndpointAsync(const CreateMarketplaceModelEndpointRequestT& request, const CreateMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateMarketplaceModelEndpoint, request, handler, context);
         }
 
         /**
@@ -518,6 +540,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Deletes an endpoint for a model from Amazon Bedrock
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteMarketplaceModelEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMarketplaceModelEndpointOutcome DeleteMarketplaceModelEndpoint(const Model::DeleteMarketplaceModelEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMarketplaceModelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMarketplaceModelEndpointRequestT = Model::DeleteMarketplaceModelEndpointRequest>
+        Model::DeleteMarketplaceModelEndpointOutcomeCallable DeleteMarketplaceModelEndpointCallable(const DeleteMarketplaceModelEndpointRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteMarketplaceModelEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMarketplaceModelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMarketplaceModelEndpointRequestT = Model::DeleteMarketplaceModelEndpointRequest>
+        void DeleteMarketplaceModelEndpointAsync(const DeleteMarketplaceModelEndpointRequestT& request, const DeleteMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteMarketplaceModelEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Delete the invocation logging. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteModelInvocationLoggingConfiguration">AWS
          * API Reference</a></p>
@@ -573,6 +621,33 @@ namespace Bedrock
         }
 
         /**
+         * <p>Deregisters an endpoint for a model from Amazon Bedrock Marketplace. This
+         * operation removes the endpoint's association with Amazon Bedrock but does not
+         * delete the underlying Amazon SageMaker endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeregisterMarketplaceModelEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterMarketplaceModelEndpointOutcome DeregisterMarketplaceModelEndpoint(const Model::DeregisterMarketplaceModelEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterMarketplaceModelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeregisterMarketplaceModelEndpointRequestT = Model::DeregisterMarketplaceModelEndpointRequest>
+        Model::DeregisterMarketplaceModelEndpointOutcomeCallable DeregisterMarketplaceModelEndpointCallable(const DeregisterMarketplaceModelEndpointRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeregisterMarketplaceModelEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DeregisterMarketplaceModelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeregisterMarketplaceModelEndpointRequestT = Model::DeregisterMarketplaceModelEndpointRequest>
+        void DeregisterMarketplaceModelEndpointAsync(const DeregisterMarketplaceModelEndpointRequestT& request, const DeregisterMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeregisterMarketplaceModelEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Get the properties associated with a Amazon Bedrock custom model that you
          * have created.For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
@@ -603,10 +678,8 @@ namespace Bedrock
         }
 
         /**
-         * <p>Retrieves the properties associated with a model evaluation job, including
-         * the status of the job. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-         * evaluation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an evaluation job, such as the status of the
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -738,6 +811,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Retrieves details about a specific endpoint for a model from Amazon Bedrock
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetMarketplaceModelEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMarketplaceModelEndpointOutcome GetMarketplaceModelEndpoint(const Model::GetMarketplaceModelEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMarketplaceModelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMarketplaceModelEndpointRequestT = Model::GetMarketplaceModelEndpointRequest>
+        Model::GetMarketplaceModelEndpointOutcomeCallable GetMarketplaceModelEndpointCallable(const GetMarketplaceModelEndpointRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetMarketplaceModelEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for GetMarketplaceModelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMarketplaceModelEndpointRequestT = Model::GetMarketplaceModelEndpointRequest>
+        void GetMarketplaceModelEndpointAsync(const GetMarketplaceModelEndpointRequestT& request, const GetMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetMarketplaceModelEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a model copy job. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
          * models to be used in other regions</a> in the <a
@@ -828,8 +927,8 @@ namespace Bedrock
 
         /**
          * <p>Gets details about a batch inference job. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-         * details about a batch inference job</a> </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+         * batch inference jobs</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationJob">AWS
          * API Reference</a></p>
          */
@@ -877,6 +976,31 @@ namespace Bedrock
         void GetModelInvocationLoggingConfigurationAsync(const GetModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetModelInvocationLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::GetModelInvocationLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about a prompt router.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetPromptRouter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPromptRouterOutcome GetPromptRouter(const Model::GetPromptRouterRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPromptRouter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPromptRouterRequestT = Model::GetPromptRouterRequest>
+        Model::GetPromptRouterOutcomeCallable GetPromptRouterCallable(const GetPromptRouterRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetPromptRouter, request);
+        }
+
+        /**
+         * An Async wrapper for GetPromptRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPromptRouterRequestT = Model::GetPromptRouterRequest>
+        void GetPromptRouterAsync(const GetPromptRouterRequestT& request, const GetPromptRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetPromptRouter, request, handler, context);
         }
 
         /**
@@ -940,7 +1064,7 @@ namespace Bedrock
         }
 
         /**
-         * <p>Lists model evaluation jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all existing evaluation jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">AWS
          * API Reference</a></p>
          */
@@ -1087,6 +1211,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Lists the endpoints for models from Amazon Bedrock Marketplace in your Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListMarketplaceModelEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMarketplaceModelEndpointsOutcome ListMarketplaceModelEndpoints(const Model::ListMarketplaceModelEndpointsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListMarketplaceModelEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMarketplaceModelEndpointsRequestT = Model::ListMarketplaceModelEndpointsRequest>
+        Model::ListMarketplaceModelEndpointsOutcomeCallable ListMarketplaceModelEndpointsCallable(const ListMarketplaceModelEndpointsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListMarketplaceModelEndpoints, request);
+        }
+
+        /**
+         * An Async wrapper for ListMarketplaceModelEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMarketplaceModelEndpointsRequestT = Model::ListMarketplaceModelEndpointsRequest>
+        void ListMarketplaceModelEndpointsAsync(const ListMarketplaceModelEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMarketplaceModelEndpointsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListMarketplaceModelEndpoints, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of model copy jobs that you have submitted. You can filter the
          * jobs to return based on one or more criteria. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
@@ -1179,7 +1329,7 @@ namespace Bedrock
 
         /**
          * <p>Lists all batch inference jobs in the account. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View
          * details about a batch inference job</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelInvocationJobs">AWS
          * API Reference</a></p>
@@ -1202,6 +1352,31 @@ namespace Bedrock
         void ListModelInvocationJobsAsync(const ListModelInvocationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelInvocationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListModelInvocationJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of prompt routers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListPromptRouters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPromptRoutersOutcome ListPromptRouters(const Model::ListPromptRoutersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListPromptRouters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPromptRoutersRequestT = Model::ListPromptRoutersRequest>
+        Model::ListPromptRoutersOutcomeCallable ListPromptRoutersCallable(const ListPromptRoutersRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListPromptRouters, request);
+        }
+
+        /**
+         * An Async wrapper for ListPromptRouters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPromptRoutersRequestT = Model::ListPromptRoutersRequest>
+        void ListPromptRoutersAsync(const ListPromptRoutersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPromptRoutersRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListPromptRouters, request, handler, context);
         }
 
         /**
@@ -1291,7 +1466,35 @@ namespace Bedrock
         }
 
         /**
-         * <p>Stops an in progress model evaluation job.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an existing Amazon SageMaker endpoint with Amazon Bedrock
+         * Marketplace, allowing it to be used with Amazon Bedrock APIs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/RegisterMarketplaceModelEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterMarketplaceModelEndpointOutcome RegisterMarketplaceModelEndpoint(const Model::RegisterMarketplaceModelEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterMarketplaceModelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RegisterMarketplaceModelEndpointRequestT = Model::RegisterMarketplaceModelEndpointRequest>
+        Model::RegisterMarketplaceModelEndpointOutcomeCallable RegisterMarketplaceModelEndpointCallable(const RegisterMarketplaceModelEndpointRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::RegisterMarketplaceModelEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for RegisterMarketplaceModelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RegisterMarketplaceModelEndpointRequestT = Model::RegisterMarketplaceModelEndpointRequest>
+        void RegisterMarketplaceModelEndpointAsync(const RegisterMarketplaceModelEndpointRequestT& request, const RegisterMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::RegisterMarketplaceModelEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Stops an evaluation job that is current being created or
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -1347,7 +1550,7 @@ namespace Bedrock
         /**
          * <p>Stops a batch inference job. You're only charged for tokens that were already
          * processed. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
          * a batch inference job</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelInvocationJob">AWS
          * API Reference</a></p>
@@ -1480,6 +1683,32 @@ namespace Bedrock
         void UpdateGuardrailAsync(const UpdateGuardrailRequestT& request, const UpdateGuardrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::UpdateGuardrail, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the configuration of an existing endpoint for a model from Amazon
+         * Bedrock Marketplace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateMarketplaceModelEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMarketplaceModelEndpointOutcome UpdateMarketplaceModelEndpoint(const Model::UpdateMarketplaceModelEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMarketplaceModelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMarketplaceModelEndpointRequestT = Model::UpdateMarketplaceModelEndpointRequest>
+        Model::UpdateMarketplaceModelEndpointOutcomeCallable UpdateMarketplaceModelEndpointCallable(const UpdateMarketplaceModelEndpointRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::UpdateMarketplaceModelEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMarketplaceModelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMarketplaceModelEndpointRequestT = Model::UpdateMarketplaceModelEndpointRequest>
+        void UpdateMarketplaceModelEndpointAsync(const UpdateMarketplaceModelEndpointRequestT& request, const UpdateMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::UpdateMarketplaceModelEndpoint, request, handler, context);
         }
 
         /**

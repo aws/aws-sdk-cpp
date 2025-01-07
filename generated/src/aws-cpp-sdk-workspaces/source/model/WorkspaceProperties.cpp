@@ -31,7 +31,8 @@ WorkspaceProperties::WorkspaceProperties() :
     m_computeTypeNameHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_operatingSystemName(OperatingSystemName::NOT_SET),
-    m_operatingSystemNameHasBeenSet(false)
+    m_operatingSystemNameHasBeenSet(false),
+    m_globalAcceleratorHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,13 @@ WorkspaceProperties& WorkspaceProperties::operator =(JsonView jsonValue)
     m_operatingSystemNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GlobalAccelerator"))
+  {
+    m_globalAccelerator = jsonValue.GetObject("GlobalAccelerator");
+
+    m_globalAcceleratorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +152,12 @@ JsonValue WorkspaceProperties::Jsonize() const
   if(m_operatingSystemNameHasBeenSet)
   {
    payload.WithString("OperatingSystemName", OperatingSystemNameMapper::GetNameForOperatingSystemName(m_operatingSystemName));
+  }
+
+  if(m_globalAcceleratorHasBeenSet)
+  {
+   payload.WithObject("GlobalAccelerator", m_globalAccelerator.Jsonize());
+
   }
 
   return payload;

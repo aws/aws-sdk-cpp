@@ -23,6 +23,8 @@ namespace Aws
         static const int Interface_HASH = HashingUtils::HashString("Interface");
         static const int Gateway_HASH = HashingUtils::HashString("Gateway");
         static const int GatewayLoadBalancer_HASH = HashingUtils::HashString("GatewayLoadBalancer");
+        static const int Resource_HASH = HashingUtils::HashString("Resource");
+        static const int ServiceNetwork_HASH = HashingUtils::HashString("ServiceNetwork");
 
 
         VpcEndpointType GetVpcEndpointTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == GatewayLoadBalancer_HASH)
           {
             return VpcEndpointType::GatewayLoadBalancer;
+          }
+          else if (hashCode == Resource_HASH)
+          {
+            return VpcEndpointType::Resource;
+          }
+          else if (hashCode == ServiceNetwork_HASH)
+          {
+            return VpcEndpointType::ServiceNetwork;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +72,10 @@ namespace Aws
             return "Gateway";
           case VpcEndpointType::GatewayLoadBalancer:
             return "GatewayLoadBalancer";
+          case VpcEndpointType::Resource:
+            return "Resource";
+          case VpcEndpointType::ServiceNetwork:
+            return "ServiceNetwork";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

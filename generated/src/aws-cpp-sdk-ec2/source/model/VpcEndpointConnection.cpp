@@ -33,7 +33,8 @@ VpcEndpointConnection::VpcEndpointConnection() :
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
     m_vpcEndpointConnectionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcEndpointRegionHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,12 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode vpcEndpointRegionNode = resultNode.FirstChild("vpcEndpointRegion");
+    if(!vpcEndpointRegionNode.IsNull())
+    {
+      m_vpcEndpointRegion = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointRegionNode.GetText());
+      m_vpcEndpointRegionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -221,6 +228,11 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_vpcEndpointRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcEndpointRegion=" << StringUtils::URLEncode(m_vpcEndpointRegion.c_str()) << "&";
+  }
+
 }
 
 void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -288,6 +300,10 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_vpcEndpointRegionHasBeenSet)
+  {
+      oStream << location << ".VpcEndpointRegion=" << StringUtils::URLEncode(m_vpcEndpointRegion.c_str()) << "&";
   }
 }
 

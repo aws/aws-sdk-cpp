@@ -35,7 +35,8 @@ CreateFileSystemOpenZFSConfiguration::CreateFileSystemOpenZFSConfiguration() :
     m_rootVolumeConfigurationHasBeenSet(false),
     m_preferredSubnetIdHasBeenSet(false),
     m_endpointIpAddressRangeHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false)
+    m_routeTableIdsHasBeenSet(false),
+    m_readCacheConfigurationHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,13 @@ CreateFileSystemOpenZFSConfiguration& CreateFileSystemOpenZFSConfiguration::oper
     m_routeTableIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReadCacheConfiguration"))
+  {
+    m_readCacheConfiguration = jsonValue.GetObject("ReadCacheConfiguration");
+
+    m_readCacheConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -214,6 +222,12 @@ JsonValue CreateFileSystemOpenZFSConfiguration::Jsonize() const
      routeTableIdsJsonList[routeTableIdsIndex].AsString(m_routeTableIds[routeTableIdsIndex]);
    }
    payload.WithArray("RouteTableIds", std::move(routeTableIdsJsonList));
+
+  }
+
+  if(m_readCacheConfigurationHasBeenSet)
+  {
+   payload.WithObject("ReadCacheConfiguration", m_readCacheConfiguration.Jsonize());
 
   }
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for the file system and kernels in a SageMaker image
+   * <p>The configuration for the file system and kernels in a SageMaker AI image
    * running as a KernelGateway app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayImageConfig">AWS
    * API Reference</a></p>
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Elastic File System storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker AI
      * image.</p>
      */
     inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }

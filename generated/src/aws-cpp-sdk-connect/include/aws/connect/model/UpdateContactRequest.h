@@ -8,6 +8,9 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/QueueInfoInput.h>
+#include <aws/connect/model/UserInfo.h>
+#include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/Reference.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <utility>
@@ -115,7 +118,13 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * (unique contact ID) using an attribute map. The attributes are standard Amazon
+     * Connect attributes. They can be accessed in flows.</p> <p>Attribute keys can
+     * include only alphanumeric, -, and _.</p> <p>This field can be used to show
+     * channel subtype, such as <code>connect:Guide</code>.</p> <p>Currently Contact
+     * Expiry is the only segment attribute which can be updated by using the
+     * UpdateContact API.</p>
      */
     inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
@@ -129,6 +138,78 @@ namespace Model
     inline UpdateContactRequest& AddSegmentAttributes(Aws::String&& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
     inline UpdateContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
     inline UpdateContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> Information about the queue associated with a contact. This parameter can
+     * only be updated for external audio contacts. It is used when you integrate
+     * third-party systems with Contact Lens for analytics. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+     * Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator
+     * Guide</i>.</p>
+     */
+    inline const QueueInfoInput& GetQueueInfo() const{ return m_queueInfo; }
+    inline bool QueueInfoHasBeenSet() const { return m_queueInfoHasBeenSet; }
+    inline void SetQueueInfo(const QueueInfoInput& value) { m_queueInfoHasBeenSet = true; m_queueInfo = value; }
+    inline void SetQueueInfo(QueueInfoInput&& value) { m_queueInfoHasBeenSet = true; m_queueInfo = std::move(value); }
+    inline UpdateContactRequest& WithQueueInfo(const QueueInfoInput& value) { SetQueueInfo(value); return *this;}
+    inline UpdateContactRequest& WithQueueInfo(QueueInfoInput&& value) { SetQueueInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the agent associated with a contact. This parameter can
+     * only be updated for external audio contacts. It is used when you integrate
+     * third-party systems with Contact Lens for analytics. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+     * Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator
+     * Guide</i>.</p>
+     */
+    inline const UserInfo& GetUserInfo() const{ return m_userInfo; }
+    inline bool UserInfoHasBeenSet() const { return m_userInfoHasBeenSet; }
+    inline void SetUserInfo(const UserInfo& value) { m_userInfoHasBeenSet = true; m_userInfo = value; }
+    inline void SetUserInfo(UserInfo&& value) { m_userInfoHasBeenSet = true; m_userInfo = std::move(value); }
+    inline UpdateContactRequest& WithUserInfo(const UserInfo& value) { SetUserInfo(value); return *this;}
+    inline UpdateContactRequest& WithUserInfo(UserInfo&& value) { SetUserInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The endpoint of the customer for which the contact was initiated. For
+     * external audio contacts, this is usually the end customer's phone number. This
+     * value can only be updated for external audio contacts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+     * Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator
+     * Guide</i>.</p>
+     */
+    inline const Endpoint& GetCustomerEndpoint() const{ return m_customerEndpoint; }
+    inline bool CustomerEndpointHasBeenSet() const { return m_customerEndpointHasBeenSet; }
+    inline void SetCustomerEndpoint(const Endpoint& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = value; }
+    inline void SetCustomerEndpoint(Endpoint&& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = std::move(value); }
+    inline UpdateContactRequest& WithCustomerEndpoint(const Endpoint& value) { SetCustomerEndpoint(value); return *this;}
+    inline UpdateContactRequest& WithCustomerEndpoint(Endpoint&& value) { SetCustomerEndpoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>External system endpoint for the contact was initiated. For external audio
+     * contacts, this is the phone number of the external system such as the contact
+     * center. This value can only be updated for external audio contacts. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+     * Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator
+     * Guide</i>.</p>
+     */
+    inline const Endpoint& GetSystemEndpoint() const{ return m_systemEndpoint; }
+    inline bool SystemEndpointHasBeenSet() const { return m_systemEndpointHasBeenSet; }
+    inline void SetSystemEndpoint(const Endpoint& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = value; }
+    inline void SetSystemEndpoint(Endpoint&& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = std::move(value); }
+    inline UpdateContactRequest& WithSystemEndpoint(const Endpoint& value) { SetSystemEndpoint(value); return *this;}
+    inline UpdateContactRequest& WithSystemEndpoint(Endpoint&& value) { SetSystemEndpoint(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -149,6 +230,18 @@ namespace Model
 
     Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
     bool m_segmentAttributesHasBeenSet = false;
+
+    QueueInfoInput m_queueInfo;
+    bool m_queueInfoHasBeenSet = false;
+
+    UserInfo m_userInfo;
+    bool m_userInfoHasBeenSet = false;
+
+    Endpoint m_customerEndpoint;
+    bool m_customerEndpointHasBeenSet = false;
+
+    Endpoint m_systemEndpoint;
+    bool m_systemEndpointHasBeenSet = false;
   };
 
 } // namespace Model

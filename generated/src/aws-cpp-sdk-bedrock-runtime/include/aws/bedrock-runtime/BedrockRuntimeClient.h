@@ -88,7 +88,12 @@ namespace BedrockRuntime
         virtual ~BedrockRuntimeClient();
 
         /**
-         * <p>The action to apply a guardrail.</p><p><h3>See Also:</h3>   <a
+         * <p>The action to apply a guardrail.</p> <p>For troubleshooting some of the
+         * common errors you might encounter when using the <code>ApplyGuardrail</code>
+         * API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">AWS
          * API Reference</a></p>
          */
@@ -139,7 +144,22 @@ namespace BedrockRuntime
          * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
          * example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User
          * Guide</i>. </p> <p>This operation requires permission for the
-         * <code>bedrock:InvokeModel</code> action. </p><p><h3>See Also:</h3>   <a
+         * <code>bedrock:InvokeModel</code> action. </p>  <p>To deny all
+         * inference access to resources that you specify in the modelId field, you need to
+         * deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the base inference actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>Converse</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">AWS
          * API Reference</a></p>
          */
@@ -195,8 +215,22 @@ namespace BedrockRuntime
          * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
          * example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock
          * User Guide</i>. </p> <p>This operation requires permission for the
-         * <code>bedrock:InvokeModelWithResponseStream</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>bedrock:InvokeModelWithResponseStream</code> action.</p>  <p>To
+         * deny all inference access to resources that you specify in the modelId field,
+         * you need to deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the base inference actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>ConverseStream</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">AWS
          * API Reference</a></p>
          */
@@ -221,12 +255,53 @@ namespace BedrockRuntime
         }
 
         /**
+         * <p>Retrieve information about an asynchronous invocation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GetAsyncInvoke">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAsyncInvokeOutcome GetAsyncInvoke(const Model::GetAsyncInvokeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAsyncInvoke that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAsyncInvokeRequestT = Model::GetAsyncInvokeRequest>
+        Model::GetAsyncInvokeOutcomeCallable GetAsyncInvokeCallable(const GetAsyncInvokeRequestT& request) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::GetAsyncInvoke, request);
+        }
+
+        /**
+         * An Async wrapper for GetAsyncInvoke that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAsyncInvokeRequestT = Model::GetAsyncInvokeRequest>
+        void GetAsyncInvokeAsync(const GetAsyncInvokeRequestT& request, const GetAsyncInvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::GetAsyncInvoke, request, handler, context);
+        }
+
+        /**
          * <p>Invokes the specified Amazon Bedrock model to run inference using the prompt
          * and inference parameters provided in the request body. You use model inference
          * to generate text, images, and embeddings.</p> <p>For example code, see <i>Invoke
          * model code examples</i> in the <i>Amazon Bedrock User Guide</i>. </p> <p>This
          * operation requires permission for the <code>bedrock:InvokeModel</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>To deny all inference access to resources that you
+         * specify in the modelId field, you need to deny access to the
+         * <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the Converse API actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>InvokeModel</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">AWS
          * API Reference</a></p>
          */
@@ -260,8 +335,22 @@ namespace BedrockRuntime
          * including <code>InvokeModelWithResponseStream</code>.</p>  <p>For example
          * code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
          * Bedrock User Guide</i>. </p> <p>This operation requires permissions to perform
-         * the <code>bedrock:InvokeModelWithResponseStream</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * the <code>bedrock:InvokeModelWithResponseStream</code> action. </p> 
+         * <p>To deny all inference access to resources that you specify in the modelId
+         * field, you need to deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the Converse API actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>InvokeModelWithResponseStream</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">AWS
          * API Reference</a></p>
          */
@@ -283,6 +372,68 @@ namespace BedrockRuntime
         void InvokeModelWithResponseStreamAsync(InvokeModelWithResponseStreamRequestT& request, const InvokeModelWithResponseStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockRuntimeClient::InvokeModelWithResponseStream, request, handler, context);
+        }
+
+        /**
+         * <p>Lists asynchronous invocations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ListAsyncInvokes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAsyncInvokesOutcome ListAsyncInvokes(const Model::ListAsyncInvokesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAsyncInvokes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAsyncInvokesRequestT = Model::ListAsyncInvokesRequest>
+        Model::ListAsyncInvokesOutcomeCallable ListAsyncInvokesCallable(const ListAsyncInvokesRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::ListAsyncInvokes, request);
+        }
+
+        /**
+         * An Async wrapper for ListAsyncInvokes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAsyncInvokesRequestT = Model::ListAsyncInvokesRequest>
+        void ListAsyncInvokesAsync(const ListAsyncInvokesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAsyncInvokesRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::ListAsyncInvokes, request, handler, context);
+        }
+
+        /**
+         * <p>Starts an asynchronous invocation.</p> <p>This operation requires permission
+         * for the <code>bedrock:InvokeModel</code> action.</p>  <p>To deny all
+         * inference access to resources that you specify in the modelId field, you need to
+         * deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the Converse API actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/StartAsyncInvoke">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAsyncInvokeOutcome StartAsyncInvoke(const Model::StartAsyncInvokeRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAsyncInvoke that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAsyncInvokeRequestT = Model::StartAsyncInvokeRequest>
+        Model::StartAsyncInvokeOutcomeCallable StartAsyncInvokeCallable(const StartAsyncInvokeRequestT& request) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::StartAsyncInvoke, request);
+        }
+
+        /**
+         * An Async wrapper for StartAsyncInvoke that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAsyncInvokeRequestT = Model::StartAsyncInvokeRequest>
+        void StartAsyncInvokeAsync(const StartAsyncInvokeRequestT& request, const StartAsyncInvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::StartAsyncInvoke, request, handler, context);
         }
 
 

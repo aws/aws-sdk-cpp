@@ -29,6 +29,12 @@ Snapshot::Snapshot() :
     m_restoreExpiryTimeHasBeenSet(false),
     m_sseType(SSEType::NOT_SET),
     m_sseTypeHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_transferType(TransferType::NOT_SET),
+    m_transferTypeHasBeenSet(false),
+    m_completionDurationMinutes(0),
+    m_completionDurationMinutesHasBeenSet(false),
+    m_completionTimeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_state(SnapshotState::NOT_SET),
@@ -100,6 +106,30 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
       m_sseTypeHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode transferTypeNode = resultNode.FirstChild("transferType");
+    if(!transferTypeNode.IsNull())
+    {
+      m_transferType = TransferTypeMapper::GetTransferTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transferTypeNode.GetText()).c_str()).c_str());
+      m_transferTypeHasBeenSet = true;
+    }
+    XmlNode completionDurationMinutesNode = resultNode.FirstChild("completionDurationMinutes");
+    if(!completionDurationMinutesNode.IsNull())
+    {
+      m_completionDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(completionDurationMinutesNode.GetText()).c_str()).c_str());
+      m_completionDurationMinutesHasBeenSet = true;
+    }
+    XmlNode completionTimeNode = resultNode.FirstChild("completionTime");
+    if(!completionTimeNode.IsNull())
+    {
+      m_completionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(completionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_completionTimeHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
@@ -216,6 +246,26 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
   }
 
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_transferTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransferType=" << TransferTypeMapper::GetNameForTransferType(m_transferType) << "&";
+  }
+
+  if(m_completionDurationMinutesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CompletionDurationMinutes=" << m_completionDurationMinutes << "&";
+  }
+
+  if(m_completionTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CompletionTime=" << StringUtils::URLEncode(m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
@@ -312,6 +362,22 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sseTypeHasBeenSet)
   {
       oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_transferTypeHasBeenSet)
+  {
+      oStream << location << ".TransferType=" << TransferTypeMapper::GetNameForTransferType(m_transferType) << "&";
+  }
+  if(m_completionDurationMinutesHasBeenSet)
+  {
+      oStream << location << ".CompletionDurationMinutes=" << m_completionDurationMinutes << "&";
+  }
+  if(m_completionTimeHasBeenSet)
+  {
+      oStream << location << ".CompletionTime=" << StringUtils::URLEncode(m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_snapshotIdHasBeenSet)
   {

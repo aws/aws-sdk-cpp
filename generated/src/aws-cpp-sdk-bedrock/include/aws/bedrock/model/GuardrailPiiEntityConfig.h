@@ -47,7 +47,7 @@ namespace Model
      * can include information such as the street, building, location, city, state,
      * country, county, zip code, precinct, and neighborhood. </p> </li> <li> <p>
      * <b>AGE</b> </p> <p>An individual's age, including the quantity and unit of time.
-     * For example, in the phrase "I am 40 years old," Guarrails recognizes "40 years"
+     * For example, in the phrase "I am 40 years old," Guardrails recognizes "40 years"
      * as an age. </p> </li> <li> <p> <b>NAME</b> </p> <p>An individual's name. This
      * entity type does not include titles, such as Dr., Mr., Mrs., or Miss. guardrails
      * doesn't apply this entity type to names that are part of organizations or
@@ -71,7 +71,7 @@ namespace Model
      * Vehicle Identification Number (VIN) uniquely identifies a vehicle. VIN content
      * and format are defined in the <i>ISO 3779</i> specification. Each country has
      * specific codes and formats for VINs. </p> </li> </ul> </li> <li> <p>
-     * <b>Finance</b> </p> <ul> <li> <p> <b>REDIT_DEBIT_CARD_CVV</b> </p> <p>A
+     * <b>Finance</b> </p> <ul> <li> <p> <b>CREDIT_DEBIT_CARD_CVV</b> </p> <p>A
      * three-digit card verification code (CVV) that is present on VISA, MasterCard,
      * and Discover credit and debit cards. For American Express credit or debit cards,
      * the CVV is a four-digit numeric code. </p> </li> <li> <p>

@@ -166,11 +166,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates SageMaker job type compatibility.</p> <ul> <li> <p>
-     * <code>TRAINING</code>: The image version is compatible with SageMaker training
-     * jobs.</p> </li> <li> <p> <code>INFERENCE</code>: The image version is compatible
-     * with SageMaker inference jobs.</p> </li> <li> <p> <code>NOTEBOOK_KERNEL</code>:
-     * The image version is compatible with SageMaker notebook kernels.</p> </li> </ul>
+     * <p>Indicates SageMaker AI job type compatibility.</p> <ul> <li> <p>
+     * <code>TRAINING</code>: The image version is compatible with SageMaker AI
+     * training jobs.</p> </li> <li> <p> <code>INFERENCE</code>: The image version is
+     * compatible with SageMaker AI inference jobs.</p> </li> <li> <p>
+     * <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker AI
+     * notebook kernels.</p> </li> </ul>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
     inline void SetJobType(const JobType& value) { m_jobType = value; }

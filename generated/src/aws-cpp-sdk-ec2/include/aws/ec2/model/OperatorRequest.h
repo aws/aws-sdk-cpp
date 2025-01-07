@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The entity that manages the resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The service provider that manages the resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OperatorRequest">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entity that manages the resource.</p>
+     * <p>The service provider that manages the resource.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

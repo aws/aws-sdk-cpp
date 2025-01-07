@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>A list of additional configurations which will be configured for the
-   * organization. </p><p><h3>See Also:</h3>   <a
+   * organization. </p> <p>Additional configuration applies to only GuardDuty Runtime
+   * Monitoring protection plan.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationAdditionalConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,8 @@ namespace Model
     ///@{
     /**
      * <p>The name of the additional configuration that will be configured for the
-     * organization.</p>
+     * organization. These values are applicable to only Runtime Monitoring protection
+     * plan.</p>
      */
     inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

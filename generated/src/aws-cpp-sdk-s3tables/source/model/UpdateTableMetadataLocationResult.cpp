@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/s3tables/model/UpdateTableMetadataLocationResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::S3Tables::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+UpdateTableMetadataLocationResult::UpdateTableMetadataLocationResult()
+{
+}
+
+UpdateTableMetadataLocationResult::UpdateTableMetadataLocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  *this = result;
+}
+
+UpdateTableMetadataLocationResult& UpdateTableMetadataLocationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("tableARN"))
+  {
+    m_tableARN = jsonValue.GetString("tableARN");
+
+  }
+
+  if(jsonValue.ValueExists("namespace"))
+  {
+    Aws::Utils::Array<JsonView> namespaceJsonList = jsonValue.GetArray("namespace");
+    for(unsigned namespaceIndex = 0; namespaceIndex < namespaceJsonList.GetLength(); ++namespaceIndex)
+    {
+      m_namespace.push_back(namespaceJsonList[namespaceIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("versionToken"))
+  {
+    m_versionToken = jsonValue.GetString("versionToken");
+
+  }
+
+  if(jsonValue.ValueExists("metadataLocation"))
+  {
+    m_metadataLocation = jsonValue.GetString("metadataLocation");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

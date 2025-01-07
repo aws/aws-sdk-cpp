@@ -70,7 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * When set to passthrough, timed metadata is passed through from input to output.
+     * Set to PASSTHROUGH to enable ID3 metadata insertion. To include metadata, you
+     * configure other parameters in the output group or individual outputs, or you add
+     * an ID3 action to the channel schedule.
      */
     inline const Fmp4TimedMetadataBehavior& GetTimedMetadataBehavior() const{ return m_timedMetadataBehavior; }
     inline bool TimedMetadataBehaviorHasBeenSet() const { return m_timedMetadataBehaviorHasBeenSet; }

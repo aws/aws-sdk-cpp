@@ -38,7 +38,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
+     * <p>The Amazon Resource Name (ARN) of the index, FAQ, data source, or other
+     * resource to add a tag. For example, the ARN of an index is constructed as
+     * follows: <i>arn:aws:kendra:your-region:your-account-id:index/index-id</i> For
+     * information on how to construct an ARN for all types of Amazon Kendra resources,
+     * see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html#amazonkendra-resources-for-iam-policies">Resource
+     * types</a>.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -52,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already
-     * exists, the existing value is replaced with the new value.</p>
+     * <p>A list of tag keys to add to the index, FAQ, data source, or other resource.
+     * If a tag already exists, the existing value is replaced with the new value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

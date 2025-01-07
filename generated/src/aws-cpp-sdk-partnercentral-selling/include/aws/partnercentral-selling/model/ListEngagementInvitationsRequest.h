@@ -7,10 +7,11 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/partnercentral-selling/model/ParticipantType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/partnercentral-selling/model/ParticipantType.h>
 #include <aws/partnercentral-selling/model/OpportunityEngagementInvitationSort.h>
 #include <aws/partnercentral-selling/model/EngagementInvitationPayloadType.h>
+#include <aws/partnercentral-selling/model/InvitationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +53,25 @@ namespace Model
     inline ListEngagementInvitationsRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
     inline ListEngagementInvitationsRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
     inline ListEngagementInvitationsRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Retrieves a list of engagement invitation summaries based on specified
+     * filters. The ListEngagementInvitations operation allows you to view all
+     * invitations that you have sent or received. You must specify the ParticipantType
+     * to filter invitations where you are either the SENDER or the RECEIVER.
+     * Invitations will automatically expire if not accepted within 15 days. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
+    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
+    inline void SetEngagementIdentifier(const Aws::Vector<Aws::String>& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = value; }
+    inline void SetEngagementIdentifier(Aws::Vector<Aws::String>&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::move(value); }
+    inline ListEngagementInvitationsRequest& WithEngagementIdentifier(const Aws::Vector<Aws::String>& value) { SetEngagementIdentifier(value); return *this;}
+    inline ListEngagementInvitationsRequest& WithEngagementIdentifier(Aws::Vector<Aws::String>&& value) { SetEngagementIdentifier(std::move(value)); return *this;}
+    inline ListEngagementInvitationsRequest& AddEngagementIdentifier(const Aws::String& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.push_back(value); return *this; }
+    inline ListEngagementInvitationsRequest& AddEngagementIdentifier(Aws::String&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.push_back(std::move(value)); return *this; }
+    inline ListEngagementInvitationsRequest& AddEngagementIdentifier(const char* value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -113,6 +133,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> List of sender AWS account IDs to filter the invitations. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSenderAwsAccountId() const{ return m_senderAwsAccountId; }
+    inline bool SenderAwsAccountIdHasBeenSet() const { return m_senderAwsAccountIdHasBeenSet; }
+    inline void SetSenderAwsAccountId(const Aws::Vector<Aws::String>& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId = value; }
+    inline void SetSenderAwsAccountId(Aws::Vector<Aws::String>&& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId = std::move(value); }
+    inline ListEngagementInvitationsRequest& WithSenderAwsAccountId(const Aws::Vector<Aws::String>& value) { SetSenderAwsAccountId(value); return *this;}
+    inline ListEngagementInvitationsRequest& WithSenderAwsAccountId(Aws::Vector<Aws::String>&& value) { SetSenderAwsAccountId(std::move(value)); return *this;}
+    inline ListEngagementInvitationsRequest& AddSenderAwsAccountId(const Aws::String& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.push_back(value); return *this; }
+    inline ListEngagementInvitationsRequest& AddSenderAwsAccountId(Aws::String&& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.push_back(std::move(value)); return *this; }
+    inline ListEngagementInvitationsRequest& AddSenderAwsAccountId(const char* value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the sorting options for listing engagement invitations. Invitations
      * can be sorted by fields such as <code>InvitationDate</code> or
      * <code>Status</code> to help partners view results in their preferred order.</p>
@@ -124,10 +159,27 @@ namespace Model
     inline ListEngagementInvitationsRequest& WithSort(const OpportunityEngagementInvitationSort& value) { SetSort(value); return *this;}
     inline ListEngagementInvitationsRequest& WithSort(OpportunityEngagementInvitationSort&& value) { SetSort(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Status values to filter the invitations. </p>
+     */
+    inline const Aws::Vector<InvitationStatus>& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const Aws::Vector<InvitationStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::Vector<InvitationStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline ListEngagementInvitationsRequest& WithStatus(const Aws::Vector<InvitationStatus>& value) { SetStatus(value); return *this;}
+    inline ListEngagementInvitationsRequest& WithStatus(Aws::Vector<InvitationStatus>&& value) { SetStatus(std::move(value)); return *this;}
+    inline ListEngagementInvitationsRequest& AddStatus(const InvitationStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
+    inline ListEngagementInvitationsRequest& AddStatus(InvitationStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_engagementIdentifier;
+    bool m_engagementIdentifierHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -141,8 +193,14 @@ namespace Model
     Aws::Vector<EngagementInvitationPayloadType> m_payloadType;
     bool m_payloadTypeHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_senderAwsAccountId;
+    bool m_senderAwsAccountIdHasBeenSet = false;
+
     OpportunityEngagementInvitationSort m_sort;
     bool m_sortHasBeenSet = false;
+
+    Aws::Vector<InvitationStatus> m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

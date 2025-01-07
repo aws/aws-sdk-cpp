@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the cluster</p>
+     * <p>The name of the cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }

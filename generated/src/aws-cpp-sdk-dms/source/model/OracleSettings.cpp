@@ -87,7 +87,9 @@ OracleSettings::OracleSettings() :
     m_convertTimestampWithZoneToUTC(false),
     m_convertTimestampWithZoneToUTCHasBeenSet(false),
     m_openTransactionWindow(0),
-    m_openTransactionWindowHasBeenSet(false)
+    m_openTransactionWindowHasBeenSet(false),
+    m_authenticationMethod(OracleAuthenticationMethod::NOT_SET),
+    m_authenticationMethodHasBeenSet(false)
 {
 }
 
@@ -403,6 +405,13 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_openTransactionWindowHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationMethod"))
+  {
+    m_authenticationMethod = OracleAuthenticationMethodMapper::GetOracleAuthenticationMethodForName(jsonValue.GetString("AuthenticationMethod"));
+
+    m_authenticationMethodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -670,6 +679,11 @@ JsonValue OracleSettings::Jsonize() const
   {
    payload.WithInteger("OpenTransactionWindow", m_openTransactionWindow);
 
+  }
+
+  if(m_authenticationMethodHasBeenSet)
+  {
+   payload.WithString("AuthenticationMethod", OracleAuthenticationMethodMapper::GetNameForOracleAuthenticationMethod(m_authenticationMethod));
   }
 
   return payload;

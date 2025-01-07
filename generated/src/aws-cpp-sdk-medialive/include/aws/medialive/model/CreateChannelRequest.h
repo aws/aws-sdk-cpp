@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettings.h>
 #include <aws/medialive/model/AnywhereSettings.h>
+#include <aws/medialive/model/ChannelEngineVersionRequest.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -232,6 +233,26 @@ creating multiple resources.
     inline CreateChannelRequest& WithAnywhereSettings(const AnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
     inline CreateChannelRequest& WithAnywhereSettings(AnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The desired engine version for this channel.
+     */
+    inline const ChannelEngineVersionRequest& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
+    inline bool ChannelEngineVersionHasBeenSet() const { return m_channelEngineVersionHasBeenSet; }
+    inline void SetChannelEngineVersion(const ChannelEngineVersionRequest& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = value; }
+    inline void SetChannelEngineVersion(ChannelEngineVersionRequest&& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = std::move(value); }
+    inline CreateChannelRequest& WithChannelEngineVersion(const ChannelEngineVersionRequest& value) { SetChannelEngineVersion(value); return *this;}
+    inline CreateChannelRequest& WithChannelEngineVersion(ChannelEngineVersionRequest&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CreateChannelRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
   private:
 
     CdiInputSpecification m_cdiInputSpecification;
@@ -275,6 +296,12 @@ creating multiple resources.
 
     AnywhereSettings m_anywhereSettings;
     bool m_anywhereSettingsHasBeenSet = false;
+
+    ChannelEngineVersionRequest m_channelEngineVersion;
+    bool m_channelEngineVersionHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

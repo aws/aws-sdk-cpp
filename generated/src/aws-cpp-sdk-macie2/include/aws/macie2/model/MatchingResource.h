@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your
+     * account.</p>
      */
     inline const MatchingBucket& GetMatchingBucket() const{ return m_matchingBucket; }
     inline bool MatchingBucketHasBeenSet() const { return m_matchingBucketHasBeenSet; }

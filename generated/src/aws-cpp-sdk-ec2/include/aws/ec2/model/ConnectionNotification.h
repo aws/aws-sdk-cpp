@@ -138,6 +138,20 @@ namespace Model
     inline ConnectionNotification& WithConnectionNotificationState(const ConnectionNotificationState& value) { SetConnectionNotificationState(value); return *this;}
     inline ConnectionNotification& WithConnectionNotificationState(ConnectionNotificationState&& value) { SetConnectionNotificationState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Region for the endpoint service.</p>
+     */
+    inline const Aws::String& GetServiceRegion() const{ return m_serviceRegion; }
+    inline bool ServiceRegionHasBeenSet() const { return m_serviceRegionHasBeenSet; }
+    inline void SetServiceRegion(const Aws::String& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = value; }
+    inline void SetServiceRegion(Aws::String&& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = std::move(value); }
+    inline void SetServiceRegion(const char* value) { m_serviceRegionHasBeenSet = true; m_serviceRegion.assign(value); }
+    inline ConnectionNotification& WithServiceRegion(const Aws::String& value) { SetServiceRegion(value); return *this;}
+    inline ConnectionNotification& WithServiceRegion(Aws::String&& value) { SetServiceRegion(std::move(value)); return *this;}
+    inline ConnectionNotification& WithServiceRegion(const char* value) { SetServiceRegion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_connectionNotificationId;
@@ -160,6 +174,9 @@ namespace Model
 
     ConnectionNotificationState m_connectionNotificationState;
     bool m_connectionNotificationStateHasBeenSet = false;
+
+    Aws::String m_serviceRegion;
+    bool m_serviceRegionHasBeenSet = false;
   };
 
 } // namespace Model

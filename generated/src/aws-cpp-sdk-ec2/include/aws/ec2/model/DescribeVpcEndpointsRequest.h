@@ -71,6 +71,7 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
      * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-region</code> - The Region of the service.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key

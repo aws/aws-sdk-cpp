@@ -121,8 +121,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MemoryDB engine to which the update applies. The values are either Redis
-     * or Valkey.</p>
+     * <p>The name of the engine for which a service update is available.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

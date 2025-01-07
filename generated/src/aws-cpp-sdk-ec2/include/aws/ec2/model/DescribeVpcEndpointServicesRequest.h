@@ -71,6 +71,7 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
      * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-region</code> - The Region of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
@@ -121,6 +122,21 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline DescribeVpcEndpointServicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The service Regions.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetServiceRegions() const{ return m_serviceRegions; }
+    inline bool ServiceRegionsHasBeenSet() const { return m_serviceRegionsHasBeenSet; }
+    inline void SetServiceRegions(const Aws::Vector<Aws::String>& value) { m_serviceRegionsHasBeenSet = true; m_serviceRegions = value; }
+    inline void SetServiceRegions(Aws::Vector<Aws::String>&& value) { m_serviceRegionsHasBeenSet = true; m_serviceRegions = std::move(value); }
+    inline DescribeVpcEndpointServicesRequest& WithServiceRegions(const Aws::Vector<Aws::String>& value) { SetServiceRegions(value); return *this;}
+    inline DescribeVpcEndpointServicesRequest& WithServiceRegions(Aws::Vector<Aws::String>&& value) { SetServiceRegions(std::move(value)); return *this;}
+    inline DescribeVpcEndpointServicesRequest& AddServiceRegions(const Aws::String& value) { m_serviceRegionsHasBeenSet = true; m_serviceRegions.push_back(value); return *this; }
+    inline DescribeVpcEndpointServicesRequest& AddServiceRegions(Aws::String&& value) { m_serviceRegionsHasBeenSet = true; m_serviceRegions.push_back(std::move(value)); return *this; }
+    inline DescribeVpcEndpointServicesRequest& AddServiceRegions(const char* value) { m_serviceRegionsHasBeenSet = true; m_serviceRegions.push_back(value); return *this; }
+    ///@}
   private:
 
     bool m_dryRun;
@@ -137,6 +153,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_serviceRegions;
+    bool m_serviceRegionsHasBeenSet = false;
   };
 
 } // namespace Model

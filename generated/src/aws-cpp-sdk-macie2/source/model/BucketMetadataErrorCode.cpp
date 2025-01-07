@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static const int BUCKET_COUNT_EXCEEDS_QUOTA_HASH = HashingUtils::HashString("BUCKET_COUNT_EXCEEDS_QUOTA");
 
 
         BucketMetadataErrorCode GetBucketMetadataErrorCodeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ACCESS_DENIED_HASH)
           {
             return BucketMetadataErrorCode::ACCESS_DENIED;
+          }
+          else if (hashCode == BUCKET_COUNT_EXCEEDS_QUOTA_HASH)
+          {
+            return BucketMetadataErrorCode::BUCKET_COUNT_EXCEEDS_QUOTA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case BucketMetadataErrorCode::ACCESS_DENIED:
             return "ACCESS_DENIED";
+          case BucketMetadataErrorCode::BUCKET_COUNT_EXCEEDS_QUOTA:
+            return "BUCKET_COUNT_EXCEEDS_QUOTA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -80,6 +80,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The environment role permissions boundary.</p>
+     */
+    inline const Aws::String& GetEnvironmentRolePermissionBoundary() const{ return m_environmentRolePermissionBoundary; }
+    inline bool EnvironmentRolePermissionBoundaryHasBeenSet() const { return m_environmentRolePermissionBoundaryHasBeenSet; }
+    inline void SetEnvironmentRolePermissionBoundary(const Aws::String& value) { m_environmentRolePermissionBoundaryHasBeenSet = true; m_environmentRolePermissionBoundary = value; }
+    inline void SetEnvironmentRolePermissionBoundary(Aws::String&& value) { m_environmentRolePermissionBoundaryHasBeenSet = true; m_environmentRolePermissionBoundary = std::move(value); }
+    inline void SetEnvironmentRolePermissionBoundary(const char* value) { m_environmentRolePermissionBoundaryHasBeenSet = true; m_environmentRolePermissionBoundary.assign(value); }
+    inline PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentRolePermissionBoundary(const Aws::String& value) { SetEnvironmentRolePermissionBoundary(value); return *this;}
+    inline PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentRolePermissionBoundary(Aws::String&& value) { SetEnvironmentRolePermissionBoundary(std::move(value)); return *this;}
+    inline PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentRolePermissionBoundary(const char* value) { SetEnvironmentRolePermissionBoundary(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the manage access role.</p>
      */
     inline const Aws::String& GetManageAccessRoleArn() const{ return m_manageAccessRoleArn; }
@@ -147,6 +161,9 @@ namespace Model
 
     Aws::String m_environmentBlueprintIdentifier;
     bool m_environmentBlueprintIdentifierHasBeenSet = false;
+
+    Aws::String m_environmentRolePermissionBoundary;
+    bool m_environmentRolePermissionBoundaryHasBeenSet = false;
 
     Aws::String m_manageAccessRoleArn;
     bool m_manageAccessRoleArnHasBeenSet = false;

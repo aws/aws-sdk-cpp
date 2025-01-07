@@ -21,6 +21,7 @@
 #include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
 #include <aws/opensearch/model/AcceptInboundConnectionRequest.h>
 #include <aws/opensearch/model/AddDataSourceRequest.h>
+#include <aws/opensearch/model/AddDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/AddTagsRequest.h>
 #include <aws/opensearch/model/AssociatePackageRequest.h>
 #include <aws/opensearch/model/AssociatePackagesRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/opensearch/model/CreateVpcEndpointRequest.h>
 #include <aws/opensearch/model/DeleteApplicationRequest.h>
 #include <aws/opensearch/model/DeleteDataSourceRequest.h>
+#include <aws/opensearch/model/DeleteDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/DeleteDomainRequest.h>
 #include <aws/opensearch/model/DeleteInboundConnectionRequest.h>
 #include <aws/opensearch/model/DeleteOutboundConnectionRequest.h>
@@ -59,12 +61,14 @@
 #include <aws/opensearch/model/GetApplicationRequest.h>
 #include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
 #include <aws/opensearch/model/GetDataSourceRequest.h>
+#include <aws/opensearch/model/GetDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/GetDomainMaintenanceStatusRequest.h>
 #include <aws/opensearch/model/GetPackageVersionHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeHistoryRequest.h>
 #include <aws/opensearch/model/GetUpgradeStatusRequest.h>
 #include <aws/opensearch/model/ListApplicationsRequest.h>
 #include <aws/opensearch/model/ListDataSourcesRequest.h>
+#include <aws/opensearch/model/ListDirectQueryDataSourcesRequest.h>
 #include <aws/opensearch/model/ListDomainMaintenancesRequest.h>
 #include <aws/opensearch/model/ListDomainNamesRequest.h>
 #include <aws/opensearch/model/ListDomainsForPackageRequest.h>
@@ -84,6 +88,7 @@
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/UpdateApplicationRequest.h>
 #include <aws/opensearch/model/UpdateDataSourceRequest.h>
+#include <aws/opensearch/model/UpdateDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
 #include <aws/opensearch/model/UpdatePackageRequest.h>
 #include <aws/opensearch/model/UpdatePackageScopeRequest.h>
@@ -301,6 +306,36 @@ AddDataSourceOutcome OpenSearchServiceClient::AddDataSource(const AddDataSourceR
       endpointOverrides.AddPathSegment(request.GetDomainName());
       endpointOverrides.AddPathSegment("/dataSource");
       return AddDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AddDirectQueryDataSourceOutcome OpenSearchServiceClient::AddDirectQueryDataSource(const AddDirectQueryDataSourceRequest& request) const
+{
+  AWS_OPERATION_GUARD(AddDirectQueryDataSource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddDirectQueryDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, AddDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AddDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AddDirectQueryDataSource",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AddDirectQueryDataSourceOutcome>(
+    [&]()-> AddDirectQueryDataSourceOutcome {
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource");
+      return AddDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -736,6 +771,42 @@ DeleteDataSourceOutcome OpenSearchServiceClient::DeleteDataSource(const DeleteDa
       endpointOverrides.AddPathSegment("/dataSource/");
       endpointOverrides.AddPathSegment(request.GetName());
       return DeleteDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteDirectQueryDataSourceOutcome OpenSearchServiceClient::DeleteDirectQueryDataSource(const DeleteDirectQueryDataSourceRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteDirectQueryDataSource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDirectQueryDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDirectQueryDataSource", "Required field: DataSourceName, is not set");
+    return DeleteDirectQueryDataSourceOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDirectQueryDataSource",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDirectQueryDataSourceOutcome>(
+    [&]()-> DeleteDirectQueryDataSourceOutcome {
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceName());
+      return DeleteDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -1621,6 +1692,42 @@ GetDataSourceOutcome OpenSearchServiceClient::GetDataSource(const GetDataSourceR
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDirectQueryDataSourceOutcome OpenSearchServiceClient::GetDirectQueryDataSource(const GetDirectQueryDataSourceRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDirectQueryDataSource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDirectQueryDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDirectQueryDataSource", "Required field: DataSourceName, is not set");
+    return GetDirectQueryDataSourceOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDirectQueryDataSource",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDirectQueryDataSourceOutcome>(
+    [&]()-> GetDirectQueryDataSourceOutcome {
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceName());
+      return GetDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDomainMaintenanceStatusOutcome OpenSearchServiceClient::GetDomainMaintenanceStatus(const GetDomainMaintenanceStatusRequest& request) const
 {
   AWS_OPERATION_GUARD(GetDomainMaintenanceStatus);
@@ -1827,6 +1934,36 @@ ListDataSourcesOutcome OpenSearchServiceClient::ListDataSources(const ListDataSo
       endpointOverrides.AddPathSegment(request.GetDomainName());
       endpointOverrides.AddPathSegment("/dataSource");
       return ListDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDirectQueryDataSourcesOutcome OpenSearchServiceClient::ListDirectQueryDataSources(const ListDirectQueryDataSourcesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDirectQueryDataSources);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDirectQueryDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDirectQueryDataSources, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDirectQueryDataSources, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDirectQueryDataSources",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDirectQueryDataSourcesOutcome>(
+    [&]()-> ListDirectQueryDataSourcesOutcome {
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource");
+      return ListDirectQueryDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -2490,6 +2627,42 @@ UpdateDataSourceOutcome OpenSearchServiceClient::UpdateDataSource(const UpdateDa
       endpointOverrides.AddPathSegment("/dataSource/");
       endpointOverrides.AddPathSegment(request.GetName());
       return UpdateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateDirectQueryDataSourceOutcome OpenSearchServiceClient::UpdateDirectQueryDataSource(const UpdateDirectQueryDataSourceRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateDirectQueryDataSource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDirectQueryDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSourceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDirectQueryDataSource", "Required field: DataSourceName, is not set");
+    return UpdateDirectQueryDataSourceOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateDirectQueryDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDirectQueryDataSource",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateDirectQueryDataSourceOutcome>(
+    [&]()-> UpdateDirectQueryDataSourceOutcome {
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceName());
+      return UpdateDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);

@@ -9,6 +9,7 @@
 #include <aws/ec2/model/VerifiedAccessEndpointProtocol.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VerifiedAccessEndpointPortRange.h>
 #include <utility>
 
 namespace Aws
@@ -93,6 +94,20 @@ namespace Model
     inline VerifiedAccessEndpointLoadBalancerOptions& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
     inline VerifiedAccessEndpointLoadBalancerOptions& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The port ranges.</p>
+     */
+    inline const Aws::Vector<VerifiedAccessEndpointPortRange>& GetPortRanges() const{ return m_portRanges; }
+    inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
+    inline void SetPortRanges(const Aws::Vector<VerifiedAccessEndpointPortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
+    inline void SetPortRanges(Aws::Vector<VerifiedAccessEndpointPortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
+    inline VerifiedAccessEndpointLoadBalancerOptions& WithPortRanges(const Aws::Vector<VerifiedAccessEndpointPortRange>& value) { SetPortRanges(value); return *this;}
+    inline VerifiedAccessEndpointLoadBalancerOptions& WithPortRanges(Aws::Vector<VerifiedAccessEndpointPortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
+    inline VerifiedAccessEndpointLoadBalancerOptions& AddPortRanges(const VerifiedAccessEndpointPortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
+    inline VerifiedAccessEndpointLoadBalancerOptions& AddPortRanges(VerifiedAccessEndpointPortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     VerifiedAccessEndpointProtocol m_protocol;
@@ -106,6 +121,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    Aws::Vector<VerifiedAccessEndpointPortRange> m_portRanges;
+    bool m_portRangesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p> Represents an Amazon Web Services team member for the engagement. This
-   * structure includes details such as name, email, and business title.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Represents an Amazon Web Services team member for the engagement. This
+   * structure includes details such as name, email, and business
+   * title.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AwsTeamMember">AWS
    * API Reference</a></p>
    */
@@ -42,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the Amazon Web Services team member's business title and indicates
-     * their organizational role. </p>
+     * <p>Specifies the Amazon Web Services team member's business title and indicates
+     * their organizational role.</p>
      */
     inline const AwsMemberBusinessTitle& GetBusinessTitle() const{ return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides the Amazon Web Services team member's email address. </p>
+     * <p>Provides the Amazon Web Services team member's email address.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides the Amazon Web Services team member's first name. </p>
+     * <p>Provides the Amazon Web Services team member's first name.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides the Amazon Web Services team member's last name. </p>
+     * <p>Provides the Amazon Web Services team member's last name.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }

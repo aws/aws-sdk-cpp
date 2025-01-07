@@ -71,7 +71,9 @@ namespace Model
      * <code>lastrun</code> to use the screenshots from the most recent run before this
      * update was made, or the value of <code>Id</code> in the <a
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html">
-     * CanaryRun</a> from any past run of this canary.</p>
+     * CanaryRun</a> from a run of this a canary in the past 31 days. If you specify
+     * the <code>Id</code> of a canary run older than 31 days, the operation returns a
+     * 400 validation exception error..</p>
      */
     inline const Aws::String& GetBaseCanaryRunId() const{ return m_baseCanaryRunId; }
     inline bool BaseCanaryRunIdHasBeenSet() const { return m_baseCanaryRunIdHasBeenSet; }

@@ -28,6 +28,7 @@
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsResult.h>
 #include <aws/connectcampaignsv2/model/ListTagsForResourceResult.h>
 #include <aws/connectcampaignsv2/model/PutOutboundRequestBatchResult.h>
+#include <aws/connectcampaignsv2/model/PutProfileOutboundRequestBatchResult.h>
 #include <aws/connectcampaignsv2/model/StartInstanceOnboardingJobResult.h>
 #include <aws/connectcampaignsv2/model/ListCampaignsRequest.h>
 #include <aws/core/NoResult.h>
@@ -90,6 +91,7 @@ namespace Aws
       class PauseCampaignRequest;
       class PutConnectInstanceIntegrationRequest;
       class PutOutboundRequestBatchRequest;
+      class PutProfileOutboundRequestBatchRequest;
       class ResumeCampaignRequest;
       class StartCampaignRequest;
       class StartInstanceOnboardingJobRequest;
@@ -125,6 +127,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> PauseCampaignOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> PutConnectInstanceIntegrationOutcome;
       typedef Aws::Utils::Outcome<PutOutboundRequestBatchResult, ConnectCampaignsV2Error> PutOutboundRequestBatchOutcome;
+      typedef Aws::Utils::Outcome<PutProfileOutboundRequestBatchResult, ConnectCampaignsV2Error> PutProfileOutboundRequestBatchOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> ResumeCampaignOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCampaignsV2Error> StartCampaignOutcome;
       typedef Aws::Utils::Outcome<StartInstanceOnboardingJobResult, ConnectCampaignsV2Error> StartInstanceOnboardingJobOutcome;
@@ -160,6 +163,7 @@ namespace Aws
       typedef std::future<PauseCampaignOutcome> PauseCampaignOutcomeCallable;
       typedef std::future<PutConnectInstanceIntegrationOutcome> PutConnectInstanceIntegrationOutcomeCallable;
       typedef std::future<PutOutboundRequestBatchOutcome> PutOutboundRequestBatchOutcomeCallable;
+      typedef std::future<PutProfileOutboundRequestBatchOutcome> PutProfileOutboundRequestBatchOutcomeCallable;
       typedef std::future<ResumeCampaignOutcome> ResumeCampaignOutcomeCallable;
       typedef std::future<StartCampaignOutcome> StartCampaignOutcomeCallable;
       typedef std::future<StartInstanceOnboardingJobOutcome> StartInstanceOnboardingJobOutcomeCallable;
@@ -198,6 +202,7 @@ namespace Aws
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PauseCampaignRequest&, const Model::PauseCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseCampaignResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutConnectInstanceIntegrationRequest&, const Model::PutConnectInstanceIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConnectInstanceIntegrationResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutOutboundRequestBatchRequest&, const Model::PutOutboundRequestBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOutboundRequestBatchResponseReceivedHandler;
+    typedef std::function<void(const ConnectCampaignsV2Client*, const Model::PutProfileOutboundRequestBatchRequest&, const Model::PutProfileOutboundRequestBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProfileOutboundRequestBatchResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::ResumeCampaignRequest&, const Model::ResumeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeCampaignResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::StartCampaignRequest&, const Model::StartCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCampaignResponseReceivedHandler;
     typedef std::function<void(const ConnectCampaignsV2Client*, const Model::StartInstanceOnboardingJobRequest&, const Model::StartInstanceOnboardingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceOnboardingJobResponseReceivedHandler;

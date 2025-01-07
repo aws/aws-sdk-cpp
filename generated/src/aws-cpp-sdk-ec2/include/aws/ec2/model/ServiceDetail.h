@@ -90,6 +90,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Region where the service is hosted.</p>
+     */
+    inline const Aws::String& GetServiceRegion() const{ return m_serviceRegion; }
+    inline bool ServiceRegionHasBeenSet() const { return m_serviceRegionHasBeenSet; }
+    inline void SetServiceRegion(const Aws::String& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = value; }
+    inline void SetServiceRegion(Aws::String&& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = std::move(value); }
+    inline void SetServiceRegion(const char* value) { m_serviceRegionHasBeenSet = true; m_serviceRegion.assign(value); }
+    inline ServiceDetail& WithServiceRegion(const Aws::String& value) { SetServiceRegion(value); return *this;}
+    inline ServiceDetail& WithServiceRegion(Aws::String&& value) { SetServiceRegion(std::move(value)); return *this;}
+    inline ServiceDetail& WithServiceRegion(const char* value) { SetServiceRegion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Availability Zones in which the service is available.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
@@ -255,6 +269,9 @@ namespace Model
 
     Aws::Vector<ServiceTypeDetail> m_serviceType;
     bool m_serviceTypeHasBeenSet = false;
+
+    Aws::String m_serviceRegion;
+    bool m_serviceRegionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/ParsingModality.h>
 #include <aws/bedrock-agent/model/ParsingPrompt.h>
 #include <utility>
 
@@ -45,7 +46,7 @@ namespace Model
     /**
      * <p>The ARN of the foundation model or <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-     * profile</a>.</p>
+     * profile</a> to use for parsing.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
@@ -55,6 +56,19 @@ namespace Model
     inline BedrockFoundationModelConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
     inline BedrockFoundationModelConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
     inline BedrockFoundationModelConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to enable parsing of multimodal data, including both text
+     * and/or images.</p>
+     */
+    inline const ParsingModality& GetParsingModality() const{ return m_parsingModality; }
+    inline bool ParsingModalityHasBeenSet() const { return m_parsingModalityHasBeenSet; }
+    inline void SetParsingModality(const ParsingModality& value) { m_parsingModalityHasBeenSet = true; m_parsingModality = value; }
+    inline void SetParsingModality(ParsingModality&& value) { m_parsingModalityHasBeenSet = true; m_parsingModality = std::move(value); }
+    inline BedrockFoundationModelConfiguration& WithParsingModality(const ParsingModality& value) { SetParsingModality(value); return *this;}
+    inline BedrockFoundationModelConfiguration& WithParsingModality(ParsingModality&& value) { SetParsingModality(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,6 +86,9 @@ namespace Model
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
+
+    ParsingModality m_parsingModality;
+    bool m_parsingModalityHasBeenSet = false;
 
     ParsingPrompt m_parsingPrompt;
     bool m_parsingPromptHasBeenSet = false;

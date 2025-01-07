@@ -87,7 +87,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the version of the game server container group
-     * definition to roll back to if deployment fails.</p>
+     * definition to roll back to if deployment fails. Amazon GameLift sets this
+     * property to the container group definition version that the fleet used when it
+     * was last active.</p>
      */
     inline const Aws::String& GetRollbackGameServerBinaryArn() const{ return m_rollbackGameServerBinaryArn; }
     inline bool RollbackGameServerBinaryArnHasBeenSet() const { return m_rollbackGameServerBinaryArnHasBeenSet; }
@@ -102,7 +104,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the version of the per-instance container group
-     * definition that is being deployed.</p>
+     * definition that is being deployed. </p>
      */
     inline const Aws::String& GetPerInstanceBinaryArn() const{ return m_perInstanceBinaryArn; }
     inline bool PerInstanceBinaryArnHasBeenSet() const { return m_perInstanceBinaryArnHasBeenSet; }
@@ -117,7 +119,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the version of the per-instance container group
-     * definition to roll back to if deployment fails.</p>
+     * definition to roll back to if deployment fails. Amazon GameLift sets this
+     * property to the container group definition version that the fleet used when it
+     * was last active.</p>
      */
     inline const Aws::String& GetRollbackPerInstanceBinaryArn() const{ return m_rollbackPerInstanceBinaryArn; }
     inline bool RollbackPerInstanceBinaryArnHasBeenSet() const { return m_rollbackPerInstanceBinaryArnHasBeenSet; }

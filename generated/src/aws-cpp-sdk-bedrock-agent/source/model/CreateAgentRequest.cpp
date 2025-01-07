@@ -13,10 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAgentRequest::CreateAgentRequest() : 
+    m_agentCollaboration(AgentCollaboration::NOT_SET),
+    m_agentCollaborationHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentResourceRoleArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_customOrchestrationHasBeenSet(false),
     m_customerEncryptionKeyArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_foundationModelHasBeenSet(false),
@@ -25,6 +28,8 @@ CreateAgentRequest::CreateAgentRequest() :
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
     m_memoryConfigurationHasBeenSet(false),
+    m_orchestrationType(OrchestrationType::NOT_SET),
+    m_orchestrationTypeHasBeenSet(false),
     m_promptOverrideConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -33,6 +38,11 @@ CreateAgentRequest::CreateAgentRequest() :
 Aws::String CreateAgentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
 
   if(m_agentNameHasBeenSet)
   {
@@ -49,6 +59,12 @@ Aws::String CreateAgentRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
 
   }
 
@@ -92,6 +108,11 @@ Aws::String CreateAgentRequest::SerializePayload() const
   {
    payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
 
+  }
+
+  if(m_orchestrationTypeHasBeenSet)
+  {
+   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
   }
 
   if(m_promptOverrideConfigurationHasBeenSet)

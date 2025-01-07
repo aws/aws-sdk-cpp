@@ -189,12 +189,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can
      * assume to perform actions on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
-     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
-     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
-     * 
+     * AI Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker
+     * AI, the caller of this action must have the <code>iam:PassRole</code>
+     * permission.</p> 
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }

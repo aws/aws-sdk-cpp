@@ -20,7 +20,9 @@ namespace Model
     WEB,
     CONFLUENCE,
     SALESFORCE,
-    SHAREPOINT
+    SHAREPOINT,
+    CUSTOM,
+    REDSHIFT_METADATA
   };
 
 namespace DataSourceTypeMapper

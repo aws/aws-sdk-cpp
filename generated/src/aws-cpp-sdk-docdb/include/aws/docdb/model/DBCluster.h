@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/docdb/model/ClusterMasterUserSecret.h>
 #include <aws/docdb/model/DBClusterMember.h>
 #include <aws/docdb/model/VpcSecurityGroupMembership.h>
 #include <aws/docdb/model/DBClusterRole.h>
@@ -521,6 +522,19 @@ namespace Model
     inline DBCluster& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
     inline DBCluster& WithStorageType(const char* value) { SetStorageType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets
+     * Manager for the master user password.</p>
+     */
+    inline const ClusterMasterUserSecret& GetMasterUserSecret() const{ return m_masterUserSecret; }
+    inline bool MasterUserSecretHasBeenSet() const { return m_masterUserSecretHasBeenSet; }
+    inline void SetMasterUserSecret(const ClusterMasterUserSecret& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = value; }
+    inline void SetMasterUserSecret(ClusterMasterUserSecret&& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = std::move(value); }
+    inline DBCluster& WithMasterUserSecret(const ClusterMasterUserSecret& value) { SetMasterUserSecret(value); return *this;}
+    inline DBCluster& WithMasterUserSecret(ClusterMasterUserSecret&& value) { SetMasterUserSecret(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -621,6 +635,9 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    ClusterMasterUserSecret m_masterUserSecret;
+    bool m_masterUserSecretHasBeenSet = false;
   };
 
 } // namespace Model

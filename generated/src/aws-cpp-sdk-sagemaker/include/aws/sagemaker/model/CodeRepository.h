@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A Git repository that SageMaker automatically displays to users for cloning
-   * in the JupyterServer application.</p><p><h3>See Also:</h3>   <a
+   * <p>A Git repository that SageMaker AI automatically displays to users for
+   * cloning in the JupyterServer application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CodeRepository">AWS
    * API Reference</a></p>
    */

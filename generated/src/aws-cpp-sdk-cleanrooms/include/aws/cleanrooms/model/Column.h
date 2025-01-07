@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A column within a schema relation, derived from the underlying Glue
+   * <p>A column within a schema relation, derived from the underlying
    * table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/Column">AWS
    * API Reference</a></p>

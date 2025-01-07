@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of SageMaker image version aliases.</p>
+     * <p>A list of SageMaker AI image version aliases.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSageMakerImageVersionAliases() const{ return m_sageMakerImageVersionAliases; }
     inline void SetSageMakerImageVersionAliases(const Aws::Vector<Aws::String>& value) { m_sageMakerImageVersionAliases = value; }

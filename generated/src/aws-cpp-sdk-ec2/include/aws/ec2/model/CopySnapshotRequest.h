@@ -210,6 +210,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specify a completion duration, in 15 minute increments, to initiate a
+     * time-based snapshot copy. Time-based snapshot copy operations complete within
+     * the specified duration. For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
+     * Time-based copies</a>.</p> <p>If you do not specify a value, the snapshot copy
+     * operation is completed on a best-effort basis.</p>
+     */
+    inline int GetCompletionDurationMinutes() const{ return m_completionDurationMinutes; }
+    inline bool CompletionDurationMinutesHasBeenSet() const { return m_completionDurationMinutesHasBeenSet; }
+    inline void SetCompletionDurationMinutes(int value) { m_completionDurationMinutesHasBeenSet = true; m_completionDurationMinutes = value; }
+    inline CopySnapshotRequest& WithCompletionDurationMinutes(int value) { SetCompletionDurationMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -248,6 +263,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    int m_completionDurationMinutes;
+    bool m_completionDurationMinutesHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;

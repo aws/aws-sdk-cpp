@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the email address.</p>
      */
     inline const Aws::String& GetEmailAddressId() const{ return m_emailAddressId; }
     inline void SetEmailAddressId(const Aws::String& value) { m_emailAddressId = value; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the email address.</p>
      */
     inline const Aws::String& GetEmailAddressArn() const{ return m_emailAddressArn; }
     inline void SetEmailAddressArn(const Aws::String& value) { m_emailAddressArn = value; }

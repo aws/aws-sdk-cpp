@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an email address for a contact
+   * center.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EmailAddressMetadata">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the email address.</p>
      */
     inline const Aws::String& GetEmailAddressId() const{ return m_emailAddressId; }
     inline bool EmailAddressIdHasBeenSet() const { return m_emailAddressIdHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the email address.</p>
      */
     inline const Aws::String& GetEmailAddressArn() const{ return m_emailAddressArn; }
     inline bool EmailAddressArnHasBeenSet() const { return m_emailAddressArnHasBeenSet; }
@@ -67,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -81,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The description of the email address.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -95,7 +96,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The display name of email address.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

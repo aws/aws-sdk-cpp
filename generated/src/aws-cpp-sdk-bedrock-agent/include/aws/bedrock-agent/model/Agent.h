@@ -6,11 +6,14 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/AgentCollaboration.h>
 #include <aws/bedrock-agent/model/AgentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock-agent/model/CustomOrchestration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryConfiguration.h>
+#include <aws/bedrock-agent/model/OrchestrationType.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <utility>
 
@@ -55,6 +58,18 @@ namespace Model
     inline Agent& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
     inline Agent& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
     inline Agent& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The agent's collaboration settings.</p>
+     */
+    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
+    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
+    inline Agent& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
+    inline Agent& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,6 +176,18 @@ namespace Model
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
     inline Agent& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
     inline Agent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Contains custom orchestration configurations for the agent. </p>
+     */
+    inline const CustomOrchestration& GetCustomOrchestration() const{ return m_customOrchestration; }
+    inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
+    inline void SetCustomOrchestration(const CustomOrchestration& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = value; }
+    inline void SetCustomOrchestration(CustomOrchestration&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::move(value); }
+    inline Agent& WithCustomOrchestration(const CustomOrchestration& value) { SetCustomOrchestration(value); return *this;}
+    inline Agent& WithCustomOrchestration(CustomOrchestration&& value) { SetCustomOrchestration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -275,6 +302,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> Specifies the orchestration strategy for the agent. </p>
+     */
+    inline const OrchestrationType& GetOrchestrationType() const{ return m_orchestrationType; }
+    inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
+    inline void SetOrchestrationType(const OrchestrationType& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
+    inline void SetOrchestrationType(OrchestrationType&& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = std::move(value); }
+    inline Agent& WithOrchestrationType(const OrchestrationType& value) { SetOrchestrationType(value); return *this;}
+    inline Agent& WithOrchestrationType(OrchestrationType&& value) { SetOrchestrationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time at which the agent was last prepared.</p>
      */
     inline const Aws::Utils::DateTime& GetPreparedAt() const{ return m_preparedAt; }
@@ -332,6 +371,9 @@ namespace Model
     Aws::String m_agentArn;
     bool m_agentArnHasBeenSet = false;
 
+    AgentCollaboration m_agentCollaboration;
+    bool m_agentCollaborationHasBeenSet = false;
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
@@ -352,6 +394,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    CustomOrchestration m_customOrchestration;
+    bool m_customOrchestrationHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
@@ -376,6 +421,9 @@ namespace Model
 
     MemoryConfiguration m_memoryConfiguration;
     bool m_memoryConfigurationHasBeenSet = false;
+
+    OrchestrationType m_orchestrationType;
+    bool m_orchestrationTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_preparedAt;
     bool m_preparedAtHasBeenSet = false;

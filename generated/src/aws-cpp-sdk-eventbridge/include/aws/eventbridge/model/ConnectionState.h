@@ -22,7 +22,9 @@ namespace Model
     AUTHORIZED,
     DEAUTHORIZED,
     AUTHORIZING,
-    DEAUTHORIZING
+    DEAUTHORIZING,
+    ACTIVE,
+    FAILED_CONNECTIVITY
   };
 
 namespace ConnectionStateMapper

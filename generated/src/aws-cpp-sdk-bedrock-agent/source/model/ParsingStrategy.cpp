@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int BEDROCK_FOUNDATION_MODEL_HASH = HashingUtils::HashString("BEDROCK_FOUNDATION_MODEL");
+        static const int BEDROCK_DATA_AUTOMATION_HASH = HashingUtils::HashString("BEDROCK_DATA_AUTOMATION");
 
 
         ParsingStrategy GetParsingStrategyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == BEDROCK_FOUNDATION_MODEL_HASH)
           {
             return ParsingStrategy::BEDROCK_FOUNDATION_MODEL;
+          }
+          else if (hashCode == BEDROCK_DATA_AUTOMATION_HASH)
+          {
+            return ParsingStrategy::BEDROCK_DATA_AUTOMATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case ParsingStrategy::BEDROCK_FOUNDATION_MODEL:
             return "BEDROCK_FOUNDATION_MODEL";
+          case ParsingStrategy::BEDROCK_DATA_AUTOMATION:
+            return "BEDROCK_DATA_AUTOMATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

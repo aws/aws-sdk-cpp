@@ -21,7 +21,8 @@ namespace Model
 S3DestinationConfiguration::S3DestinationConfiguration() : 
     m_storageConfigurationArnHasBeenSet(false),
     m_encoderConfigurationArnsHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false)
+    m_recordingConfigurationHasBeenSet(false),
+    m_thumbnailConfigurationsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,16 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
     m_recordingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("thumbnailConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> thumbnailConfigurationsJsonList = jsonValue.GetArray("thumbnailConfigurations");
+    for(unsigned thumbnailConfigurationsIndex = 0; thumbnailConfigurationsIndex < thumbnailConfigurationsJsonList.GetLength(); ++thumbnailConfigurationsIndex)
+    {
+      m_thumbnailConfigurations.push_back(thumbnailConfigurationsJsonList[thumbnailConfigurationsIndex].AsObject());
+    }
+    m_thumbnailConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,17 @@ JsonValue S3DestinationConfiguration::Jsonize() const
   if(m_recordingConfigurationHasBeenSet)
   {
    payload.WithObject("recordingConfiguration", m_recordingConfiguration.Jsonize());
+
+  }
+
+  if(m_thumbnailConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> thumbnailConfigurationsJsonList(m_thumbnailConfigurations.size());
+   for(unsigned thumbnailConfigurationsIndex = 0; thumbnailConfigurationsIndex < thumbnailConfigurationsJsonList.GetLength(); ++thumbnailConfigurationsIndex)
+   {
+     thumbnailConfigurationsJsonList[thumbnailConfigurationsIndex].AsObject(m_thumbnailConfigurations[thumbnailConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("thumbnailConfigurations", std::move(thumbnailConfigurationsJsonList));
 
   }
 

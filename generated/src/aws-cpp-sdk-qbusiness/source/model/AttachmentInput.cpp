@@ -20,8 +20,9 @@ namespace Model
 {
 
 AttachmentInput::AttachmentInput() : 
+    m_dataHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_copyFromHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,12 @@ AttachmentInput::AttachmentInput(JsonView jsonValue)
 
 AttachmentInput& AttachmentInput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
+    m_dataHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -40,10 +47,11 @@ AttachmentInput& AttachmentInput::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("data"))
+  if(jsonValue.ValueExists("copyFrom"))
   {
-    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-    m_dataHasBeenSet = true;
+    m_copyFrom = jsonValue.GetObject("copyFrom");
+
+    m_copyFromHasBeenSet = true;
   }
 
   return *this;
@@ -53,15 +61,21 @@ JsonValue AttachmentInput::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
-  if(m_dataHasBeenSet)
+  if(m_copyFromHasBeenSet)
   {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
+   payload.WithObject("copyFrom", m_copyFrom.Jsonize());
+
   }
 
   return payload;

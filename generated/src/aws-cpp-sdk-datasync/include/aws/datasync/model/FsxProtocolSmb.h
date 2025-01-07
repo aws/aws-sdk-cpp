@@ -26,10 +26,10 @@ namespace Model
 
   /**
    * <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync
-   * uses to access your Amazon FSx for NetApp ONTAP file system. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Accessing
-   * FSx for ONTAP file systems</a>.</p><p><h3>See Also:</h3>   <a
+   * uses to access your Amazon FSx for NetApp ONTAP file system's storage virtual
+   * machine (SVM). For more information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Providing
+   * DataSync access to FSx for ONTAP file systems</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolSmb">AWS
    * API Reference</a></p>
    */
@@ -44,10 +44,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active
-     * Directory that your storage virtual machine (SVM) belongs to.</p> <p>If you have
-     * multiple domains in your environment, configuring this setting makes sure that
-     * DataSync connects to the right SVM.</p>
+     * <p>Specifies the name of the Windows domain that your storage virtual machine
+     * (SVM) belongs to.</p> <p>If you have multiple domains in your environment,
+     * configuring this setting makes sure that DataSync connects to the right SVM.</p>
+     * <p>If you have multiple Active Directory domains in your environment,
+     * configuring this parameter makes sure that DataSync connects to the right
+     * SVM.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }

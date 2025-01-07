@@ -11,6 +11,7 @@
 #include <aws/bedrock-runtime/model/ConverseMetrics.h>
 #include <aws/core/utils/Document.h>
 #include <aws/bedrock-runtime/model/ConverseTrace.h>
+#include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -107,6 +108,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Model performance settings for the request.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfig = value; }
+    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfig = std::move(value); }
+    inline ConverseResult& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
+    inline ConverseResult& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -129,6 +141,8 @@ namespace Model
     Aws::Utils::Document m_additionalModelResponseFields;
 
     ConverseTrace m_trace;
+
+    PerformanceConfiguration m_performanceConfig;
 
     Aws::String m_requestId;
   };

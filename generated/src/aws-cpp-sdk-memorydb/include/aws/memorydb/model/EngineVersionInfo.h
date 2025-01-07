@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the engine version.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details of the Redis OSS engine version</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/EngineVersionInfo">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the Redis OSS or Valkey engine used by the cluster.</p>
+     * <p>The name of the engine for which version information is provided.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

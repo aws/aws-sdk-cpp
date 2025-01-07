@@ -1236,6 +1236,32 @@ namespace Backup
         }
 
         /**
+         * <p>This operation returns the metadata and details specific to the backup index
+         * associated with the specified recovery point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRecoveryPointIndexDetailsOutcome GetRecoveryPointIndexDetails(const Model::GetRecoveryPointIndexDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRecoveryPointIndexDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRecoveryPointIndexDetailsRequestT = Model::GetRecoveryPointIndexDetailsRequest>
+        Model::GetRecoveryPointIndexDetailsOutcomeCallable GetRecoveryPointIndexDetailsCallable(const GetRecoveryPointIndexDetailsRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::GetRecoveryPointIndexDetails, request);
+        }
+
+        /**
+         * An Async wrapper for GetRecoveryPointIndexDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRecoveryPointIndexDetailsRequestT = Model::GetRecoveryPointIndexDetailsRequest>
+        void GetRecoveryPointIndexDetailsAsync(const GetRecoveryPointIndexDetailsRequestT& request, const GetRecoveryPointIndexDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::GetRecoveryPointIndexDetails, request, handler, context);
+        }
+
+        /**
          * <p>Returns a set of metadata key-value pairs that were used to create the
          * backup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointRestoreMetadata">AWS
@@ -1662,6 +1688,34 @@ namespace Backup
         void ListFrameworksAsync(const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFrameworksRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListFrameworks, request, handler, context);
+        }
+
+        /**
+         * <p>This operation returns a list of recovery points that have an associated
+         * index, belonging to the specified account.</p> <p>Optional parameters you can
+         * include are: MaxResults; NextToken; SourceResourceArns; CreatedBefore;
+         * CreatedAfter; and ResourceType.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIndexedRecoveryPointsOutcome ListIndexedRecoveryPoints(const Model::ListIndexedRecoveryPointsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListIndexedRecoveryPoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIndexedRecoveryPointsRequestT = Model::ListIndexedRecoveryPointsRequest>
+        Model::ListIndexedRecoveryPointsOutcomeCallable ListIndexedRecoveryPointsCallable(const ListIndexedRecoveryPointsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BackupClient::ListIndexedRecoveryPoints, request);
+        }
+
+        /**
+         * An Async wrapper for ListIndexedRecoveryPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIndexedRecoveryPointsRequestT = Model::ListIndexedRecoveryPointsRequest>
+        void ListIndexedRecoveryPointsAsync(const ListIndexedRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIndexedRecoveryPointsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BackupClient::ListIndexedRecoveryPoints, request, handler, context);
         }
 
         /**
@@ -2423,6 +2477,33 @@ namespace Backup
         void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateGlobalSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::UpdateGlobalSettings, request, handler, context);
+        }
+
+        /**
+         * <p>This operation updates the settings of a recovery point index.</p>
+         * <p>Required: BackupVaultName, RecoveryPointArn, and IAMRoleArn</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRecoveryPointIndexSettingsOutcome UpdateRecoveryPointIndexSettings(const Model::UpdateRecoveryPointIndexSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRecoveryPointIndexSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRecoveryPointIndexSettingsRequestT = Model::UpdateRecoveryPointIndexSettingsRequest>
+        Model::UpdateRecoveryPointIndexSettingsOutcomeCallable UpdateRecoveryPointIndexSettingsCallable(const UpdateRecoveryPointIndexSettingsRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::UpdateRecoveryPointIndexSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRecoveryPointIndexSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRecoveryPointIndexSettingsRequestT = Model::UpdateRecoveryPointIndexSettingsRequest>
+        void UpdateRecoveryPointIndexSettingsAsync(const UpdateRecoveryPointIndexSettingsRequestT& request, const UpdateRecoveryPointIndexSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::UpdateRecoveryPointIndexSettings, request, handler, context);
         }
 
         /**

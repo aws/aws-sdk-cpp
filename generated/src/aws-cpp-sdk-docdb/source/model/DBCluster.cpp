@@ -58,7 +58,8 @@ DBCluster::DBCluster() :
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_masterUserSecretHasBeenSet(false)
 {
 }
 
@@ -308,6 +309,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode masterUserSecretNode = resultNode.FirstChild("MasterUserSecret");
+    if(!masterUserSecretNode.IsNull())
+    {
+      m_masterUserSecret = masterUserSecretNode;
+      m_masterUserSecretHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -510,6 +517,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if(m_masterUserSecretHasBeenSet)
+  {
+      Aws::StringStream masterUserSecretLocationAndMemberSs;
+      masterUserSecretLocationAndMemberSs << location << index << locationValue << ".MasterUserSecret";
+      m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -675,6 +689,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_masterUserSecretHasBeenSet)
+  {
+      Aws::String masterUserSecretLocationAndMember(location);
+      masterUserSecretLocationAndMember += ".MasterUserSecret";
+      m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMember.c_str());
   }
 }
 

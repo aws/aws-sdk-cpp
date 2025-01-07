@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Specifies the Network File System (NFS) protocol configuration that DataSync
-   * uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file
-   * system.</p><p><h3>See Also:</h3>   <a
+   * uses to access your FSx for OpenZFS file system or FSx for ONTAP file system's
+   * storage virtual machine (SVM).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolNfs">AWS
    * API Reference</a></p>
    */

@@ -30,8 +30,13 @@ namespace Model
   /**
    * <p>Specifies the training algorithm to use in a <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
-   * request.</p> <p>For more information about algorithms provided by SageMaker, see
-   * <a
+   * request.</p>  <p>SageMaker uses its own SageMaker account credentials
+   * to pull and access built-in algorithms so built-in algorithms are universally
+   * accessible across all Amazon Web Services accounts. As a result, built-in
+   * algorithms have standard, unrestricted access. You cannot restrict built-in
+   * algorithms using IAM roles. Use custom algorithms if you require specific access
+   * controls.</p>  <p>For more information about algorithms provided by
+   * SageMaker, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
    * For information about using your own algorithms, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using

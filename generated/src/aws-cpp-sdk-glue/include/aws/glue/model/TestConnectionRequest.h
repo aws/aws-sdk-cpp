@@ -52,6 +52,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The catalog ID where the connection resides.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+    inline TestConnectionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+    inline TestConnectionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+    inline TestConnectionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A structure that is used to specify testing a connection to a service.</p>
      */
     inline const TestConnectionInput& GetTestConnectionInput() const{ return m_testConnectionInput; }
@@ -65,6 +79,9 @@ namespace Model
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet = false;
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet = false;
 
     TestConnectionInput m_testConnectionInput;
     bool m_testConnectionInputHasBeenSet = false;

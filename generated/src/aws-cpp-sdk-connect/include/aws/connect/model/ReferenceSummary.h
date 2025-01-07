@@ -73,7 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Information about the reference when the referenceType is
+     * <code>EMAIL_MESSAGE</code>. Otherwise, null.</p>
      */
     inline const EmailMessageReference& GetEmailMessage() const{ return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }

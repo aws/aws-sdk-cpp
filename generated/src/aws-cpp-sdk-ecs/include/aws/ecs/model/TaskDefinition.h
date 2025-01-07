@@ -542,6 +542,18 @@ namespace Model
     inline TaskDefinition& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
     inline TaskDefinition& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Enables fault injection and allows for fault injection requests to be
+     * accepted from the task's containers. The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool GetEnableFaultInjection() const{ return m_enableFaultInjection; }
+    inline bool EnableFaultInjectionHasBeenSet() const { return m_enableFaultInjectionHasBeenSet; }
+    inline void SetEnableFaultInjection(bool value) { m_enableFaultInjectionHasBeenSet = true; m_enableFaultInjection = value; }
+    inline TaskDefinition& WithEnableFaultInjection(bool value) { SetEnableFaultInjection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_taskDefinitionArn;
@@ -615,6 +627,9 @@ namespace Model
 
     EphemeralStorage m_ephemeralStorage;
     bool m_ephemeralStorageHasBeenSet = false;
+
+    bool m_enableFaultInjection;
+    bool m_enableFaultInjectionHasBeenSet = false;
   };
 
 } // namespace Model

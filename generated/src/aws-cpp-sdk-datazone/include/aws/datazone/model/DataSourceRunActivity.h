@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/DataAssetActivityStatus.h>
 #include <aws/datazone/model/DataSourceErrorMessage.h>
+#include <aws/datazone/model/LineageInfo.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The data lineage summary.</p>
+     */
+    inline const LineageInfo& GetLineageSummary() const{ return m_lineageSummary; }
+    inline bool LineageSummaryHasBeenSet() const { return m_lineageSummaryHasBeenSet; }
+    inline void SetLineageSummary(const LineageInfo& value) { m_lineageSummaryHasBeenSet = true; m_lineageSummary = value; }
+    inline void SetLineageSummary(LineageInfo&& value) { m_lineageSummaryHasBeenSet = true; m_lineageSummary = std::move(value); }
+    inline DataSourceRunActivity& WithLineageSummary(const LineageInfo& value) { SetLineageSummary(value); return *this;}
+    inline DataSourceRunActivity& WithLineageSummary(LineageInfo&& value) { SetLineageSummary(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The project ID included in the data source run activity.</p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
@@ -188,6 +201,9 @@ namespace Model
 
     DataSourceErrorMessage m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
+
+    LineageInfo m_lineageSummary;
+    bool m_lineageSummaryHasBeenSet = false;
 
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet = false;

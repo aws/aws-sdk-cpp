@@ -15,9 +15,9 @@ using namespace Aws::Utils;
 CreateIndexRequest::CreateIndexRequest() : 
     m_applicationIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_type(IndexType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_capacityConfigurationHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
@@ -35,15 +35,15 @@ Aws::String CreateIndexRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", IndexTypeMapper::GetNameForIndexType(m_type));
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", IndexTypeMapper::GetNameForIndexType(m_type));
   }
 
   if(m_tagsHasBeenSet)

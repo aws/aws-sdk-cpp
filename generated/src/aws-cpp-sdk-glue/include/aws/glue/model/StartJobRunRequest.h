@@ -119,11 +119,12 @@ namespace Model
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
      * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
-     * parent job. </p> <p>Streaming jobs must have timeout values less than 7 days or
-     * 10080 minutes. When the value is left blank, the job will be restarted after 7
-     * days based if you have not setup a maintenance window. If you have setup
-     * maintenance window, it will be restarted during the maintenance window after 7
-     * days.</p>
+     * parent job. </p> <p>Jobs must have timeout values less than 7 days or 10080
+     * minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is
+     * left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue
+     * jobs that had a timeout value greater than 7 days will be defaulted to 7 days.
+     * For instance if you have specified a timeout of 20 days for a batch job, it will
+     * be stopped on the 7th day.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
@@ -190,36 +191,34 @@ namespace Model
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
      * value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X
      * for Ray jobs.</p> <ul> <li> <p>For the <code>G.1X</code> worker type, each
-     * worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk (approximately
-     * 34GB free), and provides 1 executor per worker. We recommend this worker type
-     * for workloads such as data transforms, joins, and queries, to offers a scalable
-     * and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of
-     * memory) with 128GB disk (approximately 77GB free), and provides 1 executor per
-     * worker. We recommend this worker type for workloads such as data transforms,
-     * joins, and queries, to offers a scalable and cost effective way to run most
-     * jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each worker maps
-     * to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk (approximately 235GB free),
-     * and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 94GB disk, and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 138GB disk, and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk, and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk, and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose
      * workloads contain your most demanding transforms, aggregations, joins, and
      * queries. This worker type is available only for Glue version 3.0 or later Spark
-     * ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East
-     * (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
-     * (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe
-     * (Ireland), and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code>
-     * worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB
-     * disk (approximately 487GB free), and provides 1 executor per worker. We
-     * recommend this worker type for jobs whose workloads contain your most demanding
-     * transforms, aggregations, joins, and queries. This worker type is available only
-     * for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services
-     * Regions as supported for the <code>G.4X</code> worker type.</p> </li> <li>
-     * <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2
-     * vCPUs, 4 GB of memory) with 84GB disk (approximately 34GB free), and provides 1
-     * executor per worker. We recommend this worker type for low volume streaming
-     * jobs. This worker type is only available for Glue version 3.0 streaming
-     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
-     * to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB
-     * free), and provides up to 8 Ray workers based on the autoscaler.</p> </li> </ul>
+     * ETL jobs, in the same Amazon Web Services Regions as supported for the
+     * <code>G.4X</code> worker type.</p> </li> <li> <p>For the <code>G.025X</code>
+     * worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB
+     * disk, and provides 1 executor per worker. We recommend this worker type for low
+     * volume streaming jobs. This worker type is only available for Glue version 3.0
+     * or later streaming jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker
+     * type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk,
+     * and provides up to 8 Ray workers based on the autoscaler.</p> </li> </ul>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The cluster being failed over</p>
+     * <p>The cluster being failed over.</p>
      */
     inline const Cluster& GetCluster() const{ return m_cluster; }
     inline void SetCluster(const Cluster& value) { m_cluster = value; }

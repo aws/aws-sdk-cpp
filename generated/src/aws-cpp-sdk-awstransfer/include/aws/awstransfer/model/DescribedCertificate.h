@@ -90,10 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The certificate can be either <code>ACTIVE</code>,
-     * <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>.
-     * <code>PENDING_ROTATION</code> means that this certificate will replace the
-     * current certificate when it expires.</p>
+     * <p>Currently, the only available status is <code>ACTIVE</code>: all other values
+     * are reserved for future use.</p>
      */
     inline const CertificateStatusType& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

@@ -104,7 +104,9 @@ H264Settings::H264Settings() :
     m_temporalAdaptiveQuantization(H264TemporalAdaptiveQuantization::NOT_SET),
     m_temporalAdaptiveQuantizationHasBeenSet(false),
     m_unregisteredSeiTimecode(H264UnregisteredSeiTimecode::NOT_SET),
-    m_unregisteredSeiTimecodeHasBeenSet(false)
+    m_unregisteredSeiTimecodeHasBeenSet(false),
+    m_writeMp4PackagingType(H264WriteMp4PackagingType::NOT_SET),
+    m_writeMp4PackagingTypeHasBeenSet(false)
 {
 }
 
@@ -424,6 +426,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_unregisteredSeiTimecodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("writeMp4PackagingType"))
+  {
+    m_writeMp4PackagingType = H264WriteMp4PackagingTypeMapper::GetH264WriteMp4PackagingTypeForName(jsonValue.GetString("writeMp4PackagingType"));
+
+    m_writeMp4PackagingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -667,6 +676,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_unregisteredSeiTimecodeHasBeenSet)
   {
    payload.WithString("unregisteredSeiTimecode", H264UnregisteredSeiTimecodeMapper::GetNameForH264UnregisteredSeiTimecode(m_unregisteredSeiTimecode));
+  }
+
+  if(m_writeMp4PackagingTypeHasBeenSet)
+  {
+   payload.WithString("writeMp4PackagingType", H264WriteMp4PackagingTypeMapper::GetNameForH264WriteMp4PackagingType(m_writeMp4PackagingType));
   }
 
   return payload;

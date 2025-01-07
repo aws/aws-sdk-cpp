@@ -67,11 +67,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The token returned by a previous call, which you can use to retrieve the next
+     * set of results.</p> <p>The value of <code>nextToken</code> is a unique
+     * pagination token for each page. To retrieve the next page of results, make the
+     * call again using the returned token. Keep all other arguments unchanged.</p> <p>
+     * Using an expired pagination token results in an <code>HTTP 400
+     * InvalidToken</code> error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

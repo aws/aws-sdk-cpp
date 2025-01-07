@@ -12,6 +12,7 @@
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
 #include <aws/bedrock-agent-runtime/model/FilePart.h>
 #include <aws/bedrock-agent-runtime/model/InternalServerException.h>
+#include <aws/bedrock-agent-runtime/model/ModelNotReadyException.h>
 #include <aws/bedrock-agent-runtime/model/ResourceNotFoundException.h>
 #include <aws/bedrock-agent-runtime/model/ReturnControlPayload.h>
 #include <aws/bedrock-agent-runtime/model/ServiceQuotaExceededException.h>
@@ -141,6 +142,22 @@ namespace Model
 
     ///@{
     /**
+     * <p> The model specified in the request is not ready to serve Inference requests.
+     * The AWS SDK will automatically retry the operation up to 5 times. For
+     * information about configuring automatic retries, see <a
+     * href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+     * behavior</a> in the <i>AWS SDKs and Tools</i> reference guide. </p>
+     */
+    inline const ModelNotReadyException& GetModelNotReadyException() const{ return m_modelNotReadyException; }
+    inline bool ModelNotReadyExceptionHasBeenSet() const { return m_modelNotReadyExceptionHasBeenSet; }
+    inline void SetModelNotReadyException(const ModelNotReadyException& value) { m_modelNotReadyExceptionHasBeenSet = true; m_modelNotReadyException = value; }
+    inline void SetModelNotReadyException(ModelNotReadyException&& value) { m_modelNotReadyExceptionHasBeenSet = true; m_modelNotReadyException = std::move(value); }
+    inline ResponseStream& WithModelNotReadyException(const ModelNotReadyException& value) { SetModelNotReadyException(value); return *this;}
+    inline ResponseStream& WithModelNotReadyException(ModelNotReadyException&& value) { SetModelNotReadyException(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
      * Amazon Resource Name (ARN) and try your request again.</p>
      */
@@ -242,6 +259,9 @@ namespace Model
 
     InternalServerException m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;
+
+    ModelNotReadyException m_modelNotReadyException;
+    bool m_modelNotReadyExceptionHasBeenSet = false;
 
     ResourceNotFoundException m_resourceNotFoundException;
     bool m_resourceNotFoundExceptionHasBeenSet = false;

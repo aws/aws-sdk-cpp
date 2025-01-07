@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the email address.</p>
      */
     inline const Aws::String& GetEmailAddressId() const{ return m_emailAddressId; }
     inline void SetEmailAddressId(const Aws::String& value) { m_emailAddressId = value; }
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the email address.</p>
      */
     inline const Aws::String& GetEmailAddressArn() const{ return m_emailAddressArn; }
     inline void SetEmailAddressArn(const Aws::String& value) { m_emailAddressArn = value; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddress = value; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The display name of email address</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
@@ -87,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The description of the email address.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline void SetDescription(const Aws::String& value) { m_description = value; }
@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address creation timestamp in ISO 8601 Datetime.</p>
      */
     inline const Aws::String& GetCreateTimestamp() const{ return m_createTimestamp; }
     inline void SetCreateTimestamp(const Aws::String& value) { m_createTimestamp = value; }
@@ -113,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
      */
     inline const Aws::String& GetModifiedTimestamp() const{ return m_modifiedTimestamp; }
     inline void SetModifiedTimestamp(const Aws::String& value) { m_modifiedTimestamp = value; }
@@ -126,7 +126,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }

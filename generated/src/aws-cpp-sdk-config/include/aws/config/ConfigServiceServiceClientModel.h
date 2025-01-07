@@ -18,11 +18,13 @@
 /* End of generic header includes */
 
 /* Service model headers required in ConfigServiceClient header */
+#include <aws/config/model/AssociateResourceTypesResult.h>
 #include <aws/config/model/BatchGetAggregateResourceConfigResult.h>
 #include <aws/config/model/BatchGetResourceConfigResult.h>
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeleteRemediationConfigurationResult.h>
 #include <aws/config/model/DeleteRemediationExceptionsResult.h>
+#include <aws/config/model/DeleteServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/DeleteStoredQueryResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesResult.h>
@@ -50,6 +52,7 @@
 #include <aws/config/model/DescribeRemediationExceptionsResult.h>
 #include <aws/config/model/DescribeRemediationExecutionStatusResult.h>
 #include <aws/config/model/DescribeRetentionConfigurationsResult.h>
+#include <aws/config/model/DisassociateResourceTypesResult.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>
 #include <aws/config/model/GetAggregateConfigRuleComplianceSummaryResult.h>
 #include <aws/config/model/GetAggregateConformancePackComplianceSummaryResult.h>
@@ -70,6 +73,7 @@
 #include <aws/config/model/GetResourceEvaluationSummaryResult.h>
 #include <aws/config/model/GetStoredQueryResult.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
+#include <aws/config/model/ListConfigurationRecordersResult.h>
 #include <aws/config/model/ListConformancePackComplianceScoresResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/ListResourceEvaluationsResult.h>
@@ -85,6 +89,7 @@
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
 #include <aws/config/model/PutRemediationExceptionsResult.h>
 #include <aws/config/model/PutRetentionConfigurationResult.h>
+#include <aws/config/model/PutServiceLinkedConfigurationRecorderResult.h>
 #include <aws/config/model/PutStoredQueryResult.h>
 #include <aws/config/model/SelectAggregateResourceConfigResult.h>
 #include <aws/config/model/SelectResourceConfigResult.h>
@@ -93,6 +98,7 @@
 #include <aws/config/model/StartResourceEvaluationResult.h>
 #include <aws/config/model/ListStoredQueriesRequest.h>
 #include <aws/config/model/DescribeDeliveryChannelStatusRequest.h>
+#include <aws/config/model/ListConfigurationRecordersRequest.h>
 #include <aws/config/model/DescribeRetentionConfigurationsRequest.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
 #include <aws/config/model/DescribeConformancePacksRequest.h>
@@ -159,6 +165,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in ConfigServiceClient header */
+      class AssociateResourceTypesRequest;
       class BatchGetAggregateResourceConfigRequest;
       class BatchGetResourceConfigRequest;
       class DeleteAggregationAuthorizationRequest;
@@ -175,6 +182,7 @@ namespace Aws
       class DeleteRemediationExceptionsRequest;
       class DeleteResourceConfigRequest;
       class DeleteRetentionConfigurationRequest;
+      class DeleteServiceLinkedConfigurationRecorderRequest;
       class DeleteStoredQueryRequest;
       class DeliverConfigSnapshotRequest;
       class DescribeAggregateComplianceByConfigRulesRequest;
@@ -202,6 +210,7 @@ namespace Aws
       class DescribeRemediationExceptionsRequest;
       class DescribeRemediationExecutionStatusRequest;
       class DescribeRetentionConfigurationsRequest;
+      class DisassociateResourceTypesRequest;
       class GetAggregateComplianceDetailsByConfigRuleRequest;
       class GetAggregateConfigRuleComplianceSummaryRequest;
       class GetAggregateConformancePackComplianceSummaryRequest;
@@ -222,6 +231,7 @@ namespace Aws
       class GetResourceEvaluationSummaryRequest;
       class GetStoredQueryRequest;
       class ListAggregateDiscoveredResourcesRequest;
+      class ListConfigurationRecordersRequest;
       class ListConformancePackComplianceScoresRequest;
       class ListDiscoveredResourcesRequest;
       class ListResourceEvaluationsRequest;
@@ -241,6 +251,7 @@ namespace Aws
       class PutRemediationExceptionsRequest;
       class PutResourceConfigRequest;
       class PutRetentionConfigurationRequest;
+      class PutServiceLinkedConfigurationRecorderRequest;
       class PutStoredQueryRequest;
       class SelectAggregateResourceConfigRequest;
       class SelectResourceConfigRequest;
@@ -254,6 +265,7 @@ namespace Aws
       /* End of service model forward declarations required in ConfigServiceClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AssociateResourceTypesResult, ConfigServiceError> AssociateResourceTypesOutcome;
       typedef Aws::Utils::Outcome<BatchGetAggregateResourceConfigResult, ConfigServiceError> BatchGetAggregateResourceConfigOutcome;
       typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, ConfigServiceError> BatchGetResourceConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteAggregationAuthorizationOutcome;
@@ -270,6 +282,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteRemediationExceptionsResult, ConfigServiceError> DeleteRemediationExceptionsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteResourceConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteRetentionConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DeleteServiceLinkedConfigurationRecorderResult, ConfigServiceError> DeleteServiceLinkedConfigurationRecorderOutcome;
       typedef Aws::Utils::Outcome<DeleteStoredQueryResult, ConfigServiceError> DeleteStoredQueryOutcome;
       typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, ConfigServiceError> DeliverConfigSnapshotOutcome;
       typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, ConfigServiceError> DescribeAggregateComplianceByConfigRulesOutcome;
@@ -297,6 +310,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeRemediationExceptionsResult, ConfigServiceError> DescribeRemediationExceptionsOutcome;
       typedef Aws::Utils::Outcome<DescribeRemediationExecutionStatusResult, ConfigServiceError> DescribeRemediationExecutionStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, ConfigServiceError> DescribeRetentionConfigurationsOutcome;
+      typedef Aws::Utils::Outcome<DisassociateResourceTypesResult, ConfigServiceError> DisassociateResourceTypesOutcome;
       typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, ConfigServiceError> GetAggregateComplianceDetailsByConfigRuleOutcome;
       typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, ConfigServiceError> GetAggregateConfigRuleComplianceSummaryOutcome;
       typedef Aws::Utils::Outcome<GetAggregateConformancePackComplianceSummaryResult, ConfigServiceError> GetAggregateConformancePackComplianceSummaryOutcome;
@@ -317,6 +331,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetResourceEvaluationSummaryResult, ConfigServiceError> GetResourceEvaluationSummaryOutcome;
       typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQueryOutcome;
       typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
+      typedef Aws::Utils::Outcome<ListConfigurationRecordersResult, ConfigServiceError> ListConfigurationRecordersOutcome;
       typedef Aws::Utils::Outcome<ListConformancePackComplianceScoresResult, ConfigServiceError> ListConformancePackComplianceScoresOutcome;
       typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, ConfigServiceError> ListDiscoveredResourcesOutcome;
       typedef Aws::Utils::Outcome<ListResourceEvaluationsResult, ConfigServiceError> ListResourceEvaluationsOutcome;
@@ -336,6 +351,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, ConfigServiceError> PutRemediationExceptionsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutResourceConfigOutcome;
       typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, ConfigServiceError> PutRetentionConfigurationOutcome;
+      typedef Aws::Utils::Outcome<PutServiceLinkedConfigurationRecorderResult, ConfigServiceError> PutServiceLinkedConfigurationRecorderOutcome;
       typedef Aws::Utils::Outcome<PutStoredQueryResult, ConfigServiceError> PutStoredQueryOutcome;
       typedef Aws::Utils::Outcome<SelectAggregateResourceConfigResult, ConfigServiceError> SelectAggregateResourceConfigOutcome;
       typedef Aws::Utils::Outcome<SelectResourceConfigResult, ConfigServiceError> SelectResourceConfigOutcome;
@@ -349,6 +365,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AssociateResourceTypesOutcome> AssociateResourceTypesOutcomeCallable;
       typedef std::future<BatchGetAggregateResourceConfigOutcome> BatchGetAggregateResourceConfigOutcomeCallable;
       typedef std::future<BatchGetResourceConfigOutcome> BatchGetResourceConfigOutcomeCallable;
       typedef std::future<DeleteAggregationAuthorizationOutcome> DeleteAggregationAuthorizationOutcomeCallable;
@@ -365,6 +382,7 @@ namespace Aws
       typedef std::future<DeleteRemediationExceptionsOutcome> DeleteRemediationExceptionsOutcomeCallable;
       typedef std::future<DeleteResourceConfigOutcome> DeleteResourceConfigOutcomeCallable;
       typedef std::future<DeleteRetentionConfigurationOutcome> DeleteRetentionConfigurationOutcomeCallable;
+      typedef std::future<DeleteServiceLinkedConfigurationRecorderOutcome> DeleteServiceLinkedConfigurationRecorderOutcomeCallable;
       typedef std::future<DeleteStoredQueryOutcome> DeleteStoredQueryOutcomeCallable;
       typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
       typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
@@ -392,6 +410,7 @@ namespace Aws
       typedef std::future<DescribeRemediationExceptionsOutcome> DescribeRemediationExceptionsOutcomeCallable;
       typedef std::future<DescribeRemediationExecutionStatusOutcome> DescribeRemediationExecutionStatusOutcomeCallable;
       typedef std::future<DescribeRetentionConfigurationsOutcome> DescribeRetentionConfigurationsOutcomeCallable;
+      typedef std::future<DisassociateResourceTypesOutcome> DisassociateResourceTypesOutcomeCallable;
       typedef std::future<GetAggregateComplianceDetailsByConfigRuleOutcome> GetAggregateComplianceDetailsByConfigRuleOutcomeCallable;
       typedef std::future<GetAggregateConfigRuleComplianceSummaryOutcome> GetAggregateConfigRuleComplianceSummaryOutcomeCallable;
       typedef std::future<GetAggregateConformancePackComplianceSummaryOutcome> GetAggregateConformancePackComplianceSummaryOutcomeCallable;
@@ -412,6 +431,7 @@ namespace Aws
       typedef std::future<GetResourceEvaluationSummaryOutcome> GetResourceEvaluationSummaryOutcomeCallable;
       typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
       typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
+      typedef std::future<ListConfigurationRecordersOutcome> ListConfigurationRecordersOutcomeCallable;
       typedef std::future<ListConformancePackComplianceScoresOutcome> ListConformancePackComplianceScoresOutcomeCallable;
       typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
       typedef std::future<ListResourceEvaluationsOutcome> ListResourceEvaluationsOutcomeCallable;
@@ -431,6 +451,7 @@ namespace Aws
       typedef std::future<PutRemediationExceptionsOutcome> PutRemediationExceptionsOutcomeCallable;
       typedef std::future<PutResourceConfigOutcome> PutResourceConfigOutcomeCallable;
       typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
+      typedef std::future<PutServiceLinkedConfigurationRecorderOutcome> PutServiceLinkedConfigurationRecorderOutcomeCallable;
       typedef std::future<PutStoredQueryOutcome> PutStoredQueryOutcomeCallable;
       typedef std::future<SelectAggregateResourceConfigOutcome> SelectAggregateResourceConfigOutcomeCallable;
       typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
@@ -447,6 +468,7 @@ namespace Aws
     class ConfigServiceClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const ConfigServiceClient*, const Model::AssociateResourceTypesRequest&, const Model::AssociateResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateResourceTypesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetAggregateResourceConfigRequest&, const Model::BatchGetAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetResourceConfigRequest&, const Model::BatchGetResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteAggregationAuthorizationRequest&, const Model::DeleteAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAggregationAuthorizationResponseReceivedHandler;
@@ -463,6 +485,7 @@ namespace Aws
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationExceptionsRequest&, const Model::DeleteRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteResourceConfigRequest&, const Model::DeleteResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRetentionConfigurationRequest&, const Model::DeleteRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteServiceLinkedConfigurationRecorderRequest&, const Model::DeleteServiceLinkedConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceLinkedConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteStoredQueryRequest&, const Model::DeleteStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
@@ -490,6 +513,7 @@ namespace Aws
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationExceptionsRequest&, const Model::DescribeRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationExecutionStatusRequest&, const Model::DescribeRemediationExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationExecutionStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRetentionConfigurationsRequest&, const Model::DescribeRetentionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRetentionConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DisassociateResourceTypesRequest&, const Model::DisassociateResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateResourceTypesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateComplianceDetailsByConfigRuleRequest&, const Model::GetAggregateComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConfigRuleComplianceSummaryRequest&, const Model::GetAggregateConfigRuleComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConformancePackComplianceSummaryRequest&, const Model::GetAggregateConformancePackComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConformancePackComplianceSummaryResponseReceivedHandler;
@@ -510,6 +534,7 @@ namespace Aws
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceEvaluationSummaryRequest&, const Model::GetResourceEvaluationSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceEvaluationSummaryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetStoredQueryRequest&, const Model::GetStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::ListConfigurationRecordersRequest&, const Model::ListConfigurationRecordersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationRecordersResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListConformancePackComplianceScoresRequest&, const Model::ListConformancePackComplianceScoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConformancePackComplianceScoresResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListResourceEvaluationsRequest&, const Model::ListResourceEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceEvaluationsResponseReceivedHandler;
@@ -529,6 +554,7 @@ namespace Aws
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationExceptionsRequest&, const Model::PutRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutResourceConfigRequest&, const Model::PutResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutServiceLinkedConfigurationRecorderRequest&, const Model::PutServiceLinkedConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutServiceLinkedConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutStoredQueryRequest&, const Model::PutStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectAggregateResourceConfigRequest&, const Model::SelectAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;

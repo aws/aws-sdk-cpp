@@ -56,6 +56,12 @@ PutEnvironmentBlueprintConfigurationResult& PutEnvironmentBlueprintConfiguration
 
   }
 
+  if(jsonValue.ValueExists("environmentRolePermissionBoundary"))
+  {
+    m_environmentRolePermissionBoundary = jsonValue.GetString("environmentRolePermissionBoundary");
+
+  }
+
   if(jsonValue.ValueExists("manageAccessRoleArn"))
   {
     m_manageAccessRoleArn = jsonValue.GetString("manageAccessRoleArn");

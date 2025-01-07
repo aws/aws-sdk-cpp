@@ -43,8 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that
-     * contains the client parameters for OAuth authorization.</p>
+     * <p>The client parameters for OAuth authorization.</p>
      */
     inline const CreateConnectionOAuthClientRequestParameters& GetClientParameters() const{ return m_clientParameters; }
     inline bool ClientParametersHasBeenSet() const { return m_clientParametersHasBeenSet; }
@@ -83,8 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <code>ConnectionHttpParameters</code> object that contains details about
-     * the additional parameters to use for the connection.</p>
+     * <p>Details about the additional parameters to use for the connection.</p>
      */
     inline const ConnectionHttpParameters& GetOAuthHttpParameters() const{ return m_oAuthHttpParameters; }
     inline bool OAuthHttpParametersHasBeenSet() const { return m_oAuthHttpParametersHasBeenSet; }

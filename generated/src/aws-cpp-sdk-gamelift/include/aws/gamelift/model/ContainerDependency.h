@@ -31,10 +31,14 @@ namespace Model
    * is configured with the following dependency: a <code>START</code> dependency on
    * <i>ContainerB</i>. This means that <i>ContainerA</i> can't start until
    * <i>ContainerB</i> has started. It also means that <i>ContainerA</i> must shut
-   * down before <i>ContainerB</i>.</p>
-   * <p>eiifcbfhgrdurhnucnufkgbnbnnerrvbtjvljdetkehc<b>Part of:</b>
-   * <a>GameServerContainerDefinition</a>, <a>GameServerContainerDefinitionInput</a>,
-   * <a>SupportContainerDefinition</a>, <a>SupportContainerDefinitionInput</a>
+   * down before <i>ContainerB</i>.</p> <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerDependency">AWS
    * API Reference</a></p>

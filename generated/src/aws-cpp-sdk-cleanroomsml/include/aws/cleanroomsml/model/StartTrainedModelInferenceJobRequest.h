@@ -123,7 +123,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines he data source that is used for the trained model inference job.</p>
+     * <p>Defines the data source that is used for the trained model inference job.</p>
      */
     inline const ModelInferenceDataSource& GetDataSource() const{ return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }

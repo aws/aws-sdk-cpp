@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+     * <p>The ID or ARN of the listener.</p>
      */
     inline const Aws::String& GetListenerIdentifier() const{ return m_listenerIdentifier; }
     inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or ARN of the service.</p>
      */
     inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }

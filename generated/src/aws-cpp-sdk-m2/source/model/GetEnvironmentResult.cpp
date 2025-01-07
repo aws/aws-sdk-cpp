@@ -20,6 +20,7 @@ using namespace Aws;
 GetEnvironmentResult::GetEnvironmentResult() : 
     m_actualCapacity(0),
     m_engineType(EngineType::NOT_SET),
+    m_networkType(NetworkType::NOT_SET),
     m_publiclyAccessible(false),
     m_status(EnvironmentLifecycle::NOT_SET)
 {
@@ -103,6 +104,12 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("networkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
 
   }
 

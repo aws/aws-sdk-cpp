@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of contact flows which matched your search query.</p>
+     * <p>The total number of flows which matched your search query.</p>
      */
     inline long long GetApproximateTotalCount() const{ return m_approximateTotalCount; }
     inline void SetApproximateTotalCount(long long value) { m_approximateTotalCount = value; }

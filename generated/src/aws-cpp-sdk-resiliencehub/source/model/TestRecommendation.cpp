@@ -19,6 +19,7 @@ namespace Model
 {
 
 TestRecommendation::TestRecommendation() : 
+    m_appComponentIdHasBeenSet(false),
     m_appComponentNameHasBeenSet(false),
     m_dependsOnAlarmsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -45,6 +46,13 @@ TestRecommendation::TestRecommendation(JsonView jsonValue)
 
 TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("appComponentId"))
+  {
+    m_appComponentId = jsonValue.GetString("appComponentId");
+
+    m_appComponentIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
@@ -141,6 +149,12 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
 JsonValue TestRecommendation::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_appComponentIdHasBeenSet)
+  {
+   payload.WithString("appComponentId", m_appComponentId);
+
+  }
 
   if(m_appComponentNameHasBeenSet)
   {

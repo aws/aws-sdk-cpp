@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the evaluation job you want get information
+     * on.</p>
      */
     inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }

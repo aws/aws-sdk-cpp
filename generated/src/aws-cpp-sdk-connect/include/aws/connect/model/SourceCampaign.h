@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the campaign.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SourceCampaign">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A unique identifier for a campaign.</p>
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A unique identifier for a each request part of same campaign.</p>
      */
     inline const Aws::String& GetOutboundRequestId() const{ return m_outboundRequestId; }
     inline bool OutboundRequestIdHasBeenSet() const { return m_outboundRequestIdHasBeenSet; }

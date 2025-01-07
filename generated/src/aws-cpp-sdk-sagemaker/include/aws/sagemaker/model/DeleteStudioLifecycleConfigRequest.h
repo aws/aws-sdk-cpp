@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to
      * delete.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }

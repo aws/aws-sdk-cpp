@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
 #include <aws/eks/model/NodegroupUpdateConfig.h>
+#include <aws/eks/model/NodeRepairConfig.h>
 #include <aws/eks/model/CapacityTypes.h>
 #include <aws/eks/model/Taint.h>
 #include <utility>
@@ -319,6 +320,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The node auto repair configuration for the node group.</p>
+     */
+    inline const NodeRepairConfig& GetNodeRepairConfig() const{ return m_nodeRepairConfig; }
+    inline bool NodeRepairConfigHasBeenSet() const { return m_nodeRepairConfigHasBeenSet; }
+    inline void SetNodeRepairConfig(const NodeRepairConfig& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = value; }
+    inline void SetNodeRepairConfig(NodeRepairConfig&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::move(value); }
+    inline CreateNodegroupRequest& WithNodeRepairConfig(const NodeRepairConfig& value) { SetNodeRepairConfig(value); return *this;}
+    inline CreateNodegroupRequest& WithNodeRepairConfig(NodeRepairConfig&& value) { SetNodeRepairConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The capacity type for your node group.</p>
      */
     inline const CapacityTypes& GetCapacityType() const{ return m_capacityType; }
@@ -423,6 +436,9 @@ namespace Model
 
     NodegroupUpdateConfig m_updateConfig;
     bool m_updateConfigHasBeenSet = false;
+
+    NodeRepairConfig m_nodeRepairConfig;
+    bool m_nodeRepairConfigHasBeenSet = false;
 
     CapacityTypes m_capacityType;
     bool m_capacityTypeHasBeenSet = false;

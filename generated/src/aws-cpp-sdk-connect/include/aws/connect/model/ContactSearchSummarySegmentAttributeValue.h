@@ -24,7 +24,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The value of a segment attribute. This is structured as a map with a single
+   * key-value pair. The key 'valueString' indicates that the attribute type is a
+   * string, and its corresponding value is the actual string value of the segment
+   * attribute.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactSearchSummarySegmentAttributeValue">AWS
    * API Reference</a></p>
    */
@@ -39,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The value of a segment attribute represented as a string.</p>
      */
     inline const Aws::String& GetValueString() const{ return m_valueString; }
     inline bool ValueStringHasBeenSet() const { return m_valueStringHasBeenSet; }

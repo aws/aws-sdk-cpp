@@ -93,7 +93,9 @@ namespace Model
      * are being provisioned.</p> </li> <li> <p> <code>"running"</code> – Individual
      * assessments are being run.</p> </li> <li> <p> <code>"starting"</code> – The
      * assessment run is starting, but resources are not yet being provisioned for
-     * individual assessments.</p> </li> </ul>
+     * individual assessments.</p> </li> <li> <p> <code>"warning"</code> – At least one
+     * individual assessment completed with a <code>warning</code> status.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

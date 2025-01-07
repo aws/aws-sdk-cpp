@@ -18,7 +18,9 @@ CreateSnapshotsRequest::CreateSnapshotsRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_copyTagsFromSource(CopyTagsFromSource::NOT_SET),
-    m_copyTagsFromSourceHasBeenSet(false)
+    m_copyTagsFromSourceHasBeenSet(false),
+    m_location(SnapshotLocationEnum::NOT_SET),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,11 @@ Aws::String CreateSnapshotsRequest::SerializePayload() const
   if(m_copyTagsFromSourceHasBeenSet)
   {
     ss << "CopyTagsFromSource=" << CopyTagsFromSourceMapper::GetNameForCopyTagsFromSource(m_copyTagsFromSource) << "&";
+  }
+
+  if(m_locationHasBeenSet)
+  {
+    ss << "Location=" << SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_location) << "&";
   }
 
   ss << "Version=2016-11-15";

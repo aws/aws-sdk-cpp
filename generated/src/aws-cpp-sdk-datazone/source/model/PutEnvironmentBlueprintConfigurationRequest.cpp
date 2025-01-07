@@ -16,6 +16,7 @@ PutEnvironmentBlueprintConfigurationRequest::PutEnvironmentBlueprintConfiguratio
     m_domainIdentifierHasBeenSet(false),
     m_enabledRegionsHasBeenSet(false),
     m_environmentBlueprintIdentifierHasBeenSet(false),
+    m_environmentRolePermissionBoundaryHasBeenSet(false),
     m_manageAccessRoleArnHasBeenSet(false),
     m_provisioningConfigurationsHasBeenSet(false),
     m_provisioningRoleArnHasBeenSet(false),
@@ -35,6 +36,12 @@ Aws::String PutEnvironmentBlueprintConfigurationRequest::SerializePayload() cons
      enabledRegionsJsonList[enabledRegionsIndex].AsString(m_enabledRegions[enabledRegionsIndex]);
    }
    payload.WithArray("enabledRegions", std::move(enabledRegionsJsonList));
+
+  }
+
+  if(m_environmentRolePermissionBoundaryHasBeenSet)
+  {
+   payload.WithString("environmentRolePermissionBoundary", m_environmentRolePermissionBoundary);
 
   }
 

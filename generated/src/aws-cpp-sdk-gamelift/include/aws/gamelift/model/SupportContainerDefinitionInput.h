@@ -35,9 +35,12 @@ namespace Model
    * group. Support containers don't run game server processes.</p> <p>This
    * definition includes container configuration, resources, and start instructions.
    * Use this data type when creating or updating a container group definition. For
-   * properties of a deployed support container, see
-   * <a>SupportContainerDefinition</a>.</p> <p> <b>Use with: </b>
-   * <a>CreateContainerGroupDefinition</a>, <a>UpdateContainerGroupDefinition</a>
+   * properties of a deployed support container, see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>.</p>
+   * <p> <b>Use with: </b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SupportContainerDefinitionInput">AWS
    * API Reference</a></p>
@@ -180,7 +183,9 @@ namespace Model
      * <p>A specified amount of memory (in MiB) to reserve for this container. If you
      * don't specify a container-specific memory limit, the container shares the
      * container group's total memory allocation. </p> <p> <b>Related data type: </b>
-     * <a>ContainerGroupDefinition</a> TotalMemoryLimitMebibytes<code/> </p>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code/>
+     * </p>
      */
     inline int GetMemoryHardLimitMebibytes() const{ return m_memoryHardLimitMebibytes; }
     inline bool MemoryHardLimitMebibytesHasBeenSet() const { return m_memoryHardLimitMebibytesHasBeenSet; }
@@ -211,7 +216,9 @@ namespace Model
      * <p>The number of vCPU units to reserve for this container. The container can use
      * more resources when needed, if available. If you don't reserve CPU units for
      * this container, it shares the container group's total vCPU limit. </p> <p>
-     * <b>Related data type: </b> <a>ContainerGroupDefinition</a> TotalCpuLimit </p>
+     * <b>Related data type: </b> <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+     * TotalCpuLimit </p>
      */
     inline double GetVcpu() const{ return m_vcpu; }
     inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }

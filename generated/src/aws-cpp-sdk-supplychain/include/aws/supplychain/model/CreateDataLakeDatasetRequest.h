@@ -89,7 +89,7 @@ namespace Model
     ///@{
     /**
      * <p>The custom schema of the data lake dataset and is only required when the name
-     * space is <i>default</i>.</p>
+     * space is <b>default</b>.</p>
      */
     inline const DataLakeDatasetSchema& GetSchema() const{ return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }

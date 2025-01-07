@@ -52,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the card the file is associated with, if
-     * applicable.</p>
+     * <p>The unique identifier of the card the file is associated with.</p>
      */
     inline const Aws::String& GetCardId() const{ return m_cardId; }
     inline bool CardIdHasBeenSet() const { return m_cardIdHasBeenSet; }
@@ -109,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether the file is associated with an Q App definition or a specific Q App
+     * <p>Whether the file is associated with a Q App definition or a specific Q App
      * session.</p>
      */
     inline const DocumentScope& GetScope() const{ return m_scope; }

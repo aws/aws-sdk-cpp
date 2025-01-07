@@ -244,11 +244,16 @@ namespace Model
      * <code>network-interface.mac-address</code> - The MAC address of the network
      * interface.</p> </li> <li> <p>
      * <code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p> <code>network-interface.outpost-arn</code> - The
-     * ARN of the Outpost.</p> </li> <li> <p> <code>network-interface.owner-id</code> -
-     * The ID of the owner of the network interface.</p> </li> <li> <p>
-     * <code>network-interface.private-dns-name</code> - The private DNS name of the
-     * network interface.</p> </li> <li> <p>
+     * interface.</p> </li> <li> <p> <code>network-interface.operator.managed</code> -
+     * A Boolean that indicates whether the instance has a managed network
+     * interface.</p> </li> <li> <p> <code>network-interface.operator.principal</code>
+     * - The principal that manages the network interface. Only valid for instances
+     * with managed network interfaces, where <code>managed</code> is
+     * <code>true</code>.</p> </li> <li> <p> <code>network-interface.outpost-arn</code>
+     * - The ARN of the Outpost.</p> </li> <li> <p>
+     * <code>network-interface.owner-id</code> - The ID of the owner of the network
+     * interface.</p> </li> <li> <p> <code>network-interface.private-dns-name</code> -
+     * The private DNS name of the network interface.</p> </li> <li> <p>
      * <code>network-interface.private-ip-address</code> - The private IPv4
      * address.</p> </li> <li> <p> <code>network-interface.public-dns-name</code> - The
      * public DNS name.</p> </li> <li> <p> <code>network-interface.requester-id</code>
@@ -268,6 +273,13 @@ namespace Model
      * <code>network-interface.tag-value</code> - The value of a tag assigned to the
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
+     * <code>network-performance-options.bandwidth-weighting</code> - Where the
+     * performance boost is applied, if applicable. Valid values: <code>default</code>,
+     * <code>vpc-1</code>, <code>ebs-1</code>.</p> </li> <li> <p>
+     * <code>operator.managed</code> - A Boolean that indicates whether this is a
+     * managed instance.</p> </li> <li> <p> <code>operator.principal</code> - The
+     * principal that manages the instance. Only valid for managed instances, where
+     * <code>managed</code> is <code>true</code>.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
      * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
      * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name

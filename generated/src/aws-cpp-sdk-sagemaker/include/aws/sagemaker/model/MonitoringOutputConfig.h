@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker AI uses to encrypt
      * the model artifacts at rest using Amazon S3 server-side encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }

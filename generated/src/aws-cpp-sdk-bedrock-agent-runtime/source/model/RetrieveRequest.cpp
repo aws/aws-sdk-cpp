@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RetrieveRequest::RetrieveRequest() : 
+    m_guardrailConfigurationHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_retrievalConfigurationHasBeenSet(false),
@@ -23,6 +24,12 @@ RetrieveRequest::RetrieveRequest() :
 Aws::String RetrieveRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

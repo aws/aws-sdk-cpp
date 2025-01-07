@@ -375,7 +375,7 @@ namespace ECS
          * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are
          * reserved and can't be deleted. You can disassociate them from a cluster using
          * either <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
          * or by deleting the cluster.</p>  <p>Prior to a capacity provider being
          * deleted, the capacity provider must be removed from the capacity provider
          * strategy from all services. The <a
@@ -676,7 +676,9 @@ namespace ECS
         }
 
         /**
-         * <p>Describes one or more of your clusters.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your clusters.</p> <p> For CLI examples, see <a
+         * href="https://github.com/aws/aws-cli/blob/develop/awscli/examples/ecs/describe-clusters.rst">describe-clusters.rst</a>
+         * on GitHub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">AWS
          * API Reference</a></p>
          */
@@ -1103,7 +1105,7 @@ namespace ECS
 
         /**
          * <p>This operation lists all the service deployments that meet the specified
-         * filter criteria.</p> <p>A service deployment happens when you release a softwre
+         * filter criteria.</p> <p>A service deployment happens when you release a software
          * update for the service. You route traffic from the running service revisions to
          * the new service revison and control the number of running tasks. </p> <p>This
          * API returns the values that you use for the request parameters in <a

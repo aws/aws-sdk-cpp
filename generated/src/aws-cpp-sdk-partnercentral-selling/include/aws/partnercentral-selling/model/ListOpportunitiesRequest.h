@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog associated with the request. This field takes a string
+     * <p>Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunities are listed in. Use
      * <code>AWS</code> for listing real opportunities in the Amazon Web Services
-     * catalog, and <code>Sandbox</code> for testing in secure, isolated environments.
-     * </p>
+     * catalog, and <code>Sandbox</code> for testing in secure, isolated
+     * environments.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -142,9 +142,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the maximum number of results to return in a single call. This
+     * <p>Specifies the maximum number of results to return in a single call. This
      * limits the number of opportunities returned in the response to avoid providing
-     * too many results at once. </p> <p> Default: 20 </p>
+     * too many results at once.</p> <p>Default: 20</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -154,9 +154,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> A pagination token used to retrieve the next set of results in subsequent
+     * <p>A pagination token used to retrieve the next set of results in subsequent
      * calls. This token is included in the response only if there are additional
-     * result pages available. </p>
+     * result pages available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -170,8 +170,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> An object that specifies how the response is sorted. The default
-     * <code>Sort.SortBy</code> value is <code>LastModifiedDate</code>. </p>
+     * <p>An object that specifies how the response is sorted. The default
+     * <code>Sort.SortBy</code> value is <code>LastModifiedDate</code>.</p>
      */
     inline const OpportunitySort& GetSort() const{ return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }

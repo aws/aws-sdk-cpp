@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+     * <p>The ID or ARN of the VPC.</p>
      */
     inline const Aws::String& GetVpcIdentifier() const{ return m_vpcIdentifier; }
     inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }

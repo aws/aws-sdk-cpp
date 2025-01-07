@@ -18,6 +18,7 @@ import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -209,6 +210,40 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 });
     }
 
+    private static Set<String> servicesMissingMultiAuthMRAPTrait = ImmutableSet.of(
+            "S3",
+            "S3-CRT",
+            "CloudFront KeyValueStore",
+            "SESv2",
+            "EventBridge");
+
+    private void CheckAndEnableSigV4A(final ServiceModel serviceModel, VelocityContext context) {
+        List<String> c2jAuthList = serviceModel.getMetadata().getAuth();
+        String serviceId = serviceModel.getMetadata().getServiceId();
+        if (c2jAuthList != null && c2jAuthList.contains("aws.auth#sigv4a") ||
+             servicesMissingMultiAuthMRAPTrait.contains(serviceId)) {
+            context.put("multiRegionAccessPointSupported", true);
+        }
+        // todo: remove these checks later
+        if (!context.containsKey("multiRegionAccessPointSupported")) {
+            boolean hasSigV4AOperation = serviceModel.getOperations().values().stream()
+                    .anyMatch(op -> op.getAuth() != null && op.getAuth().contains("aws.auth#sigv4a"));
+
+            if (serviceModel.getEndpointRules().contains("\"sigv4a\"") || hasSigV4AOperation) {
+                throw new RuntimeException("Endpoint rules or operation reference sigv4a auth scheme but c2j model " + serviceId +
+                        " does not list aws.auth#sigv4a as a supported auth!");
+            }
+        }
+
+        if (c2jAuthList != null) {
+            boolean hasSigV4AndBearer = c2jAuthList.contains("smithy.api#httpBearerAuth") &&
+                    (c2jAuthList.contains("aws.auth#sigv4a") || c2jAuthList.contains("aws.auth#sigv4"));
+            if (!serviceModel.isUseSmithyClient() && hasSigV4AndBearer) {
+                throw new RuntimeException("SDK Clients cannot mix AWS and Bearer Credentials without enabling Smithy Identity!");
+            }
+        }
+    }
+
     protected final VelocityContext createContext(final ServiceModel serviceModel) {
         VelocityContext context = new VelocityContext();
         context.put("nl", System.lineSeparator());
@@ -217,9 +252,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("output.encoding", StandardCharsets.UTF_8.name());
         context.put("nullChar", '\0');
 
-        if (serviceModel.getEndpointRules().contains("\"sigv4a\"")) {
-            context.put("multiRegionAccessPointSupported", true);
-        }
+        CheckAndEnableSigV4A(serviceModel, context);
+
         return context;
     }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Elastic File System storage configuration for a SageMaker
+   * <p>The Amazon Elastic File System storage configuration for a SageMaker AI
    * image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSystemConfig">AWS
    * API Reference</a></p>

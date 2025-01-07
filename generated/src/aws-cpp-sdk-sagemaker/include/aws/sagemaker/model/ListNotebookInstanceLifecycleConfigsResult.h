@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the response is truncated, SageMaker returns this token. To get the next
-     * set of lifecycle configurations, use it in the next request. </p>
+     * <p>If the response is truncated, SageMaker AI returns this token. To get the
+     * next set of lifecycle configurations, use it in the next request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

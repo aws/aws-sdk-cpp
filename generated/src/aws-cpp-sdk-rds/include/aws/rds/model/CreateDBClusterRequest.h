@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/ClusterScalabilityType.h>
 #include <aws/rds/model/Tag.h>
@@ -827,8 +828,8 @@ namespace Model
     /**
      * <p>Specifies whether minor engine upgrades are applied automatically to the DB
      * cluster during the maintenance window. By default, minor engine upgrades are
-     * applied automatically.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters
-     * only</p>
+     * applied automatically.</p> <p>Valid for Cluster Type: Aurora DB clusters and
+     * Multi-AZ DB cluster</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -842,9 +843,9 @@ namespace Model
      * collected for the DB cluster. To turn off collecting Enhanced Monitoring
      * metrics, specify <code>0</code>.</p> <p>If <code>MonitoringRoleArn</code> is
      * specified, also set <code>MonitoringInterval</code> to a value other than
-     * <code>0</code>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-     * <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p> <p>Default:
-     * <code>0</code> </p>
+     * <code>0</code>.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ
+     * DB clusters</p> <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
+     * <p>Default: <code>0</code> </p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
@@ -862,7 +863,7 @@ namespace Model
      * up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than
      * <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p> <p>Valid for
-     * Cluster Type: Multi-AZ DB clusters only</p>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
@@ -876,11 +877,27 @@ namespace Model
 
     ///@{
     /**
+     * <p>The mode of Database Insights to enable for the DB cluster.</p> <p>If you set
+     * this value to <code>advanced</code>, you must also set the
+     * <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the
+     * <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p> <p>Valid
+     * for Cluster Type: Aurora DB clusters only</p>
+     */
+    inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
+    inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
+    inline void SetDatabaseInsightsMode(const DatabaseInsightsMode& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = value; }
+    inline void SetDatabaseInsightsMode(DatabaseInsightsMode&& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = std::move(value); }
+    inline CreateDBClusterRequest& WithDatabaseInsightsMode(const DatabaseInsightsMode& value) { SetDatabaseInsightsMode(value); return *this;}
+    inline CreateDBClusterRequest& WithDatabaseInsightsMode(DatabaseInsightsMode&& value) { SetDatabaseInsightsMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
      * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+     * <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
@@ -896,8 +913,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>Valid for Cluster Type: Multi-AZ DB
-     * clusters only</p>
+     * each Amazon Web Services Region.</p> <p>Valid for Cluster Type: Aurora DB
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
@@ -912,13 +929,13 @@ namespace Model
     ///@{
     /**
      * <p>The number of days to retain Performance Insights data.</p> <p>Valid for
-     * Cluster Type: Multi-AZ DB clusters only</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>7</code> </p> </li> <li> <p> <i>month</i> * 31, where <i>month</i> is a
-     * number of months from 1-23. Examples: <code>93</code> (3 months * 31),
-     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-     * <li> <p> <code>731</code> </p> </li> </ul> <p>Default: <code>7</code> days</p>
-     * <p>If you specify a retention period that isn't valid, such as <code>94</code>,
-     * Amazon RDS issues an error.</p>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>7</code> </p> </li> <li> <p> <i>month</i> * 31,
+     * where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3
+     * months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months *
+     * 31)</p> </li> <li> <p> <code>731</code> </p> </li> </ul> <p>Default:
+     * <code>7</code> days</p> <p>If you specify a retention period that isn't valid,
+     * such as <code>94</code>, Amazon RDS issues an error.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
@@ -1251,6 +1268,9 @@ namespace Model
 
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet = false;
+
+    DatabaseInsightsMode m_databaseInsightsMode;
+    bool m_databaseInsightsModeHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
     bool m_enablePerformanceInsightsHasBeenSet = false;

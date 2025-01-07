@@ -727,6 +727,31 @@ namespace Glue
         }
 
         /**
+         * <p>Creates a new catalog in the Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCatalog">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCatalogOutcome CreateCatalog(const Model::CreateCatalogRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCatalogRequestT = Model::CreateCatalogRequest>
+        Model::CreateCatalogOutcomeCallable CreateCatalogCallable(const CreateCatalogRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateCatalog, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCatalogRequestT = Model::CreateCatalogRequest>
+        void CreateCatalogAsync(const CreateCatalogRequestT& request, const CreateCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateCatalog, request, handler, context);
+        }
+
+        /**
          * <p>Creates a classifier in the user's account. This can be a
          * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
          * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
@@ -939,6 +964,96 @@ namespace Glue
         void CreateDevEndpointAsync(const CreateDevEndpointRequestT& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::CreateDevEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a Zero-ETL integration in the caller's account between two resources
+         * with Amazon Resource Names (ARNs): the <code>SourceArn</code> and
+         * <code>TargetArn</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIntegrationOutcome CreateIntegration(const Model::CreateIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        Model::CreateIntegrationOutcomeCallable CreateIntegrationCallable(const CreateIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        void CreateIntegrationAsync(const CreateIntegrationRequestT& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>This API can be used for setting up the <code>ResourceProperty</code> of the
+         * Glue connection (for the source) or Glue database ARN (for the target). These
+         * properties can include the role to access the connection or database. To set
+         * both source and target properties the same API needs to be invoked with the Glue
+         * connection ARN as <code>ResourceArn</code> with
+         * <code>SourceProcessingProperties</code> and the Glue database ARN as
+         * <code>ResourceArn</code> with <code>TargetProcessingProperties</code>
+         * respectively.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegrationResourceProperty">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIntegrationResourcePropertyOutcome CreateIntegrationResourceProperty(const Model::CreateIntegrationResourcePropertyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIntegrationResourceProperty that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIntegrationResourcePropertyRequestT = Model::CreateIntegrationResourcePropertyRequest>
+        Model::CreateIntegrationResourcePropertyOutcomeCallable CreateIntegrationResourcePropertyCallable(const CreateIntegrationResourcePropertyRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateIntegrationResourceProperty, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIntegrationResourceProperty that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIntegrationResourcePropertyRequestT = Model::CreateIntegrationResourcePropertyRequest>
+        void CreateIntegrationResourcePropertyAsync(const CreateIntegrationResourcePropertyRequestT& request, const CreateIntegrationResourcePropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateIntegrationResourceProperty, request, handler, context);
+        }
+
+        /**
+         * <p>This API is used to provide optional override properties for the the tables
+         * that need to be replicated. These properties can include properties for
+         * filtering and partitioning for the source and target tables. To set both source
+         * and target properties the same API need to be invoked with the Glue connection
+         * ARN as <code>ResourceArn</code> with <code>SourceTableConfig</code>, and the
+         * Glue database ARN as <code>ResourceArn</code> with
+         * <code>TargetTableConfig</code> respectively.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegrationTableProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIntegrationTablePropertiesOutcome CreateIntegrationTableProperties(const Model::CreateIntegrationTablePropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIntegrationTableProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIntegrationTablePropertiesRequestT = Model::CreateIntegrationTablePropertiesRequest>
+        Model::CreateIntegrationTablePropertiesOutcomeCallable CreateIntegrationTablePropertiesCallable(const CreateIntegrationTablePropertiesRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateIntegrationTableProperties, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIntegrationTableProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIntegrationTablePropertiesRequestT = Model::CreateIntegrationTablePropertiesRequest>
+        void CreateIntegrationTablePropertiesAsync(const CreateIntegrationTablePropertiesRequestT& request, const CreateIntegrationTablePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateIntegrationTableProperties, request, handler, context);
         }
 
         /**
@@ -1248,7 +1363,10 @@ namespace Glue
         }
 
         /**
-         * <p>Creates a new trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new trigger.</p> <p>Job arguments may be logged. Do not pass
+         * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon
+         * Web Services Secrets Manager or other secret management mechanism if you intend
+         * to keep them within the Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">AWS
          * API Reference</a></p>
          */
@@ -1371,6 +1489,42 @@ namespace Glue
         void DeleteBlueprintAsync(const DeleteBlueprintRequestT& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::DeleteBlueprint, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the specified catalog from the Glue Data Catalog.</p> <p>After
+         * completing this operation, you no longer have access to the databases, tables
+         * (and all table versions and partitions that might belong to the tables) and the
+         * user-defined functions in the deleted catalog. Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
+         * service.</p> <p>To ensure the immediate deletion of all related resources before
+         * calling the <code>DeleteCatalog</code> operation, use
+         * <code>DeleteTableVersion</code> (or <code>BatchDeleteTableVersion</code>),
+         * <code>DeletePartition</code> (or <code>BatchDeletePartition</code>),
+         * <code>DeleteTable</code> (or <code>BatchDeleteTable</code>),
+         * <code>DeleteUserDefinedFunction</code> and <code>DeleteDatabase</code> to delete
+         * any resources that belong to the catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCatalog">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCatalogOutcome DeleteCatalog(const Model::DeleteCatalogRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCatalogRequestT = Model::DeleteCatalogRequest>
+        Model::DeleteCatalogOutcomeCallable DeleteCatalogCallable(const DeleteCatalogRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DeleteCatalog, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCatalogRequestT = Model::DeleteCatalogRequest>
+        void DeleteCatalogAsync(const DeleteCatalogRequestT& request, const DeleteCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DeleteCatalog, request, handler, context);
         }
 
         /**
@@ -1637,6 +1791,57 @@ namespace Glue
         void DeleteDevEndpointAsync(const DeleteDevEndpointRequestT& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::DeleteDevEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified Zero-ETL integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const DeleteIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DeleteIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        void DeleteIntegrationAsync(const DeleteIntegrationRequestT& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DeleteIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the table properties that have been created for the tables that need
+         * to be replicated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationTableProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntegrationTablePropertiesOutcome DeleteIntegrationTableProperties(const Model::DeleteIntegrationTablePropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIntegrationTableProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIntegrationTablePropertiesRequestT = Model::DeleteIntegrationTablePropertiesRequest>
+        Model::DeleteIntegrationTablePropertiesOutcomeCallable DeleteIntegrationTablePropertiesCallable(const DeleteIntegrationTablePropertiesRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DeleteIntegrationTableProperties, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIntegrationTableProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIntegrationTablePropertiesRequestT = Model::DeleteIntegrationTablePropertiesRequest>
+        void DeleteIntegrationTablePropertiesAsync(const DeleteIntegrationTablePropertiesRequestT& request, const DeleteIntegrationTablePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DeleteIntegrationTableProperties, request, handler, context);
         }
 
         /**
@@ -2109,6 +2314,113 @@ namespace Glue
         }
 
         /**
+         * <p>The <code>DescribeConnectionType</code> API provides full details of the
+         * supported options for a given connection type in Glue.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeConnectionType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConnectionTypeOutcome DescribeConnectionType(const Model::DescribeConnectionTypeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeConnectionType that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeConnectionTypeRequestT = Model::DescribeConnectionTypeRequest>
+        Model::DescribeConnectionTypeOutcomeCallable DescribeConnectionTypeCallable(const DescribeConnectionTypeRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DescribeConnectionType, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeConnectionType that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeConnectionTypeRequestT = Model::DescribeConnectionTypeRequest>
+        void DescribeConnectionTypeAsync(const DescribeConnectionTypeRequestT& request, const DescribeConnectionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DescribeConnectionType, request, handler, context);
+        }
+
+        /**
+         * <p>Provides details regarding the entity used with the connection type, with a
+         * description of the data model for each field in the selected entity.</p> <p> The
+         * response includes all the fields which make up the entity.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeEntity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEntityOutcome DescribeEntity(const Model::DescribeEntityRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEntity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEntityRequestT = Model::DescribeEntityRequest>
+        Model::DescribeEntityOutcomeCallable DescribeEntityCallable(const DescribeEntityRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DescribeEntity, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEntityRequestT = Model::DescribeEntityRequest>
+        void DescribeEntityAsync(const DescribeEntityRequestT& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DescribeEntity, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of inbound integrations for the specified
+         * integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeInboundIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInboundIntegrationsOutcome DescribeInboundIntegrations(const Model::DescribeInboundIntegrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeInboundIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInboundIntegrationsRequestT = Model::DescribeInboundIntegrationsRequest>
+        Model::DescribeInboundIntegrationsOutcomeCallable DescribeInboundIntegrationsCallable(const DescribeInboundIntegrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::DescribeInboundIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInboundIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInboundIntegrationsRequestT = Model::DescribeInboundIntegrationsRequest>
+        void DescribeInboundIntegrationsAsync(const DescribeInboundIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInboundIntegrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::DescribeInboundIntegrations, request, handler, context);
+        }
+
+        /**
+         * <p>The API is used to retrieve a list of integrations.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIntegrationsOutcome DescribeIntegrations(const Model::DescribeIntegrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        Model::DescribeIntegrationsOutcomeCallable DescribeIntegrationsCallable(const DescribeIntegrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::DescribeIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        void DescribeIntegrationsAsync(const DescribeIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeIntegrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::DescribeIntegrations, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the details of a blueprint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">AWS
          * API Reference</a></p>
@@ -2185,6 +2497,32 @@ namespace Glue
         }
 
         /**
+         * <p>The name of the Catalog to retrieve. This should be all
+         * lowercase.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalog">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetCatalogOutcome GetCatalog(const Model::GetCatalogRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCatalogRequestT = Model::GetCatalogRequest>
+        Model::GetCatalogOutcomeCallable GetCatalogCallable(const GetCatalogRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetCatalog, request);
+        }
+
+        /**
+         * An Async wrapper for GetCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCatalogRequestT = Model::GetCatalogRequest>
+        void GetCatalogAsync(const GetCatalogRequestT& request, const GetCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetCatalog, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the status of a migration operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">AWS
          * API Reference</a></p>
@@ -2207,6 +2545,34 @@ namespace Glue
         void GetCatalogImportStatusAsync(const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCatalogImportStatusRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetCatalogImportStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves all catalogs defined in a catalog in the Glue Data Catalog. For a
+         * Redshift-federated catalog use case, this operation returns the list of catalogs
+         * mapped to Redshift databases in the Redshift namespace catalog.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCatalogsOutcome GetCatalogs(const Model::GetCatalogsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetCatalogs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCatalogsRequestT = Model::GetCatalogsRequest>
+        Model::GetCatalogsOutcomeCallable GetCatalogsCallable(const GetCatalogsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::GetCatalogs, request);
+        }
+
+        /**
+         * An Async wrapper for GetCatalogs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCatalogsRequestT = Model::GetCatalogsRequest>
+        void GetCatalogsAsync(const GetCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCatalogsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::GetCatalogs, request, handler, context);
         }
 
         /**
@@ -2863,6 +3229,92 @@ namespace Glue
         }
 
         /**
+         * <p>This API is used to query preview data from a given connection type or from a
+         * native Amazon S3 based Glue Data Catalog.</p> <p>Returns records as an array of
+         * JSON blobs. Each record is formatted using Jackson JsonNode based on the field
+         * type defined by the <code>DescribeEntity</code> API.</p> <p>Spark connectors
+         * generate schemas according to the same data type mapping as in the
+         * <code>DescribeEntity</code> API. Spark connectors convert data to the
+         * appropriate data types matching the schema when returning rows.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetEntityRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEntityRecordsOutcome GetEntityRecords(const Model::GetEntityRecordsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEntityRecords that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEntityRecordsRequestT = Model::GetEntityRecordsRequest>
+        Model::GetEntityRecordsOutcomeCallable GetEntityRecordsCallable(const GetEntityRecordsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetEntityRecords, request);
+        }
+
+        /**
+         * An Async wrapper for GetEntityRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEntityRecordsRequestT = Model::GetEntityRecordsRequest>
+        void GetEntityRecordsAsync(const GetEntityRecordsRequestT& request, const GetEntityRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetEntityRecords, request, handler, context);
+        }
+
+        /**
+         * <p>This API is used for fetching the <code>ResourceProperty</code> of the Glue
+         * connection (for the source) or Glue database ARN (for the target)</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetIntegrationResourceProperty">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIntegrationResourcePropertyOutcome GetIntegrationResourceProperty(const Model::GetIntegrationResourcePropertyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIntegrationResourceProperty that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIntegrationResourcePropertyRequestT = Model::GetIntegrationResourcePropertyRequest>
+        Model::GetIntegrationResourcePropertyOutcomeCallable GetIntegrationResourcePropertyCallable(const GetIntegrationResourcePropertyRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetIntegrationResourceProperty, request);
+        }
+
+        /**
+         * An Async wrapper for GetIntegrationResourceProperty that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIntegrationResourcePropertyRequestT = Model::GetIntegrationResourcePropertyRequest>
+        void GetIntegrationResourcePropertyAsync(const GetIntegrationResourcePropertyRequestT& request, const GetIntegrationResourcePropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetIntegrationResourceProperty, request, handler, context);
+        }
+
+        /**
+         * <p>This API is used to retrieve optional override properties for the tables that
+         * need to be replicated. These properties can include properties for filtering and
+         * partition for source and target tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetIntegrationTableProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIntegrationTablePropertiesOutcome GetIntegrationTableProperties(const Model::GetIntegrationTablePropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIntegrationTableProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIntegrationTablePropertiesRequestT = Model::GetIntegrationTablePropertiesRequest>
+        Model::GetIntegrationTablePropertiesOutcomeCallable GetIntegrationTablePropertiesCallable(const GetIntegrationTablePropertiesRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetIntegrationTableProperties, request);
+        }
+
+        /**
+         * An Async wrapper for GetIntegrationTableProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIntegrationTablePropertiesRequestT = Model::GetIntegrationTablePropertiesRequest>
+        void GetIntegrationTablePropertiesAsync(const GetIntegrationTablePropertiesRequestT& request, const GetIntegrationTablePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetIntegrationTableProperties, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves an existing job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJob">AWS API
          * Reference</a></p>
@@ -2921,7 +3373,7 @@ namespace Glue
 
         /**
          * <p>Retrieves the metadata for a given job run. Job run history is accessible for
-         * 90 days for your workflow and job run.</p><p><h3>See Also:</h3>   <a
+         * 365 days for your workflow and job run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">AWS API
          * Reference</a></p>
          */
@@ -2946,8 +3398,9 @@ namespace Glue
         }
 
         /**
-         * <p>Retrieves metadata for all runs of a given job definition.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for all runs of a given job definition.</p> <p>
+         * <code>GetJobRuns</code> returns the job runs in chronological order, with the
+         * newest jobs returned first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">AWS API
          * Reference</a></p>
          */
@@ -4080,6 +4533,36 @@ namespace Glue
         }
 
         /**
+         * <p>The <code>ListConnectionTypes</code> API provides a discovery mechanism to
+         * learn available connection types in Glue. The response contains a list of
+         * connection types with high-level details of what is supported for each
+         * connection type. The connection types listed are the set of supported options
+         * for the <code>ConnectionType</code> value in the <code>CreateConnection</code>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListConnectionTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectionTypesOutcome ListConnectionTypes(const Model::ListConnectionTypesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConnectionTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConnectionTypesRequestT = Model::ListConnectionTypesRequest>
+        Model::ListConnectionTypesOutcomeCallable ListConnectionTypesCallable(const ListConnectionTypesRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::ListConnectionTypes, request);
+        }
+
+        /**
+         * An Async wrapper for ListConnectionTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConnectionTypesRequestT = Model::ListConnectionTypesRequest>
+        void ListConnectionTypesAsync(const ListConnectionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectionTypesRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::ListConnectionTypes, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the names of all crawler resources in this Amazon Web Services
          * account, or the resources with the specified tag. This operation allows you to
          * see which resources are available in your account, and their names.</p> <p>This
@@ -4353,6 +4836,32 @@ namespace Glue
         void ListDevEndpointsAsync(const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDevEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListDevEndpoints, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the available entities supported by the connection type.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEntitiesOutcome ListEntities(const Model::ListEntitiesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListEntities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEntitiesRequestT = Model::ListEntitiesRequest>
+        Model::ListEntitiesOutcomeCallable ListEntitiesCallable(const ListEntitiesRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::ListEntities, request);
+        }
+
+        /**
+         * An Async wrapper for ListEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEntitiesRequestT = Model::ListEntitiesRequest>
+        void ListEntitiesAsync(const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEntitiesRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::ListEntities, request, handler, context);
         }
 
         /**
@@ -4657,6 +5166,32 @@ namespace Glue
         void ListWorkflowsAsync(const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListWorkflows, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies a Zero-ETL integration in the caller's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ModifyIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIntegrationOutcome ModifyIntegration(const Model::ModifyIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyIntegrationRequestT = Model::ModifyIntegrationRequest>
+        Model::ModifyIntegrationOutcomeCallable ModifyIntegrationCallable(const ModifyIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::ModifyIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyIntegrationRequestT = Model::ModifyIntegrationRequest>
+        void ModifyIntegrationAsync(const ModifyIntegrationRequestT& request, const ModifyIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::ModifyIntegration, request, handler, context);
         }
 
         /**
@@ -5701,6 +6236,32 @@ namespace Glue
         }
 
         /**
+         * <p>Updates an existing catalog's properties in the Glue Data
+         * Catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCatalog">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCatalogOutcome UpdateCatalog(const Model::UpdateCatalogRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCatalogRequestT = Model::UpdateCatalogRequest>
+        Model::UpdateCatalogOutcomeCallable UpdateCatalogCallable(const UpdateCatalogRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::UpdateCatalog, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCatalogRequestT = Model::UpdateCatalogRequest>
+        void UpdateCatalogAsync(const UpdateCatalogRequestT& request, const UpdateCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::UpdateCatalog, request, handler, context);
+        }
+
+        /**
          * <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an
          * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a
          * <code>CsvClassifier</code>, depending on which field is present).</p><p><h3>See
@@ -5962,6 +6523,69 @@ namespace Glue
         }
 
         /**
+         * <p>This API can be used for updating the <code>ResourceProperty</code> of the
+         * Glue connection (for the source) or Glue database ARN (for the target). These
+         * properties can include the role to access the connection or database. Since the
+         * same resource can be used across multiple integrations, updating resource
+         * properties will impact all the integrations using it.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIntegrationResourceProperty">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIntegrationResourcePropertyOutcome UpdateIntegrationResourceProperty(const Model::UpdateIntegrationResourcePropertyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIntegrationResourceProperty that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIntegrationResourcePropertyRequestT = Model::UpdateIntegrationResourcePropertyRequest>
+        Model::UpdateIntegrationResourcePropertyOutcomeCallable UpdateIntegrationResourcePropertyCallable(const UpdateIntegrationResourcePropertyRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::UpdateIntegrationResourceProperty, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIntegrationResourceProperty that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIntegrationResourcePropertyRequestT = Model::UpdateIntegrationResourcePropertyRequest>
+        void UpdateIntegrationResourcePropertyAsync(const UpdateIntegrationResourcePropertyRequestT& request, const UpdateIntegrationResourcePropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::UpdateIntegrationResourceProperty, request, handler, context);
+        }
+
+        /**
+         * <p>This API is used to provide optional override properties for the tables that
+         * need to be replicated. These properties can include properties for filtering and
+         * partitioning for the source and target tables. To set both source and target
+         * properties the same API need to be invoked with the Glue connection ARN as
+         * <code>ResourceArn</code> with <code>SourceTableConfig</code>, and the Glue
+         * database ARN as <code>ResourceArn</code> with <code>TargetTableConfig</code>
+         * respectively.</p> <p>The override will be reflected across all the integrations
+         * using same <code>ResourceArn</code> and source table.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIntegrationTableProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIntegrationTablePropertiesOutcome UpdateIntegrationTableProperties(const Model::UpdateIntegrationTablePropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIntegrationTableProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIntegrationTablePropertiesRequestT = Model::UpdateIntegrationTablePropertiesRequest>
+        Model::UpdateIntegrationTablePropertiesOutcomeCallable UpdateIntegrationTablePropertiesCallable(const UpdateIntegrationTablePropertiesRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::UpdateIntegrationTableProperties, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIntegrationTableProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIntegrationTablePropertiesRequestT = Model::UpdateIntegrationTablePropertiesRequest>
+        void UpdateIntegrationTablePropertiesAsync(const UpdateIntegrationTablePropertiesRequestT& request, const UpdateIntegrationTablePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::UpdateIntegrationTableProperties, request, handler, context);
+        }
+
+        /**
          * <p>Updates an existing job definition. The previous job definition is completely
          * overwritten by this information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">AWS API
@@ -6213,7 +6837,10 @@ namespace Glue
         }
 
         /**
-         * <p>Updates a trigger definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a trigger definition.</p> <p>Job arguments may be logged. Do not pass
+         * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon
+         * Web Services Secrets Manager or other secret management mechanism if you intend
+         * to keep them within the Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">AWS
          * API Reference</a></p>
          */

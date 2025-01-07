@@ -16,9 +16,11 @@ namespace Model
   enum class ListFlowAssociationResourceType
   {
     NOT_SET,
+    WHATSAPP_MESSAGING_PHONE_NUMBER,
     VOICE_PHONE_NUMBER,
     INBOUND_EMAIL,
-    OUTBOUND_EMAIL
+    OUTBOUND_EMAIL,
+    ANALYTICS_CONNECTOR
   };
 
 namespace ListFlowAssociationResourceTypeMapper

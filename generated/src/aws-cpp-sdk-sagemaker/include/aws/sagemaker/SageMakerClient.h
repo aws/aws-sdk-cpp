@@ -314,9 +314,9 @@ namespace SageMaker
 
         /**
          * <p>Creates a running app for the specified UserProfile. This operation is
-         * automatically invoked by Amazon SageMaker upon access to the associated Domain,
-         * and when new kernel configurations are selected by the user. A user may have
-         * multiple Apps active simultaneously.</p><p><h3>See Also:</h3>   <a
+         * automatically invoked by Amazon SageMaker AI upon access to the associated
+         * Domain, and when new kernel configurations are selected by the user. A user may
+         * have multiple Apps active simultaneously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          */
@@ -341,9 +341,10 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a configuration for running a SageMaker image as a KernelGateway app.
-         * The configuration specifies the Amazon Elastic File System storage volume on the
-         * image, and a list of the kernels in the image.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a configuration for running a SageMaker AI image as a KernelGateway
+         * app. The configuration specifies the Amazon Elastic File System storage volume
+         * on the image, and a list of the kernels in the image.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">AWS
          * API Reference</a></p>
          */
@@ -398,21 +399,21 @@ namespace SageMaker
 
         /**
          * <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML
-         * job.</p> <p>An AutoML job in SageMaker is a fully automated process that allows
-         * you to build machine learning models with minimal effort and machine learning
-         * expertise. When initiating an AutoML job, you provide your data and optionally
-         * specify parameters tailored to your use case. SageMaker then automates the
-         * entire model development lifecycle, including data preprocessing, model
-         * training, tuning, and evaluation. AutoML jobs are designed to simplify and
+         * job.</p> <p>An AutoML job in SageMaker AI is a fully automated process that
+         * allows you to build machine learning models with minimal effort and machine
+         * learning expertise. When initiating an AutoML job, you provide your data and
+         * optionally specify parameters tailored to your use case. SageMaker AI then
+         * automates the entire model development lifecycle, including data preprocessing,
+         * model training, tuning, and evaluation. AutoML jobs are designed to simplify and
          * accelerate the model building process by automating various tasks and exploring
          * different combinations of machine learning algorithms, data preprocessing
          * techniques, and hyperparameter values. The output of an AutoML job comprises one
          * or more trained models ready for deployment and inference. Additionally,
-         * SageMaker AutoML jobs generate a candidate model leaderboard, allowing you to
+         * SageMaker AI AutoML jobs generate a candidate model leaderboard, allowing you to
          * select the best-performing model for deployment.</p> <p>For more information
          * about AutoML jobs, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html</a>
-         * in the SageMaker developer guide.</p>  <p>We recommend using the new
+         * in the SageMaker AI developer guide.</p>  <p>We recommend using the new
          * versions <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
          * and <a
@@ -455,24 +456,25 @@ namespace SageMaker
 
         /**
          * <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML
-         * job V2.</p> <p>An AutoML job in SageMaker is a fully automated process that
+         * job V2.</p> <p>An AutoML job in SageMaker AI is a fully automated process that
          * allows you to build machine learning models with minimal effort and machine
          * learning expertise. When initiating an AutoML job, you provide your data and
-         * optionally specify parameters tailored to your use case. SageMaker then
+         * optionally specify parameters tailored to your use case. SageMaker AI then
          * automates the entire model development lifecycle, including data preprocessing,
          * model training, tuning, and evaluation. AutoML jobs are designed to simplify and
          * accelerate the model building process by automating various tasks and exploring
          * different combinations of machine learning algorithms, data preprocessing
          * techniques, and hyperparameter values. The output of an AutoML job comprises one
          * or more trained models ready for deployment and inference. Additionally,
-         * SageMaker AutoML jobs generate a candidate model leaderboard, allowing you to
+         * SageMaker AI AutoML jobs generate a candidate model leaderboard, allowing you to
          * select the best-performing model for deployment.</p> <p>For more information
          * about AutoML jobs, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html</a>
-         * in the SageMaker developer guide.</p> <p>AutoML jobs V2 support various problem
-         * types such as regression, binary, and multiclass classification with tabular
-         * data, text and image classification, time-series forecasting, and fine-tuning of
-         * large language models (LLMs) for text generation.</p>  <p> <a
+         * in the SageMaker AI developer guide.</p> <p>AutoML jobs V2 support various
+         * problem types such as regression, binary, and multiclass classification with
+         * tabular data, text and image classification, time-series forecasting, and
+         * fine-tuning of large language models (LLMs) for text generation.</p>  <p>
+         * <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
          * and <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
@@ -549,12 +551,41 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a Git repository as a resource in your SageMaker account. You can
+         * <p>Create cluster policy configuration. This policy is used for task
+         * prioritization and fair-share allocation of idle compute. This helps prioritize
+         * critical workloads and distributes idle compute across entities.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterSchedulerConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateClusterSchedulerConfigOutcome CreateClusterSchedulerConfig(const Model::CreateClusterSchedulerConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateClusterSchedulerConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateClusterSchedulerConfigRequestT = Model::CreateClusterSchedulerConfigRequest>
+        Model::CreateClusterSchedulerConfigOutcomeCallable CreateClusterSchedulerConfigCallable(const CreateClusterSchedulerConfigRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateClusterSchedulerConfig, request);
+        }
+
+        /**
+         * An Async wrapper for CreateClusterSchedulerConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateClusterSchedulerConfigRequestT = Model::CreateClusterSchedulerConfigRequest>
+        void CreateClusterSchedulerConfigAsync(const CreateClusterSchedulerConfigRequestT& request, const CreateClusterSchedulerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateClusterSchedulerConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a Git repository as a resource in your SageMaker AI account. You can
          * associate the repository with notebook instances so that you can use Git source
          * control for the notebooks you create. The Git repository is a resource in your
-         * SageMaker account, so it can be associated with more than one notebook instance,
-         * and it persists independently from the lifecycle of any notebook instances it is
-         * associated with.</p> <p>The repository can be hosted either in <a
+         * SageMaker AI account, so it can be associated with more than one notebook
+         * instance, and it persists independently from the lifecycle of any notebook
+         * instances it is associated with.</p> <p>The repository can be hosted either in
+         * <a
          * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
          * Web Services CodeCommit</a> or in any other Git repository.</p><p><h3>See
          * Also:</h3>   <a
@@ -583,16 +614,16 @@ namespace SageMaker
 
         /**
          * <p>Starts a model compilation job. After the model has been compiled, Amazon
-         * SageMaker saves the resulting model artifacts to an Amazon Simple Storage
+         * SageMaker AI saves the resulting model artifacts to an Amazon Simple Storage
          * Service (Amazon S3) bucket that you specify. </p> <p>If you choose to host your
-         * model using Amazon SageMaker hosting services, you can use the resulting model
-         * artifacts as part of the model. You can also use the artifacts with Amazon Web
-         * Services IoT Greengrass. In that case, deploy them as an ML resource.</p> <p>In
-         * the request body, you provide the following:</p> <ul> <li> <p>A name for the
-         * compilation job</p> </li> <li> <p> Information about the input model artifacts
-         * </p> </li> <li> <p>The output location for the compiled model and the device
-         * (target) that the model runs on </p> </li> <li> <p>The Amazon Resource Name
-         * (ARN) of the IAM role that Amazon SageMaker assumes to perform the model
+         * model using Amazon SageMaker AI hosting services, you can use the resulting
+         * model artifacts as part of the model. You can also use the artifacts with Amazon
+         * Web Services IoT Greengrass. In that case, deploy them as an ML resource.</p>
+         * <p>In the request body, you provide the following:</p> <ul> <li> <p>A name for
+         * the compilation job</p> </li> <li> <p> Information about the input model
+         * artifacts </p> </li> <li> <p>The output location for the compiled model and the
+         * device (target) that the model runs on </p> </li> <li> <p>The Amazon Resource
+         * Name (ARN) of the IAM role that Amazon SageMaker AI assumes to perform the model
          * compilation job. </p> </li> </ul> <p>You can also provide a <code>Tag</code> to
          * track the model compilation job's resource use and costs. The response body
          * contains the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop
@@ -624,6 +655,34 @@ namespace SageMaker
         void CreateCompilationJobAsync(const CreateCompilationJobRequestT& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::CreateCompilationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Create compute allocation definition. This defines how compute is allocated,
+         * shared, and borrowed for specified entities. Specifically, how to lend and
+         * borrow idle compute and assign a fair-share weight to the specified
+         * entities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateComputeQuota">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateComputeQuotaOutcome CreateComputeQuota(const Model::CreateComputeQuotaRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateComputeQuota that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateComputeQuotaRequestT = Model::CreateComputeQuotaRequest>
+        Model::CreateComputeQuotaOutcomeCallable CreateComputeQuotaCallable(const CreateComputeQuotaRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateComputeQuota, request);
+        }
+
+        /**
+         * An Async wrapper for CreateComputeQuota that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateComputeQuotaRequestT = Model::CreateComputeQuotaRequest>
+        void CreateComputeQuotaAsync(const CreateComputeQuotaRequestT& request, const CreateComputeQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateComputeQuota, request, handler, context);
         }
 
         /**
@@ -659,7 +718,7 @@ namespace SageMaker
          * <p>Creates a definition for a job that monitors data quality and drift. For
          * information about model monitor, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
-         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker AI Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">AWS
          * API Reference</a></p>
          */
@@ -716,11 +775,11 @@ namespace SageMaker
          * artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a domain is
          * created, an EFS volume is created for use by all of the users within the domain.
          * Each user receives a private home directory within the EFS volume for notebooks,
-         * Git repositories, and data files.</p> <p>SageMaker uses the Amazon Web Services
-         * Key Management Service (Amazon Web Services KMS) to encrypt the EFS volume
-         * attached to the domain with an Amazon Web Services managed key by default. For
-         * more control, you can specify a customer managed key. For more information, see
-         * <a
+         * Git repositories, and data files.</p> <p>SageMaker AI uses the Amazon Web
+         * Services Key Management Service (Amazon Web Services KMS) to encrypt the EFS
+         * volume attached to the domain with an Amazon Web Services managed key by
+         * default. For more control, you can specify a customer managed key. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * traffic between the domain and the Amazon EFS volume is through the specified
@@ -729,19 +788,19 @@ namespace SageMaker
          * corresponds to the network access type that you choose when you onboard to the
          * domain. The following options are available:</p> <ul> <li> <p>
          * <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by
-         * Amazon SageMaker, which allows internet access. This is the default value.</p>
-         * </li> <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC
-         * and subnets. Internet access is disabled by default. To allow internet access,
-         * you must specify a NAT gateway.</p> <p>When internet access is disabled, you
-         * won't be able to run a Amazon SageMaker Studio notebook or to train or host
-         * models unless your VPC has an interface endpoint to the SageMaker API and
-         * runtime or a NAT gateway and your security groups allow outbound
+         * Amazon SageMaker AI, which allows internet access. This is the default
+         * value.</p> </li> <li> <p> <code>VpcOnly</code> - All traffic is through the
+         * specified VPC and subnets. Internet access is disabled by default. To allow
+         * internet access, you must specify a NAT gateway.</p> <p>When internet access is
+         * disabled, you won't be able to run a Amazon SageMaker AI Studio notebook or to
+         * train or host models unless your VPC has an interface endpoint to the SageMaker
+         * AI API and runtime or a NAT gateway and your security groups allow outbound
          * connections.</p> </li> </ul>  <p>NFS traffic over TCP on port 2049
          * needs to be allowed in both inbound and outbound rules in order to launch a
-         * Amazon SageMaker Studio app successfully.</p>  <p>For more
+         * Amazon SageMaker AI Studio app successfully.</p>  <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-         * Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See
+         * Amazon SageMaker AI Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
@@ -1221,11 +1280,11 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a custom SageMaker image. A SageMaker image is a set of image
+         * <p>Creates a custom SageMaker AI image. A SageMaker AI image is a set of image
          * versions. Each image version represents a container image stored in Amazon ECR.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
-         * your own SageMaker image</a>.</p><p><h3>See Also:</h3>   <a
+         * your own SageMaker AI image</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">AWS
          * API Reference</a></p>
          */
@@ -1250,9 +1309,9 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
-         * The version represents the Amazon ECR container image specified by
-         * <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a version of the SageMaker AI image specified by
+         * <code>ImageName</code>. The version represents the Amazon ECR container image
+         * specified by <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">AWS
          * API Reference</a></p>
          */
@@ -1277,15 +1336,16 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates an inference component, which is a SageMaker hosting object that you
-         * can use to deploy a model to an endpoint. In the inference component settings,
-         * you specify the model, the endpoint, and how the model utilizes the resources
-         * that the endpoint hosts. You can optimize resource utilization by tailoring how
-         * the required CPU cores, accelerators, and memory are allocated. You can deploy
-         * multiple inference components to an endpoint, where each inference component
-         * contains one model and the resource utilization needs for that individual model.
-         * After you deploy an inference component, you can directly invoke the associated
-         * model when you use the InvokeEndpoint API action.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an inference component, which is a SageMaker AI hosting object that
+         * you can use to deploy a model to an endpoint. In the inference component
+         * settings, you specify the model, the endpoint, and how the model utilizes the
+         * resources that the endpoint hosts. You can optimize resource utilization by
+         * tailoring how the required CPU cores, accelerators, and memory are allocated.
+         * You can deploy multiple inference components to an endpoint, where each
+         * inference component contains one model and the resource utilization needs for
+         * that individual model. After you deploy an inference component, you can directly
+         * invoke the associated model when you use the InvokeEndpoint API
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent">AWS
          * API Reference</a></p>
          */
@@ -1671,7 +1731,7 @@ namespace SageMaker
          * <p>Creates a definition for a job that monitors model quality and drift. For
          * information about model monitor, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
-         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker AI Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">AWS
          * API Reference</a></p>
          */
@@ -1696,8 +1756,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
-         * monitor the data captured for an Amazon SageMaker Endpoint.</p><p><h3>See
+         * <p>Creates a schedule that regularly starts Amazon SageMaker AI Processing Jobs
+         * to monitor the data captured for an Amazon SageMaker AI Endpoint.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">AWS
          * API Reference</a></p>
@@ -1723,32 +1783,32 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates an SageMaker notebook instance. A notebook instance is a machine
+         * <p>Creates an SageMaker AI notebook instance. A notebook instance is a machine
          * learning (ML) compute instance running on a Jupyter notebook. </p> <p>In a
          * <code>CreateNotebookInstance</code> request, specify the type of ML compute
-         * instance that you want to run. SageMaker launches the instance, installs common
-         * libraries that you can use to explore datasets for model training, and attaches
-         * an ML storage volume to the notebook instance. </p> <p>SageMaker also provides a
-         * set of example notebooks. Each notebook demonstrates how to use SageMaker with a
-         * specific algorithm or with a machine learning framework. </p> <p>After receiving
-         * the request, SageMaker does the following:</p> <ol> <li> <p>Creates a network
-         * interface in the SageMaker VPC.</p> </li> <li> <p>(Option) If you specified
-         * <code>SubnetId</code>, SageMaker creates a network interface in your own VPC,
-         * which is inferred from the subnet ID that you provide in the input. When
-         * creating this network interface, SageMaker attaches the security group that you
-         * specified in the request to the network interface that it creates in your
-         * VPC.</p> </li> <li> <p>Launches an EC2 instance of the type specified in the
-         * request in the SageMaker VPC. If you specified <code>SubnetId</code> of your
-         * VPC, SageMaker specifies both network interfaces when launching this instance.
-         * This enables inbound traffic from your own VPC to the notebook instance,
-         * assuming that the security groups allow it.</p> </li> </ol> <p>After creating
-         * the notebook instance, SageMaker returns its Amazon Resource Name (ARN). You
-         * can't change the name of a notebook instance after you create it.</p> <p>After
-         * SageMaker creates the notebook instance, you can connect to the Jupyter server
-         * and work in Jupyter notebooks. For example, you can write code to explore a
-         * dataset that you can use for model training, train a model, host models by
-         * creating SageMaker endpoints, and validate hosted models. </p> <p>For more
-         * information, see <a
+         * instance that you want to run. SageMaker AI launches the instance, installs
+         * common libraries that you can use to explore datasets for model training, and
+         * attaches an ML storage volume to the notebook instance. </p> <p>SageMaker AI
+         * also provides a set of example notebooks. Each notebook demonstrates how to use
+         * SageMaker AI with a specific algorithm or with a machine learning framework.
+         * </p> <p>After receiving the request, SageMaker AI does the following:</p> <ol>
+         * <li> <p>Creates a network interface in the SageMaker AI VPC.</p> </li> <li>
+         * <p>(Option) If you specified <code>SubnetId</code>, SageMaker AI creates a
+         * network interface in your own VPC, which is inferred from the subnet ID that you
+         * provide in the input. When creating this network interface, SageMaker AI
+         * attaches the security group that you specified in the request to the network
+         * interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
+         * instance of the type specified in the request in the SageMaker AI VPC. If you
+         * specified <code>SubnetId</code> of your VPC, SageMaker AI specifies both network
+         * interfaces when launching this instance. This enables inbound traffic from your
+         * own VPC to the notebook instance, assuming that the security groups allow
+         * it.</p> </li> </ol> <p>After creating the notebook instance, SageMaker AI
+         * returns its Amazon Resource Name (ARN). You can't change the name of a notebook
+         * instance after you create it.</p> <p>After SageMaker AI creates the notebook
+         * instance, you can connect to the Jupyter server and work in Jupyter notebooks.
+         * For example, you can write code to explore a dataset that you can use for model
+         * training, train a model, host models by creating SageMaker AI endpoints, and
+         * validate hosted models. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">AWS
@@ -1846,6 +1906,57 @@ namespace SageMaker
         }
 
         /**
+         * <p>Creates an Amazon SageMaker Partner AI App.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePartnerAppOutcome CreatePartnerApp(const Model::CreatePartnerAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePartnerApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePartnerAppRequestT = Model::CreatePartnerAppRequest>
+        Model::CreatePartnerAppOutcomeCallable CreatePartnerAppCallable(const CreatePartnerAppRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreatePartnerApp, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePartnerApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePartnerAppRequestT = Model::CreatePartnerAppRequest>
+        void CreatePartnerAppAsync(const CreatePartnerAppRequestT& request, const CreatePartnerAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreatePartnerApp, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a presigned URL to access an Amazon SageMaker Partner AI
+         * App.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerAppPresignedUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePartnerAppPresignedUrlOutcome CreatePartnerAppPresignedUrl(const Model::CreatePartnerAppPresignedUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePartnerAppPresignedUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePartnerAppPresignedUrlRequestT = Model::CreatePartnerAppPresignedUrlRequest>
+        Model::CreatePartnerAppPresignedUrlOutcomeCallable CreatePartnerAppPresignedUrlCallable(const CreatePartnerAppPresignedUrlRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreatePartnerAppPresignedUrl, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePartnerAppPresignedUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePartnerAppPresignedUrlRequestT = Model::CreatePartnerAppPresignedUrlRequest>
+        void CreatePartnerAppPresignedUrlAsync(const CreatePartnerAppPresignedUrlRequestT& request, const CreatePartnerAppPresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreatePartnerAppPresignedUrl, request, handler, context);
+        }
+
+        /**
          * <p>Creates a pipeline using a JSON pipeline definition.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline">AWS
@@ -1884,7 +1995,7 @@ namespace SageMaker
          * that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC Endpoints
          * that you specify. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-         * to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .</p> 
+         * to Amazon SageMaker AI Studio Through an Interface VPC Endpoint</a> .</p> 
          * <ul> <li> <p>The URL that you get from a call to
          * <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You
          * can configure this value using <code>ExpiresInSeconds</code>. If you try to use
@@ -1946,19 +2057,19 @@ namespace SageMaker
 
         /**
          * <p>Returns a URL that you can use to connect to the Jupyter server from a
-         * notebook instance. In the SageMaker console, when you choose <code>Open</code>
-         * next to a notebook instance, SageMaker opens a new tab showing the Jupyter
-         * server home page from the notebook instance. The console uses this API to get
-         * the URL and show the page.</p> <p> The IAM role or user used to call this API
-         * defines the permissions to access the notebook instance. Once the presigned URL
-         * is created, no additional permission is required to access this URL. IAM
-         * authorization policies for this API are also enforced for every HTTP request and
-         * WebSocket frame that attempts to connect to the notebook instance.</p> <p>You
-         * can restrict access to this API and to the URL that it returns to a list of IP
-         * addresses that you specify. Use the <code>NotIpAddress</code> condition operator
-         * and the <code>aws:SourceIP</code> condition context key to specify the list of
-         * IP addresses that you want to have access to the notebook instance. For more
-         * information, see <a
+         * notebook instance. In the SageMaker AI console, when you choose
+         * <code>Open</code> next to a notebook instance, SageMaker AI opens a new tab
+         * showing the Jupyter server home page from the notebook instance. The console
+         * uses this API to get the URL and show the page.</p> <p> The IAM role or user
+         * used to call this API defines the permissions to access the notebook instance.
+         * Once the presigned URL is created, no additional permission is required to
+         * access this URL. IAM authorization policies for this API are also enforced for
+         * every HTTP request and WebSocket frame that attempts to connect to the notebook
+         * instance.</p> <p>You can restrict access to this API and to the URL that it
+         * returns to a list of IP addresses that you specify. Use the
+         * <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
+         * condition context key to specify the list of IP addresses that you want to have
+         * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a
@@ -2068,8 +2179,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a new Amazon SageMaker Studio Lifecycle Configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Amazon SageMaker AI Studio Lifecycle
+         * Configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">AWS
          * API Reference</a></p>
          */
@@ -2157,6 +2268,58 @@ namespace SageMaker
         void CreateTrainingJobAsync(const CreateTrainingJobRequestT& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::CreateTrainingJob, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new training plan in SageMaker to reserve compute capacity.</p>
+         * <p>Amazon SageMaker Training Plan is a capability within SageMaker that allows
+         * customers to reserve and manage GPU capacity for large-scale AI model training.
+         * It provides a way to secure predictable access to computational resources within
+         * specific timelines and budgets, without the need to manage underlying
+         * infrastructure. </p> <p> <b>How it works</b> </p> <p>Plans can be created for
+         * specific resources such as SageMaker Training Jobs or SageMaker HyperPod
+         * clusters, automatically provisioning resources, setting up infrastructure,
+         * executing workloads, and handling infrastructure failures.</p> <p> <b>Plan
+         * creation workflow</b> </p> <ul> <li> <p>Users search for available plan
+         * offerings based on their requirements (e.g., instance type, count, start time,
+         * duration) using the <code> <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+         * </code> API operation.</p> </li> <li> <p>They create a plan that best matches
+         * their needs using the ID of the plan offering they want to use. </p> </li> <li>
+         * <p>After successful upfront payment, the plan's status becomes
+         * <code>Scheduled</code>. </p> </li> <li> <p>The plan can be used to:</p> <ul>
+         * <li> <p>Queue training jobs.</p> </li> <li> <p>Allocate to an instance group of
+         * a SageMaker HyperPod cluster. </p> </li> </ul> </li> <li> <p>When the plan start
+         * date arrives, it becomes <code>Active</code>. Based on available reserved
+         * capacity:</p> <ul> <li> <p>Training jobs are launched.</p> </li> <li>
+         * <p>Instance groups are provisioned.</p> </li> </ul> </li> </ul> <p> <b>Plan
+         * composition</b> </p> <p>A plan can consist of one or more Reserved Capacities,
+         * each defined by a specific instance type, quantity, Availability Zone, duration,
+         * and start and end times. For more information about Reserved Capacity, see
+         * <code> <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ReservedCapacitySummary.html">ReservedCapacitySummary</a>
+         * </code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrainingPlanOutcome CreateTrainingPlan(const Model::CreateTrainingPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTrainingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTrainingPlanRequestT = Model::CreateTrainingPlanRequest>
+        Model::CreateTrainingPlanOutcomeCallable CreateTrainingPlanCallable(const CreateTrainingPlanRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateTrainingPlan, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTrainingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTrainingPlanRequestT = Model::CreateTrainingPlanRequest>
+        void CreateTrainingPlanAsync(const CreateTrainingPlanRequestT& request, const CreateTrainingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateTrainingPlan, request, handler, context);
         }
 
         /**
@@ -2559,6 +2722,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>Deletes the cluster policy of the cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteClusterSchedulerConfigOutcome DeleteClusterSchedulerConfig(const Model::DeleteClusterSchedulerConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteClusterSchedulerConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteClusterSchedulerConfigRequestT = Model::DeleteClusterSchedulerConfigRequest>
+        Model::DeleteClusterSchedulerConfigOutcomeCallable DeleteClusterSchedulerConfigCallable(const DeleteClusterSchedulerConfigRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeleteClusterSchedulerConfig, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteClusterSchedulerConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteClusterSchedulerConfigRequestT = Model::DeleteClusterSchedulerConfigRequest>
+        void DeleteClusterSchedulerConfigAsync(const DeleteClusterSchedulerConfigRequestT& request, const DeleteClusterSchedulerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeleteClusterSchedulerConfig, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified Git repository from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">AWS
@@ -2586,10 +2774,10 @@ namespace SageMaker
 
         /**
          * <p>Deletes the specified compilation job. This action deletes only the
-         * compilation job resource in Amazon SageMaker. It doesn't delete other resources
-         * that are related to that job, such as the model artifacts that the job creates,
-         * the compilation logs in CloudWatch, the compiled model, or the IAM role.</p>
-         * <p>You can delete a compilation job only if its current status is
+         * compilation job resource in Amazon SageMaker AI. It doesn't delete other
+         * resources that are related to that job, such as the model artifacts that the job
+         * creates, the compilation logs in CloudWatch, the compiled model, or the IAM
+         * role.</p> <p>You can delete a compilation job only if its current status is
          * <code>COMPLETED</code>, <code>FAILED</code>, or <code>STOPPED</code>. If the job
          * status is <code>STARTING</code> or <code>INPROGRESS</code>, stop the job, and
          * then delete it after its status becomes <code>STOPPED</code>.</p><p><h3>See
@@ -2615,6 +2803,32 @@ namespace SageMaker
         void DeleteCompilationJobAsync(const DeleteCompilationJobRequestT& request, const DeleteCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DeleteCompilationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the compute allocation from the cluster.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteComputeQuota">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteComputeQuotaOutcome DeleteComputeQuota(const Model::DeleteComputeQuotaRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteComputeQuota that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteComputeQuotaRequestT = Model::DeleteComputeQuotaRequest>
+        Model::DeleteComputeQuotaOutcomeCallable DeleteComputeQuotaCallable(const DeleteComputeQuotaRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeleteComputeQuota, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteComputeQuota that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteComputeQuotaRequestT = Model::DeleteComputeQuotaRequest>
+        void DeleteComputeQuotaAsync(const DeleteComputeQuotaRequestT& request, const DeleteComputeQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeleteComputeQuota, request, handler, context);
         }
 
         /**
@@ -3066,8 +3280,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes a SageMaker image and all versions of the image. The container images
-         * aren't deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a SageMaker AI image and all versions of the image. The container
+         * images aren't deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">AWS
          * API Reference</a></p>
          */
@@ -3092,7 +3306,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes a version of a SageMaker image. The container image the version
+         * <p>Deletes a version of a SageMaker AI image. The container image the version
          * represents isn't deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">AWS
          * API Reference</a></p>
@@ -3225,7 +3439,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes an Amazon SageMaker model bias job definition.</p><p><h3>See
+         * <p>Deletes an Amazon SageMaker AI model bias job definition.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">AWS
          * API Reference</a></p>
@@ -3276,7 +3490,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes an Amazon SageMaker model explainability job
+         * <p>Deletes an Amazon SageMaker AI model explainability job
          * definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">AWS
          * API Reference</a></p>
@@ -3433,11 +3647,11 @@ namespace SageMaker
         }
 
         /**
-         * <p> Deletes an SageMaker notebook instance. Before you can delete a notebook
+         * <p> Deletes an SageMaker AI notebook instance. Before you can delete a notebook
          * instance, you must call the <code>StopNotebookInstance</code> API. </p>
          *  <p>When you delete a notebook instance, you lose all of your data.
-         * SageMaker removes the ML compute instance, and deletes the ML storage volume and
-         * the network interface associated with the notebook instance. </p>
+         * SageMaker AI removes the ML compute instance, and deletes the ML storage volume
+         * and the network interface associated with the notebook instance. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">AWS
          * API Reference</a></p>
@@ -3511,6 +3725,31 @@ namespace SageMaker
         void DeleteOptimizationJobAsync(const DeleteOptimizationJobRequestT& request, const DeleteOptimizationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DeleteOptimizationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a SageMaker Partner AI App.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePartnerApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePartnerAppOutcome DeletePartnerApp(const Model::DeletePartnerAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePartnerApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePartnerAppRequestT = Model::DeletePartnerAppRequest>
+        Model::DeletePartnerAppOutcomeCallable DeletePartnerAppCallable(const DeletePartnerAppRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeletePartnerApp, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePartnerApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePartnerAppRequestT = Model::DeletePartnerAppRequest>
+        void DeletePartnerAppAsync(const DeletePartnerAppRequestT& request, const DeletePartnerAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeletePartnerApp, request, handler, context);
         }
 
         /**
@@ -3592,7 +3831,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to
+         * <p>Deletes the Amazon SageMaker AI Studio Lifecycle Configuration. In order to
          * delete the Lifecycle Configuration, there must be no running apps using the
          * Lifecycle Configuration. You must also remove the Lifecycle Configuration from
          * UserSettings in all Domains and UserProfiles.</p><p><h3>See Also:</h3>   <a
@@ -4059,6 +4298,34 @@ namespace SageMaker
         }
 
         /**
+         * <p>Description of the cluster policy. This policy is used for task
+         * prioritization and fair-share allocation. This helps prioritize critical
+         * workloads and distributes idle compute across entities.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterSchedulerConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterSchedulerConfigOutcome DescribeClusterSchedulerConfig(const Model::DescribeClusterSchedulerConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeClusterSchedulerConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterSchedulerConfigRequestT = Model::DescribeClusterSchedulerConfigRequest>
+        Model::DescribeClusterSchedulerConfigOutcomeCallable DescribeClusterSchedulerConfigCallable(const DescribeClusterSchedulerConfigRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeClusterSchedulerConfig, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeClusterSchedulerConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterSchedulerConfigRequestT = Model::DescribeClusterSchedulerConfigRequest>
+        void DescribeClusterSchedulerConfigAsync(const DescribeClusterSchedulerConfigRequestT& request, const DescribeClusterSchedulerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeClusterSchedulerConfig, request, handler, context);
+        }
+
+        /**
          * <p>Gets details about the specified Git repository.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCodeRepository">AWS
@@ -4112,6 +4379,32 @@ namespace SageMaker
         void DescribeCompilationJobAsync(const DescribeCompilationJobRequestT& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DescribeCompilationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Description of the compute allocation definition.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeComputeQuota">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeComputeQuotaOutcome DescribeComputeQuota(const Model::DescribeComputeQuotaRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeComputeQuota that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeComputeQuotaRequestT = Model::DescribeComputeQuotaRequest>
+        Model::DescribeComputeQuotaOutcomeCallable DescribeComputeQuotaCallable(const DescribeComputeQuotaRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeComputeQuota, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeComputeQuota that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeComputeQuotaRequestT = Model::DescribeComputeQuotaRequest>
+        void DescribeComputeQuotaAsync(const DescribeComputeQuotaRequestT& request, const DescribeComputeQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeComputeQuota, request, handler, context);
         }
 
         /**
@@ -4552,7 +4845,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describes a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a SageMaker AI image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">AWS
          * API Reference</a></p>
          */
@@ -4577,7 +4870,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describes a version of a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a version of a SageMaker AI image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">AWS
          * API Reference</a></p>
          */
@@ -5078,6 +5371,32 @@ namespace SageMaker
         }
 
         /**
+         * <p>Gets information about a SageMaker Partner AI App.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePartnerApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePartnerAppOutcome DescribePartnerApp(const Model::DescribePartnerAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePartnerApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribePartnerAppRequestT = Model::DescribePartnerAppRequest>
+        Model::DescribePartnerAppOutcomeCallable DescribePartnerAppCallable(const DescribePartnerAppRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribePartnerApp, request);
+        }
+
+        /**
+         * An Async wrapper for DescribePartnerApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribePartnerAppRequestT = Model::DescribePartnerAppRequest>
+        void DescribePartnerAppAsync(const DescribePartnerAppRequestT& request, const DescribePartnerAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribePartnerApp, request, handler, context);
+        }
+
+        /**
          * <p>Describes the details of a pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline">AWS
          * API Reference</a></p>
@@ -5229,8 +5548,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describes the Amazon SageMaker Studio Lifecycle Configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the Amazon SageMaker AI Studio Lifecycle
+         * Configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">AWS
          * API Reference</a></p>
          */
@@ -5310,6 +5629,32 @@ namespace SageMaker
         void DescribeTrainingJobAsync(const DescribeTrainingJobRequestT& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DescribeTrainingJob, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves detailed information about a specific training plan.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrainingPlanOutcome DescribeTrainingPlan(const Model::DescribeTrainingPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTrainingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTrainingPlanRequestT = Model::DescribeTrainingPlanRequest>
+        Model::DescribeTrainingPlanOutcomeCallable DescribeTrainingPlanCallable(const DescribeTrainingPlanRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeTrainingPlan, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTrainingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTrainingPlanRequestT = Model::DescribeTrainingPlanRequest>
+        void DescribeTrainingPlanAsync(const DescribeTrainingPlanRequestT& request, const DescribeTrainingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeTrainingPlan, request, handler, context);
         }
 
         /**
@@ -6003,6 +6348,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>List the cluster policy configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterSchedulerConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClusterSchedulerConfigsOutcome ListClusterSchedulerConfigs(const Model::ListClusterSchedulerConfigsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListClusterSchedulerConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClusterSchedulerConfigsRequestT = Model::ListClusterSchedulerConfigsRequest>
+        Model::ListClusterSchedulerConfigsOutcomeCallable ListClusterSchedulerConfigsCallable(const ListClusterSchedulerConfigsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SageMakerClient::ListClusterSchedulerConfigs, request);
+        }
+
+        /**
+         * An Async wrapper for ListClusterSchedulerConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClusterSchedulerConfigsRequestT = Model::ListClusterSchedulerConfigsRequest>
+        void ListClusterSchedulerConfigsAsync(const ListClusterSchedulerConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClusterSchedulerConfigsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SageMakerClient::ListClusterSchedulerConfigs, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the list of SageMaker HyperPod clusters.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters">AWS
@@ -6083,6 +6453,31 @@ namespace SageMaker
         void ListCompilationJobsAsync(const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCompilationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListCompilationJobs, request, handler, context);
+        }
+
+        /**
+         * <p>List the resource allocation definitions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListComputeQuotas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListComputeQuotasOutcome ListComputeQuotas(const Model::ListComputeQuotasRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListComputeQuotas that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListComputeQuotasRequestT = Model::ListComputeQuotasRequest>
+        Model::ListComputeQuotasOutcomeCallable ListComputeQuotasCallable(const ListComputeQuotasRequestT& request = {}) const
+        {
+            return SubmitCallable(&SageMakerClient::ListComputeQuotas, request);
+        }
+
+        /**
+         * An Async wrapper for ListComputeQuotas that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListComputeQuotasRequestT = Model::ListComputeQuotasRequest>
+        void ListComputeQuotasAsync(const ListComputeQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListComputeQuotasRequestT& request = {}) const
+        {
+            return SubmitAsync(&SageMakerClient::ListComputeQuotas, request, handler, context);
         }
 
         /**
@@ -7171,8 +7566,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Returns a list of the SageMaker notebook instances in the requester's account
-         * in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the SageMaker AI notebook instances in the requester's
+         * account in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">AWS
          * API Reference</a></p>
          */
@@ -7220,6 +7615,32 @@ namespace SageMaker
         void ListOptimizationJobsAsync(const ListOptimizationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOptimizationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListOptimizationJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all of the SageMaker Partner AI Apps in an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPartnerApps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPartnerAppsOutcome ListPartnerApps(const Model::ListPartnerAppsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListPartnerApps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPartnerAppsRequestT = Model::ListPartnerAppsRequest>
+        Model::ListPartnerAppsOutcomeCallable ListPartnerAppsCallable(const ListPartnerAppsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SageMakerClient::ListPartnerApps, request);
+        }
+
+        /**
+         * An Async wrapper for ListPartnerApps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPartnerAppsRequestT = Model::ListPartnerAppsRequest>
+        void ListPartnerAppsAsync(const ListPartnerAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPartnerAppsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SageMakerClient::ListPartnerApps, request, handler, context);
         }
 
         /**
@@ -7455,8 +7876,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web
-         * Services Account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon SageMaker AI Studio Lifecycle Configurations in your Amazon
+         * Web Services Account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
          * API Reference</a></p>
          */
@@ -7598,6 +8019,32 @@ namespace SageMaker
         void ListTrainingJobsForHyperParameterTuningJobAsync(const ListTrainingJobsForHyperParameterTuningJobRequestT& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::ListTrainingJobsForHyperParameterTuningJob, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of training plans for the current account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingPlans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrainingPlansOutcome ListTrainingPlans(const Model::ListTrainingPlansRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTrainingPlans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrainingPlansRequestT = Model::ListTrainingPlansRequest>
+        Model::ListTrainingPlansOutcomeCallable ListTrainingPlansCallable(const ListTrainingPlansRequestT& request = {}) const
+        {
+            return SubmitCallable(&SageMakerClient::ListTrainingPlans, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrainingPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrainingPlansRequestT = Model::ListTrainingPlansRequest>
+        void ListTrainingPlansAsync(const ListTrainingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrainingPlansRequestT& request = {}) const
+        {
+            return SubmitAsync(&SageMakerClient::ListTrainingPlans, request, handler, context);
         }
 
         /**
@@ -7932,6 +8379,39 @@ namespace SageMaker
         }
 
         /**
+         * <p>Searches for available training plan offerings based on specified criteria.
+         * </p> <ul> <li> <p>Users search for available plan offerings based on their
+         * requirements (e.g., instance type, count, start time, duration). </p> </li> <li>
+         * <p>And then, they create a plan that best matches their needs using the ID of
+         * the plan offering they want to use. </p> </li> </ul> <p>For more information
+         * about how to reserve GPU capacity for your SageMaker training jobs or SageMaker
+         * HyperPod clusters using Amazon SageMaker Training Plan , see <code> <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+         * </code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchTrainingPlanOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchTrainingPlanOfferingsOutcome SearchTrainingPlanOfferings(const Model::SearchTrainingPlanOfferingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchTrainingPlanOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchTrainingPlanOfferingsRequestT = Model::SearchTrainingPlanOfferingsRequest>
+        Model::SearchTrainingPlanOfferingsOutcomeCallable SearchTrainingPlanOfferingsCallable(const SearchTrainingPlanOfferingsRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::SearchTrainingPlanOfferings, request);
+        }
+
+        /**
+         * An Async wrapper for SearchTrainingPlanOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchTrainingPlanOfferingsRequestT = Model::SearchTrainingPlanOfferingsRequest>
+        void SearchTrainingPlanOfferingsAsync(const SearchTrainingPlanOfferingsRequestT& request, const SearchTrainingPlanOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::SearchTrainingPlanOfferings, request, handler, context);
+        }
+
+        /**
          * <p>Notifies the pipeline that the execution of a callback step failed, along
          * with a message describing why. When a callback step is run, the pipeline
          * generates a callback token and includes the token in a message sent to Amazon
@@ -8093,7 +8573,7 @@ namespace SageMaker
         /**
          * <p>Launches an ML compute instance with the latest version of the libraries and
          * attaches your ML storage volume. After configuring the notebook instance,
-         * SageMaker sets the notebook instance status to <code>InService</code>. A
+         * SageMaker AI sets the notebook instance status to <code>InService</code>. A
          * notebook instance's status must be <code>InService</code> before you can connect
          * to your Jupyter notebook. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">AWS
@@ -8171,10 +8651,10 @@ namespace SageMaker
         }
 
         /**
-         * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
-         * the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job
-         * hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
-         * <code>StopCompilationJob</code> request, Amazon SageMaker changes the
+         * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker AI
+         * sends the algorithm the SIGTERM signal. This gracefully shuts the job down. If
+         * the job hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
+         * <code>StopCompilationJob</code> request, Amazon SageMaker AI changes the
          * <code>CompilationJobStatus</code> of the job to <code>Stopping</code>. After
          * Amazon SageMaker stops the job, it sets the <code>CompilationJobStatus</code> to
          * <code>Stopped</code>. </p><p><h3>See Also:</h3>   <a
@@ -8411,11 +8891,11 @@ namespace SageMaker
 
         /**
          * <p>Terminates the ML compute instance. Before terminating the instance,
-         * SageMaker disconnects the ML storage volume from it. SageMaker preserves the ML
-         * storage volume. SageMaker stops charging you for the ML compute instance when
-         * you call <code>StopNotebookInstance</code>.</p> <p>To access data on the ML
-         * storage volume for a notebook instance that has been terminated, call the
-         * <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
+         * SageMaker AI disconnects the ML storage volume from it. SageMaker AI preserves
+         * the ML storage volume. SageMaker AI stops charging you for the ML compute
+         * instance when you call <code>StopNotebookInstance</code>.</p> <p>To access data
+         * on the ML storage volume for a notebook instance that has been terminated, call
+         * the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
          * launches another ML compute instance, configures it, and attaches the preserved
          * ML storage volume so you can continue your work. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">AWS
@@ -8696,6 +9176,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>Update the cluster policy configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSchedulerConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterSchedulerConfigOutcome UpdateClusterSchedulerConfig(const Model::UpdateClusterSchedulerConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateClusterSchedulerConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateClusterSchedulerConfigRequestT = Model::UpdateClusterSchedulerConfigRequest>
+        Model::UpdateClusterSchedulerConfigOutcomeCallable UpdateClusterSchedulerConfigCallable(const UpdateClusterSchedulerConfigRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdateClusterSchedulerConfig, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateClusterSchedulerConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateClusterSchedulerConfigRequestT = Model::UpdateClusterSchedulerConfigRequest>
+        void UpdateClusterSchedulerConfigAsync(const UpdateClusterSchedulerConfigRequestT& request, const UpdateClusterSchedulerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdateClusterSchedulerConfig, request, handler, context);
+        }
+
+        /**
          * <p>Updates the platform software of a SageMaker HyperPod cluster for security
          * patching. To learn how to use this API, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
@@ -8750,6 +9255,31 @@ namespace SageMaker
         void UpdateCodeRepositoryAsync(const UpdateCodeRepositoryRequestT& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::UpdateCodeRepository, request, handler, context);
+        }
+
+        /**
+         * <p>Update the compute allocation definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateComputeQuota">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateComputeQuotaOutcome UpdateComputeQuota(const Model::UpdateComputeQuotaRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateComputeQuota that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateComputeQuotaRequestT = Model::UpdateComputeQuotaRequest>
+        Model::UpdateComputeQuotaOutcomeCallable UpdateComputeQuotaCallable(const UpdateComputeQuotaRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdateComputeQuota, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateComputeQuota that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateComputeQuotaRequestT = Model::UpdateComputeQuotaRequest>
+        void UpdateComputeQuotaAsync(const UpdateComputeQuotaRequestT& request, const UpdateComputeQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdateComputeQuota, request, handler, context);
         }
 
         /**
@@ -9044,8 +9574,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the properties of a SageMaker image. To change the image's tags, use
-         * the <a
+         * <p>Updates the properties of a SageMaker AI image. To change the image's tags,
+         * use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>
          * and <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a>
@@ -9074,8 +9604,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the properties of a SageMaker image version.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the properties of a SageMaker AI image version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion">AWS
          * API Reference</a></p>
          */
@@ -9363,6 +9893,32 @@ namespace SageMaker
         }
 
         /**
+         * <p>Updates all of the SageMaker Partner AI Apps in an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePartnerApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePartnerAppOutcome UpdatePartnerApp(const Model::UpdatePartnerAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePartnerApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePartnerAppRequestT = Model::UpdatePartnerAppRequest>
+        Model::UpdatePartnerAppOutcomeCallable UpdatePartnerAppCallable(const UpdatePartnerAppRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdatePartnerApp, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePartnerApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePartnerAppRequestT = Model::UpdatePartnerAppRequest>
+        void UpdatePartnerAppAsync(const UpdatePartnerAppRequestT& request, const UpdatePartnerAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdatePartnerApp, request, handler, context);
+        }
+
+        /**
          * <p>Updates a pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline">AWS
          * API Reference</a></p>
@@ -9443,7 +9999,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the settings of a space.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a space.</p>  <p>You can't edit the app type of
+         * a space in the <code>SpaceSettings</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">AWS
          * API Reference</a></p>
          */

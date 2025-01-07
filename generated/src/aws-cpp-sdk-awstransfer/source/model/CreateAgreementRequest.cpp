@@ -21,7 +21,11 @@ CreateAgreementRequest::CreateAgreementRequest() :
     m_accessRoleHasBeenSet(false),
     m_status(AgreementStatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_preserveFilename(PreserveFilenameType::NOT_SET),
+    m_preserveFilenameHasBeenSet(false),
+    m_enforceMessageSigning(EnforceMessageSigningType::NOT_SET),
+    m_enforceMessageSigningHasBeenSet(false)
 {
 }
 
@@ -79,6 +83,16 @@ Aws::String CreateAgreementRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_preserveFilenameHasBeenSet)
+  {
+   payload.WithString("PreserveFilename", PreserveFilenameTypeMapper::GetNameForPreserveFilenameType(m_preserveFilename));
+  }
+
+  if(m_enforceMessageSigningHasBeenSet)
+  {
+   payload.WithString("EnforceMessageSigning", EnforceMessageSigningTypeMapper::GetNameForEnforceMessageSigningType(m_enforceMessageSigning));
   }
 
   return payload.View().WriteReadable();

@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or ARN of the service.</p>
      */
     inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
@@ -67,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the
-     * ARN if the resources specified in the operation are in different accounts.</p>
+     * <p>The ID or ARN of the service network. You must use an ARN if the resources
+     * are in different accounts.</p>
      */
     inline const Aws::String& GetServiceNetworkIdentifier() const{ return m_serviceNetworkIdentifier; }
     inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }

@@ -18,7 +18,8 @@ using namespace Aws::Http;
 DeleteAgentMemoryRequest::DeleteAgentMemoryRequest() : 
     m_agentAliasIdHasBeenSet(false),
     m_agentIdHasBeenSet(false),
-    m_memoryIdHasBeenSet(false)
+    m_memoryIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,13 @@ void DeleteAgentMemoryRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_memoryId;
       uri.AddQueryStringParameter("memoryId", ss.str());
+      ss.str("");
+    }
+
+    if(m_sessionIdHasBeenSet)
+    {
+      ss << m_sessionId;
+      uri.AddQueryStringParameter("sessionId", ss.str());
       ss.str("");
     }
 

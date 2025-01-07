@@ -122,7 +122,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>ContactFlowId for the flow that will be run if this template is used to
+     * create a self-assigned task</p>
      */
     inline const Aws::String& GetSelfAssignFlowId() const{ return m_selfAssignFlowId; }
     inline void SetSelfAssignFlowId(const Aws::String& value) { m_selfAssignFlowId = value; }

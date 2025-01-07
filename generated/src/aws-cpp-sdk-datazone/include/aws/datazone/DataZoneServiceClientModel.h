@@ -29,6 +29,7 @@
 #include <aws/datazone/model/CreateAssetFilterResult.h>
 #include <aws/datazone/model/CreateAssetRevisionResult.h>
 #include <aws/datazone/model/CreateAssetTypeResult.h>
+#include <aws/datazone/model/CreateConnectionResult.h>
 #include <aws/datazone/model/CreateDataProductResult.h>
 #include <aws/datazone/model/CreateDataProductRevisionResult.h>
 #include <aws/datazone/model/CreateDataSourceResult.h>
@@ -44,6 +45,7 @@
 #include <aws/datazone/model/CreateListingChangeSetResult.h>
 #include <aws/datazone/model/CreateProjectResult.h>
 #include <aws/datazone/model/CreateProjectMembershipResult.h>
+#include <aws/datazone/model/CreateProjectProfileResult.h>
 #include <aws/datazone/model/CreateRuleResult.h>
 #include <aws/datazone/model/CreateSubscriptionGrantResult.h>
 #include <aws/datazone/model/CreateSubscriptionRequestResult.h>
@@ -51,6 +53,7 @@
 #include <aws/datazone/model/CreateUserProfileResult.h>
 #include <aws/datazone/model/DeleteAssetResult.h>
 #include <aws/datazone/model/DeleteAssetTypeResult.h>
+#include <aws/datazone/model/DeleteConnectionResult.h>
 #include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceResult.h>
 #include <aws/datazone/model/DeleteDomainResult.h>
@@ -62,6 +65,7 @@
 #include <aws/datazone/model/DeleteListingResult.h>
 #include <aws/datazone/model/DeleteProjectResult.h>
 #include <aws/datazone/model/DeleteProjectMembershipResult.h>
+#include <aws/datazone/model/DeleteProjectProfileResult.h>
 #include <aws/datazone/model/DeleteRuleResult.h>
 #include <aws/datazone/model/DeleteSubscriptionGrantResult.h>
 #include <aws/datazone/model/DeleteTimeSeriesDataPointsResult.h>
@@ -69,6 +73,7 @@
 #include <aws/datazone/model/GetAssetResult.h>
 #include <aws/datazone/model/GetAssetFilterResult.h>
 #include <aws/datazone/model/GetAssetTypeResult.h>
+#include <aws/datazone/model/GetConnectionResult.h>
 #include <aws/datazone/model/GetDataProductResult.h>
 #include <aws/datazone/model/GetDataSourceResult.h>
 #include <aws/datazone/model/GetDataSourceRunResult.h>
@@ -85,10 +90,13 @@
 #include <aws/datazone/model/GetGlossaryTermResult.h>
 #include <aws/datazone/model/GetGroupProfileResult.h>
 #include <aws/datazone/model/GetIamPortalLoginUrlResult.h>
+#include <aws/datazone/model/GetJobRunResult.h>
+#include <aws/datazone/model/GetLineageEventResult.h>
 #include <aws/datazone/model/GetLineageNodeResult.h>
 #include <aws/datazone/model/GetListingResult.h>
 #include <aws/datazone/model/GetMetadataGenerationRunResult.h>
 #include <aws/datazone/model/GetProjectResult.h>
+#include <aws/datazone/model/GetProjectProfileResult.h>
 #include <aws/datazone/model/GetRuleResult.h>
 #include <aws/datazone/model/GetSubscriptionResult.h>
 #include <aws/datazone/model/GetSubscriptionGrantResult.h>
@@ -98,6 +106,7 @@
 #include <aws/datazone/model/GetUserProfileResult.h>
 #include <aws/datazone/model/ListAssetFiltersResult.h>
 #include <aws/datazone/model/ListAssetRevisionsResult.h>
+#include <aws/datazone/model/ListConnectionsResult.h>
 #include <aws/datazone/model/ListDataProductRevisionsResult.h>
 #include <aws/datazone/model/ListDataSourceRunActivitiesResult.h>
 #include <aws/datazone/model/ListDataSourceRunsResult.h>
@@ -110,11 +119,14 @@
 #include <aws/datazone/model/ListEnvironmentBlueprintsResult.h>
 #include <aws/datazone/model/ListEnvironmentProfilesResult.h>
 #include <aws/datazone/model/ListEnvironmentsResult.h>
+#include <aws/datazone/model/ListJobRunsResult.h>
+#include <aws/datazone/model/ListLineageEventsResult.h>
 #include <aws/datazone/model/ListLineageNodeHistoryResult.h>
 #include <aws/datazone/model/ListMetadataGenerationRunsResult.h>
 #include <aws/datazone/model/ListNotificationsResult.h>
 #include <aws/datazone/model/ListPolicyGrantsResult.h>
 #include <aws/datazone/model/ListProjectMembershipsResult.h>
+#include <aws/datazone/model/ListProjectProfilesResult.h>
 #include <aws/datazone/model/ListProjectsResult.h>
 #include <aws/datazone/model/ListRulesResult.h>
 #include <aws/datazone/model/ListSubscriptionGrantsResult.h>
@@ -141,6 +153,7 @@
 #include <aws/datazone/model/TagResourceResult.h>
 #include <aws/datazone/model/UntagResourceResult.h>
 #include <aws/datazone/model/UpdateAssetFilterResult.h>
+#include <aws/datazone/model/UpdateConnectionResult.h>
 #include <aws/datazone/model/UpdateDataSourceResult.h>
 #include <aws/datazone/model/UpdateDomainResult.h>
 #include <aws/datazone/model/UpdateDomainUnitResult.h>
@@ -151,6 +164,7 @@
 #include <aws/datazone/model/UpdateGlossaryTermResult.h>
 #include <aws/datazone/model/UpdateGroupProfileResult.h>
 #include <aws/datazone/model/UpdateProjectResult.h>
+#include <aws/datazone/model/UpdateProjectProfileResult.h>
 #include <aws/datazone/model/UpdateRuleResult.h>
 #include <aws/datazone/model/UpdateSubscriptionGrantStatusResult.h>
 #include <aws/datazone/model/UpdateSubscriptionRequestResult.h>
@@ -209,6 +223,7 @@ namespace Aws
       class CreateAssetFilterRequest;
       class CreateAssetRevisionRequest;
       class CreateAssetTypeRequest;
+      class CreateConnectionRequest;
       class CreateDataProductRequest;
       class CreateDataProductRevisionRequest;
       class CreateDataSourceRequest;
@@ -224,6 +239,7 @@ namespace Aws
       class CreateListingChangeSetRequest;
       class CreateProjectRequest;
       class CreateProjectMembershipRequest;
+      class CreateProjectProfileRequest;
       class CreateRuleRequest;
       class CreateSubscriptionGrantRequest;
       class CreateSubscriptionRequestRequest;
@@ -232,6 +248,7 @@ namespace Aws
       class DeleteAssetRequest;
       class DeleteAssetFilterRequest;
       class DeleteAssetTypeRequest;
+      class DeleteConnectionRequest;
       class DeleteDataProductRequest;
       class DeleteDataSourceRequest;
       class DeleteDomainRequest;
@@ -246,6 +263,7 @@ namespace Aws
       class DeleteListingRequest;
       class DeleteProjectRequest;
       class DeleteProjectMembershipRequest;
+      class DeleteProjectProfileRequest;
       class DeleteRuleRequest;
       class DeleteSubscriptionGrantRequest;
       class DeleteSubscriptionRequestRequest;
@@ -255,6 +273,7 @@ namespace Aws
       class GetAssetRequest;
       class GetAssetFilterRequest;
       class GetAssetTypeRequest;
+      class GetConnectionRequest;
       class GetDataProductRequest;
       class GetDataSourceRequest;
       class GetDataSourceRunRequest;
@@ -271,10 +290,13 @@ namespace Aws
       class GetGlossaryTermRequest;
       class GetGroupProfileRequest;
       class GetIamPortalLoginUrlRequest;
+      class GetJobRunRequest;
+      class GetLineageEventRequest;
       class GetLineageNodeRequest;
       class GetListingRequest;
       class GetMetadataGenerationRunRequest;
       class GetProjectRequest;
+      class GetProjectProfileRequest;
       class GetRuleRequest;
       class GetSubscriptionRequest;
       class GetSubscriptionGrantRequest;
@@ -284,6 +306,7 @@ namespace Aws
       class GetUserProfileRequest;
       class ListAssetFiltersRequest;
       class ListAssetRevisionsRequest;
+      class ListConnectionsRequest;
       class ListDataProductRevisionsRequest;
       class ListDataSourceRunActivitiesRequest;
       class ListDataSourceRunsRequest;
@@ -296,11 +319,14 @@ namespace Aws
       class ListEnvironmentBlueprintsRequest;
       class ListEnvironmentProfilesRequest;
       class ListEnvironmentsRequest;
+      class ListJobRunsRequest;
+      class ListLineageEventsRequest;
       class ListLineageNodeHistoryRequest;
       class ListMetadataGenerationRunsRequest;
       class ListNotificationsRequest;
       class ListPolicyGrantsRequest;
       class ListProjectMembershipsRequest;
+      class ListProjectProfilesRequest;
       class ListProjectsRequest;
       class ListRulesRequest;
       class ListSubscriptionGrantsRequest;
@@ -327,6 +353,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAssetFilterRequest;
+      class UpdateConnectionRequest;
       class UpdateDataSourceRequest;
       class UpdateDomainRequest;
       class UpdateDomainUnitRequest;
@@ -337,6 +364,7 @@ namespace Aws
       class UpdateGlossaryTermRequest;
       class UpdateGroupProfileRequest;
       class UpdateProjectRequest;
+      class UpdateProjectProfileRequest;
       class UpdateRuleRequest;
       class UpdateSubscriptionGrantStatusRequest;
       class UpdateSubscriptionRequestRequest;
@@ -356,6 +384,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateAssetFilterResult, DataZoneError> CreateAssetFilterOutcome;
       typedef Aws::Utils::Outcome<CreateAssetRevisionResult, DataZoneError> CreateAssetRevisionOutcome;
       typedef Aws::Utils::Outcome<CreateAssetTypeResult, DataZoneError> CreateAssetTypeOutcome;
+      typedef Aws::Utils::Outcome<CreateConnectionResult, DataZoneError> CreateConnectionOutcome;
       typedef Aws::Utils::Outcome<CreateDataProductResult, DataZoneError> CreateDataProductOutcome;
       typedef Aws::Utils::Outcome<CreateDataProductRevisionResult, DataZoneError> CreateDataProductRevisionOutcome;
       typedef Aws::Utils::Outcome<CreateDataSourceResult, DataZoneError> CreateDataSourceOutcome;
@@ -371,6 +400,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateListingChangeSetResult, DataZoneError> CreateListingChangeSetOutcome;
       typedef Aws::Utils::Outcome<CreateProjectResult, DataZoneError> CreateProjectOutcome;
       typedef Aws::Utils::Outcome<CreateProjectMembershipResult, DataZoneError> CreateProjectMembershipOutcome;
+      typedef Aws::Utils::Outcome<CreateProjectProfileResult, DataZoneError> CreateProjectProfileOutcome;
       typedef Aws::Utils::Outcome<CreateRuleResult, DataZoneError> CreateRuleOutcome;
       typedef Aws::Utils::Outcome<CreateSubscriptionGrantResult, DataZoneError> CreateSubscriptionGrantOutcome;
       typedef Aws::Utils::Outcome<CreateSubscriptionRequestResult, DataZoneError> CreateSubscriptionRequestOutcome;
@@ -379,6 +409,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAssetResult, DataZoneError> DeleteAssetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteAssetFilterOutcome;
       typedef Aws::Utils::Outcome<DeleteAssetTypeResult, DataZoneError> DeleteAssetTypeOutcome;
+      typedef Aws::Utils::Outcome<DeleteConnectionResult, DataZoneError> DeleteConnectionOutcome;
       typedef Aws::Utils::Outcome<DeleteDataProductResult, DataZoneError> DeleteDataProductOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSourceResult, DataZoneError> DeleteDataSourceOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, DataZoneError> DeleteDomainOutcome;
@@ -393,6 +424,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteListingResult, DataZoneError> DeleteListingOutcome;
       typedef Aws::Utils::Outcome<DeleteProjectResult, DataZoneError> DeleteProjectOutcome;
       typedef Aws::Utils::Outcome<DeleteProjectMembershipResult, DataZoneError> DeleteProjectMembershipOutcome;
+      typedef Aws::Utils::Outcome<DeleteProjectProfileResult, DataZoneError> DeleteProjectProfileOutcome;
       typedef Aws::Utils::Outcome<DeleteRuleResult, DataZoneError> DeleteRuleOutcome;
       typedef Aws::Utils::Outcome<DeleteSubscriptionGrantResult, DataZoneError> DeleteSubscriptionGrantOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteSubscriptionRequestOutcome;
@@ -402,6 +434,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAssetResult, DataZoneError> GetAssetOutcome;
       typedef Aws::Utils::Outcome<GetAssetFilterResult, DataZoneError> GetAssetFilterOutcome;
       typedef Aws::Utils::Outcome<GetAssetTypeResult, DataZoneError> GetAssetTypeOutcome;
+      typedef Aws::Utils::Outcome<GetConnectionResult, DataZoneError> GetConnectionOutcome;
       typedef Aws::Utils::Outcome<GetDataProductResult, DataZoneError> GetDataProductOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceResult, DataZoneError> GetDataSourceOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceRunResult, DataZoneError> GetDataSourceRunOutcome;
@@ -418,10 +451,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetGlossaryTermResult, DataZoneError> GetGlossaryTermOutcome;
       typedef Aws::Utils::Outcome<GetGroupProfileResult, DataZoneError> GetGroupProfileOutcome;
       typedef Aws::Utils::Outcome<GetIamPortalLoginUrlResult, DataZoneError> GetIamPortalLoginUrlOutcome;
+      typedef Aws::Utils::Outcome<GetJobRunResult, DataZoneError> GetJobRunOutcome;
+      typedef Aws::Utils::Outcome<GetLineageEventResult, DataZoneError> GetLineageEventOutcome;
       typedef Aws::Utils::Outcome<GetLineageNodeResult, DataZoneError> GetLineageNodeOutcome;
       typedef Aws::Utils::Outcome<GetListingResult, DataZoneError> GetListingOutcome;
       typedef Aws::Utils::Outcome<GetMetadataGenerationRunResult, DataZoneError> GetMetadataGenerationRunOutcome;
       typedef Aws::Utils::Outcome<GetProjectResult, DataZoneError> GetProjectOutcome;
+      typedef Aws::Utils::Outcome<GetProjectProfileResult, DataZoneError> GetProjectProfileOutcome;
       typedef Aws::Utils::Outcome<GetRuleResult, DataZoneError> GetRuleOutcome;
       typedef Aws::Utils::Outcome<GetSubscriptionResult, DataZoneError> GetSubscriptionOutcome;
       typedef Aws::Utils::Outcome<GetSubscriptionGrantResult, DataZoneError> GetSubscriptionGrantOutcome;
@@ -431,6 +467,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetUserProfileResult, DataZoneError> GetUserProfileOutcome;
       typedef Aws::Utils::Outcome<ListAssetFiltersResult, DataZoneError> ListAssetFiltersOutcome;
       typedef Aws::Utils::Outcome<ListAssetRevisionsResult, DataZoneError> ListAssetRevisionsOutcome;
+      typedef Aws::Utils::Outcome<ListConnectionsResult, DataZoneError> ListConnectionsOutcome;
       typedef Aws::Utils::Outcome<ListDataProductRevisionsResult, DataZoneError> ListDataProductRevisionsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceRunActivitiesResult, DataZoneError> ListDataSourceRunActivitiesOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceRunsResult, DataZoneError> ListDataSourceRunsOutcome;
@@ -443,11 +480,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListEnvironmentBlueprintsResult, DataZoneError> ListEnvironmentBlueprintsOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentProfilesResult, DataZoneError> ListEnvironmentProfilesOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentsResult, DataZoneError> ListEnvironmentsOutcome;
+      typedef Aws::Utils::Outcome<ListJobRunsResult, DataZoneError> ListJobRunsOutcome;
+      typedef Aws::Utils::Outcome<ListLineageEventsResult, DataZoneError> ListLineageEventsOutcome;
       typedef Aws::Utils::Outcome<ListLineageNodeHistoryResult, DataZoneError> ListLineageNodeHistoryOutcome;
       typedef Aws::Utils::Outcome<ListMetadataGenerationRunsResult, DataZoneError> ListMetadataGenerationRunsOutcome;
       typedef Aws::Utils::Outcome<ListNotificationsResult, DataZoneError> ListNotificationsOutcome;
       typedef Aws::Utils::Outcome<ListPolicyGrantsResult, DataZoneError> ListPolicyGrantsOutcome;
       typedef Aws::Utils::Outcome<ListProjectMembershipsResult, DataZoneError> ListProjectMembershipsOutcome;
+      typedef Aws::Utils::Outcome<ListProjectProfilesResult, DataZoneError> ListProjectProfilesOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, DataZoneError> ListProjectsOutcome;
       typedef Aws::Utils::Outcome<ListRulesResult, DataZoneError> ListRulesOutcome;
       typedef Aws::Utils::Outcome<ListSubscriptionGrantsResult, DataZoneError> ListSubscriptionGrantsOutcome;
@@ -474,6 +514,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, DataZoneError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, DataZoneError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAssetFilterResult, DataZoneError> UpdateAssetFilterOutcome;
+      typedef Aws::Utils::Outcome<UpdateConnectionResult, DataZoneError> UpdateConnectionOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSourceResult, DataZoneError> UpdateDataSourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainResult, DataZoneError> UpdateDomainOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainUnitResult, DataZoneError> UpdateDomainUnitOutcome;
@@ -484,6 +525,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateGlossaryTermResult, DataZoneError> UpdateGlossaryTermOutcome;
       typedef Aws::Utils::Outcome<UpdateGroupProfileResult, DataZoneError> UpdateGroupProfileOutcome;
       typedef Aws::Utils::Outcome<UpdateProjectResult, DataZoneError> UpdateProjectOutcome;
+      typedef Aws::Utils::Outcome<UpdateProjectProfileResult, DataZoneError> UpdateProjectProfileOutcome;
       typedef Aws::Utils::Outcome<UpdateRuleResult, DataZoneError> UpdateRuleOutcome;
       typedef Aws::Utils::Outcome<UpdateSubscriptionGrantStatusResult, DataZoneError> UpdateSubscriptionGrantStatusOutcome;
       typedef Aws::Utils::Outcome<UpdateSubscriptionRequestResult, DataZoneError> UpdateSubscriptionRequestOutcome;
@@ -503,6 +545,7 @@ namespace Aws
       typedef std::future<CreateAssetFilterOutcome> CreateAssetFilterOutcomeCallable;
       typedef std::future<CreateAssetRevisionOutcome> CreateAssetRevisionOutcomeCallable;
       typedef std::future<CreateAssetTypeOutcome> CreateAssetTypeOutcomeCallable;
+      typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
       typedef std::future<CreateDataProductOutcome> CreateDataProductOutcomeCallable;
       typedef std::future<CreateDataProductRevisionOutcome> CreateDataProductRevisionOutcomeCallable;
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
@@ -518,6 +561,7 @@ namespace Aws
       typedef std::future<CreateListingChangeSetOutcome> CreateListingChangeSetOutcomeCallable;
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
       typedef std::future<CreateProjectMembershipOutcome> CreateProjectMembershipOutcomeCallable;
+      typedef std::future<CreateProjectProfileOutcome> CreateProjectProfileOutcomeCallable;
       typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
       typedef std::future<CreateSubscriptionGrantOutcome> CreateSubscriptionGrantOutcomeCallable;
       typedef std::future<CreateSubscriptionRequestOutcome> CreateSubscriptionRequestOutcomeCallable;
@@ -526,6 +570,7 @@ namespace Aws
       typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
       typedef std::future<DeleteAssetFilterOutcome> DeleteAssetFilterOutcomeCallable;
       typedef std::future<DeleteAssetTypeOutcome> DeleteAssetTypeOutcomeCallable;
+      typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
       typedef std::future<DeleteDataProductOutcome> DeleteDataProductOutcomeCallable;
       typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
@@ -540,6 +585,7 @@ namespace Aws
       typedef std::future<DeleteListingOutcome> DeleteListingOutcomeCallable;
       typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
       typedef std::future<DeleteProjectMembershipOutcome> DeleteProjectMembershipOutcomeCallable;
+      typedef std::future<DeleteProjectProfileOutcome> DeleteProjectProfileOutcomeCallable;
       typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
       typedef std::future<DeleteSubscriptionGrantOutcome> DeleteSubscriptionGrantOutcomeCallable;
       typedef std::future<DeleteSubscriptionRequestOutcome> DeleteSubscriptionRequestOutcomeCallable;
@@ -549,6 +595,7 @@ namespace Aws
       typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
       typedef std::future<GetAssetFilterOutcome> GetAssetFilterOutcomeCallable;
       typedef std::future<GetAssetTypeOutcome> GetAssetTypeOutcomeCallable;
+      typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
       typedef std::future<GetDataProductOutcome> GetDataProductOutcomeCallable;
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
       typedef std::future<GetDataSourceRunOutcome> GetDataSourceRunOutcomeCallable;
@@ -565,10 +612,13 @@ namespace Aws
       typedef std::future<GetGlossaryTermOutcome> GetGlossaryTermOutcomeCallable;
       typedef std::future<GetGroupProfileOutcome> GetGroupProfileOutcomeCallable;
       typedef std::future<GetIamPortalLoginUrlOutcome> GetIamPortalLoginUrlOutcomeCallable;
+      typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
+      typedef std::future<GetLineageEventOutcome> GetLineageEventOutcomeCallable;
       typedef std::future<GetLineageNodeOutcome> GetLineageNodeOutcomeCallable;
       typedef std::future<GetListingOutcome> GetListingOutcomeCallable;
       typedef std::future<GetMetadataGenerationRunOutcome> GetMetadataGenerationRunOutcomeCallable;
       typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
+      typedef std::future<GetProjectProfileOutcome> GetProjectProfileOutcomeCallable;
       typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
       typedef std::future<GetSubscriptionOutcome> GetSubscriptionOutcomeCallable;
       typedef std::future<GetSubscriptionGrantOutcome> GetSubscriptionGrantOutcomeCallable;
@@ -578,6 +628,7 @@ namespace Aws
       typedef std::future<GetUserProfileOutcome> GetUserProfileOutcomeCallable;
       typedef std::future<ListAssetFiltersOutcome> ListAssetFiltersOutcomeCallable;
       typedef std::future<ListAssetRevisionsOutcome> ListAssetRevisionsOutcomeCallable;
+      typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
       typedef std::future<ListDataProductRevisionsOutcome> ListDataProductRevisionsOutcomeCallable;
       typedef std::future<ListDataSourceRunActivitiesOutcome> ListDataSourceRunActivitiesOutcomeCallable;
       typedef std::future<ListDataSourceRunsOutcome> ListDataSourceRunsOutcomeCallable;
@@ -590,11 +641,14 @@ namespace Aws
       typedef std::future<ListEnvironmentBlueprintsOutcome> ListEnvironmentBlueprintsOutcomeCallable;
       typedef std::future<ListEnvironmentProfilesOutcome> ListEnvironmentProfilesOutcomeCallable;
       typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
+      typedef std::future<ListJobRunsOutcome> ListJobRunsOutcomeCallable;
+      typedef std::future<ListLineageEventsOutcome> ListLineageEventsOutcomeCallable;
       typedef std::future<ListLineageNodeHistoryOutcome> ListLineageNodeHistoryOutcomeCallable;
       typedef std::future<ListMetadataGenerationRunsOutcome> ListMetadataGenerationRunsOutcomeCallable;
       typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
       typedef std::future<ListPolicyGrantsOutcome> ListPolicyGrantsOutcomeCallable;
       typedef std::future<ListProjectMembershipsOutcome> ListProjectMembershipsOutcomeCallable;
+      typedef std::future<ListProjectProfilesOutcome> ListProjectProfilesOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
       typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
       typedef std::future<ListSubscriptionGrantsOutcome> ListSubscriptionGrantsOutcomeCallable;
@@ -621,6 +675,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAssetFilterOutcome> UpdateAssetFilterOutcomeCallable;
+      typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
       typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
       typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
       typedef std::future<UpdateDomainUnitOutcome> UpdateDomainUnitOutcomeCallable;
@@ -631,6 +686,7 @@ namespace Aws
       typedef std::future<UpdateGlossaryTermOutcome> UpdateGlossaryTermOutcomeCallable;
       typedef std::future<UpdateGroupProfileOutcome> UpdateGroupProfileOutcomeCallable;
       typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+      typedef std::future<UpdateProjectProfileOutcome> UpdateProjectProfileOutcomeCallable;
       typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
       typedef std::future<UpdateSubscriptionGrantStatusOutcome> UpdateSubscriptionGrantStatusOutcomeCallable;
       typedef std::future<UpdateSubscriptionRequestOutcome> UpdateSubscriptionRequestOutcomeCallable;
@@ -653,6 +709,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::CreateAssetFilterRequest&, const Model::CreateAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateAssetRevisionRequest&, const Model::CreateAssetRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetRevisionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateAssetTypeRequest&, const Model::CreateAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssetTypeResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDataProductRequest&, const Model::CreateDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProductResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDataProductRevisionRequest&, const Model::CreateDataProductRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProductRevisionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
@@ -668,6 +725,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::CreateListingChangeSetRequest&, const Model::CreateListingChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateListingChangeSetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateProjectMembershipRequest&, const Model::CreateProjectMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectMembershipResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::CreateProjectProfileRequest&, const Model::CreateProjectProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateSubscriptionGrantRequest&, const Model::CreateSubscriptionGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateSubscriptionRequestRequest&, const Model::CreateSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionRequestResponseReceivedHandler;
@@ -676,6 +734,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetFilterRequest&, const Model::DeleteAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetTypeRequest&, const Model::DeleteAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetTypeResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDataProductRequest&, const Model::DeleteDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataProductResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
@@ -690,6 +749,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteListingRequest&, const Model::DeleteListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteListingResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteProjectMembershipRequest&, const Model::DeleteProjectMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectMembershipResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DeleteProjectProfileRequest&, const Model::DeleteProjectProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteSubscriptionGrantRequest&, const Model::DeleteSubscriptionGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteSubscriptionRequestRequest&, const Model::DeleteSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionRequestResponseReceivedHandler;
@@ -699,6 +759,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetFilterRequest&, const Model::GetAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetFilterResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetTypeRequest&, const Model::GetAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetTypeResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataProductRequest&, const Model::GetDataProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataProductResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRunRequest&, const Model::GetDataSourceRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceRunResponseReceivedHandler;
@@ -715,10 +776,13 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetGlossaryTermRequest&, const Model::GetGlossaryTermOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlossaryTermResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetGroupProfileRequest&, const Model::GetGroupProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetIamPortalLoginUrlRequest&, const Model::GetIamPortalLoginUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIamPortalLoginUrlResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetJobRunRequest&, const Model::GetJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetLineageEventRequest&, Model::GetLineageEventOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLineageEventResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetLineageNodeRequest&, const Model::GetLineageNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLineageNodeResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetListingRequest&, const Model::GetListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetListingResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetMetadataGenerationRunRequest&, const Model::GetMetadataGenerationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetadataGenerationRunResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetProjectRequest&, const Model::GetProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProjectResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetProjectProfileRequest&, const Model::GetProjectProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProjectProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetRuleRequest&, const Model::GetRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetSubscriptionRequest&, const Model::GetSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetSubscriptionGrantRequest&, const Model::GetSubscriptionGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionGrantResponseReceivedHandler;
@@ -728,6 +792,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetUserProfileRequest&, const Model::GetUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListAssetFiltersRequest&, const Model::ListAssetFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetFiltersResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListAssetRevisionsRequest&, const Model::ListAssetRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRevisionsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListConnectionsRequest&, const Model::ListConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataProductRevisionsRequest&, const Model::ListDataProductRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataProductRevisionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunActivitiesRequest&, const Model::ListDataSourceRunActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunActivitiesResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunsRequest&, const Model::ListDataSourceRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunsResponseReceivedHandler;
@@ -740,11 +805,14 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::ListEnvironmentBlueprintsRequest&, const Model::ListEnvironmentBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentBlueprintsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListEnvironmentProfilesRequest&, const Model::ListEnvironmentProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentProfilesResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListJobRunsRequest&, const Model::ListJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobRunsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListLineageEventsRequest&, const Model::ListLineageEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLineageEventsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListLineageNodeHistoryRequest&, const Model::ListLineageNodeHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLineageNodeHistoryResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListMetadataGenerationRunsRequest&, const Model::ListMetadataGenerationRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetadataGenerationRunsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListPolicyGrantsRequest&, const Model::ListPolicyGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyGrantsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListProjectMembershipsRequest&, const Model::ListProjectMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectMembershipsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListProjectProfilesRequest&, const Model::ListProjectProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectProfilesResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListSubscriptionGrantsRequest&, const Model::ListSubscriptionGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionGrantsResponseReceivedHandler;
@@ -771,6 +839,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateAssetFilterRequest&, const Model::UpdateAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssetFilterResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateDomainUnitRequest&, const Model::UpdateDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainUnitResponseReceivedHandler;
@@ -781,6 +850,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::UpdateGlossaryTermRequest&, const Model::UpdateGlossaryTermOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlossaryTermResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateGroupProfileRequest&, const Model::UpdateGroupProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::UpdateProjectProfileRequest&, const Model::UpdateProjectProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateSubscriptionGrantStatusRequest&, const Model::UpdateSubscriptionGrantStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionGrantStatusResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateSubscriptionRequestRequest&, const Model::UpdateSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionRequestResponseReceivedHandler;

@@ -90,6 +90,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The identifier of the resource snapshot job created as part of this task.
+     * </p>
+     */
+    inline const Aws::String& GetResourceSnapshotJobId() const{ return m_resourceSnapshotJobId; }
+    inline void SetResourceSnapshotJobId(const Aws::String& value) { m_resourceSnapshotJobId = value; }
+    inline void SetResourceSnapshotJobId(Aws::String&& value) { m_resourceSnapshotJobId = std::move(value); }
+    inline void SetResourceSnapshotJobId(const char* value) { m_resourceSnapshotJobId.assign(value); }
+    inline StartEngagementByAcceptingInvitationTaskResult& WithResourceSnapshotJobId(const Aws::String& value) { SetResourceSnapshotJobId(value); return *this;}
+    inline StartEngagementByAcceptingInvitationTaskResult& WithResourceSnapshotJobId(Aws::String&& value) { SetResourceSnapshotJobId(std::move(value)); return *this;}
+    inline StartEngagementByAcceptingInvitationTaskResult& WithResourceSnapshotJobId(const char* value) { SetResourceSnapshotJobId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp indicating when the task was initiated. The format follows RFC
      * 3339 section 5.6.</p>
      */
@@ -157,6 +171,8 @@ namespace Model
     Aws::String m_opportunityId;
 
     ReasonCode m_reasonCode;
+
+    Aws::String m_resourceSnapshotJobId;
 
     Aws::Utils::DateTime m_startTime;
 

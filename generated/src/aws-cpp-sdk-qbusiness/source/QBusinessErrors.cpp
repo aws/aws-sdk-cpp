@@ -51,6 +51,8 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int LICENSE_NOT_FOUND_HASH = HashingUtils::HashString("LicenseNotFoundException");
+static const int MEDIA_TOO_LARGE_HASH = HashingUtils::HashString("MediaTooLargeException");
+static const int EXTERNAL_RESOURCE_HASH = HashingUtils::HashString("ExternalResourceException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -72,6 +74,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LICENSE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QBusinessErrors::LICENSE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == MEDIA_TOO_LARGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QBusinessErrors::MEDIA_TOO_LARGE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == EXTERNAL_RESOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QBusinessErrors::EXTERNAL_RESOURCE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

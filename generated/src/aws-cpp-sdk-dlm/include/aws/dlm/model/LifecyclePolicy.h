@@ -28,8 +28,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Custom policies only]</b> Detailed information about a snapshot, AMI, or
-   * event-based lifecycle policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/LifecyclePolicy">AWS
    * API Reference</a></p>
    */
@@ -182,10 +181,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> <b>[Default policies only]</b> The type of default policy. Values
-     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
-     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
-     * EBS-backed AMIs</p> </li> </ul>
+     * <p>Indicates whether the policy is a default lifecycle policy or a custom
+     * lifecycle policy.</p> <ul> <li> <p> <code>true</code> - the policy is a default
+     * policy.</p> </li> <li> <p> <code>false</code> - the policy is a custom
+     * policy.</p> </li> </ul>
      */
     inline bool GetDefaultPolicy() const{ return m_defaultPolicy; }
     inline bool DefaultPolicyHasBeenSet() const { return m_defaultPolicyHasBeenSet; }

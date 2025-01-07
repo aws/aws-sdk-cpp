@@ -38,7 +38,9 @@ Backup::Backup() :
     m_sourceBackupRegionHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+    m_volumeHasBeenSet(false),
+    m_sizeInBytes(0),
+    m_sizeInBytesHasBeenSet(false)
 {
 }
 
@@ -165,6 +167,13 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_volumeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SizeInBytes"))
+  {
+    m_sizeInBytes = jsonValue.GetInt64("SizeInBytes");
+
+    m_sizeInBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -266,6 +275,12 @@ JsonValue Backup::Jsonize() const
   if(m_volumeHasBeenSet)
   {
    payload.WithObject("Volume", m_volume.Jsonize());
+
+  }
+
+  if(m_sizeInBytesHasBeenSet)
+  {
+   payload.WithInt64("SizeInBytes", m_sizeInBytes);
 
   }
 

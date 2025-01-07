@@ -69,6 +69,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The description of the billing view. </p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline BillingViewListElement& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline BillingViewListElement& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline BillingViewListElement& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The list of owners of the Billing view. </p>
      */
     inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
@@ -99,6 +113,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;

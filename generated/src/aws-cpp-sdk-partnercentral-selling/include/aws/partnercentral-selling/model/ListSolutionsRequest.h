@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog associated with the request. This field takes a string
+     * <p>Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the solutions are listed in. Use
      * <code>AWS</code> to list solutions in the Amazon Web Services catalog, and
      * <code>Sandbox</code> to list solutions in a secure and isolated testing
-     * environment. </p>
+     * environment.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of results returned by a single call. This value must be
-     * provided in the next call to retrieve the next set of results. </p> <p>Default:
+     * provided in the next call to retrieve the next set of results.</p> <p>Default:
      * 20</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -105,9 +105,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> A pagination token used to retrieve the next set of results in subsequent
+     * <p>A pagination token used to retrieve the next set of results in subsequent
      * calls. This token is included in the response only if there are additional
-     * result pages available. </p>
+     * result pages available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -122,7 +122,7 @@ namespace Model
     ///@{
     /**
      * <p>Object that configures sorting done on the response. Default
-     * <code>Sort.SortBy</code> is <code>Identifier</code>. </p>
+     * <code>Sort.SortBy</code> is <code>Identifier</code>.</p>
      */
     inline const SolutionSort& GetSort() const{ return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }

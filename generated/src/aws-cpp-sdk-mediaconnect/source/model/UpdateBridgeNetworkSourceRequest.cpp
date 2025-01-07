@@ -20,6 +20,7 @@ namespace Model
 
 UpdateBridgeNetworkSourceRequest::UpdateBridgeNetworkSourceRequest() : 
     m_multicastIpHasBeenSet(false),
+    m_multicastSourceSettingsHasBeenSet(false),
     m_networkNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -41,6 +42,13 @@ UpdateBridgeNetworkSourceRequest& UpdateBridgeNetworkSourceRequest::operator =(J
     m_multicastIp = jsonValue.GetString("multicastIp");
 
     m_multicastIpHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multicastSourceSettings"))
+  {
+    m_multicastSourceSettings = jsonValue.GetObject("multicastSourceSettings");
+
+    m_multicastSourceSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("networkName"))
@@ -74,6 +82,12 @@ JsonValue UpdateBridgeNetworkSourceRequest::Jsonize() const
   if(m_multicastIpHasBeenSet)
   {
    payload.WithString("multicastIp", m_multicastIp);
+
+  }
+
+  if(m_multicastSourceSettingsHasBeenSet)
+  {
+   payload.WithObject("multicastSourceSettings", m_multicastSourceSettings.Jsonize());
 
   }
 

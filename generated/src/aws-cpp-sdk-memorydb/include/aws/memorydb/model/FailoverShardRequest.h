@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The cluster being failed over</p>
+     * <p>The cluster being failed over.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the shard</p>
+     * <p>The name of the shard.</p>
      */
     inline const Aws::String& GetShardName() const{ return m_shardName; }
     inline bool ShardNameHasBeenSet() const { return m_shardNameHasBeenSet; }

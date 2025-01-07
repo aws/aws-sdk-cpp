@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The settings for assigning a custom Amazon EFS file system to a user profile
-   * or space for an Amazon SageMaker Domain.</p><p><h3>See Also:</h3>   <a
+   * or space for an Amazon SageMaker AI Domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EFSFileSystemConfig">AWS
    * API Reference</a></p>
    */
@@ -55,7 +55,7 @@ namespace Model
     ///@{
     /**
      * <p>The path to the file system directory that is accessible in Amazon SageMaker
-     * Studio. Permitted users can access only this directory and below.</p>
+     * AI Studio. Permitted users can access only this directory and below.</p>
      */
     inline const Aws::String& GetFileSystemPath() const{ return m_fileSystemPath; }
     inline bool FileSystemPathHasBeenSet() const { return m_fileSystemPathHasBeenSet; }

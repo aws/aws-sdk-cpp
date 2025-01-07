@@ -19,7 +19,9 @@ namespace Model
 {
 
 MediaPackageOutputDestinationSettings::MediaPackageOutputDestinationSettings() : 
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_channelGroupHasBeenSet(false),
+    m_channelNameHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,20 @@ MediaPackageOutputDestinationSettings& MediaPackageOutputDestinationSettings::op
     m_channelIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("channelGroup"))
+  {
+    m_channelGroup = jsonValue.GetString("channelGroup");
+
+    m_channelGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("channelName"))
+  {
+    m_channelName = jsonValue.GetString("channelName");
+
+    m_channelNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +64,18 @@ JsonValue MediaPackageOutputDestinationSettings::Jsonize() const
   if(m_channelIdHasBeenSet)
   {
    payload.WithString("channelId", m_channelId);
+
+  }
+
+  if(m_channelGroupHasBeenSet)
+  {
+   payload.WithString("channelGroup", m_channelGroup);
+
+  }
+
+  if(m_channelNameHasBeenSet)
+  {
+   payload.WithString("channelName", m_channelName);
 
   }
 

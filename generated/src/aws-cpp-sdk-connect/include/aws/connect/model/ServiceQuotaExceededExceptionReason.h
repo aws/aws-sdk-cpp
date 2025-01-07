@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The reason for the exception.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ServiceQuotaExceededExceptionReason">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Total file size of all files or total number of files exceeds the service
+     * quota</p>
      */
     inline const AttachedFileServiceQuotaExceededExceptionReason& GetAttachedFileServiceQuotaExceededExceptionReason() const{ return m_attachedFileServiceQuotaExceededExceptionReason; }
     inline bool AttachedFileServiceQuotaExceededExceptionReasonHasBeenSet() const { return m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet; }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/QueryLanguage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -38,6 +39,21 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API QueryDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The query language used for this query. For more information about the query
+     * languages that CloudWatch Logs supports, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+     * query languages</a>.</p>
+     */
+    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
+    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
+    inline QueryDefinition& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
+    inline QueryDefinition& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -109,6 +125,9 @@ namespace Model
     inline QueryDefinition& AddLogGroupNames(const char* value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
     ///@}
   private:
+
+    QueryLanguage m_queryLanguage;
+    bool m_queryLanguageHasBeenSet = false;
 
     Aws::String m_queryDefinitionId;
     bool m_queryDefinitionIdHasBeenSet = false;

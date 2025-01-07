@@ -31,8 +31,6 @@ ContactFlow::ContactFlow() :
     m_descriptionHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
     m_flowContentSha256HasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
@@ -114,13 +112,6 @@ ContactFlow& ContactFlow::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("IsDefault"))
-  {
-    m_isDefault = jsonValue.GetBool("IsDefault");
-
-    m_isDefaultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FlowContentSha256"))
@@ -218,12 +209,6 @@ JsonValue ContactFlow::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_isDefaultHasBeenSet)
-  {
-   payload.WithBool("IsDefault", m_isDefault);
 
   }
 

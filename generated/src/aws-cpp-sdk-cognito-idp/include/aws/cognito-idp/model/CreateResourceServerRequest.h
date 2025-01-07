@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool where you want to create a resource server.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -85,8 +85,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of scopes. Each scope is a key-value map with the keys
-     * <code>name</code> and <code>description</code>.</p>
+     * <p>A list of custom scopes. Each scope is a key-value map with the keys
+     * <code>ScopeName</code> and <code>ScopeDescription</code>. The name of a custom
+     * scope is a combination of <code>ScopeName</code> and the resource server
+     * <code>Name</code> in this request, for example
+     * <code>MyResourceServerName/MyScopeName</code>.</p>
      */
     inline const Aws::Vector<ResourceServerScopeType>& GetScopes() const{ return m_scopes; }
     inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }

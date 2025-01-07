@@ -3181,10 +3181,10 @@ namespace Aws
          * endpoint disables RDS Data API.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
          * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
-         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-         * clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
-         * the <code>EnableHttpEndpoint</code> parameter of the
-         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+         * disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
+         * <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code>
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3242,10 +3242,10 @@ namespace Aws
          * editor.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
          * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
-         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-         * clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
-         * the <code>EnableHttpEndpoint</code> parameter of the
-         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+         * enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
+         * <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code>
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">AWS
          * API Reference</a></p>
          */

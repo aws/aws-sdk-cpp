@@ -19,6 +19,7 @@ StartQAppSessionRequest::StartQAppSessionRequest() :
     m_appVersion(0),
     m_appVersionHasBeenSet(false),
     m_initialValuesHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -47,6 +48,12 @@ Aws::String StartQAppSessionRequest::SerializePayload() const
      initialValuesJsonList[initialValuesIndex].AsObject(m_initialValues[initialValuesIndex].Jsonize());
    }
    payload.WithArray("initialValues", std::move(initialValuesJsonList));
+
+  }
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("sessionId", m_sessionId);
 
   }
 

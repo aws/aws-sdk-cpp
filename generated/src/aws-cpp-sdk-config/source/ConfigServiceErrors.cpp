@@ -43,6 +43,7 @@ static const int INVALID_RECORDING_GROUP_HASH = HashingUtils::HashString("Invali
 static const int INVALID_S3_KEY_PREFIX_HASH = HashingUtils::HashString("InvalidS3KeyPrefixException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_CONFIGURATION_RECORDER_NAME_HASH = HashingUtils::HashString("InvalidConfigurationRecorderNameException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NO_RUNNING_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoRunningConfigurationRecorderException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
 static const int LAST_DELIVERY_CHANNEL_DELETE_FAILED_HASH = HashingUtils::HashString("LastDeliveryChannelDeleteFailedException");
@@ -52,6 +53,7 @@ static const int NO_SUCH_ORGANIZATION_CONFORMANCE_PACK_HASH = HashingUtils::Hash
 static const int NO_SUCH_REMEDIATION_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchRemediationConfigurationException");
 static const int MAX_NUMBER_OF_RETENTION_CONFIGURATIONS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfRetentionConfigurationsExceededException");
 static const int NO_AVAILABLE_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoAvailableDeliveryChannelException");
+static const int UNMODIFIABLE_ENTITY_HASH = HashingUtils::HashString("UnmodifiableEntityException");
 static const int MAX_NUMBER_OF_CONFORMANCE_PACKS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConformancePacksExceededException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
@@ -175,6 +177,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_CONFIGURATION_RECORDER_NAME), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == NO_RUNNING_CONFIGURATION_RECORDER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_RUNNING_CONFIGURATION_RECORDER), RetryableType::NOT_RETRYABLE);
@@ -210,6 +216,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_AVAILABLE_DELIVERY_CHANNEL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_AVAILABLE_DELIVERY_CHANNEL), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == UNMODIFIABLE_ENTITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::UNMODIFIABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAX_NUMBER_OF_CONFORMANCE_PACKS_EXCEEDED_HASH)
   {

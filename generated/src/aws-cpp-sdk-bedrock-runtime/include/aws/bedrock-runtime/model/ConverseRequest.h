@@ -13,6 +13,7 @@
 #include <aws/bedrock-runtime/model/GuardrailConfiguration.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
 #include <aws/bedrock-runtime/model/Message.h>
 #include <aws/bedrock-runtime/model/SystemContentBlock.h>
 #include <aws/bedrock-runtime/model/PromptVariableValues.h>
@@ -62,9 +63,10 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
      * a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p> </li>
-     * <li> <p>To include a prompt that was defined in Prompt management, specify the
-     * ARN of the prompt version to use.</p> </li> </ul> <p>The Converse API doesn't
-     * support <a
+     * <li> <p>To include a prompt that was defined in <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
+     * management</a>, specify the ARN of the prompt version to use.</p> </li> </ul>
+     * <p>The Converse API doesn't support <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
      * models</a>.</p>
      */
@@ -125,9 +127,10 @@ namespace Model
     ///@{
     /**
      * <p>Configuration information for the tools that the model can use when
-     * generating a response. </p>  <p>This field is only supported by Anthropic
-     * Claude 3, Cohere Command R, Cohere Command R+, and Mistral Large models.</p>
-     * 
+     * generating a response. </p> <p>For information about models that support tool
+     * use, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported
+     * models and model features</a>.</p>
      */
     inline const ToolConfiguration& GetToolConfig() const{ return m_toolConfig; }
     inline bool ToolConfigHasBeenSet() const { return m_toolConfigHasBeenSet; }
@@ -217,6 +220,37 @@ namespace Model
     inline ConverseRequest& AddAdditionalModelResponseFieldPaths(Aws::String&& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths.push_back(std::move(value)); return *this; }
     inline ConverseRequest& AddAdditionalModelResponseFieldPaths(const char* value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Key-value pairs that you can use to filter invocation logs.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestMetadata() const{ return m_requestMetadata; }
+    inline bool RequestMetadataHasBeenSet() const { return m_requestMetadataHasBeenSet; }
+    inline void SetRequestMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = value; }
+    inline void SetRequestMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = std::move(value); }
+    inline ConverseRequest& WithRequestMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestMetadata(value); return *this;}
+    inline ConverseRequest& WithRequestMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestMetadata(std::move(value)); return *this;}
+    inline ConverseRequest& AddRequestMetadata(const Aws::String& key, const Aws::String& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, value); return *this; }
+    inline ConverseRequest& AddRequestMetadata(Aws::String&& key, const Aws::String& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), value); return *this; }
+    inline ConverseRequest& AddRequestMetadata(const Aws::String& key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, std::move(value)); return *this; }
+    inline ConverseRequest& AddRequestMetadata(Aws::String&& key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), std::move(value)); return *this; }
+    inline ConverseRequest& AddRequestMetadata(const char* key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, std::move(value)); return *this; }
+    inline ConverseRequest& AddRequestMetadata(Aws::String&& key, const char* value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), value); return *this; }
+    inline ConverseRequest& AddRequestMetadata(const char* key, const char* value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Model performance settings for the request.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
+    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
+    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
+    inline ConverseRequest& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
+    inline ConverseRequest& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelId;
@@ -245,6 +279,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_additionalModelResponseFieldPaths;
     bool m_additionalModelResponseFieldPathsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_requestMetadata;
+    bool m_requestMetadataHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfig;
+    bool m_performanceConfigHasBeenSet = false;
   };
 
 } // namespace Model

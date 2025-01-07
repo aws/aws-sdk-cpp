@@ -80,6 +80,20 @@ namespace Model
     inline LinkedWhatsAppBusinessAccountIdMetaData& AddUnregisteredWhatsAppPhoneNumbers(const WhatsAppPhoneNumberDetail& value) { m_unregisteredWhatsAppPhoneNumbersHasBeenSet = true; m_unregisteredWhatsAppPhoneNumbers.push_back(value); return *this; }
     inline LinkedWhatsAppBusinessAccountIdMetaData& AddUnregisteredWhatsAppPhoneNumbers(WhatsAppPhoneNumberDetail&& value) { m_unregisteredWhatsAppPhoneNumbersHasBeenSet = true; m_unregisteredWhatsAppPhoneNumbers.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.</p>
+     */
+    inline const Aws::String& GetWabaId() const{ return m_wabaId; }
+    inline bool WabaIdHasBeenSet() const { return m_wabaIdHasBeenSet; }
+    inline void SetWabaId(const Aws::String& value) { m_wabaIdHasBeenSet = true; m_wabaId = value; }
+    inline void SetWabaId(Aws::String&& value) { m_wabaIdHasBeenSet = true; m_wabaId = std::move(value); }
+    inline void SetWabaId(const char* value) { m_wabaIdHasBeenSet = true; m_wabaId.assign(value); }
+    inline LinkedWhatsAppBusinessAccountIdMetaData& WithWabaId(const Aws::String& value) { SetWabaId(value); return *this;}
+    inline LinkedWhatsAppBusinessAccountIdMetaData& WithWabaId(Aws::String&& value) { SetWabaId(std::move(value)); return *this;}
+    inline LinkedWhatsAppBusinessAccountIdMetaData& WithWabaId(const char* value) { SetWabaId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountName;
@@ -90,6 +104,9 @@ namespace Model
 
     Aws::Vector<WhatsAppPhoneNumberDetail> m_unregisteredWhatsAppPhoneNumbers;
     bool m_unregisteredWhatsAppPhoneNumbersHasBeenSet = false;
+
+    Aws::String m_wabaId;
+    bool m_wabaIdHasBeenSet = false;
   };
 
 } // namespace Model

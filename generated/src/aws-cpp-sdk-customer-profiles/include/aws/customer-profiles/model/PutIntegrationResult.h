@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A list of unique names for active event triggers associated with the
+     * integration. This list would be empty if no Event Trigger is associated with the
+     * integration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEventTriggerNames() const{ return m_eventTriggerNames; }
+    inline void SetEventTriggerNames(const Aws::Vector<Aws::String>& value) { m_eventTriggerNames = value; }
+    inline void SetEventTriggerNames(Aws::Vector<Aws::String>&& value) { m_eventTriggerNames = std::move(value); }
+    inline PutIntegrationResult& WithEventTriggerNames(const Aws::Vector<Aws::String>& value) { SetEventTriggerNames(value); return *this;}
+    inline PutIntegrationResult& WithEventTriggerNames(Aws::Vector<Aws::String>&& value) { SetEventTriggerNames(std::move(value)); return *this;}
+    inline PutIntegrationResult& AddEventTriggerNames(const Aws::String& value) { m_eventTriggerNames.push_back(value); return *this; }
+    inline PutIntegrationResult& AddEventTriggerNames(Aws::String&& value) { m_eventTriggerNames.push_back(std::move(value)); return *this; }
+    inline PutIntegrationResult& AddEventTriggerNames(const char* value) { m_eventTriggerNames.push_back(value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -206,6 +223,8 @@ namespace Model
     bool m_isUnstructured;
 
     Aws::String m_roleArn;
+
+    Aws::Vector<Aws::String> m_eventTriggerNames;
 
     Aws::String m_requestId;
   };

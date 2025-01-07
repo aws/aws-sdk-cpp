@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudhsmv2/model/ClusterState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/cloudhsmv2/model/NetworkType.h>
 #include <aws/cloudhsmv2/model/Certificates.h>
 #include <aws/cloudhsmv2/model/ClusterMode.h>
 #include <aws/cloudhsmv2/model/Hsm.h>
@@ -231,6 +232,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The cluster's NetworkType can be set to either IPV4 (which is the default) or
+     * DUALSTACK. When set to IPV4, communication between your application and the
+     * Hardware Security Modules (HSMs) is restricted to the IPv4 protocol only. In
+     * contrast, the DUALSTACK network type enables communication over both the IPv4
+     * and IPv6 protocols. To use the DUALSTACK option, you'll need to configure your
+     * Virtual Private Cloud (VPC) and subnets to support both IPv4 and IPv6. This
+     * involves adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the
+     * existing IPv4 CIDR blocks in your subnets. The choice between IPV4 and DUALSTACK
+     * network types determines the flexibility of the network addressing setup for
+     * your cluster. The DUALSTACK option provides more flexibility by allowing both
+     * IPv4 and IPv6 communication.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+    inline Cluster& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline Cluster& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains one or more certificates or a certificate signing request (CSR).</p>
      */
     inline const Certificates& GetCertificates() const{ return m_certificates; }
@@ -306,6 +329,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     Certificates m_certificates;
     bool m_certificatesHasBeenSet = false;

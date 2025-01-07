@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The time when the model compilation job on a compilation job instance ended.
      * For a successful or stopped job, this is when the job's model artifacts have
-     * finished uploading. For a failed job, this is when Amazon SageMaker detected
+     * finished uploading. For a failed job, this is when Amazon SageMaker AI detected
      * that the job failed. </p>
      */
     inline const Aws::Utils::DateTime& GetCompilationEndTime() const{ return m_compilationEndTime; }
@@ -111,8 +111,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies a limit to how long a model compilation job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
-     * to cap model training costs.</p>
+     * reaches the time limit, Amazon SageMaker AI ends the compilation job. Use this
+     * API to cap model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingCondition = value; }
@@ -210,8 +210,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform the model compilation job.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI
+     * assumes to perform the model compilation job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }

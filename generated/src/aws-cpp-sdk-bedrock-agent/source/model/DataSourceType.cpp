@@ -25,6 +25,8 @@ namespace Aws
         static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
         static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
         static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int REDSHIFT_METADATA_HASH = HashingUtils::HashString("REDSHIFT_METADATA");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == SHAREPOINT_HASH)
           {
             return DataSourceType::SHAREPOINT;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return DataSourceType::CUSTOM;
+          }
+          else if (hashCode == REDSHIFT_METADATA_HASH)
+          {
+            return DataSourceType::REDSHIFT_METADATA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "SALESFORCE";
           case DataSourceType::SHAREPOINT:
             return "SHAREPOINT";
+          case DataSourceType::CUSTOM:
+            return "CUSTOM";
+          case DataSourceType::REDSHIFT_METADATA:
+            return "REDSHIFT_METADATA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

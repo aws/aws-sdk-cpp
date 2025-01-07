@@ -32,6 +32,18 @@ StartEngagementFromOpportunityTaskResult::StartEngagementFromOpportunityTaskResu
 StartEngagementFromOpportunityTaskResult& StartEngagementFromOpportunityTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("EngagementId"))
+  {
+    m_engagementId = jsonValue.GetString("EngagementId");
+
+  }
+
+  if(jsonValue.ValueExists("EngagementInvitationId"))
+  {
+    m_engagementInvitationId = jsonValue.GetString("EngagementInvitationId");
+
+  }
+
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
@@ -47,6 +59,12 @@ StartEngagementFromOpportunityTaskResult& StartEngagementFromOpportunityTaskResu
   if(jsonValue.ValueExists("ReasonCode"))
   {
     m_reasonCode = ReasonCodeMapper::GetReasonCodeForName(jsonValue.GetString("ReasonCode"));
+
+  }
+
+  if(jsonValue.ValueExists("ResourceSnapshotJobId"))
+  {
+    m_resourceSnapshotJobId = jsonValue.GetString("ResourceSnapshotJobId");
 
   }
 

@@ -46,14 +46,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog associated with the request. This field takes a string
+     * <p>Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity is updated in. Use
      * <code>AWS</code> to update real opportunities in the production environment, and
      * <code>Sandbox</code> for testing in secure, isolated environments. When you use
      * the <code>Sandbox</code> catalog, it allows you to simulate and validate your
      * interactions with Amazon Web Services services without affecting live data or
-     * operations. </p>
+     * operations.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies details of the customer associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Customer& GetCustomer() const{ return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
@@ -80,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Read-only, system generated <code>Opportunity</code> unique identifier. </p>
+     * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the opportunity was last modified. </p>
+     * <p> <code>DateTime</code> when the opportunity was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
@@ -106,8 +106,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains lifecycle details for the <code>Opportunity</code>.
-     * </p>
+     * <p>An object that contains lifecycle details for the
+     * <code>Opportunity</code>.</p>
      */
     inline const LifeCycle& GetLifeCycle() const{ return m_lifeCycle; }
     inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
@@ -119,8 +119,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains marketing details for the <code>Opportunity</code>.
-     * </p>
+     * <p>An object that contains marketing details for the
+     * <code>Opportunity</code>.</p>
      */
     inline const Marketing& GetMarketing() const{ return m_marketing; }
     inline bool MarketingHasBeenSet() const { return m_marketingHasBeenSet; }
@@ -147,15 +147,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the opportunity type as a renewal, new, or expansion. </p> <p>
-     * Opportunity types: </p> <ul> <li> <p> New opportunity: Represents a new business
-     * opportunity with a potential customer that's not previously engaged with your
-     * solutions or services. </p> </li> <li> <p> Renewal opportunity: Represents an
-     * opportunity to renew an existing contract or subscription with a current
-     * customer, ensuring continuity of service. </p> </li> <li> <p> Expansion
+     * <p>Specifies the opportunity type as a renewal, new, or expansion.</p>
+     * <p>Opportunity types:</p> <ul> <li> <p>New opportunity: Represents a new
+     * business opportunity with a potential customer that's not previously engaged
+     * with your solutions or services.</p> </li> <li> <p>Renewal opportunity:
+     * Represents an opportunity to renew an existing contract or subscription with a
+     * current customer, ensuring continuity of service.</p> </li> <li> <p>Expansion
      * opportunity: Represents an opportunity to expand the scope of an existing
      * contract or subscription, either by adding new services or increasing the volume
-     * of existing services for a current customer. </p> </li> </ul>
+     * of existing services for a current customer.</p> </li> </ul>
      */
     inline const OpportunityType& GetOpportunityType() const{ return m_opportunityType; }
     inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>Specifies the opportunity's unique identifier in the partner's CRM system.
      * This value is essential to track and reconcile because it's included in the
-     * outbound payload sent back to the partner. </p>
+     * outbound payload sent back to the partner.</p>
      */
     inline const Aws::String& GetPartnerOpportunityIdentifier() const{ return m_partnerOpportunityIdentifier; }
     inline bool PartnerOpportunityIdentifierHasBeenSet() const { return m_partnerOpportunityIdentifierHasBeenSet; }
@@ -183,31 +183,32 @@ namespace Model
 
     ///@{
     /**
-     * <p> Identifies the type of support the partner needs from Amazon Web Services.
-     * </p> <p> Valid values: </p> <ul> <li> <p> Cosell—Architectural Validation:
+     * <p>Identifies the type of support the partner needs from Amazon Web
+     * Services.</p> <p>Valid values:</p> <ul> <li> <p>Cosell—Architectural Validation:
      * Confirmation from Amazon Web Services that the partner's proposed solution
      * architecture is aligned with Amazon Web Services best practices and poses
-     * minimal architectural risks. </p> </li> <li> <p> Cosell—Business Presentation:
+     * minimal architectural risks.</p> </li> <li> <p>Cosell—Business Presentation:
      * Request Amazon Web Services seller's participation in a joint customer
-     * presentation. </p> </li> <li> <p> Cosell—Competitive Information: Access to
-     * Amazon Web Services competitive resources and support for the partner's proposed
-     * solution. </p> </li> <li> <p> Cosell—Pricing Assistance: Connect with an AWS
+     * presentation.</p> </li> <li> <p>Cosell—Competitive Information: Access to Amazon
+     * Web Services competitive resources and support for the partner's proposed
+     * solution.</p> </li> <li> <p>Cosell—Pricing Assistance: Connect with an AWS
      * seller for support situations where a partner may be receiving an upfront
-     * discount on a service (for example: EDP deals). </p> </li> <li> <p>
-     * Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions
-     * Architect to address the partner's questions about the proposed solution. </p>
-     * </li> <li> <p> Cosell—Total Cost of Ownership Evaluation: Assistance with
-     * quoting different cost savings of proposed solutions on Amazon Web Services
-     * versus on-premises or a traditional hosting environment. </p> </li> <li> <p>
-     * Cosell—Deal Support: Request Amazon Web Services seller's support to progress
-     * the opportunity (for example: joint customer call, strategic positioning). </p>
-     * </li> <li> <p> Cosell—Support for Public Tender/RFx: Opportunity related to the
-     * public sector where the partner needs RFx support from Amazon Web Services. </p>
-     * </li> <li> <p> Do Not Need Support from AWS Sales Rep: Indicates that a partner
-     * doesn't need support from an Amazon Web Services Sales representative. The
-     * opportunity is managed solely by the partner. It's possible to request coselling
-     * support on these opportunities at any stage during their lifecycle. Also known
-     * as, for-visibility-only (FVO) opportunity. </p> </li> </ul>
+     * discount on a service (for example: EDP deals).</p> </li> <li>
+     * <p>Cosell—Technical Consultation: Connection with an Amazon Web Services
+     * Solutions Architect to address the partner's questions about the proposed
+     * solution.</p> </li> <li> <p>Cosell—Total Cost of Ownership Evaluation:
+     * Assistance with quoting different cost savings of proposed solutions on Amazon
+     * Web Services versus on-premises or a traditional hosting environment.</p> </li>
+     * <li> <p>Cosell—Deal Support: Request Amazon Web Services seller's support to
+     * progress the opportunity (for example: joint customer call, strategic
+     * positioning).</p> </li> <li> <p>Cosell—Support for Public Tender/RFx:
+     * Opportunity related to the public sector where the partner needs RFx support
+     * from Amazon Web Services.</p> </li> <li> <p>Do Not Need Support from AWS Sales
+     * Rep: Indicates that a partner doesn't need support from an Amazon Web Services
+     * Sales representative. The opportunity is managed solely by the partner. It's
+     * possible to request coselling support on these opportunities at any stage during
+     * their lifecycle. Also known as, for-visibility-only (FVO) opportunity.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
     inline bool PrimaryNeedsFromAwsHasBeenSet() const { return m_primaryNeedsFromAwsHasBeenSet; }
@@ -222,7 +223,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains project details summary for the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Project& GetProject() const{ return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }

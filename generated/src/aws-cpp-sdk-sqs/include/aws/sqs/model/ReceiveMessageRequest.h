@@ -19,7 +19,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Retrieves one or more messages from a specified queue.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessageRequest">AWS
    * API Reference</a></p>
    */
@@ -139,7 +140,26 @@ namespace Model
     /**
      * <p>The duration (in seconds) that the received messages are hidden from
      * subsequent retrieve requests after being retrieved by a
-     * <code>ReceiveMessage</code> request.</p>
+     * <code>ReceiveMessage</code> request. If not specified, the default visibility
+     * timeout for the queue is used, which is 30 seconds.</p> <p>Understanding
+     * <code>VisibilityTimeout</code>:</p> <ul> <li> <p>When a message is received from
+     * a queue, it becomes temporarily invisible to other consumers for the duration of
+     * the visibility timeout. This prevents multiple consumers from processing the
+     * same message simultaneously. If the message is not deleted or its visibility
+     * timeout is not extended before the timeout expires, it becomes visible again and
+     * can be retrieved by other consumers.</p> </li> <li> <p>Setting an appropriate
+     * visibility timeout is crucial. If it's too short, the message might become
+     * visible again before processing is complete, leading to duplicate processing. If
+     * it's too long, it delays the reprocessing of messages if the initial processing
+     * fails.</p> </li> <li> <p>You can adjust the visibility timeout using the
+     * <code>--visibility-timeout</code> parameter in the <code>receive-message</code>
+     * command to match the processing time required by your application.</p> </li>
+     * <li> <p>A message that isn't deleted or a message whose visibility isn't
+     * extended before the visibility timeout expires counts as a failed receive.
+     * Depending on the configuration of the queue, the message might be sent to the
+     * dead-letter queue.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
     inline bool VisibilityTimeoutHasBeenSet() const { return m_visibilityTimeoutHasBeenSet; }
@@ -152,11 +172,12 @@ namespace Model
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
-     * time expires, the call does not return a message list.</p>  <p>To
-     * avoid HTTP errors, ensure that the HTTP response timeout for
-     * <code>ReceiveMessage</code> requests is longer than the
-     * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
-     * set HTTP transport settings using the <a
+     * time expires, the call does not return a message list. If you are using the Java
+     * SDK, it returns a <code>ReceiveMessageResponse</code> object, which has a empty
+     * list instead of a Null object.</p>  <p>To avoid HTTP errors, ensure
+     * that the HTTP response timeout for <code>ReceiveMessage</code> requests is
+     * longer than the <code>WaitTimeSeconds</code> parameter. For example, with the
+     * Java SDK, you can set HTTP transport settings using the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
      * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">

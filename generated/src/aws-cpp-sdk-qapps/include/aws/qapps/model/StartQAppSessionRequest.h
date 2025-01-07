@@ -92,6 +92,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the a Q App session.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline StartQAppSessionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline StartQAppSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline StartQAppSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Optional tags to associate with the new Q App session.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -121,6 +135,9 @@ namespace Model
 
     Aws::Vector<CardValue> m_initialValues;
     bool m_initialValuesHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

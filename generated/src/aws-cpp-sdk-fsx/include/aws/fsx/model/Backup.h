@@ -257,6 +257,17 @@ namespace Model
     inline Backup& WithVolume(const Volume& value) { SetVolume(value); return *this;}
     inline Backup& WithVolume(Volume&& value) { SetVolume(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The size of the backup in bytes. This represents the amount of data that the
+     * file system would contain if you restore this backup. </p>
+     */
+    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
+    inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
+    inline Backup& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_backupId;
@@ -306,6 +317,9 @@ namespace Model
 
     Volume m_volume;
     bool m_volumeHasBeenSet = false;
+
+    long long m_sizeInBytes;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

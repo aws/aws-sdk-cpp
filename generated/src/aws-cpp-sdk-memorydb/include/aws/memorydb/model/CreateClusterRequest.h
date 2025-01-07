@@ -67,6 +67,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the multi-Region cluster to be created.</p>
+     */
+    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
+    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
+    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
+    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
+    inline CreateClusterRequest& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
+    inline CreateClusterRequest& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
+    inline CreateClusterRequest& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the parameter group associated with the cluster.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
@@ -307,8 +321,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the engine to be used for the nodes in this cluster. The value
-     * must be set to either Redis or Valkey.</p>
+     * <p>The name of the engine to be used for the cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -322,7 +335,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version number of the engine to be used for the cluster.</p>
+     * <p>The version number of the Redis OSS engine to be used for the cluster.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -365,6 +378,9 @@ namespace Model
 
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet = false;
+
+    Aws::String m_multiRegionClusterName;
+    bool m_multiRegionClusterNameHasBeenSet = false;
 
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet = false;

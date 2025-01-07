@@ -6,9 +6,12 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultConfluenceLocation.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultCustomDocumentLocation.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultKendraDocumentLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultS3Location.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultSalesforceLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultSharePointLocation.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultSqlLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultLocationType.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultWebLocation.h>
 #include <utility>
@@ -36,7 +39,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
    * response</a> – in the <code>location</code> field</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent
-   * response</a> – in the <code>locatino</code> field</p> </li> </ul><p><h3>See
+   * response</a> – in the <code>location</code> field</p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievalResultLocation">AWS
    * API Reference</a></p>
@@ -60,6 +63,30 @@ namespace Model
     inline void SetConfluenceLocation(RetrievalResultConfluenceLocation&& value) { m_confluenceLocationHasBeenSet = true; m_confluenceLocation = std::move(value); }
     inline RetrievalResultLocation& WithConfluenceLocation(const RetrievalResultConfluenceLocation& value) { SetConfluenceLocation(value); return *this;}
     inline RetrievalResultLocation& WithConfluenceLocation(RetrievalResultConfluenceLocation&& value) { SetConfluenceLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the location of a document in a custom data source.</p>
+     */
+    inline const RetrievalResultCustomDocumentLocation& GetCustomDocumentLocation() const{ return m_customDocumentLocation; }
+    inline bool CustomDocumentLocationHasBeenSet() const { return m_customDocumentLocationHasBeenSet; }
+    inline void SetCustomDocumentLocation(const RetrievalResultCustomDocumentLocation& value) { m_customDocumentLocationHasBeenSet = true; m_customDocumentLocation = value; }
+    inline void SetCustomDocumentLocation(RetrievalResultCustomDocumentLocation&& value) { m_customDocumentLocationHasBeenSet = true; m_customDocumentLocation = std::move(value); }
+    inline RetrievalResultLocation& WithCustomDocumentLocation(const RetrievalResultCustomDocumentLocation& value) { SetCustomDocumentLocation(value); return *this;}
+    inline RetrievalResultLocation& WithCustomDocumentLocation(RetrievalResultCustomDocumentLocation&& value) { SetCustomDocumentLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The location of a document in Amazon Kendra.</p>
+     */
+    inline const RetrievalResultKendraDocumentLocation& GetKendraDocumentLocation() const{ return m_kendraDocumentLocation; }
+    inline bool KendraDocumentLocationHasBeenSet() const { return m_kendraDocumentLocationHasBeenSet; }
+    inline void SetKendraDocumentLocation(const RetrievalResultKendraDocumentLocation& value) { m_kendraDocumentLocationHasBeenSet = true; m_kendraDocumentLocation = value; }
+    inline void SetKendraDocumentLocation(RetrievalResultKendraDocumentLocation&& value) { m_kendraDocumentLocationHasBeenSet = true; m_kendraDocumentLocation = std::move(value); }
+    inline RetrievalResultLocation& WithKendraDocumentLocation(const RetrievalResultKendraDocumentLocation& value) { SetKendraDocumentLocation(value); return *this;}
+    inline RetrievalResultLocation& WithKendraDocumentLocation(RetrievalResultKendraDocumentLocation&& value) { SetKendraDocumentLocation(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,6 +127,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies information about the SQL query used to retrieve the result.</p>
+     */
+    inline const RetrievalResultSqlLocation& GetSqlLocation() const{ return m_sqlLocation; }
+    inline bool SqlLocationHasBeenSet() const { return m_sqlLocationHasBeenSet; }
+    inline void SetSqlLocation(const RetrievalResultSqlLocation& value) { m_sqlLocationHasBeenSet = true; m_sqlLocation = value; }
+    inline void SetSqlLocation(RetrievalResultSqlLocation&& value) { m_sqlLocationHasBeenSet = true; m_sqlLocation = std::move(value); }
+    inline RetrievalResultLocation& WithSqlLocation(const RetrievalResultSqlLocation& value) { SetSqlLocation(value); return *this;}
+    inline RetrievalResultLocation& WithSqlLocation(RetrievalResultSqlLocation&& value) { SetSqlLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of data source location.</p>
      */
     inline const RetrievalResultLocationType& GetType() const{ return m_type; }
@@ -126,6 +165,12 @@ namespace Model
     RetrievalResultConfluenceLocation m_confluenceLocation;
     bool m_confluenceLocationHasBeenSet = false;
 
+    RetrievalResultCustomDocumentLocation m_customDocumentLocation;
+    bool m_customDocumentLocationHasBeenSet = false;
+
+    RetrievalResultKendraDocumentLocation m_kendraDocumentLocation;
+    bool m_kendraDocumentLocationHasBeenSet = false;
+
     RetrievalResultS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
@@ -134,6 +179,9 @@ namespace Model
 
     RetrievalResultSharePointLocation m_sharePointLocation;
     bool m_sharePointLocationHasBeenSet = false;
+
+    RetrievalResultSqlLocation m_sqlLocation;
+    bool m_sqlLocationHasBeenSet = false;
 
     RetrievalResultLocationType m_type;
     bool m_typeHasBeenSet = false;

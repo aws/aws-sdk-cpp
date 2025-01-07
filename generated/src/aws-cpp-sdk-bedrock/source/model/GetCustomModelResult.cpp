@@ -121,6 +121,12 @@ GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("customizationConfig"))
+  {
+    m_customizationConfig = jsonValue.GetObject("customizationConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

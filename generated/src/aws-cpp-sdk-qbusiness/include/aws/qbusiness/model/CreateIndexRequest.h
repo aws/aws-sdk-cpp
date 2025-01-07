@@ -67,6 +67,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The index type that's suitable for your needs. For more information on what's
      * included in each type of index, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#index-tiers">Amazon
@@ -78,20 +92,6 @@ namespace Model
     inline void SetType(IndexType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
     inline CreateIndexRequest& WithType(const IndexType& value) { SetType(value); return *this;}
     inline CreateIndexRequest& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
 
     ///@{
@@ -147,11 +147,11 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    IndexType m_type;
-    bool m_typeHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    IndexType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

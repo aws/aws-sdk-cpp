@@ -21,7 +21,8 @@ namespace Model
 EncryptionConfiguration::EncryptionConfiguration() : 
     m_s3EncryptionHasBeenSet(false),
     m_cloudWatchEncryptionHasBeenSet(false),
-    m_jobBookmarksEncryptionHasBeenSet(false)
+    m_jobBookmarksEncryptionHasBeenSet(false),
+    m_dataQualityEncryptionHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,13 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
     m_jobBookmarksEncryptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataQualityEncryption"))
+  {
+    m_dataQualityEncryption = jsonValue.GetObject("DataQualityEncryption");
+
+    m_dataQualityEncryptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +92,12 @@ JsonValue EncryptionConfiguration::Jsonize() const
   if(m_jobBookmarksEncryptionHasBeenSet)
   {
    payload.WithObject("JobBookmarksEncryption", m_jobBookmarksEncryption.Jsonize());
+
+  }
+
+  if(m_dataQualityEncryptionHasBeenSet)
+  {
+   payload.WithObject("DataQualityEncryption", m_dataQualityEncryption.Jsonize());
 
   }
 

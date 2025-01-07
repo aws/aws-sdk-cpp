@@ -110,14 +110,42 @@ namespace PartnerCentralSelling
         virtual ~PartnerCentralSellingClient();
 
         /**
-         * <p> Enables you to reassign an existing <code>Opportunity</code> to another user
+         * <p> Use the <code>AcceptEngagementInvitation</code> action to accept an
+         * engagement invitation shared by AWS. Accepting the invitation indicates your
+         * willingness to participate in the engagement, granting you access to all
+         * engagement-related data. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptEngagementInvitationOutcome AcceptEngagementInvitation(const Model::AcceptEngagementInvitationRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptEngagementInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AcceptEngagementInvitationRequestT = Model::AcceptEngagementInvitationRequest>
+        Model::AcceptEngagementInvitationOutcomeCallable AcceptEngagementInvitationCallable(const AcceptEngagementInvitationRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::AcceptEngagementInvitation, request);
+        }
+
+        /**
+         * An Async wrapper for AcceptEngagementInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AcceptEngagementInvitationRequestT = Model::AcceptEngagementInvitationRequest>
+        void AcceptEngagementInvitationAsync(const AcceptEngagementInvitationRequestT& request, const AcceptEngagementInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::AcceptEngagementInvitation, request, handler, context);
+        }
+
+        /**
+         * <p>Enables you to reassign an existing <code>Opportunity</code> to another user
          * within your Partner Central account. The specified user receives the
          * opportunity, and it appears on their Partner Central dashboard, allowing them to
-         * take necessary actions or proceed with the opportunity. </p> <p> This is useful
+         * take necessary actions or proceed with the opportunity.</p> <p>This is useful
          * for distributing opportunities to the appropriate team members or departments
          * within your organization, ensuring that each opportunity is handled by the right
          * person. By default, the opportunity owner is the one who creates it. Currently,
-         * there's no API to enumerate the list of available users. </p><p><h3>See
+         * there's no API to enumerate the list of available users.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssignOpportunity">AWS
          * API Reference</a></p>
@@ -143,38 +171,38 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Enables you to create a formal association between an
+         * <p>Enables you to create a formal association between an
          * <code>Opportunity</code> and various related entities, enriching the context and
          * details of the opportunity for better collaboration and decision making. You can
-         * associate an opportunity with the following entity types: </p> <ul> <li> <p>
-         * Partner Solution: A software product or consulting practice created and
+         * associate an opportunity with the following entity types:</p> <ul> <li>
+         * <p>Partner Solution: A software product or consulting practice created and
          * delivered by Partners. Partner Solutions help customers address business
-         * challenges using Amazon Web Services services. </p> </li> <li> <p> Amazon Web
+         * challenges using Amazon Web Services services.</p> </li> <li> <p>Amazon Web
          * Services Products: Amazon Web Services offers many products and services that
          * provide scalable, reliable, and cost-effective infrastructure solutions. For the
          * latest list of Amazon Web Services products, see <a
          * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
-         * Web Services products</a>. </p> </li> <li> <p> Amazon Web Services Marketplace
+         * Web Services products</a>.</p> </li> <li> <p>Amazon Web Services Marketplace
          * private offer: Allows Amazon Web Services Marketplace sellers to extend custom
          * pricing and terms to individual Amazon Web Services customers. Sellers can
          * negotiate custom prices, payment schedules, and end user license terms through
          * private offers, enabling Amazon Web Services customers to acquire software
          * solutions tailored to their specific needs. For more information, see <a
          * href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-private-offers.html">Private
-         * offers in Amazon Web Services Marketplace</a>. </p> </li> </ul> <p>To obtain
+         * offers in Amazon Web Services Marketplace</a>.</p> </li> </ul> <p>To obtain
          * identifiers for these entities, use the following methods:</p> <ul> <li>
-         * <p>Solution: Use the <code>ListSolutions</code> operation.</p> </li> <li> <p>
-         * AWS Products: For the latest list of Amazon Web Services products, see <a
+         * <p>Solution: Use the <code>ListSolutions</code> operation.</p> </li> <li> <p>AWS
+         * Products: For the latest list of Amazon Web Services products, see <a
          * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
-         * Web Services products</a>. </p> </li> <li> <p> Amazon Web Services Marketplace
+         * Web Services products</a>.</p> </li> <li> <p>Amazon Web Services Marketplace
          * private offer: Use the <a
          * href="https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html">Using
          * the Amazon Web Services Marketplace Catalog API</a> to list entities.
          * Specifically, use the <code>ListEntities</code> operation to retrieve a list of
          * private offers. The request returns the details of available private offers. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssociateOpportunity">AWS
          * API Reference</a></p>
          */
@@ -199,20 +227,75 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Creates an <code>Opportunity</code> record in Partner Central. Use this
+         * <p> The <code>CreateEngagement</code> action allows you to create an
+         * <code>Engagement</code>, which serves as a collaborative space between different
+         * parties such as AWS Partners and AWS Sellers. This action automatically adds the
+         * caller's AWS account as an active member of the newly created
+         * <code>Engagement</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEngagementOutcome CreateEngagement(const Model::CreateEngagementRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEngagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEngagementRequestT = Model::CreateEngagementRequest>
+        Model::CreateEngagementOutcomeCallable CreateEngagementCallable(const CreateEngagementRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::CreateEngagement, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEngagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEngagementRequestT = Model::CreateEngagementRequest>
+        void CreateEngagementAsync(const CreateEngagementRequestT& request, const CreateEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::CreateEngagement, request, handler, context);
+        }
+
+        /**
+         * <p> This action creates an invitation from a sender to a single receiver to join
+         * an engagement. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEngagementInvitationOutcome CreateEngagementInvitation(const Model::CreateEngagementInvitationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEngagementInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEngagementInvitationRequestT = Model::CreateEngagementInvitationRequest>
+        Model::CreateEngagementInvitationOutcomeCallable CreateEngagementInvitationCallable(const CreateEngagementInvitationRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::CreateEngagementInvitation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEngagementInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEngagementInvitationRequestT = Model::CreateEngagementInvitationRequest>
+        void CreateEngagementInvitationAsync(const CreateEngagementInvitationRequestT& request, const CreateEngagementInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::CreateEngagementInvitation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an <code>Opportunity</code> record in Partner Central. Use this
          * operation to create a potential business opportunity for submission to Amazon
          * Web Services. Creating an opportunity sets <code>Lifecycle.ReviewStatus</code>
-         * to <code>Pending Submission</code>. </p> <p> To submit an opportunity, follow
-         * these steps: </p> <ol> <li> <p>To create the opportunity, use
+         * to <code>Pending Submission</code>.</p> <p>To submit an opportunity, follow
+         * these steps:</p> <ol> <li> <p>To create the opportunity, use
          * <code>CreateOpportunity</code>.</p> </li> <li> <p>To associate a solution with
          * the opportunity, use <code>AssociateOpportunity</code>.</p> </li> <li> <p>To
          * submit the opportunity, use <code>StartEngagementFromOpportunityTask</code>.</p>
-         * </li> </ol> <p> After submission, you can't edit the opportunity until the
-         * review is complete. But opportunities in the <code>Pending Submission</code>
-         * state must have complete details. You can update the opportunity while it's in
-         * the <code>Pending Submission</code> state. </p> <p> There's a set of mandatory
-         * fields to create opportunities, but consider providing optional fields to enrich
-         * the opportunity record. </p><p><h3>See Also:</h3>   <a
+         * </li> </ol> <p>After submission, you can't edit the opportunity until the review
+         * is complete. But opportunities in the <code>Pending Submission</code> state must
+         * have complete details. You can update the opportunity while it's in the
+         * <code>Pending Submission</code> state.</p> <p>There's a set of mandatory fields
+         * to create opportunities, but consider providing optional fields to enrich the
+         * opportunity record.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">AWS
          * API Reference</a></p>
          */
@@ -237,17 +320,101 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Allows you to remove an existing association between an
+         * <p> This action allows you to create an immutable snapshot of a specific
+         * resource, such as an opportunity, within the context of an engagement. The
+         * snapshot captures a subset of the resource's data based on the schema defined by
+         * the provided template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceSnapshotOutcome CreateResourceSnapshot(const Model::CreateResourceSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateResourceSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateResourceSnapshotRequestT = Model::CreateResourceSnapshotRequest>
+        Model::CreateResourceSnapshotOutcomeCallable CreateResourceSnapshotCallable(const CreateResourceSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::CreateResourceSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for CreateResourceSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateResourceSnapshotRequestT = Model::CreateResourceSnapshotRequest>
+        void CreateResourceSnapshotAsync(const CreateResourceSnapshotRequestT& request, const CreateResourceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::CreateResourceSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p> Use this action to create a job to generate a snapshot of the specified
+         * resource within an engagement. It initiates an asynchronous process to create a
+         * resource snapshot. The job creates a new snapshot only if the resource state has
+         * changed, adhering to the same access control and immutability rules as direct
+         * snapshot creation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceSnapshotJobOutcome CreateResourceSnapshotJob(const Model::CreateResourceSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateResourceSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateResourceSnapshotJobRequestT = Model::CreateResourceSnapshotJobRequest>
+        Model::CreateResourceSnapshotJobOutcomeCallable CreateResourceSnapshotJobCallable(const CreateResourceSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::CreateResourceSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateResourceSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateResourceSnapshotJobRequestT = Model::CreateResourceSnapshotJobRequest>
+        void CreateResourceSnapshotJobAsync(const CreateResourceSnapshotJobRequestT& request, const CreateResourceSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::CreateResourceSnapshotJob, request, handler, context);
+        }
+
+        /**
+         * <p> Use this action to deletes a previously created resource snapshot job. The
+         * job must be in a stopped state before it can be deleted. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceSnapshotJobOutcome DeleteResourceSnapshotJob(const Model::DeleteResourceSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourceSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourceSnapshotJobRequestT = Model::DeleteResourceSnapshotJobRequest>
+        Model::DeleteResourceSnapshotJobOutcomeCallable DeleteResourceSnapshotJobCallable(const DeleteResourceSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::DeleteResourceSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourceSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourceSnapshotJobRequestT = Model::DeleteResourceSnapshotJobRequest>
+        void DeleteResourceSnapshotJobAsync(const DeleteResourceSnapshotJobRequestT& request, const DeleteResourceSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::DeleteResourceSnapshotJob, request, handler, context);
+        }
+
+        /**
+         * <p>Allows you to remove an existing association between an
          * <code>Opportunity</code> and related entities, such as a Partner Solution,
          * Amazon Web Services product, or an Amazon Web Services Marketplace offer. This
          * operation is the counterpart to <code>AssociateOpportunity</code>, and it
-         * provides flexibility to manage associations as business needs change. </p> <p>
-         * Use this operation to update the associations of an <code>Opportunity</code> due
-         * to changes in the related entities, or if an association was made in error.
+         * provides flexibility to manage associations as business needs change.</p> <p>Use
+         * this operation to update the associations of an <code>Opportunity</code> due to
+         * changes in the related entities, or if an association was made in error.
          * Ensuring accurate associations helps maintain clarity and accuracy to track and
          * manage business opportunities. When you replace an entity, first attach the new
          * entity and then disassociate the one to be removed, especially if it's the last
-         * remaining entity that's required. </p><p><h3>See Also:</h3>   <a
+         * remaining entity that's required.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DisassociateOpportunity">AWS
          * API Reference</a></p>
          */
@@ -272,11 +439,11 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Retrieves a summary of an AWS Opportunity. This summary includes high-level
+         * <p>Retrieves a summary of an AWS Opportunity. This summary includes high-level
          * details about the opportunity sourced from AWS, such as lifecycle information,
          * customer details, and involvement type. It is useful for tracking updates on the
-         * AWS opportunity corresponding to an opportunity in the partner's account.
-         * </p><p><h3>See Also:</h3>   <a
+         * AWS opportunity corresponding to an opportunity in the partner's
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetAwsOpportunitySummary">AWS
          * API Reference</a></p>
          */
@@ -298,6 +465,32 @@ namespace PartnerCentralSelling
         void GetAwsOpportunitySummaryAsync(const GetAwsOpportunitySummaryRequestT& request, const GetAwsOpportunitySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PartnerCentralSellingClient::GetAwsOpportunitySummary, request, handler, context);
+        }
+
+        /**
+         * <p> Use this action to retrieve the engagement record for a given
+         * <code>EngagementIdentifier</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEngagementOutcome GetEngagement(const Model::GetEngagementRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEngagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEngagementRequestT = Model::GetEngagementRequest>
+        Model::GetEngagementOutcomeCallable GetEngagementCallable(const GetEngagementRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::GetEngagement, request);
+        }
+
+        /**
+         * An Async wrapper for GetEngagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEngagementRequestT = Model::GetEngagementRequest>
+        void GetEngagementAsync(const GetEngagementRequestT& request, const GetEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::GetEngagement, request, handler, context);
         }
 
         /**
@@ -330,10 +523,10 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Fetches the <code>Opportunity</code> record from Partner Central by a given
-         * <code>Identifier</code>. </p> <p> Use the <code>ListOpportunities</code> action
-         * or the event notification (from Amazon EventBridge) to obtain this identifier.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Fetches the <code>Opportunity</code> record from Partner Central by a given
+         * <code>Identifier</code>.</p> <p>Use the <code>ListOpportunities</code> action or
+         * the event notification (from Amazon EventBridge) to obtain this
+         * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunity">AWS
          * API Reference</a></p>
          */
@@ -355,6 +548,138 @@ namespace PartnerCentralSelling
         void GetOpportunityAsync(const GetOpportunityRequestT& request, const GetOpportunityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PartnerCentralSellingClient::GetOpportunity, request, handler, context);
+        }
+
+        /**
+         * <p>Use this action to retrieve a specific snapshot record.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceSnapshotOutcome GetResourceSnapshot(const Model::GetResourceSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourceSnapshotRequestT = Model::GetResourceSnapshotRequest>
+        Model::GetResourceSnapshotOutcomeCallable GetResourceSnapshotCallable(const GetResourceSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::GetResourceSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourceSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourceSnapshotRequestT = Model::GetResourceSnapshotRequest>
+        void GetResourceSnapshotAsync(const GetResourceSnapshotRequestT& request, const GetResourceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::GetResourceSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p> Use this action to retrieves information about a specific resource snapshot
+         * job. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceSnapshotJobOutcome GetResourceSnapshotJob(const Model::GetResourceSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourceSnapshotJobRequestT = Model::GetResourceSnapshotJobRequest>
+        Model::GetResourceSnapshotJobOutcomeCallable GetResourceSnapshotJobCallable(const GetResourceSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::GetResourceSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourceSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourceSnapshotJobRequestT = Model::GetResourceSnapshotJobRequest>
+        void GetResourceSnapshotJobAsync(const GetResourceSnapshotJobRequestT& request, const GetResourceSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::GetResourceSnapshotJob, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the currently set system settings, which include the IAM Role used
+         * for resource snapshot jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetSellingSystemSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSellingSystemSettingsOutcome GetSellingSystemSettings(const Model::GetSellingSystemSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSellingSystemSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSellingSystemSettingsRequestT = Model::GetSellingSystemSettingsRequest>
+        Model::GetSellingSystemSettingsOutcomeCallable GetSellingSystemSettingsCallable(const GetSellingSystemSettingsRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::GetSellingSystemSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetSellingSystemSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSellingSystemSettingsRequestT = Model::GetSellingSystemSettingsRequest>
+        void GetSellingSystemSettingsAsync(const GetSellingSystemSettingsRequestT& request, const GetSellingSystemSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::GetSellingSystemSettings, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all in-progress, completed, or failed
+         * StartEngagementByAcceptingInvitationTask tasks that were initiated by the
+         * caller's account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEngagementByAcceptingInvitationTasksOutcome ListEngagementByAcceptingInvitationTasks(const Model::ListEngagementByAcceptingInvitationTasksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEngagementByAcceptingInvitationTasks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEngagementByAcceptingInvitationTasksRequestT = Model::ListEngagementByAcceptingInvitationTasksRequest>
+        Model::ListEngagementByAcceptingInvitationTasksOutcomeCallable ListEngagementByAcceptingInvitationTasksCallable(const ListEngagementByAcceptingInvitationTasksRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListEngagementByAcceptingInvitationTasks, request);
+        }
+
+        /**
+         * An Async wrapper for ListEngagementByAcceptingInvitationTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEngagementByAcceptingInvitationTasksRequestT = Model::ListEngagementByAcceptingInvitationTasksRequest>
+        void ListEngagementByAcceptingInvitationTasksAsync(const ListEngagementByAcceptingInvitationTasksRequestT& request, const ListEngagementByAcceptingInvitationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListEngagementByAcceptingInvitationTasks, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all in-progress, completed, or failed
+         * <code>EngagementFromOpportunity</code> tasks that were initiated by the caller's
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEngagementFromOpportunityTasksOutcome ListEngagementFromOpportunityTasks(const Model::ListEngagementFromOpportunityTasksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEngagementFromOpportunityTasks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEngagementFromOpportunityTasksRequestT = Model::ListEngagementFromOpportunityTasksRequest>
+        Model::ListEngagementFromOpportunityTasksOutcomeCallable ListEngagementFromOpportunityTasksCallable(const ListEngagementFromOpportunityTasksRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListEngagementFromOpportunityTasks, request);
+        }
+
+        /**
+         * An Async wrapper for ListEngagementFromOpportunityTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEngagementFromOpportunityTasksRequestT = Model::ListEngagementFromOpportunityTasksRequest>
+        void ListEngagementFromOpportunityTasksAsync(const ListEngagementFromOpportunityTasksRequestT& request, const ListEngagementFromOpportunityTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListEngagementFromOpportunityTasks, request, handler, context);
         }
 
         /**
@@ -385,21 +710,105 @@ namespace PartnerCentralSelling
         }
 
         /**
+         * <p> Retrieves the details of member partners in an engagement. This operation
+         * can only be invoked by members of the engagement. The
+         * <code>ListEngagementMembers</code> operation allows you to fetch information
+         * about the members of a specific engagement. This action is restricted to members
+         * of the engagement being queried. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementMembers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEngagementMembersOutcome ListEngagementMembers(const Model::ListEngagementMembersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEngagementMembers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEngagementMembersRequestT = Model::ListEngagementMembersRequest>
+        Model::ListEngagementMembersOutcomeCallable ListEngagementMembersCallable(const ListEngagementMembersRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListEngagementMembers, request);
+        }
+
+        /**
+         * An Async wrapper for ListEngagementMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEngagementMembersRequestT = Model::ListEngagementMembersRequest>
+        void ListEngagementMembersAsync(const ListEngagementMembersRequestT& request, const ListEngagementMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListEngagementMembers, request, handler, context);
+        }
+
+        /**
+         * <p> Lists the associations between resources and engagements where the caller is
+         * a member and has at least one snapshot in the engagement. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementResourceAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEngagementResourceAssociationsOutcome ListEngagementResourceAssociations(const Model::ListEngagementResourceAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEngagementResourceAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEngagementResourceAssociationsRequestT = Model::ListEngagementResourceAssociationsRequest>
+        Model::ListEngagementResourceAssociationsOutcomeCallable ListEngagementResourceAssociationsCallable(const ListEngagementResourceAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListEngagementResourceAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListEngagementResourceAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEngagementResourceAssociationsRequestT = Model::ListEngagementResourceAssociationsRequest>
+        void ListEngagementResourceAssociationsAsync(const ListEngagementResourceAssociationsRequestT& request, const ListEngagementResourceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListEngagementResourceAssociations, request, handler, context);
+        }
+
+        /**
+         * <p> This action allows users to retrieve a list of engagement records from
+         * Partner Central. This action can be used to manage and track various engagements
+         * across different stages of the partner selling process. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEngagementsOutcome ListEngagements(const Model::ListEngagementsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEngagements that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEngagementsRequestT = Model::ListEngagementsRequest>
+        Model::ListEngagementsOutcomeCallable ListEngagementsCallable(const ListEngagementsRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListEngagements, request);
+        }
+
+        /**
+         * An Async wrapper for ListEngagements that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEngagementsRequestT = Model::ListEngagementsRequest>
+        void ListEngagementsAsync(const ListEngagementsRequestT& request, const ListEngagementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListEngagements, request, handler, context);
+        }
+
+        /**
          * <p>This request accepts a list of filters that retrieve opportunity subsets as
          * well as sort options. This feature is available to partners from <a
          * href="https://partnercentral.awspartner.com/">Partner Central</a> using the
-         * <code>ListOpportunities</code> API action. </p> <p>To synchronize your system
+         * <code>ListOpportunities</code> API action.</p> <p>To synchronize your system
          * with Amazon Web Services, only list the opportunities that were newly created or
          * updated. We recommend you rely on events emitted by the service into your Amazon
          * Web Services account’s Amazon EventBridge default event bus, you can also use
-         * the <code>ListOpportunities</code> action. </p> <p>We recommend the following
+         * the <code>ListOpportunities</code> action.</p> <p>We recommend the following
          * approach:</p> <ol> <li> <p>Find the latest <code>LastModifiedDate</code> that
          * you stored, and only use the values that came from Amazon Web Services. Don’t
-         * use values generated by your system. </p> </li> <li> <p>When you send a
+         * use values generated by your system.</p> </li> <li> <p>When you send a
          * <code>ListOpportunities</code> request, submit the date in ISO 8601 format in
-         * the <code>AfterLastModifiedDate</code> filter. </p> </li> <li> <p>Amazon Web
+         * the <code>AfterLastModifiedDate</code> filter.</p> </li> <li> <p>Amazon Web
          * Services only returns opportunities created or updated on or after that date and
-         * time. Use <code>NextToken</code> to iterate over all pages. </p> </li>
+         * time. Use <code>NextToken</code> to iterate over all pages.</p> </li>
          * </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">AWS
          * API Reference</a></p>
@@ -425,9 +834,63 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Retrieves a list of Partner Solutions that the partner registered on Partner
+         * <p> Lists resource snapshot jobs owned by the customer. This operation supports
+         * various filtering scenarios, including listing all jobs owned by the caller,
+         * jobs for a specific engagement, jobs with a specific status, or any combination
+         * of these filters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshotJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceSnapshotJobsOutcome ListResourceSnapshotJobs(const Model::ListResourceSnapshotJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceSnapshotJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceSnapshotJobsRequestT = Model::ListResourceSnapshotJobsRequest>
+        Model::ListResourceSnapshotJobsOutcomeCallable ListResourceSnapshotJobsCallable(const ListResourceSnapshotJobsRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListResourceSnapshotJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceSnapshotJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceSnapshotJobsRequestT = Model::ListResourceSnapshotJobsRequest>
+        void ListResourceSnapshotJobsAsync(const ListResourceSnapshotJobsRequestT& request, const ListResourceSnapshotJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListResourceSnapshotJobs, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves a list of resource view snapshots based on specified criteria.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceSnapshotsOutcome ListResourceSnapshots(const Model::ListResourceSnapshotsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceSnapshotsRequestT = Model::ListResourceSnapshotsRequest>
+        Model::ListResourceSnapshotsOutcomeCallable ListResourceSnapshotsCallable(const ListResourceSnapshotsRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListResourceSnapshots, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceSnapshotsRequestT = Model::ListResourceSnapshotsRequest>
+        void ListResourceSnapshotsAsync(const ListResourceSnapshotsRequestT& request, const ListResourceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListResourceSnapshots, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of Partner Solutions that the partner registered on Partner
          * Central. This API is used to generate a list of solutions that an end user
-         * selects from for association with an opportunity. </p><p><h3>See Also:</h3>   <a
+         * selects from for association with an opportunity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListSolutions">AWS
          * API Reference</a></p>
          */
@@ -449,6 +912,32 @@ namespace PartnerCentralSelling
         void ListSolutionsAsync(const ListSolutionsRequestT& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PartnerCentralSellingClient::ListSolutions, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the currently set system settings, which include the IAM Role used
+         * for resource snapshot jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/PutSellingSystemSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutSellingSystemSettingsOutcome PutSellingSystemSettings(const Model::PutSellingSystemSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutSellingSystemSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutSellingSystemSettingsRequestT = Model::PutSellingSystemSettingsRequest>
+        Model::PutSellingSystemSettingsOutcomeCallable PutSellingSystemSettingsCallable(const PutSellingSystemSettingsRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::PutSellingSystemSettings, request);
+        }
+
+        /**
+         * An Async wrapper for PutSellingSystemSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutSellingSystemSettingsRequestT = Model::PutSellingSystemSettingsRequest>
+        void PutSellingSystemSettingsAsync(const PutSellingSystemSettingsRequestT& request, const PutSellingSystemSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::PutSellingSystemSettings, request, handler, context);
         }
 
         /**
@@ -541,15 +1030,96 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Updates the <code>Opportunity</code> record identified by a given
+         * <p> Starts a resource snapshot job that has been previously created.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartResourceSnapshotJobOutcome StartResourceSnapshotJob(const Model::StartResourceSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartResourceSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartResourceSnapshotJobRequestT = Model::StartResourceSnapshotJobRequest>
+        Model::StartResourceSnapshotJobOutcomeCallable StartResourceSnapshotJobCallable(const StartResourceSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::StartResourceSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartResourceSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartResourceSnapshotJobRequestT = Model::StartResourceSnapshotJobRequest>
+        void StartResourceSnapshotJobAsync(const StartResourceSnapshotJobRequestT& request, const StartResourceSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::StartResourceSnapshotJob, request, handler, context);
+        }
+
+        /**
+         * <p> Stops a resource snapshot job. The job must be started prior to being
+         * stopped. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopResourceSnapshotJobOutcome StopResourceSnapshotJob(const Model::StopResourceSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopResourceSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopResourceSnapshotJobRequestT = Model::StopResourceSnapshotJobRequest>
+        Model::StopResourceSnapshotJobOutcomeCallable StopResourceSnapshotJobCallable(const StopResourceSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::StopResourceSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for StopResourceSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopResourceSnapshotJobRequestT = Model::StopResourceSnapshotJobRequest>
+        void StopResourceSnapshotJobAsync(const StopResourceSnapshotJobRequestT& request, const StopResourceSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::StopResourceSnapshotJob, request, handler, context);
+        }
+
+        /**
+         * <p> Use this action to submit an opportunity that was previously created by
+         * partner for AWS review. After you perform this action, the opportunity becomes
+         * non-editable until it is reviewed by AWS and has <code> LifeCycle.ReviewStatus
+         * </code> as either <code>Approved</code> or <code>Action Required</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SubmitOpportunity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubmitOpportunityOutcome SubmitOpportunity(const Model::SubmitOpportunityRequest& request) const;
+
+        /**
+         * A Callable wrapper for SubmitOpportunity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SubmitOpportunityRequestT = Model::SubmitOpportunityRequest>
+        Model::SubmitOpportunityOutcomeCallable SubmitOpportunityCallable(const SubmitOpportunityRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::SubmitOpportunity, request);
+        }
+
+        /**
+         * An Async wrapper for SubmitOpportunity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SubmitOpportunityRequestT = Model::SubmitOpportunityRequest>
+        void SubmitOpportunityAsync(const SubmitOpportunityRequestT& request, const SubmitOpportunityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::SubmitOpportunity, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the <code>Opportunity</code> record identified by a given
          * <code>Identifier</code>. This operation allows you to modify the details of an
          * existing opportunity to reflect the latest information and progress. Use this
-         * action to keep the opportunity record up-to-date and accurate. </p> <p> When you
+         * action to keep the opportunity record up-to-date and accurate.</p> <p>When you
          * perform updates, include the entire payload with each request. If any field is
          * omitted, the API assumes that the field is set to <code>null</code>. The best
          * practice is to always perform a <code>GetOpportunity</code> to retrieve the
          * latest values, then send the complete payload with the updated values to be
-         * changed. </p><p><h3>See Also:</h3>   <a
+         * changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateOpportunity">AWS
          * API Reference</a></p>
          */

@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>List of the contact summary for all the contacts in contact tree associated
+     * with unique identifier.</p>
      */
     inline const Aws::Vector<AssociatedContactSummary>& GetContactSummaryList() const{ return m_contactSummaryList; }
     inline void SetContactSummaryList(const Aws::Vector<AssociatedContactSummary>& value) { m_contactSummaryList = value; }
@@ -49,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>If there are additional results, this is the token for the next set of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

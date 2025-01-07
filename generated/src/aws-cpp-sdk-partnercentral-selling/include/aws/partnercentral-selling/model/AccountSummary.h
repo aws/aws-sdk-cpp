@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains an <code>Account</code>'s subset of fields.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains an <code>Account</code>'s subset of
+   * fields.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AccountSummary">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s address details associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const AddressSummary& GetAddress() const{ return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s company name associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetCompanyName() const{ return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
@@ -72,9 +72,9 @@ namespace Model
     /**
      * <p>Specifies which industry the end <code>Customer</code> belongs to associated
      * with the <code>Opportunity</code>. It refers to the category or sector that the
-     * customer's business operates in. </p> <p>To submit a value outside the picklist,
-     * use <code>Other</code>. </p> <p>Conditionally mandatory if <code>Other</code> is
-     * selected for Industry Vertical in LOVs. </p>
+     * customer's business operates in.</p> <p>To submit a value outside the picklist,
+     * use <code>Other</code>.</p> <p>Conditionally mandatory if <code>Other</code> is
+     * selected for Industry Vertical in LOVs.</p>
      */
     inline const Industry& GetIndustry() const{ return m_industry; }
     inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
@@ -90,7 +90,7 @@ namespace Model
      * Opportunity</code>, when the selected value in the <code>Industry</code> field
      * is <code>Other</code>. This field is relevant when the customer's industry
      * doesn't fall under the predefined picklist values and requires a custom
-     * description. </p>
+     * description.</p>
      */
     inline const Aws::String& GetOtherIndustry() const{ return m_otherIndustry; }
     inline bool OtherIndustryHasBeenSet() const { return m_otherIndustryHasBeenSet; }
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>Specifies the end customer's company website URL associated with the
      * <code>Opportunity</code>. This value is crucial to map the customer within the
-     * Amazon Web Services CRM system. </p>
+     * Amazon Web Services CRM system.</p>
      */
     inline const Aws::String& GetWebsiteUrl() const{ return m_websiteUrl; }
     inline bool WebsiteUrlHasBeenSet() const { return m_websiteUrlHasBeenSet; }

@@ -219,8 +219,29 @@ namespace Model
 
     ///@{
     /**
-     * <p/>  <p>This functionality is not supported by directory buckets.</p>
-     * 
+     * <p>Specifies the KMS key ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. If the KMS key doesn't exist in the same account that's issuing the
+     * command, you must use the full Key ARN not the Key ID.</p>  <p>
+     * <b>Directory buckets</b> - If you specify <code>SSEAlgorithm</code> with
+     * <code>KMS</code>, you must specify the <code> SSEAwsKmsKeyId</code> parameter
+     * with the ID (Key ID or Key ARN) of the KMS symmetric encryption customer managed
+     * key to use. Otherwise, you get an HTTP <code>400 Bad Request</code> error. The
+     * key alias format of the KMS key isn't supported. To encrypt new object copies in
+     * a directory bucket with SSE-KMS, you must specify SSE-KMS as the directory
+     * bucket's default encryption configuration with a KMS key (specifically, a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a>). The <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. Your SSE-KMS
+     * configuration can only support 1 <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> per directory bucket for the lifetime of the bucket. After you
+     * specify a customer managed key for SSE-KMS as the bucket default encryption, you
+     * can't override the customer managed key for the bucket's SSE-KMS configuration.
+     * Then, when you specify server-side encryption settings for new object copies
+     * with SSE-KMS, you must make sure the encryption key is the same customer managed
+     * key that you specified for the directory bucket's default encryption
+     * configuration. </p> 
      */
     inline const Aws::String& GetSSEAwsKmsKeyId() const{ return m_sSEAwsKmsKeyId; }
     inline bool SSEAwsKmsKeyIdHasBeenSet() const { return m_sSEAwsKmsKeyIdHasBeenSet; }
@@ -297,9 +318,14 @@ namespace Model
      * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
      * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
      * object encryption with SSE-KMS.</p> <p>Specifying this header with an
-     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
-     * Key.</p>  <p>This functionality is not supported by directory buckets.</p>
-     * 
+     * <i>Copy</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>  <p> <b>Directory buckets</b> - S3 Bucket Keys aren't supported,
+     * when you copy SSE-KMS encrypted objects from general purpose buckets to
+     * directory buckets, from directory buckets to general purpose buckets, or between
+     * directory buckets, through <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-objects-Batch-Ops">the
+     * Copy operation in Batch Operations</a>. In this case, Amazon S3 makes a call to
+     * KMS every time a copy request is made for a KMS-encrypted object.</p> 
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }

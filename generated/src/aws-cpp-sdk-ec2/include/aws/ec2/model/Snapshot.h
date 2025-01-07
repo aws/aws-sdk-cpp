@@ -11,6 +11,7 @@
 #include <aws/ec2/model/StorageTier.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/SSEType.h>
+#include <aws/ec2/model/TransferType.h>
 #include <aws/ec2/model/SnapshotState.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Tag.h>
@@ -132,6 +133,65 @@ namespace Model
     inline void SetSseType(SSEType&& value) { m_sseTypeHasBeenSet = true; m_sseType = std::move(value); }
     inline Snapshot& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
     inline Snapshot& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone or Local Zone of the snapshot. For example,
+     * <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code>
+     * (Local Zone).</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+    inline Snapshot& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline Snapshot& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline Snapshot& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     *  <p>Only for snapshot copies.</p>  <p>Indicates whether the
+     * snapshot copy was created with a standard or time-based snapshot copy operation.
+     * Time-based snapshot copy operations complete within the completion duration
+     * specified in the request. Standard snapshot copy operations are completed on a
+     * best-effort basis.</p> <ul> <li> <p> <code>standard</code> - The snapshot copy
+     * was created with a standard snapshot copy operation.</p> </li> <li> <p>
+     * <code>time-based</code> - The snapshot copy was created with a time-based
+     * snapshot copy operation.</p> </li> </ul>
+     */
+    inline const TransferType& GetTransferType() const{ return m_transferType; }
+    inline bool TransferTypeHasBeenSet() const { return m_transferTypeHasBeenSet; }
+    inline void SetTransferType(const TransferType& value) { m_transferTypeHasBeenSet = true; m_transferType = value; }
+    inline void SetTransferType(TransferType&& value) { m_transferTypeHasBeenSet = true; m_transferType = std::move(value); }
+    inline Snapshot& WithTransferType(const TransferType& value) { SetTransferType(value); return *this;}
+    inline Snapshot& WithTransferType(TransferType&& value) { SetTransferType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     *  <p>Only for snapshot copies created with time-based snapshot copy
+     * operations.</p>  <p>The completion duration requested for the time-based
+     * snapshot copy operation.</p>
+     */
+    inline int GetCompletionDurationMinutes() const{ return m_completionDurationMinutes; }
+    inline bool CompletionDurationMinutesHasBeenSet() const { return m_completionDurationMinutesHasBeenSet; }
+    inline void SetCompletionDurationMinutes(int value) { m_completionDurationMinutesHasBeenSet = true; m_completionDurationMinutes = value; }
+    inline Snapshot& WithCompletionDurationMinutes(int value) { SetCompletionDurationMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time stamp when the snapshot was completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
+    inline Snapshot& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+    inline Snapshot& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -329,6 +389,18 @@ namespace Model
 
     SSEType m_sseType;
     bool m_sseTypeHasBeenSet = false;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
+
+    TransferType m_transferType;
+    bool m_transferTypeHasBeenSet = false;
+
+    int m_completionDurationMinutes;
+    bool m_completionDurationMinutesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_completionTime;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;

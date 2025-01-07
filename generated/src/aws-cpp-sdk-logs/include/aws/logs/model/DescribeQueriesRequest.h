@@ -8,6 +8,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/QueryStatus.h>
+#include <aws/logs/model/QueryLanguage.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,19 @@ namespace Model
     inline DescribeQueriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline DescribeQueriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Limits the returned queries to only the queries that use the specified query
+     * language.</p>
+     */
+    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
+    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
+    inline DescribeQueriesRequest& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
+    inline DescribeQueriesRequest& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_logGroupName;
@@ -97,6 +111,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    QueryLanguage m_queryLanguage;
+    bool m_queryLanguageHasBeenSet = false;
   };
 
 } // namespace Model

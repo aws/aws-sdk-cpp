@@ -25,6 +25,9 @@ namespace Aws
         static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
         static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
         static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int KENDRA_HASH = HashingUtils::HashString("KENDRA");
+        static const int SQL_HASH = HashingUtils::HashString("SQL");
 
 
         RetrievalResultLocationType GetRetrievalResultLocationTypeForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == SHAREPOINT_HASH)
           {
             return RetrievalResultLocationType::SHAREPOINT;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return RetrievalResultLocationType::CUSTOM;
+          }
+          else if (hashCode == KENDRA_HASH)
+          {
+            return RetrievalResultLocationType::KENDRA;
+          }
+          else if (hashCode == SQL_HASH)
+          {
+            return RetrievalResultLocationType::SQL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +91,12 @@ namespace Aws
             return "SALESFORCE";
           case RetrievalResultLocationType::SHAREPOINT:
             return "SHAREPOINT";
+          case RetrievalResultLocationType::CUSTOM:
+            return "CUSTOM";
+          case RetrievalResultLocationType::KENDRA:
+            return "KENDRA";
+          case RetrievalResultLocationType::SQL:
+            return "SQL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

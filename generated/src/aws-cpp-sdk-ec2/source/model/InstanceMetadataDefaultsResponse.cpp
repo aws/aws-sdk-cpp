@@ -28,7 +28,10 @@ InstanceMetadataDefaultsResponse::InstanceMetadataDefaultsResponse() :
     m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
     m_httpEndpointHasBeenSet(false),
     m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
-    m_instanceMetadataTagsHasBeenSet(false)
+    m_instanceMetadataTagsHasBeenSet(false),
+    m_managedBy(ManagedBy::NOT_SET),
+    m_managedByHasBeenSet(false),
+    m_managedExceptionMessageHasBeenSet(false)
 {
 }
 
@@ -68,6 +71,18 @@ InstanceMetadataDefaultsResponse& InstanceMetadataDefaultsResponse::operator =(c
       m_instanceMetadataTags = InstanceMetadataTagsStateMapper::GetInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()).c_str());
       m_instanceMetadataTagsHasBeenSet = true;
     }
+    XmlNode managedByNode = resultNode.FirstChild("managedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
+      m_managedByHasBeenSet = true;
+    }
+    XmlNode managedExceptionMessageNode = resultNode.FirstChild("managedExceptionMessage");
+    if(!managedExceptionMessageNode.IsNull())
+    {
+      m_managedExceptionMessage = Aws::Utils::Xml::DecodeEscapedXmlText(managedExceptionMessageNode.GetText());
+      m_managedExceptionMessageHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +110,16 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
       oStream << location << index << locationValue << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
   }
 
+  if(m_managedByHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+  }
+
+  if(m_managedExceptionMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagedExceptionMessage=" << StringUtils::URLEncode(m_managedExceptionMessage.c_str()) << "&";
+  }
+
 }
 
 void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -114,6 +139,14 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
   if(m_instanceMetadataTagsHasBeenSet)
   {
       oStream << location << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+  }
+  if(m_managedByHasBeenSet)
+  {
+      oStream << location << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+  }
+  if(m_managedExceptionMessageHasBeenSet)
+  {
+      oStream << location << ".ManagedExceptionMessage=" << StringUtils::URLEncode(m_managedExceptionMessage.c_str()) << "&";
   }
 }
 

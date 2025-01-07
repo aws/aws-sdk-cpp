@@ -215,7 +215,7 @@ namespace SQS
          * increase the number of queues you use to process your messages. To request a
          * limit increase, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
-         * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
+         * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 120,000
          * in flight messages (received from a queue by a consumer, but not yet deleted
          * from the queue). If you reach this limit, Amazon SQS returns no error
          * messages.</p>  <p>If you attempt to set the
@@ -301,16 +301,23 @@ namespace SQS
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
          * related to queues</a> and is unique within the scope of your queues.</p> 
          * <p>After you create a queue, you must wait at least one second after the queue
-         * is created to be able to use the queue.</p>  <p>To get the queue URL, use
-         * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
-         * requires only the <code>QueueName</code> parameter. be aware of existing queue
-         * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
-         * the exact names and values of all the queue's attributes,
-         * <code>CreateQueue</code> returns the queue URL for the existing queue.</p> </li>
-         * <li> <p>If the queue name, attribute names, or attribute values don't match an
-         * existing queue, <code>CreateQueue</code> returns an error.</p> </li> </ul>
-         *  <p>Cross-account permissions don't apply to this action. For more
-         * information, see <a
+         * is created to be able to use the queue.</p>  <p>To retrieve the URL of a
+         * queue, use the <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueUrl.html">
+         * <code>GetQueueUrl</code> </a> action. This action only requires the <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html#API_CreateQueue_RequestSyntax">
+         * <code>QueueName</code> </a> parameter.</p> <p>When creating queues, keep the
+         * following points in mind:</p> <ul> <li> <p>If you specify the name of an
+         * existing queue and provide the exact same names and values for all its
+         * attributes, the <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html">
+         * <code>CreateQueue</code> </a> action will return the URL of the existing queue
+         * instead of creating a new one.</p> </li> <li> <p>If you attempt to create a
+         * queue with a name that already exists but with different attribute names or
+         * values, the <code>CreateQueue</code> action will return an error. This ensures
+         * that existing queues are not inadvertently altered.</p> </li> </ul> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -344,19 +351,20 @@ namespace SQS
          * can delete a message from a queue even if a visibility timeout setting causes
          * the message to be locked by another consumer. Amazon SQS automatically deletes
          * messages left in a queue longer than the retention period configured for the
-         * queue. </p>  <p>The <code>ReceiptHandle</code> is associated with a
-         * <i>specific instance</i> of receiving a message. If you receive a message more
-         * than once, the <code>ReceiptHandle</code> is different each time you receive a
-         * message. When you use the <code>DeleteMessage</code> action, you must provide
-         * the most recently received <code>ReceiptHandle</code> for the message
-         * (otherwise, the request succeeds, but the message will not be deleted).</p>
-         * <p>For standard queues, it is possible to receive a message even after you
-         * delete it. This might happen on rare occasions if one of the servers which
-         * stores a copy of the message is unavailable when you send the request to delete
-         * the message. The copy remains on the server and might be returned to you during
-         * a subsequent receive request. You should ensure that your application is
-         * idempotent, so that receiving a message more than once does not cause
-         * issues.</p> <p><h3>See Also:</h3>   <a
+         * queue. </p>  <p>Each time you receive a message, meaning when a consumer
+         * retrieves a message from the queue, it comes with a unique
+         * <code>ReceiptHandle</code>. If you receive the same message more than once, you
+         * will get a different <code>ReceiptHandle</code> each time. When you want to
+         * delete a message using the <code>DeleteMessage</code> action, you must use the
+         * <code>ReceiptHandle</code> from the most recent time you received the message.
+         * If you use an old <code>ReceiptHandle</code>, the request will succeed, but the
+         * message might not be deleted. </p> <p>For standard queues, it is possible to
+         * receive a message even after you delete it. This might happen on rare occasions
+         * if one of the servers which stores a copy of the message is unavailable when you
+         * send the request to delete the message. The copy remains on the server and might
+         * be returned to you during a subsequent receive request. You should ensure that
+         * your application is idempotent, so that receiving a message more than once does
+         * not cause issues.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">AWS
          * API Reference</a></p>
          */
@@ -479,13 +487,16 @@ namespace SQS
         }
 
         /**
-         * <p>Returns the URL of an existing Amazon SQS queue.</p> <p>To access a queue
-         * that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
-         * parameter to specify the account ID of the queue's owner. The queue's owner must
-         * grant you permission to access the queue. For more information about shared
-         * queue access, see <code> <a>AddPermission</a> </code> or see <a
+         * <p>The <code>GetQueueUrl</code> API returns the URL of an existing Amazon SQS
+         * queue. This is useful when you know the queue's name but need to retrieve its
+         * URL for further operations.</p> <p>To access a queue owned by another Amazon Web
+         * Services account, use the <code>QueueOwnerAWSAccountId</code> parameter to
+         * specify the account ID of the queue's owner. Note that the queue owner must
+         * grant you the necessary permissions to access the queue. For more information
+         * about accessing shared queues, see the <code> <a>AddPermission</a> </code> API
+         * or <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * developers to write messages to a shared queue</a> in the <i>Amazon SQS
          * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
          * Reference</a></p>
@@ -696,12 +707,12 @@ namespace SQS
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
          * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
          * poll is the default behavior where a weighted random set of machines is sampled
-         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (fewer
-         * than 1,000), you most likely get fewer messages than you requested per
+         * on a <code>ReceiveMessage</code> call. Therefore, only the messages on the
+         * sampled machines are returned. If the number of messages in the queue is small
+         * (fewer than 1,000), you most likely get fewer messages than you requested per
          * <code>ReceiveMessage</code> call. If the number of messages in the queue is
          * extremely small, you might not receive any messages in a particular
-         * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
+         * <code>ReceiveMessage</code> response. If this happens, repeat the request.</p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
          * information about MD5, see <a
@@ -716,15 +727,11 @@ namespace SQS
          * can provide the <code>VisibilityTimeout</code> parameter in your request. The
          * parameter is applied to the messages that Amazon SQS returns in the response. If
          * you don't include the parameter, the overall visibility timeout for the queue is
-         * used for the returned messages. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
-         * isn't deleted or a message whose visibility isn't extended before the visibility
-         * timeout expires counts as a failed receive. Depending on the configuration of
-         * the queue, the message might be sent to the dead-letter queue.</p>  <p>In
-         * the future, new attributes might be added. If you write code that calls this
-         * action, we recommend that you structure your code so that it can handle new
-         * attributes gracefully.</p> <p><h3>See Also:</h3>   <a
+         * used for the returned messages. The default visibility timeout for a queue is 30
+         * seconds. </p>  <p>In the future, new attributes might be added. If you
+         * write code that calls this action, we recommend that you structure your code so
+         * that it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          */

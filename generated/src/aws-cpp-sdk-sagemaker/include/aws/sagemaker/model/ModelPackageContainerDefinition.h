@@ -226,6 +226,20 @@ namespace Model
     inline ModelPackageContainerDefinition& WithAdditionalS3DataSource(const AdditionalS3DataSource& value) { SetAdditionalS3DataSource(value); return *this;}
     inline ModelPackageContainerDefinition& WithAdditionalS3DataSource(AdditionalS3DataSource&& value) { SetAdditionalS3DataSource(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ETag associated with Model Data URL.</p>
+     */
+    inline const Aws::String& GetModelDataETag() const{ return m_modelDataETag; }
+    inline bool ModelDataETagHasBeenSet() const { return m_modelDataETagHasBeenSet; }
+    inline void SetModelDataETag(const Aws::String& value) { m_modelDataETagHasBeenSet = true; m_modelDataETag = value; }
+    inline void SetModelDataETag(Aws::String&& value) { m_modelDataETagHasBeenSet = true; m_modelDataETag = std::move(value); }
+    inline void SetModelDataETag(const char* value) { m_modelDataETagHasBeenSet = true; m_modelDataETag.assign(value); }
+    inline ModelPackageContainerDefinition& WithModelDataETag(const Aws::String& value) { SetModelDataETag(value); return *this;}
+    inline ModelPackageContainerDefinition& WithModelDataETag(Aws::String&& value) { SetModelDataETag(std::move(value)); return *this;}
+    inline ModelPackageContainerDefinition& WithModelDataETag(const char* value) { SetModelDataETag(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_containerHostname;
@@ -263,6 +277,9 @@ namespace Model
 
     AdditionalS3DataSource m_additionalS3DataSource;
     bool m_additionalS3DataSourceHasBeenSet = false;
+
+    Aws::String m_modelDataETag;
+    bool m_modelDataETagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 SuspendContactRecordingRequest::SuspendContactRecordingRequest() : 
     m_instanceIdHasBeenSet(false),
     m_contactIdHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false)
+    m_initialContactIdHasBeenSet(false),
+    m_contactRecordingType(ContactRecordingType::NOT_SET),
+    m_contactRecordingTypeHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String SuspendContactRecordingRequest::SerializePayload() const
   {
    payload.WithString("InitialContactId", m_initialContactId);
 
+  }
+
+  if(m_contactRecordingTypeHasBeenSet)
+  {
+   payload.WithString("ContactRecordingType", ContactRecordingTypeMapper::GetNameForContactRecordingType(m_contactRecordingType));
   }
 
   return payload.View().WriteReadable();

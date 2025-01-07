@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The search criteria based on searchable segment attribute key and values to
+   * search on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchableSegmentAttributesCriteria">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The key containing a searchable segment attribute.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -54,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The list of values to search for within a searchable segment attribute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

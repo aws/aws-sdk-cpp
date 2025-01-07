@@ -19,6 +19,8 @@ namespace Model
 {
 
 QueryDefinition::QueryDefinition() : 
+    m_queryLanguage(QueryLanguage::NOT_SET),
+    m_queryLanguageHasBeenSet(false),
     m_queryDefinitionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_queryStringHasBeenSet(false),
@@ -36,6 +38,13 @@ QueryDefinition::QueryDefinition(JsonView jsonValue)
 
 QueryDefinition& QueryDefinition::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("queryLanguage"))
+  {
+    m_queryLanguage = QueryLanguageMapper::GetQueryLanguageForName(jsonValue.GetString("queryLanguage"));
+
+    m_queryLanguageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("queryDefinitionId"))
   {
     m_queryDefinitionId = jsonValue.GetString("queryDefinitionId");
@@ -80,6 +89,11 @@ QueryDefinition& QueryDefinition::operator =(JsonView jsonValue)
 JsonValue QueryDefinition::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_queryLanguageHasBeenSet)
+  {
+   payload.WithString("queryLanguage", QueryLanguageMapper::GetNameForQueryLanguage(m_queryLanguage));
+  }
 
   if(m_queryDefinitionIdHasBeenSet)
   {

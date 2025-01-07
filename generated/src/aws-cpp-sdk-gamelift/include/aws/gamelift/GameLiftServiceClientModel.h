@@ -113,6 +113,7 @@
 #include <aws/gamelift/model/StopMatchmakingResult.h>
 #include <aws/gamelift/model/SuspendGameServerGroupResult.h>
 #include <aws/gamelift/model/TagResourceResult.h>
+#include <aws/gamelift/model/TerminateGameSessionResult.h>
 #include <aws/gamelift/model/UntagResourceResult.h>
 #include <aws/gamelift/model/UpdateAliasResult.h>
 #include <aws/gamelift/model/UpdateBuildResult.h>
@@ -295,6 +296,7 @@ namespace Aws
       class StopMatchmakingRequest;
       class SuspendGameServerGroupRequest;
       class TagResourceRequest;
+      class TerminateGameSessionRequest;
       class UntagResourceRequest;
       class UpdateAliasRequest;
       class UpdateBuildRequest;
@@ -415,6 +417,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopMatchmakingResult, GameLiftError> StopMatchmakingOutcome;
       typedef Aws::Utils::Outcome<SuspendGameServerGroupResult, GameLiftError> SuspendGameServerGroupOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, GameLiftError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<TerminateGameSessionResult, GameLiftError> TerminateGameSessionOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, GameLiftError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAliasResult, GameLiftError> UpdateAliasOutcome;
       typedef Aws::Utils::Outcome<UpdateBuildResult, GameLiftError> UpdateBuildOutcome;
@@ -535,6 +538,7 @@ namespace Aws
       typedef std::future<StopMatchmakingOutcome> StopMatchmakingOutcomeCallable;
       typedef std::future<SuspendGameServerGroupOutcome> SuspendGameServerGroupOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<TerminateGameSessionOutcome> TerminateGameSessionOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
       typedef std::future<UpdateBuildOutcome> UpdateBuildOutcomeCallable;
@@ -658,6 +662,7 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::StopMatchmakingRequest&, const Model::StopMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMatchmakingResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::SuspendGameServerGroupRequest&, const Model::SuspendGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::TerminateGameSessionRequest&, const Model::TerminateGameSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateGameSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateBuildRequest&, const Model::UpdateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBuildResponseReceivedHandler;

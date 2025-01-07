@@ -22,7 +22,8 @@ StreamingProperties::StreamingProperties() :
     m_streamingExperiencePreferredProtocol(StreamingExperiencePreferredProtocolEnum::NOT_SET),
     m_streamingExperiencePreferredProtocolHasBeenSet(false),
     m_userSettingsHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false)
+    m_storageConnectorsHasBeenSet(false),
+    m_globalAcceleratorHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,13 @@ StreamingProperties& StreamingProperties::operator =(JsonView jsonValue)
     m_storageConnectorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GlobalAccelerator"))
+  {
+    m_globalAccelerator = jsonValue.GetObject("GlobalAccelerator");
+
+    m_globalAcceleratorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +100,12 @@ JsonValue StreamingProperties::Jsonize() const
      storageConnectorsJsonList[storageConnectorsIndex].AsObject(m_storageConnectors[storageConnectorsIndex].Jsonize());
    }
    payload.WithArray("StorageConnectors", std::move(storageConnectorsJsonList));
+
+  }
+
+  if(m_globalAcceleratorHasBeenSet)
+  {
+   payload.WithObject("GlobalAccelerator", m_globalAccelerator.Jsonize());
 
   }
 

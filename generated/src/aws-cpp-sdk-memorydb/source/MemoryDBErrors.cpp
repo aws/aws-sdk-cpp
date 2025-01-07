@@ -25,6 +25,7 @@ static const int CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("Cluste
 static const int PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ParameterGroupQuotaExceededFault");
 static const int RESERVED_NODE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedNodeQuotaExceededFault");
 static const int SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotAlreadyExistsFault");
+static const int MULTI_REGION_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("MultiRegionClusterNotFoundFault");
 static const int SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SubnetQuotaExceededFault");
 static const int DEFAULT_USER_REQUIRED_HASH = HashingUtils::HashString("DefaultUserRequired");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
@@ -53,13 +54,16 @@ static const int INVALID_USER_STATE_FAULT_HASH = HashingUtils::HashString("Inval
 static const int A_C_L_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ACLAlreadyExistsFault");
 static const int SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SubnetGroupQuotaExceededFault");
 static const int A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("APICallRateForCustomerExceededFault");
+static const int INVALID_MULTI_REGION_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidMultiRegionClusterStateFault");
 static const int PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ParameterGroupNotFoundFault");
+static const int MULTI_REGION_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("MultiRegionClusterAlreadyExistsFault");
 static const int PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ParameterGroupAlreadyExistsFault");
 static const int SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubnetGroupNotFoundFault");
 static const int INVALID_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidParameterGroupStateFault");
 static const int SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
 static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
 static const int TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = HashingUtils::HashString("TagQuotaPerResourceExceeded");
+static const int MULTI_REGION_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("MultiRegionParameterGroupNotFoundFault");
 static const int TEST_FAILOVER_NOT_AVAILABLE_FAULT_HASH = HashingUtils::HashString("TestFailoverNotAvailableFault");
 static const int NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForCustomerExceededFault");
 static const int RESERVED_NODES_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodesOfferingNotFoundFault");
@@ -102,6 +106,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == MULTI_REGION_CLUSTER_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::MULTI_REGION_CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_QUOTA_EXCEEDED_FAULT_HASH)
   {
@@ -215,9 +223,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == INVALID_MULTI_REGION_CLUSTER_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::INVALID_MULTI_REGION_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == MULTI_REGION_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::MULTI_REGION_CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
@@ -242,6 +258,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::TAG_QUOTA_PER_RESOURCE_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == MULTI_REGION_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MemoryDBErrors::MULTI_REGION_PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TEST_FAILOVER_NOT_AVAILABLE_FAULT_HASH)
   {

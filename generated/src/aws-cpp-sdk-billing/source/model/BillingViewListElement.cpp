@@ -21,6 +21,7 @@ namespace Model
 BillingViewListElement::BillingViewListElement() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_ownerAccountIdHasBeenSet(false),
     m_billingViewType(BillingViewType::NOT_SET),
     m_billingViewTypeHasBeenSet(false)
@@ -47,6 +48,13 @@ BillingViewListElement& BillingViewListElement::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ownerAccountId"))
@@ -79,6 +87,12 @@ JsonValue BillingViewListElement::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

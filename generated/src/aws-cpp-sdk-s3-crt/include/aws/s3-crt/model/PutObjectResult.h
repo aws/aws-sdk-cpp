@@ -41,8 +41,10 @@ namespace Model
      * in the <i>Amazon S3 User Guide</i>, the response includes this header. It
      * includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs
      * that provide information about object expiration. The value of the
-     * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <code>rule-id</code> is URL-encoded.</p>  <p>Object expiration information
+     * is not returned in directory buckets and this header returns the value
+     * "<code>NotImplemented</code>" in all responses for directory buckets.</p>
+     * 
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }

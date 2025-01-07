@@ -82,6 +82,50 @@ namespace Model
     inline CoreDevice& WithLastStatusUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastStatusUpdateTimestamp(value); return *this;}
     inline CoreDevice& WithLastStatusUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastStatusUpdateTimestamp(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The operating system platform that the core device runs.</p>
+     */
+    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
+    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
+    inline CoreDevice& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
+    inline CoreDevice& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
+    inline CoreDevice& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The computer architecture of the core device.</p>
+     */
+    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
+    inline CoreDevice& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
+    inline CoreDevice& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline CoreDevice& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The runtime for the core device. The runtime can be:</p> <ul> <li> <p>
+     * <code>aws_nucleus_classic</code> </p> </li> <li> <p>
+     * <code>aws_nucleus_lite</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
+    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
+    inline CoreDevice& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
+    inline CoreDevice& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
+    inline CoreDevice& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_coreDeviceThingName;
@@ -92,6 +136,15 @@ namespace Model
 
     Aws::Utils::DateTime m_lastStatusUpdateTimestamp;
     bool m_lastStatusUpdateTimestampHasBeenSet = false;
+
+    Aws::String m_platform;
+    bool m_platformHasBeenSet = false;
+
+    Aws::String m_architecture;
+    bool m_architectureHasBeenSet = false;
+
+    Aws::String m_runtime;
+    bool m_runtimeHasBeenSet = false;
   };
 
 } // namespace Model

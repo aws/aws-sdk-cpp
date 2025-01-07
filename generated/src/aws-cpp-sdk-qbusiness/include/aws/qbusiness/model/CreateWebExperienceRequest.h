@@ -10,6 +10,8 @@
 #include <aws/qbusiness/model/WebExperienceSamplePromptsControlMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/IdentityProviderConfiguration.h>
+#include <aws/qbusiness/model/BrowserExtensionConfiguration.h>
+#include <aws/qbusiness/model/CustomizationConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -191,6 +193,37 @@ namespace Model
     inline CreateWebExperienceRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
     inline CreateWebExperienceRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The browser extension configuration for an Amazon Q Business web
+     * experience.</p>  <p> For Amazon Q Business application using external
+     * OIDC-compliant identity providers (IdPs). The IdP administrator must add the
+     * browser extension sign-in redirect URLs to the IdP application. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure
+     * external OIDC identity provider for your browser extensions.</a>. </p> 
+     */
+    inline const BrowserExtensionConfiguration& GetBrowserExtensionConfiguration() const{ return m_browserExtensionConfiguration; }
+    inline bool BrowserExtensionConfigurationHasBeenSet() const { return m_browserExtensionConfigurationHasBeenSet; }
+    inline void SetBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { m_browserExtensionConfigurationHasBeenSet = true; m_browserExtensionConfiguration = value; }
+    inline void SetBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { m_browserExtensionConfigurationHasBeenSet = true; m_browserExtensionConfiguration = std::move(value); }
+    inline CreateWebExperienceRequest& WithBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { SetBrowserExtensionConfiguration(value); return *this;}
+    inline CreateWebExperienceRequest& WithBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { SetBrowserExtensionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web
+     * experience. </p>
+     */
+    inline const CustomizationConfiguration& GetCustomizationConfiguration() const{ return m_customizationConfiguration; }
+    inline bool CustomizationConfigurationHasBeenSet() const { return m_customizationConfigurationHasBeenSet; }
+    inline void SetCustomizationConfiguration(const CustomizationConfiguration& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = value; }
+    inline void SetCustomizationConfiguration(CustomizationConfiguration&& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = std::move(value); }
+    inline CreateWebExperienceRequest& WithCustomizationConfiguration(const CustomizationConfiguration& value) { SetCustomizationConfiguration(value); return *this;}
+    inline CreateWebExperienceRequest& WithCustomizationConfiguration(CustomizationConfiguration&& value) { SetCustomizationConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -222,6 +255,12 @@ namespace Model
 
     IdentityProviderConfiguration m_identityProviderConfiguration;
     bool m_identityProviderConfigurationHasBeenSet = false;
+
+    BrowserExtensionConfiguration m_browserExtensionConfiguration;
+    bool m_browserExtensionConfigurationHasBeenSet = false;
+
+    CustomizationConfiguration m_customizationConfiguration;
+    bool m_customizationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,8 @@ namespace Model
 Expression::Expression() : 
     m_attributeConditionHasBeenSet(false),
     m_andExpressionHasBeenSet(false),
-    m_orExpressionHasBeenSet(false)
+    m_orExpressionHasBeenSet(false),
+    m_notAttributeConditionHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,13 @@ Expression& Expression::operator =(JsonView jsonValue)
     m_orExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotAttributeCondition"))
+  {
+    m_notAttributeCondition = jsonValue.GetObject("NotAttributeCondition");
+
+    m_notAttributeConditionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +100,12 @@ JsonValue Expression::Jsonize() const
      orExpressionJsonList[orExpressionIndex].AsObject(m_orExpression[orExpressionIndex].Jsonize());
    }
    payload.WithArray("OrExpression", std::move(orExpressionJsonList));
+
+  }
+
+  if(m_notAttributeConditionHasBeenSet)
+  {
+   payload.WithObject("NotAttributeCondition", m_notAttributeCondition.Jsonize());
 
   }
 

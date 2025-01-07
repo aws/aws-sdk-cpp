@@ -55,6 +55,12 @@ CreateServiceNetworkResult& CreateServiceNetworkResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("sharingConfig"))
+  {
+    m_sharingConfig = jsonValue.GetObject("sharingConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

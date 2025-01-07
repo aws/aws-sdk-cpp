@@ -4205,6 +4205,32 @@ namespace IoT
         }
 
         /**
+         * <p>Retrieves the live connectivity status per device.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetThingConnectivityData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetThingConnectivityDataOutcome GetThingConnectivityData(const Model::GetThingConnectivityDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetThingConnectivityData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetThingConnectivityDataRequestT = Model::GetThingConnectivityDataRequest>
+        Model::GetThingConnectivityDataOutcomeCallable GetThingConnectivityDataCallable(const GetThingConnectivityDataRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::GetThingConnectivityData, request);
+        }
+
+        /**
+         * An Async wrapper for GetThingConnectivityData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetThingConnectivityDataRequestT = Model::GetThingConnectivityDataRequest>
+        void GetThingConnectivityDataAsync(const GetThingConnectivityDataRequestT& request, const GetThingConnectivityDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::GetThingConnectivityData, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about the rule.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a>
          * action.</p><p><h3>See Also:</h3>   <a
@@ -4657,11 +4683,18 @@ namespace IoT
         }
 
         /**
-         * <p>List all command executions.</p>  <p>You must provide only the
-         * <code>startedTimeFilter</code> or the <code>completedTimeFilter</code>
+         * <p>List all command executions.</p>  <ul> <li> <p>You must provide
+         * only the <code>startedTimeFilter</code> or the <code>completedTimeFilter</code>
          * information. If you provide both time filters, the API will generate an error.
-         * You can use this information to find command executions that started within a
-         * specific timeframe.</p> <p><h3>See Also:</h3>   <a
+         * You can use this information to retrieve a list of command executions within a
+         * specific timeframe.</p> </li> <li> <p>You must provide only the
+         * <code>commandArn</code> or the <code>thingArn</code> information depending on
+         * whether you want to list executions for a specific command or an IoT thing. If
+         * you provide both fields, the API will generate an error.</p> </li> </ul> <p>For
+         * more information about considerations for using this API, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command-execution-start-monitor.html#iot-remote-command-execution-list-cli">List
+         * command executions in your account (CLI)</a>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCommandExecutions">AWS
          * API Reference</a></p>
          */

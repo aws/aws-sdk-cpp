@@ -34,11 +34,17 @@ namespace Model
    * be in a game server container group or a per-instance container group. Support
    * containers don't run game server processes.</p> <p>You can update a support
    * container definition and deploy the updates to an existing fleet. When creating
-   * or updating a game server container group definition, use the property
-   * <a>GameServerContainerDefinitionInput</a>. </p> <p> <b>Part of:</b>
-   * <a>ContainerGroupDefinition</a> </p> <p> <b>Returned by:</b>
-   * <a>DescribeContainerGroupDefinition</a>, <a>ListContainerGroupDefinitions</a>,
-   * <a>UpdateContainerGroupDefinition</a> </p><p><h3>See Also:</h3>   <a
+   * or updating a game server container group definition, use the property <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>.
+   * </p> <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+   * </p> <p> <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SupportContainerDefinition">AWS
    * API Reference</a></p>
    */
@@ -159,7 +165,9 @@ namespace Model
      * <p>The amount of memory that Amazon GameLift makes available to the container.
      * If memory limits aren't set for an individual container, the container shares
      * the container group's total memory allocation.</p> <p> <b>Related data type:
-     * </b> <a>ContainerGroupDefinition$TotalMemoryLimitMebibytes</a> </p>
+     * </b> <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition
+     * TotalMemoryLimitMebibytes</a> </p>
      */
     inline int GetMemoryHardLimitMebibytes() const{ return m_memoryHardLimitMebibytes; }
     inline bool MemoryHardLimitMebibytesHasBeenSet() const { return m_memoryHardLimitMebibytesHasBeenSet; }
@@ -202,8 +210,9 @@ namespace Model
     /**
      * <p>The number of vCPU units that are reserved for the container. If no resources
      * are reserved, the container shares the total vCPU limit for the container
-     * group.</p> <p> <b>Related data type: </b>
-     * <a>ContainerGroupDefinition$TotalVcpuLimit</a> </p>
+     * group.</p> <p> <b>Related data type: </b> <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition
+     * TotalVcpuLimit</a> </p>
      */
     inline double GetVcpu() const{ return m_vcpu; }
     inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }

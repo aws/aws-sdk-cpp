@@ -143,6 +143,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("quickSightConfiguration"))
+  {
+    m_quickSightConfiguration = jsonValue.GetObject("quickSightConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

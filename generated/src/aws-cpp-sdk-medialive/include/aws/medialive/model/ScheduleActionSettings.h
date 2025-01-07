@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * Action to insert HLS ID3 segment tagging
+     * Action to insert ID3 metadata in every segment, in HLS output groups
      */
     inline const HlsId3SegmentTaggingScheduleActionSettings& GetHlsId3SegmentTaggingSettings() const{ return m_hlsId3SegmentTaggingSettings; }
     inline bool HlsId3SegmentTaggingSettingsHasBeenSet() const { return m_hlsId3SegmentTaggingSettingsHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * Action to insert HLS metadata
+     * Action to insert ID3 metadata once, in HLS output groups
      */
     inline const HlsTimedMetadataScheduleActionSettings& GetHlsTimedMetadataSettings() const{ return m_hlsTimedMetadataSettings; }
     inline bool HlsTimedMetadataSettingsHasBeenSet() const { return m_hlsTimedMetadataSettingsHasBeenSet; }

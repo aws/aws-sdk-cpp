@@ -108,6 +108,8 @@ DBCluster::DBCluster() :
     m_monitoringInterval(0),
     m_monitoringIntervalHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
+    m_databaseInsightsMode(DatabaseInsightsMode::NOT_SET),
+    m_databaseInsightsModeHasBeenSet(false),
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
@@ -605,6 +607,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_monitoringRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(monitoringRoleArnNode.GetText());
       m_monitoringRoleArnHasBeenSet = true;
     }
+    XmlNode databaseInsightsModeNode = resultNode.FirstChild("DatabaseInsightsMode");
+    if(!databaseInsightsModeNode.IsNull())
+    {
+      m_databaseInsightsMode = DatabaseInsightsModeMapper::GetDatabaseInsightsModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseInsightsModeNode.GetText()).c_str()).c_str());
+      m_databaseInsightsModeHasBeenSet = true;
+    }
     XmlNode performanceInsightsEnabledNode = resultNode.FirstChild("PerformanceInsightsEnabled");
     if(!performanceInsightsEnabledNode.IsNull())
     {
@@ -1096,6 +1104,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
   }
 
+  if(m_databaseInsightsModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+  }
+
   if(m_performanceInsightsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".PerformanceInsightsEnabled=" << std::boolalpha << m_performanceInsightsEnabled << "&";
@@ -1510,6 +1523,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_monitoringRoleArnHasBeenSet)
   {
       oStream << location << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  if(m_databaseInsightsModeHasBeenSet)
+  {
+      oStream << location << ".DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
   }
   if(m_performanceInsightsEnabledHasBeenSet)
   {

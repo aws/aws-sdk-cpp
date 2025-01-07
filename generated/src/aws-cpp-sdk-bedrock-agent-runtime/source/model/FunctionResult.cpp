@@ -20,6 +20,7 @@ namespace Model
 
 FunctionResult::FunctionResult() : 
     m_actionGroupHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
     m_confirmationState(ConfirmationState::NOT_SET),
     m_confirmationStateHasBeenSet(false),
     m_functionHasBeenSet(false),
@@ -42,6 +43,13 @@ FunctionResult& FunctionResult::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
 
     m_actionGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+
+    m_agentIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("confirmationState"))
@@ -85,6 +93,12 @@ JsonValue FunctionResult::Jsonize() const
   if(m_actionGroupHasBeenSet)
   {
    payload.WithString("actionGroup", m_actionGroup);
+
+  }
+
+  if(m_agentIdHasBeenSet)
+  {
+   payload.WithString("agentId", m_agentId);
 
   }
 

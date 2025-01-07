@@ -9,7 +9,9 @@
 #include <aws/bedrock-agent-runtime/model/InvokeAgentHandler.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/BedrockModelConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/SessionState.h>
+#include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +35,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "InvokeAgent"; }
 
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
+
+    AWS_BEDROCKAGENTRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Underlying Event Stream Decoder.
@@ -81,6 +85,18 @@ namespace Model
     inline InvokeAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
     inline InvokeAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
     inline InvokeAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Model performance settings for the request.</p>
+     */
+    inline const BedrockModelConfigurations& GetBedrockModelConfigurations() const{ return m_bedrockModelConfigurations; }
+    inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
+    inline void SetBedrockModelConfigurations(const BedrockModelConfigurations& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = value; }
+    inline void SetBedrockModelConfigurations(BedrockModelConfigurations&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::move(value); }
+    inline InvokeAgentRequest& WithBedrockModelConfigurations(const BedrockModelConfigurations& value) { SetBedrockModelConfigurations(value); return *this;}
+    inline InvokeAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurations&& value) { SetBedrockModelConfigurations(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,6 +183,34 @@ namespace Model
     inline InvokeAgentRequest& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
     inline InvokeAgentRequest& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the resource making the request.</p>
+     */
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+    inline InvokeAgentRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+    inline InvokeAgentRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
+    inline InvokeAgentRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the configurations for streaming. </p>  <p>To use agent
+     * streaming, you need permissions to perform the
+     * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
+     */
+    inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
+    inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
+    inline void SetStreamingConfigurations(const StreamingConfigurations& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = value; }
+    inline void SetStreamingConfigurations(StreamingConfigurations&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::move(value); }
+    inline InvokeAgentRequest& WithStreamingConfigurations(const StreamingConfigurations& value) { SetStreamingConfigurations(value); return *this;}
+    inline InvokeAgentRequest& WithStreamingConfigurations(StreamingConfigurations&& value) { SetStreamingConfigurations(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_agentAliasId;
@@ -174,6 +218,9 @@ namespace Model
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    BedrockModelConfigurations m_bedrockModelConfigurations;
+    bool m_bedrockModelConfigurationsHasBeenSet = false;
 
     bool m_enableTrace;
     bool m_enableTraceHasBeenSet = false;
@@ -192,6 +239,12 @@ namespace Model
 
     SessionState m_sessionState;
     bool m_sessionStateHasBeenSet = false;
+
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
+
+    StreamingConfigurations m_streamingConfigurations;
+    bool m_streamingConfigurationsHasBeenSet = false;
     InvokeAgentHandler m_handler;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
 

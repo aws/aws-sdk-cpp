@@ -19,6 +19,7 @@ namespace Model
 {
 
 OpportunitySummary::OpportunitySummary() : 
+    m_arnHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_customerHasBeenSet(false),
@@ -40,6 +41,13 @@ OpportunitySummary::OpportunitySummary(JsonView jsonValue)
 
 OpportunitySummary& OpportunitySummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
@@ -109,6 +117,12 @@ OpportunitySummary& OpportunitySummary::operator =(JsonView jsonValue)
 JsonValue OpportunitySummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
 
   if(m_catalogHasBeenSet)
   {

@@ -89,6 +89,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The environment role permissions boundary.</p>
+     */
+    inline const Aws::String& GetEnvironmentRolePermissionBoundary() const{ return m_environmentRolePermissionBoundary; }
+    inline void SetEnvironmentRolePermissionBoundary(const Aws::String& value) { m_environmentRolePermissionBoundary = value; }
+    inline void SetEnvironmentRolePermissionBoundary(Aws::String&& value) { m_environmentRolePermissionBoundary = std::move(value); }
+    inline void SetEnvironmentRolePermissionBoundary(const char* value) { m_environmentRolePermissionBoundary.assign(value); }
+    inline GetEnvironmentBlueprintConfigurationResult& WithEnvironmentRolePermissionBoundary(const Aws::String& value) { SetEnvironmentRolePermissionBoundary(value); return *this;}
+    inline GetEnvironmentBlueprintConfigurationResult& WithEnvironmentRolePermissionBoundary(Aws::String&& value) { SetEnvironmentRolePermissionBoundary(std::move(value)); return *this;}
+    inline GetEnvironmentBlueprintConfigurationResult& WithEnvironmentRolePermissionBoundary(const char* value) { SetEnvironmentRolePermissionBoundary(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the manage access role with which this blueprint is created.</p>
      */
     inline const Aws::String& GetManageAccessRoleArn() const{ return m_manageAccessRoleArn; }
@@ -173,6 +186,8 @@ namespace Model
     Aws::Vector<Aws::String> m_enabledRegions;
 
     Aws::String m_environmentBlueprintId;
+
+    Aws::String m_environmentRolePermissionBoundary;
 
     Aws::String m_manageAccessRoleArn;
 

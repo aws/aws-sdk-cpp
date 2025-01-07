@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of Config rule names.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }

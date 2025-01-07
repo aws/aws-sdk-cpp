@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/OrganizationAggregationSource.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/config/model/AggregatorFilters.h>
 #include <aws/config/model/AccountAggregationSource.h>
 #include <utility>
 
@@ -134,6 +135,18 @@ namespace Model
     inline ConfigurationAggregator& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
     inline ConfigurationAggregator& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object to filter the data you specify for an aggregator.</p>
+     */
+    inline const AggregatorFilters& GetAggregatorFilters() const{ return m_aggregatorFilters; }
+    inline bool AggregatorFiltersHasBeenSet() const { return m_aggregatorFiltersHasBeenSet; }
+    inline void SetAggregatorFilters(const AggregatorFilters& value) { m_aggregatorFiltersHasBeenSet = true; m_aggregatorFilters = value; }
+    inline void SetAggregatorFilters(AggregatorFilters&& value) { m_aggregatorFiltersHasBeenSet = true; m_aggregatorFilters = std::move(value); }
+    inline ConfigurationAggregator& WithAggregatorFilters(const AggregatorFilters& value) { SetAggregatorFilters(value); return *this;}
+    inline ConfigurationAggregator& WithAggregatorFilters(AggregatorFilters&& value) { SetAggregatorFilters(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_configurationAggregatorName;
@@ -156,6 +169,9 @@ namespace Model
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
+
+    AggregatorFilters m_aggregatorFilters;
+    bool m_aggregatorFiltersHasBeenSet = false;
   };
 
 } // namespace Model

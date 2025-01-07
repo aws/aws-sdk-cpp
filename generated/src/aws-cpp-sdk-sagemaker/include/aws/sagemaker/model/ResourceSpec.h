@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the
-   * instance type that the version runs on.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version,
+   * and the instance type that the version runs on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
+     * <p>The ARN of the SageMaker AI image that the image version belongs to.</p>
      */
     inline const Aws::String& GetSageMakerImageArn() const{ return m_sageMakerImageArn; }
     inline bool SageMakerImageArnHasBeenSet() const { return m_sageMakerImageArnHasBeenSet; }

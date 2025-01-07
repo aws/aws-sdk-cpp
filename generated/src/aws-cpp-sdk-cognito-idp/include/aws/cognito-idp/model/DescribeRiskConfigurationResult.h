@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The risk configuration.</p>
+     * <p>The details of the requested risk configuration.</p>
      */
     inline const RiskConfigurationType& GetRiskConfiguration() const{ return m_riskConfiguration; }
     inline void SetRiskConfiguration(const RiskConfigurationType& value) { m_riskConfiguration = value; }

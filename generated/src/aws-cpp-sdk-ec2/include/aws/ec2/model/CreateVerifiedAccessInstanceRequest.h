@@ -107,6 +107,20 @@ namespace Model
     inline void SetFIPSEnabled(bool value) { m_fIPSEnabledHasBeenSet = true; m_fIPSEnabled = value; }
     inline CreateVerifiedAccessInstanceRequest& WithFIPSEnabled(bool value) { SetFIPSEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The custom subdomain.</p>
+     */
+    inline const Aws::String& GetCidrEndpointsCustomSubDomain() const{ return m_cidrEndpointsCustomSubDomain; }
+    inline bool CidrEndpointsCustomSubDomainHasBeenSet() const { return m_cidrEndpointsCustomSubDomainHasBeenSet; }
+    inline void SetCidrEndpointsCustomSubDomain(const Aws::String& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = value; }
+    inline void SetCidrEndpointsCustomSubDomain(Aws::String&& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = std::move(value); }
+    inline void SetCidrEndpointsCustomSubDomain(const char* value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain.assign(value); }
+    inline CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(const Aws::String& value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
+    inline CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(Aws::String&& value) { SetCidrEndpointsCustomSubDomain(std::move(value)); return *this;}
+    inline CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(const char* value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -123,6 +137,9 @@ namespace Model
 
     bool m_fIPSEnabled;
     bool m_fIPSEnabledHasBeenSet = false;
+
+    Aws::String m_cidrEndpointsCustomSubDomain;
+    bool m_cidrEndpointsCustomSubDomainHasBeenSet = false;
   };
 
 } // namespace Model

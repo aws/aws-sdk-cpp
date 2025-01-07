@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/GuardrailTraceAssessment.h>
+#include <aws/bedrock-runtime/model/PromptRouterTrace.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,25 @@ namespace Model
     inline ConverseStreamTrace& WithGuardrail(const GuardrailTraceAssessment& value) { SetGuardrail(value); return *this;}
     inline ConverseStreamTrace& WithGuardrail(GuardrailTraceAssessment&& value) { SetGuardrail(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The request's prompt router.</p>
+     */
+    inline const PromptRouterTrace& GetPromptRouter() const{ return m_promptRouter; }
+    inline bool PromptRouterHasBeenSet() const { return m_promptRouterHasBeenSet; }
+    inline void SetPromptRouter(const PromptRouterTrace& value) { m_promptRouterHasBeenSet = true; m_promptRouter = value; }
+    inline void SetPromptRouter(PromptRouterTrace&& value) { m_promptRouterHasBeenSet = true; m_promptRouter = std::move(value); }
+    inline ConverseStreamTrace& WithPromptRouter(const PromptRouterTrace& value) { SetPromptRouter(value); return *this;}
+    inline ConverseStreamTrace& WithPromptRouter(PromptRouterTrace&& value) { SetPromptRouter(std::move(value)); return *this;}
+    ///@}
   private:
 
     GuardrailTraceAssessment m_guardrail;
     bool m_guardrailHasBeenSet = false;
+
+    PromptRouterTrace m_promptRouter;
+    bool m_promptRouterHasBeenSet = false;
   };
 
 } // namespace Model

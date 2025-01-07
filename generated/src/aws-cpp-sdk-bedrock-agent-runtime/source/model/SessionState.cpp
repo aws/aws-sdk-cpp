@@ -19,6 +19,7 @@ namespace Model
 {
 
 SessionState::SessionState() : 
+    m_conversationHistoryHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_invocationIdHasBeenSet(false),
     m_knowledgeBaseConfigurationsHasBeenSet(false),
@@ -36,6 +37,13 @@ SessionState::SessionState(JsonView jsonValue)
 
 SessionState& SessionState::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("conversationHistory"))
+  {
+    m_conversationHistory = jsonValue.GetObject("conversationHistory");
+
+    m_conversationHistoryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("files"))
   {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -99,6 +107,12 @@ SessionState& SessionState::operator =(JsonView jsonValue)
 JsonValue SessionState::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_conversationHistoryHasBeenSet)
+  {
+   payload.WithObject("conversationHistory", m_conversationHistory.Jsonize());
+
+  }
 
   if(m_filesHasBeenSet)
   {

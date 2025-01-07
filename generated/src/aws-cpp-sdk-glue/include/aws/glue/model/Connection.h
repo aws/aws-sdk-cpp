@@ -14,6 +14,7 @@
 #include <aws/glue/model/ConnectionStatus.h>
 #include <aws/glue/model/AuthenticationConfiguration.h>
 #include <aws/glue/model/ConnectionPropertyKey.h>
+#include <aws/glue/model/ComputeEnvironment.h>
 #include <utility>
 
 namespace Aws
@@ -102,26 +103,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
-     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
-     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
-     * The port number, between 1024 and 65535, of the port on which the database host
-     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database. The value string for
-     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
-     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
-     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
-     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
-     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
-     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
-     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
-     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
-     * URL for connecting to a JDBC data source.</p> </li> <li> <p>
+     * <p>These key-value pairs define parameters for the connection when using the
+     * version 1 Connection schema:</p> <ul> <li> <p> <code>HOST</code> - The host URI:
+     * either the fully qualified domain name (FQDN) or the IPv4 address of the
+     * database host.</p> </li> <li> <p> <code>PORT</code> - The port number, between
+     * 1024 and 65535, of the port on which the database host is listening for database
+     * connections.</p> </li> <li> <p> <code>USER_NAME</code> - The name under which to
+     * log in to the database. The value string for <code>USER_NAME</code> is
+     * "<code>USERNAME</code>".</p> </li> <li> <p> <code>PASSWORD</code> - A password,
+     * if one is used, for the user name.</p> </li> <li> <p>
+     * <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection
+     * by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog
+     * encryption settings, this field stores the encrypted password.</p> </li> <li>
+     * <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon
+     * S3) path of the JAR file that contains the JDBC driver to use.</p> </li> <li>
+     * <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for
+     * connecting to a JDBC data source.</p> </li> <li> <p>
      * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
@@ -232,7 +234,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>This field is not currently used.</p>
+     * <p>Connection properties specific to the Spark compute environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const{ return m_sparkProperties; }
+    inline bool SparkPropertiesHasBeenSet() const { return m_sparkPropertiesHasBeenSet; }
+    inline void SetSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = value; }
+    inline void SetSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = std::move(value); }
+    inline Connection& WithSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetSparkProperties(value); return *this;}
+    inline Connection& WithSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetSparkProperties(std::move(value)); return *this;}
+    inline Connection& AddSparkProperties(const Aws::String& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+    inline Connection& AddSparkProperties(Aws::String&& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
+    inline Connection& AddSparkProperties(const Aws::String& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
+    inline Connection& AddSparkProperties(Aws::String&& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), std::move(value)); return *this; }
+    inline Connection& AddSparkProperties(const char* key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
+    inline Connection& AddSparkProperties(Aws::String&& key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
+    inline Connection& AddSparkProperties(const char* key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Connection properties specific to the Athena compute environment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAthenaProperties() const{ return m_athenaProperties; }
     inline bool AthenaPropertiesHasBeenSet() const { return m_athenaPropertiesHasBeenSet; }
@@ -247,6 +268,25 @@ namespace Model
     inline Connection& AddAthenaProperties(const char* key, Aws::String&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(key, std::move(value)); return *this; }
     inline Connection& AddAthenaProperties(Aws::String&& key, const char* value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(std::move(key), value); return *this; }
     inline Connection& AddAthenaProperties(const char* key, const char* value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Connection properties specific to the Python compute environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetPythonProperties() const{ return m_pythonProperties; }
+    inline bool PythonPropertiesHasBeenSet() const { return m_pythonPropertiesHasBeenSet; }
+    inline void SetPythonProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties = value; }
+    inline void SetPythonProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties = std::move(value); }
+    inline Connection& WithPythonProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetPythonProperties(value); return *this;}
+    inline Connection& WithPythonProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetPythonProperties(std::move(value)); return *this;}
+    inline Connection& AddPythonProperties(const Aws::String& key, const Aws::String& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, value); return *this; }
+    inline Connection& AddPythonProperties(Aws::String&& key, const Aws::String& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(std::move(key), value); return *this; }
+    inline Connection& AddPythonProperties(const Aws::String& key, Aws::String&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, std::move(value)); return *this; }
+    inline Connection& AddPythonProperties(Aws::String&& key, Aws::String&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(std::move(key), std::move(value)); return *this; }
+    inline Connection& AddPythonProperties(const char* key, Aws::String&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, std::move(value)); return *this; }
+    inline Connection& AddPythonProperties(Aws::String&& key, const char* value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(std::move(key), value); return *this; }
+    inline Connection& AddPythonProperties(const char* key, const char* value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, value); return *this; }
     ///@}
 
     ///@{
@@ -351,6 +391,31 @@ namespace Model
     inline Connection& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
     inline Connection& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version of the connection schema for this connection. Version 2 supports
+     * properties for specific compute environments.</p>
+     */
+    inline int GetConnectionSchemaVersion() const{ return m_connectionSchemaVersion; }
+    inline bool ConnectionSchemaVersionHasBeenSet() const { return m_connectionSchemaVersionHasBeenSet; }
+    inline void SetConnectionSchemaVersion(int value) { m_connectionSchemaVersionHasBeenSet = true; m_connectionSchemaVersion = value; }
+    inline Connection& WithConnectionSchemaVersion(int value) { SetConnectionSchemaVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of compute environments compatible with the connection.</p>
+     */
+    inline const Aws::Vector<ComputeEnvironment>& GetCompatibleComputeEnvironments() const{ return m_compatibleComputeEnvironments; }
+    inline bool CompatibleComputeEnvironmentsHasBeenSet() const { return m_compatibleComputeEnvironmentsHasBeenSet; }
+    inline void SetCompatibleComputeEnvironments(const Aws::Vector<ComputeEnvironment>& value) { m_compatibleComputeEnvironmentsHasBeenSet = true; m_compatibleComputeEnvironments = value; }
+    inline void SetCompatibleComputeEnvironments(Aws::Vector<ComputeEnvironment>&& value) { m_compatibleComputeEnvironmentsHasBeenSet = true; m_compatibleComputeEnvironments = std::move(value); }
+    inline Connection& WithCompatibleComputeEnvironments(const Aws::Vector<ComputeEnvironment>& value) { SetCompatibleComputeEnvironments(value); return *this;}
+    inline Connection& WithCompatibleComputeEnvironments(Aws::Vector<ComputeEnvironment>&& value) { SetCompatibleComputeEnvironments(std::move(value)); return *this;}
+    inline Connection& AddCompatibleComputeEnvironments(const ComputeEnvironment& value) { m_compatibleComputeEnvironmentsHasBeenSet = true; m_compatibleComputeEnvironments.push_back(value); return *this; }
+    inline Connection& AddCompatibleComputeEnvironments(ComputeEnvironment&& value) { m_compatibleComputeEnvironmentsHasBeenSet = true; m_compatibleComputeEnvironments.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -368,8 +433,14 @@ namespace Model
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
     bool m_connectionPropertiesHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::String> m_sparkProperties;
+    bool m_sparkPropertiesHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_athenaProperties;
     bool m_athenaPropertiesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_pythonProperties;
+    bool m_pythonPropertiesHasBeenSet = false;
 
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
     bool m_physicalConnectionRequirementsHasBeenSet = false;
@@ -394,6 +465,12 @@ namespace Model
 
     AuthenticationConfiguration m_authenticationConfiguration;
     bool m_authenticationConfigurationHasBeenSet = false;
+
+    int m_connectionSchemaVersion;
+    bool m_connectionSchemaVersionHasBeenSet = false;
+
+    Aws::Vector<ComputeEnvironment> m_compatibleComputeEnvironments;
+    bool m_compatibleComputeEnvironmentsHasBeenSet = false;
   };
 
 } // namespace Model

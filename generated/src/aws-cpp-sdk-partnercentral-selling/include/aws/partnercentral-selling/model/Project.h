@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains the <code>Opportunity</code>'s project details.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains the <code>Opportunity</code>'s project
+   * details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/Project">AWS
    * API Reference</a></p>
    */
@@ -46,7 +46,7 @@ namespace Model
     ///@{
     /**
      * <p>Captures additional comments or information for the <code>Opportunity</code>
-     * that weren't captured in other fields. </p>
+     * that weren't captured in other fields.</p>
      */
     inline const Aws::String& GetAdditionalComments() const{ return m_additionalComments; }
     inline bool AdditionalCommentsHasBeenSet() const { return m_additionalCommentsHasBeenSet; }
@@ -60,9 +60,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the Amazon Partner Network (APN) program that influenced the
+     * <p>Specifies the Amazon Partner Network (APN) program that influenced the
      * <code>Opportunity</code>. APN programs refer to specific partner programs or
-     * initiatives that can impact the <code>Opportunity</code>. </p> <p> Valid values:
+     * initiatives that can impact the <code>Opportunity</code>.</p> <p>Valid values:
      * <code>APN Immersion Days | APN Solution Space | ATO (Authority to Operate) | AWS
      * Marketplace Campaign | IS Immersion Day SFID Program | ISV Workload Migration |
      * Migration Acceleration Program | P3 | Partner Launch Initiative | Partner
@@ -84,7 +84,7 @@ namespace Model
     ///@{
     /**
      * <p>Name of the <code>Opportunity</code>'s competitor (if any). Use
-     * <code>Other</code> to submit a value not in the picklist. </p>
+     * <code>Other</code> to submit a value not in the picklist.</p>
      */
     inline const CompetitorName& GetCompetitorName() const{ return m_competitorName; }
     inline bool CompetitorNameHasBeenSet() const { return m_competitorNameHasBeenSet; }
@@ -106,7 +106,7 @@ namespace Model
      * descriptions to convey the context and significance of the
      * <code>Opportunity</code>. The content in this field helps Amazon Web Services
      * understand the nature of the <code>Opportunity</code> and the strategic fit of
-     * the partner's solution. </p>
+     * the partner's solution.</p>
      */
     inline const Aws::String& GetCustomerBusinessProblem() const{ return m_customerBusinessProblem; }
     inline bool CustomerBusinessProblemHasBeenSet() const { return m_customerBusinessProblemHasBeenSet; }
@@ -120,23 +120,23 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the proposed solution focus or type of workload for the
+     * <p>Specifies the proposed solution focus or type of workload for the
      * Opportunity. This field captures the primary use case or objective of the
-     * proposed solution, and provides context and clarity to the addressed workload.
-     * </p> <p> Valid values: <code>AI Machine Learning and Analytics | Archiving | Big
-     * Data: Data Warehouse/Data Integration/ETL/Data Lake/BI | Blockchain | Business
-     * Applications: Mainframe Modernization | Business Applications &amp; Contact
-     * Center | Business Applications &amp; SAP Production | Centralized Operations
-     * Management | Cloud Management Tools | Cloud Management Tools &amp; DevOps with
-     * Continuous Integration &amp; Continuous Delivery (CICD) | Configuration,
-     * Compliance &amp; Auditing | Connected Services | Containers &amp; Serverless |
-     * Content Delivery &amp; Edge Services | Database | Edge Computing/End User
-     * Computing | Energy | Enterprise Governance &amp; Controls | Enterprise Resource
-     * Planning | Financial Services | Healthcare and Life Sciences | High Performance
-     * Computing | Hybrid Application Platform | Industrial Software | IOT |
-     * Manufacturing, Supply Chain and Operations | Media &amp; High performance
-     * computing (HPC) | Migration/Database Migration | Monitoring, logging and
-     * performance | Monitoring &amp; Observability | Networking | Outpost | SAP |
+     * proposed solution, and provides context and clarity to the addressed
+     * workload.</p> <p>Valid values: <code>AI Machine Learning and Analytics |
+     * Archiving | Big Data: Data Warehouse/Data Integration/ETL/Data Lake/BI |
+     * Blockchain | Business Applications: Mainframe Modernization | Business
+     * Applications &amp; Contact Center | Business Applications &amp; SAP Production |
+     * Centralized Operations Management | Cloud Management Tools | Cloud Management
+     * Tools &amp; DevOps with Continuous Integration &amp; Continuous Delivery (CICD)
+     * | Configuration, Compliance &amp; Auditing | Connected Services | Containers
+     * &amp; Serverless | Content Delivery &amp; Edge Services | Database | Edge
+     * Computing/End User Computing | Energy | Enterprise Governance &amp; Controls |
+     * Enterprise Resource Planning | Financial Services | Healthcare and Life Sciences
+     * | High Performance Computing | Hybrid Application Platform | Industrial Software
+     * | IOT | Manufacturing, Supply Chain and Operations | Media &amp; High
+     * performance computing (HPC) | Migration/Database Migration | Monitoring, logging
+     * and performance | Monitoring &amp; Observability | Networking | Outpost | SAP |
      * Security &amp; Compliance | Storage &amp; Backup | Training | VMC | VMWare | Web
      * development &amp; DevOps</code> </p>
      */
@@ -152,9 +152,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the deployment or consumption model for your solution or service
-     * in the <code>Opportunity</code>'s context. You can select multiple options. </p>
-     * <p> Options' descriptions from the <code>Delivery Model</code> field are: </p>
+     * <p>Specifies the deployment or consumption model for your solution or service in
+     * the <code>Opportunity</code>'s context. You can select multiple options.</p>
+     * <p>Options' descriptions from the <code>Delivery Model</code> field are:</p>
      * <ul> <li> <p>SaaS or PaaS: Your Amazon Web Services based solution deployed as
      * SaaS or PaaS in your Amazon Web Services environment.</p> </li> <li> <p>BYOL or
      * AMI: Your Amazon Web Services based solution deployed as BYOL or AMI in the end
@@ -197,7 +197,7 @@ namespace Model
     ///@{
     /**
      * <p>Only allowed when <code>CompetitorNames</code> has <code>Other</code>
-     * selected. </p>
+     * selected.</p>
      */
     inline const Aws::String& GetOtherCompetitorNames() const{ return m_otherCompetitorNames; }
     inline bool OtherCompetitorNamesHasBeenSet() const { return m_otherCompetitorNamesHasBeenSet; }
@@ -213,7 +213,7 @@ namespace Model
     /**
      * <p>Specifies the offered solution for the customer's business problem when the
      * <code> RelatedEntityIdentifiers.Solutions</code> field value is
-     * <code>Other</code>. </p>
+     * <code>Other</code>.</p>
      */
     inline const Aws::String& GetOtherSolutionDescription() const{ return m_otherSolutionDescription; }
     inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
@@ -227,7 +227,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the current opportunity's parent opportunity identifier. </p>
+     * <p>Specifies the current opportunity's parent opportunity identifier.</p>
      */
     inline const Aws::String& GetRelatedOpportunityIdentifier() const{ return m_relatedOpportunityIdentifier; }
     inline bool RelatedOpportunityIdentifierHasBeenSet() const { return m_relatedOpportunityIdentifierHasBeenSet; }
@@ -241,23 +241,23 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the <code>Opportunity</code>'s sales activities conducted with the
+     * <p>Specifies the <code>Opportunity</code>'s sales activities conducted with the
      * end customer. These activities help drive Amazon Web Services assignment
-     * priority. </p> <p> Valid values: </p> <ul> <li> <p> Initialized discussions with
+     * priority.</p> <p>Valid values:</p> <ul> <li> <p>Initialized discussions with
      * customer: Initial conversations with the customer to understand their needs and
-     * introduce your solution. </p> </li> <li> <p> Customer has shown interest in
+     * introduce your solution.</p> </li> <li> <p>Customer has shown interest in
      * solution: After initial discussions, the customer is interested in your
-     * solution. </p> </li> <li> <p> Conducted POC/demo: You conducted a proof of
-     * concept (POC) or demonstration of the solution for the customer. </p> </li> <li>
-     * <p> In evaluation/planning stage: The customer is evaluating the solution and
-     * planning potential implementation. </p> </li> <li> <p> Agreed on solution to
-     * Business Problem: Both parties agree on how the solution addresses the
-     * customer's business problem. </p> </li> <li> <p> Completed Action Plan: A
-     * detailed action plan is complete and outlines the steps for implementation. </p>
-     * </li> <li> <p> Finalized Deployment Need: Both parties agree with and finalized
-     * the deployment needs. </p> </li> <li> <p> SOW Signed: Both parties signed a
-     * statement of work (SOW), and formalize the agreement and detail the project
-     * scope and deliverables. </p> </li> </ul>
+     * solution.</p> </li> <li> <p>Conducted POC/demo: You conducted a proof of concept
+     * (POC) or demonstration of the solution for the customer.</p> </li> <li> <p>In
+     * evaluation/planning stage: The customer is evaluating the solution and planning
+     * potential implementation.</p> </li> <li> <p>Agreed on solution to Business
+     * Problem: Both parties agree on how the solution addresses the customer's
+     * business problem.</p> </li> <li> <p>Completed Action Plan: A detailed action
+     * plan is complete and outlines the steps for implementation.</p> </li> <li>
+     * <p>Finalized Deployment Need: Both parties agree with and finalized the
+     * deployment needs.</p> </li> <li> <p>SOW Signed: Both parties signed a statement
+     * of work (SOW), and formalize the agreement and detail the project scope and
+     * deliverables.</p> </li> </ul>
      */
     inline const Aws::Vector<SalesActivity>& GetSalesActivities() const{ return m_salesActivities; }
     inline bool SalesActivitiesHasBeenSet() const { return m_salesActivitiesHasBeenSet; }
@@ -271,7 +271,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the <code>Opportunity</code>'s title or name. </p>
+     * <p>Specifies the <code>Opportunity</code>'s title or name.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }

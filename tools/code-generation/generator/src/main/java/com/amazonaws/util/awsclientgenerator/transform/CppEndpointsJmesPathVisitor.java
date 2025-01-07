@@ -95,7 +95,7 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
         }
 
         // at the start of each code block
-        String varName = expression.getName() + "Elem";
+        String varName = expression.getName() + "Elems";
         // if a new scope started, declare variable accessed
         if (context.isStartOfNewScope() || context.getVarName().isEmpty()) {
           context.addVariableInScope(varName);

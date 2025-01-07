@@ -42,8 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>The types of Amazon Web Services resources for which you want compliance
-     * information (for example, <code>AWS::EC2::Instance</code>). For this action, you
-     * can specify that the resource type is an Amazon Web Services account by
+     * information (for example, <code>AWS::EC2::Instance</code>). For this operation,
+     * you can specify that the resource type is an Amazon Web Services account by
      * specifying <code>AWS::::Account</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }

@@ -36,7 +36,9 @@ ClusterConfiguration::ClusterConfiguration() :
     m_snapshotWindowHasBeenSet(false),
     m_numShards(0),
     m_numShardsHasBeenSet(false),
-    m_shardsHasBeenSet(false)
+    m_shardsHasBeenSet(false),
+    m_multiRegionParameterGroupNameHasBeenSet(false),
+    m_multiRegionClusterNameHasBeenSet(false)
 {
 }
 
@@ -156,6 +158,20 @@ ClusterConfiguration& ClusterConfiguration::operator =(JsonView jsonValue)
     m_shardsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MultiRegionParameterGroupName"))
+  {
+    m_multiRegionParameterGroupName = jsonValue.GetString("MultiRegionParameterGroupName");
+
+    m_multiRegionParameterGroupNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MultiRegionClusterName"))
+  {
+    m_multiRegionClusterName = jsonValue.GetString("MultiRegionClusterName");
+
+    m_multiRegionClusterNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,6 +271,18 @@ JsonValue ClusterConfiguration::Jsonize() const
      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
    }
    payload.WithArray("Shards", std::move(shardsJsonList));
+
+  }
+
+  if(m_multiRegionParameterGroupNameHasBeenSet)
+  {
+   payload.WithString("MultiRegionParameterGroupName", m_multiRegionParameterGroupName);
+
+  }
+
+  if(m_multiRegionClusterNameHasBeenSet)
+  {
+   payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
 
   }
 

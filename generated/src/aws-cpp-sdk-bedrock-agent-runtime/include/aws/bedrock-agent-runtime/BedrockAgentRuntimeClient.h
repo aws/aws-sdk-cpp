@@ -104,6 +104,35 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p>Generates an SQL query from a natural language query. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html">Generate
+         * a query for structured data</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateQueryOutcome GenerateQuery(const Model::GenerateQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateQueryRequestT = Model::GenerateQueryRequest>
+        Model::GenerateQueryOutcomeCallable GenerateQueryCallable(const GenerateQueryRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GenerateQuery, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateQueryRequestT = Model::GenerateQueryRequest>
+        void GenerateQueryAsync(const GenerateQueryRequestT& request, const GenerateQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GenerateQuery, request, handler, context);
+        }
+
+        /**
          * <p>Gets the sessions stored in the memory of the agent.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">AWS
@@ -140,14 +169,18 @@ namespace BedrockAgentRuntime
          * processed, the actions it took, and the final result it yielded. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
-         * enablement</a>.</p> </li> <li> <p>End a conversation by setting
-         * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the
-         * <code>sessionState</code> object, you can include attributes for the session or
-         * prompt or, if you configured an action group to return control, results from
-         * invocation of the action group.</p> </li> </ul> <p>The response is returned in
-         * the <code>bytes</code> field of the <code>chunk</code> object.</p> <ul> <li>
-         * <p>The <code>attribution</code> object contains citations for parts of the
-         * response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
+         * enablement</a>.</p> </li> <li> <p>To stream agent responses, make sure that only
+         * orchestration prompt is enabled. Agent streaming is not supported for the
+         * following steps: </p> <ul> <li> <p> <code>Pre-processing</code> </p> </li> <li>
+         * <p> <code>Post-processing</code> </p> </li> <li> <p>Agent with 1 Knowledge base
+         * and <code>User Input</code> not enabled</p> </li> </ul> </li> <li> <p>End a
+         * conversation by setting <code>endSession</code> to <code>true</code>.</p> </li>
+         * <li> <p>In the <code>sessionState</code> object, you can include attributes for
+         * the session or prompt or, if you configured an action group to return control,
+         * results from invocation of the action group.</p> </li> </ul> <p>The response is
+         * returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
+         * <ul> <li> <p>The <code>attribution</code> object contains citations for parts of
+         * the response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
          * <code>true</code> in the request, you can trace the agent's steps and reasoning
          * process that led it to the response.</p> </li> <li> <p>If the action predicted
          * was configured to return control, the response returns parameters for the
@@ -282,6 +315,35 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p>Reranks the relevance of sources based on queries. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve
+         * the relevance of query responses with a reranker model</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Rerank">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RerankOutcome Rerank(const Model::RerankRequest& request) const;
+
+        /**
+         * A Callable wrapper for Rerank that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RerankRequestT = Model::RerankRequest>
+        Model::RerankOutcomeCallable RerankCallable(const RerankRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::Rerank, request);
+        }
+
+        /**
+         * An Async wrapper for Rerank that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RerankRequestT = Model::RerankRequest>
+        void RerankAsync(const RerankRequestT& request, const RerankResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::Rerank, request, handler, context);
+        }
+
+        /**
          * <p>Queries a knowledge base and retrieves information from it.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Retrieve">AWS
@@ -334,6 +396,35 @@ namespace BedrockAgentRuntime
         void RetrieveAndGenerateAsync(const RetrieveAndGenerateRequestT& request, const RetrieveAndGenerateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::RetrieveAndGenerate, request, handler, context);
+        }
+
+        /**
+         * <p>Queries a knowledge base and generates responses based on the retrieved
+         * results, with output in streaming format.</p>  <p>The CLI doesn't support
+         * streaming operations in Amazon Bedrock, including
+         * <code>InvokeModelWithResponseStream</code>.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerateStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RetrieveAndGenerateStreamOutcome RetrieveAndGenerateStream(Model::RetrieveAndGenerateStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for RetrieveAndGenerateStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RetrieveAndGenerateStreamRequestT = Model::RetrieveAndGenerateStreamRequest>
+        Model::RetrieveAndGenerateStreamOutcomeCallable RetrieveAndGenerateStreamCallable(RetrieveAndGenerateStreamRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::RetrieveAndGenerateStream, request);
+        }
+
+        /**
+         * An Async wrapper for RetrieveAndGenerateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RetrieveAndGenerateStreamRequestT = Model::RetrieveAndGenerateStreamRequest>
+        void RetrieveAndGenerateStreamAsync(RetrieveAndGenerateStreamRequestT& request, const RetrieveAndGenerateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::RetrieveAndGenerateStream, request, handler, context);
         }
 
 

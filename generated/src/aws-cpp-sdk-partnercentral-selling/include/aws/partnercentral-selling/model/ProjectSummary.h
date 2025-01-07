@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains a <code>Project</code> object's subset of fields.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains a <code>Project</code> object's subset of
+   * fields.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ProjectSummary">AWS
    * API Reference</a></p>
    */
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies your solution or service's deployment or consumption model in the
-     * <code>Opportunity</code>'s context. You can select multiple options. </p> <p>
-     * Options' descriptions from the <code>Delivery Model</code> field are: </p> <ul>
-     * <li> <p>SaaS or PaaS: Your Amazon Web Services based solution deployed as SaaS
-     * or PaaS in your Amazon Web Services environment.</p> </li> <li> <p>BYOL or AMI:
-     * Your Amazon Web Services based solution deployed as BYOL or AMI in the end
+     * <p>Specifies your solution or service's deployment or consumption model in the
+     * <code>Opportunity</code>'s context. You can select multiple options.</p>
+     * <p>Options' descriptions from the <code>Delivery Model</code> field are:</p>
+     * <ul> <li> <p>SaaS or PaaS: Your Amazon Web Services based solution deployed as
+     * SaaS or PaaS in your Amazon Web Services environment.</p> </li> <li> <p>BYOL or
+     * AMI: Your Amazon Web Services based solution deployed as BYOL or AMI in the end
      * customer's Amazon Web Services environment.</p> </li> <li> <p>Managed Services:
      * The end customer's Amazon Web Services business management (For example:
      * Consulting, design, implementation, billing support, cost optimization,

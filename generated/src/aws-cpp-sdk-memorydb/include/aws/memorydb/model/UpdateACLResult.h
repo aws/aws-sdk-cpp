@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated Access Control List</p>
+     * <p>The updated Access Control List.</p>
      */
     inline const ACL& GetACL() const{ return m_aCL; }
     inline void SetACL(const ACL& value) { m_aCL = value; }

@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>A unique identifier for a container in a container fleet compute. </p> <p>
-   * <b>Returned by:</b> <a>DescribeCompute</a> </p><p><h3>See Also:</h3>   <a
+   * <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html">DescribeCompute</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerAttribute">AWS
    * API Reference</a></p>
    */

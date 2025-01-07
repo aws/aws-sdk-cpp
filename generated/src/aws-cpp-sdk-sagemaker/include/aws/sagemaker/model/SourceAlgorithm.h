@@ -74,6 +74,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ETag associated with Model Data URL.</p>
+     */
+    inline const Aws::String& GetModelDataETag() const{ return m_modelDataETag; }
+    inline bool ModelDataETagHasBeenSet() const { return m_modelDataETagHasBeenSet; }
+    inline void SetModelDataETag(const Aws::String& value) { m_modelDataETagHasBeenSet = true; m_modelDataETag = value; }
+    inline void SetModelDataETag(Aws::String&& value) { m_modelDataETagHasBeenSet = true; m_modelDataETag = std::move(value); }
+    inline void SetModelDataETag(const char* value) { m_modelDataETagHasBeenSet = true; m_modelDataETag.assign(value); }
+    inline SourceAlgorithm& WithModelDataETag(const Aws::String& value) { SetModelDataETag(value); return *this;}
+    inline SourceAlgorithm& WithModelDataETag(Aws::String&& value) { SetModelDataETag(std::move(value)); return *this;}
+    inline SourceAlgorithm& WithModelDataETag(const char* value) { SetModelDataETag(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of an algorithm that was used to create the model package. The
      * algorithm must be either an algorithm resource in your SageMaker account or an
      * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
@@ -94,6 +108,9 @@ namespace Model
 
     ModelDataSource m_modelDataSource;
     bool m_modelDataSourceHasBeenSet = false;
+
+    Aws::String m_modelDataETag;
+    bool m_modelDataETagHasBeenSet = false;
 
     Aws::String m_algorithmName;
     bool m_algorithmNameHasBeenSet = false;

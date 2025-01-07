@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ManagedBy.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -44,6 +45,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The entity that manages access to the serial console. Possible values
+     * include:</p> <ul> <li> <p> <code>account</code> - Access is managed by the
+     * account.</p> </li> <li> <p> <code>declarative-policy</code> - Access is managed
+     * by a declarative policy and can't be modified by the account.</p> </li> </ul>
+     */
+    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
+    inline void SetManagedBy(const ManagedBy& value) { m_managedBy = value; }
+    inline void SetManagedBy(ManagedBy&& value) { m_managedBy = std::move(value); }
+    inline GetSerialConsoleAccessStatusResponse& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
+    inline GetSerialConsoleAccessStatusResponse& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -54,6 +69,8 @@ namespace Model
   private:
 
     bool m_serialConsoleAccessEnabled;
+
+    ManagedBy m_managedBy;
 
     ResponseMetadata m_responseMetadata;
   };

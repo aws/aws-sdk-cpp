@@ -81,8 +81,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
-     * behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker AI to perform tasks on
+     * your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/EFSFileSystem.h>
+#include <aws/sagemaker/model/FSxLustreFileSystem.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +26,8 @@ namespace Model
 
   /**
    * <p>A file system, created by you, that you assign to a user profile or space for
-   * an Amazon SageMaker Domain. Permitted users can access this file system in
-   * Amazon SageMaker Studio.</p><p><h3>See Also:</h3>   <a
+   * an Amazon SageMaker AI Domain. Permitted users can access this file system in
+   * Amazon SageMaker AI Studio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CustomFileSystem">AWS
    * API Reference</a></p>
    */
@@ -50,10 +51,25 @@ namespace Model
     inline CustomFileSystem& WithEFSFileSystem(const EFSFileSystem& value) { SetEFSFileSystem(value); return *this;}
     inline CustomFileSystem& WithEFSFileSystem(EFSFileSystem&& value) { SetEFSFileSystem(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A custom file system in Amazon FSx for Lustre.</p>
+     */
+    inline const FSxLustreFileSystem& GetFSxLustreFileSystem() const{ return m_fSxLustreFileSystem; }
+    inline bool FSxLustreFileSystemHasBeenSet() const { return m_fSxLustreFileSystemHasBeenSet; }
+    inline void SetFSxLustreFileSystem(const FSxLustreFileSystem& value) { m_fSxLustreFileSystemHasBeenSet = true; m_fSxLustreFileSystem = value; }
+    inline void SetFSxLustreFileSystem(FSxLustreFileSystem&& value) { m_fSxLustreFileSystemHasBeenSet = true; m_fSxLustreFileSystem = std::move(value); }
+    inline CustomFileSystem& WithFSxLustreFileSystem(const FSxLustreFileSystem& value) { SetFSxLustreFileSystem(value); return *this;}
+    inline CustomFileSystem& WithFSxLustreFileSystem(FSxLustreFileSystem&& value) { SetFSxLustreFileSystem(std::move(value)); return *this;}
+    ///@}
   private:
 
     EFSFileSystem m_eFSFileSystem;
     bool m_eFSFileSystemHasBeenSet = false;
+
+    FSxLustreFileSystem m_fSxLustreFileSystem;
+    bool m_fSxLustreFileSystemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags</p>
+     * tags.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

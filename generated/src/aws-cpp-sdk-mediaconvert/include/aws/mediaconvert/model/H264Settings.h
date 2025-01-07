@@ -33,6 +33,7 @@
 #include <aws/mediaconvert/model/H264Telecine.h>
 #include <aws/mediaconvert/model/H264TemporalAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H264UnregisteredSeiTimecode.h>
+#include <aws/mediaconvert/model/H264WriteMp4PackagingType.h>
 #include <utility>
 
 namespace Aws
@@ -792,6 +793,24 @@ namespace Model
     inline H264Settings& WithUnregisteredSeiTimecode(const H264UnregisteredSeiTimecode& value) { SetUnregisteredSeiTimecode(value); return *this;}
     inline H264Settings& WithUnregisteredSeiTimecode(H264UnregisteredSeiTimecode&& value) { SetUnregisteredSeiTimecode(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Specify how SPS and PPS NAL units are written in your output MP4 container,
+     * according to ISO/IEC 14496-15. If the location of these parameters doesn't
+     * matter in your workflow: Keep the default value, AVC1. MediaConvert writes SPS
+     * and PPS NAL units in the sample description ('stsd') box (but not into samples
+     * directly). To write SPS and PPS NAL units directly into samples (but not in the
+     * 'stsd' box): Choose AVC3. When you do, note that your output might not play
+     * properly with some downstream systems or players.
+     */
+    inline const H264WriteMp4PackagingType& GetWriteMp4PackagingType() const{ return m_writeMp4PackagingType; }
+    inline bool WriteMp4PackagingTypeHasBeenSet() const { return m_writeMp4PackagingTypeHasBeenSet; }
+    inline void SetWriteMp4PackagingType(const H264WriteMp4PackagingType& value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = value; }
+    inline void SetWriteMp4PackagingType(H264WriteMp4PackagingType&& value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = std::move(value); }
+    inline H264Settings& WithWriteMp4PackagingType(const H264WriteMp4PackagingType& value) { SetWriteMp4PackagingType(value); return *this;}
+    inline H264Settings& WithWriteMp4PackagingType(H264WriteMp4PackagingType&& value) { SetWriteMp4PackagingType(std::move(value)); return *this;}
+    ///@}
   private:
 
     H264AdaptiveQuantization m_adaptiveQuantization;
@@ -925,6 +944,9 @@ namespace Model
 
     H264UnregisteredSeiTimecode m_unregisteredSeiTimecode;
     bool m_unregisteredSeiTimecodeHasBeenSet = false;
+
+    H264WriteMp4PackagingType m_writeMp4PackagingType;
+    bool m_writeMp4PackagingTypeHasBeenSet = false;
   };
 
 } // namespace Model

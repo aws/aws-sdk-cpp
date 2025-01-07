@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the response parameters when OAuth is specified as the authorization
+   * <p>The response parameters when OAuth is specified as the authorization
    * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionOAuthResponseParameters">AWS
    * API Reference</a></p>
@@ -43,8 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains
-     * details about the client parameters returned when OAuth is specified as the
+     * <p>Details about the client parameters returned when OAuth is specified as the
      * authorization type.</p>
      */
     inline const ConnectionOAuthClientResponseParameters& GetClientParameters() const{ return m_clientParameters; }

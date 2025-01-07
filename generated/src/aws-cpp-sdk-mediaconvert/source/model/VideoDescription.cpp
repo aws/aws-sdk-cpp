@@ -42,6 +42,8 @@ VideoDescription::VideoDescription() :
     m_sharpnessHasBeenSet(false),
     m_timecodeInsertion(VideoTimecodeInsertion::NOT_SET),
     m_timecodeInsertionHasBeenSet(false),
+    m_timecodeTrack(TimecodeTrack::NOT_SET),
+    m_timecodeTrackHasBeenSet(false),
     m_videoPreprocessorsHasBeenSet(false),
     m_width(0),
     m_widthHasBeenSet(false)
@@ -147,6 +149,13 @@ VideoDescription& VideoDescription::operator =(JsonView jsonValue)
     m_timecodeInsertionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timecodeTrack"))
+  {
+    m_timecodeTrack = TimecodeTrackMapper::GetTimecodeTrackForName(jsonValue.GetString("timecodeTrack"));
+
+    m_timecodeTrackHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("videoPreprocessors"))
   {
     m_videoPreprocessors = jsonValue.GetObject("videoPreprocessors");
@@ -237,6 +246,11 @@ JsonValue VideoDescription::Jsonize() const
   if(m_timecodeInsertionHasBeenSet)
   {
    payload.WithString("timecodeInsertion", VideoTimecodeInsertionMapper::GetNameForVideoTimecodeInsertion(m_timecodeInsertion));
+  }
+
+  if(m_timecodeTrackHasBeenSet)
+  {
+   payload.WithString("timecodeTrack", TimecodeTrackMapper::GetNameForTimecodeTrack(m_timecodeTrack));
   }
 
   if(m_videoPreprocessorsHasBeenSet)

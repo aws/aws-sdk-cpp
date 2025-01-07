@@ -39,8 +39,7 @@ namespace Model
    * <code>AWS::CloudFormation::Type::HOOK</code> have the format with four
    * segments.</p> <p>Although the format is similar, the values for the
    * <code>Type</code> field do not match any Amazon Web Services CloudFormation
-   * values, and we do not use CloudFormation to implement these
-   * controls.</p><p><h3>See Also:</h3>   <a
+   * values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ImplementationDetails">AWS
    * API Reference</a></p>
    */

@@ -680,6 +680,37 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Deletes the integration between CloudWatch Logs and OpenSearch Service. If
+         * your integration has active vended logs dashboards, you must specify
+         * <code>true</code> for the <code>force</code> parameter, otherwise the operation
+         * will fail. If you delete the integration by setting <code>force</code> to
+         * <code>true</code>, all your vended logs dashboards powered by OpenSearch Service
+         * will be deleted and the data that was on them will no longer be
+         * accessible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const DeleteIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        void DeleteIntegrationAsync(const DeleteIntegrationRequestT& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified CloudWatch Logs anomaly detector.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">AWS
@@ -1625,6 +1656,32 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Returns information about one integration between CloudWatch Logs and
+         * OpenSearch Service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIntegrationOutcome GetIntegration(const Model::GetIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIntegrationRequestT = Model::GetIntegrationRequest>
+        Model::GetIntegrationOutcomeCallable GetIntegrationCallable(const GetIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::GetIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for GetIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIntegrationRequestT = Model::GetIntegrationRequest>
+        void GetIntegrationAsync(const GetIntegrationRequestT& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::GetIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about the log anomaly detector that you
          * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">AWS
@@ -1855,6 +1912,33 @@ namespace CloudWatchLogs
         void ListAnomaliesAsync(const ListAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnomaliesRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::ListAnomalies, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of integrations between CloudWatch Logs and other services in
+         * this account. Currently, only one integration can be created in an account, and
+         * this integration must be with OpenSearch Service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntegrationsOutcome ListIntegrations(const Model::ListIntegrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntegrationsRequestT = Model::ListIntegrationsRequest>
+        Model::ListIntegrationsOutcomeCallable ListIntegrationsCallable(const ListIntegrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::ListIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntegrationsRequestT = Model::ListIntegrationsRequest>
+        void ListIntegrationsAsync(const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIntegrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::ListIntegrations, request, handler, context);
         }
 
         /**
@@ -2429,6 +2513,40 @@ namespace CloudWatchLogs
         void PutIndexPolicyAsync(const PutIndexPolicyRequestT& request, const PutIndexPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::PutIndexPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an integration between CloudWatch Logs and another service in this
+         * account. Currently, only integrations with OpenSearch Service are supported, and
+         * currently you can have only one integration in your account.</p> <p>Integrating
+         * with OpenSearch Service makes it possible for you to create curated vended logs
+         * dashboards, powered by OpenSearch Service analytics. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-OpenSearch-Dashboards.html">Vended
+         * log dashboards powered by Amazon OpenSearch Service</a>.</p> <p>You can use this
+         * operation only to create a new integration. You can't modify an existing
+         * integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutIntegrationOutcome PutIntegration(const Model::PutIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutIntegrationRequestT = Model::PutIntegrationRequest>
+        Model::PutIntegrationOutcomeCallable PutIntegrationCallable(const PutIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::PutIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for PutIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutIntegrationRequestT = Model::PutIntegrationRequest>
+        void PutIntegrationAsync(const PutIntegrationRequestT& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::PutIntegration, request, handler, context);
         }
 
         /**

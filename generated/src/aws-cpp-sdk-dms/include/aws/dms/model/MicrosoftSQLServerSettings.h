@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/SafeguardPolicy.h>
 #include <aws/dms/model/TlogAccessMode.h>
+#include <aws/dms/model/SqlServerAuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +294,18 @@ namespace Model
     inline void SetForceLobLookup(bool value) { m_forceLobLookupHasBeenSet = true; m_forceLobLookup = value; }
     inline MicrosoftSQLServerSettings& WithForceLobLookup(bool value) { SetForceLobLookup(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+     */
+    inline const SqlServerAuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
+    inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
+    inline void SetAuthenticationMethod(const SqlServerAuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
+    inline void SetAuthenticationMethod(SqlServerAuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
+    inline MicrosoftSQLServerSettings& WithAuthenticationMethod(const SqlServerAuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
+    inline MicrosoftSQLServerSettings& WithAuthenticationMethod(SqlServerAuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_port;
@@ -345,6 +358,9 @@ namespace Model
 
     bool m_forceLobLookup;
     bool m_forceLobLookupHasBeenSet = false;
+
+    SqlServerAuthenticationMethod m_authenticationMethod;
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

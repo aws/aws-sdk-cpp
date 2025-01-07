@@ -19,9 +19,11 @@ namespace Model
 {
 
 AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfiguration() : 
+    m_answerGenerationAIGuardrailIdHasBeenSet(false),
     m_answerGenerationAIPromptIdHasBeenSet(false),
     m_associationConfigurationsHasBeenSet(false),
     m_intentLabelingGenerationAIPromptIdHasBeenSet(false),
+    m_localeHasBeenSet(false),
     m_queryReformulationAIPromptIdHasBeenSet(false)
 {
 }
@@ -34,6 +36,13 @@ AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfigurati
 
 AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
+  {
+    m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
+
+    m_answerGenerationAIGuardrailIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("answerGenerationAIPromptId"))
   {
     m_answerGenerationAIPromptId = jsonValue.GetString("answerGenerationAIPromptId");
@@ -58,6 +67,13 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
     m_intentLabelingGenerationAIPromptIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("locale"))
+  {
+    m_locale = jsonValue.GetString("locale");
+
+    m_localeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("queryReformulationAIPromptId"))
   {
     m_queryReformulationAIPromptId = jsonValue.GetString("queryReformulationAIPromptId");
@@ -71,6 +87,12 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
 JsonValue AnswerRecommendationAIAgentConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_answerGenerationAIGuardrailIdHasBeenSet)
+  {
+   payload.WithString("answerGenerationAIGuardrailId", m_answerGenerationAIGuardrailId);
+
+  }
 
   if(m_answerGenerationAIPromptIdHasBeenSet)
   {
@@ -92,6 +114,12 @@ JsonValue AnswerRecommendationAIAgentConfiguration::Jsonize() const
   if(m_intentLabelingGenerationAIPromptIdHasBeenSet)
   {
    payload.WithString("intentLabelingGenerationAIPromptId", m_intentLabelingGenerationAIPromptId);
+
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("locale", m_locale);
 
   }
 

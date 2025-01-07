@@ -18,6 +18,7 @@ InvokeFlowRequest::InvokeFlowRequest() :
     m_flowAliasIdentifierHasBeenSet(false),
     m_flowIdentifierHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_modelPerformanceConfigurationHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -40,6 +41,12 @@ Aws::String InvokeFlowRequest::SerializePayload() const
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
    }
    payload.WithArray("inputs", std::move(inputsJsonList));
+
+  }
+
+  if(m_modelPerformanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("modelPerformanceConfiguration", m_modelPerformanceConfiguration.Jsonize());
 
   }
 
