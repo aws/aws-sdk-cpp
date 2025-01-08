@@ -116,9 +116,7 @@ DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clie
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
                            std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
@@ -132,9 +130,7 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
@@ -148,9 +144,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration) :
@@ -163,9 +157,7 @@ DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfigur
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
@@ -178,9 +170,7 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
@@ -193,9 +183,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 DynamoDBClient::~DynamoDBClient()
@@ -208,45 +196,10 @@ std::shared_ptr<DynamoDBEndpointProviderBase>& DynamoDBClient::accessEndpointPro
   return m_endpointProvider;
 }
 
-void DynamoDBClient::init(const DynamoDB::DynamoDBClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void DynamoDBClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
-}
-
-DynamoDBClient::DynamoDBClient(const DynamoDBClient& other):
-  AwsSmithyClientT(
-    *other.m_clientConfig,
-    GetServiceName(),
-    Aws::Http::CreateHttpClient(other.m_clientConfiguration),
-    Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
-    other.m_endpointProvider,
-    Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
-    other.m_authSchemes),
-    Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>(other)
-{
-  init(m_clientConfiguration);
-}
-
-DynamoDBClient::DynamoDBClient(DynamoDBClient&& other): 
-  AwsSmithyClientT(std::move(other)),
-  Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>(std::move(other))
-{
-  init(m_clientConfiguration);
 }
 
 BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const

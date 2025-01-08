@@ -51,34 +51,6 @@ namespace DynamoDB
       static const char* GetServiceName();
       static const char* GetAllocationTag();
       inline const char* GetServiceClientName() const override { return "DynamoDB"; }
-      
-      DynamoDBClient(const DynamoDBClient& other);
-
-      DynamoDBClient(DynamoDBClient&& other);
-
-      DynamoDBClient& operator=(const DynamoDBClient& other)
-      {
-        if(this == &other) 
-        {
-            return *this;
-        }
-        AwsSmithyClientT::operator=(other);
-        Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(other);
-        init(m_clientConfiguration);
-        return *this;
-      }
-
-      DynamoDBClient& operator=(DynamoDBClient&& other)
-      {
-        if(this == &other) 
-        {
-            return *this;
-        }
-        AwsSmithyClientT::operator=(std::move(other));
-        Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(std::move(other));
-        init(m_clientConfiguration);
-        return *this;
-      }
 
       typedef DynamoDBClientConfiguration ClientConfigurationType;
       typedef DynamoDBEndpointProvider EndpointProviderType;
@@ -2316,7 +2288,6 @@ namespace DynamoDB
       std::shared_ptr<DynamoDBEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;
-      void init(const DynamoDBClientConfiguration& clientConfiguration);
 
       void OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint,
         const Aws::String& operationName,

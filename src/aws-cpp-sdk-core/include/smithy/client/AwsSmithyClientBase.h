@@ -20,6 +20,8 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 
+#include <utility>
+
 namespace Aws
 {
     namespace Utils
@@ -67,33 +69,6 @@ namespace client
     /* Non-template base client class that contains main Aws Client Request pipeline logic */
     class SMITHY_API AwsSmithyClientBase
     {
-    private:
-        const char* ALLOC_TAG{"AwsSmithyClientBase"};
-
-
-        void deepCopyClientConfiguration(const AwsSmithyClientBase& target)
-        {
-            //first create copy from target
-            m_clientConfig = Aws::MakeShared<Aws::Client::ClientConfiguration>(target.m_serviceName.c_str(), *target.m_clientConfig);
-            
-            //then reinitialize appropriate fields unconditionally
-            assert(m_clientConfig->configFactories.retryStrategyCreateFn);
-            m_clientConfig->retryStrategy = m_clientConfig->configFactories.retryStrategyCreateFn();
-            
-            assert(m_clientConfig->configFactories.executorCreateFn);
-            m_clientConfig->executor = m_clientConfig->configFactories.executorCreateFn();
-            
-            assert(m_clientConfig->configFactories.writeRateLimiterCreateFn);
-            m_clientConfig->writeRateLimiter = m_clientConfig->configFactories.writeRateLimiterCreateFn();
-
-            assert(m_clientConfig->configFactories.readRateLimiterCreateFn);
-            m_clientConfig->readRateLimiter = m_clientConfig->configFactories.readRateLimiterCreateFn();
-            
-            assert(m_clientConfig->configFactories.telemetryProviderCreateFn);
-            m_clientConfig->telemetryProvider = m_clientConfig->configFactories.telemetryProviderCreateFn();
-            
-        }
-
     public:
         using HttpRequest = Aws::Http::HttpRequest;
         using HttpResponse = Aws::Http::HttpResponse;
@@ -108,7 +83,7 @@ namespace client
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
 
-        AwsSmithyClientBase(std::shared_ptr<Aws::Client::ClientConfiguration>&& clientConfig,
+        AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
@@ -119,61 +94,28 @@ namespace client
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
         {
-            if (!m_clientConfig->retryStrategy)
-            {
-                assert(m_clientConfig->configFactories.retryStrategyCreateFn);
-                m_clientConfig->retryStrategy = m_clientConfig->configFactories.retryStrategyCreateFn();
-            }
-            if (!m_clientConfig->executor)
-            {
-                assert(m_clientConfig->configFactories.executorCreateFn);
-                m_clientConfig->executor = m_clientConfig->configFactories.executorCreateFn();
-            }
-            if (!m_clientConfig->writeRateLimiter)
-            {
-                assert(m_clientConfig->configFactories.writeRateLimiterCreateFn);
-                m_clientConfig->writeRateLimiter = m_clientConfig->configFactories.writeRateLimiterCreateFn();
-            }
-            if (!m_clientConfig->readRateLimiter)
-            {
-                assert(m_clientConfig->configFactories.readRateLimiterCreateFn);
-                m_clientConfig->readRateLimiter = m_clientConfig->configFactories.readRateLimiterCreateFn();
-            }
-            if (!m_clientConfig->telemetryProvider)
-            {
-                assert(m_clientConfig->configFactories.telemetryProviderCreateFn);
-                m_clientConfig->telemetryProvider = m_clientConfig->configFactories.telemetryProviderCreateFn();
-            }
-
-            m_userAgent = Aws::Client::ComputeUserAgentString(m_clientConfig.get());
+            baseInit();
         }
 
-
-        AwsSmithyClientBase& operator=(const AwsSmithyClientBase& target)
+        AwsSmithyClientBase(const AwsSmithyClientBase& other,
+                            Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
+                            Aws::String serviceName,
+                            std::shared_ptr<Aws::Http::HttpClient> httpClient,
+                            std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
+          m_clientConfig(std::move(clientConfig)),
+          m_serviceName(std::move(serviceName)),
+          m_userAgent(),
+          m_httpClient(std::move(httpClient)),
+          m_errorMarshaller(std::move(errorMarshaller)),
+          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
         {
-            if (this != &target)
-            {
-                deepCopyClientConfiguration(target);
-                m_serviceName = target.m_serviceName;
-                m_userAgent = target.m_userAgent;
-                m_httpClient = Aws::Http::CreateHttpClient(*target.m_clientConfig);
-                m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
-                m_userAgent = Aws::Client::ComputeUserAgentString(m_clientConfig.get());
-            }
-            return *this;
+          AWS_UNREFERENCED_PARAM(other);
+          baseCopyInit();
         }
 
-        AwsSmithyClientBase(const AwsSmithyClientBase& target): 
-            m_serviceName{target.m_serviceName},
-            m_userAgent{target.m_userAgent},
-            m_httpClient{Aws::Http::CreateHttpClient(*target.m_clientConfig)},
-            m_interceptors{Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)}
-        {
-            deepCopyClientConfiguration(target);  
-        }
-
+        AwsSmithyClientBase(AwsSmithyClientBase& target) = delete;
+        AwsSmithyClientBase& operator=(AwsSmithyClientBase& target) = delete;
         AwsSmithyClientBase(AwsSmithyClientBase&& target) = default;
-
         AwsSmithyClientBase& operator=(AwsSmithyClientBase&& target) = default;
 
         virtual ~AwsSmithyClientBase() = default;
@@ -191,6 +133,32 @@ namespace client
                                             EndpointUpdateCallback&& endpointCallback) const;
 
     protected:
+        void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
+          const Aws::String& serviceName,
+          std::shared_ptr<Aws::Http::HttpClient> httpClient,
+          std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller)
+        {
+          m_clientConfig = std::move(clientConfig);
+          m_serviceName = serviceName;
+          m_httpClient = std::move(httpClient);
+          m_errorMarshaller = std::move(errorMarshaller);
+          m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")};
+          baseCopyInit();
+        }
+
+        /**
+         * Initialize client configuration with their factory method, unless the user has explicitly set the
+         * configuration, and it is to be shallow copied between different clients, in which case, delete the
+         * factory method.
+         */
+        void baseInit();
+
+        /**
+         * Initialize client configuration on copy, if there is a factory use it, otherwise use the already present
+         * shared configuration.
+         */
+        void baseCopyInit();
+
         /**
          * Transforms the AmazonWebServicesResult object into an HttpRequest.
          */
@@ -211,7 +179,6 @@ namespace client
         virtual SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
-    protected:
         std::shared_ptr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;
