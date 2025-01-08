@@ -187,6 +187,8 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
     {
+        std::cout<<"WriteData called"<<std::endl;
+
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
 
         const CurlHttpClient* client = context->m_client;
@@ -262,6 +264,7 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
     {
+        std::cout<<"WriteHeader called"<<std::endl;
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, ptr);
         HttpResponse* response = context->m_response;
@@ -829,7 +832,9 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 
         OverrideOptionsOnConnectionHandle(connectionHandle);
         Aws::Utils::DateTime startTransmissionTime = Aws::Utils::DateTime::Now();
+        std::cout<<"curl_easy_perform starting"<<std::endl;
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
+        std::cout<<"curl_easy_perform finished"<<std::endl;
         bool shouldContinueRequest = ContinueRequest(*request);
         if (curlResponseCode != CURLE_OK && shouldContinueRequest)
         {
