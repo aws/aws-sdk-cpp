@@ -48,10 +48,11 @@ namespace Model
      * model training. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want SageMaker to use for model training. </p>
-     * <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object
-     * that is an augmented manifest file in JSON lines format. This file contains the
-     * data you want to use for model training. <code>AugmentedManifestFile</code> can
-     * only be used if the Channel's input mode is <code>Pipe</code>.</p>
+     * <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code>
+     * identifies an object that is an augmented manifest file in JSON lines format.
+     * This file contains the data you want to use for model training.
+     * <code>AugmentedManifestFile</code> can only be used if the Channel's input mode
+     * is <code>Pipe</code>.</p>
      */
     inline const S3DataType& GetS3DataType() const{ return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }

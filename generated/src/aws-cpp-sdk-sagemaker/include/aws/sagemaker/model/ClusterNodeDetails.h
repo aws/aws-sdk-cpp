@@ -174,6 +174,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline const Aws::String& GetPrivatePrimaryIpv6() const{ return m_privatePrimaryIpv6; }
+    inline bool PrivatePrimaryIpv6HasBeenSet() const { return m_privatePrimaryIpv6HasBeenSet; }
+    inline void SetPrivatePrimaryIpv6(const Aws::String& value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6 = value; }
+    inline void SetPrivatePrimaryIpv6(Aws::String&& value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6 = std::move(value); }
+    inline void SetPrivatePrimaryIpv6(const char* value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6.assign(value); }
+    inline ClusterNodeDetails& WithPrivatePrimaryIpv6(const Aws::String& value) { SetPrivatePrimaryIpv6(value); return *this;}
+    inline ClusterNodeDetails& WithPrivatePrimaryIpv6(Aws::String&& value) { SetPrivatePrimaryIpv6(std::move(value)); return *this;}
+    inline ClusterNodeDetails& WithPrivatePrimaryIpv6(const char* value) { SetPrivatePrimaryIpv6(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
      */
     inline const Aws::String& GetPrivateDnsHostname() const{ return m_privateDnsHostname; }
@@ -228,6 +242,9 @@ namespace Model
 
     Aws::String m_privatePrimaryIp;
     bool m_privatePrimaryIpHasBeenSet = false;
+
+    Aws::String m_privatePrimaryIpv6;
+    bool m_privatePrimaryIpv6HasBeenSet = false;
 
     Aws::String m_privateDnsHostname;
     bool m_privateDnsHostnameHasBeenSet = false;

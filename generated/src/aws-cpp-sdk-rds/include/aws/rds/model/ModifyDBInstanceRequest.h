@@ -455,25 +455,25 @@ namespace Model
      * migrating from Provisioned IOPS to standard storage, set this value to 0. The DB
      * instance will require a reboot for the change in storage type to take
      * effect.</p> <p>If you choose to migrate your DB instance from using standard
-     * storage to using Provisioned IOPS, or from using Provisioned IOPS to using
-     * standard storage, the process can take time. The duration of the migration
-     * depends on several factors such as database load, storage size, storage type
-     * (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the
-     * number of prior scale storage operations. Typical migration times are under 24
-     * hours, but the process can take up to several days in some cases. During the
-     * migration, the DB instance is available for use, but might experience
-     * performance degradation. While the migration takes place, nightly backups for
-     * the instance are suspended. No other Amazon RDS operations can take place for
-     * the instance, including modifying the instance, rebooting the instance, deleting
-     * the instance, creating a read replica for the instance, and creating a DB
-     * snapshot of the instance.</p> <p>Constraints:</p> <ul> <li> <p>For RDS for
-     * MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.</p> </li> <li> <p>When you increase the
-     * Provisioned IOPS, you must also specify the <code>AllocatedStorage</code>
-     * parameter. You can use the current value for <code>AllocatedStorage</code>.</p>
-     * </li> </ul> <p>Default: Uses existing setting</p>
+     * storage to Provisioned IOPS (io1), or from Provisioned IOPS to standard storage,
+     * the process can take time. The duration of the migration depends on several
+     * factors such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior
+     * scale storage operations. Typical migration times are under 24 hours, but the
+     * process can take up to several days in some cases. During the migration, the DB
+     * instance is available for use, but might experience performance degradation.
+     * While the migration takes place, nightly backups for the instance are suspended.
+     * No other Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance, creating
+     * a read replica for the instance, and creating a DB snapshot of the instance.</p>
+     * <p/> <p>Constraints:</p> <ul> <li> <p>For RDS for MariaDB, RDS for MySQL, RDS
+     * for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10% greater than
+     * the existing value are rounded up so that they are 10% greater than the current
+     * value.</p> </li> <li> <p>When you increase the Provisioned IOPS, you must also
+     * specify the <code>AllocatedStorage</code> parameter. You can use the current
+     * value for <code>AllocatedStorage</code>.</p> </li> </ul> <p>Default: Uses
+     * existing setting</p>
      */
     inline int GetIops() const{ return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -531,20 +531,21 @@ namespace Model
      * <p>The storage type to associate with the DB instance.</p> <p>If you specify
      * <code>io1</code>, <code>io2</code>, or <code>gp3</code> you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>If you choose to migrate your
-     * DB instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon RDS operations
-     * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid Values: <code>gp2 | gp3 |
-     * io1 | io2 | standard</code> </p> <p>Default: <code>io1</code>, if the
-     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * DB instance from using standard storage to gp2 (General Purpose SSD), gp3, or
+     * Provisioned IOPS (io1), or from these storage types to standard storage, the
+     * process can take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or Provisioned
+     * IOPS), amount of IOPS provisioned (if any), and the number of prior scale
+     * storage operations. Typical migration times are under 24 hours, but the process
+     * can take up to several days in some cases. During the migration, the DB instance
+     * is available for use, but might experience performance degradation. While the
+     * migration takes place, nightly backups for the instance are suspended. No other
+     * Amazon RDS operations can take place for the instance, including modifying the
+     * instance, rebooting the instance, deleting the instance, creating a read replica
+     * for the instance, and creating a DB snapshot of the instance.</p> <p>Valid
+     * Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>Default:
+     * <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
+     * <code>gp2</code>.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }

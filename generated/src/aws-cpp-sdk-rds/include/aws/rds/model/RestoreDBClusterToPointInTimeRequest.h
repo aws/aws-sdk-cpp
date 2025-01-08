@@ -401,8 +401,9 @@ namespace Model
      * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
      * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
      * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
-     * Serverless v1 cluster or an encrypted provisioned cluster.</p> <p>Valid for:
-     * Aurora DB clusters only</p>
+     * Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy
+     * that is an Aurora Serverless v1 cluster, specify the engine mode
+     * <code>serverless</code>.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }

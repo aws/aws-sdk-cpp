@@ -31,6 +31,7 @@ ClusterNodeDetails::ClusterNodeDetails() :
     m_threadsPerCoreHasBeenSet(false),
     m_instanceStorageConfigsHasBeenSet(false),
     m_privatePrimaryIpHasBeenSet(false),
+    m_privatePrimaryIpv6HasBeenSet(false),
     m_privateDnsHostnameHasBeenSet(false),
     m_placementHasBeenSet(false)
 {
@@ -117,6 +118,13 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_privatePrimaryIpHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PrivatePrimaryIpv6"))
+  {
+    m_privatePrimaryIpv6 = jsonValue.GetString("PrivatePrimaryIpv6");
+
+    m_privatePrimaryIpv6HasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PrivateDnsHostname"))
   {
     m_privateDnsHostname = jsonValue.GetString("PrivateDnsHostname");
@@ -198,6 +206,12 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_privatePrimaryIpHasBeenSet)
   {
    payload.WithString("PrivatePrimaryIp", m_privatePrimaryIp);
+
+  }
+
+  if(m_privatePrimaryIpv6HasBeenSet)
+  {
+   payload.WithString("PrivatePrimaryIpv6", m_privatePrimaryIpv6);
 
   }
 

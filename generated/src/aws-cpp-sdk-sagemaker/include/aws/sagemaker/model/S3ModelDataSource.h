@@ -185,7 +185,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ETag associated with Manifest S3URI.</p>
+     * <p>The ETag associated with Manifest S3 URI.</p>
      */
     inline const Aws::String& GetManifestEtag() const{ return m_manifestEtag; }
     inline bool ManifestEtagHasBeenSet() const { return m_manifestEtagHasBeenSet; }

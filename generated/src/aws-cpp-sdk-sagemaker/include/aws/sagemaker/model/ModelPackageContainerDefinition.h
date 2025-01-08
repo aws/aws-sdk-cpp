@@ -58,10 +58,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
-     * stored.</p> <p>If you are using your own custom algorithm instead of an
-     * algorithm provided by SageMaker, the inference code must meet SageMaker
-     * requirements. SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
+     * <p>If you are using your own custom algorithm instead of an algorithm provided
+     * by SageMaker, the inference code must meet SageMaker requirements. SageMaker
+     * supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
