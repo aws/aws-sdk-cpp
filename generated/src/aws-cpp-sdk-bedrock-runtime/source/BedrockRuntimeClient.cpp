@@ -202,20 +202,12 @@ ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ApplyGuardrailOutcome>(
     [&]()-> ApplyGuardrailOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/guardrail/");
-      endpointOverrides.AddPathSegment(request.GetGuardrailIdentifier());
-      endpointOverrides.AddPathSegment("/version/");
-      endpointOverrides.AddPathSegment(request.GetGuardrailVersion());
-      endpointOverrides.AddPathSegment("/apply");
-      return ApplyGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ApplyGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/guardrail/");
+      resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+      resolvedEndpoint.AddPathSegments("/version/");
+      resolvedEndpoint.AddPathSegment(request.GetGuardrailVersion());
+      resolvedEndpoint.AddPathSegments("/apply");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -241,18 +233,10 @@ ConverseOutcome BedrockRuntimeClient::Converse(const ConverseRequest& request) c
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ConverseOutcome>(
     [&]()-> ConverseOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/model/");
-      endpointOverrides.AddPathSegment(request.GetModelId());
-      endpointOverrides.AddPathSegment("/converse");
-      return ConverseOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ConverseOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/model/");
+      resolvedEndpoint.AddPathSegment(request.GetModelId());
+      resolvedEndpoint.AddPathSegments("/converse");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -278,21 +262,13 @@ ConverseStreamOutcome BedrockRuntimeClient::ConverseStream(ConverseStreamRequest
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ConverseStreamOutcome>(
     [&]()-> ConverseStreamOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/model/");
-      endpointOverrides.AddPathSegment(request.GetModelId());
-      endpointOverrides.AddPathSegment("/converse-stream");
       request.SetResponseStreamFactory(
           [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
       );
-      return ConverseStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ConverseStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/model/");
+      resolvedEndpoint.AddPathSegment(request.GetModelId());
+      resolvedEndpoint.AddPathSegments("/converse-stream");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -318,17 +294,9 @@ GetAsyncInvokeOutcome BedrockRuntimeClient::GetAsyncInvoke(const GetAsyncInvokeR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAsyncInvokeOutcome>(
     [&]()-> GetAsyncInvokeOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/async-invoke/");
-      endpointOverrides.AddPathSegment(request.GetInvocationArn());
-      return GetAsyncInvokeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetAsyncInvokeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/async-invoke/");
+      resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -354,18 +322,10 @@ InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& r
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeModelOutcome>(
     [&]()-> InvokeModelOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/model/");
-      endpointOverrides.AddPathSegment(request.GetModelId());
-      endpointOverrides.AddPathSegment("/invoke");
-      return InvokeModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return InvokeModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/model/");
+      resolvedEndpoint.AddPathSegment(request.GetModelId());
+      resolvedEndpoint.AddPathSegments("/invoke");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -391,21 +351,13 @@ InvokeModelWithResponseStreamOutcome BedrockRuntimeClient::InvokeModelWithRespon
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeModelWithResponseStreamOutcome>(
     [&]()-> InvokeModelWithResponseStreamOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/model/");
-      endpointOverrides.AddPathSegment(request.GetModelId());
-      endpointOverrides.AddPathSegment("/invoke-with-response-stream");
       request.SetResponseStreamFactory(
           [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
       );
-      return InvokeModelWithResponseStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return InvokeModelWithResponseStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/model/");
+      resolvedEndpoint.AddPathSegment(request.GetModelId());
+      resolvedEndpoint.AddPathSegments("/invoke-with-response-stream");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -426,16 +378,8 @@ ListAsyncInvokesOutcome BedrockRuntimeClient::ListAsyncInvokes(const ListAsyncIn
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAsyncInvokesOutcome>(
     [&]()-> ListAsyncInvokesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/async-invoke");
-      return ListAsyncInvokesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListAsyncInvokesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/async-invoke");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -456,16 +400,8 @@ StartAsyncInvokeOutcome BedrockRuntimeClient::StartAsyncInvoke(const StartAsyncI
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartAsyncInvokeOutcome>(
     [&]()-> StartAsyncInvokeOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/async-invoke");
-      return StartAsyncInvokeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartAsyncInvokeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/async-invoke");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

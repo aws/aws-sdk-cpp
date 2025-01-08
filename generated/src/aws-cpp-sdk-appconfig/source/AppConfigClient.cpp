@@ -227,16 +227,8 @@ CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateApplicationOutcome>(
     [&]()-> CreateApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications");
-      return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -262,18 +254,10 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateConfigurationProfileOutcome>(
     [&]()-> CreateConfigurationProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles");
-      return CreateConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -294,16 +278,8 @@ CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateDeploymentStrategyOutcome>(
     [&]()-> CreateDeploymentStrategyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/deploymentstrategies");
-      return CreateDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/deploymentstrategies");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -329,18 +305,10 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateEnvironmentOutcome>(
     [&]()-> CreateEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments");
-      return CreateEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -361,16 +329,8 @@ CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateExtensionOutcome>(
     [&]()-> CreateExtensionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensions");
-      return CreateExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -391,16 +351,8 @@ CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateExtensionAssociationOutcome>(
     [&]()-> CreateExtensionAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensionassociations");
-      return CreateExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensionassociations");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -431,20 +383,12 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateHostedConfigurationVersionOutcome>(
     [&]()-> CreateHostedConfigurationVersionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      endpointOverrides.AddPathSegment("/hostedconfigurationversions");
-      return CreateHostedConfigurationVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateHostedConfigurationVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
+      resolvedEndpoint.AddPathSegments("/hostedconfigurationversions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -470,17 +414,9 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteApplicationOutcome>(
     [&]()-> DeleteApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -511,19 +447,11 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteConfigurationProfileOutcome>(
     [&]()-> DeleteConfigurationProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      return DeleteConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -549,17 +477,9 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteDeploymentStrategyOutcome>(
     [&]()-> DeleteDeploymentStrategyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/deployementstrategies/");
-      endpointOverrides.AddPathSegment(request.GetDeploymentStrategyId());
-      return DeleteDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/deployementstrategies/");
+      resolvedEndpoint.AddPathSegment(request.GetDeploymentStrategyId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -590,19 +510,11 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteEnvironmentOutcome>(
     [&]()-> DeleteEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      return DeleteEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -628,17 +540,9 @@ DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteExtensionOutcome>(
     [&]()-> DeleteExtensionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensions/");
-      endpointOverrides.AddPathSegment(request.GetExtensionIdentifier());
-      return DeleteExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensions/");
+      resolvedEndpoint.AddPathSegment(request.GetExtensionIdentifier());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -664,17 +568,9 @@ DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteExtensionAssociationOutcome>(
     [&]()-> DeleteExtensionAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensionassociations/");
-      endpointOverrides.AddPathSegment(request.GetExtensionAssociationId());
-      return DeleteExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensionassociations/");
+      resolvedEndpoint.AddPathSegment(request.GetExtensionAssociationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -710,21 +606,13 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteHostedConfigurationVersionOutcome>(
     [&]()-> DeleteHostedConfigurationVersionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      endpointOverrides.AddPathSegment("/hostedconfigurationversions/");
-      endpointOverrides.AddPathSegment(request.GetVersionNumber());
-      return DeleteHostedConfigurationVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteHostedConfigurationVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
+      resolvedEndpoint.AddPathSegments("/hostedconfigurationversions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersionNumber());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -745,16 +633,8 @@ GetAccountSettingsOutcome AppConfigClient::GetAccountSettings(const GetAccountSe
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAccountSettingsOutcome>(
     [&]()-> GetAccountSettingsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/settings");
-      return GetAccountSettingsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetAccountSettingsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/settings");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -780,17 +660,9 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetApplicationOutcome>(
     [&]()-> GetApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -821,19 +693,11 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetConfigurationProfileOutcome>(
     [&]()-> GetConfigurationProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      return GetConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -869,21 +733,13 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDeploymentOutcome>(
     [&]()-> GetDeploymentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      endpointOverrides.AddPathSegment("/deployments/");
-      endpointOverrides.AddPathSegment(request.GetDeploymentNumber());
-      return GetDeploymentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetDeploymentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
+      resolvedEndpoint.AddPathSegments("/deployments/");
+      resolvedEndpoint.AddPathSegment(request.GetDeploymentNumber());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -909,17 +765,9 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDeploymentStrategyOutcome>(
     [&]()-> GetDeploymentStrategyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/deploymentstrategies/");
-      endpointOverrides.AddPathSegment(request.GetDeploymentStrategyId());
-      return GetDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/deploymentstrategies/");
+      resolvedEndpoint.AddPathSegment(request.GetDeploymentStrategyId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -950,19 +798,11 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetEnvironmentOutcome>(
     [&]()-> GetEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      return GetEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -988,17 +828,9 @@ GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& req
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetExtensionOutcome>(
     [&]()-> GetExtensionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensions/");
-      endpointOverrides.AddPathSegment(request.GetExtensionIdentifier());
-      return GetExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensions/");
+      resolvedEndpoint.AddPathSegment(request.GetExtensionIdentifier());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1024,17 +856,9 @@ GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const Ge
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetExtensionAssociationOutcome>(
     [&]()-> GetExtensionAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensionassociations/");
-      endpointOverrides.AddPathSegment(request.GetExtensionAssociationId());
-      return GetExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensionassociations/");
+      resolvedEndpoint.AddPathSegment(request.GetExtensionAssociationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1070,21 +894,13 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetHostedConfigurationVersionOutcome>(
     [&]()-> GetHostedConfigurationVersionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      endpointOverrides.AddPathSegment("/hostedconfigurationversions/");
-      endpointOverrides.AddPathSegment(request.GetVersionNumber());
-      return GetHostedConfigurationVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetHostedConfigurationVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
+      resolvedEndpoint.AddPathSegments("/hostedconfigurationversions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersionNumber());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1105,16 +921,8 @@ ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplications
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListApplicationsOutcome>(
     [&]()-> ListApplicationsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications");
-      return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1140,18 +948,10 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListConfigurationProfilesOutcome>(
     [&]()-> ListConfigurationProfilesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles");
-      return ListConfigurationProfilesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListConfigurationProfilesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1172,16 +972,8 @@ ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDeploymentStrategiesOutcome>(
     [&]()-> ListDeploymentStrategiesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/deploymentstrategies");
-      return ListDeploymentStrategiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDeploymentStrategiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/deploymentstrategies");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1212,20 +1004,12 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDeploymentsOutcome>(
     [&]()-> ListDeploymentsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      endpointOverrides.AddPathSegment("/deployments");
-      return ListDeploymentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDeploymentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
+      resolvedEndpoint.AddPathSegments("/deployments");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1251,18 +1035,10 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListEnvironmentsOutcome>(
     [&]()-> ListEnvironmentsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments");
-      return ListEnvironmentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListEnvironmentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1283,16 +1059,8 @@ ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListExtensionAssociationsOutcome>(
     [&]()-> ListExtensionAssociationsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensionassociations");
-      return ListExtensionAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListExtensionAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensionassociations");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1313,16 +1081,8 @@ ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListExtensionsOutcome>(
     [&]()-> ListExtensionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensions");
-      return ListExtensionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListExtensionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1353,20 +1113,12 @@ ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationV
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListHostedConfigurationVersionsOutcome>(
     [&]()-> ListHostedConfigurationVersionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      endpointOverrides.AddPathSegment("/hostedconfigurationversions");
-      return ListHostedConfigurationVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListHostedConfigurationVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
+      resolvedEndpoint.AddPathSegments("/hostedconfigurationversions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1392,17 +1144,9 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1433,20 +1177,12 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartDeploymentOutcome>(
     [&]()-> StartDeploymentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      endpointOverrides.AddPathSegment("/deployments");
-      return StartDeploymentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartDeploymentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
+      resolvedEndpoint.AddPathSegments("/deployments");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1482,21 +1218,13 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopDeploymentOutcome>(
     [&]()-> StopDeploymentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      endpointOverrides.AddPathSegment("/deployments/");
-      endpointOverrides.AddPathSegment(request.GetDeploymentNumber());
-      return StopDeploymentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StopDeploymentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
+      resolvedEndpoint.AddPathSegments("/deployments/");
+      resolvedEndpoint.AddPathSegment(request.GetDeploymentNumber());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1522,17 +1250,9 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1563,17 +1283,9 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1594,16 +1306,8 @@ UpdateAccountSettingsOutcome AppConfigClient::UpdateAccountSettings(const Update
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateAccountSettingsOutcome>(
     [&]()-> UpdateAccountSettingsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/settings");
-      return UpdateAccountSettingsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateAccountSettingsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/settings");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1629,17 +1333,9 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateApplicationOutcome>(
     [&]()-> UpdateApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1670,19 +1366,11 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateConfigurationProfileOutcome>(
     [&]()-> UpdateConfigurationProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      return UpdateConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateConfigurationProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1708,17 +1396,9 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateDeploymentStrategyOutcome>(
     [&]()-> UpdateDeploymentStrategyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/deploymentstrategies/");
-      endpointOverrides.AddPathSegment(request.GetDeploymentStrategyId());
-      return UpdateDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateDeploymentStrategyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/deploymentstrategies/");
+      resolvedEndpoint.AddPathSegment(request.GetDeploymentStrategyId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1749,19 +1429,11 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateEnvironmentOutcome>(
     [&]()-> UpdateEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/environments/");
-      endpointOverrides.AddPathSegment(request.GetEnvironmentId());
-      return UpdateEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/environments/");
+      resolvedEndpoint.AddPathSegment(request.GetEnvironmentId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1787,17 +1459,9 @@ UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateExtensionOutcome>(
     [&]()-> UpdateExtensionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensions/");
-      endpointOverrides.AddPathSegment(request.GetExtensionIdentifier());
-      return UpdateExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateExtensionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensions/");
+      resolvedEndpoint.AddPathSegment(request.GetExtensionIdentifier());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1823,17 +1487,9 @@ UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateExtensionAssociationOutcome>(
     [&]()-> UpdateExtensionAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/extensionassociations/");
-      endpointOverrides.AddPathSegment(request.GetExtensionAssociationId());
-      return UpdateExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateExtensionAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/extensionassociations/");
+      resolvedEndpoint.AddPathSegment(request.GetExtensionAssociationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1869,20 +1525,12 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ValidateConfigurationOutcome>(
     [&]()-> ValidateConfigurationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/applications/");
-      endpointOverrides.AddPathSegment(request.GetApplicationId());
-      endpointOverrides.AddPathSegment("/configurationprofiles/");
-      endpointOverrides.AddPathSegment(request.GetConfigurationProfileId());
-      endpointOverrides.AddPathSegment("/validators");
-      return ValidateConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ValidateConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/applications/");
+      resolvedEndpoint.AddPathSegment(request.GetApplicationId());
+      resolvedEndpoint.AddPathSegments("/configurationprofiles/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationProfileId());
+      resolvedEndpoint.AddPathSegments("/validators");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

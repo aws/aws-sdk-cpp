@@ -205,7 +205,7 @@ CreateContainerOutcome MediaStoreClient::CreateContainer(const CreateContainerRe
   return TracingUtils::MakeCallWithTiming<CreateContainerOutcome>(
     [&]()-> CreateContainerOutcome {
       return CreateContainerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -227,7 +227,7 @@ DeleteContainerOutcome MediaStoreClient::DeleteContainer(const DeleteContainerRe
   return TracingUtils::MakeCallWithTiming<DeleteContainerOutcome>(
     [&]()-> DeleteContainerOutcome {
       return DeleteContainerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -249,7 +249,7 @@ DeleteContainerPolicyOutcome MediaStoreClient::DeleteContainerPolicy(const Delet
   return TracingUtils::MakeCallWithTiming<DeleteContainerPolicyOutcome>(
     [&]()-> DeleteContainerPolicyOutcome {
       return DeleteContainerPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -271,7 +271,7 @@ DeleteCorsPolicyOutcome MediaStoreClient::DeleteCorsPolicy(const DeleteCorsPolic
   return TracingUtils::MakeCallWithTiming<DeleteCorsPolicyOutcome>(
     [&]()-> DeleteCorsPolicyOutcome {
       return DeleteCorsPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -293,7 +293,7 @@ DeleteLifecyclePolicyOutcome MediaStoreClient::DeleteLifecyclePolicy(const Delet
   return TracingUtils::MakeCallWithTiming<DeleteLifecyclePolicyOutcome>(
     [&]()-> DeleteLifecyclePolicyOutcome {
       return DeleteLifecyclePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -315,7 +315,7 @@ DeleteMetricPolicyOutcome MediaStoreClient::DeleteMetricPolicy(const DeleteMetri
   return TracingUtils::MakeCallWithTiming<DeleteMetricPolicyOutcome>(
     [&]()-> DeleteMetricPolicyOutcome {
       return DeleteMetricPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -337,7 +337,7 @@ DescribeContainerOutcome MediaStoreClient::DescribeContainer(const DescribeConta
   return TracingUtils::MakeCallWithTiming<DescribeContainerOutcome>(
     [&]()-> DescribeContainerOutcome {
       return DescribeContainerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -359,7 +359,7 @@ GetContainerPolicyOutcome MediaStoreClient::GetContainerPolicy(const GetContaine
   return TracingUtils::MakeCallWithTiming<GetContainerPolicyOutcome>(
     [&]()-> GetContainerPolicyOutcome {
       return GetContainerPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -381,7 +381,7 @@ GetCorsPolicyOutcome MediaStoreClient::GetCorsPolicy(const GetCorsPolicyRequest&
   return TracingUtils::MakeCallWithTiming<GetCorsPolicyOutcome>(
     [&]()-> GetCorsPolicyOutcome {
       return GetCorsPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -403,7 +403,7 @@ GetLifecyclePolicyOutcome MediaStoreClient::GetLifecyclePolicy(const GetLifecycl
   return TracingUtils::MakeCallWithTiming<GetLifecyclePolicyOutcome>(
     [&]()-> GetLifecyclePolicyOutcome {
       return GetLifecyclePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -425,7 +425,7 @@ GetMetricPolicyOutcome MediaStoreClient::GetMetricPolicy(const GetMetricPolicyRe
   return TracingUtils::MakeCallWithTiming<GetMetricPolicyOutcome>(
     [&]()-> GetMetricPolicyOutcome {
       return GetMetricPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -447,7 +447,7 @@ ListContainersOutcome MediaStoreClient::ListContainers(const ListContainersReque
   return TracingUtils::MakeCallWithTiming<ListContainersOutcome>(
     [&]()-> ListContainersOutcome {
       return ListContainersOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -469,7 +469,7 @@ ListTagsForResourceOutcome MediaStoreClient::ListTagsForResource(const ListTagsF
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -491,7 +491,7 @@ PutContainerPolicyOutcome MediaStoreClient::PutContainerPolicy(const PutContaine
   return TracingUtils::MakeCallWithTiming<PutContainerPolicyOutcome>(
     [&]()-> PutContainerPolicyOutcome {
       return PutContainerPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -513,7 +513,7 @@ PutCorsPolicyOutcome MediaStoreClient::PutCorsPolicy(const PutCorsPolicyRequest&
   return TracingUtils::MakeCallWithTiming<PutCorsPolicyOutcome>(
     [&]()-> PutCorsPolicyOutcome {
       return PutCorsPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -535,7 +535,7 @@ PutLifecyclePolicyOutcome MediaStoreClient::PutLifecyclePolicy(const PutLifecycl
   return TracingUtils::MakeCallWithTiming<PutLifecyclePolicyOutcome>(
     [&]()-> PutLifecyclePolicyOutcome {
       return PutLifecyclePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -557,7 +557,7 @@ PutMetricPolicyOutcome MediaStoreClient::PutMetricPolicy(const PutMetricPolicyRe
   return TracingUtils::MakeCallWithTiming<PutMetricPolicyOutcome>(
     [&]()-> PutMetricPolicyOutcome {
       return PutMetricPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -579,7 +579,7 @@ StartAccessLoggingOutcome MediaStoreClient::StartAccessLogging(const StartAccess
   return TracingUtils::MakeCallWithTiming<StartAccessLoggingOutcome>(
     [&]()-> StartAccessLoggingOutcome {
       return StartAccessLoggingOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -601,7 +601,7 @@ StopAccessLoggingOutcome MediaStoreClient::StopAccessLogging(const StopAccessLog
   return TracingUtils::MakeCallWithTiming<StopAccessLoggingOutcome>(
     [&]()-> StopAccessLoggingOutcome {
       return StopAccessLoggingOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -623,7 +623,7 @@ TagResourceOutcome MediaStoreClient::TagResource(const TagResourceRequest& reque
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -645,7 +645,7 @@ UntagResourceOutcome MediaStoreClient::UntagResource(const UntagResourceRequest&
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

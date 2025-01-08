@@ -237,7 +237,7 @@ CancelKeyDeletionOutcome KMSClient::CancelKeyDeletion(const CancelKeyDeletionReq
   return TracingUtils::MakeCallWithTiming<CancelKeyDeletionOutcome>(
     [&]()-> CancelKeyDeletionOutcome {
       return CancelKeyDeletionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -259,7 +259,7 @@ ConnectCustomKeyStoreOutcome KMSClient::ConnectCustomKeyStore(const ConnectCusto
   return TracingUtils::MakeCallWithTiming<ConnectCustomKeyStoreOutcome>(
     [&]()-> ConnectCustomKeyStoreOutcome {
       return ConnectCustomKeyStoreOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -281,7 +281,7 @@ CreateAliasOutcome KMSClient::CreateAlias(const CreateAliasRequest& request) con
   return TracingUtils::MakeCallWithTiming<CreateAliasOutcome>(
     [&]()-> CreateAliasOutcome {
       return CreateAliasOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -303,7 +303,7 @@ CreateCustomKeyStoreOutcome KMSClient::CreateCustomKeyStore(const CreateCustomKe
   return TracingUtils::MakeCallWithTiming<CreateCustomKeyStoreOutcome>(
     [&]()-> CreateCustomKeyStoreOutcome {
       return CreateCustomKeyStoreOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -325,7 +325,7 @@ CreateGrantOutcome KMSClient::CreateGrant(const CreateGrantRequest& request) con
   return TracingUtils::MakeCallWithTiming<CreateGrantOutcome>(
     [&]()-> CreateGrantOutcome {
       return CreateGrantOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -347,7 +347,7 @@ CreateKeyOutcome KMSClient::CreateKey(const CreateKeyRequest& request) const
   return TracingUtils::MakeCallWithTiming<CreateKeyOutcome>(
     [&]()-> CreateKeyOutcome {
       return CreateKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -369,7 +369,7 @@ DecryptOutcome KMSClient::Decrypt(const DecryptRequest& request) const
   return TracingUtils::MakeCallWithTiming<DecryptOutcome>(
     [&]()-> DecryptOutcome {
       return DecryptOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -391,7 +391,7 @@ DeleteAliasOutcome KMSClient::DeleteAlias(const DeleteAliasRequest& request) con
   return TracingUtils::MakeCallWithTiming<DeleteAliasOutcome>(
     [&]()-> DeleteAliasOutcome {
       return DeleteAliasOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -413,7 +413,7 @@ DeleteCustomKeyStoreOutcome KMSClient::DeleteCustomKeyStore(const DeleteCustomKe
   return TracingUtils::MakeCallWithTiming<DeleteCustomKeyStoreOutcome>(
     [&]()-> DeleteCustomKeyStoreOutcome {
       return DeleteCustomKeyStoreOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -435,7 +435,7 @@ DeleteImportedKeyMaterialOutcome KMSClient::DeleteImportedKeyMaterial(const Dele
   return TracingUtils::MakeCallWithTiming<DeleteImportedKeyMaterialOutcome>(
     [&]()-> DeleteImportedKeyMaterialOutcome {
       return DeleteImportedKeyMaterialOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -457,7 +457,7 @@ DeriveSharedSecretOutcome KMSClient::DeriveSharedSecret(const DeriveSharedSecret
   return TracingUtils::MakeCallWithTiming<DeriveSharedSecretOutcome>(
     [&]()-> DeriveSharedSecretOutcome {
       return DeriveSharedSecretOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -479,7 +479,7 @@ DescribeCustomKeyStoresOutcome KMSClient::DescribeCustomKeyStores(const Describe
   return TracingUtils::MakeCallWithTiming<DescribeCustomKeyStoresOutcome>(
     [&]()-> DescribeCustomKeyStoresOutcome {
       return DescribeCustomKeyStoresOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -501,7 +501,7 @@ DescribeKeyOutcome KMSClient::DescribeKey(const DescribeKeyRequest& request) con
   return TracingUtils::MakeCallWithTiming<DescribeKeyOutcome>(
     [&]()-> DescribeKeyOutcome {
       return DescribeKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -523,7 +523,7 @@ DisableKeyOutcome KMSClient::DisableKey(const DisableKeyRequest& request) const
   return TracingUtils::MakeCallWithTiming<DisableKeyOutcome>(
     [&]()-> DisableKeyOutcome {
       return DisableKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -545,7 +545,7 @@ DisableKeyRotationOutcome KMSClient::DisableKeyRotation(const DisableKeyRotation
   return TracingUtils::MakeCallWithTiming<DisableKeyRotationOutcome>(
     [&]()-> DisableKeyRotationOutcome {
       return DisableKeyRotationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -567,7 +567,7 @@ DisconnectCustomKeyStoreOutcome KMSClient::DisconnectCustomKeyStore(const Discon
   return TracingUtils::MakeCallWithTiming<DisconnectCustomKeyStoreOutcome>(
     [&]()-> DisconnectCustomKeyStoreOutcome {
       return DisconnectCustomKeyStoreOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -589,7 +589,7 @@ EnableKeyOutcome KMSClient::EnableKey(const EnableKeyRequest& request) const
   return TracingUtils::MakeCallWithTiming<EnableKeyOutcome>(
     [&]()-> EnableKeyOutcome {
       return EnableKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -611,7 +611,7 @@ EnableKeyRotationOutcome KMSClient::EnableKeyRotation(const EnableKeyRotationReq
   return TracingUtils::MakeCallWithTiming<EnableKeyRotationOutcome>(
     [&]()-> EnableKeyRotationOutcome {
       return EnableKeyRotationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -633,7 +633,7 @@ EncryptOutcome KMSClient::Encrypt(const EncryptRequest& request) const
   return TracingUtils::MakeCallWithTiming<EncryptOutcome>(
     [&]()-> EncryptOutcome {
       return EncryptOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -655,7 +655,7 @@ GenerateDataKeyOutcome KMSClient::GenerateDataKey(const GenerateDataKeyRequest& 
   return TracingUtils::MakeCallWithTiming<GenerateDataKeyOutcome>(
     [&]()-> GenerateDataKeyOutcome {
       return GenerateDataKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -677,7 +677,7 @@ GenerateDataKeyPairOutcome KMSClient::GenerateDataKeyPair(const GenerateDataKeyP
   return TracingUtils::MakeCallWithTiming<GenerateDataKeyPairOutcome>(
     [&]()-> GenerateDataKeyPairOutcome {
       return GenerateDataKeyPairOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -699,7 +699,7 @@ GenerateDataKeyPairWithoutPlaintextOutcome KMSClient::GenerateDataKeyPairWithout
   return TracingUtils::MakeCallWithTiming<GenerateDataKeyPairWithoutPlaintextOutcome>(
     [&]()-> GenerateDataKeyPairWithoutPlaintextOutcome {
       return GenerateDataKeyPairWithoutPlaintextOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -721,7 +721,7 @@ GenerateDataKeyWithoutPlaintextOutcome KMSClient::GenerateDataKeyWithoutPlaintex
   return TracingUtils::MakeCallWithTiming<GenerateDataKeyWithoutPlaintextOutcome>(
     [&]()-> GenerateDataKeyWithoutPlaintextOutcome {
       return GenerateDataKeyWithoutPlaintextOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -743,7 +743,7 @@ GenerateMacOutcome KMSClient::GenerateMac(const GenerateMacRequest& request) con
   return TracingUtils::MakeCallWithTiming<GenerateMacOutcome>(
     [&]()-> GenerateMacOutcome {
       return GenerateMacOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -765,7 +765,7 @@ GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& req
   return TracingUtils::MakeCallWithTiming<GenerateRandomOutcome>(
     [&]()-> GenerateRandomOutcome {
       return GenerateRandomOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -787,7 +787,7 @@ GetKeyPolicyOutcome KMSClient::GetKeyPolicy(const GetKeyPolicyRequest& request) 
   return TracingUtils::MakeCallWithTiming<GetKeyPolicyOutcome>(
     [&]()-> GetKeyPolicyOutcome {
       return GetKeyPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -809,7 +809,7 @@ GetKeyRotationStatusOutcome KMSClient::GetKeyRotationStatus(const GetKeyRotation
   return TracingUtils::MakeCallWithTiming<GetKeyRotationStatusOutcome>(
     [&]()-> GetKeyRotationStatusOutcome {
       return GetKeyRotationStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -831,7 +831,7 @@ GetParametersForImportOutcome KMSClient::GetParametersForImport(const GetParamet
   return TracingUtils::MakeCallWithTiming<GetParametersForImportOutcome>(
     [&]()-> GetParametersForImportOutcome {
       return GetParametersForImportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -853,7 +853,7 @@ GetPublicKeyOutcome KMSClient::GetPublicKey(const GetPublicKeyRequest& request) 
   return TracingUtils::MakeCallWithTiming<GetPublicKeyOutcome>(
     [&]()-> GetPublicKeyOutcome {
       return GetPublicKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -875,7 +875,7 @@ ImportKeyMaterialOutcome KMSClient::ImportKeyMaterial(const ImportKeyMaterialReq
   return TracingUtils::MakeCallWithTiming<ImportKeyMaterialOutcome>(
     [&]()-> ImportKeyMaterialOutcome {
       return ImportKeyMaterialOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -897,7 +897,7 @@ ListAliasesOutcome KMSClient::ListAliases(const ListAliasesRequest& request) con
   return TracingUtils::MakeCallWithTiming<ListAliasesOutcome>(
     [&]()-> ListAliasesOutcome {
       return ListAliasesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -919,7 +919,7 @@ ListGrantsOutcome KMSClient::ListGrants(const ListGrantsRequest& request) const
   return TracingUtils::MakeCallWithTiming<ListGrantsOutcome>(
     [&]()-> ListGrantsOutcome {
       return ListGrantsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -941,7 +941,7 @@ ListKeyPoliciesOutcome KMSClient::ListKeyPolicies(const ListKeyPoliciesRequest& 
   return TracingUtils::MakeCallWithTiming<ListKeyPoliciesOutcome>(
     [&]()-> ListKeyPoliciesOutcome {
       return ListKeyPoliciesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -963,7 +963,7 @@ ListKeyRotationsOutcome KMSClient::ListKeyRotations(const ListKeyRotationsReques
   return TracingUtils::MakeCallWithTiming<ListKeyRotationsOutcome>(
     [&]()-> ListKeyRotationsOutcome {
       return ListKeyRotationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -985,7 +985,7 @@ ListKeysOutcome KMSClient::ListKeys(const ListKeysRequest& request) const
   return TracingUtils::MakeCallWithTiming<ListKeysOutcome>(
     [&]()-> ListKeysOutcome {
       return ListKeysOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1007,7 +1007,7 @@ ListResourceTagsOutcome KMSClient::ListResourceTags(const ListResourceTagsReques
   return TracingUtils::MakeCallWithTiming<ListResourceTagsOutcome>(
     [&]()-> ListResourceTagsOutcome {
       return ListResourceTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1029,7 +1029,7 @@ ListRetirableGrantsOutcome KMSClient::ListRetirableGrants(const ListRetirableGra
   return TracingUtils::MakeCallWithTiming<ListRetirableGrantsOutcome>(
     [&]()-> ListRetirableGrantsOutcome {
       return ListRetirableGrantsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1051,7 +1051,7 @@ PutKeyPolicyOutcome KMSClient::PutKeyPolicy(const PutKeyPolicyRequest& request) 
   return TracingUtils::MakeCallWithTiming<PutKeyPolicyOutcome>(
     [&]()-> PutKeyPolicyOutcome {
       return PutKeyPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1073,7 +1073,7 @@ ReEncryptOutcome KMSClient::ReEncrypt(const ReEncryptRequest& request) const
   return TracingUtils::MakeCallWithTiming<ReEncryptOutcome>(
     [&]()-> ReEncryptOutcome {
       return ReEncryptOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1095,7 +1095,7 @@ ReplicateKeyOutcome KMSClient::ReplicateKey(const ReplicateKeyRequest& request) 
   return TracingUtils::MakeCallWithTiming<ReplicateKeyOutcome>(
     [&]()-> ReplicateKeyOutcome {
       return ReplicateKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1117,7 +1117,7 @@ RetireGrantOutcome KMSClient::RetireGrant(const RetireGrantRequest& request) con
   return TracingUtils::MakeCallWithTiming<RetireGrantOutcome>(
     [&]()-> RetireGrantOutcome {
       return RetireGrantOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1139,7 +1139,7 @@ RevokeGrantOutcome KMSClient::RevokeGrant(const RevokeGrantRequest& request) con
   return TracingUtils::MakeCallWithTiming<RevokeGrantOutcome>(
     [&]()-> RevokeGrantOutcome {
       return RevokeGrantOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1161,7 +1161,7 @@ RotateKeyOnDemandOutcome KMSClient::RotateKeyOnDemand(const RotateKeyOnDemandReq
   return TracingUtils::MakeCallWithTiming<RotateKeyOnDemandOutcome>(
     [&]()-> RotateKeyOnDemandOutcome {
       return RotateKeyOnDemandOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1183,7 +1183,7 @@ ScheduleKeyDeletionOutcome KMSClient::ScheduleKeyDeletion(const ScheduleKeyDelet
   return TracingUtils::MakeCallWithTiming<ScheduleKeyDeletionOutcome>(
     [&]()-> ScheduleKeyDeletionOutcome {
       return ScheduleKeyDeletionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1205,7 +1205,7 @@ SignOutcome KMSClient::Sign(const SignRequest& request) const
   return TracingUtils::MakeCallWithTiming<SignOutcome>(
     [&]()-> SignOutcome {
       return SignOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1227,7 +1227,7 @@ TagResourceOutcome KMSClient::TagResource(const TagResourceRequest& request) con
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1249,7 +1249,7 @@ UntagResourceOutcome KMSClient::UntagResource(const UntagResourceRequest& reques
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1271,7 +1271,7 @@ UpdateAliasOutcome KMSClient::UpdateAlias(const UpdateAliasRequest& request) con
   return TracingUtils::MakeCallWithTiming<UpdateAliasOutcome>(
     [&]()-> UpdateAliasOutcome {
       return UpdateAliasOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1293,7 +1293,7 @@ UpdateCustomKeyStoreOutcome KMSClient::UpdateCustomKeyStore(const UpdateCustomKe
   return TracingUtils::MakeCallWithTiming<UpdateCustomKeyStoreOutcome>(
     [&]()-> UpdateCustomKeyStoreOutcome {
       return UpdateCustomKeyStoreOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1315,7 +1315,7 @@ UpdateKeyDescriptionOutcome KMSClient::UpdateKeyDescription(const UpdateKeyDescr
   return TracingUtils::MakeCallWithTiming<UpdateKeyDescriptionOutcome>(
     [&]()-> UpdateKeyDescriptionOutcome {
       return UpdateKeyDescriptionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1337,7 +1337,7 @@ UpdatePrimaryRegionOutcome KMSClient::UpdatePrimaryRegion(const UpdatePrimaryReg
   return TracingUtils::MakeCallWithTiming<UpdatePrimaryRegionOutcome>(
     [&]()-> UpdatePrimaryRegionOutcome {
       return UpdatePrimaryRegionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1359,7 +1359,7 @@ VerifyOutcome KMSClient::Verify(const VerifyRequest& request) const
   return TracingUtils::MakeCallWithTiming<VerifyOutcome>(
     [&]()-> VerifyOutcome {
       return VerifyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1381,7 +1381,7 @@ VerifyMacOutcome KMSClient::VerifyMac(const VerifyMacRequest& request) const
   return TracingUtils::MakeCallWithTiming<VerifyMacOutcome>(
     [&]()-> VerifyMacOutcome {
       return VerifyMacOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

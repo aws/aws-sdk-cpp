@@ -24,24 +24,21 @@ ${indent}  Aws::StringStream ss;
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
-${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
 #set($hasEndPointOverrides = true)
 #if($pathAndQuery.get(0).toLowerCase().contains("resourcearn"))
-${indent}  endpointOverrides.setRfc3986Encoded = true;
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
 #end
-${indent}  endpointOverrides.AddPathSegment("${pathAndQuery.get(0)}");
+${indent}  resolvedEndpoint.AddPathSegments("${pathAndQuery.get(0)}");
 #end
 ${indent}  ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
-${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
 #set($hasEndPointOverrides = true)
 #if($uriPartString.get(0).toLowerCase().contains("resourcearn"))
-${indent}  endpointOverrides.setRfc3986Encoded = true;
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
 #end
-${indent}  endpointOverrides.AddPathSegment("$uriPartString");
+${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
 #elseif($uriVars.size() > 0)
 #set($hasEndPointOverrides = true)
-${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
 #end## ---------------------------- if (request uri contains query) end ------
 #foreach($var in $uriVars)## for (parameter in request uri parameters) -------
 #set($varIndex = $partIndex - 1)
@@ -59,11 +56,11 @@ ${indent}  ss << $parameter;
 #else
 #if($greedySyntax)
 #if($parameter.toLowerCase().contains("resourcearn"))
-${indent}  endpointOverrides.setRfc3986Encoded = true;
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
 #end
-${indent}  endpointOverrides.AddPathSegment($parameter);
+${indent}  resolvedEndpoint.AddPathSegments($parameter);
 #else
-${indent}  endpointOverrides.AddPathSegment($parameter);
+${indent}  resolvedEndpoint.AddPathSegment($parameter);
 #end
 #end
 #if($uriParts.size() > $partIndex)
@@ -73,16 +70,16 @@ ${indent}  endpointOverrides.AddPathSegment($parameter);
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
 #if($pathAndQuery.get(0).toLowerCase().contains("resourcearn"))
-${indent}  endpointOverrides.setRfc3986Encoded = true;
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
 #end
-${indent}  endpointOverrides.AddPathSegment("${pathAndQuery.get(0)}");
+${indent}  resolvedEndpoint.AddPathSegment("${pathAndQuery.get(0)}");
 #end
 ${indent}  ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
 #if($uriPartString.toLowerCase().contains("resourcearn"))
-${indent}  endpointOverrides.setRfc3986Encoded = true;
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
 #end
-${indent}  endpointOverrides.AddPathSegment("$uriPartString");
+${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
 #end
 #end
 #end## --------------------- if !skipFirst end ---
@@ -91,5 +88,5 @@ ${indent}  endpointOverrides.AddPathSegment("$uriPartString");
 #end## --------------------- if uriParts.size() > startIndex end ---
 #end## --------------------- for (parameter in request uri parameters) end ---
 #if($queryStart)
-${indent}  endpointOverrides.queryString = ss.str();
+${indent}  resolvedEndpoint.queryString = ss.str();
 #end

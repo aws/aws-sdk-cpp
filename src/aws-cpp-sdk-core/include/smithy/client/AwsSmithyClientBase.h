@@ -55,21 +55,8 @@ namespace Aws
     namespace Endpoint
     {
         class AWSEndpoint;
-
-        struct AWSEndpointResolutionOverrides {
-          Aws::Vector<Aws::String> pathSegments;
-          template<typename T>
-            inline void AddPathSegment(T&& pathSegment)
-            {
-                Aws::StringStream ss;
-                ss << std::forward<T>(pathSegment);
-                pathSegments.emplace_back(ss.str());
-            }
-          bool setRfc3986Encoded{false};
-          Aws::String queryString;
-        };
-        }  // namespace Endpoint
-        }  // namespace Aws
+    }  // namespace Endpoint
+}  // namespace Aws
 
 namespace smithy {
 namespace client

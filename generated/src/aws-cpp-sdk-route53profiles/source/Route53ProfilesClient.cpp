@@ -199,16 +199,8 @@ AssociateProfileOutcome Route53ProfilesClient::AssociateProfile(const AssociateP
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssociateProfileOutcome>(
     [&]()-> AssociateProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileassociation");
-      return AssociateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AssociateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileassociation");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -229,16 +221,8 @@ AssociateResourceToProfileOutcome Route53ProfilesClient::AssociateResourceToProf
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssociateResourceToProfileOutcome>(
     [&]()-> AssociateResourceToProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileresourceassociation");
-      return AssociateResourceToProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AssociateResourceToProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileresourceassociation");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -259,16 +243,8 @@ CreateProfileOutcome Route53ProfilesClient::CreateProfile(const CreateProfileReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateProfileOutcome>(
     [&]()-> CreateProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profile");
-      return CreateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profile");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -294,17 +270,9 @@ DeleteProfileOutcome Route53ProfilesClient::DeleteProfile(const DeleteProfileReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteProfileOutcome>(
     [&]()-> DeleteProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profile/");
-      endpointOverrides.AddPathSegment(request.GetProfileId());
-      return DeleteProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profile/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -335,19 +303,11 @@ DisassociateProfileOutcome Route53ProfilesClient::DisassociateProfile(const Disa
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DisassociateProfileOutcome>(
     [&]()-> DisassociateProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileassociation/Profileid/");
-      endpointOverrides.AddPathSegment(request.GetProfileId());
-      endpointOverrides.AddPathSegment("/resourceid/");
-      endpointOverrides.AddPathSegment(request.GetResourceId());
-      return DisassociateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DisassociateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileassociation/Profileid/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileId());
+      resolvedEndpoint.AddPathSegments("/resourceid/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -378,20 +338,12 @@ DisassociateResourceFromProfileOutcome Route53ProfilesClient::DisassociateResour
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DisassociateResourceFromProfileOutcome>(
     [&]()-> DisassociateResourceFromProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileresourceassociation/profileid/");
-      endpointOverrides.AddPathSegment(request.GetProfileId());
-      endpointOverrides.setRfc3986Encoded = true;
-      endpointOverrides.AddPathSegment("/resourcearn/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return DisassociateResourceFromProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DisassociateResourceFromProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileresourceassociation/profileid/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileId());
+      resolvedEndpoint.SetRfc3986Encoded(true);
+      resolvedEndpoint.AddPathSegments("/resourcearn/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -417,17 +369,9 @@ GetProfileOutcome Route53ProfilesClient::GetProfile(const GetProfileRequest& req
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetProfileOutcome>(
     [&]()-> GetProfileOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profile/");
-      endpointOverrides.AddPathSegment(request.GetProfileId());
-      return GetProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profile/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -453,17 +397,9 @@ GetProfileAssociationOutcome Route53ProfilesClient::GetProfileAssociation(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetProfileAssociationOutcome>(
     [&]()-> GetProfileAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileassociation/");
-      endpointOverrides.AddPathSegment(request.GetProfileAssociationId());
-      return GetProfileAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetProfileAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileassociation/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileAssociationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -489,17 +425,9 @@ GetProfileResourceAssociationOutcome Route53ProfilesClient::GetProfileResourceAs
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetProfileResourceAssociationOutcome>(
     [&]()-> GetProfileResourceAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileresourceassociation/");
-      endpointOverrides.AddPathSegment(request.GetProfileResourceAssociationId());
-      return GetProfileResourceAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetProfileResourceAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileresourceassociation/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileResourceAssociationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -520,16 +448,8 @@ ListProfileAssociationsOutcome Route53ProfilesClient::ListProfileAssociations(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListProfileAssociationsOutcome>(
     [&]()-> ListProfileAssociationsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileassociations");
-      return ListProfileAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListProfileAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileassociations");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -555,17 +475,9 @@ ListProfileResourceAssociationsOutcome Route53ProfilesClient::ListProfileResourc
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListProfileResourceAssociationsOutcome>(
     [&]()-> ListProfileResourceAssociationsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileresourceassociations/profileid/");
-      endpointOverrides.AddPathSegment(request.GetProfileId());
-      return ListProfileResourceAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListProfileResourceAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileresourceassociations/profileid/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -586,16 +498,8 @@ ListProfilesOutcome Route53ProfilesClient::ListProfiles(const ListProfilesReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListProfilesOutcome>(
     [&]()-> ListProfilesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profiles");
-      return ListProfilesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListProfilesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profiles");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -621,17 +525,9 @@ ListTagsForResourceOutcome Route53ProfilesClient::ListTagsForResource(const List
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -657,17 +553,9 @@ TagResourceOutcome Route53ProfilesClient::TagResource(const TagResourceRequest& 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -698,17 +586,9 @@ UntagResourceOutcome Route53ProfilesClient::UntagResource(const UntagResourceReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceArn());
-      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -734,17 +614,9 @@ UpdateProfileResourceAssociationOutcome Route53ProfilesClient::UpdateProfileReso
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateProfileResourceAssociationOutcome>(
     [&]()-> UpdateProfileResourceAssociationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/profileresourceassociation/");
-      endpointOverrides.AddPathSegment(request.GetProfileResourceAssociationId());
-      return UpdateProfileResourceAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateProfileResourceAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/profileresourceassociation/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileResourceAssociationId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

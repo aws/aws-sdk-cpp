@@ -190,16 +190,8 @@ GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetLatestConfigurationOutcome>(
     [&]()-> GetLatestConfigurationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/configuration");
-      return GetLatestConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetLatestConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/configuration");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -220,16 +212,8 @@ StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartConfigurationSessionOutcome>(
     [&]()-> StartConfigurationSessionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/configurationsessions");
-      return StartConfigurationSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartConfigurationSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/configurationsessions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

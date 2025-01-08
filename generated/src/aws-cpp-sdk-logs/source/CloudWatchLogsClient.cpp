@@ -271,7 +271,7 @@ AssociateKmsKeyOutcome CloudWatchLogsClient::AssociateKmsKey(const AssociateKmsK
   return TracingUtils::MakeCallWithTiming<AssociateKmsKeyOutcome>(
     [&]()-> AssociateKmsKeyOutcome {
       return AssociateKmsKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -293,7 +293,7 @@ CancelExportTaskOutcome CloudWatchLogsClient::CancelExportTask(const CancelExpor
   return TracingUtils::MakeCallWithTiming<CancelExportTaskOutcome>(
     [&]()-> CancelExportTaskOutcome {
       return CancelExportTaskOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -315,7 +315,7 @@ CreateDeliveryOutcome CloudWatchLogsClient::CreateDelivery(const CreateDeliveryR
   return TracingUtils::MakeCallWithTiming<CreateDeliveryOutcome>(
     [&]()-> CreateDeliveryOutcome {
       return CreateDeliveryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -337,7 +337,7 @@ CreateExportTaskOutcome CloudWatchLogsClient::CreateExportTask(const CreateExpor
   return TracingUtils::MakeCallWithTiming<CreateExportTaskOutcome>(
     [&]()-> CreateExportTaskOutcome {
       return CreateExportTaskOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -359,7 +359,7 @@ CreateLogAnomalyDetectorOutcome CloudWatchLogsClient::CreateLogAnomalyDetector(c
   return TracingUtils::MakeCallWithTiming<CreateLogAnomalyDetectorOutcome>(
     [&]()-> CreateLogAnomalyDetectorOutcome {
       return CreateLogAnomalyDetectorOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -381,7 +381,7 @@ CreateLogGroupOutcome CloudWatchLogsClient::CreateLogGroup(const CreateLogGroupR
   return TracingUtils::MakeCallWithTiming<CreateLogGroupOutcome>(
     [&]()-> CreateLogGroupOutcome {
       return CreateLogGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -403,7 +403,7 @@ CreateLogStreamOutcome CloudWatchLogsClient::CreateLogStream(const CreateLogStre
   return TracingUtils::MakeCallWithTiming<CreateLogStreamOutcome>(
     [&]()-> CreateLogStreamOutcome {
       return CreateLogStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -425,7 +425,7 @@ DeleteAccountPolicyOutcome CloudWatchLogsClient::DeleteAccountPolicy(const Delet
   return TracingUtils::MakeCallWithTiming<DeleteAccountPolicyOutcome>(
     [&]()-> DeleteAccountPolicyOutcome {
       return DeleteAccountPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -447,7 +447,7 @@ DeleteDataProtectionPolicyOutcome CloudWatchLogsClient::DeleteDataProtectionPoli
   return TracingUtils::MakeCallWithTiming<DeleteDataProtectionPolicyOutcome>(
     [&]()-> DeleteDataProtectionPolicyOutcome {
       return DeleteDataProtectionPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -469,7 +469,7 @@ DeleteDeliveryOutcome CloudWatchLogsClient::DeleteDelivery(const DeleteDeliveryR
   return TracingUtils::MakeCallWithTiming<DeleteDeliveryOutcome>(
     [&]()-> DeleteDeliveryOutcome {
       return DeleteDeliveryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -491,7 +491,7 @@ DeleteDeliveryDestinationOutcome CloudWatchLogsClient::DeleteDeliveryDestination
   return TracingUtils::MakeCallWithTiming<DeleteDeliveryDestinationOutcome>(
     [&]()-> DeleteDeliveryDestinationOutcome {
       return DeleteDeliveryDestinationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -513,7 +513,7 @@ DeleteDeliveryDestinationPolicyOutcome CloudWatchLogsClient::DeleteDeliveryDesti
   return TracingUtils::MakeCallWithTiming<DeleteDeliveryDestinationPolicyOutcome>(
     [&]()-> DeleteDeliveryDestinationPolicyOutcome {
       return DeleteDeliveryDestinationPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -535,7 +535,7 @@ DeleteDeliverySourceOutcome CloudWatchLogsClient::DeleteDeliverySource(const Del
   return TracingUtils::MakeCallWithTiming<DeleteDeliverySourceOutcome>(
     [&]()-> DeleteDeliverySourceOutcome {
       return DeleteDeliverySourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -557,7 +557,7 @@ DeleteDestinationOutcome CloudWatchLogsClient::DeleteDestination(const DeleteDes
   return TracingUtils::MakeCallWithTiming<DeleteDestinationOutcome>(
     [&]()-> DeleteDestinationOutcome {
       return DeleteDestinationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -579,7 +579,7 @@ DeleteIndexPolicyOutcome CloudWatchLogsClient::DeleteIndexPolicy(const DeleteInd
   return TracingUtils::MakeCallWithTiming<DeleteIndexPolicyOutcome>(
     [&]()-> DeleteIndexPolicyOutcome {
       return DeleteIndexPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -601,7 +601,7 @@ DeleteIntegrationOutcome CloudWatchLogsClient::DeleteIntegration(const DeleteInt
   return TracingUtils::MakeCallWithTiming<DeleteIntegrationOutcome>(
     [&]()-> DeleteIntegrationOutcome {
       return DeleteIntegrationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -623,7 +623,7 @@ DeleteLogAnomalyDetectorOutcome CloudWatchLogsClient::DeleteLogAnomalyDetector(c
   return TracingUtils::MakeCallWithTiming<DeleteLogAnomalyDetectorOutcome>(
     [&]()-> DeleteLogAnomalyDetectorOutcome {
       return DeleteLogAnomalyDetectorOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -645,7 +645,7 @@ DeleteLogGroupOutcome CloudWatchLogsClient::DeleteLogGroup(const DeleteLogGroupR
   return TracingUtils::MakeCallWithTiming<DeleteLogGroupOutcome>(
     [&]()-> DeleteLogGroupOutcome {
       return DeleteLogGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -667,7 +667,7 @@ DeleteLogStreamOutcome CloudWatchLogsClient::DeleteLogStream(const DeleteLogStre
   return TracingUtils::MakeCallWithTiming<DeleteLogStreamOutcome>(
     [&]()-> DeleteLogStreamOutcome {
       return DeleteLogStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -689,7 +689,7 @@ DeleteMetricFilterOutcome CloudWatchLogsClient::DeleteMetricFilter(const DeleteM
   return TracingUtils::MakeCallWithTiming<DeleteMetricFilterOutcome>(
     [&]()-> DeleteMetricFilterOutcome {
       return DeleteMetricFilterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -711,7 +711,7 @@ DeleteQueryDefinitionOutcome CloudWatchLogsClient::DeleteQueryDefinition(const D
   return TracingUtils::MakeCallWithTiming<DeleteQueryDefinitionOutcome>(
     [&]()-> DeleteQueryDefinitionOutcome {
       return DeleteQueryDefinitionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -733,7 +733,7 @@ DeleteResourcePolicyOutcome CloudWatchLogsClient::DeleteResourcePolicy(const Del
   return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
     [&]()-> DeleteResourcePolicyOutcome {
       return DeleteResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -755,7 +755,7 @@ DeleteRetentionPolicyOutcome CloudWatchLogsClient::DeleteRetentionPolicy(const D
   return TracingUtils::MakeCallWithTiming<DeleteRetentionPolicyOutcome>(
     [&]()-> DeleteRetentionPolicyOutcome {
       return DeleteRetentionPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -777,7 +777,7 @@ DeleteSubscriptionFilterOutcome CloudWatchLogsClient::DeleteSubscriptionFilter(c
   return TracingUtils::MakeCallWithTiming<DeleteSubscriptionFilterOutcome>(
     [&]()-> DeleteSubscriptionFilterOutcome {
       return DeleteSubscriptionFilterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -799,7 +799,7 @@ DeleteTransformerOutcome CloudWatchLogsClient::DeleteTransformer(const DeleteTra
   return TracingUtils::MakeCallWithTiming<DeleteTransformerOutcome>(
     [&]()-> DeleteTransformerOutcome {
       return DeleteTransformerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -821,7 +821,7 @@ DescribeAccountPoliciesOutcome CloudWatchLogsClient::DescribeAccountPolicies(con
   return TracingUtils::MakeCallWithTiming<DescribeAccountPoliciesOutcome>(
     [&]()-> DescribeAccountPoliciesOutcome {
       return DescribeAccountPoliciesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -843,7 +843,7 @@ DescribeConfigurationTemplatesOutcome CloudWatchLogsClient::DescribeConfiguratio
   return TracingUtils::MakeCallWithTiming<DescribeConfigurationTemplatesOutcome>(
     [&]()-> DescribeConfigurationTemplatesOutcome {
       return DescribeConfigurationTemplatesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -865,7 +865,7 @@ DescribeDeliveriesOutcome CloudWatchLogsClient::DescribeDeliveries(const Describ
   return TracingUtils::MakeCallWithTiming<DescribeDeliveriesOutcome>(
     [&]()-> DescribeDeliveriesOutcome {
       return DescribeDeliveriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -887,7 +887,7 @@ DescribeDeliveryDestinationsOutcome CloudWatchLogsClient::DescribeDeliveryDestin
   return TracingUtils::MakeCallWithTiming<DescribeDeliveryDestinationsOutcome>(
     [&]()-> DescribeDeliveryDestinationsOutcome {
       return DescribeDeliveryDestinationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -909,7 +909,7 @@ DescribeDeliverySourcesOutcome CloudWatchLogsClient::DescribeDeliverySources(con
   return TracingUtils::MakeCallWithTiming<DescribeDeliverySourcesOutcome>(
     [&]()-> DescribeDeliverySourcesOutcome {
       return DescribeDeliverySourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -931,7 +931,7 @@ DescribeDestinationsOutcome CloudWatchLogsClient::DescribeDestinations(const Des
   return TracingUtils::MakeCallWithTiming<DescribeDestinationsOutcome>(
     [&]()-> DescribeDestinationsOutcome {
       return DescribeDestinationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -953,7 +953,7 @@ DescribeExportTasksOutcome CloudWatchLogsClient::DescribeExportTasks(const Descr
   return TracingUtils::MakeCallWithTiming<DescribeExportTasksOutcome>(
     [&]()-> DescribeExportTasksOutcome {
       return DescribeExportTasksOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -975,7 +975,7 @@ DescribeFieldIndexesOutcome CloudWatchLogsClient::DescribeFieldIndexes(const Des
   return TracingUtils::MakeCallWithTiming<DescribeFieldIndexesOutcome>(
     [&]()-> DescribeFieldIndexesOutcome {
       return DescribeFieldIndexesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -997,7 +997,7 @@ DescribeIndexPoliciesOutcome CloudWatchLogsClient::DescribeIndexPolicies(const D
   return TracingUtils::MakeCallWithTiming<DescribeIndexPoliciesOutcome>(
     [&]()-> DescribeIndexPoliciesOutcome {
       return DescribeIndexPoliciesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1019,7 +1019,7 @@ DescribeLogGroupsOutcome CloudWatchLogsClient::DescribeLogGroups(const DescribeL
   return TracingUtils::MakeCallWithTiming<DescribeLogGroupsOutcome>(
     [&]()-> DescribeLogGroupsOutcome {
       return DescribeLogGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1041,7 +1041,7 @@ DescribeLogStreamsOutcome CloudWatchLogsClient::DescribeLogStreams(const Describ
   return TracingUtils::MakeCallWithTiming<DescribeLogStreamsOutcome>(
     [&]()-> DescribeLogStreamsOutcome {
       return DescribeLogStreamsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1063,7 +1063,7 @@ DescribeMetricFiltersOutcome CloudWatchLogsClient::DescribeMetricFilters(const D
   return TracingUtils::MakeCallWithTiming<DescribeMetricFiltersOutcome>(
     [&]()-> DescribeMetricFiltersOutcome {
       return DescribeMetricFiltersOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1085,7 +1085,7 @@ DescribeQueriesOutcome CloudWatchLogsClient::DescribeQueries(const DescribeQueri
   return TracingUtils::MakeCallWithTiming<DescribeQueriesOutcome>(
     [&]()-> DescribeQueriesOutcome {
       return DescribeQueriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1107,7 +1107,7 @@ DescribeQueryDefinitionsOutcome CloudWatchLogsClient::DescribeQueryDefinitions(c
   return TracingUtils::MakeCallWithTiming<DescribeQueryDefinitionsOutcome>(
     [&]()-> DescribeQueryDefinitionsOutcome {
       return DescribeQueryDefinitionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1129,7 +1129,7 @@ DescribeResourcePoliciesOutcome CloudWatchLogsClient::DescribeResourcePolicies(c
   return TracingUtils::MakeCallWithTiming<DescribeResourcePoliciesOutcome>(
     [&]()-> DescribeResourcePoliciesOutcome {
       return DescribeResourcePoliciesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1151,7 +1151,7 @@ DescribeSubscriptionFiltersOutcome CloudWatchLogsClient::DescribeSubscriptionFil
   return TracingUtils::MakeCallWithTiming<DescribeSubscriptionFiltersOutcome>(
     [&]()-> DescribeSubscriptionFiltersOutcome {
       return DescribeSubscriptionFiltersOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1173,7 +1173,7 @@ DisassociateKmsKeyOutcome CloudWatchLogsClient::DisassociateKmsKey(const Disasso
   return TracingUtils::MakeCallWithTiming<DisassociateKmsKeyOutcome>(
     [&]()-> DisassociateKmsKeyOutcome {
       return DisassociateKmsKeyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1195,7 +1195,7 @@ FilterLogEventsOutcome CloudWatchLogsClient::FilterLogEvents(const FilterLogEven
   return TracingUtils::MakeCallWithTiming<FilterLogEventsOutcome>(
     [&]()-> FilterLogEventsOutcome {
       return FilterLogEventsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1217,7 +1217,7 @@ GetDataProtectionPolicyOutcome CloudWatchLogsClient::GetDataProtectionPolicy(con
   return TracingUtils::MakeCallWithTiming<GetDataProtectionPolicyOutcome>(
     [&]()-> GetDataProtectionPolicyOutcome {
       return GetDataProtectionPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1239,7 +1239,7 @@ GetDeliveryOutcome CloudWatchLogsClient::GetDelivery(const GetDeliveryRequest& r
   return TracingUtils::MakeCallWithTiming<GetDeliveryOutcome>(
     [&]()-> GetDeliveryOutcome {
       return GetDeliveryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1261,7 +1261,7 @@ GetDeliveryDestinationOutcome CloudWatchLogsClient::GetDeliveryDestination(const
   return TracingUtils::MakeCallWithTiming<GetDeliveryDestinationOutcome>(
     [&]()-> GetDeliveryDestinationOutcome {
       return GetDeliveryDestinationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1283,7 +1283,7 @@ GetDeliveryDestinationPolicyOutcome CloudWatchLogsClient::GetDeliveryDestination
   return TracingUtils::MakeCallWithTiming<GetDeliveryDestinationPolicyOutcome>(
     [&]()-> GetDeliveryDestinationPolicyOutcome {
       return GetDeliveryDestinationPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1305,7 +1305,7 @@ GetDeliverySourceOutcome CloudWatchLogsClient::GetDeliverySource(const GetDelive
   return TracingUtils::MakeCallWithTiming<GetDeliverySourceOutcome>(
     [&]()-> GetDeliverySourceOutcome {
       return GetDeliverySourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1327,7 +1327,7 @@ GetIntegrationOutcome CloudWatchLogsClient::GetIntegration(const GetIntegrationR
   return TracingUtils::MakeCallWithTiming<GetIntegrationOutcome>(
     [&]()-> GetIntegrationOutcome {
       return GetIntegrationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1349,7 +1349,7 @@ GetLogAnomalyDetectorOutcome CloudWatchLogsClient::GetLogAnomalyDetector(const G
   return TracingUtils::MakeCallWithTiming<GetLogAnomalyDetectorOutcome>(
     [&]()-> GetLogAnomalyDetectorOutcome {
       return GetLogAnomalyDetectorOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1371,7 +1371,7 @@ GetLogEventsOutcome CloudWatchLogsClient::GetLogEvents(const GetLogEventsRequest
   return TracingUtils::MakeCallWithTiming<GetLogEventsOutcome>(
     [&]()-> GetLogEventsOutcome {
       return GetLogEventsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1393,7 +1393,7 @@ GetLogGroupFieldsOutcome CloudWatchLogsClient::GetLogGroupFields(const GetLogGro
   return TracingUtils::MakeCallWithTiming<GetLogGroupFieldsOutcome>(
     [&]()-> GetLogGroupFieldsOutcome {
       return GetLogGroupFieldsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1415,7 +1415,7 @@ GetLogRecordOutcome CloudWatchLogsClient::GetLogRecord(const GetLogRecordRequest
   return TracingUtils::MakeCallWithTiming<GetLogRecordOutcome>(
     [&]()-> GetLogRecordOutcome {
       return GetLogRecordOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1437,7 +1437,7 @@ GetQueryResultsOutcome CloudWatchLogsClient::GetQueryResults(const GetQueryResul
   return TracingUtils::MakeCallWithTiming<GetQueryResultsOutcome>(
     [&]()-> GetQueryResultsOutcome {
       return GetQueryResultsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1459,7 +1459,7 @@ GetTransformerOutcome CloudWatchLogsClient::GetTransformer(const GetTransformerR
   return TracingUtils::MakeCallWithTiming<GetTransformerOutcome>(
     [&]()-> GetTransformerOutcome {
       return GetTransformerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1481,7 +1481,7 @@ ListAnomaliesOutcome CloudWatchLogsClient::ListAnomalies(const ListAnomaliesRequ
   return TracingUtils::MakeCallWithTiming<ListAnomaliesOutcome>(
     [&]()-> ListAnomaliesOutcome {
       return ListAnomaliesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1503,7 +1503,7 @@ ListIntegrationsOutcome CloudWatchLogsClient::ListIntegrations(const ListIntegra
   return TracingUtils::MakeCallWithTiming<ListIntegrationsOutcome>(
     [&]()-> ListIntegrationsOutcome {
       return ListIntegrationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1525,7 +1525,7 @@ ListLogAnomalyDetectorsOutcome CloudWatchLogsClient::ListLogAnomalyDetectors(con
   return TracingUtils::MakeCallWithTiming<ListLogAnomalyDetectorsOutcome>(
     [&]()-> ListLogAnomalyDetectorsOutcome {
       return ListLogAnomalyDetectorsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1547,7 +1547,7 @@ ListLogGroupsForQueryOutcome CloudWatchLogsClient::ListLogGroupsForQuery(const L
   return TracingUtils::MakeCallWithTiming<ListLogGroupsForQueryOutcome>(
     [&]()-> ListLogGroupsForQueryOutcome {
       return ListLogGroupsForQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1569,7 +1569,7 @@ ListTagsForResourceOutcome CloudWatchLogsClient::ListTagsForResource(const ListT
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1591,7 +1591,7 @@ PutAccountPolicyOutcome CloudWatchLogsClient::PutAccountPolicy(const PutAccountP
   return TracingUtils::MakeCallWithTiming<PutAccountPolicyOutcome>(
     [&]()-> PutAccountPolicyOutcome {
       return PutAccountPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1613,7 +1613,7 @@ PutDataProtectionPolicyOutcome CloudWatchLogsClient::PutDataProtectionPolicy(con
   return TracingUtils::MakeCallWithTiming<PutDataProtectionPolicyOutcome>(
     [&]()-> PutDataProtectionPolicyOutcome {
       return PutDataProtectionPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1635,7 +1635,7 @@ PutDeliveryDestinationOutcome CloudWatchLogsClient::PutDeliveryDestination(const
   return TracingUtils::MakeCallWithTiming<PutDeliveryDestinationOutcome>(
     [&]()-> PutDeliveryDestinationOutcome {
       return PutDeliveryDestinationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1657,7 +1657,7 @@ PutDeliveryDestinationPolicyOutcome CloudWatchLogsClient::PutDeliveryDestination
   return TracingUtils::MakeCallWithTiming<PutDeliveryDestinationPolicyOutcome>(
     [&]()-> PutDeliveryDestinationPolicyOutcome {
       return PutDeliveryDestinationPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1679,7 +1679,7 @@ PutDeliverySourceOutcome CloudWatchLogsClient::PutDeliverySource(const PutDelive
   return TracingUtils::MakeCallWithTiming<PutDeliverySourceOutcome>(
     [&]()-> PutDeliverySourceOutcome {
       return PutDeliverySourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1701,7 +1701,7 @@ PutDestinationOutcome CloudWatchLogsClient::PutDestination(const PutDestinationR
   return TracingUtils::MakeCallWithTiming<PutDestinationOutcome>(
     [&]()-> PutDestinationOutcome {
       return PutDestinationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1723,7 +1723,7 @@ PutDestinationPolicyOutcome CloudWatchLogsClient::PutDestinationPolicy(const Put
   return TracingUtils::MakeCallWithTiming<PutDestinationPolicyOutcome>(
     [&]()-> PutDestinationPolicyOutcome {
       return PutDestinationPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1745,7 +1745,7 @@ PutIndexPolicyOutcome CloudWatchLogsClient::PutIndexPolicy(const PutIndexPolicyR
   return TracingUtils::MakeCallWithTiming<PutIndexPolicyOutcome>(
     [&]()-> PutIndexPolicyOutcome {
       return PutIndexPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1767,7 +1767,7 @@ PutIntegrationOutcome CloudWatchLogsClient::PutIntegration(const PutIntegrationR
   return TracingUtils::MakeCallWithTiming<PutIntegrationOutcome>(
     [&]()-> PutIntegrationOutcome {
       return PutIntegrationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1789,7 +1789,7 @@ PutLogEventsOutcome CloudWatchLogsClient::PutLogEvents(const PutLogEventsRequest
   return TracingUtils::MakeCallWithTiming<PutLogEventsOutcome>(
     [&]()-> PutLogEventsOutcome {
       return PutLogEventsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1811,7 +1811,7 @@ PutMetricFilterOutcome CloudWatchLogsClient::PutMetricFilter(const PutMetricFilt
   return TracingUtils::MakeCallWithTiming<PutMetricFilterOutcome>(
     [&]()-> PutMetricFilterOutcome {
       return PutMetricFilterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1833,7 +1833,7 @@ PutQueryDefinitionOutcome CloudWatchLogsClient::PutQueryDefinition(const PutQuer
   return TracingUtils::MakeCallWithTiming<PutQueryDefinitionOutcome>(
     [&]()-> PutQueryDefinitionOutcome {
       return PutQueryDefinitionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1855,7 +1855,7 @@ PutResourcePolicyOutcome CloudWatchLogsClient::PutResourcePolicy(const PutResour
   return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
     [&]()-> PutResourcePolicyOutcome {
       return PutResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1877,7 +1877,7 @@ PutRetentionPolicyOutcome CloudWatchLogsClient::PutRetentionPolicy(const PutRete
   return TracingUtils::MakeCallWithTiming<PutRetentionPolicyOutcome>(
     [&]()-> PutRetentionPolicyOutcome {
       return PutRetentionPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1899,7 +1899,7 @@ PutSubscriptionFilterOutcome CloudWatchLogsClient::PutSubscriptionFilter(const P
   return TracingUtils::MakeCallWithTiming<PutSubscriptionFilterOutcome>(
     [&]()-> PutSubscriptionFilterOutcome {
       return PutSubscriptionFilterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1921,7 +1921,7 @@ PutTransformerOutcome CloudWatchLogsClient::PutTransformer(const PutTransformerR
   return TracingUtils::MakeCallWithTiming<PutTransformerOutcome>(
     [&]()-> PutTransformerOutcome {
       return PutTransformerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1946,7 +1946,7 @@ StartLiveTailOutcome CloudWatchLogsClient::StartLiveTail(StartLiveTailRequest& r
           [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
       );
       return StartLiveTailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1968,7 +1968,7 @@ StartQueryOutcome CloudWatchLogsClient::StartQuery(const StartQueryRequest& requ
   return TracingUtils::MakeCallWithTiming<StartQueryOutcome>(
     [&]()-> StartQueryOutcome {
       return StartQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1990,7 +1990,7 @@ StopQueryOutcome CloudWatchLogsClient::StopQuery(const StopQueryRequest& request
   return TracingUtils::MakeCallWithTiming<StopQueryOutcome>(
     [&]()-> StopQueryOutcome {
       return StopQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2012,7 +2012,7 @@ TagResourceOutcome CloudWatchLogsClient::TagResource(const TagResourceRequest& r
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2034,7 +2034,7 @@ TestMetricFilterOutcome CloudWatchLogsClient::TestMetricFilter(const TestMetricF
   return TracingUtils::MakeCallWithTiming<TestMetricFilterOutcome>(
     [&]()-> TestMetricFilterOutcome {
       return TestMetricFilterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2056,7 +2056,7 @@ TestTransformerOutcome CloudWatchLogsClient::TestTransformer(const TestTransform
   return TracingUtils::MakeCallWithTiming<TestTransformerOutcome>(
     [&]()-> TestTransformerOutcome {
       return TestTransformerOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2078,7 +2078,7 @@ UntagResourceOutcome CloudWatchLogsClient::UntagResource(const UntagResourceRequ
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2100,7 +2100,7 @@ UpdateAnomalyOutcome CloudWatchLogsClient::UpdateAnomaly(const UpdateAnomalyRequ
   return TracingUtils::MakeCallWithTiming<UpdateAnomalyOutcome>(
     [&]()-> UpdateAnomalyOutcome {
       return UpdateAnomalyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2122,7 +2122,7 @@ UpdateDeliveryConfigurationOutcome CloudWatchLogsClient::UpdateDeliveryConfigura
   return TracingUtils::MakeCallWithTiming<UpdateDeliveryConfigurationOutcome>(
     [&]()-> UpdateDeliveryConfigurationOutcome {
       return UpdateDeliveryConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2144,7 +2144,7 @@ UpdateLogAnomalyDetectorOutcome CloudWatchLogsClient::UpdateLogAnomalyDetector(c
   return TracingUtils::MakeCallWithTiming<UpdateLogAnomalyDetectorOutcome>(
     [&]()-> UpdateLogAnomalyDetectorOutcome {
       return UpdateLogAnomalyDetectorOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

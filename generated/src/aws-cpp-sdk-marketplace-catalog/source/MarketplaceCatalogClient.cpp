@@ -196,16 +196,8 @@ BatchDescribeEntitiesOutcome MarketplaceCatalogClient::BatchDescribeEntities(con
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<BatchDescribeEntitiesOutcome>(
     [&]()-> BatchDescribeEntitiesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/BatchDescribeEntities");
-      return BatchDescribeEntitiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return BatchDescribeEntitiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/BatchDescribeEntities");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -236,16 +228,8 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelChangeSetOutcome>(
     [&]()-> CancelChangeSetOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/CancelChangeSet");
-      return CancelChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CancelChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/CancelChangeSet");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -271,16 +255,8 @@ DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
     [&]()-> DeleteResourcePolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/DeleteResourcePolicy");
-      return DeleteResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/DeleteResourcePolicy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -311,16 +287,8 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeChangeSetOutcome>(
     [&]()-> DescribeChangeSetOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/DescribeChangeSet");
-      return DescribeChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/DescribeChangeSet");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -351,16 +319,8 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeEntityOutcome>(
     [&]()-> DescribeEntityOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/DescribeEntity");
-      return DescribeEntityOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeEntityOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/DescribeEntity");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -386,16 +346,8 @@ GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetRe
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetResourcePolicyOutcome>(
     [&]()-> GetResourcePolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/GetResourcePolicy");
-      return GetResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/GetResourcePolicy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -416,16 +368,8 @@ ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeS
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListChangeSetsOutcome>(
     [&]()-> ListChangeSetsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/ListChangeSets");
-      return ListChangeSetsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListChangeSetsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ListChangeSets");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -446,16 +390,8 @@ ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListEntitiesOutcome>(
     [&]()-> ListEntitiesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/ListEntities");
-      return ListEntitiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListEntitiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ListEntities");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -476,16 +412,8 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/ListTagsForResource");
-      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ListTagsForResource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -506,16 +434,8 @@ PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutRe
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
     [&]()-> PutResourcePolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/PutResourcePolicy");
-      return PutResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return PutResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/PutResourcePolicy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -536,16 +456,8 @@ StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChange
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartChangeSetOutcome>(
     [&]()-> StartChangeSetOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/StartChangeSet");
-      return StartChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/StartChangeSet");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -566,16 +478,8 @@ TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/TagResource");
-      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/TagResource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -596,16 +500,8 @@ UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResource
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/UntagResource");
-      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/UntagResource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

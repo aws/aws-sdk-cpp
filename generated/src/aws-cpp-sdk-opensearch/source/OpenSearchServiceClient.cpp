@@ -264,18 +264,10 @@ AcceptInboundConnectionOutcome OpenSearchServiceClient::AcceptInboundConnection(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AcceptInboundConnectionOutcome>(
     [&]()-> AcceptInboundConnectionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/inboundConnection/");
-      endpointOverrides.AddPathSegment(request.GetConnectionId());
-      endpointOverrides.AddPathSegment("/accept");
-      return AcceptInboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AcceptInboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/inboundConnection/");
+      resolvedEndpoint.AddPathSegment(request.GetConnectionId());
+      resolvedEndpoint.AddPathSegments("/accept");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -301,18 +293,10 @@ AddDataSourceOutcome OpenSearchServiceClient::AddDataSource(const AddDataSourceR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AddDataSourceOutcome>(
     [&]()-> AddDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/dataSource");
-      return AddDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AddDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/dataSource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -333,16 +317,8 @@ AddDirectQueryDataSourceOutcome OpenSearchServiceClient::AddDirectQueryDataSourc
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AddDirectQueryDataSourceOutcome>(
     [&]()-> AddDirectQueryDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource");
-      return AddDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AddDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/directQueryDataSource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -363,16 +339,8 @@ AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) c
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AddTagsOutcome>(
     [&]()-> AddTagsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/tags");
-      return AddTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AddTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/tags");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -403,18 +371,10 @@ AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const Associat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssociatePackageOutcome>(
     [&]()-> AssociatePackageOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/associate/");
-      endpointOverrides.AddPathSegment(request.GetPackageID());
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      return AssociatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AssociatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/associate/");
+      resolvedEndpoint.AddPathSegment(request.GetPackageID());
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -435,16 +395,8 @@ AssociatePackagesOutcome OpenSearchServiceClient::AssociatePackages(const Associ
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AssociatePackagesOutcome>(
     [&]()-> AssociatePackagesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/associateMultiple");
-      return AssociatePackagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AssociatePackagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/associateMultiple");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -470,18 +422,10 @@ AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointA
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AuthorizeVpcEndpointAccessOutcome>(
     [&]()-> AuthorizeVpcEndpointAccessOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/authorizeVpcEndpointAccess");
-      return AuthorizeVpcEndpointAccessOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return AuthorizeVpcEndpointAccessOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/authorizeVpcEndpointAccess");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -507,18 +451,10 @@ CancelDomainConfigChangeOutcome OpenSearchServiceClient::CancelDomainConfigChang
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelDomainConfigChangeOutcome>(
     [&]()-> CancelDomainConfigChangeOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/config/cancel");
-      return CancelDomainConfigChangeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CancelDomainConfigChangeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/config/cancel");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -539,16 +475,8 @@ CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwar
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelServiceSoftwareUpdateOutcome>(
     [&]()-> CancelServiceSoftwareUpdateOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/serviceSoftwareUpdate/cancel");
-      return CancelServiceSoftwareUpdateOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CancelServiceSoftwareUpdateOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/serviceSoftwareUpdate/cancel");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -569,16 +497,8 @@ CreateApplicationOutcome OpenSearchServiceClient::CreateApplication(const Create
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateApplicationOutcome>(
     [&]()-> CreateApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/application");
-      return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/application");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -599,16 +519,8 @@ CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequ
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateDomainOutcome>(
     [&]()-> CreateDomainOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain");
-      return CreateDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -629,16 +541,8 @@ CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnectio
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateOutboundConnectionOutcome>(
     [&]()-> CreateOutboundConnectionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/outboundConnection");
-      return CreateOutboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateOutboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/outboundConnection");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -659,16 +563,8 @@ CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreatePackageOutcome>(
     [&]()-> CreatePackageOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages");
-      return CreatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -689,16 +585,8 @@ CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const Create
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateVpcEndpointOutcome>(
     [&]()-> CreateVpcEndpointOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/vpcEndpoints");
-      return CreateVpcEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateVpcEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/vpcEndpoints");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -724,17 +612,9 @@ DeleteApplicationOutcome OpenSearchServiceClient::DeleteApplication(const Delete
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteApplicationOutcome>(
     [&]()-> DeleteApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/application/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/application/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -765,19 +645,11 @@ DeleteDataSourceOutcome OpenSearchServiceClient::DeleteDataSource(const DeleteDa
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteDataSourceOutcome>(
     [&]()-> DeleteDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/dataSource/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return DeleteDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/dataSource/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -803,17 +675,9 @@ DeleteDirectQueryDataSourceOutcome OpenSearchServiceClient::DeleteDirectQueryDat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteDirectQueryDataSourceOutcome>(
     [&]()-> DeleteDirectQueryDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource/");
-      endpointOverrides.AddPathSegment(request.GetDataSourceName());
-      return DeleteDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/directQueryDataSource/");
+      resolvedEndpoint.AddPathSegment(request.GetDataSourceName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -839,17 +703,9 @@ DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequ
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteDomainOutcome>(
     [&]()-> DeleteDomainOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      return DeleteDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -875,17 +731,9 @@ DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteInboundConnectionOutcome>(
     [&]()-> DeleteInboundConnectionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/inboundConnection/");
-      endpointOverrides.AddPathSegment(request.GetConnectionId());
-      return DeleteInboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteInboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/inboundConnection/");
+      resolvedEndpoint.AddPathSegment(request.GetConnectionId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -911,17 +759,9 @@ DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnectio
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteOutboundConnectionOutcome>(
     [&]()-> DeleteOutboundConnectionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/outboundConnection/");
-      endpointOverrides.AddPathSegment(request.GetConnectionId());
-      return DeleteOutboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteOutboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/outboundConnection/");
+      resolvedEndpoint.AddPathSegment(request.GetConnectionId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -947,17 +787,9 @@ DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeletePackageOutcome>(
     [&]()-> DeletePackageOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/");
-      endpointOverrides.AddPathSegment(request.GetPackageID());
-      return DeletePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeletePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/");
+      resolvedEndpoint.AddPathSegment(request.GetPackageID());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -983,17 +815,9 @@ DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const Delete
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteVpcEndpointOutcome>(
     [&]()-> DeleteVpcEndpointOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/vpcEndpoints/");
-      endpointOverrides.AddPathSegment(request.GetVpcEndpointId());
-      return DeleteVpcEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteVpcEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/");
+      resolvedEndpoint.AddPathSegment(request.GetVpcEndpointId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1019,17 +843,9 @@ DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDoma
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainOutcome>(
     [&]()-> DescribeDomainOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      return DescribeDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1055,18 +871,10 @@ DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainAutoTunesOutcome>(
     [&]()-> DescribeDomainAutoTunesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/autoTunes");
-      return DescribeDomainAutoTunesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainAutoTunesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/autoTunes");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1092,18 +900,10 @@ DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChang
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainChangeProgressOutcome>(
     [&]()-> DescribeDomainChangeProgressOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/progress");
-      return DescribeDomainChangeProgressOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainChangeProgressOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/progress");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1129,18 +929,10 @@ DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainConfigOutcome>(
     [&]()-> DescribeDomainConfigOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/config");
-      return DescribeDomainConfigOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainConfigOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/config");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1166,18 +958,10 @@ DescribeDomainHealthOutcome OpenSearchServiceClient::DescribeDomainHealth(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainHealthOutcome>(
     [&]()-> DescribeDomainHealthOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/health");
-      return DescribeDomainHealthOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainHealthOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/health");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1203,18 +987,10 @@ DescribeDomainNodesOutcome OpenSearchServiceClient::DescribeDomainNodes(const De
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainNodesOutcome>(
     [&]()-> DescribeDomainNodesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/nodes");
-      return DescribeDomainNodesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainNodesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/nodes");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1235,16 +1011,8 @@ DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDo
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDomainsOutcome>(
     [&]()-> DescribeDomainsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain-info");
-      return DescribeDomainsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDomainsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain-info");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1270,18 +1038,10 @@ DescribeDryRunProgressOutcome OpenSearchServiceClient::DescribeDryRunProgress(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeDryRunProgressOutcome>(
     [&]()-> DescribeDryRunProgressOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/dryRun");
-      return DescribeDryRunProgressOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeDryRunProgressOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/dryRun");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1302,16 +1062,8 @@ DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnec
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeInboundConnectionsOutcome>(
     [&]()-> DescribeInboundConnectionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/inboundConnection/search");
-      return DescribeInboundConnectionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeInboundConnectionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/inboundConnection/search");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1342,18 +1094,10 @@ DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeL
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeInstanceTypeLimitsOutcome>(
     [&]()-> DescribeInstanceTypeLimitsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/instanceTypeLimits/");
-      endpointOverrides.AddPathSegment(request.GetEngineVersion());
-      endpointOverrides.AddPathSegment(OpenSearchPartitionInstanceTypeMapper::GetNameForOpenSearchPartitionInstanceType(request.GetInstanceType()));
-      return DescribeInstanceTypeLimitsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeInstanceTypeLimitsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/instanceTypeLimits/");
+      resolvedEndpoint.AddPathSegment(request.GetEngineVersion());
+      resolvedEndpoint.AddPathSegment(OpenSearchPartitionInstanceTypeMapper::GetNameForOpenSearchPartitionInstanceType(request.GetInstanceType()));
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1374,16 +1118,8 @@ DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConn
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeOutboundConnectionsOutcome>(
     [&]()-> DescribeOutboundConnectionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/outboundConnection/search");
-      return DescribeOutboundConnectionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeOutboundConnectionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/outboundConnection/search");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1404,16 +1140,8 @@ DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const Describe
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribePackagesOutcome>(
     [&]()-> DescribePackagesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/describe");
-      return DescribePackagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribePackagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/describe");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1434,16 +1162,8 @@ DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReserv
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeReservedInstanceOfferingsOutcome>(
     [&]()-> DescribeReservedInstanceOfferingsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/reservedInstanceOfferings");
-      return DescribeReservedInstanceOfferingsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeReservedInstanceOfferingsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/reservedInstanceOfferings");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1464,16 +1184,8 @@ DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstan
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeReservedInstancesOutcome>(
     [&]()-> DescribeReservedInstancesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/reservedInstances");
-      return DescribeReservedInstancesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeReservedInstancesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/reservedInstances");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1494,16 +1206,8 @@ DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeVpcEndpointsOutcome>(
     [&]()-> DescribeVpcEndpointsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/vpcEndpoints/describe");
-      return DescribeVpcEndpointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeVpcEndpointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/describe");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1534,18 +1238,10 @@ DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const Dissoc
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DissociatePackageOutcome>(
     [&]()-> DissociatePackageOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/dissociate/");
-      endpointOverrides.AddPathSegment(request.GetPackageID());
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      return DissociatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DissociatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/dissociate/");
+      resolvedEndpoint.AddPathSegment(request.GetPackageID());
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1566,16 +1262,8 @@ DissociatePackagesOutcome OpenSearchServiceClient::DissociatePackages(const Diss
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DissociatePackagesOutcome>(
     [&]()-> DissociatePackagesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/dissociateMultiple");
-      return DissociatePackagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DissociatePackagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/dissociateMultiple");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1601,17 +1289,9 @@ GetApplicationOutcome OpenSearchServiceClient::GetApplication(const GetApplicati
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetApplicationOutcome>(
     [&]()-> GetApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/application/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/application/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1632,16 +1312,8 @@ GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetCompatibleVersionsOutcome>(
     [&]()-> GetCompatibleVersionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/compatibleVersions");
-      return GetCompatibleVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetCompatibleVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/compatibleVersions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1672,19 +1344,11 @@ GetDataSourceOutcome OpenSearchServiceClient::GetDataSource(const GetDataSourceR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDataSourceOutcome>(
     [&]()-> GetDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/dataSource/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return GetDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/dataSource/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1710,17 +1374,9 @@ GetDirectQueryDataSourceOutcome OpenSearchServiceClient::GetDirectQueryDataSourc
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDirectQueryDataSourceOutcome>(
     [&]()-> GetDirectQueryDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource/");
-      endpointOverrides.AddPathSegment(request.GetDataSourceName());
-      return GetDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/directQueryDataSource/");
+      resolvedEndpoint.AddPathSegment(request.GetDataSourceName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1751,18 +1407,10 @@ GetDomainMaintenanceStatusOutcome OpenSearchServiceClient::GetDomainMaintenanceS
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDomainMaintenanceStatusOutcome>(
     [&]()-> GetDomainMaintenanceStatusOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/domainMaintenance");
-      return GetDomainMaintenanceStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetDomainMaintenanceStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/domainMaintenance");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1788,18 +1436,10 @@ GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistor
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetPackageVersionHistoryOutcome>(
     [&]()-> GetPackageVersionHistoryOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/");
-      endpointOverrides.AddPathSegment(request.GetPackageID());
-      endpointOverrides.AddPathSegment("/history");
-      return GetPackageVersionHistoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetPackageVersionHistoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/");
+      resolvedEndpoint.AddPathSegment(request.GetPackageID());
+      resolvedEndpoint.AddPathSegments("/history");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1825,18 +1465,10 @@ GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpg
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetUpgradeHistoryOutcome>(
     [&]()-> GetUpgradeHistoryOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/upgradeDomain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/history");
-      return GetUpgradeHistoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetUpgradeHistoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/upgradeDomain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/history");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1862,18 +1494,10 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetUpgradeStatusOutcome>(
     [&]()-> GetUpgradeStatusOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/upgradeDomain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/status");
-      return GetUpgradeStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetUpgradeStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/upgradeDomain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/status");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1894,16 +1518,8 @@ ListApplicationsOutcome OpenSearchServiceClient::ListApplications(const ListAppl
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListApplicationsOutcome>(
     [&]()-> ListApplicationsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/list-applications");
-      return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/list-applications");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1929,18 +1545,10 @@ ListDataSourcesOutcome OpenSearchServiceClient::ListDataSources(const ListDataSo
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDataSourcesOutcome>(
     [&]()-> ListDataSourcesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/dataSource");
-      return ListDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/dataSource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1961,16 +1569,8 @@ ListDirectQueryDataSourcesOutcome OpenSearchServiceClient::ListDirectQueryDataSo
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDirectQueryDataSourcesOutcome>(
     [&]()-> ListDirectQueryDataSourcesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource");
-      return ListDirectQueryDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDirectQueryDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/directQueryDataSource");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1996,18 +1596,10 @@ ListDomainMaintenancesOutcome OpenSearchServiceClient::ListDomainMaintenances(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDomainMaintenancesOutcome>(
     [&]()-> ListDomainMaintenancesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/domainMaintenances");
-      return ListDomainMaintenancesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDomainMaintenancesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/domainMaintenances");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2028,16 +1620,8 @@ ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomain
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDomainNamesOutcome>(
     [&]()-> ListDomainNamesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/domain");
-      return ListDomainNamesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDomainNamesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/domain");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2063,18 +1647,10 @@ ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDomainsForPackageOutcome>(
     [&]()-> ListDomainsForPackageOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/");
-      endpointOverrides.AddPathSegment(request.GetPackageID());
-      endpointOverrides.AddPathSegment("/domains");
-      return ListDomainsForPackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDomainsForPackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/");
+      resolvedEndpoint.AddPathSegment(request.GetPackageID());
+      resolvedEndpoint.AddPathSegments("/domains");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2100,17 +1676,9 @@ ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListInstanceTypeDetailsOutcome>(
     [&]()-> ListInstanceTypeDetailsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/instanceTypeDetails/");
-      endpointOverrides.AddPathSegment(request.GetEngineVersion());
-      return ListInstanceTypeDetailsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListInstanceTypeDetailsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/instanceTypeDetails/");
+      resolvedEndpoint.AddPathSegment(request.GetEngineVersion());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2136,18 +1704,10 @@ ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListPackagesForDomainOutcome>(
     [&]()-> ListPackagesForDomainOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/packages");
-      return ListPackagesForDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListPackagesForDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/packages");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2173,18 +1733,10 @@ ListScheduledActionsOutcome OpenSearchServiceClient::ListScheduledActions(const 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListScheduledActionsOutcome>(
     [&]()-> ListScheduledActionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/scheduledActions");
-      return ListScheduledActionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListScheduledActionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/scheduledActions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2210,16 +1762,8 @@ ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsOutcome>(
     [&]()-> ListTagsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/tags/");
-      return ListTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/tags/");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2240,16 +1784,8 @@ ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequ
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListVersionsOutcome>(
     [&]()-> ListVersionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/versions");
-      return ListVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/versions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2275,18 +1811,10 @@ ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListVpcEndpointAccessOutcome>(
     [&]()-> ListVpcEndpointAccessOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/listVpcEndpointAccess");
-      return ListVpcEndpointAccessOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListVpcEndpointAccessOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/listVpcEndpointAccess");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2307,16 +1835,8 @@ ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcE
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListVpcEndpointsOutcome>(
     [&]()-> ListVpcEndpointsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/vpcEndpoints");
-      return ListVpcEndpointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListVpcEndpointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/vpcEndpoints");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2342,18 +1862,10 @@ ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDom
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListVpcEndpointsForDomainOutcome>(
     [&]()-> ListVpcEndpointsForDomainOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/vpcEndpoints");
-      return ListVpcEndpointsForDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListVpcEndpointsForDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/vpcEndpoints");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2374,16 +1886,8 @@ PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReserve
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PurchaseReservedInstanceOfferingOutcome>(
     [&]()-> PurchaseReservedInstanceOfferingOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/purchaseReservedInstanceOffering");
-      return PurchaseReservedInstanceOfferingOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return PurchaseReservedInstanceOfferingOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/purchaseReservedInstanceOffering");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2409,18 +1913,10 @@ RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RejectInboundConnectionOutcome>(
     [&]()-> RejectInboundConnectionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/cc/inboundConnection/");
-      endpointOverrides.AddPathSegment(request.GetConnectionId());
-      endpointOverrides.AddPathSegment("/reject");
-      return RejectInboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return RejectInboundConnectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/cc/inboundConnection/");
+      resolvedEndpoint.AddPathSegment(request.GetConnectionId());
+      resolvedEndpoint.AddPathSegments("/reject");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2441,16 +1937,8 @@ RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& r
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RemoveTagsOutcome>(
     [&]()-> RemoveTagsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/tags-removal");
-      return RemoveTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return RemoveTagsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/tags-removal");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2476,18 +1964,10 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RevokeVpcEndpointAccessOutcome>(
     [&]()-> RevokeVpcEndpointAccessOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/revokeVpcEndpointAccess");
-      return RevokeVpcEndpointAccessOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return RevokeVpcEndpointAccessOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/revokeVpcEndpointAccess");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2513,18 +1993,10 @@ StartDomainMaintenanceOutcome OpenSearchServiceClient::StartDomainMaintenance(co
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartDomainMaintenanceOutcome>(
     [&]()-> StartDomainMaintenanceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/domainMaintenance");
-      return StartDomainMaintenanceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartDomainMaintenanceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/domainMaintenance");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2545,16 +2017,8 @@ StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareU
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartServiceSoftwareUpdateOutcome>(
     [&]()-> StartServiceSoftwareUpdateOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/serviceSoftwareUpdate/start");
-      return StartServiceSoftwareUpdateOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartServiceSoftwareUpdateOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/serviceSoftwareUpdate/start");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2580,17 +2044,9 @@ UpdateApplicationOutcome OpenSearchServiceClient::UpdateApplication(const Update
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateApplicationOutcome>(
     [&]()-> UpdateApplicationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/application/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/application/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2621,19 +2077,11 @@ UpdateDataSourceOutcome OpenSearchServiceClient::UpdateDataSource(const UpdateDa
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateDataSourceOutcome>(
     [&]()-> UpdateDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/dataSource/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return UpdateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/dataSource/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2659,17 +2107,9 @@ UpdateDirectQueryDataSourceOutcome OpenSearchServiceClient::UpdateDirectQueryDat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateDirectQueryDataSourceOutcome>(
     [&]()-> UpdateDirectQueryDataSourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/directQueryDataSource/");
-      endpointOverrides.AddPathSegment(request.GetDataSourceName());
-      return UpdateDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateDirectQueryDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/directQueryDataSource/");
+      resolvedEndpoint.AddPathSegment(request.GetDataSourceName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2695,18 +2135,10 @@ UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const Upda
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateDomainConfigOutcome>(
     [&]()-> UpdateDomainConfigOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/config");
-      return UpdateDomainConfigOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateDomainConfigOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/config");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2727,16 +2159,8 @@ UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdatePackageOutcome>(
     [&]()-> UpdatePackageOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/update");
-      return UpdatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdatePackageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/update");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2757,16 +2181,8 @@ UpdatePackageScopeOutcome OpenSearchServiceClient::UpdatePackageScope(const Upda
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdatePackageScopeOutcome>(
     [&]()-> UpdatePackageScopeOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/packages/updateScope");
-      return UpdatePackageScopeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdatePackageScopeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/packages/updateScope");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2792,18 +2208,10 @@ UpdateScheduledActionOutcome OpenSearchServiceClient::UpdateScheduledAction(cons
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateScheduledActionOutcome>(
     [&]()-> UpdateScheduledActionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/domain/");
-      endpointOverrides.AddPathSegment(request.GetDomainName());
-      endpointOverrides.AddPathSegment("/scheduledAction/update");
-      return UpdateScheduledActionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateScheduledActionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/domain/");
+      resolvedEndpoint.AddPathSegment(request.GetDomainName());
+      resolvedEndpoint.AddPathSegments("/scheduledAction/update");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2824,16 +2232,8 @@ UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const Update
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateVpcEndpointOutcome>(
     [&]()-> UpdateVpcEndpointOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/vpcEndpoints/update");
-      return UpdateVpcEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateVpcEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/vpcEndpoints/update");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2854,16 +2254,8 @@ UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpgradeDomainOutcome>(
     [&]()-> UpgradeDomainOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2021-01-01/opensearch/upgradeDomain");
-      return UpgradeDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpgradeDomainOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2021-01-01/opensearch/upgradeDomain");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

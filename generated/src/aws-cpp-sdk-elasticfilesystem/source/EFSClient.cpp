@@ -211,16 +211,8 @@ CreateAccessPointOutcome EFSClient::CreateAccessPoint(const CreateAccessPointReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateAccessPointOutcome>(
     [&]()-> CreateAccessPointOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/access-points");
-      return CreateAccessPointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateAccessPointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/access-points");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -241,16 +233,8 @@ CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateFileSystemOutcome>(
     [&]()-> CreateFileSystemOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems");
-      return CreateFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -271,16 +255,8 @@ CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateMountTargetOutcome>(
     [&]()-> CreateMountTargetOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/mount-targets");
-      return CreateMountTargetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateMountTargetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/mount-targets");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -306,18 +282,10 @@ CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateReplicationConfigurationOutcome>(
     [&]()-> CreateReplicationConfigurationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetSourceFileSystemId());
-      endpointOverrides.AddPathSegment("/replication-configuration");
-      return CreateReplicationConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateReplicationConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetSourceFileSystemId());
+      resolvedEndpoint.AddPathSegments("/replication-configuration");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -343,17 +311,9 @@ DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteAccessPointOutcome>(
     [&]()-> DeleteAccessPointOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/access-points/");
-      endpointOverrides.AddPathSegment(request.GetAccessPointId());
-      return DeleteAccessPointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteAccessPointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/access-points/");
+      resolvedEndpoint.AddPathSegment(request.GetAccessPointId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -379,17 +339,9 @@ DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteFileSystemOutcome>(
     [&]()-> DeleteFileSystemOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      return DeleteFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -415,18 +367,10 @@ DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFile
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteFileSystemPolicyOutcome>(
     [&]()-> DeleteFileSystemPolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/policy");
-      return DeleteFileSystemPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteFileSystemPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/policy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -452,17 +396,9 @@ DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteMountTargetOutcome>(
     [&]()-> DeleteMountTargetOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/mount-targets/");
-      endpointOverrides.AddPathSegment(request.GetMountTargetId());
-      return DeleteMountTargetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteMountTargetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/mount-targets/");
+      resolvedEndpoint.AddPathSegment(request.GetMountTargetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -488,18 +424,10 @@ DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteReplicationConfigurationOutcome>(
     [&]()-> DeleteReplicationConfigurationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetSourceFileSystemId());
-      endpointOverrides.AddPathSegment("/replication-configuration");
-      return DeleteReplicationConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteReplicationConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetSourceFileSystemId());
+      resolvedEndpoint.AddPathSegments("/replication-configuration");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -520,16 +448,8 @@ DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccess
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeAccessPointsOutcome>(
     [&]()-> DescribeAccessPointsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/access-points");
-      return DescribeAccessPointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeAccessPointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/access-points");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -550,16 +470,8 @@ DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const De
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeAccountPreferencesOutcome>(
     [&]()-> DescribeAccountPreferencesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/account-preferences");
-      return DescribeAccountPreferencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeAccountPreferencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/account-preferences");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -585,18 +497,10 @@ DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackup
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeBackupPolicyOutcome>(
     [&]()-> DescribeBackupPolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/backup-policy");
-      return DescribeBackupPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeBackupPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/backup-policy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -622,18 +526,10 @@ DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const Descri
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeFileSystemPolicyOutcome>(
     [&]()-> DescribeFileSystemPolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/policy");
-      return DescribeFileSystemPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeFileSystemPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/policy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -654,16 +550,8 @@ DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSyst
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeFileSystemsOutcome>(
     [&]()-> DescribeFileSystemsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems");
-      return DescribeFileSystemsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeFileSystemsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -689,18 +577,10 @@ DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeLifecycleConfigurationOutcome>(
     [&]()-> DescribeLifecycleConfigurationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/lifecycle-configuration");
-      return DescribeLifecycleConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeLifecycleConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/lifecycle-configuration");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -726,18 +606,10 @@ DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityG
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeMountTargetSecurityGroupsOutcome>(
     [&]()-> DescribeMountTargetSecurityGroupsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/mount-targets/");
-      endpointOverrides.AddPathSegment(request.GetMountTargetId());
-      endpointOverrides.AddPathSegment("/security-groups");
-      return DescribeMountTargetSecurityGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeMountTargetSecurityGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/mount-targets/");
+      resolvedEndpoint.AddPathSegment(request.GetMountTargetId());
+      resolvedEndpoint.AddPathSegments("/security-groups");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -758,16 +630,8 @@ DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountT
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeMountTargetsOutcome>(
     [&]()-> DescribeMountTargetsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/mount-targets");
-      return DescribeMountTargetsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeMountTargetsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/mount-targets");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -788,16 +652,8 @@ DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigura
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeReplicationConfigurationsOutcome>(
     [&]()-> DescribeReplicationConfigurationsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/replication-configurations");
-      return DescribeReplicationConfigurationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DescribeReplicationConfigurationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/replication-configurations");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -823,17 +679,9 @@ ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResou
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/resource-tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceId());
-      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/resource-tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -859,18 +707,10 @@ ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroup
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ModifyMountTargetSecurityGroupsOutcome>(
     [&]()-> ModifyMountTargetSecurityGroupsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/mount-targets/");
-      endpointOverrides.AddPathSegment(request.GetMountTargetId());
-      endpointOverrides.AddPathSegment("/security-groups");
-      return ModifyMountTargetSecurityGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ModifyMountTargetSecurityGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/mount-targets/");
+      resolvedEndpoint.AddPathSegment(request.GetMountTargetId());
+      resolvedEndpoint.AddPathSegments("/security-groups");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -891,16 +731,8 @@ PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPr
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutAccountPreferencesOutcome>(
     [&]()-> PutAccountPreferencesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/account-preferences");
-      return PutAccountPreferencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return PutAccountPreferencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/account-preferences");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -926,18 +758,10 @@ PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutBackupPolicyOutcome>(
     [&]()-> PutBackupPolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/backup-policy");
-      return PutBackupPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return PutBackupPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/backup-policy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -963,18 +787,10 @@ PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPol
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutFileSystemPolicyOutcome>(
     [&]()-> PutFileSystemPolicyOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/policy");
-      return PutFileSystemPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return PutFileSystemPolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/policy");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1000,18 +816,10 @@ PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutL
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutLifecycleConfigurationOutcome>(
     [&]()-> PutLifecycleConfigurationOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/lifecycle-configuration");
-      return PutLifecycleConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return PutLifecycleConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/lifecycle-configuration");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1037,17 +845,9 @@ TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) con
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/resource-tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceId());
-      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/resource-tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1078,17 +878,9 @@ UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& reques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/resource-tags/");
-      endpointOverrides.AddPathSegment(request.GetResourceId());
-      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/resource-tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1114,17 +906,9 @@ UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateFileSystemOutcome>(
     [&]()-> UpdateFileSystemOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      return UpdateFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1150,18 +934,10 @@ UpdateFileSystemProtectionOutcome EFSClient::UpdateFileSystemProtection(const Up
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateFileSystemProtectionOutcome>(
     [&]()-> UpdateFileSystemProtectionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/2015-02-01/file-systems/");
-      endpointOverrides.AddPathSegment(request.GetFileSystemId());
-      endpointOverrides.AddPathSegment("/protection");
-      return UpdateFileSystemProtectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateFileSystemProtectionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2015-02-01/file-systems/");
+      resolvedEndpoint.AddPathSegment(request.GetFileSystemId());
+      resolvedEndpoint.AddPathSegments("/protection");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

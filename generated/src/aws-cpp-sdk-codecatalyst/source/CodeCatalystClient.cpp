@@ -162,16 +162,8 @@ CreateAccessTokenOutcome CodeCatalystClient::CreateAccessToken(const CreateAcces
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateAccessTokenOutcome>(
     [&]()-> CreateAccessTokenOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/accessTokens");
-      return CreateAccessTokenOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateAccessTokenOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/accessTokens");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -202,20 +194,12 @@ CreateDevEnvironmentOutcome CodeCatalystClient::CreateDevEnvironment(const Creat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateDevEnvironmentOutcome>(
     [&]()-> CreateDevEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments");
-      return CreateDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -241,18 +225,10 @@ CreateProjectOutcome CodeCatalystClient::CreateProject(const CreateProjectReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateProjectOutcome>(
     [&]()-> CreateProjectOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects");
-      return CreateProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -288,21 +264,13 @@ CreateSourceRepositoryOutcome CodeCatalystClient::CreateSourceRepository(const C
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateSourceRepositoryOutcome>(
     [&]()-> CreateSourceRepositoryOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return CreateSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -343,23 +311,15 @@ CreateSourceRepositoryBranchOutcome CodeCatalystClient::CreateSourceRepositoryBr
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateSourceRepositoryBranchOutcome>(
     [&]()-> CreateSourceRepositoryBranchOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories/");
-      endpointOverrides.AddPathSegment(request.GetSourceRepositoryName());
-      endpointOverrides.AddPathSegment("/branches/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return CreateSourceRepositoryBranchOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return CreateSourceRepositoryBranchOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories/");
+      resolvedEndpoint.AddPathSegment(request.GetSourceRepositoryName());
+      resolvedEndpoint.AddPathSegments("/branches/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -385,17 +345,9 @@ DeleteAccessTokenOutcome CodeCatalystClient::DeleteAccessToken(const DeleteAcces
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteAccessTokenOutcome>(
     [&]()-> DeleteAccessTokenOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/accessTokens/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return DeleteAccessTokenOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteAccessTokenOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/accessTokens/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -431,21 +383,13 @@ DeleteDevEnvironmentOutcome CodeCatalystClient::DeleteDevEnvironment(const Delet
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteDevEnvironmentOutcome>(
     [&]()-> DeleteDevEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return DeleteDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -476,19 +420,11 @@ DeleteProjectOutcome CodeCatalystClient::DeleteProject(const DeleteProjectReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteProjectOutcome>(
     [&]()-> DeleteProjectOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return DeleteProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -524,21 +460,13 @@ DeleteSourceRepositoryOutcome CodeCatalystClient::DeleteSourceRepository(const D
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteSourceRepositoryOutcome>(
     [&]()-> DeleteSourceRepositoryOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return DeleteSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -564,17 +492,9 @@ DeleteSpaceOutcome CodeCatalystClient::DeleteSpace(const DeleteSpaceRequest& req
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteSpaceOutcome>(
     [&]()-> DeleteSpaceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return DeleteSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return DeleteSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -610,21 +530,13 @@ GetDevEnvironmentOutcome CodeCatalystClient::GetDevEnvironment(const GetDevEnvir
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDevEnvironmentOutcome>(
     [&]()-> GetDevEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return GetDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -655,19 +567,11 @@ GetProjectOutcome CodeCatalystClient::GetProject(const GetProjectRequest& reques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetProjectOutcome>(
     [&]()-> GetProjectOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return GetProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -703,21 +607,13 @@ GetSourceRepositoryOutcome CodeCatalystClient::GetSourceRepository(const GetSour
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSourceRepositoryOutcome>(
     [&]()-> GetSourceRepositoryOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return GetSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -753,22 +649,14 @@ GetSourceRepositoryCloneUrlsOutcome CodeCatalystClient::GetSourceRepositoryClone
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSourceRepositoryCloneUrlsOutcome>(
     [&]()-> GetSourceRepositoryCloneUrlsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories/");
-      endpointOverrides.AddPathSegment(request.GetSourceRepositoryName());
-      endpointOverrides.AddPathSegment("/cloneUrls");
-      return GetSourceRepositoryCloneUrlsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetSourceRepositoryCloneUrlsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories/");
+      resolvedEndpoint.AddPathSegment(request.GetSourceRepositoryName());
+      resolvedEndpoint.AddPathSegments("/cloneUrls");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -794,17 +682,9 @@ GetSpaceOutcome CodeCatalystClient::GetSpace(const GetSpaceRequest& request) con
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSpaceOutcome>(
     [&]()-> GetSpaceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return GetSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -830,18 +710,10 @@ GetSubscriptionOutcome CodeCatalystClient::GetSubscription(const GetSubscription
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSubscriptionOutcome>(
     [&]()-> GetSubscriptionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/subscription");
-      return GetSubscriptionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetSubscriptionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/subscription");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -862,16 +734,8 @@ GetUserDetailsOutcome CodeCatalystClient::GetUserDetails(const GetUserDetailsReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetUserDetailsOutcome>(
     [&]()-> GetUserDetailsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/userDetails");
-      return GetUserDetailsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetUserDetailsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/userDetails");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -907,21 +771,13 @@ GetWorkflowOutcome CodeCatalystClient::GetWorkflow(const GetWorkflowRequest& req
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetWorkflowOutcome>(
     [&]()-> GetWorkflowOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/workflows/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return GetWorkflowOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetWorkflowOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/workflows/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -957,21 +813,13 @@ GetWorkflowRunOutcome CodeCatalystClient::GetWorkflowRun(const GetWorkflowRunReq
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetWorkflowRunOutcome>(
     [&]()-> GetWorkflowRunOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/workflowRuns/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return GetWorkflowRunOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return GetWorkflowRunOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/workflowRuns/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -992,16 +840,8 @@ ListAccessTokensOutcome CodeCatalystClient::ListAccessTokens(const ListAccessTok
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAccessTokensOutcome>(
     [&]()-> ListAccessTokensOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/accessTokens");
-      return ListAccessTokensOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListAccessTokensOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/accessTokens");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1037,22 +877,14 @@ ListDevEnvironmentSessionsOutcome CodeCatalystClient::ListDevEnvironmentSessions
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDevEnvironmentSessionsOutcome>(
     [&]()-> ListDevEnvironmentSessionsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetDevEnvironmentId());
-      endpointOverrides.AddPathSegment("/sessions");
-      return ListDevEnvironmentSessionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDevEnvironmentSessionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetDevEnvironmentId());
+      resolvedEndpoint.AddPathSegments("/sessions");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1078,18 +910,10 @@ ListDevEnvironmentsOutcome CodeCatalystClient::ListDevEnvironments(const ListDev
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDevEnvironmentsOutcome>(
     [&]()-> ListDevEnvironmentsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/devEnvironments");
-      return ListDevEnvironmentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListDevEnvironmentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1115,18 +939,10 @@ ListEventLogsOutcome CodeCatalystClient::ListEventLogs(const ListEventLogsReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListEventLogsOutcome>(
     [&]()-> ListEventLogsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/eventLogs");
-      return ListEventLogsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListEventLogsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/eventLogs");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1152,18 +968,10 @@ ListProjectsOutcome CodeCatalystClient::ListProjects(const ListProjectsRequest& 
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListProjectsOutcome>(
     [&]()-> ListProjectsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects");
-      return ListProjectsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListProjectsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1194,20 +1002,12 @@ ListSourceRepositoriesOutcome CodeCatalystClient::ListSourceRepositories(const L
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSourceRepositoriesOutcome>(
     [&]()-> ListSourceRepositoriesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories");
-      return ListSourceRepositoriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListSourceRepositoriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1243,22 +1043,14 @@ ListSourceRepositoryBranchesOutcome CodeCatalystClient::ListSourceRepositoryBran
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSourceRepositoryBranchesOutcome>(
     [&]()-> ListSourceRepositoryBranchesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/sourceRepositories/");
-      endpointOverrides.AddPathSegment(request.GetSourceRepositoryName());
-      endpointOverrides.AddPathSegment("/branches");
-      return ListSourceRepositoryBranchesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListSourceRepositoryBranchesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/sourceRepositories/");
+      resolvedEndpoint.AddPathSegment(request.GetSourceRepositoryName());
+      resolvedEndpoint.AddPathSegments("/branches");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1279,16 +1071,8 @@ ListSpacesOutcome CodeCatalystClient::ListSpaces(const ListSpacesRequest& reques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSpacesOutcome>(
     [&]()-> ListSpacesOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces");
-      return ListSpacesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListSpacesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1319,20 +1103,12 @@ ListWorkflowRunsOutcome CodeCatalystClient::ListWorkflowRuns(const ListWorkflowR
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListWorkflowRunsOutcome>(
     [&]()-> ListWorkflowRunsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/workflowRuns");
-      return ListWorkflowRunsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListWorkflowRunsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/workflowRuns");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1363,20 +1139,12 @@ ListWorkflowsOutcome CodeCatalystClient::ListWorkflows(const ListWorkflowsReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListWorkflowsOutcome>(
     [&]()-> ListWorkflowsOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/workflows");
-      return ListWorkflowsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return ListWorkflowsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/workflows");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1412,22 +1180,14 @@ StartDevEnvironmentOutcome CodeCatalystClient::StartDevEnvironment(const StartDe
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartDevEnvironmentOutcome>(
     [&]()-> StartDevEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      endpointOverrides.AddPathSegment("/start");
-      return StartDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      resolvedEndpoint.AddPathSegments("/start");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1463,22 +1223,14 @@ StartDevEnvironmentSessionOutcome CodeCatalystClient::StartDevEnvironmentSession
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartDevEnvironmentSessionOutcome>(
     [&]()-> StartDevEnvironmentSessionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      endpointOverrides.AddPathSegment("/session");
-      return StartDevEnvironmentSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartDevEnvironmentSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      resolvedEndpoint.AddPathSegments("/session");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1514,20 +1266,12 @@ StartWorkflowRunOutcome CodeCatalystClient::StartWorkflowRun(const StartWorkflow
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartWorkflowRunOutcome>(
     [&]()-> StartWorkflowRunOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/workflowRuns");
-      return StartWorkflowRunOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StartWorkflowRunOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/workflowRuns");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1563,22 +1307,14 @@ StopDevEnvironmentOutcome CodeCatalystClient::StopDevEnvironment(const StopDevEn
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopDevEnvironmentOutcome>(
     [&]()-> StopDevEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      endpointOverrides.AddPathSegment("/stop");
-      return StopDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StopDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      resolvedEndpoint.AddPathSegments("/stop");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1619,23 +1355,15 @@ StopDevEnvironmentSessionOutcome CodeCatalystClient::StopDevEnvironmentSession(c
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopDevEnvironmentSessionOutcome>(
     [&]()-> StopDevEnvironmentSessionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      endpointOverrides.AddPathSegment("/session/");
-      endpointOverrides.AddPathSegment(request.GetSessionId());
-      return StopDevEnvironmentSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return StopDevEnvironmentSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      resolvedEndpoint.AddPathSegments("/session/");
+      resolvedEndpoint.AddPathSegment(request.GetSessionId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1671,21 +1399,13 @@ UpdateDevEnvironmentOutcome CodeCatalystClient::UpdateDevEnvironment(const Updat
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateDevEnvironmentOutcome>(
     [&]()-> UpdateDevEnvironmentOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetProjectName());
-      endpointOverrides.AddPathSegment("/devEnvironments/");
-      endpointOverrides.AddPathSegment(request.GetId());
-      return UpdateDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetProjectName());
+      resolvedEndpoint.AddPathSegments("/devEnvironments/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1716,19 +1436,11 @@ UpdateProjectOutcome CodeCatalystClient::UpdateProject(const UpdateProjectReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateProjectOutcome>(
     [&]()-> UpdateProjectOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetSpaceName());
-      endpointOverrides.AddPathSegment("/projects/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return UpdateProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetSpaceName());
+      resolvedEndpoint.AddPathSegments("/projects/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1754,17 +1466,9 @@ UpdateSpaceOutcome CodeCatalystClient::UpdateSpace(const UpdateSpaceRequest& req
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateSpaceOutcome>(
     [&]()-> UpdateSpaceOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/v1/spaces/");
-      endpointOverrides.AddPathSegment(request.GetName());
-      return UpdateSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return UpdateSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/spaces/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1785,16 +1489,8 @@ VerifySessionOutcome CodeCatalystClient::VerifySession(const VerifySessionReques
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<VerifySessionOutcome>(
     [&]()-> VerifySessionOutcome {
-      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.AddPathSegment("/session");
-      return VerifySessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        for(const auto& pathSegment : endpointOverrides.pathSegments)
-        {
-            resolvedEndpoint.AddPathSegment(pathSegment);
-        }
-        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
-        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
-        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      return VerifySessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/session");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
