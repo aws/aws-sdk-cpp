@@ -25,7 +25,14 @@ AutoScalingGroupConfiguration::AutoScalingGroupConfiguration() :
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_allocationStrategy(AllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false),
+    m_estimatedInstanceHourReductionPercentage(0.0),
+    m_estimatedInstanceHourReductionPercentageHasBeenSet(false),
+    m_type(AsgType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_mixedInstanceTypesHasBeenSet(false)
 {
 }
 
@@ -65,6 +72,37 @@ AutoScalingGroupConfiguration& AutoScalingGroupConfiguration::operator =(JsonVie
     m_instanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("allocationStrategy"))
+  {
+    m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(jsonValue.GetString("allocationStrategy"));
+
+    m_allocationStrategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("estimatedInstanceHourReductionPercentage"))
+  {
+    m_estimatedInstanceHourReductionPercentage = jsonValue.GetDouble("estimatedInstanceHourReductionPercentage");
+
+    m_estimatedInstanceHourReductionPercentageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = AsgTypeMapper::GetAsgTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mixedInstanceTypes"))
+  {
+    Aws::Utils::Array<JsonView> mixedInstanceTypesJsonList = jsonValue.GetArray("mixedInstanceTypes");
+    for(unsigned mixedInstanceTypesIndex = 0; mixedInstanceTypesIndex < mixedInstanceTypesJsonList.GetLength(); ++mixedInstanceTypesIndex)
+    {
+      m_mixedInstanceTypes.push_back(mixedInstanceTypesJsonList[mixedInstanceTypesIndex].AsString());
+    }
+    m_mixedInstanceTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +131,33 @@ JsonValue AutoScalingGroupConfiguration::Jsonize() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+   payload.WithString("allocationStrategy", AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy));
+  }
+
+  if(m_estimatedInstanceHourReductionPercentageHasBeenSet)
+  {
+   payload.WithDouble("estimatedInstanceHourReductionPercentage", m_estimatedInstanceHourReductionPercentage);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", AsgTypeMapper::GetNameForAsgType(m_type));
+  }
+
+  if(m_mixedInstanceTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> mixedInstanceTypesJsonList(m_mixedInstanceTypes.size());
+   for(unsigned mixedInstanceTypesIndex = 0; mixedInstanceTypesIndex < mixedInstanceTypesJsonList.GetLength(); ++mixedInstanceTypesIndex)
+   {
+     mixedInstanceTypesJsonList[mixedInstanceTypesIndex].AsString(m_mixedInstanceTypes[mixedInstanceTypesIndex]);
+   }
+   payload.WithArray("mixedInstanceTypes", std::move(mixedInstanceTypesJsonList));
 
   }
 

@@ -66,6 +66,25 @@ namespace Model
     inline BatchRestrictions& AddComputeTypesAllowed(Aws::String&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(std::move(value)); return *this; }
     inline BatchRestrictions& AddComputeTypesAllowed(const char* value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of strings that specify the fleets that are allowed for the batch
+     * build. See <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run
+     * builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for
+     * more information. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFleetsAllowed() const{ return m_fleetsAllowed; }
+    inline bool FleetsAllowedHasBeenSet() const { return m_fleetsAllowedHasBeenSet; }
+    inline void SetFleetsAllowed(const Aws::Vector<Aws::String>& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed = value; }
+    inline void SetFleetsAllowed(Aws::Vector<Aws::String>&& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed = std::move(value); }
+    inline BatchRestrictions& WithFleetsAllowed(const Aws::Vector<Aws::String>& value) { SetFleetsAllowed(value); return *this;}
+    inline BatchRestrictions& WithFleetsAllowed(Aws::Vector<Aws::String>&& value) { SetFleetsAllowed(std::move(value)); return *this;}
+    inline BatchRestrictions& AddFleetsAllowed(const Aws::String& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.push_back(value); return *this; }
+    inline BatchRestrictions& AddFleetsAllowed(Aws::String&& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.push_back(std::move(value)); return *this; }
+    inline BatchRestrictions& AddFleetsAllowed(const char* value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.push_back(value); return *this; }
+    ///@}
   private:
 
     int m_maximumBuildsAllowed;
@@ -73,6 +92,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_computeTypesAllowed;
     bool m_computeTypesAllowedHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_fleetsAllowed;
+    bool m_fleetsAllowedHasBeenSet = false;
   };
 
 } // namespace Model
