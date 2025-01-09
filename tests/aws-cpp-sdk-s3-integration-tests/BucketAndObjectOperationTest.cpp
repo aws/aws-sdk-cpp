@@ -2580,4 +2580,58 @@ namespace
       AWS_EXPECT_SUCCESS(headOutcome);
       EXPECT_EQ(headOutcome.GetResult().GetContentEncoding(), "gzip");
     }
+
+
+void DownloadFile(const Aws::String& bucket_name, const Aws::String& object_key, const Aws::String& destination_file) 
+{
+    Aws::S3::S3Client s3_client;
+    auto Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
+
+    ClientConfiguration config;
+    config.region = Aws::Region::US_EAST_1;
+    //config.scheme = Scheme::HTTPS;
+    config.connectTimeoutMs = 30000;
+    config.requestTimeoutMs = 30000;
+    config.readRateLimiter = Limiter;
+    config.writeRateLimiter = Limiter;
+    config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+    config.enableHttpClientTrace = true;
+
+    // Open the destination file for writing
+    std::ofstream output_file(destination_file.c_str(), std::ios::binary);
+
+    if (!output_file) {
+        std::cerr << "Failed to open destination file." << std::endl;
+        return;
+    }
+
+    // Create a GetObjectRequest with the byte range
+    Aws::S3::Model::GetObjectRequest get_object_request;
+    get_object_request.SetBucket(bucket_name);
+    get_object_request.SetKey(object_key);
+    auto start = std::chrono::high_resolution_clock::now();
+    auto get_object_outcome = s3_client.GetObject(get_object_request);
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+
+    if (get_object_outcome.IsSuccess()) {
+        // Write the part to the destination file
+        auto& retrieved_file = get_object_outcome.GetResultWithOwnership().GetBody();
+        std::ofstream output_file(destination_file, std::ios::binary);
+        output_file << retrieved_file.rdbuf(); // Write the stream content to the file
+        std::cout << "File downloaded to " << destination_file << std::endl;
+
+    } else {
+        std::cerr << "Failed to download file: " << get_object_outcome.GetError().GetMessage() << std::endl;
+    }
+
+    std::cout<<"took "<<duration.count()<<" microseconds"<<std::endl;
+}
+TEST_F(BucketAndObjectOperationTest, MeasureTier)
+{
+    DownloadFile("cpp-sdk-bucket-intelligent-tier", "sample_test_file.txt", "sample_test_file_intelligent.txt");
+
+    DownloadFile("cpp-sdk-bucket-standard-tier", "sample_test_file.txt", "sample_test_file_standard.txt");
+    
+}
 }
