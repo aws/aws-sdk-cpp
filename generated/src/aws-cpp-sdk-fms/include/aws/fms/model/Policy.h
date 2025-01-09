@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/fms/model/CustomerPolicyStatus.h>
+#include <aws/fms/model/ResourceTagLogicalOperator.h>
 #include <aws/fms/model/ResourceTag.h>
 #include <aws/fms/model/CustomerPolicyScopeIdType.h>
 #include <utility>
@@ -321,6 +322,20 @@ namespace Model
     inline Policy& WithPolicyStatus(const CustomerPolicyStatus& value) { SetPolicyStatus(value); return *this;}
     inline Policy& WithPolicyStatus(CustomerPolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to combine multiple resource tags with AND, so that a
+     * resource must have all tags to be included or excluded, or OR, so that a
+     * resource must have at least one tag.</p> <p>Default: <code>AND</code> </p>
+     */
+    inline const ResourceTagLogicalOperator& GetResourceTagLogicalOperator() const{ return m_resourceTagLogicalOperator; }
+    inline bool ResourceTagLogicalOperatorHasBeenSet() const { return m_resourceTagLogicalOperatorHasBeenSet; }
+    inline void SetResourceTagLogicalOperator(const ResourceTagLogicalOperator& value) { m_resourceTagLogicalOperatorHasBeenSet = true; m_resourceTagLogicalOperator = value; }
+    inline void SetResourceTagLogicalOperator(ResourceTagLogicalOperator&& value) { m_resourceTagLogicalOperatorHasBeenSet = true; m_resourceTagLogicalOperator = std::move(value); }
+    inline Policy& WithResourceTagLogicalOperator(const ResourceTagLogicalOperator& value) { SetResourceTagLogicalOperator(value); return *this;}
+    inline Policy& WithResourceTagLogicalOperator(ResourceTagLogicalOperator&& value) { SetResourceTagLogicalOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_policyId;
@@ -367,6 +382,9 @@ namespace Model
 
     CustomerPolicyStatus m_policyStatus;
     bool m_policyStatusHasBeenSet = false;
+
+    ResourceTagLogicalOperator m_resourceTagLogicalOperator;
+    bool m_resourceTagLogicalOperatorHasBeenSet = false;
   };
 
 } // namespace Model
