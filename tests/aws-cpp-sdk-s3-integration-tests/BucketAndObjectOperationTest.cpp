@@ -2584,18 +2584,20 @@ namespace
 
 void DownloadFile(const Aws::String& bucket_name, const Aws::String& object_key, const Aws::String& destination_file) 
 {
-    Aws::S3::S3Client s3_client;
     auto Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
 
     ClientConfiguration config;
-    config.region = Aws::Region::US_EAST_1;
-    //config.scheme = Scheme::HTTPS;
+    config.region = Aws::Region::US_WEST_2;
+    config.scheme = Scheme::HTTPS;
     config.connectTimeoutMs = 30000;
     config.requestTimeoutMs = 30000;
     config.readRateLimiter = Limiter;
     config.writeRateLimiter = Limiter;
     config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
     config.enableHttpClientTrace = true;
+
+    Aws::S3::S3Client s3_client(config);
+
 
     // Open the destination file for writing
     std::ofstream output_file(destination_file.c_str(), std::ios::binary);
@@ -2629,9 +2631,12 @@ void DownloadFile(const Aws::String& bucket_name, const Aws::String& object_key,
 }
 TEST_F(BucketAndObjectOperationTest, MeasureTier)
 {
-    DownloadFile("cpp-sdk-bucket-intelligent-tier", "sample_test_file.txt", "sample_test_file_intelligent.txt");
+    for(int i = 0; i < 10; i++)
+    {
+        DownloadFile("cpp-sdk-bucket-intelligent-tier", "sample_test_file.txt", "sample_test_file_intelligent.txt");
 
-    DownloadFile("cpp-sdk-bucket-standard-tier", "sample_test_file.txt", "sample_test_file_standard.txt");
+        DownloadFile("cpp-sdk-bucket-standard-tier", "sample_test_file.txt", "sample_test_file_standard.txt");
+    }
     
 }
 }

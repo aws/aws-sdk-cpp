@@ -953,6 +953,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             response->SetClientErrorMessage(ss.str());
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
         }
+        std::cout<<"curl transmission time="<<(DateTime::Now() - startTransmissionTime).count()<<std::endl;
         request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
     }
 
