@@ -190,7 +190,6 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
     {
-
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
 
         const CurlHttpClient* client = context->m_client;
