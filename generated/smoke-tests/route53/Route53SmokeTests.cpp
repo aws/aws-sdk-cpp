@@ -18,7 +18,6 @@
 #include <aws/route53/Route53Client.h>
 #include <aws/route53/model/GetHostedZoneRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Route53SmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class Route53SmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char Route53SmokeTestSuite::ALLOCATION_TAG[] = "Route53SmokeTest";
-TEST_F(Route53SmokeTestSuite, ListHostedZonesSuccess )
-{
-    Aws::Route53::Route53ClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<Route53Client>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListHostedZonesRequest input;
-    auto outcome = clientSp->ListHostedZones(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(Route53SmokeTestSuite, GetHostedZoneFailure )
 {
     Aws::Route53::Route53ClientConfiguration clientConfiguration;
@@ -58,5 +44,18 @@ TEST_F(Route53SmokeTestSuite, GetHostedZoneFailure )
     input.SetId("fake-zone");
     auto outcome = clientSp->GetHostedZone(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(Route53SmokeTestSuite, ListHostedZonesSuccess )
+{
+    Aws::Route53::Route53ClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-east-1";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<Route53Client>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListHostedZonesRequest input;
+    auto outcome = clientSp->ListHostedZones(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -385,6 +385,7 @@ namespace Model
     ///@{
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+     * <p>Default: false</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
@@ -394,8 +395,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
-     * <p>Default: false</p>
+     * <p>If <code>true</code>, the data in the cluster is encrypted at rest. If you
+     * set the value on this parameter to <code>false</code>, the request will
+     * fail.</p> <p>Default: true</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }

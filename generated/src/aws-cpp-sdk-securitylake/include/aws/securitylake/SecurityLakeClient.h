@@ -245,7 +245,12 @@ namespace SecurityLake
         /**
          * <p>Automatically enables Amazon Security Lake for new member accounts in your
          * organization. Security Lake is not automatically enabled for any existing member
-         * accounts in your organization.</p><p><h3>See Also:</h3>   <a
+         * accounts in your organization.</p> <p>This operation merges the new data lake
+         * organization configuration with the existing configuration for Security Lake in
+         * your organization. If you want to create a new data lake organization
+         * configuration, you must delete the existing one using <a
+         * href="https://docs.aws.amazon.com/security-lake/latest/APIReference/API_DeleteDataLakeOrganizationConfiguration.html">DeleteDataLakeOrganizationConfiguration</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
