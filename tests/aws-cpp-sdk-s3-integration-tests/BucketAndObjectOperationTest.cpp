@@ -2631,7 +2631,7 @@ void DownloadFile(const Aws::String& bucket_name, const Aws::String& object_key,
 }
 TEST_F(BucketAndObjectOperationTest, MeasureTier)
 {
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 20; i++)
     {
         DownloadFile("cpp-sdk-bucket-intelligent-tier", "sample_test_file.txt", "sample_test_file_intelligent.txt");
 
