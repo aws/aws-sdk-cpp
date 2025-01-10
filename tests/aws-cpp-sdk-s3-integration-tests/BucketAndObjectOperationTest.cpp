@@ -2581,13 +2581,12 @@ namespace
       EXPECT_EQ(headOutcome.GetResult().GetContentEncoding(), "gzip");
     }
 
-    TEST_F(BucketAndObjectOperationTest, TestResponse) {
+    TEST_F(BucketAndObjectOperationTest, TestHeaderResponse) {
 
     ClientConfiguration configuration;
     configuration.region = "us-east-1";
     configuration.enableHttpClientTrace = true;
     std::shared_ptr<Aws::S3::S3Client> client =  Aws::MakeShared<Aws::S3::S3Client>("test",configuration);
-
 
     const String fullBucketName = CalculateBucketName(BASE_CONTENT_ENCODING_BUCKET_NAME.c_str());
     CreateBucketRequest createBucketRequest;
@@ -2596,11 +2595,9 @@ namespace
     CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest,client);
     AWS_EXPECT_SUCCESS(createBucketOutcome);
 
-
     Aws::S3::Model::GetObjectRequest request;
     request.SetBucket(fullBucketName);
     request.SetKey("one_object_that_does_not_exist_in_the_bucket"); // <== we should get 404 when calling GetResponseCode
-
     request.SetHeadersReceivedEventHandler (
       [] (
         const Aws::Http::HttpRequest * ,
@@ -2608,22 +2605,14 @@ namespace
       ) {
         ::std::cout <<  "response headers received: "
             << response->GetResponseCode ( )
-           << ::std::endl; // <== current implementation is always "response headers received: -1"
+           << ::std::endl; 
+        EXPECT_EQ(response->GetResponseCode(), Aws::Http::HttpResponseCode::NOT_FOUND );
       }
     );
 
     Aws::S3::Model::GetObjectOutcome outcome =
             client->GetObject(request);
+    EXPECT_FALSE(outcome.IsSuccess());
 
-    if (!outcome.IsSuccess()) {
-        const Aws::S3::S3Error &err = outcome.GetError();
-        std::cerr << "Error: getObject: " <<
-                  err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
-    } else {
-        std::cout << "Successfully retrieved from '"
-                  << fullBucketName << "'." << std::endl;
-    }
-
-    AWS_EXPECT_SUCCESS(outcome);
   }
 }
