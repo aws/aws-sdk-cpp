@@ -55,9 +55,7 @@ namespace Model
     /**
      * <p>The identity based policy that scopes the session to the privileged tasks
      * that can be performed. You can use one of following Amazon Web Services managed
-     * policies to scope root session actions. You can add additional customer managed
-     * policies to further limit the permissions for the root session.</p> <ul> <li>
-     * <p> <a
+     * policies to scope root session actions.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a>
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMCreateRootUserPassword">IAMCreateRootUserPassword</a>
