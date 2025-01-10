@@ -88,5 +88,5 @@ ${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
 #end## --------------------- if uriParts.size() > startIndex end ---
 #end## --------------------- for (parameter in request uri parameters) end ---
 #if($queryStart)
-${indent}  resolvedEndpoint.queryString = ss.str();
+${indent}  resolvedEndpoint.SetQueryString(ss.str());
 #end
