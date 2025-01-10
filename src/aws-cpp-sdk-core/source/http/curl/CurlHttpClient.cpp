@@ -276,7 +276,7 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
             response->AddHeader(StringUtils::Trim(keyValuePair[0].c_str()), StringUtils::Trim(keyValuePair[1].c_str()));
         }
         //checking for end of all the headers before setting response code
-        else if (headerLine == "\r\n")
+        else if (headerLine == "\r\n" && context->m_curlHandle)
         {
             long responseCode{-1};
             curl_easy_getinfo(context->m_curlHandle, CURLINFO_RESPONSE_CODE, &responseCode);
