@@ -1,0 +1,90 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/MacroParseOverrideOrDefault.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
+\#include <aws/core/utils/Outcome.h>
+\#include <aws/core/auth/AWSAuthSigner.h>
+\#include <aws/core/client/CoreErrors.h>
+\#include <aws/core/client/RetryStrategy.h>
+\#include <aws/core/http/HttpClient.h>
+\#include <aws/core/http/HttpResponse.h>
+\#include <aws/core/http/HttpClientFactory.h>
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Xml;
+using namespace smithy::components::tracing;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+#end
+#if($serviceModel.metadata.namespace == "S3")
+using namespace Aws::Utils;
+#end
+
+
+#if(!${onlyGeneratedOperations})
+namespace Aws
+{
+  namespace ${metadata.namespace}
+  {
+    const char SERVICE_NAME[] = "${metadata.signingName}";
+    const char ALLOCATION_TAG[] = "${className}";
+  }
+}
+const char* ${className}::GetServiceName() {return SERVICE_NAME;}
+const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
+#end
+#set($hostOverrideString = '')
+#if($metadata.globalEndpoint)
+#set($hostOverrideString = ', "' + $metadata.globalEndpoint + '"')
+#end
+
+#if(!${onlyGeneratedOperations})
+#parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+
+#if($metadata.protocol == "query")
+Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  if (!m_endpointProvider)
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Endpoint provider is not initialized.");
+    return "";
+  }
+  Aws::Endpoint::EndpointParameters endpointParameters;
+  endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", Aws::String(region)));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
+  if (!endpointResolutionOutcome.IsSuccess())
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Endpoint resolution failed: " << endpointResolutionOutcome.GetError().GetMessage());
+    return "";
+  }
+  Aws::StringStream ss;
+  ss << "?" << requestToConvert.SerializePayload();
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+
+  return GeneratePresignedUrl(endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET, region, 3600);
+}
+
+#end
+#end
+#if($serviceNamespace == "S3Crt")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtSpecificOperations.vm")
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientOperations.vm")
