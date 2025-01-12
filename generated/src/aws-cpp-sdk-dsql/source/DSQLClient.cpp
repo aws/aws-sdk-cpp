@@ -450,11 +450,11 @@ Aws::Utils::Outcome<String, DSQLError> DSQLClient::GenerateDBConnectAuthToken(co
 {
     if (hostname.empty() || region.empty())
     {
-      return AWSError<CoreErrors>{CoreErrors::INVALID_PARAMETER_VALUE, "InavlidParameterValue", "all argments must be non-empty", false};
+      return Aws::Client::AWSError<CoreErrors>{CoreErrors::INVALID_PARAMETER_VALUE, "InavlidParameterValue", "all argments must be non-empty", false};
     }
     URI uri(hostname);
     uri.AddQueryStringParameter("Action", "DbConnect");
-    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn);
+    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn, {}, nullptr);
     Aws::Utils::StringUtils::Replace(url, "http://", "");
     return url;
 }
@@ -462,11 +462,11 @@ Aws::Utils::Outcome<String, DSQLError> DSQLClient::GenerateDBConnectAdminAuthTok
 {
     if (hostname.empty() || region.empty())
     {
-      return AWSError<CoreErrors>{CoreErrors::INVALID_PARAMETER_VALUE, "InavlidParameterValue", "all argments must be non-empty", false};
+      return Aws::Client::AWSError<CoreErrors>{CoreErrors::INVALID_PARAMETER_VALUE, "InavlidParameterValue", "all argments must be non-empty", false};
     }
     URI uri(hostname);
     uri.AddQueryStringParameter("Action", "DbConnectAdmin");
-    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn);
+    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region.c_str(), GetServiceName(), expiresIn, {}, nullptr);
     Aws::Utils::StringUtils::Replace(url, "http://", "");
     return url;
 }

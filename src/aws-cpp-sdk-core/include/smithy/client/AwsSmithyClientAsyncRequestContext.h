@@ -54,7 +54,7 @@ namespace smithy
 
             Aws::String m_invocationId;
             Aws::Http::HttpMethod m_method;
-            const Aws::AmazonWebServiceRequest* m_pRequest; // optional
+            const Aws::AmazonWebServiceRequest* m_pRequest{nullptr}; // optional
 
             RequestInfo m_requestInfo;
             Aws::String m_requestName;

@@ -19,6 +19,8 @@
 #include <smithy/identity/auth/AuthSchemeResolverBase.h>
 #include <smithy/identity/identity/AwsIdentity.h>
 #include <smithy/tracing/TelemetryProvider.h>
+#include <aws/core/http/HttpClientFactory.h>
+
 
 namespace smithy {
 namespace client
@@ -127,6 +129,33 @@ namespace client
           auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
           return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
+
+
+        Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
+                                                  Aws::Http::HttpMethod method,
+                                                  const Aws::String& region,
+                                                  const Aws::String& serviceName,
+                                                  long long expirationInSeconds,
+                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            request->SetServiceSpecificParameters(serviceSpecificParameters);
+            for (const auto& it: customizedHeaders)
+            {
+                request->SetHeaderValue(it.first.c_str(), it.second);
+            }
+            AwsSmithyClientAsyncRequestContext ctx;
+            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
+            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, region, serviceName, expirationInSeconds).IsSuccess())
+            {
+                return request->GetURIString();
+            }
+            return {};
+        }
+
+        
 
        protected:
 
