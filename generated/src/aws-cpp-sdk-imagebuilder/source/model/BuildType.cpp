@@ -23,6 +23,7 @@ namespace Aws
         static const int USER_INITIATED_HASH = HashingUtils::HashString("USER_INITIATED");
         static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
         static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
+        static const int IMPORT_ISO_HASH = HashingUtils::HashString("IMPORT_ISO");
 
 
         BuildType GetBuildTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == IMPORT_HASH)
           {
             return BuildType::IMPORT;
+          }
+          else if (hashCode == IMPORT_ISO_HASH)
+          {
+            return BuildType::IMPORT_ISO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "SCHEDULED";
           case BuildType::IMPORT:
             return "IMPORT";
+          case BuildType::IMPORT_ISO:
+            return "IMPORT_ISO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -43,6 +43,9 @@ namespace Aws
         static const int CurrentConfigurationDesiredCapacity_HASH = HashingUtils::HashString("CurrentConfigurationDesiredCapacity");
         static const int CurrentConfigurationMinSize_HASH = HashingUtils::HashString("CurrentConfigurationMinSize");
         static const int CurrentConfigurationMaxSize_HASH = HashingUtils::HashString("CurrentConfigurationMaxSize");
+        static const int CurrentConfigurationAllocationStrategy_HASH = HashingUtils::HashString("CurrentConfigurationAllocationStrategy");
+        static const int CurrentConfigurationMixedInstanceTypes_HASH = HashingUtils::HashString("CurrentConfigurationMixedInstanceTypes");
+        static const int CurrentConfigurationType_HASH = HashingUtils::HashString("CurrentConfigurationType");
         static const int CurrentOnDemandPrice_HASH = HashingUtils::HashString("CurrentOnDemandPrice");
         static const int CurrentStandardOneYearNoUpfrontReservedPrice_HASH = HashingUtils::HashString("CurrentStandardOneYearNoUpfrontReservedPrice");
         static const int CurrentStandardThreeYearNoUpfrontReservedPrice_HASH = HashingUtils::HashString("CurrentStandardThreeYearNoUpfrontReservedPrice");
@@ -54,6 +57,10 @@ namespace Aws
         static const int RecommendationOptionsConfigurationDesiredCapacity_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationDesiredCapacity");
         static const int RecommendationOptionsConfigurationMinSize_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationMinSize");
         static const int RecommendationOptionsConfigurationMaxSize_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationMaxSize");
+        static const int RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage");
+        static const int RecommendationOptionsConfigurationAllocationStrategy_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationAllocationStrategy");
+        static const int RecommendationOptionsConfigurationMixedInstanceTypes_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationMixedInstanceTypes");
+        static const int RecommendationOptionsConfigurationType_HASH = HashingUtils::HashString("RecommendationOptionsConfigurationType");
         static const int RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
         static const int RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
         static const int RecommendationOptionsPerformanceRisk_HASH = HashingUtils::HashString("RecommendationOptionsPerformanceRisk");
@@ -183,6 +190,18 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::CurrentConfigurationMaxSize;
           }
+          else if (hashCode == CurrentConfigurationAllocationStrategy_HASH)
+          {
+            return ExportableAutoScalingGroupField::CurrentConfigurationAllocationStrategy;
+          }
+          else if (hashCode == CurrentConfigurationMixedInstanceTypes_HASH)
+          {
+            return ExportableAutoScalingGroupField::CurrentConfigurationMixedInstanceTypes;
+          }
+          else if (hashCode == CurrentConfigurationType_HASH)
+          {
+            return ExportableAutoScalingGroupField::CurrentConfigurationType;
+          }
           else if (hashCode == CurrentOnDemandPrice_HASH)
           {
             return ExportableAutoScalingGroupField::CurrentOnDemandPrice;
@@ -226,6 +245,22 @@ namespace Aws
           else if (hashCode == RecommendationOptionsConfigurationMaxSize_HASH)
           {
             return ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize;
+          }
+          else if (hashCode == RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage;
+          }
+          else if (hashCode == RecommendationOptionsConfigurationAllocationStrategy_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsConfigurationAllocationStrategy;
+          }
+          else if (hashCode == RecommendationOptionsConfigurationMixedInstanceTypes_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMixedInstanceTypes;
+          }
+          else if (hashCode == RecommendationOptionsConfigurationType_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsConfigurationType;
           }
           else if (hashCode == RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH)
           {
@@ -417,6 +452,12 @@ namespace Aws
             return "CurrentConfigurationMinSize";
           case ExportableAutoScalingGroupField::CurrentConfigurationMaxSize:
             return "CurrentConfigurationMaxSize";
+          case ExportableAutoScalingGroupField::CurrentConfigurationAllocationStrategy:
+            return "CurrentConfigurationAllocationStrategy";
+          case ExportableAutoScalingGroupField::CurrentConfigurationMixedInstanceTypes:
+            return "CurrentConfigurationMixedInstanceTypes";
+          case ExportableAutoScalingGroupField::CurrentConfigurationType:
+            return "CurrentConfigurationType";
           case ExportableAutoScalingGroupField::CurrentOnDemandPrice:
             return "CurrentOnDemandPrice";
           case ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice:
@@ -439,6 +480,14 @@ namespace Aws
             return "RecommendationOptionsConfigurationMinSize";
           case ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize:
             return "RecommendationOptionsConfigurationMaxSize";
+          case ExportableAutoScalingGroupField::RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage:
+            return "RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage";
+          case ExportableAutoScalingGroupField::RecommendationOptionsConfigurationAllocationStrategy:
+            return "RecommendationOptionsConfigurationAllocationStrategy";
+          case ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMixedInstanceTypes:
+            return "RecommendationOptionsConfigurationMixedInstanceTypes";
+          case ExportableAutoScalingGroupField::RecommendationOptionsConfigurationType:
+            return "RecommendationOptionsConfigurationType";
           case ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum:
             return "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum";
           case ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum:

@@ -27,6 +27,7 @@ namespace Aws
         static const char AP_SOUTHEAST_3[] = "ap-southeast-3"; // Asia Pacific (Jakarta)
         static const char AP_SOUTHEAST_4[] = "ap-southeast-4"; // Asia Pacific (Melbourne)
         static const char AP_SOUTHEAST_5[] = "ap-southeast-5"; // Asia Pacific (Malaysia)
+        static const char AP_SOUTHEAST_7[] = "ap-southeast-7"; // Asia Pacific (Thailand)
         static const char AWS_CN_GLOBAL[] = "aws-cn-global"; // AWS China global region
         static const char AWS_GLOBAL[] = "aws-global"; // AWS Standard global region
         static const char AWS_ISO_B_GLOBAL[] = "aws-iso-b-global"; // AWS ISOB (US) global region

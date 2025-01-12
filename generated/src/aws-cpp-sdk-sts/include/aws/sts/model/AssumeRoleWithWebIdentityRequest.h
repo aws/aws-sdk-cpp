@@ -99,8 +99,9 @@ namespace Model
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
      * application makes an <code>AssumeRoleWithWebIdentity</code> call. Timestamps in
-     * the token must be formatted as either an integer or a long integer. Only tokens
-     * with RSA algorithms (RS256) are supported.</p>
+     * the token must be formatted as either an integer or a long integer. Tokens must
+     * be signed using either RSA keys (RS256, RS384, or RS512) or ECDSA keys (ES256,
+     * ES384, or ES512).</p>
      */
     inline const Aws::String& GetWebIdentityToken() const{ return m_webIdentityToken; }
     inline bool WebIdentityTokenHasBeenSet() const { return m_webIdentityTokenHasBeenSet; }

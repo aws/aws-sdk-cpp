@@ -31,10 +31,13 @@ namespace client
              typename AuthSchemesVariantT,
              typename EndpointProviderT,
              typename SerializerT,
-             typename ResponseT>
+             typename ResponseT,
+             typename ErrorMarshallerT>
     class AwsSmithyClientT : public AwsSmithyClientBase
     {
     public:
+        static_assert(std::is_base_of<Aws::Client::AWSErrorMarshaller, ErrorMarshallerT>::value, "MarshallerT must be derived from class Aws::Client::AWSErrorMarshaller");
+
         explicit AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig, const Aws::String& serviceName,
             const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
             const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& errorMarshaller,
@@ -46,14 +49,57 @@ namespace client
               m_endpointProvider(endpointProvider),
               m_authSchemeResolver(authSchemeResolver),
               m_authSchemes(authSchemes),
-              m_serializer(Aws::MakeUnique<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider))
+              m_serializer(Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider))
         {
-            m_serviceName = ServiceNameT;
+          m_serviceName = ServiceNameT;
+          initClient();
         }
+
+        AwsSmithyClientT(const AwsSmithyClientT& other):
+            AwsSmithyClientBase(other,
+              Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
+              ServiceNameT,
+              Aws::Http::CreateHttpClient(other.m_clientConfiguration),
+              Aws::MakeShared<ErrorMarshallerT>(ServiceNameT)),
+            m_clientConfiguration{*static_cast<ServiceClientConfigurationT*>(m_clientConfig.get())},
+            m_endpointProvider{other.m_endpointProvider},
+            m_authSchemeResolver{Aws::MakeShared<ServiceAuthSchemeResolverT>(ServiceNameT)},
+            m_authSchemes{other.m_authSchemes},
+            m_serializer{Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider)}
+        {
+            initClient();
+        }
+
+        AwsSmithyClientT& operator=(const AwsSmithyClientT& other)
+        {   
+            if(this != &other)
+            {
+                AwsSmithyClientBase::deepCopy(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
+                  ServiceNameT,
+                  Aws::Http::CreateHttpClient(other.m_clientConfiguration),
+                  Aws::MakeShared<ErrorMarshallerT>(ServiceNameT));
+                m_clientConfiguration = *static_cast<ServiceClientConfigurationT*>(m_clientConfig.get());
+                m_endpointProvider = other.m_endpointProvider;
+                m_authSchemeResolver = Aws::MakeShared<ServiceAuthSchemeResolverT>(ServiceNameT);
+                m_authSchemes = other.m_authSchemes;
+                m_serializer = Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider);
+                m_errorMarshaller = Aws::MakeShared<ErrorMarshallerT>(ServiceNameT);
+                initClient();
+            }
+            return *this;
+        }
+
+        AwsSmithyClientT (AwsSmithyClientT&&) = default;
+
+        AwsSmithyClientT& operator=(AwsSmithyClientT&&) = default;
 
         virtual ~AwsSmithyClientT() = default;
 
     protected:
+        void initClient() {
+          m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
+        }
+
         inline const char* GetServiceClientName() const override { return m_serviceName.c_str(); }
 
         ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const override
@@ -163,7 +209,7 @@ namespace client
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
-        Aws::UniquePtr<SerializerT> m_serializer{};
+        std::shared_ptr<SerializerT> m_serializer{};
     };
 
     }  // namespace client

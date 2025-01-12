@@ -26,6 +26,7 @@
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #end
 \#include <smithy/client/serializer/${serializer}.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 
 namespace ${rootNamespace}
 {
@@ -47,7 +48,8 @@ namespace ${serviceNamespace}
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
       ${metadata.classNamePrefix}EndpointProviderBase,
       smithy::client::$serializer,
-      smithy::client::$serializerOutcome>,
+      smithy::client::$serializerOutcome,
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<${className}>
   {
     public:
@@ -66,7 +68,6 @@ namespace ${serviceNamespace}
       std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class ${rootNamespace}::Client::ClientWithAsyncTemplateMethods<${className}>;
-      void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
 
 #if($metadata.hasEndpointDiscoveryTrait)
       void OptionallyUpdateDescribeEndpointsCache(${rootNamespace}::Endpoint::AWSEndpoint& resolvedEndpoint,
