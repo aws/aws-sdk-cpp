@@ -244,6 +244,7 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         }
         if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
+            std::cout<<"data flushed "<<std::endl;
             response->GetResponseBody().flush();
             if (response->GetResponseBody().fail()) {
                 const auto& ref = response->GetResponseBody();
@@ -255,7 +256,6 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
         {
-            std::cout<<"invoke DataReceivedEventHandler "<<std::endl;
             receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
         }
 

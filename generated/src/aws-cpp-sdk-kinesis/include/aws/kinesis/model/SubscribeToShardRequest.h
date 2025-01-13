@@ -35,6 +35,7 @@ namespace Model
     AWS_KINESIS_API Aws::String SerializePayload() const override;
 
     AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    
 
     /**
      * Underlying Event Stream Decoder.

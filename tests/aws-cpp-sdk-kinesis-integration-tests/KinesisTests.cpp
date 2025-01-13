@@ -22,6 +22,7 @@
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/kinesis/model/PutRecordRequest.h>
 
 #include <thread>
 #include <chrono>
@@ -49,7 +50,7 @@ protected:
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
 
         // Create stream
-        auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName));
+        auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName).WithShardCount(1));
         AWS_ASSERT_SUCCESS(createStream);
 
         // Wait 2 minutes for stream to be ready
@@ -171,6 +172,29 @@ TEST_F(KinesisTest, EnhancedFanOut)
     AWS_ASSERT_SUCCESS(m_client->DeregisterStreamConsumer(deregisterRequest));
 }
 
+
+void WriteDataToStream(Aws::Kinesis::KinesisClient &kinesis_client, const std::string &streamName, const std::string &data, const std::string &partitionKey)
+{
+    std::cout<<"WriteDataToStream called"<<std::endl;
+    Aws::Kinesis::Model::PutRecordRequest putRecordRequest;
+    putRecordRequest.SetStreamName(streamName);
+    
+    putRecordRequest.SetPartitionKey(partitionKey);
+
+    Aws::Utils::ByteBuffer dataBuffer((unsigned char*)data.c_str(), data.size());
+    putRecordRequest.SetData(dataBuffer);
+
+    // Send the record to the stream
+    auto putRecordOutcome = kinesis_client.PutRecord(putRecordRequest);
+    
+    if (putRecordOutcome.IsSuccess()) {
+        std::cout << "Successfully put record into stream: " << data << std::endl;
+    } else {
+        std::cout << "Error putting record into stream: " 
+                  << putRecordOutcome.GetError().GetMessage() << std::endl;
+    }
+}
+
 TEST_F(KinesisTest, testSubscribe)
 {
     // Get the Stream ARN (different between accounts)
@@ -189,6 +213,7 @@ TEST_F(KinesisTest, testSubscribe)
     const auto consumerARN = registerConsumerOutcome.GetResult().GetConsumer().GetConsumerARN();
     WaitUntilConsumerIsActive(consumerARN);
 
+    std::cout<<"get shards for "<<streamName<<", consumerARN="<<consumerARN<<std::endl;
     // Get the shard id
     ListShardsRequest listShardRequest;
     listShardRequest.SetStreamName(streamName);
@@ -196,13 +221,25 @@ TEST_F(KinesisTest, testSubscribe)
     AWS_ASSERT_SUCCESS(listShardsOutcome);
     const auto& shards = listShardsOutcome.GetResult().GetShards();
     ASSERT_FALSE(shards.empty());
+
+    std::cout<<"number of shards="<<shards.size()<<std::endl;
     const auto shardId = shards[0].GetShardId();
+    std::cout<<"shardId="<<shardId<<std::endl;
     //======
 
-    Aws::Kinesis::Model::StartingPosition start_position;
-    start_position.SetType(Aws::Kinesis::Model::ShardIteratorType::LATEST);
-
     Aws::Kinesis::KinesisClient kinesis_client;
+    std::string partitionKey = "shard0Key";  // Use a consistent partition key for Shard 0
+    
+    WriteDataToStream(kinesis_client, streamName, "Hello, this is the first test record for Shard 0!", partitionKey);
+    WriteDataToStream(kinesis_client, streamName, "Here's another test record for Shard 0!", partitionKey);
+    WriteDataToStream(kinesis_client, streamName, "Final record for Shard 0.", partitionKey);
+
+
+    //=====
+
+    Aws::Kinesis::Model::StartingPosition start_position;
+    start_position.SetType(Aws::Kinesis::Model::ShardIteratorType::TRIM_HORIZON);
+
 
     Aws::Kinesis::Model::SubscribeToShardRequest subscribe_request;
     subscribe_request.SetConsumerARN(consumerARN);
@@ -235,6 +272,8 @@ TEST_F(KinesisTest, testSubscribe)
     {
         std::cout << "Error subscribing to shard: " << subscribeOutcome.GetError().GetMessage() << std::endl;
     }
+
+ 
 }
 
 }
