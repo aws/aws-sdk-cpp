@@ -2582,37 +2582,36 @@ namespace
     }
 
     TEST_F(BucketAndObjectOperationTest, TestHeaderResponse) {
+        ClientConfiguration configuration;
+        configuration.region = "us-east-1";
+        configuration.enableHttpClientTrace = true;
+        std::shared_ptr<Aws::S3::S3Client> client =  Aws::MakeShared<Aws::S3::S3Client>("test",configuration);
 
-    ClientConfiguration configuration;
-    configuration.region = "us-east-1";
-    configuration.enableHttpClientTrace = true;
-    std::shared_ptr<Aws::S3::S3Client> client =  Aws::MakeShared<Aws::S3::S3Client>("test",configuration);
+        const String fullBucketName = CalculateBucketName(BASE_CONTENT_ENCODING_BUCKET_NAME.c_str());
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest,client);
+        AWS_EXPECT_SUCCESS(createBucketOutcome);
 
-    const String fullBucketName = CalculateBucketName(BASE_CONTENT_ENCODING_BUCKET_NAME.c_str());
-    CreateBucketRequest createBucketRequest;
-    createBucketRequest.SetBucket(fullBucketName);
-    createBucketRequest.SetACL(BucketCannedACL::private_);
-    CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest,client);
-    AWS_EXPECT_SUCCESS(createBucketOutcome);
+        Aws::S3::Model::GetObjectRequest request;
+        request.SetBucket(fullBucketName);
+        request.SetKey("one_object_that_does_not_exist_in_the_bucket"); // <== we should get 404 when calling GetResponseCode
+        request.SetHeadersReceivedEventHandler (
+        [] (
+            const Aws::Http::HttpRequest * ,
+            Aws::Http::HttpResponse * response
+        ) {
+            ::std::cout <<  "response headers received: "
+                << response->GetResponseCode ( )
+            << ::std::endl; 
+            EXPECT_EQ(response->GetResponseCode(), Aws::Http::HttpResponseCode::NOT_FOUND );
+        }
+        );
 
-    Aws::S3::Model::GetObjectRequest request;
-    request.SetBucket(fullBucketName);
-    request.SetKey("one_object_that_does_not_exist_in_the_bucket"); // <== we should get 404 when calling GetResponseCode
-    request.SetHeadersReceivedEventHandler (
-      [] (
-        const Aws::Http::HttpRequest * ,
-        Aws::Http::HttpResponse * response
-      ) {
-        ::std::cout <<  "response headers received: "
-            << response->GetResponseCode ( )
-           << ::std::endl; 
-        EXPECT_EQ(response->GetResponseCode(), Aws::Http::HttpResponseCode::NOT_FOUND );
-      }
-    );
+        Aws::S3::Model::GetObjectOutcome outcome =
+                client->GetObject(request);
+        EXPECT_FALSE(outcome.IsSuccess());
 
-    Aws::S3::Model::GetObjectOutcome outcome =
-            client->GetObject(request);
-    EXPECT_FALSE(outcome.IsSuccess());
-
-  }
+    }
 }
