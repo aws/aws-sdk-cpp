@@ -210,8 +210,15 @@ TEST_F(KinesisTest, testSubscribe)
     subscribe_request.SetStartingPosition(start_position);
 
     Aws::Kinesis::Model::SubscribeToShardHandler handler;
+    auto t_start = std::chrono::high_resolution_clock::now();
     handler.SetSubscribeToShardEventCallback([&](const Aws::Kinesis::Model::SubscribeToShardEvent &event)
     {
+        auto t_end = std::chrono::high_resolution_clock::now();
+
+        double elapsed_time = std::chrono::duration<double, std::milli>(t_end-t_start).count();
+
+        t_start = t_end;
+        std::cout << "SetSubscribeToShardEventCallback called at time: " << elapsed_time << " ms" << std::endl;
         for (const auto& record : event.GetRecords())
         {
             std::string record_str((char *) record.GetData().GetUnderlyingData(), record.GetData().GetLength());
@@ -220,6 +227,8 @@ TEST_F(KinesisTest, testSubscribe)
     });
 
     subscribe_request.SetEventStreamHandler(handler);
+
+    std::cout<<"calling SubscribeToShard"<<std::endl;
     auto subscribeOutcome = kinesis_client.SubscribeToShard(subscribe_request);
 
     if (!subscribeOutcome.IsSuccess())

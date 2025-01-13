@@ -144,6 +144,7 @@ struct CurlWriteCallbackContext
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     int64_t m_numBytesResponseReceived;
+    std::chrono::time_point<std::chrono::high_resolution_clock> m_start{ std::chrono::high_resolution_clock::now()};
 };
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
@@ -194,6 +195,12 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         {
             return 0;
         }
+
+        auto end_time = std::chrono::high_resolution_clock::now();
+        double elapsed_time = std::chrono::duration<double, std::milli>(end_time-context->m_start).count();
+        context->m_start = end_time;
+
+        std::cout<<"WriteData called after "<<elapsed_time<<" ms"<<std::endl;
 
         HttpResponse* response = context->m_response;
         auto& headersHandler = context->m_request->GetHeadersReceivedEventHandler();
@@ -248,6 +255,7 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
         {
+            std::cout<<"invoke DataReceivedEventHandler "<<std::endl;
             receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
         }
 

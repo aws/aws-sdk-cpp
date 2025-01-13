@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 {
     Aws::Testing::SetDefaultSigPipeHandler();
     Aws::SDKOptions options;
-    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Debug;
     AWS_BEGIN_MEMORY_TEST_EX(options, 1024, 128);
 
     Aws::Testing::InitPlatformTest(options);
