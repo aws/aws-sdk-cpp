@@ -47,7 +47,9 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_clientConnectOptionsHasBeenSet(false),
     m_sessionTimeoutHours(0),
     m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false)
+    m_clientLoginBannerOptionsHasBeenSet(false),
+    m_disconnectOnSessionTimeout(false),
+    m_disconnectOnSessionTimeoutHasBeenSet(false)
 {
 }
 
@@ -219,6 +221,12 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_clientLoginBannerOptions = clientLoginBannerOptionsNode;
       m_clientLoginBannerOptionsHasBeenSet = true;
     }
+    XmlNode disconnectOnSessionTimeoutNode = resultNode.FirstChild("disconnectOnSessionTimeout");
+    if(!disconnectOnSessionTimeoutNode.IsNull())
+    {
+      m_disconnectOnSessionTimeout = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disconnectOnSessionTimeoutNode.GetText()).c_str()).c_str());
+      m_disconnectOnSessionTimeoutHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -364,6 +372,11 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       m_clientLoginBannerOptions.OutputToStream(oStream, clientLoginBannerOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_disconnectOnSessionTimeoutHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
+  }
+
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -483,6 +496,10 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::String clientLoginBannerOptionsLocationAndMember(location);
       clientLoginBannerOptionsLocationAndMember += ".ClientLoginBannerOptions";
       m_clientLoginBannerOptions.OutputToStream(oStream, clientLoginBannerOptionsLocationAndMember.c_str());
+  }
+  if(m_disconnectOnSessionTimeoutHasBeenSet)
+  {
+      oStream << location << ".DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
   }
 }
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/InputType.h>
 #include <aws/transcribe/model/Rule.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -105,6 +106,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * call analytics category.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline CategoryProperties& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CategoryProperties& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CategoryProperties& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CategoryProperties& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The input type associated with the specified category. <code>POST_CALL</code>
      * refers to a category that is applied to batch transcriptions;
      * <code>REAL_TIME</code> refers to a category that is applied to streaming
@@ -130,6 +146,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     InputType m_inputType;
     bool m_inputTypeHasBeenSet = false;

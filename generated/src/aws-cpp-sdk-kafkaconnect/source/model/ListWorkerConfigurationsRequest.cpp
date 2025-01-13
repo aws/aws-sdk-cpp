@@ -18,8 +18,8 @@ using namespace Aws::Http;
 ListWorkerConfigurationsRequest::ListWorkerConfigurationsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_namePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_namePrefixHasBeenSet(false)
 {
 }
 
@@ -38,17 +38,17 @@ void ListWorkerConfigurationsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_namePrefixHasBeenSet)
-    {
-      ss << m_namePrefix;
-      uri.AddQueryStringParameter("namePrefix", ss.str());
-      ss.str("");
-    }
-
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_namePrefixHasBeenSet)
+    {
+      ss << m_namePrefix;
+      uri.AddQueryStringParameter("namePrefix", ss.str());
       ss.str("");
     }
 

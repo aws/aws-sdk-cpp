@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/model/InputType.h>
 #include <aws/transcribe/model/Rule.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * call analytics category at the time you start this new job.</p> <p>To learn more
+     * about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+     * resources</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline CreateCallAnalyticsCategoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CreateCallAnalyticsCategoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CreateCallAnalyticsCategoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateCallAnalyticsCategoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Choose whether you want to create a real-time or a post-call category for
      * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
      * assigns your category to post-call transcriptions; categories with this input
@@ -98,6 +117,9 @@ namespace Model
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     InputType m_inputType;
     bool m_inputTypeHasBeenSet = false;

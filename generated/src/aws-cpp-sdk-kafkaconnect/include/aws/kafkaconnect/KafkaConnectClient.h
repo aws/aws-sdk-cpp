@@ -256,6 +256,32 @@ namespace KafkaConnect
         }
 
         /**
+         * <p>Returns information about the specified connector's operations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConnectorOperationOutcome DescribeConnectorOperation(const Model::DescribeConnectorOperationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeConnectorOperation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeConnectorOperationRequestT = Model::DescribeConnectorOperationRequest>
+        Model::DescribeConnectorOperationOutcomeCallable DescribeConnectorOperationCallable(const DescribeConnectorOperationRequestT& request) const
+        {
+            return SubmitCallable(&KafkaConnectClient::DescribeConnectorOperation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeConnectorOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeConnectorOperationRequestT = Model::DescribeConnectorOperationRequest>
+        void DescribeConnectorOperationAsync(const DescribeConnectorOperationRequestT& request, const DescribeConnectorOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaConnectClient::DescribeConnectorOperation, request, handler, context);
+        }
+
+        /**
          * <p>A summary description of the custom plugin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeCustomPlugin">AWS
          * API Reference</a></p>
@@ -304,6 +330,32 @@ namespace KafkaConnect
         void DescribeWorkerConfigurationAsync(const DescribeWorkerConfigurationRequestT& request, const DescribeWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaConnectClient::DescribeWorkerConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Lists information about a connector's operation(s).</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectorOperationsOutcome ListConnectorOperations(const Model::ListConnectorOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConnectorOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConnectorOperationsRequestT = Model::ListConnectorOperationsRequest>
+        Model::ListConnectorOperationsOutcomeCallable ListConnectorOperationsCallable(const ListConnectorOperationsRequestT& request) const
+        {
+            return SubmitCallable(&KafkaConnectClient::ListConnectorOperations, request);
+        }
+
+        /**
+         * An Async wrapper for ListConnectorOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConnectorOperationsRequestT = Model::ListConnectorOperationsRequest>
+        void ListConnectorOperationsAsync(const ListConnectorOperationsRequestT& request, const ListConnectorOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaConnectClient::ListConnectorOperations, request, handler, context);
         }
 
         /**

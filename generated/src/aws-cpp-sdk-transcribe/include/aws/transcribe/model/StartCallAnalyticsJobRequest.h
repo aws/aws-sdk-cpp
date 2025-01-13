@@ -10,6 +10,7 @@
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/CallAnalyticsJobSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <aws/transcribe/model/ChannelDefinition.h>
 #include <utility>
 
@@ -167,6 +168,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
+     * call analytics job at the time you start this new job.</p> <p>To learn more
+     * about using tags with Amazon Transcribe, refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+     * resources</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline StartCallAnalyticsJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline StartCallAnalyticsJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline StartCallAnalyticsJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline StartCallAnalyticsJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Makes it possible to specify which speaker is on which channel. For example,
      * if your agent is the first participant to speak, you would set
      * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
@@ -201,6 +220,9 @@ namespace Model
 
     CallAnalyticsJobSettings m_settings;
     bool m_settingsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<ChannelDefinition> m_channelDefinitions;
     bool m_channelDefinitionsHasBeenSet = false;

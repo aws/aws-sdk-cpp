@@ -7,6 +7,7 @@
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 #include <aws/kafkaconnect/KafkaConnectRequest.h>
 #include <aws/kafkaconnect/model/CapacityUpdate.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -53,6 +54,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>A map of keys to values that represent the configuration for the
+     * connector.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetConnectorConfiguration() const{ return m_connectorConfiguration; }
+    inline bool ConnectorConfigurationHasBeenSet() const { return m_connectorConfigurationHasBeenSet; }
+    inline void SetConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration = value; }
+    inline void SetConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration = std::move(value); }
+    inline UpdateConnectorRequest& WithConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetConnectorConfiguration(value); return *this;}
+    inline UpdateConnectorRequest& WithConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetConnectorConfiguration(std::move(value)); return *this;}
+    inline UpdateConnectorRequest& AddConnectorConfiguration(const Aws::String& key, const Aws::String& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, value); return *this; }
+    inline UpdateConnectorRequest& AddConnectorConfiguration(Aws::String&& key, const Aws::String& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::move(key), value); return *this; }
+    inline UpdateConnectorRequest& AddConnectorConfiguration(const Aws::String& key, Aws::String&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, std::move(value)); return *this; }
+    inline UpdateConnectorRequest& AddConnectorConfiguration(Aws::String&& key, Aws::String&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::move(key), std::move(value)); return *this; }
+    inline UpdateConnectorRequest& AddConnectorConfiguration(const char* key, Aws::String&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, std::move(value)); return *this; }
+    inline UpdateConnectorRequest& AddConnectorConfiguration(Aws::String&& key, const char* value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::move(key), value); return *this; }
+    inline UpdateConnectorRequest& AddConnectorConfiguration(const char* key, const char* value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
      */
     inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
@@ -82,6 +103,9 @@ namespace Model
 
     CapacityUpdate m_capacity;
     bool m_capacityHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_connectorConfiguration;
+    bool m_connectorConfigurationHasBeenSet = false;
 
     Aws::String m_connectorArn;
     bool m_connectorArnHasBeenSet = false;

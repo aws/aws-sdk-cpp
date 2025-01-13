@@ -204,6 +204,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies which worker configuration to use with the connector.</p>
+     */
+    inline const WorkerConfiguration& GetWorkerConfiguration() const{ return m_workerConfiguration; }
+    inline bool WorkerConfigurationHasBeenSet() const { return m_workerConfigurationHasBeenSet; }
+    inline void SetWorkerConfiguration(const WorkerConfiguration& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = value; }
+    inline void SetWorkerConfiguration(WorkerConfiguration&& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = std::move(value); }
+    inline CreateConnectorRequest& WithWorkerConfiguration(const WorkerConfiguration& value) { SetWorkerConfiguration(value); return *this;}
+    inline CreateConnectorRequest& WithWorkerConfiguration(WorkerConfiguration&& value) { SetWorkerConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags you want to attach to the connector.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -219,18 +231,6 @@ namespace Model
     inline CreateConnectorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
     inline CreateConnectorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateConnectorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies which worker configuration to use with the connector.</p>
-     */
-    inline const WorkerConfiguration& GetWorkerConfiguration() const{ return m_workerConfiguration; }
-    inline bool WorkerConfigurationHasBeenSet() const { return m_workerConfigurationHasBeenSet; }
-    inline void SetWorkerConfiguration(const WorkerConfiguration& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = value; }
-    inline void SetWorkerConfiguration(WorkerConfiguration&& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = std::move(value); }
-    inline CreateConnectorRequest& WithWorkerConfiguration(const WorkerConfiguration& value) { SetWorkerConfiguration(value); return *this;}
-    inline CreateConnectorRequest& WithWorkerConfiguration(WorkerConfiguration&& value) { SetWorkerConfiguration(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -267,11 +267,11 @@ namespace Model
     Aws::String m_serviceExecutionRoleArn;
     bool m_serviceExecutionRoleArnHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-
     WorkerConfiguration m_workerConfiguration;
     bool m_workerConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model
