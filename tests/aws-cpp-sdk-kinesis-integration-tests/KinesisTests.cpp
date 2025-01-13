@@ -171,4 +171,61 @@ TEST_F(KinesisTest, EnhancedFanOut)
     AWS_ASSERT_SUCCESS(m_client->DeregisterStreamConsumer(deregisterRequest));
 }
 
+TEST_F(KinesisTest, testSubscribe)
+{
+    // Get the Stream ARN (different between accounts)
+    DescribeStreamRequest describeStreamRequest;
+    describeStreamRequest.SetStreamName(streamName);
+    auto describeStreamOutcome = m_client->DescribeStream(describeStreamRequest);
+    AWS_ASSERT_SUCCESS(describeStreamOutcome);
+    const auto streamARN = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamARN();
+
+    // Register a consumer for enhanced fan-out
+    RegisterStreamConsumerRequest registerRequest;
+    const auto consumerName = BuildResourceName("sdktest");
+    registerRequest.WithConsumerName(consumerName).WithStreamARN(streamARN);
+    auto registerConsumerOutcome = m_client->RegisterStreamConsumer(registerRequest);
+    AWS_ASSERT_SUCCESS(registerConsumerOutcome);
+    const auto consumerARN = registerConsumerOutcome.GetResult().GetConsumer().GetConsumerARN();
+    WaitUntilConsumerIsActive(consumerARN);
+
+    // Get the shard id
+    ListShardsRequest listShardRequest;
+    listShardRequest.SetStreamName(streamName);
+    auto listShardsOutcome = m_client->ListShards(listShardRequest);
+    AWS_ASSERT_SUCCESS(listShardsOutcome);
+    const auto& shards = listShardsOutcome.GetResult().GetShards();
+    ASSERT_FALSE(shards.empty());
+    const auto shardId = shards[0].GetShardId();
+    //======
+
+    Aws::Kinesis::Model::StartingPosition start_position;
+    start_position.SetType(Aws::Kinesis::Model::ShardIteratorType::LATEST);
+
+    Aws::Kinesis::KinesisClient kinesis_client;
+
+    Aws::Kinesis::Model::SubscribeToShardRequest subscribe_request;
+    subscribe_request.SetConsumerARN(consumerARN);
+    subscribe_request.SetShardId(shardId);
+    subscribe_request.SetStartingPosition(start_position);
+
+    Aws::Kinesis::Model::SubscribeToShardHandler handler;
+    handler.SetSubscribeToShardEventCallback([&](const Aws::Kinesis::Model::SubscribeToShardEvent &event)
+    {
+        for (const auto& record : event.GetRecords())
+        {
+            std::string record_str((char *) record.GetData().GetUnderlyingData(), record.GetData().GetLength());
+            std::cout << "Record: " << record_str << std::endl;
+        }
+    });
+
+    subscribe_request.SetEventStreamHandler(handler);
+    auto subscribeOutcome = kinesis_client.SubscribeToShard(subscribe_request);
+
+    if (!subscribeOutcome.IsSuccess())
+    {
+        std::cout << "Error subscribing to shard: " << subscribeOutcome.GetError().GetMessage() << std::endl;
+    }
+}
+
 }
