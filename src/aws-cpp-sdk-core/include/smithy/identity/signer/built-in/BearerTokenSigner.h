@@ -57,6 +57,12 @@ class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase>
         return SigningFutureOutcome(std::move(httpRequest));
     }
 
+    SigningFutureOutcome presign(std::shared_ptr<HttpRequest> , const IdentityT& , SigningProperties , const Aws::String& , const Aws::String& , long long ) override
+    {
+        return  SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "presign not supported",
+                                          false /*retryable*/);
+    }
+
     virtual ~BearerTokenSigner(){};
 
   protected:

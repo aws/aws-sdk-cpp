@@ -54,6 +54,26 @@ namespace smithy {
             }
             return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
         }
+        SigningFutureOutcome presign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) override
+        {
+            AWS_UNREFERENCED_PARAM(properties);
+            const auto legacyCreds = [&identity]() -> Aws::Auth::AWSCredentials {
+                if(identity.sessionToken().has_value() && identity.expiration().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration()};
+                }
+                if(identity.sessionToken().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken()};
+                }
+                return {identity.accessKeyId(), identity.secretAccessKey()};
+            }();
+            auto result = legacySigner.PresignRequest(*httpRequest, legacyCreds, region.c_str(), serviceName.c_str(), expirationTimeInSeconds);
+
+            return (result ? SigningFutureOutcome(std::move(httpRequest)) : 
+                            SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "presign failed",
+                                          false /*retryable*/));
+        }
 
         virtual ~AwsSigV4Signer() {};
     protected:

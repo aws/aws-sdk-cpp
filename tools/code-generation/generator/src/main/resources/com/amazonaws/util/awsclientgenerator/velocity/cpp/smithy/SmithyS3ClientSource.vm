@@ -107,8 +107,8 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
     }
     URI uri(computeEndpointOutcome.GetResult().endpoint);
     uri.SetPath(uri.GetPath() + "/" + key);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), expirationInSeconds, customizedHeaders, nullptr);
 #else
     if (!m_endpointProvider)
     {
@@ -127,8 +127,7 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
     params.emplace("bucketName", bucket);
     ServiceSpecificParameters serviceSpecificParameters{params};
     auto serviceParams = Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
-    return AWSClient::GeneratePresignedUrl(endpoint, method, customizedHeaders, expirationInSeconds, Aws::Auth::SIGV4_SIGNER,
-        nullptr, nullptr, serviceParams);
+    return GeneratePresignedUrl(endpoint, method, {}, {}, expirationInSeconds, customizedHeaders, serviceParams);
 #end
 }
 

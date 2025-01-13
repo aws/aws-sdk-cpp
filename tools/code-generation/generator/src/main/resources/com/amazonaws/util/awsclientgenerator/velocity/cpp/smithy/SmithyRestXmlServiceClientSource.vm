@@ -57,7 +57,7 @@ const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
 #end
 
 #if(!${onlyGeneratedOperations})
-#parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+#parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSourceInit.vm")
 
 #if($metadata.protocol == "query")
 Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
@@ -87,4 +87,4 @@ Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableW
 #if($serviceNamespace == "S3Crt")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtSpecificOperations.vm")
 #end
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientOperations.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyRestXmlServiceClientOperations.vm")
