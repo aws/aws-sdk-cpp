@@ -291,6 +291,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
                     context.put("operation", op);
                     context.put("operationName", key);
+                    if((op.getResult() != null) && op.getResult().getShape().hasEventStreamMembers())
+                    {
+                        context.put("hasEventStreamResponse", true);
+                    }
                     break;
                 }
             }

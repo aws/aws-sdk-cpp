@@ -67,7 +67,6 @@ namespace Aws
                 int8_t isFinalSegment,
                 void* context)
             {
-                std::cout<<"onPayloadSegment isFinalSegment="<<isFinalSegment<<" ."<<" payload len="<<payload->len<<std::endl;
                 AWS_UNREFERENCED_PARAM(decoder);
                 auto handler = static_cast<EventStreamHandler*>(context);
                 assert(handler);

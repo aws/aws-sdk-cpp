@@ -212,8 +212,6 @@ TEST_F(KinesisTest, testSubscribe)
     AWS_ASSERT_SUCCESS(registerConsumerOutcome);
     const auto consumerARN = registerConsumerOutcome.GetResult().GetConsumer().GetConsumerARN();
     WaitUntilConsumerIsActive(consumerARN);
-
-    std::cout<<"get shards for "<<streamName<<", consumerARN="<<consumerARN<<std::endl;
     // Get the shard id
     ListShardsRequest listShardRequest;
     listShardRequest.SetStreamName(streamName);
@@ -221,25 +219,22 @@ TEST_F(KinesisTest, testSubscribe)
     AWS_ASSERT_SUCCESS(listShardsOutcome);
     const auto& shards = listShardsOutcome.GetResult().GetShards();
     ASSERT_FALSE(shards.empty());
-
-    std::cout<<"number of shards="<<shards.size()<<std::endl;
     const auto shardId = shards[0].GetShardId();
-    std::cout<<"shardId="<<shardId<<std::endl;
-    //======
-
     Aws::Kinesis::KinesisClient kinesis_client;
     std::string partitionKey = "shard0Key";  // Use a consistent partition key for Shard 0
     
-    WriteDataToStream(kinesis_client, streamName, "Hello, this is the first test record for Shard 0!", partitionKey);
-    WriteDataToStream(kinesis_client, streamName, "Here's another test record for Shard 0!", partitionKey);
-    WriteDataToStream(kinesis_client, streamName, "Final record for Shard 0.", partitionKey);
+    const Aws::Vector<Aws::String> inputs = {
+        "Hello, this is the first test record for Shard 0!",
+        "Here's another test record for Shard 0!",
+        "Final record for Shard 0."
+    };
 
-
-    //=====
+    WriteDataToStream(kinesis_client, streamName, inputs[0], partitionKey);
+    WriteDataToStream(kinesis_client, streamName, inputs[1], partitionKey);
+    WriteDataToStream(kinesis_client, streamName, inputs[2], partitionKey);
 
     Aws::Kinesis::Model::StartingPosition start_position;
     start_position.SetType(Aws::Kinesis::Model::ShardIteratorType::TRIM_HORIZON);
-
 
     Aws::Kinesis::Model::SubscribeToShardRequest subscribe_request;
     subscribe_request.SetConsumerARN(consumerARN);
@@ -251,20 +246,25 @@ TEST_F(KinesisTest, testSubscribe)
     handler.SetSubscribeToShardEventCallback([&](const Aws::Kinesis::Model::SubscribeToShardEvent &event)
     {
         auto t_end = std::chrono::high_resolution_clock::now();
-
-        double elapsed_time = std::chrono::duration<double, std::milli>(t_end-t_start).count();
-
-        t_start = t_end;
-        std::cout << "SetSubscribeToShardEventCallback called at time: " << elapsed_time << " ms" << std::endl;
-        for (const auto& record : event.GetRecords())
+        if(event.GetRecords().size())
         {
-            std::string record_str((char *) record.GetData().GetUnderlyingData(), record.GetData().GetLength());
+
+            double elapsed_time = std::chrono::duration<double, std::milli>(t_end-t_start).count();
+            std::cout << "SetSubscribeToShardEventCallback called at time: " << elapsed_time << " ms" << std::endl;
+            EXPECT_LT(elapsed_time, 400.0);
+            EXPECT_EQ(event.GetRecords().size(), 3u);
+        }
+        t_start = t_end;
+        for (auto idx = 0u; idx < event.GetRecords().size(); ++idx)
+        {
+            const auto& record = event.GetRecords()[idx];
+            Aws::String record_str((char *) record.GetData().GetUnderlyingData(), record.GetData().GetLength());
             std::cout << "Record: " << record_str << std::endl;
+            EXPECT_EQ(record_str, inputs[idx]);
         }
     });
 
     subscribe_request.SetEventStreamHandler(handler);
-
     std::cout<<"calling SubscribeToShard"<<std::endl;
     auto subscribeOutcome = kinesis_client.SubscribeToShard(subscribe_request);
 
@@ -272,8 +272,6 @@ TEST_F(KinesisTest, testSubscribe)
     {
         std::cout << "Error subscribing to shard: " << subscribeOutcome.GetError().GetMessage() << std::endl;
     }
-
- 
 }
 
 }

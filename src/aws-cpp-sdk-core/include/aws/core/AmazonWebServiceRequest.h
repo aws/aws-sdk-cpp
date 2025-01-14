@@ -202,6 +202,11 @@ namespace Aws
 
         virtual Aws::Client::CompressionAlgorithm
         GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig) const { return Aws::Client::CompressionAlgorithm::NONE; }
+        /*
+           if true, it means the operation using this request will return an event stream response.
+        */
+        inline virtual bool HasEventStreamResponse() const { return false; }
+
 
     protected:
         /**

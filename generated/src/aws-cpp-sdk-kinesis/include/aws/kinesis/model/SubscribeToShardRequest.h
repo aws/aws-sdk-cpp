@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SubscribeToShard"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_KINESIS_API Aws::String SerializePayload() const override;
 
     AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-    
 
     /**
      * Underlying Event Stream Decoder.

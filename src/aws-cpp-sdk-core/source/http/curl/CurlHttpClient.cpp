@@ -129,10 +129,12 @@ static char* strdup_callback(const char* str)
 struct CurlWriteCallbackContext
 {
     CurlWriteCallbackContext(const CurlHttpClient* client,
+                             CURL* curlHandle,
                              HttpRequest* request,
                              HttpResponse* response,
                              Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
         m_client(client),
+        m_curlHandle(curlHandle),
         m_request(request),
         m_response(response),
         m_rateLimiter(rateLimiter),
@@ -140,11 +142,11 @@ struct CurlWriteCallbackContext
     {}
 
     const CurlHttpClient* m_client;
+    CURL* m_curlHandle{nullptr};
     HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     int64_t m_numBytesResponseReceived;
-    std::chrono::time_point<std::chrono::high_resolution_clock> m_start{ std::chrono::high_resolution_clock::now()};
 };
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
@@ -184,24 +186,6 @@ static int64_t GetContentLengthFromHeader(CURL* connectionHandle,
   return hasContentLength ? static_cast<int64_t>(contentLength) : -1;
 }
 
-void ReadAndRestorePosition(Aws::IOStream& responseBodyStream) {
-    std::streampos currentPos = responseBodyStream.tellg();
-    
-    if (currentPos == -1) {
-        std::cerr << "Stream not in a readable state or doesn't support tellg()" << std::endl;
-        return;
-    }
-
-    std::ostringstream oss;
-    oss << responseBodyStream.rdbuf(); // Read everything from the stream
-
-    std::cout << "Response Body: " << std::endl;
-    std::cout << oss.str() << std::endl;
-
-    responseBodyStream.seekg(currentPos);
-}
-
-
 static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
@@ -213,12 +197,6 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         {
             return 0;
         }
-
-        auto end_time = std::chrono::high_resolution_clock::now();
-        double elapsed_time = std::chrono::duration<double, std::milli>(end_time-context->m_start).count();
-        context->m_start = end_time;
-
-        std::cout<<"WriteData called after "<<elapsed_time<<" ms"<<std::endl;
 
         HttpResponse* response = context->m_response;
         auto& headersHandler = context->m_request->GetHeadersReceivedEventHandler();
@@ -245,7 +223,6 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
             return 0;
         }
 
-
         auto cur = response->GetResponseBody().tellp();
         if (response->GetResponseBody().fail()) {
             const auto& ref = response->GetResponseBody();
@@ -261,12 +238,8 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
                 << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
             return 0;
         }
-        
-        ReadAndRestorePosition(response->GetResponseBody());
-
         if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
-            std::cout<<"data flushed "<<std::endl;
             response->GetResponseBody().flush();
             if (response->GetResponseBody().fail()) {
                 const auto& ref = response->GetResponseBody();
@@ -301,6 +274,14 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
         if (keyValuePair.size() == 2)
         {
             response->AddHeader(StringUtils::Trim(keyValuePair[0].c_str()), StringUtils::Trim(keyValuePair[1].c_str()));
+        }
+        //checking for end of all the headers before setting response code
+        else if (headerLine == "\r\n" && context->m_curlHandle)
+        {
+            long responseCode{-1};
+            curl_easy_getinfo(context->m_curlHandle, CURLINFO_RESPONSE_CODE, &responseCode);
+            response->SetResponseCode(static_cast<HttpResponseCode>(responseCode));
+            AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned http response code " << responseCode);
         }
 
         return size * nmemb;
@@ -713,7 +694,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_HTTPHEADER, headers);
         }
 
-        CurlWriteCallbackContext writeContext(this, request.get(), response.get(), readLimiter);
+        CurlWriteCallbackContext writeContext(this, connectionHandle ,request.get(), response.get(), readLimiter);
 
         const auto readContext = [this, &connectionHandle, &request, &writeLimiter]() -> CurlReadCallbackContext {
           if (request->GetContentBody() != nullptr) {
