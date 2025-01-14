@@ -184,6 +184,24 @@ static int64_t GetContentLengthFromHeader(CURL* connectionHandle,
   return hasContentLength ? static_cast<int64_t>(contentLength) : -1;
 }
 
+void ReadAndRestorePosition(Aws::IOStream& responseBodyStream) {
+    std::streampos currentPos = responseBodyStream.tellg();
+    
+    if (currentPos == -1) {
+        std::cerr << "Stream not in a readable state or doesn't support tellg()" << std::endl;
+        return;
+    }
+
+    std::ostringstream oss;
+    oss << responseBodyStream.rdbuf(); // Read everything from the stream
+
+    std::cout << "Response Body: " << std::endl;
+    std::cout << oss.str() << std::endl;
+
+    responseBodyStream.seekg(currentPos);
+}
+
+
 static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
@@ -227,6 +245,7 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
             return 0;
         }
 
+
         auto cur = response->GetResponseBody().tellp();
         if (response->GetResponseBody().fail()) {
             const auto& ref = response->GetResponseBody();
@@ -242,6 +261,9 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
                 << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
             return 0;
         }
+        
+        ReadAndRestorePosition(response->GetResponseBody());
+
         if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             std::cout<<"data flushed "<<std::endl;
