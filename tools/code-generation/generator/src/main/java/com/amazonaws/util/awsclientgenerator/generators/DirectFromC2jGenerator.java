@@ -6,6 +6,8 @@
 package com.amazonaws.util.awsclientgenerator.generators;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jXmlNamespace;
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jXmlNamespaceDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.EndpointRuleSetModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.PartitionsModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOption;
@@ -38,6 +40,7 @@ public class DirectFromC2jGenerator {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
         gsonBuilder.registerTypeAdapter(EndpointParameterValue.class, new EndpointParameterValueDeserializer());
+        gsonBuilder.registerTypeAdapter(C2jXmlNamespace.class, new C2jXmlNamespaceDeserializer());
         Gson gson = gsonBuilder.create();
 
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
