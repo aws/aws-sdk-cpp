@@ -21,7 +21,8 @@ StartGameSessionPlacementRequest::StartGameSessionPlacementRequest() :
     m_gameSessionNameHasBeenSet(false),
     m_playerLatenciesHasBeenSet(false),
     m_desiredPlayerSessionsHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_priorityConfigurationOverrideHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,12 @@ Aws::String StartGameSessionPlacementRequest::SerializePayload() const
   if(m_gameSessionDataHasBeenSet)
   {
    payload.WithString("GameSessionData", m_gameSessionData);
+
+  }
+
+  if(m_priorityConfigurationOverrideHasBeenSet)
+  {
+   payload.WithObject("PriorityConfigurationOverride", m_priorityConfigurationOverride.Jsonize());
 
   }
 

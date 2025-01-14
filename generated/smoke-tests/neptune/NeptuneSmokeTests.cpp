@@ -18,6 +18,7 @@
 #include <aws/neptune/NeptuneClient.h>
 #include <aws/neptune/model/DescribeDBInstancesRequest.h>
 #include <aws/neptune/model/DescribeDBEngineVersionsRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace NeptuneSmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class NeptuneSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char NeptuneSmokeTestSuite::ALLOCATION_TAG[] = "NeptuneSmokeTest";
+TEST_F(NeptuneSmokeTestSuite, DescribeDBEngineVersionsSuccess )
+{
+    Aws::Neptune::NeptuneClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<NeptuneClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeDBEngineVersionsRequest input;
+    auto outcome = clientSp->DescribeDBEngineVersions(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(NeptuneSmokeTestSuite, DescribeDBInstancesFailure )
 {
     Aws::Neptune::NeptuneClientConfiguration clientConfiguration;
@@ -44,18 +58,5 @@ TEST_F(NeptuneSmokeTestSuite, DescribeDBInstancesFailure )
     input.SetDBInstanceIdentifier("fake-id");
     auto outcome = clientSp->DescribeDBInstances(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(NeptuneSmokeTestSuite, DescribeDBEngineVersionsSuccess )
-{
-    Aws::Neptune::NeptuneClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<NeptuneClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeDBEngineVersionsRequest input;
-    auto outcome = clientSp->DescribeDBEngineVersions(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/DescribeClusterRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
 #include <aws/elasticmapreduce/EMRClient.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace EMRSmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class EMRSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char EMRSmokeTestSuite::ALLOCATION_TAG[] = "EMRSmokeTest";
+TEST_F(EMRSmokeTestSuite, ListClustersSuccess )
+{
+    Aws::EMR::EMRClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<EMRClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListClustersRequest input;
+    auto outcome = clientSp->ListClusters(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(EMRSmokeTestSuite, DescribeClusterFailure )
 {
     Aws::EMR::EMRClientConfiguration clientConfiguration;
@@ -44,18 +58,5 @@ TEST_F(EMRSmokeTestSuite, DescribeClusterFailure )
     input.SetClusterId("fake_cluster");
     auto outcome = clientSp->DescribeCluster(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(EMRSmokeTestSuite, ListClustersSuccess )
-{
-    Aws::EMR::EMRClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<EMRClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListClustersRequest input;
-    auto outcome = clientSp->ListClusters(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

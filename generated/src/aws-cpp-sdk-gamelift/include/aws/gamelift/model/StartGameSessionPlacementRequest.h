@@ -8,6 +8,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/PriorityConfigurationOverride.h>
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/PlayerLatency.h>
 #include <aws/gamelift/model/DesiredPlayerSession.h>
@@ -113,9 +114,9 @@ namespace Model
     ///@{
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions. This
-     * information is used to try to place the new game session where it can offer the
-     * best possible gameplay experience for the players. </p>
+     * latency that a player experiences when connected to Amazon Web Services Regions.
+     * This information is used to try to place the new game session where it can offer
+     * the best possible gameplay experience for the players. </p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
@@ -158,6 +159,24 @@ namespace Model
     inline StartGameSessionPlacementRequest& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
     inline StartGameSessionPlacementRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A prioritized list of locations to use for the game session placement and
+     * instructions on how to use it. This list overrides a queue's prioritized
+     * location list for this game session placement request only. You can include
+     * Amazon Web Services Regions, local zones, and custom locations (for Anywhere
+     * fleets). Choose a fallback strategy to instruct Amazon GameLift to use the
+     * override list for the first placement attempt only or for all placement
+     * attempts.</p>
+     */
+    inline const PriorityConfigurationOverride& GetPriorityConfigurationOverride() const{ return m_priorityConfigurationOverride; }
+    inline bool PriorityConfigurationOverrideHasBeenSet() const { return m_priorityConfigurationOverrideHasBeenSet; }
+    inline void SetPriorityConfigurationOverride(const PriorityConfigurationOverride& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = value; }
+    inline void SetPriorityConfigurationOverride(PriorityConfigurationOverride&& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = std::move(value); }
+    inline StartGameSessionPlacementRequest& WithPriorityConfigurationOverride(const PriorityConfigurationOverride& value) { SetPriorityConfigurationOverride(value); return *this;}
+    inline StartGameSessionPlacementRequest& WithPriorityConfigurationOverride(PriorityConfigurationOverride&& value) { SetPriorityConfigurationOverride(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_placementId;
@@ -183,6 +202,9 @@ namespace Model
 
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet = false;
+
+    PriorityConfigurationOverride m_priorityConfigurationOverride;
+    bool m_priorityConfigurationOverrideHasBeenSet = false;
   };
 
 } // namespace Model

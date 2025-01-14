@@ -18,6 +18,7 @@
 #include <aws/secretsmanager/model/ListSecretsRequest.h>
 #include <aws/secretsmanager/model/DescribeSecretRequest.h>
 #include <aws/secretsmanager/SecretsManagerClient.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace SecretsManagerSmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class SecretsManagerSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char SecretsManagerSmokeTestSuite::ALLOCATION_TAG[] = "SecretsManagerSmokeTest";
+TEST_F(SecretsManagerSmokeTestSuite, ListSecretsSuccess )
+{
+    Aws::SecretsManager::SecretsManagerClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<SecretsManagerClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListSecretsRequest input;
+    auto outcome = clientSp->ListSecrets(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(SecretsManagerSmokeTestSuite, DescribeSecretFailure )
 {
     Aws::SecretsManager::SecretsManagerClientConfiguration clientConfiguration;
@@ -44,18 +58,5 @@ TEST_F(SecretsManagerSmokeTestSuite, DescribeSecretFailure )
     input.SetSecretId("fake-secret-id");
     auto outcome = clientSp->DescribeSecret(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(SecretsManagerSmokeTestSuite, ListSecretsSuccess )
-{
-    Aws::SecretsManager::SecretsManagerClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<SecretsManagerClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListSecretsRequest input;
-    auto outcome = clientSp->ListSecrets(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

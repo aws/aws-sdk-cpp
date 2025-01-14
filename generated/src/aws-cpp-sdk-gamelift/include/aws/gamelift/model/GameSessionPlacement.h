@@ -9,6 +9,7 @@
 #include <aws/gamelift/model/GameSessionPlacementState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/gamelift/model/PriorityConfigurationOverride.h>
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/PlayerLatency.h>
 #include <aws/gamelift/model/PlacedPlayerSession.h>
@@ -40,7 +41,7 @@ namespace Model
    * succeeding. With each attempt it creates a <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession</a>
    * object and updates this placement object with the new game session
-   * properties..</p> <p><h3>See Also:</h3>   <a
+   * properties.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionPlacement">AWS
    * API Reference</a></p>
    */
@@ -195,7 +196,8 @@ namespace Model
     ///@{
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
@@ -340,6 +342,24 @@ namespace Model
     inline GameSessionPlacement& WithMatchmakerData(Aws::String&& value) { SetMatchmakerData(std::move(value)); return *this;}
     inline GameSessionPlacement& WithMatchmakerData(const char* value) { SetMatchmakerData(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A prioritized list of locations to use with a game session placement request
+     * and instructions on how to use it. This list overrides a queue's prioritized
+     * location list for a single game session placement request only. The list can
+     * include Amazon Web Services Regions, local zones, and custom locations (for
+     * Anywhere fleets). The fallback strategy instructs Amazon GameLift to use the
+     * override list for the first placement attempt only or for all placement
+     * attempts.</p>
+     */
+    inline const PriorityConfigurationOverride& GetPriorityConfigurationOverride() const{ return m_priorityConfigurationOverride; }
+    inline bool PriorityConfigurationOverrideHasBeenSet() const { return m_priorityConfigurationOverrideHasBeenSet; }
+    inline void SetPriorityConfigurationOverride(const PriorityConfigurationOverride& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = value; }
+    inline void SetPriorityConfigurationOverride(PriorityConfigurationOverride&& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = std::move(value); }
+    inline GameSessionPlacement& WithPriorityConfigurationOverride(const PriorityConfigurationOverride& value) { SetPriorityConfigurationOverride(value); return *this;}
+    inline GameSessionPlacement& WithPriorityConfigurationOverride(PriorityConfigurationOverride&& value) { SetPriorityConfigurationOverride(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_placementId;
@@ -395,6 +415,9 @@ namespace Model
 
     Aws::String m_matchmakerData;
     bool m_matchmakerDataHasBeenSet = false;
+
+    PriorityConfigurationOverride m_priorityConfigurationOverride;
+    bool m_priorityConfigurationOverrideHasBeenSet = false;
   };
 
 } // namespace Model
