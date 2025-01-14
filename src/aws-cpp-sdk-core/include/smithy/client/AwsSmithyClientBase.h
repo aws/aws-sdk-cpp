@@ -87,6 +87,7 @@ namespace client
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
                             Aws::String serviceUserAgentName,
+                            Aws::String serviceUserAgentName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
           m_clientConfig(std::move(clientConfig)),
@@ -103,10 +104,12 @@ namespace client
                             Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
                             Aws::String serviceUserAgentName,
+                            Aws::String serviceUserAgentName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
           m_clientConfig(std::move(clientConfig)),
           m_serviceName(std::move(serviceName)),
+          m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
@@ -179,6 +182,7 @@ namespace client
 
            std::shared_ptr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
+        Aws::String m_serviceUserAgentName;
         Aws::String m_serviceUserAgentName;
 
         std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
