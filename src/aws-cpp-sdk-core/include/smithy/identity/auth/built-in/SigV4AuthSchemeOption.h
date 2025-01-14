@@ -11,6 +11,5 @@ namespace smithy {
     struct SigV4AuthSchemeOption
     {
         static SMITHY_API AuthSchemeOption sigV4AuthSchemeOption;
-        static SMITHY_API AuthSchemeOption sigV4EventStreamingAuthSchemeOption;
     };
 }

@@ -72,9 +72,9 @@ SMITHY_EXCLUSION_CLIENTS = {
     #bearer token
     #,"codecatalyst"
     #bidirectional streaming
-    #,"lexv2-runtime"
-    #,"qbusiness"
-    #,"transcribestreaming"
+    ,"lexv2-runtime"
+    ,"qbusiness"
+    ,"transcribestreaming"
 }
 
 DEBUG = False
