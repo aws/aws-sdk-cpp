@@ -8,6 +8,7 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/client/RequestCompression.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/endpoint/EndpointParameter.h>
@@ -203,6 +204,18 @@ namespace Aws
         virtual Aws::Client::CompressionAlgorithm
         GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig) const { return Aws::Client::CompressionAlgorithm::NONE; }
 
+        /**
+         * Adds a used feature to the user agent string for the request.
+         * @param feature the feature to be added in the user agent string.
+         */
+        void AddUserAgentFeature(Aws::Client::UserAgentFeature feature) { m_userAgentFeatures.insert(feature); }
+
+        /**
+         * Gets all features that would be included in the requests user agent string.
+         * @return a set of features that will be included in the user agent associated with this request.
+         */
+        Aws::Set<Aws::Client::UserAgentFeature> GetUserAgentFeatures() const { return m_userAgentFeatures; }
+
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the
@@ -221,6 +234,7 @@ namespace Aws
         RequestSignedHandler m_onRequestSigned;
         RequestRetryHandler m_requestRetryHandler;
         mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
+        Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
     };
 
 } // namespace Aws

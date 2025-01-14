@@ -90,6 +90,7 @@ CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerPro
                            const CodeCatalyst::CodeCatalystClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "CodeCatalyst",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG),
       endpointProvider ? endpointProvider : Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG),
@@ -98,13 +99,13 @@ CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerPro
           {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId, smithy::BearerTokenAuthScheme{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
       })
 {
-  init(m_clientConfiguration);
 }
 
 CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                            const Aws::Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "CodeCatalyst",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG),
@@ -113,7 +114,6 @@ CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerPro
           {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId, smithy::BearerTokenAuthScheme{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
       })
 {
-  init(m_clientConfiguration);
 }
 
 
@@ -129,26 +129,11 @@ std::shared_ptr<CodeCatalystEndpointProviderBase>& CodeCatalystClient::accessEnd
   return m_endpointProvider;
 }
 
-void CodeCatalystClient::init(const CodeCatalyst::CodeCatalystClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void CodeCatalystClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CreateAccessTokenOutcome CodeCatalystClient::CreateAccessToken(const CreateAccessTokenRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateAccessToken);

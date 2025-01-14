@@ -72,6 +72,7 @@ MediaStoreClient::MediaStoreClient(const MediaStore::MediaStoreClientConfigurati
                            std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "MediaStore",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MediaStoreErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
@@ -79,15 +80,14 @@ MediaStoreClient::MediaStoreClient(const MediaStore::MediaStoreClientConfigurati
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MediaStoreClient::MediaStoreClient(const AWSCredentials& credentials,
                            std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider,
                            const MediaStore::MediaStoreClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "MediaStore",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MediaStoreErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
@@ -95,15 +95,14 @@ MediaStoreClient::MediaStoreClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MediaStoreClient::MediaStoreClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider,
                            const MediaStore::MediaStoreClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "MediaStore",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MediaStoreErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
@@ -111,14 +110,13 @@ MediaStoreClient::MediaStoreClient(const std::shared_ptr<AWSCredentialsProvider>
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 MediaStoreClient::MediaStoreClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "MediaStore",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<MediaStoreErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
@@ -126,14 +124,13 @@ MediaStoreClient::MediaStoreClient(const Client::ClientConfiguration& clientConf
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MediaStoreClient::MediaStoreClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "MediaStore",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MediaStoreErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
@@ -141,14 +138,13 @@ MediaStoreClient::MediaStoreClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MediaStoreClient::MediaStoreClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "MediaStore",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MediaStoreErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
@@ -156,9 +152,7 @@ MediaStoreClient::MediaStoreClient(const std::shared_ptr<AWSCredentialsProvider>
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 MediaStoreClient::~MediaStoreClient()
@@ -171,26 +165,11 @@ std::shared_ptr<MediaStoreEndpointProviderBase>& MediaStoreClient::accessEndpoin
   return m_endpointProvider;
 }
 
-void MediaStoreClient::init(const MediaStore::MediaStoreClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void MediaStoreClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CreateContainerOutcome MediaStoreClient::CreateContainer(const CreateContainerRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateContainer);

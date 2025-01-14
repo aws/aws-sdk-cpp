@@ -134,12 +134,12 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_retryStrategy(configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn()),
     m_writeRateLimiter(configuration.writeRateLimiter ? configuration.writeRateLimiter : configuration.configFactories.writeRateLimiterCreateFn()),
     m_readRateLimiter(configuration.readRateLimiter ? configuration.readRateLimiter : configuration.configFactories.readRateLimiterCreateFn()),
-    m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG)}
+    m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
 {
 }
 
@@ -160,13 +160,13 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_retryStrategy(configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn()),
     m_writeRateLimiter(configuration.writeRateLimiter ? configuration.writeRateLimiter : configuration.configFactories.writeRateLimiterCreateFn()),
     m_readRateLimiter(configuration.readRateLimiter ? configuration.readRateLimiter : configuration.configFactories.readRateLimiterCreateFn()),
-    m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
-    m_requestCompressionConfig(configuration.requestCompressionConfig)
+    m_requestCompressionConfig(configuration.requestCompressionConfig),
+    m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
 {
-    m_interceptors.emplace_back(Aws::MakeUnique<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG));
 }
 
 void AWSClient::DisableRequestProcessing()
@@ -182,17 +182,14 @@ void AWSClient::EnableRequestProcessing()
 void AWSClient::SetServiceClientName(const Aws::String& name)
 {
     m_serviceName = std::move(name);
-    AppendToUserAgent("api/" + m_serviceName);
+    assert(m_userAgentInterceptor);
+    m_userAgentInterceptor->SetApiName(m_serviceName);
 }
 
 void AWSClient::AppendToUserAgent(const Aws::String& valueToAppend)
 {
-    Aws::String value = Aws::Client::FilterUserAgentToken(valueToAppend.c_str());
-    if (value.empty())
-        return;
-    if (m_userAgent.find(value) != Aws::String::npos)
-        return;
-    m_userAgent += " " + std::move(value);
+   assert(m_userAgentInterceptor);
+   m_userAgentInterceptor->AddLegacyFeaturesToUserAgent(valueToAppend);
 }
 
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
@@ -632,9 +629,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
     }
 
-    //user agent and headers like that shouldn't be signed for the sake of compatibility with proxies which MAY mutate that header.
-    AddCommonHeaders(*httpRequest);
-
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     auto httpResponse = ::TracingUtils::MakeCallWithTiming<std::shared_ptr<HttpResponse>>(
         [&]() -> std::shared_ptr<HttpResponse> {
@@ -779,8 +773,6 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
     {
         httpRequest->SetHeaderValue(headerValue.first, headerValue.second);
     }
-
-    AddCommonHeaders(*httpRequest);
 }
 
 void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<Aws::Http::HttpRequest> &httpRequest, const String header, const String value) const
@@ -919,11 +911,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());
     httpRequest->SetServiceSpecificParameters(request.GetServiceSpecificParameters());
     request.AddQueryStringParameters(httpRequest->GetUri());
-}
-
-void AWSClient::AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const
-{
-    httpRequest.SetUserAgent(m_userAgent);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)

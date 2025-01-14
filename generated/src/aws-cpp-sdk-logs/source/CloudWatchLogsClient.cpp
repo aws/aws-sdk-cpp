@@ -138,6 +138,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const CloudWatchLogs::CloudWatchLogsC
                            std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "CloudWatch Logs",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
@@ -145,15 +146,14 @@ CloudWatchLogsClient::CloudWatchLogsClient(const CloudWatchLogs::CloudWatchLogsC
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials,
                            std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider,
                            const CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "CloudWatch Logs",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
@@ -161,15 +161,14 @@ CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider,
                            const CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "CloudWatch Logs",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
@@ -177,14 +176,13 @@ CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsP
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "CloudWatch Logs",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
@@ -192,14 +190,13 @@ CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& cl
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "CloudWatch Logs",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
@@ -207,14 +204,13 @@ CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "CloudWatch Logs",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
@@ -222,9 +218,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsP
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 CloudWatchLogsClient::~CloudWatchLogsClient()
@@ -237,26 +231,11 @@ std::shared_ptr<CloudWatchLogsEndpointProviderBase>& CloudWatchLogsClient::acces
   return m_endpointProvider;
 }
 
-void CloudWatchLogsClient::init(const CloudWatchLogs::CloudWatchLogsClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void CloudWatchLogsClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 AssociateKmsKeyOutcome CloudWatchLogsClient::AssociateKmsKey(const AssociateKmsKeyRequest& request) const
 {
   AWS_OPERATION_GUARD(AssociateKmsKey);

@@ -19,6 +19,7 @@
 #include <smithy/tracing/TelemetryProvider.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <smithy/client/features/UserAgentInterceptor.h>
 
 #include <utility>
 
@@ -85,11 +86,12 @@ namespace client
 
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
+                            Aws::String serviceUserAgentName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
           m_clientConfig(std::move(clientConfig)),
           m_serviceName(std::move(serviceName)),
-          m_userAgent(),
+          m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
@@ -100,11 +102,12 @@ namespace client
         AwsSmithyClientBase(const AwsSmithyClientBase& other,
                             Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
+                            Aws::String serviceUserAgentName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
           m_clientConfig(std::move(clientConfig)),
           m_serviceName(std::move(serviceName)),
-          m_userAgent(),
+          m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
@@ -176,7 +179,7 @@ namespace client
 
            std::shared_ptr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
-        Aws::String m_userAgent;
+        Aws::String m_serviceUserAgentName;
 
         std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
         std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;

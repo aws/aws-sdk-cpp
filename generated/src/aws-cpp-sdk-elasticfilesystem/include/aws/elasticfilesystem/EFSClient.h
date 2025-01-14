@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/elasticfilesystem/EFSErrorMarshaller.h>
 
 namespace Aws
 {
@@ -36,7 +37,8 @@ namespace EFS
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       EFSEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::EFSErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>
   {
     public:
@@ -1162,7 +1164,6 @@ namespace EFS
       std::shared_ptr<EFSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;
-      void init(const EFSClientConfiguration& clientConfiguration);
 
   };
 

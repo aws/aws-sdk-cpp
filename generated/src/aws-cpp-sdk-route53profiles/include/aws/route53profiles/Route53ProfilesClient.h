@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/route53profiles/Route53ProfilesErrorMarshaller.h>
 
 namespace Aws
 {
@@ -28,7 +29,8 @@ namespace Route53Profiles
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       Route53ProfilesEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::Route53ProfilesErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>
   {
     public:
@@ -512,7 +514,6 @@ namespace Route53Profiles
       std::shared_ptr<Route53ProfilesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>;
-      void init(const Route53ProfilesClientConfiguration& clientConfiguration);
 
   };
 

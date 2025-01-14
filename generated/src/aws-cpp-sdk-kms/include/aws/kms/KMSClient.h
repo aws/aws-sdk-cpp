@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kms/KMSErrorMarshaller.h>
 
 namespace Aws
 {
@@ -88,7 +89,8 @@ namespace KMS
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       KMSEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::KMSErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>
   {
     public:
@@ -3806,7 +3808,6 @@ namespace KMS
       std::shared_ptr<KMSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;
-      void init(const KMSClientConfiguration& clientConfiguration);
 
   };
 

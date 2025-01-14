@@ -67,6 +67,7 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const ChimeSDKMeetings::ChimeSDKM
                            std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Chime SDK Meetings",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG),
@@ -74,15 +75,14 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const ChimeSDKMeetings::ChimeSDKM
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials,
                            std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider,
                            const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Chime SDK Meetings",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG),
@@ -90,15 +90,14 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider,
                            const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Chime SDK Meetings",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG),
@@ -106,14 +105,13 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredenti
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "Chime SDK Meetings",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG),
@@ -121,14 +119,13 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const Client::ClientConfiguration
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Chime SDK Meetings",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG),
@@ -136,14 +133,13 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Chime SDK Meetings",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG),
@@ -151,9 +147,7 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredenti
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 ChimeSDKMeetingsClient::~ChimeSDKMeetingsClient()
@@ -166,26 +160,11 @@ std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& ChimeSDKMeetingsClient::a
   return m_endpointProvider;
 }
 
-void ChimeSDKMeetingsClient::init(const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void ChimeSDKMeetingsClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 BatchCreateAttendeeOutcome ChimeSDKMeetingsClient::BatchCreateAttendee(const BatchCreateAttendeeRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchCreateAttendee);

@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
@@ -28,7 +29,8 @@ namespace BedrockRuntime
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       BedrockRuntimeEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::BedrockRuntimeErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient>
   {
     public:
@@ -441,7 +443,6 @@ namespace BedrockRuntime
       std::shared_ptr<BedrockRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient>;
-      void init(const BedrockRuntimeClientConfiguration& clientConfiguration);
 
   };
 

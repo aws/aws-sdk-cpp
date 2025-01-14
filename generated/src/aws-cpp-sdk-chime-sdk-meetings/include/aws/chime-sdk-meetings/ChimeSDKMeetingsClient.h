@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>
 
 namespace Aws
 {
@@ -32,7 +33,8 @@ namespace ChimeSDKMeetings
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       ChimeSDKMeetingsEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::ChimeSDKMeetingsErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>
   {
     public:
@@ -655,7 +657,6 @@ namespace ChimeSDKMeetings
       std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>;
-      void init(const ChimeSDKMeetingsClientConfiguration& clientConfiguration);
 
   };
 

@@ -104,6 +104,7 @@ KMSClient::KMSClient(const KMS::KMSClientConfiguration& clientConfiguration,
                            std::shared_ptr<KMSEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "KMS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
@@ -111,15 +112,14 @@ KMSClient::KMSClient(const KMS::KMSClientConfiguration& clientConfiguration,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 KMSClient::KMSClient(const AWSCredentials& credentials,
                            std::shared_ptr<KMSEndpointProviderBase> endpointProvider,
                            const KMS::KMSClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "KMS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
@@ -127,15 +127,14 @@ KMSClient::KMSClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 KMSClient::KMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<KMSEndpointProviderBase> endpointProvider,
                            const KMS::KMSClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "KMS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
@@ -143,14 +142,13 @@ KMSClient::KMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 KMSClient::KMSClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "KMS",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
@@ -158,14 +156,13 @@ KMSClient::KMSClient(const Client::ClientConfiguration& clientConfiguration) :
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 KMSClient::KMSClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "KMS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
@@ -173,14 +170,13 @@ KMSClient::KMSClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 KMSClient::KMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "KMS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
@@ -188,9 +184,7 @@ KMSClient::KMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 KMSClient::~KMSClient()
@@ -203,26 +197,11 @@ std::shared_ptr<KMSEndpointProviderBase>& KMSClient::accessEndpointProvider()
   return m_endpointProvider;
 }
 
-void KMSClient::init(const KMS::KMSClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void KMSClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CancelKeyDeletionOutcome KMSClient::CancelKeyDeletion(const CancelKeyDeletionRequest& request) const
 {
   AWS_OPERATION_GUARD(CancelKeyDeletion);

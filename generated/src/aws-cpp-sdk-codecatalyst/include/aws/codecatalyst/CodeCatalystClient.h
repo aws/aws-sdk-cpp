@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/codecatalyst/CodeCatalystErrorMarshaller.h>
 
 namespace Aws
 {
@@ -93,7 +94,8 @@ namespace CodeCatalyst
       Aws::Crt::Variant<smithy::BearerTokenAuthScheme>,
       CodeCatalystEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::CodeCatalystErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>
   {
     public:
@@ -1135,7 +1137,6 @@ namespace CodeCatalyst
       std::shared_ptr<CodeCatalystEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>;
-      void init(const CodeCatalystClientConfiguration& clientConfiguration);
 
   };
 

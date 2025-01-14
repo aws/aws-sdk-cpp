@@ -53,6 +53,7 @@ AppConfigDataClient::AppConfigDataClient(const AppConfigData::AppConfigDataClien
                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "AppConfigData",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
@@ -60,15 +61,14 @@ AppConfigDataClient::AppConfigDataClient(const AppConfigData::AppConfigDataClien
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 AppConfigDataClient::AppConfigDataClient(const AWSCredentials& credentials,
                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider,
                            const AppConfigData::AppConfigDataClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "AppConfigData",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
@@ -76,15 +76,14 @@ AppConfigDataClient::AppConfigDataClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider,
                            const AppConfigData::AppConfigDataClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "AppConfigData",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
@@ -92,14 +91,13 @@ AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsPro
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 AppConfigDataClient::AppConfigDataClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "AppConfigData",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
@@ -107,14 +105,13 @@ AppConfigDataClient::AppConfigDataClient(const Client::ClientConfiguration& clie
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 AppConfigDataClient::AppConfigDataClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "AppConfigData",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
@@ -122,14 +119,13 @@ AppConfigDataClient::AppConfigDataClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "AppConfigData",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
@@ -137,9 +133,7 @@ AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsPro
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 AppConfigDataClient::~AppConfigDataClient()
@@ -152,26 +146,11 @@ std::shared_ptr<AppConfigDataEndpointProviderBase>& AppConfigDataClient::accessE
   return m_endpointProvider;
 }
 
-void AppConfigDataClient::init(const AppConfigData::AppConfigDataClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void AppConfigDataClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const GetLatestConfigurationRequest& request) const
 {
   AWS_OPERATION_GUARD(GetLatestConfiguration);

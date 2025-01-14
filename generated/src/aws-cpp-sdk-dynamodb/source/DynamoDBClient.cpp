@@ -109,6 +109,7 @@ DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clie
                            std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DynamoDB",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -123,6 +124,7 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
                            const DynamoDB::DynamoDBClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DynamoDB",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -137,6 +139,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
                            const DynamoDB::DynamoDBClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DynamoDB",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -150,6 +153,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "DynamoDB",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -163,6 +167,7 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DynamoDB",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -176,6 +181,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DynamoDB",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -201,7 +207,6 @@ void DynamoDBClient::OverrideEndpoint(const Aws::String& endpoint)
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchExecuteStatement);

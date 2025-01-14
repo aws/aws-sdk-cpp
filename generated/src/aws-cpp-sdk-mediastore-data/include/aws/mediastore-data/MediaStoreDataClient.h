@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mediastore-data/MediaStoreDataErrorMarshaller.h>
 
 namespace Aws
 {
@@ -29,7 +30,8 @@ namespace MediaStoreData
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       MediaStoreDataEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::MediaStoreDataErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>
   {
     public:
@@ -225,7 +227,6 @@ namespace MediaStoreData
       std::shared_ptr<MediaStoreDataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>;
-      void init(const MediaStoreDataClientConfiguration& clientConfiguration);
 
   };
 

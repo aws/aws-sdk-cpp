@@ -571,21 +571,15 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
 
     ASSERT_TRUE(httpRequest->HasHeader("test1"));
     ASSERT_TRUE(httpRequest->HasHeader("test2"));
-    ASSERT_TRUE(httpRequest->HasHeader(Http::USER_AGENT_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
     ASSERT_FALSE(httpRequest->HasHeader(Http::CONTENT_TYPE_HEADER));
     ASSERT_FALSE(httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER));
 
     HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ(4u, finalHeaders.size());
+    ASSERT_EQ(3u, finalHeaders.size());
     ASSERT_EQ("testValue1", finalHeaders["test1"]);
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
-    ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    auto config = ClientConfiguration();
-    auto expUA = ComputeUserAgentString(&config);
-    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
-    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     headerValues[Http::CONTENT_LENGTH_HEADER] = "0";
     headerValues[Http::CONTENT_TYPE_HEADER] = "blah";
@@ -595,20 +589,15 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
 
     ASSERT_TRUE(httpRequest->HasHeader("test1"));
     ASSERT_TRUE(httpRequest->HasHeader("test2"));
-    ASSERT_TRUE(httpRequest->HasHeader(Http::USER_AGENT_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
     ASSERT_FALSE(httpRequest->HasHeader(Http::CONTENT_TYPE_HEADER));
     ASSERT_FALSE(httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER));
 
     finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ(4u, finalHeaders.size());
+    ASSERT_EQ(3u, finalHeaders.size());
     ASSERT_EQ("testValue1", finalHeaders["test1"]);
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
-    ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    expUA = ComputeUserAgentString(&config);
-    actualUA = finalHeaders[Http::USER_AGENT_HEADER];
-    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 }
 
 TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
@@ -634,7 +623,6 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
 
     ASSERT_TRUE(httpRequest->HasHeader("test1"));
     ASSERT_TRUE(httpRequest->HasHeader("test2"));
-    ASSERT_TRUE(httpRequest->HasHeader(Http::USER_AGENT_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_MD5_HEADER));
@@ -642,16 +630,11 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
     auto hashResult = Utils::HashingUtils::Base64Encode(Utils::HashingUtils::CalculateMD5(*ss));
 
     HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ(6u, finalHeaders.size());
+    ASSERT_EQ(5u, finalHeaders.size());
     ASSERT_EQ("testValue1", finalHeaders["test1"]);
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
-    ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    auto config = ClientConfiguration();
-    auto expUA = ComputeUserAgentString(&config);
-    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
-    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
@@ -686,7 +669,6 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithAdditionalHeadersAndBody)
     ASSERT_TRUE(httpRequest->HasHeader("test2"));
     ASSERT_TRUE(httpRequest->HasHeader("test3"));
     ASSERT_TRUE(httpRequest->HasHeader("x-amz-request-payer"));
-    ASSERT_TRUE(httpRequest->HasHeader(Http::USER_AGENT_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_MD5_HEADER));
@@ -694,18 +676,13 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithAdditionalHeadersAndBody)
     auto hashResult = Utils::HashingUtils::Base64Encode(Utils::HashingUtils::CalculateMD5(*ss));
 
     HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ(8u, finalHeaders.size());
+    ASSERT_EQ(7u, finalHeaders.size());
     ASSERT_EQ("testValue1", finalHeaders["test1"]);
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("testValue3custom", finalHeaders["test3"]);
     ASSERT_EQ("requester", finalHeaders["x-amz-request-payer"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
-    ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    auto config = ClientConfiguration();
-    auto expUA = ComputeUserAgentString(&config);
-    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
-    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();

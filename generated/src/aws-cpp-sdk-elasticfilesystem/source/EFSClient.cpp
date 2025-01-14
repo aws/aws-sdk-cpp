@@ -79,6 +79,7 @@ EFSClient::EFSClient(const EFS::EFSClientConfiguration& clientConfiguration,
                            std::shared_ptr<EFSEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "EFS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
@@ -86,15 +87,14 @@ EFSClient::EFSClient(const EFS::EFSClientConfiguration& clientConfiguration,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 EFSClient::EFSClient(const AWSCredentials& credentials,
                            std::shared_ptr<EFSEndpointProviderBase> endpointProvider,
                            const EFS::EFSClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "EFS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
@@ -102,15 +102,14 @@ EFSClient::EFSClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 EFSClient::EFSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<EFSEndpointProviderBase> endpointProvider,
                            const EFS::EFSClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "EFS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
@@ -118,14 +117,13 @@ EFSClient::EFSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 EFSClient::EFSClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "EFS",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
@@ -133,14 +131,13 @@ EFSClient::EFSClient(const Client::ClientConfiguration& clientConfiguration) :
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 EFSClient::EFSClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "EFS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
@@ -148,14 +145,13 @@ EFSClient::EFSClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 EFSClient::EFSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "EFS",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
@@ -163,9 +159,7 @@ EFSClient::EFSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 EFSClient::~EFSClient()
@@ -178,26 +172,11 @@ std::shared_ptr<EFSEndpointProviderBase>& EFSClient::accessEndpointProvider()
   return m_endpointProvider;
 }
 
-void EFSClient::init(const EFS::EFSClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void EFSClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CreateAccessPointOutcome EFSClient::CreateAccessPoint(const CreateAccessPointRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateAccessPoint);

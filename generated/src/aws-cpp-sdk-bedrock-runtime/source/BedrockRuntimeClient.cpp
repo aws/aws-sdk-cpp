@@ -60,6 +60,7 @@ BedrockRuntimeClient::BedrockRuntimeClient(const BedrockRuntime::BedrockRuntimeC
                            std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Bedrock Runtime",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -67,15 +68,14 @@ BedrockRuntimeClient::BedrockRuntimeClient(const BedrockRuntime::BedrockRuntimeC
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials,
                            std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider,
                            const BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Bedrock Runtime",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -83,15 +83,14 @@ BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider,
                            const BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Bedrock Runtime",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -99,14 +98,13 @@ BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsP
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 BedrockRuntimeClient::BedrockRuntimeClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "Bedrock Runtime",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -114,14 +112,13 @@ BedrockRuntimeClient::BedrockRuntimeClient(const Client::ClientConfiguration& cl
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Bedrock Runtime",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -129,14 +126,13 @@ BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Bedrock Runtime",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -144,9 +140,7 @@ BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsP
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 BedrockRuntimeClient::~BedrockRuntimeClient()
@@ -159,26 +153,11 @@ std::shared_ptr<BedrockRuntimeEndpointProviderBase>& BedrockRuntimeClient::acces
   return m_endpointProvider;
 }
 
-void BedrockRuntimeClient::init(const BedrockRuntime::BedrockRuntimeClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void BedrockRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailRequest& request) const
 {
   AWS_OPERATION_GUARD(ApplyGuardrail);

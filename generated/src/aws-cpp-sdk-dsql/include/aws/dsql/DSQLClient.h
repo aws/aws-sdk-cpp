@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/dsql/DSQLErrorMarshaller.h>
 
 namespace Aws
 {
@@ -34,7 +35,8 @@ namespace DSQL
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       DSQLEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::DSQLErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>
   {
     public:
@@ -354,7 +356,6 @@ namespace DSQL
       std::shared_ptr<DSQLEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>;
-      void init(const DSQLClientConfiguration& clientConfiguration);
 
   };
 

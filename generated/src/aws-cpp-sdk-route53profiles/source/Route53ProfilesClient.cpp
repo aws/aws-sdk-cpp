@@ -67,6 +67,7 @@ Route53ProfilesClient::Route53ProfilesClient(const Route53Profiles::Route53Profi
                            std::shared_ptr<Route53ProfilesEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Route53Profiles",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<Route53ProfilesErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<Route53ProfilesEndpointProvider>(ALLOCATION_TAG),
@@ -74,15 +75,14 @@ Route53ProfilesClient::Route53ProfilesClient(const Route53Profiles::Route53Profi
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 Route53ProfilesClient::Route53ProfilesClient(const AWSCredentials& credentials,
                            std::shared_ptr<Route53ProfilesEndpointProviderBase> endpointProvider,
                            const Route53Profiles::Route53ProfilesClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Route53Profiles",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<Route53ProfilesErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<Route53ProfilesEndpointProvider>(ALLOCATION_TAG),
@@ -90,15 +90,14 @@ Route53ProfilesClient::Route53ProfilesClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 Route53ProfilesClient::Route53ProfilesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<Route53ProfilesEndpointProviderBase> endpointProvider,
                            const Route53Profiles::Route53ProfilesClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Route53Profiles",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<Route53ProfilesErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<Route53ProfilesEndpointProvider>(ALLOCATION_TAG),
@@ -106,14 +105,13 @@ Route53ProfilesClient::Route53ProfilesClient(const std::shared_ptr<AWSCredential
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 Route53ProfilesClient::Route53ProfilesClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "Route53Profiles",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<Route53ProfilesErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<Route53ProfilesEndpointProvider>(ALLOCATION_TAG),
@@ -121,14 +119,13 @@ Route53ProfilesClient::Route53ProfilesClient(const Client::ClientConfiguration& 
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 Route53ProfilesClient::Route53ProfilesClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Route53Profiles",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<Route53ProfilesErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<Route53ProfilesEndpointProvider>(ALLOCATION_TAG),
@@ -136,14 +133,13 @@ Route53ProfilesClient::Route53ProfilesClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 Route53ProfilesClient::Route53ProfilesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Route53Profiles",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<Route53ProfilesErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<Route53ProfilesEndpointProvider>(ALLOCATION_TAG),
@@ -151,9 +147,7 @@ Route53ProfilesClient::Route53ProfilesClient(const std::shared_ptr<AWSCredential
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 Route53ProfilesClient::~Route53ProfilesClient()
@@ -166,26 +160,11 @@ std::shared_ptr<Route53ProfilesEndpointProviderBase>& Route53ProfilesClient::acc
   return m_endpointProvider;
 }
 
-void Route53ProfilesClient::init(const Route53Profiles::Route53ProfilesClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void Route53ProfilesClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 AssociateProfileOutcome Route53ProfilesClient::AssociateProfile(const AssociateProfileRequest& request) const
 {
   AWS_OPERATION_GUARD(AssociateProfile);

@@ -61,6 +61,7 @@ DSQLClient::DSQLClient(const DSQL::DSQLClientConfiguration& clientConfiguration,
                            std::shared_ptr<DSQLEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DSQL",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DSQLErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<DSQLEndpointProvider>(ALLOCATION_TAG),
@@ -68,15 +69,14 @@ DSQLClient::DSQLClient(const DSQL::DSQLClientConfiguration& clientConfiguration,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DSQLClient::DSQLClient(const AWSCredentials& credentials,
                            std::shared_ptr<DSQLEndpointProviderBase> endpointProvider,
                            const DSQL::DSQLClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DSQL",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DSQLErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<DSQLEndpointProvider>(ALLOCATION_TAG),
@@ -84,15 +84,14 @@ DSQLClient::DSQLClient(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DSQLClient::DSQLClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<DSQLEndpointProviderBase> endpointProvider,
                            const DSQL::DSQLClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DSQL",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DSQLErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<DSQLEndpointProvider>(ALLOCATION_TAG),
@@ -100,14 +99,13 @@ DSQLClient::DSQLClient(const std::shared_ptr<AWSCredentialsProvider>& credential
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 DSQLClient::DSQLClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "DSQL",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<DSQLErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<DSQLEndpointProvider>(ALLOCATION_TAG),
@@ -115,14 +113,13 @@ DSQLClient::DSQLClient(const Client::ClientConfiguration& clientConfiguration) :
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DSQLClient::DSQLClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DSQL",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DSQLErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<DSQLEndpointProvider>(ALLOCATION_TAG),
@@ -130,14 +127,13 @@ DSQLClient::DSQLClient(const AWSCredentials& credentials,
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 DSQLClient::DSQLClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "DSQL",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<DSQLErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<DSQLEndpointProvider>(ALLOCATION_TAG),
@@ -145,9 +141,7 @@ DSQLClient::DSQLClient(const std::shared_ptr<AWSCredentialsProvider>& credential
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 DSQLClient::~DSQLClient()
@@ -160,26 +154,11 @@ std::shared_ptr<DSQLEndpointProviderBase>& DSQLClient::accessEndpointProvider()
   return m_endpointProvider;
 }
 
-void DSQLClient::init(const DSQL::DSQLClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void DSQLClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CreateClusterOutcome DSQLClient::CreateCluster(const CreateClusterRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateCluster);

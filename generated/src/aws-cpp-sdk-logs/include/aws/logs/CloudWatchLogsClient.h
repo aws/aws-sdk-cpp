@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/logs/CloudWatchLogsErrorMarshaller.h>
 
 namespace Aws
 {
@@ -51,7 +52,8 @@ namespace CloudWatchLogs
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       CloudWatchLogsEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudWatchLogsErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>
   {
     public:
@@ -3224,7 +3226,6 @@ namespace CloudWatchLogs
       std::shared_ptr<CloudWatchLogsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
-      void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
   };
 

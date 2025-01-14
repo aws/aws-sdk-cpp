@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>
 
 namespace Aws
 {
@@ -32,7 +33,8 @@ namespace MarketplaceCatalog
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       MarketplaceCatalogEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::MarketplaceCatalogErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>
   {
     public:
@@ -467,7 +469,6 @@ namespace MarketplaceCatalog
       std::shared_ptr<MarketplaceCatalogEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>;
-      void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
 
   };
 

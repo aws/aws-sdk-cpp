@@ -64,6 +64,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const MarketplaceCatalog::Mar
                            std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Marketplace Catalog",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
@@ -71,15 +72,14 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const MarketplaceCatalog::Mar
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MarketplaceCatalogClient::MarketplaceCatalogClient(const AWSCredentials& credentials,
                            std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider,
                            const MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Marketplace Catalog",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
@@ -87,15 +87,14 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const AWSCredentials& credent
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MarketplaceCatalogClient::MarketplaceCatalogClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider,
                            const MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Marketplace Catalog",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
@@ -103,14 +102,13 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const std::shared_ptr<AWSCred
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 MarketplaceCatalogClient::MarketplaceCatalogClient(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "Marketplace Catalog",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
@@ -118,14 +116,13 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const Client::ClientConfigura
       {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MarketplaceCatalogClient::MarketplaceCatalogClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Marketplace Catalog",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
@@ -133,14 +130,13 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const AWSCredentials& credent
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 MarketplaceCatalogClient::MarketplaceCatalogClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "Marketplace Catalog",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
@@ -148,9 +144,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const std::shared_ptr<AWSCred
         {
           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 /* End of legacy constructors due deprecation */
 
 MarketplaceCatalogClient::~MarketplaceCatalogClient()
@@ -163,26 +157,11 @@ std::shared_ptr<MarketplaceCatalogEndpointProviderBase>& MarketplaceCatalogClien
   return m_endpointProvider;
 }
 
-void MarketplaceCatalogClient::init(const MarketplaceCatalog::MarketplaceCatalogClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void MarketplaceCatalogClient::OverrideEndpoint(const Aws::String& endpoint)
 {
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 BatchDescribeEntitiesOutcome MarketplaceCatalogClient::BatchDescribeEntities(const BatchDescribeEntitiesRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchDescribeEntities);

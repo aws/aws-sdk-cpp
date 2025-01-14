@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/opensearch/OpenSearchServiceErrorMarshaller.h>
 
 namespace Aws
 {
@@ -33,7 +34,8 @@ namespace OpenSearchService
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       OpenSearchServiceEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::OpenSearchServiceErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>
   {
     public:
@@ -2154,7 +2156,6 @@ namespace OpenSearchService
       std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;
-      void init(const OpenSearchServiceClientConfiguration& clientConfiguration);
 
   };
 

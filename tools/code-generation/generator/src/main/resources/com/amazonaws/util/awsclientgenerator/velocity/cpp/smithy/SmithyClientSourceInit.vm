@@ -6,6 +6,7 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
                            const ${clientConfiguration}& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -16,13 +17,13 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
 #end
       })
 {
-  init(m_clientConfiguration);
 }
 
 ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                            const Aws::Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -33,7 +34,6 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
 #end
       })
 {
-  init(m_clientConfiguration);
 }
 ## END OF BEARER TOKEN AUTH PROVIDER C-TOR
 
@@ -43,6 +43,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -59,6 +60,7 @@ ${className}::${className}(const AWSCredentials& credentials,
                            const ${clientConfiguration}& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -75,6 +77,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
                            const ${clientConfiguration}& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -90,6 +93,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -105,6 +109,7 @@ ${className}::${className}(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -120,6 +125,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -130,6 +136,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 #end
         })
 {}
+#end
 /* End of legacy constructors due deprecation */
 
 ${className}::~${className}()

@@ -12,6 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/appconfig/AppConfigErrorMarshaller.h>
 
 namespace Aws
 {
@@ -120,7 +121,8 @@ namespace AppConfig
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       AppConfigEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppConfigErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>
   {
     public:
@@ -1405,7 +1407,6 @@ namespace AppConfig
       std::shared_ptr<AppConfigEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>;
-      void init(const AppConfigClientConfiguration& clientConfiguration);
 
   };
 
