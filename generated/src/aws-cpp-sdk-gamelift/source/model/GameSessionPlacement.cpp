@@ -39,7 +39,8 @@ GameSessionPlacement::GameSessionPlacement() :
     m_portHasBeenSet(false),
     m_placedPlayerSessionsHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false)
+    m_matchmakerDataHasBeenSet(false),
+    m_priorityConfigurationOverrideHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,13 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
     m_matchmakerDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PriorityConfigurationOverride"))
+  {
+    m_priorityConfigurationOverride = jsonValue.GetObject("PriorityConfigurationOverride");
+
+    m_priorityConfigurationOverrideHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -310,6 +318,12 @@ JsonValue GameSessionPlacement::Jsonize() const
   if(m_matchmakerDataHasBeenSet)
   {
    payload.WithString("MatchmakerData", m_matchmakerData);
+
+  }
+
+  if(m_priorityConfigurationOverrideHasBeenSet)
+  {
+   payload.WithObject("PriorityConfigurationOverride", m_priorityConfigurationOverride.Jsonize());
 
   }
 

@@ -55,18 +55,21 @@ namespace Model
     ///@{
     /**
      * <p>The method to use to terminate the game session. Available methods include:
-     * </p> <ul> <li> <p> <code>TRIGGER_ON_PROCESS_TERMINATE</code> – Sends an
-     * <code>OnProcessTerminate()</code> callback to the server process to initiate the
-     * normal game session shutdown sequence. At a minimum, the callback method must
-     * include a call to the server SDK action <code>ProcessEnding()</code>, which is
-     * how the server process signals that a game session is ending. If the server
-     * process doesn't call <code>ProcessEnding()</code>, this termination method won't
-     * be successful.</p> </li> <li> <p> <code>FORCE_TERMINATE</code> – Takes action to
-     * stop the server process, using existing methods to control how server processes
-     * run on an Amazon GameLift managed compute. </p>  <p>This method is not
-     * available for game sessions that are running on Anywhere fleets unless the fleet
-     * is deployed with the Amazon GameLift Agent. In this scenario, a force terminate
-     * request results in an invalid or bad request exception.</p>  </li> </ul>
+     * </p> <ul> <li> <p> <code>TRIGGER_ON_PROCESS_TERMINATE</code> – Prompts the
+     * Amazon GameLift service to send an <code>OnProcessTerminate()</code> callback to
+     * the server process and initiate the normal game session shutdown sequence. The
+     * <code>OnProcessTerminate</code> method, which is implemented in the game server
+     * code, must include a call to the server SDK action <code>ProcessEnding()</code>,
+     * which is how the server process signals to Amazon GameLift that a game session
+     * is ending. If the server process doesn't call <code>ProcessEnding()</code>, the
+     * game session termination won't conclude successfully.</p> </li> <li> <p>
+     * <code>FORCE_TERMINATE</code> – Prompts the Amazon GameLift service to stop the
+     * server process immediately. Amazon GameLift takes action (depending on the type
+     * of fleet) to shut down the server process without the normal game session
+     * shutdown sequence. </p>  <p>This method is not available for game sessions
+     * that are running on Anywhere fleets unless the fleet is deployed with the Amazon
+     * GameLift Agent. In this scenario, a force terminate request results in an
+     * invalid or bad request exception.</p>  </li> </ul>
      */
     inline const TerminationMode& GetTerminationMode() const{ return m_terminationMode; }
     inline bool TerminationModeHasBeenSet() const { return m_terminationModeHasBeenSet; }

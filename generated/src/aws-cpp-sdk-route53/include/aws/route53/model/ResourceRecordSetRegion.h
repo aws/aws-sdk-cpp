@@ -48,6 +48,7 @@ namespace Model
     il_central_1,
     ca_west_1,
     ap_southeast_5,
+    mx_central_1,
     ap_southeast_7
   };
 

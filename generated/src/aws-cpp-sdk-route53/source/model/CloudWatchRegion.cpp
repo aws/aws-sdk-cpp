@@ -57,6 +57,7 @@ namespace Aws
         static const int il_central_1_HASH = HashingUtils::HashString("il-central-1");
         static const int ca_west_1_HASH = HashingUtils::HashString("ca-west-1");
         static const int ap_southeast_5_HASH = HashingUtils::HashString("ap-southeast-5");
+        static const int mx_central_1_HASH = HashingUtils::HashString("mx-central-1");
         static const int ap_southeast_7_HASH = HashingUtils::HashString("ap-southeast-7");
 
 
@@ -211,6 +212,10 @@ namespace Aws
           {
             return CloudWatchRegion::ap_southeast_5;
           }
+          else if (hashCode == mx_central_1_HASH)
+          {
+            return CloudWatchRegion::mx_central_1;
+          }
           else if (hashCode == ap_southeast_7_HASH)
           {
             return CloudWatchRegion::ap_southeast_7;
@@ -305,6 +310,8 @@ namespace Aws
             return "ca-west-1";
           case CloudWatchRegion::ap_southeast_5:
             return "ap-southeast-5";
+          case CloudWatchRegion::mx_central_1:
+            return "mx-central-1";
           case CloudWatchRegion::ap_southeast_7:
             return "ap-southeast-7";
           default:
