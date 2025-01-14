@@ -68,6 +68,9 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-neptune-query", new NeptuneCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-eventbridge-json", new EventBridgeCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-dsql-rest-json", new DsqlCppClientGenerator());
+
+            // protocol tests clients
+            SPEC_OVERRIDE_MAPPING.put("cpp-ec2-protocol-ec2", new Ec2CppClientGenerator());
         } catch (Exception e) {
             e.printStackTrace();
         }

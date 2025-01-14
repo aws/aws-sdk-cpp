@@ -50,11 +50,13 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator {
             shapes.put(key.replaceAll("Result$", "Response"), shape);
         }
 
-        //add "disabled" state to SpotInstanceState
-        List<String> spotInstanceStateEnumValues = shapes.get("SpotInstanceState").getEnumValues();
 
-        if(!spotInstanceStateEnumValues.contains("disabled")) {
-            spotInstanceStateEnumValues.add("disabled");
+        if (shapes.containsKey("SpotInstanceState")) {
+            // add "disabled" state to SpotInstanceState
+            List<String> spotInstanceStateEnumValues = shapes.get("SpotInstanceState").getEnumValues();
+            if (!spotInstanceStateEnumValues.contains("disabled")) {
+                spotInstanceStateEnumValues.add("disabled");
+            }
         }
 
         final Collection<Error> serviceErrors = serviceModel.getServiceErrors();
