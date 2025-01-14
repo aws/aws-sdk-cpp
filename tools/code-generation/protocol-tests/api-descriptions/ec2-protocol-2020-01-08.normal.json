@@ -1,0 +1,960 @@
+{
+    "version": "2.0",
+    "metadata": {
+        "apiVersion": "2020-01-08",
+        "auth": [
+            "aws.auth#sigv4"
+        ],
+        "endpointPrefix": "ec2query",
+        "protocol": "ec2",
+        "protocols": [
+            "ec2"
+        ],
+        "serviceFullName": "Sample Ec2 Protocol Service",
+        "serviceId": "EC2 Protocol",
+        "signatureVersion": "v4",
+        "signingName": "ec2query",
+        "uid": "ec2-protocol-2020-01-08"
+    },
+    "operations": {
+        "DatetimeOffsets": {
+            "name": "DatetimeOffsets",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "DatetimeOffsetsOutput"
+            }
+        },
+        "EmptyInputAndEmptyOutput": {
+            "name": "EmptyInputAndEmptyOutput",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "EmptyInputAndEmptyOutputInput"
+            },
+            "output": {
+                "shape": "EmptyInputAndEmptyOutputOutput"
+            },
+            "documentation": "<p>The example tests how requests and responses are serialized when there's no request or response members.</p> <p>While this should be rare, code generators must support this.</p>"
+        },
+        "EndpointOperation": {
+            "name": "EndpointOperation",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "endpoint": {
+                "hostPrefix": "foo."
+            }
+        },
+        "EndpointWithHostLabelOperation": {
+            "name": "EndpointWithHostLabelOperation",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "HostLabelInput"
+            },
+            "endpoint": {
+                "hostPrefix": "foo.{label}."
+            }
+        },
+        "FractionalSeconds": {
+            "name": "FractionalSeconds",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "FractionalSecondsOutput"
+            }
+        },
+        "GreetingWithErrors": {
+            "name": "GreetingWithErrors",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "GreetingWithErrorsOutput"
+            },
+            "errors": [
+                {
+                    "shape": "ComplexError"
+                },
+                {
+                    "shape": "InvalidGreeting"
+                }
+            ],
+            "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A BadRequest error.</li> </ol>"
+        },
+        "HostWithPathOperation": {
+            "name": "HostWithPathOperation",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            }
+        },
+        "IgnoresWrappingXmlName": {
+            "name": "IgnoresWrappingXmlName",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "IgnoresWrappingXmlNameOutput"
+            },
+            "documentation": "<p>The xmlName trait on the output structure is ignored in AWS Query.</p> <p>The wrapping element is always operation name + &quot;Response&quot;.</p>"
+        },
+        "NestedStructures": {
+            "name": "NestedStructures",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "NestedStructuresInput"
+            },
+            "documentation": "<p>This test serializes nested and recursive structure members.</p>"
+        },
+        "NoInputAndOutput": {
+            "name": "NoInputAndOutput",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "NoInputAndOutputOutput"
+            },
+            "documentation": "<p>The example tests how requests and responses are serialized when there's no request payload or response members.</p> <p>While this should be rare, code generators must support this.</p>"
+        },
+        "PutWithContentEncoding": {
+            "name": "PutWithContentEncoding",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "PutWithContentEncodingInput"
+            },
+            "requestcompression": {
+                "encodings": [
+                    "gzip"
+                ]
+            }
+        },
+        "QueryIdempotencyTokenAutoFill": {
+            "name": "QueryIdempotencyTokenAutoFill",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "QueryIdempotencyTokenAutoFillInput"
+            },
+            "documentation": "<p>Automatically adds idempotency tokens.</p>"
+        },
+        "QueryLists": {
+            "name": "QueryLists",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "QueryListsInput"
+            },
+            "documentation": "<p>This test serializes simple and complex lists.</p>"
+        },
+        "QueryTimestamps": {
+            "name": "QueryTimestamps",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "QueryTimestampsInput"
+            },
+            "documentation": "<p>This test serializes timestamps.</p> <ol> <li>Timestamps are serialized as RFC 3339 date-time values by default.</li> <li>A timestampFormat trait on a member changes the format.</li> <li>A timestampFormat trait on the shape targeted by the member changes the format.</li> </ol>"
+        },
+        "RecursiveXmlShapes": {
+            "name": "RecursiveXmlShapes",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "RecursiveXmlShapesOutput"
+            },
+            "documentation": "<p>Recursive shapes</p>"
+        },
+        "SimpleInputParams": {
+            "name": "SimpleInputParams",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "input": {
+                "shape": "SimpleInputParamsInput"
+            },
+            "documentation": "<p>This test serializes strings, numbers, and boolean values.</p>"
+        },
+        "SimpleScalarXmlProperties": {
+            "name": "SimpleScalarXmlProperties",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "SimpleScalarXmlPropertiesOutput"
+            }
+        },
+        "XmlBlobs": {
+            "name": "XmlBlobs",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlBlobsOutput"
+            },
+            "documentation": "<p>Blobs are base64 encoded</p>"
+        },
+        "XmlEmptyBlobs": {
+            "name": "XmlEmptyBlobs",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlBlobsOutput"
+            }
+        },
+        "XmlEmptyLists": {
+            "name": "XmlEmptyLists",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlListsOutput"
+            }
+        },
+        "XmlEnums": {
+            "name": "XmlEnums",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlEnumsOutput"
+            },
+            "documentation": "<p>This example serializes enums as top level properties, in lists, sets, and maps.</p>"
+        },
+        "XmlIntEnums": {
+            "name": "XmlIntEnums",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlIntEnumsOutput"
+            },
+            "documentation": "<p>This example serializes intEnums as top level properties, in lists, sets, and maps.</p>"
+        },
+        "XmlLists": {
+            "name": "XmlLists",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlListsOutput"
+            },
+            "documentation": "<p>This test case serializes XML lists for the following cases for both input and output:</p> <ol> <li>Normal XML lists.</li> <li>Normal XML sets.</li> <li>XML lists of lists.</li> <li>XML lists with @xmlName on its members</li> <li>Flattened XML lists.</li> <li>Flattened XML lists with @xmlName.</li> <li>Flattened XML lists with @xmlNamespace.</li> <li>Lists of structures.</li> </ol>"
+        },
+        "XmlNamespaces": {
+            "name": "XmlNamespaces",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlNamespacesOutput"
+            }
+        },
+        "XmlTimestamps": {
+            "name": "XmlTimestamps",
+            "http": {
+                "method": "POST",
+                "requestUri": "/"
+            },
+            "output": {
+                "shape": "XmlTimestampsOutput"
+            },
+            "documentation": "<p>This tests how timestamps are serialized, including using the default format of date-time and various @timestampFormat trait values.</p>"
+        }
+    },
+    "shapes": {
+        "Blob": {
+            "type": "blob"
+        },
+        "Boolean": {
+            "type": "boolean",
+            "box": true
+        },
+        "BooleanList": {
+            "type": "list",
+            "member": {
+                "shape": "Boolean"
+            }
+        },
+        "ComplexError": {
+            "type": "structure",
+            "members": {
+                "TopLevel": {
+                    "shape": "String"
+                },
+                "Nested": {
+                    "shape": "ComplexNestedErrorData"
+                }
+            },
+            "documentation": "<p>This error is thrown when a request is invalid.</p>",
+            "exception": true
+        },
+        "ComplexNestedErrorData": {
+            "type": "structure",
+            "members": {
+                "Foo": {
+                    "shape": "String"
+                }
+            }
+        },
+        "DateTime": {
+            "type": "timestamp",
+            "timestampFormat": "iso8601"
+        },
+        "DatetimeOffsetsOutput": {
+            "type": "structure",
+            "members": {
+                "datetime": {
+                    "shape": "DateTime"
+                }
+            }
+        },
+        "Double": {
+            "type": "double",
+            "box": true
+        },
+        "EmptyInputAndEmptyOutputInput": {
+            "type": "structure",
+            "members": {}
+        },
+        "EmptyInputAndEmptyOutputOutput": {
+            "type": "structure",
+            "members": {}
+        },
+        "EpochSeconds": {
+            "type": "timestamp",
+            "timestampFormat": "unixTimestamp"
+        },
+        "Float": {
+            "type": "float",
+            "box": true
+        },
+        "FooEnum": {
+            "type": "string",
+            "enum": [
+                "Foo",
+                "Baz",
+                "Bar",
+                "1",
+                "0"
+            ]
+        },
+        "FooEnumList": {
+            "type": "list",
+            "member": {
+                "shape": "FooEnum"
+            }
+        },
+        "FooEnumMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "FooEnum"
+            }
+        },
+        "FooEnumSet": {
+            "type": "list",
+            "member": {
+                "shape": "FooEnum"
+            }
+        },
+        "FractionalSecondsOutput": {
+            "type": "structure",
+            "members": {
+                "datetime": {
+                    "shape": "DateTime"
+                }
+            }
+        },
+        "GreetingList": {
+            "type": "list",
+            "member": {
+                "shape": "GreetingStruct"
+            }
+        },
+        "GreetingStruct": {
+            "type": "structure",
+            "members": {
+                "hi": {
+                    "shape": "String"
+                }
+            }
+        },
+        "GreetingWithErrorsOutput": {
+            "type": "structure",
+            "members": {
+                "greeting": {
+                    "shape": "String"
+                }
+            }
+        },
+        "HostLabelInput": {
+            "type": "structure",
+            "required": [
+                "label"
+            ],
+            "members": {
+                "label": {
+                    "shape": "String",
+                    "hostLabel": true
+                }
+            }
+        },
+        "HttpDate": {
+            "type": "timestamp",
+            "timestampFormat": "rfc822"
+        },
+        "IgnoresWrappingXmlNameOutput": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                }
+            },
+            "locationName": "IgnoreMe"
+        },
+        "Integer": {
+            "type": "integer",
+            "box": true
+        },
+        "IntegerEnum": {
+            "type": "integer",
+            "box": true
+        },
+        "IntegerEnumList": {
+            "type": "list",
+            "member": {
+                "shape": "IntegerEnum"
+            }
+        },
+        "IntegerEnumMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "IntegerEnum"
+            }
+        },
+        "IntegerEnumSet": {
+            "type": "list",
+            "member": {
+                "shape": "IntegerEnum"
+            }
+        },
+        "IntegerList": {
+            "type": "list",
+            "member": {
+                "shape": "Integer"
+            }
+        },
+        "InvalidGreeting": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "shape": "String"
+                }
+            },
+            "documentation": "<p>This error is thrown when an invalid greeting value is provided.</p>",
+            "exception": true
+        },
+        "ListWithMemberNamespace": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "xmlNamespace": "https://xml-member.example.com"
+            },
+            "xmlNamespace": "https://xml-list.example.com"
+        },
+        "ListWithNamespace": {
+            "type": "list",
+            "member": {
+                "shape": "String"
+            },
+            "xmlNamespace": "https://xml-list.example.com"
+        },
+        "ListWithXmlName": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "locationName": "item"
+            }
+        },
+        "Long": {
+            "type": "long",
+            "box": true
+        },
+        "NestedStringList": {
+            "type": "list",
+            "member": {
+                "shape": "StringList"
+            },
+            "documentation": "<p>A list of lists of strings.</p>"
+        },
+        "NestedStructWithList": {
+            "type": "structure",
+            "members": {
+                "ListArg": {
+                    "shape": "StringList"
+                }
+            }
+        },
+        "NestedStructuresInput": {
+            "type": "structure",
+            "members": {
+                "Nested": {
+                    "shape": "StructArg"
+                }
+            }
+        },
+        "NoInputAndOutputOutput": {
+            "type": "structure",
+            "members": {}
+        },
+        "PutWithContentEncodingInput": {
+            "type": "structure",
+            "members": {
+                "encoding": {
+                    "shape": "String"
+                },
+                "data": {
+                    "shape": "String"
+                }
+            }
+        },
+        "QueryIdempotencyTokenAutoFillInput": {
+            "type": "structure",
+            "members": {
+                "token": {
+                    "shape": "String",
+                    "idempotencyToken": true
+                }
+            }
+        },
+        "QueryListsInput": {
+            "type": "structure",
+            "members": {
+                "ListArg": {
+                    "shape": "StringList"
+                },
+                "ComplexListArg": {
+                    "shape": "GreetingList"
+                },
+                "ListArgWithXmlNameMember": {
+                    "shape": "ListWithXmlName"
+                },
+                "ListArgWithXmlName": {
+                    "shape": "ListWithXmlName",
+                    "locationName": "Hi"
+                },
+                "NestedWithList": {
+                    "shape": "NestedStructWithList"
+                }
+            }
+        },
+        "QueryTimestampsInput": {
+            "type": "structure",
+            "members": {
+                "normalFormat": {
+                    "shape": "Timestamp"
+                },
+                "epochMember": {
+                    "shape": "SyntheticTimestamp_epoch_seconds"
+                },
+                "epochTarget": {
+                    "shape": "EpochSeconds"
+                }
+            }
+        },
+        "RecursiveXmlShapesOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "RecursiveXmlShapesOutputNested1"
+                }
+            }
+        },
+        "RecursiveXmlShapesOutputNested1": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "nested": {
+                    "shape": "RecursiveXmlShapesOutputNested2"
+                }
+            }
+        },
+        "RecursiveXmlShapesOutputNested2": {
+            "type": "structure",
+            "members": {
+                "bar": {
+                    "shape": "String"
+                },
+                "recursiveMember": {
+                    "shape": "RecursiveXmlShapesOutputNested1"
+                }
+            }
+        },
+        "RenamedListMembers": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "locationName": "item"
+            }
+        },
+        "SimpleInputParamsInput": {
+            "type": "structure",
+            "members": {
+                "Foo": {
+                    "shape": "String"
+                },
+                "Bar": {
+                    "shape": "String"
+                },
+                "Baz": {
+                    "shape": "Boolean"
+                },
+                "Bam": {
+                    "shape": "Integer"
+                },
+                "FloatValue": {
+                    "shape": "Float"
+                },
+                "Boo": {
+                    "shape": "Double"
+                },
+                "Qux": {
+                    "shape": "Blob"
+                },
+                "FooEnum": {
+                    "shape": "FooEnum"
+                },
+                "HasQueryName": {
+                    "shape": "String"
+                },
+                "HasQueryAndXmlName": {
+                    "shape": "String",
+                    "locationName": "hasQueryAndXmlName"
+                },
+                "UsesXmlName": {
+                    "shape": "String",
+                    "locationName": "usesXmlName"
+                }
+            }
+        },
+        "SimpleScalarXmlPropertiesOutput": {
+            "type": "structure",
+            "members": {
+                "stringValue": {
+                    "shape": "String"
+                },
+                "emptyStringValue": {
+                    "shape": "String"
+                },
+                "trueBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "falseBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "byteValue": {
+                    "shape": "Integer"
+                },
+                "shortValue": {
+                    "shape": "Integer"
+                },
+                "integerValue": {
+                    "shape": "Integer"
+                },
+                "longValue": {
+                    "shape": "Long"
+                },
+                "floatValue": {
+                    "shape": "Float"
+                },
+                "doubleValue": {
+                    "shape": "Double",
+                    "locationName": "DoubleDribble"
+                }
+            }
+        },
+        "String": {
+            "type": "string"
+        },
+        "StringList": {
+            "type": "list",
+            "member": {
+                "shape": "String"
+            }
+        },
+        "StringSet": {
+            "type": "list",
+            "member": {
+                "shape": "String"
+            }
+        },
+        "StructArg": {
+            "type": "structure",
+            "members": {
+                "StringArg": {
+                    "shape": "String"
+                },
+                "OtherArg": {
+                    "shape": "Boolean"
+                },
+                "RecursiveArg": {
+                    "shape": "StructArg"
+                }
+            }
+        },
+        "StructureList": {
+            "type": "list",
+            "member": {
+                "shape": "StructureListMember",
+                "locationName": "item"
+            }
+        },
+        "StructureListMember": {
+            "type": "structure",
+            "members": {
+                "a": {
+                    "shape": "String",
+                    "locationName": "value"
+                },
+                "b": {
+                    "shape": "String",
+                    "locationName": "other"
+                }
+            }
+        },
+        "SyntheticTimestamp_date_time": {
+            "type": "timestamp",
+            "timestampFormat": "iso8601"
+        },
+        "SyntheticTimestamp_epoch_seconds": {
+            "type": "timestamp",
+            "timestampFormat": "unixTimestamp"
+        },
+        "SyntheticTimestamp_http_date": {
+            "type": "timestamp",
+            "timestampFormat": "rfc822"
+        },
+        "Timestamp": {
+            "type": "timestamp"
+        },
+        "TimestampList": {
+            "type": "list",
+            "member": {
+                "shape": "Timestamp"
+            }
+        },
+        "XmlBlobsOutput": {
+            "type": "structure",
+            "members": {
+                "data": {
+                    "shape": "Blob"
+                }
+            }
+        },
+        "XmlEnumsOutput": {
+            "type": "structure",
+            "members": {
+                "fooEnum1": {
+                    "shape": "FooEnum"
+                },
+                "fooEnum2": {
+                    "shape": "FooEnum"
+                },
+                "fooEnum3": {
+                    "shape": "FooEnum"
+                },
+                "fooEnumList": {
+                    "shape": "FooEnumList"
+                },
+                "fooEnumSet": {
+                    "shape": "FooEnumSet"
+                },
+                "fooEnumMap": {
+                    "shape": "FooEnumMap"
+                }
+            }
+        },
+        "XmlIntEnumsOutput": {
+            "type": "structure",
+            "members": {
+                "intEnum1": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnum2": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnum3": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "intEnumSet": {
+                    "shape": "IntegerEnumSet"
+                },
+                "intEnumMap": {
+                    "shape": "IntegerEnumMap"
+                }
+            }
+        },
+        "XmlListsOutput": {
+            "type": "structure",
+            "members": {
+                "stringList": {
+                    "shape": "StringList"
+                },
+                "stringSet": {
+                    "shape": "StringSet"
+                },
+                "integerList": {
+                    "shape": "IntegerList"
+                },
+                "booleanList": {
+                    "shape": "BooleanList"
+                },
+                "timestampList": {
+                    "shape": "TimestampList"
+                },
+                "enumList": {
+                    "shape": "FooEnumList"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "shape": "NestedStringList"
+                },
+                "renamedListMembers": {
+                    "shape": "RenamedListMembers",
+                    "locationName": "renamed"
+                },
+                "flattenedList": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true
+                },
+                "flattenedList2": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true,
+                    "locationName": "customName"
+                },
+                "flattenedListWithMemberNamespace": {
+                    "shape": "ListWithMemberNamespace",
+                    "flattened": true
+                },
+                "flattenedListWithNamespace": {
+                    "shape": "ListWithNamespace",
+                    "flattened": true
+                },
+                "structureList": {
+                    "shape": "StructureList",
+                    "locationName": "myStructureList"
+                }
+            }
+        },
+        "XmlNamespaceNested": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "xmlNamespace": {
+                        "prefix": "baz",
+                        "uri": "http://baz.com"
+                    }
+                },
+                "values": {
+                    "shape": "XmlNamespacedList",
+                    "xmlNamespace": "http://qux.com"
+                }
+            },
+            "xmlNamespace": "http://foo.com"
+        },
+        "XmlNamespacedList": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "xmlNamespace": "http://bux.com"
+            }
+        },
+        "XmlNamespacesOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "XmlNamespaceNested"
+                }
+            },
+            "xmlNamespace": "http://foo.com"
+        },
+        "XmlTimestampsOutput": {
+            "type": "structure",
+            "members": {
+                "normal": {
+                    "shape": "Timestamp"
+                },
+                "dateTime": {
+                    "shape": "SyntheticTimestamp_date_time"
+                },
+                "dateTimeOnTarget": {
+                    "shape": "DateTime"
+                },
+                "epochSeconds": {
+                    "shape": "SyntheticTimestamp_epoch_seconds"
+                },
+                "epochSecondsOnTarget": {
+                    "shape": "EpochSeconds"
+                },
+                "httpDate": {
+                    "shape": "SyntheticTimestamp_http_date"
+                },
+                "httpDateOnTarget": {
+                    "shape": "HttpDate"
+                }
+            }
+        }
+    },
+    "documentation": "<p>An EC2 query service that sends query requests and XML responses.</p>"
+}
