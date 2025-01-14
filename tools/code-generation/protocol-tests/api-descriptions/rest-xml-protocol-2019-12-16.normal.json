@@ -1,0 +1,2932 @@
+{
+    "version": "2.0",
+    "metadata": {
+        "apiVersion": "2019-12-16",
+        "auth": [
+            "aws.auth#sigv4"
+        ],
+        "endpointPrefix": "restxml",
+        "protocol": "rest-xml",
+        "protocols": [
+            "rest-xml"
+        ],
+        "serviceFullName": "Sample Rest Xml Protocol Service",
+        "serviceId": "Rest Xml Protocol",
+        "signatureVersion": "v4",
+        "signingName": "restxml",
+        "uid": "rest-xml-protocol-2019-12-16"
+    },
+    "operations": {
+        "AllQueryStringTypes": {
+            "name": "AllQueryStringTypes",
+            "http": {
+                "method": "GET",
+                "requestUri": "/AllQueryStringTypesInput",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "AllQueryStringTypesInput"
+            },
+            "documentation": "<p>This example uses all query string types.</p>"
+        },
+        "BodyWithXmlName": {
+            "name": "BodyWithXmlName",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/BodyWithXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "BodyWithXmlNameInputOutput",
+                "locationName": "BodyWithXmlNameRequest"
+            },
+            "output": {
+                "shape": "BodyWithXmlNameInputOutput"
+            },
+            "documentation": "<p>The following example serializes a body that uses an XML name, changing the wrapper name.</p>",
+            "idempotent": true
+        },
+        "ConstantAndVariableQueryString": {
+            "name": "ConstantAndVariableQueryString",
+            "http": {
+                "method": "GET",
+                "requestUri": "/ConstantAndVariableQueryString?foo=bar",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "ConstantAndVariableQueryStringInput"
+            },
+            "documentation": "<p>This example uses fixed query string params and variable query string params. The fixed query string parameters and variable parameters must both be serialized (implementations may need to merge them together).</p>"
+        },
+        "ConstantQueryString": {
+            "name": "ConstantQueryString",
+            "http": {
+                "method": "GET",
+                "requestUri": "/ConstantQueryString/{hello}?foo=bar&hello",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "ConstantQueryStringInput"
+            },
+            "documentation": "<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>"
+        },
+        "ContentTypeParameters": {
+            "name": "ContentTypeParameters",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/ContentTypeParameters",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "ContentTypeParametersInput",
+                "locationName": "ContentTypeParametersRequest"
+            },
+            "output": {
+                "shape": "ContentTypeParametersOutput"
+            },
+            "documentation": "<p>The example tests how servers must support requests containing a <code>Content-Type</code> header with parameters.</p>",
+            "idempotent": true
+        },
+        "DatetimeOffsets": {
+            "name": "DatetimeOffsets",
+            "http": {
+                "method": "POST",
+                "requestUri": "/DatetimeOffsets",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "DatetimeOffsetsOutput"
+            }
+        },
+        "EmptyInputAndEmptyOutput": {
+            "name": "EmptyInputAndEmptyOutput",
+            "http": {
+                "method": "POST",
+                "requestUri": "/EmptyInputAndEmptyOutput",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "EmptyInputAndEmptyOutputInput"
+            },
+            "output": {
+                "shape": "EmptyInputAndEmptyOutputOutput"
+            },
+            "documentation": "<p>The example tests how requests and responses are serialized when there's no request or response payload because the operation has an empty input and empty output structure that reuses the same shape. While this should be rare, code generators must support this.</p>"
+        },
+        "EndpointOperation": {
+            "name": "EndpointOperation",
+            "http": {
+                "method": "POST",
+                "requestUri": "/EndpointOperation",
+                "responseCode": 200
+            },
+            "endpoint": {
+                "hostPrefix": "foo."
+            }
+        },
+        "EndpointWithHostLabelHeaderOperation": {
+            "name": "EndpointWithHostLabelHeaderOperation",
+            "http": {
+                "method": "POST",
+                "requestUri": "/EndpointWithHostLabelHeaderOperation",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HostLabelHeaderInput"
+            },
+            "endpoint": {
+                "hostPrefix": "{accountId}."
+            }
+        },
+        "EndpointWithHostLabelOperation": {
+            "name": "EndpointWithHostLabelOperation",
+            "http": {
+                "method": "POST",
+                "requestUri": "/EndpointWithHostLabelOperation",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "EndpointWithHostLabelOperationRequest",
+                "locationName": "EndpointWithHostLabelOperationRequest"
+            },
+            "endpoint": {
+                "hostPrefix": "foo.{label}."
+            }
+        },
+        "FlattenedXmlMap": {
+            "name": "FlattenedXmlMap",
+            "http": {
+                "method": "POST",
+                "requestUri": "/FlattenedXmlMap",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "FlattenedXmlMapRequest",
+                "locationName": "FlattenedXmlMapRequest"
+            },
+            "output": {
+                "shape": "FlattenedXmlMapResponse"
+            },
+            "documentation": "<p>Flattened maps</p>"
+        },
+        "FlattenedXmlMapWithXmlName": {
+            "name": "FlattenedXmlMapWithXmlName",
+            "http": {
+                "method": "POST",
+                "requestUri": "/FlattenedXmlMapWithXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "FlattenedXmlMapWithXmlNameRequest",
+                "locationName": "FlattenedXmlMapWithXmlNameRequest"
+            },
+            "output": {
+                "shape": "FlattenedXmlMapWithXmlNameResponse"
+            },
+            "documentation": "<p>Flattened maps with @xmlName</p>"
+        },
+        "FlattenedXmlMapWithXmlNamespace": {
+            "name": "FlattenedXmlMapWithXmlNamespace",
+            "http": {
+                "method": "POST",
+                "requestUri": "/FlattenedXmlMapWithXmlNamespace",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "FlattenedXmlMapWithXmlNamespaceOutput"
+            },
+            "documentation": "<p>Flattened maps with @xmlNamespace and @xmlName</p>"
+        },
+        "FractionalSeconds": {
+            "name": "FractionalSeconds",
+            "http": {
+                "method": "POST",
+                "requestUri": "/FractionalSeconds",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "FractionalSecondsOutput"
+            }
+        },
+        "GreetingWithErrors": {
+            "name": "GreetingWithErrors",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/GreetingWithErrors",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "GreetingWithErrorsOutput"
+            },
+            "errors": [
+                {
+                    "shape": "ComplexError"
+                },
+                {
+                    "shape": "InvalidGreeting"
+                }
+            ],
+            "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A BadRequest error.</li> </ol> <p>Implementations must be able to successfully take a response and properly (de)serialize successful and error responses based on the the presence of the</p>",
+            "idempotent": true
+        },
+        "HttpEnumPayload": {
+            "name": "HttpEnumPayload",
+            "http": {
+                "method": "POST",
+                "requestUri": "/EnumPayload",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "EnumPayloadInput"
+            },
+            "output": {
+                "shape": "EnumPayloadInput"
+            }
+        },
+        "HttpPayloadTraits": {
+            "name": "HttpPayloadTraits",
+            "http": {
+                "method": "POST",
+                "requestUri": "/HttpPayloadTraits",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadTraitsInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadTraitsInputOutput"
+            },
+            "documentation": "<p>This example serializes a blob shape in the payload.</p> <p>In this example, no XML document is synthesized because the payload is not a structure or a union type.</p>"
+        },
+        "HttpPayloadWithMemberXmlName": {
+            "name": "HttpPayloadWithMemberXmlName",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpPayloadWithMemberXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadWithMemberXmlNameInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadWithMemberXmlNameInputOutput"
+            },
+            "documentation": "<p>The following example serializes a payload that uses an XML name on the member, changing the wrapper name.</p>",
+            "idempotent": true
+        },
+        "HttpPayloadWithStructure": {
+            "name": "HttpPayloadWithStructure",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpPayloadWithStructure",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadWithStructureInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadWithStructureInputOutput"
+            },
+            "documentation": "<p>This example serializes a structure in the payload.</p> <p>Note that serializing a structure changes the wrapper element name to match the targeted structure.</p>",
+            "idempotent": true
+        },
+        "HttpPayloadWithUnion": {
+            "name": "HttpPayloadWithUnion",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpPayloadWithUnion",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadWithUnionInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadWithUnionInputOutput"
+            },
+            "documentation": "<p>This example serializes a union in the payload.</p>",
+            "idempotent": true
+        },
+        "HttpPayloadWithXmlName": {
+            "name": "HttpPayloadWithXmlName",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpPayloadWithXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadWithXmlNameInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadWithXmlNameInputOutput"
+            },
+            "documentation": "<p>The following example serializes a payload that uses an XML name, changing the wrapper name.</p>",
+            "idempotent": true
+        },
+        "HttpPayloadWithXmlNamespace": {
+            "name": "HttpPayloadWithXmlNamespace",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpPayloadWithXmlNamespace",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadWithXmlNamespaceInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadWithXmlNamespaceInputOutput"
+            },
+            "documentation": "<p>The following example serializes a payload that uses an XML namespace.</p>",
+            "idempotent": true
+        },
+        "HttpPayloadWithXmlNamespaceAndPrefix": {
+            "name": "HttpPayloadWithXmlNamespaceAndPrefix",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpPayloadWithXmlNamespaceAndPrefix",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPayloadWithXmlNamespaceAndPrefixInputOutput"
+            },
+            "output": {
+                "shape": "HttpPayloadWithXmlNamespaceAndPrefixInputOutput"
+            },
+            "documentation": "<p>The following example serializes a payload that uses an XML namespace.</p>",
+            "idempotent": true
+        },
+        "HttpPrefixHeaders": {
+            "name": "HttpPrefixHeaders",
+            "http": {
+                "method": "GET",
+                "requestUri": "/HttpPrefixHeaders",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpPrefixHeadersInputOutput"
+            },
+            "output": {
+                "shape": "HttpPrefixHeadersInputOutput"
+            },
+            "documentation": "<p>This examples adds headers to the input of a request and response by prefix.</p>"
+        },
+        "HttpRequestWithFloatLabels": {
+            "name": "HttpRequestWithFloatLabels",
+            "http": {
+                "method": "GET",
+                "requestUri": "/FloatHttpLabels/{float}/{double}",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpRequestWithFloatLabelsInput"
+            }
+        },
+        "HttpRequestWithGreedyLabelInPath": {
+            "name": "HttpRequestWithGreedyLabelInPath",
+            "http": {
+                "method": "GET",
+                "requestUri": "/HttpRequestWithGreedyLabelInPath/foo/{foo}/baz/{baz+}",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpRequestWithGreedyLabelInPathInput"
+            }
+        },
+        "HttpRequestWithLabels": {
+            "name": "HttpRequestWithLabels",
+            "http": {
+                "method": "GET",
+                "requestUri": "/HttpRequestWithLabels/{string}/{short}/{integer}/{long}/{float}/{double}/{boolean}/{timestamp}",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpRequestWithLabelsInput"
+            },
+            "documentation": "<p>The example tests how requests are serialized when there's no input payload but there are HTTP labels.</p>"
+        },
+        "HttpRequestWithLabelsAndTimestampFormat": {
+            "name": "HttpRequestWithLabelsAndTimestampFormat",
+            "http": {
+                "method": "GET",
+                "requestUri": "/HttpRequestWithLabelsAndTimestampFormat/{memberEpochSeconds}/{memberHttpDate}/{memberDateTime}/{defaultFormat}/{targetEpochSeconds}/{targetHttpDate}/{targetDateTime}",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpRequestWithLabelsAndTimestampFormatInput"
+            },
+            "documentation": "<p>The example tests how requests serialize different timestamp formats in the URI path.</p>"
+        },
+        "HttpResponseCode": {
+            "name": "HttpResponseCode",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/HttpResponseCode",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "HttpResponseCodeOutput"
+            },
+            "idempotent": true
+        },
+        "HttpStringPayload": {
+            "name": "HttpStringPayload",
+            "http": {
+                "method": "POST",
+                "requestUri": "/StringPayload",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "StringPayloadInput"
+            },
+            "output": {
+                "shape": "StringPayloadInput"
+            }
+        },
+        "IgnoreQueryParamsInResponse": {
+            "name": "IgnoreQueryParamsInResponse",
+            "http": {
+                "method": "GET",
+                "requestUri": "/IgnoreQueryParamsInResponse",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "IgnoreQueryParamsInResponseOutput"
+            },
+            "documentation": "<p>This example ensures that query string bound request parameters are serialized in the body of responses if the structure is used in both the request and response.</p>"
+        },
+        "InputAndOutputWithHeaders": {
+            "name": "InputAndOutputWithHeaders",
+            "http": {
+                "method": "POST",
+                "requestUri": "/InputAndOutputWithHeaders",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "InputAndOutputWithHeadersIO"
+            },
+            "output": {
+                "shape": "InputAndOutputWithHeadersIO"
+            },
+            "documentation": "<p>The example tests how requests and responses are serialized when there is no input or output payload but there are HTTP header bindings.</p>"
+        },
+        "NestedXmlMapWithXmlName": {
+            "name": "NestedXmlMapWithXmlName",
+            "http": {
+                "method": "POST",
+                "requestUri": "/NestedXmlMapWithXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "NestedXmlMapWithXmlNameInputOutput",
+                "locationName": "NestedXmlMapWithXmlNameRequest"
+            },
+            "output": {
+                "shape": "NestedXmlMapWithXmlNameInputOutput"
+            },
+            "documentation": "<p>Nested Xml Maps with key/values with @xmlName</p>"
+        },
+        "NestedXmlMaps": {
+            "name": "NestedXmlMaps",
+            "http": {
+                "method": "POST",
+                "requestUri": "/NestedXmlMaps",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "NestedXmlMapsRequest",
+                "locationName": "NestedXmlMapsRequest"
+            },
+            "output": {
+                "shape": "NestedXmlMapsResponse"
+            }
+        },
+        "NoInputAndNoOutput": {
+            "name": "NoInputAndNoOutput",
+            "http": {
+                "method": "POST",
+                "requestUri": "/NoInputAndNoOutput",
+                "responseCode": 200
+            },
+            "documentation": "<p>The example tests how requests and responses are serialized when there's no request or response payload because the operation has no input or output. While this should be rare, code generators must support this.</p>"
+        },
+        "NoInputAndOutput": {
+            "name": "NoInputAndOutput",
+            "http": {
+                "method": "POST",
+                "requestUri": "/NoInputAndOutputOutput",
+                "responseCode": 200
+            },
+            "output": {
+                "shape": "NoInputAndOutputOutput"
+            },
+            "documentation": "<p>The example tests how requests and responses are serialized when there's no request or response payload because the operation has no input and the output is empty. While this should be rare, code generators must support this.</p>"
+        },
+        "NullAndEmptyHeadersClient": {
+            "name": "NullAndEmptyHeadersClient",
+            "http": {
+                "method": "GET",
+                "requestUri": "/NullAndEmptyHeadersClient",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "NullAndEmptyHeadersIO"
+            },
+            "output": {
+                "shape": "NullAndEmptyHeadersIO"
+            },
+            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
+        },
+        "NullAndEmptyHeadersServer": {
+            "name": "NullAndEmptyHeadersServer",
+            "http": {
+                "method": "GET",
+                "requestUri": "/NullAndEmptyHeadersServer",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "NullAndEmptyHeadersIO"
+            },
+            "output": {
+                "shape": "NullAndEmptyHeadersIO"
+            },
+            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
+        },
+        "OmitsNullSerializesEmptyString": {
+            "name": "OmitsNullSerializesEmptyString",
+            "http": {
+                "method": "GET",
+                "requestUri": "/OmitsNullSerializesEmptyString",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "OmitsNullSerializesEmptyStringInput"
+            },
+            "documentation": "<p>Omits null, but serializes empty string value.</p>"
+        },
+        "PutWithContentEncoding": {
+            "name": "PutWithContentEncoding",
+            "http": {
+                "method": "POST",
+                "requestUri": "/requestcompression/putcontentwithencoding",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "PutWithContentEncodingInput",
+                "locationName": "PutWithContentEncodingRequest"
+            },
+            "requestcompression": {
+                "encodings": [
+                    "gzip"
+                ]
+            }
+        },
+        "QueryIdempotencyTokenAutoFill": {
+            "name": "QueryIdempotencyTokenAutoFill",
+            "http": {
+                "method": "POST",
+                "requestUri": "/QueryIdempotencyTokenAutoFill",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "QueryIdempotencyTokenAutoFillInput"
+            },
+            "documentation": "<p>Automatically adds idempotency tokens.</p>"
+        },
+        "QueryParamsAsStringListMap": {
+            "name": "QueryParamsAsStringListMap",
+            "http": {
+                "method": "POST",
+                "requestUri": "/StringListMap",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "QueryParamsAsStringListMapInput"
+            }
+        },
+        "QueryPrecedence": {
+            "name": "QueryPrecedence",
+            "http": {
+                "method": "POST",
+                "requestUri": "/Precedence",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "QueryPrecedenceInput"
+            }
+        },
+        "RecursiveShapes": {
+            "name": "RecursiveShapes",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/RecursiveShapes",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "RecursiveShapesRequest",
+                "locationName": "RecursiveShapesRequest"
+            },
+            "output": {
+                "shape": "RecursiveShapesResponse"
+            },
+            "documentation": "<p>Recursive shapes</p>",
+            "idempotent": true
+        },
+        "SimpleScalarProperties": {
+            "name": "SimpleScalarProperties",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/SimpleScalarProperties",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "SimpleScalarPropertiesRequest",
+                "locationName": "SimpleScalarPropertiesRequest"
+            },
+            "output": {
+                "shape": "SimpleScalarPropertiesResponse"
+            },
+            "idempotent": true
+        },
+        "TimestampFormatHeaders": {
+            "name": "TimestampFormatHeaders",
+            "http": {
+                "method": "POST",
+                "requestUri": "/TimestampFormatHeaders",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "TimestampFormatHeadersIO"
+            },
+            "output": {
+                "shape": "TimestampFormatHeadersIO"
+            },
+            "documentation": "<p>The example tests how timestamp request and response headers are serialized.</p>"
+        },
+        "XmlAttributes": {
+            "name": "XmlAttributes",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlAttributes",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlAttributesRequest",
+                "locationName": "XmlAttributesRequest"
+            },
+            "output": {
+                "shape": "XmlAttributesResponse"
+            },
+            "documentation": "<p>This example serializes an XML attributes on synthesized document.</p>",
+            "idempotent": true
+        },
+        "XmlAttributesOnPayload": {
+            "name": "XmlAttributesOnPayload",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlAttributesOnPayload",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlAttributesOnPayloadRequest"
+            },
+            "output": {
+                "shape": "XmlAttributesOnPayloadResponse"
+            },
+            "documentation": "<p>This example serializes an XML attributes on a document targeted by httpPayload.</p>",
+            "idempotent": true
+        },
+        "XmlBlobs": {
+            "name": "XmlBlobs",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlBlobs",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlBlobsRequest",
+                "locationName": "XmlBlobsRequest"
+            },
+            "output": {
+                "shape": "XmlBlobsResponse"
+            },
+            "documentation": "<p>Blobs are base64 encoded</p>"
+        },
+        "XmlEmptyBlobs": {
+            "name": "XmlEmptyBlobs",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlEmptyBlobs",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlEmptyBlobsRequest",
+                "locationName": "XmlEmptyBlobsRequest"
+            },
+            "output": {
+                "shape": "XmlEmptyBlobsResponse"
+            },
+            "documentation": "<p>Blobs are base64 encoded</p>"
+        },
+        "XmlEmptyLists": {
+            "name": "XmlEmptyLists",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlEmptyLists",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlEmptyListsRequest",
+                "locationName": "XmlEmptyListsRequest"
+            },
+            "output": {
+                "shape": "XmlEmptyListsResponse"
+            },
+            "idempotent": true
+        },
+        "XmlEmptyMaps": {
+            "name": "XmlEmptyMaps",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlEmptyMaps",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlEmptyMapsRequest",
+                "locationName": "XmlEmptyMapsRequest"
+            },
+            "output": {
+                "shape": "XmlEmptyMapsResponse"
+            }
+        },
+        "XmlEmptyStrings": {
+            "name": "XmlEmptyStrings",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlEmptyStrings",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlEmptyStringsRequest",
+                "locationName": "XmlEmptyStringsRequest"
+            },
+            "output": {
+                "shape": "XmlEmptyStringsResponse"
+            },
+            "idempotent": true
+        },
+        "XmlEnums": {
+            "name": "XmlEnums",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlEnums",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlEnumsRequest",
+                "locationName": "XmlEnumsRequest"
+            },
+            "output": {
+                "shape": "XmlEnumsResponse"
+            },
+            "documentation": "<p>This example serializes enums as top level properties, in lists, sets, and maps.</p>",
+            "idempotent": true
+        },
+        "XmlIntEnums": {
+            "name": "XmlIntEnums",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlIntEnums",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlIntEnumsRequest",
+                "locationName": "XmlIntEnumsRequest"
+            },
+            "output": {
+                "shape": "XmlIntEnumsResponse"
+            },
+            "documentation": "<p>This example serializes enums as top level properties, in lists, sets, and maps.</p>",
+            "idempotent": true
+        },
+        "XmlLists": {
+            "name": "XmlLists",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlLists",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlListsRequest",
+                "locationName": "XmlListsRequest"
+            },
+            "output": {
+                "shape": "XmlListsResponse"
+            },
+            "documentation": "<p>This test case serializes XML lists for the following cases for both input and output:</p> <ol> <li>Normal XML lists.</li> <li>Normal XML sets.</li> <li>XML lists of lists.</li> <li>XML lists with @xmlName on its members</li> <li>Flattened XML lists.</li> <li>Flattened XML lists with @xmlName.</li> <li>Flattened XML lists with @xmlNamespace.</li> <li>Lists of structures.</li> <li>Flattened XML list of structures</li> </ol>",
+            "idempotent": true
+        },
+        "XmlMapWithXmlNamespace": {
+            "name": "XmlMapWithXmlNamespace",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlMapWithXmlNamespace",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlMapWithXmlNamespaceRequest",
+                "locationName": "XmlMapWithXmlNamespaceRequest"
+            },
+            "output": {
+                "shape": "XmlMapWithXmlNamespaceResponse"
+            },
+            "documentation": "<p>Maps with @xmlNamespace and @xmlName</p>"
+        },
+        "XmlMaps": {
+            "name": "XmlMaps",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlMaps",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlMapsRequest",
+                "locationName": "XmlMapsRequest"
+            },
+            "output": {
+                "shape": "XmlMapsResponse"
+            },
+            "documentation": "<p>The example tests basic map serialization.</p>"
+        },
+        "XmlMapsXmlName": {
+            "name": "XmlMapsXmlName",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlMapsXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlMapsXmlNameRequest",
+                "locationName": "XmlMapsXmlNameRequest"
+            },
+            "output": {
+                "shape": "XmlMapsXmlNameResponse"
+            }
+        },
+        "XmlNamespaces": {
+            "name": "XmlNamespaces",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlNamespaces",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlNamespacesRequest",
+                "locationName": "XmlNamespacesRequest"
+            },
+            "output": {
+                "shape": "XmlNamespacesResponse"
+            }
+        },
+        "XmlTimestamps": {
+            "name": "XmlTimestamps",
+            "http": {
+                "method": "POST",
+                "requestUri": "/XmlTimestamps",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlTimestampsRequest",
+                "locationName": "XmlTimestampsRequest"
+            },
+            "output": {
+                "shape": "XmlTimestampsResponse"
+            },
+            "documentation": "<p>This tests how timestamps are serialized, including using the default format of date-time and various @timestampFormat trait values.</p>"
+        },
+        "XmlUnions": {
+            "name": "XmlUnions",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlUnions",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlUnionsRequest",
+                "locationName": "XmlUnionsRequest"
+            },
+            "output": {
+                "shape": "XmlUnionsResponse"
+            },
+            "idempotent": true
+        }
+    },
+    "shapes": {
+        "AllQueryStringTypesInput": {
+            "type": "structure",
+            "members": {
+                "queryString": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "String"
+                },
+                "queryStringList": {
+                    "shape": "StringList",
+                    "location": "querystring",
+                    "locationName": "StringList"
+                },
+                "queryStringSet": {
+                    "shape": "StringSet",
+                    "location": "querystring",
+                    "locationName": "StringSet"
+                },
+                "queryByte": {
+                    "shape": "Integer",
+                    "location": "querystring",
+                    "locationName": "Byte"
+                },
+                "queryShort": {
+                    "shape": "Integer",
+                    "location": "querystring",
+                    "locationName": "Short"
+                },
+                "queryInteger": {
+                    "shape": "Integer",
+                    "location": "querystring",
+                    "locationName": "Integer"
+                },
+                "queryIntegerList": {
+                    "shape": "IntegerList",
+                    "location": "querystring",
+                    "locationName": "IntegerList"
+                },
+                "queryIntegerSet": {
+                    "shape": "IntegerSet",
+                    "location": "querystring",
+                    "locationName": "IntegerSet"
+                },
+                "queryLong": {
+                    "shape": "Long",
+                    "location": "querystring",
+                    "locationName": "Long"
+                },
+                "queryFloat": {
+                    "shape": "Float",
+                    "location": "querystring",
+                    "locationName": "Float"
+                },
+                "queryDouble": {
+                    "shape": "Double",
+                    "location": "querystring",
+                    "locationName": "Double"
+                },
+                "queryDoubleList": {
+                    "shape": "DoubleList",
+                    "location": "querystring",
+                    "locationName": "DoubleList"
+                },
+                "queryBoolean": {
+                    "shape": "Boolean",
+                    "location": "querystring",
+                    "locationName": "Boolean"
+                },
+                "queryBooleanList": {
+                    "shape": "BooleanList",
+                    "location": "querystring",
+                    "locationName": "BooleanList"
+                },
+                "queryTimestamp": {
+                    "shape": "Timestamp",
+                    "location": "querystring",
+                    "locationName": "Timestamp"
+                },
+                "queryTimestampList": {
+                    "shape": "TimestampList",
+                    "location": "querystring",
+                    "locationName": "TimestampList"
+                },
+                "queryEnum": {
+                    "shape": "FooEnum",
+                    "location": "querystring",
+                    "locationName": "Enum"
+                },
+                "queryEnumList": {
+                    "shape": "FooEnumList",
+                    "location": "querystring",
+                    "locationName": "EnumList"
+                },
+                "queryIntegerEnum": {
+                    "shape": "IntegerEnum",
+                    "location": "querystring",
+                    "locationName": "IntegerEnum"
+                },
+                "queryIntegerEnumList": {
+                    "shape": "IntegerEnumList",
+                    "location": "querystring",
+                    "locationName": "IntegerEnumList"
+                },
+                "queryParamsMapOfStrings": {
+                    "shape": "StringMap",
+                    "location": "querystring"
+                }
+            }
+        },
+        "Blob": {
+            "type": "blob"
+        },
+        "BodyWithXmlNameInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "PayloadWithXmlName"
+                }
+            },
+            "locationName": "Ahoy"
+        },
+        "Boolean": {
+            "type": "boolean",
+            "box": true
+        },
+        "BooleanList": {
+            "type": "list",
+            "member": {
+                "shape": "Boolean"
+            }
+        },
+        "ComplexError": {
+            "type": "structure",
+            "members": {
+                "Header": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-Header"
+                },
+                "TopLevel": {
+                    "shape": "String"
+                },
+                "Nested": {
+                    "shape": "ComplexNestedErrorData"
+                }
+            },
+            "documentation": "<p>This error is thrown when a request is invalid.</p>",
+            "error": {
+                "httpStatusCode": 403,
+                "senderFault": true
+            },
+            "exception": true
+        },
+        "ComplexNestedErrorData": {
+            "type": "structure",
+            "members": {
+                "Foo": {
+                    "shape": "String"
+                }
+            }
+        },
+        "ConstantAndVariableQueryStringInput": {
+            "type": "structure",
+            "members": {
+                "baz": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "baz"
+                },
+                "maybeSet": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "maybeSet"
+                }
+            }
+        },
+        "ConstantQueryStringInput": {
+            "type": "structure",
+            "required": [
+                "hello"
+            ],
+            "members": {
+                "hello": {
+                    "shape": "String",
+                    "location": "uri",
+                    "locationName": "hello"
+                }
+            }
+        },
+        "ContentTypeParametersInput": {
+            "type": "structure",
+            "members": {
+                "value": {
+                    "shape": "Integer"
+                }
+            }
+        },
+        "ContentTypeParametersOutput": {
+            "type": "structure",
+            "members": {}
+        },
+        "DateTime": {
+            "type": "timestamp",
+            "timestampFormat": "iso8601"
+        },
+        "DatetimeOffsetsOutput": {
+            "type": "structure",
+            "members": {
+                "datetime": {
+                    "shape": "DateTime"
+                }
+            }
+        },
+        "Double": {
+            "type": "double",
+            "box": true
+        },
+        "DoubleList": {
+            "type": "list",
+            "member": {
+                "shape": "Double"
+            }
+        },
+        "EmptyInputAndEmptyOutputInput": {
+            "type": "structure",
+            "members": {}
+        },
+        "EmptyInputAndEmptyOutputOutput": {
+            "type": "structure",
+            "members": {}
+        },
+        "EndpointWithHostLabelOperationRequest": {
+            "type": "structure",
+            "required": [
+                "label"
+            ],
+            "members": {
+                "label": {
+                    "shape": "String",
+                    "hostLabel": true
+                }
+            }
+        },
+        "EnumPayloadInput": {
+            "type": "structure",
+            "members": {
+                "payload": {
+                    "shape": "StringEnum"
+                }
+            },
+            "payload": "payload"
+        },
+        "EpochSeconds": {
+            "type": "timestamp",
+            "timestampFormat": "unixTimestamp"
+        },
+        "FlattenedXmlMapRequest": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "FooEnumMap",
+                    "flattened": true
+                }
+            }
+        },
+        "FlattenedXmlMapResponse": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "FooEnumMap",
+                    "flattened": true
+                }
+            }
+        },
+        "FlattenedXmlMapWithXmlNameInputOutputMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "K"
+            },
+            "value": {
+                "shape": "String",
+                "locationName": "V"
+            }
+        },
+        "FlattenedXmlMapWithXmlNameRequest": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "FlattenedXmlMapWithXmlNameInputOutputMap",
+                    "flattened": true,
+                    "locationName": "KVP"
+                }
+            }
+        },
+        "FlattenedXmlMapWithXmlNameResponse": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "FlattenedXmlMapWithXmlNameInputOutputMap",
+                    "flattened": true,
+                    "locationName": "KVP"
+                }
+            }
+        },
+        "FlattenedXmlMapWithXmlNamespaceOutput": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "FlattenedXmlMapWithXmlNamespaceOutputMap",
+                    "flattened": true,
+                    "locationName": "KVP",
+                    "xmlNamespace": "https://the-member.example.com"
+                }
+            }
+        },
+        "FlattenedXmlMapWithXmlNamespaceOutputMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "K",
+                "xmlNamespace": "https://the-key.example.com"
+            },
+            "value": {
+                "shape": "String",
+                "locationName": "V",
+                "xmlNamespace": "https://the-value.example.com"
+            }
+        },
+        "Float": {
+            "type": "float",
+            "box": true
+        },
+        "FooEnum": {
+            "type": "string",
+            "enum": [
+                "Foo",
+                "Baz",
+                "Bar",
+                "1",
+                "0"
+            ]
+        },
+        "FooEnumList": {
+            "type": "list",
+            "member": {
+                "shape": "FooEnum"
+            }
+        },
+        "FooEnumMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "FooEnum"
+            }
+        },
+        "FooEnumSet": {
+            "type": "list",
+            "member": {
+                "shape": "FooEnum"
+            }
+        },
+        "FooPrefixHeaders": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "String"
+            }
+        },
+        "FractionalSecondsOutput": {
+            "type": "structure",
+            "members": {
+                "datetime": {
+                    "shape": "DateTime"
+                }
+            }
+        },
+        "GreetingStruct": {
+            "type": "structure",
+            "members": {
+                "hi": {
+                    "shape": "String"
+                }
+            }
+        },
+        "GreetingWithErrorsOutput": {
+            "type": "structure",
+            "members": {
+                "greeting": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-Greeting"
+                }
+            }
+        },
+        "HostLabelHeaderInput": {
+            "type": "structure",
+            "required": [
+                "accountId"
+            ],
+            "members": {
+                "accountId": {
+                    "shape": "String",
+                    "hostLabel": true,
+                    "location": "header",
+                    "locationName": "X-Amz-Account-Id"
+                }
+            }
+        },
+        "HttpDate": {
+            "type": "timestamp",
+            "timestampFormat": "rfc822"
+        },
+        "HttpPayloadTraitsInputOutput": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-Foo"
+                },
+                "blob": {
+                    "shape": "Blob"
+                }
+            },
+            "payload": "blob"
+        },
+        "HttpPayloadWithMemberXmlNameInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "PayloadWithXmlName",
+                    "locationName": "Hola"
+                }
+            },
+            "payload": "nested"
+        },
+        "HttpPayloadWithStructureInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "NestedPayload",
+                    "locationName": "NestedPayload"
+                }
+            },
+            "payload": "nested"
+        },
+        "HttpPayloadWithUnionInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "UnionPayload",
+                    "locationName": "nested"
+                }
+            },
+            "payload": "nested"
+        },
+        "HttpPayloadWithXmlNameInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "PayloadWithXmlName",
+                    "locationName": "nested"
+                }
+            },
+            "payload": "nested"
+        },
+        "HttpPayloadWithXmlNamespaceAndPrefixInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "PayloadWithXmlNamespaceAndPrefix",
+                    "locationName": "nested"
+                }
+            },
+            "payload": "nested"
+        },
+        "HttpPayloadWithXmlNamespaceInputOutput": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "PayloadWithXmlNamespace",
+                    "locationName": "nested"
+                }
+            },
+            "payload": "nested"
+        },
+        "HttpPrefixHeadersInputOutput": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "x-foo"
+                },
+                "fooMap": {
+                    "shape": "FooPrefixHeaders",
+                    "location": "headers",
+                    "locationName": "x-foo-"
+                }
+            }
+        },
+        "HttpRequestWithFloatLabelsInput": {
+            "type": "structure",
+            "required": [
+                "float",
+                "double"
+            ],
+            "members": {
+                "float": {
+                    "shape": "Float",
+                    "location": "uri",
+                    "locationName": "float"
+                },
+                "double": {
+                    "shape": "Double",
+                    "location": "uri",
+                    "locationName": "double"
+                }
+            }
+        },
+        "HttpRequestWithGreedyLabelInPathInput": {
+            "type": "structure",
+            "required": [
+                "foo",
+                "baz"
+            ],
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "uri",
+                    "locationName": "foo"
+                },
+                "baz": {
+                    "shape": "String",
+                    "location": "uri",
+                    "locationName": "baz"
+                }
+            }
+        },
+        "HttpRequestWithLabelsAndTimestampFormatInput": {
+            "type": "structure",
+            "required": [
+                "memberEpochSeconds",
+                "memberHttpDate",
+                "memberDateTime",
+                "defaultFormat",
+                "targetEpochSeconds",
+                "targetHttpDate",
+                "targetDateTime"
+            ],
+            "members": {
+                "memberEpochSeconds": {
+                    "shape": "SyntheticTimestamp_epoch_seconds",
+                    "location": "uri",
+                    "locationName": "memberEpochSeconds"
+                },
+                "memberHttpDate": {
+                    "shape": "SyntheticTimestamp_http_date",
+                    "location": "uri",
+                    "locationName": "memberHttpDate"
+                },
+                "memberDateTime": {
+                    "shape": "SyntheticTimestamp_date_time",
+                    "location": "uri",
+                    "locationName": "memberDateTime"
+                },
+                "defaultFormat": {
+                    "shape": "Timestamp",
+                    "location": "uri",
+                    "locationName": "defaultFormat"
+                },
+                "targetEpochSeconds": {
+                    "shape": "EpochSeconds",
+                    "location": "uri",
+                    "locationName": "targetEpochSeconds"
+                },
+                "targetHttpDate": {
+                    "shape": "HttpDate",
+                    "location": "uri",
+                    "locationName": "targetHttpDate"
+                },
+                "targetDateTime": {
+                    "shape": "DateTime",
+                    "location": "uri",
+                    "locationName": "targetDateTime"
+                }
+            }
+        },
+        "HttpRequestWithLabelsInput": {
+            "type": "structure",
+            "required": [
+                "string",
+                "short",
+                "integer",
+                "long",
+                "float",
+                "double",
+                "boolean",
+                "timestamp"
+            ],
+            "members": {
+                "string": {
+                    "shape": "String",
+                    "location": "uri",
+                    "locationName": "string"
+                },
+                "short": {
+                    "shape": "Integer",
+                    "location": "uri",
+                    "locationName": "short"
+                },
+                "integer": {
+                    "shape": "Integer",
+                    "location": "uri",
+                    "locationName": "integer"
+                },
+                "long": {
+                    "shape": "Long",
+                    "location": "uri",
+                    "locationName": "long"
+                },
+                "float": {
+                    "shape": "Float",
+                    "location": "uri",
+                    "locationName": "float"
+                },
+                "double": {
+                    "shape": "Double",
+                    "location": "uri",
+                    "locationName": "double"
+                },
+                "boolean": {
+                    "shape": "Boolean",
+                    "documentation": "<p>Serialized in the path as true or false.</p>",
+                    "location": "uri",
+                    "locationName": "boolean"
+                },
+                "timestamp": {
+                    "shape": "Timestamp",
+                    "documentation": "<p>Note that this member has no format, so it's serialized as an RFC 3399 date-time.</p>",
+                    "location": "uri",
+                    "locationName": "timestamp"
+                }
+            }
+        },
+        "HttpResponseCodeOutput": {
+            "type": "structure",
+            "members": {
+                "Status": {
+                    "shape": "Integer",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "IgnoreQueryParamsInResponseOutput": {
+            "type": "structure",
+            "members": {
+                "baz": {
+                    "shape": "String",
+                    "location": "uri",
+                    "locationName": "baz"
+                }
+            }
+        },
+        "InputAndOutputWithHeadersIO": {
+            "type": "structure",
+            "members": {
+                "headerString": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-String"
+                },
+                "headerByte": {
+                    "shape": "Integer",
+                    "location": "header",
+                    "locationName": "X-Byte"
+                },
+                "headerShort": {
+                    "shape": "Integer",
+                    "location": "header",
+                    "locationName": "X-Short"
+                },
+                "headerInteger": {
+                    "shape": "Integer",
+                    "location": "header",
+                    "locationName": "X-Integer"
+                },
+                "headerLong": {
+                    "shape": "Long",
+                    "location": "header",
+                    "locationName": "X-Long"
+                },
+                "headerFloat": {
+                    "shape": "Float",
+                    "location": "header",
+                    "locationName": "X-Float"
+                },
+                "headerDouble": {
+                    "shape": "Double",
+                    "location": "header",
+                    "locationName": "X-Double"
+                },
+                "headerTrueBool": {
+                    "shape": "Boolean",
+                    "location": "header",
+                    "locationName": "X-Boolean1"
+                },
+                "headerFalseBool": {
+                    "shape": "Boolean",
+                    "location": "header",
+                    "locationName": "X-Boolean2"
+                },
+                "headerStringList": {
+                    "shape": "StringList",
+                    "location": "header",
+                    "locationName": "X-StringList"
+                },
+                "headerStringSet": {
+                    "shape": "StringSet",
+                    "location": "header",
+                    "locationName": "X-StringSet"
+                },
+                "headerIntegerList": {
+                    "shape": "IntegerList",
+                    "location": "header",
+                    "locationName": "X-IntegerList"
+                },
+                "headerBooleanList": {
+                    "shape": "BooleanList",
+                    "location": "header",
+                    "locationName": "X-BooleanList"
+                },
+                "headerTimestampList": {
+                    "shape": "TimestampList",
+                    "location": "header",
+                    "locationName": "X-TimestampList"
+                },
+                "headerEnum": {
+                    "shape": "FooEnum",
+                    "location": "header",
+                    "locationName": "X-Enum"
+                },
+                "headerEnumList": {
+                    "shape": "FooEnumList",
+                    "location": "header",
+                    "locationName": "X-EnumList"
+                }
+            }
+        },
+        "Integer": {
+            "type": "integer",
+            "box": true
+        },
+        "IntegerEnum": {
+            "type": "integer",
+            "box": true
+        },
+        "IntegerEnumList": {
+            "type": "list",
+            "member": {
+                "shape": "IntegerEnum"
+            }
+        },
+        "IntegerEnumMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "IntegerEnum"
+            }
+        },
+        "IntegerEnumSet": {
+            "type": "list",
+            "member": {
+                "shape": "IntegerEnum"
+            }
+        },
+        "IntegerList": {
+            "type": "list",
+            "member": {
+                "shape": "Integer"
+            }
+        },
+        "IntegerSet": {
+            "type": "list",
+            "member": {
+                "shape": "Integer"
+            }
+        },
+        "InvalidGreeting": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "shape": "String"
+                }
+            },
+            "documentation": "<p>This error is thrown when an invalid greeting value is provided.</p>",
+            "error": {
+                "httpStatusCode": 400,
+                "senderFault": true
+            },
+            "exception": true
+        },
+        "ListWithMemberNamespace": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "xmlNamespace": "https://xml-member.example.com"
+            },
+            "xmlNamespace": "https://xml-list.example.com"
+        },
+        "ListWithNamespace": {
+            "type": "list",
+            "member": {
+                "shape": "String"
+            },
+            "xmlNamespace": "https://xml-list.example.com"
+        },
+        "Long": {
+            "type": "long",
+            "box": true
+        },
+        "NestedMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "FooEnumMap"
+            }
+        },
+        "NestedPayload": {
+            "type": "structure",
+            "members": {
+                "greeting": {
+                    "shape": "String"
+                },
+                "name": {
+                    "shape": "String"
+                }
+            }
+        },
+        "NestedStringList": {
+            "type": "list",
+            "member": {
+                "shape": "StringList"
+            },
+            "documentation": "<p>A list of lists of strings.</p>"
+        },
+        "NestedXmlMapWithXmlNameInnerMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "InnerKey"
+            },
+            "value": {
+                "shape": "String",
+                "locationName": "InnerValue"
+            }
+        },
+        "NestedXmlMapWithXmlNameInputOutput": {
+            "type": "structure",
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "shape": "NestedXmlMapWithXmlNameMap"
+                }
+            }
+        },
+        "NestedXmlMapWithXmlNameMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "OuterKey"
+            },
+            "value": {
+                "shape": "NestedXmlMapWithXmlNameInnerMap"
+            }
+        },
+        "NestedXmlMapsRequest": {
+            "type": "structure",
+            "members": {
+                "nestedMap": {
+                    "shape": "NestedMap"
+                },
+                "flatNestedMap": {
+                    "shape": "NestedMap",
+                    "flattened": true
+                }
+            }
+        },
+        "NestedXmlMapsResponse": {
+            "type": "structure",
+            "members": {
+                "nestedMap": {
+                    "shape": "NestedMap"
+                },
+                "flatNestedMap": {
+                    "shape": "NestedMap",
+                    "flattened": true
+                }
+            }
+        },
+        "NoInputAndOutputOutput": {
+            "type": "structure",
+            "members": {}
+        },
+        "NullAndEmptyHeadersIO": {
+            "type": "structure",
+            "members": {
+                "a": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-A"
+                },
+                "b": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-B"
+                },
+                "c": {
+                    "shape": "StringList",
+                    "location": "header",
+                    "locationName": "X-C"
+                }
+            }
+        },
+        "OmitsNullSerializesEmptyStringInput": {
+            "type": "structure",
+            "members": {
+                "nullValue": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "Null"
+                },
+                "emptyString": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "Empty"
+                }
+            }
+        },
+        "PayloadWithXmlName": {
+            "type": "structure",
+            "members": {
+                "name": {
+                    "shape": "String"
+                }
+            },
+            "locationName": "Hello"
+        },
+        "PayloadWithXmlNamespace": {
+            "type": "structure",
+            "members": {
+                "name": {
+                    "shape": "String"
+                }
+            },
+            "xmlNamespace": "http://foo.com"
+        },
+        "PayloadWithXmlNamespaceAndPrefix": {
+            "type": "structure",
+            "members": {
+                "name": {
+                    "shape": "String"
+                }
+            },
+            "xmlNamespace": {
+                "prefix": "baz",
+                "uri": "http://foo.com"
+            }
+        },
+        "PutWithContentEncodingInput": {
+            "type": "structure",
+            "members": {
+                "encoding": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "Content-Encoding"
+                },
+                "data": {
+                    "shape": "String"
+                }
+            }
+        },
+        "QueryIdempotencyTokenAutoFillInput": {
+            "type": "structure",
+            "members": {
+                "token": {
+                    "shape": "String",
+                    "idempotencyToken": true,
+                    "location": "querystring",
+                    "locationName": "token"
+                }
+            }
+        },
+        "QueryParamsAsStringListMapInput": {
+            "type": "structure",
+            "members": {
+                "qux": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "corge"
+                },
+                "foo": {
+                    "shape": "StringListMap",
+                    "location": "querystring"
+                }
+            }
+        },
+        "QueryPrecedenceInput": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "querystring",
+                    "locationName": "bar"
+                },
+                "baz": {
+                    "shape": "StringMap",
+                    "location": "querystring"
+                }
+            }
+        },
+        "RecursiveShapesInputOutputNested1": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "nested": {
+                    "shape": "RecursiveShapesInputOutputNested2"
+                }
+            }
+        },
+        "RecursiveShapesInputOutputNested2": {
+            "type": "structure",
+            "members": {
+                "bar": {
+                    "shape": "String"
+                },
+                "recursiveMember": {
+                    "shape": "RecursiveShapesInputOutputNested1"
+                }
+            }
+        },
+        "RecursiveShapesRequest": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "RecursiveShapesInputOutputNested1"
+                }
+            }
+        },
+        "RecursiveShapesResponse": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "RecursiveShapesInputOutputNested1"
+                }
+            }
+        },
+        "RenamedListMembers": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "locationName": "item"
+            }
+        },
+        "SimpleScalarPropertiesRequest": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-Foo"
+                },
+                "stringValue": {
+                    "shape": "String"
+                },
+                "trueBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "falseBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "byteValue": {
+                    "shape": "Integer"
+                },
+                "shortValue": {
+                    "shape": "Integer"
+                },
+                "integerValue": {
+                    "shape": "Integer"
+                },
+                "longValue": {
+                    "shape": "Long"
+                },
+                "floatValue": {
+                    "shape": "Float"
+                },
+                "doubleValue": {
+                    "shape": "Double",
+                    "locationName": "DoubleDribble"
+                }
+            }
+        },
+        "SimpleScalarPropertiesResponse": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "X-Foo"
+                },
+                "stringValue": {
+                    "shape": "String"
+                },
+                "trueBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "falseBooleanValue": {
+                    "shape": "Boolean"
+                },
+                "byteValue": {
+                    "shape": "Integer"
+                },
+                "shortValue": {
+                    "shape": "Integer"
+                },
+                "integerValue": {
+                    "shape": "Integer"
+                },
+                "longValue": {
+                    "shape": "Long"
+                },
+                "floatValue": {
+                    "shape": "Float"
+                },
+                "doubleValue": {
+                    "shape": "Double",
+                    "locationName": "DoubleDribble"
+                }
+            }
+        },
+        "String": {
+            "type": "string"
+        },
+        "StringEnum": {
+            "type": "string",
+            "enum": [
+                "enumvalue"
+            ]
+        },
+        "StringList": {
+            "type": "list",
+            "member": {
+                "shape": "String"
+            }
+        },
+        "StringListMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "StringList"
+            }
+        },
+        "StringMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "String"
+            }
+        },
+        "StringPayloadInput": {
+            "type": "structure",
+            "members": {
+                "payload": {
+                    "shape": "String"
+                }
+            },
+            "payload": "payload"
+        },
+        "StringSet": {
+            "type": "list",
+            "member": {
+                "shape": "String"
+            }
+        },
+        "StructureList": {
+            "type": "list",
+            "member": {
+                "shape": "StructureListMember",
+                "locationName": "item"
+            }
+        },
+        "StructureListMember": {
+            "type": "structure",
+            "members": {
+                "a": {
+                    "shape": "String",
+                    "locationName": "value"
+                },
+                "b": {
+                    "shape": "String",
+                    "locationName": "other"
+                }
+            }
+        },
+        "SyntheticTimestamp_date_time": {
+            "type": "timestamp",
+            "timestampFormat": "iso8601"
+        },
+        "SyntheticTimestamp_epoch_seconds": {
+            "type": "timestamp",
+            "timestampFormat": "unixTimestamp"
+        },
+        "SyntheticTimestamp_http_date": {
+            "type": "timestamp",
+            "timestampFormat": "rfc822"
+        },
+        "Timestamp": {
+            "type": "timestamp"
+        },
+        "TimestampFormatHeadersIO": {
+            "type": "structure",
+            "members": {
+                "memberEpochSeconds": {
+                    "shape": "SyntheticTimestamp_epoch_seconds",
+                    "location": "header",
+                    "locationName": "X-memberEpochSeconds"
+                },
+                "memberHttpDate": {
+                    "shape": "SyntheticTimestamp_http_date",
+                    "location": "header",
+                    "locationName": "X-memberHttpDate"
+                },
+                "memberDateTime": {
+                    "shape": "SyntheticTimestamp_date_time",
+                    "location": "header",
+                    "locationName": "X-memberDateTime"
+                },
+                "defaultFormat": {
+                    "shape": "Timestamp",
+                    "location": "header",
+                    "locationName": "X-defaultFormat"
+                },
+                "targetEpochSeconds": {
+                    "shape": "EpochSeconds",
+                    "location": "header",
+                    "locationName": "X-targetEpochSeconds"
+                },
+                "targetHttpDate": {
+                    "shape": "HttpDate",
+                    "location": "header",
+                    "locationName": "X-targetHttpDate"
+                },
+                "targetDateTime": {
+                    "shape": "DateTime",
+                    "location": "header",
+                    "locationName": "X-targetDateTime"
+                }
+            }
+        },
+        "TimestampList": {
+            "type": "list",
+            "member": {
+                "shape": "Timestamp"
+            }
+        },
+        "UnionPayload": {
+            "type": "structure",
+            "members": {
+                "greeting": {
+                    "shape": "String"
+                }
+            },
+            "union": true
+        },
+        "XmlAttributesOnPayloadRequest": {
+            "type": "structure",
+            "members": {
+                "payload": {
+                    "shape": "XmlAttributesPayloadRequest",
+                    "locationName": "payload"
+                }
+            },
+            "payload": "payload"
+        },
+        "XmlAttributesOnPayloadResponse": {
+            "type": "structure",
+            "members": {
+                "payload": {
+                    "shape": "XmlAttributesPayloadResponse"
+                }
+            },
+            "payload": "payload"
+        },
+        "XmlAttributesPayloadRequest": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "attr": {
+                    "shape": "String",
+                    "locationName": "test",
+                    "xmlAttribute": true
+                }
+            }
+        },
+        "XmlAttributesPayloadResponse": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "attr": {
+                    "shape": "String",
+                    "locationName": "test",
+                    "xmlAttribute": true
+                }
+            }
+        },
+        "XmlAttributesRequest": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "attr": {
+                    "shape": "String",
+                    "locationName": "test",
+                    "xmlAttribute": true
+                }
+            }
+        },
+        "XmlAttributesResponse": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "attr": {
+                    "shape": "String",
+                    "locationName": "test",
+                    "xmlAttribute": true
+                }
+            }
+        },
+        "XmlBlobsRequest": {
+            "type": "structure",
+            "members": {
+                "data": {
+                    "shape": "Blob"
+                }
+            }
+        },
+        "XmlBlobsResponse": {
+            "type": "structure",
+            "members": {
+                "data": {
+                    "shape": "Blob"
+                }
+            }
+        },
+        "XmlEmptyBlobsRequest": {
+            "type": "structure",
+            "members": {
+                "data": {
+                    "shape": "Blob"
+                }
+            }
+        },
+        "XmlEmptyBlobsResponse": {
+            "type": "structure",
+            "members": {
+                "data": {
+                    "shape": "Blob"
+                }
+            }
+        },
+        "XmlEmptyListsRequest": {
+            "type": "structure",
+            "members": {
+                "stringList": {
+                    "shape": "StringList"
+                },
+                "stringSet": {
+                    "shape": "StringSet"
+                },
+                "integerList": {
+                    "shape": "IntegerList"
+                },
+                "booleanList": {
+                    "shape": "BooleanList"
+                },
+                "timestampList": {
+                    "shape": "TimestampList"
+                },
+                "enumList": {
+                    "shape": "FooEnumList"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "shape": "NestedStringList"
+                },
+                "renamedListMembers": {
+                    "shape": "RenamedListMembers",
+                    "locationName": "renamed"
+                },
+                "flattenedList": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true
+                },
+                "flattenedList2": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true,
+                    "locationName": "customName"
+                },
+                "flattenedListWithMemberNamespace": {
+                    "shape": "ListWithMemberNamespace",
+                    "flattened": true
+                },
+                "flattenedListWithNamespace": {
+                    "shape": "ListWithNamespace",
+                    "flattened": true
+                },
+                "structureList": {
+                    "shape": "StructureList",
+                    "locationName": "myStructureList"
+                },
+                "flattenedStructureList": {
+                    "shape": "StructureList",
+                    "flattened": true
+                }
+            }
+        },
+        "XmlEmptyListsResponse": {
+            "type": "structure",
+            "members": {
+                "stringList": {
+                    "shape": "StringList"
+                },
+                "stringSet": {
+                    "shape": "StringSet"
+                },
+                "integerList": {
+                    "shape": "IntegerList"
+                },
+                "booleanList": {
+                    "shape": "BooleanList"
+                },
+                "timestampList": {
+                    "shape": "TimestampList"
+                },
+                "enumList": {
+                    "shape": "FooEnumList"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "shape": "NestedStringList"
+                },
+                "renamedListMembers": {
+                    "shape": "RenamedListMembers",
+                    "locationName": "renamed"
+                },
+                "flattenedList": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true
+                },
+                "flattenedList2": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true,
+                    "locationName": "customName"
+                },
+                "flattenedListWithMemberNamespace": {
+                    "shape": "ListWithMemberNamespace",
+                    "flattened": true
+                },
+                "flattenedListWithNamespace": {
+                    "shape": "ListWithNamespace",
+                    "flattened": true
+                },
+                "structureList": {
+                    "shape": "StructureList",
+                    "locationName": "myStructureList"
+                },
+                "flattenedStructureList": {
+                    "shape": "StructureList",
+                    "flattened": true
+                }
+            }
+        },
+        "XmlEmptyMapsRequest": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapsInputOutputMap"
+                }
+            }
+        },
+        "XmlEmptyMapsResponse": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapsInputOutputMap"
+                }
+            }
+        },
+        "XmlEmptyStringsRequest": {
+            "type": "structure",
+            "members": {
+                "emptyString": {
+                    "shape": "String"
+                }
+            }
+        },
+        "XmlEmptyStringsResponse": {
+            "type": "structure",
+            "members": {
+                "emptyString": {
+                    "shape": "String"
+                }
+            }
+        },
+        "XmlEnumsRequest": {
+            "type": "structure",
+            "members": {
+                "fooEnum1": {
+                    "shape": "FooEnum"
+                },
+                "fooEnum2": {
+                    "shape": "FooEnum"
+                },
+                "fooEnum3": {
+                    "shape": "FooEnum"
+                },
+                "fooEnumList": {
+                    "shape": "FooEnumList"
+                },
+                "fooEnumSet": {
+                    "shape": "FooEnumSet"
+                },
+                "fooEnumMap": {
+                    "shape": "FooEnumMap"
+                }
+            }
+        },
+        "XmlEnumsResponse": {
+            "type": "structure",
+            "members": {
+                "fooEnum1": {
+                    "shape": "FooEnum"
+                },
+                "fooEnum2": {
+                    "shape": "FooEnum"
+                },
+                "fooEnum3": {
+                    "shape": "FooEnum"
+                },
+                "fooEnumList": {
+                    "shape": "FooEnumList"
+                },
+                "fooEnumSet": {
+                    "shape": "FooEnumSet"
+                },
+                "fooEnumMap": {
+                    "shape": "FooEnumMap"
+                }
+            }
+        },
+        "XmlIntEnumsRequest": {
+            "type": "structure",
+            "members": {
+                "intEnum1": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnum2": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnum3": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "intEnumSet": {
+                    "shape": "IntegerEnumSet"
+                },
+                "intEnumMap": {
+                    "shape": "IntegerEnumMap"
+                }
+            }
+        },
+        "XmlIntEnumsResponse": {
+            "type": "structure",
+            "members": {
+                "intEnum1": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnum2": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnum3": {
+                    "shape": "IntegerEnum"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "intEnumSet": {
+                    "shape": "IntegerEnumSet"
+                },
+                "intEnumMap": {
+                    "shape": "IntegerEnumMap"
+                }
+            }
+        },
+        "XmlListsRequest": {
+            "type": "structure",
+            "members": {
+                "stringList": {
+                    "shape": "StringList"
+                },
+                "stringSet": {
+                    "shape": "StringSet"
+                },
+                "integerList": {
+                    "shape": "IntegerList"
+                },
+                "booleanList": {
+                    "shape": "BooleanList"
+                },
+                "timestampList": {
+                    "shape": "TimestampList"
+                },
+                "enumList": {
+                    "shape": "FooEnumList"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "shape": "NestedStringList"
+                },
+                "renamedListMembers": {
+                    "shape": "RenamedListMembers",
+                    "locationName": "renamed"
+                },
+                "flattenedList": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true
+                },
+                "flattenedList2": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true,
+                    "locationName": "customName"
+                },
+                "flattenedListWithMemberNamespace": {
+                    "shape": "ListWithMemberNamespace",
+                    "flattened": true
+                },
+                "flattenedListWithNamespace": {
+                    "shape": "ListWithNamespace",
+                    "flattened": true
+                },
+                "structureList": {
+                    "shape": "StructureList",
+                    "locationName": "myStructureList"
+                },
+                "flattenedStructureList": {
+                    "shape": "StructureList",
+                    "flattened": true
+                }
+            }
+        },
+        "XmlListsResponse": {
+            "type": "structure",
+            "members": {
+                "stringList": {
+                    "shape": "StringList"
+                },
+                "stringSet": {
+                    "shape": "StringSet"
+                },
+                "integerList": {
+                    "shape": "IntegerList"
+                },
+                "booleanList": {
+                    "shape": "BooleanList"
+                },
+                "timestampList": {
+                    "shape": "TimestampList"
+                },
+                "enumList": {
+                    "shape": "FooEnumList"
+                },
+                "intEnumList": {
+                    "shape": "IntegerEnumList"
+                },
+                "nestedStringList": {
+                    "shape": "NestedStringList"
+                },
+                "renamedListMembers": {
+                    "shape": "RenamedListMembers",
+                    "locationName": "renamed"
+                },
+                "flattenedList": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true
+                },
+                "flattenedList2": {
+                    "shape": "RenamedListMembers",
+                    "flattened": true,
+                    "locationName": "customName"
+                },
+                "flattenedListWithMemberNamespace": {
+                    "shape": "ListWithMemberNamespace",
+                    "flattened": true
+                },
+                "flattenedListWithNamespace": {
+                    "shape": "ListWithNamespace",
+                    "flattened": true
+                },
+                "structureList": {
+                    "shape": "StructureList",
+                    "locationName": "myStructureList"
+                },
+                "flattenedStructureList": {
+                    "shape": "StructureList",
+                    "flattened": true
+                }
+            }
+        },
+        "XmlMapWithXmlNamespaceInputOutputMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "K",
+                "xmlNamespace": "https://the-key.example.com"
+            },
+            "value": {
+                "shape": "String",
+                "locationName": "V",
+                "xmlNamespace": "https://the-value.example.com"
+            }
+        },
+        "XmlMapWithXmlNamespaceRequest": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapWithXmlNamespaceInputOutputMap",
+                    "locationName": "KVP",
+                    "xmlNamespace": "https://the-member.example.com"
+                }
+            }
+        },
+        "XmlMapWithXmlNamespaceResponse": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapWithXmlNamespaceInputOutputMap",
+                    "locationName": "KVP",
+                    "xmlNamespace": "https://the-member.example.com"
+                }
+            }
+        },
+        "XmlMapsInputOutputMap": {
+            "type": "map",
+            "key": {
+                "shape": "String"
+            },
+            "value": {
+                "shape": "GreetingStruct"
+            }
+        },
+        "XmlMapsRequest": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapsInputOutputMap"
+                }
+            }
+        },
+        "XmlMapsResponse": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapsInputOutputMap"
+                }
+            }
+        },
+        "XmlMapsXmlNameInputOutputMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "Attribute"
+            },
+            "value": {
+                "shape": "GreetingStruct",
+                "locationName": "Setting"
+            }
+        },
+        "XmlMapsXmlNameRequest": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapsXmlNameInputOutputMap"
+                }
+            }
+        },
+        "XmlMapsXmlNameResponse": {
+            "type": "structure",
+            "members": {
+                "myMap": {
+                    "shape": "XmlMapsXmlNameInputOutputMap"
+                }
+            }
+        },
+        "XmlNamespaceNested": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String",
+                    "xmlNamespace": {
+                        "prefix": "baz",
+                        "uri": "http://baz.com"
+                    }
+                },
+                "values": {
+                    "shape": "XmlNamespacedList",
+                    "xmlNamespace": "http://qux.com"
+                }
+            },
+            "xmlNamespace": "http://foo.com"
+        },
+        "XmlNamespacedList": {
+            "type": "list",
+            "member": {
+                "shape": "String",
+                "xmlNamespace": "http://bux.com"
+            }
+        },
+        "XmlNamespacesRequest": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "XmlNamespaceNested"
+                }
+            },
+            "xmlNamespace": "http://foo.com"
+        },
+        "XmlNamespacesResponse": {
+            "type": "structure",
+            "members": {
+                "nested": {
+                    "shape": "XmlNamespaceNested"
+                }
+            },
+            "xmlNamespace": "http://foo.com"
+        },
+        "XmlNestedUnionStruct": {
+            "type": "structure",
+            "members": {
+                "stringValue": {
+                    "shape": "String"
+                },
+                "booleanValue": {
+                    "shape": "Boolean"
+                },
+                "byteValue": {
+                    "shape": "Integer"
+                },
+                "shortValue": {
+                    "shape": "Integer"
+                },
+                "integerValue": {
+                    "shape": "Integer"
+                },
+                "longValue": {
+                    "shape": "Long"
+                },
+                "floatValue": {
+                    "shape": "Float"
+                },
+                "doubleValue": {
+                    "shape": "Double"
+                }
+            }
+        },
+        "XmlTimestampsRequest": {
+            "type": "structure",
+            "members": {
+                "normal": {
+                    "shape": "Timestamp"
+                },
+                "dateTime": {
+                    "shape": "SyntheticTimestamp_date_time"
+                },
+                "dateTimeOnTarget": {
+                    "shape": "DateTime"
+                },
+                "epochSeconds": {
+                    "shape": "SyntheticTimestamp_epoch_seconds"
+                },
+                "epochSecondsOnTarget": {
+                    "shape": "EpochSeconds"
+                },
+                "httpDate": {
+                    "shape": "SyntheticTimestamp_http_date"
+                },
+                "httpDateOnTarget": {
+                    "shape": "HttpDate"
+                }
+            }
+        },
+        "XmlTimestampsResponse": {
+            "type": "structure",
+            "members": {
+                "normal": {
+                    "shape": "Timestamp"
+                },
+                "dateTime": {
+                    "shape": "SyntheticTimestamp_date_time"
+                },
+                "dateTimeOnTarget": {
+                    "shape": "DateTime"
+                },
+                "epochSeconds": {
+                    "shape": "SyntheticTimestamp_epoch_seconds"
+                },
+                "epochSecondsOnTarget": {
+                    "shape": "EpochSeconds"
+                },
+                "httpDate": {
+                    "shape": "SyntheticTimestamp_http_date"
+                },
+                "httpDateOnTarget": {
+                    "shape": "HttpDate"
+                }
+            }
+        },
+        "XmlUnionShape": {
+            "type": "structure",
+            "members": {
+                "stringValue": {
+                    "shape": "String"
+                },
+                "booleanValue": {
+                    "shape": "Boolean"
+                },
+                "byteValue": {
+                    "shape": "Integer"
+                },
+                "shortValue": {
+                    "shape": "Integer"
+                },
+                "integerValue": {
+                    "shape": "Integer"
+                },
+                "longValue": {
+                    "shape": "Long"
+                },
+                "floatValue": {
+                    "shape": "Float"
+                },
+                "doubleValue": {
+                    "shape": "Double"
+                },
+                "unionValue": {
+                    "shape": "XmlUnionShape"
+                },
+                "structValue": {
+                    "shape": "XmlNestedUnionStruct"
+                }
+            },
+            "union": true
+        },
+        "XmlUnionsRequest": {
+            "type": "structure",
+            "members": {
+                "unionValue": {
+                    "shape": "XmlUnionShape"
+                }
+            }
+        },
+        "XmlUnionsResponse": {
+            "type": "structure",
+            "members": {
+                "unionValue": {
+                    "shape": "XmlUnionShape"
+                }
+            }
+        }
+    },
+    "documentation": "<p>A REST XML service that sends XML requests and responses.</p>"
+}
