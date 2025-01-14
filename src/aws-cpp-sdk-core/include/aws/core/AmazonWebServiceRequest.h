@@ -84,6 +84,12 @@ namespace Aws
          * Defaults to false, if this is set to true in derived class, it's an event stream request, which means the payload is consisted by multiple structured events.
          */
         inline virtual bool IsEventStreamRequest() const { return false; }
+
+        /**
+         * Defaults to false, if this is set to true in derived class, the operation using this request will return an event stream response.
+         */
+        inline virtual bool HasEventStreamResponse() const { return false; }
+
         /**
          * Defaults to true, if this is set to false, then signers, if they support body signing, will not do so
          */
@@ -203,11 +209,6 @@ namespace Aws
 
         virtual Aws::Client::CompressionAlgorithm
         GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig) const { return Aws::Client::CompressionAlgorithm::NONE; }
-        /*
-           if true, it means the operation using this request will return an event stream response.
-        */
-        inline virtual bool HasEventStreamResponse() const { return false; }
-
 
         /**
          * Adds a used feature to the user agent string for the request.

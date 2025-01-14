@@ -289,7 +289,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
                                                                false/*retryable*/));
 
         };
-        httpRequest->SetEventStreamRequest(request.IsEventStreamRequest() || request.HasEventStreamResponse());
+        httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
+        httpRequest->SetHasEventStreamResponse(request.HasEventStreamResponse());
 
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
         outcome.SetRetryCount(retries);
