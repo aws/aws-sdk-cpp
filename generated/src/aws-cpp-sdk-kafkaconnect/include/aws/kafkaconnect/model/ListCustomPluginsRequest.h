@@ -50,20 +50,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Lists custom plugin names that start with the specified text string.</p>
-     */
-    inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
-    inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
-    inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
-    inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
-    inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
-    inline ListCustomPluginsRequest& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
-    inline ListCustomPluginsRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
-    inline ListCustomPluginsRequest& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>If the response of a ListCustomPlugins operation is truncated, it will
      * include a NextToken. Send this NextToken in a subsequent request to continue
      * listing from where the previous operation left off.</p>
@@ -77,16 +63,30 @@ namespace Model
     inline ListCustomPluginsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListCustomPluginsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Lists custom plugin names that start with the specified text string.</p>
+     */
+    inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
+    inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
+    inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
+    inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
+    inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
+    inline ListCustomPluginsRequest& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
+    inline ListCustomPluginsRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
+    inline ListCustomPluginsRequest& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+    ///@}
   private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_namePrefix;
-    bool m_namePrefixHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_namePrefix;
+    bool m_namePrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -43,6 +43,12 @@ UpdateConnectorResult& UpdateConnectorResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("connectorOperationArn"))
+  {
+    m_connectorOperationArn = jsonValue.GetString("connectorOperationArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -28,8 +28,10 @@
 #include <aws/kafkaconnect/model/DeleteCustomPluginRequest.h>
 #include <aws/kafkaconnect/model/DeleteWorkerConfigurationRequest.h>
 #include <aws/kafkaconnect/model/DescribeConnectorRequest.h>
+#include <aws/kafkaconnect/model/DescribeConnectorOperationRequest.h>
 #include <aws/kafkaconnect/model/DescribeCustomPluginRequest.h>
 #include <aws/kafkaconnect/model/DescribeWorkerConfigurationRequest.h>
+#include <aws/kafkaconnect/model/ListConnectorOperationsRequest.h>
 #include <aws/kafkaconnect/model/ListConnectorsRequest.h>
 #include <aws/kafkaconnect/model/ListCustomPluginsRequest.h>
 #include <aws/kafkaconnect/model/ListTagsForResourceRequest.h>
@@ -393,6 +395,39 @@ DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeCon
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeConnectorOperationOutcome KafkaConnectClient::DescribeConnectorOperation(const DescribeConnectorOperationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeConnectorOperation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConnectorOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConnectorOperationArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeConnectorOperation", "Required field: ConnectorOperationArn, is not set");
+    return DescribeConnectorOperationOutcome(Aws::Client::AWSError<KafkaConnectErrors>(KafkaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorOperationArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeConnectorOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeConnectorOperation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeConnectorOperation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeConnectorOperationOutcome>(
+    [&]()-> DescribeConnectorOperationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeConnectorOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectorOperations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorOperationArn());
+      return DescribeConnectorOperationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const DescribeCustomPluginRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeCustomPlugin);
@@ -453,6 +488,40 @@ DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfigurati
       endpointResolutionOutcome.GetResult().AddPathSegments("/v1/worker-configurations/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerConfigurationArn());
       return DescribeWorkerConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListConnectorOperationsOutcome KafkaConnectClient::ListConnectorOperations(const ListConnectorOperationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListConnectorOperations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConnectorOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConnectorArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConnectorOperations", "Required field: ConnectorArn, is not set");
+    return ListConnectorOperationsOutcome(Aws::Client::AWSError<KafkaConnectErrors>(KafkaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListConnectorOperations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListConnectorOperations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListConnectorOperations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListConnectorOperationsOutcome>(
+    [&]()-> ListConnectorOperationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConnectorOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/operations");
+      return ListConnectorOperationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

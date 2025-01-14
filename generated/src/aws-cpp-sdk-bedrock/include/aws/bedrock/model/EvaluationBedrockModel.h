@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/PerformanceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,18 @@ namespace Model
     inline EvaluationBedrockModel& WithInferenceParams(Aws::String&& value) { SetInferenceParams(std::move(value)); return *this;}
     inline EvaluationBedrockModel& WithInferenceParams(const char* value) { SetInferenceParams(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies performance settings for the model or inference profile.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
+    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
+    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
+    inline EvaluationBedrockModel& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
+    inline EvaluationBedrockModel& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelIdentifier;
@@ -83,6 +96,9 @@ namespace Model
 
     Aws::String m_inferenceParams;
     bool m_inferenceParamsHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfig;
+    bool m_performanceConfigHasBeenSet = false;
   };
 
 } // namespace Model
