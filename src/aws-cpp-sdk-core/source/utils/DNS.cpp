@@ -46,7 +46,12 @@ namespace Aws
             auto labels = StringUtils::Split(host, '.');
             if (labels.empty()) 
             {
-                return false;
+                //check for ipv6
+                labels = StringUtils::Split(host, ':');
+                if(labels.empty())
+                {
+                    return false;
+                }
             }
 
             return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); });

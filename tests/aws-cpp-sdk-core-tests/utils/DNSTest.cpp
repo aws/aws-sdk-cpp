@@ -61,3 +61,17 @@ TEST_F(DnsTest, TestHost)
     ASSERT_FALSE(IsValidHost("0123456789012345678901234567890123456789012345678901234567890123.com")); // 64 characters
 
 }
+
+TEST_F(DnsTest, TestIPV6)
+{
+    Aws::Vector<Aws::String> inputs{
+        "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+        "2001:DB8:85A3::8A2E:370:7334",
+        "::ffff",
+        "::",
+        "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "2001:db8:85a3:0:0:8a2e:370:7334"
+    }
+    bool IsValidHost(const Aws::String& host)
+
+}
