@@ -38,7 +38,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog related to the request. </p>
+     * <p>Specifies the catalog related to the request. Valid values are:</p> <ul> <li>
+     * <p>AWS: Submits the opportunity request from the production AWS environment.</p>
+     * </li> <li> <p>Sandbox: Submits the opportunity request from a sandbox
+     * environment used for testing or development purposes.</p> </li> </ul>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -52,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the opportunity previously created by partner and needs to
-     * be submitted. </p>
+     * <p>The identifier of the Opportunity previously created by partner and needs to
+     * be submitted.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -67,7 +70,13 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the level of AWS sellers' involvement on the opportunity. </p>
+     * <p>Specifies the level of AWS sellers' involvement on the opportunity. Valid
+     * values:</p> <ul> <li> <p> <code>Co-sell</code>: Indicates the user wants to
+     * co-sell with AWS. Share the opportunity with AWS to receive deal assistance and
+     * support.</p> </li> <li> <p> <code>For Visibility Only</code>: Indicates that the
+     * user does not need support from AWS Sales Rep. Share this opportunity with AWS
+     * for visibility only, you will not receive deal assistance and support.</p> </li>
+     * </ul>
      */
     inline const SalesInvolvementType& GetInvolvementType() const{ return m_involvementType; }
     inline bool InvolvementTypeHasBeenSet() const { return m_involvementTypeHasBeenSet; }
@@ -79,8 +88,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Determines whether to restrict visibility of the opportunity from AWS sales.
-     * Default value is Full. </p>
+     * <p>Determines whether to restrict visibility of the opportunity from AWS sales.
+     * Default value is Full. Valid values:</p> <ul> <li> <p> <code>Full</code>: The
+     * opportunity is fully visible to AWS sales.</p> </li> <li> <p>
+     * <code>Limited</code>: The opportunity has restricted visibility to AWS
+     * sales.</p> </li> </ul>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }

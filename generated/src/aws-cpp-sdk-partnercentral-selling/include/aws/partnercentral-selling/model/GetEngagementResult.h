@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the engagement retrieved. </p>
+     * <p>The Amazon Resource Name (ARN) of the engagement retrieved.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -50,9 +50,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> A list of context objects associated with the engagement. Each context
+     * <p>A list of context objects associated with the engagement. Each context
      * provides additional information related to the Engagement, such as customer
-     * projects or documents. </p>
+     * projects or documents.</p>
      */
     inline const Aws::Vector<EngagementContextDetails>& GetContexts() const{ return m_contexts; }
     inline void SetContexts(const Aws::Vector<EngagementContextDetails>& value) { m_contexts = value; }
@@ -65,9 +65,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The date and time when the Engagement was created, presented in ISO 8601
+     * <p>The date and time when the Engagement was created, presented in ISO 8601
      * format (UTC). For example: "2023-05-01T20:37:46Z". This timestamp helps track
-     * the lifecycle of the Engagement. </p>
+     * the lifecycle of the Engagement.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
@@ -78,8 +78,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The AWS account ID of the user who originally created the engagement. This
-     * field helps in tracking the origin of the engagement. </p>
+     * <p>The AWS account ID of the user who originally created the engagement. This
+     * field helps in tracking the origin of the engagement.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
     inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
@@ -92,8 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> A more detailed description of the engagement. This provides additional
-     * context or information about the engagement's purpose or scope. </p>
+     * <p>A more detailed description of the engagement. This provides additional
+     * context or information about the engagement's purpose or scope.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline void SetDescription(const Aws::String& value) { m_description = value; }
@@ -106,7 +106,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique resource identifier of the engagement retrieved. </p>
+     * <p>The unique resource identifier of the engagement retrieved.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }
@@ -119,9 +119,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the current count of members participating in the Engagement. This
+     * <p>Specifies the current count of members participating in the Engagement. This
      * count includes all active members regardless of their roles or permissions
-     * within the Engagement. </p>
+     * within the Engagement.</p>
      */
     inline int GetMemberCount() const{ return m_memberCount; }
     inline void SetMemberCount(int value) { m_memberCount = value; }
@@ -130,8 +130,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The title of the engagement. It provides a brief, descriptive name for the
-     * engagement that is meaningful and easily recognizable. </p>
+     * <p>The title of the engagement. It provides a brief, descriptive name for the
+     * engagement that is meaningful and easily recognizable.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline void SetTitle(const Aws::String& value) { m_title = value; }

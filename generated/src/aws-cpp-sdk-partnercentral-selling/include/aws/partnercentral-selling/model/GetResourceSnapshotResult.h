@@ -37,9 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the snapshot. This globally unique
-     * identifier can be used for resource-specific operations across AWS services.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the resource
+     * snapshot.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -116,8 +115,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the specific resource that was snapshotted. Matches the
-     * <code>ResourceIdentifier</code> specified in the request. </p>
+     * <p>The identifier of the specific resource that was snapshotted. Matches the
+     * ResourceIdentifier specified in the request.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
     inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
@@ -130,8 +129,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The name of the view used for this snapshot. This is the same as the
-     * template name. </p>
+     * <p>The name of the view used for this snapshot. This is the same as the template
+     * name.</p>
      */
     inline const Aws::String& GetResourceSnapshotTemplateName() const{ return m_resourceSnapshotTemplateName; }
     inline void SetResourceSnapshotTemplateName(const Aws::String& value) { m_resourceSnapshotTemplateName = value; }
@@ -144,8 +143,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of the resource that was snapshotted. Matches the
-     * <code>ResourceType</code> specified in the request. </p>
+     * <p>The type of the resource that was snapshotted. Matches the ResourceType
+     * specified in the request.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
     inline void SetResourceType(const ResourceType& value) { m_resourceType = value; }
@@ -156,8 +155,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The revision number of this snapshot. This is a positive integer that is
-     * sequential and unique within the context of a resource view. </p>
+     * <p>The revision number of this snapshot. This is a positive integer that is
+     * sequential and unique within the context of a resource view.</p>
      */
     inline int GetRevision() const{ return m_revision; }
     inline void SetRevision(int value) { m_revision = value; }

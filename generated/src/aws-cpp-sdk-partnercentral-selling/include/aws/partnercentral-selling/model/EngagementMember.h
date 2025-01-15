@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> This is the unique identifier for the AWS account associated with the member
+     * <p>This is the unique identifier for the AWS account associated with the member
      * organization. It's used for AWS-related operations and identity verification.
      * </p>
      */
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The official name of the member's company or organization. </p>
+     * <p>The official name of the member's company or organization.</p>
      */
     inline const Aws::String& GetCompanyName() const{ return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The URL of the member company's website. This offers a way to find more
+     * <p>The URL of the member company's website. This offers a way to find more
      * information about the member organization and serves as an additional
      * identifier. </p>
      */

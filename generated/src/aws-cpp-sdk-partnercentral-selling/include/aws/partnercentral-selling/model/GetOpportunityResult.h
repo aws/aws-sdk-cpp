@@ -232,12 +232,7 @@ namespace Model
      * Support: Request Amazon Web Services seller's support to progress the
      * opportunity (for example: joint customer call, strategic positioning).</p> </li>
      * <li> <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public
-     * sector where the partner needs Amazon Web Services RFx support.</p> </li> <li>
-     * <p>Do Not Need Support from Amazon Web Services Sales Rep: Indicates that a
-     * partner doesn't need support from an Amazon Web Services sales representative,
-     * and the partner solely manages the opportunity. It's possible to request
-     * coselling support on these opportunities at any stage during their lifecycle.
-     * Also known as, for-visibility-only (FVO) opportunity.</p> </li> </ul>
+     * sector where the partner needs Amazon Web Services RFx support.</p> </li> </ul>
      */
     inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
     inline void SetPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { m_primaryNeedsFromAws = value; }

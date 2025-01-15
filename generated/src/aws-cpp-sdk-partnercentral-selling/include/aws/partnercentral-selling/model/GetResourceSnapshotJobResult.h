@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> he Amazon Resource Name (ARN) of the snapshot job. This globally unique
+     * <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique
      * identifier can be used for resource-specific operations across AWS services.
      * </p>
      */
@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The catalog in which the snapshot job was created. This will match the
-     * catalog specified in the request. </p>
+     * <p>The catalog in which the snapshot job was created. This will match the
+     * Catalog specified in the request. </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline void SetCatalog(const Aws::String& value) { m_catalog = value; }
@@ -66,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The date and time when the snapshot job was created, in ISO 8601 format
-     * (UTC). Example: "2023-05-01T20:37:46Z" </p>
+     * <p>The date and time when the snapshot job was created in ISO 8601 format (UTC).
+     * Example: "2023-05-01T20:37:46Z" </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the engagement associated with this snapshot job. This
+     * <p>The identifier of the engagement associated with this snapshot job. This
      * links the job to a specific engagement context. </p>
      */
     inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
@@ -92,8 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier of the snapshot job. This matches the
-     * <code>ResourceSnapshotJobIdentifier</code> provided in the request. </p>
+     * <p>The unique identifier of the snapshot job. This matches the
+     * ResourceSnapshotJobIdentifier provided in the request. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }
@@ -106,7 +106,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> If the job has encountered any failures, this field contains the error
+     * <p>If the job has encountered any failures, this field contains the error
      * message from the most recent failure. This can be useful for troubleshooting
      * issues with the job. </p>
      */
@@ -121,7 +121,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The date and time of the last successful execution of the job, in ISO 8601
+     * <p>The date and time of the last successful execution of the job, in ISO 8601
      * format (UTC). Example: "2023-05-01T20:37:46Z" </p>
      */
     inline const Aws::Utils::DateTime& GetLastSuccessfulExecutionDate() const{ return m_lastSuccessfulExecutionDate; }
@@ -133,7 +133,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the resource being snapshotted. This
+     * <p>The Amazon Resource Name (ARN) of the resource being snapshotted. This
      * provides a globally unique identifier for the resource across AWS. </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
@@ -147,8 +147,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the specific resource being snapshotted. The format may
-     * vary depending on the <code>ResourceType</code>. </p>
+     * <p>The identifier of the specific resource being snapshotted. The format might
+     * vary depending on the ResourceType. </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
     inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
@@ -161,8 +161,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The name of the template used for creating the snapshot. This is the same as
-     * the template name. It defines the structure and content of the snapshot. </p>
+     * <p>The name of the template used for creating the snapshot. This is the same as
+     * the template name. It defines the structure and content of the snapshot.</p>
      */
     inline const Aws::String& GetResourceSnapshotTemplateName() const{ return m_resourceSnapshotTemplateName; }
     inline void SetResourceSnapshotTemplateName(const Aws::String& value) { m_resourceSnapshotTemplateName = value; }
@@ -175,9 +175,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of resource being snapshotted. This would have
-     * <code>Opportunity</code> as a value as it is dependent on the supported resource
-     * type. </p>
+     * <p>The type of resource being snapshotted. This would have "Opportunity" as a
+     * value as it is dependent on the supported resource type.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
     inline void SetResourceType(const ResourceType& value) { m_resourceType = value; }
@@ -188,9 +187,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The current status of the snapshot job. Valid values: </p> <ul> <li> <p>
-     * STOPPED: The job is not currently running. </p> </li> <li> <p> RUNNING: The job
-     * is actively executing. </p> </li> </ul>
+     * <p>The current status of the snapshot job. Valid values:</p> <ul> <li>
+     * <p>STOPPED: The job is not currently running.</p> </li> <li> <p>RUNNING: The job
+     * is actively executing.</p> </li> </ul>
      */
     inline const ResourceSnapshotJobStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const ResourceSnapshotJobStatus& value) { m_status = value; }

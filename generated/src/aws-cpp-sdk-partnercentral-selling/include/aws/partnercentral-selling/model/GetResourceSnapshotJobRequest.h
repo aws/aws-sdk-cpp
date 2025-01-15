@@ -36,10 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog related to the request. Valid values are: </p> <ul>
-     * <li> <p> AWS: Retrieves the snapshot job from the production AWS environment.
-     * </p> </li> <li> <p> Sandbox: Retrieves the snapshot job from a sandbox
-     * environment used for testing or development purposes. </p> </li> </ul>
+     * <p>Specifies the catalog related to the request. Valid values are:</p> <ul> <li>
+     * <p> AWS: Retrieves the snapshot job from the production AWS environment. </p>
+     * </li> <li> <p> Sandbox: Retrieves the snapshot job from a sandbox environment
+     * used for testing or development purposes. </p> </li> </ul>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier of the resource snapshot job to be retrieved. This
+     * <p>The unique identifier of the resource snapshot job to be retrieved. This
      * identifier is crucial for pinpointing the specific job you want to query. </p>
      */
     inline const Aws::String& GetResourceSnapshotJobIdentifier() const{ return m_resourceSnapshotJobIdentifier; }

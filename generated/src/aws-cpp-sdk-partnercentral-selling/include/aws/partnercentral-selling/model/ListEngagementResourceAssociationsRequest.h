@@ -37,8 +37,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog in which to search for engagement-resource
-     * associations. </p>
+     * <p>Specifies the catalog in which to search for engagement-resource
+     * associations. Valid Values: "AWS" or "Sandbox"</p> <ul> <li> <p>
+     * <code>AWS</code> for production environments.</p> </li> <li> <p>
+     * <code>Sandbox</code> for testing and development purposes.</p> </li> </ul>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -52,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filters the results to include only associations with resources owned by the
-     * specified AWS account. Use this when you want to find associations related to
+     * <p>Filters the response to include only snapshots of resources owned by the
+     * specified AWS account ID. Use this when you want to find associations related to
      * resources owned by a particular account. </p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
@@ -68,9 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filters the results to include only associations related to the specified
+     * <p>Filters the results to include only associations related to the specified
      * engagement. Use this when you want to find all resources associated with a
-     * specific engagement. </p>
+     * specific engagement.</p>
      */
     inline const Aws::String& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
     inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
@@ -84,8 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Limits the number of results returned in a single call. Use this to control
-     * the number of results returned, especially useful for pagination. </p>
+     * <p>Limits the number of results returned in a single call. Use this to control
+     * the number of results returned, especially useful for pagination.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -95,8 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> A token used for pagination of results. Include this token in subsequent
-     * requests to retrieve the next set of results. </p>
+     * <p>A token used for pagination of results. Include this token in subsequent
+     * requests to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -110,9 +112,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filters the results to include only associations with the specified
-     * resource. Varies depending on the resource type. Use this when you want to find
-     * all engagements associated with a specific resource. </p>
+     * <p>Filters the results to include only associations with the specified resource.
+     * Varies depending on the resource type. Use this when you want to find all
+     * engagements associated with a specific resource.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }

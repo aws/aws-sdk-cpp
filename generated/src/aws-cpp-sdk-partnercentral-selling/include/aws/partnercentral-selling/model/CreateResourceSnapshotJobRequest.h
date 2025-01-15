@@ -8,6 +8,8 @@
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/ResourceType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/partnercentral-selling/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -38,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog in which to create the snapshot job. Valid values are
-     * <code>AWS</code> and <code> Sandbox</code>. </p>
+     * <p>Specifies the catalog in which to create the snapshot job. Valid values are
+     * <code>AWS</code> and <code> Sandbox</code>.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -53,9 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies a unique, client-generated UUID to ensure that the request is
-     * handled exactly once. This token helps prevent duplicate snapshot job creations.
-     * </p>
+     * <p>A client-generated UUID used for idempotency check. The token helps prevent
+     * duplicate job creations.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -69,8 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the identifier of the engagement associated with the resource to
-     * be snapshotted. </p>
+     * <p>Specifies the identifier of the engagement associated with the resource to be
+     * snapshotted.</p>
      */
     inline const Aws::String& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
     inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
@@ -84,8 +85,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the identifier of the specific resource to be snapshotted. The
-     * format depends on the <code>ResourceType</code>. </p>
+     * <p>Specifies the identifier of the specific resource to be snapshotted. The
+     * format depends on the <code> ResourceType</code>.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
@@ -99,8 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the name of the template that defines the schema for the snapshot.
-     * </p>
+     * <p>Specifies the name of the template that defines the schema for the
+     * snapshot.</p>
      */
     inline const Aws::String& GetResourceSnapshotTemplateIdentifier() const{ return m_resourceSnapshotTemplateIdentifier; }
     inline bool ResourceSnapshotTemplateIdentifierHasBeenSet() const { return m_resourceSnapshotTemplateIdentifierHasBeenSet; }
@@ -114,8 +115,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of resource for which the snapshot job is being created. Must be
-     * one of the supported resource types <code>Opportunity</code>. </p>
+     * <p>The type of resource for which the snapshot job is being created. Must be one
+     * of the supported resource types i.e. <code>Opportunity</code> </p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -123,6 +124,20 @@ namespace Model
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
     inline CreateResourceSnapshotJobRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
     inline CreateResourceSnapshotJobRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of objects specifying each tag name and value.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline CreateResourceSnapshotJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CreateResourceSnapshotJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CreateResourceSnapshotJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateResourceSnapshotJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
@@ -143,6 +158,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

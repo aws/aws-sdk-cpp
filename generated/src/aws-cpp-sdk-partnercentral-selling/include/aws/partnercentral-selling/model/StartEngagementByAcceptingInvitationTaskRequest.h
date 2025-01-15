@@ -7,6 +7,8 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/partnercentral-selling/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -81,6 +83,20 @@ namespace Model
     inline StartEngagementByAcceptingInvitationTaskRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
     inline StartEngagementByAcceptingInvitationTaskRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of objects specifying each tag name and value.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline StartEngagementByAcceptingInvitationTaskRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline StartEngagementByAcceptingInvitationTaskRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline StartEngagementByAcceptingInvitationTaskRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline StartEngagementByAcceptingInvitationTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_catalog;
@@ -91,6 +107,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

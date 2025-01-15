@@ -110,10 +110,10 @@ namespace PartnerCentralSelling
         virtual ~PartnerCentralSellingClient();
 
         /**
-         * <p> Use the <code>AcceptEngagementInvitation</code> action to accept an
+         * <p>Use the <code>AcceptEngagementInvitation</code> action to accept an
          * engagement invitation shared by AWS. Accepting the invitation indicates your
          * willingness to participate in the engagement, granting you access to all
-         * engagement-related data. </p><p><h3>See Also:</h3>   <a
+         * engagement-related data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitation">AWS
          * API Reference</a></p>
          */
@@ -227,11 +227,11 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> The <code>CreateEngagement</code> action allows you to create an
+         * <p>The <code>CreateEngagement</code> action allows you to create an
          * <code>Engagement</code>, which serves as a collaborative space between different
          * parties such as AWS Partners and AWS Sellers. This action automatically adds the
          * caller's AWS account as an active member of the newly created
-         * <code>Engagement</code>. </p><p><h3>See Also:</h3>   <a
+         * <code>Engagement</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagement">AWS
          * API Reference</a></p>
          */
@@ -289,13 +289,14 @@ namespace PartnerCentralSelling
          * these steps:</p> <ol> <li> <p>To create the opportunity, use
          * <code>CreateOpportunity</code>.</p> </li> <li> <p>To associate a solution with
          * the opportunity, use <code>AssociateOpportunity</code>.</p> </li> <li> <p>To
-         * submit the opportunity, use <code>StartEngagementFromOpportunityTask</code>.</p>
-         * </li> </ol> <p>After submission, you can't edit the opportunity until the review
-         * is complete. But opportunities in the <code>Pending Submission</code> state must
-         * have complete details. You can update the opportunity while it's in the
-         * <code>Pending Submission</code> state.</p> <p>There's a set of mandatory fields
-         * to create opportunities, but consider providing optional fields to enrich the
-         * opportunity record.</p><p><h3>See Also:</h3>   <a
+         * start the engagement with AWS, use
+         * <code>StartEngagementFromOpportunity</code>.</p> </li> </ol> <p>After
+         * submission, you can't edit the opportunity until the review is complete. But
+         * opportunities in the <code>Pending Submission</code> state must have complete
+         * details. You can update the opportunity while it's in the <code>Pending
+         * Submission</code> state.</p> <p>There's a set of mandatory fields to create
+         * opportunities, but consider providing optional fields to enrich the opportunity
+         * record.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">AWS
          * API Reference</a></p>
          */
@@ -348,11 +349,11 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Use this action to create a job to generate a snapshot of the specified
+         * <p>Use this action to create a job to generate a snapshot of the specified
          * resource within an engagement. It initiates an asynchronous process to create a
          * resource snapshot. The job creates a new snapshot only if the resource state has
          * changed, adhering to the same access control and immutability rules as direct
-         * snapshot creation. </p><p><h3>See Also:</h3>   <a
+         * snapshot creation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotJob">AWS
          * API Reference</a></p>
          */
@@ -468,8 +469,8 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Use this action to retrieve the engagement record for a given
-         * <code>EngagementIdentifier</code>. </p><p><h3>See Also:</h3>   <a
+         * <p>Use this action to retrieve the engagement record for a given
+         * <code>EngagementIdentifier</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">AWS
          * API Reference</a></p>
          */
@@ -577,8 +578,8 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Use this action to retrieves information about a specific resource snapshot
-         * job. </p><p><h3>See Also:</h3>   <a
+         * <p>Use this action to retrieves information about a specific resource snapshot
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotJob">AWS
          * API Reference</a></p>
          */
@@ -710,11 +711,11 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Retrieves the details of member partners in an engagement. This operation
-         * can only be invoked by members of the engagement. The
+         * <p>Retrieves the details of member partners in an Engagement. This operation can
+         * only be invoked by members of the Engagement. The
          * <code>ListEngagementMembers</code> operation allows you to fetch information
-         * about the members of a specific engagement. This action is restricted to members
-         * of the engagement being queried. </p><p><h3>See Also:</h3>   <a
+         * about the members of a specific Engagement. This action is restricted to members
+         * of the Engagement being queried. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementMembers">AWS
          * API Reference</a></p>
          */
@@ -739,8 +740,8 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Lists the associations between resources and engagements where the caller is
-         * a member and has at least one snapshot in the engagement. </p><p><h3>See
+         * <p>Lists the associations between resources and engagements where the caller is
+         * a member and has at least one snapshot in the engagement.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementResourceAssociations">AWS
          * API Reference</a></p>
@@ -766,7 +767,7 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> This action allows users to retrieve a list of engagement records from
+         * <p>This action allows users to retrieve a list of Engagement records from
          * Partner Central. This action can be used to manage and track various engagements
          * across different stages of the partner selling process. </p><p><h3>See
          * Also:</h3>   <a
@@ -862,8 +863,14 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Retrieves a list of resource view snapshots based on specified criteria.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of resource view snapshots based on specified criteria. This
+         * operation supports various use cases, including: </p> <ul> <li> <p>Fetching all
+         * snapshots associated with an engagement.</p> </li> <li> <p>Retrieving snapshots
+         * of a specific resource type within an engagement.</p> </li> <li> <p>Obtaining
+         * snapshots for a particular resource using a specified template.</p> </li> <li>
+         * <p>Accessing the latest snapshot of a resource within an engagement.</p> </li>
+         * <li> <p>Filtering snapshots by resource owner.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshots">AWS
          * API Reference</a></p>
          */
@@ -912,6 +919,31 @@ namespace PartnerCentralSelling
         void ListSolutionsAsync(const ListSolutionsRequestT& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PartnerCentralSellingClient::ListSolutions, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::ListTagsForResource, request, handler, context);
         }
 
         /**
@@ -1030,8 +1062,8 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Starts a resource snapshot job that has been previously created.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Starts a resource snapshot job that has been previously
+         * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">AWS
          * API Reference</a></p>
          */
@@ -1056,8 +1088,8 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Stops a resource snapshot job. The job must be started prior to being
-         * stopped. </p><p><h3>See Also:</h3>   <a
+         * <p>Stops a resource snapshot job. The job must be started prior to being
+         * stopped.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJob">AWS
          * API Reference</a></p>
          */
@@ -1082,8 +1114,8 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p> Use this action to submit an opportunity that was previously created by
-         * partner for AWS review. After you perform this action, the opportunity becomes
+         * <p>Use this action to submit an Opportunity that was previously created by
+         * partner for AWS review. After you perform this action, the Opportunity becomes
          * non-editable until it is reviewed by AWS and has <code> LifeCycle.ReviewStatus
          * </code> as either <code>Approved</code> or <code>Action Required</code>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1108,6 +1140,57 @@ namespace PartnerCentralSelling
         void SubmitOpportunityAsync(const SubmitOpportunityRequestT& request, const SubmitOpportunityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PartnerCentralSellingClient::SubmitOpportunity, request, handler, context);
+        }
+
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes a tag or tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&PartnerCentralSellingClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PartnerCentralSellingClient::UntagResource, request, handler, context);
         }
 
         /**

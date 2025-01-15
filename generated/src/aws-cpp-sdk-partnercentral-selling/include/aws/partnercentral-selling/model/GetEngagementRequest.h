@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog related to the engagement request. Valid values are
-     * <code>AWS</code> and <code>Sandbox</code>. </p>
+     * <p>Specifies the catalog related to the engagement request. Valid values are
+     * <code>AWS</code> and <code>Sandbox</code>.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the identifier of the Engagement record to retrieve. </p>
+     * <p>Specifies the identifier of the Engagement record to retrieve.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

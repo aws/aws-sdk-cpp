@@ -36,10 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The <code>CatalogType</code> parameter specifies the catalog associated with
+     * <p>The <code>CatalogType</code> parameter specifies the catalog associated with
      * the engagement invitation. Accepted values are <code>AWS</code> and
      * <code>Sandbox</code>, which determine the environment in which the engagement
-     * invitation is managed. </p>
+     * invitation is managed.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }

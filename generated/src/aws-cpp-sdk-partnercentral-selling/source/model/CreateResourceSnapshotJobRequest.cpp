@@ -20,7 +20,8 @@ CreateResourceSnapshotJobRequest::CreateResourceSnapshotJobRequest() :
     m_resourceIdentifierHasBeenSet(false),
     m_resourceSnapshotTemplateIdentifierHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,17 @@ Aws::String CreateResourceSnapshotJobRequest::SerializePayload() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

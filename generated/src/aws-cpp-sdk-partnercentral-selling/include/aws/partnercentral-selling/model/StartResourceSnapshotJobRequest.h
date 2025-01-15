@@ -36,7 +36,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog related to the request. </p>
+     * <p>Specifies the catalog related to the request. Valid values are:</p> <ul> <li>
+     * <p>AWS: Starts the request from the production AWS environment.</p> </li> <li>
+     * <p>Sandbox: Starts the request from a sandbox environment used for testing or
+     * development purposes.</p> </li> </ul>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -50,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the resource snapshot job to start. </p>
+     * <p>The identifier of the resource snapshot job to start.</p>
      */
     inline const Aws::String& GetResourceSnapshotJobIdentifier() const{ return m_resourceSnapshotJobIdentifier; }
     inline bool ResourceSnapshotJobIdentifierHasBeenSet() const { return m_resourceSnapshotJobIdentifierHasBeenSet; }

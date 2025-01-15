@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Represents the payload of an Engagement context. The structure of this
+   * <p>Represents the payload of an Engagement context. The structure of this
    * payload varies based on the context type specified in the
    * EngagementContextDetails. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementContextPayload">AWS
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Contains detailed information about a customer project when the context type
+     * <p>Contains detailed information about a customer project when the context type
      * is "CustomerProject". This field is present only when the Type in
      * EngagementContextDetails is set to "CustomerProject". </p>
      */

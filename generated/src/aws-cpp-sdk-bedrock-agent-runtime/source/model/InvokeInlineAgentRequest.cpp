@@ -30,6 +30,7 @@ InvokeInlineAgentRequest::InvokeInlineAgentRequest() :
     m_knowledgeBasesHasBeenSet(false),
     m_promptOverrideConfigurationHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_streamingConfigurationsHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -123,6 +124,12 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
   if(m_promptOverrideConfigurationHasBeenSet)
   {
    payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
+
+  }
+
+  if(m_streamingConfigurationsHasBeenSet)
+  {
+   payload.WithObject("streamingConfigurations", m_streamingConfigurations.Jsonize());
 
   }
 
