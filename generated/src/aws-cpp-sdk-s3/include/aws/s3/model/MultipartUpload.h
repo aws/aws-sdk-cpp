@@ -11,6 +11,7 @@
 #include <aws/s3/model/Owner.h>
 #include <aws/s3/model/Initiator.h>
 #include <aws/s3/model/ChecksumAlgorithm.h>
+#include <aws/s3/model/ChecksumType.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,21 @@ namespace Model
     inline MultipartUpload& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
     inline MultipartUpload& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The checksum type that is used to calculate the object’s checksum value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline bool ChecksumTypeHasBeenSet() const { return m_checksumTypeHasBeenSet; }
+    inline void SetChecksumType(const ChecksumType& value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline void SetChecksumType(ChecksumType&& value) { m_checksumTypeHasBeenSet = true; m_checksumType = std::move(value); }
+    inline MultipartUpload& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
+    inline MultipartUpload& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_uploadId;
@@ -156,6 +172,9 @@ namespace Model
 
     ChecksumAlgorithm m_checksumAlgorithm;
     bool m_checksumAlgorithmHasBeenSet = false;
+
+    ChecksumType m_checksumType;
+    bool m_checksumTypeHasBeenSet = false;
   };
 
 } // namespace Model

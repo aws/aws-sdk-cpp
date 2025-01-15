@@ -216,6 +216,7 @@ namespace Aws
          */
         Aws::Set<Aws::Client::UserAgentFeature> GetUserAgentFeatures() const { return m_userAgentFeatures; }
 
+      inline virtual bool RequestChecksumRequired() const { return false; }
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the

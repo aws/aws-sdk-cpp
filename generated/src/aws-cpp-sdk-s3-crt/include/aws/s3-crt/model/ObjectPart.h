@@ -61,10 +61,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This header can be used as a data integrity check to verify that the data
-     * received is the same data that was originally sent. This header specifies the
-     * base64-encoded, 32-bit CRC-32 checksum of the object. For more information, see
-     * <a
+     * <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the part. This
+     * checksum is present if the multipart upload request was created with the
+     * <code>CRC-32</code> checksum algorithm. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -80,14 +79,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 32-bit CRC-32C checksum of the object. This will only be
-     * present if it was uploaded with the object. When you use an API operation on an
-     * object that was uploaded using multipart uploads, this value may not be a direct
-     * checksum value of the full object. Instead, it's a calculation based on the
-     * checksum values of each individual part. For more information about how
-     * checksums are calculated with multipart uploads, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the part. This
+     * checksum is present if the multipart upload request was created with the
+     * <code>CRC-32C</code> checksum algorithm. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
     inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
@@ -101,14 +97,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. When you use the API operation on an
-     * object that was uploaded using multipart uploads, this value may not be a direct
-     * checksum value of the full object. Instead, it's a calculation based on the
-     * checksum values of each individual part. For more information about how
-     * checksums are calculated with multipart uploads, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the part. This
+     * checksum is present if the multipart upload request was created with the
+     * <code>CRC-64NVME</code> checksum algorithm, or if the object was uploaded
+     * without a checksum (and Amazon S3 added the default checksum,
+     * <code>CRC-64NVME</code>, to the uploaded object). For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
+    inline bool ChecksumCRC64NVMEHasBeenSet() const { return m_checksumCRC64NVMEHasBeenSet; }
+    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = value; }
+    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::move(value); }
+    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME.assign(value); }
+    inline ObjectPart& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
+    inline ObjectPart& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
+    inline ObjectPart& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Base64 encoded, 160-bit <code>SHA-1</code> checksum of the part. This
+     * checksum is present if the multipart upload request was created with the
+     * <code>SHA-1</code> checksum algorithm. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
     inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
@@ -122,14 +135,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. When you use an API operation on an
-     * object that was uploaded using multipart uploads, this value may not be a direct
-     * checksum value of the full object. Instead, it's a calculation based on the
-     * checksum values of each individual part. For more information about how
-     * checksums are calculated with multipart uploads, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The Base64 encoded, 256-bit <code>SHA-256</code> checksum of the part. This
+     * checksum is present if the multipart upload request was created with the
+     * <code>SHA-256</code> checksum algorithm. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
     inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
@@ -153,6 +163,9 @@ namespace Model
 
     Aws::String m_checksumCRC32C;
     bool m_checksumCRC32CHasBeenSet = false;
+
+    Aws::String m_checksumCRC64NVME;
+    bool m_checksumCRC64NVMEHasBeenSet = false;
 
     Aws::String m_checksumSHA1;
     bool m_checksumSHA1HasBeenSet = false;

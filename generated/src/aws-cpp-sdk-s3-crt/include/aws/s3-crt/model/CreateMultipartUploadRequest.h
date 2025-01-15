@@ -16,6 +16,7 @@
 #include <aws/s3-crt/model/ObjectLockMode.h>
 #include <aws/s3-crt/model/ObjectLockLegalHoldStatus.h>
 #include <aws/s3-crt/model/ChecksumAlgorithm.h>
+#include <aws/s3-crt/model/ChecksumType.h>
 #include <utility>
 
 namespace Aws
@@ -600,7 +601,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
-     * encryption. The value of this header is a Base64-encoded string of a UTF-8
+     * encryption. The value of this header is a Base64 encoded string of a UTF-8
      * encoded JSON, which contains the encryption context as key-value pairs.</p> <p>
      * <b>Directory buckets</b> - You can optionally provide an explicit encryption
      * context value. The value must match the default encryption context - the bucket
@@ -744,6 +745,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates the checksum type that you want Amazon S3 to use to calculate the
+     * object’s checksum value. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity in the Amazon S3 User Guide</a>.</p>
+     */
+    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline bool ChecksumTypeHasBeenSet() const { return m_checksumTypeHasBeenSet; }
+    inline void SetChecksumType(const ChecksumType& value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline void SetChecksumType(ChecksumType&& value) { m_checksumTypeHasBeenSet = true; m_checksumType = std::move(value); }
+    inline CreateMultipartUploadRequest& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
+    inline CreateMultipartUploadRequest& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
@@ -850,6 +866,9 @@ namespace Model
 
     ChecksumAlgorithm m_checksumAlgorithm;
     bool m_checksumAlgorithmHasBeenSet = false;
+
+    ChecksumType m_checksumType;
+    bool m_checksumTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

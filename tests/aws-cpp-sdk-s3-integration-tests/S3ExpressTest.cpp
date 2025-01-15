@@ -199,10 +199,11 @@ namespace {
         .WithChecksumCRC32(uploadPart.GetResult().GetChecksumCRC32()));
 
       return client->CompleteMultipartUpload(CompleteMultipartUploadRequest()
-        .WithBucket(bucketName)
-        .WithKey(keyName)
-        .WithUploadId(createOutcome.GetResult().GetUploadId())
-        .WithMultipartUpload(completedUpload));
+                                                 .WithBucket(bucketName)
+                                                 .WithKey(keyName)
+                                                 .WithUploadId(createOutcome.GetResult().GetUploadId())
+                                                 .WithMultipartUpload(completedUpload)
+                                                 .WithChecksumType(ChecksumType::COMPOSITE));
     }
 
     UploadPartCopyOutcome UploadPartCopy(const Aws::String &bucketName, const Aws::String &keyName) {
@@ -398,82 +399,66 @@ namespace {
     AWS_EXPECT_SUCCESS(createOutcome);
 
     Vector<ChecksumTestCase> testCases{
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
-        },
-        HttpResponseCode::BAD_REQUEST,
-        "Just runnin' scared each place we go"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
-        },
-        HttpResponseCode::BAD_REQUEST,
-        "So afraid that he might show"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
-        },
-        HttpResponseCode::BAD_REQUEST,
-        "Yeah, runnin' scared, what would I do"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
-        },
-        HttpResponseCode::BAD_REQUEST,
-        "If he came back and wanted you?"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
-              .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
-        },
-        HttpResponseCode::OK,
-        "Runnin' scared, you love him so"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
-              .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
-        },
-        HttpResponseCode::OK,
-        "Just runnin' scared, afraid to lose"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
-              .WithChecksumSHA256(
-                HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
-        },
-        HttpResponseCode::OK,
-        "If he came back, which one would you choose?"
-      },
-      {
-        [](PutObjectRequest request) -> PutObjectRequest {
-          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
-              .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
-        },
-        HttpResponseCode::OK,
-        "Then all at once he was standing there"
-      }
-    };
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
+         },
+         HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC64NVME).WithChecksumCRC64NVME("Just runnin' scared each place we go");
+         },
+         HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
+         },
+         HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
+         },
+         HttpResponseCode::BAD_REQUEST, "So afraid that he might show"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
+         },
+         HttpResponseCode::BAD_REQUEST, "Yeah, runnin' scared, what would I do"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
+         },
+         HttpResponseCode::BAD_REQUEST, "If he came back and wanted you?"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+               .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
+         },
+         HttpResponseCode::OK, "Runnin' scared, you love him so"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC64NVME)
+               .WithChecksumCRC64NVME(HashingUtils::Base64Encode(HashingUtils::CalculateCRC64("Runnin' scared, you love him so")));
+         },
+         HttpResponseCode::OK, "Runnin' scared, you love him so"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
+               .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
+         },
+         HttpResponseCode::OK, "Just runnin' scared, afraid to lose"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
+               .WithChecksumSHA256(
+                   HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
+         },
+         HttpResponseCode::OK, "If he came back, which one would you choose?"},
+        {[](PutObjectRequest request) -> PutObjectRequest {
+           return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
+               .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
+         },
+         HttpResponseCode::OK, "Then all at once he was standing there"}};
 
-    for (const auto&testCase: testCases) {
-      auto request = testCase.chucksumRequestMutator(PutObjectRequest()
-        .WithBucket(bucketName)
-        .WithKey("RunningScared"));
-      std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
-        testCase.body,
-        std::ios_base::in | std::ios_base::binary);
+    for (const auto &testCase : testCases) {
+      auto request = testCase.chucksumRequestMutator(PutObjectRequest().WithBucket(bucketName).WithKey("RunningScared"));
+      std::shared_ptr<IOStream> body =
+          Aws::MakeShared<StringStream>(ALLOCATION_TAG, testCase.body, std::ios_base::in | std::ios_base::binary);
       request.SetBody(body);
       const auto response = client->PutObject(request);
       if (!response.IsSuccess()) {
         EXPECT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
-      }
-      else {
+      } else {
         EXPECT_EQ(testCase.responseCode, HttpResponseCode::OK);
         EXPECT_TRUE(response.IsSuccess());
       }

@@ -44,6 +44,7 @@ namespace Model
 
     AWS_S3CRT_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
     AWS_S3CRT_API Aws::String GetChecksumAlgorithmName() const override;
+    inline bool RequestChecksumRequired() const override { return true; };
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
@@ -78,11 +79,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p> <p>For requests made using the Amazon Web Services Command
-     * Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated
-     * automatically.</p>  <p>This functionality is not supported for directory
-     * buckets.</p> 
+     * <p>The Base64 encoded 128-bit <code>MD5</code> digest of the server-side
+     * encryption configuration.</p> <p>For requests made using the Amazon Web Services
+     * Command Line Interface (CLI) or Amazon Web Services SDKs, this field is
+     * calculated automatically.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }

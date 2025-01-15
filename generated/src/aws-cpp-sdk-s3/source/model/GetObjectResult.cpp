@@ -19,6 +19,7 @@ using namespace Aws;
 GetObjectResult::GetObjectResult() : 
     m_deleteMarker(false),
     m_contentLength(0),
+    m_checksumType(ChecksumType::NOT_SET),
     m_missingMeta(0),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_bucketKeyEnabled(false),
@@ -43,8 +44,10 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_eTag(std::move(toMove.m_eTag)),
     m_checksumCRC32(std::move(toMove.m_checksumCRC32)),
     m_checksumCRC32C(std::move(toMove.m_checksumCRC32C)),
+    m_checksumCRC64NVME(std::move(toMove.m_checksumCRC64NVME)),
     m_checksumSHA1(std::move(toMove.m_checksumSHA1)),
     m_checksumSHA256(std::move(toMove.m_checksumSHA256)),
+    m_checksumType(toMove.m_checksumType),
     m_missingMeta(toMove.m_missingMeta),
     m_versionId(std::move(toMove.m_versionId)),
     m_cacheControl(std::move(toMove.m_cacheControl)),
@@ -92,8 +95,10 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_eTag = std::move(toMove.m_eTag);
    m_checksumCRC32 = std::move(toMove.m_checksumCRC32);
    m_checksumCRC32C = std::move(toMove.m_checksumCRC32C);
+   m_checksumCRC64NVME = std::move(toMove.m_checksumCRC64NVME);
    m_checksumSHA1 = std::move(toMove.m_checksumSHA1);
    m_checksumSHA256 = std::move(toMove.m_checksumSHA256);
+   m_checksumType = toMove.m_checksumType;
    m_missingMeta = toMove.m_missingMeta;
    m_versionId = std::move(toMove.m_versionId);
    m_cacheControl = std::move(toMove.m_cacheControl);
@@ -194,6 +199,12 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
     m_checksumCRC32C = checksumCRC32CIter->second;
   }
 
+  const auto& checksumCRC64NVMEIter = headers.find("x-amz-checksum-crc64nvme");
+  if(checksumCRC64NVMEIter != headers.end())
+  {
+    m_checksumCRC64NVME = checksumCRC64NVMEIter->second;
+  }
+
   const auto& checksumSHA1Iter = headers.find("x-amz-checksum-sha1");
   if(checksumSHA1Iter != headers.end())
   {
@@ -204,6 +215,12 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   if(checksumSHA256Iter != headers.end())
   {
     m_checksumSHA256 = checksumSHA256Iter->second;
+  }
+
+  const auto& checksumTypeIter = headers.find("x-amz-checksum-type");
+  if(checksumTypeIter != headers.end())
+  {
+    m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(checksumTypeIter->second);
   }
 
   const auto& missingMetaIter = headers.find("x-amz-missing-meta");

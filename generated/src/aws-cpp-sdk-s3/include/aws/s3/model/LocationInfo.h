@@ -27,10 +27,9 @@ namespace Model
    * <p>Specifies the location where the bucket will be created.</p> <p>For directory
    * buckets, the location type is Availability Zone or Local Zone. For more
    * information about directory buckets, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Working
-   * with directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p> 
-   * <p>This functionality is only supported by directory buckets.</p>
-   * <p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+   * buckets</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This functionality
+   * is only supported by directory buckets.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LocationInfo">AWS API
    * Reference</a></p>
    */

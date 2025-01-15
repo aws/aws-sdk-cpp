@@ -13,22 +13,19 @@ namespace S3Crt
 {
 namespace Model
 {
-  enum class ChecksumAlgorithm
+  enum class ChecksumType
   {
     NOT_SET,
-    CRC32,
-    CRC32C,
-    SHA1,
-    SHA256,
-    CRC64NVME
+    COMPOSITE,
+    FULL_OBJECT
   };
 
-namespace ChecksumAlgorithmMapper
+namespace ChecksumTypeMapper
 {
-AWS_S3CRT_API ChecksumAlgorithm GetChecksumAlgorithmForName(const Aws::String& name);
+AWS_S3CRT_API ChecksumType GetChecksumTypeForName(const Aws::String& name);
 
-AWS_S3CRT_API Aws::String GetNameForChecksumAlgorithm(ChecksumAlgorithm value);
-} // namespace ChecksumAlgorithmMapper
+AWS_S3CRT_API Aws::String GetNameForChecksumType(ChecksumType value);
+} // namespace ChecksumTypeMapper
 } // namespace Model
 } // namespace S3Crt
 } // namespace Aws

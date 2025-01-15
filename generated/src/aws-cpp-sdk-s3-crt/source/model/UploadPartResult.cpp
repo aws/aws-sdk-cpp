@@ -63,6 +63,12 @@ UploadPartResult& UploadPartResult::operator =(const Aws::AmazonWebServiceResult
     m_checksumCRC32C = checksumCRC32CIter->second;
   }
 
+  const auto& checksumCRC64NVMEIter = headers.find("x-amz-checksum-crc64nvme");
+  if(checksumCRC64NVMEIter != headers.end())
+  {
+    m_checksumCRC64NVME = checksumCRC64NVMEIter->second;
+  }
+
   const auto& checksumSHA1Iter = headers.find("x-amz-checksum-sha1");
   if(checksumSHA1Iter != headers.end())
   {

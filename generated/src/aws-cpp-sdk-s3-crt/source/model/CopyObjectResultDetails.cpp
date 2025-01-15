@@ -23,8 +23,11 @@ namespace Model
 CopyObjectResultDetails::CopyObjectResultDetails() : 
     m_eTagHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
+    m_checksumType(ChecksumType::NOT_SET),
+    m_checksumTypeHasBeenSet(false),
     m_checksumCRC32HasBeenSet(false),
     m_checksumCRC32CHasBeenSet(false),
+    m_checksumCRC64NVMEHasBeenSet(false),
     m_checksumSHA1HasBeenSet(false),
     m_checksumSHA256HasBeenSet(false)
 {
@@ -54,6 +57,12 @@ CopyObjectResultDetails& CopyObjectResultDetails::operator =(const XmlNode& xmlN
       m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
+    XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
+    if(!checksumTypeNode.IsNull())
+    {
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumTypeHasBeenSet = true;
+    }
     XmlNode checksumCRC32Node = resultNode.FirstChild("ChecksumCRC32");
     if(!checksumCRC32Node.IsNull())
     {
@@ -65,6 +74,12 @@ CopyObjectResultDetails& CopyObjectResultDetails::operator =(const XmlNode& xmlN
     {
       m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
       m_checksumCRC32CHasBeenSet = true;
+    }
+    XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
+    if(!checksumCRC64NVMENode.IsNull())
+    {
+      m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
+      m_checksumCRC64NVMEHasBeenSet = true;
     }
     XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
     if(!checksumSHA1Node.IsNull())
@@ -98,6 +113,12 @@ void CopyObjectResultDetails::AddToNode(XmlNode& parentNode) const
    lastModifiedNode.SetText(m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
+  if(m_checksumTypeHasBeenSet)
+  {
+   XmlNode checksumTypeNode = parentNode.CreateChildElement("ChecksumType");
+   checksumTypeNode.SetText(ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
+  }
+
   if(m_checksumCRC32HasBeenSet)
   {
    XmlNode checksumCRC32Node = parentNode.CreateChildElement("ChecksumCRC32");
@@ -108,6 +129,12 @@ void CopyObjectResultDetails::AddToNode(XmlNode& parentNode) const
   {
    XmlNode checksumCRC32CNode = parentNode.CreateChildElement("ChecksumCRC32C");
    checksumCRC32CNode.SetText(m_checksumCRC32C);
+  }
+
+  if(m_checksumCRC64NVMEHasBeenSet)
+  {
+   XmlNode checksumCRC64NVMENode = parentNode.CreateChildElement("ChecksumCRC64NVME");
+   checksumCRC64NVMENode.SetText(m_checksumCRC64NVME);
   }
 
   if(m_checksumSHA1HasBeenSet)

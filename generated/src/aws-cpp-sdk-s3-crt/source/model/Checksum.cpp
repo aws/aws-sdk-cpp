@@ -23,8 +23,11 @@ namespace Model
 Checksum::Checksum() : 
     m_checksumCRC32HasBeenSet(false),
     m_checksumCRC32CHasBeenSet(false),
+    m_checksumCRC64NVMEHasBeenSet(false),
     m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
+    m_checksumSHA256HasBeenSet(false),
+    m_checksumType(ChecksumType::NOT_SET),
+    m_checksumTypeHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,12 @@ Checksum& Checksum::operator =(const XmlNode& xmlNode)
       m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
       m_checksumCRC32CHasBeenSet = true;
     }
+    XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
+    if(!checksumCRC64NVMENode.IsNull())
+    {
+      m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
+      m_checksumCRC64NVMEHasBeenSet = true;
+    }
     XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
     if(!checksumSHA1Node.IsNull())
     {
@@ -63,6 +72,12 @@ Checksum& Checksum::operator =(const XmlNode& xmlNode)
     {
       m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
       m_checksumSHA256HasBeenSet = true;
+    }
+    XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
+    if(!checksumTypeNode.IsNull())
+    {
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumTypeHasBeenSet = true;
     }
   }
 
@@ -84,6 +99,12 @@ void Checksum::AddToNode(XmlNode& parentNode) const
    checksumCRC32CNode.SetText(m_checksumCRC32C);
   }
 
+  if(m_checksumCRC64NVMEHasBeenSet)
+  {
+   XmlNode checksumCRC64NVMENode = parentNode.CreateChildElement("ChecksumCRC64NVME");
+   checksumCRC64NVMENode.SetText(m_checksumCRC64NVME);
+  }
+
   if(m_checksumSHA1HasBeenSet)
   {
    XmlNode checksumSHA1Node = parentNode.CreateChildElement("ChecksumSHA1");
@@ -94,6 +115,12 @@ void Checksum::AddToNode(XmlNode& parentNode) const
   {
    XmlNode checksumSHA256Node = parentNode.CreateChildElement("ChecksumSHA256");
    checksumSHA256Node.SetText(m_checksumSHA256);
+  }
+
+  if(m_checksumTypeHasBeenSet)
+  {
+   XmlNode checksumTypeNode = parentNode.CreateChildElement("ChecksumType");
+   checksumTypeNode.SetText(ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
   }
 
 }
