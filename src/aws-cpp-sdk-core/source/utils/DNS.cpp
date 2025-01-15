@@ -5,7 +5,6 @@
 
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
-#include <iostream>
 namespace Aws
 {
     namespace Utils
