@@ -41,15 +41,27 @@ namespace Aws
         }
 
 
+        bool isHexChar(char c) {
+            return (c >= '0' && c <= '9') || 
+                (c >= 'a' && c <= 'f') || 
+                (c >= 'A' && c <= 'F');
+        }
+
+        bool isValidIPv6Segment(const std::string& segment) {
+            if (segment.empty() || segment.length() > 4){
+                return false;
+            }
+            return std::all_of(segment.begin(), segment.end(), isHexChar);
+        }
+
+        //The assumption is this is only called with the domain part of uri
         bool isValidIpv6Host(const Aws::String& host)
         {
-            std::cout<<"isValidIpv6Host:"<<host<<std::endl;
             if(host.empty())
             {
                 return false;
             }
-
-            int segmentCount = 1;
+            size_t segmentCount = 1;
             bool doubleColonFound = false;
             size_t labelStart = 0;
 
@@ -57,22 +69,26 @@ namespace Aws
             {
                 if(host[i] == ':')
                 {
+                    // double colon check
                     if(i + 1 < host.length() && host[i+1] == ':')
                     {
                         if(doubleColonFound) {
                             return false;
                         }
                         doubleColonFound = true;
+                        ++i;
                     }
+                    // single colon segment
                     else
                     {
-                        if(!IsValidHost(host.substr(labelStart, i - labelStart))) {
+                        if(!isValidIPv6Segment(host.substr(labelStart, i - labelStart))) {
                             return false;
                         }
                         ++segmentCount;
                     }
                     labelStart = i + 1;
                 }
+                // no dots in ipv6
                 else if(host[i] == '.')
                 {
                     return false;
@@ -82,30 +98,22 @@ namespace Aws
             // Handle last segment
             if(labelStart < host.length())
             {
-                if(!IsValidHost(host.substr(labelStart))) return false;
+                if(!isValidIPv6Segment(host.substr(labelStart))) return false;
             }
-
             // Check if we have 8 segments or less with one double colon
-            if((doubleColonFound && segmentCount < 8) || (!doubleColonFound && segmentCount == 8))
-            {
-                return true;
-            }
-            return false;
+            return (doubleColonFound && segmentCount < 8) || (!doubleColonFound && segmentCount == 8);
         }
 
         bool IsValidHost(const Aws::String& host)
         {
             // Valid DNS hostnames are composed of valid DNS labels separated by a period.
             auto labels = StringUtils::Split(host, '.');
-            std::cout<<"labels.size()="<<labels.size()<<std::endl;
             if (labels.empty()) 
             {
-                //check for ipv6
-                std::cout<<"isValidHost:"<<host<<std::endl;
-                return isValidIpv6Host(host);
+                return false;
             }
 
-            return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); });
+            return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); }) || isValidIpv6Host(host);
         }
     }
 }
