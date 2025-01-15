@@ -238,7 +238,8 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
                 << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
             return 0;
         }
-        if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
+        if ((context->m_request->IsEventStreamRequest() || context->m_request->HasEventStreamResponse() )
+            && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             response->GetResponseBody().flush();
             if (response->GetResponseBody().fail()) {
