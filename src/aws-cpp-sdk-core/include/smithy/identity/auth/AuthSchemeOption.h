@@ -20,7 +20,9 @@ namespace smithy {
     public:
         AuthSchemeOption(const char* id = nullptr): schemeId(id) {}
         virtual ~AuthSchemeOption() = default;
+
         const char* schemeId = nullptr;
+
         PropertyBag virtual identityProperties() const { return PropertyBag{}; };
         PropertyBag virtual signerProperties() const { return PropertyBag{}; };
         EndpointParameters virtual endpointParameters() const { return EndpointParameters{}; };

@@ -28,6 +28,7 @@ namespace Aws
             class AWS_CORE_API EventEncoderStream : public Aws::IOStream
             {
             public:
+
                 /**
                  * Creates a stream for encoding events sent by the client.
                  * @param bufferSize The length of the underlying buffer.
@@ -39,7 +40,7 @@ namespace Aws
                  * Every event uses its previous event's signature to calculate its own signature.
                  * Setting this value affects the signature calculation of the first event.
                  */
-                virtual void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
+                void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
 
                 /**
                  * Writes an event-stream message to the underlying buffer.
@@ -65,15 +66,10 @@ namespace Aws
                  */
                 bool WaitForDrain(int64_t timeoutMs = 1000);
 
-                virtual ~EventEncoderStream() {}
-
-               protected:
-                virtual Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
-
-               private:
+            private:
                 Stream::ConcurrentStreamBuf m_streambuf;
                 EventStreamEncoder m_encoder;
             };
-        }  // namespace Event
+        }
     }
 }

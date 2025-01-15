@@ -55,16 +55,20 @@ namespace Aws
 
             bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& priorSignature) const override;
 
-            bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& priorSignature, const Aws::Auth::AWSCredentials& creds) const;
+            bool SignRequest(Aws::Http::HttpRequest& request) const override
+            {
+                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), true);
+            }
 
-            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool /* signBody */,
-                             const Aws::Auth::AWSCredentials& credentials) const;
+            bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override
+            {
+                return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), signBody);
+            }
 
-            bool SignRequest(Aws::Http::HttpRequest& request) const override;
-
-            bool SignRequest(Aws::Http::HttpRequest& request, bool signBody) const override;
-
-            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override;
+            bool SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const override
+            {
+                return SignRequest(request, region, m_serviceName.c_str(), signBody);
+            }
 
             bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const override;
 

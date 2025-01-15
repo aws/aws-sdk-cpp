@@ -35,7 +35,8 @@ class AwsBearerTokenIdentityResolver
     AwsBearerTokenIdentityResolver(const Aws::Auth::BearerTokenAuthSignerProvider &bearerTokenProvider) {
       auto signer = bearerTokenProvider.GetSigner(Aws::Auth::BEARER_SIGNER);
       if (signer) {
-        m_providerChainLegacy.emplace_back(std::dynamic_pointer_cast<Aws::Client::AWSAuthBearerSigner>(signer)->BearerTokenProvider());
+        //since signer enum is mapped to legacy AWSAuthBearerSigner, static cast is safe here and is needed
+        m_providerChainLegacy.emplace_back((static_cast<Aws::Client::AWSAuthBearerSigner*>(signer.get()))->BearerTokenProvider());
       }
     }
 

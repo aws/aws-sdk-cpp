@@ -3,13 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/AwsSmithyClientBase.h>
+#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
-
-#include <future>
-#include <thread>
 
 #include "aws/core/client/AWSErrorMarshaller.h"
 #include "aws/core/client/RetryStrategy.h"
@@ -20,6 +17,7 @@
 #include "aws/core/utils/threading/Executor.h"
 #include "aws/core/utils/threading/SameThreadExecutor.h"
 #include "smithy/tracing/TracingUtils.h"
+
 using namespace smithy::client;
 using namespace smithy::interceptor;
 using namespace smithy::components::tracing;
@@ -141,137 +139,180 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
     return httpRequest;
 }
 
-void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
-                                           Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback,
+void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request,
+                                           const char* requestName,
+                                           Aws::Http::HttpMethod method,
+                                           EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
-                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const {
-  if (!responseHandler) {
-    assert(!"Missing a mandatory response handler!");
-    AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Unable to continue AWSClient request: response handler is missing!");
-    return;
-  }
+                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
+{
+    if(!responseHandler)
+    {
+        assert(!"Missing a mandatory response handler!");
+        AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Unable to continue AWSClient request: response handler is missing!");
+        return;
+    }
 
-  std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
-      Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
-  if (!pRequestCtx) {
-    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
-    auto outcome = HttpResponseOutcome(
-        ClientError(CoreErrors::MEMORY_ALLOCATION, "", "Failed to allocate async request context", false /*retryable*/));
-    pExecutor->Submit([outcome, responseHandler]() mutable { responseHandler(std::move(outcome)); });
-    return;
-  }
-  pRequestCtx->m_responseHandler = std::move(responseHandler);
-  pRequestCtx->m_pExecutor = pExecutor;
-  pRequestCtx->m_pRequest = request;
-  if (requestName)
-    pRequestCtx->m_requestName = requestName;
-  else if (pRequestCtx->m_pRequest)
-    pRequestCtx->m_requestName = pRequestCtx->m_pRequest->GetServiceRequestName();
-  pRequestCtx->m_method = method;
-  pRequestCtx->m_retryCount = 0;
-  pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
+        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
+    if (!pRequestCtx)
+    {
+        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
+        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::MEMORY_ALLOCATION, "", "Failed to allocate async request context", false/*retryable*/));
+        pExecutor->Submit([outcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(outcome));
+          } );
+        return;
+    }
+    pRequestCtx->m_responseHandler = std::move(responseHandler);
+    pRequestCtx->m_pExecutor = pExecutor;
+    pRequestCtx->m_pRequest = request;
+    if (requestName)
+      pRequestCtx->m_requestName = requestName;
+    else if (pRequestCtx->m_pRequest)
+      pRequestCtx->m_requestName = pRequestCtx->m_pRequest->GetServiceRequestName();
+    pRequestCtx->m_method = method;
+    pRequestCtx->m_retryCount = 0;
+    pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+    auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
+    if (!authSchemeOptionOutcome.IsSuccess())
+    {
+        pExecutor->Submit([authSchemeOptionOutcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(authSchemeOptionOutcome));
+          } );
+        return;
+    }
+    pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+    assert(pRequestCtx->m_authSchemeOption.schemeId);
+    Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
+    const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
+    epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+    auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+    if (!epResolutionOutcome.IsSuccess())
+    {
+        pExecutor->Submit([epResolutionOutcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(epResolutionOutcome));
+          } );
+        return;
+    }
+    pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+    if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
+    {
+        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
+        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+        pExecutor->Submit([outcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(outcome));
+          } );
+        return;
+    }
+    pRequestCtx->m_requestInfo.attempt = 1;
+    pRequestCtx->m_requestInfo.maxAttempts = 0;
+    pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
 
-  auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
-  if (!authSchemeOptionOutcome.IsSuccess()) {
-    pExecutor->Submit([authSchemeOptionOutcome, responseHandler]() mutable { responseHandler(std::move(authSchemeOptionOutcome)); });
-    return;
-  }
-  pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-  assert(pRequestCtx->m_authSchemeOption.schemeId);
-
-  Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
-  const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
-  epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
-  auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
-  if (!epResolutionOutcome.IsSuccess()) {
-    pExecutor->Submit([epResolutionOutcome, responseHandler]() mutable { responseHandler(std::move(epResolutionOutcome)); });
-    return;
-  }
-
-  pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
-  if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority())) {
-    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
-    auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false /*retryable*/));
-    pExecutor->Submit([outcome, responseHandler]() mutable { responseHandler(std::move(outcome)); });
-    return;
-  }
-  pRequestCtx->m_requestInfo.attempt = 1;
-  pRequestCtx->m_requestInfo.maxAttempts = 0;
-  pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
-  AttemptOneRequestAsync(std::move(pRequestCtx));
+    AttemptOneRequestAsync(std::move(pRequestCtx));
 }
 
 /*HttpResponseOutcome*/
-void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const {
-  if (!pRequestCtx) {
-    assert(!"Missing pRequestCtx");
-    AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Missing request context!");
-  }
-  auto& responseHandler = pRequestCtx->m_responseHandler;
-  auto pExecutor = pRequestCtx->m_pExecutor;
-
-  TracingUtils::MakeCallWithTiming(
-      [&]() -> void {
-        pRequestCtx->m_httpRequest = BuildHttpRequest(pRequestCtx, pRequestCtx->m_endpoint.GetURI(), pRequestCtx->m_method);
-      },
-      TracingUtils::SMITHY_CLIENT_SERIALIZATION_METRIC, *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-
-  if (!pRequestCtx->m_httpRequest) {
-    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to BuildHttpRequest");
-    auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Unable to create HttpRequest object", false /*retryable*/));
-    pExecutor->Submit([outcome, responseHandler]() mutable { responseHandler(std::move(outcome)); });
-    return;
-  }
-
-  pRequestCtx->m_interceptorContext->SetTransmitRequest(pRequestCtx->m_httpRequest);
-  for (const auto& interceptor : m_interceptors) {
-    auto modifiedRequest = interceptor->ModifyBeforeSigning(*pRequestCtx->m_interceptorContext);
-    if (!modifiedRequest.IsSuccess()) {
-      pExecutor->Submit([modifiedRequest, responseHandler]() mutable { responseHandler(modifiedRequest.GetError()); });
-      return;
+void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const
+{
+    if(!pRequestCtx)
+    {
+        assert(!"Missing pRequestCtx");
+        AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Missing request context!");
     }
-  }
+    auto& responseHandler = pRequestCtx->m_responseHandler;
+    auto pExecutor = pRequestCtx->m_pExecutor;
 
-  Aws::Monitoring::CoreMetricsCollection coreMetrics;
-  pRequestCtx->m_monitoringContexts =
-      Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), pRequestCtx->m_requestName, pRequestCtx->m_httpRequest);
-
-  if (m_clientConfig->retryStrategy && !m_clientConfig->retryStrategy->HasSendToken()) {
-    auto errOutcome = HttpResponseOutcome(
-        ClientError(CoreErrors::SLOW_DOWN, "", "Unable to acquire enough send tokens to execute request.", false /*retryable*/));
-    pExecutor->Submit([errOutcome, responseHandler]() mutable { responseHandler(std::move(errOutcome)); });
-    return;
-  };
-
-  SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>(
-      [&]() -> SigningOutcome { return this->SignHttpRequest(pRequestCtx->m_httpRequest, pRequestCtx->m_authSchemeOption); },
-      TracingUtils::SMITHY_CLIENT_SIGNING_METRIC, *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+    TracingUtils::MakeCallWithTiming(
+      [&]() -> void {
+          pRequestCtx->m_httpRequest = BuildHttpRequest(pRequestCtx, pRequestCtx->m_endpoint.GetURI(), pRequestCtx->m_method);
+      },
+      TracingUtils::SMITHY_CLIENT_SERIALIZATION_METRIC,
+      *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
       {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
-  if (!signingOutcome.IsSuccess()) {
-    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Request signing failed. Returning error.");
-    auto errOutcome =
-        HttpResponseOutcome(ClientError(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false /*retryable*/));
-    pRequestCtx->m_pExecutor->Submit([errOutcome, pRequestCtx]() mutable { pRequestCtx->m_responseHandler(std::move(errOutcome)); });
-    return;
-  }
+    if (!pRequestCtx->m_httpRequest)
+    {
+        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to BuildHttpRequest");
+        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Unable to create HttpRequest object", false/*retryable*/));
+        pExecutor->Submit([outcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(outcome));
+          } );
+        return;
+    }
 
-  std::shared_ptr<Aws::Http::HttpRequest> signedHttpRequest = signingOutcome.GetResultWithOwnership();
-  assert(signedHttpRequest);
+    pRequestCtx->m_interceptorContext->SetTransmitRequest(pRequestCtx->m_httpRequest);
+    for (const auto& interceptor : m_interceptors)
+    {
+        auto modifiedRequest = interceptor->ModifyBeforeSigning(*pRequestCtx->m_interceptorContext);
+        if (!modifiedRequest.IsSuccess())
+        {
+            pExecutor->Submit([modifiedRequest, responseHandler]() mutable
+              {
+                  responseHandler(modifiedRequest.GetError());
+              });
+            return;
+        }
+    }
 
-  if (pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->GetRequestSignedHandler()) {
-    pRequestCtx->m_pRequest->GetRequestSignedHandler()(*signedHttpRequest);
-  }
+    Aws::Monitoring::CoreMetricsCollection coreMetrics;
+    pRequestCtx->m_monitoringContexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(),
+                                                                          pRequestCtx->m_requestName,
+                                                                          pRequestCtx->m_httpRequest);
 
-  // handler for a single http reply (vs final AWS response handler)
-  auto httpResponseHandler = [this, pRequestCtx](std::shared_ptr<Aws::Http::HttpResponse> pResponse) mutable {
-    HandleAsyncReply(std::move(pRequestCtx), std::move(pResponse));
-  };
+    if(m_clientConfig->retryStrategy && !m_clientConfig->retryStrategy->HasSendToken())
+    {
+        auto errOutcome = HttpResponseOutcome(ClientError(CoreErrors::SLOW_DOWN,
+                                                                "",
+                                                                "Unable to acquire enough send tokens to execute request.",
+                                                                false/*retryable*/));
+        pExecutor->Submit([errOutcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(errOutcome));
+          } );
+        return;
+    };
 
-  // TODO: async http client
+    SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>([&]() -> SigningOutcome {
+            return this->SignHttpRequest(pRequestCtx->m_httpRequest, pRequestCtx->m_authSchemeOption);
+        },
+        TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
+        *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
+         {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+    if (!signingOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Request signing failed. Returning error.");
+        auto errOutcome = HttpResponseOutcome(ClientError(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
+        pRequestCtx->m_pExecutor->Submit([errOutcome, pRequestCtx]() mutable
+          {
+              pRequestCtx->m_responseHandler(std::move(errOutcome));
+          } );
+        return;
+    }
+
+    std::shared_ptr<Aws::Http::HttpRequest> signedHttpRequest = signingOutcome.GetResultWithOwnership();
+    assert(signedHttpRequest);
+
+    if (pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->GetRequestSignedHandler())
+    {
+        pRequestCtx->m_pRequest->GetRequestSignedHandler()(*signedHttpRequest);
+    }
+
+    // handler for a single http reply (vs final AWS response handler)
+    auto httpResponseHandler = [this, pRequestCtx](std::shared_ptr<Aws::Http::HttpResponse> pResponse) mutable
+    {
+        HandleAsyncReply(std::move(pRequestCtx), std::move(pResponse));
+    };
+
+    // TODO: async http client
 #if 0
     AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request Successfully signed");
     TracingUtils::MakeCallWithTiming(
@@ -306,15 +347,17 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
 void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
                                            std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const
 {
-  assert(pRequestCtx && httpResponse);
+    assert(pRequestCtx && httpResponse);
 
-  pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
-  for (const auto& interceptor : m_interceptors) {
-    const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(*pRequestCtx->m_interceptorContext);
-    if (!modifiedResponse.IsSuccess()) {
-      return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
-    }
-  };
+    pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
+    for (const auto& interceptor : m_interceptors)
+    {
+        const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(*pRequestCtx->m_interceptorContext);
+        if (!modifiedResponse.IsSuccess())
+        {
+            return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
+        }
+    };
 
     Aws::Client::HttpResponseOutcome outcome = [&]()
     {
@@ -481,19 +524,31 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
     return pRequestCtx->m_responseHandler(std::move(outcome));
 }
 
-AwsSmithyClientBase::HttpResponseOutcome AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const* const request,
-                                                                              const char* requestName, Aws::Http::HttpMethod method,
-                                                                              EndpointUpdateCallback&& endpointCallback) const {
-  std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor =
-      Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
-  assert(pExecutor);
+AwsSmithyClientBase::HttpResponseOutcome
+AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
+                                     const char* requestName,
+                                     Aws::Http::HttpMethod method,
+                                     EndpointUpdateCallback&& endpointCallback) const
+{
+    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
+    assert(pExecutor);
 
-  HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
-  ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome) { outcome = std::move(asyncOutcome); };
-  pExecutor->Submit(
-      [&]() { this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor); });
-  pExecutor->WaitUntilStopped();
-  return outcome;
+    HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+    ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+    {
+        outcome = std::move(asyncOutcome);
+    };
+
+    pExecutor->Submit([&]()
+    {
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor);
+    });
+    pExecutor->WaitUntilStopped();
+
+    return outcome;
 }
 
-void AwsSmithyClientBase::DisableRequestProcessing() { m_httpClient->DisableRequestProcessing(); }
+void AwsSmithyClientBase::DisableRequestProcessing()
+{
+    m_httpClient->DisableRequestProcessing();
+}

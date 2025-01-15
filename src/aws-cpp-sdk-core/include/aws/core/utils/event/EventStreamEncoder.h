@@ -8,8 +8,6 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/event-stream/event_stream.h>
-#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-#include <smithy/identity/signer/AwsSignerBase.h>
 
 namespace Aws
 {
@@ -42,12 +40,7 @@ namespace Aws
                  * The signing is done via the signer member.
                  */
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
-
-               protected:
-                virtual bool SignEventMessage(Event::Message& msg);
-                Aws::String m_signatureSeed;
-
-               private:
+            private:
                 /**
                  * Initialize C struct based on C++ object.
                  * Returns true if successful.
@@ -64,6 +57,7 @@ namespace Aws
                 bool InitSignedStruct(const aws_event_stream_message* payload, aws_event_stream_message* signedmsg);
 
                 Aws::Client::AWSAuthSigner* m_signer;
+                Aws::String m_signatureSeed;
             };
         }
     }

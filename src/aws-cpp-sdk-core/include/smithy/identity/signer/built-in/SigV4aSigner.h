@@ -74,8 +74,7 @@ namespace smithy {
             std::shared_ptr<Aws::Crt::Auth::Credentials>& crtCredentials,
             const Aws::Http::HttpRequest& request, 
             Aws::Crt::Auth::AwsSigningConfig& awsSigningConfig, 
-            bool signBody
-            ) const
+            bool signBody) const
         {
             awsSigningConfig.SetSigningAlgorithm(static_cast<Aws::Crt::Auth::SigningAlgorithm>(Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4));
             awsSigningConfig.SetSignatureType(m_signatureType);
@@ -136,7 +135,7 @@ namespace smithy {
             return true;
         }
 
-        SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& regionOverride, const Aws::String& serviceName, long long expirationTimeInSeconds)
+SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& regionOverride, const Aws::String& serviceName, long long expirationTimeInSeconds)
         {
 
             auto signPayloadIt = properties.find("SignPayload");
@@ -226,7 +225,6 @@ namespace smithy {
             return success? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
         
         }
-
 
         bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const
         {

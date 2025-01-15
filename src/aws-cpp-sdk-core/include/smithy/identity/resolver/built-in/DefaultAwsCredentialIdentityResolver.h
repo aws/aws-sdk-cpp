@@ -4,10 +4,11 @@
  */
 #pragma once
 
+#include <smithy/identity/resolver/AwsCredentialIdentityResolver.h>
+
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <smithy/identity/auth/AuthSchemeResolverBase.h>
-#include <smithy/identity/resolver/AwsCredentialIdentityResolver.h>
+
 namespace smithy {
     constexpr char ALLOC_ID[] = "DefaultAwsCredentialIdentityResolver";
     /**

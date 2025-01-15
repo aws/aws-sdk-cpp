@@ -9,24 +9,17 @@
 #include <smithy/tracing/TelemetryProvider.h>
 #include <smithy/interceptor/Interceptor.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/client/features/UserAgentInterceptor.h>
 
 #include <aws/crt/Variant.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/FutureOutcome.h>
-#include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/crt/Variant.h>
-#include <smithy/client/features/ChecksumInterceptor.h>
-#include <smithy/identity/auth/AuthSchemeOption.h>
-#include <smithy/identity/identity/AwsIdentity.h>
-#include <smithy/interceptor/Interceptor.h>
-#include <smithy/tracing/TelemetryProvider.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
-#include <smithy/client/features/UserAgentInterceptor.h>
 
 #include <utility>
 
@@ -67,8 +60,8 @@ namespace Aws
     namespace Endpoint
     {
         class AWSEndpoint;
-    }  // namespace Endpoint
-}  // namespace Aws
+    }
+}
 
 namespace smithy {
 namespace client
@@ -130,12 +123,17 @@ namespace client
 
         virtual ~AwsSmithyClientBase() = default;
 
-        void MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request, const char* requestName, Aws::Http::HttpMethod method,
-                              EndpointUpdateCallback&& endpointCallback, ResponseHandlerFunc&& responseHandler,
+        void MakeRequestAsync(Aws::AmazonWebServiceRequest const * const request,
+                              const char* requestName,
+                              Aws::Http::HttpMethod method,
+                              EndpointUpdateCallback&& endpointCallback,
+                              ResponseHandlerFunc&& responseHandler,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
 
-        HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
-                                            Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback) const;
+        HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
+                                            const char* requestName,
+                                            Aws::Http::HttpMethod method,
+                                            EndpointUpdateCallback&& endpointCallback) const;
 
     protected:
         void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,

@@ -18,8 +18,8 @@ namespace smithy {
 
         Aws::Vector<AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
         {
-          AWS_UNREFERENCED_PARAM(identityProperties);
-          return {SigV4AuthSchemeOption::sigV4AuthSchemeOption};
+            AWS_UNREFERENCED_PARAM(identityProperties);
+            return {SigV4AuthSchemeOption::sigV4AuthSchemeOption};
         }
     };
 }

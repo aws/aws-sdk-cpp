@@ -4,23 +4,25 @@
  */
 #pragma once
 
-#include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/http/HttpResponse.h>
-#include <aws/core/utils/FutureOutcome.h>
-#include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/threading/Executor.h>
-#include <aws/core/utils/threading/SameThreadExecutor.h>
-#include <aws/crt/Variant.h>
-#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/AwsSmithyClientBase.h>
+#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/common/AwsSmithyRequestSigning.h>
+#include <smithy/identity/identity/AwsIdentity.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <smithy/identity/auth/AuthSchemeResolverBase.h>
-#include <smithy/identity/identity/AwsIdentity.h>
 #include <smithy/tracing/TelemetryProvider.h>
-#include <aws/core/http/HttpClientFactory.h>
 
+#include <aws/crt/Variant.h>
+
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/FutureOutcome.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/SameThreadExecutor.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/http/HttpClientFactory.h>
 
 namespace smithy {
 namespace client
@@ -141,12 +143,11 @@ namespace client
                     else
                         assert(!"Unknown endpoint parameter!");
                 }
-
                 const auto& serviceParams = ctx.m_pRequest->GetServiceSpecificParameters();
                 if (serviceParams) {
-                  for (const auto& serviceParam : serviceParams->parameterMap) {
-                    identityParams.additionalProperties.insert({serviceParam.first, serviceParam.second});
-                  }
+                    for (const auto& serviceParam : serviceParams->parameterMap) {
+                        identityParams.additionalProperties.insert({serviceParam.first, serviceParam.second});
+                    }
                 }
             }
             Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
@@ -177,13 +178,15 @@ namespace client
             return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
         }
 
-        ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
-                                         Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback) const {
-          auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
-          return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
+        ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
+                                     const char* requestName,
+                                     Aws::Http::HttpMethod method,
+                                     EndpointUpdateCallback&& endpointCallback) const
+        {
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+            return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
-
-
+	
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::String& region,
@@ -208,10 +211,6 @@ namespace client
             return {};
         }
 
-        
-
-       protected:
-
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
@@ -219,5 +218,5 @@ namespace client
         std::shared_ptr<SerializerT> m_serializer{};
     };
 
-    }  // namespace client
-    }  // namespace smithy
+} // namespace client
+} // namespace smithy

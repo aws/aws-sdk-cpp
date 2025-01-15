@@ -150,18 +150,21 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
                                     "then the bankers expected hiring the wife for one's company.";
     Aws::String transcribedResult;
     StartStreamTranscriptionHandler handler;
-    handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev) {
-      // TODO: only check the result marked as "final"
-      const auto& results = ev.GetTranscript().GetResults();
-      if (results.empty()) {
-        return;
-      }
-      const auto& last = results.back();
-      const auto& alternatives = last.GetAlternatives();
-      if (alternatives.empty()) {
-        return;
-      }
-      transcribedResult = alternatives.back().GetTranscript();
+    handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
+    {
+        // TODO: only check the result marked as "final"
+        const auto& results = ev.GetTranscript().GetResults();
+        if (results.empty())
+        {
+            return;
+        }
+        const auto& last = results.back();
+        const auto& alternatives = last.GetAlternatives();
+        if (alternatives.empty())
+        {
+            return;
+        }
+        transcribedResult = alternatives.back().GetTranscript();
     });
 
     Aws::String operationRequestId;
@@ -169,8 +172,8 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     {
         operationRequestId = initialResponse.GetRequestId();
         if (operationRequestId.empty()) {
-          AWS_ADD_FAILURE("InitialResponseCallback is called but received empty RequestId");
-          TestTrace(Aws::String("initialResponse was: ") + initialResponse.Jsonize().View().AsString());
+            AWS_ADD_FAILURE("InitialResponseCallback is called but received empty RequestId");
+            TestTrace(Aws::String("initialResponse was: ") + initialResponse.Jsonize().View().AsString());
         }
         std::cout << "Streaming Request-Id: " << operationRequestId << "\n";
         TestTrace(Aws::String("InitialResponse aws RequestId: ") + operationRequestId);
@@ -195,35 +198,43 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     request.SetMediaEncoding(MediaEncoding::pcm);
     request.SetEventStreamHandler(handler);
 
-    auto OnStreamReady = [](AudioStream& stream) {
-      Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
-      ASSERT_TRUE(file);
-      char buf[1024];
-      while (file) {
-        file.read(buf, sizeof(buf));
-        Aws::Vector<unsigned char> bits{buf, buf + file.gcount()};
-        AudioEvent event(std::move(bits));
-        if (!stream) {
-          break;
+    auto OnStreamReady = [](AudioStream& stream)
+    {
+        Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
+        ASSERT_TRUE(file);
+        char buf[1024];
+        while(file)
+        {
+            file.read(buf, sizeof(buf));
+            Aws::Vector<unsigned char> bits{buf, buf + file.gcount()};
+            AudioEvent event(std::move(bits));
+            if (!stream)
+            {
+                break;
+            }
+            if (!stream.WriteAudioEvent(event))
+            {
+                break;
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(60));
         }
-        if (!stream.WriteAudioEvent(event)) {
-          break;
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(60));
-      }
-      stream.WriteAudioEvent({});  // per the spec, we have to send an empty event (i.e. without a payload) at the end.
-      stream.flush();
-      // For some reason, this sleep is required in order to not get the empty frame lost.
-      std::this_thread::sleep_for(std::chrono::milliseconds(1000)); /* We are investigating why we need this */
-      stream.Close();
+        stream.WriteAudioEvent({}); // per the spec, we have to send an empty event (i.e. without a payload) at the end.
+        stream.flush();
+        // For some reason, this sleep is required in order to not get the empty frame lost.
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); /* We are investigating why we need this */
+        stream.Close();
     };
 
     Aws::Utils::Threading::Semaphore semaphore(0, 1);
-    auto OnResponseCallback = [&semaphore](const TranscribeStreamingServiceClient*, const StartStreamTranscriptionRequest&,
-                                           const StartStreamTranscriptionOutcome&,
-                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) { semaphore.ReleaseAll(); };
+    auto OnResponseCallback = [&semaphore](const TranscribeStreamingServiceClient*,
+            const StartStreamTranscriptionRequest&,
+            const StartStreamTranscriptionOutcome&,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+    {
+        semaphore.ReleaseAll();
+    };
 
-    client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr /*context*/);
+    client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
 
     int difference = LevenshteinDistance(EXPECTED_MESSAGE, transcribedResult);
@@ -233,68 +244,83 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
 }
 
-TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse) {
-  Aws::String transcribedResult;
-  StartStreamTranscriptionHandler handler;
-  handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev) {
-    // TODO: only check the result marked as "final"
-    const auto& results = ev.GetTranscript().GetResults();
-    if (results.empty()) {
-      return;
-    }
-    const auto& last = results.back();
-    const auto& alternatives = last.GetAlternatives();
-    if (alternatives.empty()) {
-      return;
-    }
-    transcribedResult = alternatives.back().GetTranscript();
-  });
-  bool encounteredError = false;
-  handler.SetOnErrorCallback(
-      [&encounteredError](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>&) { encounteredError = true; });
+TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse)
+{
+    Aws::String transcribedResult;
+    StartStreamTranscriptionHandler handler;
+    handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
+    {
+        // TODO: only check the result marked as "final"
+        const auto& results = ev.GetTranscript().GetResults();
+        if (results.empty())
+        {
+            return;
+        }
+        const auto& last = results.back();
+        const auto& alternatives = last.GetAlternatives();
+        if (alternatives.empty())
+        {
+            return;
+        }
+        transcribedResult = alternatives.back().GetTranscript();
+    });
+    bool encounteredError = false;
+    handler.SetOnErrorCallback([&encounteredError](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& )
+    {
+        encounteredError = true;
+    });
 
-  StartStreamTranscriptionRequest request;
-  request.SetMediaSampleRateHertz(8000);
-  request.SetLanguageCode(LanguageCode::en_US);
-  request.SetMediaEncoding(MediaEncoding::pcm);
-  request.SetEventStreamHandler(handler);
+    StartStreamTranscriptionRequest request;
+    request.SetMediaSampleRateHertz(8000);
+    request.SetLanguageCode(LanguageCode::en_US);
+    request.SetMediaEncoding(MediaEncoding::pcm);
+    request.SetEventStreamHandler(handler);
 
-  bool streamClosedUnexpectedly = false;
-  bool streamFinishedSendingBeforeFail = false;
-  auto OnStreamReady = [&](AudioStream& stream) {
-    Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
-    ASSERT_TRUE(file);
-    char buf[1024];
-    while (file) {
-      file.read(buf, sizeof(buf));
-      Aws::Vector<unsigned char> bits{buf, buf + file.gcount()};
-      AudioEvent event(std::move(bits));
-      if (!stream) {
-        streamClosedUnexpectedly = true;
-        break;
-      }
-      if (!stream.WriteAudioEvent(event)) {
-        streamClosedUnexpectedly = true;
-        break;
-      }
-    }
-    if (!streamClosedUnexpectedly) {
-      streamFinishedSendingBeforeFail = true;
-    }
-    stream.WriteAudioEvent({});  // per the spec, we have to send an empty event (i.e. without a payload) at the end.
-    stream.flush();
-    stream.Close();
-  };
+    bool streamClosedUnexpectedly = false;
+    bool streamFinishedSendingBeforeFail = false;
+    auto OnStreamReady = [&](AudioStream& stream)
+    {
+        Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
+        ASSERT_TRUE(file);
+        char buf[1024];
+        while(file)
+        {
+            file.read(buf, sizeof(buf));
+            Aws::Vector<unsigned char> bits{buf, buf + file.gcount()};
+            AudioEvent event(std::move(bits));
+            if (!stream)
+            {
+                streamClosedUnexpectedly = true;
+                break;
+            }
+            if (!stream.WriteAudioEvent(event))
+            {
+                streamClosedUnexpectedly = true;
+                break;
+            }
+        }
+        if (!streamClosedUnexpectedly)
+        {
+            streamFinishedSendingBeforeFail = true;
+        }
+        stream.WriteAudioEvent({}); // per the spec, we have to send an empty event (i.e. without a payload) at the end.
+        stream.flush();
+        stream.Close();
+    };
 
-  Aws::Utils::Threading::Semaphore semaphore(0, 1);
-  auto OnResponseCallback = [&semaphore](const TranscribeStreamingServiceClient*, const StartStreamTranscriptionRequest&,
-                                         const StartStreamTranscriptionOutcome&,
-                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) { semaphore.ReleaseAll(); };
+    Aws::Utils::Threading::Semaphore semaphore(0, 1);
+    auto OnResponseCallback = [&semaphore](const TranscribeStreamingServiceClient*,
+            const StartStreamTranscriptionRequest&,
+            const StartStreamTranscriptionOutcome&,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+    {
+        semaphore.ReleaseAll();
+    };
 
-  m_clientWithWrongCreds->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr /*context*/);
-  semaphore.WaitOne();
-  ASSERT_TRUE(encounteredError);
-  ASSERT_TRUE(streamClosedUnexpectedly || streamFinishedSendingBeforeFail);
+    m_clientWithWrongCreds->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
+    semaphore.WaitOne();
+    ASSERT_TRUE(encounteredError);
+    ASSERT_TRUE(streamClosedUnexpectedly || streamFinishedSendingBeforeFail);
 }
 
 TEST_F(TranscribeStreamingTests, TranscribeStreamingWithRequestRetry)
