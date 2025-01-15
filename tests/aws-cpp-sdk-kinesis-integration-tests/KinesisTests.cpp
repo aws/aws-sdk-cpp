@@ -214,7 +214,6 @@ TEST_F(KinesisTest, testSubscribe)
     const auto& shards = listShardsOutcome.GetResult().GetShards();
     ASSERT_FALSE(shards.empty());
     const auto shardId = shards[0].GetShardId();
-    Aws::Kinesis::KinesisClient kinesis_client;
     Aws::String partitionKey = "shard0Key";  // Use a consistent partition key for Shard 0
     
     const Aws::Vector<Aws::String> inputs = {
@@ -223,9 +222,9 @@ TEST_F(KinesisTest, testSubscribe)
         "Final record for Shard 0."
     };
 
-    ASSERT_TRUE(WriteDataToStream(kinesis_client, streamName, inputs[0], partitionKey));
-    ASSERT_TRUE(WriteDataToStream(kinesis_client, streamName, inputs[1], partitionKey));
-    ASSERT_TRUE(WriteDataToStream(kinesis_client, streamName, inputs[2], partitionKey));
+    ASSERT_TRUE(WriteDataToStream(*m_client, streamName, inputs[0], partitionKey));
+    ASSERT_TRUE(WriteDataToStream(*m_client, streamName, inputs[1], partitionKey));
+    ASSERT_TRUE(WriteDataToStream(*m_client, streamName, inputs[2], partitionKey));
 
     Aws::Kinesis::Model::StartingPosition start_position;
     start_position.SetType(Aws::Kinesis::Model::ShardIteratorType::TRIM_HORIZON);
@@ -261,7 +260,7 @@ TEST_F(KinesisTest, testSubscribe)
     subscribe_request.SetEventStreamHandler(handler);
 
     SCOPED_TRACE("calling SubscribeToShard" );
-    auto subscribeOutcome = kinesis_client.SubscribeToShard(subscribe_request);
+    auto subscribeOutcome = m_client->SubscribeToShard(subscribe_request);
 
     EXPECT_TRUE(subscribeOutcome.IsSuccess());
 }
