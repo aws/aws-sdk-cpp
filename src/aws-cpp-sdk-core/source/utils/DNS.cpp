@@ -5,7 +5,7 @@
 
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
-
+#include <iostream>
 namespace Aws
 {
     namespace Utils
@@ -40,18 +40,69 @@ namespace Aws
             return true;
         }
 
+
+        bool isValidIpv6Host(const Aws::String& host)
+        {
+            std::cout<<"isValidIpv6Host:"<<host<<std::endl;
+            if(host.empty())
+            {
+                return false;
+            }
+
+            int segmentCount = 1;
+            bool doubleColonFound = false;
+            size_t labelStart = 0;
+
+            for(size_t i = 0; i < host.length(); ++i)
+            {
+                if(host[i] == ':')
+                {
+                    if(i + 1 < host.length() && host[i+1] == ':')
+                    {
+                        if(doubleColonFound) {
+                            return false;
+                        }
+                        doubleColonFound = true;
+                    }
+                    else
+                    {
+                        if(!IsValidHost(host.substr(labelStart, i - labelStart))) {
+                            return false;
+                        }
+                        ++segmentCount;
+                    }
+                    labelStart = i + 1;
+                }
+                else if(host[i] == '.')
+                {
+                    return false;
+                }
+            }
+
+            // Handle last segment
+            if(labelStart < host.length())
+            {
+                if(!IsValidHost(host.substr(labelStart))) return false;
+            }
+
+            // Check if we have 8 segments or less with one double colon
+            if((doubleColonFound && segmentCount < 8) || (!doubleColonFound && segmentCount == 8))
+            {
+                return true;
+            }
+            return false;
+        }
+
         bool IsValidHost(const Aws::String& host)
         {
             // Valid DNS hostnames are composed of valid DNS labels separated by a period.
             auto labels = StringUtils::Split(host, '.');
+            std::cout<<"labels.size()="<<labels.size()<<std::endl;
             if (labels.empty()) 
             {
                 //check for ipv6
-                labels = StringUtils::Split(host, ':');
-                if(labels.empty())
-                {
-                    return false;
-                }
+                std::cout<<"isValidHost:"<<host<<std::endl;
+                return isValidIpv6Host(host);
             }
 
             return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); });

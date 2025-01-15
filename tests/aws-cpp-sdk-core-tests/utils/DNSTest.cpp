@@ -64,14 +64,19 @@ TEST_F(DnsTest, TestHost)
 
 TEST_F(DnsTest, TestIPV6)
 {
-    Aws::Vector<Aws::String> inputs{
-        "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
-        "2001:DB8:85A3::8A2E:370:7334",
-        "::ffff",
-        "::",
-        "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
-        "2001:db8:85a3:0:0:8a2e:370:7334"
+    Aws::Vector< std::pair<Aws::String, bool> > inputs = {
+        {"2001:0db8:85a3:0000:0000:8a2e:0370:7334", true},
+        {"2001:DB8:85A3::8A2E:370:7334", true},
+        {"::ffff", true},
+        {"::", true},
+        {"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",true},
+        {"2001:db8:85a3:0:0:8a2e:370:7334",true}
+    };
+
+    for(auto t : inputs)
+    {
+        std::cout<<"test for "<<t.first<<std::endl;
+        ASSERT_EQ(IsValidHost(t.first), t.second);
     }
-    bool IsValidHost(const Aws::String& host)
 
 }
