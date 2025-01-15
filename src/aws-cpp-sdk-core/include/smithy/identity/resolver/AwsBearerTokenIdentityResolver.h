@@ -6,9 +6,10 @@
 
 #include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
+#include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
+#include <aws/core/auth/signer/AWSAuthBearerSigner.h>
 #include <smithy/identity/identity/AwsBearerTokenIdentity.h>
 #include <smithy/identity/resolver/AwsIdentityResolverBase.h>
-
 namespace smithy
 {
 
@@ -29,6 +30,14 @@ class AwsBearerTokenIdentityResolver
             &providerChain)
         : m_providerChainLegacy{providerChain}
     {
+    }
+
+    AwsBearerTokenIdentityResolver(const Aws::Auth::BearerTokenAuthSignerProvider &bearerTokenProvider) {
+      auto signer = bearerTokenProvider.GetSigner(Aws::Auth::BEARER_SIGNER);
+      if (signer) {
+        //since signer enum is mapped to legacy AWSAuthBearerSigner, static cast is safe here and is needed
+        m_providerChainLegacy.emplace_back((static_cast<Aws::Client::AWSAuthBearerSigner*>(signer.get()))->BearerTokenProvider());
+      }
     }
 
     ResolveIdentityFutureOutcome
@@ -86,9 +95,8 @@ class DefaultAwsBearerTokenIdentityResolver
     virtual ~DefaultAwsBearerTokenIdentityResolver() = default;
 
     DefaultAwsBearerTokenIdentityResolver()
-        : AwsBearerTokenIdentityResolver(
-              {Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(
-                  "SSOBearerTokenProvider")}){};
+        : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
+              Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider")}){};
 };
 const char
     AwsBearerTokenIdentityResolver::BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] =
