@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> An object that contains an <code>Engagement</code>'s subset of fields.
+   * <p>An object that contains an <code>Engagement</code>'s subset of fields.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementSummary">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the created engagement. </p>
+     * <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The date and time when the engagement was created. </p>
+     * <p>The date and time when the Engagement was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The AWS account ID of the engagement creator. </p>
+     * <p>The AWS Account ID of the Engagement creator.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
@@ -81,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier for the engagement. </p>
+     * <p>The unique identifier for the Engagement.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The number of members in the engagement. </p>
+     * <p>The number of members in the Engagement.</p>
      */
     inline int GetMemberCount() const{ return m_memberCount; }
     inline bool MemberCountHasBeenSet() const { return m_memberCountHasBeenSet; }
@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The title of the engagement. </p>
+     * <p>The title of the Engagement.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }

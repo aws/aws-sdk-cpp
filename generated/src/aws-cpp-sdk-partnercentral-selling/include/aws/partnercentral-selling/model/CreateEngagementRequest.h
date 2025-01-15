@@ -39,10 +39,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> The <code>CreateEngagementRequest$Catalog</code> parameter specifies the
+     * <p>The <code>CreateEngagementRequest$Catalog</code> parameter specifies the
      * catalog related to the engagement. Accepted values are <code>AWS</code> and
      * <code>Sandbox</code>, which determine the environment in which the engagement is
-     * managed. </p>
+     * managed.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -56,9 +56,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The <code>CreateEngagementRequest$ClientToken</code> parameter specifies a
+     * <p>The <code>CreateEngagementRequest$ClientToken</code> parameter specifies a
      * unique, case-sensitive identifier to ensure that the request is handled exactly
-     * once. The value must not exceed sixty-four alphanumeric characters. </p>
+     * once. The value must not exceed sixty-four alphanumeric characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The <code>Contexts</code> field is a required array of objects, with a
+     * <p>The <code>Contexts</code> field is a required array of objects, with a
      * maximum of 5 contexts allowed, specifying detailed information about customer
      * projects associated with the Engagement. Each context object contains a
      * <code>Type</code> field indicating the context type, which must be
@@ -87,7 +87,7 @@ namespace Model
      * insights into the specific project associated with the customer. This structure
      * allows comprehensive context to be included within the Engagement, facilitating
      * effective collaboration between parties by providing relevant customer and
-     * project information. </p>
+     * project information.</p>
      */
     inline const Aws::Vector<EngagementContextDetails>& GetContexts() const{ return m_contexts; }
     inline bool ContextsHasBeenSet() const { return m_contextsHasBeenSet; }
@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides a description of the <code>Engagement</code>. </p>
+     * <p>Provides a description of the <code>Engagement</code>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -115,7 +115,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the title of the <code>Engagement</code>. </p>
+     * <p>Specifies the title of the <code>Engagement</code>.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }

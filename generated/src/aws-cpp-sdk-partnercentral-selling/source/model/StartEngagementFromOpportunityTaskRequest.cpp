@@ -17,7 +17,8 @@ StartEngagementFromOpportunityTaskRequest::StartEngagementFromOpportunityTaskReq
     m_catalogHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_identifierHasBeenSet(false)
+    m_identifierHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String StartEngagementFromOpportunityTaskRequest::SerializePayload() const
   if(m_identifierHasBeenSet)
   {
    payload.WithString("Identifier", m_identifier);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

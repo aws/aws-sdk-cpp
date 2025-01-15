@@ -58,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the domain name resource. Supported only for private
-     * custom domain names.</p>
+     * <p>The identifier for the domain name resource. Required for private custom
+     * domain names.</p>
      */
     inline const Aws::String& GetDomainNameId() const{ return m_domainNameId; }
     inline bool DomainNameIdHasBeenSet() const { return m_domainNameIdHasBeenSet; }

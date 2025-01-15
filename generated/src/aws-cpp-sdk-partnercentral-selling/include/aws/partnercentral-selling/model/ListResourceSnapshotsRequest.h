@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filters the response to include only snapshots of resources created by the
+     * <p>Filters the response to include only snapshots of resources owned by the
      * specified AWS account. </p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
@@ -119,8 +119,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filters the response to include only snapshots created using the specified
-     * template. </p>
+     * <p>Filters the response to include only snapshots created using the specified
+     * template.</p>
      */
     inline const Aws::String& GetResourceSnapshotTemplateIdentifier() const{ return m_resourceSnapshotTemplateIdentifier; }
     inline bool ResourceSnapshotTemplateIdentifierHasBeenSet() const { return m_resourceSnapshotTemplateIdentifierHasBeenSet; }

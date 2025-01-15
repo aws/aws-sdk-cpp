@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The catalog related to the request. </p>
+     * <p>The catalog related to the request.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Identifier of the engagement record to retrieve members from. </p>
+     * <p>Identifier of the Engagement record to retrieve members from.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The maximum number of results to return in a single call. </p>
+     * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token for the next set of results. </p>
+     * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

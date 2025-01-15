@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of strings representing engagement identifiers to retrieve. </p>
+     * <p>An array of strings representing engagement identifiers to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
     inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of strings representing AWS Account IDs. Use this to exclude
+     * <p>An array of strings representing AWS Account IDs. Use this to exclude
      * engagements created by specific users. </p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeCreatedBy() const{ return m_excludeCreatedBy; }
@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The maximum number of results to return in a single call. </p>
+     * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -110,8 +110,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token for the next set of results. This value is returned from a
-     * previous call. </p>
+     * <p>The token for the next set of results. This value is returned from a previous
+     * call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the created snapshot job. </p>
+     * <p>The Amazon Resource Name (ARN) of the created snapshot job.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier for the created snapshot job. </p>
+     * <p>The unique identifier for the created snapshot job.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }

@@ -14,6 +14,7 @@
 #include <aws/bedrock-agent-runtime/model/GuardrailConfigurationWithArn.h>
 #include <aws/bedrock-agent-runtime/model/InlineSessionState.h>
 #include <aws/bedrock-agent-runtime/model/PromptOverrideConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/AgentActionGroup.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBase.h>
 #include <utility>
@@ -263,6 +264,20 @@ namespace Model
     inline InvokeInlineAgentRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
     inline InvokeInlineAgentRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the configurations for streaming. </p>  <p>To use agent
+     * streaming, you need permissions to perform the
+     * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
+     */
+    inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
+    inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
+    inline void SetStreamingConfigurations(const StreamingConfigurations& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = value; }
+    inline void SetStreamingConfigurations(StreamingConfigurations&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::move(value); }
+    inline InvokeInlineAgentRequest& WithStreamingConfigurations(const StreamingConfigurations& value) { SetStreamingConfigurations(value); return *this;}
+    inline InvokeInlineAgentRequest& WithStreamingConfigurations(StreamingConfigurations&& value) { SetStreamingConfigurations(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<AgentActionGroup> m_actionGroups;
@@ -306,6 +321,9 @@ namespace Model
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    StreamingConfigurations m_streamingConfigurations;
+    bool m_streamingConfigurationsHasBeenSet = false;
     InvokeInlineAgentHandler m_handler;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
 
