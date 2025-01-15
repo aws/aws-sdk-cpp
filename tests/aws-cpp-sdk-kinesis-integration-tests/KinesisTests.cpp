@@ -173,7 +173,7 @@ TEST_F(KinesisTest, EnhancedFanOut)
 }
 
 
-bool WriteDataToStream(Aws::Kinesis::KinesisClient &kinesis_client, const std::string &streamName, const std::string &data, const std::string &partitionKey)
+bool WriteDataToStream(Aws::Kinesis::KinesisClient &kinesis_client, const Aws::String &streamName, const Aws::String &data, const Aws::String &partitionKey)
 {
     Aws::Kinesis::Model::PutRecordRequest putRecordRequest;
     putRecordRequest.SetStreamName(streamName);
@@ -215,7 +215,7 @@ TEST_F(KinesisTest, testSubscribe)
     ASSERT_FALSE(shards.empty());
     const auto shardId = shards[0].GetShardId();
     Aws::Kinesis::KinesisClient kinesis_client;
-    std::string partitionKey = "shard0Key";  // Use a consistent partition key for Shard 0
+    Aws::String partitionKey = "shard0Key";  // Use a consistent partition key for Shard 0
     
     const Aws::Vector<Aws::String> inputs = {
         "Hello, this is the first test record for Shard 0!",
