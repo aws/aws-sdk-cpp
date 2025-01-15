@@ -24,8 +24,13 @@ CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() :
     m_uploadIdHasBeenSet(false),
     m_checksumCRC32HasBeenSet(false),
     m_checksumCRC32CHasBeenSet(false),
+    m_checksumCRC64NVMEHasBeenSet(false),
     m_checksumSHA1HasBeenSet(false),
     m_checksumSHA256HasBeenSet(false),
+    m_checksumType(ChecksumType::NOT_SET),
+    m_checksumTypeHasBeenSet(false),
+    m_mpuObjectSize(0),
+    m_mpuObjectSizeHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
@@ -120,6 +125,13 @@ Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpeci
     ss.str("");
   }
 
+  if(m_checksumCRC64NVMEHasBeenSet)
+  {
+    ss << m_checksumCRC64NVME;
+    headers.emplace("x-amz-checksum-crc64nvme",  ss.str());
+    ss.str("");
+  }
+
   if(m_checksumSHA1HasBeenSet)
   {
     ss << m_checksumSHA1;
@@ -131,6 +143,18 @@ Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpeci
   {
     ss << m_checksumSHA256;
     headers.emplace("x-amz-checksum-sha256",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumTypeHasBeenSet && m_checksumType != ChecksumType::NOT_SET)
+  {
+    headers.emplace("x-amz-checksum-type", ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
+  }
+
+  if(m_mpuObjectSizeHasBeenSet)
+  {
+    ss << m_mpuObjectSize;
+    headers.emplace("x-amz-mp-object-size",  ss.str());
     ss.str("");
   }
 

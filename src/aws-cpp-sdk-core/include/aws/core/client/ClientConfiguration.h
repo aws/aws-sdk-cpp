@@ -56,6 +56,26 @@ namespace Aws
           ENABLE,
         };
 
+        /**
+         * Setting on whether to calculate a checksum for a payload only when it is required.
+         * i.e. when setting WHEN_REQUIRED the SDK will NOT calculate a checksum for an endpoint
+         * where it is supported but is NOT required.
+         */
+        enum class RequestChecksumCalculation {
+          WHEN_SUPPORTED,
+          WHEN_REQUIRED,
+        };
+
+        /**
+         * Setting on whether to client side response validate a content body that had a checksum
+         * associated with it. Response validation right now cannot be modeled as required but rely
+         * on an associated model configuration.
+         */
+        enum class ResponseChecksumValidation {
+          WHEN_SUPPORTED,
+          WHEN_REQUIRED,
+        };
+
         struct RequestCompressionConfig {
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
@@ -405,13 +425,27 @@ namespace Aws
              */
             Aws::String appId;
 
+            struct {
+              /**
+               * Setting on whether to calculate a checksum for a payload only when it is required.
+               * i.e. when setting WHEN_REQUIRED the SDK will NOT calculate a checksum for an endpoint
+               * where it is supported but is NOT required.
+               */
+              RequestChecksumCalculation requestChecksumCalculation = RequestChecksumCalculation::WHEN_SUPPORTED;
+
+              /**
+               * Setting on whether to client side response validate a content body that had a checksum
+               * associated with it. Response validation right now cannot be modeled as required but rely
+               * on an associated model configuration.
+               */
+              ResponseChecksumValidation responseChecksumValidation = ResponseChecksumValidation::WHEN_SUPPORTED;
+            } checksumConfig;
+
             /**
              * A helper function to read config value from env variable or aws profile config
              */
-            static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,
-                                                          const Aws::String& profile,
-                                                          const Aws::String& profileProperty,
-                                                          const Aws::Vector<Aws::String>& allowedValues,
+            static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey, const Aws::String& profile,
+                                                          const Aws::String& profileProperty, const Aws::Vector<Aws::String>& allowedValues,
                                                           const Aws::String& defaultValue);
 
             /**

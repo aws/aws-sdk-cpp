@@ -242,12 +242,12 @@ namespace Model
     ///@{
     /**
      * <p>This header can be used as a data integrity check to verify that the data
-     * received is the same data that was originally sent. This specifies the
-     * base64-encoded, 32-bit CRC-32 checksum of the object returned by the Object
-     * Lambda function. This may not match the checksum for the object stored in Amazon
-     * S3. Amazon S3 will perform validation of the checksum values only when the
-     * original <code>GetObject</code> request required checksum validation. For more
-     * information about checksums, see <a
+     * received is the same data that was originally sent. This specifies the Base64
+     * encoded, 32-bit <code>CRC-32</code> checksum of the object returned by the
+     * Object Lambda function. This may not match the checksum for the object stored in
+     * Amazon S3. Amazon S3 will perform validation of the checksum values only when
+     * the original <code>GetObject</code> request required checksum validation. For
+     * more information about checksums, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
      * checksum header can be specified at a time. If you supply multiple checksum
@@ -266,12 +266,12 @@ namespace Model
     ///@{
     /**
      * <p>This header can be used as a data integrity check to verify that the data
-     * received is the same data that was originally sent. This specifies the
-     * base64-encoded, 32-bit CRC-32C checksum of the object returned by the Object
-     * Lambda function. This may not match the checksum for the object stored in Amazon
-     * S3. Amazon S3 will perform validation of the checksum values only when the
-     * original <code>GetObject</code> request required checksum validation. For more
-     * information about checksums, see <a
+     * received is the same data that was originally sent. This specifies the Base64
+     * encoded, 32-bit <code>CRC-32C</code> checksum of the object returned by the
+     * Object Lambda function. This may not match the checksum for the object stored in
+     * Amazon S3. Amazon S3 will perform validation of the checksum values only when
+     * the original <code>GetObject</code> request required checksum validation. For
+     * more information about checksums, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
      * checksum header can be specified at a time. If you supply multiple checksum
@@ -290,11 +290,30 @@ namespace Model
     ///@{
     /**
      * <p>This header can be used as a data integrity check to verify that the data
-     * received is the same data that was originally sent. This specifies the
-     * base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda
-     * function. This may not match the checksum for the object stored in Amazon S3.
-     * Amazon S3 will perform validation of the checksum values only when the original
-     * <code>GetObject</code> request required checksum validation. For more
+     * received is the same data that was originally sent. This header specifies the
+     * Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the part. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
+    inline bool ChecksumCRC64NVMEHasBeenSet() const { return m_checksumCRC64NVMEHasBeenSet; }
+    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = value; }
+    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::move(value); }
+    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME.assign(value); }
+    inline WriteGetObjectResponseRequest& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
+    inline WriteGetObjectResponseRequest& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
+    inline WriteGetObjectResponseRequest& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This specifies the Base64
+     * encoded, 160-bit <code>SHA-1</code> digest of the object returned by the Object
+     * Lambda function. This may not match the checksum for the object stored in Amazon
+     * S3. Amazon S3 will perform validation of the checksum values only when the
+     * original <code>GetObject</code> request required checksum validation. For more
      * information about checksums, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
@@ -314,12 +333,12 @@ namespace Model
     ///@{
     /**
      * <p>This header can be used as a data integrity check to verify that the data
-     * received is the same data that was originally sent. This specifies the
-     * base64-encoded, 256-bit SHA-256 digest of the object returned by the Object
-     * Lambda function. This may not match the checksum for the object stored in Amazon
-     * S3. Amazon S3 will perform validation of the checksum values only when the
-     * original <code>GetObject</code> request required checksum validation. For more
-     * information about checksums, see <a
+     * received is the same data that was originally sent. This specifies the Base64
+     * encoded, 256-bit <code>SHA-256</code> digest of the object returned by the
+     * Object Lambda function. This may not match the checksum for the object stored in
+     * Amazon S3. Amazon S3 will perform validation of the checksum values only when
+     * the original <code>GetObject</code> request required checksum validation. For
+     * more information about checksums, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Only one
      * checksum header can be specified at a time. If you supply multiple checksum
@@ -696,6 +715,9 @@ namespace Model
 
     Aws::String m_checksumCRC32C;
     bool m_checksumCRC32CHasBeenSet = false;
+
+    Aws::String m_checksumCRC64NVME;
+    bool m_checksumCRC64NVMEHasBeenSet = false;
 
     Aws::String m_checksumSHA1;
     bool m_checksumSHA1HasBeenSet = false;

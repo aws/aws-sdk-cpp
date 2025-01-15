@@ -43,6 +43,7 @@ namespace Model
     AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     AWS_S3CRT_API Aws::String GetChecksumAlgorithmName() const override;
+    inline bool RequestChecksumRequired() const override { return true; };
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.

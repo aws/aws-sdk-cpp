@@ -10,6 +10,7 @@
 #include <aws/s3-crt/model/ServerSideEncryption.h>
 #include <aws/s3-crt/model/RequestCharged.h>
 #include <aws/s3-crt/model/ChecksumAlgorithm.h>
+#include <aws/s3-crt/model/ChecksumType.h>
 #include <utility>
 
 namespace Aws
@@ -175,7 +176,7 @@ namespace Model
     ///@{
     /**
      * <p>If present, indicates the Amazon Web Services KMS Encryption Context to use
-     * for object encryption. The value of this header is a Base64-encoded string of a
+     * for object encryption. The value of this header is a Base64 encoded string of a
      * UTF-8 encoded JSON, which contains the encryption context as key-value
      * pairs.</p>
      */
@@ -219,6 +220,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> Indicates the checksum type that you want Amazon S3 to use to calculate the
+     * object’s checksum value. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity in the Amazon S3 User Guide</a>.</p>
+     */
+    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline void SetChecksumType(const ChecksumType& value) { m_checksumType = value; }
+    inline void SetChecksumType(ChecksumType&& value) { m_checksumType = std::move(value); }
+    inline CreateMultipartUploadResult& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
+    inline CreateMultipartUploadResult& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -255,6 +270,8 @@ namespace Model
     RequestCharged m_requestCharged;
 
     ChecksumAlgorithm m_checksumAlgorithm;
+
+    ChecksumType m_checksumType;
 
     Aws::String m_requestId;
   };

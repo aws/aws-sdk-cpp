@@ -20,6 +20,7 @@ HeadObjectResult::HeadObjectResult() :
     m_deleteMarker(false),
     m_archiveStatus(ArchiveStatus::NOT_SET),
     m_contentLength(0),
+    m_checksumType(ChecksumType::NOT_SET),
     m_missingMeta(0),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_bucketKeyEnabled(false),
@@ -106,6 +107,12 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
     m_checksumCRC32C = checksumCRC32CIter->second;
   }
 
+  const auto& checksumCRC64NVMEIter = headers.find("x-amz-checksum-crc64nvme");
+  if(checksumCRC64NVMEIter != headers.end())
+  {
+    m_checksumCRC64NVME = checksumCRC64NVMEIter->second;
+  }
+
   const auto& checksumSHA1Iter = headers.find("x-amz-checksum-sha1");
   if(checksumSHA1Iter != headers.end())
   {
@@ -116,6 +123,12 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   if(checksumSHA256Iter != headers.end())
   {
     m_checksumSHA256 = checksumSHA256Iter->second;
+  }
+
+  const auto& checksumTypeIter = headers.find("x-amz-checksum-type");
+  if(checksumTypeIter != headers.end())
+  {
+    m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(checksumTypeIter->second);
   }
 
   const auto& eTagIter = headers.find("etag");

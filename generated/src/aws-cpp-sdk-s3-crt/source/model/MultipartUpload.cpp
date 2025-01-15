@@ -29,7 +29,9 @@ MultipartUpload::MultipartUpload() :
     m_ownerHasBeenSet(false),
     m_initiatorHasBeenSet(false),
     m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false)
+    m_checksumAlgorithmHasBeenSet(false),
+    m_checksumType(ChecksumType::NOT_SET),
+    m_checksumTypeHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,12 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
       m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumAlgorithmNode.GetText()).c_str()).c_str());
       m_checksumAlgorithmHasBeenSet = true;
     }
+    XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
+    if(!checksumTypeNode.IsNull())
+    {
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -135,6 +143,12 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
   {
    XmlNode checksumAlgorithmNode = parentNode.CreateChildElement("ChecksumAlgorithm");
    checksumAlgorithmNode.SetText(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
+  if(m_checksumTypeHasBeenSet)
+  {
+   XmlNode checksumTypeNode = parentNode.CreateChildElement("ChecksumType");
+   checksumTypeNode.SetText(ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
   }
 
 }
