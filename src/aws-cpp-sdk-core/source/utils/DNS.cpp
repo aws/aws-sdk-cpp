@@ -5,6 +5,7 @@
 
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
+#include <cctype>
 namespace Aws
 {
     namespace Utils
@@ -39,18 +40,11 @@ namespace Aws
             return true;
         }
 
-
-        bool isHexChar(char c) {
-            return (c >= '0' && c <= '9') || 
-                (c >= 'a' && c <= 'f') || 
-                (c >= 'A' && c <= 'F');
-        }
-
         bool isValidIPv6Segment(const std::string& segment) {
             if (segment.empty() || segment.length() > 4){
                 return false;
             }
-            return std::all_of(segment.begin(), segment.end(), isHexChar);
+            return std::all_of(segment.begin(), segment.end(), isxdigit);
         }
 
         //The assumption is this is only called with the domain part of uri
