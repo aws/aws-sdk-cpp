@@ -97,7 +97,9 @@ namespace Aws
             // Handle last segment
             if(labelStart < host.length())
             {
-                if(!isValidIPv6Segment(host.substr(labelStart))) return false;
+                if(!isValidIPv6Segment(host.substr(labelStart))){
+                    return false;
+                }
             }
             // Check if we have 8 segments or less with one double colon
             return (doubleColonFound && segmentCount < 8) || (!doubleColonFound && segmentCount == 8);
