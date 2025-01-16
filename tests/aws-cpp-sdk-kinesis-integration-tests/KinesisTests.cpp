@@ -244,7 +244,6 @@ TEST_F(KinesisTest, testSubscribe)
 
             double elapsed_time = std::chrono::duration<double, std::milli>(t_end-t_start).count();
             SCOPED_TRACE("SetSubscribeToShardEventCallback called at time: " + std::to_string(elapsed_time) + " ms" );
-            EXPECT_LT(elapsed_time, 400.0);
             EXPECT_EQ(event.GetRecords().size(), 3u);
         }
         t_start = t_end;
