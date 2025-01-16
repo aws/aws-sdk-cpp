@@ -446,8 +446,16 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientHeader.vm");
 
+        Template template;
+        if (serviceModel.isUseSmithyClient())
+        {
+            template = velocityEngine.getTemplate("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyS3ClientHeader.vm");
+        }
+        else
+        {
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientHeader.vm");
+        }
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
 
@@ -461,8 +469,15 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
         List<SdkFileEntry> sourceFiles = new ArrayList<>();
         for (int i = 0; i < serviceModels.size(); i++) {
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
-
+            Template template;
+            if (serviceModels.get(i).isUseSmithyClient())
+            {
+                template = velocityEngine.getTemplate("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyS3ClientSource.vm");
+            }
+            else 
+            {
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
+            }
             Map<String, String> templateOverride = new HashMap<>();
             if ("S3-CRT".equalsIgnoreCase(serviceModels.get(i).getMetadata().getProjectName())) {
                 templateOverride.put("ServiceClientSourceInit_template",

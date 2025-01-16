@@ -1,121 +1,127 @@
 #foreach($operation in $serviceModel.operations)
-    #if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
-        #if($arnEndpointSupported)
-            #if($multiRegionAccessPointSupported)
-                #set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
-            #else
-                #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
+#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
+#if($arnEndpointSupported)
+#if($multiRegionAccessPointSupported)
+    #set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
+#else
+    #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
+#end
+#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
+#set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
+#else
+#set($signerName = "")
+#set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
+#end
+#if($serviceModel.endpointRules)
+#set($signerName = "")
+#set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#set($refText = "&")
+#else
+#set($constText = "const ")
+#set($refText = "")
+#end
+#if($operation.request)
+${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
+{
+    AWS_OPERATION_GUARD(${operation.name});
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+    AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+    auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+    auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+    AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+    auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+        {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+        smithy::components::tracing::SpanKind::CLIENT);
+    return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+        [&]()-> ${operation.name}Outcome {
+            #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+            #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
+            #if(($serviceModel.metadata.namespace == "S3" || ($serviceModel.metadata.namespace == "S3Crt" && !$operation.s3CrtEnabled)) && $operation.shouldUsePropertyBag)
+                request.SetServiceSpecificParameters(
+                    [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+                        Aws::Map<Aws::String, Aws::String> params;
+                        #if($operation.shouldSkipChecksum || $operation.requestAlgorithmMember)
+                            auto isExpress = endpointResolutionOutcome.GetResult().AccessAttributes().value().backend == "S3Express";
+                        #end
+                        #if($operation.shouldSkipChecksum)
+                            if (!request.ChecksumAlgorithmHasBeenSet() && isExpress) {
+                                params.emplace("overrideChecksumDisable", "noop");
+                            }
+                        #end
+                        #if($operation.requestAlgorithmMember)
+                            if (!request.ChecksumAlgorithmHasBeenSet() && isExpress && request.GetChecksumAlgorithmName() == "md5") {
+                                params.emplace("overrideChecksum", "crc32");
+                            }
+                        #end
+                        params.emplace("bucketName", request.GetBucket());
+                        ServiceSpecificParameters serviceSpecificParameters{params};
+                        return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+                    }());
             #end
-            #set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
-            #set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
-        #else
-            #set($signerName = "")
-            #set($signerRegionOverride = "")
-            #set($signerServiceNameOverride = "")
-        #end
-        #if($serviceModel.endpointRules)
-            #set($signerName = "")
-            #set($signerRegionOverride = "")
-            #set($signerServiceNameOverride = "")
-        #end
-        #if($operation.result.shape.hasEventStreamMembers())
-            #set($constText = "")
-            #set($refText = "&")
-        #else
-            #set($constText = "const ")
-            #set($refText = "")
-        #end
-        #if($operation.request)
-            ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
-            {
-                AWS_OPERATION_GUARD(${operation.name});
-                #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
-                AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
-                auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-                auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-                AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
-                auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
-                    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-                    smithy::components::tracing::SpanKind::CLIENT);
-                return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
-                    [&]()-> ${operation.name}Outcome {
-                        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
-                        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
-                        #if(($serviceModel.metadata.namespace == "S3" || ($serviceModel.metadata.namespace == "S3Crt" && !$operation.s3CrtEnabled)) && $operation.shouldUsePropertyBag)
-                            request.SetServiceSpecificParameters(
-                                [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
-                                    Aws::Map<Aws::String, Aws::String> params;
-                                    #if($operation.shouldSkipChecksum || $operation.requestAlgorithmMember)
-                                        auto isExpress = endpointResolutionOutcome.GetResult().AccessAttributes().value().backend == "S3Express";
-                                    #end
-                                    #if($operation.shouldSkipChecksum)
-                                        if (!request.ChecksumAlgorithmHasBeenSet() && isExpress) {
-                                            params.emplace("overrideChecksumDisable", "noop");
-                                        }
-                                    #end
-                                    #if($operation.requestAlgorithmMember)
-                                        if (!request.ChecksumAlgorithmHasBeenSet() && isExpress && request.GetChecksumAlgorithmName() == "md5") {
-                                            params.emplace("overrideChecksum", "crc32");
-                                        }
-                                    #end
-                                    params.emplace("bucketName", request.GetBucket());
-                                    ServiceSpecificParameters serviceSpecificParameters{params};
-                                    return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
-                                }());
-                        #end
-                        #if($operation.hasPreSignedUrl)
-                            #set($requestText = "newRequest")
-                        #else
-                            #set($requestText = "request")
-                        #end
-                        #if($operation.result && $operation.result.shape.hasEventStreamMembers())
-                            request.SetResponseStreamFactory(
-                                [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-                            );
-                                return ${operation.name}Outcome(M**********************eam(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
-                        #elseif($operation.result && $operation.result.shape.hasStreamMembers())
-                                return ${operation.name}Outcome(M**********************Response(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
-                        #else
-                                return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-                            #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-                                }));
-                        #end
-                    },
-                    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-                    *meter,
-                    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-            }
+            #if($operation.hasPreSignedUrl)
+                #set($requestText = "newRequest")
+            #else
+                #set($requestText = "request")
+            #end
+            #if($operation.result && $operation.result.shape.hasEventStreamMembers())
+                request.SetResponseStreamFactory(
+                    [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+                );
+                return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+                #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+                }));                        
+            #elseif($operation.result && $operation.result.shape.hasStreamMembers())
+                return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+                #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+                }));
+            #else
+                return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+                #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+                }));
+            #end
+        },
+        TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+        *meter,
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
 
-            #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
-            #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
-        #else
-            ${operation.name}Outcome ${className}::${operation.name}() const
-            {
-                AWS_OPERATION_GUARD(${operation.name});
-                AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-                AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
-                auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-                auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-                AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
+#else
+${operation.name}Outcome ${className}::${operation.name}() const
+{
+    AWS_OPERATION_GUARD(${operation.name});
+    AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+    AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+    auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+    auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+    AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
 
-                auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".${operation.name}",
-                    {{ TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-                    smithy::components::tracing::SpanKind::CLIENT);
-                return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
-                    [&]()-> ${operation.name}Outcome {
-                        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
-                            #if($operation.result && $operation.result.shape.hasStreamMembers())
-                                return ${operation.name}Outcome(M**********************Response(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName));
-                            #else
-                                return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-                            #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-                                }));
-                            #end
-                    },
-                    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-                    *meter,
-                    {{TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-            }
-        #end
-    #end
+    auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".${operation.name}",
+        {{ TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+        smithy::components::tracing::SpanKind::CLIENT);
+    return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+        [&]()-> ${operation.name}Outcome {
+            #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
+                #if($operation.result && $operation.result.shape.hasStreamMembers())
+                    return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+                #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+                    }));
+                #else
+                    return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+                #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+                    }));
+                #end
+        },
+        TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+        *meter,
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+#end
+#end
 #end

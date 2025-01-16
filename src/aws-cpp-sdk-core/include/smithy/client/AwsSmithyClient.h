@@ -124,11 +124,31 @@ namespace client
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
+                                     EndpointUpdateCallback&& endpointCallback
+                                     ) const
         {
             auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
+
+        ResponseT MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
+                                     const char* requestName,
+                                     Aws::Http::HttpMethod method,
+                                     EndpointUpdateCallback&& endpointCallback
+                                     ) const
+        {
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+
+            if (httpResponseOutcome.IsSuccess())
+            {
+                return ResponseT(AmazonWebServiceResult<Stream::ResponseStream>(
+                    httpResponseOutcome.GetResult()->SwapResponseStreamOwnership(),
+                    httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode()));
+            }
+
+            return ResponseT(std::move(httpResponseOutcome));
+        }
+
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::String& region,
