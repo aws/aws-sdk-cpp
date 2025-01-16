@@ -20,6 +20,7 @@ namespace Model
     ml_p5_48xlarge,
     ml_p5e_48xlarge,
     ml_p5en_48xlarge,
+    ml_trn1_32xlarge,
     ml_trn2_48xlarge
   };
 
