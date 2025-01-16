@@ -32,12 +32,18 @@ class AwsBearerTokenIdentityResolver
     {
     }
 
-    AwsBearerTokenIdentityResolver(const Aws::Auth::BearerTokenAuthSignerProvider &bearerTokenProvider) {
-      auto signer = bearerTokenProvider.GetSigner(Aws::Auth::BEARER_SIGNER);
-      if (signer) {
-        //since signer enum is mapped to legacy AWSAuthBearerSigner, static cast is safe here and is needed
-        m_providerChainLegacy.emplace_back((static_cast<Aws::Client::AWSAuthBearerSigner*>(signer.get()))->BearerTokenProvider());
-      }
+    AwsBearerTokenIdentityResolver(const Aws::Auth::BearerTokenAuthSignerProvider &bearerTokenProvider):
+    m_providerChainLegacy{[&](){
+        auto signer = bearerTokenProvider.GetSigner(Aws::Auth::BEARER_SIGNER);
+        Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>> providerChain;
+        if (signer) {
+            //since signer enum is mapped to legacy AWSAuthBearerSigner, static cast is safe here and is needed
+            providerChain.emplace_back((static_cast<Aws::Client::AWSAuthBearerSigner*>(signer.get()))->BearerTokenProvider());
+        }
+        return providerChain;
+    }()}
+    {
+
     }
 
     ResolveIdentityFutureOutcome
