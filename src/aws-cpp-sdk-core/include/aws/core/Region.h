@@ -49,6 +49,7 @@ namespace Aws
         static const char IL_CENTRAL_1[] = "il-central-1"; // Israel (Tel Aviv)
         static const char ME_CENTRAL_1[] = "me-central-1"; // Middle East (UAE)
         static const char ME_SOUTH_1[] = "me-south-1"; // Middle East (Bahrain)
+        static const char MX_CENTRAL_1[] = "mx-central-1"; // Mexico (Central)
         static const char SA_EAST_1[] = "sa-east-1"; // South America (Sao Paulo)
         static const char US_EAST_1[] = "us-east-1"; // US East (N. Virginia)
         static const char US_EAST_2[] = "us-east-2"; // US East (Ohio)
