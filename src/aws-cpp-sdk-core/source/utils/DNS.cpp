@@ -6,6 +6,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
 #include <cctype>
+
 namespace Aws
 {
     namespace Utils
@@ -44,7 +45,8 @@ namespace Aws
             if (segment.empty() || segment.length() > 4){
                 return false;
             }
-            return std::all_of(segment.begin(), segment.end(), isxdigit);
+            return std::all_of(segment.begin(), segment.end(), [](unsigned char ch) {
+                return std::isxdigit(ch);});
         }
 
         //The assumption is this is only called with the domain part of uri
