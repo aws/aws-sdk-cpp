@@ -11,6 +11,7 @@
 #set($serializer = "XmlOutcomeSerializer")
 #set($serializerOutcome = "XmlOutcome")
 #end
+#set($serviceConfiguration = "Aws::" + ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #pragma once
 
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>

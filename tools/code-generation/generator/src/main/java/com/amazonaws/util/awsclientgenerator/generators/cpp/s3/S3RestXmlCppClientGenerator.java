@@ -458,6 +458,9 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         }
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("AuthSchemeResolver", "SigV4AuthSchemeResolver");
+        context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
@@ -485,8 +488,10 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             }
             VelocityContext context = createContext(serviceModels.get(i));
             context.put("CppViewHelper", CppViewHelper.class);
-            context.put("TemplateOverride", templateOverride);
-
+            context.put("TemplateOverride", templateOverride);    
+            context.put("AuthSchemeResolver", "SigV4AuthSchemeResolver");
+            context.put("AuthSchemeVariants", serviceModels.get(i).getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+    
             final String fileName;
             if (i == 0) {
                 context.put("onlyGeneratedOperations", false);
