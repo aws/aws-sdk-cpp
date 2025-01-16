@@ -4,14 +4,19 @@
  */
 
 #pragma once
+
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/auth/AWSAuthSigner.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/DNS.h>
 #include <aws/s3/S3ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <aws/core/utils/DNS.h>
+
+
+
 
 // TODO: temporary fix for naming conflicts on Windows.
 #ifdef _WIN32
@@ -39,12 +44,19 @@ namespace Aws
     /**
      * <p/>
      */
-    class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3Client>
+    class AWS_S3_API S3Client : smithy::client::AwsSmithyClientT<Aws::S3::SERVICE_NAME,
+      Aws::S3::S3ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      S3EndpointProviderBase,
+      smithy::client::XmlOutcomeSerializer,
+      smithy::client::XmlOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<S3Client>
     {
     public:
-        typedef Aws::Client::AWSXMLClient BASECLASS;
         static const char* GetServiceName();
         static const char* GetAllocationTag();
+        inline const char* GetServiceClientName() const override { return "S3"; }
 
       typedef S3ClientConfiguration ClientConfigurationType;
       typedef S3EndpointProvider EndpointProviderType;
