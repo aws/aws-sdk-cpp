@@ -19,6 +19,7 @@ file(GLOB SQS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-sqs-integration-tests/Queu
 file(GLOB S3_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-integration-tests/BucketAndObjectOperationTest.cpp")
 file(GLOB LAMBDA_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda-integration-tests/FunctionTest.cpp")
 file(GLOB COGNITO_IDENTITY_IDENTITY_POOL_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/IdentityPoolOperationTest.cpp")
+file(GLOB COGNITO_IDENTITY_IDENTITY_POOL_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentityprovider-integration-tests/OperationTest.cpp")
 file(GLOB TRANSFER_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer-tests/TransferTests.cpp")
 file(GLOB IDENTITY_MANAGEMENT_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-identity-management-tests/auth/*.cpp")
 file(GLOB ENCRYPTION_TESTS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-encryption-tests/CryptoModulesTest.cpp"
