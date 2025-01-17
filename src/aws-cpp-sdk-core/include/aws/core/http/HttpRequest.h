@@ -583,6 +583,9 @@ namespace Aws
 
             bool IsEventStreamRequest() { return m_isEvenStreamRequest; }
             void SetEventStreamRequest(bool eventStreamRequest) { m_isEvenStreamRequest = eventStreamRequest; }
+            
+            bool HasEventStreamResponse() { return m_hasEvenStreamResponse; }
+            void SetHasEventStreamResponse(bool hasEventStreamResponse) { m_hasEvenStreamResponse = hasEventStreamResponse; }
 
             virtual std::shared_ptr<Aws::Crt::Http::HttpRequest> ToCrtHttpRequest();
 
@@ -606,6 +609,7 @@ namespace Aws
             URI m_uri;
             HttpMethod m_method;
             bool m_isEvenStreamRequest = false;
+            bool m_hasEvenStreamResponse{false};
             HeadersReceivedEventHandler m_onHeadersReceived;
             DataReceivedEventHandler m_onDataReceived;
             DataSentEventHandler m_onDataSent;

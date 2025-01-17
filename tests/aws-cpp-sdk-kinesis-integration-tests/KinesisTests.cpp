@@ -22,6 +22,7 @@
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/kinesis/model/PutRecordRequest.h>
 
 #include <thread>
 #include <chrono>
@@ -49,7 +50,7 @@ protected:
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
 
         // Create stream
-        auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName));
+        auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName).WithShardCount(1));
         AWS_ASSERT_SUCCESS(createStream);
 
         // Wait 2 minutes for stream to be ready
@@ -169,6 +170,98 @@ TEST_F(KinesisTest, EnhancedFanOut)
                      .WithStreamARN(streamARN)
                      .WithConsumerARN(consumerARN);
     AWS_ASSERT_SUCCESS(m_client->DeregisterStreamConsumer(deregisterRequest));
+}
+
+
+bool WriteDataToStream(Aws::Kinesis::KinesisClient &kinesis_client, const Aws::String &streamName, const Aws::String &data, const Aws::String &partitionKey)
+{
+    Aws::Kinesis::Model::PutRecordRequest putRecordRequest;
+    putRecordRequest.SetStreamName(streamName);
+    
+    putRecordRequest.SetPartitionKey(partitionKey);
+
+    Aws::Utils::ByteBuffer dataBuffer((unsigned char*)data.c_str(), data.size());
+    putRecordRequest.SetData(dataBuffer);
+
+    // Send the record to the stream
+    auto putRecordOutcome = kinesis_client.PutRecord(putRecordRequest);
+
+    return putRecordOutcome.IsSuccess();
+}
+
+TEST_F(KinesisTest, testSubscribe)
+{
+    // Get the Stream ARN (different between accounts)
+    DescribeStreamRequest describeStreamRequest;
+    describeStreamRequest.SetStreamName(streamName);
+    auto describeStreamOutcome = m_client->DescribeStream(describeStreamRequest);
+    AWS_ASSERT_SUCCESS(describeStreamOutcome);
+    const auto streamARN = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamARN();
+
+    // Register a consumer for enhanced fan-out
+    RegisterStreamConsumerRequest registerRequest;
+    const auto consumerName = BuildResourceName("sdktest");
+    registerRequest.WithConsumerName(consumerName).WithStreamARN(streamARN);
+    auto registerConsumerOutcome = m_client->RegisterStreamConsumer(registerRequest);
+    AWS_ASSERT_SUCCESS(registerConsumerOutcome);
+    const auto consumerARN = registerConsumerOutcome.GetResult().GetConsumer().GetConsumerARN();
+    WaitUntilConsumerIsActive(consumerARN);
+    // Get the shard id
+    ListShardsRequest listShardRequest;
+    listShardRequest.SetStreamName(streamName);
+    auto listShardsOutcome = m_client->ListShards(listShardRequest);
+    AWS_ASSERT_SUCCESS(listShardsOutcome);
+    const auto& shards = listShardsOutcome.GetResult().GetShards();
+    ASSERT_FALSE(shards.empty());
+    const auto shardId = shards[0].GetShardId();
+    Aws::String partitionKey = "shard0Key";  // Use a consistent partition key for Shard 0
+    
+    const Aws::Vector<Aws::String> inputs = {
+        "Hello, this is the first test record for Shard 0!",
+        "Here's another test record for Shard 0!",
+        "Final record for Shard 0."
+    };
+
+    ASSERT_TRUE(WriteDataToStream(*m_client, streamName, inputs[0], partitionKey));
+    ASSERT_TRUE(WriteDataToStream(*m_client, streamName, inputs[1], partitionKey));
+    ASSERT_TRUE(WriteDataToStream(*m_client, streamName, inputs[2], partitionKey));
+
+    Aws::Kinesis::Model::StartingPosition start_position;
+    start_position.SetType(Aws::Kinesis::Model::ShardIteratorType::TRIM_HORIZON);
+
+    Aws::Kinesis::Model::SubscribeToShardRequest subscribe_request;
+    subscribe_request.SetConsumerARN(consumerARN);
+    subscribe_request.SetShardId(shardId);
+    subscribe_request.SetStartingPosition(start_position);
+
+    Aws::Kinesis::Model::SubscribeToShardHandler handler;
+    auto t_start = std::chrono::high_resolution_clock::now();
+    handler.SetSubscribeToShardEventCallback([&](const Aws::Kinesis::Model::SubscribeToShardEvent &event)
+    {
+        auto t_end = std::chrono::high_resolution_clock::now();
+        if(event.GetRecords().size())
+        {
+
+            double elapsed_time = std::chrono::duration<double, std::milli>(t_end-t_start).count();
+            SCOPED_TRACE("SetSubscribeToShardEventCallback called at time: " + std::to_string(elapsed_time) + " ms" );
+            EXPECT_EQ(event.GetRecords().size(), 3u);
+        }
+        t_start = t_end;
+        for (auto idx = 0u; idx < event.GetRecords().size(); ++idx)
+        {
+            const auto& record = event.GetRecords()[idx];
+            Aws::String record_str((char *) record.GetData().GetUnderlyingData(), record.GetData().GetLength());
+            SCOPED_TRACE("Record: " + record_str );
+            EXPECT_EQ(record_str, inputs[idx]);
+        }
+    });
+
+    subscribe_request.SetEventStreamHandler(handler);
+
+    SCOPED_TRACE("calling SubscribeToShard" );
+    auto subscribeOutcome = m_client->SubscribeToShard(subscribe_request);
+
+    EXPECT_TRUE(subscribeOutcome.IsSuccess());
 }
 
 }
