@@ -53,6 +53,65 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 }
 
 /* Legacy constructors due deprecation */
+#if($serviceModel.metadata.serviceId == "S3")
+${className}::${className}(const Client::ClientConfiguration& clientConfiguration,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+        bool useVirtualAddressing /*= true*/,
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+      {
+        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, signPayloads}}
+      }),
+      m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption)
+{
+  init(m_clientConfiguration);
+}
+
+${className}::${className}(
+        const Aws::Auth::AWSCredentials& credentials,
+        const Client::ClientConfiguration& clientConfiguration,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+        bool useVirtualAddressing /*= true*/,
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+      {
+        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region, signPayloads}}
+      }),
+      m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption)
+{
+  init(m_clientConfiguration);
+}
+
+${className}::${className}(
+        const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+        const Client::ClientConfiguration& clientConfiguration,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+        bool useVirtualAddressing /*= true*/,
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+      {
+        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region, signPayloads}}
+      }),
+      m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption)
+{
+  init(m_clientConfiguration);
+}
+#else
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
@@ -102,6 +161,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 {
   init(m_clientConfiguration);
 }
+#end
 /* End of legacy constructors due deprecation */
 
 ${className}::~${className}()

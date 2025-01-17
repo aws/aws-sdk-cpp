@@ -756,7 +756,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4AuthSchemeOption::sigV4aAuthSchemeOption"
     );
     private static final String SchemeMapFormat = "%s.schemeId, %s";
-    private List<String> createAuthSchemeMapEntries(final ServiceModel serviceModel) {
+    protected List<String> createAuthSchemeMapEntries(final ServiceModel serviceModel) {
         return serviceModel.getAuthSchemes().stream()
                 .map(authScheme -> String.format(SchemeMapFormat, SchemeIdMapping.get(authScheme), AuthSchemeMapping.get(authScheme)))
                 .collect(Collectors.toList());

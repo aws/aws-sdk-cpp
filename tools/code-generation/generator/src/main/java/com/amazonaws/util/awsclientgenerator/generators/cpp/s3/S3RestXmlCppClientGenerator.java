@@ -490,7 +490,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             context.put("CppViewHelper", CppViewHelper.class);
             context.put("TemplateOverride", templateOverride);    
             context.put("AuthSchemeResolver", "SigV4AuthSchemeResolver");
-            context.put("AuthSchemeVariants", serviceModels.get(i).getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+            context.put("AuthSchemeMapEntries", super.createAuthSchemeMapEntries(serviceModels.get(i)));
     
             final String fileName;
             if (i == 0) {

@@ -27,6 +27,15 @@ namespace smithy {
         {
         }
 
+        explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+            : m_serviceName(serviceName),
+              m_region(region),
+              legacySigner(nullptr, serviceName.c_str(), region, policy)
+        {
+        }
+
+        
+
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
             const auto legacyCreds = [&identity]() -> Aws::Auth::AWSCredentials {
@@ -54,6 +63,7 @@ namespace smithy {
             }
             return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
         }
+
         SigningFutureOutcome presign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) override
         {
             AWS_UNREFERENCED_PARAM(properties);
@@ -74,6 +84,7 @@ namespace smithy {
                             SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "presign failed",
                                           false /*retryable*/));
         }
+
 
         virtual ~AwsSigV4Signer() {};
     protected:

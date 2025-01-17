@@ -12,7 +12,7 @@
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
 #include <smithy/identity/signer/built-in/SigV4Signer.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-
+#include <aws/core/auth/signer/AWSAuthV4Signer.h>
 
 namespace smithy {
     constexpr char SIGV4[] = "aws.auth#sigv4";
@@ -36,12 +36,34 @@ namespace smithy {
             assert(m_signer);
         }
 
+        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
+                                 const Aws::String& serviceName,
+                                 const Aws::String& region,
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+            : AuthScheme(SIGV4), 
+            m_identityResolver{identityResolver}, 
+            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region, policy)}
+        {
+            assert(m_identityResolver);
+            assert(m_signer);
+        }
+
         //delegate constructor
         explicit SigV4AuthScheme(const Aws::String& serviceName,
                                  const Aws::String& region)
             : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
                               serviceName,
                               region)
+        {
+        }
+
+        explicit SigV4AuthScheme(const Aws::String& serviceName,
+                                 const Aws::String& region,
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+            : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
+                              serviceName,
+                              region,
+                              policy)
         {
         }
 
