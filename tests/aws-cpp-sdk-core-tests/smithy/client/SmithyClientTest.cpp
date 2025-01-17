@@ -414,7 +414,7 @@ public:
     Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(SampleServiceName),
     Aws::MakeShared<SampleEndpointProvider>(SampleServiceName),
     Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(SampleServiceName),
-    {})
+    Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4aAuthScheme>>())
   {}
 };
 
