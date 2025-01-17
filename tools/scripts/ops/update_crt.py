@@ -12,7 +12,7 @@ import shutil
 import subprocess
 import time
 
-import jinja2
+from jinja2 import Environment, select_autoescape
 
 PREFETCH_DEPS_SH_NAME = "prefetch_crt_dependency.sh"
 CRT_DIR = "./crt/aws-crt-cpp"
@@ -104,7 +104,7 @@ def main():
         sh_var_name = c_module_dir.upper().replace("-", "_")
         crt_cpp_c_modules.append({"var_name": sh_var_name, "file_path": c_module_dir, "hash": c_module_hash, "tag": c_module_tag})
 
-    jinja2_env = jinja2.Environment(autoescape=jinja2.select_autoescape(['html', 'xml']))
+    jinja2_env = Environment(autoescape=select_autoescape(['html', 'xml']))
     jinja2_template = jinja2_env.from_string(PREFETCH_DEPS_TEMPLATE)
     rendered_script = jinja2_template.render(t_crt_cpp_hash=crt_cpp_hash,
                                              t_crt_cpp_tag=latest_crt_version,
