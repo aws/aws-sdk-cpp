@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the NotificationConfiguration to
-     * return.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code>
+     * to return.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

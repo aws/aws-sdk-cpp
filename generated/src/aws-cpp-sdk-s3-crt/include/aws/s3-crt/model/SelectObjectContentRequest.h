@@ -56,6 +56,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SelectObjectContent"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_S3CRT_API Aws::String SerializePayload() const override;
 
     AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;

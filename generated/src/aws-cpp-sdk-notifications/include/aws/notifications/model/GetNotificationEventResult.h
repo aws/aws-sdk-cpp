@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the NotificationConfiguration.</p>
+     * <p>The ARN of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline void SetNotificationConfigurationArn(const Aws::String& value) { m_notificationConfigurationArn = value; }
@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation time of the NotificationEvent.</p>
+     * <p>The creation time of the <code>NotificationEvent</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -73,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The content of the NotificationEvent.</p>
+     * <p>The content of the <code>NotificationEvent</code>.</p>
      */
     inline const NotificationEvent& GetContent() const{ return m_content; }
     inline void SetContent(const NotificationEvent& value) { m_content = value; }

@@ -246,7 +246,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }

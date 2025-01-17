@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Region of the NotificationHub.</p>
+     * <p>The Region of the <code>NotificationHub</code>.</p>
      */
     inline const Aws::String& GetNotificationHubRegion() const{ return m_notificationHubRegion; }
     inline void SetNotificationHubRegion(const Aws::String& value) { m_notificationHubRegion = value; }
@@ -49,7 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>NotificationHub status information.</p>
+     * <p>Provides additional information about the current
+     * <code>NotificationConfiguration</code> status information.</p>
      */
     inline const NotificationHubStatusSummary& GetStatusSummary() const{ return m_statusSummary; }
     inline void SetStatusSummary(const NotificationHubStatusSummary& value) { m_statusSummary = value; }

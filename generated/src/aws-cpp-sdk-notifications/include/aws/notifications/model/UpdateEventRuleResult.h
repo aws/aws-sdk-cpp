@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+     * <p>The Amazon Resource Name (ARN) to use to update the
+     * <code>EventRule</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -49,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the NotificationConfiguration.</p>
+     * <p>The ARN of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline void SetNotificationConfigurationArn(const Aws::String& value) { m_notificationConfigurationArn = value; }

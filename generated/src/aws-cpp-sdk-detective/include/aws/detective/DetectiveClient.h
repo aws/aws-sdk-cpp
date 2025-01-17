@@ -56,7 +56,7 @@ namespace Detective
    * graph.</p> </li> <li> <p>Decline an invitation to contribute to a behavior
    * graph.</p> </li> <li> <p>Remove their account from a behavior graph.</p> </li>
    * </ul> <p>All API actions are logged as CloudTrail events. See <a
-   * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging
+   * href="https://docs.aws.amazon.com/detective/latest/userguide/logging-using-cloudtrail.html">Logging
    * Detective API Calls with CloudTrail</a>.</p>  <p>We replaced the term
    * "master account" with the term "administrator account". An administrator account
    * is used to centrally manage multiple accounts. In the case of Detective, the
@@ -898,7 +898,7 @@ namespace Detective
         }
 
         /**
-         * <p>Starts a data source packages for the behavior graph.</p><p><h3>See
+         * <p>Starts a data source package for the Detective behavior graph.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">AWS
          * API Reference</a></p>
