@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains a complete list of fields related to an EventRule.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains a complete list of fields related to an
+   * <code>EventRule</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EventRuleStructure">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>EventRule</code>. CloudFormation
+     * stack generates this ARN and then uses this ARN to associate with the
+     * <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -58,7 +60,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN for the NotificationConfiguration associated with this EventRule.</p>
+     * <p>The ARN for the <code>NotificationConfiguration</code> associated with this
+     * <code>EventRule</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline bool NotificationConfigurationArnHasBeenSet() const { return m_notificationConfigurationArnHasBeenSet; }
@@ -72,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation time of the resource.</p>
+     * <p>The creation time of the <code>EventRule</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
@@ -84,12 +87,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The matched event source.</p> <p>Must match one of the valid EventBridge
-     * sources. Only AWS service sourced events are supported. For example,
+     * <p>The event source this rule should match with the EventBridge event sources.
+     * It must match with atleast one of the valid EventBridge event sources. Only
+     * Amazon Web Services service sourced events are supported. For example,
      * <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-     * delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * delivery from Amazon Web Services services</a> in the <i> Amazon EventBridge
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
@@ -103,11 +108,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The event type to match.</p> <p>Must match one of the valid Amazon
-     * EventBridge event types. For example, EC2 Instance State-change Notification and
-     * AWS CloudWatch Alarm State Change. For more information, see <a
+     * <p>The event type this rule should match with the EventBridge events. It must
+     * match with atleast one of the valid EventBridge event types. For example, Amazon
+     * EC2 Instance State change Notification and Amazon CloudWatch State Change. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-     * delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * delivery from Amazon Web Services services</a> in the <i> Amazon EventBridge
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
@@ -121,8 +128,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An additional event pattern used to further filter the events this EventRule
-     * receives.</p> <p>For more information, see <a
+     * <p>An additional event pattern used to further filter the events this
+     * <code>EventRule</code> receives.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon
      * EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i> </p>
      */
@@ -138,7 +145,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of AWS Regions that send events to this EventRule.</p>
+     * <p>A list of Amazon Web Services Regions that send events to this
+     * <code>EventRule</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
@@ -154,8 +162,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of Amazon EventBridge Managed Rule ARNs associated with this
-     * EventRule.</p>  <p>These are created by AWS User Notifications within your
-     * account so your EventRules can function.</p> 
+     * <code>EventRule</code>.</p>  <p>These are created by User Notifications
+     * within your account so your <code>EventRules</code> can function.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetManagedRules() const{ return m_managedRules; }
     inline bool ManagedRulesHasBeenSet() const { return m_managedRulesHasBeenSet; }
@@ -170,8 +178,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of an EventRule's status by Region. Regions are mapped to
-     * EventRuleStatusSummary.</p>
+     * <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to
+     * <code>EventRuleStatusSummary</code>.</p>
      */
     inline const Aws::Map<Aws::String, EventRuleStatusSummary>& GetStatusSummaryByRegion() const{ return m_statusSummaryByRegion; }
     inline bool StatusSummaryByRegionHasBeenSet() const { return m_statusSummaryByRegionHasBeenSet; }

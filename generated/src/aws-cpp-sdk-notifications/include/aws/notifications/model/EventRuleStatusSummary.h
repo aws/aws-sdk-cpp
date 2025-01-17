@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes EventRule status information.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides additional information about the current <code>EventRule</code>
+   * status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EventRuleStatusSummary">AWS
    * API Reference</a></p>
    */
@@ -40,17 +41,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the EventRule.</p> <ul> <li> <p>Values:</p> <ul> <li> <p>
-     * <code>ACTIVE</code> </p> <ul> <li> <p>The EventRule can process events.</p>
-     * </li> </ul> </li> <li> <p> <code>INACTIVE</code> </p> <ul> <li> <p>The EventRule
-     * may be unable to process events.</p> </li> </ul> </li> <li> <p>
-     * <code>CREATING</code> </p> <ul> <li> <p>The EventRule is being created.</p>
-     * <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p> </li> </ul>
-     * </li> <li> <p> <code>UPDATING</code> </p> <ul> <li> <p>The EventRule is being
+     * <p>The status of the <code>EventRule</code>.</p> <ul> <li> <p>Values:</p> <ul>
+     * <li> <p> <code>ACTIVE</code> </p> <ul> <li> <p>The <code>EventRule</code> can
+     * process events.</p> </li> </ul> </li> <li> <p> <code>INACTIVE</code> </p> <ul>
+     * <li> <p>The <code>EventRule</code> may be unable to process events.</p> </li>
+     * </ul> </li> <li> <p> <code>CREATING</code> </p> <ul> <li> <p>The
+     * <code>EventRule</code> is being created.</p> <p>Only <code>GET</code> and
+     * <code>LIST</code> calls can be run.</p> </li> </ul> </li> <li> <p>
+     * <code>UPDATING</code> </p> <ul> <li> <p>The <code>EventRule</code> is being
      * updated.</p> <p>Only <code>GET</code> and <code>LIST</code> calls can be
      * run.</p> </li> </ul> </li> <li> <p> <code>DELETING</code> </p> <ul> <li> <p>The
-     * EventRule is being deleted.</p> <p>Only <code>GET</code> and <code>LIST</code>
-     * calls can be run.</p> </li> </ul> </li> </ul> </li> </ul>
+     * <code>EventRule</code> is being deleted.</p> <p>Only <code>GET</code> and
+     * <code>LIST</code> calls can be run.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline const EventRuleStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -62,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A human-readable reason for EventRuleStatus.</p>
+     * <p>A human-readable reason for <code>EventRuleStatus</code>.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

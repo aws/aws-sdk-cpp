@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>NotificationHub status information.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides additional information about the current
+   * <code>NotificationHub</code> status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/NotificationHubStatusSummary">AWS
    * API Reference</a></p>
    */
@@ -40,14 +41,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status information about the NotificationHub.</p> <ul> <li> <p>Values:</p>
-     * <ul> <li> <p> <code>ACTIVE</code> </p> <ul> <li> <p>Incoming NotificationEvents
-     * are replicated to this NotificationHub.</p> </li> </ul> </li> <li> <p>
-     * <code>REGISTERING</code> </p> <ul> <li> <p>The NotificationHub is initializing.
-     * A NotificationHub with this status can't be deregistered.</p> </li> </ul> </li>
-     * <li> <p> <code>DEREGISTERING</code> </p> <ul> <li> <p>The NotificationHub is
-     * being deleted. You can't register additional NotificationHubs in the same Region
-     * as a NotificationHub with this status.</p> </li> </ul> </li> </ul> </li> </ul>
+     * <p>Status information about the <code>NotificationHub</code>.</p> <ul> <li>
+     * <p>Values:</p> <ul> <li> <p> <code>ACTIVE</code> </p> <ul> <li> <p>Incoming
+     * <code>NotificationEvents</code> are replicated to this
+     * <code>NotificationHub</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>REGISTERING</code> </p> <ul> <li> <p>The
+     * <code>NotificationConfiguration</code> is initializing. A
+     * <code>NotificationConfiguration</code> with this status can't be
+     * deregistered.</p> </li> </ul> </li> <li> <p> <code>DEREGISTERING</code> </p>
+     * <ul> <li> <p>The <code>NotificationConfiguration</code> is being deleted. You
+     * can't register additional <code>NotificationHubs</code> in the same Region as a
+     * <code>NotificationConfiguration</code> with this status.</p> </li> </ul> </li>
+     * </ul> </li> </ul>
      */
     inline const NotificationHubStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -59,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Explanation for the current status.</p>
+     * <p>An explanation for the current status.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

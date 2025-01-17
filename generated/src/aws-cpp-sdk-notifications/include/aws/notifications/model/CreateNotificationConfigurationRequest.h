@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the NotificationConfiguration. Supports RFC 3986's unreserved
-     * characters.</p>
+     * <p>The name of the <code>NotificationConfiguration</code>. Supports RFC 3986's
+     * unreserved characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the NotificationConfiguration.</p>
+     * <p>The description of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -65,13 +65,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The aggregation preference of the NotificationConfiguration.</p> <ul> <li>
-     * <p>Values:</p> <ul> <li> <p> <code>LONG</code> </p> <ul> <li> <p>Aggregate
-     * notifications for long periods of time (12 hours).</p> </li> </ul> </li> <li>
-     * <p> <code>SHORT</code> </p> <ul> <li> <p>Aggregate notifications for short
-     * periods of time (5 minutes).</p> </li> </ul> </li> <li> <p> <code>NONE</code>
-     * </p> <ul> <li> <p>Don't aggregate notifications.</p> <p>No delay in
-     * delivery.</p> </li> </ul> </li> </ul> </li> </ul>
+     * <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
+     * <ul> <li> <p>Values:</p> <ul> <li> <p> <code>LONG</code> </p> <ul> <li>
+     * <p>Aggregate notifications for long periods of time (12 hours).</p> </li> </ul>
+     * </li> <li> <p> <code>SHORT</code> </p> <ul> <li> <p>Aggregate notifications for
+     * short periods of time (5 minutes).</p> </li> </ul> </li> <li> <p>
+     * <code>NONE</code> </p> <ul> <li> <p>Don't aggregate notifications.</p> </li>
+     * </ul> </li> </ul> </li> </ul>
      */
     inline const AggregationDuration& GetAggregationDuration() const{ return m_aggregationDuration; }
     inline bool AggregationDurationHasBeenSet() const { return m_aggregationDurationHasBeenSet; }

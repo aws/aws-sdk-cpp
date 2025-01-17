@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The NotificationConfigurations in the account.</p>
+     * <p>The <code>NotificationConfigurations</code> in the account.</p>
      */
     inline const Aws::Vector<NotificationConfigurationStructure>& GetNotificationConfigurations() const{ return m_notificationConfigurations; }
     inline void SetNotificationConfigurations(const Aws::Vector<NotificationConfigurationStructure>& value) { m_notificationConfigurations = value; }

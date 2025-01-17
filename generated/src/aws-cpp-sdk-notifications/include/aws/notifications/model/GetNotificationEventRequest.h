@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the NotificationEvent to return.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>NotificationEvent</code> to
+     * return.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -55,8 +56,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The locale code of the language used for the retrieved NotificationEvent. The
-     * default locale is English <code>en_US</code>.</p>
+     * <p>The locale code of the language used for the retrieved
+     * <code>NotificationEvent</code>. The default locale is English
+     * <code>en_US</code>.</p>
      */
     inline const LocaleCode& GetLocale() const{ return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }

@@ -902,6 +902,14 @@ namespace Aws
         static const int i8g_16xlarge_HASH = HashingUtils::HashString("i8g.16xlarge");
         static const int i8g_24xlarge_HASH = HashingUtils::HashString("i8g.24xlarge");
         static const int i8g_metal_24xl_HASH = HashingUtils::HashString("i8g.metal-24xl");
+        static const int u7i_6tb_112xlarge_HASH = HashingUtils::HashString("u7i-6tb.112xlarge");
+        static const int u7i_8tb_112xlarge_HASH = HashingUtils::HashString("u7i-8tb.112xlarge");
+        static const int u7inh_32tb_480xlarge_HASH = HashingUtils::HashString("u7inh-32tb.480xlarge");
+        static const int p5e_48xlarge_HASH = HashingUtils::HashString("p5e.48xlarge");
+        static const int p5en_48xlarge_HASH = HashingUtils::HashString("p5en.48xlarge");
+        static const int f2_12xlarge_HASH = HashingUtils::HashString("f2.12xlarge");
+        static const int f2_48xlarge_HASH = HashingUtils::HashString("f2.48xlarge");
+        static const int trn2_48xlarge_HASH = HashingUtils::HashString("trn2.48xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -5348,6 +5356,46 @@ namespace Aws
             enumValue = InstanceType::i8g_metal_24xl;
             return true;
           }
+          else if (hashCode == u7i_6tb_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u7i_6tb_112xlarge;
+            return true;
+          }
+          else if (hashCode == u7i_8tb_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u7i_8tb_112xlarge;
+            return true;
+          }
+          else if (hashCode == u7inh_32tb_480xlarge_HASH)
+          {
+            enumValue = InstanceType::u7inh_32tb_480xlarge;
+            return true;
+          }
+          else if (hashCode == p5e_48xlarge_HASH)
+          {
+            enumValue = InstanceType::p5e_48xlarge;
+            return true;
+          }
+          else if (hashCode == p5en_48xlarge_HASH)
+          {
+            enumValue = InstanceType::p5en_48xlarge;
+            return true;
+          }
+          else if (hashCode == f2_12xlarge_HASH)
+          {
+            enumValue = InstanceType::f2_12xlarge;
+            return true;
+          }
+          else if (hashCode == f2_48xlarge_HASH)
+          {
+            enumValue = InstanceType::f2_48xlarge;
+            return true;
+          }
+          else if (hashCode == trn2_48xlarge_HASH)
+          {
+            enumValue = InstanceType::trn2_48xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -8056,6 +8104,30 @@ namespace Aws
             return true;
           case InstanceType::i8g_metal_24xl:
             value = "i8g.metal-24xl";
+            return true;
+          case InstanceType::u7i_6tb_112xlarge:
+            value = "u7i-6tb.112xlarge";
+            return true;
+          case InstanceType::u7i_8tb_112xlarge:
+            value = "u7i-8tb.112xlarge";
+            return true;
+          case InstanceType::u7inh_32tb_480xlarge:
+            value = "u7inh-32tb.480xlarge";
+            return true;
+          case InstanceType::p5e_48xlarge:
+            value = "p5e.48xlarge";
+            return true;
+          case InstanceType::p5en_48xlarge:
+            value = "p5en.48xlarge";
+            return true;
+          case InstanceType::f2_12xlarge:
+            value = "f2.12xlarge";
+            return true;
+          case InstanceType::f2_48xlarge:
+            value = "f2.48xlarge";
+            return true;
+          case InstanceType::trn2_48xlarge:
+            value = "trn2.48xlarge";
             return true;
           default:
             return false;

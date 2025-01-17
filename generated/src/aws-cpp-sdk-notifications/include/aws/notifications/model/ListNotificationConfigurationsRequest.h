@@ -42,11 +42,12 @@ namespace Model
     ///@{
     /**
      * <p>The matched event source.</p> <p>Must match one of the valid EventBridge
-     * sources. Only AWS service sourced events are supported. For example,
-     * <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see
-     * <a
+     * sources. Only Amazon Web Services service sourced events are supported. For
+     * example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-     * delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetEventRuleSource() const{ return m_eventRuleSource; }
     inline bool EventRuleSourceHasBeenSet() const { return m_eventRuleSourceHasBeenSet; }
@@ -74,17 +75,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The NotificationConfiguration status to match.</p> <ul> <li> <p>Values:</p>
-     * <ul> <li> <p> <code>ACTIVE</code> </p> <ul> <li> <p>All EventRules are
-     * <code>ACTIVE</code> and any call can be run.</p> </li> </ul> </li> <li> <p>
-     * <code>PARTIALLY_ACTIVE</code> </p> <ul> <li> <p>Some EventRules are
-     * <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p>
-     * </li> <li> <p>Any call can be run.</p> </li> </ul> </li> <li> <p>
-     * <code>INACTIVE</code> </p> <ul> <li> <p>All EventRules are <code>INACTIVE</code>
-     * and any call can be run.</p> </li> </ul> </li> <li> <p> <code>DELETING</code>
-     * </p> <ul> <li> <p>This NotificationConfiguration is being deleted.</p> </li>
-     * <li> <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p> </li>
-     * </ul> </li> </ul> </li> </ul>
+     * <p>The <code>NotificationConfiguration</code> status to match.</p> <ul> <li>
+     * <p>Values:</p> <ul> <li> <p> <code>ACTIVE</code> </p> <ul> <li> <p>All
+     * <code>EventRules</code> are <code>ACTIVE</code> and any call can be run.</p>
+     * </li> </ul> </li> <li> <p> <code>PARTIALLY_ACTIVE</code> </p> <ul> <li> <p>Some
+     * <code>EventRules</code> are <code>ACTIVE</code> and some are
+     * <code>INACTIVE</code>. Any call can be run.</p> </li> <li> <p>Any call can be
+     * run.</p> </li> </ul> </li> <li> <p> <code>INACTIVE</code> </p> <ul> <li> <p>All
+     * <code>EventRules</code> are <code>INACTIVE</code> and any call can be run.</p>
+     * </li> </ul> </li> <li> <p> <code>DELETING</code> </p> <ul> <li> <p>This
+     * <code>NotificationConfiguration</code> is being deleted.</p> </li> <li> <p>Only
+     * <code>GET</code> and <code>LIST</code> calls can be run.</p> </li> </ul> </li>
+     * </ul> </li> </ul>
      */
     inline const NotificationConfigurationStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -108,7 +110,7 @@ namespace Model
     ///@{
     /**
      * <p>The start token for paginated calls. Retrieved from the response of a
-     * previous ListEventRules call. Next token uses Base64 encoding.</p>
+     * previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

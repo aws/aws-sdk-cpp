@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the NotificationConfiguration.</p>
+     * <p>The name of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the NotificationConfiguration.</p>
+     * <p>The description of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline void SetDescription(const Aws::String& value) { m_description = value; }
@@ -76,19 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of this NotificationConfiguration.</p> <p>The status should always
-     * be <code>INACTIVE</code> when part of the CreateNotificationConfiguration
-     * response.</p> <ul> <li> <p>Values:</p> <ul> <li> <p> <code>ACTIVE</code> </p>
-     * <ul> <li> <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p>
-     * </li> </ul> </li> <li> <p> <code>PARTIALLY_ACTIVE</code> </p> <ul> <li> <p>Some
-     * EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p> </li>
-     * <li> <p>Any call can be run.</p> </li> </ul> </li> <li> <p>
-     * <code>INACTIVE</code> </p> <ul> <li> <p>All EventRules are <code>INACTIVE</code>
-     * and any call can be run.</p> </li> </ul> </li> <li> <p> <code>DELETING</code>
-     * </p> <ul> <li> <p>This NotificationConfiguration is being deleted. Only
-     * <code>GET</code> and <code>LIST</code> calls can be run.</p> </li> <li> <p>Only
-     * <code>GET</code> and <code>LIST</code> calls can be run.</p> </li> </ul> </li>
-     * </ul> </li> </ul>
+     * <p>The status of this <code>NotificationConfiguration</code>.</p>
      */
     inline const NotificationConfigurationStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const NotificationConfigurationStatus& value) { m_status = value; }
@@ -99,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation time of the NotificationConfiguration.</p>
+     * <p>The creation time of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -110,13 +98,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The aggregation preference of the NotificationConfiguration.</p> <ul> <li>
-     * <p>Values:</p> <ul> <li> <p> <code>LONG</code> </p> <ul> <li> <p>Aggregate
-     * notifications for long periods of time (12 hours).</p> </li> </ul> </li> <li>
-     * <p> <code>SHORT</code> </p> <ul> <li> <p>Aggregate notifications for short
-     * periods of time (5 minutes).</p> </li> </ul> </li> <li> <p> <code>NONE</code>
-     * </p> <ul> <li> <p>Don't aggregate notifications.</p> <p>No delay in
-     * delivery.</p> </li> </ul> </li> </ul> </li> </ul>
+     * <p>The aggregation preference of the <code>NotificationConfiguration</code>.</p>
+     * <ul> <li> <p>Values:</p> <ul> <li> <p> <code>LONG</code> </p> <ul> <li>
+     * <p>Aggregate notifications for long periods of time (12 hours).</p> </li> </ul>
+     * </li> <li> <p> <code>SHORT</code> </p> <ul> <li> <p>Aggregate notifications for
+     * short periods of time (5 minutes).</p> </li> </ul> </li> <li> <p>
+     * <code>NONE</code> </p> <ul> <li> <p>Don't aggregate notifications.</p> </li>
+     * </ul> </li> </ul> </li> </ul>
      */
     inline const AggregationDuration& GetAggregationDuration() const{ return m_aggregationDuration; }
     inline void SetAggregationDuration(const AggregationDuration& value) { m_aggregationDuration = value; }

@@ -474,15 +474,15 @@ namespace EC2
         }
 
         /**
-         * <p>Assigns one or more IPv6 addresses to the specified network interface. You
-         * can specify one or more specific IPv6 addresses, or you can specify the number
-         * of IPv6 addresses to be automatically assigned from within the subnet's IPv6
-         * CIDR block range. You can assign as many IPv6 addresses to a network interface
-         * as you can assign private IPv4 addresses, and the limit varies per instance
-         * type.</p> <p>You must specify either the IPv6 addresses or the IPv6 address
-         * count in the request. </p> <p>You can optionally use Prefix Delegation on the
-         * network interface. You must specify either the IPV6 Prefix Delegation prefixes,
-         * or the IPv6 Prefix Delegation count. For information, see <a
+         * <p>Assigns the specified IPv6 addresses to the specified network interface. You
+         * can specify specific IPv6 addresses, or you can specify the number of IPv6
+         * addresses to be automatically assigned from the subnet's IPv6 CIDR block range.
+         * You can assign as many IPv6 addresses to a network interface as you can assign
+         * private IPv4 addresses, and the limit varies by instance type.</p> <p>You must
+         * specify either the IPv6 addresses or the IPv6 address count in the request. </p>
+         * <p>You can optionally use Prefix Delegation on the network interface. You must
+         * specify either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix
+         * Delegation count. For information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
          * Assigning prefixes to network interfaces</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -510,12 +510,12 @@ namespace EC2
         }
 
         /**
-         * <p>Assigns one or more secondary private IP addresses to the specified network
-         * interface.</p> <p>You can specify one or more specific secondary IP addresses,
-         * or you can specify the number of secondary IP addresses to be automatically
-         * assigned within the subnet's CIDR block range. The number of secondary IP
-         * addresses that you can assign to an instance varies by instance type. For more
-         * information about Elastic IP addresses, see <a
+         * <p>Assigns the specified secondary private IP addresses to the specified network
+         * interface.</p> <p>You can specify specific secondary IP addresses, or you can
+         * specify the number of secondary IP addresses to be automatically assigned from
+         * the subnet's CIDR block range. The number of secondary IP addresses that you can
+         * assign to an instance varies by instance type. For more information about
+         * Elastic IP addresses, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you move a
          * secondary private IP address to another network interface, any Elastic IP
@@ -3023,9 +3023,9 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a managed prefix list. You can specify one or more entries for the
-         * prefix list. Each entry consists of a CIDR block and an optional
-         * description.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a managed prefix list. You can specify entries for the prefix list.
+         * Each entry consists of a CIDR block and an optional description.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">AWS
          * API Reference</a></p>
          */
@@ -9730,14 +9730,14 @@ namespace EC2
         }
 
         /**
-         * <p>Describes one or more of your network interfaces.</p> <p>If you have a large
-         * number of network interfaces, the operation fails unless you use pagination or
-         * one of the following filters: <code>group-id</code>, <code>mac-address</code>,
-         * <code>private-dns-name</code>, <code>private-ip-address</code>,
-         * <code>private-dns-name</code>, <code>subnet-id</code>, or
-         * <code>vpc-id</code>.</p>  <p>We strongly recommend using only
-         * paginated requests. Unpaginated requests are susceptible to throttling and
-         * timeouts.</p> <p><h3>See Also:</h3>   <a
+         * <p>Describes the specified network interfaces or all your network
+         * interfaces.</p> <p>If you have a large number of network interfaces, the
+         * operation fails unless you use pagination or one of the following filters:
+         * <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
+         * <code>private-ip-address</code>, <code>private-dns-name</code>,
+         * <code>subnet-id</code>, or <code>vpc-id</code>.</p>  <p>We strongly
+         * recommend using only paginated requests. Unpaginated requests are susceptible to
+         * throttling and timeouts.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">AWS
          * API Reference</a></p>
          */
@@ -19965,7 +19965,7 @@ namespace EC2
         }
 
         /**
-         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * <p>Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
@@ -19991,7 +19991,7 @@ namespace EC2
         }
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * <p>Unassigns the specified secondary private IP addresses or IPv4 Prefix
          * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>

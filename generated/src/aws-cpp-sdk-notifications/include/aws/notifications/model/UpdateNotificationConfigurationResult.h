@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN used to update the NotificationConfiguration.</p>
+     * <p>The ARN used to update the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
