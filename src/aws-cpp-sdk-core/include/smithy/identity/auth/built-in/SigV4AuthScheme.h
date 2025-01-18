@@ -67,6 +67,21 @@ namespace smithy {
         {
         }
 
+        template <typename SIGNER_TYPE>
+        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
+                                 const Aws::String& serviceName,
+                                 const Aws::String& region,
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+            : AuthScheme(SIGV4), 
+            m_identityResolver{identityResolver}, 
+            m_signer{Aws::MakeShared<SIGNER_TYPE>("SigV4AuthScheme", serviceName, region, policy)}
+        {
+            static_assert(std::is_base_of<AwsCredentialSignerT, SIGNER_TYPE>::value, 
+                      "SIGNER_TYPE must be derived from AwsCredentialSignerT");
+            assert(m_identityResolver);
+            assert(m_signer);
+        }
+
         virtual ~SigV4AuthScheme() = default;
 
         std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver() override

@@ -478,6 +478,13 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     return true;
 }
 
+
+bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationTimeInSeconds) const
+{
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
+    return PresignRequest(request, credentials, region,serviceName, expirationTimeInSeconds );
+}
+
 bool AWSAuthV4Signer::ServiceRequireUnsignedPayload(const Aws::String& serviceName) const
 {
     // S3 uses a magic string (instead of the empty string) for its body hash for presigned URLs as outlined here:

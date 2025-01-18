@@ -343,7 +343,11 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                             member.setChecksumMember(true);
                             member.setChecksumEnumMember(CHECKSUM_MEMBERS_ENUMS.get(member.getShape().getName()));
                         }));
-
+        if (serviceModel.isUseSmithyClient())
+        {
+            return Arrays.stream(super.generateSourceFiles(serviceModel)).toArray(SdkFileEntry[]::new);
+        }
+        
         return Stream.concat(generateS3ExpressFiles(serviceModel).stream(),
                         Arrays.stream(super.generateSourceFiles(serviceModel)))
                 .toArray(SdkFileEntry[]::new);
