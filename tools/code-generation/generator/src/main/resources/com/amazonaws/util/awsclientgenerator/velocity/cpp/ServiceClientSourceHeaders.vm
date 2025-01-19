@@ -31,7 +31,7 @@
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>
 #end
 #end
-#if($serviceModel.metadata.serviceId == "S3")
+#if($serviceModel.metadata.serviceId == "S3" && !$serviceModel.isUseSmithyClient())
 \#include <aws/${metadata.projectName}/S3ExpressSignerProvider.h>
 #end
 #if($serviceModel.metadata.namespace == "S3Crt")

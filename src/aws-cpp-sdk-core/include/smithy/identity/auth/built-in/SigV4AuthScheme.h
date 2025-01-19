@@ -67,6 +67,10 @@ namespace smithy {
         {
         }
 
+        /*
+            for some services, there can be a different variant of v4 signer.
+            This constructor allows to specify the signer type abiding by the constraints of the authscheme
+        */
         template <typename SIGNER_TYPE>
         explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
                                  const Aws::String& serviceName,

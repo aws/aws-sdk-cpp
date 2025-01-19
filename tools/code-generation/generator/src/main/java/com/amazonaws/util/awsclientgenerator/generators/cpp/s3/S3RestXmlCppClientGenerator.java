@@ -20,6 +20,10 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.AuthSchemeMapping;
+import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.SchemeIdMapping;
+import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.SchemeMapFormat;
+
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -494,7 +498,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             context.put("CppViewHelper", CppViewHelper.class);
             context.put("TemplateOverride", templateOverride);    
             context.put("AuthSchemeResolver", "SigV4AuthSchemeResolver");
-            context.put("AuthSchemeMapEntries", super.createAuthSchemeMapEntries(serviceModels.get(i)));
+            context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModels.get(i)));
     
             final String fileName;
             if (i == 0) {
@@ -664,5 +668,24 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     @Override
     protected void addRequestIdToResults(final ServiceModel serviceModel) {
         addToAllResultsShape(serviceModel, "requestId", "RequestId", "x-amz-request-id", "");
+    }
+
+    private static final Map<String, String> AuthSchemeMapping = ImmutableMap.of(
+        "aws.auth#sigv4", "smithy::SigV4AuthScheme< smithy::S3ExpressSigner<smithy::AwsSigV4Signer> >",
+        "aws.auth#sigv4a", "smithy::SigV4aAuthScheme< smithy::S3ExpressSigner<smithy::AwsSigV4aSigner> >"
+    );
+
+    private static final Map<String, String> SchemeIdMapping = ImmutableMap.of(
+        "aws.auth#sigv4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
+        "aws.auth#sigv4a", "smithy::SigV4AuthSchemeOption::sigV4aAuthSchemeOption"
+    );
+
+    private static final String SchemeMapFormat = "%s.schemeId, %s";
+
+    @Override
+    protected List<String> createAuthSchemeMapEntries(final ServiceModel serviceModel) {
+        return serviceModel.getAuthSchemes().stream()
+                .map(authScheme -> String.format(SchemeMapFormat, SchemeIdMapping.get(authScheme), AuthSchemeMapping.get(authScheme)))
+                .collect(Collectors.toList());
     }
 }

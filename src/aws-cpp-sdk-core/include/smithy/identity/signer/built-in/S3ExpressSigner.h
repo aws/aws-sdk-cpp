@@ -5,6 +5,7 @@
 #pragma once
 
 #include <smithy/identity/signer/built-in/SigV4Signer.h>
+#include <smithy/identity/signer/built-in/SigV4aSigner.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/UUID.h>
@@ -12,15 +13,27 @@ namespace smithy {
 static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
 static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
 
-    class S3ExpressSigner : public AwsSigV4Signer
+
+    template <typename T>
+    struct IsValidS3ExpressSigner : std::false_type {};
+
+    template <>
+    struct IsValidS3ExpressSigner<AwsSigV4Signer> : std::true_type {};
+
+    template <>
+    struct IsValidS3ExpressSigner<AwsSigV4aSigner> : std::true_type {};
+
+    //Ensuring S3 Express Signer can be derived from Sigv4 and Sigv4a variants
+    template <typename BASECLASS>
+    class S3ExpressSigner : public std::enable_if<IsValidS3ExpressSigner<BASECLASS>::value, BASECLASS>::type
     {
         explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region)
-            : AwsSigV4Signer(serviceName, region)
+            : BASECLASS(serviceName, region)
         {
         }
 
         explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
-            : AwsSigV4Signer(serviceName, region, policy)
+            : BASECLASS(serviceName, region, policy)
         {
         }
 
@@ -81,6 +94,7 @@ static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
             std::lock_guard<std::mutex> lock(m_requestProcessing);
             m_requestsProcessing.erase(requestId);
         }
+
         mutable std::set<Aws::String> m_requestsProcessing;
         mutable std::mutex m_requestProcessing;
     };

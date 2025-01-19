@@ -37,6 +37,12 @@ namespace smithy {
         {
         }
 
+        //for legacy constructors
+        explicit AwsSigV4aSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+            :  m_serviceName(serviceName), m_region(region), m_policy(Aws::MakeShared<Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy>("AwsSigV4aSigner", policy))
+        {
+        }
+
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
             return sign(httpRequest, identity, properties, m_region, m_serviceName, m_expirationTimeInSeconds);
@@ -139,7 +145,8 @@ namespace smithy {
         {
 
             auto signPayloadIt = properties.find("SignPayload");
-            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
+            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : 
+            (m_policy ?  (*m_policy == Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always ? true : false) : false);
 
             assert(httpRequest);
             assert(identity.expiration().has_value());
@@ -240,6 +247,7 @@ namespace smithy {
 
         Aws::String m_serviceName;
         Aws::String m_region;
+        std::shared_ptr<Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy> m_policy;
         //params that can be exposed later
         long long m_expirationTimeInSeconds{0};
         const bool m_includeSha256HashHeader{true};

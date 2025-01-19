@@ -26,15 +26,15 @@ namespace smithy {
               legacySigner(nullptr, serviceName.c_str(), region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always)
         {
         }
-
+        /*
+            For legacy constructors, this is needed
+        */
         explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
             : m_serviceName(serviceName),
               m_region(region),
               legacySigner(nullptr, serviceName.c_str(), region, policy)
         {
         }
-
-        
 
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
