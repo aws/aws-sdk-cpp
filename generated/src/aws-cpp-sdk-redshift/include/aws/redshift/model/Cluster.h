@@ -392,7 +392,7 @@ namespace Model
     ///@{
     /**
      * <p>A boolean value that, if <code>true</code>, indicates that the cluster can be
-     * accessed from a public network.</p>
+     * accessed from a public network.</p> <p>Default: false</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }

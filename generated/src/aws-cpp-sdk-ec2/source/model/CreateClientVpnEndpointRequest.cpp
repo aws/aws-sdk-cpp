@@ -35,7 +35,9 @@ CreateClientVpnEndpointRequest::CreateClientVpnEndpointRequest() :
     m_clientConnectOptionsHasBeenSet(false),
     m_sessionTimeoutHours(0),
     m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false)
+    m_clientLoginBannerOptionsHasBeenSet(false),
+    m_disconnectOnSessionTimeout(false),
+    m_disconnectOnSessionTimeoutHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,11 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
   if(m_clientLoginBannerOptionsHasBeenSet)
   {
     m_clientLoginBannerOptions.OutputToStream(ss, "ClientLoginBannerOptions");
+  }
+
+  if(m_disconnectOnSessionTimeoutHasBeenSet)
+  {
+    ss << "DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
   }
 
   ss << "Version=2016-11-15";

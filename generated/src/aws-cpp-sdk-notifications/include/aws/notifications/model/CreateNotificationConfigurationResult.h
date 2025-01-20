@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the
+     * <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -48,18 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of this NotificationConfiguration.</p> <p>The status should always
-     * be <code>INACTIVE</code> when part of the CreateNotificationConfiguration
-     * response.</p> <ul> <li> <p>Values:</p> <ul> <li> <p> <code>ACTIVE</code> </p>
-     * <ul> <li> <p>All EventRules are <code>ACTIVE</code> and any call can be run.</p>
-     * </li> </ul> </li> <li> <p> <code>PARTIALLY_ACTIVE</code> </p> <ul> <li> <p>Some
-     * EventRules are <code>ACTIVE</code> and some are <code>INACTIVE</code>.</p> </li>
-     * <li> <p>Any call can be run.</p> </li> </ul> </li> <li> <p>
-     * <code>INACTIVE</code> </p> <ul> <li> <p>All EventRules are <code>INACTIVE</code>
-     * and any call can be run.</p> </li> </ul> </li> <li> <p> <code>DELETING</code>
-     * </p> <ul> <li> <p>This NotificationConfiguration is being deleted.</p> </li>
-     * <li> <p>Only <code>GET</code> and <code>LIST</code> calls can be run.</p> </li>
-     * </ul> </li> </ul> </li> </ul>
+     * <p>The current status of this <code>NotificationConfiguration</code>.</p>
      */
     inline const NotificationConfigurationStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const NotificationConfigurationStatus& value) { m_status = value; }

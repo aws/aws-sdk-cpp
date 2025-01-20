@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p>A list of fleet locations where a game session queue can place new game
-   * sessions. You can use a filter to temporarily turn off placements for specific
-   * locations. For queues that have multi-location fleets, you can use a filter
-   * configuration allow placement with some, but not all of these
+   * sessions. You can use a filter to temporarily exclude specific locations from
+   * receiving placements. For queues that have multi-location fleets, you can use a
+   * filter configuration allow placement with some, but not all, of a fleet's
    * locations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FilterConfiguration">AWS
    * API Reference</a></p>

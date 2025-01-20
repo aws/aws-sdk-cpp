@@ -58,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID of the principal (user or role) who created the snapshot.
-     * This helps in tracking the origin of the snapshot. </p>
+     * <p>The AWS account ID of the entity that owns the resource from which the
+     * snapshot was created.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
@@ -114,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The revision number of the snapshot. This integer value is incremented each
+     * <p>The revision number of the snapshot. This integer value is incremented each
      * time the snapshot is updated, allowing for version tracking of the resource
      * snapshot. </p>
      */

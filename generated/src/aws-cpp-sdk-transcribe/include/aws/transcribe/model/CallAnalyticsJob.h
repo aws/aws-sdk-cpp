@@ -16,6 +16,7 @@
 #include <aws/transcribe/model/CallAnalyticsJobSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/model/ChannelDefinition.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -303,6 +304,21 @@ namespace Model
     inline CallAnalyticsJob& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
     inline CallAnalyticsJob& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The tags, each in the form of a key:value pair, assigned to the specified
+     * call analytics job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline CallAnalyticsJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CallAnalyticsJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CallAnalyticsJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CallAnalyticsJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_callAnalyticsJobName;
@@ -352,6 +368,9 @@ namespace Model
 
     Aws::Vector<ChannelDefinition> m_channelDefinitions;
     bool m_channelDefinitionsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

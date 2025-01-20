@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The NotificationHubs in the account.</p>
+     * <p>The <code>NotificationHubs</code> in the account.</p>
      */
     inline const Aws::Vector<NotificationHubOverview>& GetNotificationHubs() const{ return m_notificationHubs; }
     inline void SetNotificationHubs(const Aws::Vector<NotificationHubOverview>& value) { m_notificationHubs = value; }

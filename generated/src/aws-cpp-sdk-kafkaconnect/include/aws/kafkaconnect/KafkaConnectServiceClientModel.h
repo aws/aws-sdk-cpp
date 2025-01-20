@@ -25,8 +25,10 @@
 #include <aws/kafkaconnect/model/DeleteCustomPluginResult.h>
 #include <aws/kafkaconnect/model/DeleteWorkerConfigurationResult.h>
 #include <aws/kafkaconnect/model/DescribeConnectorResult.h>
+#include <aws/kafkaconnect/model/DescribeConnectorOperationResult.h>
 #include <aws/kafkaconnect/model/DescribeCustomPluginResult.h>
 #include <aws/kafkaconnect/model/DescribeWorkerConfigurationResult.h>
+#include <aws/kafkaconnect/model/ListConnectorOperationsResult.h>
 #include <aws/kafkaconnect/model/ListConnectorsResult.h>
 #include <aws/kafkaconnect/model/ListCustomPluginsResult.h>
 #include <aws/kafkaconnect/model/ListTagsForResourceResult.h>
@@ -84,8 +86,10 @@ namespace Aws
       class DeleteCustomPluginRequest;
       class DeleteWorkerConfigurationRequest;
       class DescribeConnectorRequest;
+      class DescribeConnectorOperationRequest;
       class DescribeCustomPluginRequest;
       class DescribeWorkerConfigurationRequest;
+      class ListConnectorOperationsRequest;
       class ListConnectorsRequest;
       class ListCustomPluginsRequest;
       class ListTagsForResourceRequest;
@@ -103,8 +107,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteCustomPluginResult, KafkaConnectError> DeleteCustomPluginOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkerConfigurationResult, KafkaConnectError> DeleteWorkerConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectorResult, KafkaConnectError> DescribeConnectorOutcome;
+      typedef Aws::Utils::Outcome<DescribeConnectorOperationResult, KafkaConnectError> DescribeConnectorOperationOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomPluginResult, KafkaConnectError> DescribeCustomPluginOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkerConfigurationResult, KafkaConnectError> DescribeWorkerConfigurationOutcome;
+      typedef Aws::Utils::Outcome<ListConnectorOperationsResult, KafkaConnectError> ListConnectorOperationsOutcome;
       typedef Aws::Utils::Outcome<ListConnectorsResult, KafkaConnectError> ListConnectorsOutcome;
       typedef Aws::Utils::Outcome<ListCustomPluginsResult, KafkaConnectError> ListCustomPluginsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, KafkaConnectError> ListTagsForResourceOutcome;
@@ -122,8 +128,10 @@ namespace Aws
       typedef std::future<DeleteCustomPluginOutcome> DeleteCustomPluginOutcomeCallable;
       typedef std::future<DeleteWorkerConfigurationOutcome> DeleteWorkerConfigurationOutcomeCallable;
       typedef std::future<DescribeConnectorOutcome> DescribeConnectorOutcomeCallable;
+      typedef std::future<DescribeConnectorOperationOutcome> DescribeConnectorOperationOutcomeCallable;
       typedef std::future<DescribeCustomPluginOutcome> DescribeCustomPluginOutcomeCallable;
       typedef std::future<DescribeWorkerConfigurationOutcome> DescribeWorkerConfigurationOutcomeCallable;
+      typedef std::future<ListConnectorOperationsOutcome> ListConnectorOperationsOutcomeCallable;
       typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
       typedef std::future<ListCustomPluginsOutcome> ListCustomPluginsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -144,8 +152,10 @@ namespace Aws
     typedef std::function<void(const KafkaConnectClient*, const Model::DeleteCustomPluginRequest&, const Model::DeleteCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomPluginResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DeleteWorkerConfigurationRequest&, const Model::DeleteWorkerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkerConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DescribeConnectorRequest&, const Model::DescribeConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorResponseReceivedHandler;
+    typedef std::function<void(const KafkaConnectClient*, const Model::DescribeConnectorOperationRequest&, const Model::DescribeConnectorOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorOperationResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DescribeCustomPluginRequest&, const Model::DescribeCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomPluginResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::DescribeWorkerConfigurationRequest&, const Model::DescribeWorkerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkerConfigurationResponseReceivedHandler;
+    typedef std::function<void(const KafkaConnectClient*, const Model::ListConnectorOperationsRequest&, const Model::ListConnectorOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorOperationsResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorsResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::ListCustomPluginsRequest&, const Model::ListCustomPluginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomPluginsResponseReceivedHandler;
     typedef std::function<void(const KafkaConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

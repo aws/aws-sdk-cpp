@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> An array of engagement summary objects. </p>
+     * <p>An array of engagement summary objects.</p>
      */
     inline const Aws::Vector<EngagementSummary>& GetEngagementSummaryList() const{ return m_engagementSummaryList; }
     inline void SetEngagementSummaryList(const Aws::Vector<EngagementSummary>& value) { m_engagementSummaryList = value; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token to retrieve the next set of results. This field will be null if
+     * <p>The token to retrieve the next set of results. This field will be null if
      * there are no more results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }

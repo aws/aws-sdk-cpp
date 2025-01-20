@@ -60,7 +60,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The AWS account ID of the entity that created the association. </p>
+     * <p>The AWS account ID of the entity that owns the resource. Identifies the
+     * account responsible for or having primary control over the resource. </p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }

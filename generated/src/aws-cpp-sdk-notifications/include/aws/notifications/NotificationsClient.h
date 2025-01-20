@@ -16,10 +16,10 @@ namespace Aws
 namespace Notifications
 {
   /**
-   * <p>The <i>AWS User Notifications API Reference</i> provides descriptions, API
-   * request parameters, and the JSON response for each of the User Notification API
-   * actions.</p> <p>User Notification control APIs are currently available in US
-   * East (Virginia) - <code>us-east-1</code>.</p> <p> <a
+   * <p>The <i>Amazon Web Services User Notifications API Reference</i> provides
+   * descriptions, API request parameters, and the JSON response for each of the User
+   * Notification API actions.</p> <p>User Notification control plane APIs are
+   * currently available in US East (Virginia) - <code>us-east-1</code>.</p> <p> <a
    * href="https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetNotificationEvent.html">GetNotificationEvent</a>
    * and <a
    * href="https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationEvents.html">ListNotificationEvents</a>
@@ -28,7 +28,7 @@ namespace Notifications
    * partition Regions</a> and only return notifications stored in the same Region in
    * which they're called.</p> <p>The User Notifications console can only be used in
    * US East (Virginia). Your data however, is stored in each Region chosen as a <a
-   * href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html&gt;">notification
+   * href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">notification
    * hub</a> in addition to US East (Virginia).</p>
    */
   class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>
@@ -92,8 +92,8 @@ namespace Notifications
         /**
          * <p>Associates a delivery <a
          * href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-         * with a particular NotificationConfiguration. Supported Channels include AWS
-         * Chatbot, the AWS Console Mobile Application, and emails
+         * with a particular <code>NotificationConfiguration</code>. Supported Channels
+         * include Chatbot, the Console Mobile Application, and emails
          * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateChannel">AWS
          * API Reference</a></p>
@@ -119,10 +119,64 @@ namespace Notifications
         }
 
         /**
+         * <p>Associates an Account Contact with a particular
+         * <code>ManagedNotificationConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAccountContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateManagedNotificationAccountContactOutcome AssociateManagedNotificationAccountContact(const Model::AssociateManagedNotificationAccountContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateManagedNotificationAccountContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateManagedNotificationAccountContactRequestT = Model::AssociateManagedNotificationAccountContactRequest>
+        Model::AssociateManagedNotificationAccountContactOutcomeCallable AssociateManagedNotificationAccountContactCallable(const AssociateManagedNotificationAccountContactRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::AssociateManagedNotificationAccountContact, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateManagedNotificationAccountContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateManagedNotificationAccountContactRequestT = Model::AssociateManagedNotificationAccountContactRequest>
+        void AssociateManagedNotificationAccountContactAsync(const AssociateManagedNotificationAccountContactRequestT& request, const AssociateManagedNotificationAccountContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::AssociateManagedNotificationAccountContact, request, handler, context);
+        }
+
+        /**
+         * <p>Associates an additional Channel with a particular
+         * <code>ManagedNotificationConfiguration</code>.</p> <p>Supported Channels include
+         * Chatbot, the Console Mobile Application, and emails
+         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateManagedNotificationAdditionalChannelOutcome AssociateManagedNotificationAdditionalChannel(const Model::AssociateManagedNotificationAdditionalChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateManagedNotificationAdditionalChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateManagedNotificationAdditionalChannelRequestT = Model::AssociateManagedNotificationAdditionalChannelRequest>
+        Model::AssociateManagedNotificationAdditionalChannelOutcomeCallable AssociateManagedNotificationAdditionalChannelCallable(const AssociateManagedNotificationAdditionalChannelRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::AssociateManagedNotificationAdditionalChannel, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateManagedNotificationAdditionalChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateManagedNotificationAdditionalChannelRequestT = Model::AssociateManagedNotificationAdditionalChannelRequest>
+        void AssociateManagedNotificationAdditionalChannelAsync(const AssociateManagedNotificationAdditionalChannelRequestT& request, const AssociateManagedNotificationAdditionalChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::AssociateManagedNotificationAdditionalChannel, request, handler, context);
+        }
+
+        /**
          * <p>Creates an <a
-         * href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">EventRule</a>
-         * that is associated with a specified Notification Configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">
+         * <code>EventRule</code> </a> that is associated with a specified
+         * <code>NotificationConfiguration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/CreateEventRule">AWS
          * API Reference</a></p>
          */
@@ -147,7 +201,8 @@ namespace Notifications
         }
 
         /**
-         * <p>Creates a new NotificationConfiguration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new <code>NotificationConfiguration</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/CreateNotificationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -172,7 +227,7 @@ namespace Notifications
         }
 
         /**
-         * <p>Deletes an EventRule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an <code>EventRule</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeleteEventRule">AWS
          * API Reference</a></p>
          */
@@ -197,7 +252,8 @@ namespace Notifications
         }
 
         /**
-         * <p>Deletes a NotificationConfiguration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a <code>NotificationConfiguration</code>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeleteNotificationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -222,11 +278,12 @@ namespace Notifications
         }
 
         /**
-         * <p>Deregisters a NotificationHub in the specified Region.</p>  <p>You
-         * can't deregister the last NotificationHub in the account. NotificationEvents
-         * stored in the deregistered NotificationHub are no longer be visible. Recreating
-         * a new NotificationHub in the same Region restores access to those
-         * NotificationEvents.</p> <p><h3>See Also:</h3>   <a
+         * <p>Deregisters a <code>NotificationConfiguration</code> in the specified
+         * Region.</p>  <p>You can't deregister the last <code>NotificationHub</code>
+         * in the account. <code>NotificationEvents</code> stored in the deregistered
+         * <code>NotificationConfiguration</code> are no longer be visible. Recreating a
+         * new <code>NotificationConfiguration</code> in the same Region restores access to
+         * those <code>NotificationEvents</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeregisterNotificationHub">AWS
          * API Reference</a></p>
          */
@@ -251,9 +308,36 @@ namespace Notifications
         }
 
         /**
-         * <p>Disassociates a Channel from a specified NotificationConfiguration. Supported
-         * Channels include AWS Chatbot, the AWS Console Mobile Application, and emails
-         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
+         * <p>Disables service trust between User Notifications and Amazon Web Services
+         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisableNotificationsAccessForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableNotificationsAccessForOrganizationOutcome DisableNotificationsAccessForOrganization(const Model::DisableNotificationsAccessForOrganizationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DisableNotificationsAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableNotificationsAccessForOrganizationRequestT = Model::DisableNotificationsAccessForOrganizationRequest>
+        Model::DisableNotificationsAccessForOrganizationOutcomeCallable DisableNotificationsAccessForOrganizationCallable(const DisableNotificationsAccessForOrganizationRequestT& request = {}) const
+        {
+            return SubmitCallable(&NotificationsClient::DisableNotificationsAccessForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for DisableNotificationsAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableNotificationsAccessForOrganizationRequestT = Model::DisableNotificationsAccessForOrganizationRequest>
+        void DisableNotificationsAccessForOrganizationAsync(const DisableNotificationsAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableNotificationsAccessForOrganizationRequestT& request = {}) const
+        {
+            return SubmitAsync(&NotificationsClient::DisableNotificationsAccessForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a Channel from a specified
+         * <code>NotificationConfiguration</code>. Supported Channels include Chatbot, the
+         * Console Mobile Application, and emails (notifications-contacts).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateChannel">AWS
          * API Reference</a></p>
          */
@@ -278,7 +362,87 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a specified EventRule.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates an Account Contact with a particular
+         * <code>ManagedNotificationConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAccountContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateManagedNotificationAccountContactOutcome DisassociateManagedNotificationAccountContact(const Model::DisassociateManagedNotificationAccountContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateManagedNotificationAccountContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateManagedNotificationAccountContactRequestT = Model::DisassociateManagedNotificationAccountContactRequest>
+        Model::DisassociateManagedNotificationAccountContactOutcomeCallable DisassociateManagedNotificationAccountContactCallable(const DisassociateManagedNotificationAccountContactRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::DisassociateManagedNotificationAccountContact, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateManagedNotificationAccountContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateManagedNotificationAccountContactRequestT = Model::DisassociateManagedNotificationAccountContactRequest>
+        void DisassociateManagedNotificationAccountContactAsync(const DisassociateManagedNotificationAccountContactRequestT& request, const DisassociateManagedNotificationAccountContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::DisassociateManagedNotificationAccountContact, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates an additional Channel from a particular
+         * <code>ManagedNotificationConfiguration</code>.</p> <p>Supported Channels include
+         * Chatbot, the Console Mobile Application, and emails
+         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateManagedNotificationAdditionalChannelOutcome DisassociateManagedNotificationAdditionalChannel(const Model::DisassociateManagedNotificationAdditionalChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateManagedNotificationAdditionalChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateManagedNotificationAdditionalChannelRequestT = Model::DisassociateManagedNotificationAdditionalChannelRequest>
+        Model::DisassociateManagedNotificationAdditionalChannelOutcomeCallable DisassociateManagedNotificationAdditionalChannelCallable(const DisassociateManagedNotificationAdditionalChannelRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::DisassociateManagedNotificationAdditionalChannel, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateManagedNotificationAdditionalChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateManagedNotificationAdditionalChannelRequestT = Model::DisassociateManagedNotificationAdditionalChannelRequest>
+        void DisassociateManagedNotificationAdditionalChannelAsync(const DisassociateManagedNotificationAdditionalChannelRequestT& request, const DisassociateManagedNotificationAdditionalChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::DisassociateManagedNotificationAdditionalChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Enables service trust between User Notifications and Amazon Web Services
+         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EnableNotificationsAccessForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableNotificationsAccessForOrganizationOutcome EnableNotificationsAccessForOrganization(const Model::EnableNotificationsAccessForOrganizationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for EnableNotificationsAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableNotificationsAccessForOrganizationRequestT = Model::EnableNotificationsAccessForOrganizationRequest>
+        Model::EnableNotificationsAccessForOrganizationOutcomeCallable EnableNotificationsAccessForOrganizationCallable(const EnableNotificationsAccessForOrganizationRequestT& request = {}) const
+        {
+            return SubmitCallable(&NotificationsClient::EnableNotificationsAccessForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for EnableNotificationsAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableNotificationsAccessForOrganizationRequestT = Model::EnableNotificationsAccessForOrganizationRequest>
+        void EnableNotificationsAccessForOrganizationAsync(const EnableNotificationsAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableNotificationsAccessForOrganizationRequestT& request = {}) const
+        {
+            return SubmitAsync(&NotificationsClient::EnableNotificationsAccessForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a specified <code>EventRule</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetEventRule">AWS
          * API Reference</a></p>
          */
@@ -303,7 +467,86 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a specified NotificationConfiguration.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the child event of a specific given
+         * <code>ManagedNotificationEvent</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationChildEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedNotificationChildEventOutcome GetManagedNotificationChildEvent(const Model::GetManagedNotificationChildEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetManagedNotificationChildEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetManagedNotificationChildEventRequestT = Model::GetManagedNotificationChildEventRequest>
+        Model::GetManagedNotificationChildEventOutcomeCallable GetManagedNotificationChildEventCallable(const GetManagedNotificationChildEventRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::GetManagedNotificationChildEvent, request);
+        }
+
+        /**
+         * An Async wrapper for GetManagedNotificationChildEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetManagedNotificationChildEventRequestT = Model::GetManagedNotificationChildEventRequest>
+        void GetManagedNotificationChildEventAsync(const GetManagedNotificationChildEventRequestT& request, const GetManagedNotificationChildEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::GetManagedNotificationChildEvent, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a specified
+         * <code>ManagedNotificationConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedNotificationConfigurationOutcome GetManagedNotificationConfiguration(const Model::GetManagedNotificationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetManagedNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetManagedNotificationConfigurationRequestT = Model::GetManagedNotificationConfigurationRequest>
+        Model::GetManagedNotificationConfigurationOutcomeCallable GetManagedNotificationConfigurationCallable(const GetManagedNotificationConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::GetManagedNotificationConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetManagedNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetManagedNotificationConfigurationRequestT = Model::GetManagedNotificationConfigurationRequest>
+        void GetManagedNotificationConfigurationAsync(const GetManagedNotificationConfigurationRequestT& request, const GetManagedNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::GetManagedNotificationConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a specified <code>ManagedNotificationEvent</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedNotificationEventOutcome GetManagedNotificationEvent(const Model::GetManagedNotificationEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetManagedNotificationEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetManagedNotificationEventRequestT = Model::GetManagedNotificationEventRequest>
+        Model::GetManagedNotificationEventOutcomeCallable GetManagedNotificationEventCallable(const GetManagedNotificationEventRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::GetManagedNotificationEvent, request);
+        }
+
+        /**
+         * An Async wrapper for GetManagedNotificationEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetManagedNotificationEventRequestT = Model::GetManagedNotificationEventRequest>
+        void GetManagedNotificationEventAsync(const GetManagedNotificationEventRequestT& request, const GetManagedNotificationEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::GetManagedNotificationEvent, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a specified <code>NotificationConfiguration</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -328,15 +571,16 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a specified NotificationEvent.</p>  <p>User Notifications
-         * stores notifications in the individual Regions you register as notification hubs
-         * and the Region of the source event rule. GetNotificationEvent only returns
-         * notifications stored in the same Region in which the action is called. User
-         * Notifications doesn't backfill notifications to new Regions selected as
-         * notification hubs. For this reason, we recommend that you make calls in your
-         * oldest registered notification hub. For more information, see <a
+         * <p>Returns a specified <code>NotificationEvent</code>.</p>  <p>User
+         * Notifications stores notifications in the individual Regions you register as
+         * notification hubs and the Region of the source event rule.
+         * <code>GetNotificationEvent</code> only returns notifications stored in the same
+         * Region in which the action is called. User Notifications doesn't backfill
+         * notifications to new Regions selected as notification hubs. For this reason, we
+         * recommend that you make calls in your oldest registered notification hub. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-         * hubs</a> in the <i>AWS User Notifications User Guide</i>.</p>
+         * hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationEvent">AWS
          * API Reference</a></p>
@@ -362,8 +606,34 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a list of Channels for a NotificationConfiguration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the AccessStatus of Service Trust Enablement for User Notifications
+         * and Amazon Web Services Organizations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationsAccessForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNotificationsAccessForOrganizationOutcome GetNotificationsAccessForOrganization(const Model::GetNotificationsAccessForOrganizationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetNotificationsAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetNotificationsAccessForOrganizationRequestT = Model::GetNotificationsAccessForOrganizationRequest>
+        Model::GetNotificationsAccessForOrganizationOutcomeCallable GetNotificationsAccessForOrganizationCallable(const GetNotificationsAccessForOrganizationRequestT& request = {}) const
+        {
+            return SubmitCallable(&NotificationsClient::GetNotificationsAccessForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for GetNotificationsAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetNotificationsAccessForOrganizationRequestT = Model::GetNotificationsAccessForOrganizationRequest>
+        void GetNotificationsAccessForOrganizationAsync(const GetNotificationsAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetNotificationsAccessForOrganizationRequestT& request = {}) const
+        {
+            return SubmitAsync(&NotificationsClient::GetNotificationsAccessForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of Channels for a
+         * <code>NotificationConfiguration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -388,8 +658,8 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a list of EventRules according to specified filters, in reverse
-         * chronological order (newest first).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of <code>EventRules</code> according to specified filters, in
+         * reverse chronological order (newest first).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListEventRules">AWS
          * API Reference</a></p>
          */
@@ -414,9 +684,117 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a list of abbreviated NotificationConfigurations according to
-         * specified filters, in reverse chronological order (newest first).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of Account contacts and Channels associated with a
+         * <code>ManagedNotificationConfiguration</code>, in paginated
+         * format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChannelAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedNotificationChannelAssociationsOutcome ListManagedNotificationChannelAssociations(const Model::ListManagedNotificationChannelAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListManagedNotificationChannelAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedNotificationChannelAssociationsRequestT = Model::ListManagedNotificationChannelAssociationsRequest>
+        Model::ListManagedNotificationChannelAssociationsOutcomeCallable ListManagedNotificationChannelAssociationsCallable(const ListManagedNotificationChannelAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::ListManagedNotificationChannelAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedNotificationChannelAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedNotificationChannelAssociationsRequestT = Model::ListManagedNotificationChannelAssociationsRequest>
+        void ListManagedNotificationChannelAssociationsAsync(const ListManagedNotificationChannelAssociationsRequestT& request, const ListManagedNotificationChannelAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::ListManagedNotificationChannelAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of <code>ManagedNotificationChildEvents</code> for a specified
+         * aggregate <code>ManagedNotificationEvent</code>, ordered by creation time in
+         * reverse chronological order (newest first).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChildEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedNotificationChildEventsOutcome ListManagedNotificationChildEvents(const Model::ListManagedNotificationChildEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListManagedNotificationChildEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedNotificationChildEventsRequestT = Model::ListManagedNotificationChildEventsRequest>
+        Model::ListManagedNotificationChildEventsOutcomeCallable ListManagedNotificationChildEventsCallable(const ListManagedNotificationChildEventsRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::ListManagedNotificationChildEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedNotificationChildEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedNotificationChildEventsRequestT = Model::ListManagedNotificationChildEventsRequest>
+        void ListManagedNotificationChildEventsAsync(const ListManagedNotificationChildEventsRequestT& request, const ListManagedNotificationChildEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::ListManagedNotificationChildEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of Managed Notification Configurations according to specified
+         * filters, ordered by creation time in reverse chronological order (newest
+         * first).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedNotificationConfigurationsOutcome ListManagedNotificationConfigurations(const Model::ListManagedNotificationConfigurationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListManagedNotificationConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedNotificationConfigurationsRequestT = Model::ListManagedNotificationConfigurationsRequest>
+        Model::ListManagedNotificationConfigurationsOutcomeCallable ListManagedNotificationConfigurationsCallable(const ListManagedNotificationConfigurationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&NotificationsClient::ListManagedNotificationConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedNotificationConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedNotificationConfigurationsRequestT = Model::ListManagedNotificationConfigurationsRequest>
+        void ListManagedNotificationConfigurationsAsync(const ListManagedNotificationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedNotificationConfigurationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&NotificationsClient::ListManagedNotificationConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of Managed Notification Events according to specified filters,
+         * ordered by creation time in reverse chronological order (newest
+         * first).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedNotificationEventsOutcome ListManagedNotificationEvents(const Model::ListManagedNotificationEventsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListManagedNotificationEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedNotificationEventsRequestT = Model::ListManagedNotificationEventsRequest>
+        Model::ListManagedNotificationEventsOutcomeCallable ListManagedNotificationEventsCallable(const ListManagedNotificationEventsRequestT& request = {}) const
+        {
+            return SubmitCallable(&NotificationsClient::ListManagedNotificationEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedNotificationEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedNotificationEventsRequestT = Model::ListManagedNotificationEventsRequest>
+        void ListManagedNotificationEventsAsync(const ListManagedNotificationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedNotificationEventsRequestT& request = {}) const
+        {
+            return SubmitAsync(&NotificationsClient::ListManagedNotificationEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of abbreviated <code>NotificationConfigurations</code>
+         * according to specified filters, in reverse chronological order (newest
+         * first).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationConfigurations">AWS
          * API Reference</a></p>
          */
@@ -441,8 +819,8 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a list of NotificationEvents according to specified filters, in
-         * reverse chronological order (newest first).</p>  <p>User
+         * <p>Returns a list of <code>NotificationEvents</code> according to specified
+         * filters, in reverse chronological order (newest first).</p>  <p>User
          * Notifications stores notifications in the individual Regions you register as
          * notification hubs and the Region of the source event rule.
          * ListNotificationEvents only returns notifications stored in the same Region in
@@ -451,7 +829,7 @@ namespace Notifications
          * you make calls in your oldest registered notification hub. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-         * hubs</a> in the <i>AWS User Notifications User Guide</i>.</p>
+         * hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationEvents">AWS
          * API Reference</a></p>
@@ -477,7 +855,8 @@ namespace Notifications
         }
 
         /**
-         * <p>Returns a list of NotificationHubs.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of <code>NotificationHubs</code>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationHubs">AWS
          * API Reference</a></p>
          */
@@ -505,9 +884,9 @@ namespace Notifications
          * <p>Returns a list of tags for a specified Amazon Resource Name (ARN).</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-         * your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.</p>
-         *  <p>This is only supported for NotificationConfigurations.</p>
-         * <p><h3>See Also:</h3>   <a
+         * your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services
+         * Resources User Guide</i>.</p>  <p>This is only supported for
+         * <code>NotificationConfigurations</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -532,9 +911,10 @@ namespace Notifications
         }
 
         /**
-         * <p>Registers a NotificationHub in the specified Region.</p> <p>There is a
-         * maximum of one NotificationHub per Region. You can have a maximum of 3
-         * NotificationHubs at a time.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a <code>NotificationConfiguration</code> in the specified
+         * Region.</p> <p>There is a maximum of one <code>NotificationConfiguration</code>
+         * per Region. You can have a maximum of 3 <code>NotificationHub</code> resources
+         * at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/RegisterNotificationHub">AWS
          * API Reference</a></p>
          */
@@ -562,9 +942,9 @@ namespace Notifications
          * <p>Tags the resource with a tag key and value.</p> <p>For more information, see
          * <a
          * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-         * your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.</p>
-         *  <p>This is only supported for NotificationConfigurations.</p>
-         * <p><h3>See Also:</h3>   <a
+         * your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services
+         * Resources User Guide</i>.</p>  <p>This is only supported for
+         * <code>NotificationConfigurations</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/TagResource">AWS
          * API Reference</a></p>
          */
@@ -592,8 +972,8 @@ namespace Notifications
          * <p>Untags a resource with a specified Amazon Resource Name (ARN).</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-         * your AWS resources</a> in the <i>Tagging AWS Resources User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services
+         * Resources User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -618,7 +998,7 @@ namespace Notifications
         }
 
         /**
-         * <p>Updates an existing EventRule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing <code>EventRule</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateEventRule">AWS
          * API Reference</a></p>
          */
@@ -643,7 +1023,8 @@ namespace Notifications
         }
 
         /**
-         * <p>Updates a NotificationConfiguration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a <code>NotificationConfiguration</code>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateNotificationConfiguration">AWS
          * API Reference</a></p>
          */

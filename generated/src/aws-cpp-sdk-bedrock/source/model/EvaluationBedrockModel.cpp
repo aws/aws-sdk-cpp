@@ -20,7 +20,8 @@ namespace Model
 
 EvaluationBedrockModel::EvaluationBedrockModel() : 
     m_modelIdentifierHasBeenSet(false),
-    m_inferenceParamsHasBeenSet(false)
+    m_inferenceParamsHasBeenSet(false),
+    m_performanceConfigHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ EvaluationBedrockModel& EvaluationBedrockModel::operator =(JsonView jsonValue)
     m_inferenceParamsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("performanceConfig"))
+  {
+    m_performanceConfig = jsonValue.GetObject("performanceConfig");
+
+    m_performanceConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue EvaluationBedrockModel::Jsonize() const
   if(m_inferenceParamsHasBeenSet)
   {
    payload.WithString("inferenceParams", m_inferenceParams);
+
+  }
+
+  if(m_performanceConfigHasBeenSet)
+  {
+   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
 
   }
 

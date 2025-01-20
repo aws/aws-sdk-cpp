@@ -2410,113 +2410,86 @@ namespace
     }
 
     TEST_F(BucketAndObjectOperationTest, PutObjectChecksum) {
-        struct ChecksumTestCase {
-            std::function<PutObjectRequest(PutObjectRequest)> chucksumRequestMutator;
-            HttpResponseCode responseCode;
-            String body;
-        };
+      struct ChecksumTestCase {
+        std::function<PutObjectRequest(PutObjectRequest)> chucksumRequestMutator;
+        HttpResponseCode responseCode;
+        String body;
+      };
 
-        const String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
-        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
-        AWS_ASSERT_SUCCESS(createBucketOutcome);
+      const String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+      CreateBucketRequest createBucketRequest;
+      createBucketRequest.SetBucket(fullBucketName);
+      createBucketRequest.SetACL(BucketCannedACL::private_);
+      CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+      AWS_ASSERT_SUCCESS(createBucketOutcome);
 
-        Vector<ChecksumTestCase> testCases{
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
-                },
-                HttpResponseCode::BAD_REQUEST,
-                "Just runnin' scared each place we go"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
-                },
-                HttpResponseCode::BAD_REQUEST,
-                "So afraid that he might show"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
-                },
-                HttpResponseCode::BAD_REQUEST,
-                "Yeah, runnin' scared, what would I do"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
-                },
-                HttpResponseCode::BAD_REQUEST,
-                "If he came back and wanted you?"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithContentMD5("Just runnin' scared, feelin' low");
-                },
-                HttpResponseCode::BAD_REQUEST,
-                "Just runnin' scared, feelin' low",
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
-                        .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
-                },
-                HttpResponseCode::OK,
-                "Runnin' scared, you love him so"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
-                        .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
-                },
-                HttpResponseCode::OK,
-                "Just runnin' scared, afraid to lose"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
-                        .WithChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
-                },
-                HttpResponseCode::OK,
-                "If he came back, which one would you choose?"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
-                        .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
-                },
-                HttpResponseCode::OK,
-                "Then all at once he was standing there"
-            },
-            {
-                [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("So sure of himself, his head in the air")));
-                },
-                HttpResponseCode::OK,
-                "So sure of himself, his head in the air"
-            }
-        };
+      Vector<ChecksumTestCase> testCases{
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
+           },
+           HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC64NVME)
+                 .WithChecksumCRC64NVME("Just runnin' scared each place we go");
+           },
+           HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
+           },
+           HttpResponseCode::BAD_REQUEST, "Just runnin' scared each place we go"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
+           },
+           HttpResponseCode::BAD_REQUEST, "So afraid that he might show"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
+           },
+           HttpResponseCode::BAD_REQUEST, "Yeah, runnin' scared, what would I do"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
+           },
+           HttpResponseCode::BAD_REQUEST, "If he came back and wanted you?"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+                 .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
+           },
+           HttpResponseCode::OK, "Runnin' scared, you love him so"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC64NVME)
+                 .WithChecksumCRC64NVME(HashingUtils::Base64Encode(HashingUtils::CalculateCRC64("Runnin' scared, you love him so")));
+           },
+           HttpResponseCode::OK, "Runnin' scared, you love him so"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
+                 .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
+           },
+           HttpResponseCode::OK, "Just runnin' scared, afraid to lose"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
+                 .WithChecksumSHA256(
+                     HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
+           },
+           HttpResponseCode::OK, "If he came back, which one would you choose?"},
+          {[](PutObjectRequest request) -> PutObjectRequest {
+             return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
+                 .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
+           },
+           HttpResponseCode::OK, "Then all at once he was standing there"}};
 
-        for (const auto&testCase: testCases) {
-            auto request = testCase.chucksumRequestMutator(PutObjectRequest()
-                .WithBucket(fullBucketName)
-                .WithKey("RunningScared"));
-            std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
-                testCase.body,
-                std::ios_base::in | std::ios_base::binary);
-            request.SetBody(body);
-            const auto response = Client->PutObject(request);
-            if (!response.IsSuccess()) {
-                ASSERT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
-            } else {
-                ASSERT_EQ(testCase.responseCode, HttpResponseCode::OK);
-                ASSERT_TRUE(response.IsSuccess());
-            }
+      for (const auto& testCase : testCases) {
+        auto request = testCase.chucksumRequestMutator(PutObjectRequest().WithBucket(fullBucketName).WithKey("RunningScared"));
+        std::shared_ptr<IOStream> body =
+            Aws::MakeShared<StringStream>(ALLOCATION_TAG, testCase.body, std::ios_base::in | std::ios_base::binary);
+        request.SetBody(body);
+        const auto response = Client->PutObject(request);
+        if (!response.IsSuccess()) {
+          ASSERT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
+        } else {
+          ASSERT_EQ(testCase.responseCode, HttpResponseCode::OK);
+          ASSERT_TRUE(response.IsSuccess());
         }
+      }
     }
 
     TEST_F(BucketAndObjectOperationTest, PutObjectChecksumWithGuarunteedChunkedObject) {
@@ -2535,6 +2508,8 @@ namespace
 
       Vector<ChecksumTestCase> testCases{
           {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32); },
+           Aws::String(1024 * 1024, 'e')},
+          {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC64NVME); },
            Aws::String(1024 * 1024, 'e')},
           {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C); },
            Aws::String(1024 * 1024, 'l')},
@@ -2579,5 +2554,39 @@ namespace
       const auto headOutcome = Client->HeadObject(HeadObjectRequest().WithBucket(fullBucketName).WithKey("euchronia"));
       AWS_EXPECT_SUCCESS(headOutcome);
       EXPECT_EQ(headOutcome.GetResult().GetContentEncoding(), "gzip");
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestHeaderResponse) {
+        ClientConfiguration configuration;
+        configuration.region = "us-east-1";
+        configuration.enableHttpClientTrace = true;
+        std::shared_ptr<Aws::S3::S3Client> client =  Aws::MakeShared<Aws::S3::S3Client>("test",configuration);
+
+        const String fullBucketName = CalculateBucketName(BASE_CONTENT_ENCODING_BUCKET_NAME.c_str());
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest,client);
+        AWS_EXPECT_SUCCESS(createBucketOutcome);
+
+        Aws::S3::Model::GetObjectRequest request;
+        request.SetBucket(fullBucketName);
+        request.SetKey("one_object_that_does_not_exist_in_the_bucket"); // <== we should get 404 when calling GetResponseCode
+        request.SetHeadersReceivedEventHandler (
+        [] (
+            const Aws::Http::HttpRequest * ,
+            Aws::Http::HttpResponse * response
+        ) {
+            ::std::cout <<  "response headers received: "
+                << response->GetResponseCode ( )
+            << ::std::endl; 
+            EXPECT_EQ(response->GetResponseCode(), Aws::Http::HttpResponseCode::NOT_FOUND );
+        }
+        );
+
+        Aws::S3::Model::GetObjectOutcome outcome =
+                client->GetObject(request);
+        EXPECT_FALSE(outcome.IsSuccess());
+
     }
 }

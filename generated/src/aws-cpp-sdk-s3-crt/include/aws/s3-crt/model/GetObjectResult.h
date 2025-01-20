@@ -9,6 +9,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/s3-crt/model/ChecksumType.h>
 #include <aws/s3-crt/model/ServerSideEncryption.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/s3-crt/model/StorageClass.h>
@@ -160,8 +161,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 32-bit CRC-32 checksum of the object. This will only be
-     * present if it was uploaded with the object. For more information, see <a
+     * <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This
+     * checksum is only present if the object was uploaded with the object. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -176,8 +178,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 32-bit CRC-32C checksum of the object. This will only be
-     * present if it was uploaded with the object. For more information, see <a
+     * <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This
+     * will only be present if the object was uploaded with the object. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -192,8 +195,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
-     * present if it was uploaded with the object. For more information, see <a
+     * <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity in the Amazon S3 User Guide</a>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
+    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVME = value; }
+    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVME = std::move(value); }
+    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVME.assign(value); }
+    inline GetObjectResult& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
+    inline GetObjectResult& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
+    inline GetObjectResult& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This
+     * will only be present if the object was uploaded with the object. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -208,8 +228,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
-     * present if it was uploaded with the object. For more information, see <a
+     * <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This
+     * will only be present if the object was uploaded with the object. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -220,6 +241,23 @@ namespace Model
     inline GetObjectResult& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
     inline GetObjectResult& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
     inline GetObjectResult& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The checksum type, which determines how part-level checksums are combined to
+     * create an object-level checksum for multipart objects. You can use this header
+     * response to verify that the checksum type that is received is the same checksum
+     * type that was specified in the <code>CreateMultipartUpload</code> request. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline void SetChecksumType(const ChecksumType& value) { m_checksumType = value; }
+    inline void SetChecksumType(ChecksumType&& value) { m_checksumType = std::move(value); }
+    inline GetObjectResult& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
+    inline GetObjectResult& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -597,9 +635,13 @@ namespace Model
 
     Aws::String m_checksumCRC32C;
 
+    Aws::String m_checksumCRC64NVME;
+
     Aws::String m_checksumSHA1;
 
     Aws::String m_checksumSHA256;
+
+    ChecksumType m_checksumType;
 
     int m_missingMeta;
 

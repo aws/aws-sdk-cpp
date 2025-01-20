@@ -199,10 +199,11 @@ namespace {
         .WithChecksumCRC32(uploadPart.GetResult().GetChecksumCRC32()));
 
       return client->CompleteMultipartUpload(CompleteMultipartUploadRequest()
-        .WithBucket(bucketName)
-        .WithKey(keyName)
-        .WithUploadId(createOutcome.GetResult().GetUploadId())
-        .WithMultipartUpload(completedUpload));
+                                                 .WithBucket(bucketName)
+                                                 .WithKey(keyName)
+                                                 .WithUploadId(createOutcome.GetResult().GetUploadId())
+                                                 .WithMultipartUpload(completedUpload)
+                                                 .WithChecksumType(ChecksumType::COMPOSITE));
     }
 
     UploadPartCopyOutcome UploadPartCopy(const Aws::String &bucketName, const Aws::String &keyName) {

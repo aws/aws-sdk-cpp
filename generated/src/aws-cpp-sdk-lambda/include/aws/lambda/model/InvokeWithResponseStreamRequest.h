@@ -38,6 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeWithResponseStream"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     AWS_LAMBDA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;

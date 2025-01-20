@@ -24,14 +24,60 @@ using namespace smithy::components::tracing;
 
 static const char AWS_SMITHY_CLIENT_LOG[] = "AwsSmithyClient";
 
-
+namespace {
 void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::Http::HeaderValueCollection& headerValues)
 {
-    for (auto const& headerValue : headerValues)
-    {
-        httpRequest->SetHeaderValue(headerValue.first, headerValue.second);
-    }
+  for (auto const& headerValue : headerValues)
+  {
+    httpRequest->SetHeaderValue(headerValue.first, headerValue.second);
+  }
+}
+
+template <typename T>
+void createFromFactories(T& entity, std::function<T()>& factory) {
+  if (!entity) {
+    assert(factory);
+    entity = factory();
+  } else {
+    factory = nullptr;
+  }
+}
+
+template <typename T>
+void createFromFactoriesIfPresent(T& entity, std::function<T()>& factory) {
+  if (entity && factory) {
+    entity = factory();
+  }
+}
+}  // namespace
+
+void AwsSmithyClientBase::baseInit() {
+  createFromFactories(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
+  createFromFactories(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
+  createFromFactories(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
+  createFromFactories(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
+  createFromFactories(m_clientConfig->telemetryProvider, m_clientConfig->configFactories.telemetryProviderCreateFn);
+  if (m_clientConfig && m_clientConfig->retryStrategy) {
+    m_interceptors.emplace_back(Aws::MakeShared<UserAgentInterceptor>(AWS_SMITHY_CLIENT_LOG,
+                                                                      *m_clientConfig,
+                                                                      m_clientConfig->retryStrategy->GetStrategyName(),
+                                                                      m_serviceUserAgentName));
+  }
+}
+
+void AwsSmithyClientBase::baseCopyInit() {
+  createFromFactoriesIfPresent(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
+  createFromFactoriesIfPresent(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
+  createFromFactoriesIfPresent(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
+  createFromFactoriesIfPresent(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
+  createFromFactoriesIfPresent(m_clientConfig->telemetryProvider, m_clientConfig->configFactories.telemetryProviderCreateFn);
+  if (m_clientConfig && m_clientConfig->retryStrategy) {
+    m_interceptors.emplace_back(Aws::MakeShared<UserAgentInterceptor>(AWS_SMITHY_CLIENT_LOG,
+                                                                      *m_clientConfig,
+                                                                      m_clientConfig->retryStrategy->GetStrategyName(),
+                                                                      m_serviceUserAgentName));
+  }
 }
 
 std::shared_ptr<Aws::Http::HttpRequest>
@@ -54,7 +100,6 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
         return httpRequest;
     }
 
-    httpRequest->SetUserAgent(m_userAgent);
     httpRequest->SetHeaderValue(Aws::Http::SDK_INVOCATION_ID_HEADER, pRequestCtx->m_invocationId);
     httpRequest->SetHeaderValue(Aws::Http::SDK_REQUEST_HEADER, pRequestCtx->m_requestInfo.ToString());
     RecursionDetection::AppendRecursionDetectionHeader(pRequestCtx->m_httpRequest);

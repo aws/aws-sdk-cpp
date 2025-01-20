@@ -897,7 +897,15 @@ namespace Model
     i8g_12xlarge,
     i8g_16xlarge,
     i8g_24xlarge,
-    i8g_metal_24xl
+    i8g_metal_24xl,
+    u7i_6tb_112xlarge,
+    u7i_8tb_112xlarge,
+    u7inh_32tb_480xlarge,
+    p5e_48xlarge,
+    p5en_48xlarge,
+    f2_12xlarge,
+    f2_48xlarge,
+    trn2_48xlarge
   };
 
 namespace InstanceTypeMapper

@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the NotificationConfiguration.</p>
+     * <p>The Amazon Resource Name (ARN) of the
+     * <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline bool NotificationConfigurationArnHasBeenSet() const { return m_notificationConfigurationArnHasBeenSet; }
@@ -66,7 +67,7 @@ namespace Model
     ///@{
     /**
      * <p>The start token for paginated calls. Retrieved from the response of a
-     * previous ListEventRules call. Next token uses Base64 encoding.</p>
+     * previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

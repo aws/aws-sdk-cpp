@@ -31,12 +31,12 @@ namespace Aws
         static const int EngagementConflict_HASH = HashingUtils::HashString("EngagementConflict");
         static const int OpportunitySubmissionFailed_HASH = HashingUtils::HashString("OpportunitySubmissionFailed");
         static const int EngagementInvitationConflict_HASH = HashingUtils::HashString("EngagementInvitationConflict");
+        static const int InternalError_HASH = HashingUtils::HashString("InternalError");
         static const int OpportunityValidationFailed_HASH = HashingUtils::HashString("OpportunityValidationFailed");
         static const int OpportunityConflict_HASH = HashingUtils::HashString("OpportunityConflict");
         static const int ResourceSnapshotAccessDenied_HASH = HashingUtils::HashString("ResourceSnapshotAccessDenied");
         static const int ResourceSnapshotValidationFailed_HASH = HashingUtils::HashString("ResourceSnapshotValidationFailed");
         static const int ResourceSnapshotConflict_HASH = HashingUtils::HashString("ResourceSnapshotConflict");
-        static const int InternalError_HASH = HashingUtils::HashString("InternalError");
         static const int ServiceQuotaExceeded_HASH = HashingUtils::HashString("ServiceQuotaExceeded");
         static const int RequestThrottled_HASH = HashingUtils::HashString("RequestThrottled");
 
@@ -88,6 +88,10 @@ namespace Aws
           {
             return ReasonCode::EngagementInvitationConflict;
           }
+          else if (hashCode == InternalError_HASH)
+          {
+            return ReasonCode::InternalError;
+          }
           else if (hashCode == OpportunityValidationFailed_HASH)
           {
             return ReasonCode::OpportunityValidationFailed;
@@ -107,10 +111,6 @@ namespace Aws
           else if (hashCode == ResourceSnapshotConflict_HASH)
           {
             return ReasonCode::ResourceSnapshotConflict;
-          }
-          else if (hashCode == InternalError_HASH)
-          {
-            return ReasonCode::InternalError;
           }
           else if (hashCode == ServiceQuotaExceeded_HASH)
           {
@@ -158,6 +158,8 @@ namespace Aws
             return "OpportunitySubmissionFailed";
           case ReasonCode::EngagementInvitationConflict:
             return "EngagementInvitationConflict";
+          case ReasonCode::InternalError:
+            return "InternalError";
           case ReasonCode::OpportunityValidationFailed:
             return "OpportunityValidationFailed";
           case ReasonCode::OpportunityConflict:
@@ -168,8 +170,6 @@ namespace Aws
             return "ResourceSnapshotValidationFailed";
           case ReasonCode::ResourceSnapshotConflict:
             return "ResourceSnapshotConflict";
-          case ReasonCode::InternalError:
-            return "InternalError";
           case ReasonCode::ServiceQuotaExceeded:
             return "ServiceQuotaExceeded";
           case ReasonCode::RequestThrottled:

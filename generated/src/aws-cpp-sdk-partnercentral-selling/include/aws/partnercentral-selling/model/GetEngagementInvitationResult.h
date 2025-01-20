@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The description of the engagement associated with this invitation. </p>
+     * <p>The description of the engagement associated with this invitation.</p>
      */
     inline const Aws::String& GetEngagementDescription() const{ return m_engagementDescription; }
     inline void SetEngagementDescription(const Aws::String& value) { m_engagementDescription = value; }
@@ -82,8 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the engagement associated with this invitation.This ID
-     * links the invitation to its corresponding engagement. </p>
+     * <p>The identifier of the engagement associated with this invitation.This ID
+     * links the invitation to its corresponding engagement.</p>
      */
     inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
     inline void SetEngagementId(const Aws::String& value) { m_engagementId = value; }
@@ -110,11 +110,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> A list of active members currently part of the Engagement. This array
+     * <p>A list of active members currently part of the Engagement. This array
      * contains a maximum of 10 members, each represented by an object with the
-     * following properties. </p> <ul> <li> <p> CompanyName: The name of the member's
-     * company. </p> </li> <li> <p> WebsiteUrl: The website URL of the member's
-     * company. </p> </li> </ul>
+     * following properties.</p> <ul> <li> <p>CompanyName: The name of the member's
+     * company.</p> </li> <li> <p>WebsiteUrl: The website URL of the member's
+     * company.</p> </li> </ul>
      */
     inline const Aws::Vector<EngagementMemberSummary>& GetExistingMembers() const{ return m_existingMembers; }
     inline void SetExistingMembers(const Aws::Vector<EngagementMemberSummary>& value) { m_existingMembers = value; }
@@ -163,8 +163,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The message sent to the invited partner when the invitation was created.
-     * </p>
+     * <p>The message sent to the invited partner when the invitation was created.</p>
      */
     inline const Aws::String& GetInvitationMessage() const{ return m_invitationMessage; }
     inline void SetInvitationMessage(const Aws::String& value) { m_invitationMessage = value; }

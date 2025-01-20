@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The NotificationHub Region.</p>
+     * <p>The <code>NotificationConfiguration</code> Region.</p>
      */
     inline const Aws::String& GetNotificationHubRegion() const{ return m_notificationHubRegion; }
     inline bool NotificationHubRegionHasBeenSet() const { return m_notificationHubRegionHasBeenSet; }

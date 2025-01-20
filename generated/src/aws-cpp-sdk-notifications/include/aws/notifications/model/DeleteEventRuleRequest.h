@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the EventRule to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>EventRule</code> to delete.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

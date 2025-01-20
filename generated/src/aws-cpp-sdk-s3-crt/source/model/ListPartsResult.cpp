@@ -23,7 +23,8 @@ ListPartsResult::ListPartsResult() :
     m_isTruncated(false),
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumType(ChecksumType::NOT_SET)
 {
 }
 
@@ -105,6 +106,11 @@ ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<X
     if(!checksumAlgorithmNode.IsNull())
     {
       m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumAlgorithmNode.GetText()).c_str()).c_str());
+    }
+    XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
+    if(!checksumTypeNode.IsNull())
+    {
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
     }
   }
 

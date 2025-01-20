@@ -381,16 +381,13 @@ static Aws::String GetHttpRequestSignatureFromTestCase(const char* testCaseName,
  * |    HTTPS    |       N           |          Y          |Depends on Request|
  * +-------------+-------------------+---------------------+------------------+
  */
-static bool SignPayload(AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload/*sign flag in request*/)
-{
-    if (scheme == Aws::Http::Scheme::HTTPS)
-    {
-        if (policy == AWSAuthV4Signer::PayloadSigningPolicy::Never || (policy == AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent && requestSignPayload == false))
-        {
-            return false;
-        }
-    }
-    return true;
+static bool SignPayload(AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme,
+                        bool requestSignPayload /*sign flag in request*/) {
+  AWS_UNREFERENCED_PARAM(policy);
+  if (scheme == Aws::Http::Scheme::HTTPS) {
+    return requestSignPayload;
+  }
+  return true;
 }
 
 static void RunTestCaseWithPayload(const char* testCaseName, AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload, const Aws::String& requestHash)
@@ -452,11 +449,11 @@ static void RunTestCaseWithPayload(const char* testCaseName, AWSAuthV4Signer::Pa
 
 static void RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload, const Aws::String& requestHash)
 {
-    bool signPayload = SignPayload(policy, scheme, requestSignPayload);
     auto request = Standard::StandardHttpRequest(scheme == Aws::Http::Scheme::HTTP ? "http://test.com/query?key=val" : "https://test.com/query?key=val", Aws::Http::HttpMethod::HTTP_GET);
 
-    const char *expectedContentHashHeader = 
-        signPayload ? EMPTY_STRING_SHA256 : (requestHash == "none") ? UNSIGNED_PAYLOAD : STREAMING_UNSIGNED_PAYLOAD_TRAILER;
+    const char* expectedContentHashHeader = request.GetRequestHash().first.empty() ? EMPTY_STRING_SHA256
+                                            : (requestHash == "none")              ? UNSIGNED_PAYLOAD
+                                                                                   : STREAMING_UNSIGNED_PAYLOAD_TRAILER;
 
     if (requestHash == "crc32") {
         request.SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>("crc32"));
@@ -493,7 +490,7 @@ TEST_F(AWSAuthSignerEmptyTest, HeadersWithEmptyValues)
     AWSAuthV4Signer signer(credProvider, "service", "us-east-1", AWSAuthV4Signer::PayloadSigningPolicy::Never, false);
 
     ASSERT_TRUE(signer.SignRequest(request, false/*signPayload*/));
-    ASSERT_STREQ(UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
+    ASSERT_STREQ(EMPTY_STRING_SHA256, request.GetHeaderValue("x-amz-content-sha256").c_str());
 }
 
 class AWSAuthSignerTestSuite

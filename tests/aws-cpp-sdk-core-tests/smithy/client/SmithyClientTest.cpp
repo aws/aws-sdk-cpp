@@ -1,36 +1,50 @@
 /**
-* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <aws/testing/AwsCppSdkGTestSuite.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-
-#include <smithy/identity/auth/built-in/SigV4aAuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
-#include <aws/core/client/ClientConfiguration.h>
-
-#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
-#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
-#include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
-
-#include <aws/core/endpoint/EndpointProviderBase.h>
-#include <aws/core/utils/memory/stl/AWSAllocator.h>
-#include <aws/core/http/HttpClientFactory.h>
-#include <aws/core/http/HttpResponse.h>
-#include <aws/core/http/HttpRequest.h>
-#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
-#include <smithy/identity/auth/AuthSchemeOption.h>
-#include <aws/testing/mocks/http/MockHttpClient.h>
-
 #include <aws/core/auth/AWSBearerToken.h>
 #include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/endpoint/EndpointProviderBase.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/http/HttpRequest.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <aws/testing/mocks/http/MockHttpClient.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
+#include <smithy/identity/auth/built-in/SigV4aAuthSchemeResolver.h>
+#include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
 
 static const char ALLOC_TAG[] = "SmithyClientTest";
 
-class TestEndPointProvider : public Aws::Endpoint::EndpointProviderBase<>
+struct TestEndPointProvider : public Aws::Endpoint::EndpointProviderBase<>
 {
+public:
+  void InitBuiltInParameters(const Aws::Client::GenericClientConfiguration& config) override { AWS_UNREFERENCED_PARAM(config); }
+
+  void OverrideEndpoint(const Aws::String& endpoint) override { AWS_UNREFERENCED_PARAM(endpoint); }
+
+  ClientContextParameters& AccessClientContextParameters() override { return m_clientContext; }
+
+  const ClientContextParameters& GetClientContextParameters() const override { return m_clientContext; }
+
+  Aws::Endpoint::ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters) const override {
+    AWS_UNREFERENCED_PARAM(endpointParameters);
+    return Aws::Endpoint::AWSEndpoint{};
+  }
+
+  ~TestEndPointProvider() override = default;
+private:
+  ClientContextParameters m_clientContext;
 };
 
 
@@ -101,6 +115,7 @@ class SmithyClientTest : public Aws::Testing::AwsCppSdkGTestSuite {
         httpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
         errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOCATION_TAG);
         credsProviderChain = Aws::MakeShared<TestCredentialsProviderChain>(ALLOCATION_TAG);
+        endPointProvider = Aws::MakeShared<TestEndPointProvider>(ALLOCATION_TAG);
 
         //add mock credentials provider for the test to the credentials provider chain
         AddCredentialsProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
@@ -155,7 +170,8 @@ using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
                                                         SigVariant,
                                                         TestEndPointProvider,
                                                         MockDeserializer,
-                                                        Aws::String>;
+                                                        Aws::String,
+                                                        Aws::Client::XmlErrorMarshaller>;
 
 class TestClient : public MySmithyClient
 {
@@ -170,6 +186,7 @@ class TestClient : public MySmithyClient
             MySmithyClient(
                 clientConfig,
                 serviceName,
+                "ServiceUserAgentName",
                 httpClient,
                 errorMarshaller,
                 endpointProvider,
@@ -348,4 +365,67 @@ TEST_F(SmithyClientTest, bearer)
 
     EXPECT_EQ(res2.GetResult()->GetHeaderValue("authorization"),
               "Bearer testBearerToken");
+}
+
+struct SampleConfiguration: public Aws::Client::ClientConfiguration {
+  Aws::String localToService{"whatever"};
+};
+
+struct SampleConfigurationAuthSchemeOption {
+  static smithy::AuthSchemeOption schemeOption;
+};
+
+struct SampleEndpointProvider : public Aws::Endpoint::EndpointProviderBase<>
+{
+public:
+  void InitBuiltInParameters(const Aws::Client::GenericClientConfiguration& config) override { AWS_UNREFERENCED_PARAM(config); }
+
+  void OverrideEndpoint(const Aws::String& endpoint) override { AWS_UNREFERENCED_PARAM(endpoint); }
+
+  ClientContextParameters& AccessClientContextParameters() override { return m_clientContext; }
+
+  const ClientContextParameters& GetClientContextParameters() const override { return m_clientContext; }
+
+  Aws::Endpoint::ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters) const override {
+    AWS_UNREFERENCED_PARAM(endpointParameters);
+    return Aws::Endpoint::AWSEndpoint{};
+  }
+
+  ~SampleEndpointProvider() override = default;
+private:
+  ClientContextParameters m_clientContext;
+};
+
+static constexpr char SampleServiceName[] = "SampleService";
+class SampleClient: public smithy::client::AwsSmithyClientT<SampleServiceName,
+  SampleConfiguration,
+  smithy::SigV4AuthSchemeResolver<>,
+  Aws::Crt::Variant<smithy::SigV4aAuthScheme>,
+  SampleEndpointProvider,
+  smithy::client::JsonOutcomeSerializer,
+  smithy::client::JsonOutcome,
+  Aws::Client::JsonErrorMarshaller>
+{
+public:
+  SampleClient(): AwsSmithyClientT(SampleConfiguration{},
+    SampleServiceName,
+    "SampleServiceUserAgentName",
+    Aws::MakeShared<MockHttpClient>(SampleServiceName),
+    Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(SampleServiceName),
+    Aws::MakeShared<SampleEndpointProvider>(SampleServiceName),
+    Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(SampleServiceName),
+    Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4aAuthScheme>>())
+  {}
+};
+
+TEST_F(SmithyClientTest, SmithyClientShouldCopyAssignAndMove) {
+  SampleClient client{};
+  SampleClient copy{client};
+  AWS_UNREFERENCED_PARAM(copy);
+  SampleClient assign = client;
+  AWS_UNREFERENCED_PARAM(assign);
+  SampleClient move{client};
+  AWS_UNREFERENCED_PARAM(copy);
+  SampleClient moveAssign = std::move(client);
+  AWS_UNREFERENCED_PARAM(assign);
 }

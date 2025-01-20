@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Provides comprehensive details about a customer project associated with an
+   * <p>Provides comprehensive details about a customer project associated with an
    * Engagement. This may include information such as project goals, timelines, and
    * specific customer requirements. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementCustomerProjectDetails">AWS
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> A description of the business problem the project aims to solve. </p>
+     * <p>A description of the business problem the project aims to solve.</p>
      */
     inline const Aws::String& GetBusinessProblem() const{ return m_businessProblem; }
     inline bool BusinessProblemHasBeenSet() const { return m_businessProblemHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The target completion date for the customer's project. </p>
+     * <p>The target completion date for the customer's project.</p>
      */
     inline const Aws::String& GetTargetCompletionDate() const{ return m_targetCompletionDate; }
     inline bool TargetCompletionDateHasBeenSet() const { return m_targetCompletionDateHasBeenSet; }
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The title of the project. </p>
+     * <p>The title of the project.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }

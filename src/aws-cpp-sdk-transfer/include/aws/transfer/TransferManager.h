@@ -70,9 +70,8 @@ namespace Aws
             std::function<std::shared_ptr<Utils::Threading::Executor>()> executorCreateFn;
 
             /**
-             * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
-             * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.
-             * This option is disabled by default. Defer to checksumAlgorithm to use other checksum algorithms.
+             * deprecated, will now automatically use CR64 checksums. use a different checksum by specifying the
+             * checksumAlgorithm parameter.
              */
             bool computeContentMD5 = false;
             /**
@@ -145,7 +144,7 @@ namespace Aws
              * upload. Defaults to CRC32. Will be overwritten to use MD5 if computeContentMD5
              * is set to true.
              */
-            Aws::S3::Model::ChecksumAlgorithm checksumAlgorithm = S3::Model::ChecksumAlgorithm::CRC32;
+            Aws::S3::Model::ChecksumAlgorithm checksumAlgorithm = S3::Model::ChecksumAlgorithm::CRC64NVME;
         };        
 
         /**
@@ -181,27 +180,28 @@ namespace Aws
             ~TransferManager();
 
             /**
-            * Uploads a file via filename, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
-            * then a multi-part upload will be performed.
-            * Keeps file to be unopened until doing actual upload, this is useful for uploading directories with many small files (avoid having too many open files, which may exceed system limit)
-            */
-            std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName,
-                                                       const Aws::String& bucketName,
-                                                       const Aws::String& keyName,
-                                                       const Aws::String& contentType, 
+             * Uploads a file via filename, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object
+             * is larger than the configured bufferSize, then a multi-part upload will be performed. Keeps file to be unopened until doing
+             * actual upload, this is useful for uploading directories with many small files (avoid having too many open files, which may
+             * exceed system limit) If an optional checksum is given, the checksum will be sent as either the checksum header or the ful
+             * body checksum on the multipart upload.
+             */
+            std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName, const Aws::String& bucketName,
+                                                       const Aws::String& keyName, const Aws::String& contentType,
                                                        const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr);
+                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                       const Aws::String& precalculatedChecksum = {});
 
             /**
-             * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
-             * then a multi-part upload will be performed.
+             * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the
+             * object is larger than the configured bufferSize, then a multi-part upload will be performed. If an optional checksum is
+             * given, the checksum will be sent as either the checksum header or the ful body checksum on the multipart upload.
              */
-            std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream,
-                                                       const Aws::String& bucketName,
-                                                       const Aws::String& keyName,
-                                                       const Aws::String& contentType, 
+            std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName,
+                                                       const Aws::String& keyName, const Aws::String& contentType,
                                                        const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr);
+                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                       const Aws::String& precalculatedChecksum = {});
 
             /**
              * Downloads the contents of bucketName/keyName in S3 to the file specified by writeToFile. This will perform a GetObject operation.
@@ -286,14 +286,11 @@ namespace Aws
              * Creates TransferHandle.
              * fileName is not necessary if this handle will upload data from an IOStream
              */
-            std::shared_ptr<TransferHandle> CreateUploadFileHandle(Aws::IOStream* fileStream,
-                                                                   const Aws::String& bucketName,
-                                                                   const Aws::String& keyName,
-                                                                   const Aws::String& contentType, 
-                                                                   const Aws::Map<Aws::String,
-                                                                   Aws::String>& metadata,
+            std::shared_ptr<TransferHandle> CreateUploadFileHandle(Aws::IOStream* fileStream, const Aws::String& bucketName,
+                                                                   const Aws::String& keyName, const Aws::String& contentType,
+                                                                   const Aws::Map<Aws::String, Aws::String>& metadata,
                                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context,
-                                                                   const Aws::String& fileName = "");
+                                                                   const Aws::String& fileName = "", const Aws::String& checksum = "");
 
             /**
              * Submits the actual task to task scheduler
@@ -318,7 +315,6 @@ namespace Aws
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
 
             void WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle);
-
             void HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest&, const Aws::S3::Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
             void HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest&, const Aws::S3::Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
             void HandleListObjectsResponse(const Aws::S3::S3Client*, const Aws::S3::Model::ListObjectsV2Request&, const Aws::S3::Model::ListObjectsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
@@ -341,7 +337,7 @@ namespace Aws
              * @param state The state of the completed part as tracker by the transfer manager.
              * @param part The completed part of the MPU.
              */
-            void SetChecksumForAlgorithm(const std::shared_ptr<PartState> state, Aws::S3::Model::CompletedPart &part);
+            void SetChecksumForAlgorithm(const std::shared_ptr<PartState>& state, Aws::S3::Model::CompletedPart& part);
 
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 

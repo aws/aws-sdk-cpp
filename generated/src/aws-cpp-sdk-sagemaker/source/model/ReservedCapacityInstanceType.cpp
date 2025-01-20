@@ -24,6 +24,7 @@ namespace Aws
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
         static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
         static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
+        static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
         static const int ml_trn2_48xlarge_HASH = HashingUtils::HashString("ml.trn2.48xlarge");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == ml_p5en_48xlarge_HASH)
           {
             return ReservedCapacityInstanceType::ml_p5en_48xlarge;
+          }
+          else if (hashCode == ml_trn1_32xlarge_HASH)
+          {
+            return ReservedCapacityInstanceType::ml_trn1_32xlarge;
           }
           else if (hashCode == ml_trn2_48xlarge_HASH)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "ml.p5e.48xlarge";
           case ReservedCapacityInstanceType::ml_p5en_48xlarge:
             return "ml.p5en.48xlarge";
+          case ReservedCapacityInstanceType::ml_trn1_32xlarge:
+            return "ml.trn1.32xlarge";
           case ReservedCapacityInstanceType::ml_trn2_48xlarge:
             return "ml.trn2.48xlarge";
           default:

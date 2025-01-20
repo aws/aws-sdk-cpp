@@ -3,6 +3,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -16,15 +17,14 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
 #end
 #end
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ${className}::${className}(const AWSCredentials& credentials,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
                            const ${clientConfiguration}& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -34,15 +34,14 @@ ${className}::${className}(const AWSCredentials& credentials,
             {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
 #end
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
                            const ${clientConfiguration}& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -56,9 +55,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 #end
 #end
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 #if($serviceModel.metadata.serviceId == "S3")
@@ -68,6 +65,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -88,6 +86,7 @@ ${className}::${className}(
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -108,6 +107,7 @@ ${className}::${className}(
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -123,6 +123,7 @@ ${className}::${className}(
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -132,14 +133,13 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
           {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
 #end
       })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ${className}::${className}(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -149,14 +149,13 @@ ${className}::${className}(const AWSCredentials& credentials,
           {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
 #end
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "${metadata.serviceId}",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
@@ -166,9 +165,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
           {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
 #end
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 #end
 /* End of legacy constructors due deprecation */
 
@@ -180,23 +177,6 @@ ${className}::~${className}()
 std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
 {
   return m_endpointProvider;
-}
-
-void ${className}::init(const ${clientConfiguration}& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-#if($AdditionalServiceSpecificConfigLoadString)
-  ${AdditionalServiceSpecificConfigLoadString}
-#end##if($AdditionalServiceSpecificConfigLoadString)
 }
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)

@@ -58,6 +58,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the connector operation.</p>
+     */
+    inline const Aws::String& GetConnectorOperationArn() const{ return m_connectorOperationArn; }
+    inline void SetConnectorOperationArn(const Aws::String& value) { m_connectorOperationArn = value; }
+    inline void SetConnectorOperationArn(Aws::String&& value) { m_connectorOperationArn = std::move(value); }
+    inline void SetConnectorOperationArn(const char* value) { m_connectorOperationArn.assign(value); }
+    inline UpdateConnectorResult& WithConnectorOperationArn(const Aws::String& value) { SetConnectorOperationArn(value); return *this;}
+    inline UpdateConnectorResult& WithConnectorOperationArn(Aws::String&& value) { SetConnectorOperationArn(std::move(value)); return *this;}
+    inline UpdateConnectorResult& WithConnectorOperationArn(const char* value) { SetConnectorOperationArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -72,6 +85,8 @@ namespace Model
     Aws::String m_connectorArn;
 
     ConnectorState m_connectorState;
+
+    Aws::String m_connectorOperationArn;
 
     Aws::String m_requestId;
   };

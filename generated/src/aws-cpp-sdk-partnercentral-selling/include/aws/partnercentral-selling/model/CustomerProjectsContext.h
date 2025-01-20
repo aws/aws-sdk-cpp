@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> The CustomerProjects structure in Engagements offers a flexible framework
-   * for managing customer-project relationships. It supports multiple customers per
+   * <p>The CustomerProjects structure in Engagements offers a flexible framework for
+   * managing customer-project relationships. It supports multiple customers per
    * Engagement and multiple projects per customer, while also allowing for customers
    * without projects and projects without specific customers. </p> <p>All Engagement
    * members have full visibility of customers and their associated projects,
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Information about the customer project associated with the Engagement. </p>
+     * <p>Information about the customer project associated with the Engagement.</p>
      */
     inline const EngagementCustomerProjectDetails& GetProject() const{ return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }

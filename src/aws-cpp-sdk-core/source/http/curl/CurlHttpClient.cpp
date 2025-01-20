@@ -129,10 +129,12 @@ static char* strdup_callback(const char* str)
 struct CurlWriteCallbackContext
 {
     CurlWriteCallbackContext(const CurlHttpClient* client,
+                             CURL* curlHandle,
                              HttpRequest* request,
                              HttpResponse* response,
                              Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
         m_client(client),
+        m_curlHandle(curlHandle),
         m_request(request),
         m_response(response),
         m_rateLimiter(rateLimiter),
@@ -140,6 +142,7 @@ struct CurlWriteCallbackContext
     {}
 
     const CurlHttpClient* m_client;
+    CURL* m_curlHandle{nullptr};
     HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
@@ -235,7 +238,8 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
                 << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
             return 0;
         }
-        if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
+        if ((context->m_request->IsEventStreamRequest() || context->m_request->HasEventStreamResponse() )
+            && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             response->GetResponseBody().flush();
             if (response->GetResponseBody().fail()) {
@@ -271,6 +275,14 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
         if (keyValuePair.size() == 2)
         {
             response->AddHeader(StringUtils::Trim(keyValuePair[0].c_str()), StringUtils::Trim(keyValuePair[1].c_str()));
+        }
+        //checking for end of all the headers before setting response code
+        else if (headerLine == "\r\n" && context->m_curlHandle)
+        {
+            long responseCode{-1};
+            curl_easy_getinfo(context->m_curlHandle, CURLINFO_RESPONSE_CODE, &responseCode);
+            response->SetResponseCode(static_cast<HttpResponseCode>(responseCode));
+            AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned http response code " << responseCode);
         }
 
         return size * nmemb;
@@ -683,7 +695,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_HTTPHEADER, headers);
         }
 
-        CurlWriteCallbackContext writeContext(this, request.get(), response.get(), readLimiter);
+        CurlWriteCallbackContext writeContext(this, connectionHandle ,request.get(), response.get(), readLimiter);
 
         const auto readContext = [this, &connectionHandle, &request, &writeLimiter]() -> CurlReadCallbackContext {
           if (request->GetContentBody() != nullptr) {

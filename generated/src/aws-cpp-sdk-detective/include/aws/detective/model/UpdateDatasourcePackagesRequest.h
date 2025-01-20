@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data source package start for the behavior graph.</p>
+     * <p>The data source package to start for the behavior graph.</p>
      */
     inline const Aws::Vector<DatasourcePackage>& GetDatasourcePackages() const{ return m_datasourcePackages; }
     inline bool DatasourcePackagesHasBeenSet() const { return m_datasourcePackagesHasBeenSet; }

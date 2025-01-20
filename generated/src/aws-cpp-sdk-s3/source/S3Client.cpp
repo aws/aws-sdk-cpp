@@ -156,6 +156,7 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
                            std::shared_ptr<S3EndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "S3",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
@@ -163,15 +164,14 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 S3Client::S3Client(const AWSCredentials& credentials,
                            std::shared_ptr<S3EndpointProviderBase> endpointProvider,
                            const S3::S3ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "S3",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
@@ -179,15 +179,14 @@ S3Client::S3Client(const AWSCredentials& credentials,
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<S3EndpointProviderBase> endpointProvider,
                            const S3::S3ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
+        "S3",
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
@@ -195,9 +194,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG,  *this, credentialsProvider), GetServiceName(), clientConfiguration.region}}
         })
-{
-  init(m_clientConfiguration);
-}
+{}
 
 /* Legacy constructors due deprecation */
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
@@ -206,6 +203,7 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "S3",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
@@ -226,6 +224,7 @@ S3Client::S3Client(
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "S3",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
@@ -246,6 +245,7 @@ S3Client::S3Client(
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
+      "S3",
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
@@ -267,20 +267,6 @@ S3Client::~S3Client()
 std::shared_ptr<S3EndpointProviderBase>& S3Client::accessEndpointProvider()
 {
   return m_endpointProvider;
-}
-
-void S3Client::init(const S3::S3ClientConfiguration& config)
-{
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void S3Client::OverrideEndpoint(const Aws::String& endpoint)
@@ -4134,9 +4120,6 @@ UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
        [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
        Aws::Map<Aws::String, Aws::String> params;
        auto isExpress = resolvedEndpoint.AccessAttributes().value().backend == "S3Express";
-       if (!request.ChecksumAlgorithmHasBeenSet() && isExpress) {
-         params.emplace("overrideChecksumDisable", "noop");
-       }
        if (!request.ChecksumAlgorithmHasBeenSet() && isExpress && request.GetChecksumAlgorithmName() == "md5") {
            params.emplace("overrideChecksum", "crc32");
        }

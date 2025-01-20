@@ -347,7 +347,7 @@ namespace Model
      * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
-     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * +=,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
      * prefix is reserved for Amazon Web Services internal use.</p>
      */
     inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }

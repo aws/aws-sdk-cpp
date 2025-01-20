@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the NotificationConfiguration to disassociate.</p>
+     * <p>The ARN of the <code>NotificationConfiguration</code> to disassociate.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline bool NotificationConfigurationArnHasBeenSet() const { return m_notificationConfigurationArnHasBeenSet; }

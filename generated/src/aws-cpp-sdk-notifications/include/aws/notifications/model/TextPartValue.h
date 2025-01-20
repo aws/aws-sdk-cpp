@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A short single line description of the link. Must be hyperlinked with the URL
-     * itself. </p> <p>Used for text parts with the type <code>URL</code>.</p>
+     * <p>A short single line description of the link. Must be hyper-linked with the
+     * URL itself. </p> <p>Used for text parts with the type <code>URL</code>.</p>
      */
     inline const Aws::String& GetDisplayText() const{ return m_displayText; }
     inline bool DisplayTextHasBeenSet() const { return m_displayTextHasBeenSet; }

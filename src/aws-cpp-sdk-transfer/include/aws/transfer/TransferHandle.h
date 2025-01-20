@@ -379,8 +379,10 @@ namespace Aws
              */
             Aws::String GetId() const;
 
-        private:
+            Aws::String GetChecksum() const { return m_checksum; }
+            void SetChecksum(const Aws::String& checksum) { this->m_checksum = checksum; }
 
+           private:
             void CleanupDownloadStream();
 
             std::atomic<bool> m_isMultipart;
@@ -419,6 +421,7 @@ namespace Aws
             mutable std::mutex m_statusLock;
             mutable std::condition_variable m_waitUntilFinishedSignal;
             mutable std::mutex m_getterSetterLock;
+            Aws::String m_checksum;
         };
 
         AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);

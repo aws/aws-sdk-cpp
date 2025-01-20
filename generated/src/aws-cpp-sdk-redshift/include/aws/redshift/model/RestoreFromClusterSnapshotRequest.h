@@ -171,6 +171,7 @@ namespace Model
     ///@{
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+     * <p>Default: false</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }

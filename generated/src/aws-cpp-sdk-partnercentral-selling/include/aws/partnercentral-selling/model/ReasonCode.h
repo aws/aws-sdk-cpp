@@ -27,12 +27,12 @@ namespace Model
     EngagementConflict,
     OpportunitySubmissionFailed,
     EngagementInvitationConflict,
+    InternalError,
     OpportunityValidationFailed,
     OpportunityConflict,
     ResourceSnapshotAccessDenied,
     ResourceSnapshotValidationFailed,
     ResourceSnapshotConflict,
-    InternalError,
     ServiceQuotaExceeded,
     RequestThrottled
   };

@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) to use to update the EventRule.</p>
+     * <p>The Amazon Resource Name (ARN) to use to update the
+     * <code>EventRule</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -49,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An additional event pattern used to further filter the events this EventRule
-     * receives.</p> <p>For more information, see <a
+     * <p>An additional event pattern used to further filter the events this
+     * <code>EventRule</code> receives.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon
      * EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i> </p>
      */
@@ -66,7 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of AWS Regions that sends events to this EventRule.</p>
+     * <p>A list of Amazon Web Services Regions that sends events to this
+     * <code>EventRule</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }

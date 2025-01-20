@@ -231,6 +231,20 @@ namespace Model
     inline ModifyClientVpnEndpointRequest& WithClientLoginBannerOptions(const ClientLoginBannerOptions& value) { SetClientLoginBannerOptions(value); return *this;}
     inline ModifyClientVpnEndpointRequest& WithClientLoginBannerOptions(ClientLoginBannerOptions&& value) { SetClientLoginBannerOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the client VPN session is disconnected after the maximum
+     * timeout specified in <code>sessionTimeoutHours</code> is reached. If
+     * <code>true</code>, users are prompted to reconnect client VPN. If
+     * <code>false</code>, client VPN attempts to reconnect automatically. The default
+     * value is <code>false</code>.</p>
+     */
+    inline bool GetDisconnectOnSessionTimeout() const{ return m_disconnectOnSessionTimeout; }
+    inline bool DisconnectOnSessionTimeoutHasBeenSet() const { return m_disconnectOnSessionTimeoutHasBeenSet; }
+    inline void SetDisconnectOnSessionTimeout(bool value) { m_disconnectOnSessionTimeoutHasBeenSet = true; m_disconnectOnSessionTimeout = value; }
+    inline ModifyClientVpnEndpointRequest& WithDisconnectOnSessionTimeout(bool value) { SetDisconnectOnSessionTimeout(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -274,6 +288,9 @@ namespace Model
 
     ClientLoginBannerOptions m_clientLoginBannerOptions;
     bool m_clientLoginBannerOptionsHasBeenSet = false;
+
+    bool m_disconnectOnSessionTimeout;
+    bool m_disconnectOnSessionTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

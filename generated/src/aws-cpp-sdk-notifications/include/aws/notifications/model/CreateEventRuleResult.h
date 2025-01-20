@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of a NotificationConfiguration.</p>
+     * <p>The ARN of a <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline void SetNotificationConfigurationArn(const Aws::String& value) { m_notificationConfigurationArn = value; }
@@ -62,8 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of an EventRule's status by Region. Regions are mapped to
-     * EventRuleStatusSummary.</p>
+     * <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to
+     * <code>EventRuleStatusSummary</code>.</p>
      */
     inline const Aws::Map<Aws::String, EventRuleStatusSummary>& GetStatusSummaryByRegion() const{ return m_statusSummaryByRegion; }
     inline void SetStatusSummaryByRegion(const Aws::Map<Aws::String, EventRuleStatusSummary>& value) { m_statusSummaryByRegion = value; }

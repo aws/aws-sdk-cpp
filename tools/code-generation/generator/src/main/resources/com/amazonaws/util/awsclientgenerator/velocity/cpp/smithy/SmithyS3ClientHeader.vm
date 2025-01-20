@@ -111,7 +111,8 @@ namespace ${rootNamespace}
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
       ${metadata.classNamePrefix}EndpointProviderBase,
       smithy::client::$serializer,
-      smithy::client::$serializerOutcome>,
+      smithy::client::$serializerOutcome,
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<${className}>
     {
     public:
