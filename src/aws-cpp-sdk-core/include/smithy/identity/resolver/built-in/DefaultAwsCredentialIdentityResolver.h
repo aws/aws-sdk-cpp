@@ -9,6 +9,10 @@
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/ConcurrentCache.h>
+
+
 namespace smithy {
     constexpr char ALLOC_ID[] = "DefaultAwsCredentialIdentityResolver";
     /**

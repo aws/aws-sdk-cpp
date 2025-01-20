@@ -367,11 +367,9 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     return PresignRequest(request, region, m_serviceName.c_str(), expirationInSeconds);
 }
 
-bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationTimeInSeconds) const
-{
+bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const Aws::Auth::AWSCredentials& credentials, const char* region, const char* serviceName, long long expirationTimeInSeconds ) const{
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())

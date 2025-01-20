@@ -124,9 +124,10 @@
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/UploadPartCopyRequest.h>
 #include <aws/s3/model/WriteGetObjectResponseRequest.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 #include <smithy/tracing/TracingUtils.h>
-
+#include <smithy/identity/signer/built-in/S3ExpressSigner.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -161,6 +162,9 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
         Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
         {
             {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme< smithy::S3ExpressSigner<smithy::AwsSigV4Signer> >{GetServiceName(), clientConfiguration.region}},
+            //{smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme( GetServiceName(), clientConfiguration.region, 
+            //Aws::MakeShared<smithy::S3ExpressSigner<smithy::AwsSigV4Signer>>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region))},
+
         })
 {
   init(m_clientConfiguration);
@@ -176,7 +180,8 @@ S3Client::S3Client(const AWSCredentials& credentials,
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
         Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
         {
-            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme< smithy::S3ExpressSigner<smithy::AwsSigV4Signer> >{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region, 
+            Aws::MakeShared<smithy::S3ExpressSigner<smithy::AwsSigV4Signer>>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region))},
         })
 {
   init(m_clientConfiguration);

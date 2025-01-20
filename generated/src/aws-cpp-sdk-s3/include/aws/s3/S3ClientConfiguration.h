@@ -6,7 +6,6 @@
 #pragma once
 
 #include <aws/s3/S3_EXPORTS.h>
-#include <aws/s3/S3ExpressIdentityProvider.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>
 
@@ -58,10 +57,6 @@ namespace Aws
             bool useArnRegion = false;
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
             bool disableS3ExpressAuth = false;
-            using IdentityProviderSupplier = std::function<std::shared_ptr<S3ExpressIdentityProvider> (const S3Client &)>;
-            IdentityProviderSupplier identityProviderSupplier = [](const S3Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
-                return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("S3ClientConfiguration", client);
-            };
         private:
             void LoadS3SpecificConfig(const Aws::String& profileName);
         };

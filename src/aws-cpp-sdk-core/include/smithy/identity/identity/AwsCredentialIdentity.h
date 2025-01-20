@@ -21,6 +21,8 @@ namespace smithy {
         Aws::Crt::Optional<Aws::String> sessionToken() const override;
         Aws::Crt::Optional<AwsIdentity::DateTime> expiration() const override;
 
+        AwsCredentialIdentity() = default;
+
     protected:
         Aws::String m_accessKeyId;
         Aws::String m_secretAccessKey;

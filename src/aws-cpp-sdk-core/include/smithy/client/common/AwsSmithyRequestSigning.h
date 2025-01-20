@@ -144,7 +144,15 @@ namespace smithy
                     return;
                 }
 
-                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
+                //some services support buckets in identity properties
+                smithy::AuthSchemeOption::PropertyBag additonalIdentityProperties;
+                const auto& serviceSpecificParameters = httpRequest->GetServiceSpecificParameters();
+                auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
+                if (bucketNameIter != serviceSpecificParameters->parameterMap.end()) {
+                    additonalIdentityProperties.emplace("bucketName",Aws::Crt::Variant<Aws::String, bool>{bucketNameIter->second} );
+                }
+
+                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), additonalIdentityProperties);
 
                 if (!identityResult.IsSuccess())
                 {

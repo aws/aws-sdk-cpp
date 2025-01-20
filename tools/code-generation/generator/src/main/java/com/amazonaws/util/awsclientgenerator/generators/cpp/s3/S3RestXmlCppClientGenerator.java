@@ -347,10 +347,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                             member.setChecksumMember(true);
                             member.setChecksumEnumMember(CHECKSUM_MEMBERS_ENUMS.get(member.getShape().getName()));
                         }));
-        if (serviceModel.isUseSmithyClient())
-        {
-            return Arrays.stream(super.generateSourceFiles(serviceModel)).toArray(SdkFileEntry[]::new);
-        }
         
         return Stream.concat(generateS3ExpressFiles(serviceModel).stream(),
                         Arrays.stream(super.generateSourceFiles(serviceModel)))
@@ -529,6 +525,22 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                 .map(__ -> Stream.of(Pair.of(includePath + "S3CrtIdentityProviderAdapter.h", String.format(vmFilePrefixFormat, "S3CrtIdentityProviderAdapterHeader.vm")),
                         Pair.of("source/S3CrtIdentityProviderAdapter.cpp", String.format(vmFilePrefixFormat, "S3CrtIdentityProviderAdapterSource.vm"))))
                 .orElse(Stream.of());
+
+        if (serviceModel.isUseSmithyClient())
+        {
+            final String smithyVmFilePrefixFormat =  "com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/%s";
+            return Stream.concat(
+                Stream.of(
+                        Pair.of(includePath + "S3ExpressIdentityResolver.h", String.format(smithyVmFilePrefixFormat, "SmithyS3ExpressIdentityProviderHeader.vm")),
+                        Pair.of("source/S3ExpressIdentityResolver.cpp", String.format(smithyVmFilePrefixFormat, "SmithyS3ExpressIdentityProviderSource.vm"))
+                        ),
+                crtAdapters)
+        .map(codeGenPair -> makeFile(velocityEngine.getTemplate(codeGenPair.getValue()),
+                context,
+                codeGenPair.getKey(),
+                true))
+        .collect(Collectors.toList());
+        }
 
         return Stream.concat(
                         Stream.of(Pair.of(includePath + "S3ExpressIdentity.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityHeader.vm")),

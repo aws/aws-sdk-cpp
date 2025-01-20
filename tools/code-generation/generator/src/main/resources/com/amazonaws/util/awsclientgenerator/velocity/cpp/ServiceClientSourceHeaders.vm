@@ -31,8 +31,12 @@
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>
 #end
 #end
-#if($serviceModel.metadata.serviceId == "S3" && !$serviceModel.isUseSmithyClient())
+#if($serviceModel.metadata.serviceId == "S3")
+#if(!$serviceModel.isUseSmithyClient())
 \#include <aws/${metadata.projectName}/S3ExpressSignerProvider.h>
+#else
+\#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#end
 #end
 #if($serviceModel.metadata.namespace == "S3Crt")
 \#include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
