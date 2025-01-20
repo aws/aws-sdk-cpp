@@ -92,7 +92,7 @@ then using the CJSON_AS4CPP_API_VISIBILITY flag to "export" the same symbols the
 /* project version */
 #define CJSON_AS4CPP_VERSION_MAJOR 1
 #define CJSON_AS4CPP_VERSION_MINOR 7
-#define CJSON_AS4CPP_VERSION_PATCH 14
+#define CJSON_AS4CPP_VERSION_PATCH 18
 
 #include <stddef.h>
 
@@ -146,6 +146,12 @@ typedef int cJSON_AS4CPP_bool;
  * This is to prevent stack overflows. */
 #ifndef CJSON_AS4CPP_NESTING_LIMIT
 #define CJSON_AS4CPP_NESTING_LIMIT 1000
+#endif
+
+/* Limits the length of circular references can be before cJSON rejects to parse them.
+ * This is to prevent stack overflows. */
+#ifndef CJSON_AS4CPP_CIRCULAR_LIMIT
+#define CJSON_AS4CPP_CIRCULAR_LIMIT 10000
 #endif
 
 /* returns the version of cJSON as a string */
@@ -292,6 +298,13 @@ CJSON_AS4CPP_PUBLIC(double) cJSON_AS4CPP_SetNumberHelper(cJSON *object, double n
 #define cJSON_AS4CPP_SetNumberValue(object, number) ((object != NULL) ? cJSON_AS4CPP_SetNumberHelper(object, (double)number) : (number))
 /* Change the valuestring of a cJSON_AS4CPP_String object, only takes effect when type of object is cJSON_AS4CPP_String */
 CJSON_AS4CPP_PUBLIC(char*) cJSON_AS4CPP_SetValuestring(cJSON *object, const char *valuestring);
+
+/* If the object is not a boolean type this does nothing and returns cJSON_AS4CPP_Invalid else it returns the new type*/
+#define cJSON_AS4CPP_SetBoolValue(object, boolValue) ( \
+    (object != NULL && ((object)->type & (cJSON_AS4CPP_False|cJSON_AS4CPP_True))) ? \
+    (object)->type=((object)->type &(~(cJSON_AS4CPP_False|cJSON_AS4CPP_True)))|((boolValue)?cJSON_AS4CPP_True:cJSON_AS4CPP_False) : \
+    cJSON_AS4CPP_Invalid\
+)
 
 /* Macro for iterating over an array or object */
 #define cJSON_AS4CPP_ArrayForEach(element, array) for(element = (array != NULL) ? (array)->child : NULL; element != NULL; element = element->next)
