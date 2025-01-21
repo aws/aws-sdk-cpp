@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pca-connector-ad/PcaConnectorAdServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/pca-connector-ad/PcaConnectorAdErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PcaConnectorAd
 {
+  AWS_PCACONNECTORAD_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Private CA Connector for Active Directory creates a
    * connector between Amazon Web Services Private CA and Active Directory (AD) that
@@ -23,12 +27,20 @@ namespace PcaConnectorAd
    * href="https://docs.aws.amazon.com/privateca/latest/userguide/ad-connector.html">Amazon
    * Web Services Private CA Connector for Active Directory</a>.</p>
    */
-  class AWS_PCACONNECTORAD_API PcaConnectorAdClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient>
+  class AWS_PCACONNECTORAD_API PcaConnectorAdClient : smithy::client::AwsSmithyClientT<Aws::PcaConnectorAd::SERVICE_NAME,
+      Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PcaConnectorAdEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PcaConnectorAdErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Pca Connector Ad"; }
 
       typedef PcaConnectorAdClientConfiguration ClientConfigurationType;
       typedef PcaConnectorAdEndpointProvider EndpointProviderType;
@@ -747,10 +759,7 @@ namespace PcaConnectorAd
       std::shared_ptr<PcaConnectorAdEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient>;
-      void init(const PcaConnectorAdClientConfiguration& clientConfiguration);
 
-      PcaConnectorAdClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PcaConnectorAdEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PcaConnectorAd

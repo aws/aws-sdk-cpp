@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/panorama/PanoramaServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/panorama/PanoramaErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Panorama
 {
+  AWS_PANORAMA_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>AWS Panorama</fullname> <p> <b>Overview</b> </p> <p>This is the
    * <i>AWS Panorama API Reference</i>. For an introduction to the service, see <a
    * href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What
    * is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.</p></p>
    */
-  class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>
+  class AWS_PANORAMA_API PanoramaClient : smithy::client::AwsSmithyClientT<Aws::Panorama::SERVICE_NAME,
+      Aws::Panorama::PanoramaClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PanoramaEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PanoramaErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Panorama"; }
 
       typedef PanoramaClientConfiguration ClientConfigurationType;
       typedef PanoramaEndpointProvider EndpointProviderType;
@@ -948,10 +960,7 @@ namespace Panorama
       std::shared_ptr<PanoramaEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>;
-      void init(const PanoramaClientConfiguration& clientConfiguration);
 
-      PanoramaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PanoramaEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Panorama

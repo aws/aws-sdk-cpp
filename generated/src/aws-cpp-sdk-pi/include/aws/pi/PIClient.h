@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pi/PIServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/pi/PIErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PI
 {
+  AWS_PI_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon RDS Performance Insights</fullname> <p>Amazon RDS Performance
    * Insights enables you to monitor and explore different dimensions of database
@@ -40,12 +44,20 @@ namespace PI
    * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">
    * Amazon DocumentDB Developer Guide</a> </i>.</p> </li> </ul>
    */
-  class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PIClient>
+  class AWS_PI_API PIClient : smithy::client::AwsSmithyClientT<Aws::PI::SERVICE_NAME,
+      Aws::PI::PIClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PIEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PIErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<PIClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "PI"; }
 
       typedef PIClientConfiguration ClientConfigurationType;
       typedef PIEndpointProvider EndpointProviderType;
@@ -455,10 +467,7 @@ namespace PI
       std::shared_ptr<PIEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PIClient>;
-      void init(const PIClientConfiguration& clientConfiguration);
 
-      PIClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PIEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PI

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/service-quotas/ServiceQuotasErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ServiceQuotas
 {
+  AWS_SERVICEQUOTAS_API extern const char SERVICE_NAME[];
   /**
    * <p>With Service Quotas, you can view and manage your quotas easily as your
    * Amazon Web Services workloads grow. Quotas, also referred to as limits, are the
@@ -23,12 +27,20 @@ namespace ServiceQuotas
    * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
    * Quotas User Guide</a>.</p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>
+  class AWS_SERVICEQUOTAS_API ServiceQuotasClient : smithy::client::AwsSmithyClientT<Aws::ServiceQuotas::SERVICE_NAME,
+      Aws::ServiceQuotas::ServiceQuotasClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ServiceQuotasEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ServiceQuotasErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Service Quotas"; }
 
       typedef ServiceQuotasClientConfiguration ClientConfigurationType;
       typedef ServiceQuotasEndpointProvider EndpointProviderType;
@@ -588,10 +600,7 @@ namespace ServiceQuotas
       std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>;
-      void init(const ServiceQuotasClientConfiguration& clientConfiguration);
 
-      ServiceQuotasClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ServiceQuotasEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ServiceQuotas

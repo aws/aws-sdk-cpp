@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/states/SFNServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/states/SFNErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SFN
 {
+  AWS_SFN_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Step Functions</fullname> <p>Step Functions coordinates the components
    * of distributed applications and microservices using visual workflows.</p> <p>You
@@ -38,12 +42,20 @@ namespace SFN
    * example, you could use Step Functions API action <code>startSyncExecution</code>
    * and specify its parameter as <code>StateMachineArn</code>.</p> 
    */
-  class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>
+  class AWS_SFN_API SFNClient : smithy::client::AwsSmithyClientT<Aws::SFN::SERVICE_NAME,
+      Aws::SFN::SFNClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SFNEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SFNErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SFN"; }
 
       typedef SFNClientConfiguration ClientConfigurationType;
       typedef SFNEndpointProvider EndpointProviderType;
@@ -1547,10 +1559,7 @@ namespace SFN
       std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>;
-      void init(const SFNClientConfiguration& clientConfiguration);
 
-      SFNClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SFN

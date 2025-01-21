@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudtrail-data/CloudTrailDataServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cloudtrail-data/CloudTrailDataErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudTrailData
 {
+  AWS_CLOUDTRAILDATA_API extern const char SERVICE_NAME[];
   /**
    * <p>The CloudTrail Data Service lets you ingest events into CloudTrail from any
    * source in your hybrid environments, such as in-house or SaaS applications hosted
@@ -25,12 +29,20 @@ namespace CloudTrailData
    * you can use CloudTrail Lake to search, query, and analyze the data that is
    * logged from your applications.</p>
    */
-  class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>
+  class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : smithy::client::AwsSmithyClientT<Aws::CloudTrailData::SERVICE_NAME,
+      Aws::CloudTrailData::CloudTrailDataClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudTrailDataEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudTrailDataErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudTrail Data"; }
 
       typedef CloudTrailDataClientConfiguration ClientConfigurationType;
       typedef CloudTrailDataEndpointProvider EndpointProviderType;
@@ -117,10 +129,7 @@ namespace CloudTrailData
       std::shared_ptr<CloudTrailDataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>;
-      void init(const CloudTrailDataClientConfiguration& clientConfiguration);
 
-      CloudTrailDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudTrailDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudTrailData

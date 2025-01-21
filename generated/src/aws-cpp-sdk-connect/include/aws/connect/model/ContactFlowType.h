@@ -24,7 +24,8 @@ namespace Model
     AGENT_WHISPER,
     OUTBOUND_WHISPER,
     AGENT_TRANSFER,
-    QUEUE_TRANSFER
+    QUEUE_TRANSFER,
+    CAMPAIGN
   };
 
 namespace ContactFlowTypeMapper

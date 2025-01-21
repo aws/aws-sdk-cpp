@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kinesisvideo/KinesisVideoErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KinesisVideo
 {
+  AWS_KINESISVIDEO_API extern const char SERVICE_NAME[];
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>
+  class AWS_KINESISVIDEO_API KinesisVideoClient : smithy::client::AwsSmithyClientT<Aws::KinesisVideo::SERVICE_NAME,
+      Aws::KinesisVideo::KinesisVideoClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KinesisVideoEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KinesisVideoErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Kinesis Video"; }
 
       typedef KinesisVideoClientConfiguration ClientConfigurationType;
       typedef KinesisVideoEndpointProvider EndpointProviderType;
@@ -977,10 +989,7 @@ namespace KinesisVideo
       std::shared_ptr<KinesisVideoEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>;
-      void init(const KinesisVideoClientConfiguration& clientConfiguration);
 
-      KinesisVideoClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KinesisVideoEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideo

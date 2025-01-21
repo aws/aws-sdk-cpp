@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworkscm/OpsWorksCMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/opsworkscm/OpsWorksCMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace OpsWorksCM
 {
+  AWS_OPSWORKSCM_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS OpsWorks CM</fullname> <p>AWS OpsWorks for configuration
    * management (CM) is a service that runs and manages configuration management
@@ -59,12 +63,20 @@ namespace OpsWorksCM
    * <b>Throttling limits</b> </p> <p>All API operations allow for five requests per
    * second with a burst of 10 requests per second.</p>
    */
-  class AWS_OPSWORKSCM_API OpsWorksCMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>
+  class AWS_OPSWORKSCM_API OpsWorksCMClient : smithy::client::AwsSmithyClientT<Aws::OpsWorksCM::SERVICE_NAME,
+      Aws::OpsWorksCM::OpsWorksCMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      OpsWorksCMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::OpsWorksCMErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "OpsWorksCM"; }
 
       typedef OpsWorksCMClientConfiguration ClientConfigurationType;
       typedef OpsWorksCMEndpointProvider EndpointProviderType;
@@ -734,10 +746,7 @@ namespace OpsWorksCM
       std::shared_ptr<OpsWorksCMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>;
-      void init(const OpsWorksCMClientConfiguration& clientConfiguration);
 
-      OpsWorksCMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<OpsWorksCMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpsWorksCM

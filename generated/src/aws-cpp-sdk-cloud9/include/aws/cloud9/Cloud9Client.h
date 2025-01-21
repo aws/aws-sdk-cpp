@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cloud9/Cloud9ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Cloud9
 {
+  AWS_CLOUD9_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Cloud9</fullname> <p>Cloud9 is a collection of tools that you can use
    * to code, build, run, test, debug, and release software in the cloud.</p> <p>For
@@ -46,12 +50,20 @@ namespace Cloud9
    * Changes the settings of an existing environment member for an environment.</p>
    * </li> </ul>
    */
-  class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>
+  class AWS_CLOUD9_API Cloud9Client : smithy::client::AwsSmithyClientT<Aws::Cloud9::SERVICE_NAME,
+      Aws::Cloud9::Cloud9ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Cloud9EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Cloud9ErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Cloud9"; }
 
       typedef Cloud9ClientConfiguration ClientConfigurationType;
       typedef Cloud9EndpointProvider EndpointProviderType;
@@ -495,10 +507,7 @@ namespace Cloud9
       std::shared_ptr<Cloud9EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>;
-      void init(const Cloud9ClientConfiguration& clientConfiguration);
 
-      Cloud9ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Cloud9EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Cloud9

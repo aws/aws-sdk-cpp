@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KinesisVideoSignalingChannels
 {
+  AWS_KINESISVIDEOSIGNALINGCHANNELS_API extern const char SERVICE_NAME[];
   /**
    * <p>Kinesis Video Streams Signaling Service is a intermediate service that
    * establishes a communication channel for discovering peers, transmitting offers
    * and answers in order to establish peer-to-peer connection in webRTC
    * technology.</p>
    */
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>
+  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient : smithy::client::AwsSmithyClientT<Aws::KinesisVideoSignalingChannels::SERVICE_NAME,
+      Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KinesisVideoSignalingChannelsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KinesisVideoSignalingChannelsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Kinesis Video Signaling"; }
 
       typedef KinesisVideoSignalingChannelsClientConfiguration ClientConfigurationType;
       typedef KinesisVideoSignalingChannelsEndpointProvider EndpointProviderType;
@@ -154,10 +166,7 @@ namespace KinesisVideoSignalingChannels
       std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>;
-      void init(const KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration);
 
-      KinesisVideoSignalingChannelsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideoSignalingChannels

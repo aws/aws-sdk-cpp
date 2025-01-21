@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/servicediscovery/ServiceDiscoveryErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ServiceDiscovery
 {
+  AWS_SERVICEDISCOVERY_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Cloud Map</fullname> <p>With Cloud Map, you can configure public DNS,
    * private DNS, or HTTP namespaces that your microservice applications run in. When
@@ -24,12 +28,20 @@ namespace ServiceDiscovery
    * submit public or private DNS queries, or HTTP requests, for the service receive
    * an answer that contains up to eight healthy records. </p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>
+  class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : smithy::client::AwsSmithyClientT<Aws::ServiceDiscovery::SERVICE_NAME,
+      Aws::ServiceDiscovery::ServiceDiscoveryClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ServiceDiscoveryEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ServiceDiscoveryErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ServiceDiscovery"; }
 
       typedef ServiceDiscoveryClientConfiguration ClientConfigurationType;
       typedef ServiceDiscoveryEndpointProvider EndpointProviderType;
@@ -952,10 +964,7 @@ namespace ServiceDiscovery
       std::shared_ptr<ServiceDiscoveryEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>;
-      void init(const ServiceDiscoveryClientConfiguration& clientConfiguration);
 
-      ServiceDiscoveryClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ServiceDiscoveryEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ServiceDiscovery

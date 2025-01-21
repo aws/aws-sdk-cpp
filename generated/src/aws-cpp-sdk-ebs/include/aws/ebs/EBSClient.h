@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ebs/EBSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ebs/EBSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EBS
 {
+  AWS_EBS_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create
    * Amazon EBS snapshots, write data directly to your snapshots, read data on your
@@ -42,12 +46,20 @@ namespace EBS
    * Elastic Block Store Endpoints and Quotas</a> in the <i>Amazon Web Services
    * General Reference</i>.</p>
    */
-  class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>
+  class AWS_EBS_API EBSClient : smithy::client::AwsSmithyClientT<Aws::EBS::SERVICE_NAME,
+      Aws::EBS::EBSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EBSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EBSErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EBS"; }
 
       typedef EBSClientConfiguration ClientConfigurationType;
       typedef EBSEndpointProvider EndpointProviderType;
@@ -306,10 +318,7 @@ namespace EBS
       std::shared_ptr<EBSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>;
-      void init(const EBSClientConfiguration& clientConfiguration);
 
-      EBSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EBSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EBS

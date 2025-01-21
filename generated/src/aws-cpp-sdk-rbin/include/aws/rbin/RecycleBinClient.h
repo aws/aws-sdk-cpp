@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/rbin/RecycleBinErrorMarshaller.h>
 
 namespace Aws
 {
 namespace RecycleBin
 {
+  AWS_RECYCLEBIN_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Recycle Bin API Reference</i>. This documentation provides
    * descriptions and syntax for each of the actions and data types in Recycle
@@ -31,12 +35,20 @@ namespace RecycleBin
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">
    * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
    */
-  class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>
+  class AWS_RECYCLEBIN_API RecycleBinClient : smithy::client::AwsSmithyClientT<Aws::RecycleBin::SERVICE_NAME,
+      Aws::RecycleBin::RecycleBinClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      RecycleBinEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::RecycleBinErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "rbin"; }
 
       typedef RecycleBinClientConfiguration ClientConfigurationType;
       typedef RecycleBinEndpointProvider EndpointProviderType;
@@ -373,10 +385,7 @@ namespace RecycleBin
       std::shared_ptr<RecycleBinEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>;
-      void init(const RecycleBinClientConfiguration& clientConfiguration);
 
-      RecycleBinClientConfiguration m_clientConfiguration;
-      std::shared_ptr<RecycleBinEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RecycleBin

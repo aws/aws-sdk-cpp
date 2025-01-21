@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/NumericSeparatorSymbol.h>
 #include <aws/quicksight/model/Visibility.h>
+#include <aws/quicksight/model/DigitGroupingStyle.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,22 @@ namespace Model
     inline ThousandSeparatorOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
     inline ThousandSeparatorOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines the way numbers are styled to accommodate different readability
+     * standards. The <code>DEFAULT</code> value uses the standard international
+     * grouping system and groups numbers by the thousands. The <code>LAKHS</code>
+     * value uses the Indian numbering system and groups numbers by lakhs and
+     * crores.</p>
+     */
+    inline const DigitGroupingStyle& GetGroupingStyle() const{ return m_groupingStyle; }
+    inline bool GroupingStyleHasBeenSet() const { return m_groupingStyleHasBeenSet; }
+    inline void SetGroupingStyle(const DigitGroupingStyle& value) { m_groupingStyleHasBeenSet = true; m_groupingStyle = value; }
+    inline void SetGroupingStyle(DigitGroupingStyle&& value) { m_groupingStyleHasBeenSet = true; m_groupingStyle = std::move(value); }
+    inline ThousandSeparatorOptions& WithGroupingStyle(const DigitGroupingStyle& value) { SetGroupingStyle(value); return *this;}
+    inline ThousandSeparatorOptions& WithGroupingStyle(DigitGroupingStyle&& value) { SetGroupingStyle(std::move(value)); return *this;}
+    ///@}
   private:
 
     NumericSeparatorSymbol m_symbol;
@@ -69,6 +86,9 @@ namespace Model
 
     Visibility m_visibility;
     bool m_visibilityHasBeenSet = false;
+
+    DigitGroupingStyle m_groupingStyle;
+    bool m_groupingStyleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AccessAnalyzer
 {
+  AWS_ACCESSANALYZER_API extern const char SERVICE_NAME[];
   /**
    * <p>Identity and Access Management Access Analyzer helps you to set, verify, and
    * refine your IAM policies by providing a suite of capabilities. Its features
@@ -42,12 +46,20 @@ namespace AccessAnalyzer
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity
    * and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.</p>
    */
-  class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>
+  class AWS_ACCESSANALYZER_API AccessAnalyzerClient : smithy::client::AwsSmithyClientT<Aws::AccessAnalyzer::SERVICE_NAME,
+      Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AccessAnalyzerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AccessAnalyzerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AccessAnalyzer"; }
 
       typedef AccessAnalyzerClientConfiguration ClientConfigurationType;
       typedef AccessAnalyzerEndpointProvider EndpointProviderType;
@@ -1072,10 +1084,7 @@ namespace AccessAnalyzer
       std::shared_ptr<AccessAnalyzerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>;
-      void init(const AccessAnalyzerClientConfiguration& clientConfiguration);
 
-      AccessAnalyzerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AccessAnalyzerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AccessAnalyzer

@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra/KendraServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kendra/KendraErrorMarshaller.h>
 
 namespace Aws
 {
 namespace kendra
 {
+  AWS_KENDRA_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Kendra is a service for indexing large document sets.</p>
    */
-  class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>
+  class AWS_KENDRA_API KendraClient : smithy::client::AwsSmithyClientT<Aws::kendra::SERVICE_NAME,
+      Aws::kendra::KendraClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KendraEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KendraErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "kendra"; }
 
       typedef KendraClientConfiguration ClientConfigurationType;
       typedef KendraEndpointProvider EndpointProviderType;
@@ -2102,10 +2114,7 @@ namespace kendra
       std::shared_ptr<KendraEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>;
-      void init(const KendraClientConfiguration& clientConfiguration);
 
-      KendraClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KendraEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace kendra

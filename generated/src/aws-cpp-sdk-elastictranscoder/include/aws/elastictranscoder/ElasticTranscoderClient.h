@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elastictranscoder/ElasticTranscoderServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/elastictranscoder/ElasticTranscoderErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ElasticTranscoder
 {
+  AWS_ELASTICTRANSCODER_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic
    * Transcoder Service.</p>
    */
-  class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>
+  class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : smithy::client::AwsSmithyClientT<Aws::ElasticTranscoder::SERVICE_NAME,
+      Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ElasticTranscoderEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ElasticTranscoderErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Elastic Transcoder"; }
 
       typedef ElasticTranscoderClientConfiguration ClientConfigurationType;
       typedef ElasticTranscoderEndpointProvider EndpointProviderType;
@@ -535,10 +547,7 @@ namespace ElasticTranscoder
       std::shared_ptr<ElasticTranscoderEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>;
-      void init(const ElasticTranscoderClientConfiguration& clientConfiguration);
 
-      ElasticTranscoderClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ElasticTranscoderEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElasticTranscoder

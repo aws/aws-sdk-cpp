@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kendra-ranking/KendraRankingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KendraRanking
 {
+  AWS_KENDRARANKING_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search
    * capabilities to intelligently re-rank a search service's results.</p>
    */
-  class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>
+  class AWS_KENDRARANKING_API KendraRankingClient : smithy::client::AwsSmithyClientT<Aws::KendraRanking::SERVICE_NAME,
+      Aws::KendraRanking::KendraRankingClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KendraRankingEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KendraRankingErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Kendra Ranking"; }
 
       typedef KendraRankingClientConfiguration ClientConfigurationType;
       typedef KendraRankingEndpointProvider EndpointProviderType;
@@ -335,10 +347,7 @@ namespace KendraRanking
       std::shared_ptr<KendraRankingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>;
-      void init(const KendraRankingClientConfiguration& clientConfiguration);
 
-      KendraRankingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KendraRankingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KendraRanking

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/SSMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ssm/SSMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SSM
 {
+  AWS_SSM_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Systems Manager is the operations hub for your Amazon Web
    * Services applications and resources and a secure end-to-end management solution
@@ -43,12 +47,20 @@ namespace SSM
    * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems
    * Manager Incident Manager API Reference</a> </i>.</p> </li> </ul>
    */
-  class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>
+  class AWS_SSM_API SSMClient : smithy::client::AwsSmithyClientT<Aws::SSM::SERVICE_NAME,
+      Aws::SSM::SSMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SSMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SSMErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SSM"; }
 
       typedef SSMClientConfiguration ClientConfigurationType;
       typedef SSMEndpointProvider EndpointProviderType;
@@ -4368,10 +4380,7 @@ namespace SSM
       std::shared_ptr<SSMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>;
-      void init(const SSMClientConfiguration& clientConfiguration);
 
-      SSMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SSMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSM
