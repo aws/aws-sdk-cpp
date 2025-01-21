@@ -140,6 +140,7 @@ class LegacyC2jCppGen(object):
             return -1
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
+        return 0
 
     def _init_common_java_cli(self,
                               service_name: str,
@@ -172,7 +173,7 @@ class LegacyC2jCppGen(object):
         run_command += ["--service", service_name]
         run_command += ["--outputfile", output_filename]
 
-        if service_name in SMITHY_SUPPORTED_CLIENTS:
+        if service_name in SMITHY_SUPPORTED_CLIENTS or model_files.use_smithy:
             run_command += ["--use-smithy-client"]
 
         for key, val in kwargs.items():
