@@ -39,91 +39,33 @@ namespace smithy {
 
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
-            
-            auto signPayloadIt = properties.find("SignPayload");
-            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
-
-            assert(httpRequest);
-            assert(identity.expiration().has_value());
-
-            auto &request = *httpRequest;
-           
-            auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
-                Aws::Crt::ByteCursorFromCString(identity.accessKeyId().c_str()),
-                Aws::Crt::ByteCursorFromCString(identity.secretAccessKey().c_str()),
-                Aws::Crt::ByteCursorFromCString((*identity.sessionToken()).c_str()),
-                (*identity.expiration()).Seconds());
-
-            Aws::Crt::Auth::AwsSigningConfig awsSigningConfig;
-            
-            bool success = createAwsSigningConfig(crtCredentials, request, awsSigningConfig, signPayload);
-
-            if(!success)
-            {
-                AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "Failed to get Auth configuration");
-
-                return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to get Auth configuration", false);
-            }
-
-            std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = request.ToCrtHttpRequest();
-
-            auto sigv4HttpRequestSigner = Aws::MakeShared<Aws::Crt::Auth::Sigv4HttpRequestSigner>(v4AsymmetricLogTag);
-            //This is an async call, so we need to wait till we have received an outcome
-            Aws::String errorMessage;
-            bool processed = false;
-            //producer function
-            sigv4HttpRequestSigner->SignRequest(crtHttpRequest, awsSigningConfig,
-                [&request, &success, &errorMessage, &processed, this](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
-                    std::unique_lock<std::mutex> lock(m_mutex);
-                    m_cv.wait(lock, [&]{ return !processed; });
-                    success = (errorCode == AWS_ERROR_SUCCESS);
-                    if (success)
-                    {
-                        if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders)
-                        {
-                            for (size_t i = 0; i < signedCrtHttpRequest->GetHeaderCount(); i++)
-                            {
-                                Aws::Crt::Optional<Aws::Crt::Http::HttpHeader> httpHeader = signedCrtHttpRequest->GetHeader(i);
-                                request.SetHeaderValue(Aws::String(reinterpret_cast<const char*>(httpHeader->name.ptr), httpHeader->name.len),
-                                    Aws::String(reinterpret_cast<const char*>(httpHeader->value.ptr), httpHeader->value.len));
-                            }
-                        }
-                        else if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams)
-                        {
-                            Aws::Http::URI newPath(reinterpret_cast<const char*>(signedCrtHttpRequest->GetPath()->ptr));
-                            request.GetUri().SetQueryString(newPath.GetQueryString());
-                        }
-                        else
-                        {
-                            errorMessage = "No action to take when signature type is neither \"HttpRequestViaHeaders\" nor \"HttpRequestViaQueryParams\"";
-                            AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
-                            success = false;
-                        }
-                    }
-                    else
-                    {
-                        Aws::OStringStream errStream;
-                        errStream << "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode);
-                        errorMessage = errStream.str();
-                        AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
-                    }
-
-                    processed = true;
-                    m_cv.notify_all();
-                }
-            );
-
-            //consumer
-            {       
-                std::unique_lock<std::mutex> lock(m_mutex);
-                m_cv.wait(lock, [&]{ return processed; });
-
-            }
-            
-            return success? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
+            return sign(httpRequest, identity, properties, m_region, m_serviceName, m_expirationTimeInSeconds);
         }
 
+        SigningFutureOutcome presign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) override
+        {
+            Aws::String signingRegion = !region.empty() ? region : m_region;
+            Aws::String signingServiceName = !serviceName.empty() ? serviceName : m_serviceName;
 
+            const auto credentials = [&identity]() -> Aws::Auth::AWSCredentials {
+                if(identity.sessionToken().has_value() && identity.expiration().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken(), *identity.expiration()};
+                }
+                if(identity.sessionToken().has_value())
+                {
+                    return {identity.accessKeyId(), identity.secretAccessKey(), *identity.sessionToken()};
+                }
+                return {identity.accessKeyId(), identity.secretAccessKey()};
+            }();
+
+            //don't sign anonymous requests
+            if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
+            {
+                return  SigningFutureOutcome(std::move(httpRequest)) ;
+            }
+            return sign(httpRequest, identity, properties, signingRegion, signingServiceName, expirationTimeInSeconds);
+        }
 
         virtual ~AwsSigV4aSigner() {};
     protected:
@@ -193,6 +135,96 @@ namespace smithy {
             return true;
         }
 
+SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& regionOverride, const Aws::String& serviceName, long long expirationTimeInSeconds)
+        {
+
+            auto signPayloadIt = properties.find("SignPayload");
+            bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
+
+            assert(httpRequest);
+            assert(identity.expiration().has_value());
+
+            auto &request = *httpRequest;
+           
+            auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
+                Aws::Crt::ByteCursorFromCString(identity.accessKeyId().c_str()),
+                Aws::Crt::ByteCursorFromCString(identity.secretAccessKey().c_str()),
+                Aws::Crt::ByteCursorFromCString((*identity.sessionToken()).c_str()),
+                (*identity.expiration()).Seconds());
+
+            Aws::Crt::Auth::AwsSigningConfig awsSigningConfig;
+            
+            bool success = createAwsSigningConfig(crtCredentials, request, awsSigningConfig, signPayload);
+
+            if(!success)
+            {
+                AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "Failed to get Auth configuration");
+
+                return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to get Auth configuration", false);
+            }
+
+            awsSigningConfig.SetRegion(regionOverride.c_str());
+            awsSigningConfig.SetService(serviceName.c_str());
+            awsSigningConfig.SetExpirationInSeconds(expirationTimeInSeconds);
+
+            std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = request.ToCrtHttpRequest();
+
+            auto sigv4HttpRequestSigner = Aws::MakeShared<Aws::Crt::Auth::Sigv4HttpRequestSigner>(v4AsymmetricLogTag);
+            //This is an async call, so we need to wait till we have received an outcome
+            Aws::String errorMessage;
+            bool processed = false;
+            //producer function
+            sigv4HttpRequestSigner->SignRequest(crtHttpRequest, awsSigningConfig,
+                [&request, &success, &errorMessage, &processed, this](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
+                    std::unique_lock<std::mutex> lock(m_mutex);
+                    m_cv.wait(lock, [&]{ return !processed; });
+                    success = (errorCode == AWS_ERROR_SUCCESS);
+                    if (success)
+                    {
+                        if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders)
+                        {
+                            for (size_t i = 0; i < signedCrtHttpRequest->GetHeaderCount(); i++)
+                            {
+                                Aws::Crt::Optional<Aws::Crt::Http::HttpHeader> httpHeader = signedCrtHttpRequest->GetHeader(i);
+                                request.SetHeaderValue(Aws::String(reinterpret_cast<const char*>(httpHeader->name.ptr), httpHeader->name.len),
+                                    Aws::String(reinterpret_cast<const char*>(httpHeader->value.ptr), httpHeader->value.len));
+                            }
+                        }
+                        else if (m_signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams)
+                        {
+                            Aws::Http::URI newPath(reinterpret_cast<const char*>(signedCrtHttpRequest->GetPath()->ptr));
+                            request.GetUri().SetQueryString(newPath.GetQueryString());
+                        }
+                        else
+                        {
+                            errorMessage = "No action to take when signature type is neither \"HttpRequestViaHeaders\" nor \"HttpRequestViaQueryParams\"";
+                            AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
+                            success = false;
+                        }
+                    }
+                    else
+                    {
+                        Aws::OStringStream errStream;
+                        errStream << "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode);
+                        errorMessage = errStream.str();
+                        AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, errorMessage);
+                    }
+
+                    processed = true;
+                    m_cv.notify_all();
+                }
+            );
+
+            //consumer
+            {       
+                std::unique_lock<std::mutex> lock(m_mutex);
+                m_cv.wait(lock, [&]{ return processed; });
+
+            }
+            
+            return success? SigningFutureOutcome(std::move(httpRequest)) : SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4", false);
+        
+        }
 
         bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const
         {

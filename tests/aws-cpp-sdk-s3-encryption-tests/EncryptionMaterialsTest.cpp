@@ -47,7 +47,7 @@ public:
     {
         if (m_customerMasterKeyID != request.GetKeyId())
         {
-            return GenerateDataKeyOutcome(AWSError<KMSErrors>(KMSErrors::INCORRECT_KEY, "GenerateContentEncryptionKeyFailed", "Failed to generate content encryption key(CEK)", false/*not retryable*/));
+            return GenerateDataKeyOutcome(Aws::Client::AWSError<KMSErrors>(KMSErrors::INCORRECT_KEY, "GenerateContentEncryptionKeyFailed", "Failed to generate content encryption key(CEK)", false/*not retryable*/));
         }
         m_genDataKeyCalledCount++;
         return PopulateSuccessfulGenDataKeyOutcome();
