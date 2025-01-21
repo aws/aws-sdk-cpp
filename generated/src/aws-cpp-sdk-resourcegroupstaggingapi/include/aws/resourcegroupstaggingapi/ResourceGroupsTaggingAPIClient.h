@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ResourceGroupsTaggingAPI
 {
+  AWS_RESOURCEGROUPSTAGGINGAPI_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Resource Groups Tagging API</fullname>
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>
+  class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient : smithy::client::AwsSmithyClientT<Aws::ResourceGroupsTaggingAPI::SERVICE_NAME,
+      Aws::ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ResourceGroupsTaggingAPIEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ResourceGroupsTaggingAPIErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Resource Groups Tagging API"; }
 
       typedef ResourceGroupsTaggingAPIClientConfiguration ClientConfigurationType;
       typedef ResourceGroupsTaggingAPIEndpointProvider EndpointProviderType;
@@ -374,10 +386,7 @@ namespace ResourceGroupsTaggingAPI
       std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>;
-      void init(const ResourceGroupsTaggingAPIClientConfiguration& clientConfiguration);
 
-      ResourceGroupsTaggingAPIClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ResourceGroupsTaggingAPI

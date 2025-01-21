@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-places/GeoPlacesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/geo-places/GeoPlacesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GeoPlaces
 {
+  AWS_GEOPLACES_API extern const char SERVICE_NAME[];
   /**
    * <p> The Places API enables powerful location search and geocoding capabilities
    * for your applications, offering global coverage with rich, detailed information.
@@ -28,12 +32,20 @@ namespace GeoPlaces
    * of POI categories</p> </li> <li> <p>Regular data updates to ensure accuracy and
    * relevance</p> </li> </ul>
    */
-  class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>
+  class AWS_GEOPLACES_API GeoPlacesClient : smithy::client::AwsSmithyClientT<Aws::GeoPlaces::SERVICE_NAME,
+      Aws::GeoPlaces::GeoPlacesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GeoPlacesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GeoPlacesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Geo Places"; }
 
       typedef GeoPlacesClientConfiguration ClientConfigurationType;
       typedef GeoPlacesEndpointProvider EndpointProviderType;
@@ -277,10 +289,7 @@ namespace GeoPlaces
       std::shared_ptr<GeoPlacesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>;
-      void init(const GeoPlacesClientConfiguration& clientConfiguration);
 
-      GeoPlacesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GeoPlacesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GeoPlaces

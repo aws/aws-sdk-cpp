@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mediaconvert/MediaConvertErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MediaConvert
 {
+  AWS_MEDIACONVERT_API extern const char SERVICE_NAME[];
   /**
    * AWS Elemental MediaConvert
    */
-  class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>
+  class AWS_MEDIACONVERT_API MediaConvertClient : smithy::client::AwsSmithyClientT<Aws::MediaConvert::SERVICE_NAME,
+      Aws::MediaConvert::MediaConvertClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MediaConvertEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MediaConvertErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MediaConvert"; }
 
       typedef MediaConvertClientConfiguration ClientConfigurationType;
       typedef MediaConvertEndpointProvider EndpointProviderType;
@@ -846,10 +858,7 @@ namespace MediaConvert
       std::shared_ptr<MediaConvertEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>;
-      void init(const MediaConvertClientConfiguration& clientConfiguration);
 
-      MediaConvertClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MediaConvertEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaConvert

@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/xray/XRayServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/xray/XRayErrorMarshaller.h>
 
 namespace Aws
 {
 namespace XRay
 {
+  AWS_XRAY_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services X-Ray provides APIs for managing debug traces and
    * retrieving service maps and other data created by processing those traces.</p>
    */
-  class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>
+  class AWS_XRAY_API XRayClient : smithy::client::AwsSmithyClientT<Aws::XRay::SERVICE_NAME,
+      Aws::XRay::XRayClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      XRayEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::XRayErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "XRay"; }
 
       typedef XRayClientConfiguration ClientConfigurationType;
       typedef XRayEndpointProvider EndpointProviderType;
@@ -1199,10 +1211,7 @@ namespace XRay
       std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>;
-      void init(const XRayClientConfiguration& clientConfiguration);
 
-      XRayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<XRayEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace XRay

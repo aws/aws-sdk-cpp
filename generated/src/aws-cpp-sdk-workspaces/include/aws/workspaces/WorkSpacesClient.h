@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/workspaces/WorkSpacesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkSpaces
 {
+  AWS_WORKSPACES_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon WorkSpaces Service</fullname> <p>Amazon WorkSpaces enables you
    * to provision virtual, cloud-based Microsoft Windows or Amazon Linux desktops for
@@ -40,12 +44,20 @@ namespace WorkSpaces
    * href="https://docs.aws.amazon.com/cli/latest/reference/workspaces/index.html">WorkSpaces
    * section of the CLI Reference</a>.</p>
    */
-  class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>
+  class AWS_WORKSPACES_API WorkSpacesClient : smithy::client::AwsSmithyClientT<Aws::WorkSpaces::SERVICE_NAME,
+      Aws::WorkSpaces::WorkSpacesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WorkSpacesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WorkSpacesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WorkSpaces"; }
 
       typedef WorkSpacesClientConfiguration ClientConfigurationType;
       typedef WorkSpacesEndpointProvider EndpointProviderType;
@@ -2627,10 +2639,7 @@ namespace WorkSpaces
       std::shared_ptr<WorkSpacesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>;
-      void init(const WorkSpacesClientConfiguration& clientConfiguration);
 
-      WorkSpacesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WorkSpacesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkSpaces

@@ -126,6 +126,18 @@ namespace Model
     inline PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { SetWarmTierRetentionPeriod(value); return *this;}
     inline PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { SetWarmTierRetentionPeriod(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the configuration for ingesting NULL and NaN data. By default the
+     * feature is allowed. The feature is disallowed if the value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetDisallowIngestNullNaN() const{ return m_disallowIngestNullNaN; }
+    inline bool DisallowIngestNullNaNHasBeenSet() const { return m_disallowIngestNullNaNHasBeenSet; }
+    inline void SetDisallowIngestNullNaN(bool value) { m_disallowIngestNullNaNHasBeenSet = true; m_disallowIngestNullNaN = value; }
+    inline PutStorageConfigurationRequest& WithDisallowIngestNullNaN(bool value) { SetDisallowIngestNullNaN(value); return *this;}
+    ///@}
   private:
 
     StorageType m_storageType;
@@ -145,6 +157,9 @@ namespace Model
 
     WarmTierRetentionPeriod m_warmTierRetentionPeriod;
     bool m_warmTierRetentionPeriodHasBeenSet = false;
+
+    bool m_disallowIngestNullNaN;
+    bool m_disallowIngestNullNaNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,9 +42,11 @@ namespace Model
     /**
      * <p>This string allows re-configuring the S3 object prefix to contain either
      * static or variable sections. The valid variables to use in the suffix path will
-     * vary by each log source. See ConfigurationTemplate$allowedSuffixPathFields for
-     * more info on what values are supported in the suffix path for each log
-     * source.</p>
+     * vary by each log source. To find the values supported for the suffix path for
+     * each log source, use the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeConfigurationTemplates.html">DescribeConfigurationTemplates</a>
+     * operation and check the <code>allowedSuffixPathFields</code> field in the
+     * response.</p>
      */
     inline const Aws::String& GetSuffixPath() const{ return m_suffixPath; }
     inline bool SuffixPathHasBeenSet() const { return m_suffixPathHasBeenSet; }

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sms/SMSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sms/SMSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SMS
 {
+  AWS_SMS_API extern const char SERVICE_NAME[];
   /**
    *  <p> <b>Product update</b> </p> <p>We recommend <a
    * href="http://aws.amazon.com/application-migration-service">Amazon Web Services
@@ -30,12 +34,20 @@ namespace SMS
    * href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">Server
    * Migration Service User Guide</a> </p> </li> </ul>
    */
-  class AWS_SMS_API SMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SMSClient>
+  class AWS_SMS_API SMSClient : smithy::client::AwsSmithyClientT<Aws::SMS::SERVICE_NAME,
+      Aws::SMS::SMSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SMSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SMSErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SMSClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SMS"; }
 
       typedef SMSClientConfiguration ClientConfigurationType;
       typedef SMSEndpointProvider EndpointProviderType;
@@ -1012,10 +1024,7 @@ namespace SMS
       std::shared_ptr<SMSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SMSClient>;
-      void init(const SMSClientConfiguration& clientConfiguration);
 
-      SMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SMSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SMS

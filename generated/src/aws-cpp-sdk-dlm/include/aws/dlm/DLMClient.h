@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dlm/DLMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/dlm/DLMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DLM
 {
+  AWS_DLM_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Data Lifecycle Manager</fullname> <p>With Amazon Data Lifecycle
    * Manager, you can manage the lifecycle of your Amazon Web Services resources. You
@@ -25,12 +29,20 @@ namespace DLM
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">
    * Amazon Data Lifecycle Manager</a> in the <i>Amazon EC2 User Guide</i>.</p>
    */
-  class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>
+  class AWS_DLM_API DLMClient : smithy::client::AwsSmithyClientT<Aws::DLM::SERVICE_NAME,
+      Aws::DLM::DLMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DLMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DLMErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DLM"; }
 
       typedef DLMClientConfiguration ClientConfigurationType;
       typedef DLMEndpointProvider EndpointProviderType;
@@ -310,10 +322,7 @@ namespace DLM
       std::shared_ptr<DLMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>;
-      void init(const DLMClientConfiguration& clientConfiguration);
 
-      DLMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DLMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DLM

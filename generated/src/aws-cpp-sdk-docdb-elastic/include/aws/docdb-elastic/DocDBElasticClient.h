@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/docdb-elastic/DocDBElasticServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/docdb-elastic/DocDBElasticErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DocDBElastic
 {
+  AWS_DOCDBELASTIC_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Amazon DocumentDB elastic clusters</fullname> <p>Amazon DocumentDB
    * elastic-clusters support workloads with millions of reads/writes per second and
@@ -28,12 +32,20 @@ namespace DocDBElastic
    * </li> <li> <p>continue investing in a cloud-native, elastic, and class leading
    * architecture for JSON workloads.</p> </li> </ul></p>
    */
-  class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>
+  class AWS_DOCDBELASTIC_API DocDBElasticClient : smithy::client::AwsSmithyClientT<Aws::DocDBElastic::SERVICE_NAME,
+      Aws::DocDBElastic::DocDBElasticClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DocDBElasticEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DocDBElasticErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DocDB Elastic"; }
 
       typedef DocDBElasticClientConfiguration ClientConfigurationType;
       typedef DocDBElasticEndpointProvider EndpointProviderType;
@@ -581,10 +593,7 @@ namespace DocDBElastic
       std::shared_ptr<DocDBElasticEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>;
-      void init(const DocDBElasticClientConfiguration& clientConfiguration);
 
-      DocDBElasticClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DocDBElasticEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DocDBElastic

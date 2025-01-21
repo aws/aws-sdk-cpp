@@ -22,7 +22,9 @@ ThousandSeparatorOptions::ThousandSeparatorOptions() :
     m_symbol(NumericSeparatorSymbol::NOT_SET),
     m_symbolHasBeenSet(false),
     m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+    m_visibilityHasBeenSet(false),
+    m_groupingStyle(DigitGroupingStyle::NOT_SET),
+    m_groupingStyleHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,13 @@ ThousandSeparatorOptions& ThousandSeparatorOptions::operator =(JsonView jsonValu
     m_visibilityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GroupingStyle"))
+  {
+    m_groupingStyle = DigitGroupingStyleMapper::GetDigitGroupingStyleForName(jsonValue.GetString("GroupingStyle"));
+
+    m_groupingStyleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,11 @@ JsonValue ThousandSeparatorOptions::Jsonize() const
   if(m_visibilityHasBeenSet)
   {
    payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
+  }
+
+  if(m_groupingStyleHasBeenSet)
+  {
+   payload.WithString("GroupingStyle", DigitGroupingStyleMapper::GetNameForDigitGroupingStyle(m_groupingStyle));
   }
 
   return payload;

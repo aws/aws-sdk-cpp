@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Route53RecoveryControlConfig
 {
+  AWS_ROUTE53RECOVERYCONTROLCONFIG_API extern const char SERVICE_NAME[];
   /**
    * <p>Recovery Control Configuration API Reference for Amazon Route 53 Application
    * Recovery Controller</p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>
+  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient : smithy::client::AwsSmithyClientT<Aws::Route53RecoveryControlConfig::SERVICE_NAME,
+      Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Route53RecoveryControlConfigEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Route53RecoveryControlConfigErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Route53 Recovery Control Config"; }
 
       typedef Route53RecoveryControlConfigClientConfiguration ClientConfigurationType;
       typedef Route53RecoveryControlConfigEndpointProvider EndpointProviderType;
@@ -734,10 +746,7 @@ namespace Route53RecoveryControlConfig
       std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>;
-      void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
 
-      Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53RecoveryControlConfig

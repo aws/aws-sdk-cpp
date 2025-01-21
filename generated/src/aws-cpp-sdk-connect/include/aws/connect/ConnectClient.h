@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connect/ConnectServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/connect/ConnectErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Connect
 {
+  AWS_CONNECT_API extern const char SERVICE_NAME[];
   /**
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
@@ -36,12 +40,20 @@ namespace Connect
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect Endpoints</a>.</p>
    */
-  class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>
+  class AWS_CONNECT_API ConnectClient : smithy::client::AwsSmithyClientT<Aws::Connect::SERVICE_NAME,
+      Aws::Connect::ConnectClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ConnectEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ConnectErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Connect"; }
 
       typedef ConnectClientConfiguration ClientConfigurationType;
       typedef ConnectEndpointProvider EndpointProviderType;
@@ -484,8 +496,7 @@ namespace Connect
         }
 
         /**
-         * <p>&gt;Associates a set of proficiencies with a user.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Associates a set of proficiencies with a user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateUserProficiencies">AWS
          * API Reference</a></p>
          */
@@ -835,12 +846,11 @@ namespace Connect
 
         /**
          * <p>Publishes a new version of the flow provided. Versions are immutable and
-         * monotonically increasing. If a version of the same flow content already exists,
-         * no new version is created and instead the existing version number is returned.
-         * If the <code>FlowContentSha256</code> provided is different from the
-         * <code>FlowContentSha256</code> of the <code>$LATEST</code> published flow
-         * content, then an error is returned. This API only supports creating versions for
-         * flows of type <code>Campaign</code>.</p><p><h3>See Also:</h3>   <a
+         * monotonically increasing. If the <code>FlowContentSha256</code> provided is
+         * different from the <code>FlowContentSha256</code> of the <code>$LATEST</code>
+         * published flow content, then an error is returned. This API only supports
+         * creating versions for flows of type <code>Campaign</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">AWS
          * API Reference</a></p>
          */
@@ -1711,6 +1721,32 @@ namespace Connect
         }
 
         /**
+         * <p>Deletes the particular version specified in flow version
+         * identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactFlowVersionOutcome DeleteContactFlowVersion(const Model::DeleteContactFlowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteContactFlowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteContactFlowVersionRequestT = Model::DeleteContactFlowVersionRequest>
+        Model::DeleteContactFlowVersionOutcomeCallable DeleteContactFlowVersionCallable(const DeleteContactFlowVersionRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteContactFlowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteContactFlowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteContactFlowVersionRequestT = Model::DeleteContactFlowVersionRequest>
+        void DeleteContactFlowVersionAsync(const DeleteContactFlowVersionRequestT& request, const DeleteContactFlowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteContactFlowVersion, request, handler, context);
+        }
+
+        /**
          * <p>Deletes email address from the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">AWS
@@ -1956,8 +1992,7 @@ namespace Connect
         }
 
         /**
-         * <p>Deletes a queue. It isn't possible to delete a queue by using the Amazon
-         * Connect admin website.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">AWS
          * API Reference</a></p>
          */
@@ -2433,11 +2468,13 @@ namespace Connect
          * request to describe the <code>SAVED</code> content of a Flow. For example,
          * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
          * <code>$SAVED</code> needs to be supplied to view saved content that has not been
-         * published.</p> <p>In the response, <b>Status</b> indicates the flow status as
-         * either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
-         * status will initiate validation on the content. <code>SAVED</code> does not
-         * initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>
-         * </p><p><h3>See Also:</h3>   <a
+         * published.</p> <p>Use <code>arn:aws:.../contact-flow/{id}:{version}</code> to
+         * retrieve the content of a specific flow version.</p> <p>In the response,
+         * <b>Status</b> indicates the flow status as either <code>SAVED</code> or
+         * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+         * validation on the content. <code>SAVED</code> does not initiate validation of
+         * the content. <code>SAVED</code> | <code>PUBLISHED</code> </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
          */
@@ -8146,10 +8183,7 @@ namespace Connect
       std::shared_ptr<ConnectEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>;
-      void init(const ConnectClientConfiguration& clientConfiguration);
 
-      ConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Connect

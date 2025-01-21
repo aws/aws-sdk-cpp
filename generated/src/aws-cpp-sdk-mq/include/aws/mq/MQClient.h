@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mq/MQServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mq/MQErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MQ
 {
+  AWS_MQ_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon MQ is a managed message broker service for Apache ActiveMQ and
    * RabbitMQ that makes it easy to set up and operate message brokers in the cloud.
@@ -22,12 +26,20 @@ namespace MQ
    * using various programming languages, operating systems, and formal messaging
    * protocols.</p>
    */
-  class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MQClient>
+  class AWS_MQ_API MQClient : smithy::client::AwsSmithyClientT<Aws::MQ::SERVICE_NAME,
+      Aws::MQ::MQClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MQEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MQErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<MQClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "mq"; }
 
       typedef MQClientConfiguration ClientConfigurationType;
       typedef MQEndpointProvider EndpointProviderType;
@@ -690,10 +702,7 @@ namespace MQ
       std::shared_ptr<MQEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MQClient>;
-      void init(const MQClientConfiguration& clientConfiguration);
 
-      MQClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MQEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MQ

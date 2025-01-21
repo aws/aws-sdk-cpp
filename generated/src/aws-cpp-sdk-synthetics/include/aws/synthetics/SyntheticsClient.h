@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/synthetics/SyntheticsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Synthetics
 {
+  AWS_SYNTHETICS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon CloudWatch Synthetics</fullname> <p>You can use Amazon
    * CloudWatch Synthetics to continually monitor your services. You can create and
@@ -32,12 +36,20 @@ namespace Synthetics
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
    * Considerations for Synthetics Canaries</a>.</p>
    */
-  class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>
+  class AWS_SYNTHETICS_API SyntheticsClient : smithy::client::AwsSmithyClientT<Aws::Synthetics::SERVICE_NAME,
+      Aws::Synthetics::SyntheticsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SyntheticsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SyntheticsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "synthetics"; }
 
       typedef SyntheticsClientConfiguration ClientConfigurationType;
       typedef SyntheticsEndpointProvider EndpointProviderType;
@@ -741,10 +753,7 @@ namespace Synthetics
       std::shared_ptr<SyntheticsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>;
-      void init(const SyntheticsClientConfiguration& clientConfiguration);
 
-      SyntheticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SyntheticsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Synthetics

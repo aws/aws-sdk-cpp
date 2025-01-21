@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/controlcatalog/ControlCatalogServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/controlcatalog/ControlCatalogErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ControlCatalog
 {
+  AWS_CONTROLCATALOG_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the Amazon Web Services Control Catalog API reference. This guide
    * is for developers who need detailed information about how to programmatically
@@ -36,12 +40,20 @@ namespace ControlCatalog
    * errors</a>: Client and server errors that all operations can return.</p> </li>
    * </ul>
    */
-  class AWS_CONTROLCATALOG_API ControlCatalogClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient>
+  class AWS_CONTROLCATALOG_API ControlCatalogClient : smithy::client::AwsSmithyClientT<Aws::ControlCatalog::SERVICE_NAME,
+      Aws::ControlCatalog::ControlCatalogClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ControlCatalogEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ControlCatalogErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ControlCatalog"; }
 
       typedef ControlCatalogClientConfiguration ClientConfigurationType;
       typedef ControlCatalogEndpointProvider EndpointProviderType;
@@ -244,10 +256,7 @@ namespace ControlCatalog
       std::shared_ptr<ControlCatalogEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient>;
-      void init(const ControlCatalogClientConfiguration& clientConfiguration);
 
-      ControlCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ControlCatalogEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ControlCatalog

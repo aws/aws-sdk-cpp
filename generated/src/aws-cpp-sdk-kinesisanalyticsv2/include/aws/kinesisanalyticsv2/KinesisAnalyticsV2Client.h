@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KinesisAnalyticsV2
 {
+  AWS_KINESISANALYTICSV2_API extern const char SERVICE_NAME[];
   /**
    *  <p>Amazon Managed Service for Apache Flink was previously known as Amazon
    * Kinesis Data Analytics for Apache Flink.</p>  <p>Amazon Managed Service
@@ -24,12 +28,20 @@ namespace KinesisAnalyticsV2
    * to perform time series analytics, feed real-time dashboards, and create
    * real-time metrics.</p>
    */
-  class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>
+  class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : smithy::client::AwsSmithyClientT<Aws::KinesisAnalyticsV2::SERVICE_NAME,
+      Aws::KinesisAnalyticsV2::KinesisAnalyticsV2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KinesisAnalyticsV2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KinesisAnalyticsV2ErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Kinesis Analytics V2"; }
 
       typedef KinesisAnalyticsV2ClientConfiguration ClientConfigurationType;
       typedef KinesisAnalyticsV2EndpointProvider EndpointProviderType;
@@ -1048,10 +1060,7 @@ namespace KinesisAnalyticsV2
       std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>;
-      void init(const KinesisAnalyticsV2ClientConfiguration& clientConfiguration);
 
-      KinesisAnalyticsV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisAnalyticsV2

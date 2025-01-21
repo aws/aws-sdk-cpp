@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearchserverless/OpenSearchServerlessServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/opensearchserverless/OpenSearchServerlessErrorMarshaller.h>
 
 namespace Aws
 {
 namespace OpenSearchServerless
 {
+  AWS_OPENSEARCHSERVERLESS_API extern const char SERVICE_NAME[];
   /**
    * <p>Use the Amazon OpenSearch Serverless API to create, configure, and manage
    * OpenSearch Serverless collections and security policies.</p> <p>OpenSearch
@@ -27,12 +31,20 @@ namespace OpenSearchServerless
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
    * is Amazon OpenSearch Serverless?</a> </p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>
+  class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient : smithy::client::AwsSmithyClientT<Aws::OpenSearchServerless::SERVICE_NAME,
+      Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      OpenSearchServerlessEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::OpenSearchServerlessErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "OpenSearchServerless"; }
 
       typedef OpenSearchServerlessClientConfiguration ClientConfigurationType;
       typedef OpenSearchServerlessEndpointProvider EndpointProviderType;
@@ -1139,10 +1151,7 @@ namespace OpenSearchServerless
       std::shared_ptr<OpenSearchServerlessEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>;
-      void init(const OpenSearchServerlessClientConfiguration& clientConfiguration);
 
-      OpenSearchServerlessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<OpenSearchServerlessEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpenSearchServerless

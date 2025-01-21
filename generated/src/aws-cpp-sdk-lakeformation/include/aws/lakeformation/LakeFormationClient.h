@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lakeformation/LakeFormationServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/lakeformation/LakeFormationErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LakeFormation
 {
+  AWS_LAKEFORMATION_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Lake Formation</fullname> <p>Defines the public endpoint for the Lake
    * Formation service.</p>
    */
-  class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>
+  class AWS_LAKEFORMATION_API LakeFormationClient : smithy::client::AwsSmithyClientT<Aws::LakeFormation::SERVICE_NAME,
+      Aws::LakeFormation::LakeFormationClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LakeFormationEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LakeFormationErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "LakeFormation"; }
 
       typedef LakeFormationClientConfiguration ClientConfigurationType;
       typedef LakeFormationEndpointProvider EndpointProviderType;
@@ -1737,10 +1749,7 @@ namespace LakeFormation
       std::shared_ptr<LakeFormationEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>;
-      void init(const LakeFormationClientConfiguration& clientConfiguration);
 
-      LakeFormationClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LakeFormationEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LakeFormation

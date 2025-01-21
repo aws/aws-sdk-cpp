@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kinesisanalytics/KinesisAnalyticsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KinesisAnalytics
 {
+  AWS_KINESISANALYTICS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Kinesis Analytics</fullname> <p> <b>Overview</b> </p> 
    * <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API,
@@ -25,12 +29,20 @@ namespace KinesisAnalytics
    * v1 API Reference</i>. The Amazon Kinesis Analytics Developer Guide provides
    * additional information. </p>
    */
-  class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>
+  class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : smithy::client::AwsSmithyClientT<Aws::KinesisAnalytics::SERVICE_NAME,
+      Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KinesisAnalyticsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KinesisAnalyticsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Kinesis Analytics"; }
 
       typedef KinesisAnalyticsClientConfiguration ClientConfigurationType;
       typedef KinesisAnalyticsEndpointProvider EndpointProviderType;
@@ -824,10 +836,7 @@ namespace KinesisAnalytics
       std::shared_ptr<KinesisAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>;
-      void init(const KinesisAnalyticsClientConfiguration& clientConfiguration);
 
-      KinesisAnalyticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KinesisAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisAnalytics
