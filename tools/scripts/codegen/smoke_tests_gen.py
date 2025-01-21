@@ -41,6 +41,9 @@ class SmokeTestsGen(object):
             self._copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"),
                                             "cpp-codegen-smoke-tests-plugin",
                                             os.path.abspath("generated/smoke-tests"))
+            return 0
+        else:
+            return -1
 
     def _generate_smoke_tests(self, smithy_services: List[str], smithy_c2j_data: str):
         smithy_codegen_command = [
