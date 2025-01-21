@@ -12,7 +12,7 @@ import sys
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 
 from codegen.legacy_c2j_cpp_gen import LegacyC2jCppGen
-from codegen.model_utils import SERVICE_MODEL_FILENAME_PATTERN, ServiceModel
+from codegen.model_utils import SERVICE_MODEL_FILENAME_PATTERN, ServiceModel, ModelUtils
 
 PROTOCOL_TESTS_BASE_DIR = "tools/code-generation/protocol-tests"
 PROTOCOL_TESTS_CLIENT_MODELS = PROTOCOL_TESTS_BASE_DIR + "/api-descriptions"
@@ -98,6 +98,7 @@ class ProtocolTestsGen(object):
 
         if len(failures):
             return -1
+        return 0
 
     def _collect_test_client_models(self) -> dict:
         service_models = dict()
@@ -112,8 +113,9 @@ class ProtocolTestsGen(object):
             if service_model_name in UNSUPPORTED_CLIENTS:
                 continue
 
+            use_smithy = ModelUtils.is_smithy_enabled(service_model_name, self.client_models_dir, filename)
             service_models[service_model_name] = ServiceModel(service_model_name, filename,
-                                                              PROTOCOL_TESTS_ENDPOINT_RULES, None)
+                                                              PROTOCOL_TESTS_ENDPOINT_RULES, None, use_smithy)
         return service_models
 
     def _generate_tests(self):

@@ -141,18 +141,24 @@ def main():
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         c2j_gen = LegacyC2jCppGen(args, model_utils.models_to_generate)
-        c2j_gen.generate(executor, max_workers, args)
+        if c2j_gen.generate(executor, max_workers, args) != 0:
+            print("ERROR: Failed to generate service client(s)!")
+            return -1
 
         if args["generate_protocol_tests"]:
             protocol_tests_generator = ProtocolTestsGen(args)
-            protocol_tests_generator.generate(executor, max_workers)
+            if protocol_tests_generator.generate(executor, max_workers) != 0:
+                print("ERROR: Failed to generate protocol test(s)!")
+                return -1
 
     # generate code using smithy for all discoverable clients
     # clients_to_build check is present because user can generate only defaults or partitions or protocol-tests
     clients_to_build = model_utils.get_clients_to_build()
     if args["generate_smoke_tests"] and clients_to_build:
         smoke_tests_gen = SmokeTestsGen(args["debug"])
-        smoke_tests_gen.generate(clients_to_build)
+        if smoke_tests_gen.generate(clients_to_build) != 0:
+            print("ERROR: Failed to generate smoke test(s)!")
+            return -1
 
     return 0
 
