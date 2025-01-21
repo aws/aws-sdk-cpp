@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectcases/ConnectCasesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/connectcases/ConnectCasesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ConnectCases
 {
+  AWS_CONNECTCASES_API extern const char SERVICE_NAME[];
   /**
    * <p>With Amazon Connect Cases, your agents can track and manage customer issues
    * that require multiple interactions, follow-up tasks, and teams in your contact
@@ -24,12 +28,20 @@ namespace ConnectCases
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon
    * Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
    */
-  class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>
+  class AWS_CONNECTCASES_API ConnectCasesClient : smithy::client::AwsSmithyClientT<Aws::ConnectCases::SERVICE_NAME,
+      Aws::ConnectCases::ConnectCasesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ConnectCasesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ConnectCasesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ConnectCases"; }
 
       typedef ConnectCasesClientConfiguration ClientConfigurationType;
       typedef ConnectCasesEndpointProvider EndpointProviderType;
@@ -1068,10 +1080,7 @@ namespace ConnectCases
       std::shared_ptr<ConnectCasesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>;
-      void init(const ConnectCasesClientConfiguration& clientConfiguration);
 
-      ConnectCasesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ConnectCasesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectCases

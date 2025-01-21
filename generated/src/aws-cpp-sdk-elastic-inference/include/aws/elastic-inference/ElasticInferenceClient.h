@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elastic-inference/ElasticInferenceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/elastic-inference/ElasticInferenceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ElasticInference
 {
+  AWS_ELASTICINFERENCE_API extern const char SERVICE_NAME[];
   /**
    *  <p>Amazon Elastic Inference is no longer available.</p>  <p>
    * Elastic Inference public APIs. </p>
    */
-  class AWS_ELASTICINFERENCE_API ElasticInferenceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticInferenceClient>
+  class AWS_ELASTICINFERENCE_API ElasticInferenceClient : smithy::client::AwsSmithyClientT<Aws::ElasticInference::SERVICE_NAME,
+      Aws::ElasticInference::ElasticInferenceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ElasticInferenceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ElasticInferenceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ElasticInferenceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Elastic Inference"; }
 
       typedef ElasticInferenceClientConfiguration ClientConfigurationType;
       typedef ElasticInferenceEndpointProvider EndpointProviderType;
@@ -244,10 +256,7 @@ namespace ElasticInference
       std::shared_ptr<ElasticInferenceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticInferenceClient>;
-      void init(const ElasticInferenceClientConfiguration& clientConfiguration);
 
-      ElasticInferenceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ElasticInferenceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElasticInference

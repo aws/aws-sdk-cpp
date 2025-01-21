@@ -91,6 +91,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the flow version.</p>
+     */
+    inline long long GetContactFlowVersion() const{ return m_contactFlowVersion; }
+    inline bool ContactFlowVersionHasBeenSet() const { return m_contactFlowVersionHasBeenSet; }
+    inline void SetContactFlowVersion(long long value) { m_contactFlowVersionHasBeenSet = true; m_contactFlowVersion = value; }
+    inline CreateContactFlowVersionRequest& WithContactFlowVersion(long long value) { SetContactFlowVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
@@ -127,6 +137,9 @@ namespace Model
 
     Aws::String m_flowContentSha256;
     bool m_flowContentSha256HasBeenSet = false;
+
+    long long m_contactFlowVersion;
+    bool m_contactFlowVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ivschat/IvschatErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ivschat
 {
+  AWS_IVSCHAT_API extern const char SERVICE_NAME[];
   /**
    * <p> <b>Introduction</b> </p> <p>The Amazon IVS Chat control-plane API enables
    * you to create and manage Amazon IVS Chat resources. You also need to integrate
@@ -89,12 +93,20 @@ namespace ivschat
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names</a> in the <i>AWS General Reference</i>.</p>
    */
-  class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>
+  class AWS_IVSCHAT_API IvschatClient : smithy::client::AwsSmithyClientT<Aws::ivschat::SERVICE_NAME,
+      Aws::ivschat::IvschatClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IvschatEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IvschatErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ivschat"; }
 
       typedef IvschatClientConfiguration ClientConfigurationType;
       typedef IvschatEndpointProvider EndpointProviderType;
@@ -609,10 +621,7 @@ namespace ivschat
       std::shared_ptr<IvschatEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>;
-      void init(const IvschatClientConfiguration& clientConfiguration);
 
-      IvschatClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IvschatEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ivschat

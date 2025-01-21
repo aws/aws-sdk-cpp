@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/discovery/ApplicationDiscoveryServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ApplicationDiscoveryService
 {
+  AWS_APPLICATIONDISCOVERYSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Web Services Application Discovery Service</fullname> <p>Amazon
    * Web Services Application Discovery Service (Application Discovery Service) helps
@@ -77,12 +81,20 @@ namespace ApplicationDiscoveryService
    * You can operate Application Discovery Service offline to inspect collected data
    * before it is shared with the service.</p> 
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>
+  class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : smithy::client::AwsSmithyClientT<Aws::ApplicationDiscoveryService::SERVICE_NAME,
+      Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ApplicationDiscoveryServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ApplicationDiscoveryServiceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Application Discovery Service"; }
 
       typedef ApplicationDiscoveryServiceClientConfiguration ClientConfigurationType;
       typedef ApplicationDiscoveryServiceEndpointProvider EndpointProviderType;
@@ -892,10 +904,7 @@ namespace ApplicationDiscoveryService
       std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>;
-      void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
-      ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationDiscoveryService

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace VerifiedPermissions
 {
+  AWS_VERIFIEDPERMISSIONS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Verified Permissions is a permissions management service from Amazon
    * Web Services. You can use Verified Permissions to manage permissions for your
@@ -65,12 +69,20 @@ namespace VerifiedPermissions
    * use neither suffix are used in the mutating (create and update) operations.</p>
    * </li> </ul>
    */
-  class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>
+  class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : smithy::client::AwsSmithyClientT<Aws::VerifiedPermissions::SERVICE_NAME,
+      Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      VerifiedPermissionsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::VerifiedPermissionsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "VerifiedPermissions"; }
 
       typedef VerifiedPermissionsClientConfiguration ClientConfigurationType;
       typedef VerifiedPermissionsEndpointProvider EndpointProviderType;
@@ -1000,10 +1012,7 @@ namespace VerifiedPermissions
       std::shared_ptr<VerifiedPermissionsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>;
-      void init(const VerifiedPermissionsClientConfiguration& clientConfiguration);
 
-      VerifiedPermissionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<VerifiedPermissionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace VerifiedPermissions

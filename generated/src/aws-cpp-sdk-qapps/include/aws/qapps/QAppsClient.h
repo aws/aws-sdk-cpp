@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qapps/QAppsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/qapps/QAppsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace QApps
 {
+  AWS_QAPPS_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Q Apps feature capability within Amazon Q Business allows web
    * experience users to create lightweight, purpose-built AI apps to fulfill
@@ -33,12 +37,20 @@ namespace QApps
    * IAM role for the Amazon Q Business web experience including Amazon Q Apps</a> in
    * the <i>Amazon Q Business User Guide</i>.</p>
    */
-  class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>
+  class AWS_QAPPS_API QAppsClient : smithy::client::AwsSmithyClientT<Aws::QApps::SERVICE_NAME,
+      Aws::QApps::QAppsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      QAppsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::QAppsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "QApps"; }
 
       typedef QAppsClientConfiguration ClientConfigurationType;
       typedef QAppsEndpointProvider EndpointProviderType;
@@ -1040,10 +1052,7 @@ namespace QApps
       std::shared_ptr<QAppsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>;
-      void init(const QAppsClientConfiguration& clientConfiguration);
 
-      QAppsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<QAppsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace QApps

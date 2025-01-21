@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog/ServiceCatalogServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/servicecatalog/ServiceCatalogErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ServiceCatalog
 {
+  AWS_SERVICECATALOG_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Service Catalog</fullname> <p> <a
    * href="http://aws.amazon.com/servicecatalog">Service Catalog</a> enables
@@ -24,12 +28,20 @@ namespace ServiceCatalog
    * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service
    * Catalog Concepts</a>.</p>
    */
-  class AWS_SERVICECATALOG_API ServiceCatalogClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>
+  class AWS_SERVICECATALOG_API ServiceCatalogClient : smithy::client::AwsSmithyClientT<Aws::ServiceCatalog::SERVICE_NAME,
+      Aws::ServiceCatalog::ServiceCatalogClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ServiceCatalogEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ServiceCatalogErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Service Catalog"; }
 
       typedef ServiceCatalogClientConfiguration ClientConfigurationType;
       typedef ServiceCatalogEndpointProvider EndpointProviderType;
@@ -2625,10 +2637,7 @@ namespace ServiceCatalog
       std::shared_ptr<ServiceCatalogEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>;
-      void init(const ServiceCatalogClientConfiguration& clientConfiguration);
 
-      ServiceCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ServiceCatalogEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ServiceCatalog

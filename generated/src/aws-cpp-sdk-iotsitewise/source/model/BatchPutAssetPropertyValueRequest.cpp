@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchPutAssetPropertyValueRequest::BatchPutAssetPropertyValueRequest() : 
+    m_enablePartialEntryProcessing(false),
+    m_enablePartialEntryProcessingHasBeenSet(false),
     m_entriesHasBeenSet(false)
 {
 }
@@ -20,6 +22,12 @@ BatchPutAssetPropertyValueRequest::BatchPutAssetPropertyValueRequest() :
 Aws::String BatchPutAssetPropertyValueRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_enablePartialEntryProcessingHasBeenSet)
+  {
+   payload.WithBool("enablePartialEntryProcessing", m_enablePartialEntryProcessing);
+
+  }
 
   if(m_entriesHasBeenSet)
   {

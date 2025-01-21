@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fsx/FSxServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/fsx/FSxErrorMarshaller.h>
 
 namespace Aws
 {
 namespace FSx
 {
+  AWS_FSX_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon FSx is a fully managed service that makes it easy for storage and
    * application administrators to launch and use shared file storage.</p>
    */
-  class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>
+  class AWS_FSX_API FSxClient : smithy::client::AwsSmithyClientT<Aws::FSx::SERVICE_NAME,
+      Aws::FSx::FSxClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      FSxEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::FSxErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "FSx"; }
 
       typedef FSxClientConfiguration ClientConfigurationType;
       typedef FSxEndpointProvider EndpointProviderType;
@@ -1700,10 +1712,7 @@ namespace FSx
       std::shared_ptr<FSxEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>;
-      void init(const FSxClientConfiguration& clientConfiguration);
 
-      FSxClientConfiguration m_clientConfiguration;
-      std::shared_ptr<FSxEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FSx

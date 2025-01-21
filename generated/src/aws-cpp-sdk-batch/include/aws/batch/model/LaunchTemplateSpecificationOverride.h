@@ -115,7 +115,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance type or family that this this override launch template should be
+     * <p>The instance type or family that this override launch template should be
      * applied to.</p> <p>This parameter is required when defining a launch template
      * override.</p> <p>Information included in this parameter must meet the following
      * requirements:</p> <ul> <li> <p>Must be a valid Amazon EC2 instance type or

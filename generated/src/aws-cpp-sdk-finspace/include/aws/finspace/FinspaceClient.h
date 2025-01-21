@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/finspace/FinspaceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/finspace/FinspaceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace finspace
 {
+  AWS_FINSPACE_API extern const char SERVICE_NAME[];
   /**
    * <p>The FinSpace management service provides the APIs for managing FinSpace
    * environments.</p>
    */
-  class AWS_FINSPACE_API FinspaceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FinspaceClient>
+  class AWS_FINSPACE_API FinspaceClient : smithy::client::AwsSmithyClientT<Aws::finspace::SERVICE_NAME,
+      Aws::finspace::FinspaceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      FinspaceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::FinspaceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<FinspaceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "finspace"; }
 
       typedef FinspaceClientConfiguration ClientConfigurationType;
       typedef FinspaceEndpointProvider EndpointProviderType;
@@ -1256,10 +1268,7 @@ namespace finspace
       std::shared_ptr<FinspaceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FinspaceClient>;
-      void init(const FinspaceClientConfiguration& clientConfiguration);
 
-      FinspaceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<FinspaceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace finspace

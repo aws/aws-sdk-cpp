@@ -35,6 +35,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>This setting enables partial ingestion at entry-level. If set to
+     * <code>true</code>, we ingest all TQVs not resulting in an error. If set to
+     * <code>false</code>, an invalid TQV fails ingestion of the entire entry that
+     * contains it.</p>
+     */
+    inline bool GetEnablePartialEntryProcessing() const{ return m_enablePartialEntryProcessing; }
+    inline bool EnablePartialEntryProcessingHasBeenSet() const { return m_enablePartialEntryProcessingHasBeenSet; }
+    inline void SetEnablePartialEntryProcessing(bool value) { m_enablePartialEntryProcessingHasBeenSet = true; m_enablePartialEntryProcessing = value; }
+    inline BatchPutAssetPropertyValueRequest& WithEnablePartialEntryProcessing(bool value) { SetEnablePartialEntryProcessing(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of asset property value entries for the batch put request. You can
      * specify up to 10 entries per request.</p>
      */
@@ -48,6 +61,9 @@ namespace Model
     inline BatchPutAssetPropertyValueRequest& AddEntries(PutAssetPropertyValueEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
     ///@}
   private:
+
+    bool m_enablePartialEntryProcessing;
+    bool m_enablePartialEntryProcessingHasBeenSet = false;
 
     Aws::Vector<PutAssetPropertyValueEntry> m_entries;
     bool m_entriesHasBeenSet = false;

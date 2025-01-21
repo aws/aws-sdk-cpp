@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot1click-devices/IoT1ClickDevicesServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iot1click-devices/IoT1ClickDevicesServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoT1ClickDevicesService
 {
+  AWS_IOT1CLICKDEVICESSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Describes all of the AWS IoT 1-Click device-related API operations for the
    * service.
@@ -22,12 +26,20 @@ namespace IoT1ClickDevicesService
    * web services
  protocols.</p>
    */
-  class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>
+  class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : smithy::client::AwsSmithyClientT<Aws::IoT1ClickDevicesService::SERVICE_NAME,
+      Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoT1ClickDevicesServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoT1ClickDevicesServiceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoT 1Click Devices Service"; }
 
       typedef IoT1ClickDevicesServiceClientConfiguration ClientConfigurationType;
       typedef IoT1ClickDevicesServiceEndpointProvider EndpointProviderType;
@@ -447,10 +459,7 @@ namespace IoT1ClickDevicesService
       std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>;
-      void init(const IoT1ClickDevicesServiceClientConfiguration& clientConfiguration);
 
-      IoT1ClickDevicesServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoT1ClickDevicesService

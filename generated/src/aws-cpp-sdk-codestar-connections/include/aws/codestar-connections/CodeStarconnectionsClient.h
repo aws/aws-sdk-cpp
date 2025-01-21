@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/codestar-connections/CodeStarconnectionsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeStarconnections
 {
+  AWS_CODESTARCONNECTIONS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS CodeStar Connections</fullname> <p>This Amazon Web Services
    * CodeStar Connections API Reference provides descriptions and usage examples of
@@ -58,12 +62,20 @@ namespace CodeStarconnections
    * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
    * Tools User Guide</a>.</p>
    */
-  class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>
+  class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : smithy::client::AwsSmithyClientT<Aws::CodeStarconnections::SERVICE_NAME,
+      Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CodeStarconnectionsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CodeStarconnectionsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CodeStar connections"; }
 
       typedef CodeStarconnectionsClientConfiguration ClientConfigurationType;
       typedef CodeStarconnectionsEndpointProvider EndpointProviderType;
@@ -838,10 +850,7 @@ namespace CodeStarconnections
       std::shared_ptr<CodeStarconnectionsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>;
-      void init(const CodeStarconnectionsClientConfiguration& clientConfiguration);
 
-      CodeStarconnectionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CodeStarconnectionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeStarconnections

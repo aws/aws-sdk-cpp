@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace NetworkFlowMonitor
 {
+  AWS_NETWORKFLOWMONITOR_API extern const char SERVICE_NAME[];
   /**
    * <p>Network Flow Monitor is a feature of Amazon CloudWatch Network Monitoring
    * that provides visibility into the performance of network flows for your Amazon
@@ -33,12 +37,20 @@ namespace NetworkFlowMonitor
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-NetworkFlowMonitor.html">Network
    * Flow Monitor User Guide</a> in the Amazon CloudWatch User Guide.</p>
    */
-  class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>
+  class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : smithy::client::AwsSmithyClientT<Aws::NetworkFlowMonitor::SERVICE_NAME,
+      Aws::NetworkFlowMonitor::NetworkFlowMonitorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NetworkFlowMonitorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NetworkFlowMonitorErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "NetworkFlowMonitor"; }
 
       typedef NetworkFlowMonitorClientConfiguration ClientConfigurationType;
       typedef NetworkFlowMonitorEndpointProvider EndpointProviderType;
@@ -835,10 +847,7 @@ namespace NetworkFlowMonitor
       std::shared_ptr<NetworkFlowMonitorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>;
-      void init(const NetworkFlowMonitorClientConfiguration& clientConfiguration);
 
-      NetworkFlowMonitorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NetworkFlowMonitorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace NetworkFlowMonitor

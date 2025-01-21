@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/apptest/AppTest_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apptest/AppTestServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/apptest/AppTestErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppTest
 {
+  AWS_APPTEST_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS Mainframe Modernization Application Testing provides tools and resources
    * for automated functional equivalence testing for your migration projects.</p>
    */
-  class AWS_APPTEST_API AppTestClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppTestClient>
+  class AWS_APPTEST_API AppTestClient : smithy::client::AwsSmithyClientT<Aws::AppTest::SERVICE_NAME,
+      Aws::AppTest::AppTestClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppTestEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppTestErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AppTestClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppTest"; }
 
       typedef AppTestClientConfiguration ClientConfigurationType;
       typedef AppTestEndpointProvider EndpointProviderType;
@@ -682,10 +694,7 @@ namespace AppTest
       std::shared_ptr<AppTestEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppTestClient>;
-      void init(const AppTestClientConfiguration& clientConfiguration);
 
-      AppTestClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppTestEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppTest

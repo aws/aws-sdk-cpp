@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/appintegrations/AppIntegrationsServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppIntegrationsService
 {
+  AWS_APPINTEGRATIONSSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_AppIntegrations_Service.html">Amazon
@@ -31,12 +35,20 @@ namespace AppIntegrationsService
    * Amazon Q in Connect for generative AI–powered agent assistance in real-time</a>
    * </p> </li> </ul>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>
+  class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : smithy::client::AwsSmithyClientT<Aws::AppIntegrationsService::SERVICE_NAME,
+      Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppIntegrationsServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppIntegrationsServiceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppIntegrations"; }
 
       typedef AppIntegrationsServiceClientConfiguration ClientConfigurationType;
       typedef AppIntegrationsServiceEndpointProvider EndpointProviderType;
@@ -716,10 +728,7 @@ namespace AppIntegrationsService
       std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>;
-      void init(const AppIntegrationsServiceClientConfiguration& clientConfiguration);
 
-      AppIntegrationsServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppIntegrationsService

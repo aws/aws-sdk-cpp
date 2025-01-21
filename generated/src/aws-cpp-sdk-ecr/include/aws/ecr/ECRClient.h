@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr/ECRServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ecr/ECRErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ECR
 {
+  AWS_ECR_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic
    * Container Registry (Amazon ECR) is a managed container image registry service.
@@ -28,12 +32,20 @@ namespace ECR
    * href="https://docs.aws.amazon.com/general/latest/gr/ecr.html">Amazon ECR
    * endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
    */
-  class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>
+  class AWS_ECR_API ECRClient : smithy::client::AwsSmithyClientT<Aws::ECR::SERVICE_NAME,
+      Aws::ECR::ECRClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ECREndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ECRErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ECR"; }
 
       typedef ECRClientConfiguration ClientConfigurationType;
       typedef ECREndpointProvider EndpointProviderType;
@@ -1469,10 +1481,7 @@ namespace ECR
       std::shared_ptr<ECREndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>;
-      void init(const ECRClientConfiguration& clientConfiguration);
 
-      ECRClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ECREndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ECR

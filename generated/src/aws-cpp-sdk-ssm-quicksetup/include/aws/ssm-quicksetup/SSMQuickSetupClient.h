@@ -6,26 +6,38 @@
 #pragma once
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SSMQuickSetup
 {
+  AWS_SSMQUICKSETUP_API extern const char SERVICE_NAME[];
   /**
    * <p>Quick Setup helps you quickly configure frequently used services and features
    * with recommended best practices. Quick Setup simplifies setting up services,
    * including Systems Manager, by automating common or recommended tasks.</p>
    */
-  class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>
+  class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : smithy::client::AwsSmithyClientT<Aws::SSMQuickSetup::SERVICE_NAME,
+      Aws::SSMQuickSetup::SSMQuickSetupClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SSMQuickSetupEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SSMQuickSetupErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SSM QuickSetup"; }
 
       typedef SSMQuickSetupClientConfiguration ClientConfigurationType;
       typedef SSMQuickSetupEndpointProvider EndpointProviderType;
@@ -440,10 +452,7 @@ namespace SSMQuickSetup
       std::shared_ptr<SSMQuickSetupEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>;
-      void init(const SSMQuickSetupClientConfiguration& clientConfiguration);
 
-      SSMQuickSetupClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SSMQuickSetupEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSMQuickSetup

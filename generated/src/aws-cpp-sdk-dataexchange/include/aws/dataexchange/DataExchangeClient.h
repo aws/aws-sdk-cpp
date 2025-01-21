@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dataexchange/DataExchangeServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/dataexchange/DataExchangeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DataExchange
 {
+  AWS_DATAEXCHANGE_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS Data Exchange is a service that makes it easy for AWS customers to
    * exchange data in the cloud. You can use the AWS Data Exchange APIs to create,
@@ -35,12 +39,20 @@ namespace DataExchange
    * structured data file, an image file, or some other data file. Jobs are
    * asynchronous import or export operations used to create or copy assets.</p>
    */
-  class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>
+  class AWS_DATAEXCHANGE_API DataExchangeClient : smithy::client::AwsSmithyClientT<Aws::DataExchange::SERVICE_NAME,
+      Aws::DataExchange::DataExchangeClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DataExchangeEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DataExchangeErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DataExchange"; }
 
       typedef DataExchangeClientConfiguration ClientConfigurationType;
       typedef DataExchangeEndpointProvider EndpointProviderType;
@@ -1041,10 +1053,7 @@ namespace DataExchange
       std::shared_ptr<DataExchangeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>;
-      void init(const DataExchangeClientConfiguration& clientConfiguration);
 
-      DataExchangeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DataExchangeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DataExchange

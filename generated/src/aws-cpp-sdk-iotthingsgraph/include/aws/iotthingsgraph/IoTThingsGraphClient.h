@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iotthingsgraph/IoTThingsGraphErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTThingsGraph
 {
+  AWS_IOTTHINGSGRAPH_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS IoT Things Graph</fullname> <p>AWS IoT Things Graph provides an
    * integrated set of tools that enable developers to connect devices and services
@@ -26,12 +30,20 @@ namespace IoTThingsGraph
    * href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User
    * Guide</a>.</p> <p>The AWS IoT Things Graph service is discontinued.</p>
    */
-  class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>
+  class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : smithy::client::AwsSmithyClientT<Aws::IoTThingsGraph::SERVICE_NAME,
+      Aws::IoTThingsGraph::IoTThingsGraphClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTThingsGraphEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTThingsGraphErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoTThingsGraph"; }
 
       typedef IoTThingsGraphClientConfiguration ClientConfigurationType;
       typedef IoTThingsGraphEndpointProvider EndpointProviderType;
@@ -89,10 +101,7 @@ namespace IoTThingsGraph
       std::shared_ptr<IoTThingsGraphEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>;
-      void init(const IoTThingsGraphClientConfiguration& clientConfiguration);
 
-      IoTThingsGraphClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTThingsGraphEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTThingsGraph

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/scheduler/Scheduler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/scheduler/SchedulerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Scheduler
 {
+  AWS_SCHEDULER_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon EventBridge Scheduler is a serverless scheduler that allows you to
    * create, run, and manage tasks from one central, managed service. EventBridge
@@ -23,12 +27,20 @@ namespace Scheduler
    * reference lists the available API actions, and data types for EventBridge
    * Scheduler. </p>
    */
-  class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>
+  class AWS_SCHEDULER_API SchedulerClient : smithy::client::AwsSmithyClientT<Aws::Scheduler::SERVICE_NAME,
+      Aws::Scheduler::SchedulerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SchedulerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SchedulerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Scheduler"; }
 
       typedef SchedulerClientConfiguration ClientConfigurationType;
       typedef SchedulerEndpointProvider EndpointProviderType;
@@ -406,10 +418,7 @@ namespace Scheduler
       std::shared_ptr<SchedulerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>;
-      void init(const SchedulerClientConfiguration& clientConfiguration);
 
-      SchedulerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SchedulerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Scheduler

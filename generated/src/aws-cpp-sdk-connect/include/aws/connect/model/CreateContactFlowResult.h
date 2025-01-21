@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the checksum value of the flow content.</p>
+     * <p>Indicates the checksum value of the latest published flow content.</p>
      */
     inline const Aws::String& GetFlowContentSha256() const{ return m_flowContentSha256; }
     inline void SetFlowContentSha256(const Aws::String& value) { m_flowContentSha256 = value; }

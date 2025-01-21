@@ -64,6 +64,7 @@
 #include <aws/connect/model/DeleteAttachedFileResult.h>
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
+#include <aws/connect/model/DeleteContactFlowVersionResult.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
@@ -328,6 +329,7 @@ namespace Aws
       class DeleteContactEvaluationRequest;
       class DeleteContactFlowRequest;
       class DeleteContactFlowModuleRequest;
+      class DeleteContactFlowVersionRequest;
       class DeleteEmailAddressRequest;
       class DeleteEvaluationFormRequest;
       class DeleteHoursOfOperationRequest;
@@ -611,6 +613,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactEvaluationOutcome;
       typedef Aws::Utils::Outcome<DeleteContactFlowResult, ConnectError> DeleteContactFlowOutcome;
       typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
+      typedef Aws::Utils::Outcome<DeleteContactFlowVersionResult, ConnectError> DeleteContactFlowVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteEmailAddressResult, ConnectError> DeleteEmailAddressOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteEvaluationFormOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
@@ -894,6 +897,7 @@ namespace Aws
       typedef std::future<DeleteContactEvaluationOutcome> DeleteContactEvaluationOutcomeCallable;
       typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
       typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
+      typedef std::future<DeleteContactFlowVersionOutcome> DeleteContactFlowVersionOutcomeCallable;
       typedef std::future<DeleteEmailAddressOutcome> DeleteEmailAddressOutcomeCallable;
       typedef std::future<DeleteEvaluationFormOutcome> DeleteEvaluationFormOutcomeCallable;
       typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcomeCallable;
@@ -1180,6 +1184,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactEvaluationRequest&, const Model::DeleteContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowRequest&, const Model::DeleteContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleRequest&, const Model::DeleteContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowModuleResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowVersionRequest&, const Model::DeleteContactFlowVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowVersionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteEmailAddressRequest&, const Model::DeleteEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEmailAddressResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteEvaluationFormRequest&, const Model::DeleteEvaluationFormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEvaluationFormResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteHoursOfOperationRequest&, const Model::DeleteHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHoursOfOperationResponseReceivedHandler;

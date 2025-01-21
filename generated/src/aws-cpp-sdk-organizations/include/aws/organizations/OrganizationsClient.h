@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/organizations/OrganizationsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Organizations
 {
+  AWS_ORGANIZATIONS_API extern const char SERVICE_NAME[];
   /**
    * <p>Organizations is a web service that enables you to consolidate your multiple
    * Amazon Web Services accounts into an <i>organization</i> and centrally manage
@@ -63,12 +67,20 @@ namespace Organizations
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">CloudTrail
    * User Guide</a>.</p>
    */
-  class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>
+  class AWS_ORGANIZATIONS_API OrganizationsClient : smithy::client::AwsSmithyClientT<Aws::Organizations::SERVICE_NAME,
+      Aws::Organizations::OrganizationsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      OrganizationsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::OrganizationsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Organizations"; }
 
       typedef OrganizationsClientConfiguration ClientConfigurationType;
       typedef OrganizationsEndpointProvider EndpointProviderType;
@@ -2242,10 +2254,7 @@ namespace Organizations
       std::shared_ptr<OrganizationsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>;
-      void init(const OrganizationsClientConfiguration& clientConfiguration);
 
-      OrganizationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<OrganizationsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Organizations

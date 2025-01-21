@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/customer-profiles/CustomerProfilesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CustomerProfiles
 {
+  AWS_CUSTOMERPROFILES_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Connect Customer Profiles</fullname> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
@@ -30,12 +34,20 @@ namespace CustomerProfiles
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
    * Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
    */
-  class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>
+  class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : smithy::client::AwsSmithyClientT<Aws::CustomerProfiles::SERVICE_NAME,
+      Aws::CustomerProfiles::CustomerProfilesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CustomerProfilesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CustomerProfilesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Customer Profiles"; }
 
       typedef CustomerProfilesClientConfiguration ClientConfigurationType;
       typedef CustomerProfilesEndpointProvider EndpointProviderType;
@@ -2053,10 +2065,7 @@ namespace CustomerProfiles
       std::shared_ptr<CustomerProfilesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>;
-      void init(const CustomerProfilesClientConfiguration& clientConfiguration);
 
-      CustomerProfilesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CustomerProfilesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CustomerProfiles

@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lexv2-models/LexModelsV2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/lexv2-models/LexModelsV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LexModelsV2
 {
+  AWS_LEXMODELSV2_API extern const char SERVICE_NAME[];
   /**
    * <p/>
    */
-  class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>
+  class AWS_LEXMODELSV2_API LexModelsV2Client : smithy::client::AwsSmithyClientT<Aws::LexModelsV2::SERVICE_NAME,
+      Aws::LexModelsV2::LexModelsV2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LexModelsV2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LexModelsV2ErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Lex Models V2"; }
 
       typedef LexModelsV2ClientConfiguration ClientConfigurationType;
       typedef LexModelsV2EndpointProvider EndpointProviderType;
@@ -2917,10 +2929,7 @@ namespace LexModelsV2
       std::shared_ptr<LexModelsV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>;
-      void init(const LexModelsV2ClientConfiguration& clientConfiguration);
 
-      LexModelsV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LexModelsV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexModelsV2
