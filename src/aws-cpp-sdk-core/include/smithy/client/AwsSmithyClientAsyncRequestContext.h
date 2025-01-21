@@ -4,16 +4,14 @@
  */
 #pragma once
 
-#include <smithy/Smithy_EXPORTS.h>
-#include <smithy/interceptor/InterceptorContext.h>
-
+#include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/http/HttpRequest.h>
-#include <aws/core/AmazonWebServiceRequest.h>
-
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
-
+#include <smithy/Smithy_EXPORTS.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
+#include <smithy/interceptor/InterceptorContext.h>
 
 namespace smithy
 {
@@ -56,7 +54,7 @@ namespace smithy
 
             Aws::String m_invocationId;
             Aws::Http::HttpMethod m_method;
-            const Aws::AmazonWebServiceRequest* m_pRequest; // optional
+            const Aws::AmazonWebServiceRequest* m_pRequest{nullptr}; // optional
 
             RequestInfo m_requestInfo;
             Aws::String m_requestName;

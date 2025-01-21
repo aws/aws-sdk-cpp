@@ -11,7 +11,7 @@
 
 #include <smithy/identity/identity/AwsCredentialIdentityBase.h>
 #include <smithy/identity/signer/built-in/SigV4Signer.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+
 
 
 namespace smithy {

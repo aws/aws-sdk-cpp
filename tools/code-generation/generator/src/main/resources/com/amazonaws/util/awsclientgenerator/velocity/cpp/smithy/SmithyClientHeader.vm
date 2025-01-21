@@ -18,8 +18,13 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 \#include <smithy/client/AwsSmithyClient.h>
+#if($serviceModel.hasOnlyBearerAuth())
+\#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
+\#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#else
 \#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#end
 \#include <smithy/client/serializer/${serializer}.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 
@@ -56,6 +61,9 @@ namespace ${serviceNamespace}
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
+#foreach($presigner in $serviceModel.presigners)
+        Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn = 900);
+#end
       void OverrideEndpoint(const ${rootNamespace}::String& endpoint);
       std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
     private:

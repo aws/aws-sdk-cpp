@@ -1,5 +1,9 @@
-#if($metadata.hasEndpointDiscoveryTrait)
 #set($indent = "        ")
+#if($operation.request.shape.hasEventStreamMembers())
+${indent}streamReadySemaphore->ReleaseAll();
+#end
+#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
+#if($metadata.hasEndpointDiscoveryTrait)
 #if($operation.hasEndpointDiscoveryTrait)
 #set($hasId=false)
 #foreach($memberEntry in $operation.request.shape.members.entrySet())
@@ -29,6 +33,12 @@ ${indent}endpointRequest.AddIdentifiers("${memberEntry.key}", request.Get${membe
 #end
 ${indent}this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.GetServiceRequestName(), endpointKey, endpointRequest, $operation.requireEndpointDiscovery);
 #else
+#if(!$hasEndPointOverrides)
+${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+#end
+#end
+#else
+#if(!$hasEndPointOverrides)
 ${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
 #end
 #end

@@ -33,7 +33,7 @@ namespace
     class ElasticFileSystemTest : public ::testing::Test
     {
     public:
-        EFSClient m_client;
+        Aws::UniquePtr<EFSClient> m_client;
 
         ElasticFileSystemTest()
         {
@@ -43,10 +43,12 @@ namespace
             config.scheme = Scheme::HTTPS;
             config.connectTimeoutMs = 30000;
             config.requestTimeoutMs = 30000;
-            m_client = EFSClient(config);
+            m_client = Aws::MakeUnique<EFSClient>(ALLOCATION_TAG, config);
         }
 
     protected:
+        const char* ALLOCATION_TAG{"AWSCloudSearchDomainEndpointProviderTests"};
+
         static Aws::String BuildUniqueCreationToken(const char* baseCreationToken)
         {
             // If we are using full string of UUID, it will exceed the limitation of EFS creation token length, which is 64.
@@ -60,7 +62,7 @@ namespace
             {
                 DescribeFileSystemsRequest describeFileSystemsRequest;
                 describeFileSystemsRequest.SetFileSystemId(fileSystemId);
-                auto describeFileSystemsOutcome = m_client.DescribeFileSystems(describeFileSystemsRequest);
+                auto describeFileSystemsOutcome = m_client->DescribeFileSystems(describeFileSystemsRequest);
                 if (describeFileSystemsOutcome.IsSuccess())
                 {
                     return true;
@@ -77,12 +79,12 @@ namespace
     {
         CreateFileSystemRequest createFileSystemRequest;
         createFileSystemRequest.SetCreationToken(BuildUniqueCreationToken(FILE_SYSTEM_CREATION_TOKEN));
-        auto createFileSystemOutcome = m_client.CreateFileSystem(createFileSystemRequest);
+        auto createFileSystemOutcome = m_client->CreateFileSystem(createFileSystemRequest);
         AWS_ASSERT_SUCCESS(createFileSystemOutcome);
         Aws::String fileSystemId = createFileSystemOutcome.GetResult().GetFileSystemId();
         ASSERT_TRUE(WaitForFileSystemToBeActive(fileSystemId));
 
-        createFileSystemOutcome = m_client.CreateFileSystem(createFileSystemRequest);
+        createFileSystemOutcome = m_client->CreateFileSystem(createFileSystemRequest);
 #if ENABLE_CURL_CLIENT
         ASSERT_FALSE(createFileSystemOutcome.GetError().GetRemoteHostIpAddress().empty());
 #endif
@@ -94,7 +96,7 @@ namespace
 
         DeleteFileSystemRequest deleteFileSystemRequest;
         deleteFileSystemRequest.SetFileSystemId(fileSystemId);
-        auto deleteFileSystemOutcome = m_client.DeleteFileSystem(deleteFileSystemRequest);
+        auto deleteFileSystemOutcome = m_client->DeleteFileSystem(deleteFileSystemRequest);
         AWS_ASSERT_SUCCESS(deleteFileSystemOutcome);
     }
 }
