@@ -63,6 +63,7 @@ class BearerTokenSigner : public AwsSignerBase<AwsBearerTokenIdentityBase>
                                           false /*retryable*/);
     }
 
+
     virtual ~BearerTokenSigner(){};
 
   protected:

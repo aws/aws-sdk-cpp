@@ -1,0 +1,82 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+\#include <aws/core/utils/event/EventStream.h>
+#foreach($entry in $shape.members.entrySet())
+#if($entry.value.shape.isEvent())
+#foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
+#if($eventMemberEntry.value.isEventPayload())
+#if($eventMemberEntry.value.shape.isStructure())
+\#include <aws/core/utils/json/JsonSerializer.h>
+#end
+#break
+#end
+#end
+#end
+#end
+
+namespace Aws
+{
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+#set($classNameRef = "${typeInfo.className}&")
+
+#if($shape.documentation)
+  /**
+   * $shape.documentation
+   */
+#end
+  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::EventEncoderStream
+  {
+  public:
+#foreach($entry in $shape.members.entrySet())
+#if($entry.value.shape.isEvent())
+    ${typeInfo.className}& Write${entry.value.shape.name}(const ${entry.value.shape.name}& value)
+    {
+       Aws::Utils::Event::Message msg;
+#if(!$entry.value.shape.eventPayloadType.equals("blob"))
+       msg.InsertEventHeader(":message-type", Aws::String("event"));
+       msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
+#if($entry.value.shape.eventPayloadType.equals("string"))
+       msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
+       msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
+#elseif($entry.value.shape.eventPayloadType.equals("structure") || $entry.value.shape.eventPayloadType.equals("list"))
+       msg.InsertEventHeader(":content-type", Aws::String("application/json"));
+       msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
+#else
+       AWS_UNREFERENCED_PARAM(value);
+#end
+#else##if($entry.value.shape.eventPayloadType.equals("blob"))
+       if(!value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})().empty())
+       {
+           msg.InsertEventHeader(":message-type", Aws::String("event"));
+           msg.InsertEventHeader(":event-type", Aws::String("${entry.key}"));
+           msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
+           msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
+       }
+#end
+       WriteEvent(msg);
+       return *this;
+    }
+#end
+#end
+
+  };
+
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

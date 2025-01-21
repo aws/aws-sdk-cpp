@@ -180,6 +180,17 @@ namespace Aws
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, const Aws::Auth::AWSCredentials& creds, const char* region, const char* serviceName, long long expirationInSeconds = 0) const;
 
+            /**
+            * Takes a request and signs the URI based on request, region, servicename, expiration and credentials.
+            * The URI can then be used in a normal HTTP call until expiration.
+            * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm.
+            * expirationInSeconds defaults to 0 which provides a URI good for 7 days.
+            * Using m_region by default if parameter region is nullptr.
+            * Using m_serviceName by default if parameter serviceName is nullptr.
+            */
+            bool PresignRequest(Aws::Http::HttpRequest& request, const Aws::Auth::AWSCredentials& creds, const char* region, const char* serviceName, long long expirationInSeconds = 0) const;
+
+
             virtual Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
 
             Aws::String GetServiceName() const { return m_serviceName; }

@@ -280,7 +280,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     };
 
     SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>([&]() -> SigningOutcome {
-            return this->SignRequest(pRequestCtx->m_httpRequest, pRequestCtx->m_authSchemeOption);
+            return this->SignHttpRequest(pRequestCtx->m_httpRequest, pRequestCtx->m_authSchemeOption);
         },
         TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
         *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),

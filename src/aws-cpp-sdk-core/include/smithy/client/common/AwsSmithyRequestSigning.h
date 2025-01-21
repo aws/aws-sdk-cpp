@@ -87,6 +87,37 @@ namespace smithy
             return std::move(*visitor.result);
         }
 
+        static SigningOutcome PreSignRequest(std::shared_ptr<HttpRequest> httpRequest, 
+                                  const AuthSchemeOption& authSchemeOption,
+                                  const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
+                                  const Aws::String& region,
+                                  const Aws::String& serviceName,
+                                  long long expirationTimeInSeconds)
+        {
+            
+            auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
+            if (authSchemeIt == authSchemes.end())
+            {
+                assert(!"Auth scheme has not been found for a given auth option!");
+                return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
+                                     "",
+                                     "Requested AuthSchemeOption was not found within client Auth Schemes",
+                                     false/*retryable*/));
+            }
+
+            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
+
+            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
+            AuthSchemesVariantT authSchemesVariantCopy(authScheme); 
+            authSchemesVariantCopy.Visit(visitor);
+
+            if (!visitor.result) {
+              return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign with an unknown error",
+                                  false /*retryable*/));
+            }
+            return std::move(*visitor.result);
+        }
+
         static bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption,
                                     const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
