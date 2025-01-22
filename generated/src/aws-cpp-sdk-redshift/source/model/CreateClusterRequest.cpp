@@ -110,7 +110,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
       unsigned clusterSecurityGroupsCount = 1;
       for(auto& item : m_clusterSecurityGroups)
       {
-        ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
+        ss << "ClusterSecurityGroups.ClusterSecurityGroupName." << clusterSecurityGroupsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         clusterSecurityGroupsCount++;
       }
@@ -128,7 +128,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
       unsigned vpcSecurityGroupIdsCount = 1;
       for(auto& item : m_vpcSecurityGroupIds)
       {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
@@ -221,7 +221,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
       unsigned tagsCount = 1;
       for(auto& item : m_tags)
       {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
@@ -253,7 +253,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
       unsigned iamRolesCount = 1;
       for(auto& item : m_iamRoles)
       {
-        ss << "IamRoles.member." << iamRolesCount << "="
+        ss << "IamRoles.IamRoleArn." << iamRolesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         iamRolesCount++;
       }

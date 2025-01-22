@@ -89,7 +89,7 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
       unsigned tagKeysCount = 1;
       for(auto& item : m_tagKeys)
       {
-        ss << "TagKeys.member." << tagKeysCount << "="
+        ss << "TagKeys.TagKey." << tagKeysCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }
@@ -107,7 +107,7 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
       unsigned tagValuesCount = 1;
       for(auto& item : m_tagValues)
       {
-        ss << "TagValues.member." << tagValuesCount << "="
+        ss << "TagValues.TagValue." << tagValuesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         tagValuesCount++;
       }
@@ -130,7 +130,7 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
       unsigned sortingEntitiesCount = 1;
       for(auto& item : m_sortingEntities)
       {
-        item.OutputToStream(ss, "SortingEntities.member.", sortingEntitiesCount, "");
+        item.OutputToStream(ss, "SortingEntities.SnapshotSortingEntity.", sortingEntitiesCount, "");
         sortingEntitiesCount++;
       }
     }

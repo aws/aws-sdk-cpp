@@ -118,7 +118,7 @@ void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_errors)
       {
         Aws::StringStream errorsSs;
-        errorsSs << location << index << locationValue << ".IntegrationError." << errorsIdx++;
+        errorsSs << location << index << locationValue << ".Errors.IntegrationError." << errorsIdx++;
         item.OutputToStream(oStream, errorsSs.str().c_str());
       }
   }

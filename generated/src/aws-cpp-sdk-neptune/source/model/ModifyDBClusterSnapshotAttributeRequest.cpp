@@ -43,7 +43,7 @@ Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
       unsigned valuesToAddCount = 1;
       for(auto& item : m_valuesToAdd)
       {
-        ss << "ValuesToAdd.member." << valuesToAddCount << "="
+        ss << "ValuesToAdd.AttributeValue." << valuesToAddCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         valuesToAddCount++;
       }
@@ -61,7 +61,7 @@ Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
       unsigned valuesToRemoveCount = 1;
       for(auto& item : m_valuesToRemove)
       {
-        ss << "ValuesToRemove.member." << valuesToRemoveCount << "="
+        ss << "ValuesToRemove.AttributeValue." << valuesToRemoveCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         valuesToRemoveCount++;
       }

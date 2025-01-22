@@ -174,7 +174,7 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location, un
       for(auto& item : m_errors)
       {
         Aws::StringStream errorsSs;
-        errorsSs << location << index << locationValue << ".IntegrationError." << errorsIdx++;
+        errorsSs << location << index << locationValue << ".Errors.IntegrationError." << errorsIdx++;
         item.OutputToStream(oStream, errorsSs.str().c_str());
       }
   }
@@ -213,7 +213,7 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location, un
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
+        tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -381,7 +381,7 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location << index << locationValue << ".AvailabilityZone." << availabilityZonesIdx++;
+        availabilityZonesSs << location << index << locationValue << ".AvailabilityZones.AvailabilityZone." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
@@ -467,7 +467,7 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_availableProcessorFeatures)
       {
         Aws::StringStream availableProcessorFeaturesSs;
-        availableProcessorFeaturesSs << location << index << locationValue << ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
+        availableProcessorFeaturesSs << location << index << locationValue << ".AvailableProcessorFeatures.AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
         item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
       }
   }

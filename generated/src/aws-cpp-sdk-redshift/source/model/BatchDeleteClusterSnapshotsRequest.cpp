@@ -30,7 +30,7 @@ Aws::String BatchDeleteClusterSnapshotsRequest::SerializePayload() const
       unsigned identifiersCount = 1;
       for(auto& item : m_identifiers)
       {
-        item.OutputToStream(ss, "Identifiers.member.", identifiersCount, "");
+        item.OutputToStream(ss, "Identifiers.DeleteClusterSnapshotMessage.", identifiersCount, "");
         identifiersCount++;
       }
     }

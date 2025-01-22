@@ -344,7 +344,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned memberClustersIdx = 1;
       for(auto& item : m_memberClusters)
       {
-        oStream << location << index << locationValue << ".ClusterId." << memberClustersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".MemberClusters.ClusterId." << memberClustersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 
@@ -354,7 +354,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_nodeGroups)
       {
         Aws::StringStream nodeGroupsSs;
-        nodeGroupsSs << location << index << locationValue << ".NodeGroup." << nodeGroupsIdx++;
+        nodeGroupsSs << location << index << locationValue << ".NodeGroups.NodeGroup." << nodeGroupsIdx++;
         item.OutputToStream(oStream, nodeGroupsSs.str().c_str());
       }
   }
@@ -426,7 +426,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned memberClustersOutpostArnsIdx = 1;
       for(auto& item : m_memberClustersOutpostArns)
       {
-        oStream << location << index << locationValue << ".ReplicationGroupOutpostArn." << memberClustersOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".MemberClustersOutpostArns.ReplicationGroupOutpostArn." << memberClustersOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 
@@ -455,7 +455,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_logDeliveryConfigurations)
       {
         Aws::StringStream logDeliveryConfigurationsSs;
-        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfigurations.LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
   }

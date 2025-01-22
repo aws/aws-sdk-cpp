@@ -43,7 +43,7 @@ Aws::String ResetDBClusterParameterGroupRequest::SerializePayload() const
       unsigned parametersCount = 1;
       for(auto& item : m_parameters)
       {
-        item.OutputToStream(ss, "Parameters.member.", parametersCount, "");
+        item.OutputToStream(ss, "Parameters.Parameter.", parametersCount, "");
         parametersCount++;
       }
     }

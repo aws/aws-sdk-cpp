@@ -155,7 +155,7 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
       unsigned allowedVPCsIdx = 1;
       for(auto& item : m_allowedVPCs)
       {
-        oStream << location << index << locationValue << ".VpcIdentifier." << allowedVPCsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".AllowedVPCs.VpcIdentifier." << allowedVPCsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 

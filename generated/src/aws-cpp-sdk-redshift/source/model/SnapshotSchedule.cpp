@@ -122,7 +122,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned scheduleDefinitionsIdx = 1;
       for(auto& item : m_scheduleDefinitions)
       {
-        oStream << location << index << locationValue << ".ScheduleDefinition." << scheduleDefinitionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ScheduleDefinitions.ScheduleDefinition." << scheduleDefinitionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 
@@ -142,7 +142,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
+        tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -152,7 +152,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned nextInvocationsIdx = 1;
       for(auto& item : m_nextInvocations)
       {
-        oStream << location << index << locationValue << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << index << locationValue << ".NextInvocations.SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
 
@@ -167,7 +167,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_associatedClusters)
       {
         Aws::StringStream associatedClustersSs;
-        associatedClustersSs << location << index << locationValue << ".ClusterAssociatedToSchedule." << associatedClustersIdx++;
+        associatedClustersSs << location << index << locationValue << ".AssociatedClusters.ClusterAssociatedToSchedule." << associatedClustersIdx++;
         item.OutputToStream(oStream, associatedClustersSs.str().c_str());
       }
   }

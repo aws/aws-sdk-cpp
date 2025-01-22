@@ -401,7 +401,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_supportedCharacterSets)
       {
         Aws::StringStream supportedCharacterSetsSs;
-        supportedCharacterSetsSs << location << index << locationValue << ".CharacterSet." << supportedCharacterSetsIdx++;
+        supportedCharacterSetsSs << location << index << locationValue << ".SupportedCharacterSets.CharacterSet." << supportedCharacterSetsIdx++;
         item.OutputToStream(oStream, supportedCharacterSetsSs.str().c_str());
       }
   }
@@ -412,7 +412,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_supportedNcharCharacterSets)
       {
         Aws::StringStream supportedNcharCharacterSetsSs;
-        supportedNcharCharacterSetsSs << location << index << locationValue << ".CharacterSet." << supportedNcharCharacterSetsIdx++;
+        supportedNcharCharacterSetsSs << location << index << locationValue << ".SupportedNcharCharacterSets.CharacterSet." << supportedNcharCharacterSetsIdx++;
         item.OutputToStream(oStream, supportedNcharCharacterSetsSs.str().c_str());
       }
   }
@@ -423,7 +423,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_validUpgradeTarget)
       {
         Aws::StringStream validUpgradeTargetSs;
-        validUpgradeTargetSs << location << index << locationValue << ".UpgradeTarget." << validUpgradeTargetIdx++;
+        validUpgradeTargetSs << location << index << locationValue << ".ValidUpgradeTarget.UpgradeTarget." << validUpgradeTargetIdx++;
         item.OutputToStream(oStream, validUpgradeTargetSs.str().c_str());
       }
   }
@@ -434,7 +434,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_supportedTimezones)
       {
         Aws::StringStream supportedTimezonesSs;
-        supportedTimezonesSs << location << index << locationValue << ".Timezone." << supportedTimezonesIdx++;
+        supportedTimezonesSs << location << index << locationValue << ".SupportedTimezones.Timezone." << supportedTimezonesIdx++;
         item.OutputToStream(oStream, supportedTimezonesSs.str().c_str());
       }
   }
@@ -527,7 +527,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        tagListSs << location << index << locationValue << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }

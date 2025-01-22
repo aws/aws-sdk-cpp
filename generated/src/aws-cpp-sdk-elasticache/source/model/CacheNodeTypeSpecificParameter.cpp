@@ -155,7 +155,7 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_cacheNodeTypeSpecificValues)
       {
         Aws::StringStream cacheNodeTypeSpecificValuesSs;
-        cacheNodeTypeSpecificValuesSs << location << index << locationValue << ".CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
+        cacheNodeTypeSpecificValuesSs << location << index << locationValue << ".CacheNodeTypeSpecificValues.CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
   }

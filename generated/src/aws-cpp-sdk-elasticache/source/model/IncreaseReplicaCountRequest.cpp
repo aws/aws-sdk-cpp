@@ -45,7 +45,7 @@ Aws::String IncreaseReplicaCountRequest::SerializePayload() const
       unsigned replicaConfigurationCount = 1;
       for(auto& item : m_replicaConfiguration)
       {
-        item.OutputToStream(ss, "ReplicaConfiguration.member.", replicaConfigurationCount, "");
+        item.OutputToStream(ss, "ReplicaConfiguration.ConfigureShard.", replicaConfigurationCount, "");
         replicaConfigurationCount++;
       }
     }

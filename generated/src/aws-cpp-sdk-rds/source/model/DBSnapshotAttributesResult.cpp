@@ -74,7 +74,7 @@ void DBSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_dBSnapshotAttributes)
       {
         Aws::StringStream dBSnapshotAttributesSs;
-        dBSnapshotAttributesSs << location << index << locationValue << ".DBSnapshotAttribute." << dBSnapshotAttributesIdx++;
+        dBSnapshotAttributesSs << location << index << locationValue << ".DBSnapshotAttributes.DBSnapshotAttribute." << dBSnapshotAttributesIdx++;
         item.OutputToStream(oStream, dBSnapshotAttributesSs.str().c_str());
       }
   }

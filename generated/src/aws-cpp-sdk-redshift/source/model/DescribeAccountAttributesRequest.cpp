@@ -30,7 +30,7 @@ Aws::String DescribeAccountAttributesRequest::SerializePayload() const
       unsigned attributeNamesCount = 1;
       for(auto& item : m_attributeNames)
       {
-        ss << "AttributeNames.member." << attributeNamesCount << "="
+        ss << "AttributeNames.AttributeName." << attributeNamesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         attributeNamesCount++;
       }
