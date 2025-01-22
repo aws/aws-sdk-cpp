@@ -36,7 +36,7 @@ Aws::String ModifySnapshotScheduleRequest::SerializePayload() const
       unsigned scheduleDefinitionsCount = 1;
       for(auto& item : m_scheduleDefinitions)
       {
-        ss << "ScheduleDefinitions.member." << scheduleDefinitionsCount << "="
+        ss << "ScheduleDefinitions.ScheduleDefinition." << scheduleDefinitionsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         scheduleDefinitionsCount++;
       }

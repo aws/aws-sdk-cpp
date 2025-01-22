@@ -74,7 +74,7 @@ void ResourcePendingMaintenanceActions::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_pendingMaintenanceActionDetails)
       {
         Aws::StringStream pendingMaintenanceActionDetailsSs;
-        pendingMaintenanceActionDetailsSs << location << index << locationValue << ".PendingMaintenanceAction." << pendingMaintenanceActionDetailsIdx++;
+        pendingMaintenanceActionDetailsSs << location << index << locationValue << ".PendingMaintenanceActionDetails.PendingMaintenanceAction." << pendingMaintenanceActionDetailsIdx++;
         item.OutputToStream(oStream, pendingMaintenanceActionDetailsSs.str().c_str());
       }
   }

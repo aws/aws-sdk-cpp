@@ -38,7 +38,7 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
       unsigned addIamRolesCount = 1;
       for(auto& item : m_addIamRoles)
       {
-        ss << "AddIamRoles.member." << addIamRolesCount << "="
+        ss << "AddIamRoles.IamRoleArn." << addIamRolesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         addIamRolesCount++;
       }
@@ -56,7 +56,7 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
       unsigned removeIamRolesCount = 1;
       for(auto& item : m_removeIamRoles)
       {
-        ss << "RemoveIamRoles.member." << removeIamRolesCount << "="
+        ss << "RemoveIamRoles.IamRoleArn." << removeIamRolesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         removeIamRolesCount++;
       }

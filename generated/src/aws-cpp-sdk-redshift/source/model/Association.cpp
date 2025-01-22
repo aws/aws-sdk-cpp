@@ -86,7 +86,7 @@ void Association::OutputToStream(Aws::OStream& oStream, const char* location, un
       for(auto& item : m_certificateAssociations)
       {
         Aws::StringStream certificateAssociationsSs;
-        certificateAssociationsSs << location << index << locationValue << ".CertificateAssociation." << certificateAssociationsIdx++;
+        certificateAssociationsSs << location << index << locationValue << ".CertificateAssociations.CertificateAssociation." << certificateAssociationsIdx++;
         item.OutputToStream(oStream, certificateAssociationsSs.str().c_str());
       }
   }

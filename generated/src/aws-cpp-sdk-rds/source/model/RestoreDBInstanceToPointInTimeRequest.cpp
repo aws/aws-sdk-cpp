@@ -175,7 +175,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
       unsigned tagsCount = 1;
       for(auto& item : m_tags)
       {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
@@ -207,7 +207,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
       unsigned vpcSecurityGroupIdsCount = 1;
       for(auto& item : m_vpcSecurityGroupIds)
       {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
@@ -291,7 +291,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
       unsigned processorFeaturesCount = 1;
       for(auto& item : m_processorFeatures)
       {
-        item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
+        item.OutputToStream(ss, "ProcessorFeatures.ProcessorFeature.", processorFeaturesCount, "");
         processorFeaturesCount++;
       }
     }

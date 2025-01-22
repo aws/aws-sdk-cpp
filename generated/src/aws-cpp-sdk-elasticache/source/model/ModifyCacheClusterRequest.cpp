@@ -68,7 +68,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
       unsigned cacheNodeIdsToRemoveCount = 1;
       for(auto& item : m_cacheNodeIdsToRemove)
       {
-        ss << "CacheNodeIdsToRemove.member." << cacheNodeIdsToRemoveCount << "="
+        ss << "CacheNodeIdsToRemove.CacheNodeId." << cacheNodeIdsToRemoveCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         cacheNodeIdsToRemoveCount++;
       }
@@ -91,7 +91,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
       unsigned newAvailabilityZonesCount = 1;
       for(auto& item : m_newAvailabilityZones)
       {
-        ss << "NewAvailabilityZones.member." << newAvailabilityZonesCount << "="
+        ss << "NewAvailabilityZones.PreferredAvailabilityZone." << newAvailabilityZonesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         newAvailabilityZonesCount++;
       }
@@ -109,7 +109,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
       unsigned cacheSecurityGroupNamesCount = 1;
       for(auto& item : m_cacheSecurityGroupNames)
       {
-        ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
+        ss << "CacheSecurityGroupNames.CacheSecurityGroupName." << cacheSecurityGroupNamesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         cacheSecurityGroupNamesCount++;
       }
@@ -127,7 +127,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
       unsigned securityGroupIdsCount = 1;
       for(auto& item : m_securityGroupIds)
       {
-        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+        ss << "SecurityGroupIds.SecurityGroupId." << securityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         securityGroupIdsCount++;
       }
@@ -210,7 +210,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
       unsigned logDeliveryConfigurationsCount = 1;
       for(auto& item : m_logDeliveryConfigurations)
       {
-        item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+        item.OutputToStream(ss, "LogDeliveryConfigurations.LogDeliveryConfigurationRequest.", logDeliveryConfigurationsCount, "");
         logDeliveryConfigurationsCount++;
       }
     }

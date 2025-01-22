@@ -583,7 +583,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_clusterSecurityGroups)
       {
         Aws::StringStream clusterSecurityGroupsSs;
-        clusterSecurityGroupsSs << location << index << locationValue << ".ClusterSecurityGroup." << clusterSecurityGroupsIdx++;
+        clusterSecurityGroupsSs << location << index << locationValue << ".ClusterSecurityGroups.ClusterSecurityGroup." << clusterSecurityGroupsIdx++;
         item.OutputToStream(oStream, clusterSecurityGroupsSs.str().c_str());
       }
   }
@@ -594,7 +594,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroup." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroups.VpcSecurityGroup." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -605,7 +605,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_clusterParameterGroups)
       {
         Aws::StringStream clusterParameterGroupsSs;
-        clusterParameterGroupsSs << location << index << locationValue << ".ClusterParameterGroup." << clusterParameterGroupsIdx++;
+        clusterParameterGroupsSs << location << index << locationValue << ".ClusterParameterGroups.ClusterParameterGroup." << clusterParameterGroupsIdx++;
         item.OutputToStream(oStream, clusterParameterGroupsSs.str().c_str());
       }
   }
@@ -724,7 +724,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
+        tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -745,7 +745,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_iamRoles)
       {
         Aws::StringStream iamRolesSs;
-        iamRolesSs << location << index << locationValue << ".ClusterIamRole." << iamRolesIdx++;
+        iamRolesSs << location << index << locationValue << ".IamRoles.ClusterIamRole." << iamRolesIdx++;
         item.OutputToStream(oStream, iamRolesSs.str().c_str());
       }
   }
@@ -775,7 +775,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_deferredMaintenanceWindows)
       {
         Aws::StringStream deferredMaintenanceWindowsSs;
-        deferredMaintenanceWindowsSs << location << index << locationValue << ".DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
+        deferredMaintenanceWindowsSs << location << index << locationValue << ".DeferredMaintenanceWindows.DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
         item.OutputToStream(oStream, deferredMaintenanceWindowsSs.str().c_str());
       }
   }
