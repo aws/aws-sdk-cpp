@@ -214,7 +214,6 @@ function(add_sdks)
         endif()
 
         add_subdirectory("${SDK_DIR}")
-        message(STATUS "exporting ${SDK_TARGET}")
         LIST(APPEND EXPORTS "${SDK_TARGET}")
         unset(SDK_TARGET)
     endforeach()
