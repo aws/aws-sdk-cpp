@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon
-     * WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
+     * WorkSpaces, WorkSpaces Secure Browser, or AppStream 2.0.</p>
      */
     inline const Aws::String& GetDesktopArn() const{ return m_desktopArn; }
     inline bool DesktopArnHasBeenSet() const { return m_desktopArnHasBeenSet; }

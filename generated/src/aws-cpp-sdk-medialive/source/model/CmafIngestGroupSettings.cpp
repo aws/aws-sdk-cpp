@@ -34,7 +34,10 @@ CmafIngestGroupSettings::CmafIngestGroupSettings() :
     m_klvBehaviorHasBeenSet(false),
     m_klvNameModifierHasBeenSet(false),
     m_nielsenId3NameModifierHasBeenSet(false),
-    m_scte35NameModifierHasBeenSet(false)
+    m_scte35NameModifierHasBeenSet(false),
+    m_id3Behavior(CmafId3Behavior::NOT_SET),
+    m_id3BehaviorHasBeenSet(false),
+    m_id3NameModifierHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,20 @@ CmafIngestGroupSettings& CmafIngestGroupSettings::operator =(JsonView jsonValue)
     m_scte35NameModifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id3Behavior"))
+  {
+    m_id3Behavior = CmafId3BehaviorMapper::GetCmafId3BehaviorForName(jsonValue.GetString("id3Behavior"));
+
+    m_id3BehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("id3NameModifier"))
+  {
+    m_id3NameModifier = jsonValue.GetString("id3NameModifier");
+
+    m_id3NameModifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +193,17 @@ JsonValue CmafIngestGroupSettings::Jsonize() const
   if(m_scte35NameModifierHasBeenSet)
   {
    payload.WithString("scte35NameModifier", m_scte35NameModifier);
+
+  }
+
+  if(m_id3BehaviorHasBeenSet)
+  {
+   payload.WithString("id3Behavior", CmafId3BehaviorMapper::GetNameForCmafId3Behavior(m_id3Behavior));
+  }
+
+  if(m_id3NameModifierHasBeenSet)
+  {
+   payload.WithString("id3NameModifier", m_id3NameModifier);
 
   }
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agent-runtime/model/FlowInput.h>
+#include <aws/bedrock-agent-runtime/model/FlowMultiTurnInputRequestEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,34 +18,27 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowInput::FlowInput() : 
+FlowMultiTurnInputRequestEvent::FlowMultiTurnInputRequestEvent() : 
     m_contentHasBeenSet(false),
-    m_nodeInputNameHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
-    m_nodeOutputNameHasBeenSet(false)
+    m_nodeType(NodeType::NOT_SET),
+    m_nodeTypeHasBeenSet(false)
 {
 }
 
-FlowInput::FlowInput(JsonView jsonValue)
-  : FlowInput()
+FlowMultiTurnInputRequestEvent::FlowMultiTurnInputRequestEvent(JsonView jsonValue)
+  : FlowMultiTurnInputRequestEvent()
 {
   *this = jsonValue;
 }
 
-FlowInput& FlowInput::operator =(JsonView jsonValue)
+FlowMultiTurnInputRequestEvent& FlowMultiTurnInputRequestEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
 
     m_contentHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("nodeInputName"))
-  {
-    m_nodeInputName = jsonValue.GetString("nodeInputName");
-
-    m_nodeInputNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nodeName"))
@@ -55,17 +48,17 @@ FlowInput& FlowInput::operator =(JsonView jsonValue)
     m_nodeNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("nodeOutputName"))
+  if(jsonValue.ValueExists("nodeType"))
   {
-    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
+    m_nodeType = NodeTypeMapper::GetNodeTypeForName(jsonValue.GetString("nodeType"));
 
-    m_nodeOutputNameHasBeenSet = true;
+    m_nodeTypeHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue FlowInput::Jsonize() const
+JsonValue FlowMultiTurnInputRequestEvent::Jsonize() const
 {
   JsonValue payload;
 
@@ -75,22 +68,15 @@ JsonValue FlowInput::Jsonize() const
 
   }
 
-  if(m_nodeInputNameHasBeenSet)
-  {
-   payload.WithString("nodeInputName", m_nodeInputName);
-
-  }
-
   if(m_nodeNameHasBeenSet)
   {
    payload.WithString("nodeName", m_nodeName);
 
   }
 
-  if(m_nodeOutputNameHasBeenSet)
+  if(m_nodeTypeHasBeenSet)
   {
-   payload.WithString("nodeOutputName", m_nodeOutputName);
-
+   payload.WithString("nodeType", NodeTypeMapper::GetNameForNodeType(m_nodeType));
   }
 
   return payload;

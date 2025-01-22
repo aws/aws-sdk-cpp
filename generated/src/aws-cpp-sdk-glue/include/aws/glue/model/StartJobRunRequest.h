@@ -124,7 +124,9 @@ namespace Model
      * left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue
      * jobs that had a timeout value greater than 7 days will be defaulted to 7 days.
      * For instance if you have specified a timeout of 20 days for a batch job, it will
-     * be stopped on the 7th day.</p>
+     * be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a
+     * maintenance window, it will be restarted during the maintenance window after 7
+     * days.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }

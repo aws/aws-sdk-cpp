@@ -10,6 +10,7 @@
 #include <aws/bedrock-agent-runtime/model/ConflictException.h>
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
 #include <aws/bedrock-agent-runtime/model/FlowCompletionEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowMultiTurnInputRequestEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowOutputEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceEvent.h>
 #include <aws/bedrock-agent-runtime/model/InternalServerException.h>
@@ -110,6 +111,19 @@ namespace Model
     inline void SetFlowCompletionEvent(FlowCompletionEvent&& value) { m_flowCompletionEventHasBeenSet = true; m_flowCompletionEvent = std::move(value); }
     inline FlowResponseStream& WithFlowCompletionEvent(const FlowCompletionEvent& value) { SetFlowCompletionEvent(value); return *this;}
     inline FlowResponseStream& WithFlowCompletionEvent(FlowCompletionEvent&& value) { SetFlowCompletionEvent(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The event stream containing the multi-turn input request information from the
+     * flow.</p>
+     */
+    inline const FlowMultiTurnInputRequestEvent& GetFlowMultiTurnInputRequestEvent() const{ return m_flowMultiTurnInputRequestEvent; }
+    inline bool FlowMultiTurnInputRequestEventHasBeenSet() const { return m_flowMultiTurnInputRequestEventHasBeenSet; }
+    inline void SetFlowMultiTurnInputRequestEvent(const FlowMultiTurnInputRequestEvent& value) { m_flowMultiTurnInputRequestEventHasBeenSet = true; m_flowMultiTurnInputRequestEvent = value; }
+    inline void SetFlowMultiTurnInputRequestEvent(FlowMultiTurnInputRequestEvent&& value) { m_flowMultiTurnInputRequestEventHasBeenSet = true; m_flowMultiTurnInputRequestEvent = std::move(value); }
+    inline FlowResponseStream& WithFlowMultiTurnInputRequestEvent(const FlowMultiTurnInputRequestEvent& value) { SetFlowMultiTurnInputRequestEvent(value); return *this;}
+    inline FlowResponseStream& WithFlowMultiTurnInputRequestEvent(FlowMultiTurnInputRequestEvent&& value) { SetFlowMultiTurnInputRequestEvent(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,6 +229,9 @@ namespace Model
 
     FlowCompletionEvent m_flowCompletionEvent;
     bool m_flowCompletionEventHasBeenSet = false;
+
+    FlowMultiTurnInputRequestEvent m_flowMultiTurnInputRequestEvent;
+    bool m_flowMultiTurnInputRequestEventHasBeenSet = false;
 
     FlowOutputEvent m_flowOutputEvent;
     bool m_flowOutputEventHasBeenSet = false;

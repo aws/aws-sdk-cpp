@@ -73,6 +73,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the current flow execution. If you don't provide a
+     * value, Amazon Bedrock creates the identifier for you. </p>
+     */
+    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
+    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
+    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
+    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
+    inline InvokeFlowRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
+    inline InvokeFlowRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
+    inline InvokeFlowRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the flow alias.</p>
      */
     inline const Aws::String& GetFlowAliasIdentifier() const{ return m_flowAliasIdentifier; }
@@ -129,6 +144,9 @@ namespace Model
 
     bool m_enableTrace;
     bool m_enableTraceHasBeenSet = false;
+
+    Aws::String m_executionId;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_flowAliasIdentifier;
     bool m_flowAliasIdentifierHasBeenSet = false;

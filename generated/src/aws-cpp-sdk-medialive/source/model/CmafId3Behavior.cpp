@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agent-runtime/model/FlowCompletionReason.h>
+#include <aws/medialive/model/CmafId3Behavior.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,48 +13,48 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace BedrockAgentRuntime
+  namespace MediaLive
   {
     namespace Model
     {
-      namespace FlowCompletionReasonMapper
+      namespace CmafId3BehaviorMapper
       {
 
-        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-        static const int INPUT_REQUIRED_HASH = HashingUtils::HashString("INPUT_REQUIRED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 
 
-        FlowCompletionReason GetFlowCompletionReasonForName(const Aws::String& name)
+        CmafId3Behavior GetCmafId3BehaviorForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SUCCESS_HASH)
+          if (hashCode == DISABLED_HASH)
           {
-            return FlowCompletionReason::SUCCESS;
+            return CmafId3Behavior::DISABLED;
           }
-          else if (hashCode == INPUT_REQUIRED_HASH)
+          else if (hashCode == ENABLED_HASH)
           {
-            return FlowCompletionReason::INPUT_REQUIRED;
+            return CmafId3Behavior::ENABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<FlowCompletionReason>(hashCode);
+            return static_cast<CmafId3Behavior>(hashCode);
           }
 
-          return FlowCompletionReason::NOT_SET;
+          return CmafId3Behavior::NOT_SET;
         }
 
-        Aws::String GetNameForFlowCompletionReason(FlowCompletionReason enumValue)
+        Aws::String GetNameForCmafId3Behavior(CmafId3Behavior enumValue)
         {
           switch(enumValue)
           {
-          case FlowCompletionReason::NOT_SET:
+          case CmafId3Behavior::NOT_SET:
             return {};
-          case FlowCompletionReason::SUCCESS:
-            return "SUCCESS";
-          case FlowCompletionReason::INPUT_REQUIRED:
-            return "INPUT_REQUIRED";
+          case CmafId3Behavior::DISABLED:
+            return "DISABLED";
+          case CmafId3Behavior::ENABLED:
+            return "ENABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace FlowCompletionReasonMapper
+      } // namespace CmafId3BehaviorMapper
     } // namespace Model
-  } // namespace BedrockAgentRuntime
+  } // namespace MediaLive
 } // namespace Aws

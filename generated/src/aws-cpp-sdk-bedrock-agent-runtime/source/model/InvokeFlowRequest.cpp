@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 InvokeFlowRequest::InvokeFlowRequest() : 
     m_enableTrace(false),
     m_enableTraceHasBeenSet(false),
+    m_executionIdHasBeenSet(false),
     m_flowAliasIdentifierHasBeenSet(false),
     m_flowIdentifierHasBeenSet(false),
     m_inputsHasBeenSet(false),
@@ -30,6 +31,12 @@ Aws::String InvokeFlowRequest::SerializePayload() const
   if(m_enableTraceHasBeenSet)
   {
    payload.WithBool("enableTrace", m_enableTrace);
+
+  }
+
+  if(m_executionIdHasBeenSet)
+  {
+   payload.WithString("executionId", m_executionId);
 
   }
 
