@@ -52,7 +52,7 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
       unsigned sourceIdsCount = 1;
       for(auto& item : m_sourceIds)
       {
-        ss << "SourceIds.member." << sourceIdsCount << "="
+        ss << "SourceIds.SourceId." << sourceIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         sourceIdsCount++;
       }
@@ -70,7 +70,7 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
       unsigned eventCategoriesCount = 1;
       for(auto& item : m_eventCategories)
       {
-        ss << "EventCategories.member." << eventCategoriesCount << "="
+        ss << "EventCategories.EventCategory." << eventCategoriesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         eventCategoriesCount++;
       }

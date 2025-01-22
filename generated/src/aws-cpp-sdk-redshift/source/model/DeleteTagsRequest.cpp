@@ -36,7 +36,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
       unsigned tagKeysCount = 1;
       for(auto& item : m_tagKeys)
       {
-        ss << "TagKeys.member." << tagKeysCount << "="
+        ss << "TagKeys.TagKey." << tagKeysCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }

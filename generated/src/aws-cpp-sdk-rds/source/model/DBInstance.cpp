@@ -826,7 +826,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_dBSecurityGroups)
       {
         Aws::StringStream dBSecurityGroupsSs;
-        dBSecurityGroupsSs << location << index << locationValue << ".DBSecurityGroup." << dBSecurityGroupsIdx++;
+        dBSecurityGroupsSs << location << index << locationValue << ".DBSecurityGroups.DBSecurityGroup." << dBSecurityGroupsIdx++;
         item.OutputToStream(oStream, dBSecurityGroupsSs.str().c_str());
       }
   }
@@ -837,7 +837,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << index << locationValue << ".VpcSecurityGroups.VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -848,7 +848,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_dBParameterGroups)
       {
         Aws::StringStream dBParameterGroupsSs;
-        dBParameterGroupsSs << location << index << locationValue << ".DBParameterGroup." << dBParameterGroupsIdx++;
+        dBParameterGroupsSs << location << index << locationValue << ".DBParameterGroups.DBParameterGroup." << dBParameterGroupsIdx++;
         item.OutputToStream(oStream, dBParameterGroupsSs.str().c_str());
       }
   }
@@ -907,7 +907,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       unsigned readReplicaDBInstanceIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBInstanceIdentifiers)
       {
-        oStream << location << index << locationValue << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ReadReplicaDBInstanceIdentifiers.ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 
@@ -916,7 +916,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       unsigned readReplicaDBClusterIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBClusterIdentifiers)
       {
-        oStream << location << index << locationValue << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ReadReplicaDBClusterIdentifiers.ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 
@@ -941,7 +941,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_optionGroupMemberships)
       {
         Aws::StringStream optionGroupMembershipsSs;
-        optionGroupMembershipsSs << location << index << locationValue << ".OptionGroupMembership." << optionGroupMembershipsIdx++;
+        optionGroupMembershipsSs << location << index << locationValue << ".OptionGroupMemberships.OptionGroupMembership." << optionGroupMembershipsIdx++;
         item.OutputToStream(oStream, optionGroupMembershipsSs.str().c_str());
       }
   }
@@ -972,7 +972,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_statusInfos)
       {
         Aws::StringStream statusInfosSs;
-        statusInfosSs << location << index << locationValue << ".DBInstanceStatusInfo." << statusInfosIdx++;
+        statusInfosSs << location << index << locationValue << ".StatusInfos.DBInstanceStatusInfo." << statusInfosIdx++;
         item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }
@@ -1023,7 +1023,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_domainMemberships)
       {
         Aws::StringStream domainMembershipsSs;
-        domainMembershipsSs << location << index << locationValue << ".DomainMembership." << domainMembershipsIdx++;
+        domainMembershipsSs << location << index << locationValue << ".DomainMemberships.DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
   }
@@ -1103,7 +1103,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_processorFeatures)
       {
         Aws::StringStream processorFeaturesSs;
-        processorFeaturesSs << location << index << locationValue << ".ProcessorFeature." << processorFeaturesIdx++;
+        processorFeaturesSs << location << index << locationValue << ".ProcessorFeatures.ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
@@ -1119,7 +1119,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_associatedRoles)
       {
         Aws::StringStream associatedRolesSs;
-        associatedRolesSs << location << index << locationValue << ".DBInstanceRole." << associatedRolesIdx++;
+        associatedRolesSs << location << index << locationValue << ".AssociatedRoles.DBInstanceRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
   }
@@ -1142,7 +1142,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        tagListSs << location << index << locationValue << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }
@@ -1153,7 +1153,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       for(auto& item : m_dBInstanceAutomatedBackupsReplications)
       {
         Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
-        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
         item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
       }
   }

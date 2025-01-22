@@ -74,7 +74,7 @@ void DBClusterSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_dBClusterSnapshotAttributes)
       {
         Aws::StringStream dBClusterSnapshotAttributesSs;
-        dBClusterSnapshotAttributesSs << location << index << locationValue << ".DBClusterSnapshotAttribute." << dBClusterSnapshotAttributesIdx++;
+        dBClusterSnapshotAttributesSs << location << index << locationValue << ".DBClusterSnapshotAttributes.DBClusterSnapshotAttribute." << dBClusterSnapshotAttributesIdx++;
         item.OutputToStream(oStream, dBClusterSnapshotAttributesSs.str().c_str());
       }
   }

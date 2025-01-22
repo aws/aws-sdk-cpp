@@ -196,7 +196,7 @@ void Recommendation::OutputToStream(Aws::OStream& oStream, const char* location,
       for(auto& item : m_recommendedActions)
       {
         Aws::StringStream recommendedActionsSs;
-        recommendedActionsSs << location << index << locationValue << ".RecommendedAction." << recommendedActionsIdx++;
+        recommendedActionsSs << location << index << locationValue << ".RecommendedActions.RecommendedAction." << recommendedActionsIdx++;
         item.OutputToStream(oStream, recommendedActionsSs.str().c_str());
       }
   }
@@ -207,7 +207,7 @@ void Recommendation::OutputToStream(Aws::OStream& oStream, const char* location,
       for(auto& item : m_referenceLinks)
       {
         Aws::StringStream referenceLinksSs;
-        referenceLinksSs << location << index << locationValue << ".ReferenceLink." << referenceLinksIdx++;
+        referenceLinksSs << location << index << locationValue << ".ReferenceLinks.ReferenceLink." << referenceLinksIdx++;
         item.OutputToStream(oStream, referenceLinksSs.str().c_str());
       }
   }

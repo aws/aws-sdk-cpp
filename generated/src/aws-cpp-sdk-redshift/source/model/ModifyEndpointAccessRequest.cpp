@@ -36,7 +36,7 @@ Aws::String ModifyEndpointAccessRequest::SerializePayload() const
       unsigned vpcSecurityGroupIdsCount = 1;
       for(auto& item : m_vpcSecurityGroupIds)
       {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }

@@ -63,7 +63,7 @@ Aws::String GetClusterCredentialsRequest::SerializePayload() const
       unsigned dbGroupsCount = 1;
       for(auto& item : m_dbGroups)
       {
-        ss << "DbGroups.member." << dbGroupsCount << "="
+        ss << "DbGroups.DbGroup." << dbGroupsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         dbGroupsCount++;
       }
