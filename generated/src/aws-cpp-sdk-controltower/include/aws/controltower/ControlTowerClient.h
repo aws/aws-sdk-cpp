@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/controltower/ControlTowerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/controltower/ControlTowerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ControlTower
 {
+  AWS_CONTROLTOWER_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Control Tower offers application programming interface
    * (API) operations that support programmatic interaction with these types of
@@ -208,12 +212,20 @@ namespace ControlTower
    * more about CloudTrail, including how to turn it on and find your log files, see
    * the Amazon Web Services CloudTrail User Guide.</p>
    */
-  class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>
+  class AWS_CONTROLTOWER_API ControlTowerClient : smithy::client::AwsSmithyClientT<Aws::ControlTower::SERVICE_NAME,
+      Aws::ControlTower::ControlTowerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ControlTowerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ControlTowerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ControlTower"; }
 
       typedef ControlTowerClientConfiguration ClientConfigurationType;
       typedef ControlTowerEndpointProvider EndpointProviderType;
@@ -1073,10 +1085,7 @@ namespace ControlTower
       std::shared_ptr<ControlTowerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>;
-      void init(const ControlTowerClientConfiguration& clientConfiguration);
 
-      ControlTowerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ControlTowerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ControlTower

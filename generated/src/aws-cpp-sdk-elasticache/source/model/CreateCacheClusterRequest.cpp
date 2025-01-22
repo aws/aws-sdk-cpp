@@ -88,7 +88,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned preferredAvailabilityZonesCount = 1;
       for(auto& item : m_preferredAvailabilityZones)
       {
-        ss << "PreferredAvailabilityZones.member." << preferredAvailabilityZonesCount << "="
+        ss << "PreferredAvailabilityZones.PreferredAvailabilityZone." << preferredAvailabilityZonesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         preferredAvailabilityZonesCount++;
       }
@@ -136,7 +136,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned cacheSecurityGroupNamesCount = 1;
       for(auto& item : m_cacheSecurityGroupNames)
       {
-        ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
+        ss << "CacheSecurityGroupNames.CacheSecurityGroupName." << cacheSecurityGroupNamesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         cacheSecurityGroupNamesCount++;
       }
@@ -154,7 +154,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned securityGroupIdsCount = 1;
       for(auto& item : m_securityGroupIds)
       {
-        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+        ss << "SecurityGroupIds.SecurityGroupId." << securityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         securityGroupIdsCount++;
       }
@@ -172,7 +172,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned tagsCount = 1;
       for(auto& item : m_tags)
       {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
@@ -189,7 +189,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned snapshotArnsCount = 1;
       for(auto& item : m_snapshotArns)
       {
-        ss << "SnapshotArns.member." << snapshotArnsCount << "="
+        ss << "SnapshotArns.SnapshotArn." << snapshotArnsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         snapshotArnsCount++;
       }
@@ -257,7 +257,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned preferredOutpostArnsCount = 1;
       for(auto& item : m_preferredOutpostArns)
       {
-        ss << "PreferredOutpostArns.member." << preferredOutpostArnsCount << "="
+        ss << "PreferredOutpostArns.PreferredOutpostArn." << preferredOutpostArnsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         preferredOutpostArnsCount++;
       }
@@ -275,7 +275,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       unsigned logDeliveryConfigurationsCount = 1;
       for(auto& item : m_logDeliveryConfigurations)
       {
-        item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+        item.OutputToStream(ss, "LogDeliveryConfigurations.LogDeliveryConfigurationRequest.", logDeliveryConfigurationsCount, "");
         logDeliveryConfigurationsCount++;
       }
     }

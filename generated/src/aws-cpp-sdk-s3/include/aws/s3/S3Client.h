@@ -15,6 +15,7 @@
 #include <smithy/client/serializer/XmlOutcomeSerializer.h>
 #include <aws/core/utils/DNS.h>
 
+#include <aws/s3/S3ErrorMarshaller.h>
 
 
 
@@ -37,6 +38,7 @@ namespace Aws
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
+    AWS_S3_API extern const char SERVICE_NAME[];
 
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
@@ -44,7 +46,7 @@ namespace Aws
     /**
      * <p/>
      */
-    class AWS_S3_API S3Client : smithy::client::AwsSmithyClientT<Aws::S3::SERVICE_NAME,
+    class AWS_S3_API S3Client : public smithy::client::AwsSmithyClientT<Aws::S3::SERVICE_NAME,
       Aws::S3::S3ClientConfiguration,
       smithy::SigV4AuthSchemeResolver<>,
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
@@ -6986,8 +6988,7 @@ namespace Aws
     private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<S3Client>;
         void init(const S3ClientConfiguration& clientConfiguration);
-        S3ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<S3EndpointProviderBase> m_endpointProvider;
+
     };
 
   } // namespace S3

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/shield/ShieldServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/shield/ShieldErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Shield
 {
+  AWS_SHIELD_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Shield Advanced</fullname> <p>This is the <i>Shield Advanced API
    * Reference</i>. This guide is for developers who need detailed information about
@@ -24,12 +28,20 @@ namespace Shield
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF and Shield
    * Developer Guide</a>.</p>
    */
-  class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>
+  class AWS_SHIELD_API ShieldClient : smithy::client::AwsSmithyClientT<Aws::Shield::SERVICE_NAME,
+      Aws::Shield::ShieldClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ShieldEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ShieldErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Shield"; }
 
       typedef ShieldClientConfiguration ClientConfigurationType;
       typedef ShieldEndpointProvider EndpointProviderType;
@@ -1121,10 +1133,7 @@ namespace Shield
       std::shared_ptr<ShieldEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>;
-      void init(const ShieldClientConfiguration& clientConfiguration);
 
-      ShieldClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ShieldEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Shield

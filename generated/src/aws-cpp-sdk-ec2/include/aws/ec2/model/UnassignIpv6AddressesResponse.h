@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUnassignedIpv6Prefixes() const{ return m_unassignedIpv6Prefixes; }
     inline void SetUnassignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_unassignedIpv6Prefixes = value; }

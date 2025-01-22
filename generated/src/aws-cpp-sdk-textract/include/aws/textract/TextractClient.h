@@ -6,26 +6,38 @@
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/textract/TextractServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/textract/TextractErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Textract
 {
+  AWS_TEXTRACT_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Textract detects and analyzes text in documents and converts it into
    * machine-readable text. This is the API reference documentation for Amazon
    * Textract.</p>
    */
-  class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>
+  class AWS_TEXTRACT_API TextractClient : smithy::client::AwsSmithyClientT<Aws::Textract::SERVICE_NAME,
+      Aws::Textract::TextractClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      TextractEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::TextractErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Textract"; }
 
       typedef TextractClientConfiguration ClientConfigurationType;
       typedef TextractEndpointProvider EndpointProviderType;
@@ -970,10 +982,7 @@ namespace Textract
       std::shared_ptr<TextractEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>;
-      void init(const TextractClientConfiguration& clientConfiguration);
 
-      TextractClientConfiguration m_clientConfiguration;
-      std::shared_ptr<TextractEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Textract

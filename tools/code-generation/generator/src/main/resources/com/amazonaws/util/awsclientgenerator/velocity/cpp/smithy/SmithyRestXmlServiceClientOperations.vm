@@ -1,4 +1,5 @@
 #foreach($operation in $serviceModel.operations)
+#set($hasEndPointOverrides = false)
 #if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
 #if($arnEndpointSupported)
 #if($multiRegionAccessPointSupported)
@@ -29,7 +30,6 @@
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
   AWS_OPERATION_GUARD(${operation.name});
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
   AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -52,17 +52,14 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
       );
       return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
        }));                        
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
       return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
        }));
 #else
       return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
        }));
 #end
     },

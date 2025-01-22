@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datazone/DataZoneServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/datazone/DataZoneErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DataZone
 {
+  AWS_DATAZONE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon DataZone is a data management service that enables you to catalog,
    * discover, govern, share, and analyze your data. With Amazon DataZone, you can
@@ -23,12 +27,20 @@ namespace DataZone
    * including, but not limited to, Amazon Redshift, Amazon Athena, Amazon Web
    * Services Glue, and Amazon Web Services Lake Formation.</p>
    */
-  class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>
+  class AWS_DATAZONE_API DataZoneClient : smithy::client::AwsSmithyClientT<Aws::DataZone::SERVICE_NAME,
+      Aws::DataZone::DataZoneClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DataZoneEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DataZoneErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DataZone"; }
 
       typedef DataZoneClientConfiguration ClientConfigurationType;
       typedef DataZoneEndpointProvider EndpointProviderType;
@@ -4137,10 +4149,7 @@ namespace DataZone
       std::shared_ptr<DataZoneEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>;
-      void init(const DataZoneClientConfiguration& clientConfiguration);
 
-      DataZoneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DataZoneEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DataZone

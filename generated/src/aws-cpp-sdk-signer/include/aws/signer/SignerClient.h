@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/signer/SignerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/signer/SignerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace signer
 {
+  AWS_SIGNER_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS Signer is a fully managed code-signing service to help you ensure the
    * trust and integrity of your code. </p> <p>Signer supports the following
@@ -44,12 +48,20 @@ namespace signer
    * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
    * Signer Developer Guide</a>.</p>
    */
-  class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>
+  class AWS_SIGNER_API SignerClient : smithy::client::AwsSmithyClientT<Aws::signer::SERVICE_NAME,
+      Aws::signer::SignerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SignerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SignerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "signer"; }
 
       typedef SignerClientConfiguration ClientConfigurationType;
       typedef SignerEndpointProvider EndpointProviderType;
@@ -643,10 +655,7 @@ namespace signer
       std::shared_ptr<SignerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>;
-      void init(const SignerClientConfiguration& clientConfiguration);
 
-      SignerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SignerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace signer

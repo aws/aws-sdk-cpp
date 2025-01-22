@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ChimeSDKMediaPipelines
 {
+  AWS_CHIMESDKMEDIAPIPELINES_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Chime SDK media pipeline APIs in this section allow software
    * developers to create Amazon Chime SDK media pipelines that capture, concatenate,
@@ -23,12 +27,20 @@ namespace ChimeSDKMediaPipelines
    * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
    * Chime SDK media pipelines</a>. </p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>
+  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient : smithy::client::AwsSmithyClientT<Aws::ChimeSDKMediaPipelines::SERVICE_NAME,
+      Aws::ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ChimeSDKMediaPipelinesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ChimeSDKMediaPipelinesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Chime SDK Media Pipelines"; }
 
       typedef ChimeSDKMediaPipelinesClientConfiguration ClientConfigurationType;
       typedef ChimeSDKMediaPipelinesEndpointProvider EndpointProviderType;
@@ -905,10 +917,7 @@ namespace ChimeSDKMediaPipelines
       std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>;
-      void init(const ChimeSDKMediaPipelinesClientConfiguration& clientConfiguration);
 
-      ChimeSDKMediaPipelinesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKMediaPipelines

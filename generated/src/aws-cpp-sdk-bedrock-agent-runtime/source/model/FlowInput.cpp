@@ -20,6 +20,7 @@ namespace Model
 
 FlowInput::FlowInput() : 
     m_contentHasBeenSet(false),
+    m_nodeInputNameHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
     m_nodeOutputNameHasBeenSet(false)
 {
@@ -38,6 +39,13 @@ FlowInput& FlowInput::operator =(JsonView jsonValue)
     m_content = jsonValue.GetObject("content");
 
     m_contentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nodeInputName"))
+  {
+    m_nodeInputName = jsonValue.GetString("nodeInputName");
+
+    m_nodeInputNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nodeName"))
@@ -64,6 +72,12 @@ JsonValue FlowInput::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithObject("content", m_content.Jsonize());
+
+  }
+
+  if(m_nodeInputNameHasBeenSet)
+  {
+   payload.WithString("nodeInputName", m_nodeInputName);
 
   }
 

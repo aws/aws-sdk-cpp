@@ -87,37 +87,6 @@ namespace smithy
             return std::move(*visitor.result);
         }
 
-        static SigningOutcome PreSignRequest(std::shared_ptr<HttpRequest> httpRequest, 
-                                  const AuthSchemeOption& authSchemeOption,
-                                  const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
-                                  const Aws::String& region,
-                                  const Aws::String& serviceName,
-                                  long long expirationTimeInSeconds)
-        {
-            
-            auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
-            if (authSchemeIt == authSchemes.end())
-            {
-                assert(!"Auth scheme has not been found for a given auth option!");
-                return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                     "",
-                                     "Requested AuthSchemeOption was not found within client Auth Schemes",
-                                     false/*retryable*/));
-            }
-
-            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
-
-            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
-            AuthSchemesVariantT authSchemesVariantCopy(authScheme); 
-            authSchemesVariantCopy.Visit(visitor);
-
-            if (!visitor.result) {
-              return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign with an unknown error",
-                                  false /*retryable*/));
-            }
-            return std::move(*visitor.result);
-        }
-
         static bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption,
                                     const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
@@ -176,11 +145,14 @@ namespace smithy
                 }
 
                 //some services support buckets in identity properties
-                smithy::AuthSchemeOption::PropertyBag additonalIdentityProperties;
-                const auto& serviceSpecificParameters = httpRequest->GetServiceSpecificParameters();
-                auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
-                if (bucketNameIter != serviceSpecificParameters->parameterMap.end()) {
-                    additonalIdentityProperties.emplace("bucketName",Aws::Crt::Variant<Aws::String, bool>{bucketNameIter->second} );
+                Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additonalIdentityProperties;
+                const auto& serviceSpecificParameters = m_httpRequest->GetServiceSpecificParameters();
+                if(serviceSpecificParameters)
+                {
+                    auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
+                    if (bucketNameIter != serviceSpecificParameters->parameterMap.end()) {
+                        additonalIdentityProperties.emplace("bucketName",Aws::Crt::Variant<Aws::String, bool>{bucketNameIter->second} );
+                    }
                 }
 
                 auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), additonalIdentityProperties);

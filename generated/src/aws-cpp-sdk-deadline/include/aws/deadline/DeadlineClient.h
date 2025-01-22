@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/deadline/DeadlineServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/deadline/DeadlineErrorMarshaller.h>
 
 namespace Aws
 {
 namespace deadline
 {
+  AWS_DEADLINE_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Web Services Deadline Cloud API provides infrastructure and
    * centralized management for your projects. Use the Deadline Cloud API to onboard
@@ -25,12 +29,20 @@ namespace deadline
    * allowing your contributors to access the tools they need, such as scalable
    * high-speed storage, licenses, and cost management services.</p>
    */
-  class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>
+  class AWS_DEADLINE_API DeadlineClient : smithy::client::AwsSmithyClientT<Aws::deadline::SERVICE_NAME,
+      Aws::deadline::DeadlineClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DeadlineEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DeadlineErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "deadline"; }
 
       typedef DeadlineClientConfiguration ClientConfigurationType;
       typedef DeadlineEndpointProvider EndpointProviderType;
@@ -2714,10 +2726,7 @@ namespace deadline
       std::shared_ptr<DeadlineEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>;
-      void init(const DeadlineClientConfiguration& clientConfiguration);
 
-      DeadlineClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DeadlineEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace deadline

@@ -56,7 +56,7 @@ Aws::String CreateIntegrationRequest::SerializePayload() const
       unsigned tagListCount = 1;
       for(auto& item : m_tagList)
       {
-        item.OutputToStream(ss, "TagList.member.", tagListCount, "");
+        item.OutputToStream(ss, "TagList.Tag.", tagListCount, "");
         tagListCount++;
       }
     }

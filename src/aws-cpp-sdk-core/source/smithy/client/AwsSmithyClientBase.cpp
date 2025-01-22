@@ -17,6 +17,7 @@
 #include "aws/core/utils/threading/Executor.h"
 #include "aws/core/utils/threading/SameThreadExecutor.h"
 #include "smithy/tracing/TracingUtils.h"
+#include <aws/core/utils/stream/ResponseStream.h>
 
 using namespace smithy::client;
 using namespace smithy::interceptor;
@@ -551,4 +552,27 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
 void AwsSmithyClientBase::DisableRequestProcessing()
 {
     m_httpClient->DisableRequestProcessing();
+}
+
+void AwsSmithyClientBase::EnableRequestProcessing()
+{
+    m_httpClient->EnableRequestProcessing();
+}
+
+StreamOutcome AwsSmithyClientBase::MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
+                                const char* requestName,
+                                Aws::Http::HttpMethod method,
+                                EndpointUpdateCallback&& endpointCallback
+                                ) const
+{
+    auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+
+    if (httpResponseOutcome.IsSuccess())
+    {
+        return  StreamOutcome(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>(
+            httpResponseOutcome.GetResult()->SwapResponseStreamOwnership(),
+            httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode()));
+    }
+
+    return StreamOutcome(std::move(httpResponseOutcome));
 }

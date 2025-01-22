@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sagemaker-metrics/SageMakerMetricsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SageMakerMetrics
 {
+  AWS_SAGEMAKERMETRICS_API extern const char SERVICE_NAME[];
   /**
    * <p>Contains all data plane API operations and data types for Amazon SageMaker
    * Metrics. Use these APIs to put and retrieve (get) features related to your
@@ -22,12 +26,20 @@ namespace SageMakerMetrics
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_metrics_BatchPutMetrics.html">BatchPutMetrics</a>
    * </p> </li> </ul>
    */
-  class AWS_SAGEMAKERMETRICS_API SageMakerMetricsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>
+  class AWS_SAGEMAKERMETRICS_API SageMakerMetricsClient : smithy::client::AwsSmithyClientT<Aws::SageMakerMetrics::SERVICE_NAME,
+      Aws::SageMakerMetrics::SageMakerMetricsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SageMakerMetricsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SageMakerMetricsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SageMaker Metrics"; }
 
       typedef SageMakerMetricsClientConfiguration ClientConfigurationType;
       typedef SageMakerMetricsEndpointProvider EndpointProviderType;
@@ -137,10 +149,7 @@ namespace SageMakerMetrics
       std::shared_ptr<SageMakerMetricsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>;
-      void init(const SageMakerMetricsClientConfiguration& clientConfiguration);
 
-      SageMakerMetricsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SageMakerMetricsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SageMakerMetrics

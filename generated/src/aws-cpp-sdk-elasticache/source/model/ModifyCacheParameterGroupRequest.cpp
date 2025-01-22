@@ -36,7 +36,7 @@ Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
       unsigned parameterNameValuesCount = 1;
       for(auto& item : m_parameterNameValues)
       {
-        item.OutputToStream(ss, "ParameterNameValues.member.", parameterNameValuesCount, "");
+        item.OutputToStream(ss, "ParameterNameValues.ParameterNameValue.", parameterNameValuesCount, "");
         parameterNameValuesCount++;
       }
     }

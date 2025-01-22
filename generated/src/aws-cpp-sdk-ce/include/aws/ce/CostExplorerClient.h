@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/CostExplorerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ce/CostExplorerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CostExplorer
 {
+  AWS_COSTEXPLORER_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use the Cost Explorer API to programmatically query your cost and
    * usage data. You can query for aggregated data such as total monthly costs or
@@ -27,12 +31,20 @@ namespace CostExplorer
    * <a href="http://aws.amazon.com/aws-cost-management/pricing/">Amazon Web Services
    * Cost Management Pricing</a>.</p>
    */
-  class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>
+  class AWS_COSTEXPLORER_API CostExplorerClient : smithy::client::AwsSmithyClientT<Aws::CostExplorer::SERVICE_NAME,
+      Aws::CostExplorer::CostExplorerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CostExplorerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CostExplorerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Cost Explorer"; }
 
       typedef CostExplorerClientConfiguration ClientConfigurationType;
       typedef CostExplorerEndpointProvider EndpointProviderType;
@@ -1364,10 +1376,7 @@ namespace CostExplorer
       std::shared_ptr<CostExplorerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>;
-      void init(const CostExplorerClientConfiguration& clientConfiguration);
 
-      CostExplorerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CostExplorerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CostExplorer

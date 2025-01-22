@@ -66,7 +66,7 @@ Aws::String ModifyServerlessCacheRequest::SerializePayload() const
       unsigned securityGroupIdsCount = 1;
       for(auto& item : m_securityGroupIds)
       {
-        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+        ss << "SecurityGroupIds.SecurityGroupId." << securityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         securityGroupIdsCount++;
       }

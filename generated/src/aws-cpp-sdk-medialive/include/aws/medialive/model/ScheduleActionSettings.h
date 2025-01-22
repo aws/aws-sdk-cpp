@@ -20,6 +20,8 @@
 #include <aws/medialive/model/StaticImageDeactivateScheduleActionSettings.h>
 #include <aws/medialive/model/StaticImageOutputActivateScheduleActionSettings.h>
 #include <aws/medialive/model/StaticImageOutputDeactivateScheduleActionSettings.h>
+#include <aws/medialive/model/Id3SegmentTaggingScheduleActionSettings.h>
+#include <aws/medialive/model/TimedMetadataScheduleActionSettings.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +232,30 @@ namespace Model
     inline ScheduleActionSettings& WithStaticImageOutputDeactivateSettings(const StaticImageOutputDeactivateScheduleActionSettings& value) { SetStaticImageOutputDeactivateSettings(value); return *this;}
     inline ScheduleActionSettings& WithStaticImageOutputDeactivateSettings(StaticImageOutputDeactivateScheduleActionSettings&& value) { SetStaticImageOutputDeactivateSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Action to insert ID3 metadata in every segment, in applicable output groups
+     */
+    inline const Id3SegmentTaggingScheduleActionSettings& GetId3SegmentTaggingSettings() const{ return m_id3SegmentTaggingSettings; }
+    inline bool Id3SegmentTaggingSettingsHasBeenSet() const { return m_id3SegmentTaggingSettingsHasBeenSet; }
+    inline void SetId3SegmentTaggingSettings(const Id3SegmentTaggingScheduleActionSettings& value) { m_id3SegmentTaggingSettingsHasBeenSet = true; m_id3SegmentTaggingSettings = value; }
+    inline void SetId3SegmentTaggingSettings(Id3SegmentTaggingScheduleActionSettings&& value) { m_id3SegmentTaggingSettingsHasBeenSet = true; m_id3SegmentTaggingSettings = std::move(value); }
+    inline ScheduleActionSettings& WithId3SegmentTaggingSettings(const Id3SegmentTaggingScheduleActionSettings& value) { SetId3SegmentTaggingSettings(value); return *this;}
+    inline ScheduleActionSettings& WithId3SegmentTaggingSettings(Id3SegmentTaggingScheduleActionSettings&& value) { SetId3SegmentTaggingSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Action to insert ID3 metadata once, in applicable output groups
+     */
+    inline const TimedMetadataScheduleActionSettings& GetTimedMetadataSettings() const{ return m_timedMetadataSettings; }
+    inline bool TimedMetadataSettingsHasBeenSet() const { return m_timedMetadataSettingsHasBeenSet; }
+    inline void SetTimedMetadataSettings(const TimedMetadataScheduleActionSettings& value) { m_timedMetadataSettingsHasBeenSet = true; m_timedMetadataSettings = value; }
+    inline void SetTimedMetadataSettings(TimedMetadataScheduleActionSettings&& value) { m_timedMetadataSettingsHasBeenSet = true; m_timedMetadataSettings = std::move(value); }
+    inline ScheduleActionSettings& WithTimedMetadataSettings(const TimedMetadataScheduleActionSettings& value) { SetTimedMetadataSettings(value); return *this;}
+    inline ScheduleActionSettings& WithTimedMetadataSettings(TimedMetadataScheduleActionSettings&& value) { SetTimedMetadataSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     HlsId3SegmentTaggingScheduleActionSettings m_hlsId3SegmentTaggingSettings;
@@ -276,6 +302,12 @@ namespace Model
 
     StaticImageOutputDeactivateScheduleActionSettings m_staticImageOutputDeactivateSettings;
     bool m_staticImageOutputDeactivateSettingsHasBeenSet = false;
+
+    Id3SegmentTaggingScheduleActionSettings m_id3SegmentTaggingSettings;
+    bool m_id3SegmentTaggingSettingsHasBeenSet = false;
+
+    TimedMetadataScheduleActionSettings m_timedMetadataSettings;
+    bool m_timedMetadataSettingsHasBeenSet = false;
   };
 
 } // namespace Model

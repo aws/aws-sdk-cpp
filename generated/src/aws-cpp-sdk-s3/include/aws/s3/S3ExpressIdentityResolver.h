@@ -23,20 +23,20 @@ namespace Aws {
         class S3ExpressIdentityResolver : public smithy::IdentityResolverBase<smithy::AwsCredentialIdentityBase> {
          public:
           explicit S3ExpressIdentityResolver(const S3Client& s3Client);
-          explicit S3ExpressIdentityResolver(const S3Client& s3Client, std::shared_ptr<Aws::Auth::AWSCredentialsProviderChain> providerChain);
+          explicit S3ExpressIdentityResolver(const S3Client& s3Client, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider);
           ResolveIdentityFutureOutcome getIdentity(
               const IdentityProperties& identityProperties,
               const AdditionalParameters& additionalParameters) override;
         
-         protected:
-          std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
-          ResolveIdentityFutureOutcome getCredentialsFromBucket(const Aws::String& bucketName) const;
-          mutable std::shared_ptr<Aws::Auth::AWSCredentialsProviderChain> m_legacyChain_sp;
-
          private:
           const Aws::S3::S3Client& m_s3Client;
           mutable std::mutex m_bucketNameMapMutex;
           Aws::Map<Aws::String, std::shared_ptr<std::mutex>> m_bucketNameMutex;
+
+         protected:
+          std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
+          ResolveIdentityFutureOutcome getCredentialsFromBucket(const Aws::String& bucketName) const;
+          mutable std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credsProvider;
         };
         
         class DefaultS3ExpressIdentityResolver : public S3ExpressIdentityResolver {
@@ -45,8 +45,7 @@ namespace Aws {
           explicit DefaultS3ExpressIdentityResolver(
               const S3Client& s3Client,
               std::shared_ptr<Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> credentialsCache);
-          explicit DefaultS3ExpressIdentityResolver(const S3Client& s3Client, std::shared_ptr<Aws::Auth::AWSCredentialsProviderChain> providerChain);
-
+          explicit DefaultS3ExpressIdentityResolver(const S3Client& s3Client, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider);
           DefaultS3ExpressIdentityResolver(const DefaultS3ExpressIdentityResolver& other) = delete;
           DefaultS3ExpressIdentityResolver(DefaultS3ExpressIdentityResolver&& other) noexcept = delete;
           DefaultS3ExpressIdentityResolver& operator=(const DefaultS3ExpressIdentityResolver& other) = delete;

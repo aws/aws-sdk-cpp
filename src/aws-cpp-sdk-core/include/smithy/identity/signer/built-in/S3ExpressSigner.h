@@ -9,10 +9,10 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/client/AWSError.h>
 namespace smithy {
-static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
-static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
-
+    static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
+    static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
 
     template <typename T>
     struct IsValidS3ExpressSigner : std::false_type {};
@@ -27,6 +27,10 @@ static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
     template <typename BASECLASS>
     class S3ExpressSigner : public std::enable_if<IsValidS3ExpressSigner<BASECLASS>::value, BASECLASS>::type
     {
+        public:
+        using SigningFutureOutcome = typename BASECLASS::SigningFutureOutcome;
+        using SigningProperties = typename BASECLASS::SigningProperties;
+        using SigningError = typename BASECLASS::SigningError;
         explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region)
             : BASECLASS(serviceName, region)
         {

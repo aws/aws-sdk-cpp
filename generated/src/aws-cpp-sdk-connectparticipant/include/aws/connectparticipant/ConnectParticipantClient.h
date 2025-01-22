@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/connectparticipant/ConnectParticipantErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ConnectParticipant
 {
+  AWS_CONNECTPARTICIPANT_API extern const char SERVICE_NAME[];
   /**
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html">Participant
@@ -31,12 +35,20 @@ namespace ConnectParticipant
    * sharing, managing a participant's connection state and message events, and
    * retrieving chat transcripts.</p>
    */
-  class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>
+  class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : smithy::client::AwsSmithyClientT<Aws::ConnectParticipant::SERVICE_NAME,
+      Aws::ConnectParticipant::ConnectParticipantClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ConnectParticipantEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ConnectParticipantErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ConnectParticipant"; }
 
       typedef ConnectParticipantClientConfiguration ClientConfigurationType;
       typedef ConnectParticipantEndpointProvider EndpointProviderType;
@@ -489,10 +501,7 @@ namespace ConnectParticipant
       std::shared_ptr<ConnectParticipantEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>;
-      void init(const ConnectParticipantClientConfiguration& clientConfiguration);
 
-      ConnectParticipantClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ConnectParticipantEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectParticipant

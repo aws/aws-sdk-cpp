@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/neptunedata/NeptunedataServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/neptunedata/NeptunedataErrorMarshaller.h>
 
 namespace Aws
 {
 namespace neptunedata
 {
+  AWS_NEPTUNEDATA_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Neptune Data API</fullname> <p>The Amazon Neptune data API provides
    * SDK support for more than 40 of Neptune's data operations, including data
@@ -23,12 +27,20 @@ namespace neptunedata
    * It automatically signs API requests and greatly simplifies integrating Neptune
    * into your applications.</p></p>
    */
-  class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>
+  class AWS_NEPTUNEDATA_API NeptunedataClient : smithy::client::AwsSmithyClientT<Aws::neptunedata::SERVICE_NAME,
+      Aws::neptunedata::NeptunedataClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NeptunedataEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NeptunedataErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "neptunedata"; }
 
       typedef NeptunedataClientConfiguration ClientConfigurationType;
       typedef NeptunedataEndpointProvider EndpointProviderType;
@@ -1528,10 +1540,7 @@ namespace neptunedata
       std::shared_ptr<NeptunedataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>;
-      void init(const NeptunedataClientConfiguration& clientConfiguration);
 
-      NeptunedataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NeptunedataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace neptunedata

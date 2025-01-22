@@ -390,7 +390,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       for(auto& item : m_cacheSecurityGroups)
       {
         Aws::StringStream cacheSecurityGroupsSs;
-        cacheSecurityGroupsSs << location << index << locationValue << ".CacheSecurityGroup." << cacheSecurityGroupsIdx++;
+        cacheSecurityGroupsSs << location << index << locationValue << ".CacheSecurityGroups.CacheSecurityGroup." << cacheSecurityGroupsIdx++;
         item.OutputToStream(oStream, cacheSecurityGroupsSs.str().c_str());
       }
   }
@@ -413,7 +413,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       for(auto& item : m_cacheNodes)
       {
         Aws::StringStream cacheNodesSs;
-        cacheNodesSs << location << index << locationValue << ".CacheNode." << cacheNodesIdx++;
+        cacheNodesSs << location << index << locationValue << ".CacheNodes.CacheNode." << cacheNodesIdx++;
         item.OutputToStream(oStream, cacheNodesSs.str().c_str());
       }
   }
@@ -485,7 +485,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       for(auto& item : m_logDeliveryConfigurations)
       {
         Aws::StringStream logDeliveryConfigurationsSs;
-        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfigurations.LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
   }

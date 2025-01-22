@@ -12,6 +12,7 @@
 
 #include <aws/bedrock-agent-runtime/model/InvokeFlowInitialResponse.h>
 #include <aws/bedrock-agent-runtime/model/FlowCompletionEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowMultiTurnInputRequestEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowOutputEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceEvent.h>
 
@@ -25,6 +26,7 @@ namespace Model
     {
         INITIAL_RESPONSE,
         FLOWCOMPLETIONEVENT,
+        FLOWMULTITURNINPUTREQUESTEVENT,
         FLOWOUTPUTEVENT,
         FLOWTRACEEVENT,
         UNKNOWN
@@ -35,6 +37,7 @@ namespace Model
         typedef std::function<void(const InvokeFlowInitialResponse&)> InvokeFlowInitialResponseCallback;
         typedef std::function<void(const InvokeFlowInitialResponse&, const Utils::Event::InitialResponseType)> InvokeFlowInitialResponseCallbackEx;
         typedef std::function<void(const FlowCompletionEvent&)> FlowCompletionEventCallback;
+        typedef std::function<void(const FlowMultiTurnInputRequestEvent&)> FlowMultiTurnInputRequestEventCallback;
         typedef std::function<void(const FlowOutputEvent&)> FlowOutputEventCallback;
         typedef std::function<void(const FlowTraceEvent&)> FlowTraceEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
@@ -62,6 +65,7 @@ namespace Model
         }
         ///@}
         inline void SetFlowCompletionEventCallback(const FlowCompletionEventCallback& callback) { m_onFlowCompletionEvent = callback; }
+        inline void SetFlowMultiTurnInputRequestEventCallback(const FlowMultiTurnInputRequestEventCallback& callback) { m_onFlowMultiTurnInputRequestEvent = callback; }
         inline void SetFlowOutputEventCallback(const FlowOutputEventCallback& callback) { m_onFlowOutputEvent = callback; }
         inline void SetFlowTraceEventCallback(const FlowTraceEventCallback& callback) { m_onFlowTraceEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
@@ -75,6 +79,7 @@ namespace Model
 
         InvokeFlowInitialResponseCallbackEx m_onInitialResponse;
         FlowCompletionEventCallback m_onFlowCompletionEvent;
+        FlowMultiTurnInputRequestEventCallback m_onFlowMultiTurnInputRequestEvent;
         FlowOutputEventCallback m_onFlowOutputEvent;
         FlowTraceEventCallback m_onFlowTraceEvent;
         ErrorCallback m_onError;

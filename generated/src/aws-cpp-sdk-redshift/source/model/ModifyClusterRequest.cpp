@@ -89,7 +89,7 @@ Aws::String ModifyClusterRequest::SerializePayload() const
       unsigned clusterSecurityGroupsCount = 1;
       for(auto& item : m_clusterSecurityGroups)
       {
-        ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
+        ss << "ClusterSecurityGroups.ClusterSecurityGroupName." << clusterSecurityGroupsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         clusterSecurityGroupsCount++;
       }
@@ -107,7 +107,7 @@ Aws::String ModifyClusterRequest::SerializePayload() const
       unsigned vpcSecurityGroupIdsCount = 1;
       for(auto& item : m_vpcSecurityGroupIds)
       {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }

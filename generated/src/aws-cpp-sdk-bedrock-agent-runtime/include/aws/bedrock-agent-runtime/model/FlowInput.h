@@ -53,6 +53,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the input from the flow input node.</p>
+     */
+    inline const Aws::String& GetNodeInputName() const{ return m_nodeInputName; }
+    inline bool NodeInputNameHasBeenSet() const { return m_nodeInputNameHasBeenSet; }
+    inline void SetNodeInputName(const Aws::String& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = value; }
+    inline void SetNodeInputName(Aws::String&& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = std::move(value); }
+    inline void SetNodeInputName(const char* value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName.assign(value); }
+    inline FlowInput& WithNodeInputName(const Aws::String& value) { SetNodeInputName(value); return *this;}
+    inline FlowInput& WithNodeInputName(Aws::String&& value) { SetNodeInputName(std::move(value)); return *this;}
+    inline FlowInput& WithNodeInputName(const char* value) { SetNodeInputName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the flow input node that begins the prompt flow.</p>
      */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
@@ -83,6 +97,9 @@ namespace Model
 
     FlowInputContent m_content;
     bool m_contentHasBeenSet = false;
+
+    Aws::String m_nodeInputName;
+    bool m_nodeInputNameHasBeenSet = false;
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;

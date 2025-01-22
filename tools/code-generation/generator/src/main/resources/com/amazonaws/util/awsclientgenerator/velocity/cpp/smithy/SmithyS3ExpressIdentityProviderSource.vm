@@ -22,11 +22,29 @@ namespace{
 const char S3_EXPRESS_IDENTITY_PROVIDER[] = "S3ExpressIdentityProvider";
 const int DEFAULT_CACHE_SIZE = 100;
 }
-
 S3ExpressIdentityResolver::S3ExpressIdentityResolver(const S3Client& s3Client) : m_s3Client(s3Client) {}
+
+S3ExpressIdentityResolver::S3ExpressIdentityResolver(const S3Client& s3Client, std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider):
+    m_s3Client{s3Client},m_credsProvider{credentialProvider}{
+    assert(m_credsProvider);
+};
 
 S3ExpressIdentityResolver::ResolveIdentityFutureOutcome S3ExpressIdentityResolver::getIdentity(
     const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters){
+  
+  AWS_UNREFERENCED_PARAM(identityProperties);
+  if(m_credsProvider)
+  {
+      auto legacyCreds = m_credsProvider->GetAWSCredentials();
+      auto smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("S3ExpressIdentityResolver",
+                                                                    legacyCreds.GetAWSAccessKeyId(), 
+                                                                    legacyCreds.GetAWSSecretKey(),
+                                                                    legacyCreds.GetSessionToken().empty()? Aws::Crt::Optional<Aws::String>() : legacyCreds.GetSessionToken(),
+                                                                    legacyCreds.GetExpiration());
+
+      return ResolveIdentityFutureOutcome(std::move(smithyCreds));
+  }
+
   // find bucket name
   auto bucketNameIter = additionalParameters.find("bucketName");
   if (bucketNameIter == additionalParameters.end()) {
@@ -81,17 +99,38 @@ S3ExpressIdentityResolver::ResolveIdentityFutureOutcome S3ExpressIdentityResolve
 }
 
 DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(const S3Client& s3Client)
-    : S3ExpressIdentityResolver{s3Client} {};
+    : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
+            DEFAULT_CACHE_SIZE)}{};
 
 DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(
     const S3Client& s3Client,
     std::shared_ptr<Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache)
     : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{credentialsCache} {};
 
+DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(const S3Client& s3Client, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider):
+    S3ExpressIdentityResolver{s3Client,credentialProvider}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
+            DEFAULT_CACHE_SIZE)}{};
+
 DefaultS3ExpressIdentityResolver::ResolveIdentityFutureOutcome DefaultS3ExpressIdentityResolver::getIdentity(const IdentityProperties& identityProperties,
                                            const AdditionalParameters& additionalParameters){
+
+  AWS_UNREFERENCED_PARAM(identityProperties);
+  //if provider is set, then credentials from the provider is used
+  if(m_credsProvider)
+  {
+      auto legacyCreds = m_credsProvider->GetAWSCredentials();
+      auto smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("S3ExpressIdentityResolver",
+                                                                    legacyCreds.GetAWSAccessKeyId(), 
+                                                                    legacyCreds.GetAWSSecretKey(),
+                                                                    legacyCreds.GetSessionToken().empty()? Aws::Crt::Optional<Aws::String>() : legacyCreds.GetSessionToken(),
+                                                                    legacyCreds.GetExpiration());
+
+      return ResolveIdentityFutureOutcome(std::move(smithyCreds));
+  }
+
   auto bucketNameIter = additionalParameters.find("bucketName");
   if (bucketNameIter == additionalParameters.end()) {
+    
     AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "Failed to find BucketName in IdentityProperties");
     return ResolveIdentityFutureOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
         Aws::Client::CoreErrors::INVALID_PARAMETER_VALUE, "", "Failed to find BucketName in IdentityProperties",
@@ -105,7 +144,7 @@ DefaultS3ExpressIdentityResolver::ResolveIdentityFutureOutcome DefaultS3ExpressI
   auto isInCache = m_credentialsCache->Get(bucketName, identity);
 
   if (!isInCache || (identity.expiration().has_value() && identity.expiration().value() - minutes(1) < Aws::Utils::DateTime::Now())) {
-    ResolveIdentityFutureOutcome outcome = S3ExpressIdentityResolver::getIdentity(identityProperties, additionalParameters);
+    ResolveIdentityFutureOutcome outcome = S3ExpressIdentityResolver::getCredentialsFromBucket(bucketName);
 
     smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver",
                                                          outcome.GetResult()->accessKeyId(),
@@ -124,7 +163,7 @@ DefaultS3ExpressIdentityResolver::ResolveIdentityFutureOutcome DefaultS3ExpressI
 }
 
 DefaultAsyncS3ExpressIdentityResolver::DefaultAsyncS3ExpressIdentityResolver(
-    const S3Client& s3Client, std::chrono::minutes refreshPeriod = std::chrono::minutes(1))
+    const S3Client& s3Client, std::chrono::minutes refreshPeriod)
     : DefaultAsyncS3ExpressIdentityResolver(s3Client,
                                             Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(
                                                 S3_EXPRESS_IDENTITY_PROVIDER, DEFAULT_CACHE_SIZE),
@@ -132,7 +171,7 @@ DefaultAsyncS3ExpressIdentityResolver::DefaultAsyncS3ExpressIdentityResolver(
 
 DefaultAsyncS3ExpressIdentityResolver::DefaultAsyncS3ExpressIdentityResolver(
     const S3Client& s3Client, std::shared_ptr<Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache,
-    std::chrono::minutes refreshPeriod = std::chrono::minutes(1))
+    std::chrono::minutes refreshPeriod)
     : S3ExpressIdentityResolver(s3Client), m_credentialsCache(std::move(credentialsCache)) {
   // Start a thread to background refresh the keys currently in the cache.
   m_shouldStopBackgroundRefresh = false;
@@ -151,6 +190,7 @@ DefaultAsyncS3ExpressIdentityResolver::~DefaultAsyncS3ExpressIdentityResolver(){
 
 DefaultAsyncS3ExpressIdentityResolver::ResolveIdentityFutureOutcome DefaultAsyncS3ExpressIdentityResolver::getIdentity(
     const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters){
+  AWS_UNREFERENCED_PARAM(identityProperties);
   auto bucketNameIter = additionalParameters.find("bucketName");
   if (bucketNameIter == additionalParameters.end()) {
     AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "Failed to find BucketName in IdentityProperties");
@@ -166,7 +206,7 @@ DefaultAsyncS3ExpressIdentityResolver::ResolveIdentityFutureOutcome DefaultAsync
   AwsCredentialIdentity identity;
   auto isInCache = m_credentialsCache->Get(bucketName, identity);
   if (!isInCache) {
-    ResolveIdentityFutureOutcome outcome = S3ExpressIdentityResolver::getIdentity(identityProperties, additionalParameters);
+    ResolveIdentityFutureOutcome outcome =  S3ExpressIdentityResolver::getCredentialsFromBucket(bucketName);
 
     smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver",
                                                          outcome.GetResult()->accessKeyId(),

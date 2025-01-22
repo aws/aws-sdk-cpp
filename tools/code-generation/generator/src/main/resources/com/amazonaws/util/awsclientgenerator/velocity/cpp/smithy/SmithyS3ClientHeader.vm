@@ -34,6 +34,8 @@
 \#include <aws/crt/http/HttpRequestResponse.h>
 \#include <aws/$metadata.projectName/S3ExpressIdentityProvider.h>
 \#include <aws/$metadata.projectName/S3CrtIdentityProviderAdapter.h>
+#else
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 #end
 
 
@@ -64,6 +66,7 @@ namespace ${rootNamespace}
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
+    ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} extern const char SERVICE_NAME[];
 #if(!$serviceModel.endpointRules)
 
     // Get endpoint, signer region and signer service name after computing the endpoint.
@@ -105,7 +108,7 @@ namespace ${rootNamespace}
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
 #end
-    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
       ${serviceConfiguration},
       smithy::${AuthSchemeResolver}<>,
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
@@ -278,8 +281,6 @@ namespace ${rootNamespace}
 #if($serviceModel.endpointRules)
 #if($serviceNamespace == "S3Crt")
         ${metadata.classNamePrefix}::ClientConfiguration m_clientConfiguration;
-#else
-        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end
 #end
 #if($serviceNamespace == "S3Crt")
@@ -303,9 +304,7 @@ namespace ${rootNamespace}
         bool m_enableEndpointDiscovery = false;
 #end
 #end
-#if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
-#end
+
 #if(!$serviceModel.endpointRules)
         ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
 #end

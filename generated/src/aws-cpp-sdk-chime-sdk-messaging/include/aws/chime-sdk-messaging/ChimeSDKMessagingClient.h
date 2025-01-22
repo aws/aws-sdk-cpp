@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ChimeSDKMessaging
 {
+  AWS_CHIMESDKMESSAGING_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Chime SDK messaging APIs in this section allow software developers
    * to send and receive messages in custom messaging applications. These APIs depend
@@ -23,12 +27,20 @@ namespace ChimeSDKMessaging
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
    * Chime SDK messaging</a>.</p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>
+  class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : smithy::client::AwsSmithyClientT<Aws::ChimeSDKMessaging::SERVICE_NAME,
+      Aws::ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ChimeSDKMessagingEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ChimeSDKMessagingErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Chime SDK Messaging"; }
 
       typedef ChimeSDKMessagingClientConfiguration ClientConfigurationType;
       typedef ChimeSDKMessagingEndpointProvider EndpointProviderType;
@@ -1595,10 +1607,7 @@ namespace ChimeSDKMessaging
       std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>;
-      void init(const ChimeSDKMessagingClientConfiguration& clientConfiguration);
 
-      ChimeSDKMessagingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKMessaging

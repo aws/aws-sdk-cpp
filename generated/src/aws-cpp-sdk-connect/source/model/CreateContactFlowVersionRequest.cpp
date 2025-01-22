@@ -17,6 +17,8 @@ CreateContactFlowVersionRequest::CreateContactFlowVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_contactFlowIdHasBeenSet(false),
     m_flowContentSha256HasBeenSet(false),
+    m_contactFlowVersion(0),
+    m_contactFlowVersionHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedRegionHasBeenSet(false)
 {
@@ -35,6 +37,12 @@ Aws::String CreateContactFlowVersionRequest::SerializePayload() const
   if(m_flowContentSha256HasBeenSet)
   {
    payload.WithString("FlowContentSha256", m_flowContentSha256);
+
+  }
+
+  if(m_contactFlowVersionHasBeenSet)
+  {
+   payload.WithInt64("ContactFlowVersion", m_contactFlowVersion);
 
   }
 

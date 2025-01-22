@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-incidents/SSMIncidentsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ssm-incidents/SSMIncidentsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SSMIncidents
 {
+  AWS_SSMINCIDENTS_API extern const char SERVICE_NAME[];
   /**
    * <p>Systems Manager Incident Manager is an incident management console designed
    * to help users mitigate and recover from incidents affecting their Amazon Web
@@ -26,12 +30,20 @@ namespace SSMIncidents
    * critical incidents, Incident Manager automates response plans and enables
    * responder team escalation. </p>
    */
-  class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>
+  class AWS_SSMINCIDENTS_API SSMIncidentsClient : smithy::client::AwsSmithyClientT<Aws::SSMIncidents::SERVICE_NAME,
+      Aws::SSMIncidents::SSMIncidentsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SSMIncidentsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SSMIncidentsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SSM Incidents"; }
 
       typedef SSMIncidentsClientConfiguration ClientConfigurationType;
       typedef SSMIncidentsEndpointProvider EndpointProviderType;
@@ -906,10 +918,7 @@ namespace SSMIncidents
       std::shared_ptr<SSMIncidentsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>;
-      void init(const SSMIncidentsClientConfiguration& clientConfiguration);
 
-      SSMIncidentsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SSMIncidentsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSMIncidents

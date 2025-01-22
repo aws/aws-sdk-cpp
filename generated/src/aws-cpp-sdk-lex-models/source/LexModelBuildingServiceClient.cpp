@@ -4,19 +4,17 @@
  */
 
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
-#include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+
 
 #include <aws/lex-models/LexModelBuildingServiceClient.h>
 #include <aws/lex-models/LexModelBuildingServiceErrorMarshaller.h>
@@ -66,6 +64,9 @@
 
 #include <smithy/tracing/TracingUtils.h>
 
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -81,100 +82,100 @@ namespace Aws
 {
   namespace LexModelBuildingService
   {
-    const char SERVICE_NAME[] = "lex";
     const char ALLOCATION_TAG[] = "LexModelBuildingServiceClient";
+    const char SERVICE_NAME[] = "lex";
   }
 }
 const char* LexModelBuildingServiceClient::GetServiceName() {return SERVICE_NAME;}
 const char* LexModelBuildingServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration,
-                                                             std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "Lex Model Building Service",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const AWSCredentials& credentials,
-                                                             std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider,
-                                                             const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider,
+                           const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "Lex Model Building Service",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider,
-                                                             const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider,
+                           const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "Lex Model Building Service",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
-    /* Legacy constructors due deprecation */
-  LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+/* Legacy constructors due deprecation */
+LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      "Lex Model Building Service",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+      })
+{}
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "Lex Model Building Service",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "Lex Model Building Service",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
+/* End of legacy constructors due deprecation */
 
-    /* End of legacy constructors due deprecation */
 LexModelBuildingServiceClient::~LexModelBuildingServiceClient()
 {
   ShutdownSdkClient(this, -1);
@@ -185,27 +186,11 @@ std::shared_ptr<LexModelBuildingServiceEndpointProviderBase>& LexModelBuildingSe
   return m_endpointProvider;
 }
 
-void LexModelBuildingServiceClient::init(const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& config)
-{
-  AWSClient::SetServiceClientName("Lex Model Building Service");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void LexModelBuildingServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->OverrideEndpoint(endpoint);
+    AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const CreateBotVersionRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateBotVersion);
@@ -215,25 +200,20 @@ CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const Cr
     AWS_LOGSTREAM_ERROR("CreateBotVersion", "Required field: Name, is not set");
     return CreateBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBotVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateBotVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CreateBotVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateBotVersion",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateBotVersionOutcome>(
     [&]()-> CreateBotVersionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBotVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-      return CreateBotVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return CreateBotVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -249,25 +229,20 @@ CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(co
     AWS_LOGSTREAM_ERROR("CreateIntentVersion", "Required field: Name, is not set");
     return CreateIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateIntentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateIntentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CreateIntentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateIntentVersion",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateIntentVersionOutcome>(
     [&]()-> CreateIntentVersionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateIntentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-      return CreateIntentVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return CreateIntentVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -283,25 +258,20 @@ CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersio
     AWS_LOGSTREAM_ERROR("CreateSlotTypeVersion", "Required field: Name, is not set");
     return CreateSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateSlotTypeVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateSlotTypeVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CreateSlotTypeVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateSlotTypeVersion",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateSlotTypeVersionOutcome>(
     [&]()-> CreateSlotTypeVersionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSlotTypeVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-      return CreateSlotTypeVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return CreateSlotTypeVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -317,24 +287,19 @@ DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest
     AWS_LOGSTREAM_ERROR("DeleteBot", "Required field: Name, is not set");
     return DeleteBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBot",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteBotOutcome>(
     [&]()-> DeleteBotOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteBotOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -355,26 +320,21 @@ DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const Delete
     AWS_LOGSTREAM_ERROR("DeleteBotAlias", "Required field: BotName, is not set");
     return DeleteBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBotAlias",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteBotAliasOutcome>(
     [&]()-> DeleteBotAliasOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBotAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteBotAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteBotAliasOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -400,28 +360,23 @@ DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChann
     AWS_LOGSTREAM_ERROR("DeleteBotChannelAssociation", "Required field: BotAlias, is not set");
     return DeleteBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBotChannelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteBotChannelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteBotChannelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBotChannelAssociation",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteBotChannelAssociationOutcome>(
     [&]()-> DeleteBotChannelAssociationOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBotChannelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteBotChannelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteBotChannelAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      resolvedEndpoint.AddPathSegment(request.GetBotAlias());
+      resolvedEndpoint.AddPathSegments("/channels/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -442,26 +397,21 @@ DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const De
     AWS_LOGSTREAM_ERROR("DeleteBotVersion", "Required field: Version, is not set");
     return DeleteBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBotVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteBotVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteBotVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBotVersion",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteBotVersionOutcome>(
     [&]()-> DeleteBotVersionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBotVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
-      return DeleteBotVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteBotVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersion());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -477,24 +427,19 @@ DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteInte
     AWS_LOGSTREAM_ERROR("DeleteIntent", "Required field: Name, is not set");
     return DeleteIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteIntent",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteIntentOutcome>(
     [&]()-> DeleteIntentOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIntent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteIntentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteIntentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -515,26 +460,21 @@ DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(co
     AWS_LOGSTREAM_ERROR("DeleteIntentVersion", "Required field: Version, is not set");
     return DeleteIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteIntentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteIntentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteIntentVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteIntentVersion",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteIntentVersionOutcome>(
     [&]()-> DeleteIntentVersionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIntentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
-      return DeleteIntentVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteIntentVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersion());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -550,24 +490,19 @@ DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const Delete
     AWS_LOGSTREAM_ERROR("DeleteSlotType", "Required field: Name, is not set");
     return DeleteSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteSlotType",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteSlotTypeOutcome>(
     [&]()-> DeleteSlotTypeOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSlotType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return DeleteSlotTypeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteSlotTypeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -588,26 +523,21 @@ DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersio
     AWS_LOGSTREAM_ERROR("DeleteSlotTypeVersion", "Required field: Version, is not set");
     return DeleteSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteSlotTypeVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteSlotTypeVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteSlotTypeVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteSlotTypeVersion",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteSlotTypeVersionOutcome>(
     [&]()-> DeleteSlotTypeVersionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSlotTypeVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/version/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
-      return DeleteSlotTypeVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteSlotTypeVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/version/");
+      resolvedEndpoint.AddPathSegment(request.GetVersion());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -628,26 +558,21 @@ DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const De
     AWS_LOGSTREAM_ERROR("DeleteUtterances", "Required field: UserId, is not set");
     return DeleteUtterancesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteUtterances, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteUtterances, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteUtterances, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteUtterances",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteUtterancesOutcome>(
     [&]()-> DeleteUtterancesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUtterances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/utterances/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-      return DeleteUtterancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteUtterancesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/utterances/");
+      resolvedEndpoint.AddPathSegment(request.GetUserId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -668,26 +593,21 @@ GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request
     AWS_LOGSTREAM_ERROR("GetBot", "Required field: VersionOrAlias, is not set");
     return GetBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionOrAlias]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBot",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotOutcome>(
     [&]()-> GetBotOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionOrAlias());
-      return GetBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersionOrAlias());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -708,26 +628,21 @@ GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasR
     AWS_LOGSTREAM_ERROR("GetBotAlias", "Required field: BotName, is not set");
     return GetBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBotAlias",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotAliasOutcome>(
     [&]()-> GetBotAliasOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBotAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return GetBotAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotAliasOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -743,25 +658,20 @@ GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAl
     AWS_LOGSTREAM_ERROR("GetBotAliases", "Required field: BotName, is not set");
     return GetBotAliasesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBotAliases, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBotAliases, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBotAliases, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBotAliases",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotAliasesOutcome>(
     [&]()-> GetBotAliasesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBotAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      return GetBotAliasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotAliasesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -787,28 +697,23 @@ GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAsso
     AWS_LOGSTREAM_ERROR("GetBotChannelAssociation", "Required field: BotAlias, is not set");
     return GetBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBotChannelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBotChannelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBotChannelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBotChannelAssociation",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotChannelAssociationOutcome>(
     [&]()-> GetBotChannelAssociationOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBotChannelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return GetBotChannelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotChannelAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      resolvedEndpoint.AddPathSegment(request.GetBotAlias());
+      resolvedEndpoint.AddPathSegments("/channels/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -829,27 +734,22 @@ GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAss
     AWS_LOGSTREAM_ERROR("GetBotChannelAssociations", "Required field: BotAlias, is not set");
     return GetBotChannelAssociationsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBotChannelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBotChannelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBotChannelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBotChannelAssociations",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotChannelAssociationsOutcome>(
     [&]()-> GetBotChannelAssociationsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBotChannelAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
-      return GetBotChannelAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotChannelAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      resolvedEndpoint.AddPathSegment(request.GetBotAlias());
+      resolvedEndpoint.AddPathSegments("/channels/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -865,25 +765,20 @@ GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBot
     AWS_LOGSTREAM_ERROR("GetBotVersions", "Required field: Name, is not set");
     return GetBotVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBotVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBotVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBotVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBotVersions",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotVersionsOutcome>(
     [&]()-> GetBotVersionsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBotVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      return GetBotVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -894,23 +789,18 @@ GetBotsOutcome LexModelBuildingServiceClient::GetBots(const GetBotsRequest& requ
 {
   AWS_OPERATION_GUARD(GetBots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBots, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBots, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBots, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBots",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBotsOutcome>(
     [&]()-> GetBotsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      return GetBotsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBotsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -926,24 +816,19 @@ GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const Ge
     AWS_LOGSTREAM_ERROR("GetBuiltinIntent", "Required field: Signature, is not set");
     return GetBuiltinIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Signature]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBuiltinIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBuiltinIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBuiltinIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBuiltinIntent",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBuiltinIntentOutcome>(
     [&]()-> GetBuiltinIntentOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBuiltinIntent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/builtins/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSignature());
-      return GetBuiltinIntentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBuiltinIntentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/builtins/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetSignature());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -954,23 +839,18 @@ GetBuiltinIntentsOutcome LexModelBuildingServiceClient::GetBuiltinIntents(const 
 {
   AWS_OPERATION_GUARD(GetBuiltinIntents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBuiltinIntents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBuiltinIntents, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBuiltinIntents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBuiltinIntents, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBuiltinIntents",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBuiltinIntentsOutcome>(
     [&]()-> GetBuiltinIntentsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBuiltinIntents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/builtins/intents/");
-      return GetBuiltinIntentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBuiltinIntentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/builtins/intents/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -981,23 +861,18 @@ GetBuiltinSlotTypesOutcome LexModelBuildingServiceClient::GetBuiltinSlotTypes(co
 {
   AWS_OPERATION_GUARD(GetBuiltinSlotTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBuiltinSlotTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBuiltinSlotTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetBuiltinSlotTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetBuiltinSlotTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBuiltinSlotTypes",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBuiltinSlotTypesOutcome>(
     [&]()-> GetBuiltinSlotTypesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBuiltinSlotTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/builtins/slottypes/");
-      return GetBuiltinSlotTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetBuiltinSlotTypesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/builtins/slottypes/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1028,23 +903,18 @@ GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest
     AWS_LOGSTREAM_ERROR("GetExport", "Required field: ExportType, is not set");
     return GetExportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportType]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetExport, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetExport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetExport, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetExport",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetExportOutcome>(
     [&]()-> GetExportOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/exports/");
-      return GetExportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetExportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/exports/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1060,24 +930,19 @@ GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest
     AWS_LOGSTREAM_ERROR("GetImport", "Required field: ImportId, is not set");
     return GetImportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetImport, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetImport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetImport, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetImport",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetImportOutcome>(
     [&]()-> GetImportOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/imports/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportId());
-      return GetImportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetImportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/imports/");
+      resolvedEndpoint.AddPathSegment(request.GetImportId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1098,26 +963,21 @@ GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest
     AWS_LOGSTREAM_ERROR("GetIntent", "Required field: Version, is not set");
     return GetIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetIntent",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetIntentOutcome>(
     [&]()-> GetIntentOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIntent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
-      return GetIntentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetIntentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersion());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1133,25 +993,20 @@ GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const 
     AWS_LOGSTREAM_ERROR("GetIntentVersions", "Required field: Name, is not set");
     return GetIntentVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIntentVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetIntentVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetIntentVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetIntentVersions",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetIntentVersionsOutcome>(
     [&]()-> GetIntentVersionsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIntentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      return GetIntentVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetIntentVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1162,23 +1017,18 @@ GetIntentsOutcome LexModelBuildingServiceClient::GetIntents(const GetIntentsRequ
 {
   AWS_OPERATION_GUARD(GetIntents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIntents, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetIntents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetIntents, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetIntents",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetIntentsOutcome>(
     [&]()-> GetIntentsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIntents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      return GetIntentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetIntentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1194,24 +1044,19 @@ GetMigrationOutcome LexModelBuildingServiceClient::GetMigration(const GetMigrati
     AWS_LOGSTREAM_ERROR("GetMigration", "Required field: MigrationId, is not set");
     return GetMigrationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MigrationId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMigration, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetMigration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetMigration, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMigration",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMigrationOutcome>(
     [&]()-> GetMigrationOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMigration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/migrations/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMigrationId());
-      return GetMigrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetMigrationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/migrations/");
+      resolvedEndpoint.AddPathSegment(request.GetMigrationId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1222,23 +1067,18 @@ GetMigrationsOutcome LexModelBuildingServiceClient::GetMigrations(const GetMigra
 {
   AWS_OPERATION_GUARD(GetMigrations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMigrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMigrations, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetMigrations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetMigrations, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMigrations",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMigrationsOutcome>(
     [&]()-> GetMigrationsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMigrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/migrations");
-      return GetMigrationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetMigrationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/migrations");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1259,26 +1099,21 @@ GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeR
     AWS_LOGSTREAM_ERROR("GetSlotType", "Required field: Version, is not set");
     return GetSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSlotType",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSlotTypeOutcome>(
     [&]()-> GetSlotTypeOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSlotType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
-      return GetSlotTypeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSlotTypeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      resolvedEndpoint.AddPathSegment(request.GetVersion());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1294,25 +1129,20 @@ GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(co
     AWS_LOGSTREAM_ERROR("GetSlotTypeVersions", "Required field: Name, is not set");
     return GetSlotTypeVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSlotTypeVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSlotTypeVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSlotTypeVersions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSlotTypeVersions",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSlotTypeVersionsOutcome>(
     [&]()-> GetSlotTypeVersionsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSlotTypeVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
-      return GetSlotTypeVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSlotTypeVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1323,23 +1153,18 @@ GetSlotTypesOutcome LexModelBuildingServiceClient::GetSlotTypes(const GetSlotTyp
 {
   AWS_OPERATION_GUARD(GetSlotTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSlotTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSlotTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSlotTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSlotTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSlotTypes",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSlotTypesOutcome>(
     [&]()-> GetSlotTypesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSlotTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      return GetSlotTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSlotTypesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1365,28 +1190,23 @@ GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const 
     AWS_LOGSTREAM_ERROR("GetUtterancesView", "Required field: StatusType, is not set");
     return GetUtterancesViewOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusType]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetUtterancesView, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetUtterancesView, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetUtterancesView, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetUtterancesView",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetUtterancesViewOutcome>(
     [&]()-> GetUtterancesViewOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUtterancesView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return GetUtterancesViewOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       Aws::StringStream ss;
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/utterances");
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegment("/utterances");
       ss.str("?view=aggregation");
-      endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
-      return GetUtterancesViewOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      resolvedEndpoint.SetQueryString(ss.str());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1402,24 +1222,19 @@ ListTagsForResourceOutcome LexModelBuildingServiceClient::ListTagsForResource(co
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTagsForResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1435,25 +1250,20 @@ PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request
     AWS_LOGSTREAM_ERROR("PutBot", "Required field: Name, is not set");
     return PutBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, PutBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutBot",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutBotOutcome>(
     [&]()-> PutBotOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/$LATEST");
-      return PutBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return PutBotOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/$LATEST");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1474,26 +1284,21 @@ PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasR
     AWS_LOGSTREAM_ERROR("PutBotAlias", "Required field: BotName, is not set");
     return PutBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, PutBotAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutBotAlias",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutBotAliasOutcome>(
     [&]()-> PutBotAliasOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutBotAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      return PutBotAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return PutBotAliasOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/bots/");
+      resolvedEndpoint.AddPathSegment(request.GetBotName());
+      resolvedEndpoint.AddPathSegments("/aliases/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1509,25 +1314,20 @@ PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest
     AWS_LOGSTREAM_ERROR("PutIntent", "Required field: Name, is not set");
     return PutIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, PutIntent, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutIntent",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutIntentOutcome>(
     [&]()-> PutIntentOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutIntent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/$LATEST");
-      return PutIntentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return PutIntentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/intents/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/$LATEST");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1543,25 +1343,20 @@ PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeR
     AWS_LOGSTREAM_ERROR("PutSlotType", "Required field: Name, is not set");
     return PutSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, PutSlotType, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutSlotType",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutSlotTypeOutcome>(
     [&]()-> PutSlotTypeOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutSlotType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/versions/$LATEST");
-      return PutSlotTypeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return PutSlotTypeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/slottypes/");
+      resolvedEndpoint.AddPathSegment(request.GetName());
+      resolvedEndpoint.AddPathSegments("/versions/$LATEST");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1572,23 +1367,18 @@ StartImportOutcome LexModelBuildingServiceClient::StartImport(const StartImportR
 {
   AWS_OPERATION_GUARD(StartImport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartImport, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartImport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartImport, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartImport",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartImportOutcome>(
     [&]()-> StartImportOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/imports/");
-      return StartImportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartImportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/imports/");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1599,23 +1389,18 @@ StartMigrationOutcome LexModelBuildingServiceClient::StartMigration(const StartM
 {
   AWS_OPERATION_GUARD(StartMigration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMigration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartMigration, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartMigration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartMigration, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartMigration",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartMigrationOutcome>(
     [&]()-> StartMigrationOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMigration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/migrations");
-      return StartMigrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartMigrationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/migrations");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1631,24 +1416,19 @@ TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceR
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TagResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1669,27 +1449,23 @@ UntagResourceOutcome LexModelBuildingServiceClient::UntagResource(const UntagRes
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UntagResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
+
 

@@ -386,10 +386,9 @@ namespace Model
     ///@{
     /**
      * <p>The accelerator types that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with FPGA accelerators, specify <code>fpga</code>.</p> </li> <li>
-     * <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p> </li>
-     * <li> <p>For instance types with Inference accelerators, specify
-     * <code>inference</code>.</p> </li> </ul> <p>Default: Any accelerator type</p>
+     * instance types with GPU accelerators, specify <code>gpu</code>.</p> </li> <li>
+     * <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p>
+     * </li> </ul> <p>Default: Any accelerator type</p>
      */
     inline const Aws::Vector<AcceleratorType>& GetAcceleratorTypes() const{ return m_acceleratorTypes; }
     inline bool AcceleratorTypesHasBeenSet() const { return m_acceleratorTypesHasBeenSet; }

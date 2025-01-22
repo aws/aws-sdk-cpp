@@ -94,19 +94,6 @@ ${indent}  resolvedEndpoint.SetQueryString(ss.str());
 ${indent}  request.SetServiceSpecificParameters(
 ${indent}   [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
 ${indent}   Aws::Map<Aws::String, Aws::String> params;
-#if($operation.shouldSkipChecksum || $operation.requestAlgorithmMember)
-${indent}   auto isExpress = resolvedEndpoint.AccessAttributes().value().backend == "S3Express";
-#end
-#if($operation.shouldSkipChecksum)
-${indent}   if (!request.ChecksumAlgorithmHasBeenSet() && isExpress) {
-${indent}     params.emplace("overrideChecksumDisable", "noop");
-${indent}   }
-#end
-#if($operation.requestAlgorithmMember)
-${indent}   if (!request.ChecksumAlgorithmHasBeenSet() && isExpress && request.GetChecksumAlgorithmName() == "md5") {
-${indent}       params.emplace("overrideChecksum", "crc32");
-${indent}   }
-#end
 ${indent}   params.emplace("bucketName", request.GetBucket());
 ${indent}   ServiceSpecificParameters serviceSpecificParameters{params};
 ${indent}   return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);

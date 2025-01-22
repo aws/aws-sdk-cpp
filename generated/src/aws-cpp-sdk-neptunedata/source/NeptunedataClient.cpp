@@ -4,19 +4,17 @@
  */
 
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
-#include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+
 
 #include <aws/neptunedata/NeptunedataClient.h>
 #include <aws/neptunedata/NeptunedataErrorMarshaller.h>
@@ -67,6 +65,9 @@
 
 #include <smithy/tracing/TracingUtils.h>
 
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -82,100 +83,100 @@ namespace Aws
 {
   namespace neptunedata
   {
-    const char SERVICE_NAME[] = "neptune-db";
     const char ALLOCATION_TAG[] = "NeptunedataClient";
+    const char SERVICE_NAME[] = "neptune-db";
   }
 }
 const char* NeptunedataClient::GetServiceName() {return SERVICE_NAME;}
 const char* NeptunedataClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NeptunedataClient::NeptunedataClient(const neptunedata::NeptunedataClientConfiguration& clientConfiguration,
-                                     std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "neptunedata",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 NeptunedataClient::NeptunedataClient(const AWSCredentials& credentials,
-                                     std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider,
-                                     const neptunedata::NeptunedataClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider,
+                           const neptunedata::NeptunedataClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "neptunedata",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 NeptunedataClient::NeptunedataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider,
-                                     const neptunedata::NeptunedataClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider,
+                           const neptunedata::NeptunedataClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "neptunedata",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
-    /* Legacy constructors due deprecation */
-  NeptunedataClient::NeptunedataClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+/* Legacy constructors due deprecation */
+NeptunedataClient::NeptunedataClient(const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      "neptunedata",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+      })
+{}
 
 NeptunedataClient::NeptunedataClient(const AWSCredentials& credentials,
-                                     const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "neptunedata",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
 NeptunedataClient::NeptunedataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "neptunedata",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
+/* End of legacy constructors due deprecation */
 
-    /* End of legacy constructors due deprecation */
 NeptunedataClient::~NeptunedataClient()
 {
   ShutdownSdkClient(this, -1);
@@ -186,27 +187,11 @@ std::shared_ptr<NeptunedataEndpointProviderBase>& NeptunedataClient::accessEndpo
   return m_endpointProvider;
 }
 
-void NeptunedataClient::init(const neptunedata::NeptunedataClientConfiguration& config)
-{
-  AWSClient::SetServiceClientName("neptunedata");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void NeptunedataClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->OverrideEndpoint(endpoint);
+    AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 CancelGremlinQueryOutcome NeptunedataClient::CancelGremlinQuery(const CancelGremlinQueryRequest& request) const
 {
   AWS_OPERATION_GUARD(CancelGremlinQuery);
@@ -216,24 +201,19 @@ CancelGremlinQueryOutcome NeptunedataClient::CancelGremlinQuery(const CancelGrem
     AWS_LOGSTREAM_ERROR("CancelGremlinQuery", "Required field: QueryId, is not set");
     return CancelGremlinQueryOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelGremlinQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelGremlinQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelGremlinQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelGremlinQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelGremlinQueryOutcome>(
     [&]()-> CancelGremlinQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelGremlinQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/status/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
-      return CancelGremlinQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelGremlinQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/gremlin/status/");
+      resolvedEndpoint.AddPathSegment(request.GetQueryId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -249,24 +229,19 @@ CancelLoaderJobOutcome NeptunedataClient::CancelLoaderJob(const CancelLoaderJobR
     AWS_LOGSTREAM_ERROR("CancelLoaderJob", "Required field: LoadId, is not set");
     return CancelLoaderJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoadId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelLoaderJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelLoaderJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelLoaderJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelLoaderJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelLoaderJobOutcome>(
     [&]()-> CancelLoaderJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelLoaderJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/loader/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLoadId());
-      return CancelLoaderJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelLoaderJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/loader/");
+      resolvedEndpoint.AddPathSegment(request.GetLoadId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -282,24 +257,19 @@ CancelMLDataProcessingJobOutcome NeptunedataClient::CancelMLDataProcessingJob(co
     AWS_LOGSTREAM_ERROR("CancelMLDataProcessingJob", "Required field: Id, is not set");
     return CancelMLDataProcessingJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelMLDataProcessingJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelMLDataProcessingJobOutcome>(
     [&]()-> CancelMLDataProcessingJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelMLDataProcessingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/dataprocessing/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return CancelMLDataProcessingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelMLDataProcessingJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/dataprocessing/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -315,24 +285,19 @@ CancelMLModelTrainingJobOutcome NeptunedataClient::CancelMLModelTrainingJob(cons
     AWS_LOGSTREAM_ERROR("CancelMLModelTrainingJob", "Required field: Id, is not set");
     return CancelMLModelTrainingJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelMLModelTrainingJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelMLModelTrainingJobOutcome>(
     [&]()-> CancelMLModelTrainingJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelMLModelTrainingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltraining/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return CancelMLModelTrainingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelMLModelTrainingJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltraining/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -348,24 +313,19 @@ CancelMLModelTransformJobOutcome NeptunedataClient::CancelMLModelTransformJob(co
     AWS_LOGSTREAM_ERROR("CancelMLModelTransformJob", "Required field: Id, is not set");
     return CancelMLModelTransformJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelMLModelTransformJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelMLModelTransformJobOutcome>(
     [&]()-> CancelMLModelTransformJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelMLModelTransformJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltransform/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return CancelMLModelTransformJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelMLModelTransformJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltransform/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -381,24 +341,19 @@ CancelOpenCypherQueryOutcome NeptunedataClient::CancelOpenCypherQuery(const Canc
     AWS_LOGSTREAM_ERROR("CancelOpenCypherQuery", "Required field: QueryId, is not set");
     return CancelOpenCypherQueryOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelOpenCypherQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelOpenCypherQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelOpenCypherQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelOpenCypherQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelOpenCypherQueryOutcome>(
     [&]()-> CancelOpenCypherQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelOpenCypherQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher/status/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
-      return CancelOpenCypherQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelOpenCypherQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/opencypher/status/");
+      resolvedEndpoint.AddPathSegment(request.GetQueryId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -409,23 +364,18 @@ CreateMLEndpointOutcome NeptunedataClient::CreateMLEndpoint(const CreateMLEndpoi
 {
   AWS_OPERATION_GUARD(CreateMLEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMLEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CreateMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMLEndpoint",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateMLEndpointOutcome>(
     [&]()-> CreateMLEndpointOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMLEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/endpoints");
-      return CreateMLEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return CreateMLEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/endpoints");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -441,24 +391,19 @@ DeleteMLEndpointOutcome NeptunedataClient::DeleteMLEndpoint(const DeleteMLEndpoi
     AWS_LOGSTREAM_ERROR("DeleteMLEndpoint", "Required field: Id, is not set");
     return DeleteMLEndpointOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMLEndpoint",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteMLEndpointOutcome>(
     [&]()-> DeleteMLEndpointOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMLEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/endpoints/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return DeleteMLEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteMLEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/endpoints/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -469,23 +414,18 @@ DeletePropertygraphStatisticsOutcome NeptunedataClient::DeletePropertygraphStati
 {
   AWS_OPERATION_GUARD(DeletePropertygraphStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePropertygraphStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeletePropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeletePropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeletePropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeletePropertygraphStatistics",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeletePropertygraphStatisticsOutcome>(
     [&]()-> DeletePropertygraphStatisticsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePropertygraphStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics");
-      return DeletePropertygraphStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeletePropertygraphStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/propertygraph/statistics");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -496,23 +436,18 @@ DeleteSparqlStatisticsOutcome NeptunedataClient::DeleteSparqlStatistics(const De
 {
   AWS_OPERATION_GUARD(DeleteSparqlStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSparqlStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteSparqlStatistics",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteSparqlStatisticsOutcome>(
     [&]()-> DeleteSparqlStatisticsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSparqlStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/statistics");
-      return DeleteSparqlStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteSparqlStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/sparql/statistics");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -523,23 +458,18 @@ ExecuteFastResetOutcome NeptunedataClient::ExecuteFastReset(const ExecuteFastRes
 {
   AWS_OPERATION_GUARD(ExecuteFastReset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteFastReset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExecuteFastReset, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ExecuteFastReset, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ExecuteFastReset, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExecuteFastReset",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteFastResetOutcome>(
     [&]()-> ExecuteFastResetOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteFastReset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/system");
-      return ExecuteFastResetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ExecuteFastResetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/system");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -550,23 +480,18 @@ ExecuteGremlinExplainQueryOutcome NeptunedataClient::ExecuteGremlinExplainQuery(
 {
   AWS_OPERATION_GUARD(ExecuteGremlinExplainQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteGremlinExplainQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExecuteGremlinExplainQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ExecuteGremlinExplainQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ExecuteGremlinExplainQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExecuteGremlinExplainQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteGremlinExplainQueryOutcome>(
     [&]()-> ExecuteGremlinExplainQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteGremlinExplainQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/explain");
-      return ExecuteGremlinExplainQueryOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      return ExecuteGremlinExplainQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/gremlin/explain");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -577,23 +502,18 @@ ExecuteGremlinProfileQueryOutcome NeptunedataClient::ExecuteGremlinProfileQuery(
 {
   AWS_OPERATION_GUARD(ExecuteGremlinProfileQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteGremlinProfileQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExecuteGremlinProfileQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ExecuteGremlinProfileQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ExecuteGremlinProfileQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExecuteGremlinProfileQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteGremlinProfileQueryOutcome>(
     [&]()-> ExecuteGremlinProfileQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteGremlinProfileQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/profile");
-      return ExecuteGremlinProfileQueryOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      return ExecuteGremlinProfileQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/gremlin/profile");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -604,23 +524,18 @@ ExecuteGremlinQueryOutcome NeptunedataClient::ExecuteGremlinQuery(const ExecuteG
 {
   AWS_OPERATION_GUARD(ExecuteGremlinQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteGremlinQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExecuteGremlinQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ExecuteGremlinQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ExecuteGremlinQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExecuteGremlinQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteGremlinQueryOutcome>(
     [&]()-> ExecuteGremlinQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteGremlinQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin");
-      return ExecuteGremlinQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ExecuteGremlinQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/gremlin");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -631,23 +546,18 @@ ExecuteOpenCypherExplainQueryOutcome NeptunedataClient::ExecuteOpenCypherExplain
 {
   AWS_OPERATION_GUARD(ExecuteOpenCypherExplainQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteOpenCypherExplainQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExecuteOpenCypherExplainQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ExecuteOpenCypherExplainQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ExecuteOpenCypherExplainQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExecuteOpenCypherExplainQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteOpenCypherExplainQueryOutcome>(
     [&]()-> ExecuteOpenCypherExplainQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteOpenCypherExplainQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher/explain");
-      return ExecuteOpenCypherExplainQueryOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      return ExecuteOpenCypherExplainQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/opencypher/explain");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -658,23 +568,18 @@ ExecuteOpenCypherQueryOutcome NeptunedataClient::ExecuteOpenCypherQuery(const Ex
 {
   AWS_OPERATION_GUARD(ExecuteOpenCypherQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteOpenCypherQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExecuteOpenCypherQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ExecuteOpenCypherQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ExecuteOpenCypherQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExecuteOpenCypherQuery",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExecuteOpenCypherQueryOutcome>(
     [&]()-> ExecuteOpenCypherQueryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteOpenCypherQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher");
-      return ExecuteOpenCypherQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ExecuteOpenCypherQueryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/opencypher");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -685,23 +590,18 @@ GetEngineStatusOutcome NeptunedataClient::GetEngineStatus(const GetEngineStatusR
 {
   AWS_OPERATION_GUARD(GetEngineStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEngineStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetEngineStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetEngineStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetEngineStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetEngineStatus",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetEngineStatusOutcome>(
     [&]()-> GetEngineStatusOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEngineStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/status");
-      return GetEngineStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetEngineStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/status");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -717,24 +617,19 @@ GetGremlinQueryStatusOutcome NeptunedataClient::GetGremlinQueryStatus(const GetG
     AWS_LOGSTREAM_ERROR("GetGremlinQueryStatus", "Required field: QueryId, is not set");
     return GetGremlinQueryStatusOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetGremlinQueryStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetGremlinQueryStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetGremlinQueryStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetGremlinQueryStatus",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetGremlinQueryStatusOutcome>(
     [&]()-> GetGremlinQueryStatusOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGremlinQueryStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/status/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
-      return GetGremlinQueryStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetGremlinQueryStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/gremlin/status/");
+      resolvedEndpoint.AddPathSegment(request.GetQueryId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -750,24 +645,19 @@ GetLoaderJobStatusOutcome NeptunedataClient::GetLoaderJobStatus(const GetLoaderJ
     AWS_LOGSTREAM_ERROR("GetLoaderJobStatus", "Required field: LoadId, is not set");
     return GetLoaderJobStatusOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoadId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetLoaderJobStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetLoaderJobStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetLoaderJobStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetLoaderJobStatus",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetLoaderJobStatusOutcome>(
     [&]()-> GetLoaderJobStatusOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLoaderJobStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/loader/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLoadId());
-      return GetLoaderJobStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetLoaderJobStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/loader/");
+      resolvedEndpoint.AddPathSegment(request.GetLoadId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -783,24 +673,19 @@ GetMLDataProcessingJobOutcome NeptunedataClient::GetMLDataProcessingJob(const Ge
     AWS_LOGSTREAM_ERROR("GetMLDataProcessingJob", "Required field: Id, is not set");
     return GetMLDataProcessingJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMLDataProcessingJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMLDataProcessingJobOutcome>(
     [&]()-> GetMLDataProcessingJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMLDataProcessingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/dataprocessing/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetMLDataProcessingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetMLDataProcessingJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/dataprocessing/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -816,24 +701,19 @@ GetMLEndpointOutcome NeptunedataClient::GetMLEndpoint(const GetMLEndpointRequest
     AWS_LOGSTREAM_ERROR("GetMLEndpoint", "Required field: Id, is not set");
     return GetMLEndpointOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetMLEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMLEndpoint",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMLEndpointOutcome>(
     [&]()-> GetMLEndpointOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMLEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/endpoints/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetMLEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetMLEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/endpoints/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -849,24 +729,19 @@ GetMLModelTrainingJobOutcome NeptunedataClient::GetMLModelTrainingJob(const GetM
     AWS_LOGSTREAM_ERROR("GetMLModelTrainingJob", "Required field: Id, is not set");
     return GetMLModelTrainingJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMLModelTrainingJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMLModelTrainingJobOutcome>(
     [&]()-> GetMLModelTrainingJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMLModelTrainingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltraining/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetMLModelTrainingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetMLModelTrainingJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltraining/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -882,24 +757,19 @@ GetMLModelTransformJobOutcome NeptunedataClient::GetMLModelTransformJob(const Ge
     AWS_LOGSTREAM_ERROR("GetMLModelTransformJob", "Required field: Id, is not set");
     return GetMLModelTransformJobOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMLModelTransformJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMLModelTransformJobOutcome>(
     [&]()-> GetMLModelTransformJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMLModelTransformJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltransform/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
-      return GetMLModelTransformJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetMLModelTransformJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltransform/");
+      resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -915,24 +785,19 @@ GetOpenCypherQueryStatusOutcome NeptunedataClient::GetOpenCypherQueryStatus(cons
     AWS_LOGSTREAM_ERROR("GetOpenCypherQueryStatus", "Required field: QueryId, is not set");
     return GetOpenCypherQueryStatusOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOpenCypherQueryStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetOpenCypherQueryStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetOpenCypherQueryStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOpenCypherQueryStatus",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetOpenCypherQueryStatusOutcome>(
     [&]()-> GetOpenCypherQueryStatusOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOpenCypherQueryStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher/status/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
-      return GetOpenCypherQueryStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetOpenCypherQueryStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/opencypher/status/");
+      resolvedEndpoint.AddPathSegment(request.GetQueryId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -943,23 +808,18 @@ GetPropertygraphStatisticsOutcome NeptunedataClient::GetPropertygraphStatistics(
 {
   AWS_OPERATION_GUARD(GetPropertygraphStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPropertygraphStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetPropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetPropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPropertygraphStatistics",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetPropertygraphStatisticsOutcome>(
     [&]()-> GetPropertygraphStatisticsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPropertygraphStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics");
-      return GetPropertygraphStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetPropertygraphStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/propertygraph/statistics");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -970,23 +830,18 @@ GetPropertygraphStreamOutcome NeptunedataClient::GetPropertygraphStream(const Ge
 {
   AWS_OPERATION_GUARD(GetPropertygraphStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPropertygraphStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPropertygraphStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetPropertygraphStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetPropertygraphStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPropertygraphStream",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetPropertygraphStreamOutcome>(
     [&]()-> GetPropertygraphStreamOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPropertygraphStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/stream");
-      return GetPropertygraphStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetPropertygraphStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/propertygraph/stream");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -997,23 +852,18 @@ GetPropertygraphSummaryOutcome NeptunedataClient::GetPropertygraphSummary(const 
 {
   AWS_OPERATION_GUARD(GetPropertygraphSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPropertygraphSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPropertygraphSummary, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetPropertygraphSummary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetPropertygraphSummary, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPropertygraphSummary",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetPropertygraphSummaryOutcome>(
     [&]()-> GetPropertygraphSummaryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPropertygraphSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics/summary");
-      return GetPropertygraphSummaryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetPropertygraphSummaryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/propertygraph/statistics/summary");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1024,23 +874,18 @@ GetRDFGraphSummaryOutcome NeptunedataClient::GetRDFGraphSummary(const GetRDFGrap
 {
   AWS_OPERATION_GUARD(GetRDFGraphSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRDFGraphSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRDFGraphSummary, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetRDFGraphSummary, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetRDFGraphSummary, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRDFGraphSummary",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetRDFGraphSummaryOutcome>(
     [&]()-> GetRDFGraphSummaryOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRDFGraphSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/rdf/statistics/summary");
-      return GetRDFGraphSummaryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetRDFGraphSummaryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/rdf/statistics/summary");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1051,23 +896,18 @@ GetSparqlStatisticsOutcome NeptunedataClient::GetSparqlStatistics(const GetSparq
 {
   AWS_OPERATION_GUARD(GetSparqlStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSparqlStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSparqlStatistics",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSparqlStatisticsOutcome>(
     [&]()-> GetSparqlStatisticsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSparqlStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/statistics");
-      return GetSparqlStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSparqlStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/sparql/statistics");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1078,23 +918,18 @@ GetSparqlStreamOutcome NeptunedataClient::GetSparqlStream(const GetSparqlStreamR
 {
   AWS_OPERATION_GUARD(GetSparqlStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSparqlStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSparqlStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSparqlStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSparqlStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSparqlStream",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSparqlStreamOutcome>(
     [&]()-> GetSparqlStreamOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSparqlStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/stream");
-      return GetSparqlStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSparqlStreamOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/sparql/stream");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1105,23 +940,18 @@ ListGremlinQueriesOutcome NeptunedataClient::ListGremlinQueries(const ListGremli
 {
   AWS_OPERATION_GUARD(ListGremlinQueries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGremlinQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListGremlinQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListGremlinQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListGremlinQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListGremlinQueries",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListGremlinQueriesOutcome>(
     [&]()-> ListGremlinQueriesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGremlinQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/status");
-      return ListGremlinQueriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListGremlinQueriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/gremlin/status");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1132,23 +962,18 @@ ListLoaderJobsOutcome NeptunedataClient::ListLoaderJobs(const ListLoaderJobsRequ
 {
   AWS_OPERATION_GUARD(ListLoaderJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLoaderJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListLoaderJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListLoaderJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListLoaderJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListLoaderJobs",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListLoaderJobsOutcome>(
     [&]()-> ListLoaderJobsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLoaderJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/loader");
-      return ListLoaderJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListLoaderJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/loader");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1159,23 +984,18 @@ ListMLDataProcessingJobsOutcome NeptunedataClient::ListMLDataProcessingJobs(cons
 {
   AWS_OPERATION_GUARD(ListMLDataProcessingJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMLDataProcessingJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMLDataProcessingJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListMLDataProcessingJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListMLDataProcessingJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMLDataProcessingJobs",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListMLDataProcessingJobsOutcome>(
     [&]()-> ListMLDataProcessingJobsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMLDataProcessingJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/dataprocessing");
-      return ListMLDataProcessingJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListMLDataProcessingJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/dataprocessing");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1186,23 +1006,18 @@ ListMLEndpointsOutcome NeptunedataClient::ListMLEndpoints(const ListMLEndpointsR
 {
   AWS_OPERATION_GUARD(ListMLEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMLEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMLEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListMLEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListMLEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMLEndpoints",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListMLEndpointsOutcome>(
     [&]()-> ListMLEndpointsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMLEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/endpoints");
-      return ListMLEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListMLEndpointsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/endpoints");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1213,23 +1028,18 @@ ListMLModelTrainingJobsOutcome NeptunedataClient::ListMLModelTrainingJobs(const 
 {
   AWS_OPERATION_GUARD(ListMLModelTrainingJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMLModelTrainingJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMLModelTrainingJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListMLModelTrainingJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListMLModelTrainingJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMLModelTrainingJobs",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListMLModelTrainingJobsOutcome>(
     [&]()-> ListMLModelTrainingJobsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMLModelTrainingJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltraining");
-      return ListMLModelTrainingJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListMLModelTrainingJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltraining");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1240,23 +1050,18 @@ ListMLModelTransformJobsOutcome NeptunedataClient::ListMLModelTransformJobs(cons
 {
   AWS_OPERATION_GUARD(ListMLModelTransformJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMLModelTransformJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMLModelTransformJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListMLModelTransformJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListMLModelTransformJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMLModelTransformJobs",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListMLModelTransformJobsOutcome>(
     [&]()-> ListMLModelTransformJobsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMLModelTransformJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltransform");
-      return ListMLModelTransformJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListMLModelTransformJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltransform");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1267,23 +1072,18 @@ ListOpenCypherQueriesOutcome NeptunedataClient::ListOpenCypherQueries(const List
 {
   AWS_OPERATION_GUARD(ListOpenCypherQueries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOpenCypherQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOpenCypherQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListOpenCypherQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListOpenCypherQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOpenCypherQueries",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListOpenCypherQueriesOutcome>(
     [&]()-> ListOpenCypherQueriesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOpenCypherQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher/status");
-      return ListOpenCypherQueriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListOpenCypherQueriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/opencypher/status");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1294,23 +1094,18 @@ ManagePropertygraphStatisticsOutcome NeptunedataClient::ManagePropertygraphStati
 {
   AWS_OPERATION_GUARD(ManagePropertygraphStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ManagePropertygraphStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ManagePropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ManagePropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ManagePropertygraphStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ManagePropertygraphStatistics",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ManagePropertygraphStatisticsOutcome>(
     [&]()-> ManagePropertygraphStatisticsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ManagePropertygraphStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics");
-      return ManagePropertygraphStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ManagePropertygraphStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/propertygraph/statistics");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1321,23 +1116,18 @@ ManageSparqlStatisticsOutcome NeptunedataClient::ManageSparqlStatistics(const Ma
 {
   AWS_OPERATION_GUARD(ManageSparqlStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ManageSparqlStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ManageSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ManageSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ManageSparqlStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ManageSparqlStatistics",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ManageSparqlStatisticsOutcome>(
     [&]()-> ManageSparqlStatisticsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ManageSparqlStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/statistics");
-      return ManageSparqlStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ManageSparqlStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/sparql/statistics");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1348,23 +1138,18 @@ StartLoaderJobOutcome NeptunedataClient::StartLoaderJob(const StartLoaderJobRequ
 {
   AWS_OPERATION_GUARD(StartLoaderJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartLoaderJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartLoaderJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartLoaderJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartLoaderJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartLoaderJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartLoaderJobOutcome>(
     [&]()-> StartLoaderJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartLoaderJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/loader");
-      return StartLoaderJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartLoaderJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/loader");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1375,23 +1160,18 @@ StartMLDataProcessingJobOutcome NeptunedataClient::StartMLDataProcessingJob(cons
 {
   AWS_OPERATION_GUARD(StartMLDataProcessingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMLDataProcessingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartMLDataProcessingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartMLDataProcessingJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartMLDataProcessingJobOutcome>(
     [&]()-> StartMLDataProcessingJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMLDataProcessingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/dataprocessing");
-      return StartMLDataProcessingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartMLDataProcessingJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/dataprocessing");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1402,23 +1182,18 @@ StartMLModelTrainingJobOutcome NeptunedataClient::StartMLModelTrainingJob(const 
 {
   AWS_OPERATION_GUARD(StartMLModelTrainingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMLModelTrainingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartMLModelTrainingJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartMLModelTrainingJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartMLModelTrainingJobOutcome>(
     [&]()-> StartMLModelTrainingJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMLModelTrainingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltraining");
-      return StartMLModelTrainingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartMLModelTrainingJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltraining");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1429,26 +1204,22 @@ StartMLModelTransformJobOutcome NeptunedataClient::StartMLModelTransformJob(cons
 {
   AWS_OPERATION_GUARD(StartMLModelTransformJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMLModelTransformJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartMLModelTransformJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartMLModelTransformJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartMLModelTransformJobOutcome>(
     [&]()-> StartMLModelTransformJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMLModelTransformJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltransform");
-      return StartMLModelTransformJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartMLModelTransformJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ml/modeltransform");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
+
 

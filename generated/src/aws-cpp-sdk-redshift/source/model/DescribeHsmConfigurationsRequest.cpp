@@ -50,7 +50,7 @@ Aws::String DescribeHsmConfigurationsRequest::SerializePayload() const
       unsigned tagKeysCount = 1;
       for(auto& item : m_tagKeys)
       {
-        ss << "TagKeys.member." << tagKeysCount << "="
+        ss << "TagKeys.TagKey." << tagKeysCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         tagKeysCount++;
       }
@@ -68,7 +68,7 @@ Aws::String DescribeHsmConfigurationsRequest::SerializePayload() const
       unsigned tagValuesCount = 1;
       for(auto& item : m_tagValues)
       {
-        ss << "TagValues.member." << tagValuesCount << "="
+        ss << "TagValues.TagValue." << tagValuesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         tagValuesCount++;
       }

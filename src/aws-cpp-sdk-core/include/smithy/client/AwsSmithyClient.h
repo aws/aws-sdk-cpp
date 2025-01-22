@@ -162,7 +162,7 @@ namespace client
             if (authSchemeOptionIt != authSchemeOptions.end()) {
                 return SelectAuthSchemeOptionOutcome(*authSchemeOptionIt);
             }
-            return AWSError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
+            return Aws::Client::AWSError<CoreErrors>(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
                                  "",
                                  "Failed to select an auth scheme",
                                  false/*retryable*/);
@@ -186,48 +186,6 @@ namespace client
         {
             auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
-        }
-	
-        Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
-                                                  Aws::Http::HttpMethod method,
-                                                  const Aws::String& region,
-                                                  const Aws::String& serviceName,
-                                                  long long expirationInSeconds,
-                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
-        {
-            std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            request->SetServiceSpecificParameters(serviceSpecificParameters);
-            for (const auto& it: customizedHeaders)
-            {
-                request->SetHeaderValue(it.first.c_str(), it.second);
-            }
-            AwsSmithyClientAsyncRequestContext ctx;
-            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
-            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, region, serviceName, expirationInSeconds).IsSuccess())
-            {
-                return request->GetURIString();
-            }
-            return {};
-        }
-
-        ResponseT MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
-                                     const char* requestName,
-                                     Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback
-                                     ) const
-        {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
-
-            if (httpResponseOutcome.IsSuccess())
-            {
-                return ResponseT(AmazonWebServiceResult<Stream::ResponseStream>(
-                    httpResponseOutcome.GetResult()->SwapResponseStreamOwnership(),
-                    httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode()));
-            }
-
-            return ResponseT(std::move(httpResponseOutcome));
         }
 
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,

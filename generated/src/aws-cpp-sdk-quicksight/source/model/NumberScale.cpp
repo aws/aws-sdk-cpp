@@ -26,6 +26,8 @@ namespace Aws
         static const int MILLIONS_HASH = HashingUtils::HashString("MILLIONS");
         static const int BILLIONS_HASH = HashingUtils::HashString("BILLIONS");
         static const int TRILLIONS_HASH = HashingUtils::HashString("TRILLIONS");
+        static const int LAKHS_HASH = HashingUtils::HashString("LAKHS");
+        static const int CRORES_HASH = HashingUtils::HashString("CRORES");
 
 
         NumberScale GetNumberScaleForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return NumberScale::TRILLIONS;
           }
+          else if (hashCode == LAKHS_HASH)
+          {
+            return NumberScale::LAKHS;
+          }
+          else if (hashCode == CRORES_HASH)
+          {
+            return NumberScale::CRORES;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +93,10 @@ namespace Aws
             return "BILLIONS";
           case NumberScale::TRILLIONS:
             return "TRILLIONS";
+          case NumberScale::LAKHS:
+            return "LAKHS";
+          case NumberScale::CRORES:
+            return "CRORES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

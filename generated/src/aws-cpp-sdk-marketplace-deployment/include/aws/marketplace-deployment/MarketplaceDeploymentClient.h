@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MarketplaceDeployment
 {
+  AWS_MARKETPLACEDEPLOYMENT_API extern const char SERVICE_NAME[];
   /**
    * <p>The AWS Marketplace Deployment Service supports the Quick Launch experience,
    * which is a deployment option for software as a service (SaaS) products. Quick
@@ -24,12 +28,20 @@ namespace MarketplaceDeployment
    * example, API keys and external IDs) to buyers during the Quick Launch
    * experience.</p>
    */
-  class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>
+  class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient : smithy::client::AwsSmithyClientT<Aws::MarketplaceDeployment::SERVICE_NAME,
+      Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MarketplaceDeploymentEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MarketplaceDeploymentErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Marketplace Deployment"; }
 
       typedef MarketplaceDeploymentClientConfiguration ClientConfigurationType;
       typedef MarketplaceDeploymentEndpointProvider EndpointProviderType;
@@ -189,10 +201,7 @@ namespace MarketplaceDeployment
       std::shared_ptr<MarketplaceDeploymentEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>;
-      void init(const MarketplaceDeploymentClientConfiguration& clientConfiguration);
 
-      MarketplaceDeploymentClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MarketplaceDeployment

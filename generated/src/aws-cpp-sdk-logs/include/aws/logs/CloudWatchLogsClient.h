@@ -118,9 +118,9 @@ namespace CloudWatchLogs
          * <p>When you use <code>AssociateKmsKey</code>, you specify either the
          * <code>logGroupName</code> parameter or the <code>resourceIdentifier</code>
          * parameter. You can't specify both of those parameters in the same operation.</p>
-         * <ul> <li> <p>Specify the <code>logGroupName</code> parameter to cause all log
-         * events stored in the log group to be encrypted with that key. Only the log
-         * events ingested after the key is associated are encrypted with that key.</p>
+         * <ul> <li> <p>Specify the <code>logGroupName</code> parameter to cause log events
+         * ingested into that log group to be encrypted with that key. Only the log events
+         * ingested after the key is associated are encrypted with that key.</p>
          * <p>Associating a KMS key with a log group overrides any existing associations
          * between the log group and a KMS key. After a KMS key is associated with a log
          * group, all newly ingested data for the log group is encrypted using the KMS key.
@@ -274,10 +274,15 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate log data for each export task, specify a prefix to
-         * be used as the Amazon S3 key prefix for all exported objects.</p> 
-         * <p>Time-based sorting on chunks of log data inside an exported file is not
-         * guaranteed. You can sort the exported log field data by using Linux
-         * utilities.</p> <p><h3>See Also:</h3>   <a
+         * be used as the Amazon S3 key prefix for all exported objects.</p>  <p>We
+         * recommend that you don't regularly export to Amazon S3 as a way to continuously
+         * archive your logs. For that use case, we instaed recommend that you use
+         * subscriptions. For more information about subscriptions, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
+         * processing of log data with subscriptions</a>.</p>   <p>Time-based
+         * sorting on chunks of log data inside an exported file is not guaranteed. You can
+         * sort the exported log field data by using Linux utilities.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
          */
@@ -500,7 +505,7 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Deletes s <i>delivery</i>. A delivery is a connection between a logical
+         * <p>Deletes a <i>delivery</i>. A delivery is a connection between a logical
          * <i>delivery source</i> and a logical <i>delivery destination</i>. Deleting a
          * delivery only deletes the connection between the delivery source and delivery
          * destination. It does not delete the delivery destination or the delivery
@@ -955,8 +960,20 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Returns a list of all CloudWatch Logs account policies in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all CloudWatch Logs account policies in the account.</p>
+         * <p>To use this operation, you must be signed on with the correct permissions
+         * depending on the type of policy that you are retrieving information for.</p>
+         * <ul> <li> <p>To see data protection policies, you must have the
+         * <code>logs:GetDataProtectionPolicy</code> and
+         * <code>logs:DescribeAccountPolicies</code> permissions.</p> </li> <li> <p>To see
+         * subscription filter policies, you must have the
+         * <code>logs:DescrubeSubscriptionFilters</code> and
+         * <code>logs:DescribeAccountPolicies</code> permissions.</p> </li> <li> <p>To see
+         * transformer policies, you must have the <code>logs:GetTransformer</code> and
+         * <code>logs:DescribeAccountPolicies</code> permissions.</p> </li> <li> <p>To see
+         * field index policies, you must have the <code>logs:DescribeIndexPolicies</code>
+         * and <code>logs:DescribeAccountPolicies</code> permissions.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeAccountPolicies">AWS
          * API Reference</a></p>
          */
@@ -1257,7 +1274,7 @@ namespace CloudWatchLogs
          * are ordered.</p> <p>You can specify the log group to search by using either
          * <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must include
          * one of these two parameters, but you can't include both. </p> <p>This operation
-         * has a limit of five transactions per second, after which transactions are
+         * has a limit of 25 transactions per second, after which transactions are
          * throttled.</p> <p>If you are using CloudWatch cross-account observability, you
          * can use this operation in a monitoring account and view data from the linked
          * source accounts. For more information, see <a
@@ -2030,20 +2047,31 @@ namespace CloudWatchLogs
         /**
          * <p>Creates an account-level data protection policy, subscription filter policy,
          * or field index policy that applies to all log groups or a subset of log groups
-         * in the account.</p> <p> <b>Data protection policy</b> </p> <p>A data protection
-         * policy can help safeguard sensitive data that's ingested by your log groups by
-         * auditing and masking the sensitive log data. Each account can have only one
-         * account-level data protection policy.</p>  <p>Sensitive data is
-         * detected and masked when it is ingested into a log group. When you set a data
-         * protection policy, log events ingested into the log groups before that time are
-         * not masked.</p>  <p>If you use <code>PutAccountPolicy</code> to
-         * create a data protection policy for your whole account, it applies to both
-         * existing log groups and all log groups that are created later in this account.
-         * The account-level policy is applied to existing log groups with eventual
-         * consistency. It might take up to 5 minutes before sensitive data in existing log
-         * groups begins to be masked.</p> <p>By default, when a user views a log event
-         * that includes masked data, the sensitive data is replaced by asterisks. A user
-         * who has the <code>logs:Unmask</code> permission can use a <a
+         * in the account.</p> <p>To use this operation, you must be signed on with the
+         * correct permissions depending on the type of policy that you are creating.</p>
+         * <ul> <li> <p>To create a data protection policy, you must have the
+         * <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code>
+         * permissions.</p> </li> <li> <p>To create a subscription filter policy, you must
+         * have the <code>logs:PutSubscriptionFilter</code> and
+         * <code>logs:PutccountPolicy</code> permissions.</p> </li> <li> <p>To create a
+         * transformer policy, you must have the <code>logs:PutTransformer</code> and
+         * <code>logs:PutAccountPolicy</code> permissions.</p> </li> <li> <p>To create a
+         * field index policy, you must have the <code>logs:PutIndexPolicy</code> and
+         * <code>logs:PutAccountPolicy</code> permissions.</p> </li> </ul> <p> <b>Data
+         * protection policy</b> </p> <p>A data protection policy can help safeguard
+         * sensitive data that's ingested by your log groups by auditing and masking the
+         * sensitive log data. Each account can have only one account-level data protection
+         * policy.</p>  <p>Sensitive data is detected and masked when it is
+         * ingested into a log group. When you set a data protection policy, log events
+         * ingested into the log groups before that time are not masked.</p> 
+         * <p>If you use <code>PutAccountPolicy</code> to create a data protection policy
+         * for your whole account, it applies to both existing log groups and all log
+         * groups that are created later in this account. The account-level policy is
+         * applied to existing log groups with eventual consistency. It might take up to 5
+         * minutes before sensitive data in existing log groups begins to be masked.</p>
+         * <p>By default, when a user views a log event that includes masked data, the
+         * sensitive data is replaced by asterisks. A user who has the
+         * <code>logs:Unmask</code> permission can use a <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
@@ -2246,9 +2274,10 @@ namespace CloudWatchLogs
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery
-         * destination</i>, which is a logical object that represents the actual delivery
-         * destination. </p> </li> <li> <p>If you are delivering logs cross-account, you
-         * must use <a
+         * destination</i> in the same account of the actual delivery destination. The
+         * delivery destination that you create is a logical object that represents the
+         * actual delivery destination. </p> </li> <li> <p>If you are delivering logs
+         * cross-account, you must use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
          * in the destination account to assign an IAM policy to the destination. This
          * policy allows delivery to that destination. </p> </li> <li> <p>Use
@@ -2610,11 +2639,11 @@ namespace CloudWatchLogs
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
-         * is 100.</p> <p>Using regular expressions to create metric filters is supported.
-         * For these filters, there is a quota of two regular expression patterns within a
+         * is 100.</p> <p>Using regular expressions in filter patterns is supported. For
+         * these filters, there is a quota of two regular expression patterns within a
          * single filter pattern. There is also a quota of five regular expression patterns
-         * per log group. For more information about using regular expressions in metric
-         * filters, see <a
+         * per log group. For more information about using regular expressions in filter
+         * patterns, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
          * Filter pattern syntax for metric filters, subscription filters, filter log
          * events, and Live Tail</a>.</p> <p>When you create a metric filter, you can also
@@ -2781,11 +2810,11 @@ namespace CloudWatchLogs
          * filter, for same-account delivery.</p> </li> </ul> <p>Each log group can have up
          * to two subscription filters associated with it. If you are updating an existing
          * filter, you must specify the correct name in <code>filterName</code>. </p>
-         * <p>Using regular expressions to create subscription filters is supported. For
-         * these filters, there is a quotas of quota of two regular expression patterns
-         * within a single filter pattern. There is also a quota of five regular expression
-         * patterns per log group. For more information about using regular expressions in
-         * subscription filters, see <a
+         * <p>Using regular expressions in filter patterns is supported. For these filters,
+         * there is a quotas of quota of two regular expression patterns within a single
+         * filter pattern. There is also a quota of five regular expression patterns per
+         * log group. For more information about using regular expressions in filter
+         * patterns, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
          * Filter pattern syntax for metric filters, subscription filters, filter log
          * events, and Live Tail</a>.</p> <p>To perform a

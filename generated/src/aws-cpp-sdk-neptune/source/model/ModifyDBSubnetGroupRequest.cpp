@@ -42,7 +42,7 @@ Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
       unsigned subnetIdsCount = 1;
       for(auto& item : m_subnetIds)
       {
-        ss << "SubnetIds.member." << subnetIdsCount << "="
+        ss << "SubnetIds.SubnetIdentifier." << subnetIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         subnetIdsCount++;
       }

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/athena/AthenaServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/athena/AthenaErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Athena
 {
+  AWS_ATHENA_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Athena is an interactive query service that lets you use standard SQL
    * to analyze data directly in Amazon S3. You can point Athena at your data in
@@ -31,12 +35,20 @@ namespace Athena
    * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
    * Amazon Athena with JDBC</a>.</p>
    */
-  class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>
+  class AWS_ATHENA_API AthenaClient : smithy::client::AwsSmithyClientT<Aws::Athena::SERVICE_NAME,
+      Aws::Athena::AthenaClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AthenaEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AthenaErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Athena"; }
 
       typedef AthenaClientConfiguration ClientConfigurationType;
       typedef AthenaEndpointProvider EndpointProviderType;
@@ -1968,10 +1980,7 @@ namespace Athena
       std::shared_ptr<AthenaEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>;
-      void init(const AthenaClientConfiguration& clientConfiguration);
 
-      AthenaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AthenaEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Athena

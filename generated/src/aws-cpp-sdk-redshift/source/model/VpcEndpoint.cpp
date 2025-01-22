@@ -86,7 +86,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location << index << locationValue << ".NetworkInterface." << networkInterfacesIdx++;
+        networkInterfacesSs << location << index << locationValue << ".NetworkInterfaces.NetworkInterface." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }

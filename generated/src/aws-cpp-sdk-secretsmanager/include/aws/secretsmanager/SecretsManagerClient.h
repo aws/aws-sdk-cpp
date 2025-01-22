@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/secretsmanager/SecretsManagerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SecretsManager
 {
+  AWS_SECRETSMANAGER_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Web Services Secrets Manager</fullname> <p>Amazon Web Services
    * Secrets Manager provides a service to enable you to store, manage, and retrieve,
@@ -49,12 +53,20 @@ namespace SecretsManager
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">Amazon
    * Web Services CloudTrail User Guide</a>.</p>
    */
-  class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>
+  class AWS_SECRETSMANAGER_API SecretsManagerClient : smithy::client::AwsSmithyClientT<Aws::SecretsManager::SERVICE_NAME,
+      Aws::SecretsManager::SecretsManagerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SecretsManagerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SecretsManagerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Secrets Manager"; }
 
       typedef SecretsManagerClientConfiguration ClientConfigurationType;
       typedef SecretsManagerEndpointProvider EndpointProviderType;
@@ -1181,10 +1193,7 @@ namespace SecretsManager
       std::shared_ptr<SecretsManagerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>;
-      void init(const SecretsManagerClientConfiguration& clientConfiguration);
 
-      SecretsManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SecretsManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SecretsManager

@@ -20,7 +20,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
-
+#include <aws/core/AmazonWebServiceResult.h>
 #include <utility>
 
 namespace Aws
@@ -83,6 +83,7 @@ namespace client
         using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
+        using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSError >;
 
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
@@ -135,6 +136,12 @@ namespace client
                                             Aws::Http::HttpMethod method,
                                             EndpointUpdateCallback&& endpointCallback) const;
 
+        StreamOutcome MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
+                                const char* requestName,
+                                Aws::Http::HttpMethod method,
+                                EndpointUpdateCallback&& endpointCallback
+                                ) const;
+
     protected:
         void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
           const Aws::String& serviceName,
@@ -176,6 +183,7 @@ namespace client
         inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
         inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
         virtual void DisableRequestProcessing();
+        virtual void EnableRequestProcessing();
 
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;

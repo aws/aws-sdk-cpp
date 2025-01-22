@@ -86,7 +86,7 @@ void MaintenanceTrack::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_updateTargets)
       {
         Aws::StringStream updateTargetsSs;
-        updateTargetsSs << location << index << locationValue << ".UpdateTarget." << updateTargetsIdx++;
+        updateTargetsSs << location << index << locationValue << ".UpdateTargets.UpdateTarget." << updateTargetsIdx++;
         item.OutputToStream(oStream, updateTargetsSs.str().c_str());
       }
   }

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudhsm/CloudHSMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cloudhsm/CloudHSMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudHSM
 {
+  AWS_CLOUDHSM_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS CloudHSM Service</fullname> <p>This is documentation for <b>AWS
    * CloudHSM Classic</b>. For more information, see <a
@@ -31,12 +35,20 @@ namespace CloudHSM
    * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM
    * API Reference</a>.</p>
    */
-  class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>
+  class AWS_CLOUDHSM_API CloudHSMClient : smithy::client::AwsSmithyClientT<Aws::CloudHSM::SERVICE_NAME,
+      Aws::CloudHSM::CloudHSMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudHSMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudHSMErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudHSM"; }
 
       typedef CloudHSMClientConfiguration ClientConfigurationType;
       typedef CloudHSMEndpointProvider EndpointProviderType;
@@ -94,10 +106,7 @@ namespace CloudHSM
       std::shared_ptr<CloudHSMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>;
-      void init(const CloudHSMClientConfiguration& clientConfiguration);
 
-      CloudHSMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudHSMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudHSM

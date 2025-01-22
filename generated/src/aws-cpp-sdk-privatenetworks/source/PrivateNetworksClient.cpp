@@ -4,19 +4,17 @@
  */
 
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
-#include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+
 
 #include <aws/privatenetworks/PrivateNetworksClient.h>
 #include <aws/privatenetworks/PrivateNetworksErrorMarshaller.h>
@@ -50,6 +48,9 @@
 
 #include <smithy/tracing/TracingUtils.h>
 
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -65,100 +66,100 @@ namespace Aws
 {
   namespace PrivateNetworks
   {
-    const char SERVICE_NAME[] = "private-networks";
     const char ALLOCATION_TAG[] = "PrivateNetworksClient";
+    const char SERVICE_NAME[] = "private-networks";
   }
 }
 const char* PrivateNetworksClient::GetServiceName() {return SERVICE_NAME;}
 const char* PrivateNetworksClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PrivateNetworksClient::PrivateNetworksClient(const PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration,
-                                             std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "PrivateNetworks",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 PrivateNetworksClient::PrivateNetworksClient(const AWSCredentials& credentials,
-                                             std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider,
-                                             const PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider,
+                           const PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "PrivateNetworks",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 PrivateNetworksClient::PrivateNetworksClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider,
-                                             const PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider,
+                           const PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "PrivateNetworks",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
-    /* Legacy constructors due deprecation */
-  PrivateNetworksClient::PrivateNetworksClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+/* Legacy constructors due deprecation */
+PrivateNetworksClient::PrivateNetworksClient(const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      "PrivateNetworks",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+      })
+{}
 
 PrivateNetworksClient::PrivateNetworksClient(const AWSCredentials& credentials,
-                                             const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "PrivateNetworks",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
 PrivateNetworksClient::PrivateNetworksClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "PrivateNetworks",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
+/* End of legacy constructors due deprecation */
 
-    /* End of legacy constructors due deprecation */
 PrivateNetworksClient::~PrivateNetworksClient()
 {
   ShutdownSdkClient(this, -1);
@@ -169,48 +170,27 @@ std::shared_ptr<PrivateNetworksEndpointProviderBase>& PrivateNetworksClient::acc
   return m_endpointProvider;
 }
 
-void PrivateNetworksClient::init(const PrivateNetworks::PrivateNetworksClientConfiguration& config)
-{
-  AWSClient::SetServiceClientName("PrivateNetworks");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void PrivateNetworksClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->OverrideEndpoint(endpoint);
+    AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 AcknowledgeOrderReceiptOutcome PrivateNetworksClient::AcknowledgeOrderReceipt(const AcknowledgeOrderReceiptRequest& request) const
 {
   AWS_OPERATION_GUARD(AcknowledgeOrderReceipt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AcknowledgeOrderReceipt",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AcknowledgeOrderReceiptOutcome>(
     [&]()-> AcknowledgeOrderReceiptOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/orders/acknowledge");
-      return AcknowledgeOrderReceiptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return AcknowledgeOrderReceiptOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/orders/acknowledge");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -221,23 +201,18 @@ ActivateDeviceIdentifierOutcome PrivateNetworksClient::ActivateDeviceIdentifier(
 {
   AWS_OPERATION_GUARD(ActivateDeviceIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ActivateDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ActivateDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ActivateDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ActivateDeviceIdentifier",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ActivateDeviceIdentifierOutcome>(
     [&]()-> ActivateDeviceIdentifierOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/device-identifiers/activate");
-      return ActivateDeviceIdentifierOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ActivateDeviceIdentifierOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/device-identifiers/activate");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -248,23 +223,18 @@ ActivateNetworkSiteOutcome PrivateNetworksClient::ActivateNetworkSite(const Acti
 {
   AWS_OPERATION_GUARD(ActivateNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ActivateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ActivateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ActivateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ActivateNetworkSite",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ActivateNetworkSiteOutcome>(
     [&]()-> ActivateNetworkSiteOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites/activate");
-      return ActivateNetworkSiteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ActivateNetworkSiteOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites/activate");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -275,23 +245,18 @@ ConfigureAccessPointOutcome PrivateNetworksClient::ConfigureAccessPoint(const Co
 {
   AWS_OPERATION_GUARD(ConfigureAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ConfigureAccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ConfigureAccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ConfigureAccessPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ConfigureAccessPoint",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ConfigureAccessPointOutcome>(
     [&]()-> ConfigureAccessPointOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ConfigureAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-resources/configure");
-      return ConfigureAccessPointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ConfigureAccessPointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-resources/configure");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -302,23 +267,18 @@ CreateNetworkOutcome PrivateNetworksClient::CreateNetwork(const CreateNetworkReq
 {
   AWS_OPERATION_GUARD(CreateNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CreateNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateNetwork",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateNetworkOutcome>(
     [&]()-> CreateNetworkOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/networks");
-      return CreateNetworkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return CreateNetworkOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/networks");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -329,23 +289,18 @@ CreateNetworkSiteOutcome PrivateNetworksClient::CreateNetworkSite(const CreateNe
 {
   AWS_OPERATION_GUARD(CreateNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CreateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateNetworkSite",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateNetworkSiteOutcome>(
     [&]()-> CreateNetworkSiteOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites");
-      return CreateNetworkSiteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return CreateNetworkSiteOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -356,23 +311,18 @@ DeactivateDeviceIdentifierOutcome PrivateNetworksClient::DeactivateDeviceIdentif
 {
   AWS_OPERATION_GUARD(DeactivateDeviceIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeactivateDeviceIdentifier",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeactivateDeviceIdentifierOutcome>(
     [&]()-> DeactivateDeviceIdentifierOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/device-identifiers/deactivate");
-      return DeactivateDeviceIdentifierOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return DeactivateDeviceIdentifierOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/device-identifiers/deactivate");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -388,24 +338,19 @@ DeleteNetworkOutcome PrivateNetworksClient::DeleteNetwork(const DeleteNetworkReq
     AWS_LOGSTREAM_ERROR("DeleteNetwork", "Required field: NetworkArn, is not set");
     return DeleteNetworkOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteNetwork",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteNetworkOutcome>(
     [&]()-> DeleteNetworkOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/networks/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkArn());
-      return DeleteNetworkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteNetworkOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/networks/");
+      resolvedEndpoint.AddPathSegment(request.GetNetworkArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -421,24 +366,19 @@ DeleteNetworkSiteOutcome PrivateNetworksClient::DeleteNetworkSite(const DeleteNe
     AWS_LOGSTREAM_ERROR("DeleteNetworkSite", "Required field: NetworkSiteArn, is not set");
     return DeleteNetworkSiteOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkSiteArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteNetworkSite",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteNetworkSiteOutcome>(
     [&]()-> DeleteNetworkSiteOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkSiteArn());
-      return DeleteNetworkSiteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return DeleteNetworkSiteOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites/");
+      resolvedEndpoint.AddPathSegment(request.GetNetworkSiteArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -454,24 +394,19 @@ GetDeviceIdentifierOutcome PrivateNetworksClient::GetDeviceIdentifier(const GetD
     AWS_LOGSTREAM_ERROR("GetDeviceIdentifier", "Required field: DeviceIdentifierArn, is not set");
     return GetDeviceIdentifierOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceIdentifierArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetDeviceIdentifier, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDeviceIdentifier",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDeviceIdentifierOutcome>(
     [&]()-> GetDeviceIdentifierOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/device-identifiers/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceIdentifierArn());
-      return GetDeviceIdentifierOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetDeviceIdentifierOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/device-identifiers/");
+      resolvedEndpoint.AddPathSegment(request.GetDeviceIdentifierArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -487,24 +422,19 @@ GetNetworkOutcome PrivateNetworksClient::GetNetwork(const GetNetworkRequest& req
     AWS_LOGSTREAM_ERROR("GetNetwork", "Required field: NetworkArn, is not set");
     return GetNetworkOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetNetwork, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetNetwork",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetNetworkOutcome>(
     [&]()-> GetNetworkOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/networks/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkArn());
-      return GetNetworkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetNetworkOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/networks/");
+      resolvedEndpoint.AddPathSegment(request.GetNetworkArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -520,24 +450,19 @@ GetNetworkResourceOutcome PrivateNetworksClient::GetNetworkResource(const GetNet
     AWS_LOGSTREAM_ERROR("GetNetworkResource", "Required field: NetworkResourceArn, is not set");
     return GetNetworkResourceOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetNetworkResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetNetworkResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetNetworkResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetNetworkResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetNetworkResourceOutcome>(
     [&]()-> GetNetworkResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNetworkResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-resources/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkResourceArn());
-      return GetNetworkResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetNetworkResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-resources/");
+      resolvedEndpoint.AddPathSegment(request.GetNetworkResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -553,24 +478,19 @@ GetNetworkSiteOutcome PrivateNetworksClient::GetNetworkSite(const GetNetworkSite
     AWS_LOGSTREAM_ERROR("GetNetworkSite", "Required field: NetworkSiteArn, is not set");
     return GetNetworkSiteOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkSiteArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetNetworkSite",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetNetworkSiteOutcome>(
     [&]()-> GetNetworkSiteOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkSiteArn());
-      return GetNetworkSiteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetNetworkSiteOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites/");
+      resolvedEndpoint.AddPathSegment(request.GetNetworkSiteArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -586,24 +506,19 @@ GetOrderOutcome PrivateNetworksClient::GetOrder(const GetOrderRequest& request) 
     AWS_LOGSTREAM_ERROR("GetOrder", "Required field: OrderArn, is not set");
     return GetOrderOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrderArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOrder, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetOrder, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetOrder, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOrder",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetOrderOutcome>(
     [&]()-> GetOrderOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/orders/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrderArn());
-      return GetOrderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetOrderOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/orders/");
+      resolvedEndpoint.AddPathSegment(request.GetOrderArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -614,23 +529,18 @@ ListDeviceIdentifiersOutcome PrivateNetworksClient::ListDeviceIdentifiers(const 
 {
   AWS_OPERATION_GUARD(ListDeviceIdentifiers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeviceIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDeviceIdentifiers, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDeviceIdentifiers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListDeviceIdentifiers, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDeviceIdentifiers",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDeviceIdentifiersOutcome>(
     [&]()-> ListDeviceIdentifiersOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeviceIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/device-identifiers/list");
-      return ListDeviceIdentifiersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ListDeviceIdentifiersOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/device-identifiers/list");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -641,23 +551,18 @@ ListNetworkResourcesOutcome PrivateNetworksClient::ListNetworkResources(const Li
 {
   AWS_OPERATION_GUARD(ListNetworkResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworkResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListNetworkResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListNetworkResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListNetworkResources, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListNetworkResources",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListNetworkResourcesOutcome>(
     [&]()-> ListNetworkResourcesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworkResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-resources");
-      return ListNetworkResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ListNetworkResourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-resources");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -668,23 +573,18 @@ ListNetworkSitesOutcome PrivateNetworksClient::ListNetworkSites(const ListNetwor
 {
   AWS_OPERATION_GUARD(ListNetworkSites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworkSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListNetworkSites, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListNetworkSites, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListNetworkSites, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListNetworkSites",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListNetworkSitesOutcome>(
     [&]()-> ListNetworkSitesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworkSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites/list");
-      return ListNetworkSitesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ListNetworkSitesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites/list");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -695,23 +595,18 @@ ListNetworksOutcome PrivateNetworksClient::ListNetworks(const ListNetworksReques
 {
   AWS_OPERATION_GUARD(ListNetworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListNetworks, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListNetworks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListNetworks, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListNetworks",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListNetworksOutcome>(
     [&]()-> ListNetworksOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/networks/list");
-      return ListNetworksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ListNetworksOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/networks/list");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -722,23 +617,18 @@ ListOrdersOutcome PrivateNetworksClient::ListOrders(const ListOrdersRequest& req
 {
   AWS_OPERATION_GUARD(ListOrders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOrders, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListOrders, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListOrders, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOrders",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListOrdersOutcome>(
     [&]()-> ListOrdersOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/orders/list");
-      return ListOrdersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return ListOrdersOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/orders/list");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -754,24 +644,19 @@ ListTagsForResourceOutcome PrivateNetworksClient::ListTagsForResource(const List
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTagsForResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -782,23 +667,18 @@ PingOutcome PrivateNetworksClient::Ping(const PingRequest& request) const
 {
   AWS_OPERATION_GUARD(Ping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Ping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, Ping, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, Ping, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, Ping, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".Ping",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PingOutcome>(
     [&]()-> PingOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Ping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/ping");
-      return PingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return PingOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/ping");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -809,23 +689,18 @@ StartNetworkResourceUpdateOutcome PrivateNetworksClient::StartNetworkResourceUpd
 {
   AWS_OPERATION_GUARD(StartNetworkResourceUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartNetworkResourceUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartNetworkResourceUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartNetworkResourceUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartNetworkResourceUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartNetworkResourceUpdate",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartNetworkResourceUpdateOutcome>(
     [&]()-> StartNetworkResourceUpdateOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartNetworkResourceUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-resources/update");
-      return StartNetworkResourceUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartNetworkResourceUpdateOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-resources/update");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -841,24 +716,19 @@ TagResourceOutcome PrivateNetworksClient::TagResource(const TagResourceRequest& 
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TagResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -879,24 +749,19 @@ UntagResourceOutcome PrivateNetworksClient::UntagResource(const UntagResourceReq
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<PrivateNetworksErrors>(PrivateNetworksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UntagResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -907,23 +772,18 @@ UpdateNetworkSiteOutcome PrivateNetworksClient::UpdateNetworkSite(const UpdateNe
 {
   AWS_OPERATION_GUARD(UpdateNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, UpdateNetworkSite, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateNetworkSite",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateNetworkSiteOutcome>(
     [&]()-> UpdateNetworkSiteOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites/site");
-      return UpdateNetworkSiteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return UpdateNetworkSiteOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites/site");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -934,26 +794,22 @@ UpdateNetworkSitePlanOutcome PrivateNetworksClient::UpdateNetworkSitePlan(const 
 {
   AWS_OPERATION_GUARD(UpdateNetworkSitePlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkSitePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateNetworkSitePlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateNetworkSitePlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, UpdateNetworkSitePlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateNetworkSitePlan",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateNetworkSitePlanOutcome>(
     [&]()-> UpdateNetworkSitePlanOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNetworkSitePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-sites/plan");
-      return UpdateNetworkSitePlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return UpdateNetworkSitePlanOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v1/network-sites/plan");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
+
 

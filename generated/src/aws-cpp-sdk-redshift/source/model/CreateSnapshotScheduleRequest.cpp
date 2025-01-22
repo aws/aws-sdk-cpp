@@ -37,7 +37,7 @@ Aws::String CreateSnapshotScheduleRequest::SerializePayload() const
       unsigned scheduleDefinitionsCount = 1;
       for(auto& item : m_scheduleDefinitions)
       {
-        ss << "ScheduleDefinitions.member." << scheduleDefinitionsCount << "="
+        ss << "ScheduleDefinitions.ScheduleDefinition." << scheduleDefinitionsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         scheduleDefinitionsCount++;
       }
@@ -65,7 +65,7 @@ Aws::String CreateSnapshotScheduleRequest::SerializePayload() const
       unsigned tagsCount = 1;
       for(auto& item : m_tags)
       {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }

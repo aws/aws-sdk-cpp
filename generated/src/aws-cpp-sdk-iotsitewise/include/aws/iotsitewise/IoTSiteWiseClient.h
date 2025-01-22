@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsitewise/IoTSiteWiseServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iotsitewise/IoTSiteWiseErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTSiteWise
 {
+  AWS_IOTSITEWISE_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web
    * Services service that connects <a
@@ -26,12 +30,20 @@ namespace IoTSiteWise
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
    * in the <i>IoT SiteWise User Guide</i>.</p>
    */
-  class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>
+  class AWS_IOTSITEWISE_API IoTSiteWiseClient : smithy::client::AwsSmithyClientT<Aws::IoTSiteWise::SERVICE_NAME,
+      Aws::IoTSiteWise::IoTSiteWiseClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTSiteWiseEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTSiteWiseErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoTSiteWise"; }
 
       typedef IoTSiteWiseClientConfiguration ClientConfigurationType;
       typedef IoTSiteWiseEndpointProvider EndpointProviderType;
@@ -2641,10 +2653,7 @@ namespace IoTSiteWise
       std::shared_ptr<IoTSiteWiseEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>;
-      void init(const IoTSiteWiseClientConfiguration& clientConfiguration);
 
-      IoTSiteWiseClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTSiteWiseEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTSiteWise

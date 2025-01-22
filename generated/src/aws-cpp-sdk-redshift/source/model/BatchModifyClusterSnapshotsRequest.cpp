@@ -34,7 +34,7 @@ Aws::String BatchModifyClusterSnapshotsRequest::SerializePayload() const
       unsigned snapshotIdentifierListCount = 1;
       for(auto& item : m_snapshotIdentifierList)
       {
-        ss << "SnapshotIdentifierList.member." << snapshotIdentifierListCount << "="
+        ss << "SnapshotIdentifierList.String." << snapshotIdentifierListCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         snapshotIdentifierListCount++;
       }

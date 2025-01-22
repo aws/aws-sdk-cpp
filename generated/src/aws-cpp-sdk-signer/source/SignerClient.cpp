@@ -4,19 +4,17 @@
  */
 
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
-#include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+
 
 #include <aws/signer/SignerClient.h>
 #include <aws/signer/SignerErrorMarshaller.h>
@@ -43,6 +41,9 @@
 
 #include <smithy/tracing/TracingUtils.h>
 
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -58,8 +59,8 @@ namespace Aws
 {
   namespace signer
   {
-    const char SERVICE_NAME[] = "signer";
     const char ALLOCATION_TAG[] = "SignerClient";
+    const char SERVICE_NAME[] = "signer";
   }
 }
 const char* SignerClient::GetServiceName() {return SERVICE_NAME;}
@@ -67,91 +68,91 @@ const char* SignerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SignerClient::SignerClient(const signer::SignerClientConfiguration& clientConfiguration,
                            std::shared_ptr<SignerEndpointProviderBase> endpointProvider) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "signer",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 SignerClient::SignerClient(const AWSCredentials& credentials,
                            std::shared_ptr<SignerEndpointProviderBase> endpointProvider,
                            const signer::SignerClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "signer",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+        })
+{}
 
 SignerClient::SignerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<SignerEndpointProviderBase> endpointProvider,
                            const signer::SignerClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "signer",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
-    /* Legacy constructors due deprecation */
-  SignerClient::SignerClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+/* Legacy constructors due deprecation */
+SignerClient::SignerClient(const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      "signer",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+      })
+{}
 
 SignerClient::SignerClient(const AWSCredentials& credentials,
                            const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "signer",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+        })
+{}
 
 SignerClient::SignerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG))
-{
-  init(m_clientConfiguration);
-}
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        "signer",
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
+{}
+/* End of legacy constructors due deprecation */
 
-    /* End of legacy constructors due deprecation */
 SignerClient::~SignerClient()
 {
   ShutdownSdkClient(this, -1);
@@ -162,27 +163,11 @@ std::shared_ptr<SignerEndpointProviderBase>& SignerClient::accessEndpointProvide
   return m_endpointProvider;
 }
 
-void SignerClient::init(const signer::SignerClientConfiguration& config)
-{
-  AWSClient::SetServiceClientName("signer");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config);
-}
-
 void SignerClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->OverrideEndpoint(endpoint);
+    AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 AddProfilePermissionOutcome SignerClient::AddProfilePermission(const AddProfilePermissionRequest& request) const
 {
   AWS_OPERATION_GUARD(AddProfilePermission);
@@ -192,25 +177,20 @@ AddProfilePermissionOutcome SignerClient::AddProfilePermission(const AddProfileP
     AWS_LOGSTREAM_ERROR("AddProfilePermission", "Required field: ProfileName, is not set");
     return AddProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AddProfilePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, AddProfilePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, AddProfilePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AddProfilePermission",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<AddProfilePermissionOutcome>(
     [&]()-> AddProfilePermissionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddProfilePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
-      return AddProfilePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return AddProfilePermissionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      resolvedEndpoint.AddPathSegments("/permissions");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -226,24 +206,19 @@ CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigni
     AWS_LOGSTREAM_ERROR("CancelSigningProfile", "Required field: ProfileName, is not set");
     return CancelSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, CancelSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelSigningProfile",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelSigningProfileOutcome>(
     [&]()-> CancelSigningProfileOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelSigningProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      return CancelSigningProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return CancelSigningProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -259,24 +234,19 @@ DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigning
     AWS_LOGSTREAM_ERROR("DescribeSigningJob", "Required field: JobId, is not set");
     return DescribeSigningJobOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeSigningJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DescribeSigningJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DescribeSigningJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeSigningJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeSigningJobOutcome>(
     [&]()-> DescribeSigningJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSigningJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return DescribeSigningJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return DescribeSigningJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-jobs/");
+      resolvedEndpoint.AddPathSegment(request.GetJobId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -312,25 +282,18 @@ GetRevocationStatusOutcome SignerClient::GetRevocationStatus(const GetRevocation
     AWS_LOGSTREAM_ERROR("GetRevocationStatus", "Required field: CertificateHashes, is not set");
     return GetRevocationStatusOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateHashes]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRevocationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetRevocationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetRevocationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRevocationStatus",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetRevocationStatusOutcome>(
     [&]()-> GetRevocationStatusOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRevocationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("verification.");
-      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetRevocationStatusOutcome(addPrefixErr.value()));
-      endpointResolutionOutcome.GetResult().AddPathSegments("/revocations");
-      return GetRevocationStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetRevocationStatusOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/revocations");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -346,24 +309,19 @@ GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatf
     AWS_LOGSTREAM_ERROR("GetSigningPlatform", "Required field: PlatformId, is not set");
     return GetSigningPlatformOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlatformId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSigningPlatform, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSigningPlatform, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSigningPlatform, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSigningPlatform",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSigningPlatformOutcome>(
     [&]()-> GetSigningPlatformOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSigningPlatform, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-platforms/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlatformId());
-      return GetSigningPlatformOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSigningPlatformOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-platforms/");
+      resolvedEndpoint.AddPathSegment(request.GetPlatformId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -379,24 +337,19 @@ GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfile
     AWS_LOGSTREAM_ERROR("GetSigningProfile", "Required field: ProfileName, is not set");
     return GetSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSigningProfile",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSigningProfileOutcome>(
     [&]()-> GetSigningProfileOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSigningProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      return GetSigningProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return GetSigningProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -412,25 +365,20 @@ ListProfilePermissionsOutcome SignerClient::ListProfilePermissions(const ListPro
     AWS_LOGSTREAM_ERROR("ListProfilePermissions", "Required field: ProfileName, is not set");
     return ListProfilePermissionsOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListProfilePermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListProfilePermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListProfilePermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListProfilePermissions",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListProfilePermissionsOutcome>(
     [&]()-> ListProfilePermissionsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProfilePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
-      return ListProfilePermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListProfilePermissionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      resolvedEndpoint.AddPathSegments("/permissions");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -441,23 +389,18 @@ ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsReques
 {
   AWS_OPERATION_GUARD(ListSigningJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSigningJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSigningJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListSigningJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListSigningJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSigningJobs",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSigningJobsOutcome>(
     [&]()-> ListSigningJobsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSigningJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs");
-      return ListSigningJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListSigningJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-jobs");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -468,23 +411,18 @@ ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigning
 {
   AWS_OPERATION_GUARD(ListSigningPlatforms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSigningPlatforms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSigningPlatforms, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListSigningPlatforms, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListSigningPlatforms, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSigningPlatforms",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSigningPlatformsOutcome>(
     [&]()-> ListSigningPlatformsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSigningPlatforms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-platforms");
-      return ListSigningPlatformsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListSigningPlatformsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-platforms");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -495,23 +433,18 @@ ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningPr
 {
   AWS_OPERATION_GUARD(ListSigningProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSigningProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSigningProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListSigningProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListSigningProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSigningProfiles",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSigningProfilesOutcome>(
     [&]()-> ListSigningProfilesOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSigningProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles");
-      return ListSigningProfilesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListSigningProfilesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -527,24 +460,19 @@ ListTagsForResourceOutcome SignerClient::ListTagsForResource(const ListTagsForRe
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTagsForResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -560,24 +488,19 @@ PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfile
     AWS_LOGSTREAM_ERROR("PutSigningProfile", "Required field: ProfileName, is not set");
     return PutSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, PutSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutSigningProfile",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutSigningProfileOutcome>(
     [&]()-> PutSigningProfileOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutSigningProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      return PutSigningProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return PutSigningProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -603,26 +526,21 @@ RemoveProfilePermissionOutcome SignerClient::RemoveProfilePermission(const Remov
     AWS_LOGSTREAM_ERROR("RemoveProfilePermission", "Required field: StatementId, is not set");
     return RemoveProfilePermissionOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RemoveProfilePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, RemoveProfilePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, RemoveProfilePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RemoveProfilePermission",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RemoveProfilePermissionOutcome>(
     [&]()-> RemoveProfilePermissionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveProfilePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/permissions/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
-      return RemoveProfilePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return RemoveProfilePermissionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      resolvedEndpoint.AddPathSegments("/permissions/");
+      resolvedEndpoint.AddPathSegment(request.GetStatementId());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -638,25 +556,20 @@ RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureReques
     AWS_LOGSTREAM_ERROR("RevokeSignature", "Required field: JobId, is not set");
     return RevokeSignatureOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RevokeSignature, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, RevokeSignature, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, RevokeSignature, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RevokeSignature",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RevokeSignatureOutcome>(
     [&]()-> RevokeSignatureOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeSignature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
-      return RevokeSignatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return RevokeSignatureOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-jobs/");
+      resolvedEndpoint.AddPathSegment(request.GetJobId());
+      resolvedEndpoint.AddPathSegments("/revoke");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -672,25 +585,20 @@ RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigni
     AWS_LOGSTREAM_ERROR("RevokeSigningProfile", "Required field: ProfileName, is not set");
     return RevokeSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RevokeSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, RevokeSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, RevokeSigningProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RevokeSigningProfile",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RevokeSigningProfileOutcome>(
     [&]()-> RevokeSigningProfileOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeSigningProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
-      return RevokeSigningProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      return RevokeSigningProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-profiles/");
+      resolvedEndpoint.AddPathSegment(request.GetProfileName());
+      resolvedEndpoint.AddPathSegments("/revoke");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -701,23 +609,18 @@ SignPayloadOutcome SignerClient::SignPayload(const SignPayloadRequest& request) 
 {
   AWS_OPERATION_GUARD(SignPayload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SignPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SignPayload, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, SignPayload, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, SignPayload, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SignPayload",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<SignPayloadOutcome>(
     [&]()-> SignPayloadOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SignPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs/with-payload");
-      return SignPayloadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return SignPayloadOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-jobs/with-payload");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -728,23 +631,18 @@ StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobReques
 {
   AWS_OPERATION_GUARD(StartSigningJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSigningJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartSigningJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartSigningJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, StartSigningJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartSigningJob",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartSigningJobOutcome>(
     [&]()-> StartSigningJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSigningJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs");
-      return StartSigningJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return StartSigningJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/signing-jobs");
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -760,24 +658,19 @@ TagResourceOutcome SignerClient::TagResource(const TagResourceRequest& request) 
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TagResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -798,27 +691,23 @@ UntagResourceOutcome SignerClient::UntagResource(const UntagResourceRequest& req
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UntagResource",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/tags/");
+      resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
+
 
