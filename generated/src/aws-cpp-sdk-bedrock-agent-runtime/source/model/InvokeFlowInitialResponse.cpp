@@ -7,6 +7,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -20,11 +21,13 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvokeFlowInitialResponse::InvokeFlowInitialResponse()
+InvokeFlowInitialResponse::InvokeFlowInitialResponse() : 
+    m_executionIdHasBeenSet(false)
 {
 }
 
 InvokeFlowInitialResponse::InvokeFlowInitialResponse(JsonView jsonValue)
+  : InvokeFlowInitialResponse()
 {
   *this = jsonValue;
 }
@@ -37,7 +40,12 @@ InvokeFlowInitialResponse& InvokeFlowInitialResponse::operator =(JsonView jsonVa
 
 InvokeFlowInitialResponse::InvokeFlowInitialResponse(const Http::HeaderValueCollection& headers) : InvokeFlowInitialResponse()
 {
-  AWS_UNREFERENCED_PARAM(headers);
+  const auto& executionIdIter = headers.find("x-amz-bedrock-flow-execution-id");
+  if(executionIdIter != headers.end())
+  {
+    m_executionId = executionIdIter->second;
+  }
+
 }
 
 JsonValue InvokeFlowInitialResponse::Jsonize() const
