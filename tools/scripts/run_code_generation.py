@@ -668,7 +668,6 @@ def main():
             return -1
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
-    
     #generate code using smithy for all discoverable clients
     if (args["generate_smoke_tests"] and clients_to_build):
 
@@ -678,7 +677,9 @@ def main():
         if generate_smoke_tests(smithy_services, json.dumps(smithy_c2j_data)) :
             #move the output to generated folder
             copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"), "cpp-codegen-smoke-tests-plugin", os.path.abspath( "generated/smoke-tests"))
-
+        else:
+            print("Failed to generate code for smoke-tests")
+            return -1
     return 0
 
 
