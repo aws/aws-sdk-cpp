@@ -11,9 +11,12 @@
  import software.amazon.smithy.codegen.core.Symbol;
 
  import java.util.Collections;
+ import java.util.Comparator;
  import java.util.HashSet;
  import java.util.Set;
  import java.util.Map;
+ import java.util.List;
+ import java.util.stream.Collectors;
 
 public final class CppImportContainer implements ImportContainer {
 
@@ -81,19 +84,26 @@ public final class CppImportContainer implements ImportContainer {
             dynamicHeaders.add(containerHeaderMap.get(symbol.getName()));
         }
      }
+     
+     
+    private static List<String> setToSortedList(Set<String> set) {
+        return set.stream()
+                  .sorted(Comparator.comparing(elem -> elem))
+                  .collect(Collectors.toList());
+    }
  
      @Override
      public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        coreHeaders.forEach(
+        setToSortedList(coreHeaders).forEach(
             elem -> sb.append(String.format("#include <%s>\n",elem))
         );
 
-        unitTestHeaders.forEach(
+        setToSortedList(unitTestHeaders).forEach(
             elem -> sb.append(String.format("#include <%s>\n",elem))
         );
-        dynamicHeaders.forEach(
+        setToSortedList(dynamicHeaders).forEach(
             elem -> sb.append(String.format("#include <%s>\n",elem))
         );
 
