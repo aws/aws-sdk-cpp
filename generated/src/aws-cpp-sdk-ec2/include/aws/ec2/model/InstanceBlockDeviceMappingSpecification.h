@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Suppresses the specified device included in the block device mapping.</p>
+     * <p>suppress the specified device included in the block device mapping.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
     inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }

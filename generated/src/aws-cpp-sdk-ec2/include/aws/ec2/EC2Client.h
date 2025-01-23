@@ -474,15 +474,15 @@ namespace EC2
         }
 
         /**
-         * <p>Assigns the specified IPv6 addresses to the specified network interface. You
-         * can specify specific IPv6 addresses, or you can specify the number of IPv6
-         * addresses to be automatically assigned from the subnet's IPv6 CIDR block range.
-         * You can assign as many IPv6 addresses to a network interface as you can assign
-         * private IPv4 addresses, and the limit varies by instance type.</p> <p>You must
-         * specify either the IPv6 addresses or the IPv6 address count in the request. </p>
-         * <p>You can optionally use Prefix Delegation on the network interface. You must
-         * specify either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix
-         * Delegation count. For information, see <a
+         * <p>Assigns one or more IPv6 addresses to the specified network interface. You
+         * can specify one or more specific IPv6 addresses, or you can specify the number
+         * of IPv6 addresses to be automatically assigned from within the subnet's IPv6
+         * CIDR block range. You can assign as many IPv6 addresses to a network interface
+         * as you can assign private IPv4 addresses, and the limit varies per instance
+         * type.</p> <p>You must specify either the IPv6 addresses or the IPv6 address
+         * count in the request. </p> <p>You can optionally use Prefix Delegation on the
+         * network interface. You must specify either the IPV6 Prefix Delegation prefixes,
+         * or the IPv6 Prefix Delegation count. For information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
          * Assigning prefixes to network interfaces</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -510,12 +510,12 @@ namespace EC2
         }
 
         /**
-         * <p>Assigns the specified secondary private IP addresses to the specified network
-         * interface.</p> <p>You can specify specific secondary IP addresses, or you can
-         * specify the number of secondary IP addresses to be automatically assigned from
-         * the subnet's CIDR block range. The number of secondary IP addresses that you can
-         * assign to an instance varies by instance type. For more information about
-         * Elastic IP addresses, see <a
+         * <p>Assigns one or more secondary private IP addresses to the specified network
+         * interface.</p> <p>You can specify one or more specific secondary IP addresses,
+         * or you can specify the number of secondary IP addresses to be automatically
+         * assigned within the subnet's CIDR block range. The number of secondary IP
+         * addresses that you can assign to an instance varies by instance type. For more
+         * information about Elastic IP addresses, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you move a
          * secondary private IP address to another network interface, any Elastic IP
@@ -1527,11 +1527,8 @@ namespace EC2
          * <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>active</code> and
          * there is no commitment duration or the commitment duration has elapsed. You
          * can't cancel a future-dated Capacity Reservation during the commitment
-         * duration.</p> </li> </ul>  <p>You can't modify or cancel a Capacity Block.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
-         * Blocks for ML</a>.</p>  <p>If a future-dated Capacity Reservation enters
-         * the <code>delayed</code> state, the commitment duration is waived, and you can
+         * duration.</p> </li> </ul> <p>If a future-dated Capacity Reservation enters the
+         * <code>delayed</code> state, the commitment duration is waived, and you can
          * cancel it as soon as it enters the <code>active</code> state.</p> <p>Instances
          * running in the reserved capacity continue running until you stop them. Stopped
          * instances that target the Capacity Reservation can no longer launch. Modify
@@ -1932,11 +1929,12 @@ namespace EC2
          * copied to an Outpost are encrypted by default using the default encryption key
          * for the Region, or a different key that you specify in the request using
          * <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
+         * information, <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User
+         * Guide</i>.</p> <p>Snapshots created by copying another snapshot have an
+         * arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-         * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-         * <p>Snapshots created by copying another snapshot have an arbitrary volume ID
-         * that should not be used for any purpose.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -3023,9 +3021,9 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a managed prefix list. You can specify entries for the prefix list.
-         * Each entry consists of a CIDR block and an optional description.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a managed prefix list. You can specify one or more entries for the
+         * prefix list. Each entry consists of a CIDR block and an optional
+         * description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">AWS
          * API Reference</a></p>
          */
@@ -3574,7 +3572,7 @@ namespace EC2
          * determines where you can create the snapshot.</p> <ul> <li> <p>If the source
          * volume is in a Region, you must create the snapshot in the same Region as the
          * volume.</p> </li> <li> <p>If the source volume is in a Local Zone, you can
-         * create the snapshot in the same Local Zone or in its parent Amazon Web Services
+         * create the snapshot in the same Local Zone or in parent Amazon Web Services
          * Region.</p> </li> <li> <p>If the source volume is on an Outpost, you can create
          * the snapshot on the same Outpost or in its parent Amazon Web Services
          * Region.</p> </li> </ul> <p>When a snapshot is created, any Amazon Web Services
@@ -3593,7 +3591,7 @@ namespace EC2
          * instance before taking the snapshot.</p> <p>Snapshots that are taken from
          * encrypted volumes are automatically encrypted. Volumes that are created from
          * encrypted snapshots are also automatically encrypted. Your encrypted volumes and
-         * any associated snapshots always remain protected. For more information, see <a
+         * any associated snapshots always remain protected. For more information, <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -3631,7 +3629,7 @@ namespace EC2
          * snapshots.</p> <ul> <li> <p>If the source instance is in a Region, you must
          * create the snapshots in the same Region as the instance.</p> </li> <li> <p>If
          * the source instance is in a Local Zone, you can create the snapshots in the same
-         * Local Zone or in its parent Amazon Web Services Region.</p> </li> <li> <p>If the
+         * Local Zone or in parent Amazon Web Services Region.</p> </li> <li> <p>If the
          * source instance is on an Outpost, you can create the snapshots on the same
          * Outpost or in its parent Amazon Web Services Region.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -5899,7 +5897,7 @@ namespace EC2
          * So regardless of which prior snapshots have been deleted, all active snapshots
          * will have access to all the information needed to restore the volume.</p> <p>You
          * cannot delete a snapshot of the root device of an EBS volume used by a
-         * registered AMI. You must first deregister the AMI before you can delete the
+         * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-snapshot.html">Delete
          * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
@@ -7415,12 +7413,7 @@ namespace EC2
         /**
          * <p>Describes Capacity Block offerings available for purchase in the Amazon Web
          * Services Region that you're currently using. With Capacity Blocks, you purchase
-         * a specific instance type for a period of time.</p> <p>To search for an available
-         * Capacity Block offering, you specify a reservation duration and instance count.
-         * You must select one of the following options.</p> <ul> <li> <p>For reservation
-         * durations<b> 1-day increments up 14 days and 7-day increments up to 182 days
-         * total</b> </p> </li> <li> <p>For instance count<b> 1, 2, 4, 8, 16, 32, or 64
-         * instances</b> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * a specific instance type for a period of time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
          * API Reference</a></p>
          */
@@ -8801,8 +8794,7 @@ namespace EC2
          * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
          * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> |
          * <code>p5en.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
-         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> |
-         * <code>trn2.48xlarge</code> | <code>trn2u.48xlarge</code> </p> </li> </ul> </li>
+         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> </p> </li> </ul> </li>
          * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
@@ -9730,14 +9722,14 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the specified network interfaces or all your network
-         * interfaces.</p> <p>If you have a large number of network interfaces, the
-         * operation fails unless you use pagination or one of the following filters:
-         * <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
-         * <code>private-ip-address</code>, <code>private-dns-name</code>,
-         * <code>subnet-id</code>, or <code>vpc-id</code>.</p>  <p>We strongly
-         * recommend using only paginated requests. Unpaginated requests are susceptible to
-         * throttling and timeouts.</p> <p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your network interfaces.</p> <p>If you have a large
+         * number of network interfaces, the operation fails unless you use pagination or
+         * one of the following filters: <code>group-id</code>, <code>mac-address</code>,
+         * <code>private-dns-name</code>, <code>private-ip-address</code>,
+         * <code>private-dns-name</code>, <code>subnet-id</code>, or
+         * <code>vpc-id</code>.</p>  <p>We strongly recommend using only
+         * paginated requests. Unpaginated requests are susceptible to throttling and
+         * timeouts.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">AWS
          * API Reference</a></p>
          */
@@ -19965,7 +19957,7 @@ namespace EC2
         }
 
         /**
-         * <p>Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
@@ -19991,7 +19983,7 @@ namespace EC2
         }
 
         /**
-         * <p>Unassigns the specified secondary private IP addresses or IPv4 Prefix
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
          * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>

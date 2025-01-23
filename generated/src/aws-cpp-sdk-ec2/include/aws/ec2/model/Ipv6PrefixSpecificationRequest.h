@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the IPv6 prefix option for a network interface.</p><p><h3>See
+   * <p>Describes the IPv4 prefix option for a network interface.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipv6PrefixSpecificationRequest">AWS
    * API Reference</a></p>

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int used_HASH = HashingUtils::HashString("used");
+        static const int future_HASH = HashingUtils::HashString("future");
 
 
         AllocationType GetAllocationTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == used_HASH)
           {
             return AllocationType::used;
+          }
+          else if (hashCode == future_HASH)
+          {
+            return AllocationType::future;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AllocationType::used:
             return "used";
+          case AllocationType::future:
+            return "future";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
