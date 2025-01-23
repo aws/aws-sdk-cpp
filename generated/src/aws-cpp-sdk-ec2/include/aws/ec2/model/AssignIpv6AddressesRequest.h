@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>One or more IPv6 prefixes assigned to the network interface. You can't use
+     * <p>One or more IPv6 prefixes assigned to the network interface. You cannot use
      * this option if you use the <code>Ipv6PrefixCount</code> option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }

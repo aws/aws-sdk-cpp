@@ -16,7 +16,8 @@ namespace Model
   enum class AllocationType
   {
     NOT_SET,
-    used
+    used,
+    future
   };
 
 namespace AllocationTypeMapper
