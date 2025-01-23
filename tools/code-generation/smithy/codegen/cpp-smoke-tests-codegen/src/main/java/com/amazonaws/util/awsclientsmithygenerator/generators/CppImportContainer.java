@@ -15,8 +15,6 @@
  import java.util.HashSet;
  import java.util.Set;
  import java.util.Map;
- import java.util.List;
- import java.util.stream.Collectors;
 
 public final class CppImportContainer implements ImportContainer {
 
