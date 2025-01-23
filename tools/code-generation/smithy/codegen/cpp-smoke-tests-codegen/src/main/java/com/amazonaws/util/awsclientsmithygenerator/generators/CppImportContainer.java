@@ -30,8 +30,8 @@ public final class CppImportContainer implements ImportContainer {
          String clientNamespace = SmokeTestsParser.removeSpaces(namespace);
          String folderNamespace = SmokeTestsParser.toKebabCase(namespace);
         this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(folderNamespace);
-        this.coreHeaders = new HashSet<>();
-        this.dynamicHeaders = new HashSet<>();
+        this.coreHeaders = new TreeSet<>(Comparator.naturalOrder()); //This maintains lexicographical order
+        this.dynamicHeaders = new TreeSet<>(Comparator.naturalOrder());
         Collections.addAll(coreHeaders, 
             "aws/core/client/AsyncCallerContext.h",
             "aws/core/client/AsyncCallerContext.h",
@@ -96,14 +96,14 @@ public final class CppImportContainer implements ImportContainer {
      public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        setToSortedList(coreHeaders).forEach(
+        coreHeaders.forEach(
             elem -> sb.append(String.format("#include <%s>\n",elem))
         );
 
-        setToSortedList(unitTestHeaders).forEach(
+        unitTestHeaders.forEach(
             elem -> sb.append(String.format("#include <%s>\n",elem))
         );
-        setToSortedList(dynamicHeaders).forEach(
+        dynamicHeaders.forEach(
             elem -> sb.append(String.format("#include <%s>\n",elem))
         );
 
