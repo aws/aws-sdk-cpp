@@ -82,13 +82,6 @@ public final class CppImportContainer implements ImportContainer {
             dynamicHeaders.add(containerHeaderMap.get(symbol.getName()));
         }
      }
-     
-     
-    private static List<String> setToSortedList(Set<String> set) {
-        return set.stream()
-                  .sorted(Comparator.comparing(elem -> elem))
-                  .collect(Collectors.toList());
-    }
  
      @Override
      public String toString() {
