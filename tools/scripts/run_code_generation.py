@@ -155,9 +155,9 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
         with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
             model = json.load(json_file)
             #get service id. It has to exist, else continue
-            if ("metadata" in model and "serviceId" in model["metadata"]):
+            if "metadata" in model and any(k in model["metadata"] for k in ["serviceId", "serviceFullName"]):
                 if key not in legacy_mapped_services:
-                    key = model["metadata"]["serviceId"] 
+                    key = model["metadata"].get("serviceId", model["metadata"].get("serviceFullName"))
                     #convert into smithy case convention
                     key = key.lower().replace(' ', '-')
                 
