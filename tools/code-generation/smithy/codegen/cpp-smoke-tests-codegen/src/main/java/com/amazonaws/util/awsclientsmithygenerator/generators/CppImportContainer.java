@@ -11,9 +11,11 @@
  import software.amazon.smithy.codegen.core.Symbol;
 
  import java.util.Collections;
+ import java.util.Comparator;
  import java.util.HashSet;
  import java.util.Set;
  import java.util.Map;
+ import java.util.TreeSet;
 
 public final class CppImportContainer implements ImportContainer {
 
@@ -27,8 +29,8 @@ public final class CppImportContainer implements ImportContainer {
          String clientNamespace = SmokeTestsParser.removeSpaces(namespace);
          String folderNamespace = SmokeTestsParser.toKebabCase(namespace);
         this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(folderNamespace);
-        this.coreHeaders = new HashSet<>();
-        this.dynamicHeaders = new HashSet<>();
+        this.coreHeaders = new TreeSet<>(Comparator.naturalOrder()); //This maintains lexicographical order
+        this.dynamicHeaders = new TreeSet<>(Comparator.naturalOrder());
         Collections.addAll(coreHeaders, 
             "aws/core/client/AsyncCallerContext.h",
             "aws/core/client/AsyncCallerContext.h",

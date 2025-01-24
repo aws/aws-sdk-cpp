@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
+import java.util.Comparator;
 
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.aws.smoketests.model.AwsSmokeTestModel;
@@ -280,6 +281,7 @@ public class SmokeTestsParser implements Runnable{
         filter(operationShape -> operationShape.getInput().isPresent()).
         filter(operationShape -> operationShape.getTrait(SmokeTestsTrait.class).isPresent() ).
         filter(operationShape ->  operationToServiceMap.containsKey(operationShape.getId()) ).
+        sorted(Comparator.comparing(OperationShape::getId)).
         forEach(operationShape -> {
             SmokeTestsTrait smokeTestsTrait = operationShape.getTrait(SmokeTestsTrait.class).get();
             //get serviceShape
