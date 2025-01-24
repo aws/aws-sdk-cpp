@@ -27,8 +27,8 @@ namespace Model
   /**
    * <p>Request to update the configuration of the compute capability of your EKS
    * Auto Mode cluster. For example, enable the capability. For more information, see
-   * EKS Auto Mode compute capability in the EKS User Guide.</p><p><h3>See Also:</h3>
-   * <a
+   * EKS Auto Mode compute capability in the <i>Amazon EKS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ComputeConfigRequest">AWS
    * API Reference</a></p>
    */
@@ -56,8 +56,8 @@ namespace Model
     ///@{
     /**
      * <p>Configuration for node pools that defines the compute resources for your EKS
-     * Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS
-     * User Guide.</p>
+     * Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the
+     * <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodePools() const{ return m_nodePools; }
     inline bool NodePoolsHasBeenSet() const { return m_nodePoolsHasBeenSet; }
@@ -74,8 +74,8 @@ namespace Model
     /**
      * <p>The ARN of the IAM Role EKS will assign to EC2 Managed Instances in your EKS
      * Auto Mode cluster. This value cannot be changed after the compute capability of
-     * EKS Auto Mode is enabled. For more information, see the IAM Reference in the EKS
-     * User Guide.</p>
+     * EKS Auto Mode is enabled. For more information, see the IAM Reference in the
+     * <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetNodeRoleArn() const{ return m_nodeRoleArn; }
     inline bool NodeRoleArnHasBeenSet() const { return m_nodeRoleArnHasBeenSet; }

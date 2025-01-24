@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/NodegroupUpdateStrategies.h>
+#include <utility>
 
 namespace Aws
 {
@@ -22,7 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The node group update configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>The node group update configuration. An Amazon EKS managed node group updates
+   * by replacing nodes with new nodes of newer AMI versions in parallel. You choose
+   * the <i>maximum unavailable</i> and the <i>update strategy</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupUpdateConfig">AWS
    * API Reference</a></p>
    */
@@ -59,6 +64,30 @@ namespace Model
     inline void SetMaxUnavailablePercentage(int value) { m_maxUnavailablePercentageHasBeenSet = true; m_maxUnavailablePercentage = value; }
     inline NodegroupUpdateConfig& WithMaxUnavailablePercentage(int value) { SetMaxUnavailablePercentage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for the behavior to follow during a node group version
+     * update of this managed node group. You choose between two possible strategies
+     * for replacing nodes during an <a
+     * href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a>
+     * action.</p> <p>An Amazon EKS managed node group updates by replacing nodes with
+     * new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes
+     * the managed node update behavior of the managed node group for each quantity.
+     * The <i>default</i> strategy has guardrails to protect you from misconfiguration
+     * and launches the new instances first, before terminating the old instances. The
+     * <i>minimal</i> strategy removes the guardrails and terminates the old instances
+     * before launching the new instances. This minimal strategy is useful in scenarios
+     * where you are constrained to resources or costs (for example, with hardware
+     * accelerators such as GPUs).</p>
+     */
+    inline const NodegroupUpdateStrategies& GetUpdateStrategy() const{ return m_updateStrategy; }
+    inline bool UpdateStrategyHasBeenSet() const { return m_updateStrategyHasBeenSet; }
+    inline void SetUpdateStrategy(const NodegroupUpdateStrategies& value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = value; }
+    inline void SetUpdateStrategy(NodegroupUpdateStrategies&& value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = std::move(value); }
+    inline NodegroupUpdateConfig& WithUpdateStrategy(const NodegroupUpdateStrategies& value) { SetUpdateStrategy(value); return *this;}
+    inline NodegroupUpdateConfig& WithUpdateStrategy(NodegroupUpdateStrategies&& value) { SetUpdateStrategy(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_maxUnavailable;
@@ -66,6 +95,9 @@ namespace Model
 
     int m_maxUnavailablePercentage;
     bool m_maxUnavailablePercentageHasBeenSet = false;
+
+    NodegroupUpdateStrategies m_updateStrategy;
+    bool m_updateStrategyHasBeenSet = false;
   };
 
 } // namespace Model

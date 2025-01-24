@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     SMART_ON_FHIR_V1,
+    SMART_ON_FHIR,
     AWS_AUTH
   };
 

@@ -199,8 +199,8 @@ namespace Model
     /**
      * <p>Choose the parameter that will define how your automation will branch out.
      * This target is required for associations that use an Automation runbook and
-     * target resources by using rate controls. Automation is a capability of Amazon
-     * Web Services Systems Manager.</p>
+     * target resources by using rate controls. Automation is a tool in Amazon Web
+     * Services Systems Manager.</p>
      */
     inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
     inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }

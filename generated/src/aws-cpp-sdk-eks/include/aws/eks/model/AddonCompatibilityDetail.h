@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains compatibility information for an Amazon EKS add-on.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The summary information about the Amazon EKS add-on compatibility for the
+   * next Kubernetes version for an insight check in the
+   * <code>UPGRADE_READINESS</code> category.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonCompatibilityDetail">AWS
    * API Reference</a></p>
    */
@@ -55,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of compatible add-on versions.</p>
+     * <p>The list of compatible Amazon EKS add-on versions for the next Kubernetes
+     * version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCompatibleVersions() const{ return m_compatibleVersions; }
     inline bool CompatibleVersionsHasBeenSet() const { return m_compatibleVersionsHasBeenSet; }

@@ -65,12 +65,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Supports the following OAuth grant types: Device Code and Refresh Token.
-     * Specify either of the following values, depending on the grant type that you
-     * want:</p> <p>* Device Code -
+     * <p>Supports the following OAuth grant types: Authorization Code, Device Code,
+     * and Refresh Token. Specify one of the following values, depending on the grant
+     * type that you want:</p> <p>* Authorization Code -
+     * <code>authorization_code</code> </p> <p>* Device Code -
      * <code>urn:ietf:params:oauth:grant-type:device_code</code> </p> <p>* Refresh
-     * Token - <code>refresh_token</code> </p> <p>For information about how to obtain
-     * the device code, see the <a>StartDeviceAuthorization</a> topic.</p>
+     * Token - <code>refresh_token</code> </p>
      */
     inline const Aws::String& GetGrantType() const{ return m_grantType; }
     inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
@@ -85,7 +85,7 @@ namespace Model
     ///@{
     /**
      * <p>Used only when calling this API for the Device Code grant type. This
-     * short-term code is used to identify this authorization request. This comes from
+     * short-lived code is used to identify this authorization request. This comes from
      * the result of the <a>StartDeviceAuthorization</a> API.</p>
      */
     inline const Aws::String& GetDeviceCode() const{ return m_deviceCode; }
@@ -101,8 +101,7 @@ namespace Model
     ///@{
     /**
      * <p>Used only when calling this API for the Authorization Code grant type. The
-     * short-term code is used to identify this authorization request. This grant type
-     * is currently unsupported for the <a>CreateToken</a> API.</p>
+     * short-lived code is used to identify this authorization request.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
@@ -117,7 +116,7 @@ namespace Model
     ///@{
     /**
      * <p>Used only when calling this API for the Refresh Token grant type. This token
-     * is used to refresh short-term tokens, such as the access token, that might
+     * is used to refresh short-lived tokens, such as the access token, that might
      * expire.</p> <p>For more information about the features and limitations of the
      * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
      * this Guide</i> in the <a

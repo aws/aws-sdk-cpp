@@ -26,8 +26,8 @@ namespace Model
    * EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If
    * the block storage capability is enabled, EKS Auto Mode will create and delete
    * EBS volumes in your Amazon Web Services account. For more information, see EKS
-   * Auto Mode block storage capability in the EKS User Guide.</p><p><h3>See
-   * Also:</h3>   <a
+   * Auto Mode block storage capability in the <i>Amazon EKS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/BlockStorage">AWS
    * API Reference</a></p>
    */

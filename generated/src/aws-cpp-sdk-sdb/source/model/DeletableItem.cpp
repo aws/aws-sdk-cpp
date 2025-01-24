@@ -74,7 +74,7 @@ void DeletableItem::OutputToStream(Aws::OStream& oStream, const char* location, 
       for(auto& item : m_attributes)
       {
         Aws::StringStream attributesSs;
-        attributesSs << location << index << locationValue << ".Attribute." << attributesIdx++;
+        attributesSs << location << index << locationValue << ".Attributes.Attribute." << attributesIdx++;
         item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
