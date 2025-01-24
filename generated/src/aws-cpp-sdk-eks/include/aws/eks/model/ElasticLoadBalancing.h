@@ -24,8 +24,8 @@ namespace Model
   /**
    * <p>Indicates the current configuration of the load balancing capability on your
    * EKS Auto Mode cluster. For example, if the capability is enabled or disabled.
-   * For more information, see EKS Auto Mode load balancing capability in the EKS
-   * User Guide.</p><p><h3>See Also:</h3>   <a
+   * For more information, see EKS Auto Mode load balancing capability in the
+   * <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ElasticLoadBalancing">AWS
    * API Reference</a></p>
    */

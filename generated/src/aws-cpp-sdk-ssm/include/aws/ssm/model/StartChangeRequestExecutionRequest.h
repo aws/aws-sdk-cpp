@@ -176,7 +176,12 @@ namespace Model
      * might want to tag a change request to identify an environment or target Amazon
      * Web Services Region. In this case, you could specify the following key-value
      * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
-     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul> 
+     * <p>The <code>Array Members</code> maximum value is reported as 1000. This number
+     * includes capacity reserved for internal operations. When calling the
+     * <code>StartChangeRequestExecution</code> action, you can specify a maximum of 5
+     * tags. You can, however, use the <a>AddTagsToResource</a> action to add up to a
+     * total of 50 tags to an existing change request configuration.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

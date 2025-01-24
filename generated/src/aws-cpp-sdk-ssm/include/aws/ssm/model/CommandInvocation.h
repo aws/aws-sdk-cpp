@@ -270,8 +270,8 @@ namespace Model
     ///@{
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
-     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per managed node
+     * tool in Amazon Web Services Systems Manager, uses to act on your behalf when
+     * sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }

@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>Request to update the configuration of the storage capability of your EKS
    * Auto Mode cluster. For example, enable the capability. For more information, see
-   * EKS Auto Mode block storage capability in the EKS User Guide.</p><p><h3>See
-   * Also:</h3>   <a
+   * EKS Auto Mode block storage capability in the <i>Amazon EKS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StorageConfigRequest">AWS
    * API Reference</a></p>
    */

@@ -259,9 +259,9 @@ namespace Model
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
      * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
-     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
-     * It is managed by your direct call to the <a>PutComplianceItems</a> API
-     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
+     * managed by State Manager, a tool in Amazon Web Services Systems Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
+     * <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
     inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }

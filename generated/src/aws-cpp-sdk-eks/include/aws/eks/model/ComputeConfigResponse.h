@@ -54,8 +54,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates the current configuration of node pools in your EKS Auto Mode
-     * cluster. For more information, see EKS Auto Mode Node Pools in the EKS User
-     * Guide.</p>
+     * cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS
+     * User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodePools() const{ return m_nodePools; }
     inline bool NodePoolsHasBeenSet() const { return m_nodePoolsHasBeenSet; }

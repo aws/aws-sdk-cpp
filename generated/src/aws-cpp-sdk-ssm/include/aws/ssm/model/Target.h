@@ -34,8 +34,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
    * maintenance window tasks without targets</a> in the <i>Amazon Web Services
    * Systems Manager User Guide</i>.</p>  <p>Supported formats include the
-   * following.</p> <p> <b>For all Systems Manager capabilities:</b> </p> <ul> <li>
-   * <p> <code>Key=tag-key,Values=tag-value-1,tag-value-2</code> </p> </li> </ul> <p>
+   * following.</p> <p> <b>For all Systems Manager tools:</b> </p> <ul> <li> <p>
+   * <code>Key=tag-key,Values=tag-value-1,tag-value-2</code> </p> </li> </ul> <p>
    * <b>For Automation and Change Manager:</b> </p> <ul> <li> <p>
    * <code>Key=tag:tag-key,Values=tag-value</code> </p> </li> <li> <p>
    * <code>Key=ResourceGroup,Values=resource-group-name</code> </p> </li> <li> <p>

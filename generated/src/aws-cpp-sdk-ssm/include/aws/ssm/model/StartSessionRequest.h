@@ -90,7 +90,10 @@ namespace Model
     ///@{
     /**
      * <p>The values you want to specify for the parameters defined in the Session
-     * document.</p>
+     * document. For more information about these parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create
+     * a Session Manager preferences document</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

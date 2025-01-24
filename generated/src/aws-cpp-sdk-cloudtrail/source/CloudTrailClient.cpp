@@ -63,6 +63,7 @@
 #include <aws/cloudtrail/model/RegisterOrganizationDelegatedAdminRequest.h>
 #include <aws/cloudtrail/model/RemoveTagsRequest.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreRequest.h>
+#include <aws/cloudtrail/model/SearchSampleQueriesRequest.h>
 #include <aws/cloudtrail/model/StartDashboardRefreshRequest.h>
 #include <aws/cloudtrail/model/StartEventDataStoreIngestionRequest.h>
 #include <aws/cloudtrail/model/StartImportRequest.h>
@@ -1165,6 +1166,28 @@ RestoreEventDataStoreOutcome CloudTrailClient::RestoreEventDataStore(const Resto
   return TracingUtils::MakeCallWithTiming<RestoreEventDataStoreOutcome>(
     [&]()-> RestoreEventDataStoreOutcome {
       return RestoreEventDataStoreOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SearchSampleQueriesOutcome CloudTrailClient::SearchSampleQueries(const SearchSampleQueriesRequest& request) const
+{
+  AWS_OPERATION_GUARD(SearchSampleQueries);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchSampleQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, SearchSampleQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SearchSampleQueries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchSampleQueries",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SearchSampleQueriesOutcome>(
+    [&]()-> SearchSampleQueriesOutcome {
+      return SearchSampleQueriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },

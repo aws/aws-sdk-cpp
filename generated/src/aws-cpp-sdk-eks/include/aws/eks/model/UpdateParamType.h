@@ -40,6 +40,7 @@ namespace Model
     MaxUnavailable,
     MaxUnavailablePercentage,
     NodeRepairEnabled,
+    UpdateStrategy,
     ConfigurationValues,
     SecurityGroups,
     Subnets,

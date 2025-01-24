@@ -28,20 +28,20 @@ namespace SSM
    * Services Systems Manager User Guide</a>. To get started, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
    * up Amazon Web Services Systems Manager</a>.</p> <p class="title"> <b>Related
-   * resources</b> </p> <ul> <li> <p>For information about each of the capabilities
-   * that comprise Systems Manager, see <a
-   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
-   * Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User
+   * resources</b> </p> <ul> <li> <p>For information about each of the tools that
+   * comprise Systems Manager, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html">Using
+   * Systems Manager tools</a> in the <i>Amazon Web Services Systems Manager User
    * Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for
-   * Automation, a capability of Amazon Web Services Systems Manager, see the <i> <a
+   * Automation, a tool in Amazon Web Services Systems Manager, see the <i> <a
    * href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html">Systems
    * Manager Automation runbook reference</a> </i>.</p> </li> <li> <p>For information
-   * about AppConfig, a capability of Systems Manager, see the <i> <a
+   * about AppConfig, a tool in Systems Manager, see the <i> <a
    * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User
    * Guide</a> </i> and the <i> <a
    * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
    * API Reference</a> </i>.</p> </li> <li> <p>For information about Incident
-   * Manager, a capability of Systems Manager, see the <i> <a
+   * Manager, a tool in Systems Manager, see the <i> <a
    * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems
    * Manager Incident Manager User Guide</a> </i> and the <i> <a
    * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems
@@ -163,8 +163,8 @@ namespace SSM
         /**
          * <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services
-         * Systems Manager.</p><p><h3>See Also:</h3>   <a
+         * OpsItem. Incident Manager and OpsCenter are tools in Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          */
@@ -246,10 +246,10 @@ namespace SSM
          * <p>Generates an activation code and activation ID you can use to register your
          * on-premises servers, edge devices, or virtual machine (VM) with Amazon Web
          * Services Systems Manager. Registering these machines with Systems Manager makes
-         * it possible to manage them using Systems Manager capabilities. You use the
-         * activation code and ID when installing SSM Agent on machines in your hybrid
-         * environment. For more information about requirements for managing on-premises
-         * machines using Systems Manager, see <a
+         * it possible to manage them using Systems Manager tools. You use the activation
+         * code and ID when installing SSM Agent on machines in your hybrid environment.
+         * For more information about requirements for managing on-premises machines using
+         * Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
          * Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in
          * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>  <p>Amazon
@@ -286,13 +286,13 @@ namespace SSM
          * ports must be closed. For static targets, the association specifies a schedule
          * for when the configuration is reapplied. For dynamic targets, such as an Amazon
          * Web Services resource group or an Amazon Web Services autoscaling group, State
-         * Manager, a capability of Amazon Web Services Systems Manager applies the
-         * configuration when new managed nodes are added to the group. The association
-         * also specifies actions to take when applying the configuration. For example, an
-         * association for anti-virus software might run once a day. If the software isn't
-         * installed, then State Manager installs it. If the software is installed, but the
-         * service isn't running, then the association might instruct State Manager to
-         * start the service. </p><p><h3>See Also:</h3>   <a
+         * Manager, a tool in Amazon Web Services Systems Manager applies the configuration
+         * when new managed nodes are added to the group. The association also specifies
+         * actions to take when applying the configuration. For example, an association for
+         * anti-virus software might run once a day. If the software isn't installed, then
+         * State Manager installs it. If the software is installed, but the service isn't
+         * running, then the association might instruct State Manager to start the service.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          */
@@ -1935,8 +1935,8 @@ namespace SSM
         /**
          * <p>Deletes the association between an OpsItem and a related item. For example,
          * this API operation can delete an Incident Manager incident from an OpsItem.
-         * Incident Manager is a capability of Amazon Web Services Systems
-         * Manager.</p><p><h3>See Also:</h3>   <a
+         * Incident Manager is a tool in Amazon Web Services Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          */
@@ -1997,7 +1997,7 @@ namespace SSM
          * the command returns the status of <code>OPEN</code> only if all calendars in the
          * request are open. If one or more calendars in the request are closed, the status
          * returned is <code>CLOSED</code>.</p> <p>For more information about Change
-         * Calendar, a capability of Amazon Web Services Systems Manager, see <a
+         * Calendar, a tool in Amazon Web Services Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
          * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
          * Systems Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2122,11 +2122,11 @@ namespace SSM
          * such as with the Command Line Interface (CLI), the system attempts to use your
          * local Amazon Web Services credentials and the operation fails. To avoid this,
          * you can run the command in the Amazon Web Services Systems Manager console. Use
-         * Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
-         * document that enables you to target a managed node with a script or command. For
-         * example, run the command using the <code>AWS-RunShellScript</code> document or
-         * the <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See
-         * Also:</h3>   <a
+         * Run Command, a tool in Amazon Web Services Systems Manager, with an SSM document
+         * that enables you to target a managed node with a script or command. For example,
+         * run the command using the <code>AWS-RunShellScript</code> document or the
+         * <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>
          */
@@ -2567,15 +2567,15 @@ namespace SSM
         }
 
         /**
-         * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p> <p>Request results are returned on a best-effort basis. If you specify
-         * <code>MaxResults</code> in the request, the response includes information up to
-         * the limit specified. The number of items returned, however, can be between zero
-         * and the value of <code>MaxResults</code>. If the service reaches an internal
-         * limit while processing the results, it stops the operation and returns the
-         * matching values up to that point and a <code>NextToken</code>. You can specify
-         * the <code>NextToken</code> in a subsequent call to get the next set of
-         * results.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve information about one or more parameters under a specified level in
+         * a hierarchy. </p> <p>Request results are returned on a best-effort basis. If you
+         * specify <code>MaxResults</code> in the request, the response includes
+         * information up to the limit specified. The number of items returned, however,
+         * can be between zero and the value of <code>MaxResults</code>. If the service
+         * reaches an internal limit while processing the results, it stops the operation
+         * and returns the matching values up to that point and a <code>NextToken</code>.
+         * You can specify the <code>NextToken</code> in a subsequent call to get the next
+         * set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -2792,7 +2792,7 @@ namespace SSM
          * <p>Returns all State Manager associations in the current Amazon Web Services
          * account and Amazon Web Services Region. You can limit the results to a specific
          * State Manager association document or managed node by specifying a filter. State
-         * Manager is a capability of Amazon Web Services Systems Manager.</p><p><h3>See
+         * Manager is a tool in Amazon Web Services Systems Manager.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
@@ -3116,7 +3116,7 @@ namespace SSM
 
         /**
          * <p>Lists all related-item resources associated with a Systems Manager OpsCenter
-         * OpsItem. OpsCenter is a capability of Amazon Web Services Systems
+         * OpsItem. OpsCenter is a tool in Amazon Web Services Systems
          * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
          * API Reference</a></p>

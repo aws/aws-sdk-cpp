@@ -80,10 +80,11 @@ namespace Model
      * specify <code>ipv6</code>, then ensure that your VPC meets the requirements
      * listed in the considerations listed in <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning
-     * IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes
-     * assigns services <code>IPv6</code> addresses from the unique local address range
-     * <code>(fc00::/7)</code>. You can't specify a custom <code>IPv6</code> CIDR
-     * block. Pod addresses are assigned from the subnet's <code>IPv6</code> CIDR.</p>
+     * IPv6 addresses to pods and services</a> in the <i>Amazon EKS User Guide</i>.
+     * Kubernetes assigns services <code>IPv6</code> addresses from the unique local
+     * address range <code>(fc00::/7)</code>. You can't specify a custom
+     * <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's
+     * <code>IPv6</code> CIDR.</p>
      */
     inline const IpFamily& GetIpFamily() const{ return m_ipFamily; }
     inline bool IpFamilyHasBeenSet() const { return m_ipFamilyHasBeenSet; }
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>Request to enable or disable the load balancing capability on your EKS Auto
      * Mode cluster. For more information, see EKS Auto Mode load balancing capability
-     * in the EKS User Guide.</p>
+     * in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const ElasticLoadBalancing& GetElasticLoadBalancing() const{ return m_elasticLoadBalancing; }
     inline bool ElasticLoadBalancingHasBeenSet() const { return m_elasticLoadBalancingHasBeenSet; }

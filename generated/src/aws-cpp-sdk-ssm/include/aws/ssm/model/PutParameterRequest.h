@@ -97,8 +97,9 @@ namespace Model
      * <p>The parameter value that you want to add to the system. Standard parameters
      * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      *  <p>Parameters can't be referenced or nested in the values of other
-     * parameters. You can't include <code>{{}}</code> or
-     * <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> 
+     * parameters. You can't include values wrapped in double brackets
+     * <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter
+     * value.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -259,21 +260,21 @@ namespace Model
     ///@{
     /**
      * <p>One or more policies to apply to a parameter. This operation takes a JSON
-     * array. Parameter Store, a capability of Amazon Web Services Systems Manager
-     * supports the following policy types:</p> <p>Expiration: This policy deletes the
-     * parameter after it expires. When you create the policy, you specify the
-     * expiration date. You can update the expiration date and time by updating the
-     * policy. Updating the <i>parameter</i> doesn't affect the expiration date and
-     * time. When the expiration time is reached, Parameter Store deletes the
-     * parameter.</p> <p>ExpirationNotification: This policy initiates an event in
-     * Amazon CloudWatch Events that notifies you about the expiration. By using this
-     * policy, you can receive notification before or after the expiration time is
-     * reached, in units of days or hours.</p> <p>NoChangeNotification: This policy
-     * initiates a CloudWatch Events event if a parameter hasn't been modified for a
-     * specified period of time. This policy type is useful when, for example, a secret
-     * needs to be changed within a period of time, but it hasn't been changed.</p>
-     * <p>All existing policies are preserved until you send new policies or an empty
-     * policy. For more information about parameter policies, see <a
+     * array. Parameter Store, a tool in Amazon Web Services Systems Manager supports
+     * the following policy types:</p> <p>Expiration: This policy deletes the parameter
+     * after it expires. When you create the policy, you specify the expiration date.
+     * You can update the expiration date and time by updating the policy. Updating the
+     * <i>parameter</i> doesn't affect the expiration date and time. When the
+     * expiration time is reached, Parameter Store deletes the parameter.</p>
+     * <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch
+     * Events that notifies you about the expiration. By using this policy, you can
+     * receive notification before or after the expiration time is reached, in units of
+     * days or hours.</p> <p>NoChangeNotification: This policy initiates a CloudWatch
+     * Events event if a parameter hasn't been modified for a specified period of time.
+     * This policy type is useful when, for example, a secret needs to be changed
+     * within a period of time, but it hasn't been changed.</p> <p>All existing
+     * policies are preserved until you send new policies or an empty policy. For more
+     * information about parameter policies, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
      * parameter policies</a>. </p>
      */

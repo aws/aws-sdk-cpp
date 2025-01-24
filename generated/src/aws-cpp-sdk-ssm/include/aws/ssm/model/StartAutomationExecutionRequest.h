@@ -242,8 +242,12 @@ namespace Model
      * might want to tag an automation to identify an environment or operating system.
      * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
      * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
-     * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
+     * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>The <code>Array
+     * Members</code> maximum value is reported as 1000. This number includes capacity
+     * reserved for internal operations. When calling the
+     * <code>StartAutomationExecution</code> action, you can specify a maximum of 5
+     * tags. You can, however, use the <a>AddTagsToResource</a> action to add up to a
+     * total of 50 tags to an existing automation configuration.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/awstransfer/model/AgreementStatusType.h>
 #include <aws/awstransfer/model/PreserveFilenameType.h>
 #include <aws/awstransfer/model/EnforceMessageSigningType.h>
+#include <aws/awstransfer/model/CustomDirectoriesType.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +213,22 @@ namespace Model
     inline UpdateAgreementRequest& WithEnforceMessageSigning(const EnforceMessageSigningType& value) { SetEnforceMessageSigning(value); return *this;}
     inline UpdateAgreementRequest& WithEnforceMessageSigning(EnforceMessageSigningType&& value) { SetEnforceMessageSigning(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A <code>CustomDirectoriesType</code> structure. This structure specifies
+     * custom directories for storing various AS2 message files. You can specify
+     * directories for the following types of files.</p> <ul> <li> <p>Failed files</p>
+     * </li> <li> <p>MDN files</p> </li> <li> <p>Payload files</p> </li> <li> <p>Status
+     * files</p> </li> <li> <p>Temporary files</p> </li> </ul>
+     */
+    inline const CustomDirectoriesType& GetCustomDirectories() const{ return m_customDirectories; }
+    inline bool CustomDirectoriesHasBeenSet() const { return m_customDirectoriesHasBeenSet; }
+    inline void SetCustomDirectories(const CustomDirectoriesType& value) { m_customDirectoriesHasBeenSet = true; m_customDirectories = value; }
+    inline void SetCustomDirectories(CustomDirectoriesType&& value) { m_customDirectoriesHasBeenSet = true; m_customDirectories = std::move(value); }
+    inline UpdateAgreementRequest& WithCustomDirectories(const CustomDirectoriesType& value) { SetCustomDirectories(value); return *this;}
+    inline UpdateAgreementRequest& WithCustomDirectories(CustomDirectoriesType&& value) { SetCustomDirectories(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_agreementId;
@@ -243,6 +260,9 @@ namespace Model
 
     EnforceMessageSigningType m_enforceMessageSigning;
     bool m_enforceMessageSigningHasBeenSet = false;
+
+    CustomDirectoriesType m_customDirectories;
+    bool m_customDirectoriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -136,8 +136,10 @@ namespace Transfer
          * and the AS2 process. To define an agreement, Transfer Family combines a server,
          * local profile, partner profile, certificate, and other attributes.</p> <p>The
          * partner is identified with the <code>PartnerProfileId</code>, and the AS2
-         * process is identified with the <code>LocalProfileId</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * process is identified with the <code>LocalProfileId</code>.</p> 
+         * <p>Specify <i>either</i> <code>BaseDirectory</code> or
+         * <code>CustomDirectories</code>, but not both. Specifying both causes the command
+         * to fail.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">AWS
          * API Reference</a></p>
          */
@@ -1821,8 +1823,13 @@ namespace Transfer
         /**
          * <p>Updates some of the parameters for an existing agreement. Provide the
          * <code>AgreementId</code> and the <code>ServerId</code> for the agreement that
-         * you want to update, along with the new values for the parameters to
-         * update.</p><p><h3>See Also:</h3>   <a
+         * you want to update, along with the new values for the parameters to update.</p>
+         *  <p>Specify <i>either</i> <code>BaseDirectory</code> or
+         * <code>CustomDirectories</code>, but not both. Specifying both causes the command
+         * to fail.</p> <p>If you update an agreement from using base directory to custom
+         * directories, the base directory is no longer used. Similarly, if you change from
+         * custom directories to a base directory, the custom directories are no longer
+         * used.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">AWS
          * API Reference</a></p>
          */

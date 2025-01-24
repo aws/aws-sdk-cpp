@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     SUBMITTED,
+    QUEUED,
     IN_PROGRESS,
     COMPLETED_WITH_ERRORS,
     COMPLETED,

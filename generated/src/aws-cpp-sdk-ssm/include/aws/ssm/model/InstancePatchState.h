@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The number of patches beyond the supported limit of
      * <code>NotApplicableCount</code> that aren't reported by name to Inventory.
-     * Inventory is a capability of Amazon Web Services Systems Manager.</p>
+     * Inventory is a tool in Amazon Web Services Systems Manager.</p>
      */
     inline int GetUnreportedNotApplicableCount() const{ return m_unreportedNotApplicableCount; }
     inline bool UnreportedNotApplicableCountHasBeenSet() const { return m_unreportedNotApplicableCountHasBeenSet; }
