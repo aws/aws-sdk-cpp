@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/BandwidthReductionFilter.h>
 #include <aws/mediaconvert/model/H265CodecLevel.h>
 #include <aws/mediaconvert/model/H265CodecProfile.h>
+#include <aws/mediaconvert/model/H265Deblocking.h>
 #include <aws/mediaconvert/model/H265DynamicSubGop.h>
 #include <aws/mediaconvert/model/H265EndOfStreamMarkers.h>
 #include <aws/mediaconvert/model/H265FlickerAdaptiveQuantization.h>
@@ -150,6 +151,23 @@ namespace Model
     inline void SetCodecProfile(H265CodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
     inline H265Settings& WithCodecProfile(const H265CodecProfile& value) { SetCodecProfile(value); return *this;}
     inline H265Settings& WithCodecProfile(H265CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Use Deblocking to improve the video quality of your output by smoothing the
+     * edges of macroblock artifacts created during video compression. To reduce
+     * blocking artifacts at block boundaries, and improve overall video quality: Keep
+     * the default value, Enabled. To not apply any deblocking: Choose Disabled.
+     * Visible block edge artifacts might appear in the output, especially at lower
+     * bitrates.
+     */
+    inline const H265Deblocking& GetDeblocking() const{ return m_deblocking; }
+    inline bool DeblockingHasBeenSet() const { return m_deblockingHasBeenSet; }
+    inline void SetDeblocking(const H265Deblocking& value) { m_deblockingHasBeenSet = true; m_deblocking = value; }
+    inline void SetDeblocking(H265Deblocking&& value) { m_deblockingHasBeenSet = true; m_deblocking = std::move(value); }
+    inline H265Settings& WithDeblocking(const H265Deblocking& value) { SetDeblocking(value); return *this;}
+    inline H265Settings& WithDeblocking(H265Deblocking&& value) { SetDeblocking(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -770,6 +788,9 @@ namespace Model
 
     H265CodecProfile m_codecProfile;
     bool m_codecProfileHasBeenSet = false;
+
+    H265Deblocking m_deblocking;
+    bool m_deblockingHasBeenSet = false;
 
     H265DynamicSubGop m_dynamicSubGop;
     bool m_dynamicSubGopHasBeenSet = false;

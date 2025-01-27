@@ -19,6 +19,7 @@ namespace Model
 {
 
 TextPromptTemplateConfiguration::TextPromptTemplateConfiguration() : 
+    m_cachePointHasBeenSet(false),
     m_inputVariablesHasBeenSet(false),
     m_textHasBeenSet(false)
 {
@@ -32,6 +33,13 @@ TextPromptTemplateConfiguration::TextPromptTemplateConfiguration(JsonView jsonVa
 
 TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cachePoint"))
+  {
+    m_cachePoint = jsonValue.GetObject("cachePoint");
+
+    m_cachePointHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputVariables"))
   {
     Aws::Utils::Array<JsonView> inputVariablesJsonList = jsonValue.GetArray("inputVariables");
@@ -55,6 +63,12 @@ TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator =(Jso
 JsonValue TextPromptTemplateConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cachePointHasBeenSet)
+  {
+   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
+
+  }
 
   if(m_inputVariablesHasBeenSet)
   {

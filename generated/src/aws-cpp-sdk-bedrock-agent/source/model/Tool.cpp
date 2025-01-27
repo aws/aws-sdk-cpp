@@ -19,6 +19,7 @@ namespace Model
 {
 
 Tool::Tool() : 
+    m_cachePointHasBeenSet(false),
     m_toolSpecHasBeenSet(false)
 {
 }
@@ -31,6 +32,13 @@ Tool::Tool(JsonView jsonValue)
 
 Tool& Tool::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cachePoint"))
+  {
+    m_cachePoint = jsonValue.GetObject("cachePoint");
+
+    m_cachePointHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("toolSpec"))
   {
     m_toolSpec = jsonValue.GetObject("toolSpec");
@@ -44,6 +52,12 @@ Tool& Tool::operator =(JsonView jsonValue)
 JsonValue Tool::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cachePointHasBeenSet)
+  {
+   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
+
+  }
 
   if(m_toolSpecHasBeenSet)
   {

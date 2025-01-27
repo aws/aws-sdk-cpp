@@ -32,6 +32,7 @@ Input::Input() :
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
     m_dolbyVisionMetadataXmlHasBeenSet(false),
+    m_dynamicAudioSelectorsHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -141,6 +142,16 @@ Input& Input::operator =(JsonView jsonValue)
     m_dolbyVisionMetadataXml = jsonValue.GetString("dolbyVisionMetadataXml");
 
     m_dolbyVisionMetadataXmlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicAudioSelectors"))
+  {
+    Aws::Map<Aws::String, JsonView> dynamicAudioSelectorsJsonMap = jsonValue.GetObject("dynamicAudioSelectors").GetAllObjects();
+    for(auto& dynamicAudioSelectorsItem : dynamicAudioSelectorsJsonMap)
+    {
+      m_dynamicAudioSelectors[dynamicAudioSelectorsItem.first] = dynamicAudioSelectorsItem.second.AsObject();
+    }
+    m_dynamicAudioSelectorsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fileInput"))
@@ -333,6 +344,17 @@ JsonValue Input::Jsonize() const
   if(m_dolbyVisionMetadataXmlHasBeenSet)
   {
    payload.WithString("dolbyVisionMetadataXml", m_dolbyVisionMetadataXml);
+
+  }
+
+  if(m_dynamicAudioSelectorsHasBeenSet)
+  {
+   JsonValue dynamicAudioSelectorsJsonMap;
+   for(auto& dynamicAudioSelectorsItem : m_dynamicAudioSelectors)
+   {
+     dynamicAudioSelectorsJsonMap.WithObject(dynamicAudioSelectorsItem.first, dynamicAudioSelectorsItem.second.Jsonize());
+   }
+   payload.WithObject("dynamicAudioSelectors", std::move(dynamicAudioSelectorsJsonMap));
 
   }
 

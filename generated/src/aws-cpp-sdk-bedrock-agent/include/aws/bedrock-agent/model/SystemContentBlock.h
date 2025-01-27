@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -42,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Creates a cache checkpoint within a tool designation</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const{ return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    inline void SetCachePoint(const CachePointBlock& value) { m_cachePointHasBeenSet = true; m_cachePoint = value; }
+    inline void SetCachePoint(CachePointBlock&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::move(value); }
+    inline SystemContentBlock& WithCachePoint(const CachePointBlock& value) { SetCachePoint(value); return *this;}
+    inline SystemContentBlock& WithCachePoint(CachePointBlock&& value) { SetCachePoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The text in the system prompt.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
@@ -54,6 +67,9 @@ namespace Model
     inline SystemContentBlock& WithText(const char* value) { SetText(value); return *this;}
     ///@}
   private:
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;

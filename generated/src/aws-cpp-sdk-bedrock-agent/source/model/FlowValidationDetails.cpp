@@ -41,6 +41,8 @@ FlowValidationDetails::FlowValidationDetails() :
     m_unknownConnectionSourceOutputHasBeenSet(false),
     m_unknownConnectionTargetHasBeenSet(false),
     m_unknownConnectionTargetInputHasBeenSet(false),
+    m_unknownNodeInputHasBeenSet(false),
+    m_unknownNodeOutputHasBeenSet(false),
     m_unreachableNodeHasBeenSet(false),
     m_unsatisfiedConnectionConditionsHasBeenSet(false),
     m_unspecifiedHasBeenSet(false)
@@ -209,6 +211,20 @@ FlowValidationDetails& FlowValidationDetails::operator =(JsonView jsonValue)
     m_unknownConnectionTargetInputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unknownNodeInput"))
+  {
+    m_unknownNodeInput = jsonValue.GetObject("unknownNodeInput");
+
+    m_unknownNodeInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unknownNodeOutput"))
+  {
+    m_unknownNodeOutput = jsonValue.GetObject("unknownNodeOutput");
+
+    m_unknownNodeOutputHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("unreachableNode"))
   {
     m_unreachableNode = jsonValue.GetObject("unreachableNode");
@@ -366,6 +382,18 @@ JsonValue FlowValidationDetails::Jsonize() const
   if(m_unknownConnectionTargetInputHasBeenSet)
   {
    payload.WithObject("unknownConnectionTargetInput", m_unknownConnectionTargetInput.Jsonize());
+
+  }
+
+  if(m_unknownNodeInputHasBeenSet)
+  {
+   payload.WithObject("unknownNodeInput", m_unknownNodeInput.Jsonize());
+
+  }
+
+  if(m_unknownNodeOutputHasBeenSet)
+  {
+   payload.WithObject("unknownNodeOutput", m_unknownNodeOutput.Jsonize());
 
   }
 

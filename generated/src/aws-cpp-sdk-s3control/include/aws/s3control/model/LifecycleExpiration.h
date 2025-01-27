@@ -67,7 +67,9 @@ namespace Model
      * <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent
      * versions. If set to true, the delete marker will be expired. If set to false,
      * the policy takes no action. This cannot be specified with Days or Date in a
-     * Lifecycle Expiration Policy.</p>
+     * Lifecycle Expiration Policy. To learn more about delete markers, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
+     * with delete markers</a>.</p>
      */
     inline bool GetExpiredObjectDeleteMarker() const{ return m_expiredObjectDeleteMarker; }
     inline bool ExpiredObjectDeleteMarkerHasBeenSet() const { return m_expiredObjectDeleteMarkerHasBeenSet; }
