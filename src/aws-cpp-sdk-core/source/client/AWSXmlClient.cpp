@@ -65,7 +65,8 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
         }
     }
-    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+    (void)signerName;
+    return MakeRequest(uri, request, method, "S3ExpressSigner", signerRegionOverride, signerServiceNameOverride);
 }
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
@@ -98,6 +99,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    std::cout<<"MakeRequest signer "<<signerName<<std::endl;
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
