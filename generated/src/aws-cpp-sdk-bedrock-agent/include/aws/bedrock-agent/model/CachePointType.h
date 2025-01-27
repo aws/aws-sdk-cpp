@@ -13,23 +13,18 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  enum class AgentAliasStatus
+  enum class CachePointType
   {
     NOT_SET,
-    CREATING,
-    PREPARED,
-    FAILED,
-    UPDATING,
-    DELETING,
-    DISSOCIATED
+    default_
   };
 
-namespace AgentAliasStatusMapper
+namespace CachePointTypeMapper
 {
-AWS_BEDROCKAGENT_API AgentAliasStatus GetAgentAliasStatusForName(const Aws::String& name);
+AWS_BEDROCKAGENT_API CachePointType GetCachePointTypeForName(const Aws::String& name);
 
-AWS_BEDROCKAGENT_API Aws::String GetNameForAgentAliasStatus(AgentAliasStatus value);
-} // namespace AgentAliasStatusMapper
+AWS_BEDROCKAGENT_API Aws::String GetNameForCachePointType(CachePointType value);
+} // namespace CachePointTypeMapper
 } // namespace Model
 } // namespace BedrockAgent
 } // namespace Aws

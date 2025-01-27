@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <aws/bedrock-agent/model/ToolSpecification.h>
 #include <utility>
 
@@ -43,6 +44,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Creates a cache checkpoint within a tool designation</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const{ return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    inline void SetCachePoint(const CachePointBlock& value) { m_cachePointHasBeenSet = true; m_cachePoint = value; }
+    inline void SetCachePoint(CachePointBlock&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::move(value); }
+    inline Tool& WithCachePoint(const CachePointBlock& value) { SetCachePoint(value); return *this;}
+    inline Tool& WithCachePoint(CachePointBlock&& value) { SetCachePoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The specification for the tool.</p>
      */
     inline const ToolSpecification& GetToolSpec() const{ return m_toolSpec; }
@@ -53,6 +66,9 @@ namespace Model
     inline Tool& WithToolSpec(ToolSpecification&& value) { SetToolSpec(std::move(value)); return *this;}
     ///@}
   private:
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
 
     ToolSpecification m_toolSpec;
     bool m_toolSpecHasBeenSet = false;

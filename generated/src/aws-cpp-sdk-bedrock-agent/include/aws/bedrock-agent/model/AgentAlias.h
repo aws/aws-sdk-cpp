@@ -106,7 +106,8 @@ namespace Model
      * created or updated and is ready to be invoked.</p> </li> <li> <p>FAILED – The
      * agent alias API operation failed.</p> </li> <li> <p>UPDATING – The agent alias
      * is being updated.</p> </li> <li> <p>DELETING – The agent alias is being
-     * deleted.</p> </li> </ul>
+     * deleted.</p> </li> <li> <p>DISSOCIATED - The agent alias has no version
+     * associated with it.</p> </li> </ul>
      */
     inline const AgentAliasStatus& GetAgentAliasStatus() const{ return m_agentAliasStatus; }
     inline bool AgentAliasStatusHasBeenSet() const { return m_agentAliasStatusHasBeenSet; }
