@@ -50,6 +50,18 @@ EvaluateCodeResult& EvaluateCodeResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
+  if(jsonValue.ValueExists("stash"))
+  {
+    m_stash = jsonValue.GetString("stash");
+
+  }
+
+  if(jsonValue.ValueExists("outErrors"))
+  {
+    m_outErrors = jsonValue.GetString("outErrors");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -8,6 +8,7 @@
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/DeliveryStreamType.h>
+#include <aws/firehose/model/DirectPutSourceConfiguration.h>
 #include <aws/firehose/model/KinesisStreamSourceConfiguration.h>
 #include <aws/firehose/model/DeliveryStreamEncryptionConfigurationInput.h>
 #include <aws/firehose/model/ExtendedS3DestinationConfiguration.h>
@@ -85,6 +86,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The structure that configures parameters such as
+     * <code>ThroughputHintInMBs</code> for a stream configured with Direct PUT as a
+     * source. </p>
+     */
+    inline const DirectPutSourceConfiguration& GetDirectPutSourceConfiguration() const{ return m_directPutSourceConfiguration; }
+    inline bool DirectPutSourceConfigurationHasBeenSet() const { return m_directPutSourceConfigurationHasBeenSet; }
+    inline void SetDirectPutSourceConfiguration(const DirectPutSourceConfiguration& value) { m_directPutSourceConfigurationHasBeenSet = true; m_directPutSourceConfiguration = value; }
+    inline void SetDirectPutSourceConfiguration(DirectPutSourceConfiguration&& value) { m_directPutSourceConfigurationHasBeenSet = true; m_directPutSourceConfiguration = std::move(value); }
+    inline CreateDeliveryStreamRequest& WithDirectPutSourceConfiguration(const DirectPutSourceConfiguration& value) { SetDirectPutSourceConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithDirectPutSourceConfiguration(DirectPutSourceConfiguration&& value) { SetDirectPutSourceConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>When a Kinesis data stream is used as the source for the Firehose stream, a
      * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
      * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
@@ -136,7 +151,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination in Amazon ES. You can specify only one destination.</p>
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
      */
     inline const ElasticsearchDestinationConfiguration& GetElasticsearchDestinationConfiguration() const{ return m_elasticsearchDestinationConfiguration; }
     inline bool ElasticsearchDestinationConfigurationHasBeenSet() const { return m_elasticsearchDestinationConfigurationHasBeenSet; }
@@ -198,7 +214,7 @@ namespace Model
      * action, Amazon Data Firehose performs an additional authorization on the
      * <code>firehose:TagDeliveryStream</code> action to verify if users have
      * permissions to create tags. If you do not provide this permission, requests to
-     * create new Firehose Firehose streams with IAM resource tags will fail with an
+     * create new Firehose streams with IAM resource tags will fail with an
      * <code>AccessDeniedException</code> such as following.</p> <p>
      * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
      * not authorized to perform: firehose:TagDeliveryStream on resource:
@@ -266,8 +282,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The top level object for configuring streams with database as a source. </p>
+     * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
     inline const DatabaseSourceConfiguration& GetDatabaseSourceConfiguration() const{ return m_databaseSourceConfiguration; }
     inline bool DatabaseSourceConfigurationHasBeenSet() const { return m_databaseSourceConfigurationHasBeenSet; }
@@ -283,6 +299,9 @@ namespace Model
 
     DeliveryStreamType m_deliveryStreamType;
     bool m_deliveryStreamTypeHasBeenSet = false;
+
+    DirectPutSourceConfiguration m_directPutSourceConfiguration;
+    bool m_directPutSourceConfigurationHasBeenSet = false;
 
     KinesisStreamSourceConfiguration m_kinesisStreamSourceConfiguration;
     bool m_kinesisStreamSourceConfigurationHasBeenSet = false;

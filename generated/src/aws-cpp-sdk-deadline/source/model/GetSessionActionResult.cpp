@@ -93,6 +93,15 @@ GetSessionActionResult& GetSessionActionResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("acquiredLimits"))
+  {
+    Aws::Utils::Array<JsonView> acquiredLimitsJsonList = jsonValue.GetArray("acquiredLimits");
+    for(unsigned acquiredLimitsIndex = 0; acquiredLimitsIndex < acquiredLimitsJsonList.GetLength(); ++acquiredLimitsIndex)
+    {
+      m_acquiredLimits.push_back(acquiredLimitsJsonList[acquiredLimitsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

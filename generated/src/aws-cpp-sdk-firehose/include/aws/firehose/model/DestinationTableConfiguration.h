@@ -87,7 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p>The partition spec configuration for a table that is used by automatic table
+     * creation.</p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const PartitionSpec& GetPartitionSpec() const{ return m_partitionSpec; }

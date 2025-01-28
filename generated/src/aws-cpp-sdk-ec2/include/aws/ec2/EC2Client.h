@@ -1527,8 +1527,11 @@ namespace EC2
          * <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>active</code> and
          * there is no commitment duration or the commitment duration has elapsed. You
          * can't cancel a future-dated Capacity Reservation during the commitment
-         * duration.</p> </li> </ul> <p>If a future-dated Capacity Reservation enters the
-         * <code>delayed</code> state, the commitment duration is waived, and you can
+         * duration.</p> </li> </ul>  <p>You can't modify or cancel a Capacity Block.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
+         * Blocks for ML</a>.</p>  <p>If a future-dated Capacity Reservation enters
+         * the <code>delayed</code> state, the commitment duration is waived, and you can
          * cancel it as soon as it enters the <code>active</code> state.</p> <p>Instances
          * running in the reserved capacity continue running until you stop them. Stopped
          * instances that target the Capacity Reservation can no longer launch. Modify
@@ -6591,7 +6594,7 @@ namespace EC2
         /**
          * <p>Delete a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
          * mode that can be applied to a single VPC or subnet that exempts it from the
-         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * account��s BPA mode and will allow bidirectional or egress-only access. You can
          * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
          * account to ensure that there is no traffic disruption to the exclusions when VPC
          * BPA is turned on. To learn more about VPC BPA, see <a
@@ -7413,7 +7416,12 @@ namespace EC2
         /**
          * <p>Describes Capacity Block offerings available for purchase in the Amazon Web
          * Services Region that you're currently using. With Capacity Blocks, you purchase
-         * a specific instance type for a period of time.</p><p><h3>See Also:</h3>   <a
+         * a specific instance type for a period of time.</p> <p>To search for an available
+         * Capacity Block offering, you specify a reservation duration and instance count.
+         * You must select one of the following options.</p> <ul> <li> <p>For reservation
+         * durations<b> 1-day increments up 14 days and 7-day increments up to 182 days
+         * total</b> </p> </li> <li> <p>For instance count<b> 1, 2, 4, 8, 16, 32, or 64
+         * instances</b> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
          * API Reference</a></p>
          */
@@ -8794,7 +8802,8 @@ namespace EC2
          * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
          * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> |
          * <code>p5en.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
-         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> </p> </li> </ul> </li>
+         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> |
+         * <code>trn2.48xlarge</code> | <code>trn2u.48xlarge</code> </p> </li> </ul> </li>
          * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See

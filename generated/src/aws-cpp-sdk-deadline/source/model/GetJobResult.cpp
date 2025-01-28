@@ -23,7 +23,8 @@ GetJobResult::GetJobResult() :
     m_taskRunStatus(TaskRunStatus::NOT_SET),
     m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
     m_maxFailedTasksCount(0),
-    m_maxRetriesPerTask(0)
+    m_maxRetriesPerTask(0),
+    m_maxWorkerCount(0)
 {
 }
 
@@ -159,6 +160,12 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("maxWorkerCount"))
+  {
+    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
 
   }
 

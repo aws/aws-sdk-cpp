@@ -16,6 +16,7 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_deliveryStreamNameHasBeenSet(false),
     m_deliveryStreamType(DeliveryStreamType::NOT_SET),
     m_deliveryStreamTypeHasBeenSet(false),
+    m_directPutSourceConfigurationHasBeenSet(false),
     m_kinesisStreamSourceConfigurationHasBeenSet(false),
     m_deliveryStreamEncryptionConfigurationInputHasBeenSet(false),
     m_extendedS3DestinationConfigurationHasBeenSet(false),
@@ -46,6 +47,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_deliveryStreamTypeHasBeenSet)
   {
    payload.WithString("DeliveryStreamType", DeliveryStreamTypeMapper::GetNameForDeliveryStreamType(m_deliveryStreamType));
+  }
+
+  if(m_directPutSourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("DirectPutSourceConfiguration", m_directPutSourceConfiguration.Jsonize());
+
   }
 
   if(m_kinesisStreamSourceConfigurationHasBeenSet)

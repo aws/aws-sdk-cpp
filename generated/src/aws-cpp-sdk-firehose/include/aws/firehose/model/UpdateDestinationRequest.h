@@ -116,7 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes an update for a destination in Amazon ES.</p>
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
      */
     inline const ElasticsearchDestinationUpdate& GetElasticsearchDestinationUpdate() const{ return m_elasticsearchDestinationUpdate; }
     inline bool ElasticsearchDestinationUpdateHasBeenSet() const { return m_elasticsearchDestinationUpdateHasBeenSet; }

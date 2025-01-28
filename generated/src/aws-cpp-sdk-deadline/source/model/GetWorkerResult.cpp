@@ -31,12 +31,6 @@ GetWorkerResult::GetWorkerResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 GetWorkerResult& GetWorkerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("workerId"))
-  {
-    m_workerId = jsonValue.GetString("workerId");
-
-  }
-
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
@@ -46,6 +40,12 @@ GetWorkerResult& GetWorkerResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("fleetId"))
   {
     m_fleetId = jsonValue.GetString("fleetId");
+
+  }
+
+  if(jsonValue.ValueExists("workerId"))
+  {
+    m_workerId = jsonValue.GetString("workerId");
 
   }
 

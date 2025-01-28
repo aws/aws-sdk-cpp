@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a single field in a <code>PartitionSpec</code>. </p> <p>Amazon
+   * Data Firehose is in preview release and is subject to change.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PartitionField">AWS
    * API Reference</a></p>
    */
@@ -40,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The column name to be configured in partition spec. </p> <p>Amazon Data
+     * Firehose is in preview release and is subject to change.</p>
      */
     inline const Aws::String& GetSourceName() const{ return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }

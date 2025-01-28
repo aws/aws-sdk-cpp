@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/DeadlineRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/StepTargetTaskRunStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -35,6 +35,18 @@ namespace Model
 
     AWS_DEADLINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
+    ///@{
+    /**
+     * <p>The task status to update the step's tasks to.</p>
+     */
+    inline const StepTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
+    inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
+    inline void SetTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = value; }
+    inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = std::move(value); }
+    inline UpdateStepRequest& WithTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
+    inline UpdateStepRequest& WithTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -106,19 +118,10 @@ namespace Model
     inline UpdateStepRequest& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
     inline UpdateStepRequest& WithStepId(const char* value) { SetStepId(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The task status to update the step's tasks to.</p>
-     */
-    inline const StepTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
-    inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }
-    inline void SetTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = value; }
-    inline void SetTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { m_targetTaskRunStatusHasBeenSet = true; m_targetTaskRunStatus = std::move(value); }
-    inline UpdateStepRequest& WithTargetTaskRunStatus(const StepTargetTaskRunStatus& value) { SetTargetTaskRunStatus(value); return *this;}
-    inline UpdateStepRequest& WithTargetTaskRunStatus(StepTargetTaskRunStatus&& value) { SetTargetTaskRunStatus(std::move(value)); return *this;}
-    ///@}
   private:
+
+    StepTargetTaskRunStatus m_targetTaskRunStatus;
+    bool m_targetTaskRunStatusHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
@@ -134,9 +137,6 @@ namespace Model
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
-
-    StepTargetTaskRunStatus m_targetTaskRunStatus;
-    bool m_targetTaskRunStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination in Amazon ES.</p>
+     * <p>The destination in Amazon OpenSearch Service.</p>
      */
     inline const ElasticsearchDestinationDescription& GetElasticsearchDestinationDescription() const{ return m_elasticsearchDestinationDescription; }
     inline bool ElasticsearchDestinationDescriptionHasBeenSet() const { return m_elasticsearchDestinationDescriptionHasBeenSet; }

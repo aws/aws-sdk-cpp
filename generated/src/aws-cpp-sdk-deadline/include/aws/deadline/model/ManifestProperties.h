@@ -111,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The has value of the file.</p>
+     * <p>The hash value of the file.</p>
      */
     inline const Aws::String& GetInputManifestHash() const{ return m_inputManifestHash; }
     inline bool InputManifestHashHasBeenSet() const { return m_inputManifestHashHasBeenSet; }

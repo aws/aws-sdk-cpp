@@ -33,7 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The destination description in Amazon ES.</p><p><h3>See Also:</h3>   <a
+   * <p>The destination description in Amazon OpenSearch Service.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationDescription">AWS
    * API Reference</a></p>
    */
@@ -65,11 +66,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon ES domain. For more information, see <a
+     * <p>The ARN of the Amazon OpenSearch Service domain. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      * <p>Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code>
-     * to send data to Amazon ES.</p>
+     * to send data to Amazon OpenSearch Service.</p>
      */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
     inline bool DomainARNHasBeenSet() const { return m_domainARNHasBeenSet; }
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The endpoint to use when communicating with the cluster. Firehose uses either
      * this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send
-     * data to Amazon ES.</p>
+     * data to Amazon OpenSearch Service.</p>
      */
     inline const Aws::String& GetClusterEndpoint() const{ return m_clusterEndpoint; }
     inline bool ClusterEndpointHasBeenSet() const { return m_clusterEndpointHasBeenSet; }
@@ -153,7 +154,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon ES retry options.</p>
+     * <p>The Amazon OpenSearch Service retry options.</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
