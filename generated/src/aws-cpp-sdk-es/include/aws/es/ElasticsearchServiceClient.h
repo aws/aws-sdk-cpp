@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/es/ElasticsearchServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ElasticsearchService
 {
+  AWS_ELASTICSEARCHSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Elasticsearch Configuration Service</fullname> <p>Use the
    * Amazon Elasticsearch Configuration API to create, configure, and manage
@@ -30,12 +34,20 @@ namespace ElasticsearchService
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions"
    * target="_blank">Regions and Endpoints</a>.</p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>
+  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient : smithy::client::AwsSmithyClientT<Aws::ElasticsearchService::SERVICE_NAME,
+      Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ElasticsearchServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ElasticsearchServiceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Elasticsearch Service"; }
 
       typedef ElasticsearchServiceClientConfiguration ClientConfigurationType;
       typedef ElasticsearchServiceEndpointProvider EndpointProviderType;
@@ -1437,10 +1449,7 @@ namespace ElasticsearchService
       std::shared_ptr<ElasticsearchServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>;
-      void init(const ElasticsearchServiceClientConfiguration& clientConfiguration);
 
-      ElasticsearchServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ElasticsearchServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElasticsearchService

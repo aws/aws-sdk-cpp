@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cloudhsmv2/CloudHSMV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudHSMV2
 {
+  AWS_CLOUDHSMV2_API extern const char SERVICE_NAME[];
   /**
    * <p>For more information about CloudHSM, see <a
    * href="http://aws.amazon.com/cloudhsm/">CloudHSM</a> and the <a
    * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/"> CloudHSM User
    * Guide</a>.</p>
    */
-  class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>
+  class AWS_CLOUDHSMV2_API CloudHSMV2Client : smithy::client::AwsSmithyClientT<Aws::CloudHSMV2::SERVICE_NAME,
+      Aws::CloudHSMV2::CloudHSMV2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudHSMV2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudHSMV2ErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudHSM V2"; }
 
       typedef CloudHSMV2ClientConfiguration ClientConfigurationType;
       typedef CloudHSMV2EndpointProvider EndpointProviderType;
@@ -628,10 +640,7 @@ namespace CloudHSMV2
       std::shared_ptr<CloudHSMV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>;
-      void init(const CloudHSMV2ClientConfiguration& clientConfiguration);
 
-      CloudHSMV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudHSMV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudHSMV2

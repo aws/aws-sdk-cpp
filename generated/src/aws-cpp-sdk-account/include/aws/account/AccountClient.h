@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/account/AccountServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/account/AccountErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Account
 {
+  AWS_ACCOUNT_API extern const char SERVICE_NAME[];
   /**
    * <p>Operations for Amazon Web Services Account Management</p>
    */
-  class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>
+  class AWS_ACCOUNT_API AccountClient : smithy::client::AwsSmithyClientT<Aws::Account::SERVICE_NAME,
+      Aws::Account::AccountClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AccountEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AccountErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Account"; }
 
       typedef AccountClientConfiguration ClientConfigurationType;
       typedef AccountEndpointProvider EndpointProviderType;
@@ -430,10 +442,7 @@ namespace Account
       std::shared_ptr<AccountEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>;
-      void init(const AccountClientConfiguration& clientConfiguration);
 
-      AccountClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AccountEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Account

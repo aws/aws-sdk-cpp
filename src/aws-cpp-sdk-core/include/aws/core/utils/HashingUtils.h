@@ -107,6 +107,16 @@ namespace Aws
              */
             static ByteBuffer CalculateCRC32C(Aws::IOStream& stream);
 
+            /**
+             * Calculates a CRC64 Hash value
+             */
+            static ByteBuffer CalculateCRC64(const Aws::String& str);
+
+            /**
+             * Calculates a CRC64 Hash value
+             */
+            static ByteBuffer CalculateCRC64(Aws::IOStream& stream);
+
             static int HashString(const char* strToHash);
 
         };

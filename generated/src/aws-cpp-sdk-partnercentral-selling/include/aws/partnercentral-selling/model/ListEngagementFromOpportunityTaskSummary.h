@@ -59,8 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier of the engagement identifier created as a result of
-     * the task. This field is populated when the task is completed successfully. </p>
+     * <p>The unique identifier of the Engagement Invitation.</p>
      */
     inline const Aws::String& GetEngagementInvitationId() const{ return m_engagementInvitationId; }
     inline bool EngagementInvitationIdHasBeenSet() const { return m_engagementInvitationIdHasBeenSet; }

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bcm-pricing-calculator/BCMPricingCalculatorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BCMPricingCalculator
 {
+  AWS_BCMPRICINGCALCULATOR_API extern const char SERVICE_NAME[];
   /**
    * <p> You can use the Pricing Calculator API to programmatically create estimates
    * for your planned cloud use. You can model usage and commitments such as Savings
@@ -23,12 +27,20 @@ namespace BCMPricingCalculator
    * following endpoint:</p> <ul> <li> <p>
    * <code>https://bcm-pricing-calculator.us-east-1.api.aws</code> </p> </li> </ul>
    */
-  class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>
+  class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient : smithy::client::AwsSmithyClientT<Aws::BCMPricingCalculator::SERVICE_NAME,
+      Aws::BCMPricingCalculator::BCMPricingCalculatorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BCMPricingCalculatorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BCMPricingCalculatorErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "BCM Pricing Calculator"; }
 
       typedef BCMPricingCalculatorClientConfiguration ClientConfigurationType;
       typedef BCMPricingCalculatorEndpointProvider EndpointProviderType;
@@ -1037,10 +1049,7 @@ namespace BCMPricingCalculator
       std::shared_ptr<BCMPricingCalculatorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>;
-      void init(const BCMPricingCalculatorClientConfiguration& clientConfiguration);
 
-      BCMPricingCalculatorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BCMPricingCalculatorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BCMPricingCalculator

@@ -52,7 +52,7 @@ class BearerTokenAuthScheme : public AuthScheme<AwsBearerTokenIdentityBase>
 
     std::shared_ptr<AwsCredentialSignerT> signer() override { return m_signer; }
 
-  protected:
+   protected:
     std::shared_ptr<AwsCredentialIdentityResolverT> m_identityResolver;
     std::shared_ptr<AwsCredentialSignerT> m_signer;
 };

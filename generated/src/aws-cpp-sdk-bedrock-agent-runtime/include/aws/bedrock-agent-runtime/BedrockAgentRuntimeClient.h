@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BedrockAgentRuntime
 {
+  AWS_BEDROCKAGENTRUNTIME_API extern const char SERVICE_NAME[];
   /**
    * <p>Contains APIs related to model invocation and querying of knowledge
    * bases.</p>
    */
-  class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>
+  class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient : smithy::client::AwsSmithyClientT<Aws::BedrockAgentRuntime::SERVICE_NAME,
+      Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BedrockAgentRuntimeEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BedrockAgentRuntimeErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Bedrock Agent Runtime"; }
 
       typedef BedrockAgentRuntimeClientConfiguration ClientConfigurationType;
       typedef BedrockAgentRuntimeEndpointProvider EndpointProviderType;
@@ -159,15 +171,13 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         *  <p>The CLI doesn't support streaming operations in Amazon Bedrock,
-         * including <code>InvokeAgent</code>.</p>  <p>Sends a prompt for the agent
-         * to process and respond to. Note the following fields for the request:</p> <ul>
-         * <li> <p>To continue the same conversation with an agent, use the same
-         * <code>sessionId</code> value in the request.</p> </li> <li> <p>To activate trace
-         * enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement
-         * helps you follow the agent's reasoning process that led it to the information it
-         * processed, the actions it took, and the final result it yielded. For more
-         * information, see <a
+         *   <p>Sends a prompt for the agent to process and respond to. Note
+         * the following fields for the request:</p> <ul> <li> <p>To continue the same
+         * conversation with an agent, use the same <code>sessionId</code> value in the
+         * request.</p> </li> <li> <p>To activate trace enablement, turn
+         * <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow
+         * the agent's reasoning process that led it to the information it processed, the
+         * actions it took, and the final result it yielded. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
          * enablement</a>.</p> </li> <li> <p>To stream agent responses, make sure that only
          * orchestration prompt is enabled. Agent streaming is not supported for the
@@ -177,16 +187,18 @@ namespace BedrockAgentRuntime
          * conversation by setting <code>endSession</code> to <code>true</code>.</p> </li>
          * <li> <p>In the <code>sessionState</code> object, you can include attributes for
          * the session or prompt or, if you configured an action group to return control,
-         * results from invocation of the action group.</p> </li> </ul> <p>The response is
-         * returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
-         * <ul> <li> <p>The <code>attribution</code> object contains citations for parts of
-         * the response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
-         * <code>true</code> in the request, you can trace the agent's steps and reasoning
-         * process that led it to the response.</p> </li> <li> <p>If the action predicted
-         * was configured to return control, the response returns parameters for the
-         * action, elicited from the user, in the <code>returnControl</code> field.</p>
-         * </li> <li> <p>Errors are also surfaced in the response.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * results from invocation of the action group.</p> </li> </ul> <p>The response
+         * contains both <b>chunk</b> and <b>trace</b> attributes.</p> <p>The final
+         * response is returned in the <code>bytes</code> field of the <code>chunk</code>
+         * object. The <code>InvokeAgent</code> returns one chunk for the entire
+         * interaction.</p> <ul> <li> <p>The <code>attribution</code> object contains
+         * citations for parts of the response.</p> </li> <li> <p>If you set
+         * <code>enableTrace</code> to <code>true</code> in the request, you can trace the
+         * agent's steps and reasoning process that led it to the response.</p> </li> <li>
+         * <p>If the action predicted was configured to return control, the response
+         * returns parameters for the action, elicited from the user, in the
+         * <code>returnControl</code> field.</p> </li> <li> <p>Errors are also surfaced in
+         * the response.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeAgent">AWS
          * API Reference</a></p>
          */
@@ -258,9 +270,8 @@ namespace BedrockAgentRuntime
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
          * prompts</a>.</p> </li> <li> <p>The agent instructions will not be honored if
          * your agent has only one knowledge base, uses default prompts, has no action
-         * group, and user input is disabled.</p> </li> </ul>  <p>The CLI doesn't
-         * support streaming operations in Amazon Bedrock, including
-         * <code>InvokeInlineAgent</code>.</p> <p><h3>See Also:</h3>   <a
+         * group, and user input is disabled.</p> </li> </ul>  <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeInlineAgent">AWS
          * API Reference</a></p>
          */
@@ -432,10 +443,7 @@ namespace BedrockAgentRuntime
       std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>;
-      void init(const BedrockAgentRuntimeClientConfiguration& clientConfiguration);
 
-      BedrockAgentRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BedrockAgentRuntime

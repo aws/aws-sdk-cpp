@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/internetmonitor/InternetMonitorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/internetmonitor/InternetMonitorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace InternetMonitor
 {
+  AWS_INTERNETMONITOR_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon CloudWatch Internet Monitor provides visibility into how internet
    * issues impact the performance and availability between your applications hosted
@@ -44,12 +48,20 @@ namespace InternetMonitor
    * Amazon CloudWatch Internet Monitor</a> in the <i>Amazon CloudWatch User
    * Guide</i>.</p>
    */
-  class AWS_INTERNETMONITOR_API InternetMonitorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<InternetMonitorClient>
+  class AWS_INTERNETMONITOR_API InternetMonitorClient : smithy::client::AwsSmithyClientT<Aws::InternetMonitor::SERVICE_NAME,
+      Aws::InternetMonitor::InternetMonitorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      InternetMonitorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::InternetMonitorErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<InternetMonitorClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "InternetMonitor"; }
 
       typedef InternetMonitorClientConfiguration ClientConfigurationType;
       typedef InternetMonitorEndpointProvider EndpointProviderType;
@@ -596,10 +608,7 @@ namespace InternetMonitor
       std::shared_ptr<InternetMonitorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<InternetMonitorClient>;
-      void init(const InternetMonitorClientConfiguration& clientConfiguration);
 
-      InternetMonitorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<InternetMonitorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace InternetMonitor

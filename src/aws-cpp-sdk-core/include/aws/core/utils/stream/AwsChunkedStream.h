@@ -77,7 +77,7 @@ class AwsChunkedStream {
       m_request->GetRequestHash().second->Update(reinterpret_cast<unsigned char *>(m_data.GetUnderlyingData()), bytesRead);
     }
 
-    if (m_chunkingStream != nullptr && !m_chunkingStream->bad()) {
+    if (bytesRead > 0 && m_chunkingStream != nullptr && !m_chunkingStream->bad()) {
       if (m_chunkingStream->eof()) {
         m_chunkingStream->clear();
       }

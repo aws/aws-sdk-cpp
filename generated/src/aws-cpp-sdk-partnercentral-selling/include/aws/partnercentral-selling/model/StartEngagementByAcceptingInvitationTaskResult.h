@@ -90,8 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the resource snapshot job created as part of this task.
-     * </p>
+     * <p>The identifier of the Resource Snapshot Job created as part of this task.</p>
      */
     inline const Aws::String& GetResourceSnapshotJobId() const{ return m_resourceSnapshotJobId; }
     inline void SetResourceSnapshotJobId(const Aws::String& value) { m_resourceSnapshotJobId = value; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) that identifies the engagement. </p>
+     * <p>The Amazon Resource Name (ARN) that identifies the engagement.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Unique identifier assigned to the newly created engagement. </p>
+     * <p>Unique identifier assigned to the newly created engagement.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }

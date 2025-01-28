@@ -6,23 +6,28 @@
 #pragma once
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sso-oidc/SSOOIDCErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SSOOIDC
 {
+  AWS_SSOOIDC_API extern const char SERVICE_NAME[];
   /**
    * <p>IAM Identity Center OpenID Connect (OIDC) is a web service that enables a
    * client (such as CLI or a native application) to register with IAM Identity
    * Center. The service also enables the client to fetch the user’s access token
    * upon successful authentication and authorization with IAM Identity Center.</p>
-   *  <p>IAM Identity Center uses the <code>sso</code> and
-   * <code>identitystore</code> API namespaces.</p>  <p> <b>Considerations for
-   * Using This Guide</b> </p> <p>Before you begin using this guide, we recommend
+   * <p> <b>API namespaces</b> </p> <p>IAM Identity Center uses the <code>sso</code>
+   * and <code>identitystore</code> API namespaces. IAM Identity Center OpenID
+   * Connect uses the <code>sso-oidc</code> namespace.</p> <p> <b>Considerations for
+   * using this guide</b> </p> <p>Before you begin using this guide, we recommend
    * that you first review the following important information about how the IAM
    * Identity Center OIDC service works.</p> <ul> <li> <p>The IAM Identity Center
    * OIDC service currently implements only the portions of the OAuth 2.0 Device
@@ -49,12 +54,20 @@ namespace SSOOIDC
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">What
    * is IAM Identity Center?</a> in the <i>IAM Identity Center User Guide</i>.</p>
    */
-  class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>
+  class AWS_SSOOIDC_API SSOOIDCClient : smithy::client::AwsSmithyClientT<Aws::SSOOIDC::SERVICE_NAME,
+      Aws::SSOOIDC::SSOOIDCClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SSOOIDCEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SSOOIDCErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SSO OIDC"; }
 
       typedef SSOOIDCClientConfiguration ClientConfigurationType;
       typedef SSOOIDCEndpointProvider EndpointProviderType;
@@ -110,7 +123,7 @@ namespace SSOOIDC
         /**
          * <p>Creates and returns access and refresh tokens for clients that are
          * authenticated using client secrets. The access token can be used to fetch
-         * short-term credentials for the assigned AWS accounts or to access application
+         * short-lived credentials for the assigned AWS accounts or to access application
          * APIs using <code>bearer</code> authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">AWS
          * API Reference</a></p>
@@ -138,7 +151,7 @@ namespace SSOOIDC
         /**
          * <p>Creates and returns access and refresh tokens for clients and applications
          * that are authenticated using IAM entities. The access token can be used to fetch
-         * short-term credentials for the assigned Amazon Web Services accounts or to
+         * short-lived credentials for the assigned Amazon Web Services accounts or to
          * access application APIs using <code>bearer</code> authentication.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">AWS
@@ -165,9 +178,9 @@ namespace SSOOIDC
         }
 
         /**
-         * <p>Registers a client with IAM Identity Center. This allows clients to initiate
-         * device authorization. The output should be persisted for reuse through many
-         * authentication requests.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a public client with IAM Identity Center. This allows clients
+         * to perform authorization using the authorization code grant with Proof Key for
+         * Code Exchange (PKCE) or the device code grant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">AWS
          * API Reference</a></p>
          */
@@ -222,10 +235,7 @@ namespace SSOOIDC
       std::shared_ptr<SSOOIDCEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>;
-      void init(const SSOOIDCClientConfiguration& clientConfiguration);
 
-      SSOOIDCClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SSOOIDCEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSOOIDC

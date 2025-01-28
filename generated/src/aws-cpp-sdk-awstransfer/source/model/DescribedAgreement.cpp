@@ -33,7 +33,8 @@ DescribedAgreement::DescribedAgreement() :
     m_preserveFilename(PreserveFilenameType::NOT_SET),
     m_preserveFilenameHasBeenSet(false),
     m_enforceMessageSigning(EnforceMessageSigningType::NOT_SET),
-    m_enforceMessageSigningHasBeenSet(false)
+    m_enforceMessageSigningHasBeenSet(false),
+    m_customDirectoriesHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,13 @@ DescribedAgreement& DescribedAgreement::operator =(JsonView jsonValue)
     m_enforceMessageSigningHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomDirectories"))
+  {
+    m_customDirectories = jsonValue.GetObject("CustomDirectories");
+
+    m_customDirectoriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -211,6 +219,12 @@ JsonValue DescribedAgreement::Jsonize() const
   if(m_enforceMessageSigningHasBeenSet)
   {
    payload.WithString("EnforceMessageSigning", EnforceMessageSigningTypeMapper::GetNameForEnforceMessageSigningType(m_enforceMessageSigning));
+  }
+
+  if(m_customDirectoriesHasBeenSet)
+  {
+   payload.WithObject("CustomDirectories", m_customDirectories.Jsonize());
+
   }
 
   return payload;

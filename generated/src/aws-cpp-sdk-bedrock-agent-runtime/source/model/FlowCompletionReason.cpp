@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
+        static const int INPUT_REQUIRED_HASH = HashingUtils::HashString("INPUT_REQUIRED");
 
 
         FlowCompletionReason GetFlowCompletionReasonForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SUCCESS_HASH)
           {
             return FlowCompletionReason::SUCCESS;
+          }
+          else if (hashCode == INPUT_REQUIRED_HASH)
+          {
+            return FlowCompletionReason::INPUT_REQUIRED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case FlowCompletionReason::SUCCESS:
             return "SUCCESS";
+          case FlowCompletionReason::INPUT_REQUIRED:
+            return "INPUT_REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

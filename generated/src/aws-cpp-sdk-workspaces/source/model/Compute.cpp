@@ -26,6 +26,8 @@ namespace Aws
         static const int POWER_HASH = HashingUtils::HashString("POWER");
         static const int GRAPHICS_HASH = HashingUtils::HashString("GRAPHICS");
         static const int POWERPRO_HASH = HashingUtils::HashString("POWERPRO");
+        static const int GENERALPURPOSE_4XLARGE_HASH = HashingUtils::HashString("GENERALPURPOSE_4XLARGE");
+        static const int GENERALPURPOSE_8XLARGE_HASH = HashingUtils::HashString("GENERALPURPOSE_8XLARGE");
         static const int GRAPHICSPRO_HASH = HashingUtils::HashString("GRAPHICSPRO");
         static const int GRAPHICS_G4DN_HASH = HashingUtils::HashString("GRAPHICS_G4DN");
         static const int GRAPHICSPRO_G4DN_HASH = HashingUtils::HashString("GRAPHICSPRO_G4DN");
@@ -57,6 +59,14 @@ namespace Aws
           else if (hashCode == POWERPRO_HASH)
           {
             return Compute::POWERPRO;
+          }
+          else if (hashCode == GENERALPURPOSE_4XLARGE_HASH)
+          {
+            return Compute::GENERALPURPOSE_4XLARGE;
+          }
+          else if (hashCode == GENERALPURPOSE_8XLARGE_HASH)
+          {
+            return Compute::GENERALPURPOSE_8XLARGE;
           }
           else if (hashCode == GRAPHICSPRO_HASH)
           {
@@ -98,6 +108,10 @@ namespace Aws
             return "GRAPHICS";
           case Compute::POWERPRO:
             return "POWERPRO";
+          case Compute::GENERALPURPOSE_4XLARGE:
+            return "GENERALPURPOSE_4XLARGE";
+          case Compute::GENERALPURPOSE_8XLARGE:
+            return "GENERALPURPOSE_8XLARGE";
           case Compute::GRAPHICSPRO:
             return "GRAPHICSPRO";
           case Compute::GRAPHICS_G4DN:

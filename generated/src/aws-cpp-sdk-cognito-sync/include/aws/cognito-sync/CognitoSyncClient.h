@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cognito-sync/CognitoSyncErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CognitoSync
 {
+  AWS_COGNITOSYNC_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Cognito Sync</fullname> <p>Amazon Cognito Sync provides an AWS
    * service and client library that enable cross-device syncing of
@@ -37,12 +41,20 @@ namespace CognitoSync
    * href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
    * Guide for iOS</a>.</p>
    */
-  class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>
+  class AWS_COGNITOSYNC_API CognitoSyncClient : smithy::client::AwsSmithyClientT<Aws::CognitoSync::SERVICE_NAME,
+      Aws::CognitoSync::CognitoSyncClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CognitoSyncEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CognitoSyncErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Cognito Sync"; }
 
       typedef CognitoSyncClientConfiguration ClientConfigurationType;
       typedef CognitoSyncEndpointProvider EndpointProviderType;
@@ -595,10 +607,7 @@ namespace CognitoSync
       std::shared_ptr<CognitoSyncEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>;
-      void init(const CognitoSyncClientConfiguration& clientConfiguration);
 
-      CognitoSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CognitoSyncEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CognitoSync

@@ -34,6 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeFlow"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
 
     /**
@@ -68,6 +69,21 @@ namespace Model
     inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
     inline void SetEnableTrace(bool value) { m_enableTraceHasBeenSet = true; m_enableTrace = value; }
     inline InvokeFlowRequest& WithEnableTrace(bool value) { SetEnableTrace(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier for the current flow execution. If you don't provide a
+     * value, Amazon Bedrock creates the identifier for you. </p>
+     */
+    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
+    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
+    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
+    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
+    inline InvokeFlowRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
+    inline InvokeFlowRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
+    inline InvokeFlowRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
     ///@}
 
     ///@{
@@ -128,6 +144,9 @@ namespace Model
 
     bool m_enableTrace;
     bool m_enableTraceHasBeenSet = false;
+
+    Aws::String m_executionId;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_flowAliasIdentifier;
     bool m_flowAliasIdentifierHasBeenSet = false;

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/databrew/GlueDataBrewServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/databrew/GlueDataBrewErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GlueDataBrew
 {
+  AWS_GLUEDATABREW_API extern const char SERVICE_NAME[];
   /**
    * <p>Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew
    * simplifies data preparation tasks, targeting data issues that are hard to spot
@@ -22,12 +26,20 @@ namespace GlueDataBrew
    * visualize the data and perform one-click data transformations, with no coding
    * required.</p>
    */
-  class AWS_GLUEDATABREW_API GlueDataBrewClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>
+  class AWS_GLUEDATABREW_API GlueDataBrewClient : smithy::client::AwsSmithyClientT<Aws::GlueDataBrew::SERVICE_NAME,
+      Aws::GlueDataBrew::GlueDataBrewClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GlueDataBrewEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GlueDataBrewErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DataBrew"; }
 
       typedef GlueDataBrewClientConfiguration ClientConfigurationType;
       typedef GlueDataBrewEndpointProvider EndpointProviderType;
@@ -1223,10 +1235,7 @@ namespace GlueDataBrew
       std::shared_ptr<GlueDataBrewEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>;
-      void init(const GlueDataBrewClientConfiguration& clientConfiguration);
 
-      GlueDataBrewClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GlueDataBrewEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GlueDataBrew

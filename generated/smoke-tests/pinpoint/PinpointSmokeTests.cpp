@@ -2,22 +2,22 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <aws/core/utils/memory/AWSMemory.h>
+#include <algorithm>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/core/utils/UnreferencedParam.h>
-#include <utility>
-#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/http/HttpTypes.h>
-#include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
-#include <algorithm>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <utility>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/pinpoint/PinpointClient.h>
-#include <aws/pinpoint/model/GetAppsRequest.h>
 #include <aws/pinpoint/model/GetAppRequest.h>
+#include <aws/pinpoint/model/GetAppsRequest.h>
 
 namespace PinpointSmokeTest{
 using namespace Aws::Auth;

@@ -59,9 +59,8 @@ namespace Model
     ///@{
     /**
      * <p>The parameters you want to update for the association. If you create a
-     * parameter using Parameter Store, a capability of Amazon Web Services Systems
-     * Manager, you can reference the parameter using
-     * <code>{{ssm:parameter-name}}</code>.</p>
+     * parameter using Parameter Store, a tool in Amazon Web Services Systems Manager,
+     * you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
@@ -199,8 +198,8 @@ namespace Model
     /**
      * <p>Choose the parameter that will define how your automation will branch out.
      * This target is required for associations that use an Automation runbook and
-     * target resources by using rate controls. Automation is a capability of Amazon
-     * Web Services Systems Manager.</p>
+     * target resources by using rate controls. Automation is a tool in Amazon Web
+     * Services Systems Manager.</p>
      */
     inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
     inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }
@@ -281,9 +280,9 @@ namespace Model
      * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
      * mode, you must specify the <code>AssociationId</code> as a parameter for the
      * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
-     * managed by State Manager, a capability of Amazon Web Services Systems Manager.
-     * It is managed by your direct call to the <a>PutComplianceItems</a> API
-     * operation.</p> <p>By default, all associations use <code>AUTO</code> mode.</p>
+     * managed by State Manager, a tool in Amazon Web Services Systems Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
+     * <p>By default, all associations use <code>AUTO</code> mode.</p>
      */
     inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
     inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }

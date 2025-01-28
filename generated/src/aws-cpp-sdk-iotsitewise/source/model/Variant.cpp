@@ -25,7 +25,8 @@ Variant::Variant() :
     m_doubleValue(0.0),
     m_doubleValueHasBeenSet(false),
     m_booleanValue(false),
-    m_booleanValueHasBeenSet(false)
+    m_booleanValueHasBeenSet(false),
+    m_nullValueHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,13 @@ Variant& Variant::operator =(JsonView jsonValue)
     m_booleanValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("nullValue"))
+  {
+    m_nullValue = jsonValue.GetObject("nullValue");
+
+    m_nullValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +101,12 @@ JsonValue Variant::Jsonize() const
   if(m_booleanValueHasBeenSet)
   {
    payload.WithBool("booleanValue", m_booleanValue);
+
+  }
+
+  if(m_nullValueHasBeenSet)
+  {
+   payload.WithObject("nullValue", m_nullValue.Jsonize());
 
   }
 

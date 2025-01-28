@@ -141,10 +141,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             "WriteGetObjectResponse"
     );
 
-    private static final Set<String> OPS_TO_SKIP_CHECKSUMS = ImmutableSet.of(
-            "UploadPart"
-    );
-
     private static final Set<String> REQUESTS_TO_OVERRIDE_STREAMING = ImmutableSet.of(
             "PutBucketPolicyRequest"
     );
@@ -280,10 +276,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         serviceModel.getOperations().entrySet().stream()
                 .filter(entry -> !opsThatDoNotSupportBucketArguments.contains(entry.getValue().getName()))
                 .forEach(entry -> entry.getValue().setShouldUsePropertyBag(true));
-
-        serviceModel.getOperations().entrySet().stream()
-                .filter(entry -> OPS_TO_SKIP_CHECKSUMS.contains(entry.getValue().getName()))
-                .forEach(entry -> entry.getValue().setShouldSkipChecksum(true));
 
         serviceModel.getShapes().values().stream()
                 .filter(shape -> REQUESTS_TO_OVERRIDE_STREAMING.contains(shape.getName()))

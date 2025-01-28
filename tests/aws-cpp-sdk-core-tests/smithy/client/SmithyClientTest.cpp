@@ -202,7 +202,7 @@ class TestClient : public MySmithyClient
 
     SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const smithy::AuthSchemeOption& targetAuthSchemeOption) const
     {
-        return MySmithyClient::SignRequest(httpRequest, targetAuthSchemeOption);
+        return MySmithyClient::SignHttpRequest(httpRequest, targetAuthSchemeOption);
     }
 
 
@@ -414,7 +414,7 @@ public:
     Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(SampleServiceName),
     Aws::MakeShared<SampleEndpointProvider>(SampleServiceName),
     Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(SampleServiceName),
-    {})
+    Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4aAuthScheme>>())
   {}
 };
 

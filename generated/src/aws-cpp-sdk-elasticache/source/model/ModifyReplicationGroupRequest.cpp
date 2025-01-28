@@ -99,7 +99,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
       unsigned cacheSecurityGroupNamesCount = 1;
       for(auto& item : m_cacheSecurityGroupNames)
       {
-        ss << "CacheSecurityGroupNames.member." << cacheSecurityGroupNamesCount << "="
+        ss << "CacheSecurityGroupNames.CacheSecurityGroupName." << cacheSecurityGroupNamesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         cacheSecurityGroupNamesCount++;
       }
@@ -117,7 +117,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
       unsigned securityGroupIdsCount = 1;
       for(auto& item : m_securityGroupIds)
       {
-        ss << "SecurityGroupIds.member." << securityGroupIdsCount << "="
+        ss << "SecurityGroupIds.SecurityGroupId." << securityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         securityGroupIdsCount++;
       }
@@ -241,7 +241,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
       unsigned logDeliveryConfigurationsCount = 1;
       for(auto& item : m_logDeliveryConfigurations)
       {
-        item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+        item.OutputToStream(ss, "LogDeliveryConfigurations.LogDeliveryConfigurationRequest.", logDeliveryConfigurationsCount, "");
         logDeliveryConfigurationsCount++;
       }
     }

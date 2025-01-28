@@ -25,6 +25,7 @@ CopyPartResult::CopyPartResult() :
     m_lastModifiedHasBeenSet(false),
     m_checksumCRC32HasBeenSet(false),
     m_checksumCRC32CHasBeenSet(false),
+    m_checksumCRC64NVMEHasBeenSet(false),
     m_checksumSHA1HasBeenSet(false),
     m_checksumSHA256HasBeenSet(false)
 {
@@ -65,6 +66,12 @@ CopyPartResult& CopyPartResult::operator =(const XmlNode& xmlNode)
     {
       m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
       m_checksumCRC32CHasBeenSet = true;
+    }
+    XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
+    if(!checksumCRC64NVMENode.IsNull())
+    {
+      m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
+      m_checksumCRC64NVMEHasBeenSet = true;
     }
     XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
     if(!checksumSHA1Node.IsNull())
@@ -108,6 +115,12 @@ void CopyPartResult::AddToNode(XmlNode& parentNode) const
   {
    XmlNode checksumCRC32CNode = parentNode.CreateChildElement("ChecksumCRC32C");
    checksumCRC32CNode.SetText(m_checksumCRC32C);
+  }
+
+  if(m_checksumCRC64NVMEHasBeenSet)
+  {
+   XmlNode checksumCRC64NVMENode = parentNode.CreateChildElement("ChecksumCRC64NVME");
+   checksumCRC64NVMENode.SetText(m_checksumCRC64NVME);
   }
 
   if(m_checksumSHA1HasBeenSet)

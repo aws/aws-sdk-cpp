@@ -69,6 +69,9 @@ namespace Model
 #if($shape.hasEventStreamMembers())
     inline virtual bool IsEventStreamRequest() const override { return true; }
 #end
+#if($hasEventStreamResponse)
+    inline virtual bool HasEventStreamResponse() const override { return true; }
+#end
 #if(!$shape.hasStreamMembers() && !$shape.hasEventStreamMembers())
     ${exportMacro} Aws::String SerializePayload() const override;
 
@@ -91,10 +94,13 @@ namespace Model
 #end
 #if($operation.requestAlgorithmMember)
     ${exportMacro} Aws::String GetChecksumAlgorithmName() const override;
-
 #end
 #if($operation.requestValidationModeMember)
     ${exportMacro} bool ShouldValidateResponseChecksum() const override;
+
+#end
+#if($operation.requestChecksumRequired)
+    inline bool RequestChecksumRequired() const override { return true; };
 
 #end
 #if($operation.responseAlgorithms)

@@ -12,6 +12,7 @@
 #include <aws/notifications/model/NotificationType.h>
 #include <aws/notifications/model/EventStatus.h>
 #include <aws/notifications/model/AggregationEventType.h>
+#include <aws/notifications/model/AggregationSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -35,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>A NotificationEvent is a notification-focused representation of an event.
-   * They contain semantic information used by Channels to create end-user
+   * <p>A <code>NotificationEvent</code> is a notification-focused representation of
+   * an event. They contain semantic information used by Channels to create end-user
    * notifications.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/NotificationEvent">AWS
    * API Reference</a></p>
@@ -64,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for a NotificationEvent.</p>
+     * <p>The unique identifier for a <code>NotificationEvent</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -151,12 +152,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The assesed nature of the event.</p> <ul> <li> <p>Values:</p> <ul> <li> <p>
-     * <code>HEALTHY</code> </p> <ul> <li> <p>All EventRules are <code>ACTIVE</code>
-     * and any call can be run.</p> </li> </ul> </li> <li> <p> <code>UNHEALTHY</code>
-     * </p> <ul> <li> <p>Some EventRules are <code>ACTIVE</code> and some are
-     * <code>INACTIVE</code>. Any call can be run.</p> </li> </ul> </li> </ul> </li>
-     * </ul>
+     * <p>The assessed nature of the event.</p> <ul> <li> <p>Values:</p> <ul> <li> <p>
+     * <code>HEALTHY</code> </p> <ul> <li> <p>All <code>EventRules</code> are
+     * <code>ACTIVE</code> and any call can be run.</p> </li> </ul> </li> <li> <p>
+     * <code>UNHEALTHY</code> </p> <ul> <li> <p>Some <code>EventRules</code> are
+     * <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p>
+     * </li> </ul> </li> </ul> </li> </ul>
      */
     inline const EventStatus& GetEventStatus() const{ return m_eventStatus; }
     inline bool EventStatusHasBeenSet() const { return m_eventStatusHasBeenSet; }
@@ -168,11 +169,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The NotificationConfiguration's aggregation type.</p> <ul> <li>
-     * <p>Values:</p> <ul> <li> <p> <code>AGGREGATE</code> </p> <ul> <li> <p>The
+     * <p>The aggregation type of the <code>NotificationConfiguration</code>.</p> <ul>
+     * <li> <p>Values:</p> <ul> <li> <p> <code>AGGREGATE</code> </p> <ul> <li> <p>The
      * notification event is an aggregate notification. Aggregate notifications
      * summarize grouped events over a specified time period.</p> </li> </ul> </li>
-     * <li> <p> <code>CHILD</code> </p> <ul> <li> <p>Some EventRules are
+     * <li> <p> <code>CHILD</code> </p> <ul> <li> <p>Some <code>EventRules</code> are
      * <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p>
      * </li> </ul> </li> <li> <p> <code>NONE</code> </p> <ul> <li> <p>The notification
      * isn't aggregated.</p> </li> </ul> </li> </ul> </li> </ul>
@@ -187,9 +188,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the value of aggregationEventType is not <code>NONE</code>, this is the
-     * Amazon Resource Event (ARN) of the parent aggregate notification.</p> <p>This is
-     * omitted if notification isn't aggregated.</p>
+     * <p>If the value of <code>aggregationEventType</code> is not <code>NONE</code>,
+     * this is the Amazon Resource Event (ARN) of the parent aggregate
+     * notification.</p> <p>This is omitted if notification isn't aggregated.</p>
      */
     inline const Aws::String& GetAggregateNotificationEventArn() const{ return m_aggregateNotificationEventArn; }
     inline bool AggregateNotificationEventArnHasBeenSet() const { return m_aggregateNotificationEventArnHasBeenSet; }
@@ -199,6 +200,19 @@ namespace Model
     inline NotificationEvent& WithAggregateNotificationEventArn(const Aws::String& value) { SetAggregateNotificationEventArn(value); return *this;}
     inline NotificationEvent& WithAggregateNotificationEventArn(Aws::String&& value) { SetAggregateNotificationEventArn(std::move(value)); return *this;}
     inline NotificationEvent& WithAggregateNotificationEventArn(const char* value) { SetAggregateNotificationEventArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides additional information about how multiple notifications are
+     * grouped.</p>
+     */
+    inline const AggregationSummary& GetAggregationSummary() const{ return m_aggregationSummary; }
+    inline bool AggregationSummaryHasBeenSet() const { return m_aggregationSummaryHasBeenSet; }
+    inline void SetAggregationSummary(const AggregationSummary& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = value; }
+    inline void SetAggregationSummary(AggregationSummary&& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = std::move(value); }
+    inline NotificationEvent& WithAggregationSummary(const AggregationSummary& value) { SetAggregationSummary(value); return *this;}
+    inline NotificationEvent& WithAggregationSummary(AggregationSummary&& value) { SetAggregationSummary(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -287,6 +301,9 @@ namespace Model
 
     Aws::String m_aggregateNotificationEventArn;
     bool m_aggregateNotificationEventArnHasBeenSet = false;
+
+    AggregationSummary m_aggregationSummary;
+    bool m_aggregationSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;

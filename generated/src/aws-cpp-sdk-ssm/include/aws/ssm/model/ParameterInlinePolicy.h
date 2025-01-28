@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
-     * Systems Manager, supports the following policy types: Expiration,
+     * <p>The type of policy. Parameter Store, a tool in Amazon Web Services Systems
+     * Manager, supports the following policy types: Expiration,
      * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }

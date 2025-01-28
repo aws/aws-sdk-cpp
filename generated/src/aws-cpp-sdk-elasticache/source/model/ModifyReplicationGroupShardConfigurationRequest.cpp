@@ -52,7 +52,7 @@ Aws::String ModifyReplicationGroupShardConfigurationRequest::SerializePayload() 
       unsigned reshardingConfigurationCount = 1;
       for(auto& item : m_reshardingConfiguration)
       {
-        item.OutputToStream(ss, "ReshardingConfiguration.member.", reshardingConfigurationCount, "");
+        item.OutputToStream(ss, "ReshardingConfiguration.ReshardingConfiguration.", reshardingConfigurationCount, "");
         reshardingConfigurationCount++;
       }
     }
@@ -69,7 +69,7 @@ Aws::String ModifyReplicationGroupShardConfigurationRequest::SerializePayload() 
       unsigned nodeGroupsToRemoveCount = 1;
       for(auto& item : m_nodeGroupsToRemove)
       {
-        ss << "NodeGroupsToRemove.member." << nodeGroupsToRemoveCount << "="
+        ss << "NodeGroupsToRemove.NodeGroupToRemove." << nodeGroupsToRemoveCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         nodeGroupsToRemoveCount++;
       }
@@ -87,7 +87,7 @@ Aws::String ModifyReplicationGroupShardConfigurationRequest::SerializePayload() 
       unsigned nodeGroupsToRetainCount = 1;
       for(auto& item : m_nodeGroupsToRetain)
       {
-        ss << "NodeGroupsToRetain.member." << nodeGroupsToRetainCount << "="
+        ss << "NodeGroupsToRetain.NodeGroupToRetain." << nodeGroupsToRetainCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         nodeGroupsToRetainCount++;
       }

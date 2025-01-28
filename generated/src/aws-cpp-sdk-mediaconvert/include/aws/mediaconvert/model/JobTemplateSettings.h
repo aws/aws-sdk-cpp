@@ -124,7 +124,7 @@ namespace Model
     /**
      * Specify the input that MediaConvert references for your default output settings.
      * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
-     * for all  outputs that you don't manually specify different output settings for.
+     * for all outputs that you don't manually specify different output settings for.
      * Enabling this setting will disable "Follow source" for all other inputs.  If
      * MediaConvert cannot follow your source, for example if you specify an audio-only
      * input,  MediaConvert uses the first followable input instead. In your JSON job

@@ -17,6 +17,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CompleteMultipartUploadResult::CompleteMultipartUploadResult() : 
+    m_checksumType(ChecksumType::NOT_SET),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
@@ -66,6 +67,11 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
     {
       m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
     }
+    XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
+    if(!checksumCRC64NVMENode.IsNull())
+    {
+      m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
+    }
     XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
     if(!checksumSHA1Node.IsNull())
     {
@@ -75,6 +81,11 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
     if(!checksumSHA256Node.IsNull())
     {
       m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
+    }
+    XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
+    if(!checksumTypeNode.IsNull())
+    {
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
     }
   }
 

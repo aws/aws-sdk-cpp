@@ -59,7 +59,6 @@ public class Operation {
 
     // For S3 Express
     private boolean shouldUsePropertyBag;
-    private boolean shouldSkipChecksum;
 
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;
@@ -81,6 +80,8 @@ public class Operation {
     private String requestAlgorithmMember;
     private String requestValidationModeMember;
     private List<String> responseAlgorithms;
+
+    // for comporession
     private boolean requestCompressionRequired;
     private boolean requestCompressionRequiredGzip;
 

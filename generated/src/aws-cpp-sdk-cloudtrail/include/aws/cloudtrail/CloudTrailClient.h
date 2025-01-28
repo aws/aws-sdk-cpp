@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cloudtrail/CloudTrailErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudTrail
 {
+  AWS_CLOUDTRAIL_API extern const char SERVICE_NAME[];
   /**
    * <fullname>CloudTrail</fullname> <p>This is the CloudTrail API Reference. It
    * provides descriptions of actions, data types, common parameters, and common
@@ -36,12 +40,20 @@ namespace CloudTrail
    * User Guide</a> for information about the data that is included with each Amazon
    * Web Services API call listed in the log files.</p>
    */
-  class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>
+  class AWS_CLOUDTRAIL_API CloudTrailClient : smithy::client::AwsSmithyClientT<Aws::CloudTrail::SERVICE_NAME,
+      Aws::CloudTrail::CloudTrailClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudTrailEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudTrailErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudTrail"; }
 
       typedef CloudTrailClientConfiguration ClientConfigurationType;
       typedef CloudTrailEndpointProvider EndpointProviderType;
@@ -779,9 +791,9 @@ namespace CloudTrail
          * event data store, or the <code>TrailName</code> parameter to the get Insights
          * event selectors for a trail. You cannot specify these parameters together.</p>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * CloudTrail Insights events</a> in the <i>CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+         * with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
          * API Reference</a></p>
          */
@@ -1258,10 +1270,10 @@ namespace CloudTrail
          * your trail to log Insights events, be sure the event selector or advanced event
          * selector enables logging of the Insights event types you want configured for
          * your trail. For more information about logging Insights events, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails
-         * created without specific event selectors are configured to log all read and
-         * write management events, and no data events or network activity events.</p>
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+         * with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>. By default,
+         * trails created without specific event selectors are configured to log all read
+         * and write management events, and no data events or network activity events.</p>
          * <p>When an event occurs in your account, CloudTrail evaluates the event
          * selectors or advanced event selectors in all trails. For each trail, if the
          * event matches any event selector, the trail processes and logs the event. If the
@@ -1336,9 +1348,9 @@ namespace CloudTrail
          * management events. You can call <code>GetEventDataStore</code> on an event data
          * store to check whether the event data store logs management events.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-         * CloudTrail Insights events</a> in the <i>CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+         * with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
          * API Reference</a></p>
          */
@@ -1472,6 +1484,33 @@ namespace CloudTrail
         void RestoreEventDataStoreAsync(const RestoreEventDataStoreRequestT& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::RestoreEventDataStore, request, handler, context);
+        }
+
+        /**
+         * <p> Searches sample queries and returns a list of sample queries that are sorted
+         * by relevance. To search for sample queries, provide a natural language
+         * <code>SearchPhrase</code> in English. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchSampleQueriesOutcome SearchSampleQueries(const Model::SearchSampleQueriesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchSampleQueries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchSampleQueriesRequestT = Model::SearchSampleQueriesRequest>
+        Model::SearchSampleQueriesOutcomeCallable SearchSampleQueriesCallable(const SearchSampleQueriesRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::SearchSampleQueries, request);
+        }
+
+        /**
+         * An Async wrapper for SearchSampleQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchSampleQueriesRequestT = Model::SearchSampleQueriesRequest>
+        void SearchSampleQueriesAsync(const SearchSampleQueriesRequestT& request, const SearchSampleQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::SearchSampleQueries, request, handler, context);
         }
 
         /**
@@ -1872,10 +1911,7 @@ namespace CloudTrail
       std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;
-      void init(const CloudTrailClientConfiguration& clientConfiguration);
 
-      CloudTrailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudTrail

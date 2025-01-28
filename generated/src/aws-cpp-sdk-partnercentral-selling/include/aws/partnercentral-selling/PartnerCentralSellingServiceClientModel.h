@@ -40,9 +40,12 @@
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsResult.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsResult.h>
 #include <aws/partnercentral-selling/model/ListSolutionsResult.h>
+#include <aws/partnercentral-selling/model/ListTagsForResourceResult.h>
 #include <aws/partnercentral-selling/model/PutSellingSystemSettingsResult.h>
 #include <aws/partnercentral-selling/model/StartEngagementByAcceptingInvitationTaskResult.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskResult.h>
+#include <aws/partnercentral-selling/model/TagResourceResult.h>
+#include <aws/partnercentral-selling/model/UntagResourceResult.h>
 #include <aws/partnercentral-selling/model/UpdateOpportunityResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PartnerCentralSellingClient header */
@@ -112,6 +115,7 @@ namespace Aws
       class ListResourceSnapshotJobsRequest;
       class ListResourceSnapshotsRequest;
       class ListSolutionsRequest;
+      class ListTagsForResourceRequest;
       class PutSellingSystemSettingsRequest;
       class RejectEngagementInvitationRequest;
       class StartEngagementByAcceptingInvitationTaskRequest;
@@ -119,6 +123,8 @@ namespace Aws
       class StartResourceSnapshotJobRequest;
       class StopResourceSnapshotJobRequest;
       class SubmitOpportunityRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateOpportunityRequest;
       /* End of service model forward declarations required in PartnerCentralSellingClient header */
 
@@ -150,6 +156,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListResourceSnapshotJobsResult, PartnerCentralSellingError> ListResourceSnapshotJobsOutcome;
       typedef Aws::Utils::Outcome<ListResourceSnapshotsResult, PartnerCentralSellingError> ListResourceSnapshotsOutcome;
       typedef Aws::Utils::Outcome<ListSolutionsResult, PartnerCentralSellingError> ListSolutionsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, PartnerCentralSellingError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutSellingSystemSettingsResult, PartnerCentralSellingError> PutSellingSystemSettingsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> RejectEngagementInvitationOutcome;
       typedef Aws::Utils::Outcome<StartEngagementByAcceptingInvitationTaskResult, PartnerCentralSellingError> StartEngagementByAcceptingInvitationTaskOutcome;
@@ -157,6 +164,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> StartResourceSnapshotJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> StopResourceSnapshotJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralSellingError> SubmitOpportunityOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, PartnerCentralSellingError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, PartnerCentralSellingError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateOpportunityResult, PartnerCentralSellingError> UpdateOpportunityOutcome;
       /* End of service model Outcome class definitions */
 
@@ -188,6 +197,7 @@ namespace Aws
       typedef std::future<ListResourceSnapshotJobsOutcome> ListResourceSnapshotJobsOutcomeCallable;
       typedef std::future<ListResourceSnapshotsOutcome> ListResourceSnapshotsOutcomeCallable;
       typedef std::future<ListSolutionsOutcome> ListSolutionsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutSellingSystemSettingsOutcome> PutSellingSystemSettingsOutcomeCallable;
       typedef std::future<RejectEngagementInvitationOutcome> RejectEngagementInvitationOutcomeCallable;
       typedef std::future<StartEngagementByAcceptingInvitationTaskOutcome> StartEngagementByAcceptingInvitationTaskOutcomeCallable;
@@ -195,6 +205,8 @@ namespace Aws
       typedef std::future<StartResourceSnapshotJobOutcome> StartResourceSnapshotJobOutcomeCallable;
       typedef std::future<StopResourceSnapshotJobOutcome> StopResourceSnapshotJobOutcomeCallable;
       typedef std::future<SubmitOpportunityOutcome> SubmitOpportunityOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateOpportunityOutcome> UpdateOpportunityOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -229,6 +241,7 @@ namespace Aws
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListResourceSnapshotJobsRequest&, const Model::ListResourceSnapshotJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceSnapshotJobsResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListResourceSnapshotsRequest&, const Model::ListResourceSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceSnapshotsResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListSolutionsRequest&, const Model::ListSolutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionsResponseReceivedHandler;
+    typedef std::function<void(const PartnerCentralSellingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::PutSellingSystemSettingsRequest&, const Model::PutSellingSystemSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSellingSystemSettingsResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::RejectEngagementInvitationRequest&, const Model::RejectEngagementInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectEngagementInvitationResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::StartEngagementByAcceptingInvitationTaskRequest&, const Model::StartEngagementByAcceptingInvitationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEngagementByAcceptingInvitationTaskResponseReceivedHandler;
@@ -236,6 +249,8 @@ namespace Aws
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::StartResourceSnapshotJobRequest&, const Model::StartResourceSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartResourceSnapshotJobResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::StopResourceSnapshotJobRequest&, const Model::StopResourceSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopResourceSnapshotJobResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::SubmitOpportunityRequest&, const Model::SubmitOpportunityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitOpportunityResponseReceivedHandler;
+    typedef std::function<void(const PartnerCentralSellingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const PartnerCentralSellingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PartnerCentralSellingClient*, const Model::UpdateOpportunityRequest&, const Model::UpdateOpportunityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOpportunityResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace PartnerCentralSelling

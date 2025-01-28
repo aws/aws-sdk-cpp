@@ -21,7 +21,9 @@ namespace Model
     THOUSANDS,
     MILLIONS,
     BILLIONS,
-    TRILLIONS
+    TRILLIONS,
+    LAKHS,
+    CRORES
   };
 
 namespace NumberScaleMapper

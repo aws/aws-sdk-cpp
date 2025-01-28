@@ -40,6 +40,7 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "StartCallAnalyticsStreamTranscription"; }
 
     inline virtual bool IsEventStreamRequest() const override { return true; }
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     // SerializePayload will not be invoked.
     // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::String SerializePayload() const override { return {}; }

@@ -7,6 +7,7 @@
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3-crt/model/ChecksumType.h>
 #include <aws/s3-crt/model/ObjectVersionStorageClass.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3-crt/model/Owner.h>
@@ -69,6 +70,21 @@ namespace Model
     inline ObjectVersion& WithChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
     inline ObjectVersion& AddChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
     inline ObjectVersion& AddChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The checksum type that is used to calculate the object’s checksum value. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline bool ChecksumTypeHasBeenSet() const { return m_checksumTypeHasBeenSet; }
+    inline void SetChecksumType(const ChecksumType& value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline void SetChecksumType(ChecksumType&& value) { m_checksumTypeHasBeenSet = true; m_checksumType = std::move(value); }
+    inline ObjectVersion& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
+    inline ObjectVersion& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,6 +194,9 @@ namespace Model
 
     Aws::Vector<ChecksumAlgorithm> m_checksumAlgorithm;
     bool m_checksumAlgorithmHasBeenSet = false;
+
+    ChecksumType m_checksumType;
+    bool m_checksumTypeHasBeenSet = false;
 
     long long m_size;
     bool m_sizeHasBeenSet = false;

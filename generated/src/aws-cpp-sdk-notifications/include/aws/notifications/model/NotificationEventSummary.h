@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a short summary and metadata for a notification
-   * event.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a short summary and metadata for a
+   * <code>NotificationEvent</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/NotificationEventSummary">AWS
    * API Reference</a></p>
    */
@@ -80,12 +80,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The notification event status.</p> <ul> <li> <p>Values:</p> <ul> <li> <p>
-     * <code>HEALTHY</code> </p> <ul> <li> <p>All EventRules are <code>ACTIVE</code>
-     * and any call can be run.</p> </li> </ul> </li> <li> <p> <code>UNHEALTHY</code>
-     * </p> <ul> <li> <p>Some EventRules are <code>ACTIVE</code> and some are
-     * <code>INACTIVE</code>. Any call can be run.</p> </li> </ul> </li> </ul> </li>
-     * </ul>
+     * <p>Provides additional information about the current status of the
+     * <code>NotificationEvent</code>.</p> <ul> <li> <p>Values:</p> <ul> <li> <p>
+     * <code>HEALTHY</code> </p> <ul> <li> <p>All <code>EventRules</code> are
+     * <code>ACTIVE</code>.</p> </li> </ul> </li> <li> <p> <code>UNHEALTHY</code> </p>
+     * <ul> <li> <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are
+     * <code>INACTIVE</code>.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline const EventStatus& GetEventStatus() const{ return m_eventStatus; }
     inline bool EventStatusHasBeenSet() const { return m_eventStatusHasBeenSet; }

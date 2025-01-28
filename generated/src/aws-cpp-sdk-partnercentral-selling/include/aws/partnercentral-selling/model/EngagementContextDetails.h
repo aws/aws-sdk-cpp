@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Provides detailed context information for an Engagement. This structure
+   * <p>Provides detailed context information for an Engagement. This structure
    * allows for specifying the type of context and its associated payload.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementContextDetails">AWS
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Contains the specific details of the Engagement context. The structure of
+     * <p>Contains the specific details of the Engagement context. The structure of
      * this payload varies depending on the Type field. </p>
      */
     inline const EngagementContextPayload& GetPayload() const{ return m_payload; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the type of Engagement context. Valid values are "CustomerProject"
+     * <p>Specifies the type of Engagement context. Valid values are "CustomerProject"
      * or "Document", indicating whether the context relates to a customer project or a
      * document respectively. </p>
      */

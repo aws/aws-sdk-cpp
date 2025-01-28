@@ -45,7 +45,7 @@ Aws::String IncreaseNodeGroupsInGlobalReplicationGroupRequest::SerializePayload(
       unsigned regionalConfigurationsCount = 1;
       for(auto& item : m_regionalConfigurations)
       {
-        item.OutputToStream(ss, "RegionalConfigurations.member.", regionalConfigurationsCount, "");
+        item.OutputToStream(ss, "RegionalConfigurations.RegionalConfiguration.", regionalConfigurationsCount, "");
         regionalConfigurationsCount++;
       }
     }

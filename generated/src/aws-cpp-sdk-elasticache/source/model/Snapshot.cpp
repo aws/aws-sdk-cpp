@@ -378,7 +378,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       for(auto& item : m_nodeSnapshots)
       {
         Aws::StringStream nodeSnapshotsSs;
-        nodeSnapshotsSs << location << index << locationValue << ".NodeSnapshot." << nodeSnapshotsIdx++;
+        nodeSnapshotsSs << location << index << locationValue << ".NodeSnapshots.NodeSnapshot." << nodeSnapshotsIdx++;
         item.OutputToStream(oStream, nodeSnapshotsSs.str().c_str());
       }
   }

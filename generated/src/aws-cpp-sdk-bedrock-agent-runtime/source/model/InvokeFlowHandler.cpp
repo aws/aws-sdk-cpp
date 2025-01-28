@@ -41,6 +41,11 @@ namespace Model
             AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowCompletionEvent received.");
         };
 
+        m_onFlowMultiTurnInputRequestEvent = [&](const FlowMultiTurnInputRequestEvent&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowMultiTurnInputRequestEvent received.");
+        };
+
         m_onFlowOutputEvent = [&](const FlowOutputEvent&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowOutputEvent received.");
@@ -123,6 +128,18 @@ namespace Model
             }
 
             m_onFlowCompletionEvent(FlowCompletionEvent{json.View()});
+            break;
+        }
+        case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowMultiTurnInputRequestEvent object from the response in JSON format.");
+                break;
+            }
+
+            m_onFlowMultiTurnInputRequestEvent(FlowMultiTurnInputRequestEvent{json.View()});
             break;
         }
         case InvokeFlowEventType::FLOWOUTPUTEVENT:
@@ -243,6 +260,7 @@ namespace InvokeFlowEventMapper
 {
     static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int FLOWCOMPLETIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowCompletionEvent");
+    static const int FLOWMULTITURNINPUTREQUESTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowMultiTurnInputRequestEvent");
     static const int FLOWOUTPUTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowOutputEvent");
     static const int FLOWTRACEEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowTraceEvent");
 
@@ -257,6 +275,10 @@ namespace InvokeFlowEventMapper
         else if (hashCode == FLOWCOMPLETIONEVENT_HASH)
         {
             return InvokeFlowEventType::FLOWCOMPLETIONEVENT;
+        }
+        else if (hashCode == FLOWMULTITURNINPUTREQUESTEVENT_HASH)
+        {
+            return InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT;
         }
         else if (hashCode == FLOWOUTPUTEVENT_HASH)
         {
@@ -277,6 +299,8 @@ namespace InvokeFlowEventMapper
             return "initial-response";
         case InvokeFlowEventType::FLOWCOMPLETIONEVENT:
             return "flowCompletionEvent";
+        case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
+            return "flowMultiTurnInputRequestEvent";
         case InvokeFlowEventType::FLOWOUTPUTEVENT:
             return "flowOutputEvent";
         case InvokeFlowEventType::FLOWTRACEEVENT:

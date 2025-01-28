@@ -3,18 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/base64/Base64.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/crypto/MD5.h>
+#include <aws/core/utils/crypto/Sha1.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
-#include <aws/core/utils/crypto/Sha1.h>
-#include <aws/core/utils/crypto/MD5.h>
-#include <aws/core/utils/crypto/CRC32.h>
-#include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <iomanip>
 
@@ -259,6 +260,16 @@ ByteBuffer HashingUtils::CalculateCRC32C(Aws::IOStream& stream)
 {
     CRC32C hash;
     return hash.Calculate(stream).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateCRC64(const Aws::String& str) {
+  CRC64 hash;
+  return hash.Calculate(str).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateCRC64(Aws::IOStream& stream) {
+  CRC64 hash;
+  return hash.Calculate(stream).GetResult();
 }
 
 int HashingUtils::HashString(const char* strToHash)

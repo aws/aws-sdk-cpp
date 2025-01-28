@@ -26,6 +26,7 @@ UploadPartRequest::UploadPartRequest() :
     m_checksumAlgorithmHasBeenSet(false),
     m_checksumCRC32HasBeenSet(false),
     m_checksumCRC32CHasBeenSet(false),
+    m_checksumCRC64NVMEHasBeenSet(false),
     m_checksumSHA1HasBeenSet(false),
     m_checksumSHA256HasBeenSet(false),
     m_keyHasBeenSet(false),
@@ -113,6 +114,13 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
   {
     ss << m_checksumCRC32C;
     headers.emplace("x-amz-checksum-crc32c",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumCRC64NVMEHasBeenSet)
+  {
+    ss << m_checksumCRC64NVME;
+    headers.emplace("x-amz-checksum-crc64nvme",  ss.str());
     ss.str("");
   }
 
@@ -205,7 +213,7 @@ Aws::String UploadPartRequest::GetChecksumAlgorithmName() const
 {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return "crc64nvme";
   }
   else
   {

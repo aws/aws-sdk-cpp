@@ -125,7 +125,7 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       unsigned cacheNodeIdsToRemoveIdx = 1;
       for(auto& item : m_cacheNodeIdsToRemove)
       {
-        oStream << location << index << locationValue << ".CacheNodeId." << cacheNodeIdsToRemoveIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".CacheNodeIdsToRemove.CacheNodeId." << cacheNodeIdsToRemoveIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 

@@ -98,7 +98,12 @@ namespace Model
     ///@{
     /**
      * <p>The list of OAuth 2.0 grant types that are defined by the client. This list
-     * is used to restrict the token granting flows available to the client.</p>
+     * is used to restrict the token granting flows available to the client. Supports
+     * the following OAuth 2.0 grant types: Authorization Code, Device Code, and
+     * Refresh Token. </p> <p>* Authorization Code - <code>authorization_code</code>
+     * </p> <p>* Device Code -
+     * <code>urn:ietf:params:oauth:grant-type:device_code</code> </p> <p>* Refresh
+     * Token - <code>refresh_token</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTypes() const{ return m_grantTypes; }
     inline bool GrantTypesHasBeenSet() const { return m_grantTypesHasBeenSet; }

@@ -20,7 +20,8 @@ using namespace Aws;
 PutStorageConfigurationResult::PutStorageConfigurationResult() : 
     m_storageType(StorageType::NOT_SET),
     m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET),
-    m_warmTier(WarmTierState::NOT_SET)
+    m_warmTier(WarmTierState::NOT_SET),
+    m_disallowIngestNullNaN(false)
 {
 }
 
@@ -72,6 +73,12 @@ PutStorageConfigurationResult& PutStorageConfigurationResult::operator =(const A
   if(jsonValue.ValueExists("warmTierRetentionPeriod"))
   {
     m_warmTierRetentionPeriod = jsonValue.GetObject("warmTierRetentionPeriod");
+
+  }
+
+  if(jsonValue.ValueExists("disallowIngestNullNaN"))
+  {
+    m_disallowIngestNullNaN = jsonValue.GetBool("disallowIngestNullNaN");
 
   }
 

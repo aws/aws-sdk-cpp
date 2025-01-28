@@ -25,6 +25,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int DISSOCIATED_HASH = HashingUtils::HashString("DISSOCIATED");
 
 
         AgentAliasStatus GetAgentAliasStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return AgentAliasStatus::DELETING;
+          }
+          else if (hashCode == DISSOCIATED_HASH)
+          {
+            return AgentAliasStatus::DISSOCIATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "UPDATING";
           case AgentAliasStatus::DELETING:
             return "DELETING";
+          case AgentAliasStatus::DISSOCIATED:
+            return "DISSOCIATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -70,7 +70,7 @@ Aws::String DescribeReservedDBInstancesOfferingsRequest::SerializePayload() cons
       unsigned filtersCount = 1;
       for(auto& item : m_filters)
       {
-        item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+        item.OutputToStream(ss, "Filters.Filter.", filtersCount, "");
         filtersCount++;
       }
     }

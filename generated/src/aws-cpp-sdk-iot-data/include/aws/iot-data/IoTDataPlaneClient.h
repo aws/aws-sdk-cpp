@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTDataPlane
 {
+  AWS_IOTDATAPLANE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>IoT data</fullname> <p>IoT data enables secure, bi-directional
    * communication between Internet-connected things (such as sensors, actuators,
@@ -29,12 +33,20 @@ namespace IoTDataPlane
    * Web ServicesSignature Version 4</a> to sign requests is:
    * <i>iotdevicegateway</i>.</p>
    */
-  class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>
+  class AWS_IOTDATAPLANE_API IoTDataPlaneClient : smithy::client::AwsSmithyClientT<Aws::IoTDataPlane::SERVICE_NAME,
+      Aws::IoTDataPlane::IoTDataPlaneClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTDataPlaneEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTDataPlaneErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoT Data Plane"; }
 
       typedef IoTDataPlaneClientConfiguration ClientConfigurationType;
       typedef IoTDataPlaneEndpointProvider EndpointProviderType;
@@ -312,10 +324,7 @@ namespace IoTDataPlane
       std::shared_ptr<IoTDataPlaneEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>;
-      void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
 
-      IoTDataPlaneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTDataPlaneEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTDataPlane

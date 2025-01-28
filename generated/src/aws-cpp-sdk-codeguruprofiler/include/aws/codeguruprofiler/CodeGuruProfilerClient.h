@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeGuruProfiler
 {
+  AWS_CODEGURUPROFILER_API extern const char SERVICE_NAME[];
   /**
    * <p> This section provides documentation for the Amazon CodeGuru Profiler API
    * operations. </p> <p> Amazon CodeGuru Profiler collects runtime performance data
@@ -34,12 +38,20 @@ namespace CodeGuruProfiler
    * is Amazon CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User
    * Guide</i>. </p>
    */
-  class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>
+  class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : smithy::client::AwsSmithyClientT<Aws::CodeGuruProfiler::SERVICE_NAME,
+      Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CodeGuruProfilerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CodeGuruProfilerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CodeGuruProfiler"; }
 
       typedef CodeGuruProfilerClientConfiguration ClientConfigurationType;
       typedef CodeGuruProfilerEndpointProvider EndpointProviderType;
@@ -775,10 +787,7 @@ namespace CodeGuruProfiler
       std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>;
-      void init(const CodeGuruProfilerClientConfiguration& clientConfiguration);
 
-      CodeGuruProfilerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CodeGuruProfilerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeGuruProfiler

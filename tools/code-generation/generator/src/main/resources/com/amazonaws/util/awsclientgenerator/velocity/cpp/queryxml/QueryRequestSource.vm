@@ -80,6 +80,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
 #elseif($metadata.protocol == "ec2")
 #set($location = $member.key)
+#elseif($member.value.shape.listMember.locationName)
+#set($location = $member.key + "." + $member.value.shape.listMember.locationName)
 #else
 #set($location = $member.key + ".member")
 #end

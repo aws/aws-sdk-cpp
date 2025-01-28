@@ -20,7 +20,8 @@ CreateMultipartUploadResult::CreateMultipartUploadResult() :
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumType(ChecksumType::NOT_SET)
 {
 }
 
@@ -117,6 +118,12 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Aws::
   if(checksumAlgorithmIter != headers.end())
   {
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
+  }
+
+  const auto& checksumTypeIter = headers.find("x-amz-checksum-type");
+  if(checksumTypeIter != headers.end())
+  {
+    m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(checksumTypeIter->second);
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");

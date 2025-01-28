@@ -71,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> A URL providing additional information or context about the spend
-     * estimation. </p>
+     * <p>A URL providing additional information or context about the spend
+     * estimation.</p>
      */
     inline const Aws::String& GetEstimationUrl() const{ return m_estimationUrl; }
     inline bool EstimationUrlHasBeenSet() const { return m_estimationUrlHasBeenSet; }

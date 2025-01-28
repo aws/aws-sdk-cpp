@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-routes/GeoRoutesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/geo-routes/GeoRoutesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GeoRoutes
 {
+  AWS_GEOROUTES_API extern const char SERVICE_NAME[];
   /**
    * <p>With the Amazon Location Routes API you can calculate routes and estimate
    * travel time based on up-to-date road network and live traffic information.</p>
@@ -27,12 +31,20 @@ namespace GeoRoutes
    * reachable areas within specified time or distance thresholds</p> </li> <li>
    * <p>Map-matching to align GPS traces with the road network</p> </li> </ul>
    */
-  class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>
+  class AWS_GEOROUTES_API GeoRoutesClient : smithy::client::AwsSmithyClientT<Aws::GeoRoutes::SERVICE_NAME,
+      Aws::GeoRoutes::GeoRoutesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GeoRoutesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GeoRoutesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Geo Routes"; }
 
       typedef GeoRoutesClientConfiguration ClientConfigurationType;
       typedef GeoRoutesEndpointProvider EndpointProviderType;
@@ -224,10 +236,7 @@ namespace GeoRoutes
       std::shared_ptr<GeoRoutesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>;
-      void init(const GeoRoutesClientConfiguration& clientConfiguration);
 
-      GeoRoutesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GeoRoutesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GeoRoutes

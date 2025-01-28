@@ -74,7 +74,7 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
       unsigned availabilityZonesCount = 1;
       for(auto& item : m_availabilityZones)
       {
-        ss << "AvailabilityZones.member." << availabilityZonesCount << "="
+        ss << "AvailabilityZones.AvailabilityZone." << availabilityZonesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         availabilityZonesCount++;
       }
@@ -132,7 +132,7 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
       unsigned vpcSecurityGroupIdsCount = 1;
       for(auto& item : m_vpcSecurityGroupIds)
       {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
@@ -150,7 +150,7 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
       unsigned tagsCount = 1;
       for(auto& item : m_tags)
       {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }

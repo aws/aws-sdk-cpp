@@ -34,6 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeAgent"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
 
     AWS_BEDROCKAGENTRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;

@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The url of the media.</p>
+     * <p>The URL of the media.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }

@@ -140,7 +140,7 @@ Aws::String PutObjectLockConfigurationRequest::GetChecksumAlgorithmName() const
 {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return "crc64nvme";
   }
   else
   {

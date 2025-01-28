@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie2/Macie2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/macie2/Macie2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Macie2
 {
+  AWS_MACIE2_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Macie</p>
    */
-  class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>
+  class AWS_MACIE2_API Macie2Client : smithy::client::AwsSmithyClientT<Aws::Macie2::SERVICE_NAME,
+      Aws::Macie2::Macie2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Macie2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Macie2ErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Macie2"; }
 
       typedef Macie2ClientConfiguration ClientConfigurationType;
       typedef Macie2EndpointProvider EndpointProviderType;
@@ -2186,10 +2198,7 @@ namespace Macie2
       std::shared_ptr<Macie2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>;
-      void init(const Macie2ClientConfiguration& clientConfiguration);
 
-      Macie2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Macie2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Macie2

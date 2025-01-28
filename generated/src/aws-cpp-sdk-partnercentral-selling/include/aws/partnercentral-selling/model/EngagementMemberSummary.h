@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> The EngagementMemberSummary provides a snapshot of essential information
+   * <p>The EngagementMemberSummary provides a snapshot of essential information
    * about participants in an AWS Partner Central Engagement. This compact data
    * structure encapsulates key details of each member, facilitating efficient
    * collaboration and management within the Engagement. </p><p><h3>See Also:</h3>  
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The official name of the member's company or organization. </p>
+     * <p>The official name of the member's company or organization.</p>
      */
     inline const Aws::String& GetCompanyName() const{ return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The URL of the member company's website. This offers a way to find more
+     * <p>The URL of the member company's website. This offers a way to find more
      * information about the member organization and serves as an additional
      * identifier. </p>
      */

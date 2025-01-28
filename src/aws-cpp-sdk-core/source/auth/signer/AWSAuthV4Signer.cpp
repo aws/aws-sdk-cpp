@@ -55,21 +55,21 @@ namespace Aws
 }
 
 AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const char* serviceName,
-    const Aws::String& region, PayloadSigningPolicy signingPolicy, bool urlEscapePath, AWSSigningAlgorithm signingAlgorithm) :
-    m_includeSha256HashHeader(true),
-    m_signingAlgorithm(signingAlgorithm),
-    m_credentialsProvider(credentialsProvider),
-    m_serviceName(serviceName),
-    m_region(region),
-    m_unsignedHeaders({USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID}),
-    m_payloadSigningPolicy(signingPolicy),
-    m_urlEscapePath(urlEscapePath)
-{
-    //go ahead and warm up the signing cache.
-    if (credentialsProvider)
-    {
-        ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
-    }
+                                 const Aws::String& region, PayloadSigningPolicy signingPolicy, bool urlEscapePath,
+                                 AWSSigningAlgorithm signingAlgorithm)
+    : m_includeSha256HashHeader(true),
+      m_signingAlgorithm(signingAlgorithm),
+      m_credentialsProvider(credentialsProvider),
+      m_serviceName(serviceName),
+      m_region(region),
+      m_unsignedHeaders({USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID}),
+      m_payloadSigningPolicy(signingPolicy),
+      m_urlEscapePath(urlEscapePath) {
+  // go ahead and warm up the signing cache.
+  if (credentialsProvider) {
+    ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(),
+                DateTime::CalculateGmtTimestampAsString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
+  }
 }
 
 AWSAuthV4Signer::~AWSAuthV4Signer()
@@ -202,19 +202,6 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
     request.SetSigningRegion(signingRegion);
 
     Aws::String payloadHash(UNSIGNED_PAYLOAD);
-    switch(m_payloadSigningPolicy)
-    {
-        case PayloadSigningPolicy::Always:
-            signBody = true;
-            break;
-        case PayloadSigningPolicy::Never:
-            signBody = false;
-            break;
-        case PayloadSigningPolicy::RequestDependent:
-            // respect the request setting
-        default:
-            break;
-    }
 
     if (m_signingAlgorithm == AWSSigningAlgorithm::ASYMMETRIC_SIGV4)
     {
@@ -227,55 +214,50 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
         request.SetAwsSessionToken(credentials.GetSessionToken());
     }
 
-    if(signBody || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
-    {
-        payloadHash = ComputePayloadHash(request);
-        if (payloadHash.empty())
-        {
-            // this indicates a hashing error occurred, which was logged
-            return false;
-        }
-
-        Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-        const auto headers = request.GetHeaders();
-        if (request.GetRequestHash().second != nullptr && !request.HasHeader(checksumHeaderKey.c_str()))
-        {
-            Aws::String checksumHeaderValue;
-            if (request.GetRequestHash().first == "sha256") {
-                // we already calculated the payload hash so just reverse the hex string to
-                // a ByteBuffer and Base64Encode it - otherwise we're re-hashing the content
-                checksumHeaderValue = HashingUtils::Base64Encode(HashingUtils::HexDecode(payloadHash));
-            } else {
-                // if it is one of the other hashes, we must be careful if there is no content body
-                const auto& body = request.GetContentBody();
-                checksumHeaderValue = (body)
-                    ? HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*body).GetResult())
-                    : HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate({}).GetResult());
-            }
-            request.SetHeaderValue(checksumHeaderKey, checksumHeaderValue);
-            request.SetRequestHash("", nullptr);
-        }
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << signBody
-                << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
-        if (request.GetRequestHash().second != nullptr)
-        {
-            payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
-            Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            request.DeleteHeader(checksumHeaderValue.c_str());
-            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
-            request.SetTransferEncoding(CHUNKED_VALUE);
-            request.HasContentEncoding()
+    // If the request checksum, set the signer to use a unsigned
+    // trailing payload. otherwise use it in the header
+    if (request.GetRequestHash().second != nullptr && !request.GetRequestHash().first.empty() && request.GetContentBody() != nullptr) {
+      AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads="
+                                        << signBody << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
+      if (request.GetRequestHash().second != nullptr) {
+        payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
+        Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+        request.DeleteHeader(checksumHeaderValue.c_str());
+        request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
+        request.SetTransferEncoding(CHUNKED_VALUE);
+        request.HasContentEncoding()
                 ? request.SetContentEncoding(Aws::String{Http::AWS_CHUNKED_VALUE} + "," + request.GetContentEncoding())
                 : request.SetContentEncoding(Http::AWS_CHUNKED_VALUE);
 
-            if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
-                request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));
-                request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
-            }
+        if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
+          request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));
+          request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         }
+      }
+    } else {
+      payloadHash = ComputePayloadHash(request);
+      if (payloadHash.empty()) {
+        // this indicates a hashing error occurred, which was logged
+        return false;
+      }
+
+      Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+      const auto headers = request.GetHeaders();
+      if (request.GetRequestHash().second != nullptr && !request.HasHeader(checksumHeaderKey.c_str())) {
+        Aws::String checksumHeaderValue;
+        if (request.GetRequestHash().first == "sha256") {
+          // we already calculated the payload hash so just reverse the hex string to
+          // a ByteBuffer and Base64Encode it - otherwise we're re-hashing the content
+          checksumHeaderValue = HashingUtils::Base64Encode(HashingUtils::HexDecode(payloadHash));
+        } else {
+          // if it is one of the other hashes, we must be careful if there is no content body
+          const auto& body = request.GetContentBody();
+          checksumHeaderValue = (body) ? HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*body).GetResult())
+                                       : HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate({}).GetResult());
+        }
+        request.SetHeaderValue(checksumHeaderKey, checksumHeaderValue);
+        request.SetRequestHash("", nullptr);
+      }
     }
 
     if(m_includeSha256HashHeader)
@@ -367,11 +349,10 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     return PresignRequest(request, region, m_serviceName.c_str(), expirationInSeconds);
 }
 
-bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationTimeInSeconds) const
+bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const Aws::Auth::AWSCredentials& credentials, const char* region, const char* serviceName, long long expirationTimeInSeconds ) const
 {
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
@@ -476,6 +457,14 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     request.AddQueryStringParameter(X_AMZ_SIGNATURE, finalSigningHash);
 
     return true;
+}
+
+
+
+bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationTimeInSeconds) const
+{
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
+    return PresignRequest(request, credentials, region,serviceName, expirationTimeInSeconds );
 }
 
 bool AWSAuthV4Signer::ServiceRequireUnsignedPayload(const Aws::String& serviceName) const

@@ -39,7 +39,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
       unsigned optionsToIncludeCount = 1;
       for(auto& item : m_optionsToInclude)
       {
-        item.OutputToStream(ss, "OptionsToInclude.member.", optionsToIncludeCount, "");
+        item.OutputToStream(ss, "OptionsToInclude.OptionConfiguration.", optionsToIncludeCount, "");
         optionsToIncludeCount++;
       }
     }

@@ -26,9 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an overview of a NotificationHub.</p> <p>A NotificationHub is an
-   * account-level setting used to select the Regions where you want to store,
-   * process and replicate your notifications.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an overview of a <code>NotificationHub</code>.</p> <p>A
+   * <code>NotificationConfiguration</code> is an account-level setting used to
+   * select the Regions where you want to store, process and replicate your
+   * notifications.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/NotificationHubOverview">AWS
    * API Reference</a></p>
    */
@@ -69,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time the resource was created.</p>
+     * <p>The date and time the <code>NotificationHubOverview</code> was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
@@ -81,7 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The most recent time this NotificationHub had an ACTIVE status.</p>
+     * <p>The most recent time this <code>NotificationHub</code> had an
+     * <code>ACTIVE</code> status.</p>
      */
     inline const Aws::Utils::DateTime& GetLastActivationTime() const{ return m_lastActivationTime; }
     inline bool LastActivationTimeHasBeenSet() const { return m_lastActivationTimeHasBeenSet; }

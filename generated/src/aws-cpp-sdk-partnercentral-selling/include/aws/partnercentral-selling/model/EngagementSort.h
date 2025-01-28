@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Specifies the sorting parameters for listing Engagements. </p><p><h3>See
+   * <p>Specifies the sorting parameters for listing Engagements.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementSort">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The field by which to sort the results. </p>
+     * <p>The field by which to sort the results.</p>
      */
     inline const EngagementSortName& GetSortBy() const{ return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The order in which to sort the results. </p>
+     * <p>The order in which to sort the results.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }

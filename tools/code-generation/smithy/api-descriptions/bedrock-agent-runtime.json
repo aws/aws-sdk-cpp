@@ -2301,7 +2301,23 @@
                     "traits": {
                         "smithy.api#enumValue": "SUCCESS"
                     }
+                },
+                "INPUT_REQUIRED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "INPUT_REQUIRED"
+                    }
                 }
+            }
+        },
+        "com.amazonaws.bedrockagentruntime#FlowExecutionId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 2,
+                    "max": 100
+                },
+                "smithy.api#pattern": "^[0-9a-zA-Z._:-]+$"
             }
         },
         "com.amazonaws.bedrockagentruntime#FlowIdentifier": {
@@ -2326,8 +2342,7 @@
                 "nodeOutputName": {
                     "target": "com.amazonaws.bedrockagentruntime#NodeOutputName",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the output from the flow input node that begins the prompt flow.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The name of the output from the flow input node that begins the prompt flow.</p>"
                     }
                 },
                 "content": {
@@ -2335,6 +2350,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Contains information about an input into the prompt flow.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "nodeInputName": {
+                    "target": "com.amazonaws.bedrockagentruntime#NodeInputName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the input from the flow input node.</p>"
                     }
                 }
             },
@@ -2367,6 +2388,50 @@
                     "min": 1,
                     "max": 1
                 }
+            }
+        },
+        "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputContent": {
+            "type": "union",
+            "members": {
+                "document": {
+                    "target": "smithy.api#Document",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The requested additional input to send back to the multi-turn flow node.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The content structure containing input information for multi-turn flow interactions.</p>"
+            }
+        },
+        "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputRequestEvent": {
+            "type": "structure",
+            "members": {
+                "nodeName": {
+                    "target": "com.amazonaws.bedrockagentruntime#NodeName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the node in the flow that is requesting the input.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "nodeType": {
+                    "target": "com.amazonaws.bedrockagentruntime#NodeType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of the node in the flow that is requesting the input.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "content": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputContent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The content payload containing the input request details for the multi-turn interaction.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Response object from the flow multi-turn node requesting additional information.</p>",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.bedrockagentruntime#FlowOutputContent": {
@@ -2494,6 +2559,12 @@
                     "target": "com.amazonaws.bedrockagentruntime#BadGatewayException",
                     "traits": {
                         "smithy.api#documentation": "<p>There was an issue with a dependency due to a server issue. Retry your request.</p>"
+                    }
+                },
+                "flowMultiTurnInputRequestEvent": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputRequestEvent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The event stream containing the multi-turn input request information from the flow.</p>"
                     }
                 }
             },
@@ -4657,7 +4728,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<note>\n            <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeAgent</code>.</p>\n         </note>\n         <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p>\n         <ul>\n            <li>\n               <p>To continue the same conversation with an agent, use the same <code>sessionId</code> value in the request.</p>\n            </li>\n            <li>\n               <p>To activate trace enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow the agent's reasoning process that led it to the information it processed, the actions it took, and the final result it yielded. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events\">Trace enablement</a>.</p>\n            </li>\n            <li>\n               <p>To stream agent responses, make sure that only orchestration prompt is enabled. Agent streaming is not supported for the following steps:\n        </p>\n               <ul>\n                  <li>\n                     <p>\n                        <code>Pre-processing</code>\n                     </p>\n                  </li>\n                  <li>\n                     <p>\n                        <code>Post-processing</code>\n                     </p>\n                  </li>\n                  <li>\n                     <p>Agent with 1 Knowledge base and <code>User Input</code> not enabled</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p>\n            </li>\n            <li>\n               <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p>\n            </li>\n         </ul>\n         <p>The response is returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>\n         <ul>\n            <li>\n               <p>The <code>attribution</code> object contains citations for parts of the response.</p>\n            </li>\n            <li>\n               <p>If you set <code>enableTrace</code> to <code>true</code> in the request, you can trace the agent's steps and reasoning process that led it to the response.</p>\n            </li>\n            <li>\n               <p>If the action predicted was configured to return control, the response returns parameters for the action, elicited from the user, in the <code>returnControl</code> field.</p>\n            </li>\n            <li>\n               <p>Errors are also surfaced in the response.</p>\n            </li>\n         </ul>",
+                "smithy.api#documentation": "<note>\n    </note>\n         <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p>\n         <ul>\n            <li>\n               <p>To continue the same conversation with an agent, use the same <code>sessionId</code> value in the request.</p>\n            </li>\n            <li>\n               <p>To activate trace enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow the agent's reasoning process that led it to the information it processed, the actions it took, and the final result it yielded. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events\">Trace enablement</a>.</p>\n            </li>\n            <li>\n               <p>To stream agent responses, make sure that only orchestration prompt is enabled. Agent streaming is not supported for the following steps:\n        </p>\n               <ul>\n                  <li>\n                     <p>\n                        <code>Pre-processing</code>\n                     </p>\n                  </li>\n                  <li>\n                     <p>\n                        <code>Post-processing</code>\n                     </p>\n                  </li>\n                  <li>\n                     <p>Agent with 1 Knowledge base and <code>User Input</code> not enabled</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p>\n            </li>\n            <li>\n               <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p>\n            </li>\n         </ul>\n         <p>The response contains both <b>chunk</b> and <b>trace</b> attributes.</p>\n         <p>The final response is returned in the <code>bytes</code> field of the <code>chunk</code> object. The <code>InvokeAgent</code> returns one chunk for the entire interaction.</p>\n         <ul>\n            <li>\n               <p>The <code>attribution</code> object contains citations for parts of the response.</p>\n            </li>\n            <li>\n               <p>If you set <code>enableTrace</code> to <code>true</code> in the request, you can trace the agent's steps and reasoning process that led it to the response.</p>\n            </li>\n            <li>\n               <p>If the action predicted was configured to return control, the response returns parameters for the action, elicited from the user, in the <code>returnControl</code> field.</p>\n            </li>\n            <li>\n               <p>Errors are also surfaced in the response.</p>\n            </li>\n         </ul>",
                 "smithy.api#http": {
                     "code": 200,
                     "method": "POST",
@@ -4868,6 +4939,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Model performance settings for the request.</p>"
                     }
+                },
+                "executionId": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowExecutionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.  </p>"
+                    }
                 }
             },
             "traits": {
@@ -4883,6 +4960,13 @@
                         "smithy.api#documentation": "<p>The output of the flow, returned as a stream. If there's an error, the error is returned.</p>",
                         "smithy.api#httpPayload": {},
                         "smithy.api#required": {}
+                    }
+                },
+                "executionId": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowExecutionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique identifier for the current flow execution.</p>",
+                        "smithy.api#httpHeader": "x-amz-bedrock-flow-execution-id"
                     }
                 }
             },
@@ -4928,7 +5012,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>\n            Invokes an inline Amazon Bedrock agent using the configurations you provide with the request.\n        </p>\n         <ul>\n            <li>\n               <p>Specify the following fields for security purposes.</p>\n               <ul>\n                  <li>\n                     <p>(Optional) <code>customerEncryptionKeyArn</code> – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.</p>\n                  </li>\n                  <li>\n                     <p>(Optional) <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent <code>InvokeInlineAgent</code> request begins a new session.</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>To override the default prompt behavior for agent orchestration and to use advanced prompts, include a <code>promptOverrideConfiguration</code> object. \n                    For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html\">Advanced prompts</a>.</p>\n            </li>\n            <li>\n               <p>The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled.</p>\n            </li>\n         </ul>\n         <note>\n            <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeInlineAgent</code>.</p>\n         </note>",
+                "smithy.api#documentation": "<p>\n            Invokes an inline Amazon Bedrock agent using the configurations you provide with the request.\n        </p>\n         <ul>\n            <li>\n               <p>Specify the following fields for security purposes.</p>\n               <ul>\n                  <li>\n                     <p>(Optional) <code>customerEncryptionKeyArn</code> – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.</p>\n                  </li>\n                  <li>\n                     <p>(Optional) <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent <code>InvokeInlineAgent</code> request begins a new session.</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>To override the default prompt behavior for agent orchestration and to use advanced prompts, include a <code>promptOverrideConfiguration</code> object. \n                    For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html\">Advanced prompts</a>.</p>\n            </li>\n            <li>\n               <p>The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled.</p>\n            </li>\n         </ul>\n         <note>\n        </note>",
                 "smithy.api#http": {
                     "code": 200,
                     "method": "POST",
@@ -5025,6 +5109,12 @@
                     "target": "com.amazonaws.bedrockagentruntime#InlineBedrockModelConfigurations",
                     "traits": {
                         "smithy.api#documentation": "<p>Model settings for the request.</p>"
+                    }
+                },
+                "streamingConfigurations": {
+                    "target": "com.amazonaws.bedrockagentruntime#StreamingConfigurations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n           Specifies the configurations for streaming.\n        </p>\n         <note>\n            <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>\n         </note>"
                     }
                 }
             },

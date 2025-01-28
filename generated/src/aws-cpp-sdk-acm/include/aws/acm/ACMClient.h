@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/ACMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/acm/ACMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ACM
 {
+  AWS_ACM_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Certificate Manager</fullname> <p>You can use Certificate Manager
    * (ACM) to manage SSL/TLS certificates for your Amazon Web Services-based websites
@@ -22,12 +26,20 @@ namespace ACM
    * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
    * User Guide</a>.</p>
    */
-  class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>
+  class AWS_ACM_API ACMClient : smithy::client::AwsSmithyClientT<Aws::ACM::SERVICE_NAME,
+      Aws::ACM::ACMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ACMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ACMErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ACM"; }
 
       typedef ACMClientConfiguration ClientConfigurationType;
       typedef ACMEndpointProvider EndpointProviderType;
@@ -606,10 +618,7 @@ namespace ACM
       std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>;
-      void init(const ACMClientConfiguration& clientConfiguration);
 
-      ACMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ACMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ACM

@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of EventRules.</p>
+     * <p>A list of <code>EventRules</code>.</p>
      */
     inline const Aws::Vector<EventRuleStructure>& GetEventRules() const{ return m_eventRules; }
     inline void SetEventRules(const Aws::Vector<EventRuleStructure>& value) { m_eventRules = value; }

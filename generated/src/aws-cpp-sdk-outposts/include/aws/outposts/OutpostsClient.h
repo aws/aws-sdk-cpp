@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/outposts/OutpostsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/outposts/OutpostsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Outposts
 {
+  AWS_OUTPOSTS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Outposts is a fully managed service that extends Amazon
    * Web Services infrastructure, APIs, and tools to customer premises. By providing
@@ -24,12 +28,20 @@ namespace Outposts
    * compute and storage resources for lower latency and local data processing
    * needs.</p>
    */
-  class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>
+  class AWS_OUTPOSTS_API OutpostsClient : smithy::client::AwsSmithyClientT<Aws::Outposts::SERVICE_NAME,
+      Aws::Outposts::OutpostsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      OutpostsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::OutpostsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Outposts"; }
 
       typedef OutpostsClientConfiguration ClientConfigurationType;
       typedef OutpostsEndpointProvider EndpointProviderType;
@@ -974,10 +986,7 @@ namespace Outposts
       std::shared_ptr<OutpostsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>;
-      void init(const OutpostsClientConfiguration& clientConfiguration);
 
-      OutpostsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<OutpostsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Outposts

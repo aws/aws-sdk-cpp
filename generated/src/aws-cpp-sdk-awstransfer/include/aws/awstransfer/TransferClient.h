@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/awstransfer/TransferErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Transfer
 {
+  AWS_TRANSFER_API extern const char SERVICE_NAME[];
   /**
    * <p>Transfer Family is a fully managed service that enables the transfer of files
    * over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
@@ -29,12 +33,20 @@ namespace Transfer
    * and archiving. Getting started with Transfer Family is easy since there is no
    * infrastructure to buy and set up.</p>
    */
-  class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>
+  class AWS_TRANSFER_API TransferClient : smithy::client::AwsSmithyClientT<Aws::Transfer::SERVICE_NAME,
+      Aws::Transfer::TransferClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      TransferEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::TransferErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Transfer"; }
 
       typedef TransferClientConfiguration ClientConfigurationType;
       typedef TransferEndpointProvider EndpointProviderType;
@@ -124,8 +136,10 @@ namespace Transfer
          * and the AS2 process. To define an agreement, Transfer Family combines a server,
          * local profile, partner profile, certificate, and other attributes.</p> <p>The
          * partner is identified with the <code>PartnerProfileId</code>, and the AS2
-         * process is identified with the <code>LocalProfileId</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * process is identified with the <code>LocalProfileId</code>.</p> 
+         * <p>Specify <i>either</i> <code>BaseDirectory</code> or
+         * <code>CustomDirectories</code>, but not both. Specifying both causes the command
+         * to fail.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">AWS
          * API Reference</a></p>
          */
@@ -1809,8 +1823,13 @@ namespace Transfer
         /**
          * <p>Updates some of the parameters for an existing agreement. Provide the
          * <code>AgreementId</code> and the <code>ServerId</code> for the agreement that
-         * you want to update, along with the new values for the parameters to
-         * update.</p><p><h3>See Also:</h3>   <a
+         * you want to update, along with the new values for the parameters to update.</p>
+         *  <p>Specify <i>either</i> <code>BaseDirectory</code> or
+         * <code>CustomDirectories</code>, but not both. Specifying both causes the command
+         * to fail.</p> <p>If you update an agreement from using base directory to custom
+         * directories, the base directory is no longer used. Similarly, if you change from
+         * custom directories to a base directory, the custom directories are no longer
+         * used.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">AWS
          * API Reference</a></p>
          */
@@ -2065,10 +2084,7 @@ namespace Transfer
       std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>;
-      void init(const TransferClientConfiguration& clientConfiguration);
 
-      TransferClientConfiguration m_clientConfiguration;
-      std::shared_ptr<TransferEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Transfer

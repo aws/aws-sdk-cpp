@@ -55,9 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier for the engagement within the AWS Partner Central
-     * system. This ID is used for direct references to the engagement within the
-     * service. </p>
+     * <p>The unique identifier of the Engagement.</p>
      */
     inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
     inline bool EngagementIdHasBeenSet() const { return m_engagementIdHasBeenSet; }
@@ -87,7 +85,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Represents the current status of the resource snapshot job. </p>
+     * <p>The current status of the snapshot job.</p> <p>Valid values:</p> <ul> <li>
+     * <p> STOPPED: The job is not currently running. </p> </li> <li> <p> RUNNING: The
+     * job is actively executing. </p> </li> </ul>
      */
     inline const ResourceSnapshotJobStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

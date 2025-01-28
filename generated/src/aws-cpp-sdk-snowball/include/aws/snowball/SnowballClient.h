@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/snowball/SnowballServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/snowball/SnowballErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Snowball
 {
+  AWS_SNOWBALL_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Web Services Snow Family provides a petabyte-scale data transport
    * solution that uses secure devices to transfer large amounts of data between your
@@ -28,12 +32,20 @@ namespace Snowball
    * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
    * Guide</a>.</p>
    */
-  class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>
+  class AWS_SNOWBALL_API SnowballClient : smithy::client::AwsSmithyClientT<Aws::Snowball::SERVICE_NAME,
+      Aws::Snowball::SnowballClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SnowballEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SnowballErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Snowball"; }
 
       typedef SnowballClientConfiguration ClientConfigurationType;
       typedef SnowballEndpointProvider EndpointProviderType;
@@ -891,10 +903,7 @@ namespace Snowball
       std::shared_ptr<SnowballEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>;
-      void init(const SnowballClientConfiguration& clientConfiguration);
 
-      SnowballClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SnowballEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Snowball

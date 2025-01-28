@@ -46,7 +46,7 @@ Aws::String DecreaseNodeGroupsInGlobalReplicationGroupRequest::SerializePayload(
       unsigned globalNodeGroupsToRemoveCount = 1;
       for(auto& item : m_globalNodeGroupsToRemove)
       {
-        ss << "GlobalNodeGroupsToRemove.member." << globalNodeGroupsToRemoveCount << "="
+        ss << "GlobalNodeGroupsToRemove.GlobalNodeGroupId." << globalNodeGroupsToRemoveCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         globalNodeGroupsToRemoveCount++;
       }
@@ -64,7 +64,7 @@ Aws::String DecreaseNodeGroupsInGlobalReplicationGroupRequest::SerializePayload(
       unsigned globalNodeGroupsToRetainCount = 1;
       for(auto& item : m_globalNodeGroupsToRetain)
       {
-        ss << "GlobalNodeGroupsToRetain.member." << globalNodeGroupsToRetainCount << "="
+        ss << "GlobalNodeGroupsToRetain.GlobalNodeGroupId." << globalNodeGroupsToRetainCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         globalNodeGroupsToRetainCount++;
       }

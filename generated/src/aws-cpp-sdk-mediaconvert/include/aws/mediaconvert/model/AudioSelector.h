@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * Specifies audio data from an external file source.
+     * Specify the S3, HTTP, or HTTPS URL for your external audio file input.
      */
     inline const Aws::String& GetExternalAudioFileInput() const{ return m_externalAudioFileInput; }
     inline bool ExternalAudioFileInputHasBeenSet() const { return m_externalAudioFileInputHasBeenSet; }
@@ -138,7 +138,10 @@ namespace Model
 
     ///@{
     /**
-     * Selects a specific language code from within an audio source.
+     * Specify the language to select from your audio input. In the MediaConvert
+     * console choose from a list of languages. In your JSON job settings choose from
+     * an ISO 639-2 three-letter code listed at
+     * https://www.loc.gov/standards/iso639-2/php/code_list.php
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
@@ -150,7 +153,11 @@ namespace Model
 
     ///@{
     /**
-     * Specifies a time delta in milliseconds to offset the audio from the input video.
+     * Specify a time delta, in milliseconds, to offset the audio from the input
+     * video.
+To specify no offset: Keep the default value, 0.
+To specify an offset:
+     * Enter an integer from -2147483648 to 2147483647
      */
     inline int GetOffset() const{ return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }

@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sagemaker-runtime/SageMakerRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SageMakerRuntime
 {
+  AWS_SAGEMAKERRUNTIME_API extern const char SERVICE_NAME[];
   /**
    * <p> The Amazon SageMaker runtime API. </p>
    */
-  class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>
+  class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : smithy::client::AwsSmithyClientT<Aws::SageMakerRuntime::SERVICE_NAME,
+      Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SageMakerRuntimeEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SageMakerRuntimeErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SageMaker Runtime"; }
 
       typedef SageMakerRuntimeClientConfiguration ClientConfigurationType;
       typedef SageMakerRuntimeEndpointProvider EndpointProviderType;
@@ -215,10 +227,7 @@ namespace SageMakerRuntime
       std::shared_ptr<SageMakerRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>;
-      void init(const SageMakerRuntimeClientConfiguration& clientConfiguration);
 
-      SageMakerRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SageMakerRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SageMakerRuntime

@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/forecast/ForecastServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ForecastService
 {
+  AWS_FORECASTSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
    */
-  class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>
+  class AWS_FORECASTSERVICE_API ForecastServiceClient : smithy::client::AwsSmithyClientT<Aws::ForecastService::SERVICE_NAME,
+      Aws::ForecastService::ForecastServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ForecastServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ForecastServiceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "forecast"; }
 
       typedef ForecastServiceClientConfiguration ClientConfigurationType;
       typedef ForecastServiceEndpointProvider EndpointProviderType;
@@ -2167,10 +2179,7 @@ namespace ForecastService
       std::shared_ptr<ForecastServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>;
-      void init(const ForecastServiceClientConfiguration& clientConfiguration);
 
-      ForecastServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ForecastServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ForecastService

@@ -153,6 +153,12 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setDocumentation(formatDocumentation(c2jServiceModel.getDocumentation(), 3));
         serviceModel.setServiceName(c2jServiceModel.getServiceName());
         serviceModel.setAuthSchemes(c2jServiceModel.getMetadata().getAuth());
+        //if auth field is not present, check for SignatureVersion
+        if( (c2jServiceModel.getMetadata().getAuth() == null || c2jServiceModel.getMetadata().getAuth().isEmpty() ) 
+            && (c2jServiceModel.getMetadata().getSignatureVersion() != null))
+        {
+            serviceModel.setAuthSchemes(Arrays.asList(c2jServiceModel.getMetadata().getSignatureVersion()));
+        }
 
         convertShapes();
         convertOperations();

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kms/KMSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/kms/KMSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KMS
 {
+  AWS_KMS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Key Management Service</fullname> <p>Key Management Service (KMS) is
    * an encryption and key management web service. This guide describes the KMS
@@ -79,12 +83,20 @@ namespace KMS
    * <a>GenerateDataKey</a> </p> </li> <li> <p>
    * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
    */
-  class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>
+  class AWS_KMS_API KMSClient : smithy::client::AwsSmithyClientT<Aws::KMS::SERVICE_NAME,
+      Aws::KMS::KMSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KMSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KMSErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "KMS"; }
 
       typedef KMSClientConfiguration ClientConfigurationType;
       typedef KMSEndpointProvider EndpointProviderType;
@@ -3796,10 +3808,7 @@ namespace KMS
       std::shared_ptr<KMSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;
-      void init(const KMSClientConfiguration& clientConfiguration);
 
-      KMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KMSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KMS

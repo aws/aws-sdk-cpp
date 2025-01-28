@@ -19,7 +19,8 @@ namespace Model
     DKIM,
     DMARC,
     SPF,
-    BIMI
+    BIMI,
+    COMPLAINT
   };
 
 namespace RecommendationTypeMapper

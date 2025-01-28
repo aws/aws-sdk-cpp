@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the newly created engagement. Only populated if TaskStatus
-     * is COMPLETE. </p>
+     * <p>The identifier of the newly created Engagement. Only populated if TaskStatus
+     * is COMPLETE.</p>
      */
     inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
     inline void SetEngagementId(const Aws::String& value) { m_engagementId = value; }
@@ -51,8 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the new engagement invitation. Only populated if
-     * TaskStatus is COMPLETE. </p>
+     * <p>The identifier of the new Engagement invitation. Only populated if TaskStatus
+     * is COMPLETE.</p>
      */
     inline const Aws::String& GetEngagementInvitationId() const{ return m_engagementInvitationId; }
     inline void SetEngagementInvitationId(const Aws::String& value) { m_engagementInvitationId = value; }
@@ -104,9 +104,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the resource snapshot job created to add the opportunity
-     * resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.
-     * </p>
+     * <p>The identifier of the resource snapshot job created to add the opportunity
+     * resource snapshot to the Engagement. Only populated if TaskStatus is
+     * COMPLETE</p>
      */
     inline const Aws::String& GetResourceSnapshotJobId() const{ return m_resourceSnapshotJobId; }
     inline void SetResourceSnapshotJobId(const Aws::String& value) { m_resourceSnapshotJobId = value; }

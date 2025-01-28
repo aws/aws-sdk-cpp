@@ -360,7 +360,7 @@ namespace Model
      * <p>This value indicates if extended support is enabled or disabled for the
      * cluster.</p> <p> <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
-     * more about EKS Extended Support in the EKS User Guide.</a> </p>
+     * more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a> </p>
      */
     inline const UpgradePolicyResponse& GetUpgradePolicy() const{ return m_upgradePolicy; }
     inline bool UpgradePolicyHasBeenSet() const { return m_upgradePolicyHasBeenSet; }
@@ -401,7 +401,7 @@ namespace Model
      * Auto Mode cluster. For example, if the capability is enabled or disabled. If the
      * compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed
      * Instances in your Amazon Web Services account. For more information, see EKS
-     * Auto Mode compute capability in the EKS User Guide.</p>
+     * Auto Mode compute capability in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const ComputeConfigResponse& GetComputeConfig() const{ return m_computeConfig; }
     inline bool ComputeConfigHasBeenSet() const { return m_computeConfigHasBeenSet; }
@@ -417,7 +417,7 @@ namespace Model
      * EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If
      * the block storage capability is enabled, EKS Auto Mode will create and delete
      * EBS volumes in your Amazon Web Services account. For more information, see EKS
-     * Auto Mode block storage capability in the EKS User Guide.</p>
+     * Auto Mode block storage capability in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const StorageConfigResponse& GetStorageConfig() const{ return m_storageConfig; }
     inline bool StorageConfigHasBeenSet() const { return m_storageConfigHasBeenSet; }

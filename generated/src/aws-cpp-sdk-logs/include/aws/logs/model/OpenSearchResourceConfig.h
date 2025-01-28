@@ -61,9 +61,8 @@ namespace Model
      * integration. This role must have the permissions necessary to access the
      * OpenSearch Service collection to be able to create the dashboards. For more
      * information about the permissions needed, see <a
-     * href="https://docs.aws.amazon.com/OpenSearch-Dashboards-CreateRole">Create an
-     * IAM role to access the OpenSearch Service collection</a> in the CloudWatch Logs
-     * User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions
+     * that the integration needs</a> in the CloudWatch Logs User Guide.</p>
      */
     inline const Aws::String& GetDataSourceRoleArn() const{ return m_dataSourceRoleArn; }
     inline bool DataSourceRoleArnHasBeenSet() const { return m_dataSourceRoleArnHasBeenSet; }
@@ -80,8 +79,10 @@ namespace Model
      * <p>Specify the ARNs of IAM roles and IAM users who you want to grant permission
      * to for viewing the dashboards.</p>  <p>In addition to specifying
      * these users here, you must also grant them the
-     * <b>CloudWatchOpenSearchDashboardsAccess</b> IAM policy. For more information,
-     * see </p> 
+     * <b>CloudWatchOpenSearchDashboardAccess</b> IAM policy. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM
+     * policies for users</a>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetDashboardViewerPrincipals() const{ return m_dashboardViewerPrincipals; }
     inline bool DashboardViewerPrincipalsHasBeenSet() const { return m_dashboardViewerPrincipalsHasBeenSet; }

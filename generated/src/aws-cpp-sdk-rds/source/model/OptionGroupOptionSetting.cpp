@@ -148,7 +148,7 @@ void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_minimumEngineVersionPerAllowedValue)
       {
         Aws::StringStream minimumEngineVersionPerAllowedValueSs;
-        minimumEngineVersionPerAllowedValueSs << location << index << locationValue << ".MinimumEngineVersionPerAllowedValue." << minimumEngineVersionPerAllowedValueIdx++;
+        minimumEngineVersionPerAllowedValueSs << location << index << locationValue << ".MinimumEngineVersionPerAllowedValue.MinimumEngineVersionPerAllowedValue." << minimumEngineVersionPerAllowedValueIdx++;
         item.OutputToStream(oStream, minimumEngineVersionPerAllowedValueSs.str().c_str());
       }
   }

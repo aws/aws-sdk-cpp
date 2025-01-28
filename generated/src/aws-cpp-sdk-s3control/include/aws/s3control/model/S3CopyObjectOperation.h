@@ -61,10 +61,16 @@ namespace Model
      * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
-     * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
+     * <code>destinationBucket</code> in the Availability Zone identified by the AZ ID
      * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
-     * </li> </ul>
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.
+     * A directory bucket as a destination bucket can be in Availability Zone or Local
+     * Zone. </p>  <p>Copying objects across different Amazon Web Services
+     * Regions isn't supported when the source or destination bucket is in Amazon Web
+     * Services Local Zones. The source and destination buckets must have the same
+     * parent Amazon Web Services Region. Otherwise, you get an HTTP <code>400 Bad
+     * Request</code> error with the error code <code>InvalidRequest</code>.</p>
+     *  </li> </ul>
      */
     inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }

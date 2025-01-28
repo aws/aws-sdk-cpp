@@ -6,26 +6,38 @@
 #pragma once
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-sap/SsmSapServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ssm-sap/SsmSapErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SsmSap
 {
+  AWS_SSMSAP_API extern const char SERVICE_NAME[];
   /**
    * <p>This API reference provides descriptions, syntax, and other details about
    * each of the actions and data types for AWS Systems Manager for SAP. The topic
    * for each action shows the API request parameters and responses. </p>
    */
-  class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>
+  class AWS_SSMSAP_API SsmSapClient : smithy::client::AwsSmithyClientT<Aws::SsmSap::SERVICE_NAME,
+      Aws::SsmSap::SsmSapClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SsmSapEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SsmSapErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Ssm Sap"; }
 
       typedef SsmSapClientConfiguration ClientConfigurationType;
       typedef SsmSapEndpointProvider EndpointProviderType;
@@ -636,10 +648,7 @@ namespace SsmSap
       std::shared_ptr<SsmSapEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>;
-      void init(const SsmSapClientConfiguration& clientConfiguration);
 
-      SsmSapClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SsmSapEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SsmSap

@@ -205,7 +205,7 @@ void ReservedCacheNode::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharge." << recurringChargesIdx++;
+        recurringChargesSs << location << index << locationValue << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/PropertyValueNullValue.h>
 #include <utility>
 
 namespace Aws
@@ -40,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Asset property data of type string (sequence of characters).</p>
+     * <p> Asset property data of type string (sequence of characters). The allowed
+     * pattern: "^$|[^\u0000-\u001F\u007F]+". The max length is 1024. </p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
@@ -64,7 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Asset property data of type double (floating point number).</p>
+     * <p> Asset property data of type double (floating point number). The min value is
+     * -10^10. The max value is 10^10. Double.NaN is allowed. </p>
      */
     inline double GetDoubleValue() const{ return m_doubleValue; }
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
@@ -81,6 +84,18 @@ namespace Model
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
     inline Variant& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of null asset property data with BAD and UNCERTAIN qualities.</p>
+     */
+    inline const PropertyValueNullValue& GetNullValue() const{ return m_nullValue; }
+    inline bool NullValueHasBeenSet() const { return m_nullValueHasBeenSet; }
+    inline void SetNullValue(const PropertyValueNullValue& value) { m_nullValueHasBeenSet = true; m_nullValue = value; }
+    inline void SetNullValue(PropertyValueNullValue&& value) { m_nullValueHasBeenSet = true; m_nullValue = std::move(value); }
+    inline Variant& WithNullValue(const PropertyValueNullValue& value) { SetNullValue(value); return *this;}
+    inline Variant& WithNullValue(PropertyValueNullValue&& value) { SetNullValue(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_stringValue;
@@ -94,6 +109,9 @@ namespace Model
 
     bool m_booleanValue;
     bool m_booleanValueHasBeenSet = false;
+
+    PropertyValueNullValue m_nullValue;
+    bool m_nullValueHasBeenSet = false;
   };
 
 } // namespace Model

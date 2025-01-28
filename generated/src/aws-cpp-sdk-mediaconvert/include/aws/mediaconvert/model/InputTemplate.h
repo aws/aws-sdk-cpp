@@ -22,6 +22,7 @@
 #include <aws/mediaconvert/model/AudioSelectorGroup.h>
 #include <aws/mediaconvert/model/AudioSelector.h>
 #include <aws/mediaconvert/model/CaptionSelector.h>
+#include <aws/mediaconvert/model/DynamicAudioSelector.h>
 #include <aws/mediaconvert/model/InputClipping.h>
 #include <aws/mediaconvert/model/VideoOverlay.h>
 #include <utility>
@@ -209,6 +210,30 @@ namespace Model
     inline InputTemplate& WithDolbyVisionMetadataXml(const Aws::String& value) { SetDolbyVisionMetadataXml(value); return *this;}
     inline InputTemplate& WithDolbyVisionMetadataXml(Aws::String&& value) { SetDolbyVisionMetadataXml(std::move(value)); return *this;}
     inline InputTemplate& WithDolbyVisionMetadataXml(const char* value) { SetDolbyVisionMetadataXml(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Use Dynamic audio selectors when you do not know the track layout of your source
+     * when you submit your job, but want to select multiple audio tracks. When you
+     * include an audio track in your output and specify this Dynamic audio selector as
+     * the Audio source, MediaConvert creates an output audio track for each
+     * dynamically selected track. Note that when you include a Dynamic audio selector
+     * for two or more inputs, each input must have the same number of audio tracks and
+     * audio channels.
+     */
+    inline const Aws::Map<Aws::String, DynamicAudioSelector>& GetDynamicAudioSelectors() const{ return m_dynamicAudioSelectors; }
+    inline bool DynamicAudioSelectorsHasBeenSet() const { return m_dynamicAudioSelectorsHasBeenSet; }
+    inline void SetDynamicAudioSelectors(const Aws::Map<Aws::String, DynamicAudioSelector>& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors = value; }
+    inline void SetDynamicAudioSelectors(Aws::Map<Aws::String, DynamicAudioSelector>&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors = std::move(value); }
+    inline InputTemplate& WithDynamicAudioSelectors(const Aws::Map<Aws::String, DynamicAudioSelector>& value) { SetDynamicAudioSelectors(value); return *this;}
+    inline InputTemplate& WithDynamicAudioSelectors(Aws::Map<Aws::String, DynamicAudioSelector>&& value) { SetDynamicAudioSelectors(std::move(value)); return *this;}
+    inline InputTemplate& AddDynamicAudioSelectors(const Aws::String& key, const DynamicAudioSelector& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, value); return *this; }
+    inline InputTemplate& AddDynamicAudioSelectors(Aws::String&& key, const DynamicAudioSelector& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(std::move(key), value); return *this; }
+    inline InputTemplate& AddDynamicAudioSelectors(const Aws::String& key, DynamicAudioSelector&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, std::move(value)); return *this; }
+    inline InputTemplate& AddDynamicAudioSelectors(Aws::String&& key, DynamicAudioSelector&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(std::move(key), std::move(value)); return *this; }
+    inline InputTemplate& AddDynamicAudioSelectors(const char* key, DynamicAudioSelector&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, std::move(value)); return *this; }
+    inline InputTemplate& AddDynamicAudioSelectors(const char* key, const DynamicAudioSelector& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, value); return *this; }
     ///@}
 
     ///@{
@@ -431,6 +456,9 @@ namespace Model
 
     Aws::String m_dolbyVisionMetadataXml;
     bool m_dolbyVisionMetadataXmlHasBeenSet = false;
+
+    Aws::Map<Aws::String, DynamicAudioSelector> m_dynamicAudioSelectors;
+    bool m_dynamicAudioSelectorsHasBeenSet = false;
 
     InputFilterEnable m_filterEnable;
     bool m_filterEnableHasBeenSet = false;

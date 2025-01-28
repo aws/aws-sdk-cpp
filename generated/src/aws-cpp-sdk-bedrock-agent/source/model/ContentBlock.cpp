@@ -19,6 +19,7 @@ namespace Model
 {
 
 ContentBlock::ContentBlock() : 
+    m_cachePointHasBeenSet(false),
     m_textHasBeenSet(false)
 {
 }
@@ -31,6 +32,13 @@ ContentBlock::ContentBlock(JsonView jsonValue)
 
 ContentBlock& ContentBlock::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cachePoint"))
+  {
+    m_cachePoint = jsonValue.GetObject("cachePoint");
+
+    m_cachePointHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
@@ -44,6 +52,12 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
 JsonValue ContentBlock::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cachePointHasBeenSet)
+  {
+   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
+
+  }
 
   if(m_textHasBeenSet)
   {

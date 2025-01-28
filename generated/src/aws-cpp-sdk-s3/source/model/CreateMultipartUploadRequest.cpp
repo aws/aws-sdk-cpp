@@ -56,6 +56,8 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_expectedBucketOwnerHasBeenSet(false),
     m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
     m_checksumAlgorithmHasBeenSet(false),
+    m_checksumType(ChecksumType::NOT_SET),
+    m_checksumTypeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -289,6 +291,11 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
   if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
   {
     headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
+  if(m_checksumTypeHasBeenSet && m_checksumType != ChecksumType::NOT_SET)
+  {
+    headers.emplace("x-amz-checksum-type", ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
   }
 
   return headers;

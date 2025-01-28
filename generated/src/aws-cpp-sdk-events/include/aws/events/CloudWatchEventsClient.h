@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/events/CloudWatchEventsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudWatchEvents
 {
+  AWS_CLOUDWATCHEVENTS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon EventBridge helps you to respond to state changes in your Amazon Web
    * Services resources. When your resources change state, they automatically send
@@ -31,12 +35,20 @@ namespace CloudWatchEvents
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide">Amazon
    * EventBridge User Guide</a>.</p>
    */
-  class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>
+  class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : smithy::client::AwsSmithyClientT<Aws::CloudWatchEvents::SERVICE_NAME,
+      Aws::CloudWatchEvents::CloudWatchEventsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudWatchEventsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudWatchEventsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudWatch Events"; }
 
       typedef CloudWatchEventsClientConfiguration ClientConfigurationType;
       typedef CloudWatchEventsEndpointProvider EndpointProviderType;
@@ -1677,10 +1689,7 @@ namespace CloudWatchEvents
       std::shared_ptr<CloudWatchEventsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>;
-      void init(const CloudWatchEventsClientConfiguration& clientConfiguration);
 
-      CloudWatchEventsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudWatchEventsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudWatchEvents

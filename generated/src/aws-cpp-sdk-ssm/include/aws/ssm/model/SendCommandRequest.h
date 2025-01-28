@@ -326,8 +326,8 @@ namespace Model
     ///@{
     /**
      * <p>Enables Amazon Web Services Systems Manager to send Run Command output to
-     * Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services
-     * Systems Manager.</p>
+     * Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems
+     * Manager.</p>
      */
     inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
     inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }

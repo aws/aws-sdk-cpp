@@ -6,7 +6,7 @@ Aws::String ${typeInfo.className}::GetChecksumAlgorithmName() const
 {
   if (m_${lowerCaseVarName} == ${checksumAlgorithmMember.shape.name}::NOT_SET)
   {
-    return "md5";
+    return "crc64nvme";
   }
   else
   {
