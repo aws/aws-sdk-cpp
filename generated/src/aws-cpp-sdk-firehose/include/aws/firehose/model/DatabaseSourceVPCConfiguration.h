@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p> The structure for details of the VPC Endpoint Service which Firehose uses to
+   * create a PrivateLink to the database. </p> <p>Amazon Data Firehose is in preview
+   * release and is subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DatabaseSourceVPCConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,8 +41,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The VPC endpoint service name which Firehose uses to create a PrivateLink to
+     * the database. The endpoint service must have the Firehose service principle
+     * <code>firehose.amazonaws.com</code> as an allowed principal on the VPC endpoint
+     * service. The VPC endpoint service name is a string that looks like
+     * <code>com.amazonaws.vpce.&lt;region&gt;.&lt;vpc-endpoint-service-id&gt;</code>.
+     * </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
     inline const Aws::String& GetVpcEndpointServiceName() const{ return m_vpcEndpointServiceName; }
     inline bool VpcEndpointServiceNameHasBeenSet() const { return m_vpcEndpointServiceNameHasBeenSet; }

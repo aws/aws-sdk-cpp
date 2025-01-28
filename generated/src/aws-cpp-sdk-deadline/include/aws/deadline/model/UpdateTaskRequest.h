@@ -53,6 +53,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The run status with which to start the task.</p>
+     */
+    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
+    inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
+    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = value; }
+    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = std::move(value); }
+    inline UpdateTaskRequest& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
+    inline UpdateTaskRequest& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The farm ID to update.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -120,22 +132,13 @@ namespace Model
     inline UpdateTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
     inline UpdateTaskRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The run status with which to start the task.</p>
-     */
-    inline const TaskTargetRunStatus& GetTargetRunStatus() const{ return m_targetRunStatus; }
-    inline bool TargetRunStatusHasBeenSet() const { return m_targetRunStatusHasBeenSet; }
-    inline void SetTargetRunStatus(const TaskTargetRunStatus& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = value; }
-    inline void SetTargetRunStatus(TaskTargetRunStatus&& value) { m_targetRunStatusHasBeenSet = true; m_targetRunStatus = std::move(value); }
-    inline UpdateTaskRequest& WithTargetRunStatus(const TaskTargetRunStatus& value) { SetTargetRunStatus(value); return *this;}
-    inline UpdateTaskRequest& WithTargetRunStatus(TaskTargetRunStatus&& value) { SetTargetRunStatus(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    TaskTargetRunStatus m_targetRunStatus;
+    bool m_targetRunStatusHasBeenSet = false;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
@@ -151,9 +154,6 @@ namespace Model
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
-
-    TaskTargetRunStatus m_targetRunStatus;
-    bool m_targetRunStatusHasBeenSet = false;
   };
 
 } // namespace Model

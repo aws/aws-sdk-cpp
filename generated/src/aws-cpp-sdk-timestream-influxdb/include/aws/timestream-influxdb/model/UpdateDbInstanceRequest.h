@@ -10,6 +10,7 @@
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
+#include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +118,29 @@ namespace Model
     inline UpdateDbInstanceRequest& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
     inline UpdateDbInstanceRequest& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
+     */
+    inline const DbStorageType& GetDbStorageType() const{ return m_dbStorageType; }
+    inline bool DbStorageTypeHasBeenSet() const { return m_dbStorageTypeHasBeenSet; }
+    inline void SetDbStorageType(const DbStorageType& value) { m_dbStorageTypeHasBeenSet = true; m_dbStorageType = value; }
+    inline void SetDbStorageType(DbStorageType&& value) { m_dbStorageTypeHasBeenSet = true; m_dbStorageType = std::move(value); }
+    inline UpdateDbInstanceRequest& WithDbStorageType(const DbStorageType& value) { SetDbStorageType(value); return *this;}
+    inline UpdateDbInstanceRequest& WithDbStorageType(DbStorageType&& value) { SetDbStorageType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of storage to allocate for your DB storage type (in
+     * gibibytes).</p>
+     */
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline UpdateDbInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_identifier;
@@ -136,6 +160,12 @@ namespace Model
 
     DeploymentType m_deploymentType;
     bool m_deploymentTypeHasBeenSet = false;
+
+    DbStorageType m_dbStorageType;
+    bool m_dbStorageTypeHasBeenSet = false;
+
+    int m_allocatedStorage;
+    bool m_allocatedStorageHasBeenSet = false;
   };
 
 } // namespace Model

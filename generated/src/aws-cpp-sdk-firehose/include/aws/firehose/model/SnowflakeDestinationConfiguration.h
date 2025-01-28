@@ -185,7 +185,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the record metadata column</p>
+     * <p>Specify a column name in the table, where the metadata information has to be
+     * loaded. When you enable this field, you will see the following column in the
+     * snowflake table, which differs based on the source type.</p> <p>For Direct PUT
+     * as source </p> <p> <code>{ "firehoseDeliveryStreamName" : "streamname",
+     * "IngestionTime" : "timestamp" }</code> </p> <p>For Kinesis Data Stream as source
+     * </p> <p> <code> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id",
+     * "kinesisPartitionKey" : "key", "kinesisSequenceNumber" : "1234",
+     * "subsequenceNumber" : "2334", "IngestionTime" : "timestamp" }</code> </p>
      */
     inline const Aws::String& GetMetaDataColumnName() const{ return m_metaDataColumnName; }
     inline bool MetaDataColumnNameHasBeenSet() const { return m_metaDataColumnNameHasBeenSet; }
@@ -199,7 +206,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the record content column</p>
+     * <p>The name of the record content column.</p>
      */
     inline const Aws::String& GetContentColumnName() const{ return m_contentColumnName; }
     inline bool ContentColumnNameHasBeenSet() const { return m_contentColumnNameHasBeenSet; }

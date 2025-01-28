@@ -53,6 +53,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The life cycle status to update in the session.</p>
+     */
+    inline const SessionLifecycleTargetStatus& GetTargetLifecycleStatus() const{ return m_targetLifecycleStatus; }
+    inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
+    inline void SetTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = value; }
+    inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = std::move(value); }
+    inline UpdateSessionRequest& WithTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { SetTargetLifecycleStatus(value); return *this;}
+    inline UpdateSessionRequest& WithTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { SetTargetLifecycleStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The farm ID to update in the session.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -106,22 +118,13 @@ namespace Model
     inline UpdateSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
     inline UpdateSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The life cycle status to update in the session.</p>
-     */
-    inline const SessionLifecycleTargetStatus& GetTargetLifecycleStatus() const{ return m_targetLifecycleStatus; }
-    inline bool TargetLifecycleStatusHasBeenSet() const { return m_targetLifecycleStatusHasBeenSet; }
-    inline void SetTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = value; }
-    inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = std::move(value); }
-    inline UpdateSessionRequest& WithTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { SetTargetLifecycleStatus(value); return *this;}
-    inline UpdateSessionRequest& WithTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { SetTargetLifecycleStatus(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    SessionLifecycleTargetStatus m_targetLifecycleStatus;
+    bool m_targetLifecycleStatusHasBeenSet = false;
 
     Aws::String m_farmId;
     bool m_farmIdHasBeenSet = false;
@@ -134,9 +137,6 @@ namespace Model
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
-
-    SessionLifecycleTargetStatus m_targetLifecycleStatus;
-    bool m_targetLifecycleStatusHasBeenSet = false;
   };
 
 } // namespace Model

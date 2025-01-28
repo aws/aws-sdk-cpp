@@ -495,9 +495,9 @@ namespace DataSync
          * <p>Creates a transfer <i>location</i> for a Server Message Block (SMB) file
          * server. DataSync can use this location as a source or destination for
          * transferring data.</p> <p>Before you begin, make sure that you understand how
-         * DataSync <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
-         * SMB file servers</a>.</p><p><h3>See Also:</h3>   <a
+         * DataSync accesses SMB file servers. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+         * DataSync access to SMB file servers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */

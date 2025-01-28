@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the buffering to perform before delivering data to the Amazon ES
-   * destination.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the buffering to perform before delivering data to the Amazon
+   * OpenSearch Service destination.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchBufferingHints">AWS
    * API Reference</a></p>
    */

@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure used to configure the list of database patterns in source
+   * database endpoint for Firehose to read from. </p> <p>Amazon Data Firehose is in
+   * preview release and is subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DatabaseList">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>The list of database patterns in source database endpoint to be included for
+     * Firehose to read from. </p> <p>Amazon Data Firehose is in preview release and is
+     * subject to change.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclude() const{ return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
@@ -57,8 +59,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>The list of database patterns in source database endpoint to be excluded for
+     * Firehose to read from. </p> <p>Amazon Data Firehose is in preview release and is
+     * subject to change.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclude() const{ return m_exclude; }
     inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }

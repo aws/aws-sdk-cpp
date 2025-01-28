@@ -458,7 +458,7 @@ namespace deadline
         }
 
         /**
-         * <p>Creates a job. A job is a set of instructions that AWS Deadline Cloud uses to
+         * <p>Creates a job. A job is a set of instructions that Deadline Cloud uses to
          * schedule and run work on available workers. For more information, see <a
          * href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline
          * Cloud jobs</a>.</p><p><h3>See Also:</h3>   <a
@@ -509,6 +509,36 @@ namespace deadline
         void CreateLicenseEndpointAsync(const CreateLicenseEndpointRequestT& request, const CreateLicenseEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DeadlineClient::CreateLicenseEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a limit that manages the distribution of shared resources, such as
+         * floating licenses. A limit can throttle work assignments, help manage workloads,
+         * and track current usage. Before you use a limit, you must associate the limit
+         * with one or more queues. </p> <p>You must add the
+         * <code>amountRequirementName</code> to a step in a job template to declare the
+         * limit requirement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLimitOutcome CreateLimit(const Model::CreateLimitRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLimit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLimitRequestT = Model::CreateLimitRequest>
+        Model::CreateLimitOutcomeCallable CreateLimitCallable(const CreateLimitRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::CreateLimit, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLimitRequestT = Model::CreateLimitRequest>
+        void CreateLimitAsync(const CreateLimitRequestT& request, const CreateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::CreateLimit, request, handler, context);
         }
 
         /**
@@ -616,6 +646,35 @@ namespace deadline
         void CreateQueueFleetAssociationAsync(const CreateQueueFleetAssociationRequestT& request, const CreateQueueFleetAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DeadlineClient::CreateQueueFleetAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Associates a limit with a particular queue. After the limit is associated,
+         * all workers for jobs that specify the limit associated with the queue are
+         * subject to the limit. You can't associate two limits with the same
+         * <code>amountRequirementName</code> to the same queue.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueLimitAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateQueueLimitAssociationOutcome CreateQueueLimitAssociation(const Model::CreateQueueLimitAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateQueueLimitAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateQueueLimitAssociationRequestT = Model::CreateQueueLimitAssociationRequest>
+        Model::CreateQueueLimitAssociationOutcomeCallable CreateQueueLimitAssociationCallable(const CreateQueueLimitAssociationRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::CreateQueueLimitAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateQueueLimitAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateQueueLimitAssociationRequestT = Model::CreateQueueLimitAssociationRequest>
+        void CreateQueueLimitAssociationAsync(const CreateQueueLimitAssociationRequestT& request, const CreateQueueLimitAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::CreateQueueLimitAssociation, request, handler, context);
         }
 
         /**
@@ -773,6 +832,33 @@ namespace deadline
         }
 
         /**
+         * <p>Removes a limit from the specified farm. Before you delete a limit you must
+         * use the <code>DeleteQueueLimitAssociation</code> operation to remove the
+         * association with any queues. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLimitOutcome DeleteLimit(const Model::DeleteLimitRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLimit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLimitRequestT = Model::DeleteLimitRequest>
+        Model::DeleteLimitOutcomeCallable DeleteLimitCallable(const DeleteLimitRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::DeleteLimit, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLimitRequestT = Model::DeleteLimitRequest>
+        void DeleteLimitAsync(const DeleteLimitRequestT& request, const DeleteLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::DeleteLimit, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a metered product.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMeteredProduct">AWS
          * API Reference</a></p>
@@ -898,6 +984,37 @@ namespace deadline
         void DeleteQueueFleetAssociationAsync(const DeleteQueueFleetAssociationRequestT& request, const DeleteQueueFleetAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DeadlineClient::DeleteQueueFleetAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the association between a queue and a limit. You must use the
+         * <code>UpdateQueueLimitAssociation</code> operation to set the status to
+         * <code>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</code> or
+         * <code>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</code>. The status does not change
+         * immediately. Use the <code>GetQueueLimitAssociation</code> operation to see if
+         * the status changed to <code>STOPPED</code> before deleting the
+         * association.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueLimitAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueueLimitAssociationOutcome DeleteQueueLimitAssociation(const Model::DeleteQueueLimitAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteQueueLimitAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteQueueLimitAssociationRequestT = Model::DeleteQueueLimitAssociationRequest>
+        Model::DeleteQueueLimitAssociationOutcomeCallable DeleteQueueLimitAssociationCallable(const DeleteQueueLimitAssociationRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::DeleteQueueLimitAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteQueueLimitAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteQueueLimitAssociationRequestT = Model::DeleteQueueLimitAssociationRequest>
+        void DeleteQueueLimitAssociationAsync(const DeleteQueueLimitAssociationRequestT& request, const DeleteQueueLimitAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::DeleteQueueLimitAssociation, request, handler, context);
         }
 
         /**
@@ -1176,6 +1293,31 @@ namespace deadline
         }
 
         /**
+         * <p>Gets information about a specific limit.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLimitOutcome GetLimit(const Model::GetLimitRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLimit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLimitRequestT = Model::GetLimitRequest>
+        Model::GetLimitOutcomeCallable GetLimitCallable(const GetLimitRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::GetLimit, request);
+        }
+
+        /**
+         * An Async wrapper for GetLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLimitRequestT = Model::GetLimitRequest>
+        void GetLimitAsync(const GetLimitRequestT& request, const GetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::GetLimit, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about the specified monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitor">AWS
          * API Reference</a></p>
@@ -1273,6 +1415,32 @@ namespace deadline
         void GetQueueFleetAssociationAsync(const GetQueueFleetAssociationRequestT& request, const GetQueueFleetAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DeadlineClient::GetQueueFleetAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about a specific association between a queue and a
+         * limit.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueueLimitAssociationOutcome GetQueueLimitAssociation(const Model::GetQueueLimitAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQueueLimitAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetQueueLimitAssociationRequestT = Model::GetQueueLimitAssociationRequest>
+        Model::GetQueueLimitAssociationOutcomeCallable GetQueueLimitAssociationCallable(const GetQueueLimitAssociationRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::GetQueueLimitAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetQueueLimitAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetQueueLimitAssociationRequestT = Model::GetQueueLimitAssociationRequest>
+        void GetQueueLimitAssociationAsync(const GetQueueLimitAssociationRequestT& request, const GetQueueLimitAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::GetQueueLimitAssociation, request, handler, context);
         }
 
         /**
@@ -1731,6 +1899,32 @@ namespace deadline
         }
 
         /**
+         * <p>Gets a list of limits defined in the specified farm.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLimits">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLimitsOutcome ListLimits(const Model::ListLimitsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLimits that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLimitsRequestT = Model::ListLimitsRequest>
+        Model::ListLimitsOutcomeCallable ListLimitsCallable(const ListLimitsRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::ListLimits, request);
+        }
+
+        /**
+         * An Async wrapper for ListLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLimitsRequestT = Model::ListLimitsRequest>
+        void ListLimitsAsync(const ListLimitsRequestT& request, const ListLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::ListLimits, request, handler, context);
+        }
+
+        /**
          * <p>Lists metered products.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMeteredProducts">AWS
          * API Reference</a></p>
@@ -1828,6 +2022,32 @@ namespace deadline
         void ListQueueFleetAssociationsAsync(const ListQueueFleetAssociationsRequestT& request, const ListQueueFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DeadlineClient::ListQueueFleetAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Gets a list of the associations between queues and limits defined in a
+         * farm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQueueLimitAssociationsOutcome ListQueueLimitAssociations(const Model::ListQueueLimitAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListQueueLimitAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListQueueLimitAssociationsRequestT = Model::ListQueueLimitAssociationsRequest>
+        Model::ListQueueLimitAssociationsOutcomeCallable ListQueueLimitAssociationsCallable(const ListQueueLimitAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::ListQueueLimitAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListQueueLimitAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListQueueLimitAssociationsRequestT = Model::ListQueueLimitAssociationsRequest>
+        void ListQueueLimitAssociationsAsync(const ListQueueLimitAssociationsRequestT& request, const ListQueueLimitAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::ListQueueLimitAssociations, request, handler, context);
         }
 
         /**
@@ -2470,6 +2690,31 @@ namespace deadline
         }
 
         /**
+         * <p>Updates the properties of the specified limit. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateLimit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLimitOutcome UpdateLimit(const Model::UpdateLimitRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLimit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLimitRequestT = Model::UpdateLimitRequest>
+        Model::UpdateLimitOutcomeCallable UpdateLimitCallable(const UpdateLimitRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::UpdateLimit, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLimitRequestT = Model::UpdateLimitRequest>
+        void UpdateLimitAsync(const UpdateLimitRequestT& request, const UpdateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::UpdateLimit, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the settings for a Deadline Cloud monitor. You can modify one or all
          * of the settings when you call <code>UpdateMonitor</code>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2569,6 +2814,33 @@ namespace deadline
         void UpdateQueueFleetAssociationAsync(const UpdateQueueFleetAssociationRequestT& request, const UpdateQueueFleetAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DeadlineClient::UpdateQueueFleetAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the status of the queue. If you set the status to one of the
+         * <code>STOP_LIMIT_USAGE*</code> values, there will be a delay before the status
+         * transitions to the <code>STOPPED</code> state. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueLimitAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueLimitAssociationOutcome UpdateQueueLimitAssociation(const Model::UpdateQueueLimitAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateQueueLimitAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateQueueLimitAssociationRequestT = Model::UpdateQueueLimitAssociationRequest>
+        Model::UpdateQueueLimitAssociationOutcomeCallable UpdateQueueLimitAssociationCallable(const UpdateQueueLimitAssociationRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::UpdateQueueLimitAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateQueueLimitAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateQueueLimitAssociationRequestT = Model::UpdateQueueLimitAssociationRequest>
+        void UpdateQueueLimitAssociationAsync(const UpdateQueueLimitAssociationRequestT& request, const UpdateQueueLimitAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::UpdateQueueLimitAssociation, request, handler, context);
         }
 
         /**

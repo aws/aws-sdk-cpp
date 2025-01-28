@@ -25,7 +25,12 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+   * <p>Represents how to produce partition data for a table. Partition data is
+   * produced by transforming columns in a table. Each column transform is
+   * represented by a named <code>PartitionField</code>. </p> <p>Here is an example
+   * of the schema in JSON. </p> <p> <code>"partitionSpec": { "identity": [
+   * {"sourceName": "column1"}, {"sourceName": "column2"}, {"sourceName": "column3"}
+   * ] }</code> </p> <p>Amazon Data Firehose is in preview release and is subject to
    * change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PartitionSpec">AWS
    * API Reference</a></p>
@@ -41,8 +46,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> List of identity <a
+     * href="https://iceberg.apache.org/spec/#partition-transforms">transforms</a> that
+     * performs an identity transformation. The transform takes the source value, and
+     * does not modify it. Result type is the source type.</p> <p>Amazon Data Firehose
+     * is in preview release and is subject to change.</p>
      */
     inline const Aws::Vector<PartitionField>& GetIdentity() const{ return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }

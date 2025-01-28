@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration to enable schema evolution.</p> <p>Amazon Data Firehose is
+   * in preview release and is subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SchemaEvolutionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> Specify whether you want to enable schema evolution. </p> <p>Amazon Data
+     * Firehose is in preview release and is subject to change.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

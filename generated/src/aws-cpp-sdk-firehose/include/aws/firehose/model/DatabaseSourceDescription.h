@@ -33,8 +33,9 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p> The top level object for database source description. </p> <p>Amazon Data
+   * Firehose is in preview release and is subject to change.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DatabaseSourceDescription">AWS
    * API Reference</a></p>
    */
@@ -49,8 +50,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>The type of database engine. This can be one of the following values. </p>
+     * <ul> <li> <p>MySQL</p> </li> <li> <p>PostgreSQL</p> </li> </ul> <p>Amazon Data
+     * Firehose is in preview release and is subject to change.</p>
      */
     inline const DatabaseType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -62,8 +64,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The endpoint of the database server. </p> <p>Amazon Data Firehose is in
+     * preview release and is subject to change.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
@@ -77,8 +79,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>The port of the database. This can be one of the following values.</p> <ul>
+     * <li> <p>3306 for MySQL database type</p> </li> <li> <p>5432 for PostgreSQL
+     * database type</p> </li> </ul> <p>Amazon Data Firehose is in preview release and
+     * is subject to change.</p>
      */
     inline int GetPort() const{ return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -88,7 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p> The mode to enable or disable SSL when Firehose connects to the database
+     * endpoint. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const SSLMode& GetSSLMode() const{ return m_sSLMode; }
@@ -101,7 +106,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p> The list of database patterns in source database endpoint for Firehose to
+     * read from. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const DatabaseList& GetDatabases() const{ return m_databases; }
@@ -114,7 +120,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p> The list of table patterns in source database endpoint for Firehose to read
+     * from. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const DatabaseTableList& GetTables() const{ return m_tables; }
@@ -127,7 +134,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p> The list of column patterns in source database endpoint for Firehose to read
+     * from. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const DatabaseColumnList& GetColumns() const{ return m_columns; }
@@ -140,8 +148,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The optional list of table and column names used as unique key columns when
+     * taking snapshot if the tables don’t have primary keys configured. </p> <p>Amazon
+     * Data Firehose is in preview release and is subject to change.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSurrogateKeys() const{ return m_surrogateKeys; }
     inline bool SurrogateKeysHasBeenSet() const { return m_surrogateKeysHasBeenSet; }
@@ -156,8 +165,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The fully qualified name of the table in source database endpoint that
+     * Firehose uses to track snapshot progress. </p> <p>Amazon Data Firehose is in
+     * preview release and is subject to change.</p>
      */
     inline const Aws::String& GetSnapshotWatermarkTable() const{ return m_snapshotWatermarkTable; }
     inline bool SnapshotWatermarkTableHasBeenSet() const { return m_snapshotWatermarkTableHasBeenSet; }
@@ -171,8 +181,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The structure that describes the snapshot information of a table in source
+     * database endpoint that Firehose reads. </p> <p>Amazon Data Firehose is in
+     * preview release and is subject to change.</p>
      */
     inline const Aws::Vector<DatabaseSnapshotInfo>& GetSnapshotInfo() const{ return m_snapshotInfo; }
     inline bool SnapshotInfoHasBeenSet() const { return m_snapshotInfoHasBeenSet; }
@@ -186,8 +197,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The structure to configure the authentication methods for Firehose to
+     * connect to source database endpoint. </p> <p>Amazon Data Firehose is in preview
+     * release and is subject to change.</p>
      */
     inline const DatabaseSourceAuthenticationConfiguration& GetDatabaseSourceAuthenticationConfiguration() const{ return m_databaseSourceAuthenticationConfiguration; }
     inline bool DatabaseSourceAuthenticationConfigurationHasBeenSet() const { return m_databaseSourceAuthenticationConfigurationHasBeenSet; }
@@ -199,8 +211,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The details of the VPC Endpoint Service which Firehose uses to create a
+     * PrivateLink to the database. </p> <p>Amazon Data Firehose is in preview release
+     * and is subject to change.</p>
      */
     inline const DatabaseSourceVPCConfiguration& GetDatabaseSourceVPCConfiguration() const{ return m_databaseSourceVPCConfiguration; }
     inline bool DatabaseSourceVPCConfigurationHasBeenSet() const { return m_databaseSourceVPCConfigurationHasBeenSet; }

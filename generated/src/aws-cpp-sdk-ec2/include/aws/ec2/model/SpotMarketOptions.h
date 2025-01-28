@@ -49,7 +49,9 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p> <p>If you specify a maximum price, it must be more than USD
+     * $0.001. Specifying a value below USD $0.001 will result in an
+     * <code>InvalidParameterValue</code> error message.</p> 
      */
     inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }

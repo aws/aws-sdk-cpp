@@ -19,6 +19,7 @@ namespace Model
 {
 
 SourceDescription::SourceDescription() : 
+    m_directPutSourceDescriptionHasBeenSet(false),
     m_kinesisStreamSourceDescriptionHasBeenSet(false),
     m_mSKSourceDescriptionHasBeenSet(false),
     m_databaseSourceDescriptionHasBeenSet(false)
@@ -33,6 +34,13 @@ SourceDescription::SourceDescription(JsonView jsonValue)
 
 SourceDescription& SourceDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DirectPutSourceDescription"))
+  {
+    m_directPutSourceDescription = jsonValue.GetObject("DirectPutSourceDescription");
+
+    m_directPutSourceDescriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("KinesisStreamSourceDescription"))
   {
     m_kinesisStreamSourceDescription = jsonValue.GetObject("KinesisStreamSourceDescription");
@@ -60,6 +68,12 @@ SourceDescription& SourceDescription::operator =(JsonView jsonValue)
 JsonValue SourceDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_directPutSourceDescriptionHasBeenSet)
+  {
+   payload.WithObject("DirectPutSourceDescription", m_directPutSourceDescription.Jsonize());
+
+  }
 
   if(m_kinesisStreamSourceDescriptionHasBeenSet)
   {

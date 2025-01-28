@@ -56,8 +56,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>The warehouse location for Apache Iceberg tables. You must configure this
+     * when schema evolution and table creation is enabled.</p> <p>Amazon Data Firehose
+     * is in preview release and is subject to change.</p>
      */
     inline const Aws::String& GetWarehouseLocation() const{ return m_warehouseLocation; }
     inline bool WarehouseLocationHasBeenSet() const { return m_warehouseLocationHasBeenSet; }

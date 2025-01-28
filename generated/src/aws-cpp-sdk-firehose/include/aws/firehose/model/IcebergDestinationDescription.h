@@ -67,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>The description of automatic schema evolution configuration.</p> <p>Amazon
+     * Data Firehose is in preview release and is subject to change.</p>
      */
     inline const SchemaEvolutionConfiguration& GetSchemaEvolutionConfiguration() const{ return m_schemaEvolutionConfiguration; }
     inline bool SchemaEvolutionConfigurationHasBeenSet() const { return m_schemaEvolutionConfigurationHasBeenSet; }
@@ -80,8 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The description of table creation configuration. </p> <p>Amazon Data
+     * Firehose is in preview release and is subject to change.</p>
      */
     inline const TableCreationConfiguration& GetTableCreationConfiguration() const{ return m_tableCreationConfiguration; }
     inline bool TableCreationConfigurationHasBeenSet() const { return m_tableCreationConfigurationHasBeenSet; }
@@ -161,6 +161,22 @@ namespace Model
 
     ///@{
     /**
+     * <p> Describes whether all incoming data for this delivery stream will be append
+     * only (inserts only and not for updates and deletes) for Iceberg delivery. This
+     * feature is only applicable for Apache Iceberg Tables.</p> <p>The default value
+     * is false. If you set this value to true, Firehose automatically increases the
+     * throughput limit of a stream based on the throttling levels of the stream. If
+     * you set this parameter to true for a stream with updates and deletes, you will
+     * see out of order delivery.</p> <p> </p>
+     */
+    inline bool GetAppendOnly() const{ return m_appendOnly; }
+    inline bool AppendOnlyHasBeenSet() const { return m_appendOnlyHasBeenSet; }
+    inline void SetAppendOnly(bool value) { m_appendOnlyHasBeenSet = true; m_appendOnly = value; }
+    inline IcebergDestinationDescription& WithAppendOnly(bool value) { SetAppendOnly(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Configuration describing where the destination Iceberg tables are persisted.
      * </p>
      */
@@ -209,6 +225,9 @@ namespace Model
 
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
+
+    bool m_appendOnly;
+    bool m_appendOnlyHasBeenSet = false;
 
     CatalogConfiguration m_catalogConfiguration;
     bool m_catalogConfigurationHasBeenSet = false;

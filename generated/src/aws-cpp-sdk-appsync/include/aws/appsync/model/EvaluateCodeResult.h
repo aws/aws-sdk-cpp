@@ -74,6 +74,36 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An object available inside each resolver and function handler. A single
+     * <code>stash</code> object lives through a single resolver run. Therefore, you
+     * can use the stash to pass arbitrary data across request and response handlers
+     * and across functions in a pipeline resolver.</p>
+     */
+    inline const Aws::String& GetStash() const{ return m_stash; }
+    inline void SetStash(const Aws::String& value) { m_stash = value; }
+    inline void SetStash(Aws::String&& value) { m_stash = std::move(value); }
+    inline void SetStash(const char* value) { m_stash.assign(value); }
+    inline EvaluateCodeResult& WithStash(const Aws::String& value) { SetStash(value); return *this;}
+    inline EvaluateCodeResult& WithStash(Aws::String&& value) { SetStash(std::move(value)); return *this;}
+    inline EvaluateCodeResult& WithStash(const char* value) { SetStash(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of runtime errors that are added to the GraphQL operation
+     * response.</p>
+     */
+    inline const Aws::String& GetOutErrors() const{ return m_outErrors; }
+    inline void SetOutErrors(const Aws::String& value) { m_outErrors = value; }
+    inline void SetOutErrors(Aws::String&& value) { m_outErrors = std::move(value); }
+    inline void SetOutErrors(const char* value) { m_outErrors.assign(value); }
+    inline EvaluateCodeResult& WithOutErrors(const Aws::String& value) { SetOutErrors(value); return *this;}
+    inline EvaluateCodeResult& WithOutErrors(Aws::String&& value) { SetOutErrors(std::move(value)); return *this;}
+    inline EvaluateCodeResult& WithOutErrors(const char* value) { SetOutErrors(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -90,6 +120,10 @@ namespace Model
     EvaluateCodeErrorDetail m_error;
 
     Aws::Vector<Aws::String> m_logs;
+
+    Aws::String m_stash;
+
+    Aws::String m_outErrors;
 
     Aws::String m_requestId;
   };
