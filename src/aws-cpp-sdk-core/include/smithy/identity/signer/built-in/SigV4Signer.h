@@ -50,13 +50,18 @@ namespace smithy {
                 return {identity.accessKeyId(), identity.secretAccessKey()};
             }();
 
-
-            
             auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
+            auto signerRegionOverrideIt = properties.find("signerRegionOverride");
+            auto region = signerRegionOverrideIt != properties.end() ? signerRegionOverrideIt->second.get<Aws::String>().c_str() : m_region.c_str();
+            
+            auto signerServiceNameOverrideIt = properties.find("signerServiceNameOverride");
+            auto svcName = signerServiceNameOverrideIt != properties.end() ? signerServiceNameOverrideIt->second.get<Aws::String>().c_str() : m_serviceName.c_str();
+      
+
             assert(httpRequest);
-            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, m_region.c_str(), m_serviceName.c_str(), (signPayload || true ));
+            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, region, svcName, signPayload);
             if (success)
             {
                 return SigningFutureOutcome(std::move(httpRequest));

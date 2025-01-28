@@ -25,13 +25,17 @@ namespace smithy {
 
         PropertyBag virtual identityProperties() const { return m_identityProperties; };
         PropertyBag virtual signerProperties() const { return m_signerProperties; };
-        bool addIdentityProperty( const Aws::String& key,const Aws::Crt::Variant<Aws::String, bool>& value) {
+        void putIdentityProperty( const Aws::String& key,const Aws::Crt::Variant<Aws::String, bool>& value) {
             auto it = m_identityProperties.emplace(key, value);
-            return it.second;
+            if(!it.second) {
+                it.first->second = value;
+            }
         };
-        bool addSignerProperty( const Aws::String& key,const Aws::Crt::Variant<Aws::String, bool>& value) {
+        void putSignerProperty( const Aws::String& key,const Aws::Crt::Variant<Aws::String, bool>& value) {
             auto it = m_signerProperties.emplace(key, value);
-            return it.second;
+            if(!it.second) {
+                it.first->second = value;
+            }
         };
         EndpointParameters virtual endpointParameters() const { return EndpointParameters{}; };
 

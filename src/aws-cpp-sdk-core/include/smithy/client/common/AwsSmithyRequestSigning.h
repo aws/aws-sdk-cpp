@@ -17,6 +17,7 @@
 #include <aws/crt/Variant.h>
 #include <aws/crt/Optional.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
 
 #include <cassert>
 
@@ -61,6 +62,7 @@ namespace smithy
                                   const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
                                   const Aws::String& region,
                                   const Aws::String& serviceName,
+                                  const Aws::String& signerName,
                                   long long expirationTimeInSeconds)
         {
 
@@ -76,7 +78,7 @@ namespace smithy
 
             const AuthSchemesVariantT& authScheme = authSchemeIt->second;
 
-            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
+            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, signerName, expirationTimeInSeconds);
             AuthSchemesVariantT authSchemesVariantCopy(authScheme); 
             authSchemesVariantCopy.Visit(visitor);
 
@@ -184,11 +186,13 @@ namespace smithy
                           const AuthSchemeOption& targetAuthSchemeOption,
                           const Aws::String& region,
                           const Aws::String& serviceName,
+                          const Aws::String& signerName,
                           long long expirationTimeInSeconds)
               : m_httpRequest(std::move(httpRequest)), 
               m_targetAuthSchemeOption(targetAuthSchemeOption) ,
               m_region(region),
               m_serviceName(serviceName),
+              m_signerName(signerName),
               m_expirationTimeInSeconds(expirationTimeInSeconds)
               {}
 
@@ -196,6 +200,7 @@ namespace smithy
           const AuthSchemeOption& m_targetAuthSchemeOption;
           const Aws::String& m_region;
           const Aws::String& m_serviceName;
+          const Aws::String& m_signerName;
           const long long m_expirationTimeInSeconds;
 
           Aws::Crt::Optional<SigningOutcome> result;
@@ -216,8 +221,13 @@ namespace smithy
               return;
             }
 
+            Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additonalIdentityProperties;
+            if(!m_signerName.empty()) {
+              additonalIdentityProperties.emplace(smithy::AUTH_SCHEME_PROPERTY,Aws::Crt::Variant<Aws::String, bool>{m_signerName} );
+            }
+
             auto identityResult =
-                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
+                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), additonalIdentityProperties);
 
             if (!identityResult.IsSuccess()) {
               result.emplace(identityResult.GetError());

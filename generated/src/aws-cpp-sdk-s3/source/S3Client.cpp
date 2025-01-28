@@ -161,9 +161,11 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
-        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4MultiAuthSchemeResolver<>>(ALLOCATION_TAG),
         {
-            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)), GetServiceName(), clientConfiguration.region}},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+            {smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, smithy::S3ExpressSigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+            {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
         })
 {}
 
@@ -176,9 +178,11 @@ S3Client::S3Client(const AWSCredentials& credentials,
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
-        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4MultiAuthSchemeResolver<>>(ALLOCATION_TAG),
         {
-            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)  ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+            {smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, smithy::S3ExpressSigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)  ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+            {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)  ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
         })
 {}
 
@@ -191,9 +195,11 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
-        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4MultiAuthSchemeResolver<>>(ALLOCATION_TAG),
         {
-            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG,  *this, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+            {smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, smithy::S3ExpressSigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+            {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
         })
 {}
 
@@ -209,10 +215,11 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
-      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4MultiAuthSchemeResolver<>>(ALLOCATION_TAG),
       {
-        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+            {smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, smithy::S3ExpressSigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+            {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
       })
 {
 }
@@ -230,10 +237,11 @@ S3Client::S3Client(
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
-      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4MultiAuthSchemeResolver<>>(ALLOCATION_TAG),
       {
-        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)  ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+            {smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, smithy::S3ExpressSigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)  ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+            {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)  ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
       })
 {
 }
@@ -251,10 +259,11 @@ S3Client::S3Client(
       Aws::Http::CreateHttpClient(clientConfiguration),
       Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG),
       Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
-      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4MultiAuthSchemeResolver<>>(ALLOCATION_TAG),
       {
-        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+            {smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, smithy::S3ExpressSigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+            {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider ), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
       })
 {
 }

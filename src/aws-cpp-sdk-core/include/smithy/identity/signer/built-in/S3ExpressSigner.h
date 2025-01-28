@@ -13,6 +13,7 @@
 namespace smithy {
     static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
     static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
+    static const char *S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
 
     template <typename T>
     struct IsValidS3ExpressSigner : std::false_type {};
@@ -23,7 +24,7 @@ namespace smithy {
     template <>
     struct IsValidS3ExpressSigner<AwsSigV4aSigner> : std::true_type {};
 
-    //Ensuring S3 Express Signer can be derived from Sigv4 and Sigv4a variants
+    //Ensuring S3 Express Signer can use Sigv4 or Sigv4a signing algorithm
     template <typename BASECLASS>
     class S3ExpressSigner : public std::enable_if<IsValidS3ExpressSigner<BASECLASS>::value, BASECLASS>::type
     {
@@ -32,29 +33,24 @@ namespace smithy {
         using SigningProperties = typename BASECLASS::SigningProperties;
         using SigningError = typename BASECLASS::SigningError;
         explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region)
-            : BASECLASS(serviceName, region),legacySigner(nullptr, serviceName.c_str(), region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always)
+            : BASECLASS(serviceName, region)
         {
         }
 
-        explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
-            : BASECLASS(serviceName, region, policy),legacySigner(nullptr, serviceName.c_str(), region, policy)
+        explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool escapeUrl)
+            : BASECLASS(serviceName, region, policy, escapeUrl)
         {
         }
 
-        SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
+        SigningFutureOutcome sign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
             //if legacy signer, ie if signer name not s3express
             auto signerNameOverride = properties.find("signerName");
-            if(signerNameOverride != properties.end() )
+            //check for region, service name override
+            if(signerNameOverride != properties.end() && signerNameOverride->second.template get<Aws::String>() != S3_EXPRESS_SIGNER_NAME)
             {
-                std::cout<<"signerNameOverride="<<signerNameOverride->second.template get<Aws::String>()<<std::endl;
+                return BASECLASS::sign(httpRequest, identity, properties);
             }
-
-            if(signerNameOverride != properties.end() && signerNameOverride->second.template get<Aws::String>() != "S3ExpressSigner")
-            {
-                return AwsSigV4Signer::sign(httpRequest, identity, properties);
-            }
-
             const auto requestId = Aws::GetWithDefault(httpRequest->GetServiceSpecificParameters()->parameterMap,
             Aws::String("dedupeId"),
             Aws::String(Aws::Utils::UUID::RandomUUID()));
@@ -69,12 +65,12 @@ namespace smithy {
             }
             putRequestId(requestId);
             httpRequest->SetHeaderValue(S3_EXPRESS_HEADER, identity.sessionToken().value());
-            auto isSigned = AwsSigV4Signer::sign(httpRequest, identity, properties);
+            auto isSigned = BASECLASS::sign(httpRequest, identity, properties);
             deleteRequestId(requestId);
             return SigningFutureOutcome(std::move(httpRequest));
         }
 
-        SigningFutureOutcome presign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) override
+        SigningFutureOutcome presign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) override
         {
             const auto requestId = Aws::GetWithDefault(httpRequest->GetServiceSpecificParameters()->parameterMap,
             Aws::String("dedupeId"),
@@ -89,7 +85,7 @@ namespace smithy {
             }
             putRequestId(requestId);
             httpRequest->AddQueryStringParameter(S3_EXPRESS_QUERY_PARAM, identity.sessionToken().value());
-            auto isSigned = AwsSigV4Signer::presign(httpRequest, identity, properties, region, serviceName, expirationTimeInSeconds);
+            auto isSigned = BASECLASS::presign(httpRequest, identity, properties, region, serviceName, expirationTimeInSeconds);
             deleteRequestId(requestId);
             return SigningFutureOutcome(std::move(httpRequest));
 
@@ -112,8 +108,6 @@ namespace smithy {
         }
 
         mutable std::set<Aws::String> m_requestsProcessing;
-        mutable std::mutex m_requestProcessing;
-        Aws::Client::AWSAuthV4Signer legacySigner;
-        
+        mutable std::mutex m_requestProcessing;        
     };
 }

@@ -305,7 +305,7 @@ TEST_F(SmithyClientTest, testSigV4a) {
 
     EXPECT_EQ(res2.IsSuccess(), true);
 
-    EXPECT_TRUE(res2.GetResult()->GetSigningAccessKey().empty());
+    EXPECT_TRUE(!res2.GetResult()->GetSigningAccessKey().empty());
 
     EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
 

@@ -781,7 +781,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4", "smithy::SigV4AuthScheme",
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
             "bearer", "smithy::BearerTokenAuthScheme",
-            "v4", "smithy::SigV4AuthScheme"
+            "sigv4-s3express","smithy::S3ExpressSigV4AuthScheme"
     );
 
     protected String mapAuthSchemes(final String authSchemeName) {
@@ -794,9 +794,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private static final Map<String, String> SchemeIdMapping = ImmutableMap.of(
             "aws.auth#sigv4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
-            "aws.auth#sigv4a", "smithy::SigV4AuthSchemeOption::sigV4aAuthSchemeOption",
+            "aws.auth#sigv4a", "smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption",
             "bearer", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption",
-            "v4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption"
+            "v4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
+            "sigv4-s3express", "smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption"
     );
 
     private static final Map<String, String> ResolverMapping = ImmutableMap.of(

@@ -19,6 +19,9 @@
 #include "smithy/tracing/TracingUtils.h"
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/crt/Variant.h>
+#include <aws/core/client/CoreErrors.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
+
 using namespace smithy::client;
 using namespace smithy::interceptor;
 using namespace smithy::components::tracing;
@@ -193,33 +196,19 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
     if (!epResolutionOutcome.IsSuccess())
     {
-        pExecutor->Submit([epResolutionOutcome, responseHandler]() mutable
+        auto epOutcome = ResolveEndpointOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
+            Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE,  
+            epResolutionOutcome.GetError().GetExceptionName(), 
+            epResolutionOutcome.GetError().GetMessage(), 
+            false});
+
+        pExecutor->Submit([epOutcome, responseHandler]() mutable
           {
-              responseHandler(std::move(epResolutionOutcome));
+              responseHandler(std::move(epOutcome));
           } );
         return;
     }
     pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
-
-    
-    //get signer Name from end point and pass this info
-    if (pRequestCtx->m_endpoint.GetAttributes()) {
-        auto signerName = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetName();
-        pRequestCtx->m_authSchemeOption.addIdentityProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
-        pRequestCtx->m_authSchemeOption.addSignerProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
-        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion();
-            pRequestCtx->m_authSchemeOption.addSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
-        }
-        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet();
-            pRequestCtx->m_authSchemeOption.addSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
-        }
-        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            auto signerServiceNameOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName();
-            pRequestCtx->m_authSchemeOption.addSignerProperty("signerServiceNameOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
-        }
-    }
 
     if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
     {
@@ -248,6 +237,26 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     }
     auto& responseHandler = pRequestCtx->m_responseHandler;
     auto pExecutor = pRequestCtx->m_pExecutor;
+
+    //get signer Name from end point and pass this info
+    //This is extracted here so that on retry with correct region, signer region override is honored
+    if (pRequestCtx->m_endpoint.GetAttributes()) {
+        auto signerName = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetName();
+        pRequestCtx->m_authSchemeOption.putIdentityProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
+        pRequestCtx->m_authSchemeOption.putSignerProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
+        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion();
+            pRequestCtx->m_authSchemeOption.putSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
+        }
+        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet();
+            pRequestCtx->m_authSchemeOption.putSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
+        }
+        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            auto signerServiceNameOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName();
+            pRequestCtx->m_authSchemeOption.putSignerProperty("signerServiceNameOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
+        }
+    }
 
     TracingUtils::MakeCallWithTiming(
       [&]() -> void {
@@ -516,7 +525,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
         if (retryWithCorrectRegion)
         {
             Aws::String newEndpoint = m_errorMarshaller->ExtractEndpoint(outcome.GetError());
-            if (newEndpoint.empty()) {
+            if (!newEndpoint.empty()) {
               Aws::Http::URI newUri = pRequestCtx->m_endpoint.GetURI();
               newUri.SetAuthority(newEndpoint);
               pRequestCtx->m_endpoint.SetURI(newUri);

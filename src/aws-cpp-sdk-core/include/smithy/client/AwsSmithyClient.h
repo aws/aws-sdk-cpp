@@ -23,6 +23,7 @@
 #include <aws/core/utils/threading/SameThreadExecutor.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
 
 namespace smithy {
 namespace client
@@ -80,7 +81,7 @@ namespace client
         }
 
         AwsSmithyClientT& operator=(const AwsSmithyClientT& other)
-        {   
+        {
             if(this != &other)
             {
                 AwsSmithyClientBase::deepCopy(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
@@ -150,6 +151,20 @@ namespace client
                     }
                 }
             }
+
+            //resolve endpoint once to fetch auth schemes
+            Aws::Endpoint::EndpointParameters epParams = ctx.m_pRequest ? ctx.m_pRequest->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
+            auto epResolutionOutcome = this->ResolveEndpoint(epParams, [](Aws::Endpoint::AWSEndpoint&){});
+            if (epResolutionOutcome.IsSuccess())
+            {
+                auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+                if (endpoint.GetAttributes())
+                {
+                    auto authSchemeName = endpoint.GetAttributes()->authScheme.GetName();
+                    identityParams.additionalProperties.insert({smithy::AUTH_SCHEME_PROPERTY, Aws::String(authSchemeName.c_str())});
+                }
+            }
+
             Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
 
             auto authSchemeOptionIt = std::find_if(authSchemeOptions.begin(), authSchemeOptions.end(),
@@ -192,6 +207,7 @@ namespace client
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::String& region,
                                                   const Aws::String& serviceName,
+                                                  const Aws::String& signerName,
                                                   long long expirationInSeconds,
                                                   const Aws::Http::HeaderValueCollection& customizedHeaders,
                                                   const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
@@ -205,7 +221,7 @@ namespace client
             AwsSmithyClientAsyncRequestContext ctx;
             auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
             auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
-            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, region, serviceName, expirationInSeconds).IsSuccess())
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, region, serviceName, signerName, expirationInSeconds).IsSuccess())
             {
                 return request->GetURIString();
             }
@@ -223,8 +239,10 @@ namespace client
             const Aws::Http::URI& uri = endpoint.GetURI();
             auto signerRegionOverride = region;
             auto signerServiceNameOverride = serviceName;
-            
+            //signer name is needed for some identity resolvers
+            Aws::String signerName = Aws::Auth::SIGV4_SIGNER;
             if (endpoint.GetAttributes()) {
+                signerName = endpoint.GetAttributes()->authScheme.GetName().empty() ? signerName : endpoint.GetAttributes()->authScheme.GetName();
                 if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
                     signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
                 }
@@ -235,8 +253,7 @@ namespace client
                     signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
                 }
             }
-
-            return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
+            return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, signerName, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
         }
 
     protected:

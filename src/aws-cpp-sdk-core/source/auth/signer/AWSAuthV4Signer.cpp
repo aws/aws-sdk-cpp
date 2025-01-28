@@ -51,6 +51,7 @@ namespace Aws
     {
         const char SIGV4_SIGNER[] = "SignatureV4";
         const char ASYMMETRIC_SIGV4_SIGNER[] = "AsymmetricSignatureV4";
+        static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
     }
 }
 
@@ -209,7 +210,8 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
             0 /* expirationTimeInSeconds doesn't matter for HttpRequestViaHeaders */, Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders);
     }
 
-    if (!credentials.GetSessionToken().empty())
+    //additional check is needed for s3 header since this is invoked by s3 signer
+    if (!credentials.GetSessionToken().empty() && !request.HasHeader(S3_EXPRESS_HEADER))
     {
         request.SetAwsSessionToken(credentials.GetSessionToken());
     }
