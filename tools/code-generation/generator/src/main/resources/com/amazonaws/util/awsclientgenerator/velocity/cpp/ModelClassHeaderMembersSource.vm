@@ -33,7 +33,11 @@
   ${spaces}headers.emplace("${locationName}", ss.str());
   ${spaces}ss.str("");
 #elseif($member.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
   ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
+#else
+  ${spaces}headers.emplace("${locationName}", StringUtils::to_string(m_${lowerCaseVarName}.Seconds()));
+#end
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
@@ -48,6 +52,14 @@
   ${spaces}  [](const Aws::String &acc, const $CppViewHelper.computeCppType($member.shape.listMember.shape) &item) -> Aws::String {
 #if($member.shape.listMember.shape.enum)
   ${spaces}    const auto headerValue = ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item);
+#elseif($member.shape.listMember.shape.timeStamp)
+#if($member.shape.listMember.shape.timestampFormat != "unixTimestamp")
+  ${spaces}    const auto headerValue = item.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape.listMember.shape));
+#else
+  ${spaces}    const auto headerValue = StringUtils::to_string(item.Seconds());
+#end
+#elseif($member.shape.listMember.shape.primitive)
+  ${spaces}    const auto headerValue = StringUtils::to_string(item);
 #else
   ${spaces}    const auto headerValue = item;
 #end

@@ -48,6 +48,12 @@ ${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
 #set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVar))
 #if($partShapeMember.shape.enum)
 #set($parameter = "${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}())")
+#elseif($partShapeMember.shape.timeStamp)
+#if($partShapeMember.shape.timestampFormat != "unixTimestamp")
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}().ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($partShapeMember.shape))")
+#else
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}().Seconds()")
+#end
 #else
 #set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}()")
 #end
