@@ -1,0 +1,107 @@
+##-------------------- serializeElementToText macro
+#macro( serializeElementToText $shapeMember $memberVarName )
+##/* --- the actual shape member is $shapeMember; the actual shape is $shapeMember.shape; --- */
+#if($shapeMember.shape.enum)
+${shapeMember.shape.name}Mapper::GetNameFor${shapeMember.shape.name}(${memberVarName})##
+#elseif($shapeMember.shape.timeStamp)
+#set($timestamptFormatStr = $CppViewHelper.computeTimestampFormatInXml($shapeMember.shape))
+${memberVarName}.ToGmtString(Aws::Utils::DateFormat::${timestamptFormatStr})##
+#elseif($shapeMember.shape.boolean)
+std::boolalpha << ${memberVarName}##
+#elseif($shapeMember.shape.blob)
+HashingUtils::Base64Encode(${memberVarName})##
+#else
+${memberVarName}##
+#end
+#end##macro serializeElementToText
+##-------------------- serializeXmlPayloadElement macro
+#macro( serializeXmlPayloadElement $spaces $serializationName $lowerCaseVarName $shapeMember $memberVarName $parentNode="parentNode")
+#if($shapeMember.xmlAttribute)
+#if($member.shape.boolean || $member.shape.primitive)
+  ${spaces}ss << #serializeElementToText($shapeMember, $memberVarName);
+  ${spaces}${parentNode}.SetAttributeValue("${serializationName}", ss.str());
+  ${spaces}ss.str("");
+#else
+  ${spaces}${parentNode}.SetAttributeValue("${serializationName}", #serializeElementToText($shapeMember, $memberVarName));
+#end
+#else##($shapeMember.xmlAttribute)
+  ${spaces}XmlNode ${lowerCaseVarName}Node = ${parentNode}.CreateChildElement("${serializationName}");
+#if($member.shape.boolean || $member.shape.primitive)
+  ${spaces}ss << #serializeElementToText($shapeMember, $memberVarName);
+  ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
+  ${spaces}ss.str("");
+#else
+#if($shapeMember.shape.structure)
+  ${spaces}${memberVarName}.AddToNode(${lowerCaseVarName}Node);
+#else
+  ${spaces}${lowerCaseVarName}Node.SetText(#serializeElementToText($shapeMember, $memberVarName));
+#end
+#end
+#end
+#end##macro serializeXmlPayloadElement
+##-------------------- serializeXmlListPayloadElement macro
+#macro( serializeXmlListPayloadElement $spaces $serializationName $lowerCaseVarName $member $memberVarName )
+#if(!($member.locationName && $member.shape.flattened) && !(${member.shape.listMember.locationName} && ${member.isFlattened()}))
+  ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${serializationName}");
+#end
+  ${spaces}for(const auto& item : $memberVarName)
+  ${spaces}{
+#set($listElParentNode = "parentNode")
+#set($listElSerializationName = "")
+#if($member.locationName && $member.shape.flattened)
+#set($listElSerializationName = ${member.locationName})
+#elseif(${member.shape.listMember.locationName} && ${member.isFlattened()})
+#set($listElSerializationName = ${member.shape.listMember.locationName})
+#elseif(${member.shape.listMember.locationName})
+#set($listElSerializationName = ${member.shape.listMember.locationName})
+#set($listElParentNode = "${lowerCaseVarName}ParentNode")
+#else
+#set($listElSerializationName = ${member.shape.listMember.shape.name})
+#set($listElParentNode = "${lowerCaseVarName}ParentNode")
+#end
+#set($listSpaces = $spaces + "  ")
+#serializeXmlPayloadElement($listSpaces, $listElSerializationName, $lowerCaseVarName, $member.shape.listMember, "item", $listElParentNode)
+  ${spaces}}
+#end##macro serializeXmlListPayloadElement
+##-------------------- END OF MACROS, ACTUAL TEMPLATE BEGINS --------------------
+#if($member.shape.enum || $member.shape.boolean || $member.shape.primitive || $member.shape.timeStamp || $member.shape.structure)
+#serializeXmlPayloadElement($spaces, $serializationName, $lowerCaseVarName, $member, $memberVarName)
+#elseif($member.shape.string)
+#if($member.xmlAttribute)
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
+#else
+  ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName) && !$serviceModel.endpointRules))
+## TODO: just remove this block once endpoints check can be removed
+  ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
+  ${spaces}if (arn && arn.Validate().IsSuccess())
+  ${spaces}{
+  ${spaces}  if (arn.GetResourceType() == ARNResourceType::BUCKET)
+  ${spaces}  {
+  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetResourceId());
+  ${spaces}  }
+  ${spaces}  else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+  ${spaces}  {
+  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetSubResourceId());
+  ${spaces}  }
+  ${spaces}  else
+  ${spaces}  {
+  ${spaces}    // It's a valid ARN, but has incorrect resource type.
+  ${spaces}    assert(false);
+  ${spaces}  }
+  ${spaces}}
+  ${spaces}else
+  ${spaces}{
+  ${spaces}  ${lowerCaseVarName}Node.SetText(${memberVarName});
+  ${spaces}}
+#else
+  ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
+#end##$operation.arnEndpointAllowed...
+#end
+#elseif($member.shape.list)
+#serializeXmlListPayloadElement($spaces, $serializationName, $lowerCaseVarName, $member, $memberVarName)
+#elseif($member.shape.map)
+!!!! Work in progress for map serialization
+#else
+!!!! Code generation error: the template does not support this shape under $serializationName serialization to xml: ${member}
+#end##End of member.shape is structure or list
