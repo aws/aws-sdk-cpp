@@ -5,6 +5,7 @@
 
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/s3-test-utils/S3TestUtils.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
@@ -44,6 +45,7 @@
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
+
 #include <fstream>
 
 #ifdef _WIN32
@@ -88,9 +90,6 @@ namespace
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
     static const char* URIESCAPE_KEY = "Esc a=pe+Me$";
-    static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
-
-    static const int TIMEOUT_MAX = 20;
 
     void AppendUUID(std::string& bucketName)
     {
@@ -139,10 +138,8 @@ namespace
     public:
         static std::shared_ptr<S3CrtClient> Client;
         static std::shared_ptr<S3CrtClient> oregonClient;
-        static std::shared_ptr<HttpClient> m_HttpClient;
 
     protected:
-
         static void SetUpTestCase()
         {
             EnsureUniqueBucketNames();
@@ -150,24 +147,23 @@ namespace
 
         static void TearDownTestCase()
         {
-            DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str()));
+            Testing::S3TestUtils::DeleteBucket(Client, CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str()));
 
             Client = nullptr;
             oregonClient = nullptr;
-            m_HttpClient = nullptr;
         }
 
         // Create new S3 CRT Client for each test case, as multiple bucket is not supported yet.
@@ -190,7 +186,6 @@ namespace
             oregonClient = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG,
                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), s3ClientConfig,
                 AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
-            m_HttpClient = Aws::Http::CreateHttpClient(s3ClientConfig);
         }
 
         static std::shared_ptr<Aws::StringStream> CreateStreamForUploadPart(uint32_t sizeInMb, const char* partTag)
@@ -247,196 +242,14 @@ namespace
             ASSERT_STREQ(ss.str().c_str(), outcome.GetResult().GetETag().c_str());
         }
 
-        static void TagTestBucket(const Aws::String& bucketName, const std::shared_ptr<S3CrtClient>& client) {
-            ASSERT_TRUE(!bucketName.empty());
-            ASSERT_TRUE(client);
-
-            PutBucketTaggingRequest taggingRequest;
-            taggingRequest.SetBucket(bucketName);
-            Tag tag;
-            tag.SetKey(TEST_BUCKET_TAG);
-            tag.SetValue(TEST_BUCKET_TAG);
-            Tagging tagging;
-            tagging.AddTagSet(tag);
-            taggingRequest.SetTagging(tagging);
-
-            auto taggingOutcome = CallOperationWithUnconditionalRetry(client.get(), &Aws::S3Crt::S3CrtClient::PutBucketTagging, taggingRequest);
-            AWS_ASSERT_SUCCESS(taggingOutcome);
-        }
-
-        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3CrtClient>& client = Client)
-        {
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX)
-            {
-                ListObjectsRequest listObjectsRequest;
-                listObjectsRequest.SetBucket(bucketName);
-                ListObjectsOutcome listObjectsOutcome = client->ListObjects(listObjectsRequest);
-                if (listObjectsOutcome.IsSuccess())
-                {
-                    return true;
-                }
-
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-            }
-
-            return false;
-        }
-
-        static bool WaitForObjectToPropagate(const Aws::String& bucketName, const char* objectKey)
-        {
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX)
-            {
-                GetObjectRequest getObjectRequest;
-                getObjectRequest.SetBucket(bucketName);
-                getObjectRequest.SetKey(objectKey);
-                GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
-                if (getObjectOutcome.IsSuccess())
-                {
-                   return true;
-                }
-
-                std::this_thread::sleep_for(std::chrono::seconds(5));
-            }
-
-            return false;
-        }
-
-        static void EmptyBucket(const Aws::String& bucketName)
-        {
-            ListObjectsRequest listObjectsRequest;
-            listObjectsRequest.SetBucket(bucketName);
-
-            ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-
-            if (!listObjectsOutcome.IsSuccess())
-                return;
-
-            for (const auto& object : listObjectsOutcome.GetResult().GetContents())
-            {
-                DeleteObjectRequest deleteObjectRequest;
-                deleteObjectRequest.SetBucket(bucketName);
-                deleteObjectRequest.SetKey(object.GetKey());
-                Client->DeleteObject(deleteObjectRequest);
-            }
-        }
-
-        static void WaitForBucketToEmpty(const Aws::String& bucketName)
-        {
-            ListObjectsRequest listObjectsRequest;
-            listObjectsRequest.SetBucket(bucketName);
-
-            unsigned checkForObjectsCount = 0;
-            while (checkForObjectsCount++ < TIMEOUT_MAX)
-            {
-                ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-                AWS_ASSERT_SUCCESS(listObjectsOutcome);
-
-                if (listObjectsOutcome.GetResult().GetContents().size() > 0)
-                {
-                    std::this_thread::sleep_for(std::chrono::seconds(5));
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
-
-        static void DeleteBucket(const Aws::String& bucketName)
-        {
-            HeadBucketRequest headBucketRequest;
-            headBucketRequest.SetBucket(bucketName);
-            HeadBucketOutcome bucketOutcome = Client->HeadBucket(headBucketRequest);
-
-            if (bucketOutcome.IsSuccess())
-            {
-                EmptyBucket(bucketName);
-                WaitForBucketToEmpty(bucketName);
-
-                DeleteBucketRequest deleteBucketRequest;
-                deleteBucketRequest.SetBucket(bucketName);
-
-                auto deleteBucketOutcome = CallOperationWithUnconditionalRetry(Client.get(), &Aws::S3Crt::S3CrtClient::DeleteBucket, deleteBucketRequest);
-                AWS_ASSERT_SUCCESS(deleteBucketOutcome);
-            }
-        }
-
         static Aws::String CalculateBucketName(const Aws::String& bucketPrefix)
         {
-            return Aws::Testing::GetAwsResourcePrefix() + bucketPrefix;
+            return Testing::S3TestUtils::CalculateBucketName(bucketPrefix);
         }
-
-        static Aws::String PreparePresignedUrlTest()
-        {
-            Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
-            SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-            CreateBucketRequest createBucketRequest;
-            createBucketRequest.SetBucket(fullBucketName);
-            createBucketRequest.SetACL(BucketCannedACL::private_);
-            CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-            AWS_EXPECT_SUCCESS(createBucketOutcome);
-            const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
-            EXPECT_TRUE(!createBucketResult.GetLocation().empty());
-            EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName));
-            TagTestBucket(fullBucketName, Client);
-            return fullBucketName;
-        }
-
-        static void DoPresignedUrlTest(const Aws::String& bucketName, std::shared_ptr<HttpRequest>& putRequest)
-        {
-            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
-            *objectStream << "Test Object";
-            objectStream->flush();
-
-            putRequest->AddContentBody(objectStream);
-            Aws::StringStream intConverter;
-            intConverter << objectStream->tellp();
-            putRequest->SetContentLength(intConverter.str());
-            putRequest->SetContentType("text/plain");
-            std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(putRequest);
-
-            ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
-
-            ASSERT_TRUE(WaitForObjectToPropagate(bucketName, TEST_OBJ_KEY));
-
-            // GetObject with presigned url
-            Aws::String presignedUrlGet = Client->GeneratePresignedUrl(bucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET);
-            std::shared_ptr<HttpRequest> getRequest = CreateHttpRequest(presignedUrlGet, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(getRequest);
-
-            ASSERT_EQ(HttpResponseCode::OK, getResponse->GetResponseCode());
-            Aws::StringStream ss;
-            ss << getResponse->GetResponseBody().rdbuf();
-            ASSERT_STREQ("Test Object", ss.str().c_str());
-
-            Aws::S3Crt::Model::GetObjectRequest getObjectRequest;
-            getObjectRequest.WithBucket(bucketName).WithKey(TEST_OBJ_KEY);
-            auto outcome = Client->GetObject(getObjectRequest);
-            AWS_ASSERT_SUCCESS(outcome);
-            if (putRequest->HasHeader(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION))
-            {
-                ASSERT_STREQ(Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(outcome.GetResult().GetServerSideEncryption()).c_str(), putRequest->GetHeaderValue(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION).c_str());
-            }
-        }
-
-        static void CleanUpPresignedUrlTest()
-        {
-            Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
-            SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
-            Aws::String presignedUrlDelete = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_DELETE);
-            std::shared_ptr<HttpRequest> deleteRequest = CreateHttpRequest(presignedUrlDelete, HttpMethod::HTTP_DELETE, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            std::shared_ptr<HttpResponse> deleteResponse = m_HttpClient->MakeRequest(deleteRequest);
-            ASSERT_EQ(HttpResponseCode::NO_CONTENT, deleteResponse->GetResponseCode());
-            WaitForBucketToEmpty(fullBucketName);
-        }
-
     };
 
     std::shared_ptr<S3CrtClient> BucketAndObjectOperationTest::Client(nullptr);
     std::shared_ptr<S3CrtClient> BucketAndObjectOperationTest::oregonClient(nullptr);
-    std::shared_ptr<HttpClient> BucketAndObjectOperationTest::m_HttpClient(nullptr);
 
     TEST_F(BucketAndObjectOperationTest, TestBucketOperationsErrorWithMissingRequiredFields)
     {
@@ -457,6 +270,7 @@ namespace
     {
         const Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
@@ -465,8 +279,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         ListBucketsOutcome listBucketsOutcome = Client->ListBuckets();
         AWS_ASSERT_SUCCESS(listBucketsOutcome);
@@ -505,8 +319,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, oregonClient));
-        TagTestBucket(fullBucketName, oregonClient);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(oregonClient, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(oregonClient, fullBucketName);
 
         GetBucketLocationRequest locationRequest;
         locationRequest.SetBucket(fullBucketName);
@@ -533,8 +347,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -557,8 +371,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -574,7 +388,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, TEST_OBJ_KEY));
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -604,7 +418,7 @@ namespace
         DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
         AWS_ASSERT_SUCCESS(deleteObjectOutcome);
 
-        WaitForBucketToEmpty(fullBucketName);
+        Testing::S3TestUtils::WaitForBucketToEmpty(Client, fullBucketName);
 
         headObjectOutcome = Client->HeadObject(headObjectRequest);
         ASSERT_FALSE(headObjectOutcome.IsSuccess());
@@ -632,8 +446,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -648,7 +462,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, TEST_OBJ_KEY));
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -677,7 +491,7 @@ namespace
         DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
         AWS_ASSERT_SUCCESS(deleteObjectOutcome);
 
-        WaitForBucketToEmpty(fullBucketName);
+        Testing::S3TestUtils::WaitForBucketToEmpty(Client, fullBucketName);
 
         headObjectOutcome = Client->HeadObject(headObjectRequest);
         ASSERT_FALSE(headObjectOutcome.IsSuccess());
@@ -695,8 +509,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         // S3 CRT Client doesn't support this edge case right now.
         //test unicode
@@ -715,7 +529,7 @@ namespace
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
             AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-            ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, unicodekey.c_str()));
+            ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, unicodekey.c_str()));
 
             DeleteObjectRequest deleteObjectRequest;
             deleteObjectRequest.SetBucket(fullBucketName);
@@ -738,7 +552,7 @@ namespace
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
             AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-            ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY));
+            ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, URIESCAPE_KEY));
 
             DeleteObjectRequest deleteObjectRequest;
             deleteObjectRequest.SetBucket(fullBucketName);
@@ -746,22 +560,22 @@ namespace
             DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
             AWS_ASSERT_SUCCESS(deleteObjectOutcome);
         }
-        WaitForBucketToEmpty(fullBucketName);
+        Testing::S3TestUtils::WaitForBucketToEmpty(Client, fullBucketName);
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrls)
     {
-        Aws::String fullBucketName = PreparePresignedUrlTest();
+        Aws::String fullBucketName = Testing::S3TestUtils::PreparePresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT);
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        DoPresignedUrlTest(fullBucketName, putRequest);
-        CleanUpPresignedUrlTest();
+        Testing::S3TestUtils::DoPresignedUrlTest(&ServerSideEncryptionMapper::GetNameForServerSideEncryption, Client, fullBucketName, putRequest);
+        Testing::S3TestUtils::CleanUpPresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsAndCustomizedHeaders)
     {
-        Aws::String fullBucketName = PreparePresignedUrlTest();
+        Aws::String fullBucketName = Testing::S3TestUtils::PreparePresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         Aws::Http::HeaderValueCollection collections;
         collections.emplace("TestKey1", "TestVal1");
@@ -773,25 +587,25 @@ namespace
         ASSERT_NE(presignedUrlPut.find("testkey2"), Aws::String::npos);
         putRequest->SetHeaderValue("TestKey1", "TestVal1");
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
-        DoPresignedUrlTest(fullBucketName, putRequest);
-        CleanUpPresignedUrlTest();
+        Testing::S3TestUtils::DoPresignedUrlTest(&ServerSideEncryptionMapper::GetNameForServerSideEncryption, Client, fullBucketName, putRequest);
+        Testing::S3TestUtils::CleanUpPresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsWithSSES3)
     {
-        Aws::String fullBucketName = PreparePresignedUrlTest();
+        Aws::String fullBucketName = Testing::S3TestUtils::PreparePresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         Aws::String presignedUrlPut = Client->GeneratePresignedUrlWithSSES3(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT);
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         putRequest->SetHeaderValue(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION,
                 Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::AES256));
-        DoPresignedUrlTest(fullBucketName, putRequest);
-        CleanUpPresignedUrlTest();
+        Testing::S3TestUtils::DoPresignedUrlTest(&ServerSideEncryptionMapper::GetNameForServerSideEncryption, Client, fullBucketName, putRequest);
+        Testing::S3TestUtils::CleanUpPresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsWithSSES3AndCustomizedHeaders)
     {
-        Aws::String fullBucketName = PreparePresignedUrlTest();
+        Aws::String fullBucketName = Testing::S3TestUtils::PreparePresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         Aws::Http::HeaderValueCollection collections;
         collections.emplace("TestKey1", "TestVal1");
@@ -805,26 +619,26 @@ namespace
         ASSERT_NE(presignedUrlPut.find("testkey2"), Aws::String::npos);
         putRequest->SetHeaderValue("TestKey1", "TestVal1");
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
-        DoPresignedUrlTest(fullBucketName, putRequest);
-        CleanUpPresignedUrlTest();
+        Testing::S3TestUtils::DoPresignedUrlTest(&ServerSideEncryptionMapper::GetNameForServerSideEncryption, Client, fullBucketName, putRequest);
+        Testing::S3TestUtils::CleanUpPresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsWithSSEKMS)
     {
-        Aws::String fullBucketName = PreparePresignedUrlTest();
+        Aws::String fullBucketName = Testing::S3TestUtils::PreparePresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         Aws::String presignedUrlPut = Client->GeneratePresignedUrlWithSSEKMS(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT); //Using default KMS key in this AWS account
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         putRequest->SetHeaderValue(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION,
                 Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::aws_kms));
-        DoPresignedUrlTest(fullBucketName, putRequest);
-        CleanUpPresignedUrlTest();
+        Testing::S3TestUtils::DoPresignedUrlTest(&ServerSideEncryptionMapper::GetNameForServerSideEncryption, Client, fullBucketName, putRequest);
+        Testing::S3TestUtils::CleanUpPresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
     }
 
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrlsWithSSEKMSAndCustomizedHeaders)
     {
-        Aws::String fullBucketName = PreparePresignedUrlTest();
+        Aws::String fullBucketName = Testing::S3TestUtils::PreparePresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         Aws::Http::HeaderValueCollection collections;
         collections.emplace("TestKey1", "TestVal1");
@@ -838,8 +652,8 @@ namespace
         ASSERT_NE(presignedUrlPut.find("testkey2"), Aws::String::npos);
         putRequest->SetHeaderValue("TestKey1", "TestVal1");
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
-        DoPresignedUrlTest(fullBucketName, putRequest);
-        CleanUpPresignedUrlTest();
+        Testing::S3TestUtils::DoPresignedUrlTest(&ServerSideEncryptionMapper::GetNameForServerSideEncryption, Client, fullBucketName, putRequest);
+        Testing::S3TestUtils::CleanUpPresignedUrlTest(Client, BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestThatErrorsParse)
@@ -863,8 +677,8 @@ namespace
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -882,8 +696,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -918,8 +732,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -952,8 +766,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         auto objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
         *objectStream << "Test Japanese & Chinese Unicode keys";
@@ -987,8 +801,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1007,7 +821,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);
@@ -1067,8 +881,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1087,7 +901,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);
@@ -1143,8 +957,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1166,7 +980,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);
@@ -1249,8 +1063,8 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1273,7 +1087,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
-        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(Client, fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);
@@ -1345,8 +1159,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1642,8 +1456,8 @@ namespace
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
-        TagTestBucket(fullBucketName, Client);
+        ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(Client, fullBucketName));
+        Testing::S3TestUtils::TagTestBucket(Client, fullBucketName);
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
