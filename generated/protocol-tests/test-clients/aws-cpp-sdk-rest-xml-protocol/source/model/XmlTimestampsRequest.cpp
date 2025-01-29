@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/rest-xml-protocol/model/XmlTimestampsRequest.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
+
+#include <utility>
+
+using namespace Aws::RestXmlProtocol::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+XmlTimestampsRequest::XmlTimestampsRequest() : 
+    m_normalHasBeenSet(false),
+    m_dateTimeHasBeenSet(false),
+    m_dateTimeOnTargetHasBeenSet(false),
+    m_epochSecondsHasBeenSet(false),
+    m_epochSecondsOnTargetHasBeenSet(false),
+    m_httpDateHasBeenSet(false),
+    m_httpDateOnTargetHasBeenSet(false)
+{
+}
+
+Aws::String XmlTimestampsRequest::SerializePayload() const
+{
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("XmlTimestampsRequest");
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+
+  Aws::StringStream ss;
+  if(m_normalHasBeenSet)
+  {
+   XmlNode normalNode = parentNode.CreateChildElement("normal");
+   normalNode.SetText(m_normal.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_dateTimeHasBeenSet)
+  {
+   XmlNode dateTimeNode = parentNode.CreateChildElement("dateTime");
+   dateTimeNode.SetText(m_dateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_dateTimeOnTargetHasBeenSet)
+  {
+   XmlNode dateTimeOnTargetNode = parentNode.CreateChildElement("dateTimeOnTarget");
+   dateTimeOnTargetNode.SetText(m_dateTimeOnTarget.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_epochSecondsHasBeenSet)
+  {
+   XmlNode epochSecondsNode = parentNode.CreateChildElement("epochSeconds");
+   epochSecondsNode.SetText(m_epochSeconds.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_epochSecondsOnTargetHasBeenSet)
+  {
+   XmlNode epochSecondsOnTargetNode = parentNode.CreateChildElement("epochSecondsOnTarget");
+   epochSecondsOnTargetNode.SetText(m_epochSecondsOnTarget.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_httpDateHasBeenSet)
+  {
+   XmlNode httpDateNode = parentNode.CreateChildElement("httpDate");
+   httpDateNode.SetText(m_httpDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_httpDateOnTargetHasBeenSet)
+  {
+   XmlNode httpDateOnTargetNode = parentNode.CreateChildElement("httpDateOnTarget");
+   httpDateOnTargetNode.SetText(m_httpDateOnTarget.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  return payloadDoc.ConvertToString();
+}
+
+
