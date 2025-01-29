@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/RuleBooleanEmailAttribute.h>
+#include <aws/mailmanager/model/RuleIsInAddressList.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +50,26 @@ namespace Model
     inline RuleBooleanToEvaluate& WithAttribute(const RuleBooleanEmailAttribute& value) { SetAttribute(value); return *this;}
     inline RuleBooleanToEvaluate& WithAttribute(RuleBooleanEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The structure representing the address lists and address list attribute that
+     * will be used in evaluation of boolean expression.</p>
+     */
+    inline const RuleIsInAddressList& GetIsInAddressList() const{ return m_isInAddressList; }
+    inline bool IsInAddressListHasBeenSet() const { return m_isInAddressListHasBeenSet; }
+    inline void SetIsInAddressList(const RuleIsInAddressList& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = value; }
+    inline void SetIsInAddressList(RuleIsInAddressList&& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = std::move(value); }
+    inline RuleBooleanToEvaluate& WithIsInAddressList(const RuleIsInAddressList& value) { SetIsInAddressList(value); return *this;}
+    inline RuleBooleanToEvaluate& WithIsInAddressList(RuleIsInAddressList&& value) { SetIsInAddressList(std::move(value)); return *this;}
+    ///@}
   private:
 
     RuleBooleanEmailAttribute m_attribute;
     bool m_attributeHasBeenSet = false;
+
+    RuleIsInAddressList m_isInAddressList;
+    bool m_isInAddressListHasBeenSet = false;
   };
 
 } // namespace Model

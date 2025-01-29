@@ -254,10 +254,10 @@ namespace Model
      * mismatch between the specified object size value and the actual object size
      * value, it results in an <code>HTTP 400 InvalidRequest</code> error. </p>
      */
-    inline int GetMpuObjectSize() const{ return m_mpuObjectSize; }
+    inline long long GetMpuObjectSize() const{ return m_mpuObjectSize; }
     inline bool MpuObjectSizeHasBeenSet() const { return m_mpuObjectSizeHasBeenSet; }
-    inline void SetMpuObjectSize(int value) { m_mpuObjectSizeHasBeenSet = true; m_mpuObjectSize = value; }
-    inline CompleteMultipartUploadRequest& WithMpuObjectSize(int value) { SetMpuObjectSize(value); return *this;}
+    inline void SetMpuObjectSize(long long value) { m_mpuObjectSizeHasBeenSet = true; m_mpuObjectSize = value; }
+    inline CompleteMultipartUploadRequest& WithMpuObjectSize(long long value) { SetMpuObjectSize(value); return *this;}
     ///@}
 
     ///@{
@@ -439,7 +439,7 @@ namespace Model
     ChecksumType m_checksumType;
     bool m_checksumTypeHasBeenSet = false;
 
-    int m_mpuObjectSize;
+    long long m_mpuObjectSize;
     bool m_mpuObjectSizeHasBeenSet = false;
 
     RequestPayer m_requestPayer;

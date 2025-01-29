@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in TranscribeStreamingServiceClient header */
+#include <aws/transcribestreaming/model/GetMedicalScribeStreamResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TranscribeStreamingServiceClient header */
 
@@ -64,8 +65,11 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in TranscribeStreamingServiceClient header */
+      class GetMedicalScribeStreamRequest;
       class StartCallAnalyticsStreamTranscriptionRequest;
       class AudioStream;
+      class StartMedicalScribeStreamRequest;
+      class MedicalScribeInputStream;
       class StartMedicalStreamTranscriptionRequest;
       class AudioStream;
       class StartStreamTranscriptionRequest;
@@ -73,13 +77,17 @@ namespace Aws
       /* End of service model forward declarations required in TranscribeStreamingServiceClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<GetMedicalScribeStreamResult, TranscribeStreamingServiceError> GetMedicalScribeStreamOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartCallAnalyticsStreamTranscriptionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartMedicalScribeStreamOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartMedicalStreamTranscriptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartStreamTranscriptionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<GetMedicalScribeStreamOutcome> GetMedicalScribeStreamOutcomeCallable;
       typedef std::future<StartCallAnalyticsStreamTranscriptionOutcome> StartCallAnalyticsStreamTranscriptionOutcomeCallable;
+      typedef std::future<StartMedicalScribeStreamOutcome> StartMedicalScribeStreamOutcomeCallable;
       typedef std::future<StartMedicalStreamTranscriptionOutcome> StartMedicalStreamTranscriptionOutcomeCallable;
       typedef std::future<StartStreamTranscriptionOutcome> StartStreamTranscriptionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -88,8 +96,11 @@ namespace Aws
     class TranscribeStreamingServiceClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::GetMedicalScribeStreamRequest&, const Model::GetMedicalScribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMedicalScribeStreamResponseReceivedHandler;
     typedef std::function<void(Model::AudioStream&)> StartCallAnalyticsStreamTranscriptionStreamReadyHandler;
     typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartCallAnalyticsStreamTranscriptionRequest&, const Model::StartCallAnalyticsStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCallAnalyticsStreamTranscriptionResponseReceivedHandler;
+    typedef std::function<void(Model::MedicalScribeInputStream&)> StartMedicalScribeStreamStreamReadyHandler;
+    typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartMedicalScribeStreamRequest&, const Model::StartMedicalScribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalScribeStreamResponseReceivedHandler;
     typedef std::function<void(Model::AudioStream&)> StartMedicalStreamTranscriptionStreamReadyHandler;
     typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartMedicalStreamTranscriptionRequest&, const Model::StartMedicalStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalStreamTranscriptionResponseReceivedHandler;
     typedef std::function<void(Model::AudioStream&)> StartStreamTranscriptionStreamReadyHandler;

@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/mailmanager/MailManager_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mailmanager/model/RuleAddressListEmailAttribute.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace MailManager
+{
+namespace Model
+{
+
+  /**
+   * <p>The structure type for a boolean condition that provides the address lists
+   * and address list attribute to evaluate.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RuleIsInAddressList">AWS
+   * API Reference</a></p>
+   */
+  class RuleIsInAddressList
+  {
+  public:
+    AWS_MAILMANAGER_API RuleIsInAddressList();
+    AWS_MAILMANAGER_API RuleIsInAddressList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAILMANAGER_API RuleIsInAddressList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>The address lists that will be used for evaluation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddressLists() const{ return m_addressLists; }
+    inline bool AddressListsHasBeenSet() const { return m_addressListsHasBeenSet; }
+    inline void SetAddressLists(const Aws::Vector<Aws::String>& value) { m_addressListsHasBeenSet = true; m_addressLists = value; }
+    inline void SetAddressLists(Aws::Vector<Aws::String>&& value) { m_addressListsHasBeenSet = true; m_addressLists = std::move(value); }
+    inline RuleIsInAddressList& WithAddressLists(const Aws::Vector<Aws::String>& value) { SetAddressLists(value); return *this;}
+    inline RuleIsInAddressList& WithAddressLists(Aws::Vector<Aws::String>&& value) { SetAddressLists(std::move(value)); return *this;}
+    inline RuleIsInAddressList& AddAddressLists(const Aws::String& value) { m_addressListsHasBeenSet = true; m_addressLists.push_back(value); return *this; }
+    inline RuleIsInAddressList& AddAddressLists(Aws::String&& value) { m_addressListsHasBeenSet = true; m_addressLists.push_back(std::move(value)); return *this; }
+    inline RuleIsInAddressList& AddAddressLists(const char* value) { m_addressListsHasBeenSet = true; m_addressLists.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The email attribute that needs to be evaluated against the address list.</p>
+     */
+    inline const RuleAddressListEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+    inline void SetAttribute(const RuleAddressListEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(RuleAddressListEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+    inline RuleIsInAddressList& WithAttribute(const RuleAddressListEmailAttribute& value) { SetAttribute(value); return *this;}
+    inline RuleIsInAddressList& WithAttribute(RuleAddressListEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    Aws::Vector<Aws::String> m_addressLists;
+    bool m_addressListsHasBeenSet = false;
+
+    RuleAddressListEmailAttribute m_attribute;
+    bool m_attributeHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace MailManager
+} // namespace Aws

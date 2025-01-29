@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filter workload estimates based on their creation date. </p>
+     * <p> Filter workload estimates based on the creation date. </p>
      */
     inline const FilterTimestamp& GetCreatedAtFilter() const{ return m_createdAtFilter; }
     inline bool CreatedAtFilterHasBeenSet() const { return m_createdAtFilterHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filter workload estimates based on their expiration date. </p>
+     * <p> Filter workload estimates based on the expiration date. </p>
      */
     inline const FilterTimestamp& GetExpiresAtFilter() const{ return m_expiresAtFilter; }
     inline bool ExpiresAtFilterHasBeenSet() const { return m_expiresAtFilterHasBeenSet; }

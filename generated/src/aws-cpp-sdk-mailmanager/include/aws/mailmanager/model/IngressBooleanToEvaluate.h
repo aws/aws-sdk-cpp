@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/IngressAnalysis.h>
+#include <aws/mailmanager/model/IngressIsInAddressList.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,26 @@ namespace Model
     inline IngressBooleanToEvaluate& WithAnalysis(const IngressAnalysis& value) { SetAnalysis(value); return *this;}
     inline IngressBooleanToEvaluate& WithAnalysis(IngressAnalysis&& value) { SetAnalysis(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The structure type for a boolean condition that provides the address lists to
+     * evaluate incoming traffic on.</p>
+     */
+    inline const IngressIsInAddressList& GetIsInAddressList() const{ return m_isInAddressList; }
+    inline bool IsInAddressListHasBeenSet() const { return m_isInAddressListHasBeenSet; }
+    inline void SetIsInAddressList(const IngressIsInAddressList& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = value; }
+    inline void SetIsInAddressList(IngressIsInAddressList&& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = std::move(value); }
+    inline IngressBooleanToEvaluate& WithIsInAddressList(const IngressIsInAddressList& value) { SetIsInAddressList(value); return *this;}
+    inline IngressBooleanToEvaluate& WithIsInAddressList(IngressIsInAddressList&& value) { SetIsInAddressList(std::move(value)); return *this;}
+    ///@}
   private:
 
     IngressAnalysis m_analysis;
     bool m_analysisHasBeenSet = false;
+
+    IngressIsInAddressList m_isInAddressList;
+    bool m_isInAddressListHasBeenSet = false;
   };
 
 } // namespace Model
