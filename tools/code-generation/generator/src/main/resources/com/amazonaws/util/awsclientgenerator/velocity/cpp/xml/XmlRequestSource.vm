@@ -85,7 +85,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   parentNode.SetAttributeValue("${xmlnsKey}", "${xmlNamespace.uri}");
 #end
 
-#if($payloadMember)
+#if($payloadMember && !$member.shape.enum)
   ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(parentNode);
   if(parentNode.HasChildren())
   {

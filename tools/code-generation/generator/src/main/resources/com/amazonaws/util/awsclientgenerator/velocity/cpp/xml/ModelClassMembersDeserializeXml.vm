@@ -177,7 +177,11 @@
 #elseif($member.shape.string)
     ${spaces}${memberVarName} = ${substituteString};
 #elseif($member.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
     ${spaces}${memberVarName} = DateTime(StringUtils::Trim(${substituteString}.c_str()).c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape));
+#else
+    ${spaces}${memberVarName} = DateTime(StringUtils::ConvertToDouble(StringUtils::Trim(${substituteString}.c_str()).c_str()));
+#end
 #end
 #if(!$member.required && $useRequiredField)
       $varNameHasBeenSet = true;
