@@ -1,0 +1,82 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/rest-xml-protocol/model/XmlEnumsRequest.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
+
+#include <utility>
+
+using namespace Aws::RestXmlProtocol::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+XmlEnumsRequest::XmlEnumsRequest() : 
+    m_fooEnum1(FooEnum::NOT_SET),
+    m_fooEnum1HasBeenSet(false),
+    m_fooEnum2(FooEnum::NOT_SET),
+    m_fooEnum2HasBeenSet(false),
+    m_fooEnum3(FooEnum::NOT_SET),
+    m_fooEnum3HasBeenSet(false),
+    m_fooEnumListHasBeenSet(false),
+    m_fooEnumSetHasBeenSet(false),
+    m_fooEnumMapHasBeenSet(false)
+{
+}
+
+Aws::String XmlEnumsRequest::SerializePayload() const
+{
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("XmlEnumsRequest");
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+
+  Aws::StringStream ss;
+  if(m_fooEnum1HasBeenSet)
+  {
+   XmlNode fooEnum1Node = parentNode.CreateChildElement("fooEnum1");
+   fooEnum1Node.SetText(FooEnumMapper::GetNameForFooEnum(m_fooEnum1));
+  }
+
+  if(m_fooEnum2HasBeenSet)
+  {
+   XmlNode fooEnum2Node = parentNode.CreateChildElement("fooEnum2");
+   fooEnum2Node.SetText(FooEnumMapper::GetNameForFooEnum(m_fooEnum2));
+  }
+
+  if(m_fooEnum3HasBeenSet)
+  {
+   XmlNode fooEnum3Node = parentNode.CreateChildElement("fooEnum3");
+   fooEnum3Node.SetText(FooEnumMapper::GetNameForFooEnum(m_fooEnum3));
+  }
+
+  if(m_fooEnumListHasBeenSet)
+  {
+   XmlNode fooEnumListParentNode = parentNode.CreateChildElement("fooEnumList");
+   for(const auto& item : m_fooEnumList)
+   {
+     XmlNode fooEnumListNode = fooEnumListParentNode.CreateChildElement("FooEnum");
+     fooEnumListNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
+   }
+  }
+
+  if(m_fooEnumSetHasBeenSet)
+  {
+   XmlNode fooEnumSetParentNode = parentNode.CreateChildElement("fooEnumSet");
+   for(const auto& item : m_fooEnumSet)
+   {
+     XmlNode fooEnumSetNode = fooEnumSetParentNode.CreateChildElement("FooEnum");
+     fooEnumSetNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
+   }
+  }
+
+  if(m_fooEnumMapHasBeenSet)
+  {
+  }
+
+  return payloadDoc.ConvertToString();
+}
+
+
