@@ -331,7 +331,8 @@ TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
   EXPECT_TRUE(crtMetadata != userAgentParsed.end());
   auto archMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("md/arch") != Aws::String::npos; });
   EXPECT_TRUE(archMetadata != userAgentParsed.end());
-  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("m/") != Aws::String::npos; });
+  // RETRY_MODE_STANDARD -> E, FLEXIBLE_CHECKSUMS_REQ_CRC64 -> W,FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED -> Z, FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED -> b
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("m/E,W,Z,b") != Aws::String::npos; });
   EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 
   // assert the order of the UA header
