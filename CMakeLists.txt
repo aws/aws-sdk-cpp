@@ -240,11 +240,7 @@ if (LEGACY_BUILD)
             set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
         endif ()
     else ()
-        # This is required in order to append /lib/cmake to each element in CMAKE_PREFIX_PATH
-        set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
-        string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
-        # Append that generated list to the module search path
-        list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
+        find_package(aws-c-common REQUIRED)
         include(AwsFindPackage)
         set(IN_SOURCE_BUILD OFF)
     endif ()
