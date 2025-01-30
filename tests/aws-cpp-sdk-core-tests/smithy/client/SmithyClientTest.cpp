@@ -241,7 +241,6 @@ TEST_F(SmithyClientTest, testSigV4) {
     auto res = ptr->SelectAuthSchemeOption(ctx);
 
     EXPECT_EQ(res.IsSuccess(), true);
-    std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
     Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
@@ -251,9 +250,6 @@ TEST_F(SmithyClientTest, testSigV4) {
     auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
 
     EXPECT_EQ(res2.IsSuccess(), true);
-    
-    std::cout<<"Final auth="<<res2.GetResult()->GetAwsAuthorization()<<std::endl;
-
     EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
 
 
@@ -293,8 +289,6 @@ TEST_F(SmithyClientTest, testSigV4a) {
     auto res = ptr->SelectAuthSchemeOption(ctx);
 
     EXPECT_EQ(res.IsSuccess(), true);
-
-    std::cout<<"selected scheme id="<<res.GetResult().schemeId<<std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
     Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
@@ -341,8 +335,6 @@ TEST_F(SmithyClientTest, bearer)
     auto res = ptr->SelectAuthSchemeOption(ctx);
 
     EXPECT_EQ(res.IsSuccess(), true);
-
-    std::cout << "selected scheme id=" << res.GetResult().schemeId << std::endl;
     EXPECT_EQ(res.GetResult().schemeId, key);
 
     Aws::String uri{
@@ -359,10 +351,6 @@ TEST_F(SmithyClientTest, bearer)
     EXPECT_EQ(res2.IsSuccess(), true);
 
     EXPECT_TRUE(!res2.GetResult()->GetHeaderValue("authorization").empty());
-
-    std::cout << "header=" << res2.GetResult()->GetHeaderValue("authorization")
-              << std::endl;
-
     EXPECT_EQ(res2.GetResult()->GetHeaderValue("authorization"),
               "Bearer testBearerToken");
 }
