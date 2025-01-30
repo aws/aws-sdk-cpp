@@ -4,8 +4,12 @@
 #if($shapeMember.shape.enum)
 ${shapeMember.shape.name}Mapper::GetNameFor${shapeMember.shape.name}(${memberVarName})##
 #elseif($shapeMember.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
 #set($timestamptFormatStr = $CppViewHelper.computeTimestampFormatInXml($shapeMember.shape))
 ${memberVarName}.ToGmtString(Aws::Utils::DateFormat::${timestamptFormatStr})##
+#else
+StringUtils::to_string(${memberVarName}.Seconds())##
+#end
 #elseif($shapeMember.shape.boolean)
 std::boolalpha << ${memberVarName}##
 #elseif($shapeMember.shape.blob)

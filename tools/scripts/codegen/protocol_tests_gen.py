@@ -157,10 +157,10 @@ class ProtocolTestsGen(object):
                                                               PROTOCOL_TESTS_ENDPOINT_RULES, None, use_smithy)
         return service_models
 
-    def _get_client_models_metadata(self) -> set:
-        models = set()
+    def _get_client_models_metadata(self) -> list:
+        models = list()
         model_files = os.listdir(self.client_models_dir)
-        for filename in model_files:
+        for filename in sorted(model_files):
             if not os.path.isfile("/".join([self.client_models_dir, filename])):
                 continue
             model_abspath = str(pathlib.Path(f"{self.client_models_dir}/{filename}").resolve())
@@ -169,7 +169,7 @@ class ProtocolTestsGen(object):
                     c2j_model = json.load(file_content)
                     model_metadata = self.ProtoTestC2jClientModelMetadata(filename, model_abspath,
                                                                           c2j_model.get("metadata"))
-                    models.add(model_metadata)
+                    models.append(model_metadata)
                 except Exception as exc:
                     print(f"ERROR: unexpected file content in protocol tests clients dir {self.client_models_dir}. "
                           f"Expected c2j client model, but json metadata kew is missing: {exc}")
@@ -194,7 +194,7 @@ class ProtocolTestsGen(object):
 
                 test_def_path = str(pathlib.Path(f"{self.test_definitions_dir}/{test_def_group}/{filename}").resolve())
 
-                def _get_corresponding_test_client(test_clients_md: set, test_path: str) -> list:
+                def _get_corresponding_test_client(test_clients_md: list, test_path: str) -> list:
                     # Get c2j client models matching the test suite
                     # more than 1 is possible (ex: xml and xml with namespace clients for a single test suite)
                     result = list()
