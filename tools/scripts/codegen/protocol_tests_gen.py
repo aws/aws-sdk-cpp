@@ -46,6 +46,14 @@ class ProtocolTestsGen(object):
             self.model_path = model_path
             self.md = md
 
+        def __lt__(self, other):
+            if isinstance(other, ProtocolTestsGen.ProtoTestC2jClientModelMetadata):
+                less = False
+                for field in ["service_name", "model_path"]:
+                    less |= getattr(self, field) < getattr(other, field)
+            else:
+                return NotImplemented
+
     class ProtocolTestModel:
         def __init__(self, test_type: str, test_name: str, c2j_test_model: str, c2j_client_md):
             self.test_type = test_type  # ex: input our output
@@ -211,7 +219,7 @@ class ProtocolTestsGen(object):
                         except Exception as exc:
                             print(f"ERROR: unexpected file content in protocol tests {test_def_path}. "
                                   f"Expected c2j protocol test, but json metadata kew is missing: {exc}")
-                    return result
+                    return sorted(result)
 
                 test_clients_for_suite = _get_corresponding_test_client(all_test_clients_md, test_def_path)
 

@@ -1,7 +1,7 @@
 add_project(rest-xml-input-protocol-tests
     "Tests for the protocol rest-xml of AWS C++ SDK"
     testing-resources
-    aws-cpp-sdk-rest-xml-protocol
+    aws-cpp-sdk-rest-xml-protocol-namespace
     aws-cpp-sdk-core)
 
 file(GLOB AWS_REST_XML_INPUT_PROTOCOL_TESTS_SRC

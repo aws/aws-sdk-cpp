@@ -186,7 +186,7 @@ void AllQueryStringTypesRequest::AddQueryStringParameters(URI& uri) const
     {
       for(const auto& item : m_queryTimestampList)
       {
-        ss << item;
+        ss << item.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
         uri.AddQueryStringParameter("TimestampList", ss.str());
         ss.str("");
       }

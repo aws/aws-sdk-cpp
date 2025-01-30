@@ -74,6 +74,15 @@ Aws::String XmlEnumsRequest::SerializePayload() const
 
   if(m_fooEnumMapHasBeenSet)
   {
+   XmlNode fooEnumMapParentNode = parentNode.CreateChildElement("fooEnumMap");
+   for(const auto& mapItem : m_fooEnumMap)
+   {
+     XmlNode fooEnumMapMapEntryNode = fooEnumMapParentNode.CreateChildElement("entry");
+     XmlNode fooEnumMapKeyNode = fooEnumMapMapEntryNode.CreateChildElement("key");
+     fooEnumMapKeyNode.SetText(mapItem.first);
+     XmlNode fooEnumMapValueNode = fooEnumMapMapEntryNode.CreateChildElement("value");
+     fooEnumMapValueNode.SetText(FooEnumMapper::GetNameForFooEnum(mapItem.second));
+   }
   }
 
   return payloadDoc.ConvertToString();

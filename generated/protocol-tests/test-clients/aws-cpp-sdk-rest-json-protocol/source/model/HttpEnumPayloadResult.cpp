@@ -4,14 +4,16 @@
  */
 
 #include <aws/rest-json-protocol/model/HttpEnumPayloadResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::RestJsonProtocol::Model;
-using namespace Aws::Utils::Stream;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -20,34 +22,17 @@ HttpEnumPayloadResult::HttpEnumPayloadResult() :
 {
 }
 
-HttpEnumPayloadResult::HttpEnumPayloadResult(HttpEnumPayloadResult&& toMove) : 
-    m_payload(toMove.m_payload),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-HttpEnumPayloadResult& HttpEnumPayloadResult::operator=(HttpEnumPayloadResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_payload = toMove.m_payload;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
-HttpEnumPayloadResult::HttpEnumPayloadResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
   : HttpEnumPayloadResult()
 {
-  *this = std::move(result);
+  *this = result;
 }
 
-HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  m_payload = result.TakeOwnershipOfPayload();
+  JsonView jsonValue = result.GetPayload().View();
+  m_payload = StringEnumMapper::GetStringEnumForName(jsonValue.GetString("payload"));
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -56,5 +41,6 @@ HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(Aws::AmazonWebServiceRe
     m_requestId = requestIdIter->second;
   }
 
-   return *this;
+
+  return *this;
 }

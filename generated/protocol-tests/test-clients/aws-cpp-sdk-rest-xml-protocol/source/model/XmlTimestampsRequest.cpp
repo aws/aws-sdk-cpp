@@ -53,25 +53,25 @@ Aws::String XmlTimestampsRequest::SerializePayload() const
   if(m_epochSecondsHasBeenSet)
   {
    XmlNode epochSecondsNode = parentNode.CreateChildElement("epochSeconds");
-   epochSecondsNode.SetText(m_epochSeconds.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   epochSecondsNode.SetText(m_epochSeconds.ToGmtString(Aws::Utils::DateFormat::${timestamptFormatStr}));
   }
 
   if(m_epochSecondsOnTargetHasBeenSet)
   {
    XmlNode epochSecondsOnTargetNode = parentNode.CreateChildElement("epochSecondsOnTarget");
-   epochSecondsOnTargetNode.SetText(m_epochSecondsOnTarget.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   epochSecondsOnTargetNode.SetText(m_epochSecondsOnTarget.ToGmtString(Aws::Utils::DateFormat::${timestamptFormatStr}));
   }
 
   if(m_httpDateHasBeenSet)
   {
    XmlNode httpDateNode = parentNode.CreateChildElement("httpDate");
-   httpDateNode.SetText(m_httpDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   httpDateNode.SetText(m_httpDate.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_httpDateOnTargetHasBeenSet)
   {
    XmlNode httpDateOnTargetNode = parentNode.CreateChildElement("httpDateOnTarget");
-   httpDateOnTargetNode.SetText(m_httpDateOnTarget.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   httpDateOnTargetNode.SetText(m_httpDateOnTarget.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   return payloadDoc.ConvertToString();

@@ -19,7 +19,7 @@ namespace Model
 
   /**
    */
-  class HttpEnumPayloadRequest : public StreamingRestJsonProtocolRequest
+  class HttpEnumPayloadRequest : public RestJsonProtocolRequest
   {
   public:
     AWS_RESTJSONPROTOCOL_API HttpEnumPayloadRequest();
@@ -30,8 +30,20 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "HttpEnumPayload"; }
 
+    AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+
     AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
+    ///@{
+    
+    inline const StringEnum& GetPayload() const{ return m_payload; }
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+    inline void SetPayload(const StringEnum& value) { m_payloadHasBeenSet = true; m_payload = value; }
+    inline void SetPayload(StringEnum&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
+    inline HttpEnumPayloadRequest& WithPayload(const StringEnum& value) { SetPayload(value); return *this;}
+    inline HttpEnumPayloadRequest& WithPayload(StringEnum&& value) { SetPayload(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     
@@ -46,6 +58,8 @@ namespace Model
     ///@}
   private:
 
+    StringEnum m_payload;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

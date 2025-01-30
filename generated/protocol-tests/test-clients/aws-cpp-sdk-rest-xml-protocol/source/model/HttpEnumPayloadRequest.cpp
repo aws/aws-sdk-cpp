@@ -4,15 +4,16 @@
  */
 
 #include <aws/rest-xml-protocol/model/HttpEnumPayloadRequest.h>
-#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
-using namespace Aws::Utils::Stream;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
-using namespace Aws;
 
 HttpEnumPayloadRequest::HttpEnumPayloadRequest() : 
     m_payload(StringEnum::NOT_SET),
@@ -20,6 +21,20 @@ HttpEnumPayloadRequest::HttpEnumPayloadRequest() :
 {
 }
 
+Aws::String HttpEnumPayloadRequest::SerializePayload() const
+{
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("payload");
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+
+  m_payload.AddToNode(parentNode);
+  if(parentNode.HasChildren())
+  {
+    return payloadDoc.ConvertToString();
+  }
+
+  return {};
+}
 
 
 Aws::Http::HeaderValueCollection HttpEnumPayloadRequest::GetRequestSpecificHeaders() const
@@ -34,5 +49,4 @@ Aws::Http::HeaderValueCollection HttpEnumPayloadRequest::GetRequestSpecificHeade
   }
 
   return headers;
-
 }
