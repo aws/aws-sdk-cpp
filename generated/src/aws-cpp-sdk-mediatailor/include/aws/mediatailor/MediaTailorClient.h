@@ -125,8 +125,8 @@ namespace MediaTailor
         }
 
         /**
-         * <p>Amazon CloudWatch log settings for a playback configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Defines where AWS Elemental MediaTailor sends logs for the playback
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">AWS
          * API Reference</a></p>
          */

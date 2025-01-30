@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Q Business action that is allowed.</p>
+     * <p>The Amazon Q Business action that is allowed.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }

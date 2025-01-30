@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrors.h>
 #include <aws/bedrock-agent-runtime/model/BadGatewayException.h>
+#include <aws/bedrock-agent-runtime/model/InternalServerException.h>
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
 
 using namespace Aws::Client;
@@ -22,6 +23,12 @@ template<> AWS_BEDROCKAGENTRUNTIME_API BadGatewayException BedrockAgentRuntimeEr
 {
   assert(this->GetErrorType() == BedrockAgentRuntimeErrors::BAD_GATEWAY);
   return BadGatewayException(this->GetJsonPayload().View());
+}
+
+template<> AWS_BEDROCKAGENTRUNTIME_API InternalServerException BedrockAgentRuntimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == BedrockAgentRuntimeErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_BEDROCKAGENTRUNTIME_API DependencyFailedException BedrockAgentRuntimeError::GetModeledError()

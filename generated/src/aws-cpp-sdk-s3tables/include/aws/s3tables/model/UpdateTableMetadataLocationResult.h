@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the table.</p>
+     * <p>The Amazon Resource Name (ARN) of the table.</p>
      */
     inline const Aws::String& GetTableARN() const{ return m_tableARN; }
     inline void SetTableARN(const Aws::String& value) { m_tableARN = value; }

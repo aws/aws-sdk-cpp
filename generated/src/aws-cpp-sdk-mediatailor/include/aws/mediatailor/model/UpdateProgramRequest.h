@@ -52,20 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of AudienceMedia defined in program.</p>
-     */
-    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
-    inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
-    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
-    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
-    inline UpdateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
-    inline UpdateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
-    inline UpdateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
-    inline UpdateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the channel for this Program.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
@@ -103,13 +89,24 @@ namespace Model
     inline UpdateProgramRequest& WithScheduleConfiguration(const UpdateProgramScheduleConfiguration& value) { SetScheduleConfiguration(value); return *this;}
     inline UpdateProgramRequest& WithScheduleConfiguration(UpdateProgramScheduleConfiguration&& value) { SetScheduleConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+    inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
+    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
+    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
+    inline UpdateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
+    inline UpdateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
+    inline UpdateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
+    inline UpdateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<AdBreak> m_adBreaks;
     bool m_adBreaksHasBeenSet = false;
-
-    Aws::Vector<AudienceMedia> m_audienceMedia;
-    bool m_audienceMediaHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
@@ -119,6 +116,9 @@ namespace Model
 
     UpdateProgramScheduleConfiguration m_scheduleConfiguration;
     bool m_scheduleConfigurationHasBeenSet = false;
+
+    Aws::Vector<AudienceMedia> m_audienceMedia;
+    bool m_audienceMediaHasBeenSet = false;
   };
 
 } // namespace Model

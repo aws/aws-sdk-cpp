@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>The time when prefetched ads are considered for use in an ad break. If you
      * don't specify <code>StartTime</code>, the prefetched ads are available after
-     * MediaTailor retrives them from the ad decision server.</p>
+     * MediaTailor retrieves them from the ad decision server.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }

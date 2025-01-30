@@ -37,16 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duration of the live program in seconds.</p>
-     */
-    inline long long GetDurationMillis() const{ return m_durationMillis; }
-    inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
-    inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
-    inline UpdateProgramTransition& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time that the program is scheduled to start, in epoch
      * milliseconds.</p>
      */
@@ -55,13 +45,23 @@ namespace Model
     inline void SetScheduledStartTimeMillis(long long value) { m_scheduledStartTimeMillisHasBeenSet = true; m_scheduledStartTimeMillis = value; }
     inline UpdateProgramTransition& WithScheduledStartTimeMillis(long long value) { SetScheduledStartTimeMillis(value); return *this;}
     ///@}
-  private:
 
-    long long m_durationMillis;
-    bool m_durationMillisHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The duration of the live program in seconds.</p>
+     */
+    inline long long GetDurationMillis() const{ return m_durationMillis; }
+    inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
+    inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
+    inline UpdateProgramTransition& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+    ///@}
+  private:
 
     long long m_scheduledStartTimeMillis;
     bool m_scheduledStartTimeMillisHasBeenSet = false;
+
+    long long m_durationMillis;
+    bool m_durationMillisHasBeenSet = false;
   };
 
 } // namespace Model

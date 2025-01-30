@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the resource policy.</p>
+     * <p>The <code>JSON</code> that defines the policy.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicy = value; }

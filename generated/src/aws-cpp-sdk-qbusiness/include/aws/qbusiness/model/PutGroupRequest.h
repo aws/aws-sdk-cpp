@@ -125,9 +125,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file
-     * that contains your list of users that belong to a group.The Amazon Resource Name
-     * (ARN) of an IAM role that has access to the S3 file that contains your list of
-     * users that belong to a group.</p>
+     * that contains your list of users that belong to a group.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

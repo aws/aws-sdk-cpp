@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns Amazon CloudWatch log settings for a playback
+   * <p>Defines where AWS Elemental MediaTailor sends logs for the playback
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/LogConfiguration">AWS
    * API Reference</a></p>
@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs
-     * account. For example, if your playback configuration has 1000 sessions and
+     * <p>The percentage of session logs that MediaTailor sends to your configured log
+     * destination. For example, if your playback configuration has 1000 sessions and
      * <code>percentEnabled</code> is set to <code>60</code>, MediaTailor sends logs
      * for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which
      * of the playback configuration sessions to send logs for. If you want to view
