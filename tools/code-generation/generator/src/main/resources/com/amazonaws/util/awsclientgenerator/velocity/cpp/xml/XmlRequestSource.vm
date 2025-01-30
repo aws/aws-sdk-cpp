@@ -69,6 +69,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($xmlNamespace = ${payloadMember.xmlNamespace})
 #set($locationName = $payloadMember.locationName)
 #end
+#if(!$payloadMember || !$payloadMember.shape.enum && !$payloadMember.shape.string && !$payloadMember.shape.string)##if payload is structured
 #if($locationName)
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("${locationName}");
 #else
@@ -76,6 +77,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
 
   XmlNode parentNode = payloadDoc.GetRootElement();
+#end
 #if($xmlNamespace)
 #if($xmlNamespace.prefix)
 #set($xmlnsKey = "xmlns:${xmlNamespace.prefix}")
@@ -85,7 +87,21 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   parentNode.SetAttributeValue("${xmlnsKey}", "${xmlNamespace.uri}");
 #end
 
-#if($payloadMember && !$member.shape.enum)
+#if($payloadMember)
+#if($payloadMember.shape.enum || $payloadMember.shape.string || $payloadMember.shape.string)
+##payload member is "streamed", i.e. payload doc is not the XML, but the enum string/string/blob itself
+##and CPP SDK did not generate legacy "streaming" request for some modelling quirks) - we need to set the payload to just a string/buffer.
+#if($payloadMember.shape.enum)
+  if ($payloadMember.shape.name::NOT_SET != ${CppViewHelper.computeMemberVariableName($shape.payload)}) {
+    return ${payloadMember.shape.name}Mapper::GetNameFor${payloadMember.shape.name}(${CppViewHelper.computeMemberVariableName($shape.payload)});
+  }
+  return {};
+#elseif($payloadMember.shape.string)
+  return ${CppViewHelper.computeMemberVariableName($shape.payload)};
+#else
+  static_assert(false, "Failed to generate code to serialize non-streaming request with non-structured (not xml) plain string/blob payload" /*payloadMember: $payloadMember*/);
+#end
+#else
   ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(parentNode);
   if(parentNode.HasChildren())
   {
@@ -93,6 +109,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   }
 
   return {};
+#end
 #else
 #set($useRequiredField = true)
 #set($callFromRequestShape = true)
