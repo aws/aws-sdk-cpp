@@ -244,7 +244,7 @@ SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCre
         const bool m_includeSha256HashHeader{true};
         const bool m_urlEscape{true};
         const Aws::Set<Aws::String> m_unsignedHeaders{USER_AGENT,X_AMZN_TRACE_ID};
-        const Aws::Crt::Auth::SignatureType m_signatureType{Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams};
+        const Aws::Crt::Auth::SignatureType m_signatureType{Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders};
         std::condition_variable m_cv;
         std::mutex m_mutex;
     };
