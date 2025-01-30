@@ -214,7 +214,7 @@ namespace Aws
          * Adds a used feature to the user agent string for the request.
          * @param feature the feature to be added in the user agent string.
          */
-        void AddUserAgentFeature(Aws::Client::UserAgentFeature feature) { m_userAgentFeatures.insert(feature); }
+        void AddUserAgentFeature(Aws::Client::UserAgentFeature feature) const { m_userAgentFeatures.insert(feature); }
 
         /**
          * Gets all features that would be included in the requests user agent string.
@@ -241,7 +241,7 @@ namespace Aws
         RequestSignedHandler m_onRequestSigned;
         RequestRetryHandler m_requestRetryHandler;
         mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
-        Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
+        mutable Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
     };
 
 } // namespace Aws
