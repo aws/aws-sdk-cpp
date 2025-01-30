@@ -164,6 +164,12 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("AdConditioningConfiguration"))
+  {
+    m_adConditioningConfiguration = jsonValue.GetObject("AdConditioningConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
-#include <aws/mediatailor/model/FillPolicy.h>
 #include <aws/mediatailor/model/Mode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/FillPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -41,21 +41,6 @@ namespace Model
     AWS_MEDIATAILOR_API AvailSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    /**
-     * <p>Defines the policy to apply to the avail suppression mode.
-     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
-     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
-     * when a session starts mid-break.</p>
-     */
-    inline const FillPolicy& GetFillPolicy() const{ return m_fillPolicy; }
-    inline bool FillPolicyHasBeenSet() const { return m_fillPolicyHasBeenSet; }
-    inline void SetFillPolicy(const FillPolicy& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = value; }
-    inline void SetFillPolicy(FillPolicy&& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = std::move(value); }
-    inline AvailSuppression& WithFillPolicy(const FillPolicy& value) { SetFillPolicy(value); return *this;}
-    inline AvailSuppression& WithFillPolicy(FillPolicy&& value) { SetFillPolicy(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -95,16 +80,31 @@ namespace Model
     inline AvailSuppression& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
     inline AvailSuppression& WithValue(const char* value) { SetValue(value); return *this;}
     ///@}
-  private:
 
-    FillPolicy m_fillPolicy;
-    bool m_fillPolicyHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Defines the policy to apply to the avail suppression mode.
+     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
+     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
+     * when a session starts mid-break.</p>
+     */
+    inline const FillPolicy& GetFillPolicy() const{ return m_fillPolicy; }
+    inline bool FillPolicyHasBeenSet() const { return m_fillPolicyHasBeenSet; }
+    inline void SetFillPolicy(const FillPolicy& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = value; }
+    inline void SetFillPolicy(FillPolicy&& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = std::move(value); }
+    inline AvailSuppression& WithFillPolicy(const FillPolicy& value) { SetFillPolicy(value); return *this;}
+    inline AvailSuppression& WithFillPolicy(FillPolicy&& value) { SetFillPolicy(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Mode m_mode;
     bool m_modeHasBeenSet = false;
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    FillPolicy m_fillPolicy;
+    bool m_fillPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the table bucket.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

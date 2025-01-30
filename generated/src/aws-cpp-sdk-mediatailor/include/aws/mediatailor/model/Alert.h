@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/mediatailor/model/AlertCategory.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/AlertCategory.h>
 #include <utility>
 
 namespace Aws
@@ -71,18 +71,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The category that MediaTailor assigns to the alert.</p>
-     */
-    inline const AlertCategory& GetCategory() const{ return m_category; }
-    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const AlertCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(AlertCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline Alert& WithCategory(const AlertCategory& value) { SetCategory(value); return *this;}
-    inline Alert& WithCategory(AlertCategory&& value) { SetCategory(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The timestamp when the alert was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
@@ -121,6 +109,18 @@ namespace Model
     inline Alert& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
     inline Alert& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline const AlertCategory& GetCategory() const{ return m_category; }
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+    inline void SetCategory(const AlertCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline void SetCategory(AlertCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+    inline Alert& WithCategory(const AlertCategory& value) { SetCategory(value); return *this;}
+    inline Alert& WithCategory(AlertCategory&& value) { SetCategory(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_alertCode;
@@ -128,9 +128,6 @@ namespace Model
 
     Aws::String m_alertMessage;
     bool m_alertMessageHasBeenSet = false;
-
-    AlertCategory m_category;
-    bool m_categoryHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;
@@ -140,6 +137,9 @@ namespace Model
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
+
+    AlertCategory m_category;
+    bool m_categoryHasBeenSet = false;
   };
 
 } // namespace Model

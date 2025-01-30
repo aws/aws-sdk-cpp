@@ -25,6 +25,7 @@
 #include <aws/qbusiness/model/AssociatePermissionRequest.h>
 #include <aws/qbusiness/model/BatchDeleteDocumentRequest.h>
 #include <aws/qbusiness/model/BatchPutDocumentRequest.h>
+#include <aws/qbusiness/model/CancelSubscriptionRequest.h>
 #include <aws/qbusiness/model/ChatRequest.h>
 #include <aws/qbusiness/model/ChatSyncRequest.h>
 #include <aws/qbusiness/model/CreateApplicationRequest.h>
@@ -33,6 +34,7 @@
 #include <aws/qbusiness/model/CreateIndexRequest.h>
 #include <aws/qbusiness/model/CreatePluginRequest.h>
 #include <aws/qbusiness/model/CreateRetrieverRequest.h>
+#include <aws/qbusiness/model/CreateSubscriptionRequest.h>
 #include <aws/qbusiness/model/CreateUserRequest.h>
 #include <aws/qbusiness/model/CreateWebExperienceRequest.h>
 #include <aws/qbusiness/model/DeleteApplicationRequest.h>
@@ -74,6 +76,7 @@
 #include <aws/qbusiness/model/ListPluginTypeMetadataRequest.h>
 #include <aws/qbusiness/model/ListPluginsRequest.h>
 #include <aws/qbusiness/model/ListRetrieversRequest.h>
+#include <aws/qbusiness/model/ListSubscriptionsRequest.h>
 #include <aws/qbusiness/model/ListTagsForResourceRequest.h>
 #include <aws/qbusiness/model/ListWebExperiencesRequest.h>
 #include <aws/qbusiness/model/PutFeedbackRequest.h>
@@ -90,6 +93,7 @@
 #include <aws/qbusiness/model/UpdateIndexRequest.h>
 #include <aws/qbusiness/model/UpdatePluginRequest.h>
 #include <aws/qbusiness/model/UpdateRetrieverRequest.h>
+#include <aws/qbusiness/model/UpdateSubscriptionRequest.h>
 #include <aws/qbusiness/model/UpdateUserRequest.h>
 #include <aws/qbusiness/model/UpdateWebExperienceRequest.h>
 
@@ -345,6 +349,46 @@ BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocument
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/documents");
       return BatchPutDocumentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CancelSubscriptionOutcome QBusinessClient::CancelSubscription(const CancelSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelSubscription", "Required field: ApplicationId, is not set");
+    return CancelSubscriptionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SubscriptionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelSubscription", "Required field: SubscriptionId, is not set");
+    return CancelSubscriptionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CancelSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CancelSubscriptionOutcome>(
+    [&]()-> CancelSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
+      return CancelSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -642,6 +686,40 @@ CreateRetrieverOutcome QBusinessClient::CreateRetriever(const CreateRetrieverReq
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/retrievers");
       return CreateRetrieverOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateSubscriptionOutcome QBusinessClient::CreateSubscription(const CreateSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSubscription", "Required field: ApplicationId, is not set");
+    return CreateSubscriptionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateSubscriptionOutcome>(
+    [&]()-> CreateSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
+      return CreateSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2235,6 +2313,40 @@ ListRetrieversOutcome QBusinessClient::ListRetrievers(const ListRetrieversReques
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListSubscriptionsOutcome QBusinessClient::ListSubscriptions(const ListSubscriptionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListSubscriptions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSubscriptions", "Required field: ApplicationId, is not set");
+    return ListSubscriptionsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListSubscriptions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListSubscriptions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListSubscriptions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListSubscriptionsOutcome>(
+    [&]()-> ListSubscriptionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
+      return ListSubscriptionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListTagsForResourceOutcome QBusinessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_GUARD(ListTagsForResource);
@@ -2860,6 +2972,46 @@ UpdateRetrieverOutcome QBusinessClient::UpdateRetriever(const UpdateRetrieverReq
       endpointResolutionOutcome.GetResult().AddPathSegments("/retrievers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRetrieverId());
       return UpdateRetrieverOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateSubscriptionOutcome QBusinessClient::UpdateSubscription(const UpdateSubscriptionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateSubscription);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSubscription", "Required field: ApplicationId, is not set");
+    return UpdateSubscriptionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SubscriptionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSubscription", "Required field: SubscriptionId, is not set");
+    return UpdateSubscriptionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateSubscription, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateSubscription",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateSubscriptionOutcome>(
+    [&]()-> UpdateSubscriptionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
+      return UpdateSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

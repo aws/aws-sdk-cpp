@@ -17,7 +17,8 @@ CreateTableRequest::CreateTableRequest() :
     m_namespaceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_format(OpenTableFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_formatHasBeenSet)
   {
    payload.WithString("format", OpenTableFormatMapper::GetNameForOpenTableFormat(m_format));
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

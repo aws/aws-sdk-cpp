@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<ECREndpointProviderEndpointTestCase>> ECREndpointProviderTests::TEST_CASES;
-const size_t ECREndpointProviderTests::TEST_CASES_SZ = 98;
+const size_t ECREndpointProviderTests::TEST_CASES_SZ = 53;
 
 Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTestCase() {
 
@@ -89,15 +89,6 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
-  {"For region af-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.af-south-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 2*/
   {"For region ap-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -106,16 +97,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 3*/
-  {"For region ap-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 4*/
+  /*TEST CASE 2*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -124,16 +106,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 5*/
-  {"For region ap-northeast-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-northeast-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 6*/
+  /*TEST CASE 3*/
   {"For region ap-northeast-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -142,16 +115,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 7*/
-  {"For region ap-northeast-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-northeast-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 8*/
+  /*TEST CASE 4*/
   {"For region ap-northeast-3 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -160,16 +124,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 9*/
-  {"For region ap-northeast-3 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-northeast-3.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 10*/
+  /*TEST CASE 5*/
   {"For region ap-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -178,34 +133,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 11*/
-  {"For region ap-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-south-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region ap-south-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.ap-south-2.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region ap-south-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-south-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
+  /*TEST CASE 6*/
   {"For region ap-southeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -214,16 +142,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 15*/
-  {"For region ap-southeast-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-southeast-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
+  /*TEST CASE 7*/
   {"For region ap-southeast-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -232,16 +151,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 17*/
-  {"For region ap-southeast-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-southeast-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 18*/
+  /*TEST CASE 8*/
   {"For region ap-southeast-3 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -250,70 +160,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 19*/
-  {"For region ap-southeast-3 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-southeast-3.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 20*/
-  {"For region ap-southeast-4 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-4"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.ap-southeast-4.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 21*/
-  {"For region ap-southeast-4 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-4"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-southeast-4.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 22*/
-  {"For region ap-southeast-5 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-5"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.ap-southeast-5.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 23*/
-  {"For region ap-southeast-5 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-5"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-southeast-5.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 24*/
-  {"For region ap-southeast-7 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-7"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.ap-southeast-7.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 25*/
-  {"For region ap-southeast-7 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-7"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ap-southeast-7.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 26*/
+  /*TEST CASE 9*/
   {"For region ca-central-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -322,34 +169,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 27*/
-  {"For region ca-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ca-central-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 28*/
-  {"For region ca-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ca-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.ca-west-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 29*/
-  {"For region ca-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ca-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.ca-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 30*/
+  /*TEST CASE 10*/
   {"For region eu-central-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -358,34 +178,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 31*/
-  {"For region eu-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-central-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 32*/
-  {"For region eu-central-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.eu-central-2.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 33*/
-  {"For region eu-central-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-central-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 34*/
+  /*TEST CASE 11*/
   {"For region eu-north-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -394,16 +187,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 35*/
-  {"For region eu-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-north-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 36*/
+  /*TEST CASE 12*/
   {"For region eu-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -412,34 +196,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 37*/
-  {"For region eu-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-south-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 38*/
-  {"For region eu-south-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-south-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.eu-south-2.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 39*/
-  {"For region eu-south-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-south-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-south-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 40*/
+  /*TEST CASE 13*/
   {"For region eu-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -448,16 +205,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 41*/
-  {"For region eu-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 42*/
+  /*TEST CASE 14*/
   {"For region eu-west-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -466,16 +214,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 43*/
-  {"For region eu-west-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-west-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 44*/
+  /*TEST CASE 15*/
   {"For region eu-west-3 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -484,52 +223,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 45*/
-  {"For region eu-west-3 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.eu-west-3.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 46*/
-  {"For region il-central-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "il-central-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.il-central-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 47*/
-  {"For region il-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "il-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.il-central-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 48*/
-  {"For region me-central-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-central-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://api.ecr.me-central-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 49*/
-  {"For region me-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.me-central-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 50*/
+  /*TEST CASE 16*/
   {"For region me-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -538,16 +232,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 51*/
-  {"For region me-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.me-south-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 52*/
+  /*TEST CASE 17*/
   {"For region sa-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -556,16 +241,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 53*/
-  {"For region sa-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.sa-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 54*/
+  /*TEST CASE 18*/
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -574,7 +250,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 55*/
+  /*TEST CASE 19*/
   {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -583,25 +259,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 56*/
-  {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 57*/
-  {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 58*/
+  /*TEST CASE 20*/
   {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -610,7 +268,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 59*/
+  /*TEST CASE 21*/
   {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -619,25 +277,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 60*/
-  {"For region us-east-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.us-east-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 61*/
-  {"For region us-east-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr-fips.us-east-2.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 62*/
+  /*TEST CASE 22*/
   {"For region us-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -646,7 +286,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 63*/
+  /*TEST CASE 23*/
   {"For region us-west-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -655,25 +295,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 64*/
-  {"For region us-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.us-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 65*/
-  {"For region us-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr-fips.us-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 66*/
+  /*TEST CASE 24*/
   {"For region us-west-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -682,7 +304,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 67*/
+  /*TEST CASE 25*/
   {"For region us-west-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -691,25 +313,25 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 68*/
-  {"For region us-west-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 26*/
+  {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://ecr.us-west-2.api.aws",
+    {{/*epUrl*/"https://api.ecr-fips.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 69*/
-  {"For region us-west-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 27*/
+  {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://ecr-fips.us-west-2.api.aws",
+    {{/*epUrl*/"https://api.ecr.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 70*/
+  /*TEST CASE 28*/
   {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -718,16 +340,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 71*/
-  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 72*/
+  /*TEST CASE 29*/
   {"For region cn-northwest-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -736,16 +349,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 73*/
-  {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.cn-northwest-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 74*/
+  /*TEST CASE 30*/
   {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -754,7 +358,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 75*/
+  /*TEST CASE 31*/
   {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -763,7 +367,16 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 76*/
+  /*TEST CASE 32*/
+  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://api.ecr.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 33*/
   {"For region us-gov-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -772,7 +385,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 77*/
+  /*TEST CASE 34*/
   {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -781,25 +394,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 78*/
-  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 79*/
-  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://ecr-fips.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 80*/
+  /*TEST CASE 35*/
   {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -808,7 +403,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 81*/
+  /*TEST CASE 36*/
   {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -817,25 +412,25 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 82*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 37*/
+  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://ecr.us-gov-west-1.api.aws",
+    {{/*epUrl*/"https://api.ecr-fips.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 83*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 38*/
+  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://ecr-fips.us-gov-west-1.api.aws",
+    {{/*epUrl*/"https://api.ecr.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 84*/
+  /*TEST CASE 39*/
   {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -844,7 +439,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 85*/
+  /*TEST CASE 40*/
   {"For region us-iso-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -853,13 +448,13 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 86*/
+  /*TEST CASE 41*/
   {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
   },
-  /*TEST CASE 87*/
+  /*TEST CASE 42*/
   {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -868,13 +463,13 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 88*/
+  /*TEST CASE 43*/
   {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   },
-  /*TEST CASE 89*/
+  /*TEST CASE 44*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -883,13 +478,13 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 90*/
+  /*TEST CASE 45*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
   },
-  /*TEST CASE 91*/
+  /*TEST CASE 46*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -898,13 +493,13 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 92*/
+  /*TEST CASE 47*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   },
-  /*TEST CASE 93*/
+  /*TEST CASE 48*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -913,7 +508,7 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 94*/
+  /*TEST CASE 49*/
   {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -922,19 +517,19 @@ Aws::Vector<ECREndpointProviderEndpointTestCase> ECREndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 95*/
+  /*TEST CASE 50*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 96*/
+  /*TEST CASE 51*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 97*/
+  /*TEST CASE 52*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags

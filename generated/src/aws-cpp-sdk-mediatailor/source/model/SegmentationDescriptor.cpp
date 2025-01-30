@@ -19,15 +19,15 @@ namespace Model
 {
 
 SegmentationDescriptor::SegmentationDescriptor() : 
-    m_segmentNum(0),
-    m_segmentNumHasBeenSet(false),
     m_segmentationEventId(0),
     m_segmentationEventIdHasBeenSet(false),
-    m_segmentationTypeId(0),
-    m_segmentationTypeIdHasBeenSet(false),
-    m_segmentationUpidHasBeenSet(false),
     m_segmentationUpidType(0),
     m_segmentationUpidTypeHasBeenSet(false),
+    m_segmentationUpidHasBeenSet(false),
+    m_segmentationTypeId(0),
+    m_segmentationTypeIdHasBeenSet(false),
+    m_segmentNum(0),
+    m_segmentNumHasBeenSet(false),
     m_segmentsExpected(0),
     m_segmentsExpectedHasBeenSet(false),
     m_subSegmentNum(0),
@@ -45,13 +45,6 @@ SegmentationDescriptor::SegmentationDescriptor(JsonView jsonValue)
 
 SegmentationDescriptor& SegmentationDescriptor::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("SegmentNum"))
-  {
-    m_segmentNum = jsonValue.GetInteger("SegmentNum");
-
-    m_segmentNumHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("SegmentationEventId"))
   {
     m_segmentationEventId = jsonValue.GetInteger("SegmentationEventId");
@@ -59,11 +52,11 @@ SegmentationDescriptor& SegmentationDescriptor::operator =(JsonView jsonValue)
     m_segmentationEventIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SegmentationTypeId"))
+  if(jsonValue.ValueExists("SegmentationUpidType"))
   {
-    m_segmentationTypeId = jsonValue.GetInteger("SegmentationTypeId");
+    m_segmentationUpidType = jsonValue.GetInteger("SegmentationUpidType");
 
-    m_segmentationTypeIdHasBeenSet = true;
+    m_segmentationUpidTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SegmentationUpid"))
@@ -73,11 +66,18 @@ SegmentationDescriptor& SegmentationDescriptor::operator =(JsonView jsonValue)
     m_segmentationUpidHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SegmentationUpidType"))
+  if(jsonValue.ValueExists("SegmentationTypeId"))
   {
-    m_segmentationUpidType = jsonValue.GetInteger("SegmentationUpidType");
+    m_segmentationTypeId = jsonValue.GetInteger("SegmentationTypeId");
 
-    m_segmentationUpidTypeHasBeenSet = true;
+    m_segmentationTypeIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SegmentNum"))
+  {
+    m_segmentNum = jsonValue.GetInteger("SegmentNum");
+
+    m_segmentNumHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SegmentsExpected"))
@@ -108,21 +108,15 @@ JsonValue SegmentationDescriptor::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_segmentNumHasBeenSet)
-  {
-   payload.WithInteger("SegmentNum", m_segmentNum);
-
-  }
-
   if(m_segmentationEventIdHasBeenSet)
   {
    payload.WithInteger("SegmentationEventId", m_segmentationEventId);
 
   }
 
-  if(m_segmentationTypeIdHasBeenSet)
+  if(m_segmentationUpidTypeHasBeenSet)
   {
-   payload.WithInteger("SegmentationTypeId", m_segmentationTypeId);
+   payload.WithInteger("SegmentationUpidType", m_segmentationUpidType);
 
   }
 
@@ -132,9 +126,15 @@ JsonValue SegmentationDescriptor::Jsonize() const
 
   }
 
-  if(m_segmentationUpidTypeHasBeenSet)
+  if(m_segmentationTypeIdHasBeenSet)
   {
-   payload.WithInteger("SegmentationUpidType", m_segmentationUpidType);
+   payload.WithInteger("SegmentationTypeId", m_segmentationTypeId);
+
+  }
+
+  if(m_segmentNumHasBeenSet)
+  {
+   payload.WithInteger("SegmentNum", m_segmentNum);
 
   }
 
