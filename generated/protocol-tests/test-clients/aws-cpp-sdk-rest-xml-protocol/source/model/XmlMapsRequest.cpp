@@ -28,6 +28,15 @@ Aws::String XmlMapsRequest::SerializePayload() const
   Aws::StringStream ss;
   if(m_myMapHasBeenSet)
   {
+   XmlNode myMapParentNode = parentNode.CreateChildElement("myMap");
+   for(const auto& mapItem : m_myMap)
+   {
+     XmlNode myMapMapEntryNode = myMapParentNode.CreateChildElement("entry");
+     XmlNode myMapKeyNode = myMapMapEntryNode.CreateChildElement("key");
+     myMapKeyNode.SetText(mapItem.first);
+     XmlNode myMapValueNode = myMapMapEntryNode.CreateChildElement("value");
+     mapItem.second.AddToNode(myMapValueNode);
+   }
   }
 
   return payloadDoc.ConvertToString();

@@ -56,12 +56,12 @@ XmlTimestampsResponse& XmlTimestampsResponse::operator =(const Aws::AmazonWebSer
     XmlNode epochSecondsNode = resultNode.FirstChild("epochSeconds");
     if(!epochSecondsNode.IsNull())
     {
-      m_epochSeconds = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(epochSecondsNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape));
+      m_epochSeconds = DateTime(StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(epochSecondsNode.GetText()).c_str()).c_str()));
     }
     XmlNode epochSecondsOnTargetNode = resultNode.FirstChild("epochSecondsOnTarget");
     if(!epochSecondsOnTargetNode.IsNull())
     {
-      m_epochSecondsOnTarget = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(epochSecondsOnTargetNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape));
+      m_epochSecondsOnTarget = DateTime(StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(epochSecondsOnTargetNode.GetText()).c_str()).c_str()));
     }
     XmlNode httpDateNode = resultNode.FirstChild("httpDate");
     if(!httpDateNode.IsNull())

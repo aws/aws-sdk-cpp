@@ -22,6 +22,7 @@ namespace RestXmlProtocol
 {
 namespace Model
 {
+  class RecursiveShapesInputOutputNested1;
 
   class RecursiveShapesInputOutputNested2
   {

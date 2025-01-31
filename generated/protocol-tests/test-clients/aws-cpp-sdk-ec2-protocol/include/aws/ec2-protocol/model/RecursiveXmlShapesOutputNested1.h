@@ -23,6 +23,7 @@ namespace EC2Protocol
 {
 namespace Model
 {
+  class RecursiveXmlShapesOutputNested2;
 
   class RecursiveXmlShapesOutputNested1
   {

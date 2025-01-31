@@ -23,6 +23,7 @@ namespace QueryProtocol
 {
 namespace Model
 {
+  class RecursiveXmlShapesOutputNested2;
 
   class RecursiveXmlShapesOutputNested1
   {
