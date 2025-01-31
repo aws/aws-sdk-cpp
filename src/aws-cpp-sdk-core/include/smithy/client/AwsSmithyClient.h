@@ -99,14 +99,38 @@ namespace client
             return *this;
         }
 
-        AwsSmithyClientT (AwsSmithyClientT&&) = default;
+        AwsSmithyClientT (AwsSmithyClientT&& other) {
+          //reference can't be moved, so it gets copied first since moving base class member using the reference will cause crash
+          m_clientConfiguration =  other.m_clientConfiguration;
+          AwsSmithyClientBase::operator=(std::move(other));
+          //move other base class members
+          m_endpointProvider = std::move(other.m_endpointProvider);
+          m_authSchemeResolver =  std::move(other.m_authSchemeResolver);
+          m_authSchemes = std::move(other.m_authSchemes);
+          m_serializer = std::move(other.m_serializer);
+          m_errorMarshaller = std::move(other.m_errorMarshaller);
+        }
 
-        AwsSmithyClientT& operator=(AwsSmithyClientT&&) = default;
+        AwsSmithyClientT& operator=(AwsSmithyClientT&& other) {
+          if(this == &other) {
+            return *this;
+          }
+          //reference can't be moved, so it gets copied first since moving base class member using the reference will cause crash
+          m_clientConfiguration =  other.m_clientConfiguration;
+          AwsSmithyClientBase::operator=(std::move(other));
+          //move other base class members
+          m_endpointProvider = std::move(other.m_endpointProvider);
+          m_authSchemeResolver =  std::move(other.m_authSchemeResolver);
+          m_authSchemes = std::move(other.m_authSchemes);
+          m_serializer = std::move(other.m_serializer);
+          m_errorMarshaller = std::move(other.m_errorMarshaller);
+          return *this;
+        }
 
         virtual ~AwsSmithyClientT() = default;
 
     protected:
-        virtual void initClient() {
+        void initClient() {
           m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
         }
 
@@ -226,6 +250,25 @@ namespace client
                 return request->GetURIString();
             }
             return {};
+        }
+
+        Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
+                                                  Aws::Http::HttpMethod method,
+                                                  const Aws::String& region,
+                                                  const Aws::String& serviceName,
+                                                  long long expirationInSeconds,
+                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            return GeneratePresignedUrl(uri,
+                                        method,
+                                        region,
+                                        serviceName,
+                                        Aws::String(),
+                                        expirationInSeconds,
+                                        customizedHeaders,
+                                        serviceSpecificParameters);
+
         }
 
         Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,

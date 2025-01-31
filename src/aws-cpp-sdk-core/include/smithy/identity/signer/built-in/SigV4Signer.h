@@ -10,6 +10,7 @@
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>
 
 #include <aws/core/auth/AWSCredentials.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
 
 namespace smithy {
     /**
@@ -50,13 +51,13 @@ namespace smithy {
                 return {identity.accessKeyId(), identity.secretAccessKey()};
             }();
 
-            auto signPayloadIt = properties.find("SignPayload");
+            auto signPayloadIt = properties.find(smithy::AUTH_SCHEME_PROPERTY);
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
-            auto signerRegionOverrideIt = properties.find("signerRegionOverride");
+            auto signerRegionOverrideIt = properties.find(smithy::SIGNER_REGION_PROPERTY);
             auto region = signerRegionOverrideIt != properties.end() ? signerRegionOverrideIt->second.get<Aws::String>().c_str() : m_region.c_str();
             
-            auto signerServiceNameOverrideIt = properties.find("signerServiceNameOverride");
+            auto signerServiceNameOverrideIt = properties.find(smithy::SIGNER_SERVICE_NAME);
             auto svcName = signerServiceNameOverrideIt != properties.end() ? signerServiceNameOverrideIt->second.get<Aws::String>().c_str() : m_serviceName.c_str();
       
 

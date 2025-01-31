@@ -14,7 +14,7 @@ namespace smithy
     class AwsCredentialsProviderIdentityResolver : public AwsCredentialIdentityResolver
     {
     public:
-        using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
+        using SigV4AuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
 
         explicit AwsCredentialsProviderIdentityResolver(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider)
             : m_credentialsProvider(credentialsProvider)

@@ -169,7 +169,7 @@ namespace Aws
             * Using m_serviceName by default if parameter serviceName is nullptr.
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const override;
-            
+
             /**
             * Takes a request and signs the URI based on request, region, servicename, expiration and credentials.
             * The URI can then be used in a normal HTTP call until expiration.
@@ -179,6 +179,7 @@ namespace Aws
             * Using m_serviceName by default if parameter serviceName is nullptr.
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, const Aws::Auth::AWSCredentials& creds, const char* region, const char* serviceName, long long expirationInSeconds = 0) const;
+
 
             virtual Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
 

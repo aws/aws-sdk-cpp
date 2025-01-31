@@ -267,6 +267,22 @@ S3Client::S3Client(
       })
 {
 }
+
+S3Client& S3Client::operator=(const S3Client &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    AwsSmithyClientT::operator=(rhs);
+    return *this;
+}
+
+S3Client& S3Client::operator=(S3Client &&rhs) noexcept {
+  if (&rhs == this) {
+    return *this;
+  }
+  AwsSmithyClientT::operator=(std::move(rhs));
+  return *this;
+}
 /* End of legacy constructors due deprecation */
 
 S3Client::~S3Client()

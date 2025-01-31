@@ -20,6 +20,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -782,6 +786,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4", "smithy::SigV4AuthScheme",
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
             "bearer", "smithy::BearerTokenAuthScheme",
+            "v4","smithy::SigV4AuthScheme",
             "sigv4-s3express","smithy::S3ExpressSigV4AuthScheme"
     );
 
@@ -837,4 +842,105 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     requestlessOperations.add(operation.getName());
                 });
     }
+
+    //dfs 
+    protected static void findNestedField(JsonElement element, String targetField, List<JsonElement> results) {
+        if (element == null || element.isJsonNull()) {
+            return;
+        }
+
+        if (element.isJsonObject()) {
+            JsonObject obj = element.getAsJsonObject();
+            
+            if (obj.has(targetField)) {
+                JsonElement targetElement = obj.get(targetField);
+
+                results.add(targetElement);
+                //assumption is target field wont contain internal target fields
+                return;
+            }
+
+            //recurse
+            obj.entrySet().stream().forEach(entry -> {
+                findNestedField(entry.getValue(), targetField, results);
+            });
+        
+        } else if (element.isJsonArray()) {
+            element.getAsJsonArray().forEach(entry -> 
+            {
+                findNestedField(entry, targetField, results);
+            });
+        }
+    }
+
+    protected void updateAuthSchemesFromEndpointRules(ServiceModel serviceModel, String rawjson)
+    {
+        if(rawjson == null || rawjson.isEmpty())
+        {
+            return;
+        }
+        
+        List<String> authschemes =  new ArrayList<>(serviceModel.getAuthSchemes());
+        Set<String> authSchemeSet = new HashSet<>(authschemes);
+
+        // parse the JSON into a JsonElement tree
+        JsonElement jsonElement = JsonParser.parseString(rawjson);
+
+        // search for the "authSchemes" field in endpoint rules recursively to get all authschemes
+        List<JsonElement> authSchemes = new ArrayList<>();
+        findNestedField(jsonElement, "authSchemes", authSchemes);
+        // extract authschemes
+        authSchemes.stream()
+        .filter(entry -> entry.isJsonArray()) // check if the element is a JsonArray
+        .map(JsonElement::getAsJsonArray) // convert to JsonArray
+        .forEach(arrelem -> {
+            arrelem.forEach(entry -> {  // iterate over each element in the JsonArray
+                // array element with key "name" has the auth scheme name as value 
+                if (entry.isJsonObject() && entry.getAsJsonObject().has("name")) {
+                    JsonElement elem = entry.getAsJsonObject().get("name");
+                    if (elem.isJsonPrimitive() && elem.getAsJsonPrimitive().isString()) {
+                        String authscheme = elem.getAsJsonPrimitive().getAsString();
+                        if(AuthSchemeNameMapping.containsKey(authscheme)) {
+                            authscheme = AuthSchemeNameMapping.get(authscheme);
+                        }
+                        if (!authSchemeSet.contains(authscheme)) {
+                            authschemes.add(authscheme);
+                            authSchemeSet.add(authscheme);
+                        }
+                    }
+                }
+            });
+        });
+        serviceModel.setAuthSchemes(authschemes);
+    }
+
+
+    protected void updateAuthSchemesFromOperations(ServiceModel serviceModel)
+    {
+        List<String> authschemes =  new ArrayList<>(serviceModel.getAuthSchemes());
+        Set<String> authSchemeSet = new HashSet<>(authschemes);
+
+        serviceModel.getOperations().values().forEach(operation -> {
+            if (operation.getAuth() == null) {
+                return;
+            }
+            operation.getAuth().forEach(authScheme -> {
+                if(AuthSchemeNameMapping.containsKey(authScheme)) {
+                    authScheme = AuthSchemeNameMapping.get(authScheme);
+                }
+                // only add if it's not already present in the authSchemeSet
+                if (!authSchemeSet.contains(authScheme)) {
+                    serviceModel.getAuthSchemes().add(authScheme);
+                    authSchemeSet.add(authScheme);
+                }
+            });
+        });
+        serviceModel.setAuthSchemes(authschemes);
+    }
+    //auth schemes can be named differently in endpoints/operations, this is a mapping
+    private static final Map<String, String> AuthSchemeNameMapping = ImmutableMap.of(
+        "v4", "aws.auth#sigv4",
+        "sigv4", "aws.auth#sigv4",
+        "sigv4a","aws.auth#sigv4a"
+    );
 }

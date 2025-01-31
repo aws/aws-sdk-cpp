@@ -166,6 +166,22 @@ ${className}::${className}(
       })
 {
 }
+
+${className}& ${className}::operator=(const ${className} &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    AwsSmithyClientT::operator=(rhs);
+    return *this;
+}
+
+${className}& ${className}::operator=(${className} &&rhs) noexcept {
+  if (&rhs == this) {
+    return *this;
+  }
+  AwsSmithyClientT::operator=(std::move(rhs));
+  return *this;
+}
 #else
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,

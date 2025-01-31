@@ -28,6 +28,12 @@ using namespace smithy::components::tracing;
 
 static const char AWS_SMITHY_CLIENT_LOG[] = "AwsSmithyClient";
 
+namespace smithy {
+    const char *AUTH_SCHEME_PROPERTY = "signerName";
+    const char *SIGNER_REGION_PROPERTY = "signerRegionOverride";
+    const char *SIGNER_SERVICE_NAME = "signerServiceNameOverride";
+}
+
 namespace {
 void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::Http::HeaderValueCollection& headerValues)
@@ -63,10 +69,11 @@ void AwsSmithyClientBase::baseInit() {
   createFromFactories(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
   createFromFactories(m_clientConfig->telemetryProvider, m_clientConfig->configFactories.telemetryProviderCreateFn);
   if (m_clientConfig && m_clientConfig->retryStrategy) {
-    m_interceptors.emplace_back(Aws::MakeShared<UserAgentInterceptor>(AWS_SMITHY_CLIENT_LOG,
+    m_userAgentInterceptor = Aws::MakeShared<UserAgentInterceptor>(AWS_SMITHY_CLIENT_LOG,
                                                                       *m_clientConfig,
                                                                       m_clientConfig->retryStrategy->GetStrategyName(),
-                                                                      m_serviceUserAgentName));
+                                                                      m_serviceUserAgentName);
+    m_interceptors.emplace_back(m_userAgentInterceptor);
   }
 }
 
@@ -77,10 +84,11 @@ void AwsSmithyClientBase::baseCopyInit() {
   createFromFactoriesIfPresent(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->telemetryProvider, m_clientConfig->configFactories.telemetryProviderCreateFn);
   if (m_clientConfig && m_clientConfig->retryStrategy) {
-    m_interceptors.emplace_back(Aws::MakeShared<UserAgentInterceptor>(AWS_SMITHY_CLIENT_LOG,
+    m_userAgentInterceptor = Aws::MakeShared<UserAgentInterceptor>(AWS_SMITHY_CLIENT_LOG,
                                                                       *m_clientConfig,
                                                                       m_clientConfig->retryStrategy->GetStrategyName(),
-                                                                      m_serviceUserAgentName));
+                                                                      m_serviceUserAgentName);
+    m_interceptors.emplace_back(m_userAgentInterceptor);
   }
 }
 
@@ -112,6 +120,8 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
     {
         AddHeadersToRequest(httpRequest, pRequest->GetHeaders());
         AddHeadersToRequest(httpRequest, pRequest->GetAdditionalCustomHeaders());
+
+        httpRequest->SetHasEventStreamResponse(pRequest->HasEventStreamResponse());
 
         if (pRequest->IsEventStreamRequest())
         {
@@ -227,6 +237,30 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     AttemptOneRequestAsync(std::move(pRequestCtx));
 }
 
+void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const
+{
+    //get signer Name from end point and pass this info
+    if (endpoint.GetAttributes()) {
+        auto authschemeName = endpoint.GetAttributes()->authScheme.GetName();
+        //identiy resolution can also need the auth scheme for credential resolver
+        authscheme.putIdentityProperty(smithy::AUTH_SCHEME_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(authschemeName));
+        authscheme.putSignerProperty(smithy::AUTH_SCHEME_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(authschemeName));
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            auto signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion();
+            authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            auto signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet();
+            authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            auto signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName();
+            authscheme.putSignerProperty(smithy::SIGNER_SERVICE_NAME, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
+        }
+    }
+}
+
+
 /*HttpResponseOutcome*/
 void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx) const
 {
@@ -238,25 +272,8 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     auto& responseHandler = pRequestCtx->m_responseHandler;
     auto pExecutor = pRequestCtx->m_pExecutor;
 
-    //get signer Name from end point and pass this info
     //This is extracted here so that on retry with correct region, signer region override is honored
-    if (pRequestCtx->m_endpoint.GetAttributes()) {
-        auto signerName = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetName();
-        pRequestCtx->m_authSchemeOption.putIdentityProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
-        pRequestCtx->m_authSchemeOption.putSignerProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
-        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion();
-            pRequestCtx->m_authSchemeOption.putSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
-        }
-        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet();
-            pRequestCtx->m_authSchemeOption.putSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
-        }
-        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            auto signerServiceNameOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName();
-            pRequestCtx->m_authSchemeOption.putSignerProperty("signerServiceNameOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
-        }
-    }
+    UpdateAuthSchemeFromEndpoint(pRequestCtx->m_endpoint, pRequestCtx->m_authSchemeOption);
 
     TracingUtils::MakeCallWithTiming(
       [&]() -> void {
@@ -392,14 +409,22 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 
     Aws::Client::HttpResponseOutcome outcome = [&]()
     {
-        bool hasEmbeddedError = pRequestCtx->m_pRequest &&
-                      pRequestCtx->m_pRequest->HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders());
-        if (Utils::DoesResponseGenerateError(httpResponse) || hasEmbeddedError)
+        auto hasEmbeddedError = [&]() {
+          return pRequestCtx->m_pRequest &&
+          pRequestCtx->m_pRequest->HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders());
+        };
+        if (Utils::DoesResponseGenerateError(httpResponse))
         {
             AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request returned error. Attempting to generate appropriate error codes from response");
             assert(m_errorMarshaller);
             auto error = m_errorMarshaller->BuildAWSError(httpResponse);
             return HttpResponseOutcome(std::move(error));
+        }
+        else if (hasEmbeddedError()) {
+          AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Response has embedded errors");
+
+          auto error = m_errorMarshaller->Marshall(*httpResponse);
+          return HttpResponseOutcome(std::move(error) );
         }
         AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request returned successful response.");
         return HttpResponseOutcome(std::move(httpResponse));
@@ -605,4 +630,10 @@ StreamOutcome AwsSmithyClientBase::MakeRequestWithUnparsedResponse(Aws::AmazonWe
     }
 
     return StreamOutcome(std::move(httpResponseOutcome));
+}
+
+void AwsSmithyClientBase::AppendToUserAgent(const Aws::String& valueToAppend)
+{
+   assert(m_userAgentInterceptor);
+   m_userAgentInterceptor->AddLegacyFeaturesToUserAgent(valueToAppend);
 }

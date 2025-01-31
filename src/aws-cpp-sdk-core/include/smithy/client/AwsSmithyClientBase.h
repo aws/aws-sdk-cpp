@@ -95,7 +95,7 @@ namespace client
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
+          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
         {
             baseInit();
         }
@@ -111,7 +111,7 @@ namespace client
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
+          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
         {
           AWS_UNREFERENCED_PARAM(other);
           baseCopyInit();
@@ -141,6 +141,7 @@ namespace client
                                 Aws::Http::HttpMethod method,
                                 EndpointUpdateCallback&& endpointCallback
                                 ) const;
+        void AppendToUserAgent(const Aws::String& valueToAppend);
 
     protected:
         void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
@@ -197,6 +198,9 @@ namespace client
         std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
         std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
         Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
+        std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
+    private:
+        void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
     };
 } // namespace client
 } // namespace smithy

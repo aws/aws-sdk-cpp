@@ -29,7 +29,7 @@ S3ExpressIdentityResolver::S3ExpressIdentityResolver(const S3Client& s3Client) :
 S3ExpressIdentityResolver::S3ExpressIdentityResolver(const S3Client& s3Client, std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider):
     m_s3Client{s3Client},m_credsProvider{credentialProvider}{
     assert(m_credsProvider);
-};
+}
 
 S3ExpressIdentityResolver::ResolveIdentityFutureOutcome S3ExpressIdentityResolver::getIdentity(
     const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters){
@@ -108,16 +108,16 @@ AwsCredentialIdentity S3ExpressIdentityResolver::GetCredentialsFromBucket(const 
 
 DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(const S3Client& s3Client)
     : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
-            DEFAULT_CACHE_SIZE)}{};
+            DEFAULT_CACHE_SIZE)}{}
 
 DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(
     const S3Client& s3Client,
     std::shared_ptr<Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache)
-    : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{credentialsCache} {};
+    : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{credentialsCache} {}
 
 DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(const S3Client& s3Client, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider):
     S3ExpressIdentityResolver{s3Client,credentialProvider}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
-            DEFAULT_CACHE_SIZE)}{};
+            DEFAULT_CACHE_SIZE)}{}
 
 AwsCredentialIdentity DefaultS3ExpressIdentityResolver::GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
     auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");

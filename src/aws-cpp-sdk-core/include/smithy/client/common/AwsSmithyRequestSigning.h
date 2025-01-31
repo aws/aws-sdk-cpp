@@ -146,14 +146,15 @@ namespace smithy
                     return;
                 }
 
-                //some services support buckets in identity properties
+                //relay service params in additional properties which will be relevant in credential resolution
+                // example: bucket Name
                 Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additonalIdentityProperties;
                 const auto& serviceSpecificParameters = m_httpRequest->GetServiceSpecificParameters();
                 if(serviceSpecificParameters)
                 {
-                    auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
-                    if (bucketNameIter != serviceSpecificParameters->parameterMap.end()) {
-                        additonalIdentityProperties.emplace("bucketName",Aws::Crt::Variant<Aws::String, bool>{bucketNameIter->second} );
+                    for(const auto& propPair : serviceSpecificParameters->parameterMap)
+                    {
+                        additonalIdentityProperties.emplace(propPair.first,Aws::Crt::Variant<Aws::String, bool>{propPair.second} );
                     }
                 }
 

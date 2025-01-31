@@ -72,20 +72,6 @@ namespace smithy {
         {
         }
 
-        /*
-            for some services, there can be a different variant of v4 signer. Example: s3 express
-            This constructor allows to specify the signer type abiding by the constraints of the authscheme
-        */
-        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,
-                                 std::shared_ptr<AwsCredentialSignerT>&& signer)
-            : AuthScheme(SIGV4), 
-            m_identityResolver{identityResolver}, 
-            m_signer{std::move(signer)}
-        {
-            assert(m_identityResolver);
-            assert(m_signer);
-        }
-
         virtual ~SigV4AuthScheme() = default;
 
         std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver() override

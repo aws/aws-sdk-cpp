@@ -49,22 +49,6 @@ namespace smithy {
             :  AuthScheme(SIGV4A),  
             m_identityResolver{identityResolver}, 
             m_signer{Aws::MakeShared<AwsSigV4aSigner>("SigV4aAuthScheme", serviceName, region, policy, urlEscape)}{}
-      
-
-        /*
-            for some services, there can be a different variant of v4 signer.
-            This constructor allows to specify the signer type abiding by the constraints of the authscheme
-        */
-        explicit SigV4aAuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,
-                                 std::shared_ptr<AwsCredentialSignerT>&& signer
-                                 )
-            : AuthScheme(SIGV4A), 
-            m_identityResolver{identityResolver}, 
-            m_signer{std::move(signer)}
-        {
-            assert(m_identityResolver);
-            assert(m_signer);
-        }
 
         virtual ~SigV4aAuthScheme() = default;
 

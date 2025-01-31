@@ -195,6 +195,11 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
     @Override
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+        if(serviceModel.isUseSmithyClient())
+        {
+            updateAuthSchemesFromEndpointRules(serviceModel, serviceModel.getRawEndpointRules());
+            updateAuthSchemesFromOperations(serviceModel);
+        }
 
         // Add ID2 and RequestId to GetObjectResult
         hackGetObjectOutputResponse(serviceModel);
