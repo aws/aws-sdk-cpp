@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The avoidance geometry, to be included while calculating the
-   * route.</p><p><h3>See Also:</h3>   <a
+   * <p>The avoidance geometry, to be included while calculating an
+   * isoline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineAvoidanceAreaGeometry">AWS
    * API Reference</a></p>
    */

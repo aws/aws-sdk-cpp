@@ -54,7 +54,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Travel mode options when the provided travel mode is "Scooter"</p>
+     * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
+     * </p>  <p>When travel mode is set to <code>Scooter</code>, then the
+     * avoidance option <code>ControlledAccessHighways</code> defaults to
+     * <code>true</code>.</p> 
      */
     inline const IsolineScooterOptions& GetScooter() const{ return m_scooter; }
     inline bool ScooterHasBeenSet() const { return m_scooterHasBeenSet; }

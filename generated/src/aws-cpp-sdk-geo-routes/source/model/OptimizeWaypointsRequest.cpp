@@ -17,6 +17,7 @@ using namespace Aws::Http;
 
 OptimizeWaypointsRequest::OptimizeWaypointsRequest() : 
     m_avoidHasBeenSet(false),
+    m_clusteringHasBeenSet(false),
     m_departureTimeHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationOptionsHasBeenSet(false),
@@ -42,6 +43,12 @@ Aws::String OptimizeWaypointsRequest::SerializePayload() const
   if(m_avoidHasBeenSet)
   {
    payload.WithObject("Avoid", m_avoid.Jsonize());
+
+  }
+
+  if(m_clusteringHasBeenSet)
+  {
+   payload.WithObject("Clustering", m_clustering.Jsonize());
 
   }
 

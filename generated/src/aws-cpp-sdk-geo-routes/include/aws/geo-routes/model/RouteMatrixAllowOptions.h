@@ -38,6 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+     * <p>Default value: <code>false</code> </p>
      */
     inline bool GetHot() const{ return m_hot; }
     inline bool HotHasBeenSet() const { return m_hotHasBeenSet; }
@@ -48,6 +49,7 @@ namespace Model
     ///@{
     /**
      * <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+     * <p>Default value: <code>false</code> </p>
      */
     inline bool GetHov() const{ return m_hov; }
     inline bool HovHasBeenSet() const { return m_hovHasBeenSet; }

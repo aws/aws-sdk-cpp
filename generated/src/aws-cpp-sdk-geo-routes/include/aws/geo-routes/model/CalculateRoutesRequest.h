@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Features that are allowed while calculating. a route</p>
+     * <p>Features that are allowed while calculating a route.</p>
      */
     inline const RouteAllowOptions& GetAllow() const{ return m_allow; }
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
@@ -387,7 +387,7 @@ namespace Model
     /**
      * <p>Type of step returned by the response. Default provides basic steps intended
      * for web based applications. TurnByTurn provides detailed instructions with more
-     * granularity intended for a turn based naviagtion system.</p>
+     * granularity intended for a turn based navigation system.</p>
      */
     inline const RouteTravelStepType& GetTravelStepType() const{ return m_travelStepType; }
     inline bool TravelStepTypeHasBeenSet() const { return m_travelStepTypeHasBeenSet; }

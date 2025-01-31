@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Geometry of the connection between different Isoline
+   * <p>Geometry of the connection between different isoline
    * components.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineConnectionGeometry">AWS
    * API Reference</a></p>

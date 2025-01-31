@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per
+   * <p>Threshold to be used for the isoline calculation. Up to 5 thresholds per
    * provided type can be requested.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineThresholds">AWS
    * API Reference</a></p>

@@ -19,7 +19,8 @@ namespace Model
 {
 
 CitationEvent::CitationEvent() : 
-    m_citationHasBeenSet(false)
+    m_generatedResponsePartHasBeenSet(false),
+    m_retrievedReferencesHasBeenSet(false)
 {
 }
 
@@ -31,11 +32,21 @@ CitationEvent::CitationEvent(JsonView jsonValue)
 
 CitationEvent& CitationEvent::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("citation"))
+  if(jsonValue.ValueExists("generatedResponsePart"))
   {
-    m_citation = jsonValue.GetObject("citation");
+    m_generatedResponsePart = jsonValue.GetObject("generatedResponsePart");
 
-    m_citationHasBeenSet = true;
+    m_generatedResponsePartHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("retrievedReferences"))
+  {
+    Aws::Utils::Array<JsonView> retrievedReferencesJsonList = jsonValue.GetArray("retrievedReferences");
+    for(unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength(); ++retrievedReferencesIndex)
+    {
+      m_retrievedReferences.push_back(retrievedReferencesJsonList[retrievedReferencesIndex].AsObject());
+    }
+    m_retrievedReferencesHasBeenSet = true;
   }
 
   return *this;
@@ -45,9 +56,20 @@ JsonValue CitationEvent::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_citationHasBeenSet)
+  if(m_generatedResponsePartHasBeenSet)
   {
-   payload.WithObject("citation", m_citation.Jsonize());
+   payload.WithObject("generatedResponsePart", m_generatedResponsePart.Jsonize());
+
+  }
+
+  if(m_retrievedReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> retrievedReferencesJsonList(m_retrievedReferences.size());
+   for(unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength(); ++retrievedReferencesIndex)
+   {
+     retrievedReferencesJsonList[retrievedReferencesIndex].AsObject(m_retrievedReferences[retrievedReferencesIndex].Jsonize());
+   }
+   payload.WithArray("retrievedReferences", std::move(retrievedReferencesJsonList));
 
   }
 

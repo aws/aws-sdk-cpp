@@ -7,6 +7,7 @@
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/geo-routes/GeoRoutesRequest.h>
 #include <aws/geo-routes/model/WaypointOptimizationAvoidanceOptions.h>
+#include <aws/geo-routes/model/WaypointOptimizationClusteringOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/model/WaypointOptimizationDestinationOptions.h>
@@ -51,9 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Features that are avoided while calculating a route. Avoidance is on a
-     * best-case basis. If an avoidance can't be satisfied for a particular case, this
-     * setting is ignored.</p>
+     * <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance
+     * can't be satisfied for a particular case, this setting is ignored.</p>
      */
     inline const WaypointOptimizationAvoidanceOptions& GetAvoid() const{ return m_avoid; }
     inline bool AvoidHasBeenSet() const { return m_avoidHasBeenSet; }
@@ -61,6 +61,19 @@ namespace Model
     inline void SetAvoid(WaypointOptimizationAvoidanceOptions&& value) { m_avoidHasBeenSet = true; m_avoid = std::move(value); }
     inline OptimizeWaypointsRequest& WithAvoid(const WaypointOptimizationAvoidanceOptions& value) { SetAvoid(value); return *this;}
     inline OptimizeWaypointsRequest& WithAvoid(WaypointOptimizationAvoidanceOptions&& value) { SetAvoid(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Clustering allows you to specify how nearby waypoints can be clustered to
+     * improve the optimized sequence.</p>
+     */
+    inline const WaypointOptimizationClusteringOptions& GetClustering() const{ return m_clustering; }
+    inline bool ClusteringHasBeenSet() const { return m_clusteringHasBeenSet; }
+    inline void SetClustering(const WaypointOptimizationClusteringOptions& value) { m_clusteringHasBeenSet = true; m_clustering = value; }
+    inline void SetClustering(WaypointOptimizationClusteringOptions&& value) { m_clusteringHasBeenSet = true; m_clustering = std::move(value); }
+    inline OptimizeWaypointsRequest& WithClustering(const WaypointOptimizationClusteringOptions& value) { SetClustering(value); return *this;}
+    inline OptimizeWaypointsRequest& WithClustering(WaypointOptimizationClusteringOptions&& value) { SetClustering(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,6 +252,9 @@ namespace Model
 
     WaypointOptimizationAvoidanceOptions m_avoid;
     bool m_avoidHasBeenSet = false;
+
+    WaypointOptimizationClusteringOptions m_clustering;
+    bool m_clusteringHasBeenSet = false;
 
     Aws::String m_departureTime;
     bool m_departureTimeHasBeenSet = false;

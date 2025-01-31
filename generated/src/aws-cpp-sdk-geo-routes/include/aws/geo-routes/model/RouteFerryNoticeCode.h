@@ -20,7 +20,8 @@ namespace Model
     NoSchedule,
     Other,
     ViolatedAvoidFerry,
-    ViolatedAvoidRailFerry
+    ViolatedAvoidRailFerry,
+    SeasonalClosure
   };
 
 namespace RouteFerryNoticeCodeMapper

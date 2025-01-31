@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Travel mode options when the provided travel mode is "Car"</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Travel mode options when the provided travel mode is
+   * <code>Car</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteCarOptions">AWS
    * API Reference</a></p>
    */

@@ -202,6 +202,7 @@ namespace Model
     ml_inf2_48xlarge,
     ml_p5_48xlarge,
     ml_p5e_48xlarge,
+    ml_p5en_48xlarge,
     ml_m7i_large,
     ml_m7i_xlarge,
     ml_m7i_2xlarge,

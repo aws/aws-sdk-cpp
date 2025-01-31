@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     BUILD,
-    BUILD_BATCH
+    BUILD_BATCH,
+    RUNNER_BUILDKITE_BUILD
   };
 
 namespace WebhookBuildTypeMapper

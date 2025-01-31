@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/Citation.h>
+#include <aws/bedrock-agent-runtime/model/GeneratedResponsePart.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/RetrievedReference.h>
 #include <utility>
 
 namespace Aws
@@ -39,19 +41,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>The citation.</p>
+     * <p>The generated response to the citation event.</p>
      */
-    inline const Citation& GetCitation() const{ return m_citation; }
-    inline bool CitationHasBeenSet() const { return m_citationHasBeenSet; }
-    inline void SetCitation(const Citation& value) { m_citationHasBeenSet = true; m_citation = value; }
-    inline void SetCitation(Citation&& value) { m_citationHasBeenSet = true; m_citation = std::move(value); }
-    inline CitationEvent& WithCitation(const Citation& value) { SetCitation(value); return *this;}
-    inline CitationEvent& WithCitation(Citation&& value) { SetCitation(std::move(value)); return *this;}
+    inline const GeneratedResponsePart& GetGeneratedResponsePart() const{ return m_generatedResponsePart; }
+    inline bool GeneratedResponsePartHasBeenSet() const { return m_generatedResponsePartHasBeenSet; }
+    inline void SetGeneratedResponsePart(const GeneratedResponsePart& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = value; }
+    inline void SetGeneratedResponsePart(GeneratedResponsePart&& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = std::move(value); }
+    inline CitationEvent& WithGeneratedResponsePart(const GeneratedResponsePart& value) { SetGeneratedResponsePart(value); return *this;}
+    inline CitationEvent& WithGeneratedResponsePart(GeneratedResponsePart&& value) { SetGeneratedResponsePart(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The retrieved references of the citation event.</p>
+     */
+    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const{ return m_retrievedReferences; }
+    inline bool RetrievedReferencesHasBeenSet() const { return m_retrievedReferencesHasBeenSet; }
+    inline void SetRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = value; }
+    inline void SetRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::move(value); }
+    inline CitationEvent& WithRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { SetRetrievedReferences(value); return *this;}
+    inline CitationEvent& WithRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { SetRetrievedReferences(std::move(value)); return *this;}
+    inline CitationEvent& AddRetrievedReferences(const RetrievedReference& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(value); return *this; }
+    inline CitationEvent& AddRetrievedReferences(RetrievedReference&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
-    Citation m_citation;
-    bool m_citationHasBeenSet = false;
+    GeneratedResponsePart m_generatedResponsePart;
+    bool m_generatedResponsePartHasBeenSet = false;
+
+    Aws::Vector<RetrievedReference> m_retrievedReferences;
+    bool m_retrievedReferencesHasBeenSet = false;
   };
 
 } // namespace Model
