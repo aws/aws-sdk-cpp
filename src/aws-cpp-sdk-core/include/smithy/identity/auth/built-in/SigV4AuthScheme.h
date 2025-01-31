@@ -36,13 +36,15 @@ namespace smithy {
             assert(m_signer);
         }
 
+        //delegate constructor
         explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
                                  const Aws::String& serviceName,
                                  const Aws::String& region,
-                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy,
+                                 bool urlEscapePath)
             : AuthScheme(SIGV4), 
             m_identityResolver{identityResolver}, 
-            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region, policy)}
+            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region, policy, urlEscapePath)}
         {
             assert(m_identityResolver);
             assert(m_signer);
@@ -57,18 +59,21 @@ namespace smithy {
         {
         }
 
+        //For legacy constructors, signing requires additonal input parameters
         explicit SigV4AuthScheme(const Aws::String& serviceName,
                                  const Aws::String& region,
-                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy,
+                                 bool urlEscapePath)
             : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
                               serviceName,
                               region,
-                              policy)
+                              policy,
+                              urlEscapePath)
         {
         }
 
         /*
-            for some services, there can be a different variant of v4 signer.
+            for some services, there can be a different variant of v4 signer. Example: s3 express
             This constructor allows to specify the signer type abiding by the constraints of the authscheme
         */
         explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,

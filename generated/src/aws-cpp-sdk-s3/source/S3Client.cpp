@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/platform/Environment.h>
 
@@ -128,7 +129,7 @@
 
 #include <smithy/tracing/TracingUtils.h>
 
-#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -162,7 +163,7 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
         endpointProvider ? endpointProvider : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
         Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
         {
-            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), GetServiceName(), clientConfiguration.region}},
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)), GetServiceName(), clientConfiguration.region}},
         })
 {}
 
@@ -201,7 +202,8 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
-    AwsSmithyClientT(clientConfiguration,
+    AwsSmithyClientT(
+      S3::S3ClientConfiguration{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
       GetServiceName(),
       "S3",
       Aws::Http::CreateHttpClient(clientConfiguration),
@@ -210,11 +212,9 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
       Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
       {
         {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads))},
+            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
       })
 {
-  m_clientConfiguration.useVirtualAddressing = useVirtualAddressing;
-  m_clientConfiguration.useUSEast1RegionalEndPointOption = USEast1RegionalEndPointOption;
 }
 
 S3Client::S3Client(
@@ -223,7 +223,8 @@ S3Client::S3Client(
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
-    AwsSmithyClientT(clientConfiguration,
+    AwsSmithyClientT(
+      S3::S3ClientConfiguration{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
       GetServiceName(),
       "S3",
       Aws::Http::CreateHttpClient(clientConfiguration),
@@ -232,11 +233,9 @@ S3Client::S3Client(
       Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
       {
         {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads))},
+            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
       })
 {
-  m_clientConfiguration.useVirtualAddressing = useVirtualAddressing;
-  m_clientConfiguration.useUSEast1RegionalEndPointOption = USEast1RegionalEndPointOption;
 }
 
 S3Client::S3Client(
@@ -245,7 +244,8 @@ S3Client::S3Client(
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
-    AwsSmithyClientT(clientConfiguration,
+    AwsSmithyClientT(
+      S3::S3ClientConfiguration{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
       GetServiceName(),
       "S3",
       Aws::Http::CreateHttpClient(clientConfiguration),
@@ -254,11 +254,9 @@ S3Client::S3Client(
       Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
       {
         {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads))},
+            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
       })
 {
-  m_clientConfiguration.useVirtualAddressing = useVirtualAddressing;
-  m_clientConfiguration.useUSEast1RegionalEndPointOption = USEast1RegionalEndPointOption;
 }
 /* End of legacy constructors due deprecation */
 

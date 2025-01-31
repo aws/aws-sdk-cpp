@@ -20,10 +20,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
-import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.AuthSchemeMapping;
-import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.SchemeIdMapping;
-import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.SchemeMapFormat;
-
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;

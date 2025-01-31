@@ -23,8 +23,20 @@ namespace smithy {
 
         const char* schemeId = nullptr;
 
-        PropertyBag virtual identityProperties() const { return PropertyBag{}; };
-        PropertyBag virtual signerProperties() const { return PropertyBag{}; };
+        PropertyBag virtual identityProperties() const { return m_identityProperties; };
+        PropertyBag virtual signerProperties() const { return m_signerProperties; };
+        bool addIdentityProperty( const Aws::String& key,const Aws::Crt::Variant<Aws::String, bool>& value) {
+            auto it = m_identityProperties.emplace(key, value);
+            return it.second;
+        };
+        bool addSignerProperty( const Aws::String& key,const Aws::Crt::Variant<Aws::String, bool>& value) {
+            auto it = m_signerProperties.emplace(key, value);
+            return it.second;
+        };
         EndpointParameters virtual endpointParameters() const { return EndpointParameters{}; };
+
+    private:
+        PropertyBag m_identityProperties;
+        PropertyBag m_signerProperties;
     };
 }

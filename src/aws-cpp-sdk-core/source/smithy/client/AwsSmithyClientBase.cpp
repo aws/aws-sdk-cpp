@@ -18,7 +18,7 @@
 #include "aws/core/utils/threading/SameThreadExecutor.h"
 #include "smithy/tracing/TracingUtils.h"
 #include <aws/core/utils/stream/ResponseStream.h>
-
+#include <aws/crt/Variant.h>
 using namespace smithy::client;
 using namespace smithy::interceptor;
 using namespace smithy::components::tracing;
@@ -200,6 +200,27 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         return;
     }
     pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+
+    
+    //get signer Name from end point and pass this info
+    if (pRequestCtx->m_endpoint.GetAttributes()) {
+        auto signerName = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetName();
+        pRequestCtx->m_authSchemeOption.addIdentityProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
+        pRequestCtx->m_authSchemeOption.addSignerProperty("signerName", Aws::Crt::Variant<Aws::String, bool>(signerName));
+        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion();
+            pRequestCtx->m_authSchemeOption.addSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
+        }
+        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            auto signerRegionOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegionSet();
+            pRequestCtx->m_authSchemeOption.addSignerProperty("signerRegionOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
+        }
+        if (pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            auto signerServiceNameOverride = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningName();
+            pRequestCtx->m_authSchemeOption.addSignerProperty("signerServiceNameOverride", Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
+        }
+    }
+
     if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");

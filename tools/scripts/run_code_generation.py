@@ -4,389 +4,15 @@
 # SPDX-License-Identifier: Apache-2.0.
 
 import argparse
-import datetime
-import io
-import json
 import os
-import re
-import shutil
-import subprocess
 import sys
-import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
-import json
-from typing import List
-from typing import Set
 
-# Default configuration variables
-CLIENT_MODEL_FILE_LOCATION = "./code-generation/api-descriptions/"
-ENDPOINT_RULES_LOCATION = "./code-generation/endpoints/"
-PARTITIONS_FILE_LOCATION = "../partitions/partitions.json"  # Relative to models dir
-DEFAULTS_FILE_LOCATION = "../defaults/sdk-default-configuration.json"  # Relative to models dir
-DEFAULT_GENERATOR_LOCATION = "code-generation/generator/"
-GENERATOR_TARGET_DIR = "target"
-GENERATOR_JAR = GENERATOR_TARGET_DIR + "/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
-SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/codegen"
-SMITHY_OUTPUT_DIR = "codegen_output"
-SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/codegen/smithy2c2j_service_map.json"
-
-# Regexp to parse C2J model filename to extract service name and date version
-SERVICE_MODEL_FILENAME_PATTERN = re.compile(
-    "^"
-    "(?P<service>.+)-"                                      # service name
-    "(?P<date>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])"  # model date
-    ".normal.json$"
-)
-
-# Legacy table of service model remaps/name correction during the code generation
-SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
-                       "runtime.lex.v2": "lexv2-runtime",
-                       "models.lex.v2": "lexv2-models",
-                       "transfer": "awstransfer",
-                       "transcribe-streaming": "transcribestreaming",
-                       "streams.dynamodb": "dynamodbstreams"}
-
-CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
-                           "partitions": PARTITIONS_FILE_LOCATION}
-
-SMITHY_SUPPORTED_CLIENTS = {
-    "dynamodb",
-    "s3"
-}
-
-SMITHY_EXCLUSION_CLIENTS = {
-    #multi auth
-    "eventbridge"
-    ,"cloudfront-keyvaluestore"
-    ,"cognito-identity"
-    ,"cognito-idp"
-    #customization
-    ,"machinelearning"
-    ,"apigatewayv2"
-    ,"apigateway"
-    ,"eventbridge"
-    ,"glacier"
-    ,"lambda"
-    ,"polly"
-    ,"sqs"
-    #bearer token
-    #,"codecatalyst"
-    #bidirectional streaming
-    ,"lexv2-runtime"
-    ,"qbusiness"
-    ,"transcribestreaming"
-}
-
-DEBUG = False
-
-class ServiceModel(object):
-    def __init__(self, service_id, c2j_model, endpoint_rule_set, endpoint_tests):
-        self.service_id = service_id  # For debugging purposes, not used atm
-        self.c2j_model = c2j_model
-        self.endpoint_rule_set = endpoint_rule_set
-        self.endpoint_tests = endpoint_tests
-
-    def __init__(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-
-def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str, c2j_model_filename) -> ServiceModel:
-    """Return a ServiceModel containing paths to the Service models: C2J model and endpoints (rules and tests).
-
-    :param models_dir (str): filepath (absolute or relative) to the dir with c2j models
-    :param endpoint_rules_dir (str): filepath (absolute or relative) to the dir with dirs of endpoints
-    :param c2j_model_filename (str): filename of a service C2J model (just filename, relative to models_dir without separator)
-    :return: ServiceModel, a descriptor class holding Service models filenames
-    """
-
-    endpoint_rules_filename = c2j_model_filename.replace('.normal.json', '.endpoint-rule-set.json')
-    endpoint_rules_filepath = f"{endpoint_rules_dir}/{endpoint_rules_filename}"
-    endpoint_tests_filename = c2j_model_filename.replace('.normal.json', '.endpoint-tests.json')
-    endpoint_tests_filepath = f"{endpoint_rules_dir}/{endpoint_tests_filename}"
-    match = SERVICE_MODEL_FILENAME_PATTERN.match(c2j_model_filename)
-    service_id = match.group("service")
-
-    if os.path.exists(endpoint_rules_filepath) and os.path.exists(endpoint_tests_filepath):
-        return ServiceModel(service_id=service_id,
-                            c2j_model=c2j_model_filename,
-                            endpoint_rule_set=endpoint_rules_filename,
-                            endpoint_tests=endpoint_tests_filename)
-
-
-def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_mapped_services: Set[str], smithy_supported_clients: Set[str]) -> dict:
-    """Return a dict of <service_name, model_file_name> with all available c2j models in a models_dir
-
-    :param models_dir: path to the directory with c2j models
-    :param endpoint_rules_dir: path to the directory with endpoints dir models
-    :return: dict<service_name, model_file_name> in models dir
-    """
-    model_files = os.listdir(models_dir)
-    service_name_to_model_filename_date = dict()
-    if DEBUG:
-        print("legacy_mapped_services:",legacy_mapped_services)
-
-    for filename in model_files:
-        if not os.path.isfile("/".join([models_dir, filename])):
-            continue
-        match = SERVICE_MODEL_FILENAME_PATTERN.match(filename)
-
-        service_model_name = match.group("service")
-        service_model_date = match.group("date")
-        service_model_date = datetime.datetime.strptime(service_model_date, "%Y-%m-%d").date()
-        already_found_model = service_name_to_model_filename_date.get(service_model_name, None)
-        if already_found_model:
-            already_found_date = already_found_model[1]
-            if already_found_date < service_model_date:
-                service_name_to_model_filename_date[service_model_name] = (filename, service_model_date)
-        else:
-            service_name_to_model_filename_date[service_model_name] = (filename, service_model_date)
-
-    service_name_to_model_filename = dict()
-    missing = set()
-    for raw_key, model_file_date in service_name_to_model_filename_date.items():
-        key = SERVICE_NAME_REMAPS.get(raw_key, raw_key)
-        if "." in key:
-            key = "-".join(reversed(key.split(".")))  # just replicating existing legacy behavior
-        if ";" in key:
-            key = key.replace(";", "-")  # just in case... just replicating existing legacy behavior
-        
-        # determine if new service/service indifferent to name mapping
-        with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
-            model = json.load(json_file)
-            #get service id. It has to exist, else continue
-            if "metadata" in model and any(k in model["metadata"] for k in ["serviceId", "serviceFullName"]):
-                if key not in legacy_mapped_services:
-                    key = model["metadata"].get("serviceId", model["metadata"].get("serviceFullName"))
-                    #convert into smithy case convention
-                    key = key.lower().replace(' ', '-')
-                
-                #if protocol is 
-                if ("protocol" in  model["metadata"] and 
-                    (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
-                    if key not in SMITHY_EXCLUSION_CLIENTS:
-                        smithy_supported_clients.add(key)
-                    
-            else:
-                print("service Id not found in model file:", model_file_date[0], " Skipping.")
-                continue
-        
-            
-        # fetch endpoint-rules filename which is based on ServiceId in c2j models:
-        try:
-            service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
-                                                                                      endpoint_rules_dir,
-                                                                                      model_file_date[0])
-
-            if key == "s3":
-                service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
-        except Exception as exc:
-            # TODO: re-enable with endpoints introduction
-            # print(f"C2J model does not have a corresponding endpoints ruleset: {exc}")
-            missing.add(model_file_date[0])
-            service_name_to_model_filename[key] = ServiceModel(service_id=key,
-                                                               c2j_model=model_file_date[0],
-                                                               endpoint_rule_set=None,
-                                                               endpoint_tests=None)
-    if missing:
-        # TODO: re-enable with endpoints introduction
-        # print(f"Missing endpoints for services: {missing}")
-        pass
-
-    if service_name_to_model_filename.get("s3") and "s3-crt" not in service_name_to_model_filename:
-        service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
-    return service_name_to_model_filename
-
-
-def build_generator(generator_dir: str, max_workers: int) -> None:
-    """Build generator in subprocess (mvn package) located in generator_dir
-
-    :param generator_dir: path to the generator source code
-    :param max_workers: number of threads to use to build generator
-    :return: None
-    """
-
-    mvn_cmd = [shutil.which("mvn"), "package", "-q"]  # subprocess.run does expand Path by default
-    process = subprocess.run(mvn_cmd, cwd=generator_dir, timeout=6*60, check=True)
-    process.check_returncode()
-
-
-def run_generator_once(service_name: str, run_command: list, output_filename: str):
-    """Helper function to call generator once in a subprocess
-
-    :param service_name: argument used purely for tracing/logging
-    :param run_command: actual subprocess command to execute
-    :param output_filename: temporary file to be generated by generator or STDOUT
-    :return: generated filename (str) or io.BytesIO-like object
-    """
-    if DEBUG:
-        run_command_str = str(run_command).replace(', ', ' ').replace('\'','')
-        print(f"RUNNING COMMAND\n{run_command_str}\n")
-    process = subprocess.run(run_command, timeout=6*60, check=True, capture_output=True)
-    process.check_returncode()
-
-    if output_filename != "STDOUT":
-        if not os.path.exists(output_filename) or os.path.getsize(output_filename) < 4:
-            raise RuntimeError(f"Code of {service_name} generation failure: "
-                               f"Code generator did not generate an output archive (and did not report failure!)")
-
-    if output_filename != "STDOUT":
-        output_zip_file = output_filename
-    else:
-        output_zip_file = process.stdout
-        if not output_zip_file or len(output_zip_file) < 4:
-            raise RuntimeError(f"Code of {service_name} generation failure: "
-                               f"Code generator did not generate an output.\n"
-                               f"Error details: {process.stderr.decode()}")
-        output_zip_file = io.BytesIO(output_zip_file)
-
-    return output_zip_file
-
-
-def extract_zip(zip_bytes: io.BytesIO, service_name: str, output_dir: str, dir_to_delete: str):
-    """Extract bytes containing zip file to output_dir
-
-    :param zip_bytes: raw bytes containing zip (opened file or io.BytesIO)
-    :param service_name: services name (for tracing/logging only)
-    :param output_dir: destination directory path to unpack zip
-    :param dir_to_delete: optional (str or None) directory to delete before unpacking
-    :return:
-    """
-    with zipfile.ZipFile(zip_bytes, 'r') as zip_ref:
-        if zip_ref.testzip() is not None:
-            raise RuntimeError(f"Service {service_name} generation failure: "
-                               f"Code generator generated an invalid archive")
-        try:
-            if dir_to_delete:
-                shutil.rmtree(dir_to_delete)
-        except Exception as exc:
-            print(f"Non-blocking failure to remove dir {dir_to_delete}: {exc}")
-
-        zip_ref.extractall(output_dir)
-        print(f"Generated {service_name}")
-
-    return service_name, 0
-
-
-def generate_core_component(component_name: str,
-                            model_file_path: str,
-                            models_dir: str,
-                            generator_filepath: str,
-                            output_dir: str,
-                            tmp_dir: str,
-                            kwargs):
-    """Generate AWS-SDK-CPP defaults
-
-    :param component_name: "partitions" or "defaults"
-    :param model_file_path: relative path to the component json model
-    :param models_dir: path where c2j models are located
-    :param generator_filepath: path where SDK generator is located
-    :param output_dir: path to the SDK root (with aws-cpp-sdk-core)
-    :param tmp_dir: Optional path to a tmp dir to use (otherwise STDOUT piping will be used)
-    :param kwargs: Additional optional arguments to pass to the code generator
-    :return: ("Defaults", status_code), where 0 is success status_code
-    """
-    if component_name not in ["defaults", "partitions"]:
-        raise RuntimeError(f"Unknown core component: {component_name}")
-    # raw arguments to be passed from Py wrapper to the actual generator
-    if not kwargs.get("language-binding"):
-        kwargs["language-binding"] = "cpp"  # Always cpp by default in the current code gen
-
-    if tmp_dir:
-        output_filename = f"{tmp_dir}/aws-cpp-sdk-core-{component_name}.zip"
-    else:
-        output_filename = "STDOUT"
-
-    full_model_file_path = f"{models_dir}/{model_file_path}"
-    generator_jar = generator_filepath + "/" + GENERATOR_JAR
-    run_command = list()
-    run_command.append("java")
-    run_command += ["-jar", generator_jar]
-    run_command += ["--inputfile", full_model_file_path]
-    run_command += [f"--{component_name}", "global"]
-    run_command += ["--outputfile", output_filename]
-    run_command += ["--arbitrary"]
-
-    for key, val in kwargs.items():
-        run_command += [f"--{key}", val]
-
-    output_zip_file = run_generator_once(f"core/{component_name}", run_command, output_filename)
-
-    return extract_zip(output_zip_file, f"core/{component_name}", output_dir, None)
-
-
-def generate_single_client(service_name: str,
-                           model_files: ServiceModel,
-                           models_filepath: str,
-                           endpoints_filepath: str,
-                           generator_filepath: str,
-                           output_dir: str,
-                           tmp_dir: str,
-                           use_smithy: bool,
-                           kwargs):
-    """Generate a single AWS client in AWS-SDK-CPP from c2j model
-
-    :param service_name: Service name to generate (typically a first part of c2j model filename)
-    :param model_files: ServiceModel wrapper containing model file names (C2J model and endpoints)
-    :param models_filepath: Path to a dir where C2J models are located
-    :param endpoints_filepath: Path to a dir where endpoint models are located
-    :param generator_filepath: Path to a dir where code generator is located
-    :param output_dir: Path to the root of generated code (i.e. where generated client will be located)
-    :param tmp_dir: Optional path to a tmp dir to use (otherwise STDOUT piping will be used)
-    :param kwargs: Additional optional arguments to pass to the code generator
-    :return: (service_name, status_code), where 0 is success status_code
-    """
-    if not service_name or service_name == "" or not model_files.c2j_model or model_files.c2j_model == "":
-        raise RuntimeError("Unknown client to generate!")
-    # raw arguments to be passed from Py wrapper to the actual generator
-    if not kwargs.get("language-binding"):
-        kwargs["language-binding"] = "cpp"  # Always cpp by default in the current code gen
-    if not kwargs.get("enable-virtual-operations"):
-        kwargs["enable-virtual-operations"] = ""  # Historically always set by default in this project
-
-    if tmp_dir:
-        output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '.zip')}"
-    else:
-        output_filename = "STDOUT"
-
-    model_filepath = models_filepath + "/" + model_files.c2j_model
-    generator_jar = generator_filepath + "/" + GENERATOR_JAR
-    run_command = list()
-    run_command.append("java")
-    run_command += ["-jar", generator_jar]
-    run_command += ["--inputfile", model_filepath]
-    if model_files.endpoint_rule_set:
-        run_command += ["--endpoint-rule-set", f"{endpoints_filepath}/{model_files.endpoint_rule_set}"]
-    if model_files.endpoint_tests:
-        run_command += ["--endpoint-tests", f"{endpoints_filepath}/{model_files.endpoint_tests}"]
-    run_command += ["--service", service_name]
-    run_command += ["--outputfile", output_filename]
-    if use_smithy:
-        run_command += ["--use-smithy-client"]
-
-    for key, val in kwargs.items():
-        run_command += [f"--{key}", val]
-
-    output_zip_file = run_generator_once(service_name, run_command, output_filename)
-    dir_to_delete_before_extract = f"{output_dir}/src/aws-cpp-sdk-{service_name}"
-    dir_to_extract = f"{output_dir}/src/"
-    service_name, status = extract_zip(output_zip_file, service_name, dir_to_extract, dir_to_delete_before_extract)
-
-    if model_files.endpoint_rule_set and model_files.endpoint_tests:
-        run_command.append("--generate-tests")
-
-        if tmp_dir:
-            output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '-gen-tests.zip')}"
-        else:
-            output_filename = "STDOUT"
-        output_zip_file = run_generator_once(service_name, run_command, output_filename)
-        if not os.path.exists(f"{output_dir}/tests"):
-            os.makedirs(f"{output_dir}/tests")
-        dir_to_delete_before_extract = f"{output_dir}/tests/{service_name}-gen-tests"
-        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)
-
-    return service_name, status
+from codegen.legacy_c2j_cpp_gen import LegacyC2jCppGen, CLIENT_MODEL_FILE_LOCATION, ENDPOINT_RULES_LOCATION
+from codegen.model_utils import ModelUtils
+from codegen.protocol_tests_gen import ProtocolTestsGen
+from codegen.smoke_tests_gen import SmokeTestsGen
 
 
 def parse_arguments() -> dict:
@@ -426,16 +52,16 @@ def parse_arguments() -> dict:
                         help="Code generator raw argument to be passed through to "
                              "mark operation functions in service client as virtual functions. Always on by default",
                         action="store_true")
-    
+
     parser.add_argument("--generate_smoke_tests",
-                    help="Run smithy code generator for smoke tests",
-                    action="store_true")
+                        help="Run smithy code generator for smoke tests",
+                        action="store_true")
+    parser.add_argument("--generate_protocol_tests",
+                        help="Run protocol tests generation",
+                        action="store_true")
 
     args = vars(parser.parse_args())
-    arg_map = {}
-    if args.get("debug", None):
-        global DEBUG
-        DEBUG = True
+    arg_map = {"debug": args.get("debug", False)}
 
     if args.get("all", None):
         arg_map["all"] = True
@@ -479,16 +105,7 @@ def parse_arguments() -> dict:
                 raise RuntimeError("Could not find api definitions location!")
         arg_map[cli_argument] = models_location
 
-    generator_location = args["path_to_generator"] or DEFAULT_GENERATOR_LOCATION
-    generator_location = str(Path(generator_location).absolute())
-    if not os.path.exists(generator_location):
-        if args["path_to_generator"] is not None and args["path_to_generator"] != "":
-            raise RuntimeError("Provided path_to_generator does not exist!")
-        generator_location = str(Path(sys.path[0] + "/../" + DEFAULT_GENERATOR_LOCATION).absolute())
-        if not os.path.exists(generator_location):
-            raise RuntimeError("Could not find generator location!")
-    arg_map["path_to_generator"] = generator_location
-
+    arg_map["path_to_generator"] = args.get("path_to_generator", None)
     arg_map["prepare_tools"] = args["prepare_tools"] or False
     arg_map["list_all"] = args["list_all"] or False
 
@@ -498,64 +115,11 @@ def parse_arguments() -> dict:
             raw_generator_arguments[raw_argument] = args[raw_argument]
     arg_map["raw_generator_arguments"] = raw_generator_arguments
     arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
-    if DEBUG:
-        print("args=",arg_map)
+    arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
+    if arg_map["debug"]:
+        print("args=", arg_map)
     return arg_map
 
-def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: str):
-    
-    # check if the target directory exists, create it if it doesn't
-    os.makedirs(target_dir, exist_ok=True)
-    if DEBUG:
-        print(f"copy_cpp_codegen_contents: {target_dir}")
-
-    # Walk through the top-level directory and find all "cpp-codegen-smoke-tests-plugin" directories
-    for root, dirs, files in os.walk(top_level_dir):
-        if plugin_name in dirs:
-            source_dir = os.path.join(root, plugin_name)
-            # recursively copy all contents from the source to the target folder
-            for item in os.listdir(source_dir):
-                source_item = os.path.join(source_dir, item)
-                target_item = os.path.join(target_dir, item)
-                # Recursively copy directories and files
-                if os.path.isdir(source_item):
-                    shutil.copytree(source_item, target_item, dirs_exist_ok=True)
-                else:
-                    shutil.copy2(source_item, target_item)
-            print(f"Copied contents from '{source_dir}' to '{target_dir}'.")
-            
-def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
-    smithy_codegen_command = [
-        "./gradlew", 
-        "clean",
-        "build", 
-        "-PoutputDirectory=" + SMITHY_OUTPUT_DIR,
-        "-PservicesFilter=" + ",".join(smithy_services),
-        "-Pc2jMap=" + smithy_c2j_data 
-    ]
-    original_dir = os.getcwd()
-    try:
-        if DEBUG:
-            run_command_str = " ".join("%s" % item for item in smithy_codegen_command)
-            print(f"RUNNING COMMAND\n{run_command_str}\nfrom directory:\n{SMITHY_GENERATOR_LOCATION}")
-
-        process = subprocess.run(
-            smithy_codegen_command, 
-            timeout=6*60,  # Timeout after 6 minutes
-            check=True, 
-            capture_output=True, 
-            text=True,
-            cwd=SMITHY_GENERATOR_LOCATION
-        )
-        # If successful, print the command output
-        print("Smithy codegen command executed successfully!\n", process.stdout)
-        return True
-
-    except subprocess.CalledProcessError as e:
-        # Handle command failure and print error details
-        print(f"Command failed with return code {e.returncode}")
-        print(f"Error Output:\n{e.stderr}")
-        return False
 
 def main():
     """Main entrypoint for this script that wraps AWS-SDK-CPP code generation
@@ -564,123 +128,38 @@ def main():
     """
     args = parse_arguments()
 
+    model_utils = ModelUtils(args)
+    if args.get("list_all"):
+        model_list = model_utils.models_to_generate.keys()
+        print(sorted(model_list))
+        return 0
+
     highly_refined_percent_of_cores_to_take = 0.9
     max_workers = max(1, int(highly_refined_percent_of_cores_to_take * os.cpu_count()))
-    
-    #build reverse map of c2j to smithy since in this script we use c2j names for legacy services
-    smithy_c2j_data = {}
-    c2j_smithy_data = {}        
-    with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
-        smithy_c2j_data = json.load(file)
-        c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
-        
-        
-    smithy_supported_clients = SMITHY_SUPPORTED_CLIENTS.copy()
+    if args["debug"]:
+        print(f"Parallel executor thread count: {max_workers}")
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
-        build_generator_future = None
-
-        if not args.get("list_all"):
-            build_generator_future = executor.submit(build_generator, args["path_to_generator"], max_workers)
-        if args.get("prepare_tools"):
-            build_generator_future.result()  # will rethrow any exceptions
-            return 0
-
-        available_models = collect_available_models(args["path_to_api_definitions"],
-                                                    args["path_to_endpoint_rules"],
-                                                    set(c2j_smithy_data.keys()),
-                                                    smithy_supported_clients)
-        if args.get("list_all"):
-            model_list = available_models.keys()
-            print(model_list)
-            return 0
-
-        if args.get("all"):
-            clients_to_build = available_models.keys()
-        else:
-            clients_to_build = args.get("client_list")
-            if not clients_to_build:
-                clients_to_build = []
-            clients_to_build_set = set(clients_to_build)
-            available_models_set = set(available_models.keys())
-            not_found_models = clients_to_build_set - available_models_set
-            if len(not_found_models):
-                raise RuntimeError(f"Requested to build clients but their model files are not present: "
-                                   f"{not_found_models}")
-
-        # Now wait for generator build to complete
-        build_generator_future.result()  # will rethrow any exceptions
-
-        pending = set()
-        done = set()
-        if DEBUG:
-            print(f"Smithy supported clients: {smithy_supported_clients}")
-        print(f"Running code generator, up to {max_workers} processes in parallel")
-        sys.stdout.flush()
-        for core_component in ["defaults", "partitions"]:
-            if args.get("all") or args.get(core_component):
-                task = executor.submit(generate_core_component,
-                                       core_component,
-                                       CORE_COMPONENT_TO_MODEL[core_component],
-                                       args["path_to_api_definitions"],
-                                       args["path_to_generator"],
-                                       f"{args['output_location']}/../src/",
-                                       None,
-                                       args["raw_generator_arguments"])
-                pending.add(task)
-        for service in clients_to_build:
-            model_files = available_models[service]
-
-            while len(pending) >= max_workers:
-                new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
-                done.update(new_done)
-            task = executor.submit(generate_single_client,
-                                   service,
-                                   model_files,
-                                   args["path_to_api_definitions"],
-                                   args["path_to_endpoint_rules"],
-                                   args["path_to_generator"],
-                                   args["output_location"],
-                                   None,
-                                   (service in smithy_supported_clients),
-                                   args["raw_generator_arguments"])
-            pending.add(task)
-
-        new_done, _ = wait(pending, return_when=ALL_COMPLETED)
-        done.update(new_done)
-        
-        failures = set()
-        for result in done:
-            try:
-                service, status = result.result()  # will rethrow any exceptions
-                if status != 0:
-                    raise RuntimeError(f"Service {service} (re)generation failed with non-zero return: {status}")
-            except Exception as exc:
-                failures.add(f"Service (re)generation failed with error.\n    Exception: {exc}\n"
-                             f"stderr: {getattr(exc, 'stderr', None)}")
-
-        if len(failures):
-            print(f"Code generation failed, processed {len(done)} packages. "
-                  f"Encountered {len(failures)} failures:\n")  # Including defaults and partitions
-            for failure in failures:
-                print(failure)
-
-        if len(failures):
+        c2j_gen = LegacyC2jCppGen(args, model_utils.models_to_generate)
+        if c2j_gen.generate(executor, max_workers, args) != 0:
+            print("ERROR: Failed to generate service client(s)!")
             return -1
 
-        print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
-    #generate code using smithy for all discoverable clients
-    if (args["generate_smoke_tests"] and clients_to_build):
+        if args["generate_protocol_tests"]:
+            protocol_tests_generator = ProtocolTestsGen(args)
+            if protocol_tests_generator.generate(executor, max_workers) != 0:
+                print("ERROR: Failed to generate protocol test(s)!")
+                return -1
 
-        #get smithy names
-        smithy_services = [c2j_smithy_data[service] if service in c2j_smithy_data else service for service in clients_to_build]
-        print(f"Running code generator for smoke-tests for services:"+",".join(smithy_services))
-        if generate_smoke_tests(smithy_services, json.dumps(smithy_c2j_data)) :
-            #move the output to generated folder
-            copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"), "cpp-codegen-smoke-tests-plugin", os.path.abspath( "generated/smoke-tests"))
-        else:
-            print("Failed to generate code for smoke-tests")
+    # generate code using smithy for all discoverable clients
+    # clients_to_build check is present because user can generate only defaults or partitions or protocol-tests
+    clients_to_build = model_utils.get_clients_to_build()
+    if args["generate_smoke_tests"] and clients_to_build:
+        smoke_tests_gen = SmokeTestsGen(args["debug"])
+        if smoke_tests_gen.generate(clients_to_build) != 0:
+            print("ERROR: Failed to generate smoke test(s)!")
             return -1
+
     return 0
 
 

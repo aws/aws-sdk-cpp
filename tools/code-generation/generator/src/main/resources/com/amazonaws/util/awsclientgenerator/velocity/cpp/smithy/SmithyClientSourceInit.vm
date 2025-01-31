@@ -103,7 +103,8 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
-    AwsSmithyClientT(clientConfiguration,
+    AwsSmithyClientT(
+      ${clientConfiguration}{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
       GetServiceName(),
       "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
@@ -112,11 +113,9 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
       {
         {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads))},
+            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
       })
 {
-  m_clientConfiguration.useVirtualAddressing = useVirtualAddressing;
-  m_clientConfiguration.useUSEast1RegionalEndPointOption = USEast1RegionalEndPointOption;
 }
 
 ${className}::${className}(
@@ -125,7 +124,8 @@ ${className}::${className}(
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
-    AwsSmithyClientT(clientConfiguration,
+    AwsSmithyClientT(
+      ${clientConfiguration}{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
       GetServiceName(),
       "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
@@ -134,11 +134,9 @@ ${className}::${className}(
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
       {
         {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads))},
+            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
       })
 {
-  m_clientConfiguration.useVirtualAddressing = useVirtualAddressing;
-  m_clientConfiguration.useUSEast1RegionalEndPointOption = USEast1RegionalEndPointOption;
 }
 
 ${className}::${className}(
@@ -147,7 +145,8 @@ ${className}::${className}(
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
-    AwsSmithyClientT(clientConfiguration,
+    AwsSmithyClientT(
+      ${clientConfiguration}{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
       GetServiceName(),
       "${metadata.serviceId}",
       Aws::Http::CreateHttpClient(clientConfiguration),
@@ -155,12 +154,10 @@ ${className}::${className}(
       Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
       {
-        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<DefaultS3ExpressIdentityResolver>(ALLOCATION_TAG, *this, credentialsProvider), 
-            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads))},
+        {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme(Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), 
+            Aws::MakeShared<smithy::AwsSigV4Signer>( ALLOCATION_TAG, GetServiceName(), clientConfiguration.region, signPayloads, false))},
       })
 {
-  m_clientConfiguration.useVirtualAddressing = useVirtualAddressing;
-  m_clientConfiguration.useUSEast1RegionalEndPointOption = USEast1RegionalEndPointOption;
 }
 #else
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :

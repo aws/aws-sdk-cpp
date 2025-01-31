@@ -32,17 +32,29 @@ namespace smithy {
         using SigningProperties = typename BASECLASS::SigningProperties;
         using SigningError = typename BASECLASS::SigningError;
         explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region)
-            : BASECLASS(serviceName, region)
+            : BASECLASS(serviceName, region),legacySigner(nullptr, serviceName.c_str(), region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always)
         {
         }
 
         explicit S3ExpressSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
-            : BASECLASS(serviceName, region, policy)
+            : BASECLASS(serviceName, region, policy),legacySigner(nullptr, serviceName.c_str(), region, policy)
         {
         }
 
         SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const AwsCredentialIdentityBase& identity, SigningProperties properties) override
         {
+            //if legacy signer, ie if signer name not s3express
+            auto signerNameOverride = properties.find("signerName");
+            if(signerNameOverride != properties.end() )
+            {
+                std::cout<<"signerNameOverride="<<signerNameOverride->second.template get<Aws::String>()<<std::endl;
+            }
+
+            if(signerNameOverride != properties.end() && signerNameOverride->second.template get<Aws::String>() != "S3ExpressSigner")
+            {
+                return AwsSigV4Signer::sign(httpRequest, identity, properties);
+            }
+
             const auto requestId = Aws::GetWithDefault(httpRequest->GetServiceSpecificParameters()->parameterMap,
             Aws::String("dedupeId"),
             Aws::String(Aws::Utils::UUID::RandomUUID()));
@@ -101,5 +113,7 @@ namespace smithy {
 
         mutable std::set<Aws::String> m_requestsProcessing;
         mutable std::mutex m_requestProcessing;
+        Aws::Client::AWSAuthV4Signer legacySigner;
+        
     };
 }

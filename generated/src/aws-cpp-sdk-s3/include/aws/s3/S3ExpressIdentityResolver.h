@@ -27,7 +27,9 @@ namespace Aws {
           ResolveIdentityFutureOutcome getIdentity(
               const IdentityProperties& identityProperties,
               const AdditionalParameters& additionalParameters) override;
-        
+          virtual smithy::AwsCredentialIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
+          smithy::AwsCredentialIdentity GetCredentialsFromBucket(const Aws::String& bucketName) const;
+
          private:
           const Aws::S3::S3Client& m_s3Client;
           mutable std::mutex m_bucketNameMapMutex;
@@ -35,7 +37,6 @@ namespace Aws {
 
          protected:
           std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
-          ResolveIdentityFutureOutcome getCredentialsFromBucket(const Aws::String& bucketName) const;
           mutable std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credsProvider;
         };
         
@@ -51,9 +52,7 @@ namespace Aws {
           DefaultS3ExpressIdentityResolver& operator=(const DefaultS3ExpressIdentityResolver& other) = delete;
           DefaultS3ExpressIdentityResolver& operator=(DefaultS3ExpressIdentityResolver&& other) noexcept = delete;
           virtual ~DefaultS3ExpressIdentityResolver() override = default;
-          ResolveIdentityFutureOutcome getIdentity(
-              const IdentityProperties& identityProperties,
-              const AdditionalParameters& additionalParameters) override;
+          smithy::AwsCredentialIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
         
          private:
           mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> m_credentialsCache;
@@ -75,12 +74,9 @@ namespace Aws {
           DefaultAsyncS3ExpressIdentityResolver& operator=(
               const DefaultAsyncS3ExpressIdentityResolver& other) = delete;
           DefaultAsyncS3ExpressIdentityResolver& operator=(DefaultAsyncS3ExpressIdentityResolver&& other) noexcept = delete;
-        
           virtual ~DefaultAsyncS3ExpressIdentityResolver() override;
-        
-          ResolveIdentityFutureOutcome getIdentity(
-              const IdentityProperties& identityProperties,
-              const AdditionalParameters& additionalParameters) override;
+          smithy::AwsCredentialIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
+
         
          private:
           void refreshIdentities(std::chrono::minutes refreshPeriod);

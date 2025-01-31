@@ -170,6 +170,8 @@ namespace
         {
             S3Client::EnableRequestProcessing();
         }
+
+        ~S3TestClient(){}
     };
 
     class BucketAndObjectOperationTest : public Aws::Testing::AwsCppSdkGTestSuite
@@ -210,8 +212,7 @@ namespace
                 config.proxyPort = PROXY_PORT;
             }
 
-            Client = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
+            Client = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY);
             config.region = Aws::Region::AWS_GLOBAL;
             globalClient = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG,

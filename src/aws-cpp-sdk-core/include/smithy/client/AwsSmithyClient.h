@@ -105,7 +105,7 @@ namespace client
         virtual ~AwsSmithyClientT() = default;
 
     protected:
-        void initClient() {
+        virtual void initClient() {
           m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
         }
 

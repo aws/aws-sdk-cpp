@@ -29,10 +29,10 @@ namespace smithy {
         /*
             For legacy constructors, this is needed
         */
-        explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy)
+        explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool urlEscapePath)
             : m_serviceName(serviceName),
               m_region(region),
-              legacySigner(nullptr, serviceName.c_str(), region, policy)
+              legacySigner(nullptr, serviceName.c_str(), region, policy, urlEscapePath)
         {
         }
 
@@ -56,7 +56,7 @@ namespace smithy {
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
             assert(httpRequest);
-            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, m_region.c_str(), m_serviceName.c_str(), signPayload);
+            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, m_region.c_str(), m_serviceName.c_str(), (signPayload || true ));
             if (success)
             {
                 return SigningFutureOutcome(std::move(httpRequest));
