@@ -90,7 +90,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    for(const auto& item : m_timestampList)
    {
      XmlNode timestampListNode = timestampListParentNode.CreateChildElement("Timestamp");
-     timestampListNode.SetText(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+     timestampListNode.SetText(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
    }
   }
 
@@ -122,6 +122,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    for(const auto& item : m_nestedStringList)
    {
      XmlNode nestedStringListNode = nestedStringListParentNode.CreateChildElement("StringList");
+     nestedStringListNode.SetText(item);
    }
   }
 
