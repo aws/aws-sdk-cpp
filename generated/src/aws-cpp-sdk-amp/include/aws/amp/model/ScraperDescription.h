@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/amp/model/Destination.h>
+#include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/ScrapeConfiguration.h>
 #include <aws/amp/model/Source.h>
 #include <aws/amp/model/ScraperStatus.h>
@@ -127,6 +128,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const RoleConfiguration& GetRoleConfiguration() const{ return m_roleConfiguration; }
+    inline bool RoleConfigurationHasBeenSet() const { return m_roleConfigurationHasBeenSet; }
+    inline void SetRoleConfiguration(const RoleConfiguration& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = value; }
+    inline void SetRoleConfiguration(RoleConfiguration&& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = std::move(value); }
+    inline ScraperDescription& WithRoleConfiguration(const RoleConfiguration& value) { SetRoleConfiguration(value); return *this;}
+    inline ScraperDescription& WithRoleConfiguration(RoleConfiguration&& value) { SetRoleConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The configuration in use by the scraper.</p>
      */
@@ -228,6 +239,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    RoleConfiguration m_roleConfiguration;
+    bool m_roleConfigurationHasBeenSet = false;
 
     ScrapeConfiguration m_scrapeConfiguration;
     bool m_scrapeConfigurationHasBeenSet = false;

@@ -25,6 +25,7 @@ namespace Aws
         static const int Other_HASH = HashingUtils::HashString("Other");
         static const int ViolatedAvoidFerry_HASH = HashingUtils::HashString("ViolatedAvoidFerry");
         static const int ViolatedAvoidRailFerry_HASH = HashingUtils::HashString("ViolatedAvoidRailFerry");
+        static const int SeasonalClosure_HASH = HashingUtils::HashString("SeasonalClosure");
 
 
         RouteFerryNoticeCode GetRouteFerryNoticeCodeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == ViolatedAvoidRailFerry_HASH)
           {
             return RouteFerryNoticeCode::ViolatedAvoidRailFerry;
+          }
+          else if (hashCode == SeasonalClosure_HASH)
+          {
+            return RouteFerryNoticeCode::SeasonalClosure;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "ViolatedAvoidFerry";
           case RouteFerryNoticeCode::ViolatedAvoidRailFerry:
             return "ViolatedAvoidRailFerry";
+          case RouteFerryNoticeCode::SeasonalClosure:
+            return "SeasonalClosure";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

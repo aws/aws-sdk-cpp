@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Features that are avoided while calculating a route. Avoidance is on a
+   * <p>Features that are avoided while calculating isolines. Avoidance is on a
    * best-case basis. If an avoidance can't be satisfied for a particular case, it
    * violates the avoidance and the returned response produces a notice for the
    * violation.</p><p><h3>See Also:</h3>   <a
@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Avoid car-shuttle-trains while calculating the route.</p>
+     * <p>Avoid car-shuttle-trains while calculating an isoline.</p>
      */
     inline bool GetCarShuttleTrains() const{ return m_carShuttleTrains; }
     inline bool CarShuttleTrainsHasBeenSet() const { return m_carShuttleTrainsHasBeenSet; }
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Avoid controlled access highways while calculating the route.</p>
+     * <p>Avoid controlled access highways while calculating an isoline.</p>
      */
     inline bool GetControlledAccessHighways() const{ return m_controlledAccessHighways; }
     inline bool ControlledAccessHighwaysHasBeenSet() const { return m_controlledAccessHighwaysHasBeenSet; }
@@ -79,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Avoid dirt roads while calculating the route.</p>
+     * <p>Avoid dirt roads while calculating an isoline.</p>
      */
     inline bool GetDirtRoads() const{ return m_dirtRoads; }
     inline bool DirtRoadsHasBeenSet() const { return m_dirtRoadsHasBeenSet; }
@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Avoid ferries while calculating the route.</p>
+     * <p>Avoid ferries while calculating an isoline.</p>
      */
     inline bool GetFerries() const{ return m_ferries; }
     inline bool FerriesHasBeenSet() const { return m_ferriesHasBeenSet; }
@@ -99,7 +99,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Avoid roads that have seasonal closure while calculating the route.</p>
+     * <p>Avoid roads that have seasonal closure while calculating an isoline.</p>
      */
     inline bool GetSeasonalClosure() const{ return m_seasonalClosure; }
     inline bool SeasonalClosureHasBeenSet() const { return m_seasonalClosureHasBeenSet; }
@@ -149,7 +149,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Avoid tunnels while calculating the route.</p>
+     * <p>Avoid tunnels while calculating an isoline.</p>
      */
     inline bool GetTunnels() const{ return m_tunnels; }
     inline bool TunnelsHasBeenSet() const { return m_tunnelsHasBeenSet; }

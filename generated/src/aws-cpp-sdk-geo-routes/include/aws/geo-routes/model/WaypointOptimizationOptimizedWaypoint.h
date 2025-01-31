@@ -57,6 +57,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Index of the cluster the waypoint is associated with. The index is included
+     * in the response only if clustering was performed while processing the
+     * request.</p>
+     */
+    inline int GetClusterIndex() const{ return m_clusterIndex; }
+    inline bool ClusterIndexHasBeenSet() const { return m_clusterIndexHasBeenSet; }
+    inline void SetClusterIndex(int value) { m_clusterIndexHasBeenSet = true; m_clusterIndex = value; }
+    inline WaypointOptimizationOptimizedWaypoint& WithClusterIndex(int value) { SetClusterIndex(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Estimated time of departure from thr origin.</p> <p>Time
      * format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code>
      * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
@@ -102,6 +114,9 @@ namespace Model
 
     Aws::String m_arrivalTime;
     bool m_arrivalTimeHasBeenSet = false;
+
+    int m_clusterIndex;
+    bool m_clusterIndexHasBeenSet = false;
 
     Aws::String m_departureTime;
     bool m_departureTimeHasBeenSet = false;

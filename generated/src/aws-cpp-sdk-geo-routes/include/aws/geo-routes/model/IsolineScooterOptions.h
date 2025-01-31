@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Options for the property.</p><p><h3>See Also:</h3>   <a
+   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineScooterOptions">AWS
    * API Reference</a></p>
    */

@@ -27,7 +27,12 @@ namespace Model
 {
 
   /**
-   * <p>Options related to the route matrix.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies options for areas to avoid when calculating the route. This is a
+   * best-effort avoidance setting, meaning the router will try to honor the
+   * avoidance preferences but may still include restricted areas if no feasible
+   * alternative route exists. If avoidance options are not followed, the response
+   * will indicate that the avoidance criteria were violated.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteMatrixAvoidanceOptions">AWS
    * API Reference</a></p>
    */

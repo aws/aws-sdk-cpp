@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Features that are allowed while calculating. a route</p>
+     * <p>Features that are allowed while calculating a route.</p>
      */
     inline const RouteMatrixAllowOptions& GetAllow() const{ return m_allow; }
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
@@ -105,7 +105,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of destinations for the route.</p>
+     * <p>List of destinations for the route.</p>  <p>Route calculations are
+     * billed for each origin and destination pair. If you use a large matrix of
+     * origins and destinations, your costs will increase accordingly. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
+     * Amazon Location's pricing page</a> for more information.</p> 
      */
     inline const Aws::Vector<RouteMatrixDestination>& GetDestinations() const{ return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
@@ -159,7 +163,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The position in longitude and latitude for the origin.</p>
+     * <p>The position in longitude and latitude for the origin.</p>  <p>Route
+     * calculations are billed for each origin and destination pair. Using a large
+     * amount of Origins in a request can lead you to incur unexpected charges. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
+     * Amazon Location's pricing page</a> for more information.</p> 
      */
     inline const Aws::Vector<RouteMatrixOrigin>& GetOrigins() const{ return m_origins; }
     inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }

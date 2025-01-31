@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Options related to the origin.</p><p><h3>See Also:</h3>   <a
+   * <p>Origin related options.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/WaypointOptimizationOriginOptions">AWS
    * API Reference</a></p>
    */

@@ -20,6 +20,8 @@ namespace Model
 
 WaypointOptimizationOptimizedWaypoint::WaypointOptimizationOptimizedWaypoint() : 
     m_arrivalTimeHasBeenSet(false),
+    m_clusterIndex(0),
+    m_clusterIndexHasBeenSet(false),
     m_departureTimeHasBeenSet(false),
     m_idHasBeenSet(false),
     m_positionHasBeenSet(false)
@@ -39,6 +41,13 @@ WaypointOptimizationOptimizedWaypoint& WaypointOptimizationOptimizedWaypoint::op
     m_arrivalTime = jsonValue.GetString("ArrivalTime");
 
     m_arrivalTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ClusterIndex"))
+  {
+    m_clusterIndex = jsonValue.GetInteger("ClusterIndex");
+
+    m_clusterIndexHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DepartureTime"))
@@ -75,6 +84,12 @@ JsonValue WaypointOptimizationOptimizedWaypoint::Jsonize() const
   if(m_arrivalTimeHasBeenSet)
   {
    payload.WithString("ArrivalTime", m_arrivalTime);
+
+  }
+
+  if(m_clusterIndexHasBeenSet)
+  {
+   payload.WithInteger("ClusterIndex", m_clusterIndex);
 
   }
 

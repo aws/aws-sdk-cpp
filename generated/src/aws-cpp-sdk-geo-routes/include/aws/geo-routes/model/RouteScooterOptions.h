@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Travel mode options when the provided travel mode is "Scooter"</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Travel mode options when the provided travel mode is <code>Scooter</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteScooterOptions">AWS
    * API Reference</a></p>
    */
