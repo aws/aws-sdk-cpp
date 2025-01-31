@@ -45,6 +45,8 @@ namespace Aws
         static const int UnfulfilledNodeInput_HASH = HashingUtils::HashString("UnfulfilledNodeInput");
         static const int UnsatisfiedConnectionConditions_HASH = HashingUtils::HashString("UnsatisfiedConnectionConditions");
         static const int Unspecified_HASH = HashingUtils::HashString("Unspecified");
+        static const int UnknownNodeInput_HASH = HashingUtils::HashString("UnknownNodeInput");
+        static const int UnknownNodeOutput_HASH = HashingUtils::HashString("UnknownNodeOutput");
 
 
         FlowValidationType GetFlowValidationTypeForName(const Aws::String& name)
@@ -150,6 +152,14 @@ namespace Aws
           {
             return FlowValidationType::Unspecified;
           }
+          else if (hashCode == UnknownNodeInput_HASH)
+          {
+            return FlowValidationType::UnknownNodeInput;
+          }
+          else if (hashCode == UnknownNodeOutput_HASH)
+          {
+            return FlowValidationType::UnknownNodeOutput;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -216,6 +226,10 @@ namespace Aws
             return "UnsatisfiedConnectionConditions";
           case FlowValidationType::Unspecified:
             return "Unspecified";
+          case FlowValidationType::UnknownNodeInput:
+            return "UnknownNodeInput";
+          case FlowValidationType::UnknownNodeOutput:
+            return "UnknownNodeOutput";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

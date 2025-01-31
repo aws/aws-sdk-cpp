@@ -40,7 +40,9 @@ namespace Model
     MultipleNodeInputConnections,
     UnfulfilledNodeInput,
     UnsatisfiedConnectionConditions,
-    Unspecified
+    Unspecified,
+    UnknownNodeInput,
+    UnknownNodeOutput
   };
 
 namespace FlowValidationTypeMapper

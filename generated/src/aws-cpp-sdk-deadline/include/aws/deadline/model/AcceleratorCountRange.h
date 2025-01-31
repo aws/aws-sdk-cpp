@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The range for the GPU fleet acceleration.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines the maximum and minimum number of GPU accelerators required for a
+   * worker instance..</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AcceleratorCountRange">AWS
    * API Reference</a></p>
    */
@@ -37,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a
-     * worker will still have 1 GPU.</p>
+     * <p>The minimum number of GPU accelerators in the worker host.</p>
      */
     inline int GetMin() const{ return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of GPUs for the accelerator.</p>
+     * <p>The maximum number of GPU accelerators in the worker host.</p>
      */
     inline int GetMax() const{ return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }

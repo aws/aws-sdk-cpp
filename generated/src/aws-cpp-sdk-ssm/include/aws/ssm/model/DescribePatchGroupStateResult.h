@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The number of managed nodes with <code>NotApplicable</code> patches beyond
      * the supported limit, which aren't reported by name to Inventory. Inventory is a
-     * capability of Amazon Web Services Systems Manager.</p>
+     * tool in Amazon Web Services Systems Manager.</p>
      */
     inline int GetInstancesWithUnreportedNotApplicablePatches() const{ return m_instancesWithUnreportedNotApplicablePatches; }
     inline void SetInstancesWithUnreportedNotApplicablePatches(int value) { m_instancesWithUnreportedNotApplicablePatches = value; }

@@ -40,7 +40,8 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
-    m_videoContentSourceUrlHasBeenSet(false)
+    m_videoContentSourceUrlHasBeenSet(false),
+    m_adConditioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_videoContentSourceUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdConditioningConfiguration"))
+  {
+    m_adConditioningConfiguration = jsonValue.GetObject("AdConditioningConfiguration");
+
+    m_adConditioningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -342,6 +350,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_videoContentSourceUrlHasBeenSet)
   {
    payload.WithString("VideoContentSourceUrl", m_videoContentSourceUrl);
+
+  }
+
+  if(m_adConditioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("AdConditioningConfiguration", m_adConditioningConfiguration.Jsonize());
 
   }
 

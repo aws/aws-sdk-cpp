@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The single audience for GetChannelScheduleRequest.</p>
-     */
-    inline const Aws::String& GetAudience() const{ return m_audience; }
-    inline bool AudienceHasBeenSet() const { return m_audienceHasBeenSet; }
-    inline void SetAudience(const Aws::String& value) { m_audienceHasBeenSet = true; m_audience = value; }
-    inline void SetAudience(Aws::String&& value) { m_audienceHasBeenSet = true; m_audience = std::move(value); }
-    inline void SetAudience(const char* value) { m_audienceHasBeenSet = true; m_audience.assign(value); }
-    inline GetChannelScheduleRequest& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
-    inline GetChannelScheduleRequest& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
-    inline GetChannelScheduleRequest& WithAudience(const char* value) { SetAudience(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the channel associated with this Channel Schedule.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
@@ -113,10 +99,21 @@ namespace Model
     inline GetChannelScheduleRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline GetChannelScheduleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_audience;
-    bool m_audienceHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The single audience for GetChannelScheduleRequest.</p>
+     */
+    inline const Aws::String& GetAudience() const{ return m_audience; }
+    inline bool AudienceHasBeenSet() const { return m_audienceHasBeenSet; }
+    inline void SetAudience(const Aws::String& value) { m_audienceHasBeenSet = true; m_audience = value; }
+    inline void SetAudience(Aws::String&& value) { m_audienceHasBeenSet = true; m_audience = std::move(value); }
+    inline void SetAudience(const char* value) { m_audienceHasBeenSet = true; m_audience.assign(value); }
+    inline GetChannelScheduleRequest& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
+    inline GetChannelScheduleRequest& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
+    inline GetChannelScheduleRequest& WithAudience(const char* value) { SetAudience(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
@@ -129,6 +126,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_audience;
+    bool m_audienceHasBeenSet = false;
   };
 
 } // namespace Model

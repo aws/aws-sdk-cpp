@@ -35,21 +35,25 @@
 #include <aws/deadline/model/CreateFleetRequest.h>
 #include <aws/deadline/model/CreateJobRequest.h>
 #include <aws/deadline/model/CreateLicenseEndpointRequest.h>
+#include <aws/deadline/model/CreateLimitRequest.h>
 #include <aws/deadline/model/CreateMonitorRequest.h>
 #include <aws/deadline/model/CreateQueueRequest.h>
 #include <aws/deadline/model/CreateQueueEnvironmentRequest.h>
 #include <aws/deadline/model/CreateQueueFleetAssociationRequest.h>
+#include <aws/deadline/model/CreateQueueLimitAssociationRequest.h>
 #include <aws/deadline/model/CreateStorageProfileRequest.h>
 #include <aws/deadline/model/CreateWorkerRequest.h>
 #include <aws/deadline/model/DeleteBudgetRequest.h>
 #include <aws/deadline/model/DeleteFarmRequest.h>
 #include <aws/deadline/model/DeleteFleetRequest.h>
 #include <aws/deadline/model/DeleteLicenseEndpointRequest.h>
+#include <aws/deadline/model/DeleteLimitRequest.h>
 #include <aws/deadline/model/DeleteMeteredProductRequest.h>
 #include <aws/deadline/model/DeleteMonitorRequest.h>
 #include <aws/deadline/model/DeleteQueueRequest.h>
 #include <aws/deadline/model/DeleteQueueEnvironmentRequest.h>
 #include <aws/deadline/model/DeleteQueueFleetAssociationRequest.h>
+#include <aws/deadline/model/DeleteQueueLimitAssociationRequest.h>
 #include <aws/deadline/model/DeleteStorageProfileRequest.h>
 #include <aws/deadline/model/DeleteWorkerRequest.h>
 #include <aws/deadline/model/DisassociateMemberFromFarmRequest.h>
@@ -61,10 +65,12 @@
 #include <aws/deadline/model/GetFleetRequest.h>
 #include <aws/deadline/model/GetJobRequest.h>
 #include <aws/deadline/model/GetLicenseEndpointRequest.h>
+#include <aws/deadline/model/GetLimitRequest.h>
 #include <aws/deadline/model/GetMonitorRequest.h>
 #include <aws/deadline/model/GetQueueRequest.h>
 #include <aws/deadline/model/GetQueueEnvironmentRequest.h>
 #include <aws/deadline/model/GetQueueFleetAssociationRequest.h>
+#include <aws/deadline/model/GetQueueLimitAssociationRequest.h>
 #include <aws/deadline/model/GetSessionRequest.h>
 #include <aws/deadline/model/GetSessionActionRequest.h>
 #include <aws/deadline/model/GetSessionsStatisticsAggregationRequest.h>
@@ -83,10 +89,12 @@
 #include <aws/deadline/model/ListJobParameterDefinitionsRequest.h>
 #include <aws/deadline/model/ListJobsRequest.h>
 #include <aws/deadline/model/ListLicenseEndpointsRequest.h>
+#include <aws/deadline/model/ListLimitsRequest.h>
 #include <aws/deadline/model/ListMeteredProductsRequest.h>
 #include <aws/deadline/model/ListMonitorsRequest.h>
 #include <aws/deadline/model/ListQueueEnvironmentsRequest.h>
 #include <aws/deadline/model/ListQueueFleetAssociationsRequest.h>
+#include <aws/deadline/model/ListQueueLimitAssociationsRequest.h>
 #include <aws/deadline/model/ListQueueMembersRequest.h>
 #include <aws/deadline/model/ListQueuesRequest.h>
 #include <aws/deadline/model/ListSessionActionsRequest.h>
@@ -112,10 +120,12 @@
 #include <aws/deadline/model/UpdateFarmRequest.h>
 #include <aws/deadline/model/UpdateFleetRequest.h>
 #include <aws/deadline/model/UpdateJobRequest.h>
+#include <aws/deadline/model/UpdateLimitRequest.h>
 #include <aws/deadline/model/UpdateMonitorRequest.h>
 #include <aws/deadline/model/UpdateQueueRequest.h>
 #include <aws/deadline/model/UpdateQueueEnvironmentRequest.h>
 #include <aws/deadline/model/UpdateQueueFleetAssociationRequest.h>
+#include <aws/deadline/model/UpdateQueueLimitAssociationRequest.h>
 #include <aws/deadline/model/UpdateSessionRequest.h>
 #include <aws/deadline/model/UpdateStepRequest.h>
 #include <aws/deadline/model/UpdateStorageProfileRequest.h>
@@ -843,6 +853,35 @@ CreateLicenseEndpointOutcome DeadlineClient::CreateLicenseEndpoint(const CreateL
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateLimitOutcome DeadlineClient::CreateLimit(const CreateLimitRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateLimit);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLimit", "Required field: FarmId, is not set");
+    return CreateLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateLimit",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateLimitOutcome>(
+    [&]()-> CreateLimitOutcome {
+      return CreateLimitOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/limits");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateMonitorOutcome DeadlineClient::CreateMonitor(const CreateMonitorRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateMonitor);
@@ -952,6 +991,35 @@ CreateQueueFleetAssociationOutcome DeadlineClient::CreateQueueFleetAssociation(c
       resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
       resolvedEndpoint.AddPathSegment(request.GetFarmId());
       resolvedEndpoint.AddPathSegments("/queue-fleet-associations");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateQueueLimitAssociationOutcome DeadlineClient::CreateQueueLimitAssociation(const CreateQueueLimitAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateQueueLimitAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateQueueLimitAssociation", "Required field: FarmId, is not set");
+    return CreateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateQueueLimitAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateQueueLimitAssociationOutcome>(
+    [&]()-> CreateQueueLimitAssociationOutcome {
+      return CreateQueueLimitAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/queue-limit-associations");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1150,6 +1218,41 @@ DeleteLicenseEndpointOutcome DeadlineClient::DeleteLicenseEndpoint(const DeleteL
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteLimitOutcome DeadlineClient::DeleteLimit(const DeleteLimitRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteLimit);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLimit", "Required field: FarmId, is not set");
+    return DeleteLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.LimitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLimit", "Required field: LimitId, is not set");
+    return DeleteLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LimitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteLimit",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteLimitOutcome>(
+    [&]()-> DeleteLimitOutcome {
+      return DeleteLimitOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/limits/");
+      resolvedEndpoint.AddPathSegment(request.GetLimitId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteMeteredProductOutcome DeadlineClient::DeleteMeteredProduct(const DeleteMeteredProductRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteMeteredProduct);
@@ -1324,6 +1427,47 @@ DeleteQueueFleetAssociationOutcome DeadlineClient::DeleteQueueFleetAssociation(c
       resolvedEndpoint.AddPathSegments("/queue-fleet-associations/");
       resolvedEndpoint.AddPathSegment(request.GetQueueId());
       resolvedEndpoint.AddPathSegment(request.GetFleetId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteQueueLimitAssociationOutcome DeadlineClient::DeleteQueueLimitAssociation(const DeleteQueueLimitAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteQueueLimitAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueueLimitAssociation", "Required field: FarmId, is not set");
+    return DeleteQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueueLimitAssociation", "Required field: QueueId, is not set");
+    return DeleteQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.LimitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueueLimitAssociation", "Required field: LimitId, is not set");
+    return DeleteQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LimitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteQueueLimitAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteQueueLimitAssociationOutcome>(
+    [&]()-> DeleteQueueLimitAssociationOutcome {
+      return DeleteQueueLimitAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/queue-limit-associations/");
+      resolvedEndpoint.AddPathSegment(request.GetQueueId());
+      resolvedEndpoint.AddPathSegment(request.GetLimitId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1683,15 +1827,15 @@ GetJobOutcome DeadlineClient::GetJob(const GetJobRequest& request) const
     AWS_LOGSTREAM_ERROR("GetJob", "Required field: FarmId, is not set");
     return GetJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
   }
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobId, is not set");
-    return GetJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
   if (!request.QueueIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetJob", "Required field: QueueId, is not set");
     return GetJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobId, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1737,6 +1881,41 @@ GetLicenseEndpointOutcome DeadlineClient::GetLicenseEndpoint(const GetLicenseEnd
       return GetLicenseEndpointOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       resolvedEndpoint.AddPathSegments("/2023-10-12/license-endpoints/");
       resolvedEndpoint.AddPathSegment(request.GetLicenseEndpointId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetLimitOutcome DeadlineClient::GetLimit(const GetLimitRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetLimit);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLimit", "Required field: FarmId, is not set");
+    return GetLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.LimitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLimit", "Required field: LimitId, is not set");
+    return GetLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LimitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetLimit",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetLimitOutcome>(
+    [&]()-> GetLimitOutcome {
+      return GetLimitOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/limits/");
+      resolvedEndpoint.AddPathSegment(request.GetLimitId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1883,6 +2062,47 @@ GetQueueFleetAssociationOutcome DeadlineClient::GetQueueFleetAssociation(const G
       resolvedEndpoint.AddPathSegments("/queue-fleet-associations/");
       resolvedEndpoint.AddPathSegment(request.GetQueueId());
       resolvedEndpoint.AddPathSegment(request.GetFleetId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetQueueLimitAssociationOutcome DeadlineClient::GetQueueLimitAssociation(const GetQueueLimitAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetQueueLimitAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueueLimitAssociation", "Required field: FarmId, is not set");
+    return GetQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueueLimitAssociation", "Required field: QueueId, is not set");
+    return GetQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.LimitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueueLimitAssociation", "Required field: LimitId, is not set");
+    return GetQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LimitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetQueueLimitAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetQueueLimitAssociationOutcome>(
+    [&]()-> GetQueueLimitAssociationOutcome {
+      return GetQueueLimitAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/queue-limit-associations/");
+      resolvedEndpoint.AddPathSegment(request.GetQueueId());
+      resolvedEndpoint.AddPathSegment(request.GetLimitId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2557,6 +2777,35 @@ ListLicenseEndpointsOutcome DeadlineClient::ListLicenseEndpoints(const ListLicen
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListLimitsOutcome DeadlineClient::ListLimits(const ListLimitsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListLimits);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListLimits", "Required field: FarmId, is not set");
+    return ListLimitsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListLimits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListLimits",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListLimitsOutcome>(
+    [&]()-> ListLimitsOutcome {
+      return ListLimitsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/limits");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListMeteredProductsOutcome DeadlineClient::ListMeteredProducts(const ListMeteredProductsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListMeteredProducts);
@@ -2666,6 +2915,35 @@ ListQueueFleetAssociationsOutcome DeadlineClient::ListQueueFleetAssociations(con
       resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
       resolvedEndpoint.AddPathSegment(request.GetFarmId());
       resolvedEndpoint.AddPathSegments("/queue-fleet-associations");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListQueueLimitAssociationsOutcome DeadlineClient::ListQueueLimitAssociations(const ListQueueLimitAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListQueueLimitAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueLimitAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListQueueLimitAssociations", "Required field: FarmId, is not set");
+    return ListQueueLimitAssociationsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListQueueLimitAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListQueueLimitAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListQueueLimitAssociations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListQueueLimitAssociationsOutcome>(
+    [&]()-> ListQueueLimitAssociationsOutcome {
+      return ListQueueLimitAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/queue-limit-associations");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -3570,6 +3848,41 @@ UpdateJobOutcome DeadlineClient::UpdateJob(const UpdateJobRequest& request) cons
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+UpdateLimitOutcome DeadlineClient::UpdateLimit(const UpdateLimitRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateLimit);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLimit", "Required field: FarmId, is not set");
+    return UpdateLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.LimitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLimit", "Required field: LimitId, is not set");
+    return UpdateLimitOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LimitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateLimit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateLimit",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateLimitOutcome>(
+    [&]()-> UpdateLimitOutcome {
+      return UpdateLimitOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/limits/");
+      resolvedEndpoint.AddPathSegment(request.GetLimitId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 UpdateMonitorOutcome DeadlineClient::UpdateMonitor(const UpdateMonitorRequest& request) const
 {
   AWS_OPERATION_GUARD(UpdateMonitor);
@@ -3709,6 +4022,47 @@ UpdateQueueFleetAssociationOutcome DeadlineClient::UpdateQueueFleetAssociation(c
       resolvedEndpoint.AddPathSegments("/queue-fleet-associations/");
       resolvedEndpoint.AddPathSegment(request.GetQueueId());
       resolvedEndpoint.AddPathSegment(request.GetFleetId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateQueueLimitAssociationOutcome DeadlineClient::UpdateQueueLimitAssociation(const UpdateQueueLimitAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateQueueLimitAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueLimitAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FarmIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueueLimitAssociation", "Required field: FarmId, is not set");
+    return UpdateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FarmId]", false));
+  }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueueLimitAssociation", "Required field: QueueId, is not set");
+    return UpdateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  if (!request.LimitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueueLimitAssociation", "Required field: LimitId, is not set");
+    return UpdateQueueLimitAssociationOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LimitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateQueueLimitAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateQueueLimitAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateQueueLimitAssociationOutcome>(
+    [&]()-> UpdateQueueLimitAssociationOutcome {
+      return UpdateQueueLimitAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2023-10-12/farms/");
+      resolvedEndpoint.AddPathSegment(request.GetFarmId());
+      resolvedEndpoint.AddPathSegments("/queue-limit-associations/");
+      resolvedEndpoint.AddPathSegment(request.GetQueueId());
+      resolvedEndpoint.AddPathSegment(request.GetLimitId());
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the table.</p>
+     * <p>The Amazon Resource Name (ARN) of the table.</p>
      */
     inline const Aws::String& GetTableARN() const{ return m_tableARN; }
     inline bool TableARNHasBeenSet() const { return m_tableARNHasBeenSet; }

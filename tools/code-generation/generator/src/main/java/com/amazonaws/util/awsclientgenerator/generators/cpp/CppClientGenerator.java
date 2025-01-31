@@ -229,7 +229,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
             boolean hasSigV4AOperation = serviceModel.getOperations().values().stream()
                     .anyMatch(op -> op.getAuth() != null && op.getAuth().contains("aws.auth#sigv4a"));
 
-            if (serviceModel.getEndpointRules().contains("\"sigv4a\"") || hasSigV4AOperation) {
+            if (serviceModel.getEndpointRules() != null &&
+                    (serviceModel.getEndpointRules().contains("\"sigv4a\"") || hasSigV4AOperation)) {
                 throw new RuntimeException("Endpoint rules or operation reference sigv4a auth scheme but c2j model " + serviceId +
                         " does not list aws.auth#sigv4a as a supported auth!");
             }

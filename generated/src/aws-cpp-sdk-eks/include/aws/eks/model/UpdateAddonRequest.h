@@ -165,8 +165,8 @@ namespace Model
      * left blank, no change. If an empty array is provided, existing Pod Identity
      * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
-     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
-     * Guide.</p>
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS
+     * User Guide</i>.</p>
      */
     inline const Aws::Vector<AddonPodIdentityAssociations>& GetPodIdentityAssociations() const{ return m_podIdentityAssociations; }
     inline bool PodIdentityAssociationsHasBeenSet() const { return m_podIdentityAssociationsHasBeenSet; }

@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration of a destination in Amazon ES.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the configuration of a destination in Amazon OpenSearch
+   * Service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -50,8 +50,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
-     * calling the Amazon ES Configuration API and for indexing documents. For more
-     * information, see <a
+     * calling the Amazon OpenSearch Service Configuration API and for indexing
+     * documents. For more information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -69,8 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
      * <code>DescribeDomainConfig</code> after assuming the role specified in
      * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -139,7 +139,7 @@ namespace Model
      * to the <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-     * Rotation for the Amazon ES Destination</a>. The default value
+     * Rotation for the Amazon OpenSearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
     inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
@@ -166,7 +166,7 @@ namespace Model
     ///@{
     /**
      * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
-     * ES. The default value is 300 (5 minutes).</p>
+     * OpenSearch Service. The default value is 300 (5 minutes).</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
@@ -187,7 +187,7 @@ namespace Model
      * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
-     * S3 Backup for the Amazon ES Destination</a>. Default value is
+     * S3 Backup for the Amazon OpenSearch Service Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
      * you create the Firehose stream. </p>
      */

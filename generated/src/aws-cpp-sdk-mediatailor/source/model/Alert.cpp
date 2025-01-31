@@ -21,11 +21,11 @@ namespace Model
 Alert::Alert() : 
     m_alertCodeHasBeenSet(false),
     m_alertMessageHasBeenSet(false),
-    m_category(AlertCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_relatedResourceArnsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_category(AlertCategory::NOT_SET),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -49,13 +49,6 @@ Alert& Alert::operator =(JsonView jsonValue)
     m_alertMessage = jsonValue.GetString("AlertMessage");
 
     m_alertMessageHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Category"))
-  {
-    m_category = AlertCategoryMapper::GetAlertCategoryForName(jsonValue.GetString("Category"));
-
-    m_categoryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModifiedTime"))
@@ -82,6 +75,13 @@ Alert& Alert::operator =(JsonView jsonValue)
     m_resourceArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Category"))
+  {
+    m_category = AlertCategoryMapper::GetAlertCategoryForName(jsonValue.GetString("Category"));
+
+    m_categoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,11 +99,6 @@ JsonValue Alert::Jsonize() const
   {
    payload.WithString("AlertMessage", m_alertMessage);
 
-  }
-
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("Category", AlertCategoryMapper::GetNameForAlertCategory(m_category));
   }
 
   if(m_lastModifiedTimeHasBeenSet)
@@ -126,6 +121,11 @@ JsonValue Alert::Jsonize() const
   {
    payload.WithString("ResourceArn", m_resourceArn);
 
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", AlertCategoryMapper::GetNameForAlertCategory(m_category));
   }
 
   return payload;

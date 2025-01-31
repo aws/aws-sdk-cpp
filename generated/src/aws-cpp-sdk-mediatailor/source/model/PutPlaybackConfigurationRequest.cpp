@@ -29,7 +29,8 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
-    m_videoContentSourceUrlHasBeenSet(false)
+    m_videoContentSourceUrlHasBeenSet(false),
+    m_adConditioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_videoContentSourceUrlHasBeenSet)
   {
    payload.WithString("VideoContentSourceUrl", m_videoContentSourceUrl);
+
+  }
+
+  if(m_adConditioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("AdConditioningConfiguration", m_adConditioningConfiguration.Jsonize());
 
   }
 

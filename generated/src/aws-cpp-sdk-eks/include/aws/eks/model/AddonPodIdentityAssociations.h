@@ -28,8 +28,8 @@ namespace Model
    * EKS Pod Identity Association maps a role to a service account in a namespace in
    * the cluster.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
-   * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonPodIdentityAssociations">AWS
    * API Reference</a></p>
    */

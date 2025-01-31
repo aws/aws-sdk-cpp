@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Q Business application.</p>
+     * <p>The unique identifier of the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of Q Business actions that the ISV is allowed to perform.</p>
+     * <p>The list of Amazon Q Business actions that the ISV is allowed to perform.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
@@ -78,8 +78,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role for the ISV that is being
-     * granted permission.</p>
+     * <p>The Amazon Resource Name of the IAM role for the ISV that is being granted
+     * permission.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

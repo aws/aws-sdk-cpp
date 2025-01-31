@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Configures retry behavior in case Firehose is unable to deliver documents to
-   * Amazon ES.</p><p><h3>See Also:</h3>   <a
+   * Amazon OpenSearch Service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchRetryOptions">AWS
    * API Reference</a></p>
    */
@@ -38,10 +38,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>After an initial failure to deliver to Amazon ES, the total amount of time
-     * during which Firehose retries delivery (including the first attempt). After this
-     * time has elapsed, the failed documents are written to Amazon S3. Default value
-     * is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
+     * <p>After an initial failure to deliver to Amazon OpenSearch Service, the total
+     * amount of time during which Firehose retries delivery (including the first
+     * attempt). After this time has elapsed, the failed documents are written to
+     * Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results
+     * in no retries.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }

@@ -31,8 +31,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>An audio blob that contains the next part of the audio that you want to
-     * transcribe. The maximum audio chunk size is 32 KB.</p>
+     * <p> An audio blob containing the next segment of audio from your application,
+     * with a maximum duration of 1 second. The maximum size in bytes varies based on
+     * audio properties. </p> <p>Find recommended size in <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#best-practices">Transcribing
+     * streaming best practices</a>. </p> <p> Size calculation: <code>Duration (s) *
+     * Sample Rate (Hz) * Number of Channels * 2 (Bytes per Sample)</code> </p> <p> For
+     * example, a 1-second chunk of 16 kHz, 2-channel, 16-bit audio would be <code>1 *
+     * 16000 * 2 * 2 = 64000 bytes</code>. </p> <p> For 8 kHz, 1-channel, 16-bit audio,
+     * a 1-second chunk would be <code>1 * 8000 * 1 * 2 = 16000 bytes</code>. </p>
      */
     inline const Aws::Vector<unsigned char>& GetAudioChunk() const { return m_audioChunk; }
     inline Aws::Vector<unsigned char>&& GetAudioChunkWithOwnership() { return std::move(m_audioChunk); }

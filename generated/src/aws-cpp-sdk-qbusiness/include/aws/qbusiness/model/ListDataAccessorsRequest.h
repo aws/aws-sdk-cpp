@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Q Business application.</p>
+     * <p>The unique identifier of the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }

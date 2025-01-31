@@ -52,20 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of AudienceMedia defined in program.</p>
-     */
-    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
-    inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
-    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
-    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
-    inline CreateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
-    inline CreateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
-    inline CreateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
-    inline CreateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the channel for this Program.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
@@ -145,13 +131,24 @@ namespace Model
     inline CreateProgramRequest& WithVodSourceName(Aws::String&& value) { SetVodSourceName(std::move(value)); return *this;}
     inline CreateProgramRequest& WithVodSourceName(const char* value) { SetVodSourceName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+    inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
+    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
+    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
+    inline CreateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
+    inline CreateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
+    inline CreateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
+    inline CreateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<AdBreak> m_adBreaks;
     bool m_adBreaksHasBeenSet = false;
-
-    Aws::Vector<AudienceMedia> m_audienceMedia;
-    bool m_audienceMediaHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
@@ -170,6 +167,9 @@ namespace Model
 
     Aws::String m_vodSourceName;
     bool m_vodSourceNameHasBeenSet = false;
+
+    Aws::Vector<AudienceMedia> m_audienceMedia;
+    bool m_audienceMediaHasBeenSet = false;
   };
 
 } // namespace Model

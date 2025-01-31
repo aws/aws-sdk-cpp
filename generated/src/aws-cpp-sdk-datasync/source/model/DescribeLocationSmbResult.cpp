@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationSmbResult::DescribeLocationSmbResult()
+DescribeLocationSmbResult::DescribeLocationSmbResult() : 
+    m_authenticationType(SmbAuthenticationType::NOT_SET)
 {
 }
 
 DescribeLocationSmbResult::DescribeLocationSmbResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLocationSmbResult()
 {
   *this = result;
 }
@@ -71,6 +73,27 @@ DescribeLocationSmbResult& DescribeLocationSmbResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
+  if(jsonValue.ValueExists("DnsIpAddresses"))
+  {
+    Aws::Utils::Array<JsonView> dnsIpAddressesJsonList = jsonValue.GetArray("DnsIpAddresses");
+    for(unsigned dnsIpAddressesIndex = 0; dnsIpAddressesIndex < dnsIpAddressesJsonList.GetLength(); ++dnsIpAddressesIndex)
+    {
+      m_dnsIpAddresses.push_back(dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("KerberosPrincipal"))
+  {
+    m_kerberosPrincipal = jsonValue.GetString("KerberosPrincipal");
+
+  }
+
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = SmbAuthenticationTypeMapper::GetSmbAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
 
   }
 

@@ -44,6 +44,7 @@ namespace Aws
         static const int MaxUnavailable_HASH = HashingUtils::HashString("MaxUnavailable");
         static const int MaxUnavailablePercentage_HASH = HashingUtils::HashString("MaxUnavailablePercentage");
         static const int NodeRepairEnabled_HASH = HashingUtils::HashString("NodeRepairEnabled");
+        static const int UpdateStrategy_HASH = HashingUtils::HashString("UpdateStrategy");
         static const int ConfigurationValues_HASH = HashingUtils::HashString("ConfigurationValues");
         static const int SecurityGroups_HASH = HashingUtils::HashString("SecurityGroups");
         static const int Subnets_HASH = HashingUtils::HashString("Subnets");
@@ -155,6 +156,10 @@ namespace Aws
           {
             return UpdateParamType::NodeRepairEnabled;
           }
+          else if (hashCode == UpdateStrategy_HASH)
+          {
+            return UpdateParamType::UpdateStrategy;
+          }
           else if (hashCode == ConfigurationValues_HASH)
           {
             return UpdateParamType::ConfigurationValues;
@@ -259,6 +264,8 @@ namespace Aws
             return "MaxUnavailablePercentage";
           case UpdateParamType::NodeRepairEnabled:
             return "NodeRepairEnabled";
+          case UpdateParamType::UpdateStrategy:
+            return "UpdateStrategy";
           case UpdateParamType::ConfigurationValues:
             return "ConfigurationValues";
           case UpdateParamType::SecurityGroups:

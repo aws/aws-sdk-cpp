@@ -21,6 +21,7 @@
 #include <aws/qbusiness/model/AssociatePermissionResult.h>
 #include <aws/qbusiness/model/BatchDeleteDocumentResult.h>
 #include <aws/qbusiness/model/BatchPutDocumentResult.h>
+#include <aws/qbusiness/model/CancelSubscriptionResult.h>
 #include <aws/qbusiness/model/ChatSyncResult.h>
 #include <aws/qbusiness/model/CreateApplicationResult.h>
 #include <aws/qbusiness/model/CreateDataAccessorResult.h>
@@ -28,6 +29,7 @@
 #include <aws/qbusiness/model/CreateIndexResult.h>
 #include <aws/qbusiness/model/CreatePluginResult.h>
 #include <aws/qbusiness/model/CreateRetrieverResult.h>
+#include <aws/qbusiness/model/CreateSubscriptionResult.h>
 #include <aws/qbusiness/model/CreateUserResult.h>
 #include <aws/qbusiness/model/CreateWebExperienceResult.h>
 #include <aws/qbusiness/model/DeleteApplicationResult.h>
@@ -69,6 +71,7 @@
 #include <aws/qbusiness/model/ListPluginTypeMetadataResult.h>
 #include <aws/qbusiness/model/ListPluginsResult.h>
 #include <aws/qbusiness/model/ListRetrieversResult.h>
+#include <aws/qbusiness/model/ListSubscriptionsResult.h>
 #include <aws/qbusiness/model/ListTagsForResourceResult.h>
 #include <aws/qbusiness/model/ListWebExperiencesResult.h>
 #include <aws/qbusiness/model/PutGroupResult.h>
@@ -84,6 +87,7 @@
 #include <aws/qbusiness/model/UpdateIndexResult.h>
 #include <aws/qbusiness/model/UpdatePluginResult.h>
 #include <aws/qbusiness/model/UpdateRetrieverResult.h>
+#include <aws/qbusiness/model/UpdateSubscriptionResult.h>
 #include <aws/qbusiness/model/UpdateUserResult.h>
 #include <aws/qbusiness/model/UpdateWebExperienceResult.h>
 #include <aws/qbusiness/model/ListPluginTypeMetadataRequest.h>
@@ -137,6 +141,7 @@ namespace Aws
       class AssociatePermissionRequest;
       class BatchDeleteDocumentRequest;
       class BatchPutDocumentRequest;
+      class CancelSubscriptionRequest;
       class ChatRequest;
       class ChatInputStream;
       class ChatSyncRequest;
@@ -146,6 +151,7 @@ namespace Aws
       class CreateIndexRequest;
       class CreatePluginRequest;
       class CreateRetrieverRequest;
+      class CreateSubscriptionRequest;
       class CreateUserRequest;
       class CreateWebExperienceRequest;
       class DeleteApplicationRequest;
@@ -187,6 +193,7 @@ namespace Aws
       class ListPluginTypeMetadataRequest;
       class ListPluginsRequest;
       class ListRetrieversRequest;
+      class ListSubscriptionsRequest;
       class ListTagsForResourceRequest;
       class ListWebExperiencesRequest;
       class PutFeedbackRequest;
@@ -203,6 +210,7 @@ namespace Aws
       class UpdateIndexRequest;
       class UpdatePluginRequest;
       class UpdateRetrieverRequest;
+      class UpdateSubscriptionRequest;
       class UpdateUserRequest;
       class UpdateWebExperienceRequest;
       /* End of service model forward declarations required in QBusinessClient header */
@@ -211,6 +219,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociatePermissionResult, QBusinessError> AssociatePermissionOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteDocumentResult, QBusinessError> BatchDeleteDocumentOutcome;
       typedef Aws::Utils::Outcome<BatchPutDocumentResult, QBusinessError> BatchPutDocumentOutcome;
+      typedef Aws::Utils::Outcome<CancelSubscriptionResult, QBusinessError> CancelSubscriptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, QBusinessError> ChatOutcome;
       typedef Aws::Utils::Outcome<ChatSyncResult, QBusinessError> ChatSyncOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, QBusinessError> CreateApplicationOutcome;
@@ -219,6 +228,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateIndexResult, QBusinessError> CreateIndexOutcome;
       typedef Aws::Utils::Outcome<CreatePluginResult, QBusinessError> CreatePluginOutcome;
       typedef Aws::Utils::Outcome<CreateRetrieverResult, QBusinessError> CreateRetrieverOutcome;
+      typedef Aws::Utils::Outcome<CreateSubscriptionResult, QBusinessError> CreateSubscriptionOutcome;
       typedef Aws::Utils::Outcome<CreateUserResult, QBusinessError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<CreateWebExperienceResult, QBusinessError> CreateWebExperienceOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationResult, QBusinessError> DeleteApplicationOutcome;
@@ -260,6 +270,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPluginTypeMetadataResult, QBusinessError> ListPluginTypeMetadataOutcome;
       typedef Aws::Utils::Outcome<ListPluginsResult, QBusinessError> ListPluginsOutcome;
       typedef Aws::Utils::Outcome<ListRetrieversResult, QBusinessError> ListRetrieversOutcome;
+      typedef Aws::Utils::Outcome<ListSubscriptionsResult, QBusinessError> ListSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, QBusinessError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListWebExperiencesResult, QBusinessError> ListWebExperiencesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, QBusinessError> PutFeedbackOutcome;
@@ -276,6 +287,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateIndexResult, QBusinessError> UpdateIndexOutcome;
       typedef Aws::Utils::Outcome<UpdatePluginResult, QBusinessError> UpdatePluginOutcome;
       typedef Aws::Utils::Outcome<UpdateRetrieverResult, QBusinessError> UpdateRetrieverOutcome;
+      typedef Aws::Utils::Outcome<UpdateSubscriptionResult, QBusinessError> UpdateSubscriptionOutcome;
       typedef Aws::Utils::Outcome<UpdateUserResult, QBusinessError> UpdateUserOutcome;
       typedef Aws::Utils::Outcome<UpdateWebExperienceResult, QBusinessError> UpdateWebExperienceOutcome;
       /* End of service model Outcome class definitions */
@@ -284,6 +296,7 @@ namespace Aws
       typedef std::future<AssociatePermissionOutcome> AssociatePermissionOutcomeCallable;
       typedef std::future<BatchDeleteDocumentOutcome> BatchDeleteDocumentOutcomeCallable;
       typedef std::future<BatchPutDocumentOutcome> BatchPutDocumentOutcomeCallable;
+      typedef std::future<CancelSubscriptionOutcome> CancelSubscriptionOutcomeCallable;
       typedef std::future<ChatOutcome> ChatOutcomeCallable;
       typedef std::future<ChatSyncOutcome> ChatSyncOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
@@ -292,6 +305,7 @@ namespace Aws
       typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
       typedef std::future<CreatePluginOutcome> CreatePluginOutcomeCallable;
       typedef std::future<CreateRetrieverOutcome> CreateRetrieverOutcomeCallable;
+      typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
       typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
       typedef std::future<CreateWebExperienceOutcome> CreateWebExperienceOutcomeCallable;
       typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
@@ -333,6 +347,7 @@ namespace Aws
       typedef std::future<ListPluginTypeMetadataOutcome> ListPluginTypeMetadataOutcomeCallable;
       typedef std::future<ListPluginsOutcome> ListPluginsOutcomeCallable;
       typedef std::future<ListRetrieversOutcome> ListRetrieversOutcomeCallable;
+      typedef std::future<ListSubscriptionsOutcome> ListSubscriptionsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListWebExperiencesOutcome> ListWebExperiencesOutcomeCallable;
       typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
@@ -349,6 +364,7 @@ namespace Aws
       typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
       typedef std::future<UpdatePluginOutcome> UpdatePluginOutcomeCallable;
       typedef std::future<UpdateRetrieverOutcome> UpdateRetrieverOutcomeCallable;
+      typedef std::future<UpdateSubscriptionOutcome> UpdateSubscriptionOutcomeCallable;
       typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
       typedef std::future<UpdateWebExperienceOutcome> UpdateWebExperienceOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -360,6 +376,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::AssociatePermissionRequest&, const Model::AssociatePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePermissionResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::BatchDeleteDocumentRequest&, const Model::BatchDeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDocumentResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::BatchPutDocumentRequest&, const Model::BatchPutDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDocumentResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::CancelSubscriptionRequest&, const Model::CancelSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSubscriptionResponseReceivedHandler;
     typedef std::function<void(Model::ChatInputStream&)> ChatStreamReadyHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ChatRequest&, const Model::ChatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChatResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ChatSyncRequest&, const Model::ChatSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChatSyncResponseReceivedHandler;
@@ -369,6 +386,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreatePluginRequest&, const Model::CreatePluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePluginResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateRetrieverRequest&, const Model::CreateRetrieverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRetrieverResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::CreateSubscriptionRequest&, const Model::CreateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateWebExperienceRequest&, const Model::CreateWebExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebExperienceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
@@ -410,6 +428,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::ListPluginTypeMetadataRequest&, const Model::ListPluginTypeMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPluginTypeMetadataResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListPluginsRequest&, const Model::ListPluginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPluginsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListRetrieversRequest&, const Model::ListRetrieversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRetrieversResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListWebExperiencesRequest&, const Model::ListWebExperiencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebExperiencesResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
@@ -426,6 +445,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdatePluginRequest&, const Model::UpdatePluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePluginResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateRetrieverRequest&, const Model::UpdateRetrieverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRetrieverResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::UpdateSubscriptionRequest&, const Model::UpdateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::UpdateWebExperienceRequest&, const Model::UpdateWebExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebExperienceResponseReceivedHandler;
     /* End of service model async handlers definitions */

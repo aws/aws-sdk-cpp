@@ -29,8 +29,6 @@ ENDPOINT_RULES_LOCATION = "./code-generation/endpoints/"
 PARTITIONS_FILE_LOCATION = "../partitions/partitions.json"  # Relative to models dir
 DEFAULTS_FILE_LOCATION = "../defaults/sdk-default-configuration.json"  # Relative to models dir
 DEFAULT_GENERATOR_LOCATION = "code-generation/generator/"
-GENERATOR_TARGET_DIR = "target"
-GENERATOR_JAR = GENERATOR_TARGET_DIR + "/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
                            "partitions": PARTITIONS_FILE_LOCATION}
@@ -47,6 +45,7 @@ SERVICE_MODEL_FILENAME_PATTERN = re.compile(
 class LegacyC2jCppGen(object):
     """A wrapper for AWS SDK for C++ clients and core components generator
     """
+    GENERATOR_JAR = "target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
     def __init__(self, args: dict, c2j_models: dict):
         self.debug = args.get("debug", False)
@@ -162,7 +161,7 @@ class LegacyC2jCppGen(object):
             output_filename = "STDOUT"
 
         model_filepath = self.path_to_api_definitions + "/" + model_files.c2j_model
-        generator_jar = self.path_to_generator + "/" + GENERATOR_JAR
+        generator_jar = self.path_to_generator + "/" + self.GENERATOR_JAR
         run_command = list()
         run_command.append("java")
         run_command += ["-jar", generator_jar]
@@ -186,22 +185,22 @@ class LegacyC2jCppGen(object):
                         service_name: str,
                         model_files: ServiceModel,
                         output_dir: str,
-                        tmp_dir: str):
+                        tmp_dir: str) -> (str, int):
         """
         Generate a single AWS SDK CPP client
         :param service_name: name of the c2j service model
         :param model_files: a ServiceModel descriptor with c2j model and endpoints rules filenames
         :param output_dir: a destination directory where to extract the generated client
         :param tmp_dir: optional, a temporary directory to be used by the c2j codegen, a pipe redirection is default.
-        :return:
+        :return: service_name, status
         """
         run_command, output_filename = self._init_common_java_cli(service_name, model_files, tmp_dir,
                                                                   self.raw_generator_arguments)
 
-        output_zip_file = self._run_generator_once(service_name, run_command, output_filename)
+        output_zip_file = self.run_generator_once(service_name, run_command, output_filename)
         dir_to_delete = f"{output_dir}/aws-cpp-sdk-{service_name}"
         dir_to_extract = f"{output_dir}/"
-        service_name, status = self._extract_zip(output_zip_file, service_name, dir_to_extract, dir_to_delete)
+        service_name, status = self.extract_zip(output_zip_file, service_name, dir_to_extract, dir_to_delete)
 
         return service_name, status
 
@@ -226,12 +225,12 @@ class LegacyC2jCppGen(object):
                                                                   self.raw_generator_arguments)
         run_command.append("--generate-tests")
 
-        output_zip_file = self._run_generator_once(service_name, run_command, output_filename)
+        output_zip_file = self.run_generator_once(service_name, run_command, output_filename)
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         dir_to_delete = f"{output_dir}/{service_name}-gen-tests"
 
-        return self._extract_zip(output_zip_file, f"{service_name}-gen-tests", output_dir, dir_to_delete)
+        return self.extract_zip(output_zip_file, f"{service_name}-gen-tests", output_dir, dir_to_delete)
 
     def _generate_single_service(self,
                                  service_name: str,
@@ -246,7 +245,7 @@ class LegacyC2jCppGen(object):
 
         return service_name, status
 
-    def _run_generator_once(self, service_name: str, run_command: list, output_filename: str):
+    def run_generator_once(self, service_name: str, run_command: list, output_filename: str):
         """Helper function to call generator once in a subprocess
 
         :param service_name: argument used purely for tracing/logging
@@ -278,7 +277,7 @@ class LegacyC2jCppGen(object):
         return output_zip_file
 
     @staticmethod
-    def _extract_zip(zip_bytes: io.BytesIO, service_name: str, output_dir: str, dir_to_delete: str):
+    def extract_zip(zip_bytes: io.BytesIO, service_name: str, output_dir: str, dir_to_delete: str):
         """Extract bytes containing zip file to output_dir
 
         :param zip_bytes: raw bytes containing zip (opened file or io.BytesIO)
@@ -330,7 +329,7 @@ class LegacyC2jCppGen(object):
             output_filename = "STDOUT"
 
         full_model_file_path = f"{self.path_to_api_definitions}/{model_file_path}"
-        generator_jar = self.path_to_generator + "/" + GENERATOR_JAR
+        generator_jar = self.path_to_generator + "/" + self.GENERATOR_JAR
         run_command = list()
         run_command.append("java")
         run_command += ["-jar", generator_jar]
@@ -342,6 +341,6 @@ class LegacyC2jCppGen(object):
         for key, val in kwargs.items():
             run_command += [f"--{key}", val]
 
-        output_zip_file = self._run_generator_once(f"core/{component_name}", run_command, output_filename)
+        output_zip_file = self.run_generator_once(f"core/{component_name}", run_command, output_filename)
 
-        return self._extract_zip(output_zip_file, f"core/{component_name}", output_dir, None)
+        return self.extract_zip(output_zip_file, f"core/{component_name}", output_dir, None)

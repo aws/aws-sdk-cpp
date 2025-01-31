@@ -63,7 +63,7 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
       m_credentialsProvider(credentialsProvider),
       m_serviceName(serviceName),
       m_region(region),
-      m_unsignedHeaders({USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID}),
+      m_unsignedHeaders({USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID, TRANSFER_ENCODING_HEADER}),
       m_payloadSigningPolicy(signingPolicy),
       m_urlEscapePath(urlEscapePath) {
   // go ahead and warm up the signing cache.

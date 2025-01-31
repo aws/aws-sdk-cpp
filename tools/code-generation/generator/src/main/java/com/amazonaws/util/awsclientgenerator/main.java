@@ -30,6 +30,9 @@ public class main {
     static final String INPUT_FILE_NAME = "inputfile";
     static final String ENDPOINT_RULE_SET = "endpoint-rule-set";
     static final String ENDPOINT_TESTS = "endpoint-tests";
+    static final String PROTOCOL_TESTS = "protocol-tests";
+    static final String PROTOCOL_TESTS_TYPE = "protocol-tests-type"; // ex: "input" or "output"
+    static final String PROTOCOL_TESTS_NAME = "protocol-tests-name"; // ex: "xml" or "json", ...
     static final String OUTPUT_FILE_NAME = "outputfile";
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
@@ -57,9 +60,7 @@ public class main {
         //AWSClientGenerator --service myService --language-binding cpp < /home/henso/someC2jFile.normal.json
         if (argPairs.containsKey(ARBITRARY_OPTION) || argPairs.containsKey(INPUT_FILE_NAME)) {
             if (!argPairs.containsKey(LANGUAGE_BINDING_OPTION) || argPairs.get(LANGUAGE_BINDING_OPTION).isEmpty()) {
-                System.err.println("Error: A language binding must be specified with the --arbitrary option.");
-                System.exit(-1);
-                return;
+                argPairs.put(LANGUAGE_BINDING_OPTION, "cpp"); // legacy argument and in fact always cpp in this project
             }
             final Set<String> ALLOWED_OPTIONS = new HashSet<>(Arrays.asList(SERVICE_OPTION, DEFAULTS_OPTION, PARTITIONS_OPTION));
             Set<String> selectedOptions = ALLOWED_OPTIONS;
@@ -95,6 +96,18 @@ public class main {
             if (argPairs.containsKey(ENDPOINT_TESTS)) {
                 endpointRuleTests = readFile(argPairs.get(ENDPOINT_TESTS));
             }
+            String protocolTests = null;
+            if (argPairs.containsKey(PROTOCOL_TESTS)) {
+                protocolTests = readFile(argPairs.get(PROTOCOL_TESTS));
+            }
+            String protocolTestsType = "";
+            if (argPairs.containsKey(PROTOCOL_TESTS_TYPE) && !argPairs.get(PROTOCOL_TESTS_TYPE).isEmpty()) {
+                protocolTestsType = argPairs.get(PROTOCOL_TESTS_TYPE);
+            }
+            String protocolTestsName = "";
+            if (argPairs.containsKey(PROTOCOL_TESTS_NAME) && !argPairs.get(PROTOCOL_TESTS_NAME).isEmpty()) {
+                protocolTestsName = argPairs.get(PROTOCOL_TESTS_NAME);
+            }
 
             String outputFileName = null;
             if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
@@ -114,11 +127,20 @@ public class main {
                                     licenseText, generateStandalonePackage, enableVirtualOperations, useSmithyClient);
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
-                        } else {
+                        } else if (argPairs.containsKey(ENDPOINT_TESTS)) {
                             generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                     licenseText);
 
                             componentOutputName = String.format("%s-gen-tests", serviceName);
+                        } else if (argPairs.containsKey(PROTOCOL_TESTS)) {
+                            generated = generateProtocolTest(arbitraryJson, protocolTests, protocolTestsType, protocolTestsName, serviceName);
+
+                            componentOutputName = String.format("%s", serviceName);
+                        } else {
+                            generated = new ByteArrayOutputStream();
+                            componentOutputName = "";
+                            System.out.println("Unknown component to generate!");
+                            System.exit(-1);
                         }
                     } else {
                         if (generateTests) {
@@ -219,6 +241,23 @@ public class main {
                 serviceName,
                 namespace,
                 licenseText);
+        return outputStream;
+    }
+
+    private static ByteArrayOutputStream generateProtocolTest(String c2jModelJson,
+                                                              String protocolTestsJson,
+                                                              String protocolTestsType,
+                                                              String protocolTestsName,
+                                                              String serviceName) throws Exception {
+        MainGenerator generator = new MainGenerator();
+        DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
+
+        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateProtocolTestSourceFromModels(
+                c2jModelJson,
+                protocolTestsJson,
+                protocolTestsType,
+                protocolTestsName,
+                serviceName);
         return outputStream;
     }
 

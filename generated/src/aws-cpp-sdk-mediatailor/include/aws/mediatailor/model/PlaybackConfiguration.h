@@ -16,6 +16,7 @@
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/mediatailor/model/LogConfiguration.h>
 #include <aws/mediatailor/model/ManifestProcessingRules.h>
+#include <aws/mediatailor/model/AdConditioningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
-     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain
      * Variables</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetConfigurationAliases() const{ return m_configurationAliases; }
@@ -188,7 +189,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+     * <p>Defines where AWS Elemental MediaTailor sends logs for the playback
+     * configuration.</p>
      */
     inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
@@ -360,6 +362,19 @@ namespace Model
     inline PlaybackConfiguration& WithVideoContentSourceUrl(Aws::String&& value) { SetVideoContentSourceUrl(std::move(value)); return *this;}
     inline PlaybackConfiguration& WithVideoContentSourceUrl(const char* value) { SetVideoContentSourceUrl(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The setting that indicates what conditioning MediaTailor will perform on ads
+     * that the ad decision server (ADS) returns.</p>
+     */
+    inline const AdConditioningConfiguration& GetAdConditioningConfiguration() const{ return m_adConditioningConfiguration; }
+    inline bool AdConditioningConfigurationHasBeenSet() const { return m_adConditioningConfigurationHasBeenSet; }
+    inline void SetAdConditioningConfiguration(const AdConditioningConfiguration& value) { m_adConditioningConfigurationHasBeenSet = true; m_adConditioningConfiguration = value; }
+    inline void SetAdConditioningConfiguration(AdConditioningConfiguration&& value) { m_adConditioningConfigurationHasBeenSet = true; m_adConditioningConfiguration = std::move(value); }
+    inline PlaybackConfiguration& WithAdConditioningConfiguration(const AdConditioningConfiguration& value) { SetAdConditioningConfiguration(value); return *this;}
+    inline PlaybackConfiguration& WithAdConditioningConfiguration(AdConditioningConfiguration&& value) { SetAdConditioningConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_adDecisionServerUrl;
@@ -421,6 +436,9 @@ namespace Model
 
     Aws::String m_videoContentSourceUrl;
     bool m_videoContentSourceUrlHasBeenSet = false;
+
+    AdConditioningConfiguration m_adConditioningConfiguration;
+    bool m_adConditioningConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

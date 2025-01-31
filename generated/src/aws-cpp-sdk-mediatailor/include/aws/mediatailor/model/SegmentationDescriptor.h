@@ -46,19 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The segment number to assign to the
-     * <code>segmentation_descriptor.segment_num</code> message, as defined in section
-     * 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256,
-     * inclusive. The default value is 0.</p>
-     */
-    inline int GetSegmentNum() const{ return m_segmentNum; }
-    inline bool SegmentNumHasBeenSet() const { return m_segmentNumHasBeenSet; }
-    inline void SetSegmentNum(int value) { m_segmentNumHasBeenSet = true; m_segmentNum = value; }
-    inline SegmentationDescriptor& WithSegmentNum(int value) { SetSegmentNum(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Event Identifier to assign to the
      * <code>segmentation_descriptor.segmentation_event_id</code> message, as defined
      * in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is
@@ -72,15 +59,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Type Identifier to assign to the
-     * <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in
-     * section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and
-     * 256, inclusive. The default value is 48.</p>
+     * <p>The Upid Type to assign to the
+     * <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined
+     * in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0
+     * and 256, inclusive. The default value is 14.</p>
      */
-    inline int GetSegmentationTypeId() const{ return m_segmentationTypeId; }
-    inline bool SegmentationTypeIdHasBeenSet() const { return m_segmentationTypeIdHasBeenSet; }
-    inline void SetSegmentationTypeId(int value) { m_segmentationTypeIdHasBeenSet = true; m_segmentationTypeId = value; }
-    inline SegmentationDescriptor& WithSegmentationTypeId(int value) { SetSegmentationTypeId(value); return *this;}
+    inline int GetSegmentationUpidType() const{ return m_segmentationUpidType; }
+    inline bool SegmentationUpidTypeHasBeenSet() const { return m_segmentationUpidTypeHasBeenSet; }
+    inline void SetSegmentationUpidType(int value) { m_segmentationUpidTypeHasBeenSet = true; m_segmentationUpidType = value; }
+    inline SegmentationDescriptor& WithSegmentationUpidType(int value) { SetSegmentationUpidType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,15 +90,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Upid Type to assign to the
-     * <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined
-     * in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0
-     * and 256, inclusive. The default value is 14.</p>
+     * <p>The Type Identifier to assign to the
+     * <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in
+     * section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and
+     * 256, inclusive. The default value is 48.</p>
      */
-    inline int GetSegmentationUpidType() const{ return m_segmentationUpidType; }
-    inline bool SegmentationUpidTypeHasBeenSet() const { return m_segmentationUpidTypeHasBeenSet; }
-    inline void SetSegmentationUpidType(int value) { m_segmentationUpidTypeHasBeenSet = true; m_segmentationUpidType = value; }
-    inline SegmentationDescriptor& WithSegmentationUpidType(int value) { SetSegmentationUpidType(value); return *this;}
+    inline int GetSegmentationTypeId() const{ return m_segmentationTypeId; }
+    inline bool SegmentationTypeIdHasBeenSet() const { return m_segmentationTypeIdHasBeenSet; }
+    inline void SetSegmentationTypeId(int value) { m_segmentationTypeIdHasBeenSet = true; m_segmentationTypeId = value; }
+    inline SegmentationDescriptor& WithSegmentationTypeId(int value) { SetSegmentationTypeId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The segment number to assign to the
+     * <code>segmentation_descriptor.segment_num</code> message, as defined in section
+     * 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256,
+     * inclusive. The default value is 0.</p>
+     */
+    inline int GetSegmentNum() const{ return m_segmentNum; }
+    inline bool SegmentNumHasBeenSet() const { return m_segmentNumHasBeenSet; }
+    inline void SetSegmentNum(int value) { m_segmentNumHasBeenSet = true; m_segmentNum = value; }
+    inline SegmentationDescriptor& WithSegmentNum(int value) { SetSegmentNum(value); return *this;}
     ///@}
 
     ///@{
@@ -154,20 +154,20 @@ namespace Model
     ///@}
   private:
 
-    int m_segmentNum;
-    bool m_segmentNumHasBeenSet = false;
-
     int m_segmentationEventId;
     bool m_segmentationEventIdHasBeenSet = false;
 
-    int m_segmentationTypeId;
-    bool m_segmentationTypeIdHasBeenSet = false;
+    int m_segmentationUpidType;
+    bool m_segmentationUpidTypeHasBeenSet = false;
 
     Aws::String m_segmentationUpid;
     bool m_segmentationUpidHasBeenSet = false;
 
-    int m_segmentationUpidType;
-    bool m_segmentationUpidTypeHasBeenSet = false;
+    int m_segmentationTypeId;
+    bool m_segmentationTypeIdHasBeenSet = false;
+
+    int m_segmentNum;
+    bool m_segmentNumHasBeenSet = false;
 
     int m_segmentsExpected;
     bool m_segmentsExpectedHasBeenSet = false;

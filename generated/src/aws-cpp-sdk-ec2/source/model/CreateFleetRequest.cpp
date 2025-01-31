@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreateFleetRequest::CreateFleetRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_spotOptionsHasBeenSet(false),
     m_onDemandOptionsHasBeenSet(false),
     m_excessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy::NOT_SET),

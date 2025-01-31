@@ -46,24 +46,9 @@ UpdateProgramResult& UpdateProgramResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("AudienceMedia"))
-  {
-    Aws::Utils::Array<JsonView> audienceMediaJsonList = jsonValue.GetArray("AudienceMedia");
-    for(unsigned audienceMediaIndex = 0; audienceMediaIndex < audienceMediaJsonList.GetLength(); ++audienceMediaIndex)
-    {
-      m_audienceMedia.push_back(audienceMediaJsonList[audienceMediaIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("ChannelName"))
   {
     m_channelName = jsonValue.GetString("ChannelName");
-
-  }
-
-  if(jsonValue.ValueExists("ClipRange"))
-  {
-    m_clipRange = jsonValue.GetObject("ClipRange");
 
   }
 
@@ -73,27 +58,9 @@ UpdateProgramResult& UpdateProgramResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("DurationMillis"))
-  {
-    m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
-  }
-
-  if(jsonValue.ValueExists("LiveSourceName"))
-  {
-    m_liveSourceName = jsonValue.GetString("LiveSourceName");
-
-  }
-
   if(jsonValue.ValueExists("ProgramName"))
   {
     m_programName = jsonValue.GetString("ProgramName");
-
-  }
-
-  if(jsonValue.ValueExists("ScheduledStartTime"))
-  {
-    m_scheduledStartTime = jsonValue.GetDouble("ScheduledStartTime");
 
   }
 
@@ -107,6 +74,39 @@ UpdateProgramResult& UpdateProgramResult::operator =(const Aws::AmazonWebService
   {
     m_vodSourceName = jsonValue.GetString("VodSourceName");
 
+  }
+
+  if(jsonValue.ValueExists("LiveSourceName"))
+  {
+    m_liveSourceName = jsonValue.GetString("LiveSourceName");
+
+  }
+
+  if(jsonValue.ValueExists("ClipRange"))
+  {
+    m_clipRange = jsonValue.GetObject("ClipRange");
+
+  }
+
+  if(jsonValue.ValueExists("DurationMillis"))
+  {
+    m_durationMillis = jsonValue.GetInt64("DurationMillis");
+
+  }
+
+  if(jsonValue.ValueExists("ScheduledStartTime"))
+  {
+    m_scheduledStartTime = jsonValue.GetDouble("ScheduledStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("AudienceMedia"))
+  {
+    Aws::Utils::Array<JsonView> audienceMediaJsonList = jsonValue.GetArray("AudienceMedia");
+    for(unsigned audienceMediaIndex = 0; audienceMediaIndex < audienceMediaJsonList.GetLength(); ++audienceMediaIndex)
+    {
+      m_audienceMedia.push_back(audienceMediaJsonList[audienceMediaIndex].AsObject());
+    }
   }
 
 

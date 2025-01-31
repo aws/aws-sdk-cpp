@@ -108,10 +108,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If
-     * you include the <code>acceleratorCapabilities</code> property in the <a
-     * href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a>
-     * object, all of the Amazon EC2 instances will have at least one accelerator. </p>
+     * <p>Describes the GPU accelerator capabilities required for worker host instances
+     * in this fleet.</p>
      */
     inline const AcceleratorCapabilities& GetAcceleratorCapabilities() const{ return m_acceleratorCapabilities; }
     inline bool AcceleratorCapabilitiesHasBeenSet() const { return m_acceleratorCapabilitiesHasBeenSet; }

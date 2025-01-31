@@ -17,6 +17,7 @@
 #include <aws/ec2/model/FleetLaunchTemplateConfigRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -61,7 +62,9 @@ namespace Model
     ///@{
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
+     * of the request. If you do not specify a client token, a randomly generated token
+     * is used for the request to ensure idempotency.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a>.</p>
      */

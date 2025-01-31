@@ -27,6 +27,8 @@
 #include <aws/bedrock-agent/model/UnknownConnectionSourceOutputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnknownConnectionTargetFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnknownConnectionTargetInputFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/UnknownNodeInputFlowValidationDetails.h>
+#include <aws/bedrock-agent/model/UnknownNodeOutputFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnreachableNodeFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnsatisfiedConnectionConditionsFlowValidationDetails.h>
 #include <aws/bedrock-agent/model/UnspecifiedFlowValidationDetails.h>
@@ -328,6 +330,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about an unknown input for a node.</p>
+     */
+    inline const UnknownNodeInputFlowValidationDetails& GetUnknownNodeInput() const{ return m_unknownNodeInput; }
+    inline bool UnknownNodeInputHasBeenSet() const { return m_unknownNodeInputHasBeenSet; }
+    inline void SetUnknownNodeInput(const UnknownNodeInputFlowValidationDetails& value) { m_unknownNodeInputHasBeenSet = true; m_unknownNodeInput = value; }
+    inline void SetUnknownNodeInput(UnknownNodeInputFlowValidationDetails&& value) { m_unknownNodeInputHasBeenSet = true; m_unknownNodeInput = std::move(value); }
+    inline FlowValidationDetails& WithUnknownNodeInput(const UnknownNodeInputFlowValidationDetails& value) { SetUnknownNodeInput(value); return *this;}
+    inline FlowValidationDetails& WithUnknownNodeInput(UnknownNodeInputFlowValidationDetails&& value) { SetUnknownNodeInput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about an unknown output for a node.</p>
+     */
+    inline const UnknownNodeOutputFlowValidationDetails& GetUnknownNodeOutput() const{ return m_unknownNodeOutput; }
+    inline bool UnknownNodeOutputHasBeenSet() const { return m_unknownNodeOutputHasBeenSet; }
+    inline void SetUnknownNodeOutput(const UnknownNodeOutputFlowValidationDetails& value) { m_unknownNodeOutputHasBeenSet = true; m_unknownNodeOutput = value; }
+    inline void SetUnknownNodeOutput(UnknownNodeOutputFlowValidationDetails&& value) { m_unknownNodeOutputHasBeenSet = true; m_unknownNodeOutput = std::move(value); }
+    inline FlowValidationDetails& WithUnknownNodeOutput(const UnknownNodeOutputFlowValidationDetails& value) { SetUnknownNodeOutput(value); return *this;}
+    inline FlowValidationDetails& WithUnknownNodeOutput(UnknownNodeOutputFlowValidationDetails&& value) { SetUnknownNodeOutput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about an unreachable node in the flow.</p>
      */
     inline const UnreachableNodeFlowValidationDetails& GetUnreachableNode() const{ return m_unreachableNode; }
@@ -428,6 +454,12 @@ namespace Model
 
     UnknownConnectionTargetInputFlowValidationDetails m_unknownConnectionTargetInput;
     bool m_unknownConnectionTargetInputHasBeenSet = false;
+
+    UnknownNodeInputFlowValidationDetails m_unknownNodeInput;
+    bool m_unknownNodeInputHasBeenSet = false;
+
+    UnknownNodeOutputFlowValidationDetails m_unknownNodeOutput;
+    bool m_unknownNodeOutputHasBeenSet = false;
 
     UnreachableNodeFlowValidationDetails m_unreachableNode;
     bool m_unreachableNodeHasBeenSet = false;
