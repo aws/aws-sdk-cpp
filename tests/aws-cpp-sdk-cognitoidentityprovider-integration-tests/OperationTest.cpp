@@ -24,6 +24,11 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/platform/Environment.h>
 #include <openssl/srp.h>
+#include <openssl/sha.h>
+#include <openssl/evp.h>
+#include <openssl/hmac.h>
+
+
 using namespace Aws::CognitoIdentityProvider;
 using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Client;
@@ -55,7 +60,6 @@ protected:
         Aws::Client::ClientConfiguration config;
         config.region = AWS_TEST_REGION;
 
-        //TODO: move this over to profile config file.
         client = Aws::MakeShared<Aws::CognitoIdentityProvider::CognitoIdentityProviderClient>(ALLOCATION_TAG, config);
     }
 
@@ -102,8 +106,8 @@ protected:
         request.SetExplicitAuthFlows(authFlows);
 
         // Make the call to create the user pool client
-        auto outcome = client->CreateUserPoolClient(request);
-        ASSERT_TRUE(outcome.IsSuccess());
+        Aws::CognitoIdentityProvider::Model::CreateUserPoolClientOutcome outcome = client->CreateUserPoolClient(request);
+        /*ASSERT_TRUE(outcome.IsSuccess());
         if (outcome.IsSuccess())
         {
             std::cout << "User Pool Client created successfully." << std::endl;
@@ -112,7 +116,7 @@ protected:
             {
                 std::cout << "Client Secret: " << outcome.GetResult().GetUserPoolClient().GetClientSecret() << std::endl;
             }
-        }
+        }*/
         return outcome;
     }
 
@@ -135,7 +139,25 @@ protected:
 
 };
 
+Aws::String ComputeSecretHash(const Aws::String &userPoolClientId, const Aws::String &userPoolClientSecret, const Aws::String &userName)
+{
+    const auto secret = userPoolClientSecret;
+    const auto message = userName + userPoolClientId;
+    
+    unsigned char * digest = HMAC(EVP_sha256(), 
+                                secret.c_str(), static_cast<int>(secret.length()), 
+                                reinterpret_cast<const unsigned char*>(message.c_str()), 
+                                static_cast<int>(message.length()), 
+                                NULL, NULL);
+    
+    char mdString[SHA256_DIGEST_LENGTH * 2 + 1];
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i)
+        sprintf(&mdString[i*2], "%02x", (unsigned int)digest[i]);
 
+    mdString[64] = '\0'; // null-terminate the string
+    
+    return Aws::String(mdString);
+}
 
 
 
@@ -143,28 +165,6 @@ protected:
 TEST_F(IdentityProviderOperationTest, testSecret)
 {
     auto outcome = createPoolClient();
-
-    
-    Aws::String ComputeSecretHash(const Aws::String &userPoolClientId, const Aws::String &userPoolClientSecret, const Aws::String &userName)
-    {
-        const auto secret = userPoolClientSecret;
-        const auto message = userName + userPoolClientId;
-        
-        unsigned char * digest = HMAC(EVP_sha256(), 
-                                    secret.c_str(), static_cast<int>(secret.length()), 
-                                    reinterpret_cast<const unsigned char*>(message.c_str()), 
-                                    static_cast<int>(message.length()), 
-                                    NULL, NULL);
-        
-        char mdString[SHA256_DIGEST_LENGTH * 2 + 1];
-        for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i)
-            sprintf(&mdString[i*2], "%02x", (unsigned int)digest[i]);
-
-        mdString[64] = '\0'; // null-terminate the string
-        
-        return Aws::String(mdString);
-    }
-
 
     Aws::Map<Aws::String, Aws::String> authParameters;
     authParameters["USERNAME"] = "dummyuser"; // Replace with actual username

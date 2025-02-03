@@ -37,7 +37,7 @@ find_package(OpenSSL REQUIRED)
 # Include directories for OpenSSL headers
 include_directories(${OPENSSL_INCLUDE_DIR})
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} OpenSSL::Crypto)
 
 
 
