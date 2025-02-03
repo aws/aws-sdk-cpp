@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/LoggingStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,10 +55,32 @@ namespace Model
     inline void SetPercentEnabled(int value) { m_percentEnabledHasBeenSet = true; m_percentEnabled = value; }
     inline LogConfiguration& WithPercentEnabled(int value) { SetPercentEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The method used for collecting logs from AWS Elemental MediaTailor.
+     * <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs
+     * directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that
+     * MediaTailor is sending logs to CloudWatch, which then vends the logs to your
+     * destination of choice. Supported destinations are CloudWatch Logs log group,
+     * Amazon S3 bucket, and Amazon Data Firehose stream. </p>
+     */
+    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const{ return m_enabledLoggingStrategies; }
+    inline bool EnabledLoggingStrategiesHasBeenSet() const { return m_enabledLoggingStrategiesHasBeenSet; }
+    inline void SetEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = value; }
+    inline void SetEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = std::move(value); }
+    inline LogConfiguration& WithEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { SetEnabledLoggingStrategies(value); return *this;}
+    inline LogConfiguration& WithEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { SetEnabledLoggingStrategies(std::move(value)); return *this;}
+    inline LogConfiguration& AddEnabledLoggingStrategies(const LoggingStrategy& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
+    inline LogConfiguration& AddEnabledLoggingStrategies(LoggingStrategy&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     int m_percentEnabled;
     bool m_percentEnabledHasBeenSet = false;
+
+    Aws::Vector<LoggingStrategy> m_enabledLoggingStrategies;
+    bool m_enabledLoggingStrategiesHasBeenSet = false;
   };
 
 } // namespace Model
