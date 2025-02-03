@@ -1,8 +1,6 @@
 add_project(aws-cpp-sdk-cognitoidentityprovider-integration-tests 
-    "Tests for the AWS Cognito Identity C++ SDK" 
-    #aws-cpp-sdk-access-management
+    "Tests for the AWS Cognito IDP C++ SDK" 
     aws-cpp-sdk-cognito-idp 
-    #aws-cpp-sdk-iam
     testing-resources 
     aws-cpp-sdk-core 
 )
@@ -37,7 +35,7 @@ find_package(OpenSSL REQUIRED)
 # Include directories for OpenSSL headers
 include_directories(${OPENSSL_INCLUDE_DIR})
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} OpenSSL::Crypto)
 
 
 
