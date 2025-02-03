@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/acm-pca/ACMPCAErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ACMPCA
 {
+  AWS_ACMPCA_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Amazon Web Services Private Certificate Authority API
    * Reference</i>. It provides descriptions, syntax, and usage examples for each of
@@ -39,12 +43,20 @@ namespace ACMPCA
    * href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
    * console.</p>
    */
-  class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>
+  class AWS_ACMPCA_API ACMPCAClient : smithy::client::AwsSmithyClientT<Aws::ACMPCA::SERVICE_NAME,
+      Aws::ACMPCA::ACMPCAClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ACMPCAEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ACMPCAErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ACM PCA"; }
 
       typedef ACMPCAClientConfiguration ClientConfigurationType;
       typedef ACMPCAEndpointProvider EndpointProviderType;
@@ -1059,10 +1071,7 @@ namespace ACMPCA
       std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>;
-      void init(const ACMPCAClientConfiguration& clientConfiguration);
 
-      ACMPCAClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ACMPCAEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ACMPCA

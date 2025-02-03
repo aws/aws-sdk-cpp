@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/PromptInputVariable.h>
@@ -43,6 +44,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A cache checkpoint within a template configuration.</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const{ return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    inline void SetCachePoint(const CachePointBlock& value) { m_cachePointHasBeenSet = true; m_cachePoint = value; }
+    inline void SetCachePoint(CachePointBlock&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::move(value); }
+    inline TextPromptTemplateConfiguration& WithCachePoint(const CachePointBlock& value) { SetCachePoint(value); return *this;}
+    inline TextPromptTemplateConfiguration& WithCachePoint(CachePointBlock&& value) { SetCachePoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of the variables in the prompt template.</p>
      */
     inline const Aws::Vector<PromptInputVariable>& GetInputVariables() const{ return m_inputVariables; }
@@ -69,6 +82,9 @@ namespace Model
     inline TextPromptTemplateConfiguration& WithText(const char* value) { SetText(value); return *this;}
     ///@}
   private:
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
 
     Aws::Vector<PromptInputVariable> m_inputVariables;
     bool m_inputVariablesHasBeenSet = false;

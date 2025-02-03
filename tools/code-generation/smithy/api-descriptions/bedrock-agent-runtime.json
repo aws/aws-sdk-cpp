@@ -1567,7 +1567,23 @@
                 "citation": {
                     "target": "com.amazonaws.bedrockagentruntime#Citation",
                     "traits": {
+                        "smithy.api#deprecated": {
+                            "since": "2024-12-17",
+                            "message": "Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event."
+                        },
                         "smithy.api#documentation": "<p>The citation.</p>"
+                    }
+                },
+                "generatedResponsePart": {
+                    "target": "com.amazonaws.bedrockagentruntime#GeneratedResponsePart",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The generated response to the citation event.</p>"
+                    }
+                },
+                "retrievedReferences": {
+                    "target": "com.amazonaws.bedrockagentruntime#RetrievedReferences",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The retrieved references of the citation event.</p>"
                     }
                 }
             },
@@ -2301,7 +2317,23 @@
                     "traits": {
                         "smithy.api#enumValue": "SUCCESS"
                     }
+                },
+                "INPUT_REQUIRED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "INPUT_REQUIRED"
+                    }
                 }
+            }
+        },
+        "com.amazonaws.bedrockagentruntime#FlowExecutionId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 2,
+                    "max": 100
+                },
+                "smithy.api#pattern": "^[0-9a-zA-Z._:-]+$"
             }
         },
         "com.amazonaws.bedrockagentruntime#FlowIdentifier": {
@@ -2326,8 +2358,7 @@
                 "nodeOutputName": {
                     "target": "com.amazonaws.bedrockagentruntime#NodeOutputName",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the output from the flow input node that begins the prompt flow.</p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p>The name of the output from the flow input node that begins the prompt flow.</p>"
                     }
                 },
                 "content": {
@@ -2335,6 +2366,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Contains information about an input into the prompt flow.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "nodeInputName": {
+                    "target": "com.amazonaws.bedrockagentruntime#NodeInputName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the input from the flow input node.</p>"
                     }
                 }
             },
@@ -2367,6 +2404,50 @@
                     "min": 1,
                     "max": 1
                 }
+            }
+        },
+        "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputContent": {
+            "type": "union",
+            "members": {
+                "document": {
+                    "target": "smithy.api#Document",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The requested additional input to send back to the multi-turn flow node.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The content structure containing input information for multi-turn flow interactions.</p>"
+            }
+        },
+        "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputRequestEvent": {
+            "type": "structure",
+            "members": {
+                "nodeName": {
+                    "target": "com.amazonaws.bedrockagentruntime#NodeName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the node in the flow that is requesting the input.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "nodeType": {
+                    "target": "com.amazonaws.bedrockagentruntime#NodeType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of the node in the flow that is requesting the input.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "content": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputContent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The content payload containing the input request details for the multi-turn interaction.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Response object from the flow multi-turn node requesting additional information.</p>",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.bedrockagentruntime#FlowOutputContent": {
@@ -2494,6 +2575,12 @@
                     "target": "com.amazonaws.bedrockagentruntime#BadGatewayException",
                     "traits": {
                         "smithy.api#documentation": "<p>There was an issue with a dependency due to a server issue. Retry your request.</p>"
+                    }
+                },
+                "flowMultiTurnInputRequestEvent": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowMultiTurnInputRequestEvent",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The event stream containing the multi-turn input request information from the flow.</p>"
                     }
                 }
             },
@@ -4476,6 +4563,12 @@
             "members": {
                 "message": {
                     "target": "com.amazonaws.bedrockagentruntime#NonBlankString"
+                },
+                "reason": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>"
+                    }
                 }
             },
             "traits": {
@@ -4868,6 +4961,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Model performance settings for the request.</p>"
                     }
+                },
+                "executionId": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowExecutionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.  </p>"
+                    }
                 }
             },
             "traits": {
@@ -4883,6 +4982,13 @@
                         "smithy.api#documentation": "<p>The output of the flow, returned as a stream. If there's an error, the error is returned.</p>",
                         "smithy.api#httpPayload": {},
                         "smithy.api#required": {}
+                    }
+                },
+                "executionId": {
+                    "target": "com.amazonaws.bedrockagentruntime#FlowExecutionId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique identifier for the current flow execution.</p>",
+                        "smithy.api#httpHeader": "x-amz-bedrock-flow-execution-id"
                     }
                 }
             },
@@ -8201,7 +8307,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Queries a knowledge base and generates responses based on the retrieved results, with output in streaming format.</p>\n         <note>\n            <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p>\n         </note>",
+                "smithy.api#documentation": "<p>Queries a knowledge base and generates responses based on the retrieved results, with output in streaming format.</p>\n         <note>\n            <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p>\n         </note>\n         <p>This operation requires permission for the <code> bedrock:RetrieveAndGenerate</code> action.</p>",
                 "smithy.api#http": {
                     "code": 200,
                     "method": "POST",

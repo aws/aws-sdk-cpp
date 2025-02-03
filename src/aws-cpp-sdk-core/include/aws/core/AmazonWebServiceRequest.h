@@ -84,6 +84,12 @@ namespace Aws
          * Defaults to false, if this is set to true in derived class, it's an event stream request, which means the payload is consisted by multiple structured events.
          */
         inline virtual bool IsEventStreamRequest() const { return false; }
+
+        /**
+         * Defaults to false, if this is set to true in derived class, the operation using this request will return an event stream response.
+         */
+        inline virtual bool HasEventStreamResponse() const { return false; }
+
         /**
          * Defaults to true, if this is set to false, then signers, if they support body signing, will not do so
          */
@@ -208,7 +214,7 @@ namespace Aws
          * Adds a used feature to the user agent string for the request.
          * @param feature the feature to be added in the user agent string.
          */
-        void AddUserAgentFeature(Aws::Client::UserAgentFeature feature) { m_userAgentFeatures.insert(feature); }
+        void AddUserAgentFeature(Aws::Client::UserAgentFeature feature) const { m_userAgentFeatures.insert(feature); }
 
         /**
          * Gets all features that would be included in the requests user agent string.
@@ -235,7 +241,7 @@ namespace Aws
         RequestSignedHandler m_onRequestSigned;
         RequestRetryHandler m_requestRetryHandler;
         mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
-        Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
+        mutable Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
     };
 
 } // namespace Aws

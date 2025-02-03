@@ -66,8 +66,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The locale code of the language used for the retrieved NotificationEvent. The
-     * default locale is English <code>(en_US)</code>.</p>
+     * <p>The locale code of the language used for the retrieved
+     * <code>NotificationEvent</code>. The default locale is English
+     * <code>(en_US)</code>.</p>
      */
     inline const LocaleCode& GetLocale() const{ return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
@@ -80,11 +81,12 @@ namespace Model
     ///@{
     /**
      * <p>The matched event source.</p> <p>Must match one of the valid EventBridge
-     * sources. Only AWS service sourced events are supported. For example,
-     * <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see
-     * <a
+     * sources. Only Amazon Web Services service sourced events are supported. For
+     * example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-     * delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
@@ -108,8 +110,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the aggregatedNotificationEventArn to
-     * match.</p>
+     * <p>The Amazon Resource Name (ARN) of the
+     * <code>aggregatedNotificationEventArn</code> to match.</p>
      */
     inline const Aws::String& GetAggregateNotificationEventArn() const{ return m_aggregateNotificationEventArn; }
     inline bool AggregateNotificationEventArnHasBeenSet() const { return m_aggregateNotificationEventArnHasBeenSet; }
@@ -135,7 +137,7 @@ namespace Model
     ///@{
     /**
      * <p>The start token for paginated calls. Retrieved from the response of a
-     * previous ListEventRules call. Next token uses Base64 encoding.</p>
+     * previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

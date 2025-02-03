@@ -8,6 +8,7 @@
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/Destination.h>
+#include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/ScrapeConfiguration.h>
 #include <aws/amp/model/Source.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -85,6 +86,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The scraper role configuration for the workspace.</p>
+     */
+    inline const RoleConfiguration& GetRoleConfiguration() const{ return m_roleConfiguration; }
+    inline bool RoleConfigurationHasBeenSet() const { return m_roleConfigurationHasBeenSet; }
+    inline void SetRoleConfiguration(const RoleConfiguration& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = value; }
+    inline void SetRoleConfiguration(RoleConfiguration&& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = std::move(value); }
+    inline CreateScraperRequest& WithRoleConfiguration(const RoleConfiguration& value) { SetRoleConfiguration(value); return *this;}
+    inline CreateScraperRequest& WithRoleConfiguration(RoleConfiguration&& value) { SetRoleConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration file to use in the new scraper. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
@@ -139,6 +152,9 @@ namespace Model
 
     Destination m_destination;
     bool m_destinationHasBeenSet = false;
+
+    RoleConfiguration m_roleConfiguration;
+    bool m_roleConfigurationHasBeenSet = false;
 
     ScrapeConfiguration m_scrapeConfiguration;
     bool m_scrapeConfigurationHasBeenSet = false;

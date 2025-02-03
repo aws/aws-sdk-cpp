@@ -38,19 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The worker ID.</p>
-     */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerId.assign(value); }
-    inline GetWorkerResult& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline GetWorkerResult& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline GetWorkerResult& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The farm ID.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
@@ -73,6 +60,19 @@ namespace Model
     inline GetWorkerResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
     inline GetWorkerResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
     inline GetWorkerResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The worker ID.</p>
+     */
+    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline void SetWorkerId(const Aws::String& value) { m_workerId = value; }
+    inline void SetWorkerId(Aws::String&& value) { m_workerId = std::move(value); }
+    inline void SetWorkerId(const char* value) { m_workerId.assign(value); }
+    inline GetWorkerResult& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
+    inline GetWorkerResult& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
+    inline GetWorkerResult& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
     ///@}
 
     ///@{
@@ -168,11 +168,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_workerId;
-
     Aws::String m_farmId;
 
     Aws::String m_fleetId;
+
+    Aws::String m_workerId;
 
     HostPropertiesResponse m_hostProperties;
 

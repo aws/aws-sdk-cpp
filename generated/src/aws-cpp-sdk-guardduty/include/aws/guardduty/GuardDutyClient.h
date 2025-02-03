@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/guardduty/GuardDutyErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GuardDuty
 {
+  AWS_GUARDDUTY_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon GuardDuty is a continuous security monitoring service that analyzes
    * and processes the following foundational data sources - VPC flow logs, Amazon
@@ -39,12 +43,20 @@ namespace GuardDuty
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
    * GuardDuty User Guide</a> </i>. </p>
    */
-  class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>
+  class AWS_GUARDDUTY_API GuardDutyClient : smithy::client::AwsSmithyClientT<Aws::GuardDuty::SERVICE_NAME,
+      Aws::GuardDuty::GuardDutyClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GuardDutyEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GuardDutyErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "GuardDuty"; }
 
       typedef GuardDutyClientConfiguration ClientConfigurationType;
       typedef GuardDutyEndpointProvider EndpointProviderType;
@@ -2185,10 +2197,7 @@ namespace GuardDuty
       std::shared_ptr<GuardDutyEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>;
-      void init(const GuardDutyClientConfiguration& clientConfiguration);
 
-      GuardDutyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GuardDutyEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GuardDuty

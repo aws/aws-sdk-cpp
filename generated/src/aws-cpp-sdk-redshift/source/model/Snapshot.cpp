@@ -429,7 +429,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       for(auto& item : m_accountsWithRestoreAccess)
       {
         Aws::StringStream accountsWithRestoreAccessSs;
-        accountsWithRestoreAccessSs << location << index << locationValue << ".AccountWithRestoreAccess." << accountsWithRestoreAccessIdx++;
+        accountsWithRestoreAccessSs << location << index << locationValue << ".AccountsWithRestoreAccess.AccountWithRestoreAccess." << accountsWithRestoreAccessIdx++;
         item.OutputToStream(oStream, accountsWithRestoreAccessSs.str().c_str());
       }
   }
@@ -480,7 +480,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
+        tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -490,7 +490,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       unsigned restorableNodeTypesIdx = 1;
       for(auto& item : m_restorableNodeTypes)
       {
-        oStream << location << index << locationValue << ".NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".RestorableNodeTypes.NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 

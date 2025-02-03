@@ -146,6 +146,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Describes the configuration for ingesting NULL and NaN data. By default the
+     * feature is allowed. The feature is disallowed if the value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetDisallowIngestNullNaN() const{ return m_disallowIngestNullNaN; }
+    inline void SetDisallowIngestNullNaN(bool value) { m_disallowIngestNullNaN = value; }
+    inline DescribeStorageConfigurationResult& WithDisallowIngestNullNaN(bool value) { SetDisallowIngestNullNaN(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -172,6 +183,8 @@ namespace Model
     WarmTierState m_warmTier;
 
     WarmTierRetentionPeriod m_warmTierRetentionPeriod;
+
+    bool m_disallowIngestNullNaN;
 
     Aws::String m_requestId;
   };

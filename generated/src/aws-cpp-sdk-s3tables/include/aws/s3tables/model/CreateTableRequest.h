@@ -8,6 +8,7 @@
 #include <aws/s3tables/S3TablesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3tables/model/OpenTableFormat.h>
+#include <aws/s3tables/model/TableMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,18 @@ namespace Model
     inline CreateTableRequest& WithFormat(const OpenTableFormat& value) { SetFormat(value); return *this;}
     inline CreateTableRequest& WithFormat(OpenTableFormat&& value) { SetFormat(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The metadata for the table.</p>
+     */
+    inline const TableMetadata& GetMetadata() const{ return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    inline void SetMetadata(const TableMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+    inline void SetMetadata(TableMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+    inline CreateTableRequest& WithMetadata(const TableMetadata& value) { SetMetadata(value); return *this;}
+    inline CreateTableRequest& WithMetadata(TableMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_tableBucketARN;
@@ -100,6 +113,9 @@ namespace Model
 
     OpenTableFormat m_format;
     bool m_formatHasBeenSet = false;
+
+    TableMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

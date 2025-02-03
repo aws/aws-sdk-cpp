@@ -11,6 +11,7 @@
 #include <aws/medialive/model/CmafIngestSegmentLengthUnits.h>
 #include <aws/medialive/model/CmafKLVBehavior.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/CmafId3Behavior.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +180,38 @@ namespace Model
     inline CmafIngestGroupSettings& WithScte35NameModifier(Aws::String&& value) { SetScte35NameModifier(std::move(value)); return *this;}
     inline CmafIngestGroupSettings& WithScte35NameModifier(const char* value) { SetScte35NameModifier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Set to ENABLED to enable ID3 metadata insertion. To include metadata, you
+     * configure other parameters in the output group, or you add an ID3 action to the
+     * channel schedule.
+     */
+    inline const CmafId3Behavior& GetId3Behavior() const{ return m_id3Behavior; }
+    inline bool Id3BehaviorHasBeenSet() const { return m_id3BehaviorHasBeenSet; }
+    inline void SetId3Behavior(const CmafId3Behavior& value) { m_id3BehaviorHasBeenSet = true; m_id3Behavior = value; }
+    inline void SetId3Behavior(CmafId3Behavior&& value) { m_id3BehaviorHasBeenSet = true; m_id3Behavior = std::move(value); }
+    inline CmafIngestGroupSettings& WithId3Behavior(const CmafId3Behavior& value) { SetId3Behavior(value); return *this;}
+    inline CmafIngestGroupSettings& WithId3Behavior(CmafId3Behavior&& value) { SetId3Behavior(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Change the modifier that MediaLive automatically adds to the Streams() name that
+     * identifies an ID3 track. The default is "id3", which means the default name will
+     * be Streams(id3.cmfm). Any string you enter here will replace the "id3"
+     * string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-),
+     * underscore (_) and period (.) and has a maximum length of 100 characters.
+     */
+    inline const Aws::String& GetId3NameModifier() const{ return m_id3NameModifier; }
+    inline bool Id3NameModifierHasBeenSet() const { return m_id3NameModifierHasBeenSet; }
+    inline void SetId3NameModifier(const Aws::String& value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier = value; }
+    inline void SetId3NameModifier(Aws::String&& value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier = std::move(value); }
+    inline void SetId3NameModifier(const char* value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier.assign(value); }
+    inline CmafIngestGroupSettings& WithId3NameModifier(const Aws::String& value) { SetId3NameModifier(value); return *this;}
+    inline CmafIngestGroupSettings& WithId3NameModifier(Aws::String&& value) { SetId3NameModifier(std::move(value)); return *this;}
+    inline CmafIngestGroupSettings& WithId3NameModifier(const char* value) { SetId3NameModifier(value); return *this;}
+    ///@}
   private:
 
     OutputLocationRef m_destination;
@@ -210,6 +243,12 @@ namespace Model
 
     Aws::String m_scte35NameModifier;
     bool m_scte35NameModifierHasBeenSet = false;
+
+    CmafId3Behavior m_id3Behavior;
+    bool m_id3BehaviorHasBeenSet = false;
+
+    Aws::String m_id3NameModifier;
+    bool m_id3NameModifierHasBeenSet = false;
   };
 
 } // namespace Model

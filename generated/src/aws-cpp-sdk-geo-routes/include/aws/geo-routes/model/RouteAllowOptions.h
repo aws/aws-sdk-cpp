@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Features that are allowed while calculating. a route</p><p><h3>See Also:</h3>
+   * <p>Features that are allowed while calculating a route.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteAllowOptions">AWS
    * API Reference</a></p>
@@ -39,6 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+     * <p>Default value: <code>false</code> </p>
      */
     inline bool GetHot() const{ return m_hot; }
     inline bool HotHasBeenSet() const { return m_hotHasBeenSet; }
@@ -49,6 +50,7 @@ namespace Model
     ///@{
     /**
      * <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+     * <p>Default value: <code>false</code> </p>
      */
     inline bool GetHov() const{ return m_hov; }
     inline bool HovHasBeenSet() const { return m_hovHasBeenSet; }

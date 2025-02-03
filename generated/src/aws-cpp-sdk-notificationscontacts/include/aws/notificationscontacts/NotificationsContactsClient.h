@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/notificationscontacts/NotificationsContactsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/notificationscontacts/NotificationsContactsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace NotificationsContacts
 {
+  AWS_NOTIFICATIONSCONTACTS_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS User Notifications Contacts is a service that allows you to create and
    * manage email contacts for AWS User Notifications. The AWS User Notifications
    * Contacts API Reference provides descriptions, API request parameters, and the
    * JSON response for all email contact related API actions.</p>
    */
-  class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsContactsClient>
+  class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsClient : smithy::client::AwsSmithyClientT<Aws::NotificationsContacts::SERVICE_NAME,
+      Aws::NotificationsContacts::NotificationsContactsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NotificationsContactsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NotificationsContactsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<NotificationsContactsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "NotificationsContacts"; }
 
       typedef NotificationsContactsClientConfiguration ClientConfigurationType;
       typedef NotificationsContactsEndpointProvider EndpointProviderType;
@@ -324,10 +336,7 @@ namespace NotificationsContacts
       std::shared_ptr<NotificationsContactsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsContactsClient>;
-      void init(const NotificationsContactsClientConfiguration& clientConfiguration);
 
-      NotificationsContactsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NotificationsContactsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace NotificationsContacts

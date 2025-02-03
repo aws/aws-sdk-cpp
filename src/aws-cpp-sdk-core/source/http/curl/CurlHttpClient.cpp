@@ -238,7 +238,8 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
                 << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
             return 0;
         }
-        if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
+        if ((context->m_request->IsEventStreamRequest() || context->m_request->HasEventStreamResponse() )
+            && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             response->GetResponseBody().flush();
             if (response->GetResponseBody().fail()) {
@@ -362,6 +363,14 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
 
     const CurlHttpClient* client = context->m_client;
     if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
+    {
+        return CURL_SEEKFUNC_FAIL;
+    }
+
+    // fail seek for aws-chunk encoded body as the length and offset is unknown
+    if (context->m_request &&
+        context->m_request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
+        context->m_request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos)
     {
         return CURL_SEEKFUNC_FAIL;
     }

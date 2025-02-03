@@ -33,6 +33,7 @@ NotificationEvent::NotificationEvent() :
     m_aggregationEventType(AggregationEventType::NOT_SET),
     m_aggregationEventTypeHasBeenSet(false),
     m_aggregateNotificationEventArnHasBeenSet(false),
+    m_aggregationSummaryHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_textPartsHasBeenSet(false),
@@ -116,6 +117,13 @@ NotificationEvent& NotificationEvent::operator =(JsonView jsonValue)
     m_aggregateNotificationEventArn = jsonValue.GetString("aggregateNotificationEventArn");
 
     m_aggregateNotificationEventArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("aggregationSummary"))
+  {
+    m_aggregationSummary = jsonValue.GetObject("aggregationSummary");
+
+    m_aggregationSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startTime"))
@@ -212,6 +220,12 @@ JsonValue NotificationEvent::Jsonize() const
   if(m_aggregateNotificationEventArnHasBeenSet)
   {
    payload.WithString("aggregateNotificationEventArn", m_aggregateNotificationEventArn);
+
+  }
+
+  if(m_aggregationSummaryHasBeenSet)
+  {
+   payload.WithObject("aggregationSummary", m_aggregationSummary.Jsonize());
 
   }
 

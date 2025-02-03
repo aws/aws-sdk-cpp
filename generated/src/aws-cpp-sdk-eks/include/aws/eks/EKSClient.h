@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/eks/EKSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EKS
 {
+  AWS_EKS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that
    * makes it easy for you to run Kubernetes on Amazon Web Services without needing
@@ -28,12 +32,20 @@ namespace EKS
    * means that you can easily migrate any standard Kubernetes application to Amazon
    * EKS without any code modification required.</p>
    */
-  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
+  class AWS_EKS_API EKSClient : smithy::client::AwsSmithyClientT<Aws::EKS::SERVICE_NAME,
+      Aws::EKS::EKSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EKSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EKSErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EKS"; }
 
       typedef EKSClientConfiguration ClientConfigurationType;
       typedef EKSEndpointProvider EndpointProviderType;
@@ -342,7 +354,7 @@ namespace EKS
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
          * Fargate and specify which pods run on which Fargate profile. This declaration is
-         * done through the profile’s selectors. Each profile can have up to five selectors
+         * done through the profile's selectors. Each profile can have up to five selectors
          * that contain a namespace and labels. A namespace is required for every selector.
          * The label field consists of multiple optional key-value pairs. Pods that match
          * the selectors are scheduled on Fargate. If a to-be-scheduled pod matches any of
@@ -1650,7 +1662,7 @@ namespace EKS
          * consistent). When the update is complete (either <code>Failed</code> or
          * <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
          * <p>If your cluster has managed node groups attached to it, all of your node
-         * groups’ Kubernetes versions must match the cluster’s Kubernetes version in order
+         * groups' Kubernetes versions must match the cluster's Kubernetes version in order
          * to update the cluster to a new Kubernetes version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">AWS
          * API Reference</a></p>
@@ -1705,9 +1717,9 @@ namespace EKS
          * <p>Updates an Amazon EKS managed node group configuration. Your node group
          * continues to function during the update. The response output includes an update
          * ID that you can use to track the status of your node group update with the
-         * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes
-         * labels for a node group or the scaling configuration.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>DescribeUpdate</a> API operation. You can update the Kubernetes labels and
+         * taints for a node group and the scaling and version update
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">AWS
          * API Reference</a></p>
          */
@@ -1813,10 +1825,7 @@ namespace EKS
       std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
-      void init(const EKSClientConfiguration& clientConfiguration);
 
-      EKSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EKSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EKS

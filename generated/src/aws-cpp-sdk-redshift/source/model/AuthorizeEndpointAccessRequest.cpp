@@ -42,7 +42,7 @@ Aws::String AuthorizeEndpointAccessRequest::SerializePayload() const
       unsigned vpcIdsCount = 1;
       for(auto& item : m_vpcIds)
       {
-        ss << "VpcIds.member." << vpcIdsCount << "="
+        ss << "VpcIds.VpcIdentifier." << vpcIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcIdsCount++;
       }

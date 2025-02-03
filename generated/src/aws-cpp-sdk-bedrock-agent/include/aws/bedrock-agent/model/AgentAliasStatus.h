@@ -20,7 +20,8 @@ namespace Model
     PREPARED,
     FAILED,
     UPDATING,
-    DELETING
+    DELETING,
+    DISSOCIATED
   };
 
 namespace AgentAliasStatusMapper

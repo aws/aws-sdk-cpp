@@ -14,6 +14,7 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 public class DynamoDBJsonCppClientGenerator extends JsonCppClientGenerator {
 
@@ -53,9 +55,16 @@ public class DynamoDBJsonCppClientGenerator extends JsonCppClientGenerator {
         final List<SdkFileEntry> awsClients = super.generateClientSourceFile(serviceModels.stream()
                 .filter(serviceModel -> !serviceModel.isUseSmithyClient())
                 .collect(Collectors.toList()));
-        final List<SdkFileEntry> smithyClients = generateSmithyClientSourceFile(serviceModels.stream()
-                .filter(ServiceModel::isUseSmithyClient)
-                .collect(Collectors.toList()));
+
+        List<Integer> serviceModelsIndices = IntStream.range(0, serviceModels.size()).boxed().collect(Collectors.toList());
+
+        final List<SdkFileEntry> smithyClients = new ArrayList<>();
+        serviceModelsIndices.stream().forEach(index -> {
+            if(serviceModels.get(index).isUseSmithyClient())
+            {
+                smithyClients.add(GenerateSmithyClientSourceFile(serviceModels.get(index), index));
+            }
+        });
         return Stream.concat(awsClients.stream(), smithyClients.stream()).collect(Collectors.toList());
     }
 

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/meteringmarketplace/MarketplaceMeteringErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MarketplaceMetering
 {
+  AWS_MARKETPLACEMETERING_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides
    * descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS
@@ -52,12 +56,20 @@ namespace MarketplaceMetering
    * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">AWS
    * CloudTrail User Guide</a>.</i> </p>
    */
-  class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>
+  class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : smithy::client::AwsSmithyClientT<Aws::MarketplaceMetering::SERVICE_NAME,
+      Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MarketplaceMeteringEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MarketplaceMeteringErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Marketplace Metering"; }
 
       typedef MarketplaceMeteringClientConfiguration ClientConfigurationType;
       typedef MarketplaceMeteringEndpointProvider EndpointProviderType;
@@ -284,10 +296,7 @@ namespace MarketplaceMetering
       std::shared_ptr<MarketplaceMeteringEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>;
-      void init(const MarketplaceMeteringClientConfiguration& clientConfiguration);
 
-      MarketplaceMeteringClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MarketplaceMeteringEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MarketplaceMetering

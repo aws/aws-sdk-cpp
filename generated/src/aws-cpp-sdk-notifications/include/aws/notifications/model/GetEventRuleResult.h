@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of a NotificationConfiguration.</p>
+     * <p>The ARN of a <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline void SetNotificationConfigurationArn(const Aws::String& value) { m_notificationConfigurationArn = value; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date when the EventRule was created.</p>
+     * <p>The date when the <code>EventRule</code> was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -76,11 +76,12 @@ namespace Model
     ///@{
     /**
      * <p>The matched event source.</p> <p>Must match one of the valid EventBridge
-     * sources. Only AWS service sourced events are supported. For example,
-     * <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more information, see
-     * <a
+     * sources. Only Amazon Web Services service sourced events are supported. For
+     * example, <code>aws.ec2</code> and <code>aws.cloudwatch</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-     * delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
     inline void SetSource(const Aws::String& value) { m_source = value; }
@@ -95,9 +96,10 @@ namespace Model
     /**
      * <p>The event type to match.</p> <p>Must match one of the valid Amazon
      * EventBridge event types. For example, EC2 Instance State-change Notification and
-     * AWS CloudWatch Alarm State Change. For more information, see <a
+     * Amazon CloudWatch Alarm State Change. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-     * delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
     inline void SetEventType(const Aws::String& value) { m_eventType = value; }
@@ -110,8 +112,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An additional event pattern used to further filter the events this EventRule
-     * receives.</p> <p>For more information, see <a
+     * <p>An additional event pattern used to further filter the events this
+     * <code>EventRule</code> receives.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon
      * EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i> </p>
      */
@@ -126,7 +128,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of AWS Regions that send events to this EventRule.</p>
+     * <p>A list of Amazon Web Services Regions that send events to this
+     * <code>EventRule</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regions = value; }
@@ -140,9 +143,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of managed rules from EventBridge that are are associated with this
-     * EventRule.</p>  <p>These are created by AWS User Notifications within your
-     * account so this EventRule functions.</p> 
+     * <p>A list of managed rules from EventBridge that are associated with this
+     * <code>EventRule</code>.</p>  <p>These are created by User Notifications
+     * within your account so this <code>EventRule</code> functions.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetManagedRules() const{ return m_managedRules; }
     inline void SetManagedRules(const Aws::Vector<Aws::String>& value) { m_managedRules = value; }
@@ -156,8 +159,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of an EventRule's status by Region. Regions are mapped to
-     * EventRuleStatusSummary.</p>
+     * <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to
+     * <code>EventRuleStatusSummary</code>.</p>
      */
     inline const Aws::Map<Aws::String, EventRuleStatusSummary>& GetStatusSummaryByRegion() const{ return m_statusSummaryByRegion; }
     inline void SetStatusSummaryByRegion(const Aws::Map<Aws::String, EventRuleStatusSummary>& value) { m_statusSummaryByRegion = value; }

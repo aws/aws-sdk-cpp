@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SMART_ON_FHIR_V1_HASH = HashingUtils::HashString("SMART_ON_FHIR_V1");
+        static const int SMART_ON_FHIR_HASH = HashingUtils::HashString("SMART_ON_FHIR");
         static const int AWS_AUTH_HASH = HashingUtils::HashString("AWS_AUTH");
 
 
@@ -30,6 +31,10 @@ namespace Aws
           if (hashCode == SMART_ON_FHIR_V1_HASH)
           {
             return AuthorizationStrategy::SMART_ON_FHIR_V1;
+          }
+          else if (hashCode == SMART_ON_FHIR_HASH)
+          {
+            return AuthorizationStrategy::SMART_ON_FHIR;
           }
           else if (hashCode == AWS_AUTH_HASH)
           {
@@ -53,6 +58,8 @@ namespace Aws
             return {};
           case AuthorizationStrategy::SMART_ON_FHIR_V1:
             return "SMART_ON_FHIR_V1";
+          case AuthorizationStrategy::SMART_ON_FHIR:
+            return "SMART_ON_FHIR";
           case AuthorizationStrategy::AWS_AUTH:
             return "AWS_AUTH";
           default:

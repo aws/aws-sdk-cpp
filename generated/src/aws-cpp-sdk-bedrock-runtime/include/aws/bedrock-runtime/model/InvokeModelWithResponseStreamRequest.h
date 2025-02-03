@@ -34,6 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeModelWithResponseStream"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_BEDROCKRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**

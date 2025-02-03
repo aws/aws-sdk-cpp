@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/tnb/TnbServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/tnb/TnbErrorMarshaller.h>
 
 namespace Aws
 {
 namespace tnb
 {
+  AWS_TNB_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon Web Services Telco Network Builder (TNB) is a network automation
    * service that helps you deploy and manage telecom networks. AWS TNB helps you
    * with the lifecycle management of your telecommunication network functions
    * throughout planning, deployment, and post-deployment activities.</p>
    */
-  class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>
+  class AWS_TNB_API TnbClient : smithy::client::AwsSmithyClientT<Aws::tnb::SERVICE_NAME,
+      Aws::tnb::TnbClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      TnbEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::TnbErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "tnb"; }
 
       typedef TnbClientConfiguration ClientConfigurationType;
       typedef TnbEndpointProvider EndpointProviderType;
@@ -1063,10 +1075,7 @@ namespace tnb
       std::shared_ptr<TnbEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>;
-      void init(const TnbClientConfiguration& clientConfiguration);
 
-      TnbClientConfiguration m_clientConfiguration;
-      std::shared_ptr<TnbEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace tnb

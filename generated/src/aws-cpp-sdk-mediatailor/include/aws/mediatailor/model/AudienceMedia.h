@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/AlternateMedia.h>
 #include <utility>
 
@@ -42,20 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of AlternateMedia defined in AudienceMedia.</p>
-     */
-    inline const Aws::Vector<AlternateMedia>& GetAlternateMedia() const{ return m_alternateMedia; }
-    inline bool AlternateMediaHasBeenSet() const { return m_alternateMediaHasBeenSet; }
-    inline void SetAlternateMedia(const Aws::Vector<AlternateMedia>& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = value; }
-    inline void SetAlternateMedia(Aws::Vector<AlternateMedia>&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = std::move(value); }
-    inline AudienceMedia& WithAlternateMedia(const Aws::Vector<AlternateMedia>& value) { SetAlternateMedia(value); return *this;}
-    inline AudienceMedia& WithAlternateMedia(Aws::Vector<AlternateMedia>&& value) { SetAlternateMedia(std::move(value)); return *this;}
-    inline AudienceMedia& AddAlternateMedia(const AlternateMedia& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.push_back(value); return *this; }
-    inline AudienceMedia& AddAlternateMedia(AlternateMedia&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The Audience defined in AudienceMedia.</p>
      */
     inline const Aws::String& GetAudience() const{ return m_audience; }
@@ -67,13 +53,27 @@ namespace Model
     inline AudienceMedia& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
     inline AudienceMedia& WithAudience(const char* value) { SetAudience(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<AlternateMedia> m_alternateMedia;
-    bool m_alternateMediaHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The list of AlternateMedia defined in AudienceMedia.</p>
+     */
+    inline const Aws::Vector<AlternateMedia>& GetAlternateMedia() const{ return m_alternateMedia; }
+    inline bool AlternateMediaHasBeenSet() const { return m_alternateMediaHasBeenSet; }
+    inline void SetAlternateMedia(const Aws::Vector<AlternateMedia>& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = value; }
+    inline void SetAlternateMedia(Aws::Vector<AlternateMedia>&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = std::move(value); }
+    inline AudienceMedia& WithAlternateMedia(const Aws::Vector<AlternateMedia>& value) { SetAlternateMedia(value); return *this;}
+    inline AudienceMedia& WithAlternateMedia(Aws::Vector<AlternateMedia>&& value) { SetAlternateMedia(std::move(value)); return *this;}
+    inline AudienceMedia& AddAlternateMedia(const AlternateMedia& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.push_back(value); return *this; }
+    inline AudienceMedia& AddAlternateMedia(AlternateMedia&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_audience;
     bool m_audienceHasBeenSet = false;
+
+    Aws::Vector<AlternateMedia> m_alternateMedia;
+    bool m_alternateMediaHasBeenSet = false;
   };
 
 } // namespace Model

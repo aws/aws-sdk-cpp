@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wellarchitected/WellArchitectedServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/wellarchitected/WellArchitectedErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WellArchitected
 {
+  AWS_WELLARCHITECTED_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected
    * Tool API Reference</i>. The WA Tool API provides programmatic access to the <a
@@ -25,12 +29,20 @@ namespace WellArchitected
    * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected
    * Tool User Guide</a>.</p>
    */
-  class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>
+  class AWS_WELLARCHITECTED_API WellArchitectedClient : smithy::client::AwsSmithyClientT<Aws::WellArchitected::SERVICE_NAME,
+      Aws::WellArchitected::WellArchitectedClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WellArchitectedEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WellArchitectedErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WellArchitected"; }
 
       typedef WellArchitectedClientConfiguration ClientConfigurationType;
       typedef WellArchitectedEndpointProvider EndpointProviderType;
@@ -2041,10 +2053,7 @@ namespace WellArchitected
       std::shared_ptr<WellArchitectedEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>;
-      void init(const WellArchitectedClientConfiguration& clientConfiguration);
 
-      WellArchitectedClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WellArchitectedEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WellArchitected

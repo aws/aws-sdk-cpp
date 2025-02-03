@@ -25,7 +25,8 @@ CreateAgreementRequest::CreateAgreementRequest() :
     m_preserveFilename(PreserveFilenameType::NOT_SET),
     m_preserveFilenameHasBeenSet(false),
     m_enforceMessageSigning(EnforceMessageSigningType::NOT_SET),
-    m_enforceMessageSigningHasBeenSet(false)
+    m_enforceMessageSigningHasBeenSet(false),
+    m_customDirectoriesHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String CreateAgreementRequest::SerializePayload() const
   if(m_enforceMessageSigningHasBeenSet)
   {
    payload.WithString("EnforceMessageSigning", EnforceMessageSigningTypeMapper::GetNameForEnforceMessageSigningType(m_enforceMessageSigning));
+  }
+
+  if(m_customDirectoriesHasBeenSet)
+  {
+   payload.WithObject("CustomDirectories", m_customDirectories.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

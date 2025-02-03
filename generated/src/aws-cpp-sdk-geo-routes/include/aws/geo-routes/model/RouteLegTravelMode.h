@@ -20,7 +20,8 @@ namespace Model
     Ferry,
     Pedestrian,
     Scooter,
-    Truck
+    Truck,
+    CarShuttleTrain
   };
 
 namespace RouteLegTravelModeMapper

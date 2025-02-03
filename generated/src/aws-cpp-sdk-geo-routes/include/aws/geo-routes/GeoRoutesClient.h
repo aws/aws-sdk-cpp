@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-routes/GeoRoutesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/geo-routes/GeoRoutesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GeoRoutes
 {
+  AWS_GEOROUTES_API extern const char SERVICE_NAME[];
   /**
    * <p>With the Amazon Location Routes API you can calculate routes and estimate
    * travel time based on up-to-date road network and live traffic information.</p>
@@ -27,12 +31,20 @@ namespace GeoRoutes
    * reachable areas within specified time or distance thresholds</p> </li> <li>
    * <p>Map-matching to align GPS traces with the road network</p> </li> </ul>
    */
-  class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>
+  class AWS_GEOROUTES_API GeoRoutesClient : smithy::client::AwsSmithyClientT<Aws::GeoRoutes::SERVICE_NAME,
+      Aws::GeoRoutes::GeoRoutesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GeoRoutesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GeoRoutesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Geo Routes"; }
 
       typedef GeoRoutesClientConfiguration ClientConfigurationType;
       typedef GeoRoutesEndpointProvider EndpointProviderType;
@@ -112,10 +124,10 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>Calculates route matrix containing the results for all pairs of Origins to
-         * Destinations. Each row corresponds to one entry in Origins. Each entry in the
-         * row corresponds to the route from that entry in Origins to an entry in
-         * Destinations positions.</p><p><h3>See Also:</h3>   <a
+         * <p> Use <code>CalculateRouteMatrix</code> to compute results for all pairs of
+         * Origins to Destinations. Each row corresponds to one entry in Origins. Each
+         * entry in the row corresponds to the route from that entry in Origins to an entry
+         * in Destinations positions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRouteMatrix">AWS
          * API Reference</a></p>
          */
@@ -140,8 +152,9 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>Calculates a route given the following required parameters:
-         * <code>Origin</code> and <code>Destination</code>.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>CalculateRoutes</code> computes routes given the following required
+         * parameters: <code>Origin</code> and <code>Destination</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRoutes">AWS
          * API Reference</a></p>
          */
@@ -166,10 +179,10 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>Calculates the optimal order to travel between a set of waypoints to minimize
-         * either the travel time or the distance travelled during the journey, based on
-         * road network restrictions and the traffic pattern data.</p><p><h3>See Also:</h3>
-         * <a
+         * <p> <code>OptimizeWaypoints</code> calculates the optimal order to travel
+         * between a set of waypoints to minimize either the travel time or the distance
+         * travelled during the journey, based on road network restrictions and the traffic
+         * pattern data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/OptimizeWaypoints">AWS
          * API Reference</a></p>
          */
@@ -194,7 +207,7 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>The SnapToRoads action matches GPS trace to roads most likely traveled
+         * <p> <code>SnapToRoads</code> matches GPS trace to roads most likely traveled
          * on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/SnapToRoads">AWS
          * API Reference</a></p>
@@ -224,10 +237,7 @@ namespace GeoRoutes
       std::shared_ptr<GeoRoutesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>;
-      void init(const GeoRoutesClientConfiguration& clientConfiguration);
 
-      GeoRoutesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GeoRoutesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GeoRoutes

@@ -47,7 +47,11 @@ namespace Model
      * field is used only for selecting events as filtering is not supported.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>
-     * in the <i>CloudTrailUser Guide</i>.</p>
+     * in the <i>CloudTrail API Reference</i>.</p>  <p>Selectors don't support
+     * the use of wildcards like <code>*</code> . To match multiple values with a
+     * single condition, you may use <code>StartsWith</code>, <code>EndsWith</code>,
+     * <code>NotStartsWith</code>, or <code>NotEndsWith</code> to explicitly match the
+     * beginning or end of the event field.</p> 
      */
     inline const Aws::String& GetField() const{ return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }

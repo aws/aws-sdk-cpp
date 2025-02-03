@@ -41,6 +41,8 @@ JobSummary::JobSummary() :
     m_maxFailedTasksCountHasBeenSet(false),
     m_maxRetriesPerTask(0),
     m_maxRetriesPerTaskHasBeenSet(false),
+    m_maxWorkerCount(0),
+    m_maxWorkerCountHasBeenSet(false),
     m_sourceJobIdHasBeenSet(false)
 {
 }
@@ -168,6 +170,13 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_maxRetriesPerTaskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxWorkerCount"))
+  {
+    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
+
+    m_maxWorkerCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceJobId"))
   {
     m_sourceJobId = jsonValue.GetString("sourceJobId");
@@ -273,6 +282,12 @@ JsonValue JobSummary::Jsonize() const
   if(m_maxRetriesPerTaskHasBeenSet)
   {
    payload.WithInteger("maxRetriesPerTask", m_maxRetriesPerTask);
+
+  }
+
+  if(m_maxWorkerCountHasBeenSet)
+  {
+   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
 
   }
 

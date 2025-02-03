@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/billingconductor/BillingConductorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/billingconductor/BillingConductorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BillingConductor
 {
+  AWS_BILLINGCONDUCTOR_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Billing Conductor is a fully managed service that you can
    * use to customize a <a
@@ -37,12 +41,20 @@ namespace BillingConductor
    * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html">
    * Amazon Web Services Billing Conductor User Guide</a>.</p>
    */
-  class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>
+  class AWS_BILLINGCONDUCTOR_API BillingConductorClient : smithy::client::AwsSmithyClientT<Aws::BillingConductor::SERVICE_NAME,
+      Aws::BillingConductor::BillingConductorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BillingConductorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BillingConductorErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "billingconductor"; }
 
       typedef BillingConductorClientConfiguration ClientConfigurationType;
       typedef BillingConductorEndpointProvider EndpointProviderType;
@@ -941,10 +953,7 @@ namespace BillingConductor
       std::shared_ptr<BillingConductorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>;
-      void init(const BillingConductorClientConfiguration& clientConfiguration);
 
-      BillingConductorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BillingConductorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BillingConductor

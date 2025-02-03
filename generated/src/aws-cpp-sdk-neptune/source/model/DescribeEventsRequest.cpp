@@ -66,7 +66,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
       unsigned eventCategoriesCount = 1;
       for(auto& item : m_eventCategories)
       {
-        ss << "EventCategories.member." << eventCategoriesCount << "="
+        ss << "EventCategories.EventCategory." << eventCategoriesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         eventCategoriesCount++;
       }
@@ -84,7 +84,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
       unsigned filtersCount = 1;
       for(auto& item : m_filters)
       {
-        item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+        item.OutputToStream(ss, "Filters.Filter.", filtersCount, "");
         filtersCount++;
       }
     }

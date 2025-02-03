@@ -98,8 +98,7 @@ namespace Model
     ///@{
     /**
      * <p> The number of minutes before session times out. Default for Spark ETL jobs
-     * is 48 hours (2880 minutes), the maximum session lifetime for this job type.
-     * Consult the documentation for other job types. </p>
+     * is 48 hours (2880 minutes). Consult the documentation for other job types. </p>
      */
     inline int GetTimeout() const{ return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }

@@ -67,6 +67,7 @@ if (LEGACY_BUILD)
     option(USE_TLS_V1_2 "Set http client to enforce TLS 1.2" ON)
     option(USE_TLS_V1_3 "Set http client to enforce TLS 1.3" OFF)
     option(ENABLE_SMOKE_TESTS "Enable smoke tests" OFF)
+    option(ENABLE_PROTOCOL_TESTS "Enable protocol tests" OFF)
     option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
 
 
@@ -239,11 +240,7 @@ if (LEGACY_BUILD)
             set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
         endif ()
     else ()
-        # This is required in order to append /lib/cmake to each element in CMAKE_PREFIX_PATH
-        set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
-        string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
-        # Append that generated list to the module search path
-        list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
+        find_package(aws-c-common REQUIRED)
         include(AwsFindPackage)
         set(IN_SOURCE_BUILD OFF)
     endif ()
@@ -267,7 +264,6 @@ if (LEGACY_BUILD)
     set_msvc_warnings()
 
     include(sdks)
-
     include(utilities)
 
     if (ENABLE_OPENSSL_ENCRYPTION)
@@ -338,6 +334,7 @@ if (LEGACY_BUILD)
     add_definitions("-DAWS_TEST_REGION=${AWS_TEST_REGION}")
 
     add_sdks()
+    include(tests)
 
     # for user friendly cmake usage
     include(setup_cmake_find_module)

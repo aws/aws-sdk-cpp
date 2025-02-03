@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticmapreduce/EMRServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/elasticmapreduce/EMRErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EMR
 {
+  AWS_EMR_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon EMR is a web service that makes it easier to process large amounts of
    * data efficiently. Amazon EMR uses Hadoop processing combined with several Amazon
@@ -22,12 +26,20 @@ namespace EMR
    * analysis, machine learning, scientific simulation, and data warehouse
    * management.</p>
    */
-  class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>
+  class AWS_EMR_API EMRClient : smithy::client::AwsSmithyClientT<Aws::EMR::SERVICE_NAME,
+      Aws::EMR::EMRClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EMREndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EMRErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EMR"; }
 
       typedef EMRClientConfiguration ClientConfigurationType;
       typedef EMREndpointProvider EndpointProviderType;
@@ -1671,10 +1683,7 @@ namespace EMR
       std::shared_ptr<EMREndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>;
-      void init(const EMRClientConfiguration& clientConfiguration);
 
-      EMRClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EMREndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EMR

@@ -29,8 +29,8 @@ namespace Model
    * have higher costs. The default value is <code>EXTENDED</code>. Use
    * <code>STANDARD</code> to disable extended support.</p> <p> <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
-   * more about EKS Extended Support in the EKS User Guide.</a> </p><p><h3>See
-   * Also:</h3>   <a
+   * more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpgradePolicyRequest">AWS
    * API Reference</a></p>
    */
@@ -50,7 +50,7 @@ namespace Model
      * <code>STANDARD</code>, it will be automatically upgraded at the end of standard
      * support.</p> <p> <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
-     * more about EKS Extended Support in the EKS User Guide.</a> </p>
+     * more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a> </p>
      */
     inline const SupportType& GetSupportType() const{ return m_supportType; }
     inline bool SupportTypeHasBeenSet() const { return m_supportTypeHasBeenSet; }

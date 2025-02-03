@@ -90,7 +90,7 @@ namespace Model
     ///@{
     /**
      * <p>The environment variables to pass to a container. This parameter maps to Env
-     * inthe <a
+     * in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/compute-optimizer/ComputeOptimizerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ComputeOptimizer
 {
+  AWS_COMPUTEOPTIMIZER_API extern const char SERVICE_NAME[];
   /**
    * <p>Compute Optimizer is a service that analyzes the configuration and
    * utilization metrics of your Amazon Web Services compute resources, such as
@@ -32,12 +36,20 @@ namespace ComputeOptimizer
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
    * Optimizer User Guide</a>.</p>
    */
-  class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>
+  class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : smithy::client::AwsSmithyClientT<Aws::ComputeOptimizer::SERVICE_NAME,
+      Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ComputeOptimizerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ComputeOptimizerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Compute Optimizer"; }
 
       typedef ComputeOptimizerClientConfiguration ClientConfigurationType;
       typedef ComputeOptimizerEndpointProvider EndpointProviderType;
@@ -967,10 +979,7 @@ namespace ComputeOptimizer
       std::shared_ptr<ComputeOptimizerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>;
-      void init(const ComputeOptimizerClientConfiguration& clientConfiguration);
 
-      ComputeOptimizerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ComputeOptimizerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ComputeOptimizer

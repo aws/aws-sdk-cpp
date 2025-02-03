@@ -41,6 +41,8 @@ JobSearchSummary::JobSearchSummary() :
     m_endedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_jobParametersHasBeenSet(false),
+    m_maxWorkerCount(0),
+    m_maxWorkerCountHasBeenSet(false),
     m_sourceJobIdHasBeenSet(false)
 {
 }
@@ -171,6 +173,13 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_jobParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxWorkerCount"))
+  {
+    m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
+
+    m_maxWorkerCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceJobId"))
   {
     m_sourceJobId = jsonValue.GetString("sourceJobId");
@@ -282,6 +291,12 @@ JsonValue JobSearchSummary::Jsonize() const
      jobParametersJsonMap.WithObject(jobParametersItem.first, jobParametersItem.second.Jsonize());
    }
    payload.WithObject("jobParameters", std::move(jobParametersJsonMap));
+
+  }
+
+  if(m_maxWorkerCountHasBeenSet)
+  {
+   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
 
   }
 

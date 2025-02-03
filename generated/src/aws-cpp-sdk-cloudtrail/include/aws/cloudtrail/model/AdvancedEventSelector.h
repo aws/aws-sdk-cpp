@@ -39,7 +39,7 @@ namespace Model
    * cannot apply both event selectors and advanced event selectors to a trail.</p>
    * <p>For information about configurable advanced event selector fields, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>
-   * in the <i>CloudTrailUser Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * in the <i>CloudTrail API Reference</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedEventSelector">AWS
    * API Reference</a></p>
    */

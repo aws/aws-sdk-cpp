@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/notifications/model/NotificationEventSummary.h>
 #include <aws/notifications/model/AggregationEventType.h>
+#include <aws/notifications/model/AggregationSummary.h>
 #include <utility>
 
 namespace Aws
@@ -27,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a short summary of a NotificationEvent. This is only used when
-   * listing notification events.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a short summary of a <code>NotificationEvent</code>. This is only
+   * used when listing notification events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/NotificationEventOverview">AWS
    * API Reference</a></p>
    */
@@ -57,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the NotificationConfiguration.</p>
+     * <p>The ARN of the <code>NotificationConfiguration</code>.</p>
      */
     inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
     inline bool NotificationConfigurationArnHasBeenSet() const { return m_notificationConfigurationArnHasBeenSet; }
@@ -71,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account name containing the NotificationHub.</p>
+     * <p>The account name containing the <code>NotificationHub</code>.</p>
      */
     inline const Aws::String& GetRelatedAccount() const{ return m_relatedAccount; }
     inline bool RelatedAccountHasBeenSet() const { return m_relatedAccountHasBeenSet; }
@@ -85,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation time of the NotificationEvent.</p>
+     * <p>The creation time of the <code>NotificationEvent</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
@@ -97,8 +98,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Refers to a NotificationEventSummary object.</p> <p>Similar in structure to
-     * <code>content</code> in the GetNotificationEvent response.</p>
+     * <p>Refers to a <code>NotificationEventSummary</code> object.</p> <p>Similar in
+     * structure to <code>content</code> in the <code>GetNotificationEvent</code>
+     * response.</p>
      */
     inline const NotificationEventSummary& GetNotificationEvent() const{ return m_notificationEvent; }
     inline bool NotificationEventHasBeenSet() const { return m_notificationEventHasBeenSet; }
@@ -110,11 +112,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The NotificationConfiguration's aggregation type.</p> <ul> <li>
+     * <p>The <code>NotificationConfiguration</code>'s aggregation type.</p> <ul> <li>
      * <p>Values:</p> <ul> <li> <p> <code>AGGREGATE</code> </p> <ul> <li> <p>The
      * notification event is an aggregate notification. Aggregate notifications
      * summarize grouped events over a specified time period.</p> </li> </ul> </li>
-     * <li> <p> <code>CHILD</code> </p> <ul> <li> <p>Some EventRules are
+     * <li> <p> <code>CHILD</code> </p> <ul> <li> <p>Some <code>EventRules</code> are
      * <code>ACTIVE</code> and some are <code>INACTIVE</code>. Any call can be run.</p>
      * </li> </ul> </li> <li> <p> <code>NONE</code> </p> <ul> <li> <p>The notification
      * isn't aggregated.</p> </li> </ul> </li> </ul> </li> </ul>
@@ -129,7 +131,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the aggregatedNotificationEventArn to match.</p>
+     * <p>The ARN of the <code>aggregatedNotificationEventArn</code> to match.</p>
      */
     inline const Aws::String& GetAggregateNotificationEventArn() const{ return m_aggregateNotificationEventArn; }
     inline bool AggregateNotificationEventArnHasBeenSet() const { return m_aggregateNotificationEventArnHasBeenSet; }
@@ -139,6 +141,18 @@ namespace Model
     inline NotificationEventOverview& WithAggregateNotificationEventArn(const Aws::String& value) { SetAggregateNotificationEventArn(value); return *this;}
     inline NotificationEventOverview& WithAggregateNotificationEventArn(Aws::String&& value) { SetAggregateNotificationEventArn(std::move(value)); return *this;}
     inline NotificationEventOverview& WithAggregateNotificationEventArn(const char* value) { SetAggregateNotificationEventArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides an aggregated summary data for notification events.</p>
+     */
+    inline const AggregationSummary& GetAggregationSummary() const{ return m_aggregationSummary; }
+    inline bool AggregationSummaryHasBeenSet() const { return m_aggregationSummaryHasBeenSet; }
+    inline void SetAggregationSummary(const AggregationSummary& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = value; }
+    inline void SetAggregationSummary(AggregationSummary&& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = std::move(value); }
+    inline NotificationEventOverview& WithAggregationSummary(const AggregationSummary& value) { SetAggregationSummary(value); return *this;}
+    inline NotificationEventOverview& WithAggregationSummary(AggregationSummary&& value) { SetAggregationSummary(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -162,6 +176,9 @@ namespace Model
 
     Aws::String m_aggregateNotificationEventArn;
     bool m_aggregateNotificationEventArnHasBeenSet = false;
+
+    AggregationSummary m_aggregationSummary;
+    bool m_aggregationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

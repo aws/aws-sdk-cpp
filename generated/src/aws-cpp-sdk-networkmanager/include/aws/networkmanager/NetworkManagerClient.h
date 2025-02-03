@@ -6,26 +6,38 @@
 #pragma once
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkmanager/NetworkManagerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/networkmanager/NetworkManagerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace NetworkManager
 {
+  AWS_NETWORKMANAGER_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services enables you to centrally manage your Amazon Web Services
    * Cloud WAN core network and your Transit Gateway network across Amazon Web
    * Services accounts, Regions, and on-premises locations.</p>
    */
-  class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>
+  class AWS_NETWORKMANAGER_API NetworkManagerClient : smithy::client::AwsSmithyClientT<Aws::NetworkManager::SERVICE_NAME,
+      Aws::NetworkManager::NetworkManagerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NetworkManagerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NetworkManagerErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "NetworkManager"; }
 
       typedef NetworkManagerClientConfiguration ClientConfigurationType;
       typedef NetworkManagerEndpointProvider EndpointProviderType;
@@ -2403,10 +2415,7 @@ namespace NetworkManager
       std::shared_ptr<NetworkManagerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>;
-      void init(const NetworkManagerClientConfiguration& clientConfiguration);
 
-      NetworkManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NetworkManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace NetworkManager

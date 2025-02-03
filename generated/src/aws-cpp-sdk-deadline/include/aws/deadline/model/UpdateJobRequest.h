@@ -54,48 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The farm ID of the job to update.</p>
-     */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
-    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline UpdateJobRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline UpdateJobRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline UpdateJobRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The queue ID of the job to update.</p>
-     */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline UpdateJobRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline UpdateJobRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline UpdateJobRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The job ID to update.</p>
-     */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline UpdateJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline UpdateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline UpdateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The task status to update the job's tasks to.</p>
      */
     inline const JobTargetTaskRunStatus& GetTargetTaskRunStatus() const{ return m_targetTaskRunStatus; }
@@ -151,19 +109,68 @@ namespace Model
     inline UpdateJobRequest& WithLifecycleStatus(const UpdateJobLifecycleStatus& value) { SetLifecycleStatus(value); return *this;}
     inline UpdateJobRequest& WithLifecycleStatus(UpdateJobLifecycleStatus&& value) { SetLifecycleStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of worker hosts that can concurrently process a job. When
+     * the <code>maxWorkerCount</code> is reached, no more workers will be assigned to
+     * process the job, even if the fleets assigned to the job's queue has available
+     * workers.</p> <p>You can't set the <code>maxWorkerCount</code> to 0. If you set
+     * it to -1, there is no maximum number of workers.</p> <p>If you don't specify the
+     * <code>maxWorkerCount</code>, the default is -1.</p> <p>The maximum number of
+     * workers that can process tasks in the job.</p>
+     */
+    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
+    inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
+    inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
+    inline UpdateJobRequest& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The farm ID of the job to update.</p>
+     */
+    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
+    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
+    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
+    inline UpdateJobRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
+    inline UpdateJobRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
+    inline UpdateJobRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The queue ID of the job to update.</p>
+     */
+    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
+    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
+    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
+    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
+    inline UpdateJobRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
+    inline UpdateJobRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
+    inline UpdateJobRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The job ID to update.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+    inline UpdateJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+    inline UpdateJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+    inline UpdateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_farmId;
-    bool m_farmIdHasBeenSet = false;
-
-    Aws::String m_queueId;
-    bool m_queueIdHasBeenSet = false;
-
-    Aws::String m_jobId;
-    bool m_jobIdHasBeenSet = false;
 
     JobTargetTaskRunStatus m_targetTaskRunStatus;
     bool m_targetTaskRunStatusHasBeenSet = false;
@@ -179,6 +186,18 @@ namespace Model
 
     UpdateJobLifecycleStatus m_lifecycleStatus;
     bool m_lifecycleStatusHasBeenSet = false;
+
+    int m_maxWorkerCount;
+    bool m_maxWorkerCountHasBeenSet = false;
+
+    Aws::String m_farmId;
+    bool m_farmIdHasBeenSet = false;
+
+    Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
   };
 
 } // namespace Model

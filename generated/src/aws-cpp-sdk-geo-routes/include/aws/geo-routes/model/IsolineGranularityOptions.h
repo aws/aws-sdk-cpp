@@ -48,7 +48,7 @@ namespace Model
     ///@{
     /**
      * <p>Maximum resolution of the returned isoline.</p> <p> <b>Unit</b>:
-     * <code>centimeters</code> </p>
+     * <code>meters</code> </p>
      */
     inline long long GetMaxResolution() const{ return m_maxResolution; }
     inline bool MaxResolutionHasBeenSet() const { return m_maxResolutionHasBeenSet; }

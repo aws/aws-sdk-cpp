@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appstream/AppStreamServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/appstream/AppStreamErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppStream
 {
+  AWS_APPSTREAM_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon AppStream 2.0</fullname> <p>This is the <i>Amazon AppStream 2.0
    * API Reference</i>. This documentation provides descriptions and syntax for each
@@ -34,12 +38,20 @@ namespace AppStream
    * href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0
    * documentation</a> </p> </li> </ul>
    */
-  class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>
+  class AWS_APPSTREAM_API AppStreamClient : smithy::client::AwsSmithyClientT<Aws::AppStream::SERVICE_NAME,
+      Aws::AppStream::AppStreamClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppStreamEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppStreamErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppStream"; }
 
       typedef AppStreamClientConfiguration ClientConfigurationType;
       typedef AppStreamEndpointProvider EndpointProviderType;
@@ -2221,10 +2233,7 @@ namespace AppStream
       std::shared_ptr<AppStreamEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>;
-      void init(const AppStreamClientConfiguration& clientConfiguration);
 
-      AppStreamClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppStreamEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppStream

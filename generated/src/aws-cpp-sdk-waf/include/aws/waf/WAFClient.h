@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf/WAFServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/waf/WAFErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WAF
 {
+  AWS_WAF_API extern const char SERVICE_NAME[];
   /**
    *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
    * see <a
@@ -34,12 +38,20 @@ namespace WAF
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
    * WAF Classic</a> in the developer guide.</p>
    */
-  class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>
+  class AWS_WAF_API WAFClient : smithy::client::AwsSmithyClientT<Aws::WAF::SERVICE_NAME,
+      Aws::WAF::WAFClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WAFEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WAFErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WAF"; }
 
       typedef WAFClientConfiguration ClientConfigurationType;
       typedef WAFEndpointProvider EndpointProviderType;
@@ -3414,10 +3426,7 @@ namespace WAF
       std::shared_ptr<WAFEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>;
-      void init(const WAFClientConfiguration& clientConfiguration);
 
-      WAFClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WAFEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WAF

@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/imagebuilder/ImagebuilderServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/imagebuilder/ImagebuilderErrorMarshaller.h>
 
 namespace Aws
 {
 namespace imagebuilder
 {
+  AWS_IMAGEBUILDER_API extern const char SERVICE_NAME[];
   /**
    * <p>EC2 Image Builder is a fully managed Amazon Web Services service that makes
    * it easier to automate the creation, management, and deployment of customized,
    * secure, and up-to-date "golden" server images that are pre-installed and
    * pre-configured with software and settings to meet specific IT standards.</p>
    */
-  class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>
+  class AWS_IMAGEBUILDER_API ImagebuilderClient : smithy::client::AwsSmithyClientT<Aws::imagebuilder::SERVICE_NAME,
+      Aws::imagebuilder::ImagebuilderClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ImagebuilderEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ImagebuilderErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "imagebuilder"; }
 
       typedef ImagebuilderClientConfiguration ClientConfigurationType;
       typedef ImagebuilderEndpointProvider EndpointProviderType;
@@ -2084,10 +2096,7 @@ namespace imagebuilder
       std::shared_ptr<ImagebuilderEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>;
-      void init(const ImagebuilderClientConfiguration& clientConfiguration);
 
-      ImagebuilderClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ImagebuilderEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace imagebuilder

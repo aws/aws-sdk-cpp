@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/supplychain/SupplyChainServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/supplychain/SupplyChainErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SupplyChain
 {
+  AWS_SUPPLYCHAIN_API extern const char SERVICE_NAME[];
   /**
    * <p> AWS Supply Chain is a cloud-based application that works with your
    * enterprise resource planning (ERP) and supply chain management systems. Using
@@ -26,12 +30,20 @@ namespace SupplyChain
    * allow for the exclusive use of AWS Identity and Access Management users and
    * roles to help facilitate access, trust, and permission policies. </p>
    */
-  class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>
+  class AWS_SUPPLYCHAIN_API SupplyChainClient : smithy::client::AwsSmithyClientT<Aws::SupplyChain::SERVICE_NAME,
+      Aws::SupplyChain::SupplyChainClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SupplyChainEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SupplyChainErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SupplyChain"; }
 
       typedef SupplyChainClientConfiguration ClientConfigurationType;
       typedef SupplyChainEndpointProvider EndpointProviderType;
@@ -687,10 +699,7 @@ namespace SupplyChain
       std::shared_ptr<SupplyChainEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>;
-      void init(const SupplyChainClientConfiguration& clientConfiguration);
 
-      SupplyChainClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SupplyChainEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SupplyChain

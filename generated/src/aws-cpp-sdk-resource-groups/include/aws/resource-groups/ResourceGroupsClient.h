@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/resource-groups/ResourceGroupsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ResourceGroups
 {
+  AWS_RESOURCEGROUPS_API extern const char SERVICE_NAME[];
   /**
    * <p>Resource Groups lets you organize Amazon Web Services resources such as
    * Amazon Elastic Compute Cloud instances, Amazon Relational Database Service
@@ -42,12 +46,20 @@ namespace ResourceGroups
    * about resources that are members of a group</p> </li> <li> <p>Searching Amazon
    * Web Services resources based on a resource query</p> </li> </ul>
    */
-  class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>
+  class AWS_RESOURCEGROUPS_API ResourceGroupsClient : smithy::client::AwsSmithyClientT<Aws::ResourceGroups::SERVICE_NAME,
+      Aws::ResourceGroups::ResourceGroupsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ResourceGroupsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ResourceGroupsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Resource Groups"; }
 
       typedef ResourceGroupsClientConfiguration ClientConfigurationType;
       typedef ResourceGroupsEndpointProvider EndpointProviderType;
@@ -796,10 +808,7 @@ namespace ResourceGroups
       std::shared_ptr<ResourceGroupsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>;
-      void init(const ResourceGroupsClientConfiguration& clientConfiguration);
 
-      ResourceGroupsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ResourceGroupsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ResourceGroups

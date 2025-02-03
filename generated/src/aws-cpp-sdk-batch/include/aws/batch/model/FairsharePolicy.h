@@ -41,10 +41,13 @@ namespace Model
     ///@{
     /**
      * <p>The amount of time (in seconds) to use to calculate a fair share percentage
-     * for each fair share identifier in use. A value of zero (0) indicates that only
-     * current usage is measured. The decay allows for more recently run jobs to have
-     * more weight than jobs that ran earlier. The maximum supported value is 604800 (1
-     * week).</p>
+     * for each fair share identifier in use. A value of zero (0) indicates the default
+     * minimum time window (600 seconds). The maximum supported value is 604800 (1
+     * week).</p> <p>The decay allows for more recently run jobs to have more weight
+     * than jobs that ran earlier. Consider adjusting this number if you have jobs that
+     * (on average) run longer than ten minutes, or a large difference in job count or
+     * job run times between share identifiers, and the allocation of resources doesn’t
+     * meet your needs.</p>
      */
     inline int GetShareDecaySeconds() const{ return m_shareDecaySeconds; }
     inline bool ShareDecaySecondsHasBeenSet() const { return m_shareDecaySecondsHasBeenSet; }

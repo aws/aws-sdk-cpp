@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/s3tables/S3TablesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace S3Tables
 {
+  AWS_S3TABLES_API extern const char SERVICE_NAME[];
   /**
    * <p>An Amazon S3 table represents a structured dataset consisting of tabular data
    * in <a href="https://parquet.apache.org/docs/">Apache Parquet</a> format and
@@ -33,12 +37,20 @@ namespace S3Tables
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">Amazon
    * S3 table buckets</a>.</p>
    */
-  class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>
+  class AWS_S3TABLES_API S3TablesClient : smithy::client::AwsSmithyClientT<Aws::S3Tables::SERVICE_NAME,
+      Aws::S3Tables::S3TablesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      S3TablesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::S3TablesErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "S3Tables"; }
 
       typedef S3TablesClientConfiguration ClientConfigurationType;
       typedef S3TablesEndpointProvider EndpointProviderType;
@@ -94,8 +106,11 @@ namespace S3Tables
         /**
          * <p>Creates a namespace. A namespace is a logical grouping of tables within your
          * table bucket, which you can use to organize tables. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
-         * namespaces</a>. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-create.html">Create
+         * a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:CreateNamespace</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateNamespace">AWS
          * API Reference</a></p>
          */
@@ -120,8 +135,15 @@ namespace S3Tables
         }
 
         /**
-         * <p>Creates a new table associated with the given namespace in a table
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new table associated with the given namespace in a table bucket.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating
+         * an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:CreateTable</code> permission to use this operation. </p> 
+         * <p>Additionally, you must have the <code>s3tables:PutTableData</code> permission
+         * to use this operation with the optional <code>metadata</code> request parameter.
+         * </p>  </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTable">AWS
          * API Reference</a></p>
          */
@@ -146,7 +168,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Creates a table bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html">Creating
+         * a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:CreateTableBucket</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTableBucket">AWS
          * API Reference</a></p>
          */
@@ -171,7 +198,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Deletes a namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a namespace. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-delete.html">Delete
+         * a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:DeleteNamespace</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteNamespace">AWS
          * API Reference</a></p>
          */
@@ -196,7 +228,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Deletes a table.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a table. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-delete.html">Deleting
+         * an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:DeleteTable</code> permission to use this operation. </p> </dd>
+         * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTable">AWS
          * API Reference</a></p>
          */
@@ -221,7 +258,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Deletes a table bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html">Deleting
+         * a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:DeleteTableBucket</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucket">AWS
          * API Reference</a></p>
          */
@@ -246,7 +288,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Deletes a table bucket policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a table bucket policy. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-delete">Deleting
+         * a table bucket policy</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:DeleteTableBucketPolicy</code> permission to use this operation.
+         * </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketPolicy">AWS
          * API Reference</a></p>
          */
@@ -271,7 +318,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Deletes a table policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a table policy. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-delete">Deleting
+         * a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:DeleteTablePolicy</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTablePolicy">AWS
          * API Reference</a></p>
          */
@@ -296,7 +348,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details about a namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details about a namespace. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
+         * namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetNamespace</code> permission to use this operation. </p> </dd>
+         * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetNamespace">AWS
          * API Reference</a></p>
          */
@@ -321,7 +378,11 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details about a table.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details about a table. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+         * Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the <code>s3tables:GetTable</code>
+         * permission to use this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTable">AWS
          * API Reference</a></p>
          */
@@ -346,7 +407,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details on a table bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details on a table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-details.html">Viewing
+         * details about an Amazon S3 table bucket</a> in the <i>Amazon Simple Storage
+         * Service User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTableBucket</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucket">AWS
          * API Reference</a></p>
          */
@@ -371,8 +437,13 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details about a maintenance configuration for a given table
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details about a maintenance configuration for a given table bucket. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
+         * S3 table bucket maintenance</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTableBucketMaintenanceConfiguration</code> permission to use
+         * this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMaintenanceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -397,7 +468,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details about a table bucket policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details about a table bucket policy. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-get">Viewing
+         * a table bucket policy</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTableBucketPolicy</code> permission to use this operation.
+         * </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketPolicy">AWS
          * API Reference</a></p>
          */
@@ -422,8 +498,13 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details about the maintenance configuration of a table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets details about the maintenance configuration of a table. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+         * Tables maintenance</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTableMaintenanceConfiguration</code> permission to use this
+         * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMaintenanceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -448,8 +529,13 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets the status of a maintenance job for a table.</p><p><h3>See Also:</h3>  
+         * <p>Gets the status of a maintenance job for a table. For more information, see
          * <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+         * Tables maintenance</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTableMaintenanceJobStatus</code> permission to use this
+         * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMaintenanceJobStatus">AWS
          * API Reference</a></p>
          */
@@ -474,7 +560,9 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets the location of the table metadata.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the location of the table metadata.</p> <dl> <dt>Permissions</dt> <dd>
+         * <p>You must have the <code>s3tables:GetTableMetadataLocation</code> permission
+         * to use this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMetadataLocation">AWS
          * API Reference</a></p>
          */
@@ -499,7 +587,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Gets details about a table policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details about a table policy. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get">Viewing
+         * a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:GetTablePolicy</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTablePolicy">AWS
          * API Reference</a></p>
          */
@@ -524,7 +617,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Lists the namespaces within a table bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the namespaces within a table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
+         * namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:ListNamespaces</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListNamespaces">AWS
          * API Reference</a></p>
          */
@@ -549,7 +647,12 @@ namespace S3Tables
         }
 
         /**
-         * <p>Lists table buckets for your account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists table buckets for your account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">S3
+         * Table buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:ListTableBuckets</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTableBuckets">AWS
          * API Reference</a></p>
          */
@@ -574,7 +677,11 @@ namespace S3Tables
         }
 
         /**
-         * <p>List tables in the given table bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>List tables in the given table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+         * Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the <code>s3tables:ListTables</code>
+         * permission to use this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTables">AWS
          * API Reference</a></p>
          */
@@ -600,7 +707,12 @@ namespace S3Tables
 
         /**
          * <p>Creates a new maintenance configuration or replaces an existing maintenance
-         * configuration for a table bucket.</p><p><h3>See Also:</h3>   <a
+         * configuration for a table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
+         * S3 table bucket maintenance</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:PutTableBucketMaintenanceConfiguration</code> permission to use
+         * this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMaintenanceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -626,7 +738,12 @@ namespace S3Tables
 
         /**
          * <p>Creates a new maintenance configuration or replaces an existing table bucket
-         * policy for a table bucket. </p><p><h3>See Also:</h3>   <a
+         * policy for a table bucket. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding
+         * a table bucket policy</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:PutTableBucketPolicy</code> permission to use this operation.
+         * </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketPolicy">AWS
          * API Reference</a></p>
          */
@@ -652,7 +769,12 @@ namespace S3Tables
 
         /**
          * <p>Creates a new maintenance configuration or replaces an existing maintenance
-         * configuration for a table.</p><p><h3>See Also:</h3>   <a
+         * configuration for a table. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+         * Tables maintenance</a> in the <i>Amazon Simple Storage Service User
+         * Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:PutTableMaintenanceConfiguration</code> permission to use this
+         * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableMaintenanceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -678,7 +800,12 @@ namespace S3Tables
 
         /**
          * <p>Creates a new maintenance configuration or replaces an existing table policy
-         * for a table. </p><p><h3>See Also:</h3>   <a
+         * for a table. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add">Adding
+         * a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>. </p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:PutTablePolicy</code> permission to use this operation. </p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTablePolicy">AWS
          * API Reference</a></p>
          */
@@ -703,7 +830,11 @@ namespace S3Tables
         }
 
         /**
-         * <p>Renames a table or a namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>Renames a table or a namespace. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+         * Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have the <code>s3tables:RenameTable</code>
+         * permission to use this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/RenameTable">AWS
          * API Reference</a></p>
          */
@@ -728,7 +859,13 @@ namespace S3Tables
         }
 
         /**
-         * <p>Updates the metadata location for a table.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the metadata location for a table. The metadata location of a table
+         * must be an S3 URI that begins with the table's warehouse location. The metadata
+         * location for an Apache Iceberg table must end with <code>.metadata.json</code>,
+         * or if the metadata file is Gzip-compressed, <code>.metadata.json.gz</code>.</p>
+         * <dl> <dt>Permissions</dt> <dd> <p>You must have the
+         * <code>s3tables:UpdateTableMetadataLocation</code> permission to use this
+         * operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/UpdateTableMetadataLocation">AWS
          * API Reference</a></p>
          */
@@ -757,10 +894,7 @@ namespace S3Tables
       std::shared_ptr<S3TablesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>;
-      void init(const S3TablesClientConfiguration& clientConfiguration);
 
-      S3TablesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<S3TablesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace S3Tables

@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Exclusion options.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies strict exclusion options for the route calculation. This setting
+   * mandates that the router will avoid any routes that include the specified
+   * options, rather than merely attempting to minimize them.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/WaypointOptimizationExclusionOptions">AWS
    * API Reference</a></p>
    */

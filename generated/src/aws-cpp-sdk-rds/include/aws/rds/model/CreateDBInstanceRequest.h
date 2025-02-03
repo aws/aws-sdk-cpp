@@ -1250,9 +1250,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage throughput value for the DB instance.</p> <p>This setting applies
-     * only to the <code>gp3</code> storage type.</p> <p>This setting doesn't apply to
-     * Amazon Aurora or RDS Custom DB instances.</p>
+     * <p>The storage throughput value, in mebibyte per second (MiBps), for the DB
+     * instance.</p> <p>This setting applies only to the <code>gp3</code> storage
+     * type.</p> <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB
+     * instances.</p>
      */
     inline int GetStorageThroughput() const{ return m_storageThroughput; }
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-maps/GeoMapsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/geo-maps/GeoMapsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GeoMaps
 {
+  AWS_GEOMAPS_API extern const char SERVICE_NAME[];
   /**
    * <p> Integrate high-quality base map data into your applications using <a
    * href="https://maplibre.org">MapLibre</a>. Capabilities include: </p> <ul> <li>
@@ -28,12 +32,20 @@ namespace GeoMaps
    * <p>Enhancing application performance by reducing client-side rendering</p> </li>
    * </ul> </li> </ul>
    */
-  class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>
+  class AWS_GEOMAPS_API GeoMapsClient : smithy::client::AwsSmithyClientT<Aws::GeoMaps::SERVICE_NAME,
+      Aws::GeoMaps::GeoMapsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GeoMapsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GeoMapsErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Geo Maps"; }
 
       typedef GeoMapsClientConfiguration ClientConfigurationType;
       typedef GeoMapsEndpointProvider EndpointProviderType;
@@ -221,10 +233,7 @@ namespace GeoMaps
       std::shared_ptr<GeoMapsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>;
-      void init(const GeoMapsClientConfiguration& clientConfiguration);
 
-      GeoMapsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GeoMapsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GeoMaps

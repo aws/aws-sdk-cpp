@@ -29,6 +29,7 @@ namespace Aws
         static const int OUTBOUND_WHISPER_HASH = HashingUtils::HashString("OUTBOUND_WHISPER");
         static const int AGENT_TRANSFER_HASH = HashingUtils::HashString("AGENT_TRANSFER");
         static const int QUEUE_TRANSFER_HASH = HashingUtils::HashString("QUEUE_TRANSFER");
+        static const int CAMPAIGN_HASH = HashingUtils::HashString("CAMPAIGN");
 
 
         ContactFlowType GetContactFlowTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ContactFlowType::QUEUE_TRANSFER;
           }
+          else if (hashCode == CAMPAIGN_HASH)
+          {
+            return ContactFlowType::CAMPAIGN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +109,8 @@ namespace Aws
             return "AGENT_TRANSFER";
           case ContactFlowType::QUEUE_TRANSFER:
             return "QUEUE_TRANSFER";
+          case ContactFlowType::CAMPAIGN:
+            return "CAMPAIGN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

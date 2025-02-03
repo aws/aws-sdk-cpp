@@ -19,7 +19,8 @@ namespace Model
 {
 
 EntitiesDefinition::EntitiesDefinition() : 
-    m_entityListHasBeenSet(false)
+    m_entityListHasBeenSet(false),
+    m_cedarJsonHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,13 @@ EntitiesDefinition& EntitiesDefinition::operator =(JsonView jsonValue)
     m_entityListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cedarJson"))
+  {
+    m_cedarJson = jsonValue.GetString("cedarJson");
+
+    m_cedarJsonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -56,6 +64,12 @@ JsonValue EntitiesDefinition::Jsonize() const
      entityListJsonList[entityListIndex].AsObject(m_entityList[entityListIndex].Jsonize());
    }
    payload.WithArray("entityList", std::move(entityListJsonList));
+
+  }
+
+  if(m_cedarJsonHasBeenSet)
+  {
+   payload.WithString("cedarJson", m_cedarJson);
 
   }
 

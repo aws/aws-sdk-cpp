@@ -206,6 +206,7 @@ namespace Aws
         static const int ml_inf2_48xlarge_HASH = HashingUtils::HashString("ml.inf2.48xlarge");
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
         static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
+        static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
         static const int ml_m7i_large_HASH = HashingUtils::HashString("ml.m7i.large");
         static const int ml_m7i_xlarge_HASH = HashingUtils::HashString("ml.m7i.xlarge");
         static const int ml_m7i_2xlarge_HASH = HashingUtils::HashString("ml.m7i.2xlarge");
@@ -1175,6 +1176,11 @@ namespace Aws
             enumValue = ProductionVariantInstanceType::ml_p5e_48xlarge;
             return true;
           }
+          else if (hashCode == ml_p5en_48xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_p5en_48xlarge;
+            return true;
+          }
           else if (hashCode == ml_m7i_large_HASH)
           {
             enumValue = ProductionVariantInstanceType::ml_m7i_large;
@@ -1882,6 +1888,9 @@ namespace Aws
             return true;
           case ProductionVariantInstanceType::ml_p5e_48xlarge:
             value = "ml.p5e.48xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_p5en_48xlarge:
+            value = "ml.p5en.48xlarge";
             return true;
           case ProductionVariantInstanceType::ml_m7i_large:
             value = "ml.m7i.large";

@@ -22,7 +22,8 @@ StorageConnector::StorageConnector() :
     m_connectorType(StorageConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+    m_domainsHasBeenSet(false),
+    m_domainsRequireAdminConsentHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ StorageConnector& StorageConnector::operator =(JsonView jsonValue)
     m_domainsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DomainsRequireAdminConsent"))
+  {
+    Aws::Utils::Array<JsonView> domainsRequireAdminConsentJsonList = jsonValue.GetArray("DomainsRequireAdminConsent");
+    for(unsigned domainsRequireAdminConsentIndex = 0; domainsRequireAdminConsentIndex < domainsRequireAdminConsentJsonList.GetLength(); ++domainsRequireAdminConsentIndex)
+    {
+      m_domainsRequireAdminConsent.push_back(domainsRequireAdminConsentJsonList[domainsRequireAdminConsentIndex].AsString());
+    }
+    m_domainsRequireAdminConsentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,17 @@ JsonValue StorageConnector::Jsonize() const
      domainsJsonList[domainsIndex].AsString(m_domains[domainsIndex]);
    }
    payload.WithArray("Domains", std::move(domainsJsonList));
+
+  }
+
+  if(m_domainsRequireAdminConsentHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> domainsRequireAdminConsentJsonList(m_domainsRequireAdminConsent.size());
+   for(unsigned domainsRequireAdminConsentIndex = 0; domainsRequireAdminConsentIndex < domainsRequireAdminConsentJsonList.GetLength(); ++domainsRequireAdminConsentIndex)
+   {
+     domainsRequireAdminConsentJsonList[domainsRequireAdminConsentIndex].AsString(m_domainsRequireAdminConsent[domainsRequireAdminConsentIndex]);
+   }
+   payload.WithArray("DomainsRequireAdminConsent", std::move(domainsRequireAdminConsentJsonList));
 
   }
 

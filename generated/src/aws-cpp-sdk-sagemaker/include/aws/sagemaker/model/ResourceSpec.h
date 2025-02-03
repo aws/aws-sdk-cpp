@@ -26,7 +26,15 @@ namespace Model
 
   /**
    * <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version,
-   * and the instance type that the version runs on.</p><p><h3>See Also:</h3>   <a
+   * and the instance type that the version runs on.</p>  <p>When both
+   * <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are
+   * passed, <code>SageMakerImageVersionArn</code> is used. Any updates to
+   * <code>SageMakerImageArn</code> will not take effect if
+   * <code>SageMakerImageVersionArn</code> already exists in the
+   * <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always
+   * takes precedence. To clear the value set for
+   * <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */
@@ -55,7 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the image version created on the instance.</p>
+     * <p>The ARN of the image version created on the instance. To clear the value set
+     * for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the
+     * value.</p>
      */
     inline const Aws::String& GetSageMakerImageVersionArn() const{ return m_sageMakerImageVersionArn; }
     inline bool SageMakerImageVersionArnHasBeenSet() const { return m_sageMakerImageVersionArnHasBeenSet; }

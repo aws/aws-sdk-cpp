@@ -1,0 +1,84 @@
+#macro( serializeElement $shapeMember $memberVarName )
+##/* --- the actual shape member is $shapeMember; the actual shape is $shapeMember.shape; --- */
+#if($shapeMember.shape.enum)
+${shapeMember.shape.name}Mapper::GetNameFor${shapeMember.shape.name}(${memberVarName});
+#elseif($shapeMember.shape.timeStamp)
+${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($shapeMember.shape));
+#else
+$memberVarName;
+#end
+#end##macro serializeElement
+#macro( serializeMap $spaces $shapeMember $memberVarName )
+    ${spaces}for(auto& item : ${memberVarName})
+    ${spaces}{
+#if(!$shapeMember.shape.mapValue.shape.list)
+    ${spaces}  ss << #serializeElement($shapeMember.shape.mapValue, "item.second")
+    ${spaces}  uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+    ${spaces}  ss.str("");
+#else##URL query Key has multiple values, multiply key per https://smithy.io/2.0/spec/http-bindings.html#id9
+    ${spaces}  for(auto& innerItem : item.second)
+    ${spaces}  {
+    ${spaces}    ss << #serializeElement($shapeMember.shape.mapValue, "innerItem")
+    ${spaces}    uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+    ${spaces}    ss.str("");
+    ${spaces}  }
+#end##if(!$shapeMember.shape.map.mapValue.shape.list)
+    ${spaces}}
+#end##macro serializeMap
+#macro( serializeList $spaces $shapeMember $memberVarName )
+    ${spaces}for(const auto& item : $memberVarName)
+    ${spaces}{
+    ${spaces}  ss << #serializeElement($shapeMember.shape.listMember, "item")
+    ${spaces}  uri.AddQueryStringParameter("${shapeMember.locationName}", ss.str());
+    ${spaces}  ss.str("");
+    ${spaces}}
+#end##macro serializeList
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberEntry.key))
+#set($spaces = '')
+#if(!$memberEntry.value.required)
+    if($CppViewHelper.computeVariableHasBeenSetName($memberEntry.key))
+    {
+#set($spaces = '  ')
+#end
+#if($memberEntry.value.shape.map)
+#serializeMap($spaces, $memberEntry.value, $memberVarName)
+#elseif($memberEntry.value.shape.list)
+#serializeList($spaces, $memberEntry.value, $memberVarName)
+##TODO remove the check for enum and timestamp and the following block (everything until next "${spaces}ss << ${memberVarName};" once it is safe to remove endpoint rules check)
+#elseif($memberEntry.value.shape.enum || $memberEntry.value.shape.timeStamp)
+    ${spaces}ss << #serializeElement($memberEntry.value, $memberVarName)
+    ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
+    ${spaces}ss.str("");
+#else
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("querystring") && $operation.arnEndpointMemberName.equals($$memberEntry.key) && !$serviceModel.endpointRules))
+    ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
+    ${spaces}if (arn && arn.Validate().IsSuccess())
+    ${spaces}{
+    ${spaces}  if (arn.GetResourceType() == ARNResourceType::BUCKET)
+    ${spaces}  {
+    ${spaces}    ss << arn.GetResourceId();
+    ${spaces}  }
+    ${spaces}  else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+    ${spaces}  {
+    ${spaces}    ss << arn.GetSubResourceId();
+    ${spaces}  }
+    ${spaces}  else
+    ${spaces}  {
+    ${spaces}    // It's a valid ARN, but has incorrect resource type.
+    ${spaces}    assert(false);
+    ${spaces}  }
+    ${spaces}}
+    ${spaces}else
+    ${spaces}{
+    ${spaces}  ss << ${memberVarName};
+    ${spaces}}
+#else
+    ${spaces}ss << ${memberVarName};
+#end
+    ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
+    ${spaces}ss.str("");
+#end
+#if(!$memberEntry.value.required)
+    }
+
+#end

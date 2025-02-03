@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTDeviceAdvisor
 {
+  AWS_IOTDEVICEADVISOR_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services IoT Core Device Advisor is a cloud-based, fully managed
    * test capability for validating IoT devices during device software development.
@@ -28,12 +32,20 @@ namespace IoTDeviceAdvisor
    * Web Services Partner Device Catalog without the need to send your device in and
    * wait for it to be tested.</p>
    */
-  class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>
+  class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : smithy::client::AwsSmithyClientT<Aws::IoTDeviceAdvisor::SERVICE_NAME,
+      Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTDeviceAdvisorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTDeviceAdvisorErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IotDeviceAdvisor"; }
 
       typedef IoTDeviceAdvisorClientConfiguration ClientConfigurationType;
       typedef IoTDeviceAdvisorEndpointProvider EndpointProviderType;
@@ -482,10 +494,7 @@ namespace IoTDeviceAdvisor
       std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>;
-      void init(const IoTDeviceAdvisorClientConfiguration& clientConfiguration);
 
-      IoTDeviceAdvisorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTDeviceAdvisor

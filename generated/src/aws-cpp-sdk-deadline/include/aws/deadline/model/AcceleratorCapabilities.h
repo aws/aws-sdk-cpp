@@ -26,12 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the GPU accelerators and drivers for the instance
-   * types in a fleet. If you include the <code>acceleratorCapabilities</code>
-   * property in the <a
-   * href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a>
-   * object, all of the Amazon EC2 instances will have at least one accelerator.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the GPU accelerators used for jobs processed by a
+   * fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AcceleratorCapabilities">AWS
    * API Reference</a></p>
    */
@@ -46,8 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of objects that contain the GPU name of the accelerator and driver for
-     * the instance types that support the accelerator.</p>
+     * <p>A list of accelerator capabilities requested for this fleet. Only Amazon
+     * Elastic Compute Cloud instances that provide these capabilities will be used.
+     * For example, if you specify both L4 and T4 chips, Deadline Cloud will use Amazon
+     * EC2 instances that have either the L4 or the T4 chip installed.</p>
      */
     inline const Aws::Vector<AcceleratorSelection>& GetSelections() const{ return m_selections; }
     inline bool SelectionsHasBeenSet() const { return m_selectionsHasBeenSet; }
@@ -61,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of GPUs on each worker. The default is 1.</p>
+     * <p>The number of GPU accelerators specified for worker hosts in this fleet. </p>
      */
     inline const AcceleratorCountRange& GetCount() const{ return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }

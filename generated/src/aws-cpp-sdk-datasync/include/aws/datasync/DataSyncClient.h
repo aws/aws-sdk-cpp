@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/datasync/DataSyncErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DataSync
 {
+  AWS_DATASYNC_API extern const char SERVICE_NAME[];
   /**
    * <fullname>DataSync</fullname> <p>DataSync is an online data movement and
    * discovery service that simplifies data migration and helps you quickly, easily,
@@ -25,12 +29,20 @@ namespace DataSync
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
    * User Guide</a> </i>.</p>
    */
-  class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>
+  class AWS_DATASYNC_API DataSyncClient : smithy::client::AwsSmithyClientT<Aws::DataSync::SERVICE_NAME,
+      Aws::DataSync::DataSyncClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DataSyncEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DataSyncErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DataSync"; }
 
       typedef DataSyncClientConfiguration ClientConfigurationType;
       typedef DataSyncEndpointProvider EndpointProviderType;
@@ -483,9 +495,9 @@ namespace DataSync
          * <p>Creates a transfer <i>location</i> for a Server Message Block (SMB) file
          * server. DataSync can use this location as a source or destination for
          * transferring data.</p> <p>Before you begin, make sure that you understand how
-         * DataSync <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
-         * SMB file servers</a>.</p><p><h3>See Also:</h3>   <a
+         * DataSync accesses SMB file servers. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+         * DataSync access to SMB file servers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -1973,10 +1985,7 @@ namespace DataSync
       std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>;
-      void init(const DataSyncClientConfiguration& clientConfiguration);
 
-      DataSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DataSyncEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DataSync

@@ -148,7 +148,7 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
       unsigned clusterSecurityGroupsCount = 1;
       for(auto& item : m_clusterSecurityGroups)
       {
-        ss << "ClusterSecurityGroups.member." << clusterSecurityGroupsCount << "="
+        ss << "ClusterSecurityGroups.ClusterSecurityGroupName." << clusterSecurityGroupsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         clusterSecurityGroupsCount++;
       }
@@ -166,7 +166,7 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
       unsigned vpcSecurityGroupIdsCount = 1;
       for(auto& item : m_vpcSecurityGroupIds)
       {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+        ss << "VpcSecurityGroupIds.VpcSecurityGroupId." << vpcSecurityGroupIdsCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
@@ -219,7 +219,7 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
       unsigned iamRolesCount = 1;
       for(auto& item : m_iamRoles)
       {
-        ss << "IamRoles.member." << iamRolesCount << "="
+        ss << "IamRoles.IamRoleArn." << iamRolesCount << "="
             << StringUtils::URLEncode(item.c_str()) << "&";
         iamRolesCount++;
       }

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The range for memory, in MiB, to use for the accelerator.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Defines the maximum and minimum amount of memory, in MiB, to use for the
+   * accelerator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AcceleratorTotalMemoryMiBRange">AWS
    * API Reference</a></p>
    */

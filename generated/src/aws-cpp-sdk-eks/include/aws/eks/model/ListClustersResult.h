@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of all of the clusters for your account in the specified Amazon Web
-     * Services Region.</p>
+     * Services Region .</p>
      */
     inline const Aws::Vector<Aws::String>& GetClusters() const{ return m_clusters; }
     inline void SetClusters(const Aws::Vector<Aws::String>& value) { m_clusters = value; }

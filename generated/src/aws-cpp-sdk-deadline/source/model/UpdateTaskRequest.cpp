@@ -16,13 +16,13 @@ using namespace Aws::Utils;
 UpdateTaskRequest::UpdateTaskRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
+    m_targetRunStatusHasBeenSet(false),
     m_farmIdHasBeenSet(false),
     m_queueIdHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_stepIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
-    m_targetRunStatusHasBeenSet(false)
+    m_taskIdHasBeenSet(false)
 {
 }
 

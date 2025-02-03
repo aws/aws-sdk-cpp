@@ -57,6 +57,37 @@ namespace smithy
             return SignWithAuthScheme(std::move(HTTPRequest), authScheme, authSchemeOption);
         }
 
+        static SigningOutcome PreSignRequest(std::shared_ptr<HttpRequest> httpRequest, 
+                                  const AuthSchemeOption& authSchemeOption,
+                                  const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
+                                  const Aws::String& region,
+                                  const Aws::String& serviceName,
+                                  long long expirationTimeInSeconds)
+        {
+            
+            auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
+            if (authSchemeIt == authSchemes.end())
+            {
+                assert(!"Auth scheme has not been found for a given auth option!");
+                return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
+                                     "",
+                                     "Requested AuthSchemeOption was not found within client Auth Schemes",
+                                     false/*retryable*/));
+            }
+
+            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
+
+            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
+            AuthSchemesVariantT authSchemesVariantCopy(authScheme); 
+            authSchemesVariantCopy.Visit(visitor);
+
+            if (!visitor.result) {
+              return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign with an unknown error",
+                                  false /*retryable*/));
+            }
+            return std::move(*visitor.result);
+        }
+
         static bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption,
                                     const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
@@ -135,6 +166,63 @@ namespace smithy
 
                 result.emplace(signer->sign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties()));
             }
+        };
+
+        //for presigning, region and expiration can be passed in runtime
+        struct PreSignerVisitor {
+          explicit PreSignerVisitor(std::shared_ptr<HttpRequest> httpRequest, 
+                          const AuthSchemeOption& targetAuthSchemeOption,
+                          const Aws::String& region,
+                          const Aws::String& serviceName,
+                          long long expirationTimeInSeconds)
+              : m_httpRequest(std::move(httpRequest)), 
+              m_targetAuthSchemeOption(targetAuthSchemeOption) ,
+              m_region(region),
+              m_serviceName(serviceName),
+              m_expirationTimeInSeconds(expirationTimeInSeconds)
+              {}
+
+          const std::shared_ptr<HttpRequest> m_httpRequest;
+          const AuthSchemeOption& m_targetAuthSchemeOption;
+          const Aws::String& m_region;
+          const Aws::String& m_serviceName;
+          const long long m_expirationTimeInSeconds;
+
+          Aws::Crt::Optional<SigningOutcome> result;
+
+          template <typename AuthSchemeAlternativeT>
+          void operator()(AuthSchemeAlternativeT& authScheme) {
+            // Auth Scheme Variant alternative contains the requested auth option
+            assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
+
+            using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
+            using IdentityResolver = IdentityResolverBase<IdentityT>;
+            using Signer = AwsSignerBase<IdentityT>;
+
+            std::shared_ptr<IdentityResolver> identityResolver = authScheme.identityResolver();
+            if (!identityResolver) {
+              result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "",
+                                          "Auth scheme provided a nullptr identityResolver", false /*retryable*/));
+              return;
+            }
+
+            auto identityResult =
+                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
+
+            if (!identityResult.IsSuccess()) {
+              result.emplace(identityResult.GetError());
+              return;
+            }
+            auto identity = std::move(identityResult.GetResultWithOwnership());
+
+            std::shared_ptr<Signer> signer = authScheme.signer();
+            if (!signer) {
+              result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Auth scheme provided a nullptr signer",
+                                          false /*retryable*/));
+              return;
+            }
+            result.emplace(signer->presign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties(), m_region, m_serviceName, m_expirationTimeInSeconds));
+          }
         };
 
         static

@@ -27,11 +27,7 @@ namespace Model
   /**
    * <p>The serializer that you want Firehose to use to convert data to the target
    * format before writing it to Amazon S3. Firehose supports two types of
-   * serializers: the <a
-   * href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC
-   * SerDe</a> and the <a
-   * href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet
-   * SerDe</a>.</p><p><h3>See Also:</h3>   <a
+   * serializers: the ORC SerDe and the Parquet SerDe.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Serializer">AWS
    * API Reference</a></p>
    */
@@ -48,7 +44,8 @@ namespace Model
     /**
      * <p>A serializer to use for converting data to the Parquet format before storing
      * it in Amazon S3. For more information, see <a
-     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
+     * href="https://parquet.apache.org/docs/contribution-guidelines/">Apache
+     * Parquet</a>.</p>
      */
     inline const ParquetSerDe& GetParquetSerDe() const{ return m_parquetSerDe; }
     inline bool ParquetSerDeHasBeenSet() const { return m_parquetSerDeHasBeenSet; }

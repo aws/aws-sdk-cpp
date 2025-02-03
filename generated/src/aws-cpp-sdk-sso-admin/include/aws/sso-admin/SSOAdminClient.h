@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-admin/SSOAdminServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sso-admin/SSOAdminErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SSOAdmin
 {
+  AWS_SSOADMIN_API extern const char SERVICE_NAME[];
   /**
    * <p>IAM Identity Center (successor to Single Sign-On) helps you securely create,
    * or connect, your workforce identities and manage their access centrally across
@@ -41,12 +45,20 @@ namespace SSOAdmin
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
    * 
    */
-  class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>
+  class AWS_SSOADMIN_API SSOAdminClient : smithy::client::AwsSmithyClientT<Aws::SSOAdmin::SERVICE_NAME,
+      Aws::SSOAdmin::SSOAdminClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SSOAdminEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SSOAdminErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SSO Admin"; }
 
       typedef SSOAdminClientConfiguration ClientConfigurationType;
       typedef SSOAdminEndpointProvider EndpointProviderType;
@@ -2090,10 +2102,7 @@ namespace SSOAdmin
       std::shared_ptr<SSOAdminEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>;
-      void init(const SSOAdminClientConfiguration& clientConfiguration);
 
-      SSOAdminClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SSOAdminEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSOAdmin

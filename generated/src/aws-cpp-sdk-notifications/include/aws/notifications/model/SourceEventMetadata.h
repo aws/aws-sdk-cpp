@@ -88,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Primary AWS account of Source Event</p>
+     * <p>The primary Amazon Web Services account of <code>SourceEvent</code>.</p>
      */
     inline const Aws::String& GetRelatedAccount() const{ return m_relatedAccount; }
     inline bool RelatedAccountHasBeenSet() const { return m_relatedAccountHasBeenSet; }
@@ -102,7 +102,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS servvice the event originates from. For example
+     * <p>The Amazon Web Services service the event originates from. For example
      * <code>aws.cloudwatch</code>.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
@@ -130,7 +130,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of event. For example, an AWS CloudWatch state change.</p>
+     * <p>The type of event. For example, an Amazon CloudWatch state change.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
@@ -144,7 +144,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of resources related to this NotificationEvent.</p>
+     * <p>A list of resources related to this <code>NotificationEvent</code>.</p>
      */
     inline const Aws::Vector<Resource>& GetRelatedResources() const{ return m_relatedResources; }
     inline bool RelatedResourcesHasBeenSet() const { return m_relatedResourcesHasBeenSet; }

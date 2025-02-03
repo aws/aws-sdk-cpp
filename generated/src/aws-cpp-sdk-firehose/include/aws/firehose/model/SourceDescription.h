@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
+#include <aws/firehose/model/DirectPutSourceDescription.h>
 #include <aws/firehose/model/KinesisStreamSourceDescription.h>
 #include <aws/firehose/model/MSKSourceDescription.h>
 #include <aws/firehose/model/DatabaseSourceDescription.h>
@@ -27,7 +28,7 @@ namespace Model
 
   /**
    * <p>Details about a Kinesis data stream used as the source for a Firehose
-   * Firehose stream.</p><p><h3>See Also:</h3>   <a
+   * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription">AWS
    * API Reference</a></p>
    */
@@ -39,6 +40,18 @@ namespace Model
     AWS_FIREHOSE_API SourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Details about Direct PUT used as the source for a Firehose stream. </p>
+     */
+    inline const DirectPutSourceDescription& GetDirectPutSourceDescription() const{ return m_directPutSourceDescription; }
+    inline bool DirectPutSourceDescriptionHasBeenSet() const { return m_directPutSourceDescriptionHasBeenSet; }
+    inline void SetDirectPutSourceDescription(const DirectPutSourceDescription& value) { m_directPutSourceDescriptionHasBeenSet = true; m_directPutSourceDescription = value; }
+    inline void SetDirectPutSourceDescription(DirectPutSourceDescription&& value) { m_directPutSourceDescriptionHasBeenSet = true; m_directPutSourceDescription = std::move(value); }
+    inline SourceDescription& WithDirectPutSourceDescription(const DirectPutSourceDescription& value) { SetDirectPutSourceDescription(value); return *this;}
+    inline SourceDescription& WithDirectPutSourceDescription(DirectPutSourceDescription&& value) { SetDirectPutSourceDescription(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -68,8 +81,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p>Details about a database used as the source for a Firehose stream.</p>
+     * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
     inline const DatabaseSourceDescription& GetDatabaseSourceDescription() const{ return m_databaseSourceDescription; }
     inline bool DatabaseSourceDescriptionHasBeenSet() const { return m_databaseSourceDescriptionHasBeenSet; }
@@ -79,6 +92,9 @@ namespace Model
     inline SourceDescription& WithDatabaseSourceDescription(DatabaseSourceDescription&& value) { SetDatabaseSourceDescription(std::move(value)); return *this;}
     ///@}
   private:
+
+    DirectPutSourceDescription m_directPutSourceDescription;
+    bool m_directPutSourceDescriptionHasBeenSet = false;
 
     KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
     bool m_kinesisStreamSourceDescriptionHasBeenSet = false;

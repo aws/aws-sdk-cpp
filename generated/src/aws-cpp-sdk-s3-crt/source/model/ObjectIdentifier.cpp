@@ -101,7 +101,7 @@ void ObjectIdentifier::AddToNode(XmlNode& parentNode) const
   if(m_lastModifiedTimeHasBeenSet)
   {
    XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_sizeHasBeenSet)

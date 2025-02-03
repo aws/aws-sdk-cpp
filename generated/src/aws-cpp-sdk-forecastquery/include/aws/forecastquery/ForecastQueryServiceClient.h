@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/forecastquery/ForecastQueryServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ForecastQueryService
 {
+  AWS_FORECASTQUERYSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
    */
-  class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>
+  class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient : smithy::client::AwsSmithyClientT<Aws::ForecastQueryService::SERVICE_NAME,
+      Aws::ForecastQueryService::ForecastQueryServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ForecastQueryServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ForecastQueryServiceErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "forecastquery"; }
 
       typedef ForecastQueryServiceClientConfiguration ClientConfigurationType;
       typedef ForecastQueryServiceEndpointProvider EndpointProviderType;
@@ -142,10 +154,7 @@ namespace ForecastQueryService
       std::shared_ptr<ForecastQueryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>;
-      void init(const ForecastQueryServiceClientConfiguration& clientConfiguration);
 
-      ForecastQueryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ForecastQueryServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ForecastQueryService

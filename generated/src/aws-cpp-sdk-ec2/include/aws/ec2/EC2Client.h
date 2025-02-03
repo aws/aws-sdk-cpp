@@ -1932,11 +1932,12 @@ namespace EC2
          * copied to an Outpost are encrypted by default using the default encryption key
          * for the Region, or a different key that you specify in the request using
          * <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
+         * information, <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User
+         * Guide</i>.</p> <p>Snapshots created by copying another snapshot have an
+         * arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-         * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-         * <p>Snapshots created by copying another snapshot have an arbitrary volume ID
-         * that should not be used for any purpose.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -3574,7 +3575,7 @@ namespace EC2
          * determines where you can create the snapshot.</p> <ul> <li> <p>If the source
          * volume is in a Region, you must create the snapshot in the same Region as the
          * volume.</p> </li> <li> <p>If the source volume is in a Local Zone, you can
-         * create the snapshot in the same Local Zone or in its parent Amazon Web Services
+         * create the snapshot in the same Local Zone or in parent Amazon Web Services
          * Region.</p> </li> <li> <p>If the source volume is on an Outpost, you can create
          * the snapshot on the same Outpost or in its parent Amazon Web Services
          * Region.</p> </li> </ul> <p>When a snapshot is created, any Amazon Web Services
@@ -3593,7 +3594,7 @@ namespace EC2
          * instance before taking the snapshot.</p> <p>Snapshots that are taken from
          * encrypted volumes are automatically encrypted. Volumes that are created from
          * encrypted snapshots are also automatically encrypted. Your encrypted volumes and
-         * any associated snapshots always remain protected. For more information, see <a
+         * any associated snapshots always remain protected. For more information, <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -3631,7 +3632,7 @@ namespace EC2
          * snapshots.</p> <ul> <li> <p>If the source instance is in a Region, you must
          * create the snapshots in the same Region as the instance.</p> </li> <li> <p>If
          * the source instance is in a Local Zone, you can create the snapshots in the same
-         * Local Zone or in its parent Amazon Web Services Region.</p> </li> <li> <p>If the
+         * Local Zone or in parent Amazon Web Services Region.</p> </li> <li> <p>If the
          * source instance is on an Outpost, you can create the snapshots on the same
          * Outpost or in its parent Amazon Web Services Region.</p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -5899,7 +5900,7 @@ namespace EC2
          * So regardless of which prior snapshots have been deleted, all active snapshots
          * will have access to all the information needed to restore the volume.</p> <p>You
          * cannot delete a snapshot of the root device of an EBS volume used by a
-         * registered AMI. You must first deregister the AMI before you can delete the
+         * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-snapshot.html">Delete
          * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
@@ -6593,7 +6594,7 @@ namespace EC2
         /**
          * <p>Delete a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
          * mode that can be applied to a single VPC or subnet that exempts it from the
-         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * account��s BPA mode and will allow bidirectional or egress-only access. You can
          * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
          * account to ensure that there is no traffic disruption to the exclusions when VPC
          * BPA is turned on. To learn more about VPC BPA, see <a

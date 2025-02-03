@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class JsonCppClientGenerator extends CppClientGenerator {
 
@@ -150,6 +152,10 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
 
+        if (serviceModel.isUseSmithyClient() && !serviceModel.hasEventStreamingRequestShapes()) {
+            return generateClientSmithyHeaderFile(serviceModel);
+        }
+
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
@@ -158,30 +164,25 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
-
         return makeFile(template, context, fileName, true);
     }
 
     @Override
-    protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
-        List<SdkFileEntry> sourceFiles = new ArrayList<>();
-        for (int i = 0; i < serviceModels.size(); i++) {
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientSource.vm", StandardCharsets.UTF_8.name());
+    protected List<SdkFileEntry> generateClientSourceFile( List<ServiceModel> serviceModels) throws Exception {
 
-            VelocityContext context = createContext(serviceModels.get(i));
-            context.put("CppViewHelper", CppViewHelper.class);
+        List<Integer> serviceModelsIndices = IntStream.range(0, serviceModels.size()).boxed().collect(Collectors.toList());
 
-            final String fileName;
-            if (i == 0) {
-                context.put("onlyGeneratedOperations", false);
-                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
-            } else {
-                context.put("onlyGeneratedOperations", true);
-                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
+        return serviceModelsIndices.stream().map(index -> 
+        {
+            if(serviceModels.get(index).isUseSmithyClient() && !serviceModels.get(index).hasEventStreamingRequestShapes())
+            {
+                return GenerateSmithyClientSourceFile(serviceModels.get(index), index);
             }
-            sourceFiles.add(makeFile(template, context, fileName, true));
-        }
-        return sourceFiles;
+            else
+            {
+                return GenerateLegacyClientSourceFile(serviceModels.get(index), index);
+            }
+        }).collect(Collectors.toList()); 
     }
 
     @Override

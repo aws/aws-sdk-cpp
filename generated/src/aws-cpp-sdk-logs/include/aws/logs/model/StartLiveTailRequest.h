@@ -32,6 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartLiveTail"; }
 
+    inline virtual bool HasEventStreamResponse() const override { return true; }
     AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;

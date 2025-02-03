@@ -16,7 +16,8 @@ namespace Model
   enum class FlowCompletionReason
   {
     NOT_SET,
-    SUCCESS
+    SUCCESS,
+    INPUT_REQUIRED
   };
 
 namespace FlowCompletionReasonMapper

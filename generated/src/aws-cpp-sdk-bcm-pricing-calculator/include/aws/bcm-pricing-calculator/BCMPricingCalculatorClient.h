@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bcm-pricing-calculator/BCMPricingCalculatorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BCMPricingCalculator
 {
+  AWS_BCMPRICINGCALCULATOR_API extern const char SERVICE_NAME[];
   /**
    * <p> You can use the Pricing Calculator API to programmatically create estimates
    * for your planned cloud use. You can model usage and commitments such as Savings
@@ -23,12 +27,20 @@ namespace BCMPricingCalculator
    * following endpoint:</p> <ul> <li> <p>
    * <code>https://bcm-pricing-calculator.us-east-1.api.aws</code> </p> </li> </ul>
    */
-  class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>
+  class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient : smithy::client::AwsSmithyClientT<Aws::BCMPricingCalculator::SERVICE_NAME,
+      Aws::BCMPricingCalculator::BCMPricingCalculatorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BCMPricingCalculatorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BCMPricingCalculatorErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "BCM Pricing Calculator"; }
 
       typedef BCMPricingCalculatorClientConfiguration ClientConfigurationType;
       typedef BCMPricingCalculatorEndpointProvider EndpointProviderType;
@@ -83,8 +95,12 @@ namespace BCMPricingCalculator
 
         /**
          * <p> Create Compute Savings Plans, EC2 Instance Savings Plans, or EC2 Reserved
-         * Instances commitments that you want to model in a Bill Scenario. </p><p><h3>See
-         * Also:</h3>   <a
+         * Instances commitments that you want to model in a Bill Scenario. </p> 
+         * <p>The <code>BatchCreateBillScenarioCommitmentModification</code> operation
+         * doesn't have its own IAM permission. To authorize this operation for Amazon Web
+         * Services principals, include the permission
+         * <code>bcm-pricing-calculator:CreateBillScenarioCommitmentModification</code> in
+         * your policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateBillScenarioCommitmentModification">AWS
          * API Reference</a></p>
          */
@@ -110,7 +126,12 @@ namespace BCMPricingCalculator
 
         /**
          * <p> Create Amazon Web Services service usage that you want to model in a Bill
-         * Scenario. </p><p><h3>See Also:</h3>   <a
+         * Scenario. </p>  <p>The
+         * <code>BatchCreateBillScenarioUsageModification</code> operation doesn't have its
+         * own IAM permission. To authorize this operation for Amazon Web Services
+         * principals, include the permission
+         * <code>bcm-pricing-calculator:CreateBillScenarioUsageModification</code> in your
+         * policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateBillScenarioUsageModification">AWS
          * API Reference</a></p>
          */
@@ -136,7 +157,12 @@ namespace BCMPricingCalculator
 
         /**
          * <p> Create Amazon Web Services service usage that you want to model in a
-         * Workload Estimate. </p><p><h3>See Also:</h3>   <a
+         * Workload Estimate. </p>  <p>The
+         * <code>BatchCreateWorkloadEstimateUsage</code> operation doesn't have its own IAM
+         * permission. To authorize this operation for Amazon Web Services principals,
+         * include the permission
+         * <code>bcm-pricing-calculator:CreateWorkloadEstimateUsage</code> in your
+         * policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateWorkloadEstimateUsage">AWS
          * API Reference</a></p>
          */
@@ -168,8 +194,12 @@ namespace BCMPricingCalculator
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BillScenarioCommitmentModificationAction.html">
          * BillScenarioCommitmentModificationAction</a> of <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioUsageModification.html">
-         * BatchCreateBillScenarioCommitmentModification</a> operation. </p><p><h3>See
-         * Also:</h3>   <a
+         * BatchCreateBillScenarioCommitmentModification</a> operation. </p>  <p>The
+         * <code>BatchDeleteBillScenarioCommitmentModification</code> operation doesn't
+         * have its own IAM permission. To authorize this operation for Amazon Web Services
+         * principals, include the permission
+         * <code>bcm-pricing-calculator:DeleteBillScenarioCommitmentModification</code> in
+         * your policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteBillScenarioCommitmentModification">AWS
          * API Reference</a></p>
          */
@@ -198,7 +228,12 @@ namespace BCMPricingCalculator
          * usage that you had added and cannot model deletion (or removal) of a existing
          * usage. If you want model removal of an existing usage, see <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioUsageModification.html">
-         * BatchUpdateBillScenarioUsageModification</a>. </p><p><h3>See Also:</h3>   <a
+         * BatchUpdateBillScenarioUsageModification</a>. </p>  <p>The
+         * <code>BatchDeleteBillScenarioUsageModification</code> operation doesn't have its
+         * own IAM permission. To authorize this operation for Amazon Web Services
+         * principals, include the permission
+         * <code>bcm-pricing-calculator:DeleteBillScenarioUsageModification</code> in your
+         * policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteBillScenarioUsageModification">AWS
          * API Reference</a></p>
          */
@@ -227,7 +262,12 @@ namespace BCMPricingCalculator
          * delete usage that you had added and cannot model deletion (or removal) of a
          * existing usage. If you want model removal of an existing usage, see <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html">
-         * BatchUpdateWorkloadEstimateUsage</a>. </p><p><h3>See Also:</h3>   <a
+         * BatchUpdateWorkloadEstimateUsage</a>. </p>  <p>The
+         * <code>BatchDeleteWorkloadEstimateUsage</code> operation doesn't have its own IAM
+         * permission. To authorize this operation for Amazon Web Services principals,
+         * include the permission
+         * <code>bcm-pricing-calculator:DeleteWorkloadEstimateUsage</code> in your
+         * policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteWorkloadEstimateUsage">AWS
          * API Reference</a></p>
          */
@@ -253,8 +293,12 @@ namespace BCMPricingCalculator
 
         /**
          * <p> Update a newly added or existing commitment. You can update the commitment
-         * group based on a commitment ID and a Bill scenario ID. </p><p><h3>See Also:</h3>
-         * <a
+         * group based on a commitment ID and a Bill scenario ID. </p>  <p>The
+         * <code>BatchUpdateBillScenarioCommitmentModification</code> operation doesn't
+         * have its own IAM permission. To authorize this operation for Amazon Web Services
+         * principals, include the permission
+         * <code>bcm-pricing-calculator:UpdateBillScenarioCommitmentModification</code> in
+         * your policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateBillScenarioCommitmentModification">AWS
          * API Reference</a></p>
          */
@@ -281,7 +325,11 @@ namespace BCMPricingCalculator
         /**
          * <p> Update a newly added or existing usage lines. You can update the usage
          * amounts, usage hour, and usage group based on a usage ID and a Bill scenario ID.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p>  <p>The <code>BatchUpdateBillScenarioUsageModification</code>
+         * operation doesn't have its own IAM permission. To authorize this operation for
+         * Amazon Web Services principals, include the permission
+         * <code>bcm-pricing-calculator:UpdateBillScenarioUsageModification</code> in your
+         * policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateBillScenarioUsageModification">AWS
          * API Reference</a></p>
          */
@@ -307,8 +355,12 @@ namespace BCMPricingCalculator
 
         /**
          * <p> Update a newly added or existing usage lines. You can update the usage
-         * amounts and usage group based on a usage ID and a Workload estimate ID.
-         * </p><p><h3>See Also:</h3>   <a
+         * amounts and usage group based on a usage ID and a Workload estimate ID. </p>
+         *  <p>The <code>BatchUpdateWorkloadEstimateUsage</code> operation doesn't
+         * have its own IAM permission. To authorize this operation for Amazon Web Services
+         * principals, include the permission
+         * <code>bcm-pricing-calculator:UpdateWorkloadEstimateUsage</code> in your
+         * policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateWorkloadEstimateUsage">AWS
          * API Reference</a></p>
          */
@@ -1037,10 +1089,7 @@ namespace BCMPricingCalculator
       std::shared_ptr<BCMPricingCalculatorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>;
-      void init(const BCMPricingCalculatorClientConfiguration& clientConfiguration);
 
-      BCMPricingCalculatorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BCMPricingCalculatorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BCMPricingCalculator

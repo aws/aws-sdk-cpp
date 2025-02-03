@@ -62,6 +62,7 @@
 #include <aws/cloudtrail/model/RegisterOrganizationDelegatedAdminResult.h>
 #include <aws/cloudtrail/model/RemoveTagsResult.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreResult.h>
+#include <aws/cloudtrail/model/SearchSampleQueriesResult.h>
 #include <aws/cloudtrail/model/StartDashboardRefreshResult.h>
 #include <aws/cloudtrail/model/StartEventDataStoreIngestionResult.h>
 #include <aws/cloudtrail/model/StartImportResult.h>
@@ -170,6 +171,7 @@ namespace Aws
       class RegisterOrganizationDelegatedAdminRequest;
       class RemoveTagsRequest;
       class RestoreEventDataStoreRequest;
+      class SearchSampleQueriesRequest;
       class StartDashboardRefreshRequest;
       class StartEventDataStoreIngestionRequest;
       class StartImportRequest;
@@ -229,6 +231,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RegisterOrganizationDelegatedAdminResult, CloudTrailError> RegisterOrganizationDelegatedAdminOutcome;
       typedef Aws::Utils::Outcome<RemoveTagsResult, CloudTrailError> RemoveTagsOutcome;
       typedef Aws::Utils::Outcome<RestoreEventDataStoreResult, CloudTrailError> RestoreEventDataStoreOutcome;
+      typedef Aws::Utils::Outcome<SearchSampleQueriesResult, CloudTrailError> SearchSampleQueriesOutcome;
       typedef Aws::Utils::Outcome<StartDashboardRefreshResult, CloudTrailError> StartDashboardRefreshOutcome;
       typedef Aws::Utils::Outcome<StartEventDataStoreIngestionResult, CloudTrailError> StartEventDataStoreIngestionOutcome;
       typedef Aws::Utils::Outcome<StartImportResult, CloudTrailError> StartImportOutcome;
@@ -288,6 +291,7 @@ namespace Aws
       typedef std::future<RegisterOrganizationDelegatedAdminOutcome> RegisterOrganizationDelegatedAdminOutcomeCallable;
       typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
       typedef std::future<RestoreEventDataStoreOutcome> RestoreEventDataStoreOutcomeCallable;
+      typedef std::future<SearchSampleQueriesOutcome> SearchSampleQueriesOutcomeCallable;
       typedef std::future<StartDashboardRefreshOutcome> StartDashboardRefreshOutcomeCallable;
       typedef std::future<StartEventDataStoreIngestionOutcome> StartEventDataStoreIngestionOutcomeCallable;
       typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
@@ -350,6 +354,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::RegisterOrganizationDelegatedAdminRequest&, const Model::RegisterOrganizationDelegatedAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOrganizationDelegatedAdminResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RestoreEventDataStoreRequest&, const Model::RestoreEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreEventDataStoreResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::SearchSampleQueriesRequest&, const Model::SearchSampleQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSampleQueriesResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartDashboardRefreshRequest&, const Model::StartDashboardRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDashboardRefreshResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartEventDataStoreIngestionRequest&, const Model::StartEventDataStoreIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEventDataStoreIngestionResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;

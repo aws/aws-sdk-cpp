@@ -86,7 +86,7 @@ void DefaultClusterParameters::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location << index << locationValue << ".Parameter." << parametersIdx++;
+        parametersSs << location << index << locationValue << ".Parameters.Parameter." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }

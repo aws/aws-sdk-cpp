@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/invoicing/InvoicingServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/invoicing/InvoicingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Invoicing
 {
+  AWS_INVOICING_API extern const char SERVICE_NAME[];
   /**
    * <p> <b>Amazon Web Services Invoice Configuration</b> </p> <p>You can use Amazon
    * Web Services Invoice Configuration APIs to programmatically create, update,
@@ -34,12 +38,20 @@ namespace Invoicing
    * Configuration:</p> <ul> <li> <p>
    * <code>https://invoicing.us-east-1.api.aws</code> </p> </li> </ul>
    */
-  class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>
+  class AWS_INVOICING_API InvoicingClient : smithy::client::AwsSmithyClientT<Aws::Invoicing::SERVICE_NAME,
+      Aws::Invoicing::InvoicingClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      InvoicingEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::InvoicingErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Invoicing"; }
 
       typedef InvoicingClientConfiguration ClientConfigurationType;
       typedef InvoicingEndpointProvider EndpointProviderType;
@@ -329,10 +341,7 @@ namespace Invoicing
       std::shared_ptr<InvoicingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>;
-      void init(const InvoicingClientConfiguration& clientConfiguration);
 
-      InvoicingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<InvoicingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Invoicing

@@ -82,3 +82,18 @@ TEST_F(AwsChunkedStreamTest, ShouldWorkOnSmallBuffer) {
   amountRead = chunkedStream.BufferedRead(outputBuffer.GetUnderlyingData(), 100);
   EXPECT_EQ(0ul, amountRead);
 }
+
+TEST_F(AwsChunkedStreamTest, ShouldWorkOnEmptyStream) {
+  StandardHttpRequest request{"www.nidia.com/juna", Http::HttpMethod::HTTP_GET};
+  auto requestHash = Aws::MakeShared<CRC32>(TEST_LOG_TAG);
+  request.SetRequestHash("crc32", requestHash);
+  std::shared_ptr<IOStream> inputStream = Aws::MakeShared<StringStream>(TEST_LOG_TAG, "");
+  AwsChunkedStream<5> chunkedStream{&request, inputStream};
+  Aws::Utils::Array<char> outputBuffer{100};
+  Aws::StringStream firstRead;
+  auto amountRead = chunkedStream.BufferedRead(outputBuffer.GetUnderlyingData(), 100);
+  std::copy(outputBuffer.GetUnderlyingData(), outputBuffer.GetUnderlyingData() + amountRead, std::ostream_iterator<char>(firstRead));
+  EXPECT_EQ(36ul, amountRead);
+  auto encodedStr = firstRead.str();
+  EXPECT_EQ("0\r\nx-amz-checksum-crc32:AAAAAA==\r\n\r\n", encodedStr);
+}

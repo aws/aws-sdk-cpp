@@ -30,6 +30,8 @@ H265Settings::H265Settings() :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H265CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_deblocking(H265Deblocking::NOT_SET),
+    m_deblockingHasBeenSet(false),
     m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
     m_dynamicSubGopHasBeenSet(false),
     m_endOfStreamMarkers(H265EndOfStreamMarkers::NOT_SET),
@@ -154,6 +156,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_codecProfile = H265CodecProfileMapper::GetH265CodecProfileForName(jsonValue.GetString("codecProfile"));
 
     m_codecProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deblocking"))
+  {
+    m_deblocking = H265DeblockingMapper::GetH265DeblockingForName(jsonValue.GetString("deblocking"));
+
+    m_deblockingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dynamicSubGop"))
@@ -452,6 +461,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_codecProfileHasBeenSet)
   {
    payload.WithString("codecProfile", H265CodecProfileMapper::GetNameForH265CodecProfile(m_codecProfile));
+  }
+
+  if(m_deblockingHasBeenSet)
+  {
+   payload.WithString("deblocking", H265DeblockingMapper::GetNameForH265Deblocking(m_deblocking));
   }
 
   if(m_dynamicSubGopHasBeenSet)

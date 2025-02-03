@@ -28,6 +28,9 @@ namespace ${serviceNamespace}
 {
 namespace Model
 {
+#foreach($forwardDeclaration in $typeInfo.forwardDeclarations)
+  class $forwardDeclaration;
+#end
 #set($xmlRef = "${typeInfo.xmlNodeType}&")
 #set($classNameRef = "${typeInfo.className}&")
 

@@ -47,8 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application
-     * created for this data accessor.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created
+     * for this data accessor.</p>
      */
     inline const Aws::String& GetIdcApplicationArn() const{ return m_idcApplicationArn; }
     inline void SetIdcApplicationArn(const Aws::String& value) { m_idcApplicationArn = value; }

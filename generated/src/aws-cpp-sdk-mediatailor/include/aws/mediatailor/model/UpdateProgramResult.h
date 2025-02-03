@@ -7,8 +7,8 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/mediatailor/model/ClipRange.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediatailor/model/ClipRange.h>
 #include <aws/mediatailor/model/AdBreak.h>
 #include <aws/mediatailor/model/AudienceMedia.h>
 #include <utility>
@@ -65,19 +65,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of AudienceMedia defined in program.</p>
-     */
-    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
-    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMedia = value; }
-    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMedia = std::move(value); }
-    inline UpdateProgramResult& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
-    inline UpdateProgramResult& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
-    inline UpdateProgramResult& AddAudienceMedia(const AudienceMedia& value) { m_audienceMedia.push_back(value); return *this; }
-    inline UpdateProgramResult& AddAudienceMedia(AudienceMedia&& value) { m_audienceMedia.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The name to assign to the channel for this program.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
@@ -87,17 +74,6 @@ namespace Model
     inline UpdateProgramResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
     inline UpdateProgramResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
     inline UpdateProgramResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The clip range configuration settings.</p>
-     */
-    inline const ClipRange& GetClipRange() const{ return m_clipRange; }
-    inline void SetClipRange(const ClipRange& value) { m_clipRange = value; }
-    inline void SetClipRange(ClipRange&& value) { m_clipRange = std::move(value); }
-    inline UpdateProgramResult& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
-    inline UpdateProgramResult& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +89,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duration of the live program in milliseconds.</p>
-     */
-    inline long long GetDurationMillis() const{ return m_durationMillis; }
-    inline void SetDurationMillis(long long value) { m_durationMillis = value; }
-    inline UpdateProgramResult& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
-    inline const Aws::String& GetLiveSourceName() const{ return m_liveSourceName; }
-    inline void SetLiveSourceName(const Aws::String& value) { m_liveSourceName = value; }
-    inline void SetLiveSourceName(Aws::String&& value) { m_liveSourceName = std::move(value); }
-    inline void SetLiveSourceName(const char* value) { m_liveSourceName.assign(value); }
-    inline UpdateProgramResult& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
-    inline UpdateProgramResult& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
-    inline UpdateProgramResult& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name to assign to this program.</p>
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
@@ -144,17 +98,6 @@ namespace Model
     inline UpdateProgramResult& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
     inline UpdateProgramResult& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
     inline UpdateProgramResult& WithProgramName(const char* value) { SetProgramName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The scheduled start time for this Program.</p>
-     */
-    inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
-    inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTime = value; }
-    inline void SetScheduledStartTime(Aws::Utils::DateTime&& value) { m_scheduledStartTime = std::move(value); }
-    inline UpdateProgramResult& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
-    inline UpdateProgramResult& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,6 +127,63 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The name of the LiveSource for this Program.</p>
+     */
+    inline const Aws::String& GetLiveSourceName() const{ return m_liveSourceName; }
+    inline void SetLiveSourceName(const Aws::String& value) { m_liveSourceName = value; }
+    inline void SetLiveSourceName(Aws::String&& value) { m_liveSourceName = std::move(value); }
+    inline void SetLiveSourceName(const char* value) { m_liveSourceName.assign(value); }
+    inline UpdateProgramResult& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
+    inline UpdateProgramResult& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The clip range configuration settings.</p>
+     */
+    inline const ClipRange& GetClipRange() const{ return m_clipRange; }
+    inline void SetClipRange(const ClipRange& value) { m_clipRange = value; }
+    inline void SetClipRange(ClipRange&& value) { m_clipRange = std::move(value); }
+    inline UpdateProgramResult& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
+    inline UpdateProgramResult& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The duration of the live program in milliseconds.</p>
+     */
+    inline long long GetDurationMillis() const{ return m_durationMillis; }
+    inline void SetDurationMillis(long long value) { m_durationMillis = value; }
+    inline UpdateProgramResult& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The scheduled start time for this Program.</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
+    inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTime = value; }
+    inline void SetScheduledStartTime(Aws::Utils::DateTime&& value) { m_scheduledStartTime = std::move(value); }
+    inline UpdateProgramResult& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
+    inline UpdateProgramResult& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMedia = value; }
+    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMedia = std::move(value); }
+    inline UpdateProgramResult& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
+    inline UpdateProgramResult& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
+    inline UpdateProgramResult& AddAudienceMedia(const AudienceMedia& value) { m_audienceMedia.push_back(value); return *this; }
+    inline UpdateProgramResult& AddAudienceMedia(AudienceMedia&& value) { m_audienceMedia.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -199,25 +199,25 @@ namespace Model
 
     Aws::String m_arn;
 
-    Aws::Vector<AudienceMedia> m_audienceMedia;
-
     Aws::String m_channelName;
-
-    ClipRange m_clipRange;
 
     Aws::Utils::DateTime m_creationTime;
 
-    long long m_durationMillis;
-
-    Aws::String m_liveSourceName;
-
     Aws::String m_programName;
-
-    Aws::Utils::DateTime m_scheduledStartTime;
 
     Aws::String m_sourceLocationName;
 
     Aws::String m_vodSourceName;
+
+    Aws::String m_liveSourceName;
+
+    ClipRange m_clipRange;
+
+    long long m_durationMillis;
+
+    Aws::Utils::DateTime m_scheduledStartTime;
+
+    Aws::Vector<AudienceMedia> m_audienceMedia;
 
     Aws::String m_requestId;
   };
