@@ -21,7 +21,11 @@ UpdateDbInstanceRequest::UpdateDbInstanceRequest() :
     m_dbInstanceType(DbInstanceType::NOT_SET),
     m_dbInstanceTypeHasBeenSet(false),
     m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false)
+    m_deploymentTypeHasBeenSet(false),
+    m_dbStorageType(DbStorageType::NOT_SET),
+    m_dbStorageTypeHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,17 @@ Aws::String UpdateDbInstanceRequest::SerializePayload() const
   if(m_deploymentTypeHasBeenSet)
   {
    payload.WithString("deploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
+  }
+
+  if(m_dbStorageTypeHasBeenSet)
+  {
+   payload.WithString("dbStorageType", DbStorageTypeMapper::GetNameForDbStorageType(m_dbStorageType));
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+   payload.WithInteger("allocatedStorage", m_allocatedStorage);
+
   }
 
   return payload.View().WriteReadable();

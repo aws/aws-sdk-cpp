@@ -6,12 +6,12 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/ChannelState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/SlateSource.h>
-#include <aws/mediatailor/model/LogConfigurationForChannel.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediatailor/model/LogConfigurationForChannel.h>
 #include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
 #include <utility>
@@ -51,20 +51,6 @@ namespace Model
     inline DescribeChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
     inline DescribeChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
     inline DescribeChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of audiences defined in channel.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
-    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiences = value; }
-    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiences = std::move(value); }
-    inline DescribeChannelResult& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
-    inline DescribeChannelResult& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
-    inline DescribeChannelResult& AddAudiences(const Aws::String& value) { m_audiences.push_back(value); return *this; }
-    inline DescribeChannelResult& AddAudiences(Aws::String&& value) { m_audiences.push_back(std::move(value)); return *this; }
-    inline DescribeChannelResult& AddAudiences(const char* value) { m_audiences.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -123,17 +109,6 @@ namespace Model
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
     inline DescribeChannelResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
     inline DescribeChannelResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The log configuration for the channel.</p>
-     */
-    inline const LogConfigurationForChannel& GetLogConfiguration() const{ return m_logConfiguration; }
-    inline void SetLogConfiguration(const LogConfigurationForChannel& value) { m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfigurationForChannel&& value) { m_logConfiguration = std::move(value); }
-    inline DescribeChannelResult& WithLogConfiguration(const LogConfigurationForChannel& value) { SetLogConfiguration(value); return *this;}
-    inline DescribeChannelResult& WithLogConfiguration(LogConfigurationForChannel&& value) { SetLogConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,6 +174,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The log configuration for the channel.</p>
+     */
+    inline const LogConfigurationForChannel& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline void SetLogConfiguration(const LogConfigurationForChannel& value) { m_logConfiguration = value; }
+    inline void SetLogConfiguration(LogConfigurationForChannel&& value) { m_logConfiguration = std::move(value); }
+    inline DescribeChannelResult& WithLogConfiguration(const LogConfigurationForChannel& value) { SetLogConfiguration(value); return *this;}
+    inline DescribeChannelResult& WithLogConfiguration(LogConfigurationForChannel&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The time-shifted viewing configuration for the channel. </p>
      */
     inline const TimeShiftConfiguration& GetTimeShiftConfiguration() const{ return m_timeShiftConfiguration; }
@@ -206,6 +192,20 @@ namespace Model
     inline void SetTimeShiftConfiguration(TimeShiftConfiguration&& value) { m_timeShiftConfiguration = std::move(value); }
     inline DescribeChannelResult& WithTimeShiftConfiguration(const TimeShiftConfiguration& value) { SetTimeShiftConfiguration(value); return *this;}
     inline DescribeChannelResult& WithTimeShiftConfiguration(TimeShiftConfiguration&& value) { SetTimeShiftConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiences = value; }
+    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiences = std::move(value); }
+    inline DescribeChannelResult& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
+    inline DescribeChannelResult& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
+    inline DescribeChannelResult& AddAudiences(const Aws::String& value) { m_audiences.push_back(value); return *this; }
+    inline DescribeChannelResult& AddAudiences(Aws::String&& value) { m_audiences.push_back(std::move(value)); return *this; }
+    inline DescribeChannelResult& AddAudiences(const char* value) { m_audiences.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -222,8 +222,6 @@ namespace Model
 
     Aws::String m_arn;
 
-    Aws::Vector<Aws::String> m_audiences;
-
     Aws::String m_channelName;
 
     ChannelState m_channelState;
@@ -234,8 +232,6 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime;
 
-    LogConfigurationForChannel m_logConfiguration;
-
     Aws::Vector<ResponseOutputItem> m_outputs;
 
     Aws::String m_playbackMode;
@@ -244,7 +240,11 @@ namespace Model
 
     Aws::String m_tier;
 
+    LogConfigurationForChannel m_logConfiguration;
+
     TimeShiftConfiguration m_timeShiftConfiguration;
+
+    Aws::Vector<Aws::String> m_audiences;
 
     Aws::String m_requestId;
   };

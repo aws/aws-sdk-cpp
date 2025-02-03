@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/model/SmbMountOptions.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/datasync/model/SmbAuthenticationType.h>
 #include <utility>
 
 namespace Aws
@@ -84,7 +85,8 @@ namespace Model
     ///@{
     /**
      * <p>The user that can mount and access the files, folders, and file metadata in
-     * your SMB file server.</p>
+     * your SMB file server. This element applies only if
+     * <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
     inline void SetUser(const Aws::String& value) { m_user = value; }
@@ -97,8 +99,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Microsoft Active Directory domain that the SMB file server
-     * belongs to.</p>
+     * <p>The name of the Windows domain that the SMB file server belongs to. This
+     * element applies only if <code>AuthenticationType</code> is set to
+     * <code>NTLM</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline void SetDomain(const Aws::String& value) { m_domain = value; }
@@ -111,7 +114,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The protocol that DataSync use to access your SMB file.</p>
+     * <p>The SMB protocol version that DataSync uses to access your SMB file
+     * server.</p>
      */
     inline const SmbMountOptions& GetMountOptions() const{ return m_mountOptions; }
     inline void SetMountOptions(const SmbMountOptions& value) { m_mountOptions = value; }
@@ -129,6 +133,48 @@ namespace Model
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
     inline DescribeLocationSmbResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
     inline DescribeLocationSmbResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to.
+     * This element applies only if <code>AuthenticationType</code> is set to
+     * <code>KERBEROS</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsIpAddresses() const{ return m_dnsIpAddresses; }
+    inline void SetDnsIpAddresses(const Aws::Vector<Aws::String>& value) { m_dnsIpAddresses = value; }
+    inline void SetDnsIpAddresses(Aws::Vector<Aws::String>&& value) { m_dnsIpAddresses = std::move(value); }
+    inline DescribeLocationSmbResult& WithDnsIpAddresses(const Aws::Vector<Aws::String>& value) { SetDnsIpAddresses(value); return *this;}
+    inline DescribeLocationSmbResult& WithDnsIpAddresses(Aws::Vector<Aws::String>&& value) { SetDnsIpAddresses(std::move(value)); return *this;}
+    inline DescribeLocationSmbResult& AddDnsIpAddresses(const Aws::String& value) { m_dnsIpAddresses.push_back(value); return *this; }
+    inline DescribeLocationSmbResult& AddDnsIpAddresses(Aws::String&& value) { m_dnsIpAddresses.push_back(std::move(value)); return *this; }
+    inline DescribeLocationSmbResult& AddDnsIpAddresses(const char* value) { m_dnsIpAddresses.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Kerberos service principal name (SPN) that has permission to access the
+     * files, folders, and file metadata in your SMB file server.</p>
+     */
+    inline const Aws::String& GetKerberosPrincipal() const{ return m_kerberosPrincipal; }
+    inline void SetKerberosPrincipal(const Aws::String& value) { m_kerberosPrincipal = value; }
+    inline void SetKerberosPrincipal(Aws::String&& value) { m_kerberosPrincipal = std::move(value); }
+    inline void SetKerberosPrincipal(const char* value) { m_kerberosPrincipal.assign(value); }
+    inline DescribeLocationSmbResult& WithKerberosPrincipal(const Aws::String& value) { SetKerberosPrincipal(value); return *this;}
+    inline DescribeLocationSmbResult& WithKerberosPrincipal(Aws::String&& value) { SetKerberosPrincipal(std::move(value)); return *this;}
+    inline DescribeLocationSmbResult& WithKerberosPrincipal(const char* value) { SetKerberosPrincipal(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The authentication protocol that DataSync uses to connect to your SMB file
+     * server.</p>
+     */
+    inline const SmbAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline void SetAuthenticationType(const SmbAuthenticationType& value) { m_authenticationType = value; }
+    inline void SetAuthenticationType(SmbAuthenticationType&& value) { m_authenticationType = std::move(value); }
+    inline DescribeLocationSmbResult& WithAuthenticationType(const SmbAuthenticationType& value) { SetAuthenticationType(value); return *this;}
+    inline DescribeLocationSmbResult& WithAuthenticationType(SmbAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,6 +202,12 @@ namespace Model
     SmbMountOptions m_mountOptions;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::Vector<Aws::String> m_dnsIpAddresses;
+
+    Aws::String m_kerberosPrincipal;
+
+    SmbAuthenticationType m_authenticationType;
 
     Aws::String m_requestId;
   };

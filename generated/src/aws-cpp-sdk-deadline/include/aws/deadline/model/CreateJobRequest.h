@@ -202,6 +202,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The maximum number of worker hosts that can concurrently process a job. When
+     * the <code>maxWorkerCount</code> is reached, no more workers will be assigned to
+     * process the job, even if the fleets assigned to the job's queue has available
+     * workers.</p> <p>You can't set the <code>maxWorkerCount</code> to 0. If you set
+     * it to -1, there is no maximum number of workers.</p> <p>If you don't specify the
+     * <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers
+     * used to process the job.</p>
+     */
+    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
+    inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
+    inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
+    inline CreateJobRequest& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The job ID for the source job.</p>
      */
     inline const Aws::String& GetSourceJobId() const{ return m_sourceJobId; }
@@ -250,6 +266,9 @@ namespace Model
 
     int m_maxRetriesPerTask;
     bool m_maxRetriesPerTaskHasBeenSet = false;
+
+    int m_maxWorkerCount;
+    bool m_maxWorkerCountHasBeenSet = false;
 
     Aws::String m_sourceJobId;
     bool m_sourceJobIdHasBeenSet = false;

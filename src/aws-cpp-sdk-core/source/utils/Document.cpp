@@ -393,6 +393,10 @@ DocumentView Document::View() const
     return *this;
 }
 
+Json::JsonValue Document::Jsonize() const {
+  return Json::JsonValue(View());
+}
+
 DocumentView::DocumentView() : m_json(nullptr)
 {
 }

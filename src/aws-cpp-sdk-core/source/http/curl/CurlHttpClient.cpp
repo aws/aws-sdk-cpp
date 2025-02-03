@@ -367,6 +367,14 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
         return CURL_SEEKFUNC_FAIL;
     }
 
+    // fail seek for aws-chunk encoded body as the length and offset is unknown
+    if (context->m_request &&
+        context->m_request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
+        context->m_request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos)
+    {
+        return CURL_SEEKFUNC_FAIL;
+    }
+
     HttpRequest* request = context->m_request;
     const std::shared_ptr<Aws::IOStream>& ioStream = request->GetContentBody();
 

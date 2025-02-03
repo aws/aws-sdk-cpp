@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p> The structure to configure the authentication methods for Firehose to
+   * connect to source database endpoint. </p> <p>Amazon Data Firehose is in preview
+   * release and is subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DatabaseSourceAuthenticationConfiguration">AWS
    * API Reference</a></p>
    */

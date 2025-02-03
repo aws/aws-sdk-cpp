@@ -207,6 +207,10 @@ namespace Aws
              */
             DocumentView View() const;
 
+            /**
+             * Convert this document to a JsonValue
+             */
+            Aws::Utils::Json::JsonValue Jsonize() const;
         private:
             void Destroy();
             Document(cJSON* value);

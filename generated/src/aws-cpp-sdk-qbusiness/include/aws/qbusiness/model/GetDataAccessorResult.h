@@ -76,8 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Q Business application associated with this data
-     * accessor.</p>
+     * <p>The unique identifier of the Amazon Q Business application associated with
+     * this data accessor.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
@@ -90,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application
+     * <p>The Amazon Resource Name (ARN) of the IAM Identity Center application
      * associated with this data accessor.</p>
      */
     inline const Aws::String& GetIdcApplicationArn() const{ return m_idcApplicationArn; }

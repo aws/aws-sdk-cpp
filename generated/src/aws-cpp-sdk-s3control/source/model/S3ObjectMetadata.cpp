@@ -160,6 +160,15 @@ void S3ObjectMetadata::AddToNode(XmlNode& parentNode) const
 
   if(m_userMetadataHasBeenSet)
   {
+   XmlNode userMetadataParentNode = parentNode.CreateChildElement("UserMetadata");
+   for(const auto& mapItem : m_userMetadata)
+   {
+     XmlNode userMetadataMapEntryNode = userMetadataParentNode.CreateChildElement("entry");
+     XmlNode userMetadataKeyNode = userMetadataMapEntryNode.CreateChildElement("key");
+     userMetadataKeyNode.SetText(mapItem.first);
+     XmlNode userMetadataValueNode = userMetadataMapEntryNode.CreateChildElement("value");
+     userMetadataValueNode.SetText(mapItem.second);
+   }
   }
 
   if(m_contentLengthHasBeenSet)

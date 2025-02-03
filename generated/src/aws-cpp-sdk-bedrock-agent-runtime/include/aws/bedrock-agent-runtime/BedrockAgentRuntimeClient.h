@@ -413,8 +413,9 @@ namespace BedrockAgentRuntime
          * <p>Queries a knowledge base and generates responses based on the retrieved
          * results, with output in streaming format.</p>  <p>The CLI doesn't support
          * streaming operations in Amazon Bedrock, including
-         * <code>InvokeModelWithResponseStream</code>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <code>InvokeModelWithResponseStream</code>.</p>  <p>This operation
+         * requires permission for the <code> bedrock:RetrieveAndGenerate</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerateStream">AWS
          * API Reference</a></p>
          */

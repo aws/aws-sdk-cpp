@@ -40,6 +40,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
+     */
+    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+    inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
+    inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
+    inline HlsPlaylistSettings& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Determines the type of SCTE 35 tags to use in ad markup. Specify
      * <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD
      * content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code>
@@ -54,24 +65,13 @@ namespace Model
     inline HlsPlaylistSettings& AddAdMarkupType(const AdMarkupType& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType.push_back(value); return *this; }
     inline HlsPlaylistSettings& AddAdMarkupType(AdMarkupType&& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value:
-     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
-     */
-    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
-    inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
-    inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
-    inline HlsPlaylistSettings& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<AdMarkupType> m_adMarkupType;
-    bool m_adMarkupTypeHasBeenSet = false;
 
     int m_manifestWindowSeconds;
     bool m_manifestWindowSecondsHasBeenSet = false;
+
+    Aws::Vector<AdMarkupType> m_adMarkupType;
+    bool m_adMarkupTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p> The structure that describes the snapshot information of a table in source
+   * database endpoint that Firehose reads. </p> <p>Amazon Data Firehose is in
+   * preview release and is subject to change.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DatabaseSnapshotInfo">AWS
    * API Reference</a></p>
    */
@@ -44,7 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p> The identifier of the current snapshot of the table in source database
+     * endpoint. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -59,8 +61,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The fully qualified name of the table in source database endpoint that
+     * Firehose reads. </p> <p>Amazon Data Firehose is in preview release and is
+     * subject to change.</p>
      */
     inline const Aws::String& GetTable() const{ return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
@@ -74,8 +77,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The timestamp when the current snapshot is taken on the table. </p>
+     * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
     inline const Aws::Utils::DateTime& GetRequestTimestamp() const{ return m_requestTimestamp; }
     inline bool RequestTimestampHasBeenSet() const { return m_requestTimestampHasBeenSet; }
@@ -87,7 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * <p> The principal that sent the request to take the current snapshot on the
+     * table. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
     inline const SnapshotRequestedBy& GetRequestedBy() const{ return m_requestedBy; }
@@ -100,8 +104,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * <p> The status of the current snapshot of the table. </p> <p>Amazon Data
+     * Firehose is in preview release and is subject to change.</p>
      */
     inline const SnapshotStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

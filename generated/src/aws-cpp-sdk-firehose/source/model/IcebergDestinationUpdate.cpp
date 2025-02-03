@@ -29,6 +29,8 @@ IcebergDestinationUpdate::IcebergDestinationUpdate() :
     m_s3BackupModeHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
     m_roleARNHasBeenSet(false),
+    m_appendOnly(false),
+    m_appendOnlyHasBeenSet(false),
     m_catalogConfigurationHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false)
 {
@@ -108,6 +110,13 @@ IcebergDestinationUpdate& IcebergDestinationUpdate::operator =(JsonView jsonValu
     m_roleARNHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppendOnly"))
+  {
+    m_appendOnly = jsonValue.GetBool("AppendOnly");
+
+    m_appendOnlyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CatalogConfiguration"))
   {
     m_catalogConfiguration = jsonValue.GetObject("CatalogConfiguration");
@@ -184,6 +193,12 @@ JsonValue IcebergDestinationUpdate::Jsonize() const
   if(m_roleARNHasBeenSet)
   {
    payload.WithString("RoleARN", m_roleARN);
+
+  }
+
+  if(m_appendOnlyHasBeenSet)
+  {
+   payload.WithBool("AppendOnly", m_appendOnly);
 
   }
 

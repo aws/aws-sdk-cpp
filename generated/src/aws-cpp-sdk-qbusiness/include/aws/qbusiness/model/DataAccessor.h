@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the associated AWS IAM Identity Center
+     * <p>The Amazon Resource Name (ARN) of the associated IAM Identity Center
      * application.</p>
      */
     inline const Aws::String& GetIdcApplicationArn() const{ return m_idcApplicationArn; }

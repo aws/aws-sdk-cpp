@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Details about a Kinesis data stream used as the source for a Firehose
-   * Firehose stream.</p><p><h3>See Also:</h3>   <a
+   * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KinesisStreamSourceDescription">AWS
    * API Reference</a></p>
    */

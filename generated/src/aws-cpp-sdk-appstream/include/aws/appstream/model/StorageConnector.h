@@ -80,6 +80,23 @@ namespace Model
     inline StorageConnector& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
     inline StorageConnector& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The OneDrive for Business domains where you require admin consent when users
+     * try to link their OneDrive account to AppStream 2.0. The attribute can only be
+     * specified when ConnectorType=ONE_DRIVE.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDomainsRequireAdminConsent() const{ return m_domainsRequireAdminConsent; }
+    inline bool DomainsRequireAdminConsentHasBeenSet() const { return m_domainsRequireAdminConsentHasBeenSet; }
+    inline void SetDomainsRequireAdminConsent(const Aws::Vector<Aws::String>& value) { m_domainsRequireAdminConsentHasBeenSet = true; m_domainsRequireAdminConsent = value; }
+    inline void SetDomainsRequireAdminConsent(Aws::Vector<Aws::String>&& value) { m_domainsRequireAdminConsentHasBeenSet = true; m_domainsRequireAdminConsent = std::move(value); }
+    inline StorageConnector& WithDomainsRequireAdminConsent(const Aws::Vector<Aws::String>& value) { SetDomainsRequireAdminConsent(value); return *this;}
+    inline StorageConnector& WithDomainsRequireAdminConsent(Aws::Vector<Aws::String>&& value) { SetDomainsRequireAdminConsent(std::move(value)); return *this;}
+    inline StorageConnector& AddDomainsRequireAdminConsent(const Aws::String& value) { m_domainsRequireAdminConsentHasBeenSet = true; m_domainsRequireAdminConsent.push_back(value); return *this; }
+    inline StorageConnector& AddDomainsRequireAdminConsent(Aws::String&& value) { m_domainsRequireAdminConsentHasBeenSet = true; m_domainsRequireAdminConsent.push_back(std::move(value)); return *this; }
+    inline StorageConnector& AddDomainsRequireAdminConsent(const char* value) { m_domainsRequireAdminConsentHasBeenSet = true; m_domainsRequireAdminConsent.push_back(value); return *this; }
+    ///@}
   private:
 
     StorageConnectorType m_connectorType;
@@ -90,6 +107,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_domains;
     bool m_domainsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_domainsRequireAdminConsent;
+    bool m_domainsRequireAdminConsentHasBeenSet = false;
   };
 
 } // namespace Model

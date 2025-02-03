@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/SlateSource.h>
-#include <aws/mediatailor/model/LogConfigurationForChannel.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediatailor/model/LogConfigurationForChannel.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
 #include <utility>
 
@@ -59,21 +59,6 @@ namespace Model
     inline Channel& WithArn(const Aws::String& value) { SetArn(value); return *this;}
     inline Channel& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
     inline Channel& WithArn(const char* value) { SetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of audiences defined in channel.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
-    inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
-    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
-    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
-    inline Channel& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
-    inline Channel& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
-    inline Channel& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
-    inline Channel& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
-    inline Channel& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -145,18 +130,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The log configuration.</p>
-     */
-    inline const LogConfigurationForChannel& GetLogConfiguration() const{ return m_logConfiguration; }
-    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfigurationForChannel& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfigurationForChannel&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline Channel& WithLogConfiguration(const LogConfigurationForChannel& value) { SetLogConfiguration(value); return *this;}
-    inline Channel& WithLogConfiguration(LogConfigurationForChannel&& value) { SetLogConfiguration(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The channel's output properties.</p>
      */
     inline const Aws::Vector<ResponseOutputItem>& GetOutputs() const{ return m_outputs; }
@@ -223,13 +196,37 @@ namespace Model
     inline Channel& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
     inline Channel& WithTier(const char* value) { SetTier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The log configuration.</p>
+     */
+    inline const LogConfigurationForChannel& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+    inline void SetLogConfiguration(const LogConfigurationForChannel& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+    inline void SetLogConfiguration(LogConfigurationForChannel&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+    inline Channel& WithLogConfiguration(const LogConfigurationForChannel& value) { SetLogConfiguration(value); return *this;}
+    inline Channel& WithLogConfiguration(LogConfigurationForChannel&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+    inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
+    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
+    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
+    inline Channel& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
+    inline Channel& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
+    inline Channel& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+    inline Channel& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
+    inline Channel& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_audiences;
-    bool m_audiencesHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
@@ -246,9 +243,6 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    LogConfigurationForChannel m_logConfiguration;
-    bool m_logConfigurationHasBeenSet = false;
-
     Aws::Vector<ResponseOutputItem> m_outputs;
     bool m_outputsHasBeenSet = false;
 
@@ -260,6 +254,12 @@ namespace Model
 
     Aws::String m_tier;
     bool m_tierHasBeenSet = false;
+
+    LogConfigurationForChannel m_logConfiguration;
+    bool m_logConfigurationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_audiences;
+    bool m_audiencesHasBeenSet = false;
   };
 
 } // namespace Model

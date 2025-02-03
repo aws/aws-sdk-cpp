@@ -16,9 +16,6 @@ using namespace Aws::Utils;
 UpdateJobRequest::UpdateJobRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
     m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
     m_targetTaskRunStatusHasBeenSet(false),
     m_priority(0),
@@ -28,7 +25,12 @@ UpdateJobRequest::UpdateJobRequest() :
     m_maxRetriesPerTask(0),
     m_maxRetriesPerTaskHasBeenSet(false),
     m_lifecycleStatus(UpdateJobLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false)
+    m_lifecycleStatusHasBeenSet(false),
+    m_maxWorkerCount(0),
+    m_maxWorkerCountHasBeenSet(false),
+    m_farmIdHasBeenSet(false),
+    m_queueIdHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,12 @@ Aws::String UpdateJobRequest::SerializePayload() const
   if(m_lifecycleStatusHasBeenSet)
   {
    payload.WithString("lifecycleStatus", UpdateJobLifecycleStatusMapper::GetNameForUpdateJobLifecycleStatus(m_lifecycleStatus));
+  }
+
+  if(m_maxWorkerCountHasBeenSet)
+  {
+   payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
+
   }
 
   return payload.View().WriteReadable();

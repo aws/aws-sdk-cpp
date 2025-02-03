@@ -24,7 +24,16 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::RETRY_MODE_ADAPTIVE, "F"},
     {UserAgentFeature::S3_TRANSFER, "G"},
     {UserAgentFeature::S3_CRYPTO_V1N, "H"},
-    {UserAgentFeature::S3_CRYPTO_V2, "I"}
+    {UserAgentFeature::S3_CRYPTO_V2, "I"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32, "U"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C, "V"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64, "W"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA1, "X"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA256, "Y"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED, "Z"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_WHEN_REQUIRED, "a"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED, "b"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED, "c"}
 };
 
 Aws::String BusinessMetricForFeature(UserAgentFeature feature) {

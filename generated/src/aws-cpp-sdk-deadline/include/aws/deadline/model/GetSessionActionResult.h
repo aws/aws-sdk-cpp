@@ -9,6 +9,8 @@
 #include <aws/deadline/model/SessionActionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/deadline/model/SessionActionDefinition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/deadline/model/AcquiredLimit.h>
 #include <utility>
 
 namespace Aws
@@ -149,6 +151,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The limits and their amounts acquired during a session action. If no limits
+     * were acquired during the session, this field isn't returned.</p>
+     */
+    inline const Aws::Vector<AcquiredLimit>& GetAcquiredLimits() const{ return m_acquiredLimits; }
+    inline void SetAcquiredLimits(const Aws::Vector<AcquiredLimit>& value) { m_acquiredLimits = value; }
+    inline void SetAcquiredLimits(Aws::Vector<AcquiredLimit>&& value) { m_acquiredLimits = std::move(value); }
+    inline GetSessionActionResult& WithAcquiredLimits(const Aws::Vector<AcquiredLimit>& value) { SetAcquiredLimits(value); return *this;}
+    inline GetSessionActionResult& WithAcquiredLimits(Aws::Vector<AcquiredLimit>&& value) { SetAcquiredLimits(std::move(value)); return *this;}
+    inline GetSessionActionResult& AddAcquiredLimits(const AcquiredLimit& value) { m_acquiredLimits.push_back(value); return *this; }
+    inline GetSessionActionResult& AddAcquiredLimits(AcquiredLimit&& value) { m_acquiredLimits.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -179,6 +195,8 @@ namespace Model
     Aws::String m_progressMessage;
 
     SessionActionDefinition m_definition;
+
+    Aws::Vector<AcquiredLimit> m_acquiredLimits;
 
     Aws::String m_requestId;
   };

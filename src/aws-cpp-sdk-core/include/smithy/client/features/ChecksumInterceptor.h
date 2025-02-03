@@ -40,7 +40,7 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
   using Sha1 = Aws::Utils::Crypto::Sha1;
   using PrecalculatedHash = Aws::Utils::Crypto::PrecalculatedHash;
 
-  ChecksumInterceptor(const ClientConfiguration& configuration)
+  explicit ChecksumInterceptor(const ClientConfiguration& configuration)
       : m_requestChecksumCalculation(configuration.checksumConfig.requestChecksumCalculation),
         m_responseChecksumValidation(configuration.checksumConfig.responseChecksumValidation) {}
   ~ChecksumInterceptor() override = default;
@@ -67,6 +67,7 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
     }
 
     // Add RequestChecksum
+    addChecksumConfigurationFeatures(request);
     if ((!request.GetChecksumAlgorithmName().empty() && m_requestChecksumCalculation == RequestChecksumCalculation::WHEN_SUPPORTED) ||
         request.RequestChecksumRequired()) {
       Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
@@ -82,35 +83,41 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
         // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let
         // AwsAuthSigner decide it.
         if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
+          addChecksumFeatureForChecksumName(checksumAlgorithmName, request);
           const auto hash = Aws::MakeShared<PrecalculatedHash>(AWS_SMITHY_CLIENT_CHECKSUM, checksumHeader->second);
           httpRequest->SetRequestHash(checksumAlgorithmName, hash);
         } else if (checksumValueAndAlgorithmProvided) {
           httpRequest->SetHeaderValue(checksumType, checksumHeader->second);
         } else if (checksumAlgorithmName == "crc64nvme") {
+          request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64);
           if (request.IsStreaming()) {
             httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<CRC64>(AWS_SMITHY_CLIENT_CHECKSUM));
           } else {
             httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC64(*(GetBodyStream(request)))));
           }
         } else if (checksumAlgorithmName == "crc32") {
+          request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32);
           if (request.IsStreaming()) {
             httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<CRC32>(AWS_SMITHY_CLIENT_CHECKSUM));
           } else {
             httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
           }
         } else if (checksumAlgorithmName == "crc32c") {
+          request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C);
           if (request.IsStreaming()) {
             httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<CRC32C>(AWS_SMITHY_CLIENT_CHECKSUM));
           } else {
             httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
           }
         } else if (checksumAlgorithmName == "sha256") {
+          request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA256);
           if (request.IsStreaming()) {
             httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Sha256>(AWS_SMITHY_CLIENT_CHECKSUM));
           } else {
             httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
           }
         } else if (checksumAlgorithmName == "sha1") {
+          request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA1);
           if (request.IsStreaming()) {
             httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Sha1>(AWS_SMITHY_CLIENT_CHECKSUM));
           } else {
@@ -188,6 +195,36 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
   }
 
  private:
+  void addChecksumFeatureForChecksumName(const Aws::String& checksumName, const Aws::AmazonWebServiceRequest& request) {
+    if (checksumName == "crc32") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C);
+    } else if (checksumName == "crc32c") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C);
+    } else if (checksumName == "crc64") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64);
+    } else if (checksumName == "sha1") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA1);
+    } else if (checksumName == "sha256") {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA256);
+    } else {
+      AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_CHECKSUM, "could not add useragent feature for checksum " << checksumName);
+    }
+  }
+
+  void addChecksumConfigurationFeatures(const Aws::AmazonWebServiceRequest& request) {
+    switch (m_requestChecksumCalculation) {
+      case RequestChecksumCalculation::WHEN_SUPPORTED: request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED); break;
+      case RequestChecksumCalculation::WHEN_REQUIRED: request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_WHEN_REQUIRED);break;
+      default: AWS_LOG_ERROR(AWS_SMITHY_CLIENT_CHECKSUM, "could not add useragent feature for checksum request configuration"); break;
+    }
+
+    switch (m_responseChecksumValidation) {
+      case ResponseChecksumValidation::WHEN_SUPPORTED: request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED); break;
+      case ResponseChecksumValidation::WHEN_REQUIRED: request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED); break;
+      default: AWS_LOG_ERROR(AWS_SMITHY_CLIENT_CHECKSUM, "could not add useragent feature for checksum response configuration"); break;
+    }
+  }
+
   RequestChecksumCalculation m_requestChecksumCalculation{RequestChecksumCalculation::WHEN_SUPPORTED};
   ResponseChecksumValidation m_responseChecksumValidation{ResponseChecksumValidation::WHEN_SUPPORTED};
 };

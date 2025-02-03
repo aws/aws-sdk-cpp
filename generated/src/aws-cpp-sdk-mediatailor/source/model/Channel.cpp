@@ -20,17 +20,17 @@ namespace Model
 
 Channel::Channel() : 
     m_arnHasBeenSet(false),
-    m_audiencesHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_channelStateHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_fillerSlateHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_tierHasBeenSet(false)
+    m_tierHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_audiencesHasBeenSet(false)
 {
 }
 
@@ -47,16 +47,6 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Audiences"))
-  {
-    Aws::Utils::Array<JsonView> audiencesJsonList = jsonValue.GetArray("Audiences");
-    for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
-    {
-      m_audiences.push_back(audiencesJsonList[audiencesIndex].AsString());
-    }
-    m_audiencesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ChannelName"))
@@ -94,13 +84,6 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("LogConfiguration"))
-  {
-    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
-    m_logConfigurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
@@ -135,6 +118,23 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_tierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Audiences"))
+  {
+    Aws::Utils::Array<JsonView> audiencesJsonList = jsonValue.GetArray("Audiences");
+    for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
+    {
+      m_audiences.push_back(audiencesJsonList[audiencesIndex].AsString());
+    }
+    m_audiencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,17 +145,6 @@ JsonValue Channel::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
-
-  }
-
-  if(m_audiencesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> audiencesJsonList(m_audiences.size());
-   for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
-   {
-     audiencesJsonList[audiencesIndex].AsString(m_audiences[audiencesIndex]);
-   }
-   payload.WithArray("Audiences", std::move(audiencesJsonList));
 
   }
 
@@ -185,12 +174,6 @@ JsonValue Channel::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
-  }
-
-  if(m_logConfigurationHasBeenSet)
-  {
-   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
-
   }
 
   if(m_outputsHasBeenSet)
@@ -224,6 +207,23 @@ JsonValue Channel::Jsonize() const
   if(m_tierHasBeenSet)
   {
    payload.WithString("Tier", m_tier);
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_audiencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audiencesJsonList(m_audiences.size());
+   for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
+   {
+     audiencesJsonList[audiencesIndex].AsString(m_audiences[audiencesIndex]);
+   }
+   payload.WithArray("Audiences", std::move(audiencesJsonList));
 
   }
 

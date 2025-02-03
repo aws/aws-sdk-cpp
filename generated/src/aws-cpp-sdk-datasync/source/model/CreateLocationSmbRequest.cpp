@@ -5,6 +5,7 @@
 
 #include <aws/datasync/model/CreateLocationSmbRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -20,7 +21,13 @@ CreateLocationSmbRequest::CreateLocationSmbRequest() :
     m_passwordHasBeenSet(false),
     m_agentArnsHasBeenSet(false),
     m_mountOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_authenticationType(SmbAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
+    m_dnsIpAddressesHasBeenSet(false),
+    m_kerberosPrincipalHasBeenSet(false),
+    m_kerberosKeytabHasBeenSet(false),
+    m_kerberosKrb5ConfHasBeenSet(false)
 {
 }
 
@@ -84,6 +91,38 @@ Aws::String CreateLocationSmbRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", SmbAuthenticationTypeMapper::GetNameForSmbAuthenticationType(m_authenticationType));
+  }
+
+  if(m_dnsIpAddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dnsIpAddressesJsonList(m_dnsIpAddresses.size());
+   for(unsigned dnsIpAddressesIndex = 0; dnsIpAddressesIndex < dnsIpAddressesJsonList.GetLength(); ++dnsIpAddressesIndex)
+   {
+     dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString(m_dnsIpAddresses[dnsIpAddressesIndex]);
+   }
+   payload.WithArray("DnsIpAddresses", std::move(dnsIpAddressesJsonList));
+
+  }
+
+  if(m_kerberosPrincipalHasBeenSet)
+  {
+   payload.WithString("KerberosPrincipal", m_kerberosPrincipal);
+
+  }
+
+  if(m_kerberosKeytabHasBeenSet)
+  {
+   payload.WithString("KerberosKeytab", HashingUtils::Base64Encode(m_kerberosKeytab));
+  }
+
+  if(m_kerberosKrb5ConfHasBeenSet)
+  {
+   payload.WithString("KerberosKrb5Conf", HashingUtils::Base64Encode(m_kerberosKrb5Conf));
   }
 
   return payload.View().WriteReadable();
