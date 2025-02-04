@@ -47,7 +47,7 @@ XmlAttributesPayloadResponse& XmlAttributesPayloadResponse::operator =(const Xml
     auto attr = resultNode.GetAttributeValue("test");
     if(!attr.empty())
     {
-      m_attr = attr;
+      m_attr = Aws::Utils::Xml::DecodeEscapedXmlText(attr);
       m_attrHasBeenSet = true;
     }
   }

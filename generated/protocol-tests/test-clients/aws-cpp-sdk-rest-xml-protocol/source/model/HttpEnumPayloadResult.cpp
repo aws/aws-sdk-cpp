@@ -4,6 +4,7 @@
  */
 
 #include <aws/rest-xml-protocol/model/HttpEnumPayloadResult.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -11,7 +12,7 @@
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
-using namespace Aws::Utils::Stream;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -20,34 +21,25 @@ HttpEnumPayloadResult::HttpEnumPayloadResult() :
 {
 }
 
-HttpEnumPayloadResult::HttpEnumPayloadResult(HttpEnumPayloadResult&& toMove) : 
-    m_payload(toMove.m_payload),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-HttpEnumPayloadResult& HttpEnumPayloadResult::operator=(HttpEnumPayloadResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_payload = toMove.m_payload;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
-HttpEnumPayloadResult::HttpEnumPayloadResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
   : HttpEnumPayloadResult()
 {
-  *this = std::move(result);
+  *this = result;
 }
 
-HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
-  m_payload = result.TakeOwnershipOfPayload();
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode resultNode = xmlDocument.GetRootElement();
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode payloadNode = resultNode.FirstChild("payload");
+    if(!payloadNode.IsNull())
+    {
+      m_payload = StringEnumMapper::GetStringEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payloadNode.GetText()).c_str()).c_str());
+    }
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -56,5 +48,5 @@ HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(Aws::AmazonWebServiceRe
     m_requestId = requestIdIter->second;
   }
 
-   return *this;
+  return *this;
 }

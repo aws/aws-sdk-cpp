@@ -50,7 +50,7 @@ SystemStatus& SystemStatus::operator =(const XmlNode& xmlNode)
       XmlNode loadAverageMember = loadAverageNode.FirstChild("member");
       while(!loadAverageMember.IsNull())
       {
-         m_loadAverage.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(loadAverageMember.GetText().c_str()).c_str()));
+        m_loadAverage.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(loadAverageMember.GetText().c_str()).c_str()));
         loadAverageMember = loadAverageMember.NextNode("member");
       }
 
