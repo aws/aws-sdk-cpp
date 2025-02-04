@@ -105,7 +105,7 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
       XmlNode protocolsMember = protocolsNode.FirstChild("item");
       while(!protocolsMember.IsNull())
       {
-         m_protocols.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(protocolsMember.GetText().c_str()).c_str()));
+        m_protocols.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(protocolsMember.GetText().c_str()).c_str()));
         protocolsMember = protocolsMember.NextNode("item");
       }
 

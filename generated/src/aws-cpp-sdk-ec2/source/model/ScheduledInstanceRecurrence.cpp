@@ -61,7 +61,7 @@ ScheduledInstanceRecurrence& ScheduledInstanceRecurrence::operator =(const XmlNo
       XmlNode occurrenceDaySetMember = occurrenceDaySetNode.FirstChild("item");
       while(!occurrenceDaySetMember.IsNull())
       {
-         m_occurrenceDaySet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(occurrenceDaySetMember.GetText().c_str()).c_str()));
+        m_occurrenceDaySet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(occurrenceDaySetMember.GetText().c_str()).c_str()));
         occurrenceDaySetMember = occurrenceDaySetMember.NextNode("item");
       }
 

@@ -66,7 +66,7 @@ XmlEmptyListsResult& XmlEmptyListsResult::operator =(const Aws::AmazonWebService
       XmlNode integerListMember = integerListNode.FirstChild("member");
       while(!integerListMember.IsNull())
       {
-         m_integerList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(integerListMember.GetText().c_str()).c_str()));
+        m_integerList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(integerListMember.GetText().c_str()).c_str()));
         integerListMember = integerListMember.NextNode("member");
       }
 
@@ -77,7 +77,7 @@ XmlEmptyListsResult& XmlEmptyListsResult::operator =(const Aws::AmazonWebService
       XmlNode booleanListMember = booleanListNode.FirstChild("member");
       while(!booleanListMember.IsNull())
       {
-         m_booleanList.push_back(StringUtils::ConvertToBool(StringUtils::Trim(booleanListMember.GetText().c_str()).c_str()));
+        m_booleanList.push_back(StringUtils::ConvertToBool(StringUtils::Trim(booleanListMember.GetText().c_str()).c_str()));
         booleanListMember = booleanListMember.NextNode("member");
       }
 
@@ -110,7 +110,7 @@ XmlEmptyListsResult& XmlEmptyListsResult::operator =(const Aws::AmazonWebService
       XmlNode intEnumListMember = intEnumListNode.FirstChild("member");
       while(!intEnumListMember.IsNull())
       {
-         m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
+        m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
         intEnumListMember = intEnumListMember.NextNode("member");
       }
 
@@ -121,6 +121,16 @@ XmlEmptyListsResult& XmlEmptyListsResult::operator =(const Aws::AmazonWebService
       XmlNode nestedStringListMember = nestedStringListNode.FirstChild("member");
       while(!nestedStringListMember.IsNull())
       {
+        m_nestedStringList.push_back([&nestedStringListMember]() -> Aws::Vector<Aws::String> {
+          Aws::Vector<Aws::String> nestedListNestedStringList;
+          if(nestedStringListMember.IsNull())  { return nestedListNestedStringList; }
+          XmlNode nestedListNestedStringListMemberNode = nestedStringListMember.FirstChild("member");
+          while(!nestedListNestedStringListMemberNode.IsNull()) {
+            nestedListNestedStringList.push_back(nestedListNestedStringListMemberNode.GetText());
+            nestedListNestedStringListMemberNode = nestedListNestedStringListMemberNode.NextNode("member");
+          }
+          return nestedListNestedStringList;
+        } (/*IIFE*/));
         nestedStringListMember = nestedStringListMember.NextNode("member");
       }
 

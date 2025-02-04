@@ -39,7 +39,7 @@ Aws::Http::HeaderValueCollection TimestampFormatHeadersRequest::GetRequestSpecif
   Aws::StringStream ss;
   if(m_memberEpochSecondsHasBeenSet)
   {
-    headers.emplace("x-memberepochseconds", m_memberEpochSeconds.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
+    headers.emplace("x-memberepochseconds", StringUtils::to_string(m_memberEpochSeconds.Seconds()));
   }
 
   if(m_memberHttpDateHasBeenSet)
@@ -59,7 +59,7 @@ Aws::Http::HeaderValueCollection TimestampFormatHeadersRequest::GetRequestSpecif
 
   if(m_targetEpochSecondsHasBeenSet)
   {
-    headers.emplace("x-targetepochseconds", m_targetEpochSeconds.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
+    headers.emplace("x-targetepochseconds", StringUtils::to_string(m_targetEpochSeconds.Seconds()));
   }
 
   if(m_targetHttpDateHasBeenSet)

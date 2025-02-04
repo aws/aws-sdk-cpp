@@ -40,7 +40,7 @@ NestedWithNamespace& NestedWithNamespace::operator =(const XmlNode& xmlNode)
     auto attrField = resultNode.GetAttributeValue("xsi:someName");
     if(!attrField.empty())
     {
-      m_attrField = attrField;
+      m_attrField = Aws::Utils::Xml::DecodeEscapedXmlText(attrField);
       m_attrFieldHasBeenSet = true;
     }
   }
