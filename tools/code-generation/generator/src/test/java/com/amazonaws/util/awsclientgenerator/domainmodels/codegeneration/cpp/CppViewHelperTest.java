@@ -31,7 +31,7 @@ public class CppViewHelperTest {
         shape.setMembers(new HashMap<>());
         ShapeMember payloadShapeMember = new ShapeMember();
         Shape payloadShape = new Shape();
-        payloadShape.setType("BlobStream");
+        payloadShape.setType("blob");
         payloadShapeMember.setShape(payloadShape);
         shape.getMembers().put("blah", payloadShapeMember);
         assertEquals("StreamingServiceRequest", CppViewHelper.computeBaseClass("Service", shape));

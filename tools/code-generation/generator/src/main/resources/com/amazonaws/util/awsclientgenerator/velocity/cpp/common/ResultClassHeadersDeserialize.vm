@@ -28,7 +28,11 @@
 #if($memberEntry.value.shape.string)
     ${memberVarName} = ${varName}Iter->second;
 #elseif($memberEntry.value.shape.timeStamp)
+#if($memberEntry.value.shape.timestampFormat != "unixTimestamp")
     ${memberVarName} = DateTime(${varName}Iter->second.c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+#else
+    ${memberVarName} = DateTime(StringUtils::ConvertToDouble(${varName}Iter->second.c_str()));
+#end
     if(!${memberVarName}.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("${serviceNamespace}::${typeInfo.className}", "Failed to parse ${varName} header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << ${varName}Iter->second.c_str());

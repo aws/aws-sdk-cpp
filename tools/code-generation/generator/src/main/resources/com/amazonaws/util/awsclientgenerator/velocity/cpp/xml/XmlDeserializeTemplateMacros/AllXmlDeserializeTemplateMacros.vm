@@ -1,0 +1,5 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlDeserializeTemplateMacros/deserializeXmlSingleElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlDeserializeTemplateMacros/deserializeXmlListPayloadElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlDeserializeTemplateMacros/deserializeXmlMapPayloadElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlDeserializeTemplateMacros/deserializeXmlNestedMapElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlDeserializeTemplateMacros/deserializeXmlNestedListElement.vm")
