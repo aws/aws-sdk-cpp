@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/ResponseScope.h>
+#include <aws/qbusiness/model/AppliedOrchestrationConfiguration.h>
 #include <aws/qbusiness/model/BlockedPhrasesConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/AppliedCreatorModeConfiguration.h>
@@ -50,6 +51,21 @@ namespace Model
     inline void SetResponseScope(ResponseScope&& value) { m_responseScope = std::move(value); }
     inline GetChatControlsConfigurationResult& WithResponseScope(const ResponseScope& value) { SetResponseScope(value); return *this;}
     inline GetChatControlsConfigurationResult& WithResponseScope(ResponseScope&& value) { SetResponseScope(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The chat response orchestration settings for your application.</p> 
+     * <p>Chat orchestration is optimized to work for English language content. For
+     * more details on language support in Amazon Q Business, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported
+     * languages</a>.</p> 
+     */
+    inline const AppliedOrchestrationConfiguration& GetOrchestrationConfiguration() const{ return m_orchestrationConfiguration; }
+    inline void SetOrchestrationConfiguration(const AppliedOrchestrationConfiguration& value) { m_orchestrationConfiguration = value; }
+    inline void SetOrchestrationConfiguration(AppliedOrchestrationConfiguration&& value) { m_orchestrationConfiguration = std::move(value); }
+    inline GetChatControlsConfigurationResult& WithOrchestrationConfiguration(const AppliedOrchestrationConfiguration& value) { SetOrchestrationConfiguration(value); return *this;}
+    inline GetChatControlsConfigurationResult& WithOrchestrationConfiguration(AppliedOrchestrationConfiguration&& value) { SetOrchestrationConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,6 +133,8 @@ namespace Model
   private:
 
     ResponseScope m_responseScope;
+
+    AppliedOrchestrationConfiguration m_orchestrationConfiguration;
 
     BlockedPhrasesConfiguration m_blockedPhrases;
 

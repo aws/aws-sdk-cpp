@@ -8,6 +8,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/AssertionEncryptionModeType.h>
 #include <aws/iam/model/Tag.h>
 #include <utility>
 
@@ -95,6 +96,34 @@ namespace Model
     inline CreateSAMLProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline CreateSAMLProviderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the encryption setting for the SAML provider.</p>
+     */
+    inline const AssertionEncryptionModeType& GetAssertionEncryptionMode() const{ return m_assertionEncryptionMode; }
+    inline bool AssertionEncryptionModeHasBeenSet() const { return m_assertionEncryptionModeHasBeenSet; }
+    inline void SetAssertionEncryptionMode(const AssertionEncryptionModeType& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
+    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType&& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = std::move(value); }
+    inline CreateSAMLProviderRequest& WithAssertionEncryptionMode(const AssertionEncryptionModeType& value) { SetAssertionEncryptionMode(value); return *this;}
+    inline CreateSAMLProviderRequest& WithAssertionEncryptionMode(AssertionEncryptionModeType&& value) { SetAssertionEncryptionMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The private key generated from your external identity provider. The private
+     * key must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to
+     * decrypt SAML assertions.</p>
+     */
+    inline const Aws::String& GetAddPrivateKey() const{ return m_addPrivateKey; }
+    inline bool AddPrivateKeyHasBeenSet() const { return m_addPrivateKeyHasBeenSet; }
+    inline void SetAddPrivateKey(const Aws::String& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = value; }
+    inline void SetAddPrivateKey(Aws::String&& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = std::move(value); }
+    inline void SetAddPrivateKey(const char* value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey.assign(value); }
+    inline CreateSAMLProviderRequest& WithAddPrivateKey(const Aws::String& value) { SetAddPrivateKey(value); return *this;}
+    inline CreateSAMLProviderRequest& WithAddPrivateKey(Aws::String&& value) { SetAddPrivateKey(std::move(value)); return *this;}
+    inline CreateSAMLProviderRequest& WithAddPrivateKey(const char* value) { SetAddPrivateKey(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_sAMLMetadataDocument;
@@ -105,6 +134,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AssertionEncryptionModeType m_assertionEncryptionMode;
+    bool m_assertionEncryptionModeHasBeenSet = false;
+
+    Aws::String m_addPrivateKey;
+    bool m_addPrivateKeyHasBeenSet = false;
   };
 
 } // namespace Model

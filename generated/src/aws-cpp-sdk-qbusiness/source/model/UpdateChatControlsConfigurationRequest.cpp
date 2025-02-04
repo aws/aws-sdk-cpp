@@ -18,6 +18,7 @@ UpdateChatControlsConfigurationRequest::UpdateChatControlsConfigurationRequest()
     m_clientTokenHasBeenSet(true),
     m_responseScope(ResponseScope::NOT_SET),
     m_responseScopeHasBeenSet(false),
+    m_orchestrationConfigurationHasBeenSet(false),
     m_blockedPhrasesConfigurationUpdateHasBeenSet(false),
     m_topicConfigurationsToCreateOrUpdateHasBeenSet(false),
     m_topicConfigurationsToDeleteHasBeenSet(false),
@@ -38,6 +39,12 @@ Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
   if(m_responseScopeHasBeenSet)
   {
    payload.WithString("responseScope", ResponseScopeMapper::GetNameForResponseScope(m_responseScope));
+  }
+
+  if(m_orchestrationConfigurationHasBeenSet)
+  {
+   payload.WithObject("orchestrationConfiguration", m_orchestrationConfiguration.Jsonize());
+
   }
 
   if(m_blockedPhrasesConfigurationUpdateHasBeenSet)

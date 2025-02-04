@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/ResponseScope.h>
+#include <aws/qbusiness/model/OrchestrationConfiguration.h>
 #include <aws/qbusiness/model/BlockedPhrasesConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/CreatorModeConfiguration.h>
@@ -85,6 +86,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> The chat response orchestration settings for your application.</p>
+     */
+    inline const OrchestrationConfiguration& GetOrchestrationConfiguration() const{ return m_orchestrationConfiguration; }
+    inline bool OrchestrationConfigurationHasBeenSet() const { return m_orchestrationConfigurationHasBeenSet; }
+    inline void SetOrchestrationConfiguration(const OrchestrationConfiguration& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = value; }
+    inline void SetOrchestrationConfiguration(OrchestrationConfiguration&& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = std::move(value); }
+    inline UpdateChatControlsConfigurationRequest& WithOrchestrationConfiguration(const OrchestrationConfiguration& value) { SetOrchestrationConfiguration(value); return *this;}
+    inline UpdateChatControlsConfigurationRequest& WithOrchestrationConfiguration(OrchestrationConfiguration&& value) { SetOrchestrationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The phrases blocked from chat by your chat control configuration.</p>
      */
     inline const BlockedPhrasesConfigurationUpdate& GetBlockedPhrasesConfigurationUpdate() const{ return m_blockedPhrasesConfigurationUpdate; }
@@ -144,6 +157,9 @@ namespace Model
 
     ResponseScope m_responseScope;
     bool m_responseScopeHasBeenSet = false;
+
+    OrchestrationConfiguration m_orchestrationConfiguration;
+    bool m_orchestrationConfigurationHasBeenSet = false;
 
     BlockedPhrasesConfigurationUpdate m_blockedPhrasesConfigurationUpdate;
     bool m_blockedPhrasesConfigurationUpdateHasBeenSet = false;
