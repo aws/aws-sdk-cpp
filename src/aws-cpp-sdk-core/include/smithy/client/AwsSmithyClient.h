@@ -99,33 +99,9 @@ namespace client
             return *this;
         }
 
-        AwsSmithyClientT (AwsSmithyClientT&& other) {
-          //reference can't be moved, so it gets copied first since moving base class member using the reference will cause crash
-          m_clientConfiguration =  other.m_clientConfiguration;
-          AwsSmithyClientBase::operator=(std::move(other));
-          //move other base class members
-          m_endpointProvider = std::move(other.m_endpointProvider);
-          m_authSchemeResolver =  std::move(other.m_authSchemeResolver);
-          m_authSchemes = std::move(other.m_authSchemes);
-          m_serializer = std::move(other.m_serializer);
-          m_errorMarshaller = std::move(other.m_errorMarshaller);
-        }
+        AwsSmithyClientT (AwsSmithyClientT&& other) = default;
 
-        AwsSmithyClientT& operator=(AwsSmithyClientT&& other) {
-          if(this == &other) {
-            return *this;
-          }
-          //reference can't be moved, so it gets copied first since moving base class member using the reference will cause crash
-          m_clientConfiguration =  other.m_clientConfiguration;
-          AwsSmithyClientBase::operator=(std::move(other));
-          //move other base class members
-          m_endpointProvider = std::move(other.m_endpointProvider);
-          m_authSchemeResolver =  std::move(other.m_authSchemeResolver);
-          m_authSchemes = std::move(other.m_authSchemes);
-          m_serializer = std::move(other.m_serializer);
-          m_errorMarshaller = std::move(other.m_errorMarshaller);
-          return *this;
-        }
+        AwsSmithyClientT& operator=(AwsSmithyClientT&& other) = default;
 
         virtual ~AwsSmithyClientT() = default;
 
@@ -300,7 +276,7 @@ namespace client
         }
 
     protected:
-        ServiceClientConfigurationT& m_clientConfiguration;
+        ServiceClientConfigurationT m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
