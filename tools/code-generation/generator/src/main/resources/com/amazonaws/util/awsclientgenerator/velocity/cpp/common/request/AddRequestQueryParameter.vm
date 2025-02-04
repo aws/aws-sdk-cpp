@@ -3,7 +3,7 @@
 #if($shapeMember.shape.enum)
 ${shapeMember.shape.name}Mapper::GetNameFor${shapeMember.shape.name}(${memberVarName});
 #elseif($shapeMember.shape.timeStamp)
-${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($shapeMember.shape));
+${memberVarName}.$CppViewHelper.computeTimeStampAccessInQueryString($shapeMember.shape);
 #else
 $memberVarName;
 #end
