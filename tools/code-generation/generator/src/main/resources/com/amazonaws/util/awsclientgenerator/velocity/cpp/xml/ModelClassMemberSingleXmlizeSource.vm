@@ -5,8 +5,8 @@
 ${shapeMember.shape.name}Mapper::GetNameFor${shapeMember.shape.name}(${memberVarName})##
 #elseif($shapeMember.shape.timeStamp)
 #if($member.shape.timestampFormat != "unixTimestamp")
-#set($timestamptFormatStr = $CppViewHelper.computeTimestampFormatInXml($shapeMember.shape))
-${memberVarName}.ToGmtString(Aws::Utils::DateFormat::${timestamptFormatStr})##
+#set($macro.timestamptFormatStr = $CppViewHelper.computeTimestampFormatInXml($shapeMember.shape))
+${memberVarName}.ToGmtString(Aws::Utils::DateFormat::${macro.timestamptFormatStr})##
 #else
 StringUtils::to_string(${memberVarName}.Seconds())##
 #end
@@ -36,7 +36,11 @@ ${memberVarName}##
   ${spaces}ss.str("");
 #else
 #if($shapeMember.shape.structure)
+#if($shapeMember.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->AddToNode(${lowerCaseVarName}Node);
+#else
   ${spaces}${memberVarName}.AddToNode(${lowerCaseVarName}Node);
+#end
 #else
   ${spaces}${lowerCaseVarName}Node.SetText(#serializeElementToText($shapeMember, $memberVarName));
 #end
@@ -50,21 +54,21 @@ ${memberVarName}##
 #end
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
-#set($listElParentNode = "parentNode")
-#set($listElSerializationName = "")
+#set($macro.listElParentNode = "parentNode")
+#set($macro.listElSerializationName = "")
 #if($member.locationName && $member.shape.flattened)
-#set($listElSerializationName = ${member.locationName})
+#set($macro.listElSerializationName = ${member.locationName})
 #elseif(${member.shape.listMember.locationName} && ${member.isFlattened()})
-#set($listElSerializationName = ${member.shape.listMember.locationName})
+#set($macro.listElSerializationName = ${member.shape.listMember.locationName})
 #elseif(${member.shape.listMember.locationName})
-#set($listElSerializationName = ${member.shape.listMember.locationName})
-#set($listElParentNode = "${lowerCaseVarName}ParentNode")
+#set($macro.listElSerializationName = ${member.shape.listMember.locationName})
+#set($macro.listElParentNode = "${lowerCaseVarName}ParentNode")
 #else
-#set($listElSerializationName = ${member.shape.listMember.shape.name})
-#set($listElParentNode = "${lowerCaseVarName}ParentNode")
+#set($macro.listElSerializationName = ${member.shape.listMember.shape.name})
+#set($macro.listElParentNode = "${lowerCaseVarName}ParentNode")
 #end
-#set($listSpaces = $spaces + "  ")
-#serializeXmlPayloadElement($listSpaces, $listElSerializationName, $lowerCaseVarName, $member.shape.listMember, "item", $listElParentNode)
+#set($macro.listSpaces = $spaces + "  ")
+#serializeXmlPayloadElement($macro.listSpaces, $macro.listElSerializationName, $lowerCaseVarName, $member.shape.listMember, "item", $macro.listElParentNode)
   ${spaces}}
 #end##macro serializeXmlListPayloadElement
 ##-------------------- serializeXmlMapPayloadElement macro
@@ -76,20 +80,20 @@ ${memberVarName}##
 ##// /* --- key shape: ${member.shape.mapKey.shape} */
 ##// /* --- key member: ${member.shape.mapValue} */
 ##// /* --- key shape: ${member.shape.mapValue.shape} */
-#set($mapEntryParentNode = "parentNode")
+#set($macro.mapEntryParentNode = "parentNode")
 #if(!($member.locationName && $member.shape.flattened))
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${serializationName}");
-#set($mapEntryParentNode = "${lowerCaseVarName}ParentNode")
+#set($macro.mapEntryParentNode = "${lowerCaseVarName}ParentNode")
 #end
   ${spaces}for(const auto& mapItem : $memberVarName)
   ${spaces}{
-#set($mapSpaces = $spaces + "  ")
-#set($mapEntrySerializationName = "#if($member.locationName)$member.locationName#{else}entry#end")
-  ${spaces}  XmlNode ${lowerCaseVarName}MapEntryNode = ${mapEntryParentNode}.CreateChildElement("${mapEntrySerializationName}");
-#set($mapKeySerializationName = "#if($member.shape.mapKey.locationName)$member.shape.mapKey.locationName#{else}key#end")
-#serializeXmlPayloadElement($mapSpaces, $mapKeySerializationName, "${lowerCaseVarName}Key", $member.shape.mapKey, "mapItem.first", "${lowerCaseVarName}MapEntryNode")
-#set($mapValueSerializationName = "#if($member.shape.mapValue.locationName)$member.shape.mapValue.locationName#{else}value#end")
-#serializeXmlPayloadElement($mapSpaces, $mapValueSerializationName, "${lowerCaseVarName}Value", $member.shape.mapValue, "mapItem.second", "${lowerCaseVarName}MapEntryNode")
+#set($macro.mapSpaces = $spaces + "  ")
+#set($macro.mapEntrySerializationName = "#if($member.locationName)$member.locationName#{else}entry#end")
+  ${spaces}  XmlNode ${lowerCaseVarName}MapEntryNode = ${macro.mapEntryParentNode}.CreateChildElement("${macro.mapEntrySerializationName}");
+#set($macro.mapKeySerializationName = "#if($member.shape.mapKey.locationName)$member.shape.mapKey.locationName#{else}key#end")
+#serializeXmlPayloadElement($macro.mapSpaces, $macro.mapKeySerializationName, "${lowerCaseVarName}Key", $member.shape.mapKey, "mapItem.first", "${lowerCaseVarName}MapEntryNode")
+#set($macro.mapValueSerializationName = "#if($member.shape.mapValue.locationName)$member.shape.mapValue.locationName#{else}value#end")
+#serializeXmlPayloadElement($macro.mapSpaces, $macro.mapValueSerializationName, "${lowerCaseVarName}Value", $member.shape.mapValue, "mapItem.second", "${lowerCaseVarName}MapEntryNode")
   ${spaces}}
 #end##macro serializeXmlMapPayloadElement
 ##-------------------- END OF MACROS, ACTUAL TEMPLATE BEGINS --------------------

@@ -222,6 +222,38 @@ public class CppViewHelper {
         }
     }
 
+    public static boolean isStreamingPayloadMember(Shape parent, String member) {
+        if (!parent.getMembers().containsKey(member)) {
+            throw new RuntimeException("Parent shape " + parent.getName() +
+                    " does not contain member key " + member);
+        }
+        ShapeMember shapeMember = parent.getMembers().get(member);
+        Shape childShape = shapeMember.getShape();
+
+        if (parent.getPayload() != null && parent.getPayload().equals(member)) {
+            if (shapeMember.isStreaming() || childShape.isBlob() || childShape.isString()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String computeCppType(Shape parent, String member) {
+        if (!parent.getMembers().containsKey(member)) {
+            throw new RuntimeException("Parent shape " + parent.getName() +
+                    " does not contain member key " + member);
+        }
+        ShapeMember shapeMember = parent.getMembers().get(member);
+        Shape childShape = shapeMember.getShape();
+
+        if (parent.getPayload() != null && parent.getPayload().equals(member) && parent.isResult()) {
+            if (shapeMember.isStreaming() || childShape.isBlob() || childShape.isString()) {
+                return "Aws::Utils::Stream::ResponseStream";
+            }
+        }
+        return computeCppType(childShape);
+    }
+
     public static String computeJsonCppType(Shape shape) {
         if(shape.isTimeStamp() && shape.getTimestampFormat() != null) {
             return CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase());
@@ -465,6 +497,14 @@ public class CppViewHelper {
         }
         else {
             return str.toUpperCase();
+        }
+    }
+
+    public static String ifNotNullOrEmpty(final String target, final String fallback) {
+        if (target != null && !target.isEmpty()){
+            return target;
+        } else {
+            return fallback;
         }
     }
 
