@@ -1,0 +1,71 @@
+##-------------------- deserializeXmlListPayloadElement macro
+#macro( deserializeXmlListPayloadElement $memberName $member $memberIsWholePayload $lowerCaseVarName)
+#set($macro.spaces = '  ')
+#set($macro.listVarName = $CppViewHelper.computeVariableName($memberName) + "Member")
+#set($macro.listMemberName = "member")
+#if($memberIsWholePayload)
+#set($macro.listVarName = $CppViewHelper.computeVariableName($memberName) + "Member")
+    XmlNode ${macro.listVarName} = resultNode;
+#else
+#if($member.shape.flattened || $member.flattened)##list member uses flattened serialization
+#if($member.locationName)
+#set($macro.listVarName = $CppViewHelper.computeVariableName($member.locationName) + "Member")
+#set($macro.listMemberName = $member.locationName)
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${macro.listMemberName}");
+#elseif($member.shape.listMember.locationName)##a location is specified for the serilization member
+#set($macro.listVarName = $CppViewHelper.computeVariableName($member.shape.listMember.locationName) + "Member")
+#set($macro.listMemberName = $member.shape.listMember.locationName)
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${macro.listMemberName}");
+#else##no location specified.
+#set($macro.listVarName = $CppViewHelper.computeVariableName($memberName) + "Member")
+#set($macro.listMemberName = $memberName)
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${macro.listMemberName}");
+#end##a location is specified for the serilization member
+#else##list member does not use flattened serialization
+#if($member.shape.listMember.locationName)##location specified in model
+#set($macro.listVarName = $lowerCaseVarName + "Member")
+#set($macro.listMemberName = $member.shape.listMember.locationName)
+#else##no location specified
+#set($macro.listVarName = $CppViewHelper.computeVariableName($memberName) + "Member")
+#set($macro.listMemberName = "member")
+#end##location specified in model
+#if($member.locationName)##location specified
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
+#else##no location specified
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
+#end##
+#end##list member uses flattened serialization
+#end##member is whole payload
+#if($member.xmlAttribute)
+    if(!${lowerCaseVarName}.empty())
+    {
+#else
+    if(!${lowerCaseVarName}Node.IsNull())
+    {
+#end
+#if($macro.listVarName && !$memberIsWholePayload)
+#if($member.shape.flattened || $member.flattened)
+    ${macro.spaces}XmlNode ${macro.listVarName} = ${lowerCaseVarName}Node;
+#else
+    ${macro.spaces}XmlNode ${macro.listVarName} = ${lowerCaseVarName}Node.FirstChild("${macro.listMemberName}");
+#end
+#end
+    ${macro.spaces}while(!${macro.listVarName}.IsNull())
+    ${macro.spaces}{
+#set($macro.memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+    ${macro.spaces}  ${macro.memberVarName}.push_back(#deserializeXmlSingleElement($member.shape.listMember, $macro.listVarName));
+#if($member.shape.listMember.locationName)
+#set($listMemberName = $member.shape.listMember.locationName)
+#elseif(!($member.shape.flattened || $member.flattened))
+#set($listMemberName = "member")
+#else
+#if($member.locationName)
+#set($listMemberName = $member.locationName)
+#else
+#set($listMemberName = $memberName)
+#end
+#end
+    ${macro.spaces}  ${macro.listVarName} = ${macro.listVarName}.NextNode("${listMemberName}");
+    ${macro.spaces}}
+
+#end##macro deserializeXmlListPayloadElement
