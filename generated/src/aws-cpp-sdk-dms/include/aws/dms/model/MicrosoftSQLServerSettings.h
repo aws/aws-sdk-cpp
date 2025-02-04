@@ -297,7 +297,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+     * <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
      */
     inline const SqlServerAuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
     inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }

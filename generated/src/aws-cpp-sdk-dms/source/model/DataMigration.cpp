@@ -30,6 +30,7 @@ DataMigration::DataMigration() :
     m_dataMigrationTypeHasBeenSet(false),
     m_dataMigrationSettingsHasBeenSet(false),
     m_sourceDataSettingsHasBeenSet(false),
+    m_targetDataSettingsHasBeenSet(false),
     m_dataMigrationStatisticsHasBeenSet(false),
     m_dataMigrationStatusHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
@@ -118,6 +119,16 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
       m_sourceDataSettings.push_back(sourceDataSettingsJsonList[sourceDataSettingsIndex].AsObject());
     }
     m_sourceDataSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetDataSettings"))
+  {
+    Aws::Utils::Array<JsonView> targetDataSettingsJsonList = jsonValue.GetArray("TargetDataSettings");
+    for(unsigned targetDataSettingsIndex = 0; targetDataSettingsIndex < targetDataSettingsJsonList.GetLength(); ++targetDataSettingsIndex)
+    {
+      m_targetDataSettings.push_back(targetDataSettingsJsonList[targetDataSettingsIndex].AsObject());
+    }
+    m_targetDataSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DataMigrationStatistics"))
@@ -233,6 +244,17 @@ JsonValue DataMigration::Jsonize() const
      sourceDataSettingsJsonList[sourceDataSettingsIndex].AsObject(m_sourceDataSettings[sourceDataSettingsIndex].Jsonize());
    }
    payload.WithArray("SourceDataSettings", std::move(sourceDataSettingsJsonList));
+
+  }
+
+  if(m_targetDataSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> targetDataSettingsJsonList(m_targetDataSettings.size());
+   for(unsigned targetDataSettingsIndex = 0; targetDataSettingsIndex < targetDataSettingsJsonList.GetLength(); ++targetDataSettingsIndex)
+   {
+     targetDataSettingsJsonList[targetDataSettingsIndex].AsObject(m_targetDataSettings[targetDataSettingsIndex].Jsonize());
+   }
+   payload.WithArray("TargetDataSettings", std::move(targetDataSettingsJsonList));
 
   }
 

@@ -13,7 +13,10 @@ using namespace Aws::Utils;
 CreateSAMLProviderRequest::CreateSAMLProviderRequest() : 
     m_sAMLMetadataDocumentHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_assertionEncryptionMode(AssertionEncryptionModeType::NOT_SET),
+    m_assertionEncryptionModeHasBeenSet(false),
+    m_addPrivateKeyHasBeenSet(false)
 {
 }
 
@@ -46,6 +49,16 @@ Aws::String CreateSAMLProviderRequest::SerializePayload() const
         tagsCount++;
       }
     }
+  }
+
+  if(m_assertionEncryptionModeHasBeenSet)
+  {
+    ss << "AssertionEncryptionMode=" << AssertionEncryptionModeTypeMapper::GetNameForAssertionEncryptionModeType(m_assertionEncryptionMode) << "&";
+  }
+
+  if(m_addPrivateKeyHasBeenSet)
+  {
+    ss << "AddPrivateKey=" << StringUtils::URLEncode(m_addPrivateKey.c_str()) << "&";
   }
 
   ss << "Version=2010-05-08";

@@ -10,6 +10,7 @@
 #include <aws/dms/model/MigrationTypeValue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/SourceDataSetting.h>
+#include <aws/dms/model/TargetDataSetting.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The new information about the target data provider for the data
+     * migration.</p>
+     */
+    inline const Aws::Vector<TargetDataSetting>& GetTargetDataSettings() const{ return m_targetDataSettings; }
+    inline bool TargetDataSettingsHasBeenSet() const { return m_targetDataSettingsHasBeenSet; }
+    inline void SetTargetDataSettings(const Aws::Vector<TargetDataSetting>& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = value; }
+    inline void SetTargetDataSettings(Aws::Vector<TargetDataSetting>&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = std::move(value); }
+    inline ModifyDataMigrationRequest& WithTargetDataSettings(const Aws::Vector<TargetDataSetting>& value) { SetTargetDataSettings(value); return *this;}
+    inline ModifyDataMigrationRequest& WithTargetDataSettings(Aws::Vector<TargetDataSetting>&& value) { SetTargetDataSettings(std::move(value)); return *this;}
+    inline ModifyDataMigrationRequest& AddTargetDataSettings(const TargetDataSetting& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.push_back(value); return *this; }
+    inline ModifyDataMigrationRequest& AddTargetDataSettings(TargetDataSetting&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of parallel jobs that trigger parallel threads to unload the
      * tables from the source, and then load them to the target.</p>
      */
@@ -160,6 +176,9 @@ namespace Model
 
     Aws::Vector<SourceDataSetting> m_sourceDataSettings;
     bool m_sourceDataSettingsHasBeenSet = false;
+
+    Aws::Vector<TargetDataSetting> m_targetDataSettings;
+    bool m_targetDataSettingsHasBeenSet = false;
 
     int m_numberOfJobs;
     bool m_numberOfJobsHasBeenSet = false;
