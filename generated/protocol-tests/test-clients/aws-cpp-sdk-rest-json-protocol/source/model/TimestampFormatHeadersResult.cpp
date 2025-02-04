@@ -34,7 +34,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
   const auto& memberEpochSecondsIter = headers.find("x-memberepochseconds");
   if(memberEpochSecondsIter != headers.end())
   {
-    m_memberEpochSeconds = DateTime(memberEpochSecondsIter->second.c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+    m_memberEpochSeconds = DateTime(StringUtils::ConvertToDouble(memberEpochSecondsIter->second.c_str()));
     if(!m_memberEpochSeconds.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse memberEpochSeconds header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << memberEpochSecondsIter->second.c_str());
@@ -74,7 +74,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
   const auto& targetEpochSecondsIter = headers.find("x-targetepochseconds");
   if(targetEpochSecondsIter != headers.end())
   {
-    m_targetEpochSeconds = DateTime(targetEpochSecondsIter->second.c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+    m_targetEpochSeconds = DateTime(StringUtils::ConvertToDouble(targetEpochSecondsIter->second.c_str()));
     if(!m_targetEpochSeconds.WasParseSuccessful())
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse targetEpochSeconds header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << targetEpochSecondsIter->second.c_str());

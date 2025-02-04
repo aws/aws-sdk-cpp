@@ -48,7 +48,7 @@ RecursiveXmlShapesOutputNested2& RecursiveXmlShapesOutputNested2::operator =(con
     XmlNode recursiveMemberNode = resultNode.FirstChild("recursiveMember");
     if(!recursiveMemberNode.IsNull())
     {
-      m_recursiveMember = recursiveMemberNode;
+      m_recursiveMember = Aws::MakeShared<RecursiveXmlShapesOutputNested1>("RecursiveXmlShapesOutputNested2", recursiveMemberNode);
       m_recursiveMemberHasBeenSet = true;
     }
   }
