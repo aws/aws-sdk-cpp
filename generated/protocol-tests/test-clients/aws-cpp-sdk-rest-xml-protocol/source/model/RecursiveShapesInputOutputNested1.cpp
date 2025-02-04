@@ -48,7 +48,7 @@ RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator =
     XmlNode nestedNode = resultNode.FirstChild("nested");
     if(!nestedNode.IsNull())
     {
-      m_nested = nestedNode;
+      m_nested = Aws::MakeShared<RecursiveShapesInputOutputNested2>("RecursiveShapesInputOutputNested1", nestedNode);
       m_nestedHasBeenSet = true;
     }
   }
@@ -68,7 +68,7 @@ void RecursiveShapesInputOutputNested1::AddToNode(XmlNode& parentNode) const
   if(m_nestedHasBeenSet)
   {
    XmlNode nestedNode = parentNode.CreateChildElement("nested");
-   m_nested.AddToNode(nestedNode);
+   m_nested->AddToNode(nestedNode);
   }
 
 }

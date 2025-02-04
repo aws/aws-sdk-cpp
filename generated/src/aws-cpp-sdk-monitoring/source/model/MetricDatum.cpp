@@ -90,7 +90,7 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       XmlNode valuesMember = valuesNode.FirstChild("member");
       while(!valuesMember.IsNull())
       {
-         m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
+        m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
         valuesMember = valuesMember.NextNode("member");
       }
 
@@ -102,7 +102,7 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
       XmlNode countsMember = countsNode.FirstChild("member");
       while(!countsMember.IsNull())
       {
-         m_counts.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(countsMember.GetText().c_str()).c_str()));
+        m_counts.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(countsMember.GetText().c_str()).c_str()));
         countsMember = countsMember.NextNode("member");
       }
 

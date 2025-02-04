@@ -48,7 +48,7 @@ GetAccountSummaryResult& GetAccountSummaryResult::operator =(const Aws::AmazonWe
         XmlNode keyNode = summaryMapEntry.FirstChild("key");
         XmlNode valueNode = summaryMapEntry.FirstChild("value");
         m_summaryMap[SummaryKeyTypeMapper::GetSummaryKeyTypeForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-           StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+            StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
         summaryMapEntry = summaryMapEntry.NextNode("entry");
       }
 

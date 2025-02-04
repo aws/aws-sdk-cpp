@@ -680,7 +680,7 @@ HttpEnumPayloadOutcome RestXmlProtocolClient::HttpEnumPayload(const HttpEnumPayl
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, HttpEnumPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/EnumPayload");
-      return HttpEnumPayloadOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      return HttpEnumPayloadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1049,7 +1049,7 @@ HttpRequestWithLabelsOutcome RestXmlProtocolClient::HttpRequestWithLabels(const 
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFloat());
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDouble());
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBoolean());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTimestamp());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTimestamp().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
       return HttpRequestWithLabelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1112,13 +1112,13 @@ HttpRequestWithLabelsAndTimestampFormatOutcome RestXmlProtocolClient::HttpReques
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, HttpRequestWithLabelsAndTimestampFormat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/HttpRequestWithLabelsAndTimestampFormat/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberEpochSeconds());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberHttpDate());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberDateTime());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDefaultFormat());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetEpochSeconds());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetHttpDate());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetDateTime());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberEpochSeconds().Seconds());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDefaultFormat().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetEpochSeconds().Seconds());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
       return HttpRequestWithLabelsAndTimestampFormatOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
