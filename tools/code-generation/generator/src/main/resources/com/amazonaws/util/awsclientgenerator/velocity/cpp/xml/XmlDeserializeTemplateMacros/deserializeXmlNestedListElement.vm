@@ -1,0 +1,16 @@
+##-------------------- deserializeXmlNestedListElement macro
+#macro( deserializeXmlNestedListElement $member $memberVarName $spaces='')
+#set($macro.spaces = "${spaces}  ")
+#set($macro.mapCppType = $CppViewHelper.computeCppType($member.shape))
+#set($macro.resultVarName = "nestedList$CppViewHelper.capitalizeFirstChar(${memberVarName.replace('Member', '')})")
+[&${memberVarName}]() -> ${macro.mapCppType} {
+    ${macro.spaces}  ${macro.mapCppType} ${macro.resultVarName};
+    ${macro.spaces}  if(${memberVarName}.IsNull())  { return ${macro.resultVarName}; }
+    ${macro.spaces}  XmlNode ${macro.resultVarName}MemberNode = ${memberVarName}.FirstChild("${CppViewHelper.ifNotNullOrEmpty($member.locationName, 'member')}");
+    ${macro.spaces}  while(!${macro.resultVarName}MemberNode.IsNull()) {
+    ${macro.spaces}    ${macro.resultVarName}.push_back(#deserializeXmlSingleElement($member.shape.listMember, "${macro.resultVarName}MemberNode"));
+    ${macro.spaces}    ${macro.resultVarName}MemberNode = ${macro.resultVarName}MemberNode.NextNode("${CppViewHelper.ifNotNullOrEmpty($member.locationName, 'member')}");
+    ${macro.spaces}  }
+    ${macro.spaces}  return ${macro.resultVarName};
+    ${macro.spaces}} (/*IIFE*/)##
+#end##macro deserializeXmlNestedListElement

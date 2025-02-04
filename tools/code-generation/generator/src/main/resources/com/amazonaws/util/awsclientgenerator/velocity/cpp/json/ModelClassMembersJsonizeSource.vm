@@ -16,7 +16,7 @@
   if($varNameHasBeenSet)
   {
 #end
-#if($memberName == $shape.payload)
+#if($memberName == $shape.payload && !$member.shape.enum)
   ${spaces}payload = ${memberVarName}.Jsonize();
 #else
 #if($member.shape.enum)

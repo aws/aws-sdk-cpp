@@ -5,12 +5,13 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -139,8 +140,10 @@ public class Shape {
 
     public boolean hasStreamMembers() {
       if (members == null) return false;
-      return members.values().parallelStream()
-              .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure() && !members.get(payload).getShape().isList());
+      return members.entrySet().parallelStream()
+              .anyMatch(entry -> (entry.getValue().isStreaming()) ||
+                                  CppViewHelper.isStreamingPayloadMember(this, entry.getKey())
+              );
     }
 
     public boolean hasPayloadMembers() {

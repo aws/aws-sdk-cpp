@@ -1,0 +1,37 @@
+##-------------------- deserializeXmlSingleElement macro
+#macro( deserializeXmlSingleElement $member $memberVarName $spaces='' $unescape=false)
+##/* --- the actual shape member is $member; the actual shape is #member.shape; --- */
+##TODO: need to check why we perform substitution unescape only for top level elements, see ref 72131ed9529a5ce102fd3c4bf4e521c80d7cf11b
+##enum, structure, timestamp, and blob can't be with escaped characters, but for legacy and git diff reasons keeping it here for now
+#set($macro.spaces = "${spaces}  ")
+#set($macro.memberVarNameGetText = "${memberVarName}.GetText()")
+#if($member.xmlAttribute)
+#set($macro.memberVarNameGetText = "${memberVarName}")
+#end
+#if($unescape)
+#set($macro.memberVarNameGetText = "Aws::Utils::Xml::DecodeEscapedXmlText(${macro.memberVarNameGetText})")
+#end
+#if($member.shape.enum)
+${member.shape.name}Mapper::Get${member.shape.name}ForName(StringUtils::Trim(${macro.memberVarNameGetText}.c_str()))##
+#elseif($member.shape.structure)
+${memberVarName}##
+#elseif($member.shape.string)
+${macro.memberVarNameGetText}##
+#elseif($member.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
+DateTime(StringUtils::Trim(${macro.memberVarNameGetText}.c_str()).c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape))##
+#else
+DateTime(StringUtils::ConvertToDouble(StringUtils::Trim(${macro.memberVarNameGetText}.c_str()).c_str()))##
+#end
+#elseif($member.shape.primitive)
+${CppViewHelper.computeXmlConversionMethodName($member.shape)}(StringUtils::Trim(${macro.memberVarNameGetText}.c_str()).c_str())##
+#elseif($member.shape.blob)
+HashingUtils::Base64Decode(${macro.memberVarNameGetText})##
+#elseif($member.shape.list)
+#deserializeXmlNestedListElement($member, $memberVarName, $macro.spaces)
+#elseif($member.shape.map)
+#deserializeXmlNestedMapElement($member, $memberVarName, $macro.spaces)
+#else
+static_assert(false, "Codegen failure: unknown type to deserialize XML element: ${memberVarName}:${member}");
+#end
+#end##macro deserializeXmlSingleElement
