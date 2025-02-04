@@ -21,6 +21,7 @@ CreateDataMigrationRequest::CreateDataMigrationRequest() :
     m_enableCloudwatchLogs(false),
     m_enableCloudwatchLogsHasBeenSet(false),
     m_sourceDataSettingsHasBeenSet(false),
+    m_targetDataSettingsHasBeenSet(false),
     m_numberOfJobs(0),
     m_numberOfJobsHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -69,6 +70,17 @@ Aws::String CreateDataMigrationRequest::SerializePayload() const
      sourceDataSettingsJsonList[sourceDataSettingsIndex].AsObject(m_sourceDataSettings[sourceDataSettingsIndex].Jsonize());
    }
    payload.WithArray("SourceDataSettings", std::move(sourceDataSettingsJsonList));
+
+  }
+
+  if(m_targetDataSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> targetDataSettingsJsonList(m_targetDataSettings.size());
+   for(unsigned targetDataSettingsIndex = 0; targetDataSettingsIndex < targetDataSettingsJsonList.GetLength(); ++targetDataSettingsIndex)
+   {
+     targetDataSettingsJsonList[targetDataSettingsIndex].AsObject(m_targetDataSettings[targetDataSettingsIndex].Jsonize());
+   }
+   payload.WithArray("TargetDataSettings", std::move(targetDataSettingsJsonList));
 
   }
 

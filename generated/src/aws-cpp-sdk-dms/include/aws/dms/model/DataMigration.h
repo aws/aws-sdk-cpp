@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/DataMigrationStatistics.h>
 #include <aws/dms/model/SourceDataSetting.h>
+#include <aws/dms/model/TargetDataSetting.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +180,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies information about the data migration's target data provider.</p>
+     */
+    inline const Aws::Vector<TargetDataSetting>& GetTargetDataSettings() const{ return m_targetDataSettings; }
+    inline bool TargetDataSettingsHasBeenSet() const { return m_targetDataSettingsHasBeenSet; }
+    inline void SetTargetDataSettings(const Aws::Vector<TargetDataSetting>& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = value; }
+    inline void SetTargetDataSettings(Aws::Vector<TargetDataSetting>&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = std::move(value); }
+    inline DataMigration& WithTargetDataSettings(const Aws::Vector<TargetDataSetting>& value) { SetTargetDataSettings(value); return *this;}
+    inline DataMigration& WithTargetDataSettings(Aws::Vector<TargetDataSetting>&& value) { SetTargetDataSettings(std::move(value)); return *this;}
+    inline DataMigration& AddTargetDataSettings(const TargetDataSetting& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.push_back(value); return *this; }
+    inline DataMigration& AddTargetDataSettings(TargetDataSetting&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides information about the data migration's run, including start and stop
      * time, latency, and data migration progress.</p>
      */
@@ -292,6 +307,9 @@ namespace Model
 
     Aws::Vector<SourceDataSetting> m_sourceDataSettings;
     bool m_sourceDataSettingsHasBeenSet = false;
+
+    Aws::Vector<TargetDataSetting> m_targetDataSettings;
+    bool m_targetDataSettingsHasBeenSet = false;
 
     DataMigrationStatistics m_dataMigrationStatistics;
     bool m_dataMigrationStatisticsHasBeenSet = false;

@@ -153,8 +153,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Kerberos service principal name (SPN) that has permission to access the
-     * files, folders, and file metadata in your SMB file server.</p>
+     * <p>The Kerberos principal that has permission to access the files, folders, and
+     * file metadata in your SMB file server.</p>
      */
     inline const Aws::String& GetKerberosPrincipal() const{ return m_kerberosPrincipal; }
     inline void SetKerberosPrincipal(const Aws::String& value) { m_kerberosPrincipal = value; }

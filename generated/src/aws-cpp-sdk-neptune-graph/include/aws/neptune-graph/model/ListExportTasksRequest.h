@@ -44,6 +44,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the Neptune Analytics graph.</p>
+     */
+    inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
+    inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
+    inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
+    inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
+    inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
+    inline ListExportTasksRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
+    inline ListExportTasksRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
+    inline ListExportTasksRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Pagination token used to paginate input.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -66,6 +80,9 @@ namespace Model
     inline ListExportTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_graphIdentifier;
+    bool m_graphIdentifierHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

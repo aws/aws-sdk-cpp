@@ -7,6 +7,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/model/AssertionEncryptionModeType.h>
 #include <utility>
 
 namespace Aws
@@ -42,7 +43,7 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP.</p>
+     * identity management software that is used as your IdP.</p>
      */
     inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
     inline bool SAMLMetadataDocumentHasBeenSet() const { return m_sAMLMetadataDocumentHasBeenSet; }
@@ -71,6 +72,48 @@ namespace Model
     inline UpdateSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
     inline UpdateSAMLProviderRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the encryption setting for the SAML provider.</p>
+     */
+    inline const AssertionEncryptionModeType& GetAssertionEncryptionMode() const{ return m_assertionEncryptionMode; }
+    inline bool AssertionEncryptionModeHasBeenSet() const { return m_assertionEncryptionModeHasBeenSet; }
+    inline void SetAssertionEncryptionMode(const AssertionEncryptionModeType& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
+    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType&& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = std::move(value); }
+    inline UpdateSAMLProviderRequest& WithAssertionEncryptionMode(const AssertionEncryptionModeType& value) { SetAssertionEncryptionMode(value); return *this;}
+    inline UpdateSAMLProviderRequest& WithAssertionEncryptionMode(AssertionEncryptionModeType&& value) { SetAssertionEncryptionMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the new private key from your external identity provider. The
+     * private key must be a .pem file that uses AES-GCM or AES-CBC encryption
+     * algorithm to decrypt SAML assertions.</p>
+     */
+    inline const Aws::String& GetAddPrivateKey() const{ return m_addPrivateKey; }
+    inline bool AddPrivateKeyHasBeenSet() const { return m_addPrivateKeyHasBeenSet; }
+    inline void SetAddPrivateKey(const Aws::String& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = value; }
+    inline void SetAddPrivateKey(Aws::String&& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = std::move(value); }
+    inline void SetAddPrivateKey(const char* value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey.assign(value); }
+    inline UpdateSAMLProviderRequest& WithAddPrivateKey(const Aws::String& value) { SetAddPrivateKey(value); return *this;}
+    inline UpdateSAMLProviderRequest& WithAddPrivateKey(Aws::String&& value) { SetAddPrivateKey(std::move(value)); return *this;}
+    inline UpdateSAMLProviderRequest& WithAddPrivateKey(const char* value) { SetAddPrivateKey(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Key ID of the private key to remove.</p>
+     */
+    inline const Aws::String& GetRemovePrivateKey() const{ return m_removePrivateKey; }
+    inline bool RemovePrivateKeyHasBeenSet() const { return m_removePrivateKeyHasBeenSet; }
+    inline void SetRemovePrivateKey(const Aws::String& value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey = value; }
+    inline void SetRemovePrivateKey(Aws::String&& value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey = std::move(value); }
+    inline void SetRemovePrivateKey(const char* value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey.assign(value); }
+    inline UpdateSAMLProviderRequest& WithRemovePrivateKey(const Aws::String& value) { SetRemovePrivateKey(value); return *this;}
+    inline UpdateSAMLProviderRequest& WithRemovePrivateKey(Aws::String&& value) { SetRemovePrivateKey(std::move(value)); return *this;}
+    inline UpdateSAMLProviderRequest& WithRemovePrivateKey(const char* value) { SetRemovePrivateKey(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_sAMLMetadataDocument;
@@ -78,6 +121,15 @@ namespace Model
 
     Aws::String m_sAMLProviderArn;
     bool m_sAMLProviderArnHasBeenSet = false;
+
+    AssertionEncryptionModeType m_assertionEncryptionMode;
+    bool m_assertionEncryptionModeHasBeenSet = false;
+
+    Aws::String m_addPrivateKey;
+    bool m_addPrivateKeyHasBeenSet = false;
+
+    Aws::String m_removePrivateKey;
+    bool m_removePrivateKeyHasBeenSet = false;
   };
 
 } // namespace Model

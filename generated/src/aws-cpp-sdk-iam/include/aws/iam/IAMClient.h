@@ -133,8 +133,17 @@ namespace IAM
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
          * the instance profile</a>, or you can stop your instance and then restart it.</p>
          *  <p>The caller of this operation must be granted the <code>PassRole</code>
-         * permission on the IAM role by a permissions policy.</p>  <p> For more
-         * information about roles, see <a
+         * permission on the IAM role by a permissions policy.</p>  
+         * <p>When using the <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#available-keys-for-iam">iam:AssociatedResourceArn</a>
+         * condition in a policy to restrict the <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+         * IAM action, special considerations apply if the policy is intended to define
+         * access for the <code>AddRoleToInstanceProfile</code> action. In this case, you
+         * cannot specify a Region or instance ID in the EC2 instance ARN. The ARN value
+         * must be <code>arn:aws:ec2:*:CallerAccountId:instance/ *</code>. Using any other
+         * ARN value may lead to unexpected evaluation results.</p>  <p> For
+         * more information about roles, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
          * roles</a> in the <i>IAM User Guide</i>. For more information about instance
          * profiles, see <a
@@ -1707,7 +1716,7 @@ namespace IAM
         /**
          * <p>Disables the management of privileged root user credentials across member
          * accounts in your organization. When you disable this feature, the management
-         * account and the delegated admininstrator for IAM can no longer manage root user
+         * account and the delegated administrator for IAM can no longer manage root user
          * credentials for member accounts in your organization.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootCredentialsManagement">AWS
@@ -1736,8 +1745,8 @@ namespace IAM
         /**
          * <p>Disables root user sessions for privileged tasks across member accounts in
          * your organization. When you disable this feature, the management account and the
-         * delegated admininstrator for IAM can no longer perform privileged tasks on
-         * member accounts in your organization.</p><p><h3>See Also:</h3>   <a
+         * delegated administrator for IAM can no longer perform privileged tasks on member
+         * accounts in your organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootSessions">AWS
          * API Reference</a></p>
          */
@@ -1793,7 +1802,7 @@ namespace IAM
          * accounts in your organization. When you enable root credentials management for
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
-         * root access</a>, the management account and the delegated admininstrator for IAM
+         * root access</a>, the management account and the delegated administrator for IAM
          * can manage root user credentials for member accounts in your organization.</p>
          * <p>Before you enable centralized root access, you must have an account
          * configured with the following settings:</p> <ul> <li> <p>You must manage your
@@ -1801,7 +1810,7 @@ namespace IAM
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.</p>
          * </li> <li> <p>Enable trusted access for Identity and Access Management in
          * Organizations. For details, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-iam.html">IAM
          * and Organizations</a> in the <i>Organizations User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootCredentialsManagement">AWS
@@ -3030,9 +3039,9 @@ namespace IAM
          * <p>Lists the account alias associated with the Amazon Web Services account
          * (Note: you can have only one). For information about using an Amazon Web
          * Services account alias, see <a
-         * href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-         * deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon
-         * Web Services Sign-In User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+         * deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">AWS
          * API Reference</a></p>
          */
@@ -3575,7 +3584,7 @@ namespace IAM
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
          * policies</a> in the <i>IAM User Guide</i>.</p>  <p>The list of policies
          * returned by the operation depends on the ARN of the identity that you
-         * provide.</p> <ul> <li> <p> <b>User</b> ��� The list of policies includes the
+         * provide.</p> <ul> <li> <p> <b>User</b> – The list of policies includes the
          * managed and inline policies that are attached to the user directly. The list
          * also includes any additional managed and inline policies that are attached to
          * the group to which the user belongs. </p> </li> <li> <p> <b>Group</b> – The list
@@ -5583,10 +5592,9 @@ namespace IAM
         }
 
         /**
-         * <p>Updates the metadata document for an existing SAML provider resource
-         * object.</p>  <p>This operation requires <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates the metadata document, SAML encryption settings, and private keys for
+         * an existing SAML provider. To rotate private keys, add your new private key and
+         * then remove the old key in a separate request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">AWS
          * API Reference</a></p>
          */

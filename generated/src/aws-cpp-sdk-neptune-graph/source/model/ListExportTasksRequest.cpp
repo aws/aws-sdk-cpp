@@ -16,6 +16,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListExportTasksRequest::ListExportTasksRequest() : 
+    m_graphIdentifierHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -30,6 +31,13 @@ Aws::String ListExportTasksRequest::SerializePayload() const
 void ListExportTasksRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_graphIdentifierHasBeenSet)
+    {
+      ss << m_graphIdentifier;
+      uri.AddQueryStringParameter("graphIdentifier", ss.str());
+      ss.str("");
+    }
+
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;
