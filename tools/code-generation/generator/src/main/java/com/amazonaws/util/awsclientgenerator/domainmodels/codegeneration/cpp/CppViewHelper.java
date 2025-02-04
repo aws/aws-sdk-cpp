@@ -268,6 +268,21 @@ public class CppViewHelper {
         return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601");
     }
 
+    public static String computeTimeStampAccessInQueryString(final Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            if (C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.containsKey(shape.getTimestampFormat().toLowerCase())) {
+                return String.format("ToGmtString(Aws::Utils::DateFormat::%s)",
+                        C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase()));
+            } else if (shape.getTimestampFormat().equalsIgnoreCase("unixtimestamp")) {
+                return "SecondsWithMSPrecision()";
+            } else {
+                throw new RuntimeException("Illegal timestamp format: " + shape.getTimestampFormat());
+            }
+        }
+        return String.format("ToGmtString(Aws::Utils::DateFormat::%s)",
+                C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601"));
+    }
+
     public static String computeTimestampFormatInXml(Shape shape) {
         if (shape.getTimestampFormat() != null) {
             return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
