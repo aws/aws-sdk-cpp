@@ -11,6 +11,7 @@
 
 #include <aws/core/auth/AWSCredentials.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/identity/auth/AuthSchemeResolverBase.h>
 
 namespace smithy {
     /**
@@ -51,7 +52,7 @@ namespace smithy {
                 return {identity.accessKeyId(), identity.secretAccessKey()};
             }();
 
-            auto signPayloadIt = properties.find(smithy::AUTH_SCHEME_PROPERTY);
+            auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
             auto signerRegionOverrideIt = properties.find(smithy::SIGNER_REGION_PROPERTY);
@@ -91,9 +92,22 @@ namespace smithy {
                                           false /*retryable*/));
         }
 
-
         virtual ~AwsSigV4Signer() {};
     protected:
+
+        // strictly for backward compatibility
+        explicit AwsSigV4Signer(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> &credentialsProvider, const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, 
+        bool urlEscapePath, Aws::Auth::AWSSigningAlgorithm signingAlgorithm )
+            : m_serviceName(serviceName),
+              m_region(region),
+              legacySigner(credentialsProvider, serviceName.c_str(), region, policy, urlEscapePath, signingAlgorithm)
+        {
+        }
+
+        const Aws::Client::AWSAuthV4Signer& getLegacySigner() const {
+            return legacySigner;
+        }
+
         Aws::String m_serviceName;
         Aws::String m_region;
         Aws::Client::AWSAuthV4Signer legacySigner;

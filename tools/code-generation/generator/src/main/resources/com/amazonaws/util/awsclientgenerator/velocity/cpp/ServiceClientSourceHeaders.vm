@@ -36,8 +36,11 @@
 \#include <aws/${metadata.projectName}/S3ExpressSignerProvider.h>
 #else
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-\#include <aws/${metadata.projectName}/S3ExpressIdentityResolver.h>
-\#include <smithy/identity/signer/built-in/S3ExpressSigner.h>
+\#include <aws/${metadata.projectName}/S3ExpressIdentityProvider.h>
+\#include <aws/$metadata.projectName/S3ExpressSigV4AuthScheme.h>
+\#include <aws/$metadata.projectName/S3ExpressSigner.h>
+\#include <aws/$metadata.projectName/S3ExpressSigV4AuthSchemeOption.h>
+\#include <aws/$metadata.projectName/S3ExpressAuthSchemeResolver.h>
 #end
 #end
 #if($serviceModel.metadata.namespace == "S3Crt")

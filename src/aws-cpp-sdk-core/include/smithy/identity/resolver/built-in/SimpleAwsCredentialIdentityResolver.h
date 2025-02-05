@@ -5,9 +5,9 @@
 #pragma once
 
 #include <smithy/identity/resolver/AwsCredentialIdentityResolver.h>
-
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <smithy/identity/auth/AuthSchemeResolverBase.h>
 
 namespace smithy
 {

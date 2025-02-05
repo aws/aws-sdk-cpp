@@ -17,6 +17,7 @@
 #include <condition_variable>
 #include <mutex>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/identity/auth/AuthSchemeResolverBase.h>
 
 namespace smithy {
     static const char* UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
@@ -32,7 +33,7 @@ namespace smithy {
     class AwsSigV4aSigner : public AwsSignerBase<AwsCredentialIdentityBase> {
         
     public:
-        using SigV4aAuthSchemeParameters = smithy::DefaultAuthSchemeResolverParameters;
+        using SigV4aAuthSchemeParameters = DefaultAuthSchemeResolverParameters;
         explicit AwsSigV4aSigner(const Aws::String& serviceName, const Aws::String& region)
             :  m_serviceName(serviceName), m_region(region)
         {
@@ -170,7 +171,7 @@ namespace smithy {
               return {identity.accessKeyId(), identity.secretAccessKey()};
             }();
 
-            auto signPayloadIt = properties.find(smithy::AUTH_SCHEME_PROPERTY);
+            auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
             auto signerRegionOverrideIt = properties.find(smithy::SIGNER_REGION_PROPERTY);

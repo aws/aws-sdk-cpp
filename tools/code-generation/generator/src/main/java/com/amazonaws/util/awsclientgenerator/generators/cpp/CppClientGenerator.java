@@ -787,7 +787,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
             "bearer", "smithy::BearerTokenAuthScheme",
             "v4","smithy::SigV4AuthScheme",
-            "sigv4-s3express","smithy::S3ExpressSigV4AuthScheme"
+            "sigv4-s3express","S3::S3ExpressSigV4AuthScheme"
     );
 
     protected String mapAuthSchemes(final String authSchemeName) {
@@ -803,7 +803,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption",
             "bearer", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption",
             "v4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
-            "sigv4-s3express", "smithy::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption"
+            "sigv4-s3express", "S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption"
     );
 
     private static final Map<String, String> ResolverMapping = ImmutableMap.of(
@@ -816,8 +816,13 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private static final String SchemeMapFormat = "%s.schemeId, %s";
     protected List<String> createAuthSchemeMapEntries(final ServiceModel serviceModel) {
-        return serviceModel.getAuthSchemes().stream()
+        return  getSupportedAuthSchemes(serviceModel).stream()
                 .map(authScheme -> String.format(SchemeMapFormat, SchemeIdMapping.get(authScheme), AuthSchemeMapping.get(authScheme)))
+                .collect(Collectors.toList());
+    }
+
+    protected List<String> getSupportedAuthSchemes(final ServiceModel serviceModel) {
+        return serviceModel.getAuthSchemes().stream()
                 .collect(Collectors.toList());
     }
 

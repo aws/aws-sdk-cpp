@@ -22,7 +22,7 @@
 \#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 \#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
-\#include <smithy/identity/auth/built-in/S3ExpressSigV4AuthScheme.h>
+\#include <aws/$metadata.projectName/S3ExpressSigV4AuthScheme.h>
 \#include <smithy/client/serializer/${serializer}.h>
 \#include <aws/core/utils/DNS.h>
 

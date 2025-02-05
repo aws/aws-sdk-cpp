@@ -13,7 +13,7 @@
 #include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
-#include <smithy/identity/auth/built-in/S3ExpressSigV4AuthScheme.h>
+#include <aws/s3/S3ExpressSigV4AuthScheme.h>
 #include <smithy/client/serializer/XmlOutcomeSerializer.h>
 #include <aws/core/utils/DNS.h>
 
@@ -51,7 +51,7 @@ namespace Aws
     class AWS_S3_API S3Client : public smithy::client::AwsSmithyClientT<Aws::S3::SERVICE_NAME,
       Aws::S3::S3ClientConfiguration,
       smithy::SigV4MultiAuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme,smithy::S3ExpressSigV4AuthScheme,smithy::SigV4aAuthScheme>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme,S3::S3ExpressSigV4AuthScheme,smithy::SigV4aAuthScheme>,
       S3EndpointProviderBase,
       smithy::client::XmlOutcomeSerializer,
       smithy::client::XmlOutcome,

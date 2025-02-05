@@ -152,7 +152,7 @@ namespace client
                 }
             }
 
-            //resolve endpoint once to fetch auth schemes
+            //resolve endpoint first time to fetch auth schemes
             Aws::Endpoint::EndpointParameters epParams = ctx.m_pRequest ? ctx.m_pRequest->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
             auto epResolutionOutcome = this->ResolveEndpoint(epParams, [](Aws::Endpoint::AWSEndpoint&){});
             if (epResolutionOutcome.IsSuccess())

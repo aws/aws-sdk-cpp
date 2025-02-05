@@ -221,14 +221,8 @@ namespace smithy
                                           "Auth scheme provided a nullptr identityResolver", false /*retryable*/));
               return;
             }
-
-            Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additonalIdentityProperties;
-            if(!m_signerName.empty()) {
-              additonalIdentityProperties.emplace(smithy::AUTH_SCHEME_PROPERTY,Aws::Crt::Variant<Aws::String, bool>{m_signerName} );
-            }
-
             auto identityResult =
-                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), additonalIdentityProperties);
+                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
 
             if (!identityResult.IsSuccess()) {
               result.emplace(identityResult.GetError());

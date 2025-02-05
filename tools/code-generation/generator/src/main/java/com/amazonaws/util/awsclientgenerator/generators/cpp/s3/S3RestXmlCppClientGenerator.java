@@ -486,9 +486,11 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             VelocityContext context = createContext(serviceModels.get(i));
             context.put("CppViewHelper", CppViewHelper.class);
             context.put("TemplateOverride", templateOverride);    
-            context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
+            context.put("AuthSchemeResolver", "S3ExpressAuthSchemeResolver");
             context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModels.get(i)));
-    
+            context.put("AuthSchemes", getSupportedAuthSchemes(serviceModels.get(i)));
+            context.put("AuthSchemeVariants", serviceModels.get(i).getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+
             final String fileName;
             if (i == 0) {
                 context.put("onlyGeneratedOperations", false);
@@ -524,9 +526,17 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             final String smithyVmFilePrefixFormat =  "com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/%s";
             return Stream.concat(
                 Stream.of(
-                        Pair.of(includePath + "S3ExpressIdentityResolver.h", String.format(smithyVmFilePrefixFormat, "SmithyS3ExpressIdentityProviderHeader.vm")),
-                        Pair.of("source/S3ExpressIdentityResolver.cpp", String.format(smithyVmFilePrefixFormat, "SmithyS3ExpressIdentityProviderSource.vm"))
-                        ),
+                        Pair.of(includePath + "S3ExpressIdentity.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityHeader.vm")),
+                        Pair.of(includePath + "S3ExpressIdentityProvider.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressIdentityProviderHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSigner.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressSignerHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSignerProvider.h", String.format(vmFilePrefixFormat, "S3ExpressSignerProviderHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSigV4AuthScheme.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressSigV4AuthSchemeHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSigV4AuthSchemeOption.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressSigV4AuthSchemeOptionHeader.vm")),
+                        Pair.of(includePath + "S3ExpressAuthSchemeResolver.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressAuthSchemeResolverHeader.vm")),
+                        Pair.of("source/S3ExpressSigV4AuthSchemeOption.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressSigV4AuthSchemeOptionSource.vm")),
+                        Pair.of("source/S3ExpressIdentityProvider.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressIdentityProviderSource.vm")),
+                        Pair.of("source/S3ExpressSigner.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressSignerSource.vm")),
+                        Pair.of("source/S3ExpressSignerProvider.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressSignerProviderSource.vm"))),
                 crtAdapters)
         .map(codeGenPair -> makeFile(velocityEngine.getTemplate(codeGenPair.getValue()),
                 context,

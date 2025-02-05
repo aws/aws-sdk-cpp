@@ -23,6 +23,7 @@
 #end
 \#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
 \#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
+\#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;

@@ -29,9 +29,9 @@ using namespace smithy::components::tracing;
 static const char AWS_SMITHY_CLIENT_LOG[] = "AwsSmithyClient";
 
 namespace smithy {
-    const char *AUTH_SCHEME_PROPERTY = "signerName";
-    const char *SIGNER_REGION_PROPERTY = "signerRegionOverride";
-    const char *SIGNER_SERVICE_NAME = "signerServiceNameOverride";
+    SMITHY_API const char *AUTH_SCHEME_PROPERTY = "authSchemeName";
+    SMITHY_API const char *SIGNER_REGION_PROPERTY = "signerRegionOverride";
+    SMITHY_API const char *SIGNER_SERVICE_NAME = "signerServiceNameOverride";
 }
 
 namespace {
@@ -237,14 +237,11 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     AttemptOneRequestAsync(std::move(pRequestCtx));
 }
 
-void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const
+void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, smithy::AuthSchemeOption& authscheme) const
 {
-    //get signer Name from end point and pass this info
+    //Overrides from endpoint
     if (endpoint.GetAttributes()) {
         auto authschemeName = endpoint.GetAttributes()->authScheme.GetName();
-        //identiy resolution can also need the auth scheme for credential resolver
-        authscheme.putIdentityProperty(smithy::AUTH_SCHEME_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(authschemeName));
-        authscheme.putSignerProperty(smithy::AUTH_SCHEME_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(authschemeName));
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             auto signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion();
             authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerRegionOverride->c_str())));
@@ -614,7 +611,7 @@ void AwsSmithyClientBase::EnableRequestProcessing()
     m_httpClient->EnableRequestProcessing();
 }
 
-StreamOutcome AwsSmithyClientBase::MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
+AwsSmithyClientBase::StreamOutcome AwsSmithyClientBase::MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
                                 const char* requestName,
                                 Aws::Http::HttpMethod method,
                                 EndpointUpdateCallback&& endpointCallback

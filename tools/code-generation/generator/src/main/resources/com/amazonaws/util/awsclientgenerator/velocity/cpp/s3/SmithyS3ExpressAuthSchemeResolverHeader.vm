@@ -1,0 +1,35 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <aws/${metadata.projectName}/S3ExpressSigner.h>
+\#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthSchemeOption.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthScheme.h>
+
+namespace ${rootNamespace} {
+namespace ${serviceNamespace} {
+
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<>{
+
+        public:        
+        Aws::Vector<smithy::AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
+        {
+            //use resolved endpoint params to return
+            auto authSchemeNameIt = identityProperties.additionalProperties.find(smithy::AUTH_SCHEME_PROPERTY);
+            if(authSchemeNameIt != identityProperties.additionalProperties.end())
+            {
+                auto authSchemeName = authSchemeNameIt->second.template get<Aws::String>().c_str();
+                if(strcmp(authSchemeName, ${serviceNamespace}::S3_EXPRESS_SIGNER_NAME) == 0)
+                {
+                    return {S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption};
+                }
+            }
+            return smithy::SigV4MultiAuthSchemeResolver<>::resolveAuthScheme(identityProperties);
+        }
+    };
+}
+}

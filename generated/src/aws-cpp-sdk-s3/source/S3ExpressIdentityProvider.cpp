@@ -1,37 +1,31 @@
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
-#set($metadata = $serviceModel.metadata)
-#set($rootNamespace = $serviceModel.namespace)
-#set($serviceNamespace = $metadata.namespace)
-\#include <aws/core/utils/logging/LogMacros.h>
-\#include <aws/${metadata.projectName}/${serviceNamespace}Client.h>
-\#include <aws/${metadata.projectName}/S3ExpressIdentityResolver.h>
-\#include <aws/${metadata.projectName}/model/CreateSessionRequest.h>
-\#include <aws/core/auth/AWSCredentialsProviderChain.h>
-\#include <smithy/identity/signer/built-in/S3ExpressSigner.h>
-\#include <smithy/identity/signer/built-in/SignerProperties.h>
-\#include <utility>
-\#include <thread>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/S3ExpressIdentityProvider.h>
+#include <aws/s3/model/CreateSessionRequest.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <utility>
+#include <thread>
 
-using namespace ${rootNamespace}::${serviceNamespace};
-using namespace ${rootNamespace}::Utils;
-using namespace ${rootNamespace}::Http;
+using namespace Aws::S3;
+using namespace Aws::Utils;
+using namespace Aws::Http;
 using namespace std::chrono;
 using namespace smithy;
-using CacheValueType = typename ${rootNamespace}::Utils::Cache<${rootNamespace}::String, AwsCredentialIdentity>::Value;
+using CacheValueType = typename Aws::Utils::Cache<Aws::String, AwsCredentialIdentity>::Value;
 
 namespace{
 const char S3_EXPRESS_IDENTITY_PROVIDER[] = "S3ExpressIdentityProvider";
 const int DEFAULT_CACHE_SIZE = 100;
 }
-S3ExpressIdentityResolver::S3ExpressIdentityResolver(const S3Client& s3Client) : m_s3Client(s3Client), m_credsProvider(Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>("S3ExpressIdentityResolver")) {}
 
-S3ExpressIdentityResolver::S3ExpressIdentityResolver(const S3Client& s3Client, std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider):
-    m_s3Client{s3Client},m_credsProvider{credentialProvider}{
-    assert(m_credsProvider);
-}
+S3ExpressIdentityProvider::S3ExpressIdentityProvider(const S3Client& s3Client) : m_s3Client(s3Client){}
 
-S3ExpressIdentityResolver::ResolveIdentityFutureOutcome S3ExpressIdentityResolver::getIdentity(
+S3ExpressIdentityProvider::ResolveIdentityFutureOutcome S3ExpressIdentityProvider::getIdentity(
     const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters){
     const auto params = Aws::MakeShared<ServiceSpecificParameters>(S3_EXPRESS_IDENTITY_PROVIDER);
     for (const auto& paramMap: {identityProperties, additionalParameters})
@@ -51,29 +45,22 @@ S3ExpressIdentityResolver::ResolveIdentityFutureOutcome S3ExpressIdentityResolve
                return {};
            });
     }
-
-    //if signer name is not s3 express as set in signer properties, get from credential provider
-    auto signerName = params->parameterMap.find(smithy::AUTH_SCHEME_PROPERTY);
-    if (signerName != params->parameterMap.end())
-    {
-       if (signerName->second != smithy::S3_EXPRESS_SIGNER_NAME)
-       {
-        if(!m_credsProvider)
-        {
-            AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "Failed to make S3Express Connect Call")
-            return ResolveIdentityFutureOutcome();
-        }
-        auto creds = m_credsProvider->GetAWSCredentials();
-        return ResolveIdentityFutureOutcome(Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver",  AwsCredentialIdentity{creds.GetAWSAccessKeyId(), creds.GetAWSSecretKey(), creds.GetSessionToken(), creds.GetExpiration()}));
-       }
-    }
     
-    auto identity =  Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver", GetS3ExpressIdentity(params));
+    auto identity =  Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver", GetS3ExpressAwsIdentity(params));
     
     return ResolveIdentityFutureOutcome(std::move(identity));
 }
 
-std::shared_ptr<std::mutex> S3ExpressIdentityResolver::GetMutexForBucketName(const Aws::String& bucketName) {
+S3ExpressIdentity S3ExpressIdentityProvider::GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters)
+{
+    auto identity = GetS3ExpressAwsIdentity(serviceSpecificParameters);
+
+    return S3ExpressIdentity(identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken().has_value() ? identity.sessionToken().value() : Aws::String(), 
+    identity.expiration().has_value() ? identity.expiration().value() : smithy::AwsIdentity::DateTime());
+
+}
+
+std::shared_ptr<std::mutex> S3ExpressIdentityProvider::GetMutexForBucketName(const Aws::String& bucketName) {
   std::lock_guard<std::mutex> lock(m_bucketNameMapMutex);
   auto it = m_bucketNameMutex.find(bucketName);
   if (it != m_bucketNameMutex.end()) {
@@ -84,7 +71,7 @@ std::shared_ptr<std::mutex> S3ExpressIdentityResolver::GetMutexForBucketName(con
   return bucketMutex;
 }
 
-AwsCredentialIdentity S3ExpressIdentityResolver::GetCredentialsFromBucket(const Aws::String& bucketName) const {
+AwsCredentialIdentity S3ExpressIdentityProvider::GetCredentialsFromBucket(const Aws::String& bucketName) const {
   auto outcome = m_s3Client.CreateSession(Model::CreateSessionRequest().WithBucket(bucketName));
   // If we fail the connect call return empty credentials and log an error message.
   if (!outcome.IsSuccess()) {
@@ -106,20 +93,16 @@ AwsCredentialIdentity S3ExpressIdentityResolver::GetCredentialsFromBucket(const 
       expiry};
 }
 
-DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(const S3Client& s3Client)
-    : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
+DefaultS3ExpressIdentityProvider::DefaultS3ExpressIdentityProvider(const S3Client& s3Client)
+    : S3ExpressIdentityProvider{s3Client}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
             DEFAULT_CACHE_SIZE)}{}
 
-DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(
+DefaultS3ExpressIdentityProvider::DefaultS3ExpressIdentityProvider(
     const S3Client& s3Client,
-    std::shared_ptr<Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache)
-    : S3ExpressIdentityResolver{s3Client}, m_credentialsCache{credentialsCache} {}
+    std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache)
+    : S3ExpressIdentityProvider{s3Client}, m_credentialsCache{credentialsCache} {}
 
-DefaultS3ExpressIdentityResolver::DefaultS3ExpressIdentityResolver(const S3Client& s3Client, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>  credentialProvider):
-    S3ExpressIdentityResolver{s3Client,credentialProvider}, m_credentialsCache{Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(S3_EXPRESS_IDENTITY_PROVIDER,
-            DEFAULT_CACHE_SIZE)}{}
-
-AwsCredentialIdentity DefaultS3ExpressIdentityResolver::GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
+AwsCredentialIdentity DefaultS3ExpressIdentityProvider::GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
     auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
     if (bucketNameIter == serviceSpecificParameters->parameterMap.end()) {
         AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "property bucketName Required to make call")
@@ -129,7 +112,7 @@ AwsCredentialIdentity DefaultS3ExpressIdentityResolver::GetS3ExpressIdentity(con
     AwsCredentialIdentity identity;
     auto isInCache = m_credentialsCache->Get(bucketNameIter->second, identity);
     if (!isInCache || (identity.expiration().has_value() && (identity.expiration().value() - minutes(1) < Aws::Utils::DateTime::Now())) ) {
-        identity = S3ExpressIdentityResolver::GetCredentialsFromBucket(bucketNameIter->second);
+        identity = S3ExpressIdentityProvider::GetCredentialsFromBucket(bucketNameIter->second);
         if (identity.expiration().has_value()) {
           m_credentialsCache->Put(bucketNameIter->second,
               identity,
@@ -139,24 +122,24 @@ AwsCredentialIdentity DefaultS3ExpressIdentityResolver::GetS3ExpressIdentity(con
     return identity;
 }
 
-DefaultAsyncS3ExpressIdentityResolver::DefaultAsyncS3ExpressIdentityResolver(
+DefaultAsyncS3ExpressIdentityProvider::DefaultAsyncS3ExpressIdentityProvider(
     const S3Client& s3Client, std::chrono::minutes refreshPeriod)
-    : DefaultAsyncS3ExpressIdentityResolver(s3Client,
+    : DefaultAsyncS3ExpressIdentityProvider(s3Client,
                                             Aws::MakeShared<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>>(
                                                 S3_EXPRESS_IDENTITY_PROVIDER, DEFAULT_CACHE_SIZE),
                                             refreshPeriod) {}
 
-DefaultAsyncS3ExpressIdentityResolver::DefaultAsyncS3ExpressIdentityResolver(
-    const S3Client& s3Client, std::shared_ptr<Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache,
+DefaultAsyncS3ExpressIdentityProvider::DefaultAsyncS3ExpressIdentityProvider(
+    const S3Client& s3Client, std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, AwsCredentialIdentity>> credentialsCache,
     std::chrono::minutes refreshPeriod)
-    : S3ExpressIdentityResolver(s3Client), m_credentialsCache(std::move(credentialsCache)) {
+    : S3ExpressIdentityProvider(s3Client), m_credentialsCache(std::move(credentialsCache)) {
   // Start a thread to background refresh the keys currently in the cache.
   m_shouldStopBackgroundRefresh = false;
   m_backgroundRefreshThread = Aws::MakeUnique<std::thread>(
-      S3_EXPRESS_IDENTITY_PROVIDER, std::thread(&DefaultAsyncS3ExpressIdentityResolver::refreshIdentities, this, refreshPeriod));
+      S3_EXPRESS_IDENTITY_PROVIDER, std::thread(&DefaultAsyncS3ExpressIdentityProvider::refreshIdentities, this, refreshPeriod));
 }
 
-DefaultAsyncS3ExpressIdentityResolver::~DefaultAsyncS3ExpressIdentityResolver(){
+DefaultAsyncS3ExpressIdentityProvider::~DefaultAsyncS3ExpressIdentityProvider(){
   {
     std::unique_lock<std::mutex> lock(m_shutDownMutex);
     m_shouldStopBackgroundRefresh = true;
@@ -165,7 +148,7 @@ DefaultAsyncS3ExpressIdentityResolver::~DefaultAsyncS3ExpressIdentityResolver(){
   m_backgroundRefreshThread->join();
 }
 
-AwsCredentialIdentity DefaultAsyncS3ExpressIdentityResolver::GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters){
+AwsCredentialIdentity DefaultAsyncS3ExpressIdentityProvider::GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters){
   auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
   if (bucketNameIter == serviceSpecificParameters->parameterMap.end()) {
       AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "property bucketName Required to make call")
@@ -176,7 +159,7 @@ AwsCredentialIdentity DefaultAsyncS3ExpressIdentityResolver::GetS3ExpressIdentit
   AwsCredentialIdentity identity;
   auto isInCache = m_credentialsCache->Get(bucketNameIter->second, identity);
   if (!isInCache || (identity.expiration().has_value() && (identity.expiration().value() - minutes(1) < Aws::Utils::DateTime::Now())) ) {
-      identity = S3ExpressIdentityResolver::GetCredentialsFromBucket(bucketNameIter->second);
+      identity = S3ExpressIdentityProvider::GetCredentialsFromBucket(bucketNameIter->second);
       if (identity.expiration().has_value()) {
         m_credentialsCache->Put(bucketNameIter->second,
             identity,
@@ -186,22 +169,22 @@ AwsCredentialIdentity DefaultAsyncS3ExpressIdentityResolver::GetS3ExpressIdentit
   return identity;
 }
 
-void DefaultAsyncS3ExpressIdentityResolver::threadSafeKeyEmpty() {
+void DefaultAsyncS3ExpressIdentityProvider::threadSafeKeyEmpty() {
   std::lock_guard<std::mutex> lock(m_keysUsedMutex);
   m_keysUsed.clear();
 }
 
-bool DefaultAsyncS3ExpressIdentityResolver::threadSafeKeyHas(const Aws::String& key) {
+bool DefaultAsyncS3ExpressIdentityProvider::threadSafeKeyHas(const Aws::String& key) {
   std::lock_guard<std::mutex> lock(m_keysUsedMutex);
   return m_keysUsed.find(key) != m_keysUsed.end();
 }
 
-void DefaultAsyncS3ExpressIdentityResolver::threadSafeKeyInsert(const Aws::String& key) {
+void DefaultAsyncS3ExpressIdentityProvider::threadSafeKeyInsert(const Aws::String& key) {
   std::lock_guard<std::mutex> lock(m_keysUsedMutex);
   m_keysUsed.insert(key);
 }
 
-void DefaultAsyncS3ExpressIdentityResolver::refreshIdentities(std::chrono::minutes refreshPeriod) {
+void DefaultAsyncS3ExpressIdentityProvider::refreshIdentities(std::chrono::minutes refreshPeriod) {
   auto filterUnusedKeys = [&](const Aws::String &bucketName, const CacheValueType &valueType) -> bool {
       std::lock_guard<std::mutex> lock(*GetMutexForBucketName(bucketName));
       AWS_UNREFERENCED_PARAM(valueType);
@@ -213,7 +196,7 @@ void DefaultAsyncS3ExpressIdentityResolver::refreshIdentities(std::chrono::minut
       if  ((!valueType.val.expiration().has_value()) || 
           (duration_cast<milliseconds>(refreshPeriod).count() < valueType.val.expiration().value().Millis() &&
           valueType.val.expiration().value() - refreshPeriod < Aws::Utils::DateTime::Now())) {
-          auto updatedIdentity = this->S3ExpressIdentityResolver::GetCredentialsFromBucket(bucketName);
+          auto updatedIdentity = this->S3ExpressIdentityProvider::GetCredentialsFromBucket(bucketName);
           return {updatedIdentity.expiration().value(), updatedIdentity};
       }
       return valueType;
