@@ -83,10 +83,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
-     * specifies the allocated storage size in gibibytes (GiB). For Aurora,
-     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
-     * storage size isn't fixed, but instead automatically adjusts as needed.</p>
+     * <p> <code>AllocatedStorage</code> specifies the allocated storage size in
+     * gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> can vary because
+     * Aurora DB cluster storage size adjusts as needed.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }

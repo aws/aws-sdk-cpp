@@ -82,7 +82,8 @@ namespace Model
     /**
      * <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must
      * begin with a letter and must contain only ASCII letters, digits, and hyphens; it
-     * can't end with a hyphen or contain two consecutive hyphens.</p>
+     * can't end with a hyphen or contain two consecutive hyphens.</p> <p>You can't
+     * rename the <code>default</code> target group.</p>
      */
     inline const Aws::String& GetNewName() const{ return m_newName; }
     inline bool NewNameHasBeenSet() const { return m_newNameHasBeenSet; }

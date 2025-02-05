@@ -97,7 +97,8 @@ namespace Model
     /**
      * <p>Specifies whether to remove automated backups immediately after the DB
      * cluster is deleted. This parameter isn't case-sensitive. The default is to
-     * remove automated backups immediately after the DB cluster is deleted.</p>
+     * remove automated backups immediately after the DB cluster is deleted, unless the
+     * Amazon Web Services Backup policy specifies a point-in-time restore rule.</p>
      */
     inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
     inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }
