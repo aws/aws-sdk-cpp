@@ -76,7 +76,9 @@
             } \
         }
 
-    #define AWS_LOGSTREAM_FATAL(tag, streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Fatal, tag, streamExpression)
+    #define AWS_LOGSTREAM_FATAL(tag, streamExpression) \
+      AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Fatal, tag, streamExpression) \
+      AWS_LOG_FLUSH()
     #define AWS_LOGSTREAM_ERROR(tag, streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Error, tag, streamExpression)
     #define AWS_LOGSTREAM_WARN(tag,  streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Warn,  tag, streamExpression)
     #define AWS_LOGSTREAM_INFO(tag,  streamExpression)  AWS_LOGSTREAM(Aws::Utils::Logging::LogLevel::Info,  tag, streamExpression)

@@ -33,15 +33,18 @@ namespace Aws
                 ThreadTask(ThreadTask&&) = delete;
                 ThreadTask& operator =(ThreadTask&&) = delete;
 
-                void StopProcessingWork();                
+                void StopProcessingWork();
 
+                std::thread::id GetThreadId() const;
+                void DetachFromExecutor();
             protected:
                 void MainTaskRunner();
 
-            private:                
+            private:
                 std::atomic<bool> m_continue;
                 PooledThreadExecutor& m_executor;
                 std::thread m_thread;
+                bool m_detached = false;
             };
         }
     }
