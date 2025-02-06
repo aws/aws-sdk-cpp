@@ -60,6 +60,11 @@ namespace Aws {
                 return getExpiration();
             }
 
+            Aws::Crt::Optional<Aws::String> accountId() const override
+            {
+                return Aws::Crt::Optional<Aws::String>{};
+            }
+
 
         private:
             Aws::String m_accessKeyId;

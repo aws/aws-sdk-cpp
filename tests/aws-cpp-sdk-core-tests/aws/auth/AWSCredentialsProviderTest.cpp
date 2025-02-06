@@ -96,21 +96,25 @@ TEST_F(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     credsFile << "[Somebody Else ]" << std::endl;
     credsFile << "aws_access_key_id = SomebodyElseAccessId" << std::endl;
     credsFile << "something else to break the parser" << std::endl;
+    credsFile << "aws_account_id=222222222222" << std::endl;
     credsFile << "#test comment" << std::endl;
     credsFile << "[default]" << std::endl;
     credsFile << "aws_access_key_id = DefaultAccessKey" << std::endl;
     credsFile << "aws_secret_access_key=DefaultSecretKey " << std::endl;
     credsFile << "aws_session_token=DefaultSessionToken" << std::endl;
+    credsFile << "aws_account_id=111111111111" << std::endl;
     credsFile << std::endl;
     credsFile << " [Somebody Else Again]" << std::endl;
     credsFile << "aws_secret_access_key = SomebodyElseAgainAccessId" << std::endl;
     credsFile << " aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
     credsFile << "aws_session_token=SomebodyElseAgainSessionToken" << std::endl;
+    credsFile << "aws_account_id=333333333333" << std::endl;
     credsFile.close();
 
     ReloadableProfileConfigProvider provider;
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    EXPECT_STREQ("111111111111", provider.GetAWSCredentials().GetAccountId().c_str());
 
     Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
     provider.ReloadNow();
@@ -131,6 +135,7 @@ public:
         SaveEnvironmentVariable("AWS_ACCESS_KEY_ID");
         SaveEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
         SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
+        SaveEnvironmentVariable("AWS_ACCOUNT_ID");
 
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
         Aws::StringStream ss;
@@ -274,11 +279,13 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
     Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "Access Key", 1);
     Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
     Aws::Environment::SetEnv("AWS_SESSION_TOKEN", "Session Token", 1);
+    Aws::Environment::SetEnv("AWS_ACCOUNT_ID", "123456789012", 1);
 
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("Access Key", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("Secret Key", provider.GetAWSCredentials().GetAWSSecretKey());
     ASSERT_EQ("Session Token", provider.GetAWSCredentials().GetSessionToken());
+    ASSERT_EQ("123456789012", provider.GetAWSCredentials().GetAccountId());
 }
 
 TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
@@ -475,7 +482,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThen
 
     Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFileNew << "[default]" << std::endl;
-    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
+    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\", \"AccountId\": \"123456789012\"}") << std::endl;
     configFileNew.close();
 
     Aws::Config::ReloadCachedConfigFile();
@@ -484,6 +491,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThen
     EXPECT_FALSE(credsTwo.IsEmpty());
     EXPECT_STREQ("AccessKey321", credsTwo.GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SecretKey123", credsTwo.GetAWSSecretKey().c_str());
+    EXPECT_STREQ("123456789012", credsTwo.GetAccountId().c_str());
 
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
@@ -683,7 +691,7 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
     ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
     std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI(request.GetURIString(true /*include querystring*/)), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     //Made up credentials from https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
-    Aws::String goodXml = "<AssumeRoleWithWebIdentityResult><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2226-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId></Credentials></AssumeRoleWithWebIdentityResult>";
+    Aws::String goodXml = "<AssumeRoleWithWebIdentityResult><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2226-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId><AssumedRoleUser><Arn>arn:aws:sts::123456789012:assumed-role/FederatedWebIdentityRole/app1</Arn><AssumedRoleId>AROACLKWSDQRAOEXAMPLE:app1</AssumedRoleId></AssumedRoleUser></Credentials></AssumeRoleWithWebIdentityResult>";
     std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
     goodResponse->SetResponseCode(HttpResponseCode::OK);
     goodResponse->GetResponseBody() << goodXml;
@@ -694,6 +702,7 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
     ASSERT_EQ("AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE", creds.GetSessionToken());
     ASSERT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY", creds.GetAWSSecretKey());
     ASSERT_EQ("ASgeIAIOSFODNN7EXAMPLE", creds.GetAWSAccessKeyId());
+    ASSERT_EQ("123456789012", creds.GetAccountId());
 
     Aws::FileSystem::RemoveFileIfExists(tokenFileName.c_str());
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -872,7 +881,8 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
       "accessKeyId": "access",
       "expiration": 2303614800000,
       "secretAccessKey": "secret",
-      "sessionToken": "token"
+      "sessionToken": "token",
+      "accountId": "123456789012"
    }
 }
 )";
@@ -887,6 +897,7 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
     ASSERT_EQ("access", creds.GetAWSAccessKeyId());
     ASSERT_EQ("secret", creds.GetAWSSecretKey());
     ASSERT_EQ("token", creds.GetSessionToken());
+    ASSERT_EQ("123456789012", creds.GetAccountId());
     ASSERT_EQ(DateTime((int64_t) 2303614800000), creds.GetExpiration());
 }
 

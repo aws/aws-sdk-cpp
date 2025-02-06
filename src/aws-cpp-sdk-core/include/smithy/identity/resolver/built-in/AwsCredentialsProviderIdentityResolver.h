@@ -35,9 +35,12 @@ namespace smithy
 
             const auto fetchedCreds = m_credentialsProvider->GetAWSCredentials();
 
-            auto smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("DefaultAwsCredentialIdentityResolver",
-                                                                     fetchedCreds.GetAWSAccessKeyId(), fetchedCreds.GetAWSSecretKey(),
-                                                                     fetchedCreds.GetSessionToken(), fetchedCreds.GetExpiration());
+            auto smithyCreds = Aws::MakeUnique<AwsCredentialIdentity>("AwsCredentialsProviderIdentityResolver",
+              fetchedCreds.GetAWSAccessKeyId(),
+              fetchedCreds.GetAWSSecretKey(),
+              fetchedCreds.GetSessionToken(),
+              fetchedCreds.GetExpiration(),
+              fetchedCreds.GetAccountId());
 
             return {std::move(smithyCreds)};
         }

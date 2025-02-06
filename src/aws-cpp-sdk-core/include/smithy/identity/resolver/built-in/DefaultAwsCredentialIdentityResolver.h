@@ -49,7 +49,8 @@ namespace smithy {
                                                                      legacyCreds.GetAWSAccessKeyId(), 
                                                                      legacyCreds.GetAWSSecretKey(),
                                                                      legacyCreds.GetSessionToken().empty()? Aws::Crt::Optional<Aws::String>() : legacyCreds.GetSessionToken(),
-                                                                     legacyCreds.GetExpiration());
+                                                                     legacyCreds.GetExpiration(),
+                                                                     legacyCreds.GetAccountId().empty()? Aws::Crt::Optional<Aws::String>() : legacyCreds.GetSessionToken());
 
             return ResolveIdentityFutureOutcome(std::move(smithyCreds));
         }

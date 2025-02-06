@@ -12,6 +12,7 @@ namespace smithy {
         virtual Aws::String accessKeyId() const = 0;
         virtual Aws::String secretAccessKey() const = 0;
         virtual Aws::Crt::Optional<Aws::String> sessionToken() const = 0;
-        virtual Aws::Crt::Optional<AwsIdentity::DateTime> expiration() const override = 0 ;
+        virtual Aws::Crt::Optional<AwsIdentity::DateTime> expiration() const override = 0;
+        virtual Aws::Crt::Optional<Aws::String> accountId() const override = 0;
     };
 }
