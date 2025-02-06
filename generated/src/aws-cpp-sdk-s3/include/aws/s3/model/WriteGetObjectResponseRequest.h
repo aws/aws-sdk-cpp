@@ -357,7 +357,10 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is
-     * not (<code>false</code>) a delete marker. </p>
+     * not (<code>false</code>) a delete marker. To learn more about delete markers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
+     * with delete markers</a>.</p>
      */
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
     inline bool DeleteMarkerHasBeenSet() const { return m_deleteMarkerHasBeenSet; }

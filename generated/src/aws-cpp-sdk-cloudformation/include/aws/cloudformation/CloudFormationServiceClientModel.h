@@ -26,6 +26,7 @@
 #include <aws/cloudformation/model/CreateGeneratedTemplateResult.h>
 #include <aws/cloudformation/model/CreateStackResult.h>
 #include <aws/cloudformation/model/CreateStackInstancesResult.h>
+#include <aws/cloudformation/model/CreateStackRefactorResult.h>
 #include <aws/cloudformation/model/CreateStackSetResult.h>
 #include <aws/cloudformation/model/DeactivateOrganizationsAccessResult.h>
 #include <aws/cloudformation/model/DeactivateTypeResult.h>
@@ -43,6 +44,7 @@
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusResult.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
 #include <aws/cloudformation/model/DescribeStackInstanceResult.h>
+#include <aws/cloudformation/model/DescribeStackRefactorResult.h>
 #include <aws/cloudformation/model/DescribeStackResourceResult.h>
 #include <aws/cloudformation/model/DescribeStackResourceDriftsResult.h>
 #include <aws/cloudformation/model/DescribeStackResourcesResult.h>
@@ -71,6 +73,8 @@
 #include <aws/cloudformation/model/ListResourceScansResult.h>
 #include <aws/cloudformation/model/ListStackInstanceResourceDriftsResult.h>
 #include <aws/cloudformation/model/ListStackInstancesResult.h>
+#include <aws/cloudformation/model/ListStackRefactorActionsResult.h>
+#include <aws/cloudformation/model/ListStackRefactorsResult.h>
 #include <aws/cloudformation/model/ListStackResourcesResult.h>
 #include <aws/cloudformation/model/ListStackSetAutoDeploymentTargetsResult.h>
 #include <aws/cloudformation/model/ListStackSetOperationResultsResult.h>
@@ -120,6 +124,7 @@
 #include <aws/cloudformation/model/GetTemplateRequest.h>
 #include <aws/cloudformation/model/ListStackSetsRequest.h>
 #include <aws/cloudformation/model/DescribeStackResourcesRequest.h>
+#include <aws/cloudformation/model/ListStackRefactorsRequest.h>
 #include <aws/cloudformation/model/ActivateOrganizationsAccessRequest.h>
 #include <aws/cloudformation/model/ActivateTypeRequest.h>
 #include <aws/cloudformation/model/ListTypesRequest.h>
@@ -175,6 +180,7 @@ namespace Aws
       class CreateGeneratedTemplateRequest;
       class CreateStackRequest;
       class CreateStackInstancesRequest;
+      class CreateStackRefactorRequest;
       class CreateStackSetRequest;
       class DeactivateOrganizationsAccessRequest;
       class DeactivateTypeRequest;
@@ -194,6 +200,7 @@ namespace Aws
       class DescribeStackDriftDetectionStatusRequest;
       class DescribeStackEventsRequest;
       class DescribeStackInstanceRequest;
+      class DescribeStackRefactorRequest;
       class DescribeStackResourceRequest;
       class DescribeStackResourceDriftsRequest;
       class DescribeStackResourcesRequest;
@@ -207,6 +214,7 @@ namespace Aws
       class DetectStackSetDriftRequest;
       class EstimateTemplateCostRequest;
       class ExecuteChangeSetRequest;
+      class ExecuteStackRefactorRequest;
       class GetGeneratedTemplateRequest;
       class GetStackPolicyRequest;
       class GetTemplateRequest;
@@ -222,6 +230,8 @@ namespace Aws
       class ListResourceScansRequest;
       class ListStackInstanceResourceDriftsRequest;
       class ListStackInstancesRequest;
+      class ListStackRefactorActionsRequest;
+      class ListStackRefactorsRequest;
       class ListStackResourcesRequest;
       class ListStackSetAutoDeploymentTargetsRequest;
       class ListStackSetOperationResultsRequest;
@@ -261,6 +271,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateGeneratedTemplateResult, CloudFormationError> CreateGeneratedTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateStackResult, CloudFormationError> CreateStackOutcome;
       typedef Aws::Utils::Outcome<CreateStackInstancesResult, CloudFormationError> CreateStackInstancesOutcome;
+      typedef Aws::Utils::Outcome<CreateStackRefactorResult, CloudFormationError> CreateStackRefactorOutcome;
       typedef Aws::Utils::Outcome<CreateStackSetResult, CloudFormationError> CreateStackSetOutcome;
       typedef Aws::Utils::Outcome<DeactivateOrganizationsAccessResult, CloudFormationError> DeactivateOrganizationsAccessOutcome;
       typedef Aws::Utils::Outcome<DeactivateTypeResult, CloudFormationError> DeactivateTypeOutcome;
@@ -280,6 +291,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, CloudFormationError> DescribeStackDriftDetectionStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeStackEventsResult, CloudFormationError> DescribeStackEventsOutcome;
       typedef Aws::Utils::Outcome<DescribeStackInstanceResult, CloudFormationError> DescribeStackInstanceOutcome;
+      typedef Aws::Utils::Outcome<DescribeStackRefactorResult, CloudFormationError> DescribeStackRefactorOutcome;
       typedef Aws::Utils::Outcome<DescribeStackResourceResult, CloudFormationError> DescribeStackResourceOutcome;
       typedef Aws::Utils::Outcome<DescribeStackResourceDriftsResult, CloudFormationError> DescribeStackResourceDriftsOutcome;
       typedef Aws::Utils::Outcome<DescribeStackResourcesResult, CloudFormationError> DescribeStackResourcesOutcome;
@@ -293,6 +305,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DetectStackSetDriftResult, CloudFormationError> DetectStackSetDriftOutcome;
       typedef Aws::Utils::Outcome<EstimateTemplateCostResult, CloudFormationError> EstimateTemplateCostOutcome;
       typedef Aws::Utils::Outcome<ExecuteChangeSetResult, CloudFormationError> ExecuteChangeSetOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> ExecuteStackRefactorOutcome;
       typedef Aws::Utils::Outcome<GetGeneratedTemplateResult, CloudFormationError> GetGeneratedTemplateOutcome;
       typedef Aws::Utils::Outcome<GetStackPolicyResult, CloudFormationError> GetStackPolicyOutcome;
       typedef Aws::Utils::Outcome<GetTemplateResult, CloudFormationError> GetTemplateOutcome;
@@ -308,6 +321,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListResourceScansResult, CloudFormationError> ListResourceScansOutcome;
       typedef Aws::Utils::Outcome<ListStackInstanceResourceDriftsResult, CloudFormationError> ListStackInstanceResourceDriftsOutcome;
       typedef Aws::Utils::Outcome<ListStackInstancesResult, CloudFormationError> ListStackInstancesOutcome;
+      typedef Aws::Utils::Outcome<ListStackRefactorActionsResult, CloudFormationError> ListStackRefactorActionsOutcome;
+      typedef Aws::Utils::Outcome<ListStackRefactorsResult, CloudFormationError> ListStackRefactorsOutcome;
       typedef Aws::Utils::Outcome<ListStackResourcesResult, CloudFormationError> ListStackResourcesOutcome;
       typedef Aws::Utils::Outcome<ListStackSetAutoDeploymentTargetsResult, CloudFormationError> ListStackSetAutoDeploymentTargetsOutcome;
       typedef Aws::Utils::Outcome<ListStackSetOperationResultsResult, CloudFormationError> ListStackSetOperationResultsOutcome;
@@ -347,6 +362,7 @@ namespace Aws
       typedef std::future<CreateGeneratedTemplateOutcome> CreateGeneratedTemplateOutcomeCallable;
       typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
       typedef std::future<CreateStackInstancesOutcome> CreateStackInstancesOutcomeCallable;
+      typedef std::future<CreateStackRefactorOutcome> CreateStackRefactorOutcomeCallable;
       typedef std::future<CreateStackSetOutcome> CreateStackSetOutcomeCallable;
       typedef std::future<DeactivateOrganizationsAccessOutcome> DeactivateOrganizationsAccessOutcomeCallable;
       typedef std::future<DeactivateTypeOutcome> DeactivateTypeOutcomeCallable;
@@ -366,6 +382,7 @@ namespace Aws
       typedef std::future<DescribeStackDriftDetectionStatusOutcome> DescribeStackDriftDetectionStatusOutcomeCallable;
       typedef std::future<DescribeStackEventsOutcome> DescribeStackEventsOutcomeCallable;
       typedef std::future<DescribeStackInstanceOutcome> DescribeStackInstanceOutcomeCallable;
+      typedef std::future<DescribeStackRefactorOutcome> DescribeStackRefactorOutcomeCallable;
       typedef std::future<DescribeStackResourceOutcome> DescribeStackResourceOutcomeCallable;
       typedef std::future<DescribeStackResourceDriftsOutcome> DescribeStackResourceDriftsOutcomeCallable;
       typedef std::future<DescribeStackResourcesOutcome> DescribeStackResourcesOutcomeCallable;
@@ -379,6 +396,7 @@ namespace Aws
       typedef std::future<DetectStackSetDriftOutcome> DetectStackSetDriftOutcomeCallable;
       typedef std::future<EstimateTemplateCostOutcome> EstimateTemplateCostOutcomeCallable;
       typedef std::future<ExecuteChangeSetOutcome> ExecuteChangeSetOutcomeCallable;
+      typedef std::future<ExecuteStackRefactorOutcome> ExecuteStackRefactorOutcomeCallable;
       typedef std::future<GetGeneratedTemplateOutcome> GetGeneratedTemplateOutcomeCallable;
       typedef std::future<GetStackPolicyOutcome> GetStackPolicyOutcomeCallable;
       typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
@@ -394,6 +412,8 @@ namespace Aws
       typedef std::future<ListResourceScansOutcome> ListResourceScansOutcomeCallable;
       typedef std::future<ListStackInstanceResourceDriftsOutcome> ListStackInstanceResourceDriftsOutcomeCallable;
       typedef std::future<ListStackInstancesOutcome> ListStackInstancesOutcomeCallable;
+      typedef std::future<ListStackRefactorActionsOutcome> ListStackRefactorActionsOutcomeCallable;
+      typedef std::future<ListStackRefactorsOutcome> ListStackRefactorsOutcomeCallable;
       typedef std::future<ListStackResourcesOutcome> ListStackResourcesOutcomeCallable;
       typedef std::future<ListStackSetAutoDeploymentTargetsOutcome> ListStackSetAutoDeploymentTargetsOutcomeCallable;
       typedef std::future<ListStackSetOperationResultsOutcome> ListStackSetOperationResultsOutcomeCallable;
@@ -436,6 +456,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::CreateGeneratedTemplateRequest&, const Model::CreateGeneratedTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGeneratedTemplateResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackInstancesRequest&, const Model::CreateStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackInstancesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::CreateStackRefactorRequest&, const Model::CreateStackRefactorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackRefactorResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackSetRequest&, const Model::CreateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeactivateOrganizationsAccessRequest&, const Model::DeactivateOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeactivateTypeRequest&, const Model::DeactivateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateTypeResponseReceivedHandler;
@@ -455,6 +476,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackDriftDetectionStatusRequest&, const Model::DescribeStackDriftDetectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackDriftDetectionStatusResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackEventsRequest&, const Model::DescribeStackEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackEventsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackInstanceRequest&, const Model::DescribeStackInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackInstanceResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackRefactorRequest&, const Model::DescribeStackRefactorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackRefactorResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourceRequest&, const Model::DescribeStackResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourceDriftsRequest&, const Model::DescribeStackResourceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourceDriftsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourcesRequest&, const Model::DescribeStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourcesResponseReceivedHandler;
@@ -468,6 +490,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::DetectStackSetDriftRequest&, const Model::DetectStackSetDriftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectStackSetDriftResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::EstimateTemplateCostRequest&, const Model::EstimateTemplateCostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EstimateTemplateCostResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ExecuteChangeSetRequest&, const Model::ExecuteChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteChangeSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ExecuteStackRefactorRequest&, const Model::ExecuteStackRefactorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteStackRefactorResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::GetGeneratedTemplateRequest&, const Model::GetGeneratedTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeneratedTemplateResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::GetStackPolicyRequest&, const Model::GetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStackPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::GetTemplateRequest&, const Model::GetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateResponseReceivedHandler;
@@ -483,6 +506,8 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::ListResourceScansRequest&, const Model::ListResourceScansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceScansResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackInstanceResourceDriftsRequest&, const Model::ListStackInstanceResourceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstanceResourceDriftsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackInstancesRequest&, const Model::ListStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstancesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackRefactorActionsRequest&, const Model::ListStackRefactorActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackRefactorActionsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackRefactorsRequest&, const Model::ListStackRefactorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackRefactorsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackResourcesRequest&, const Model::ListStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackResourcesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetAutoDeploymentTargetsRequest&, const Model::ListStackSetAutoDeploymentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetAutoDeploymentTargetsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetOperationResultsRequest&, const Model::ListStackSetOperationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetOperationResultsResponseReceivedHandler;

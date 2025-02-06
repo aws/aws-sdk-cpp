@@ -18,14 +18,17 @@
 /* End of generic header includes */
 
 /* Service model headers required in ConnectCasesClient header */
+#include <aws/connectcases/model/BatchGetCaseRuleResult.h>
 #include <aws/connectcases/model/BatchGetFieldResult.h>
 #include <aws/connectcases/model/BatchPutFieldOptionsResult.h>
 #include <aws/connectcases/model/CreateCaseResult.h>
+#include <aws/connectcases/model/CreateCaseRuleResult.h>
 #include <aws/connectcases/model/CreateDomainResult.h>
 #include <aws/connectcases/model/CreateFieldResult.h>
 #include <aws/connectcases/model/CreateLayoutResult.h>
 #include <aws/connectcases/model/CreateRelatedItemResult.h>
 #include <aws/connectcases/model/CreateTemplateResult.h>
+#include <aws/connectcases/model/DeleteCaseRuleResult.h>
 #include <aws/connectcases/model/DeleteDomainResult.h>
 #include <aws/connectcases/model/DeleteFieldResult.h>
 #include <aws/connectcases/model/DeleteLayoutResult.h>
@@ -36,6 +39,7 @@
 #include <aws/connectcases/model/GetDomainResult.h>
 #include <aws/connectcases/model/GetLayoutResult.h>
 #include <aws/connectcases/model/GetTemplateResult.h>
+#include <aws/connectcases/model/ListCaseRulesResult.h>
 #include <aws/connectcases/model/ListCasesForContactResult.h>
 #include <aws/connectcases/model/ListDomainsResult.h>
 #include <aws/connectcases/model/ListFieldOptionsResult.h>
@@ -47,6 +51,7 @@
 #include <aws/connectcases/model/SearchCasesResult.h>
 #include <aws/connectcases/model/SearchRelatedItemsResult.h>
 #include <aws/connectcases/model/UpdateCaseResult.h>
+#include <aws/connectcases/model/UpdateCaseRuleResult.h>
 #include <aws/connectcases/model/UpdateFieldResult.h>
 #include <aws/connectcases/model/UpdateLayoutResult.h>
 #include <aws/connectcases/model/UpdateTemplateResult.h>
@@ -92,14 +97,17 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in ConnectCasesClient header */
+      class BatchGetCaseRuleRequest;
       class BatchGetFieldRequest;
       class BatchPutFieldOptionsRequest;
       class CreateCaseRequest;
+      class CreateCaseRuleRequest;
       class CreateDomainRequest;
       class CreateFieldRequest;
       class CreateLayoutRequest;
       class CreateRelatedItemRequest;
       class CreateTemplateRequest;
+      class DeleteCaseRuleRequest;
       class DeleteDomainRequest;
       class DeleteFieldRequest;
       class DeleteLayoutRequest;
@@ -110,6 +118,7 @@ namespace Aws
       class GetDomainRequest;
       class GetLayoutRequest;
       class GetTemplateRequest;
+      class ListCaseRulesRequest;
       class ListCasesForContactRequest;
       class ListDomainsRequest;
       class ListFieldOptionsRequest;
@@ -123,20 +132,24 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateCaseRequest;
+      class UpdateCaseRuleRequest;
       class UpdateFieldRequest;
       class UpdateLayoutRequest;
       class UpdateTemplateRequest;
       /* End of service model forward declarations required in ConnectCasesClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchGetCaseRuleResult, ConnectCasesError> BatchGetCaseRuleOutcome;
       typedef Aws::Utils::Outcome<BatchGetFieldResult, ConnectCasesError> BatchGetFieldOutcome;
       typedef Aws::Utils::Outcome<BatchPutFieldOptionsResult, ConnectCasesError> BatchPutFieldOptionsOutcome;
       typedef Aws::Utils::Outcome<CreateCaseResult, ConnectCasesError> CreateCaseOutcome;
+      typedef Aws::Utils::Outcome<CreateCaseRuleResult, ConnectCasesError> CreateCaseRuleOutcome;
       typedef Aws::Utils::Outcome<CreateDomainResult, ConnectCasesError> CreateDomainOutcome;
       typedef Aws::Utils::Outcome<CreateFieldResult, ConnectCasesError> CreateFieldOutcome;
       typedef Aws::Utils::Outcome<CreateLayoutResult, ConnectCasesError> CreateLayoutOutcome;
       typedef Aws::Utils::Outcome<CreateRelatedItemResult, ConnectCasesError> CreateRelatedItemOutcome;
       typedef Aws::Utils::Outcome<CreateTemplateResult, ConnectCasesError> CreateTemplateOutcome;
+      typedef Aws::Utils::Outcome<DeleteCaseRuleResult, ConnectCasesError> DeleteCaseRuleOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, ConnectCasesError> DeleteDomainOutcome;
       typedef Aws::Utils::Outcome<DeleteFieldResult, ConnectCasesError> DeleteFieldOutcome;
       typedef Aws::Utils::Outcome<DeleteLayoutResult, ConnectCasesError> DeleteLayoutOutcome;
@@ -147,6 +160,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDomainResult, ConnectCasesError> GetDomainOutcome;
       typedef Aws::Utils::Outcome<GetLayoutResult, ConnectCasesError> GetLayoutOutcome;
       typedef Aws::Utils::Outcome<GetTemplateResult, ConnectCasesError> GetTemplateOutcome;
+      typedef Aws::Utils::Outcome<ListCaseRulesResult, ConnectCasesError> ListCaseRulesOutcome;
       typedef Aws::Utils::Outcome<ListCasesForContactResult, ConnectCasesError> ListCasesForContactOutcome;
       typedef Aws::Utils::Outcome<ListDomainsResult, ConnectCasesError> ListDomainsOutcome;
       typedef Aws::Utils::Outcome<ListFieldOptionsResult, ConnectCasesError> ListFieldOptionsOutcome;
@@ -160,20 +174,24 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCasesError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCasesError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCaseResult, ConnectCasesError> UpdateCaseOutcome;
+      typedef Aws::Utils::Outcome<UpdateCaseRuleResult, ConnectCasesError> UpdateCaseRuleOutcome;
       typedef Aws::Utils::Outcome<UpdateFieldResult, ConnectCasesError> UpdateFieldOutcome;
       typedef Aws::Utils::Outcome<UpdateLayoutResult, ConnectCasesError> UpdateLayoutOutcome;
       typedef Aws::Utils::Outcome<UpdateTemplateResult, ConnectCasesError> UpdateTemplateOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchGetCaseRuleOutcome> BatchGetCaseRuleOutcomeCallable;
       typedef std::future<BatchGetFieldOutcome> BatchGetFieldOutcomeCallable;
       typedef std::future<BatchPutFieldOptionsOutcome> BatchPutFieldOptionsOutcomeCallable;
       typedef std::future<CreateCaseOutcome> CreateCaseOutcomeCallable;
+      typedef std::future<CreateCaseRuleOutcome> CreateCaseRuleOutcomeCallable;
       typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
       typedef std::future<CreateFieldOutcome> CreateFieldOutcomeCallable;
       typedef std::future<CreateLayoutOutcome> CreateLayoutOutcomeCallable;
       typedef std::future<CreateRelatedItemOutcome> CreateRelatedItemOutcomeCallable;
       typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
+      typedef std::future<DeleteCaseRuleOutcome> DeleteCaseRuleOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
       typedef std::future<DeleteFieldOutcome> DeleteFieldOutcomeCallable;
       typedef std::future<DeleteLayoutOutcome> DeleteLayoutOutcomeCallable;
@@ -184,6 +202,7 @@ namespace Aws
       typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
       typedef std::future<GetLayoutOutcome> GetLayoutOutcomeCallable;
       typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
+      typedef std::future<ListCaseRulesOutcome> ListCaseRulesOutcomeCallable;
       typedef std::future<ListCasesForContactOutcome> ListCasesForContactOutcomeCallable;
       typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
       typedef std::future<ListFieldOptionsOutcome> ListFieldOptionsOutcomeCallable;
@@ -197,6 +216,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCaseOutcome> UpdateCaseOutcomeCallable;
+      typedef std::future<UpdateCaseRuleOutcome> UpdateCaseRuleOutcomeCallable;
       typedef std::future<UpdateFieldOutcome> UpdateFieldOutcomeCallable;
       typedef std::future<UpdateLayoutOutcome> UpdateLayoutOutcomeCallable;
       typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
@@ -206,14 +226,17 @@ namespace Aws
     class ConnectCasesClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const ConnectCasesClient*, const Model::BatchGetCaseRuleRequest&, const Model::BatchGetCaseRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCaseRuleResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::BatchGetFieldRequest&, const Model::BatchGetFieldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFieldResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::BatchPutFieldOptionsRequest&, const Model::BatchPutFieldOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutFieldOptionsResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateCaseRequest&, const Model::CreateCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCaseResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::CreateCaseRuleRequest&, const Model::CreateCaseRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCaseRuleResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateFieldRequest&, const Model::CreateFieldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFieldResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateLayoutRequest&, const Model::CreateLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLayoutResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateRelatedItemRequest&, const Model::CreateRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRelatedItemResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateTemplateRequest&, const Model::CreateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::DeleteCaseRuleRequest&, const Model::DeleteCaseRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCaseRuleResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteFieldRequest&, const Model::DeleteFieldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteLayoutRequest&, const Model::DeleteLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayoutResponseReceivedHandler;
@@ -224,6 +247,7 @@ namespace Aws
     typedef std::function<void(const ConnectCasesClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetLayoutRequest&, const Model::GetLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayoutResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetTemplateRequest&, const Model::GetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::ListCaseRulesRequest&, const Model::ListCaseRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCaseRulesResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::ListCasesForContactRequest&, const Model::ListCasesForContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCasesForContactResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::ListFieldOptionsRequest&, const Model::ListFieldOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFieldOptionsResponseReceivedHandler;
@@ -237,6 +261,7 @@ namespace Aws
     typedef std::function<void(const ConnectCasesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::UpdateCaseRequest&, const Model::UpdateCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCaseResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::UpdateCaseRuleRequest&, const Model::UpdateCaseRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCaseRuleResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::UpdateFieldRequest&, const Model::UpdateFieldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::UpdateLayoutRequest&, const Model::UpdateLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLayoutResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;

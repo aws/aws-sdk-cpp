@@ -49,8 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The names of one or more Amazon Web Services accounts for which you want to
-     * deploy stack set updates.</p>
+     * <p>The account IDs of the Amazon Web Services accounts. If you have many account
+     * numbers, you can provide those accounts using the <code>AccountsUrl</code>
+     * property instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
@@ -65,7 +66,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
+     * <p>The Amazon S3 URL path to a file that contains a list of Amazon Web Services
+     * account IDs. The file format must be either <code>.csv</code> or
+     * <code>.txt</code>, and the data can be comma-separated or new-line-separated.
+     * There is currently a 10MB limit for the data (approximately 800,000
+     * accounts).</p> <p/>
      */
     inline const Aws::String& GetAccountsUrl() const{ return m_accountsUrl; }
     inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
@@ -79,8 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-     * deploys.</p>
+     * <p>The organization root ID or organizational unit (OU) IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }

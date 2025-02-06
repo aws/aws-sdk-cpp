@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * <p>[Self-managed permissions] The account IDs of one or more Amazon Web Services
      * accounts that you want to create stack instances in the specified Region(s)
      * for.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>

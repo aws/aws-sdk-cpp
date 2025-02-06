@@ -122,12 +122,12 @@ namespace Model
      * create the administrator and execution roles required to deploy to target
      * accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * self-managed permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
      * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
-     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
+     * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
      */
     inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }

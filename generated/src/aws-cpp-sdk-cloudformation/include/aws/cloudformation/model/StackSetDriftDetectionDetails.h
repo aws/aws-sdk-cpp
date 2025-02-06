@@ -32,8 +32,8 @@ namespace Model
    * included.</p> <p>For stack set operations, includes information about drift
    * operations currently being performed on the stack set.</p> <p>For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-   * unmanaged changes in stack sets</a> in the <i>CloudFormation User
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+   * drift detection on CloudFormation StackSets</a> in the <i>CloudFormation User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetDriftDetectionDetails">AWS
    * API Reference</a></p>

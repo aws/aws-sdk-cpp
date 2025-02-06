@@ -252,7 +252,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Invocation points are points in provisioning logic where hooks are
+     * <p>Invocation points are points in provisioning logic where Hooks are
      * initiated.</p>
      */
     inline const HookInvocationPoint& GetHookInvocationPoint() const{ return m_hookInvocationPoint; }

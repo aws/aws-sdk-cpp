@@ -142,7 +142,7 @@ namespace Model
      * might include resources that can affect permissions in your Amazon Web Services
      * account—for example, by creating new Identity and Access Management (IAM) users.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
@@ -190,8 +190,8 @@ namespace Model
      * stack set.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
+     * for using CloudFormation StackSets</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
@@ -256,12 +256,12 @@ namespace Model
      * create the administrator and execution roles required to deploy to target
      * accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * self-managed permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
      * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
-     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
+     * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
      */
     inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }

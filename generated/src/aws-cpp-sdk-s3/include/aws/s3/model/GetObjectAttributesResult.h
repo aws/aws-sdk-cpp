@@ -41,8 +41,11 @@ namespace Model
     /**
      * <p>Specifies whether the object retrieved was (<code>true</code>) or was not
      * (<code>false</code>) a delete marker. If <code>false</code>, this response
-     * header does not appear in the response.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * header does not appear in the response. To learn more about delete markers, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
+     * with delete markers</a>.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
     inline void SetDeleteMarker(bool value) { m_deleteMarker = value; }

@@ -56,7 +56,7 @@ namespace Model
      * names adhere to the following patterns:</p> <ul> <li> <p>For resource types,
      * <code>company_or_organization::service::type</code>.</p> </li> <li> <p>For
      * modules, <code>company_or_organization::service::type::MODULE</code>.</p> </li>
-     * <li> <p>For hooks, <code>MyCompany::Testing::MyTestHook</code>.</p> </li> </ul>
+     * <li> <p>For Hooks, <code>MyCompany::Testing::MyTestHook</code>.</p> </li> </ul>
      *  <p>The following organization namespaces are reserved and can't be used
      * in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li>
      * <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li>

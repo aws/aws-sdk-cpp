@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Specifies <code>RESOURCE</code> type target details for activated
-   * hooks.</p><p><h3>See Also:</h3>   <a
+   * Hooks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ChangeSetHookResourceTargetDetails">AWS
    * API Reference</a></p>
    */

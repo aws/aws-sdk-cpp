@@ -145,15 +145,15 @@ namespace Aws
          * <b>Directory buckets</b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General
          * purpose bucket permissions</b> - For information about permissions required to
          * use the multipart upload, see <a
@@ -257,15 +257,15 @@ namespace Aws
          *  <p> <b>Directory buckets</b> - For directory buckets, you must make
          * requests for this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - For information about permissions required to use the
          * multipart upload API, see <a
@@ -363,15 +363,15 @@ namespace Aws
          * <b>Directory buckets </b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> <li> <p>VPC endpoints don't support cross-Region requests (including
          * copies). If you're using VPC endpoints, your source and destination buckets
          * should be in the same Amazon Web Services Region as your VPC endpoint.</p> </li>
@@ -463,10 +463,15 @@ namespace Aws
          * the copy source is in a different region, the data transfer is billed to the
          * copy source account. For pricing information, see <a
          * href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </dd>
-         * <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP
-         * Host header syntax is <code>
+         * <dt>HTTP Host header syntax</dt> <dd> <ul> <li> <p> <b>Directory buckets </b> -
+         * The HTTP Host header syntax is <code>
          * <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
-         * </dd> </dl> <p>The following operations are related to
+         * </li> <li> <p> <b>Amazon S3 on Outposts</b> - When you use this action with S3
+         * on Outposts through the REST API, you must direct requests to the S3 on Outposts
+         * hostname. The S3 on Outposts hostname takes the form <code>
+         * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+         * The hostname isn't required when you use the Amazon Web Services CLI or
+         * SDKs.</p> </li> </ul> </dd> </dl> <p>The following operations are related to
          * <code>CopyObject</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
          * </p> </li> <li> <p> <a
@@ -511,12 +516,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General
          * purpose bucket permissions</b> - In addition to the <code>s3:CreateBucket</code>
          * permission, the following permissions are required in a policy when your
@@ -688,15 +693,15 @@ namespace Aws
          * by directory buckets.</p> </li> <li> <p> <b>Directory buckets </b> - For
          * directory buckets, you must make requests for this API operation to the Zonal
          * endpoint. These endpoints support virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <dl> <dt>Request signing</dt> <dd> <p>For request signing,
          * multipart upload is just a series of regular requests. You initiate a multipart
          * upload, send one or more requests to upload parts, and then complete the
@@ -929,12 +934,12 @@ namespace Aws
          * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.
          * Path-style requests are not supported. For more information about endpoints in
          * Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> <li> <p> <b> <code>CopyObject</code> API operation</b> - Unlike other
          * Zonal endpoint API operations, the <code>CopyObject</code> API operation doesn't
          * use the temporary security credentials returned from the
@@ -1069,12 +1074,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General
          * purpose bucket permissions</b> - You must have the <code>s3:DeleteBucket</code>
          * permission on the specified bucket in a policy.</p> </li> <li> <p> <b>Directory
@@ -1385,12 +1390,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> <p>
          * <b>Directory buckets </b> - The HTTP Host header syntax is
          * <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl>
@@ -1554,12 +1559,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <p>If you are using an identity other
          * than the root user of the Amazon Web Services account that owns the bucket, the
          * calling identity must both have the <code>DeleteBucketPolicy</code> permissions
@@ -1768,15 +1773,15 @@ namespace Aws
          * request.</p> </li> <li> <p> <b>Directory buckets</b> - For directory buckets,
          * you must make requests for this API operation to the Zonal endpoint. These
          * endpoints support virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <p>To remove a specific version, you must use the
          * <code>versionId</code> query parameter. Using this query parameter permanently
          * deletes the version. If the object deleted is a delete marker, Amazon S3 sets
@@ -1895,25 +1900,25 @@ namespace Aws
          * single HTTP request. If you know the object keys that you want to delete, then
          * this operation provides a suitable alternative to sending individual delete
          * requests, reducing per-request overhead.</p> <p>The request can contain a list
-         * of up to 1000 keys that you want to delete. In the XML, you provide the object
+         * of up to 1,000 keys that you want to delete. In the XML, you provide the object
          * key names, and optionally, version IDs if you want to delete a specific version
          * of the object from a versioning-enabled bucket. For each key, Amazon S3 performs
          * a delete operation and returns the result of that delete, success or failure, in
-         * the response. Note that if the object specified in the request is not found,
-         * Amazon S3 returns the result as deleted.</p>  <ul> <li> <p> <b>Directory
-         * buckets</b> - S3 Versioning isn't enabled and supported for directory
-         * buckets.</p> </li> <li> <p> <b>Directory buckets</b> - For directory buckets,
-         * you must make requests for this API operation to the Zonal endpoint. These
-         * endpoints support virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * the response. If the object specified in the request isn't found, Amazon S3
+         * confirms the deletion by returning the result as deleted.</p>  <ul> <li>
+         * <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+         * directory buckets.</p> </li> <li> <p> <b>Directory buckets</b> - For directory
+         * buckets, you must make requests for this API operation to the Zonal endpoint.
+         * These endpoints support virtual-hosted-style requests in the format
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <p>The operation supports two modes for the response:
          * verbose and quiet. By default, the operation uses verbose mode in which the
          * response includes the result of deletion of each key in your request. In quiet
@@ -2426,12 +2431,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory
          * buckets </b> - The HTTP Host header syntax is
          * <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>
@@ -2726,12 +2731,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <p>If you are using an identity other
          * than the root user of the Amazon Web Services account that owns the bucket, the
          * calling identity must both have the <code>GetBucketPolicy</code> permissions on
@@ -3050,19 +3055,19 @@ namespace Aws
          * <b>Directory buckets</b> - Only virtual-hosted-style requests are supported. For
          * a virtual hosted-style request example, if you have the object
          * <code>photos/2006/February/sample.jpg</code> in the bucket named
-         * <code>examplebucket--use1-az5--x-s3</code>, specify the object key name as
+         * <code>amzn-s3-demo-bucket--usw2-az1--x-s3</code>, specify the object key name as
          * <code>/photos/2006/February/sample.jpg</code>. Also, when you make requests to
          * this API operation, your requests are sent to the Zonal endpoint. These
          * endpoints support virtual-hosted-style requests in the format
          * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - You must have the required permissions in a policy. To use
          * <code>GetObject</code>, you must have the <code>READ</code> access to the object
@@ -3230,15 +3235,15 @@ namespace Aws
          * <code>GetObjectAttributes</code>.</p>  <p> <b>Directory buckets</b> - For
          * directory buckets, you must make requests for this API operation to the Zonal
          * endpoint. These endpoints support virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - To use <code>GetObjectAttributes</code>, you must have READ
          * access to the object. The permissions that you need to use this operation depend
@@ -3646,12 +3651,12 @@ namespace Aws
          * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.
          * Path-style requests are not supported. For more information about endpoints in
          * Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
          * Reference</a></p>
@@ -3770,15 +3775,15 @@ namespace Aws
          *  <p>For directory buckets, you must make requests for this API operation
          * to the Zonal endpoint. These endpoints support virtual-hosted-style requests in
          * the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  </dd> </dl> <p>The following actions are related to
          * <code>HeadObject</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -4065,12 +4070,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <p>You must have the
          * <code>s3express:ListAllMyDirectoryBuckets</code> permission in an IAM
          * identity-based policy instead of a bucket policy. Cross-account access to this
@@ -4143,15 +4148,15 @@ namespace Aws
          *  <p> <b>Directory buckets</b> - For directory buckets, you must make
          * requests for this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - For information about permissions required to use the
          * multipart upload API, see <a
@@ -4327,15 +4332,15 @@ namespace Aws
          * </p> </li> <li> <p> <b>Directory buckets</b> - For directory buckets, you must
          * make requests for this API operation to the Zonal endpoint. These endpoints
          * support virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General
          * purpose bucket permissions</b> - To use this operation, you must have READ
          * access to the bucket. You must have permission to perform the
@@ -4427,15 +4432,15 @@ namespace Aws
          *  <p> <b>Directory buckets</b> - For directory buckets, you must make
          * requests for this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - For information about permissions required to use the
          * multipart upload API, see <a
@@ -4808,12 +4813,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <p>By default, all buckets have a default encryption configuration that
          * uses server-side encryption with Amazon S3 managed keys (SSE-S3).</p> 
          * <ul> <li> <p> <b>General purpose buckets</b> </p> <ul> <li> <p>You can
@@ -4843,7 +4848,7 @@ namespace Aws
          * server-side encryption with KMS for new object uploads</a>.</p> </li> <li>
          * <p>Your SSE-KMS configuration can only support 1 <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-         * managed key</a> per directory bucket for the lifetime of the bucket. The <a
+         * managed key</a> per directory bucket's lifetime. The <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
          * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. </p> </li>
          * <li> <p>S3 Bucket Keys are always enabled for <code>GET</code> and
@@ -5149,12 +5154,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  </li> </ul> </dd> <dd> <p> <b>Directory buckets </b> - The HTTP Host
          * header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p>
          * <p>The following operations are related to
@@ -5424,12 +5429,12 @@ namespace Aws
          * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
          * </code>. Virtual-hosted-style requests aren't supported. For more information
          * about endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <p>If you are using an identity other
          * than the root user of the Amazon Web Services account that owns the bucket, the
          * calling identity must both have the <code>PutBucketPolicy</code> permissions on
@@ -5817,15 +5822,15 @@ namespace Aws
          * <b>Directory buckets</b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </li> </ul>  <p>Amazon S3 is a distributed system. If it receives
          * multiple write requests for the same object simultaneously, it overwrites all
          * but the last object written. However, Amazon S3 provides features that can
@@ -5834,12 +5839,23 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Amazon
          * S3 Object Lock</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
          * functionality is not supported for directory buckets.</p>  </li> <li> <p>
-         * <b>S3 Versioning</b> - When you enable versioning for a bucket, if Amazon S3
-         * receives multiple write requests for the same object simultaneously, it stores
-         * all versions of the objects. For each write request that is made to the same
-         * object, Amazon S3 automatically generates a unique version ID of that object
-         * being stored in Amazon S3. You can retrieve, replace, or delete any version of
-         * the object. For more information about versioning, see <a
+         * <b>If-None-Match</b> - Uploads the object only if the object key name does not
+         * already exist in the specified bucket. Otherwise, Amazon S3 returns a <code>412
+         * Precondition Failed</code> error. If a conflicting operation occurs during the
+         * upload, S3 returns a <code>409 ConditionalRequestConflict</code> response. On a
+         * 409 failure, retry the upload.</p> <p>Expects the * character (asterisk).</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Add
+         * preconditions to S3 operations with conditional requests</a> in the <i>Amazon S3
+         * User Guide</i> or <a href="https://datatracker.ietf.org/doc/rfc7232/">RFC
+         * 7232</a>. </p>  <p>This functionality is not supported for S3 on
+         * Outposts.</p>  </li> <li> <p> <b>S3 Versioning</b> - When you enable
+         * versioning for a bucket, if Amazon S3 receives multiple write requests for the
+         * same object simultaneously, it stores all versions of the objects. For each
+         * write request that is made to the same object, Amazon S3 automatically generates
+         * a unique version ID of that object being stored in Amazon S3. You can retrieve,
+         * replace, or delete any version of the object. For more information about
+         * versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
          * Objects to Versioning-Enabled Buckets</a> in the <i>Amazon S3 User Guide</i>.
          * For information about returning the versioning state of a bucket, see <a
@@ -5955,7 +5971,7 @@ namespace Aws
          * <li> <p>US West (N. California)</p> </li> <li> <p> US West (Oregon)</p> </li>
          * <li> <p> Asia Pacific (Singapore)</p> </li> <li> <p>Asia Pacific (Sydney)</p>
          * </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe (Ireland)</p> </li>
-         * <li> <p>South America (São Paulo)</p> </li> </ul> <p>For a list of all the
+         * <li> <p>South America (S��o Paulo)</p> </li> </ul> <p>For a list of all the
          * Amazon S3 supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the Amazon Web Services General Reference.</p> 
@@ -6494,15 +6510,15 @@ namespace Aws
          * <b>Directory buckets</b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
          * virtual-hosted-style requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - To perform a multipart upload with encryption using an Key
          * Management Service key, the requester must have permission to the
@@ -6651,15 +6667,15 @@ namespace Aws
          * buckets</b> - For directory buckets, you must make requests for this API
          * operation to the Zonal endpoint. These endpoints support virtual-hosted-style
          * requests in the format
-         * <code>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+         * <code>https://<i>amzn-s3-demo-bucket</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information about
          * endpoints in Availability Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
          * and Zonal endpoints for directory buckets in Availability Zones</a> in the
          * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
          * Zones, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-         * Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+         * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
          *  <dl> <dt>Authentication and authorization</dt> <dd> <p>All
          * <code>UploadPartCopy</code> requests must be authenticated and signed by using
          * IAM credentials (access key ID and secret access key for the IAM identities).

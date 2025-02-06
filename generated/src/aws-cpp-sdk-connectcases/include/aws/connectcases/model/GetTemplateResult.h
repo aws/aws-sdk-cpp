@@ -12,6 +12,7 @@
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connectcases/model/RequiredField.h>
+#include <aws/connectcases/model/TemplateRule.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +123,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of case rules (also known as <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
+     * field conditions</a>) on a template. </p>
+     */
+    inline const Aws::Vector<TemplateRule>& GetRules() const{ return m_rules; }
+    inline void SetRules(const Aws::Vector<TemplateRule>& value) { m_rules = value; }
+    inline void SetRules(Aws::Vector<TemplateRule>&& value) { m_rules = std::move(value); }
+    inline GetTemplateResult& WithRules(const Aws::Vector<TemplateRule>& value) { SetRules(value); return *this;}
+    inline GetTemplateResult& WithRules(Aws::Vector<TemplateRule>&& value) { SetRules(std::move(value)); return *this;}
+    inline GetTemplateResult& AddRules(const TemplateRule& value) { m_rules.push_back(value); return *this; }
+    inline GetTemplateResult& AddRules(TemplateRule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the template.</p>
      */
     inline const TemplateStatus& GetStatus() const{ return m_status; }
@@ -201,6 +217,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::Vector<RequiredField> m_requiredFields;
+
+    Aws::Vector<TemplateRule> m_rules;
 
     TemplateStatus m_status;
 

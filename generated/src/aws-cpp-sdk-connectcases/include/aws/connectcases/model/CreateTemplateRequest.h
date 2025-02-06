@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/connectcases/model/RequiredField.h>
+#include <aws/connectcases/model/TemplateRule.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +108,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of case rules (also known as <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
+     * field conditions</a>) on a template. </p>
+     */
+    inline const Aws::Vector<TemplateRule>& GetRules() const{ return m_rules; }
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+    inline void SetRules(const Aws::Vector<TemplateRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
+    inline void SetRules(Aws::Vector<TemplateRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
+    inline CreateTemplateRequest& WithRules(const Aws::Vector<TemplateRule>& value) { SetRules(value); return *this;}
+    inline CreateTemplateRequest& WithRules(Aws::Vector<TemplateRule>&& value) { SetRules(std::move(value)); return *this;}
+    inline CreateTemplateRequest& AddRules(const TemplateRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+    inline CreateTemplateRequest& AddRules(TemplateRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the template.</p>
      */
     inline const TemplateStatus& GetStatus() const{ return m_status; }
@@ -132,6 +149,9 @@ namespace Model
 
     Aws::Vector<RequiredField> m_requiredFields;
     bool m_requiredFieldsHasBeenSet = false;
+
+    Aws::Vector<TemplateRule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     TemplateStatus m_status;
     bool m_statusHasBeenSet = false;

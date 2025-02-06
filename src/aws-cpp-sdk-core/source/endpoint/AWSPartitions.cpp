@@ -10,8 +10,8 @@ namespace Aws
 {
 namespace Endpoint
 {
-const size_t AWSPartitions::PartitionsBlobStrLen = 2605;
-const size_t AWSPartitions::PartitionsBlobSize = 2606;
+const size_t AWSPartitions::PartitionsBlobStrLen = 2667;
+const size_t AWSPartitions::PartitionsBlobSize = 2668;
 
 using PartitionsBlobT = Aws::Array<const char, AWSPartitions::PartitionsBlobSize>;
 static constexpr PartitionsBlobT PartitionsBlob = {{
@@ -118,8 +118,10 @@ static constexpr PartitionsBlobT PartitionsBlob = {{
 'a','c','k','"',':','f','a','l','s','e',',','"','s','u','p','p','o','r','t','s','F','I','P','S','"',
 ':','t','r','u','e','}',',','"','r','e','g','i','o','n','R','e','g','e','x','"',':','"','^','u','s',
 '\\','\\','-','i','s','o','f','\\','\\','-','\\','\\','w','+','\\','\\','-','\\','\\','d','+','$','"',',','"',
-'r','e','g','i','o','n','s','"',':','{','}','}',']',',','"','v','e','r','s','i','o','n','"',':','"',
-'1','.','1','"','}','\0'
+'r','e','g','i','o','n','s','"',':','{','"','a','w','s','-','i','s','o','-','f','-','g','l','o','b',
+'a','l','"',':','{','}',',','"','u','s','-','i','s','o','f','-','e','a','s','t','-','1','"',':','{',
+'}',',','"','u','s','-','i','s','o','f','-','s','o','u','t','h','-','1','"',':','{','}','}','}',']',
+',','"','v','e','r','s','i','o','n','"',':','"','1','.','1','"','}','\0'
 }};
 
 const char* AWSPartitions::GetPartitionsBlob()
