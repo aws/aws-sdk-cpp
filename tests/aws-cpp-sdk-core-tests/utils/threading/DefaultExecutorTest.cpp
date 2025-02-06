@@ -43,8 +43,7 @@ TEST_F(DefaultExecutorTest, ThreadsDetachIfNotShuttingDown)
     ASSERT_EQ(20, i.load());
 }
 
-TEST_F(DefaultExecutorTest, WorkerThreadTheOnlyOwner)
-{
+TEST_F(DefaultExecutorTest, WorkerThreadTheOnlyOwner) {
   // If somehow the shared_ptr of the Executor gets owned by a worker thread of that Executor - Executor shutdown must not deadlock
   auto pExec = Aws::MakeShared<DefaultExecutor>("WorkerThreadTheOnlyOwner");
 
@@ -54,60 +53,37 @@ TEST_F(DefaultExecutorTest, WorkerThreadTheOnlyOwner)
   bool taskCanContinue = false;
   bool taskFinished = false;
 
-  pExec->Submit([pExec, &mtx, &cv, &taskStarted, &taskCanContinue, &taskFinished]() mutable {
-    {
-      std::unique_lock<std::mutex> lock(mtx);
-      taskStarted = true;
-      cv.notify_one();
-    }
+  auto sendSignal = [&mtx, &cv](bool& boolSignal) {
+    std::unique_lock<std::mutex> lock(mtx);
+    boolSignal = true;
+    cv.notify_one();
+  };
 
-    if (!taskCanContinue) {
+  auto waitForSignal = [&mtx, &cv](bool& boolSignal, const Aws::String& msg) {
+    if (!boolSignal) {
       std::unique_lock<std::mutex> lock(mtx);
-      cv.wait_for(lock, std::chrono::seconds(60), [&taskCanContinue]() { return taskCanContinue; });
+      cv.wait_for(lock, std::chrono::seconds(60), [&boolSignal]() { return boolSignal; });
     }
+    ASSERT_TRUE(boolSignal) << msg;
+  };
 
-    ASSERT_TRUE(taskCanContinue) << "Async task has not been allowed to continue withing 60 seconds!";
+  pExec->Submit([pExec, &sendSignal, &waitForSignal, &taskStarted, &taskCanContinue, &taskFinished]() mutable {
+    sendSignal(taskStarted);
+    waitForSignal(taskCanContinue, "Async task has not been allowed to continue within 60 seconds!");
     ASSERT_TRUE(pExec);
     ASSERT_EQ(1, pExec.use_count());
-
     pExec.reset();  // focal point of the test
     ASSERT_FALSE(pExec);
-
-    {
-      std::unique_lock<std::mutex> lock(mtx);
-      taskFinished = true;
-      cv.notify_one();
-    }
+    sendSignal(taskFinished);
   });
 
-  if (!taskStarted) {
-    std::unique_lock<std::mutex> lock(mtx);
-    cv.wait_for(lock, std::chrono::seconds(60), [&taskStarted]() { return taskStarted; });
-  }
-  ASSERT_TRUE(taskStarted) << "Async task has not started within 60 seconds!";
-  if (!taskStarted) {
-    std::terminate();  // avoid hanging tests
-  }
-
+  waitForSignal(taskStarted, "Async task has not started within 60 seconds!");
   ASSERT_EQ(2, pExec.use_count());
   pExec.reset();
   ASSERT_FALSE(pExec);
   // Now async task is the only owner of the Executor
+  sendSignal(taskCanContinue);
 
-  {
-    std::unique_lock<std::mutex> lock(mtx);
-    taskCanContinue = true;
-    cv.notify_one();
-  }
-
-  if (!taskFinished) {
-    std::unique_lock<std::mutex> lock(mtx);
-    cv.wait_for(lock, std::chrono::seconds(60), [&taskFinished]() { return taskFinished; });
-  }
-  ASSERT_TRUE(taskFinished) << "Async task has not finished within 60 seconds!";
-  if (!taskFinished) {
-    std::terminate();  // avoid hanging tests
-  }
-
+  waitForSignal(taskFinished, "Async task has not finished within 60 seconds!");
   ASSERT_FALSE(pExec);  // (just in case) executor pointer cannot magically resurrect.
 }

@@ -5,65 +5,40 @@
 
 #pragma once
 
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/threading/Executor.h>
 
-#include <aws/core/utils/memory/stl/AWSMap.h>
-
-#include <atomic>
 #include <functional>
-#include <mutex>
-#include <thread>
 
-namespace Aws
-{
-    namespace Utils
-    {
-        namespace Threading
-        {
-            /**
-            * Default Executor implementation. Simply spawns a thread and detaches it.
-            */
-            class AWS_CORE_API DefaultExecutor : public Executor
-            {
-            public:
-                DefaultExecutor() : m_state(State::Free) {}
-                ~DefaultExecutor();
+namespace Aws {
+namespace Utils {
+namespace Threading {
+/**
+ * Default Executor implementation. Simply spawns a thread and detaches it.
+ */
+class AWS_CORE_API DefaultExecutor : public Executor {
+  // API contract
+ public:
+  DefaultExecutor();
+  DefaultExecutor(const DefaultExecutor& other);
+  DefaultExecutor& operator=(const DefaultExecutor&);
+  DefaultExecutor(DefaultExecutor&& other) = default;
+  DefaultExecutor& operator=(DefaultExecutor&&) = default;
 
-                void WaitUntilStopped() override;
-            protected:
-                class DefaultExecutorTask {
-                public:
-                  DefaultExecutorTask(std::function<void()>&& task, DefaultExecutor* executor);
-                  DefaultExecutorTask(const DefaultExecutorTask&) = delete;
-                  DefaultExecutorTask& operator=(const DefaultExecutorTask&) = delete;
-                  DefaultExecutorTask(DefaultExecutorTask&&) = default;
+  virtual ~DefaultExecutor();
 
-                  /**
-                   * Detaches the task from the executor
-                   */
-                  void DoNotDetach();
-                  /**
-                   * Starts task execution on a new thread
-                   */
-                  static std::pair<std::thread, DefaultExecutorTask*> Launch(DefaultExecutorTask* task);
-                private:
-                  void Execute();
+  void WaitUntilStopped() override;
 
-                  std::function<void()> m_task;
-                  DefaultExecutor* m_executor = nullptr;
-                };
+ protected:
+  bool SubmitToThread(std::function<void()>&&) override;
 
-                enum class State
-                {
-                    Free, Locked, Shutdown
-                };
-                bool SubmitToThread(std::function<void()>&&) override;
-                void Detach(std::thread::id id);
-                std::atomic<State> m_state;
+  // implementation details
+ public:
+  struct impl;
 
-                using DefaultExecutorTaskPair = std::pair<std::thread, DefaultExecutorTask*>;
-                Aws::UnorderedMap<std::thread::id, DefaultExecutorTaskPair> m_tasks;
-            };
-        } // namespace Threading
-    } // namespace Utils
-} // namespace Aws
+ private:
+  std::shared_ptr<impl> pImpl;
+};
+}  // namespace Threading
+}  // namespace Utils
+}  // namespace Aws
