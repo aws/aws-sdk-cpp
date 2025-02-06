@@ -232,17 +232,19 @@ void GeneralHTTPCredentialsProvider::Reload()
         return;
     }
 
-    Aws::String accessKey, secretKey, token;
+    Aws::String accessKey, secretKey, token, accountId;
     Utils::Json::JsonView credentialsView(credentialsDoc);
     accessKey = credentialsView.GetString("AccessKeyId");
     secretKey = credentialsView.GetString("SecretAccessKey");
     token = credentialsView.GetString("Token");
+    accountId = credentialsView.GetString("AccountId");
     AWS_LOGSTREAM_DEBUG(GEN_HTTP_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
 
     m_credentials.SetAWSAccessKeyId(accessKey);
     m_credentials.SetAWSSecretKey(secretKey);
     m_credentials.SetSessionToken(token);
     m_credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), Aws::Utils::DateFormat::ISO_8601));
+    m_credentials.SetAccountId(accountId);
     AWSCredentialsProvider::Reload();
 }
 

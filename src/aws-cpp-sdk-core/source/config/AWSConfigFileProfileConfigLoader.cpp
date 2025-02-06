@@ -21,6 +21,7 @@ namespace Aws
         static const char ACCESS_KEY_ID_KEY[]                = "aws_access_key_id";
         static const char SECRET_KEY_KEY[]                   = "aws_secret_access_key";
         static const char SESSION_TOKEN_KEY[]                = "aws_session_token";
+        static const char ACCOUNT_ID_KEY[]                   = "aws_account_id";
         static const char SSO_START_URL_KEY[]                = "sso_start_url";
         static const char SSO_REGION_KEY[]                   = "sso_region";
         static const char SSO_ACCOUNT_ID_KEY[]               = "sso_account_id";
@@ -445,7 +446,7 @@ namespace Aws
                     }
 
                     auto accessKeyIdIter = currentKeyValues.find(ACCESS_KEY_ID_KEY);
-                    Aws::String accessKey, secretKey, sessionToken;
+                    Aws::String accessKey, secretKey, sessionToken, accountId;
                     if (accessKeyIdIter != currentKeyValues.end())
                     {
                         accessKey = accessKeyIdIter->second;
@@ -467,7 +468,18 @@ namespace Aws
                             sessionToken = sessionTokenIter->second;
                         }
 
-                        profile.SetCredentials(Aws::Auth::AWSCredentials(accessKey, secretKey, sessionToken));
+                        const auto accountIdIter = currentKeyValues.find(ACCOUNT_ID_KEY);
+
+                        if (accountIdIter != currentKeyValues.end())
+                        {
+                            accountId = accountIdIter->second;
+                        }
+
+                        profile.SetCredentials(Aws::Auth::AWSCredentials(accessKey,
+                          secretKey,
+                          sessionToken,
+                          DateTime{(std::chrono::time_point<std::chrono::system_clock>::max)()},
+                          accountId));
                     }
 
                     if (!profile.GetSsoStartUrl().empty() || !profile.GetSsoRegion().empty()

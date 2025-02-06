@@ -36,6 +36,7 @@ using Aws::Utils::Threading::WriterLockGuard;
 static const char ACCESS_KEY_ENV_VAR[] = "AWS_ACCESS_KEY_ID";
 static const char SECRET_KEY_ENV_VAR[] = "AWS_SECRET_ACCESS_KEY";
 static const char SESSION_TOKEN_ENV_VAR[] = "AWS_SESSION_TOKEN";
+static const char ACCOUNT_ID_ENV_VAR[] = "AWS_ACCOUNT_ID";
 static const char DEFAULT_PROFILE[] = "default";
 static const char AWS_PROFILE_ENV_VAR[] = "AWS_PROFILE";
 static const char AWS_PROFILE_DEFAULT_ENV_VAR[] = "AWS_DEFAULT_PROFILE";
@@ -90,6 +91,14 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
         {
             credentials.SetSessionToken(sessionToken);
             AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found sessionToken");
+        }
+
+        const auto accountId = Aws::Environment::GetEnv(ACCOUNT_ID_ENV_VAR);
+
+        if (!accountId.empty())
+        {
+            credentials.SetAccountId(accountId);
+            AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found accountId");
         }
     }
 
@@ -407,6 +416,11 @@ AWSCredentials Aws::Auth::GetCredentialsFromProcess(const Aws::String& process)
     else
     {
         credentials.SetExpiration((std::chrono::time_point<std::chrono::system_clock>::max)());
+    }
+
+    if (credentialsView.KeyExists("AccountId"))
+    {
+      credentials.SetAccountId(credentialsView.GetString("AccountId"));
     }
 
     AWS_LOGSTREAM_DEBUG(PROFILE_LOG_TAG, "Successfully pulled credentials from process credential with AccessKey: " << accessKey << ", Expiration:" << credentialsView.GetString("Expiration"));
