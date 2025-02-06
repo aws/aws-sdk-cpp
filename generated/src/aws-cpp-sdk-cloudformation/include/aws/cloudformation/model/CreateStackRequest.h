@@ -82,9 +82,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
-     * Systems Manager document. The location for an Amazon S3 bucket must start with
+     * <p>The URL of a file containing the template body. The URL must point to a
+     * template (max size: 1 MB) that's located in an Amazon S3 bucket or a Systems
+     * Manager document. The location for an Amazon S3 bucket must start with
      * <code>https://</code>.</p> <p>Conditional: You must specify either the
      * <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not
      * both.</p>
@@ -195,6 +195,8 @@ namespace Model
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
      * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+     * AWS::IAM::ManagedPolicy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>
@@ -203,7 +205,7 @@ namespace Model
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -214,7 +216,7 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
@@ -257,7 +259,7 @@ namespace Model
      * default, CloudFormation grants permissions to all resource types. IAM uses this
      * parameter for CloudFormation-specific condition keys in IAM policies. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
      * access with Identity and Access Management</a>.</p>  <p>Only one of the
      * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
      * specified.</p> 

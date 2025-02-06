@@ -103,14 +103,14 @@ namespace Model
      * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
      * For automatic deployments that require a sequence of operations, the operation
      * is queued to be performed. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">stack
-     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
-     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
-     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
-     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
-     * The operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">StackSets
+     * status codes</a> in the <i>CloudFormation User Guide</i>.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation is currently being performed.</p> </li> <li>
+     * <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li> <li>
+     * <p> <code>STOPPING</code>: The operation is in the process of stopping, at user
+     * request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -151,9 +151,8 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
@@ -231,8 +230,9 @@ namespace Model
      * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect
-     * stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+     * drift detection on CloudFormation StackSets</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
     inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }

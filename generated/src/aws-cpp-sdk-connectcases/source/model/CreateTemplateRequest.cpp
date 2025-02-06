@@ -18,6 +18,7 @@ CreateTemplateRequest::CreateTemplateRequest() :
     m_layoutConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requiredFieldsHasBeenSet(false),
+    m_rulesHasBeenSet(false),
     m_status(TemplateStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -53,6 +54,17 @@ Aws::String CreateTemplateRequest::SerializePayload() const
      requiredFieldsJsonList[requiredFieldsIndex].AsObject(m_requiredFields[requiredFieldsIndex].Jsonize());
    }
    payload.WithArray("requiredFields", std::move(requiredFieldsJsonList));
+
+  }
+
+  if(m_rulesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
+   for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+   {
+     rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+   }
+   payload.WithArray("rules", std::move(rulesJsonList));
 
   }
 

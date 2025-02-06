@@ -160,9 +160,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the change set, such as
-     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or
-     * <code>FAILED</code>.</p>
+     * <p>The current status of the change set, such as <code>CREATE_PENDING</code>,
+     * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
      */
     inline const ChangeSetStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const ChangeSetStatus& value) { m_status = value; }
