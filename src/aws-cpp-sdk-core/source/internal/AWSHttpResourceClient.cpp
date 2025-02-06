@@ -9,6 +9,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/ARN.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/platform/Environment.h>
@@ -588,6 +589,15 @@ namespace Aws
                     {
                         result.creds.SetExpiration(DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601));
                     }
+                    XmlNode assumeRoleUser = credentialsNode.FirstChild("AssumedRoleUser");
+                    if (!assumeRoleUser.IsNull())
+                    {
+                      XmlNode roleArn = assumeRoleUser.FirstChild("Arn");
+                      if (!roleArn.IsNull())
+                      {
+                        result.creds.SetAccountId(ARN{roleArn.GetText()}.GetAccountId());
+                      }
+                    }
                 }
             }
             return result;
@@ -670,6 +680,7 @@ namespace Aws
             creds.SetAWSSecretKey(roleCredentials.GetString("secretAccessKey"));
             creds.SetSessionToken(roleCredentials.GetString("sessionToken"));
             creds.SetExpiration(roleCredentials.GetInt64("expiration"));
+            creds.SetAccountId(roleCredentials.GetString("accountId"));
             SSOCredentialsClient::SSOGetRoleCredentialsResult result;
             result.creds = creds;
             return result;

@@ -518,6 +518,7 @@ TEST_P(GeneralHTTPCredentialsProviderResponseHandlingTests, ResponseHandlingTest
       ASSERT_EQ(testCredentials.GetString("access_key_id"), credentials.GetAWSAccessKeyId());
       ASSERT_EQ(testCredentials.GetString("secret_access_key"), credentials.GetAWSSecretKey());
       ASSERT_EQ(testCredentials.GetString("session_token"), credentials.GetSessionToken());
+      ASSERT_EQ(testCredentials.GetString("account_id"), credentials.GetAccountId());
       ASSERT_EQ(Aws::Utils::DateTime(testCredentials.GetString("expiration"), Aws::Utils::DateFormat::ISO_8601), credentials.GetExpiration());
     }
   } else {
