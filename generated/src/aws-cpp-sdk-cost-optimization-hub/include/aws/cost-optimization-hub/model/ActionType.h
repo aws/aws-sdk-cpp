@@ -22,7 +22,8 @@ namespace Model
     PurchaseSavingsPlans,
     PurchaseReservedInstances,
     MigrateToGraviton,
-    Delete
+    Delete,
+    ScaleIn
   };
 
 namespace ActionTypeMapper

@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If specified, lists only the hooks related to the specified
+     * <p>If specified, lists only the Hooks related to the specified
      * <code>LogicalResourceId</code>.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }

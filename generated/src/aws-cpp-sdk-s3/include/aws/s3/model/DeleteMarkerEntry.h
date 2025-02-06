@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account that created the delete marker.&gt;</p>
+     * <p>The account that created the delete marker. </p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether the object is (true) or is not (false) the latest version
-     * of an object.</p>
+     * of an object. </p>
      */
     inline bool GetIsLatest() const{ return m_isLatest; }
     inline bool IsLatestHasBeenSet() const { return m_isLatestHasBeenSet; }

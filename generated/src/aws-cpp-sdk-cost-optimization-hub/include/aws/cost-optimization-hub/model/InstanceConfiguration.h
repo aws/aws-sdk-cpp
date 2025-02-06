@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The Instance configuration used for recommendations.</p><p><h3>See Also:</h3>
+   * <p>The instance configuration used for recommendations.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/InstanceConfiguration">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about the type.</p>
+     * <p>The instance type of the configuration.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

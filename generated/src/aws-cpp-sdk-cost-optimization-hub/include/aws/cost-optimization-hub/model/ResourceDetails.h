@@ -198,7 +198,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SageMaker Savings Plans recommendation details.</p>
+     * <p>The SageMaker AI Savings Plans recommendation details.</p>
      */
     inline const SageMakerSavingsPlans& GetSageMakerSavingsPlans() const{ return m_sageMakerSavingsPlans; }
     inline bool SageMakerSavingsPlansHasBeenSet() const { return m_sageMakerSavingsPlansHasBeenSet; }

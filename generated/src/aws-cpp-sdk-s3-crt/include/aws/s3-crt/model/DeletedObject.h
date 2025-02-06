@@ -71,8 +71,10 @@ namespace Model
      * <p>Indicates whether the specified object version that was permanently deleted
      * was (true) or was not (false) a delete marker before deletion. In a simple
      * DELETE, this header indicates whether (true) or not (false) the current version
-     * of the object is a delete marker.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * of the object is a delete marker. To learn more about delete markers, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
+     * with delete markers</a>.</p>  <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
     inline bool DeleteMarkerHasBeenSet() const { return m_deleteMarkerHasBeenSet; }

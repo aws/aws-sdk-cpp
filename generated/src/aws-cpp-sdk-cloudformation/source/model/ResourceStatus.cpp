@@ -36,6 +36,12 @@ namespace Aws
         static const int IMPORT_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_IN_PROGRESS");
         static const int IMPORT_ROLLBACK_FAILED_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_FAILED");
         static const int IMPORT_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_COMPLETE");
+        static const int EXPORT_FAILED_HASH = HashingUtils::HashString("EXPORT_FAILED");
+        static const int EXPORT_COMPLETE_HASH = HashingUtils::HashString("EXPORT_COMPLETE");
+        static const int EXPORT_IN_PROGRESS_HASH = HashingUtils::HashString("EXPORT_IN_PROGRESS");
+        static const int EXPORT_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("EXPORT_ROLLBACK_IN_PROGRESS");
+        static const int EXPORT_ROLLBACK_FAILED_HASH = HashingUtils::HashString("EXPORT_ROLLBACK_FAILED");
+        static const int EXPORT_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("EXPORT_ROLLBACK_COMPLETE");
         static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
         static const int UPDATE_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
         static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
@@ -111,6 +117,30 @@ namespace Aws
           {
             return ResourceStatus::IMPORT_ROLLBACK_COMPLETE;
           }
+          else if (hashCode == EXPORT_FAILED_HASH)
+          {
+            return ResourceStatus::EXPORT_FAILED;
+          }
+          else if (hashCode == EXPORT_COMPLETE_HASH)
+          {
+            return ResourceStatus::EXPORT_COMPLETE;
+          }
+          else if (hashCode == EXPORT_IN_PROGRESS_HASH)
+          {
+            return ResourceStatus::EXPORT_IN_PROGRESS;
+          }
+          else if (hashCode == EXPORT_ROLLBACK_IN_PROGRESS_HASH)
+          {
+            return ResourceStatus::EXPORT_ROLLBACK_IN_PROGRESS;
+          }
+          else if (hashCode == EXPORT_ROLLBACK_FAILED_HASH)
+          {
+            return ResourceStatus::EXPORT_ROLLBACK_FAILED;
+          }
+          else if (hashCode == EXPORT_ROLLBACK_COMPLETE_HASH)
+          {
+            return ResourceStatus::EXPORT_ROLLBACK_COMPLETE;
+          }
           else if (hashCode == UPDATE_ROLLBACK_IN_PROGRESS_HASH)
           {
             return ResourceStatus::UPDATE_ROLLBACK_IN_PROGRESS;
@@ -183,6 +213,18 @@ namespace Aws
             return "IMPORT_ROLLBACK_FAILED";
           case ResourceStatus::IMPORT_ROLLBACK_COMPLETE:
             return "IMPORT_ROLLBACK_COMPLETE";
+          case ResourceStatus::EXPORT_FAILED:
+            return "EXPORT_FAILED";
+          case ResourceStatus::EXPORT_COMPLETE:
+            return "EXPORT_COMPLETE";
+          case ResourceStatus::EXPORT_IN_PROGRESS:
+            return "EXPORT_IN_PROGRESS";
+          case ResourceStatus::EXPORT_ROLLBACK_IN_PROGRESS:
+            return "EXPORT_ROLLBACK_IN_PROGRESS";
+          case ResourceStatus::EXPORT_ROLLBACK_FAILED:
+            return "EXPORT_ROLLBACK_FAILED";
+          case ResourceStatus::EXPORT_ROLLBACK_COMPLETE:
+            return "EXPORT_ROLLBACK_COMPLETE";
           case ResourceStatus::UPDATE_ROLLBACK_IN_PROGRESS:
             return "UPDATE_ROLLBACK_IN_PROGRESS";
           case ResourceStatus::UPDATE_ROLLBACK_COMPLETE:

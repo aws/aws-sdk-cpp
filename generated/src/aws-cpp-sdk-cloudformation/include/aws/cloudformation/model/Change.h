@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains
-     * the number of hooks that will invoke for the resource.</p>
+     * <p>Is either <code>null</code>, if no Hooks invoke for the resource, or contains
+     * the number of Hooks that will invoke for the resource.</p>
      */
     inline int GetHookInvocationCount() const{ return m_hookInvocationCount; }
     inline bool HookInvocationCountHasBeenSet() const { return m_hookInvocationCountHasBeenSet; }

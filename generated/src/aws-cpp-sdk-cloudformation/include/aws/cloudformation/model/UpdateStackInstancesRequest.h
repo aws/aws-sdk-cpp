@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Self-managed permissions] The names of one or more Amazon Web Services
+     * <p>[Self-managed permissions] The account IDs of one or more Amazon Web Services
      * accounts for which you want to update parameter values for stack instances. The
      * overridden parameter values will be applied to all stack instances in the
      * specified accounts and Amazon Web Services Regions.</p> <p>You can specify
