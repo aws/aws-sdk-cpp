@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int F4V_HASH = HashingUtils::HashString("F4V");
+        static const int GIF_HASH = HashingUtils::HashString("GIF");
         static const int ISMV_HASH = HashingUtils::HashString("ISMV");
         static const int M2TS_HASH = HashingUtils::HashString("M2TS");
         static const int M3U8_HASH = HashingUtils::HashString("M3U8");
@@ -41,6 +42,10 @@ namespace Aws
           if (hashCode == F4V_HASH)
           {
             return ContainerType::F4V;
+          }
+          else if (hashCode == GIF_HASH)
+          {
+            return ContainerType::GIF;
           }
           else if (hashCode == ISMV_HASH)
           {
@@ -108,6 +113,8 @@ namespace Aws
             return {};
           case ContainerType::F4V:
             return "F4V";
+          case ContainerType::GIF:
+            return "GIF";
           case ContainerType::ISMV:
             return "ISMV";
           case ContainerType::M2TS:

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     RIFF,
-    RF64
+    RF64,
+    EXTENSIBLE
   };
 
 namespace WavFormatMapper

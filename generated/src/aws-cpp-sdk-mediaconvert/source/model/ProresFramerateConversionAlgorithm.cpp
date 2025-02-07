@@ -23,6 +23,7 @@ namespace Aws
         static const int DUPLICATE_DROP_HASH = HashingUtils::HashString("DUPLICATE_DROP");
         static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
         static const int FRAMEFORMER_HASH = HashingUtils::HashString("FRAMEFORMER");
+        static const int MAINTAIN_FRAME_COUNT_HASH = HashingUtils::HashString("MAINTAIN_FRAME_COUNT");
 
 
         ProresFramerateConversionAlgorithm GetProresFramerateConversionAlgorithmForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FRAMEFORMER_HASH)
           {
             return ProresFramerateConversionAlgorithm::FRAMEFORMER;
+          }
+          else if (hashCode == MAINTAIN_FRAME_COUNT_HASH)
+          {
+            return ProresFramerateConversionAlgorithm::MAINTAIN_FRAME_COUNT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "INTERPOLATE";
           case ProresFramerateConversionAlgorithm::FRAMEFORMER:
             return "FRAMEFORMER";
+          case ProresFramerateConversionAlgorithm::MAINTAIN_FRAME_COUNT:
+            return "MAINTAIN_FRAME_COUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

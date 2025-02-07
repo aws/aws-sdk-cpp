@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     F4V,
+    GIF,
     ISMV,
     M2TS,
     M3U8,

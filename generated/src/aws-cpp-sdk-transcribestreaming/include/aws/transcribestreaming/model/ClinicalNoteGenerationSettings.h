@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribestreaming/model/MedicalScribeNoteTemplate.h>
 #include <utility>
 
 namespace Aws
@@ -62,10 +63,32 @@ namespace Model
     inline ClinicalNoteGenerationSettings& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
     inline ClinicalNoteGenerationSettings& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specify one of the following templates to use for the clinical note summary.
+     * The default is <code>HISTORY_AND_PHYSICAL</code>.</p> <ul> <li>
+     * <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical
+     * documentation. Sections include Chief Complaint, History of Present Illness,
+     * Review of Systems, Past Medical History, Assessment, and Plan.</p> </li> <li>
+     * <p>GIRPP: Provides summaries based on the patients progress toward goals.
+     * Sections include Goal, Intervention, Response, Progress, and Plan.</p> </li>
+     * </ul>
+     */
+    inline const MedicalScribeNoteTemplate& GetNoteTemplate() const{ return m_noteTemplate; }
+    inline bool NoteTemplateHasBeenSet() const { return m_noteTemplateHasBeenSet; }
+    inline void SetNoteTemplate(const MedicalScribeNoteTemplate& value) { m_noteTemplateHasBeenSet = true; m_noteTemplate = value; }
+    inline void SetNoteTemplate(MedicalScribeNoteTemplate&& value) { m_noteTemplateHasBeenSet = true; m_noteTemplate = std::move(value); }
+    inline ClinicalNoteGenerationSettings& WithNoteTemplate(const MedicalScribeNoteTemplate& value) { SetNoteTemplate(value); return *this;}
+    inline ClinicalNoteGenerationSettings& WithNoteTemplate(MedicalScribeNoteTemplate&& value) { SetNoteTemplate(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_outputBucketName;
     bool m_outputBucketNameHasBeenSet = false;
+
+    MedicalScribeNoteTemplate m_noteTemplate;
+    bool m_noteTemplateHasBeenSet = false;
   };
 
 } // namespace Model

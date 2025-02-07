@@ -28,7 +28,8 @@ MedicalScribeSettings::MedicalScribeSettings() :
     m_vocabularyNameHasBeenSet(false),
     m_vocabularyFilterNameHasBeenSet(false),
     m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false)
+    m_vocabularyFilterMethodHasBeenSet(false),
+    m_clinicalNoteGenerationSettingsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,13 @@ MedicalScribeSettings& MedicalScribeSettings::operator =(JsonView jsonValue)
     m_vocabularyFilterMethodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClinicalNoteGenerationSettings"))
+  {
+    m_clinicalNoteGenerationSettings = jsonValue.GetObject("ClinicalNoteGenerationSettings");
+
+    m_clinicalNoteGenerationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +130,12 @@ JsonValue MedicalScribeSettings::Jsonize() const
   if(m_vocabularyFilterMethodHasBeenSet)
   {
    payload.WithString("VocabularyFilterMethod", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
+  }
+
+  if(m_clinicalNoteGenerationSettingsHasBeenSet)
+  {
+   payload.WithObject("ClinicalNoteGenerationSettings", m_clinicalNoteGenerationSettings.Jsonize());
+
   }
 
   return payload;

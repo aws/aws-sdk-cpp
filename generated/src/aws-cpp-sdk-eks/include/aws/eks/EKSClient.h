@@ -1032,7 +1032,7 @@ namespace EKS
 
         /**
          * <p>Describes an update to an Amazon EKS resource.</p> <p>When the status of the
-         * update is <code>Succeeded</code>, the update is complete. If an update fails,
+         * update is <code>Successful</code>, the update is complete. If an update fails,
          * the status is <code>Failed</code>, and an error detail explains the reason for
          * the failure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">AWS
@@ -1455,8 +1455,10 @@ namespace EKS
          * <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p> <p>Any
          * Kubernetes cluster can be connected to the Amazon EKS control plane to view
          * current information about the cluster and its nodes. </p> <p>Cluster connection
-         * requires two steps. First, send a <code> <a>RegisterClusterRequest</a> </code>
-         * to add it to the Amazon EKS control plane.</p> <p>Second, a <a
+         * requires two steps. First, send a <a
+         * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html">
+         * <code>RegisterClusterRequest</code> </a> to add it to the Amazon EKS control
+         * plane.</p> <p>Second, a <a
          * href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
          * containing the <code>activationID</code> and <code>activationCode</code> must be
          * applied to the Kubernetes cluster through it's native provider to provide
@@ -1656,14 +1658,17 @@ namespace EKS
          * <p>Updates an Amazon EKS cluster to the specified Kubernetes version. Your
          * cluster continues to function during the update. The response output includes an
          * update ID that you can use to track the status of your cluster update with the
-         * <a>DescribeUpdate</a> API operation.</p> <p>Cluster updates are asynchronous,
-         * and they should finish within a few minutes. During an update, the cluster
-         * status moves to <code>UPDATING</code> (this status transition is eventually
-         * consistent). When the update is complete (either <code>Failed</code> or
-         * <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
-         * <p>If your cluster has managed node groups attached to it, all of your node
-         * groups' Kubernetes versions must match the cluster's Kubernetes version in order
-         * to update the cluster to a new Kubernetes version.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+         * <code>DescribeUpdate</code> </a> API operation.</p> <p>Cluster updates are
+         * asynchronous, and they should finish within a few minutes. During an update, the
+         * cluster status moves to <code>UPDATING</code> (this status transition is
+         * eventually consistent). When the update is complete (either <code>Failed</code>
+         * or <code>Successful</code>), the cluster status moves to
+         * <code>Active</code>.</p> <p>If your cluster has managed node groups attached to
+         * it, all of your node groups' Kubernetes versions must match the cluster's
+         * Kubernetes version in order to update the cluster to a new Kubernetes
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">AWS
          * API Reference</a></p>
          */
@@ -1716,9 +1721,10 @@ namespace EKS
         /**
          * <p>Updates an Amazon EKS managed node group configuration. Your node group
          * continues to function during the update. The response output includes an update
-         * ID that you can use to track the status of your node group update with the
-         * <a>DescribeUpdate</a> API operation. You can update the Kubernetes labels and
-         * taints for a node group and the scaling and version update
+         * ID that you can use to track the status of your node group update with the <a
+         * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+         * <code>DescribeUpdate</code> </a> API operation. You can update the Kubernetes
+         * labels and taints for a node group and the scaling and version update
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">AWS
          * API Reference</a></p>

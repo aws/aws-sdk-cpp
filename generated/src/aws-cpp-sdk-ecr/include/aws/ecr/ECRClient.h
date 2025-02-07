@@ -1257,10 +1257,12 @@ namespace ECR
         }
 
         /**
-         * <p>Starts an image vulnerability scan. An image scan can only be started once
-         * per 24 hours on an individual image. This limit includes if an image was scanned
-         * on initial push. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+         * <p>Starts a basic image vulnerability scan.</p> <p> A basic image scan can only
+         * be started once per 24 hours on an individual image. This limit includes if an
+         * image was scanned on initial push. You can start up to 100,000 basic scans per
+         * 24 hours. This limit includes both scans on initial push and scans initiated by
+         * the StartImageScan API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning-basic.html">Basic
          * scanning</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS

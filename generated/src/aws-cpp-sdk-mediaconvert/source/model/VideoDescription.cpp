@@ -23,6 +23,8 @@ VideoDescription::VideoDescription() :
     m_afdSignalingHasBeenSet(false),
     m_antiAlias(AntiAlias::NOT_SET),
     m_antiAliasHasBeenSet(false),
+    m_chromaPositionMode(ChromaPositionMode::NOT_SET),
+    m_chromaPositionModeHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
     m_colorMetadata(ColorMetadata::NOT_SET),
     m_colorMetadataHasBeenSet(false),
@@ -70,6 +72,13 @@ VideoDescription& VideoDescription::operator =(JsonView jsonValue)
     m_antiAlias = AntiAliasMapper::GetAntiAliasForName(jsonValue.GetString("antiAlias"));
 
     m_antiAliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("chromaPositionMode"))
+  {
+    m_chromaPositionMode = ChromaPositionModeMapper::GetChromaPositionModeForName(jsonValue.GetString("chromaPositionMode"));
+
+    m_chromaPositionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codecSettings"))
@@ -185,6 +194,11 @@ JsonValue VideoDescription::Jsonize() const
   if(m_antiAliasHasBeenSet)
   {
    payload.WithString("antiAlias", AntiAliasMapper::GetNameForAntiAlias(m_antiAlias));
+  }
+
+  if(m_chromaPositionModeHasBeenSet)
+  {
+   payload.WithString("chromaPositionMode", ChromaPositionModeMapper::GetNameForChromaPositionMode(m_chromaPositionMode));
   }
 
   if(m_codecSettingsHasBeenSet)

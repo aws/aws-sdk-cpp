@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/AvcIntraSettings.h>
 #include <aws/mediaconvert/model/VideoCodec.h>
 #include <aws/mediaconvert/model/FrameCaptureSettings.h>
+#include <aws/mediaconvert/model/GifSettings.h>
 #include <aws/mediaconvert/model/H264Settings.h>
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
@@ -41,9 +42,10 @@ namespace Model
    * codec. For each codec enum that you choose, define the corresponding settings
    * object. The following lists the codec enum, settings object pairs. * AV1,
    * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
-   * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-   * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
-   * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings<p><h3>See Also:</h3>   <a
+   * * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2,
+   * Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings *
+   * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
+   * XavcSettings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -112,6 +114,19 @@ namespace Model
     inline void SetFrameCaptureSettings(FrameCaptureSettings&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::move(value); }
     inline VideoCodecSettings& WithFrameCaptureSettings(const FrameCaptureSettings& value) { SetFrameCaptureSettings(value); return *this;}
     inline VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettings&& value) { SetFrameCaptureSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value GIF
+     */
+    inline const GifSettings& GetGifSettings() const{ return m_gifSettings; }
+    inline bool GifSettingsHasBeenSet() const { return m_gifSettingsHasBeenSet; }
+    inline void SetGifSettings(const GifSettings& value) { m_gifSettingsHasBeenSet = true; m_gifSettings = value; }
+    inline void SetGifSettings(GifSettings&& value) { m_gifSettingsHasBeenSet = true; m_gifSettings = std::move(value); }
+    inline VideoCodecSettings& WithGifSettings(const GifSettings& value) { SetGifSettings(value); return *this;}
+    inline VideoCodecSettings& WithGifSettings(GifSettings&& value) { SetGifSettings(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,6 +250,9 @@ namespace Model
 
     FrameCaptureSettings m_frameCaptureSettings;
     bool m_frameCaptureSettingsHasBeenSet = false;
+
+    GifSettings m_gifSettings;
+    bool m_gifSettingsHasBeenSet = false;
 
     H264Settings m_h264Settings;
     bool m_h264SettingsHasBeenSet = false;

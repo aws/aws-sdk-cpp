@@ -7,6 +7,7 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/model/VocabularyFilterMethod.h>
+#include <aws/transcribe/model/ClinicalNoteGenerationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,18 @@ namespace Model
     inline MedicalScribeSettings& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
     inline MedicalScribeSettings& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specify settings for the clinical note generation.</p>
+     */
+    inline const ClinicalNoteGenerationSettings& GetClinicalNoteGenerationSettings() const{ return m_clinicalNoteGenerationSettings; }
+    inline bool ClinicalNoteGenerationSettingsHasBeenSet() const { return m_clinicalNoteGenerationSettingsHasBeenSet; }
+    inline void SetClinicalNoteGenerationSettings(const ClinicalNoteGenerationSettings& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = value; }
+    inline void SetClinicalNoteGenerationSettings(ClinicalNoteGenerationSettings&& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = std::move(value); }
+    inline MedicalScribeSettings& WithClinicalNoteGenerationSettings(const ClinicalNoteGenerationSettings& value) { SetClinicalNoteGenerationSettings(value); return *this;}
+    inline MedicalScribeSettings& WithClinicalNoteGenerationSettings(ClinicalNoteGenerationSettings&& value) { SetClinicalNoteGenerationSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     bool m_showSpeakerLabels;
@@ -159,6 +172,9 @@ namespace Model
 
     VocabularyFilterMethod m_vocabularyFilterMethod;
     bool m_vocabularyFilterMethodHasBeenSet = false;
+
+    ClinicalNoteGenerationSettings m_clinicalNoteGenerationSettings;
+    bool m_clinicalNoteGenerationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

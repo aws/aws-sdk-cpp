@@ -19,7 +19,9 @@ namespace Model
 {
 
 ClinicalNoteGenerationSettings::ClinicalNoteGenerationSettings() : 
-    m_outputBucketNameHasBeenSet(false)
+    m_outputBucketNameHasBeenSet(false),
+    m_noteTemplate(MedicalScribeNoteTemplate::NOT_SET),
+    m_noteTemplateHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,13 @@ ClinicalNoteGenerationSettings& ClinicalNoteGenerationSettings::operator =(JsonV
     m_outputBucketNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NoteTemplate"))
+  {
+    m_noteTemplate = MedicalScribeNoteTemplateMapper::GetMedicalScribeNoteTemplateForName(jsonValue.GetString("NoteTemplate"));
+
+    m_noteTemplateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +58,11 @@ JsonValue ClinicalNoteGenerationSettings::Jsonize() const
   {
    payload.WithString("OutputBucketName", m_outputBucketName);
 
+  }
+
+  if(m_noteTemplateHasBeenSet)
+  {
+   payload.WithString("NoteTemplate", MedicalScribeNoteTemplateMapper::GetNameForMedicalScribeNoteTemplate(m_noteTemplate));
   }
 
   return payload;
