@@ -38,8 +38,9 @@ namespace Model
     /**
      * <p>The list of summarized descriptions of the associations that are in the
      * cluster and match any filters that you provided.</p> <p>Each summary is
-     * simplified by removing these fields compared to the full <code>
-     * <a>PodIdentityAssociation</a> </code>:</p> <ul> <li> <p>The IAM role:
+     * simplified by removing these fields compared to the full <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html">
+     * <code>PodIdentityAssociation</code> </a>:</p> <ul> <li> <p>The IAM role:
      * <code>roleArn</code> </p> </li> <li> <p>The timestamp that the association was
      * created at: <code>createdAt</code> </p> </li> <li> <p>The most recent timestamp
      * that the association was modified at:. <code>modifiedAt</code> </p> </li> <li>

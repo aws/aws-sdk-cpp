@@ -29,6 +29,8 @@ ClusterVersionInformation::ClusterVersionInformation() :
     m_endOfExtendedSupportDateHasBeenSet(false),
     m_status(ClusterVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_versionStatus(VersionStatus::NOT_SET),
+    m_versionStatusHasBeenSet(false),
     m_kubernetesPatchVersionHasBeenSet(false)
 {
 }
@@ -97,6 +99,13 @@ ClusterVersionInformation& ClusterVersionInformation::operator =(JsonView jsonVa
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("versionStatus"))
+  {
+    m_versionStatus = VersionStatusMapper::GetVersionStatusForName(jsonValue.GetString("versionStatus"));
+
+    m_versionStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("kubernetesPatchVersion"))
   {
     m_kubernetesPatchVersion = jsonValue.GetString("kubernetesPatchVersion");
@@ -153,6 +162,11 @@ JsonValue ClusterVersionInformation::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ClusterVersionStatusMapper::GetNameForClusterVersionStatus(m_status));
+  }
+
+  if(m_versionStatusHasBeenSet)
+  {
+   payload.WithString("versionStatus", VersionStatusMapper::GetNameForVersionStatus(m_versionStatus));
   }
 
   if(m_kubernetesPatchVersionHasBeenSet)

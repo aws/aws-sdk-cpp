@@ -24,6 +24,7 @@ VideoCodecSettings::VideoCodecSettings() :
     m_codec(VideoCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_frameCaptureSettingsHasBeenSet(false),
+    m_gifSettingsHasBeenSet(false),
     m_h264SettingsHasBeenSet(false),
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
@@ -70,6 +71,13 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_frameCaptureSettings = jsonValue.GetObject("frameCaptureSettings");
 
     m_frameCaptureSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("gifSettings"))
+  {
+    m_gifSettings = jsonValue.GetObject("gifSettings");
+
+    m_gifSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("h264Settings"))
@@ -162,6 +170,12 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_frameCaptureSettingsHasBeenSet)
   {
    payload.WithObject("frameCaptureSettings", m_frameCaptureSettings.Jsonize());
+
+  }
+
+  if(m_gifSettingsHasBeenSet)
+  {
+   payload.WithObject("gifSettings", m_gifSettings.Jsonize());
 
   }
 
