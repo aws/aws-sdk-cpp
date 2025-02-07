@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/eks/model/ClusterVersionStatus.h>
+#include <aws/eks/model/VersionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +131,8 @@ namespace Model
 
     ///@{
     /**
+     *  <p>This field is deprecated. Use <code>versionStatus</code> instead,
+     * as that field matches for input and output of this action.</p> 
      * <p>Current status of this cluster version.</p>
      */
     inline const ClusterVersionStatus& GetStatus() const{ return m_status; }
@@ -138,6 +141,18 @@ namespace Model
     inline void SetStatus(ClusterVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
     inline ClusterVersionInformation& WithStatus(const ClusterVersionStatus& value) { SetStatus(value); return *this;}
     inline ClusterVersionInformation& WithStatus(ClusterVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Current status of this cluster version.</p>
+     */
+    inline const VersionStatus& GetVersionStatus() const{ return m_versionStatus; }
+    inline bool VersionStatusHasBeenSet() const { return m_versionStatusHasBeenSet; }
+    inline void SetVersionStatus(const VersionStatus& value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
+    inline void SetVersionStatus(VersionStatus&& value) { m_versionStatusHasBeenSet = true; m_versionStatus = std::move(value); }
+    inline ClusterVersionInformation& WithVersionStatus(const VersionStatus& value) { SetVersionStatus(value); return *this;}
+    inline ClusterVersionInformation& WithVersionStatus(VersionStatus&& value) { SetVersionStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,6 +193,9 @@ namespace Model
 
     ClusterVersionStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    VersionStatus m_versionStatus;
+    bool m_versionStatusHasBeenSet = false;
 
     Aws::String m_kubernetesPatchVersion;
     bool m_kubernetesPatchVersionHasBeenSet = false;

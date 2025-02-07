@@ -168,7 +168,8 @@ namespace Model
      * specified dimension group in the <code>GroupBy</code> parameter is
      * <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values
      * for the top <code>N</code> SQL digests. The response syntax is as follows:
-     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
+     * <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+     * <p>The only supported statistic function is <code>.avg</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalMetrics() const{ return m_additionalMetrics; }
     inline bool AdditionalMetricsHasBeenSet() const { return m_additionalMetricsHasBeenSet; }

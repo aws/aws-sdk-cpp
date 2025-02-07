@@ -22,6 +22,7 @@ namespace Aws
 
         static const int RIFF_HASH = HashingUtils::HashString("RIFF");
         static const int RF64_HASH = HashingUtils::HashString("RF64");
+        static const int EXTENSIBLE_HASH = HashingUtils::HashString("EXTENSIBLE");
 
 
         WavFormat GetWavFormatForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == RF64_HASH)
           {
             return WavFormat::RF64;
+          }
+          else if (hashCode == EXTENSIBLE_HASH)
+          {
+            return WavFormat::EXTENSIBLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "RIFF";
           case WavFormat::RF64:
             return "RF64";
+          case WavFormat::EXTENSIBLE:
+            return "EXTENSIBLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

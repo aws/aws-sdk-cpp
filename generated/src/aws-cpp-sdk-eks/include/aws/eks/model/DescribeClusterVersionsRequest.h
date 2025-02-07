@@ -8,7 +8,7 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/eks/model/ClusterVersionStatus.h>
+#include <aws/eks/model/VersionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -117,12 +117,12 @@ namespace Model
     /**
      * <p>Filter versions by their current status.</p>
      */
-    inline const ClusterVersionStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ClusterVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ClusterVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DescribeClusterVersionsRequest& WithStatus(const ClusterVersionStatus& value) { SetStatus(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithStatus(ClusterVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const VersionStatus& GetVersionStatus() const{ return m_versionStatus; }
+    inline bool VersionStatusHasBeenSet() const { return m_versionStatusHasBeenSet; }
+    inline void SetVersionStatus(const VersionStatus& value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
+    inline void SetVersionStatus(VersionStatus&& value) { m_versionStatusHasBeenSet = true; m_versionStatus = std::move(value); }
+    inline DescribeClusterVersionsRequest& WithVersionStatus(const VersionStatus& value) { SetVersionStatus(value); return *this;}
+    inline DescribeClusterVersionsRequest& WithVersionStatus(VersionStatus&& value) { SetVersionStatus(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -144,8 +144,8 @@ namespace Model
     Aws::Vector<Aws::String> m_clusterVersions;
     bool m_clusterVersionsHasBeenSet = false;
 
-    ClusterVersionStatus m_status;
-    bool m_statusHasBeenSet = false;
+    VersionStatus m_versionStatus;
+    bool m_versionStatusHasBeenSet = false;
   };
 
 } // namespace Model

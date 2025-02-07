@@ -195,8 +195,8 @@ namespace PI
          * <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
          * <code>db.sql.statement</code> associated with this ID. This operation is useful
          * because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
-         * don't support retrieval of large SQL statement text.</p><p><h3>See Also:</h3>  
-         * <a
+         * don't support retrieval of large SQL statement text, lock snapshots, and
+         * execution plans.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">AWS
          * API Reference</a></p>
          */

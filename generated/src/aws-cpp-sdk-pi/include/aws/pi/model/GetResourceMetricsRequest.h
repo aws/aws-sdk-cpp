@@ -147,9 +147,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of items to return in the response. If more items exist
-     * than the specified <code>MaxRecords</code> value, a pagination token is included
-     * in the response so that the remaining results can be retrieved. </p>
+     * <p>The maximum number of items to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
