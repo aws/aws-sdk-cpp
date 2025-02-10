@@ -62,7 +62,6 @@ namespace smithy
                                   const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
                                   const Aws::String& region,
                                   const Aws::String& serviceName,
-                                  const Aws::String& signerName,
                                   long long expirationTimeInSeconds)
         {
 
@@ -78,7 +77,7 @@ namespace smithy
 
             const AuthSchemesVariantT& authScheme = authSchemeIt->second;
 
-            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, signerName, expirationTimeInSeconds);
+            PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
             AuthSchemesVariantT authSchemesVariantCopy(authScheme); 
             authSchemesVariantCopy.Visit(visitor);
 
@@ -187,13 +186,11 @@ namespace smithy
                           const AuthSchemeOption& targetAuthSchemeOption,
                           const Aws::String& region,
                           const Aws::String& serviceName,
-                          const Aws::String& signerName,
                           long long expirationTimeInSeconds)
               : m_httpRequest(std::move(httpRequest)), 
               m_targetAuthSchemeOption(targetAuthSchemeOption) ,
               m_region(region),
               m_serviceName(serviceName),
-              m_signerName(signerName),
               m_expirationTimeInSeconds(expirationTimeInSeconds)
               {}
 
@@ -201,7 +198,6 @@ namespace smithy
           const AuthSchemeOption& m_targetAuthSchemeOption;
           const Aws::String& m_region;
           const Aws::String& m_serviceName;
-          const Aws::String& m_signerName;
           const long long m_expirationTimeInSeconds;
 
           Aws::Crt::Optional<SigningOutcome> result;

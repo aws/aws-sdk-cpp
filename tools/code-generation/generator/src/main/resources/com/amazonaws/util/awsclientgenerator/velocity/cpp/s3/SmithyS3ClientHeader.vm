@@ -112,7 +112,7 @@ namespace ${rootNamespace}
 #end
     class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
       ${serviceConfiguration},
-      smithy::${AuthSchemeResolver}<>,
+      smithy::${AuthSchemeResolver}<${metadata.classNamePrefix}EndpointProvider, ${serviceConfiguration}>,
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
       ${metadata.classNamePrefix}EndpointProviderBase,
       smithy::client::$serializer,

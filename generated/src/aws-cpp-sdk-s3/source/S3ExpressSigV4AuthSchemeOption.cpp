@@ -7,7 +7,7 @@
 namespace Aws {
 namespace S3 {
 
-smithy::AuthSchemeOption S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption = smithy::AuthSchemeOption("sigv4-s3express");
+AWS_S3_API smithy::AuthSchemeOption S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption = smithy::AuthSchemeOption("sigv4-s3express");
 
 }
 }

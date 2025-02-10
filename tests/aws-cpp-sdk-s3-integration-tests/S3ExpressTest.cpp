@@ -35,6 +35,7 @@
 #include <random>
 #include <aws/s3/S3ExpressSigner.h>
 #include <aws/s3/S3ExpressSigV4AuthSchemeOption.h>
+#include <aws/s3/S3ExpressIdentityProvider.h>
 
 #ifdef _WIN32
 #pragma warning(disable: 4127)
@@ -507,56 +508,132 @@ namespace {
     AWS_EXPECT_SUCCESS(response);
   }
 
-  class S3TestClient : public S3Client
+
+  class MyIdentityProvider : public S3ExpressIdentityProvider {
+   public:
+    explicit MyIdentityProvider(const S3Client& client):S3ExpressIdentityProvider(client) {}
+    ~MyIdentityProvider() override = default;
+
+    S3ExpressIdentity GetS3ExpressIdentity(
+      const std::shared_ptr<ServiceSpecificParameters>&
+      ) override
+    {
+     return S3ExpressIdentity{"access_key",
+       "secret_key",
+       "sessions_token",
+       DateTime::Now()};
+    }
+
+    ResolveIdentityFutureOutcome getIdentity(
+        const IdentityProperties& ,
+        const AdditionalParameters& ) override
+    {
+      return Aws::MakeUnique<S3ExpressIdentity>("log",
+        "access_key",
+        "secret_key",
+        "sessions_token",
+        DateTime::Now());
+    }
+  };
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilityCompilation)
   {
-      public:
-      template<typename ...ARGS>
-      explicit S3TestClient(ARGS... args) : S3Client(std::forward<ARGS>(args)...) {
-        overrideS3ExpressSigner();
-      }
+    MyIdentityProvider identityProvider(*client);
+   
+  }
 
-      S3TestClient(const S3TestClient&) = default;
-      S3TestClient(S3TestClient&&) noexcept = default;
-      S3TestClient& operator=(const S3TestClient&) = default;
-      S3TestClient& operator=(S3TestClient&&) noexcept = default;
+class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3ExpressIdentityProvider
+  {
+  public:
+    TestSmithyDefaultS3ExpressIdentityProvider(const S3Client& s3Client):SmithyDefaultS3ExpressIdentityProvider(s3Client){}
 
-      ~S3TestClient(){}
-      private:
-      FRIEND_TEST(S3ExpressTest, ExpressSignerBackwardCompatibility);
-      void overrideS3ExpressSigner()
-      {
-        for(auto& auth : m_authSchemes)
+
+    smithy::AwsCredentialIdentity GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &) override
+    {
+      return m_creds;
+    }
+
+    smithy::AwsCredentialIdentity m_creds{
+      Aws::String("demo_access_key"),
+      Aws::String("demo_secret_key"),
+      Aws::String("demo_sessions_token"),
+      DateTime::Now()
+    };
+
+  };
+
+
+  class S3TestClient : public S3Client {
+  public:
+    template<typename ...ARGS>
+    explicit S3TestClient(ARGS... args) : S3Client(std::forward<ARGS>(args)...) {
+      overrideIdentityProvider();
+    }
+
+    S3TestClient(const S3TestClient&) = default;
+    S3TestClient(S3TestClient&&) noexcept = default;
+    S3TestClient& operator=(const S3TestClient&) = default;
+    S3TestClient& operator=(S3TestClient&&) noexcept = default;
+
+    virtual ~S3TestClient() = default;
+
+    smithy::AwsCredentialIdentity getCreds() {
+
+      for(auto& auth : m_authSchemes) {
+        if(auth.first ==  S3::S3ExpressSigV4AuthSchemeOption::GetS3ExpressSigV4AuthSchemeOption().schemeId)
         {
-          if(auth.first == S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId)
-          {
-            auth.second.get<S3::S3ExpressSigV4AuthScheme>().signer() = 
-            Aws::MakeShared<Aws::S3::S3ExpressSigner>(ALLOCATION_TAG,
-              m_clientConfiguration.identityProviderSupplier(*this),
-              Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-              GetServiceName(), 
-              Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), 
-              m_clientConfiguration.payloadSigningPolicy, 
-              false,
-              Aws::Auth::AWSSigningAlgorithm::SIGV4);
-            break;
-          }
+          smithy::IdentityResolverBase<smithy::AwsCredentialIdentity>::IdentityProperties props;
+          auto tmp = auth.second.get<S3::S3ExpressSigV4AuthScheme>();
+          auto outcome = tmp.identityResolver()->getIdentity(props,props);
+
+          return smithy::AwsCredentialIdentity(outcome.GetResult()->accessKeyId(), outcome.GetResult()->secretAccessKey(), outcome.GetResult()->sessionToken(),
+            outcome.GetResult()->expiration());
+
         }
       }
+      return smithy::AwsCredentialIdentity{};
+
+    }
+  private:
+    FRIEND_TEST(S3ExpressTest, ExpressSignerBackwardCompatibility);
+
+    void overrideIdentityProvider()
+    {
+      for(auto& auth : m_authSchemes)
+      {
+        if(auth.first ==  S3::S3ExpressSigV4AuthSchemeOption::GetS3ExpressSigV4AuthSchemeOption().schemeId)
+        {
+
+          auth.second = S3::S3ExpressSigV4AuthScheme{Aws::MakeShared<TestSmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false};
+
+          ///auth.second.get<S3::S3ExpressSigV4AuthScheme>().identityResolver() = Aws::MakeShared<TestSmithyDefaultS3ExpressIdentityProvider>("TestSmithyDefaultS3ExpressIdentityProvider", *this);
+
+          break;
+        }
+      }
+    }
+
+
   };
-  
-  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibility) {
+
+  TEST_F(S3ExpressTest, TestAuthschemeCopy) {
     S3ClientConfiguration configuration;
     configuration.region = "us-east-1";
     configuration.enableHttpClientTrace = true;
-    auto testClient = Aws::MakeShared<S3TestClient>("S3ExpressTestClient", configuration);
-
-    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
-    auto keyName = randomString();
-    auto createOutcome = CreateBucket(testClient ,bucketName);
-    AWS_EXPECT_SUCCESS(createOutcome);
-    auto putObjectOutcome = PutObject(testClient, bucketName, keyName);
-    AWS_EXPECT_SUCCESS(putObjectOutcome);
-    EmptyBucketUtil(testClient,{bucketName});
+    auto testclient = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG, configuration);
+    ASSERT_TRUE(testclient->getCreds().accessKeyId() == "demo_access_key");
+    auto cpy = *testclient;
+    ASSERT_TRUE(cpy.getCreds().accessKeyId() == "");
   }
-  
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilitySupplier)
+  {
+    S3ClientConfiguration configuration{};
+    configuration.identityProviderSupplier =
+      [](const S3Client &clientref) -> std::shared_ptr<S3ExpressIdentityProvider> {
+          return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", clientref);
+      };
+    S3Client testclient{configuration};
+  }
+
 }

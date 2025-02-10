@@ -894,28 +894,28 @@ public abstract class CppClientGenerator implements ClientGenerator {
         // search for the "authSchemes" field in endpoint rules recursively to get all authschemes
         List<JsonElement> authSchemes = new ArrayList<>();
         findNestedField(jsonElement, "authSchemes", authSchemes);
-        // extract authschemes
+        // Extract authschemes
         authSchemes.stream()
-        .filter(entry -> entry.isJsonArray()) // check if the element is a JsonArray
-        .map(JsonElement::getAsJsonArray) // convert to JsonArray
-        .forEach(arrelem -> {
-            arrelem.forEach(entry -> {  // iterate over each element in the JsonArray
-                // array element with key "name" has the auth scheme name as value 
-                if (entry.isJsonObject() && entry.getAsJsonObject().has("name")) {
-                    JsonElement elem = entry.getAsJsonObject().get("name");
-                    if (elem.isJsonPrimitive() && elem.getAsJsonPrimitive().isString()) {
-                        String authscheme = elem.getAsJsonPrimitive().getAsString();
-                        if(AuthSchemeNameMapping.containsKey(authscheme)) {
-                            authscheme = AuthSchemeNameMapping.get(authscheme);
-                        }
-                        if (!authSchemeSet.contains(authscheme)) {
-                            authschemes.add(authscheme);
-                            authSchemeSet.add(authscheme);
+            .filter(entry -> entry.isJsonArray()) // Check if the element is a JsonArray
+            .map(JsonElement::getAsJsonArray) // Convert to JsonArray
+            .forEach(arrelem -> {
+                arrelem.forEach(entry -> { // Iterate over each element in the JsonArray
+                    // Array element with key "name" has the auth scheme name as value
+                    if (entry.isJsonObject() && entry.getAsJsonObject().has("name")) {
+                        JsonElement elem = entry.getAsJsonObject().get("name");
+                        if (elem.isJsonPrimitive() && elem.getAsJsonPrimitive().isString()) {
+                            String authscheme = elem.getAsJsonPrimitive().getAsString();
+                            if (AuthSchemeNameMapping.containsKey(authscheme)) {
+                                authscheme = AuthSchemeNameMapping.get(authscheme);
+                            }
+                            if (!authSchemeSet.contains(authscheme)) {
+                                authschemes.add(authscheme);
+                                authSchemeSet.add(authscheme);
+                            }
                         }
                     }
-                }
+                });
             });
-        });
         serviceModel.setAuthSchemes(authschemes);
     }
 

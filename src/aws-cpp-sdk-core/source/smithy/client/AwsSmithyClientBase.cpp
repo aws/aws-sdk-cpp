@@ -29,7 +29,6 @@ using namespace smithy::components::tracing;
 static const char AWS_SMITHY_CLIENT_LOG[] = "AwsSmithyClient";
 
 namespace smithy {
-    SMITHY_API const char *AUTH_SCHEME_PROPERTY = "authSchemeName";
     SMITHY_API const char *SIGNER_REGION_PROPERTY = "signerRegionOverride";
     SMITHY_API const char *SIGNER_SERVICE_NAME = "signerServiceNameOverride";
 }
@@ -179,7 +178,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-    pRequestCtx->m_responseHandler = std::move(responseHandler);
     pRequestCtx->m_pExecutor = pExecutor;
     pRequestCtx->m_pRequest = request;
     if (requestName)
@@ -233,7 +231,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
-
+    pRequestCtx->m_responseHandler = std::move(responseHandler);
     AttemptOneRequestAsync(std::move(pRequestCtx));
 }
 

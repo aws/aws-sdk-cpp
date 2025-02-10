@@ -4,7 +4,7 @@
 namespace ${rootNamespace} {
 namespace ${serviceNamespace} {
 
-smithy::AuthSchemeOption S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption = smithy::AuthSchemeOption("sigv4-s3express");
+${CppViewHelper.computeExportValue($serviceNamespace)} smithy::AuthSchemeOption S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption = smithy::AuthSchemeOption("sigv4-s3express");
 
 }
 }

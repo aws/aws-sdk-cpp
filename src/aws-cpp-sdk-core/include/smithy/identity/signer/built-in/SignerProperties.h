@@ -5,7 +5,6 @@
 #pragma once
 
 namespace smithy {
-    extern SMITHY_API const char *AUTH_SCHEME_PROPERTY;
     extern SMITHY_API const char *SIGNER_REGION_PROPERTY;
     extern SMITHY_API const char *SIGNER_SERVICE_NAME;
 }
