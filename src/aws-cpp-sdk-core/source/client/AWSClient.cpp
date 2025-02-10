@@ -194,6 +194,7 @@ void AWSClient::AppendToUserAgent(const Aws::String& valueToAppend)
 
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
 {
+    std::cout<<"get signer "<<name<<std::endl;
     const auto& signer =  m_signerProvider->GetSigner(name);
     return signer ? signer.get() : nullptr;
 }
