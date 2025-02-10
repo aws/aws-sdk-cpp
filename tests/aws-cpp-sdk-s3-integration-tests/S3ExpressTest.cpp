@@ -531,7 +531,7 @@ namespace {
           {
             auth.second.get<S3::S3ExpressSigV4AuthScheme>().signer() = 
             Aws::MakeShared<Aws::S3::S3ExpressSigner>(ALLOCATION_TAG,
-              m_clientConfiguration.identityProviderSupplier(*this),
+              Aws::MakeShared<DefaultS3ExpressIdentityProvider>("S3ClientConfiguration", *this),
               Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
               GetServiceName(), 
               Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), 
@@ -558,5 +558,38 @@ namespace {
     AWS_EXPECT_SUCCESS(putObjectOutcome);
     EmptyBucketUtil(testClient,{bucketName});
   }
-  
+
+
+  class MyIdentityProvider : public S3ExpressIdentityProvider {
+   public:
+    explicit MyIdentityProvider(const S3Client& client):S3ExpressIdentityProvider(client) {}
+    ~MyIdentityProvider() override = default;
+
+    S3ExpressIdentity GetS3ExpressIdentity(
+      const std::shared_ptr<ServiceSpecificParameters>&
+      ) override
+    {
+     return S3ExpressIdentity{"access_key",
+       "secret_key",
+       "sessions_token",
+       DateTime::Now()};
+    }
+
+    ResolveIdentityFutureOutcome getIdentity(
+        const IdentityProperties& ,
+        const AdditionalParameters& ) override
+    {
+      return Aws::MakeUnique<S3ExpressIdentity>("log",
+        "access_key",
+        "secret_key",
+        "sessions_token",
+        DateTime::Now());
+    }
+  };
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilityCompilation)
+  {
+    MyIdentityProvider identityProvider(*client);
+   
+  } 
 }

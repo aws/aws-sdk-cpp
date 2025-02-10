@@ -99,9 +99,9 @@ namespace client
             return *this;
         }
 
-        AwsSmithyClientT (AwsSmithyClientT&& other) = default;
+        AwsSmithyClientT (AwsSmithyClientT&&) = default;
 
-        AwsSmithyClientT& operator=(AwsSmithyClientT&& other) = default;
+        AwsSmithyClientT& operator=(AwsSmithyClientT&&) = default;
 
         virtual ~AwsSmithyClientT() = default;
 

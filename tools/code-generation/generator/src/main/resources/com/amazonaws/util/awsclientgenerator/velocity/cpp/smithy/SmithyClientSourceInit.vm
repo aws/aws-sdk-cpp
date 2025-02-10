@@ -167,7 +167,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
-                  {${entry}{Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
 #else
                   {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
 #end
@@ -197,7 +197,7 @@ ${className}::${className}(
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
-                  {${entry}{Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
 #else
                   {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
 #end
@@ -227,7 +227,7 @@ ${className}::${className}(
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
-                  {${entry}{Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
 #else
                   {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
 #end

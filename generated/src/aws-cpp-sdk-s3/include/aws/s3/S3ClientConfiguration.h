@@ -58,9 +58,9 @@ namespace Aws
             bool useArnRegion = false;
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
             bool disableS3ExpressAuth = false;
-            using IdentityProviderSupplier = std::function<std::shared_ptr<S3ExpressIdentityProvider> (const S3Client &)>;
-            IdentityProviderSupplier identityProviderSupplier = [](const S3Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
-                return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("S3ClientConfiguration", client);
+            using IdentityProviderSupplier = std::function<std::shared_ptr<SmithyS3ExpressIdentityProvider> (const S3Client &)>;
+            IdentityProviderSupplier identityProviderSupplier = [](const S3Client &client) -> std::shared_ptr<SmithyS3ExpressIdentityProvider> {
+                return Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>("S3ClientConfiguration", client);
             };
         private:
             void LoadS3SpecificConfig(const Aws::String& profileName);

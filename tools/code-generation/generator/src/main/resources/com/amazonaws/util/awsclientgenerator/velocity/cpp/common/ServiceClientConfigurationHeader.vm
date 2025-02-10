@@ -127,10 +127,17 @@ namespace ${rootNamespace}
 #end
 #if($serviceModel.metadata.serviceId == "S3")
             bool disableS3ExpressAuth = false;
+#if(!$serviceModel.isUseSmithyClient())
             using IdentityProviderSupplier = std::function<std::shared_ptr<S3ExpressIdentityProvider> (const ${metadata.classNamePrefix}Client &)>;
             IdentityProviderSupplier identityProviderSupplier = [](const ${metadata.classNamePrefix}Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
                 return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
             };
+#else
+            using IdentityProviderSupplier = std::function<std::shared_ptr<SmithyS3ExpressIdentityProvider> (const ${metadata.classNamePrefix}Client &)>;
+            IdentityProviderSupplier identityProviderSupplier = [](const ${metadata.classNamePrefix}Client &client) -> std::shared_ptr<SmithyS3ExpressIdentityProvider> {
+                return Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
+            };
+#end
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
 
