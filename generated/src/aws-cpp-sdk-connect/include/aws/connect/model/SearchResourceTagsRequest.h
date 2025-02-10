@@ -53,11 +53,13 @@ namespace Model
     /**
      * <p>The list of resource types to be used to search tags from. If not provided or
      * if any empty list is provided, this API will search from all supported resource
-     * types.</p> <p class="title"> <b>Supported resource types</b> </p> <ul> <li>
-     * <p>AGENT</p> </li> <li> <p>ROUTING_PROFILE</p> </li> <li> <p>STANDARD_QUEUE</p>
-     * </li> <li> <p>SECURITY_PROFILE</p> </li> <li> <p>OPERATING_HOURS</p> </li> <li>
-     * <p>PROMPT</p> </li> <li> <p>CONTACT_FLOW</p> </li> <li> <p>FLOW_MODULE</p> </li>
-     * </ul>
+     * types. Note that lowercase and - are required.</p> <p class="title">
+     * <b>Supported resource types</b> </p> <ul> <li> <p>agent</p> </li> <li>
+     * <p>agent-state</p> </li> <li> <p>routing-profile</p> </li> <li>
+     * <p>standard-queue</p> </li> <li> <p>security-profile</p> </li> <li>
+     * <p>operating-hours</p> </li> <li> <p>prompt</p> </li> <li> <p>contact-flow</p>
+     * </li> <li> <p>flow- module</p> </li> <li> <p>transfer-destination (also known as
+     * quick connect)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }

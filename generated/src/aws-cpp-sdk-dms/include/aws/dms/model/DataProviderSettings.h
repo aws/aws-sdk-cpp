@@ -12,6 +12,8 @@
 #include <aws/dms/model/MicrosoftSqlServerDataProviderSettings.h>
 #include <aws/dms/model/DocDbDataProviderSettings.h>
 #include <aws/dms/model/MariaDbDataProviderSettings.h>
+#include <aws/dms/model/IbmDb2LuwDataProviderSettings.h>
+#include <aws/dms/model/IbmDb2zOsDataProviderSettings.h>
 #include <aws/dms/model/MongoDbDataProviderSettings.h>
 #include <utility>
 
@@ -119,6 +121,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provides information that defines an IBM DB2 LUW data provider.</p>
+     */
+    inline const IbmDb2LuwDataProviderSettings& GetIbmDb2LuwSettings() const{ return m_ibmDb2LuwSettings; }
+    inline bool IbmDb2LuwSettingsHasBeenSet() const { return m_ibmDb2LuwSettingsHasBeenSet; }
+    inline void SetIbmDb2LuwSettings(const IbmDb2LuwDataProviderSettings& value) { m_ibmDb2LuwSettingsHasBeenSet = true; m_ibmDb2LuwSettings = value; }
+    inline void SetIbmDb2LuwSettings(IbmDb2LuwDataProviderSettings&& value) { m_ibmDb2LuwSettingsHasBeenSet = true; m_ibmDb2LuwSettings = std::move(value); }
+    inline DataProviderSettings& WithIbmDb2LuwSettings(const IbmDb2LuwDataProviderSettings& value) { SetIbmDb2LuwSettings(value); return *this;}
+    inline DataProviderSettings& WithIbmDb2LuwSettings(IbmDb2LuwDataProviderSettings&& value) { SetIbmDb2LuwSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides information that defines an IBM DB2 for z/OS data provider.</p>
+     */
+    inline const IbmDb2zOsDataProviderSettings& GetIbmDb2zOsSettings() const{ return m_ibmDb2zOsSettings; }
+    inline bool IbmDb2zOsSettingsHasBeenSet() const { return m_ibmDb2zOsSettingsHasBeenSet; }
+    inline void SetIbmDb2zOsSettings(const IbmDb2zOsDataProviderSettings& value) { m_ibmDb2zOsSettingsHasBeenSet = true; m_ibmDb2zOsSettings = value; }
+    inline void SetIbmDb2zOsSettings(IbmDb2zOsDataProviderSettings&& value) { m_ibmDb2zOsSettingsHasBeenSet = true; m_ibmDb2zOsSettings = std::move(value); }
+    inline DataProviderSettings& WithIbmDb2zOsSettings(const IbmDb2zOsDataProviderSettings& value) { SetIbmDb2zOsSettings(value); return *this;}
+    inline DataProviderSettings& WithIbmDb2zOsSettings(IbmDb2zOsDataProviderSettings&& value) { SetIbmDb2zOsSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides information that defines a MongoDB data provider.</p>
      */
     inline const MongoDbDataProviderSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
@@ -150,6 +176,12 @@ namespace Model
 
     MariaDbDataProviderSettings m_mariaDbSettings;
     bool m_mariaDbSettingsHasBeenSet = false;
+
+    IbmDb2LuwDataProviderSettings m_ibmDb2LuwSettings;
+    bool m_ibmDb2LuwSettingsHasBeenSet = false;
+
+    IbmDb2zOsDataProviderSettings m_ibmDb2zOsSettings;
+    bool m_ibmDb2zOsSettingsHasBeenSet = false;
 
     MongoDbDataProviderSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet = false;

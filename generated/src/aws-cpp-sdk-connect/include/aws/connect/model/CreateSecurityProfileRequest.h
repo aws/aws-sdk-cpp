@@ -140,9 +140,10 @@ namespace Model
     ///@{
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
-     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
-     * </p>
+     * Amazon Connect. For a list of Amazon Connect resources that you can tag, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add
+     * tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagRestrictedResources() const{ return m_tagRestrictedResources; }
     inline bool TagRestrictedResourcesHasBeenSet() const { return m_tagRestrictedResourcesHasBeenSet; }

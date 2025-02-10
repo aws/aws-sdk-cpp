@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
      * values: <code>os-upgrade</code>, <code>system-update</code>,
-     * <code>db-upgrade</code> </p>
+     * <code>db-upgrade</code>, <code>os-patch</code> </p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
     inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }

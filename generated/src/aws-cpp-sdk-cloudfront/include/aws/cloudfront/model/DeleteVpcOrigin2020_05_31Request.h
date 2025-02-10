@@ -50,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The VPC origin to delete, if a match occurs.</p>
+     * <p>The version identifier of the VPC origin to delete. This is the
+     * <code>ETag</code> value returned in the response to <a>GetVpcOrigin</a>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
