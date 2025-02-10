@@ -766,7 +766,9 @@ namespace Connect
         }
 
         /**
-         * <p>Creates a new contact.</p><p><h3>See Also:</h3>   <a
+         *  <p>Only the EMAIL channel is supported. The supported initiation
+         * methods are: OUTBOUND, AGENT_REPLY, and FLOW.</p>  <p>Creates a new
+         * EMAIL contact. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">AWS
          * API Reference</a></p>
          */
@@ -7871,9 +7873,13 @@ namespace Connect
 
         /**
          * <p>Updates the traffic distribution for a given traffic distribution group. </p>
-         *  <p>The <code>SignInConfig</code> distribution is available only on a
-         * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
-         * parameter in the <a
+         *  <p>When you shift telephony traffic, also shift agents and/or agent
+         * sign-ins to ensure they can handle the calls in the other Region. If you don't
+         * shift the agents, voice calls will go to the shifted Region but there won't be
+         * any agents available to receive the calls.</p>   <p>The
+         * <code>SignInConfig</code> distribution is available only on a default
+         * <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter
+         * in the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
          * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
          * <code>SignInConfig</code> and a non-default

@@ -133,7 +133,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The channel for the contact</p>
+     * <p>The channel for the contact</p>  <p>CreateContact only supports
+     * the EMAIL channel. The following information that states other channels are
+     * supported is incorrect. We are working to update this topic.</p> 
      */
     inline const Channel& GetChannel() const{ return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
@@ -145,7 +147,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates how the contact was initiated.</p>
+     * <p>Indicates how the contact was initiated. </p>  <p>CreateContact
+     * only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW.
+     * The following information that states other initiation methods are supported is
+     * incorrect. We are working to update this topic.</p> 
      */
     inline const ContactInitiationMethod& GetInitiationMethod() const{ return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }

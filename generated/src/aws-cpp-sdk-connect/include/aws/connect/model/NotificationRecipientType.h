@@ -62,7 +62,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of user IDs.</p>
+     * <p>A list of user IDs. Supports variable injection of
+     * <code>$.ContactLens.ContactEvaluation.Agent.AgentId</code> for
+     * <code>OnContactEvaluationSubmit</code> event source. </p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
