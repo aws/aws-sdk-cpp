@@ -447,7 +447,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         Template template;
         if (serviceModel.isUseSmithyClient())
         {
-            template = velocityEngine.getTemplate("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyS3ClientHeader.vm");
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/SmithyS3ClientHeader.vm");
         }
         else
         {
@@ -472,7 +472,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             Template template;
             if (serviceModels.get(i).isUseSmithyClient())
             {
-                template = velocityEngine.getTemplate("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyS3ClientSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/SmithyS3ClientSource.vm");
             }
             else 
             {
@@ -523,7 +523,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
         if (serviceModel.isUseSmithyClient())
         {
-            final String smithyVmFilePrefixFormat =  "com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/%s";
             return Stream.concat(
                 Stream.of(
                         Pair.of(includePath + "S3ExpressIdentity.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityHeader.vm")),
