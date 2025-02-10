@@ -209,7 +209,6 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
             0 /* expirationTimeInSeconds doesn't matter for HttpRequestViaHeaders */, Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders);
     }
 
-    //additional check is needed for s3 header since this is invoked by s3 signer
     if (!credentials.GetSessionToken().empty())
     {
         request.SetAwsSessionToken(credentials.GetSessionToken());
