@@ -140,7 +140,7 @@ public class CppViewHelper {
     }
 
     public static String computeVariableName(String memberName) {
-        return memberName.substring(0, 1).toLowerCase() + memberName.substring(1);
+        return lowercasesFirstChar(memberName).replace("-", "_");
     }
 
     public static String convertToUpperCamel(String lowerCamel) {
@@ -504,6 +504,15 @@ public class CppViewHelper {
 
     public static String computeCoreErrorConstName(String errorName) {
         return CoreErrors.VARIANTS.get(errorName);
+    }
+
+    public static String lowercasesFirstChar(final String str) {
+        if (str.length() > 1) {
+            return str.substring(0,1).toLowerCase() + str.substring(1);
+        }
+        else {
+            return str.toLowerCase();
+        }
     }
 
     public static String capitalizeFirstChar(final String str) {
