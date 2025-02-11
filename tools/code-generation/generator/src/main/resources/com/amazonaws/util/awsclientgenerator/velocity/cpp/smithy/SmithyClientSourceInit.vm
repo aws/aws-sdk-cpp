@@ -242,8 +242,22 @@ ${className}& ${className}::operator=(const ${className} &rhs) {
       return *this;
     }
     AwsSmithyClientT::operator=(rhs);
+    m_authSchemes =
+      [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+        auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+        return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region),  m_clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+            };
+      }();
     return *this;
 }
+
 
 ${className}& ${className}::operator=(${className} &&rhs) noexcept {
   if (&rhs == this) {

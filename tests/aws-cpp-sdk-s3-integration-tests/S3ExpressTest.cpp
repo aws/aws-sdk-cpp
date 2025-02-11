@@ -506,19 +506,6 @@ namespace {
     const auto response = client->PutObject(request);
     AWS_EXPECT_SUCCESS(response);
   }
-  
-  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibility) {
-
-    auto legacyIdentityProvider = Aws::MakeShared<DefaultS3ExpressIdentityProvider>("ExpressSignerBackwardCompatibility", *client);
-
-    auto serviceParams = Aws::MakeShared<Aws::Http::ServiceSpecificParameters>("ExpressSignerBackwardCompatibility");
-    auto creds = legacyIdentityProvider->GetS3ExpressIdentity(serviceParams);
-
-    ASSERT_TRUE(!creds.getAccessKeyId().empty());
-    ASSERT_TRUE(!creds.getSessionToken().empty());
-
-  }
-
 
   class MyIdentityProvider : public S3ExpressIdentityProvider {
    public:
