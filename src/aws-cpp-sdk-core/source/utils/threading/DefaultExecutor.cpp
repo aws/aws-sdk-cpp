@@ -6,6 +6,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/ThreadTask.h>
+#include <aws/crt/Optional.h>
 
 #include <cassert>
 
@@ -34,14 +35,16 @@ struct DefaultExecutor::impl {
   void Detach(std::thread::id id);
 
  private:
-  std::atomic<State> m_state{State::Free};
+  std::mutex m_mutex;
+  std::condition_variable m_cv;
+  State m_state = State::Free;
   Aws::UnorderedMap<std::thread::id, DefaultExecutorTaskPair> m_tasks;
 };
 
 class DefaultExecutorTask {
  public:
   DefaultExecutorTask(std::function<void()>&& task, const std::shared_ptr<DefaultExecutor::impl>& pExecutor)
-      : m_task(std::move(task)), m_executor(pExecutor) {
+      : m_task(std::move(task)), m_impl(pExecutor) {
     assert(m_task);
   }
   DefaultExecutorTask(const DefaultExecutorTask&) = delete;
@@ -51,7 +54,7 @@ class DefaultExecutorTask {
   /**
    * Detaches the task from the executor
    */
-  void DoNotDetach() { m_executor.reset(); }
+  void DoNotDetach() { m_impl.reset(); }
   /**
    * Starts task execution on a new thread
    */
@@ -67,14 +70,14 @@ class DefaultExecutorTask {
   void Execute() {
     assert(m_task);
     m_task();
-    if (const auto spExecutor = m_executor.lock()) {
+    if (const auto spExecutor = m_impl.lock()) {
       spExecutor->Detach(std::this_thread::get_id());
     }
     Aws::Delete(this);
   }
 
   std::function<void()> m_task;
-  std::weak_ptr<DefaultExecutor::impl> m_executor;
+  std::weak_ptr<DefaultExecutor::impl> m_impl;
 };
 
 bool DefaultExecutor::SubmitToThread(std::function<void()>&& fx) {
@@ -92,52 +95,65 @@ void DefaultExecutor::WaitUntilStopped() {
 }
 
 bool DefaultExecutor::impl::SubmitToThread(const std::shared_ptr<impl>& spThis, std::function<void()>&& fx) {
-  if (State::Shutdown == m_state.load()) {
-    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to submit async task: the executor is shut down!");
-    return false;
-  }
-
+  // allocate outside critical section
   auto* task = Aws::New<DefaultExecutorTask>(DEFAULT_EXECUTOR_LOG_TAG, std::move(fx), spThis);
   if (!task) {
     AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to allocate async task!");
     return false;
   }
 
-  State expected;
-  do {
-    expected = State::Free;
-    if (m_state.compare_exchange_strong(expected, State::Locked)) {
-      DefaultExecutorTaskPair taskPair = DefaultExecutorTask::Launch(task);
-      const auto id = taskPair.first.get_id();
-      m_tasks.emplace(id, std::move(taskPair));
-      m_state = State::Free;
-      return true;
-    }
-  } while (expected != State::Shutdown);
-  return false;
+  // lock and launch task
+  std::unique_lock<std::mutex> lock(m_mutex);
+  if (State::Shutdown == m_state) {
+    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to submit async task: the executor is shut down!");
+    Aws::Delete(task);
+    return false;
+  }
+
+  DefaultExecutorTaskPair taskPair = DefaultExecutorTask::Launch(task);
+  const auto id = taskPair.first.get_id();
+  m_tasks.emplace(id, std::move(taskPair));
+  m_state = State::Free;
+  return true;
 }
 
 void DefaultExecutor::impl::Detach(std::thread::id id) {
-  State expected;
-  do {
-    expected = State::Free;
-    if (m_state.compare_exchange_strong(expected, State::Locked)) {
-      auto it = m_tasks.find(id);
-      assert(it != m_tasks.end());
-      it->second.first.detach();
-      m_tasks.erase(it);
-      m_state = State::Free;
-      return;
-    }
-  } while (expected != State::Shutdown);
+  std::unique_lock<std::mutex> lock(m_mutex);
+  if (State::Shutdown == m_state) {
+    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to Detach async task: the executor is shut down!");
+  }
+  auto it = m_tasks.find(id);
+  assert(it != m_tasks.end());
+  it->second.first.detach();
+  m_tasks.erase(it);
+  m_state = State::Free;
+  m_cv.notify_one();
 }
 
 void DefaultExecutor::impl::WaitUntilStopped() {
-  auto expected = State::Free;
-  while (!m_state.compare_exchange_strong(expected, State::Shutdown)) {
-    // spin while currently detaching threads finish
-    assert(expected == State::Locked);
-    expected = State::Free;
+  std::unique_lock<std::mutex> lock(m_mutex);
+  m_state = State::Shutdown;
+
+  // if worker thread in m_tasks is actually this thread running the Executor Shutdown - detach it after waiting for all other threads
+  Crt::Optional<std::thread> toDetach = [&]() {
+    Crt::Optional<std::thread> ret;
+    const auto thisWorkerThreadIt = m_tasks.find(std::this_thread::get_id());
+    if (thisWorkerThreadIt != m_tasks.end()) {
+      thisWorkerThreadIt->second.second->DoNotDetach();
+      ret.emplace(std::move(thisWorkerThreadIt->second.first));
+      m_tasks.erase(std::this_thread::get_id());
+    }
+    return ret;
+  }();
+
+  // wait for all running tasks to finish and detach themselves
+  m_cv.wait(lock, [this]() { return m_tasks.empty(); });
+
+  if (toDetach) {
+    AWS_LOGSTREAM_WARN(DEFAULT_EXECUTOR_LOG_TAG, "DefaultExecutor is getting destructed from one of it's worker threads!");
+    AWS_LOGSTREAM_FLUSH();  // we are in UB zone and may crash soon.
+
+    toDetach->detach();
   }
 }
 
@@ -151,37 +167,19 @@ DefaultExecutor::DefaultExecutor(const DefaultExecutor& other) {
 DefaultExecutor& DefaultExecutor::operator=(const DefaultExecutor& other) {
   if (this != &other) {
     WaitUntilStopped();
-    pImpl.reset();
+    pImpl = MakeShared<DefaultExecutor::impl>(DEFAULT_EXECUTOR_LOG_TAG);
   }
   return *this;
 }
 
 DefaultExecutor::~DefaultExecutor() {
-  DefaultExecutor::WaitUntilStopped();  // virtual call is resolved at compile time
+  DefaultExecutor::WaitUntilStopped();
   pImpl.reset();
 }
 
 DefaultExecutor::impl::~impl() {
-  const auto thisThreadId = std::this_thread::get_id();
-  bool workerOwnsThis = false;
-
-  for (auto& taskItem : m_tasks) {
-    if (thisThreadId != taskItem.first) {
-      taskItem.second.first.join();
-    } else {
-      workerOwnsThis = true;
-      taskItem.second.second->DoNotDetach();  // prevent task from self-detaching from Executor
-    }
-  }
-
-  if (workerOwnsThis) {
-    std::thread toDetach = std::move(m_tasks[thisThreadId].first);
-    AWS_LOGSTREAM_WARN(DEFAULT_EXECUTOR_LOG_TAG, "DefaultExecutor is getting destructed from one of it's worker threads!");
-    AWS_LOGSTREAM_FLUSH();  // we are in UB zone and may crash soon.
-
-    m_tasks.clear();
-    toDetach.detach();
-  }
+  WaitUntilStopped();
+  assert(m_state == State::Shutdown && m_tasks.empty());
 }
 
 }  // namespace Threading
