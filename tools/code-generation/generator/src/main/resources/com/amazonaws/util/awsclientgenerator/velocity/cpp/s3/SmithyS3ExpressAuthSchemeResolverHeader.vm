@@ -3,6 +3,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($clientConfiguration = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #pragma once
 
 \#include <aws/${metadata.projectName}/S3ExpressSigner.h>
@@ -12,8 +13,7 @@
 
 namespace ${rootNamespace} {
 namespace ${serviceNamespace} {
-
-    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<>{
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}>{
 
         public:
         Aws::Vector<smithy::AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
@@ -33,9 +33,9 @@ namespace ${serviceNamespace} {
             }
 
             //resolve endpoint first time to fetch auth schemes
-            if(m_resolveEndpointFunc)
+            if(m_endpointProviderForAuth)
             {
-                auto epResolutionOutcome = m_resolveEndpointFunc(epParams);
+                auto epResolutionOutcome = m_endpointProviderForAuth->ResolveEndpoint(epParams);
                 if (epResolutionOutcome.IsSuccess())
                 {
                     auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());

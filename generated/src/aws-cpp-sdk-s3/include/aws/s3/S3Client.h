@@ -50,7 +50,7 @@ namespace Aws
      */
     class AWS_S3_API S3Client : public smithy::client::AwsSmithyClientT<Aws::S3::SERVICE_NAME,
       Aws::S3::S3ClientConfiguration,
-      smithy::SigV4MultiAuthSchemeResolver<>,
+      smithy::SigV4MultiAuthSchemeResolver<S3EndpointProvider, Aws::S3::S3ClientConfiguration>,
       Aws::Crt::Variant<smithy::SigV4AuthScheme,S3::S3ExpressSigV4AuthScheme,smithy::SigV4aAuthScheme>,
       S3EndpointProviderBase,
       smithy::client::XmlOutcomeSerializer,

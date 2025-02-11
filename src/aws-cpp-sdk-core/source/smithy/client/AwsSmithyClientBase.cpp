@@ -29,7 +29,6 @@ using namespace smithy::components::tracing;
 static const char AWS_SMITHY_CLIENT_LOG[] = "AwsSmithyClient";
 
 namespace smithy {
-    SMITHY_API const char *AUTH_SCHEME_PROPERTY = "authSchemeName";
     SMITHY_API const char *SIGNER_REGION_PROPERTY = "signerRegionOverride";
     SMITHY_API const char *SIGNER_SERVICE_NAME = "signerServiceNameOverride";
 }

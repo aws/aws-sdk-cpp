@@ -12,8 +12,7 @@
 
 namespace Aws {
 namespace S3 {
-
-    class AWS_S3_API S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<>{
+    class AWS_S3_API S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<S3EndpointProvider, S3::S3ClientConfiguration>{
 
         public:
         Aws::Vector<smithy::AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
@@ -33,9 +32,9 @@ namespace S3 {
             }
 
             //resolve endpoint first time to fetch auth schemes
-            if(m_resolveEndpointFunc)
+            if(m_endpointProviderForAuth)
             {
-                auto epResolutionOutcome = m_resolveEndpointFunc(epParams);
+                auto epResolutionOutcome = m_endpointProviderForAuth->ResolveEndpoint(epParams);
                 if (epResolutionOutcome.IsSuccess())
                 {
                     auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());

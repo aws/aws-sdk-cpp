@@ -9,7 +9,6 @@
 
 #include <aws/crt/Variant.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <smithy/client/AwsSmithyClientBase.h>
 
 
 namespace smithy {
@@ -31,12 +30,14 @@ namespace smithy {
 
     };
 
-    template<typename ServiceAuthSchemeParametersT = DefaultAuthSchemeResolverParameters>
+    template<typename ServiceAuthSchemeParametersT = DefaultAuthSchemeResolverParameters,  typename ClientConfigT = Aws::Client::ClientConfiguration>
     class AuthSchemeResolverBase
     {
     public:
 
-        virtual void Init(smithy::client::AwsSmithyClientBase::ResolveEndpointFunctionType){}
+        virtual void Init(const ClientConfigT& config) {
+          AWS_UNREFERENCED_PARAM(config);
+        }
 
         using ServiceAuthSchemeParameters = ServiceAuthSchemeParametersT;
 
