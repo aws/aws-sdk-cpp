@@ -928,6 +928,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -969,6 +970,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1004,6 +1006,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1040,6 +1043,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1078,6 +1082,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1120,6 +1125,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1166,6 +1172,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1218,6 +1225,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1275,6 +1283,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
         AWS_ASSERT_SUCCESS(getOutcome);
@@ -1310,6 +1319,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1372,6 +1382,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
         AWS_ASSERT_SUCCESS(getOutcome);
@@ -1406,6 +1417,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1440,6 +1452,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(attributeValueTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);

@@ -2572,7 +2572,7 @@ namespace
             Aws::MakeShared<StringStream>(ALLOCATION_TAG, testCase.body, std::ios_base::in | std::ios_base::binary);
         request.SetBody(body);
         const auto response = Client->PutObject(request);
-        EXPECT_TRUE(response.IsSuccess());
+        AWS_EXPECT_SUCCESS(response);
       }
     }
 
