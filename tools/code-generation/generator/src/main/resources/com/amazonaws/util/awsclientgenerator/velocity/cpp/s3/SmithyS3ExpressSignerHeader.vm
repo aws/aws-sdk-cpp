@@ -29,21 +29,6 @@ namespace {
 
     template <>
     struct IsValidS3ExpressSigner<smithy::AwsSigV4aSigner> : std::true_type {};
-
-    template <typename BASECLASS>
-    struct ExtractIdentity : public std::enable_if<IsValidS3ExpressSigner<BASECLASS>::value, BASECLASS>::type
-    {
-      smithy::AwsCredentialIdentity operator()(const smithy::AwsCredentialIdentityBase& identity) const {
-        return smithy::AwsCredentialIdentity{identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken(),identity.expiration()};
-      }
-    };
-
-    template <>
-    struct ExtractIdentity<smithy::AwsSigV4Signer> {
-      auto operator()(const smithy::AwsCredentialIdentityBase& identity) const -> smithy::AwsCredentialIdentity {
-        return smithy::AwsCredentialIdentity{identity.accessKeyId(), identity.secretAccessKey(), {},{}};
-      }
-    };
 }
 
     //Ensuring S3 Express Signer can use Sigv4 or Sigv4a signing algorithm
