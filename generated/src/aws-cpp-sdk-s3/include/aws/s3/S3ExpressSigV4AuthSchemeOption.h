@@ -11,9 +11,9 @@
 namespace Aws {
 namespace S3 {
 
-    struct AWS_S3_API S3ExpressSigV4AuthSchemeOption
+    struct S3ExpressSigV4AuthSchemeOption
     {
-        static smithy::AuthSchemeOption s3ExpressSigV4AuthSchemeOption;
+        static AWS_S3_API smithy::AuthSchemeOption s3ExpressSigV4AuthSchemeOption;
     };
 }
 }
