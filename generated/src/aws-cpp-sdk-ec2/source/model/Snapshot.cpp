@@ -35,6 +35,8 @@ Snapshot::Snapshot() :
     m_completionDurationMinutes(0),
     m_completionDurationMinutesHasBeenSet(false),
     m_completionTimeHasBeenSet(false),
+    m_fullSnapshotSizeInBytes(0),
+    m_fullSnapshotSizeInBytesHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_state(SnapshotState::NOT_SET),
@@ -130,6 +132,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_completionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(completionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_completionTimeHasBeenSet = true;
+    }
+    XmlNode fullSnapshotSizeInBytesNode = resultNode.FirstChild("fullSnapshotSizeInBytes");
+    if(!fullSnapshotSizeInBytesNode.IsNull())
+    {
+      m_fullSnapshotSizeInBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fullSnapshotSizeInBytesNode.GetText()).c_str()).c_str());
+      m_fullSnapshotSizeInBytesHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
@@ -266,6 +274,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".CompletionTime=" << StringUtils::URLEncode(m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_fullSnapshotSizeInBytesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FullSnapshotSizeInBytes=" << m_fullSnapshotSizeInBytes << "&";
+  }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
@@ -378,6 +391,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_completionTimeHasBeenSet)
   {
       oStream << location << ".CompletionTime=" << StringUtils::URLEncode(m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_fullSnapshotSizeInBytesHasBeenSet)
+  {
+      oStream << location << ".FullSnapshotSizeInBytes=" << m_fullSnapshotSizeInBytes << "&";
   }
   if(m_snapshotIdHasBeenSet)
   {

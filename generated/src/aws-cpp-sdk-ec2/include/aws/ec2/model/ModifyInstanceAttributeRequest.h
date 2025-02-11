@@ -162,9 +162,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
-     * parameter for Spot Instances.</p>
+     * <p>Enable or disable termination protection for the instance. If the value is
+     * <code>true</code>, you can't terminate the instance using the Amazon EC2
+     * console, command line interface, or API. You can't enable termination protection
+     * for Spot Instances.</p>
      */
     inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }

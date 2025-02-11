@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/acm-pca/model/S3ObjectAcl.h>
 #include <aws/acm-pca/model/CrlDistributionPointExtensionConfiguration.h>
+#include <aws/acm-pca/model/CrlType.h>
 #include <utility>
 
 namespace Aws
@@ -197,6 +198,53 @@ namespace Model
     inline CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(const CrlDistributionPointExtensionConfiguration& value) { SetCrlDistributionPointExtensionConfiguration(value); return *this;}
     inline CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfiguration&& value) { SetCrlDistributionPointExtensionConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Choose whether to use a partitioned or complete CRL. Your choice determines
+     * the maximum number of certificates that the certificate authority can issue and
+     * revoke, as described in the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca-connector-ad">Amazon
+     * Web Services Private CA quotas</a>.</p> <ul> <li> <p> <code>PARTITIONED</code> -
+     * The default setting. Partitioned CRLs are an especially good option for devices
+     * that have limited processing power or storage capacity, such as certain IoT
+     * devices. Compared to complete CRLs, partitioned CRLs dramatically increase the
+     * number of certificates your private CA can issue. Each certificate that Amazon
+     * Web Services Private CA issues is bound to a specific CRL partition through the
+     * CRL distribution point (CDP) defined in <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p>
+     *  <p>To make sure that your client fetches the CRL from a valid
+     * endpoint, we recommend that you programmatically validate that the CRL's issuing
+     * distribution point (IDP) URI matches the certificate's CDP URI. Amazon Web
+     * Services Private CA marks the IDP extension as critical, which your client must
+     * be able to process.</p>  </li> <li> <p> <code>COMPLETE</code> -
+     * Amazon Web Services Private CA maintains a single CRL file for all unexpired
+     * certificates issued by a CA that have been revoked for any reason.</p> </li>
+     * </ul>
+     */
+    inline const CrlType& GetCrlType() const{ return m_crlType; }
+    inline bool CrlTypeHasBeenSet() const { return m_crlTypeHasBeenSet; }
+    inline void SetCrlType(const CrlType& value) { m_crlTypeHasBeenSet = true; m_crlType = value; }
+    inline void SetCrlType(CrlType&& value) { m_crlTypeHasBeenSet = true; m_crlType = std::move(value); }
+    inline CrlConfiguration& WithCrlType(const CrlType& value) { SetCrlType(value); return *this;}
+    inline CrlConfiguration& WithCrlType(CrlType&& value) { SetCrlType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Designates a custom file path in S3 for CRL(s). For example,
+     * <code>http://&lt;CustomName&gt;/&lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>.
+     * You can change the custom path up to five times.</p>
+     */
+    inline const Aws::String& GetCustomPath() const{ return m_customPath; }
+    inline bool CustomPathHasBeenSet() const { return m_customPathHasBeenSet; }
+    inline void SetCustomPath(const Aws::String& value) { m_customPathHasBeenSet = true; m_customPath = value; }
+    inline void SetCustomPath(Aws::String&& value) { m_customPathHasBeenSet = true; m_customPath = std::move(value); }
+    inline void SetCustomPath(const char* value) { m_customPathHasBeenSet = true; m_customPath.assign(value); }
+    inline CrlConfiguration& WithCustomPath(const Aws::String& value) { SetCustomPath(value); return *this;}
+    inline CrlConfiguration& WithCustomPath(Aws::String&& value) { SetCustomPath(std::move(value)); return *this;}
+    inline CrlConfiguration& WithCustomPath(const char* value) { SetCustomPath(value); return *this;}
+    ///@}
   private:
 
     bool m_enabled;
@@ -216,6 +264,12 @@ namespace Model
 
     CrlDistributionPointExtensionConfiguration m_crlDistributionPointExtensionConfiguration;
     bool m_crlDistributionPointExtensionConfigurationHasBeenSet = false;
+
+    CrlType m_crlType;
+    bool m_crlTypeHasBeenSet = false;
+
+    Aws::String m_customPath;
+    bool m_customPathHasBeenSet = false;
   };
 
 } // namespace Model

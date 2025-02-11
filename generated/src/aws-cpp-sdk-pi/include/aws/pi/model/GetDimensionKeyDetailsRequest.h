@@ -70,7 +70,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Performance Insights searches the specified
      * group for the dimension group ID. The following group name values are valid:</p>
-     * <ul> <li> <p> <code>db.lock_snapshot</code> (Aurora only)</p> </li> <li> <p>
+     * <ul> <li> <p> <code>db.execution_plan</code> (Amazon RDS and Aurora only)</p>
+     * </li> <li> <p> <code>db.lock_snapshot</code> (Aurora only)</p> </li> <li> <p>
      * <code>db.query</code> (Amazon DocumentDB only)</p> </li> <li> <p>
      * <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li> </ul>
      */
@@ -88,13 +89,16 @@ namespace Model
     /**
      * <p>The ID of the dimension group from which to retrieve dimension details. For
      * dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The
-     * following group ID values are valid:</p> <ul> <li> <p> <code>db.sql.id</code>
-     * for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li> <li> <p>
-     * <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB
-     * only)</p> </li> <li> <p>For the dimension group <code>db.lock_snapshot</code>,
-     * the <code>GroupIdentifier</code> is the epoch timestamp when Performance
-     * Insights captured the snapshot, in seconds. You can retrieve this value with the
-     * <code>GetResourceMetrics</code> operation for a 1 second period.</p> </li> </ul>
+     * following group ID values are valid:</p> <ul> <li> <p>
+     * <code>db.execution_plan.id</code> for dimension group
+     * <code>db.execution_plan</code> (Aurora and RDS only)</p> </li> <li> <p>
+     * <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS
+     * only)</p> </li> <li> <p> <code>db.query.id</code> for dimension group
+     * <code>db.query</code> (DocumentDB only)</p> </li> <li> <p>For the dimension
+     * group <code>db.lock_snapshot</code>, the <code>GroupIdentifier</code> is the
+     * epoch timestamp when Performance Insights captured the snapshot, in seconds. You
+     * can retrieve this value with the <code>GetResourceMetrics</code> operation for a
+     * 1 second period.</p> </li> </ul>
      */
     inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
@@ -112,9 +116,13 @@ namespace Model
      * dimension group. If you don't specify this parameter, Performance Insights
      * returns all dimension data within the specified dimension group. Specify
      * dimension names for the following dimension groups:</p> <ul> <li> <p>
-     * <code>db.lock_trees</code> - Specify the dimension name
-     * <code>db.lock_trees</code>. (Aurora only)</p> </li> <li> <p> <code>db.sql</code>
-     * - Specify either the full dimension name <code>db.sql.statement</code> or the
+     * <code>db.execution_plan</code> - Specify the dimension name
+     * <code>db.execution_plan.raw_plan</code> or the short dimension name
+     * <code>raw_plan</code> (Amazon RDS and Aurora only)</p> </li> <li> <p>
+     * <code>db.lock_snapshot</code> - Specify the dimension name
+     * <code>db.lock_snapshot.lock_trees</code> or the short dimension name
+     * <code>lock_trees</code>. (Aurora only)</p> </li> <li> <p> <code>db.sql</code> -
+     * Specify either the full dimension name <code>db.sql.statement</code> or the
      * short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
      * <li> <p> <code>db.query</code> - Specify either the full dimension name
      * <code>db.query.statement</code> or the short dimension name

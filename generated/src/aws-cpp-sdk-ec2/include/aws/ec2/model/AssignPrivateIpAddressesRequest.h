@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * <p>One or more IPv4 prefixes assigned to the network interface. You can't use
      * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
@@ -60,7 +60,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the <code>Ipv4
+     * the network interface. You can't use this option if you use the <code>Ipv4
      * Prefixes</code> option.</p>
      */
     inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }

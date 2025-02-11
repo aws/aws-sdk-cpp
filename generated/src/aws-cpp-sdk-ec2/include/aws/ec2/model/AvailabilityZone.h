@@ -117,10 +117,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> For Availability Zones, this parameter has the same value as the Region
-     * name.</p> <p>For Local Zones, the name of the associated group, for example
-     * <code>us-west-2-lax-1</code>.</p> <p>For Wavelength Zones, the name of the
-     * associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+     * <p>The name of the zone group. For example:</p> <ul> <li> <p>Availability Zones
+     * - <code>us-east-1-zg-1</code> </p> </li> <li> <p>Local Zones -
+     * <code>us-west-2-lax-1</code> </p> </li> <li> <p>Wavelength Zones -
+     * <code>us-east-1-wl1-bos-wlz-1</code> </p> </li> </ul>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }

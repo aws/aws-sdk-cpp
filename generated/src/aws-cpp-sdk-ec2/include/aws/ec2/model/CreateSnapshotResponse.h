@@ -184,6 +184,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The full size of the snapshot, in bytes.</p>  <p>This is
+     * <b>not</b> the incremental size of the snapshot. This is the full snapshot size
+     * and represents the size of all the blocks that were written to the source volume
+     * at the time the snapshot was created.</p> 
+     */
+    inline long long GetFullSnapshotSizeInBytes() const{ return m_fullSnapshotSizeInBytes; }
+    inline void SetFullSnapshotSizeInBytes(long long value) { m_fullSnapshotSizeInBytes = value; }
+    inline CreateSnapshotResponse& WithFullSnapshotSizeInBytes(long long value) { SetFullSnapshotSizeInBytes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
      * created.</p>
      */
@@ -367,6 +379,8 @@ namespace Model
     int m_completionDurationMinutes;
 
     Aws::Utils::DateTime m_completionTime;
+
+    long long m_fullSnapshotSizeInBytes;
 
     Aws::String m_snapshotId;
 

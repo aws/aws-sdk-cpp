@@ -121,7 +121,12 @@ namespace Model
      * OU exclusion. There is a limit on the number of exclusions you can create. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for
-     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>  <p>The
+     * resulting set of exclusions must not result in "overlap", meaning two or more OU
+     * exclusions must not exclude the same OU. For more information and examples, see
+     * the Amazon Web Services CLI request process in <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/exclude-ous.html#exclude-ous-create-delete">Add
+     * or remove OU exclusions </a> in the <i>Amazon VPC User Guide</i>.</p> 
      */
     inline const Aws::Vector<AddIpamOrganizationalUnitExclusion>& GetAddOrganizationalUnitExclusions() const{ return m_addOrganizationalUnitExclusions; }
     inline bool AddOrganizationalUnitExclusionsHasBeenSet() const { return m_addOrganizationalUnitExclusionsHasBeenSet; }
@@ -141,7 +146,12 @@ namespace Model
      * OU exclusion. There is a limit on the number of exclusions you can create. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for
-     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>  <p>The
+     * resulting set of exclusions must not result in "overlap", meaning two or more OU
+     * exclusions must not exclude the same OU. For more information and examples, see
+     * the Amazon Web Services CLI request process in <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/exclude-ous.html#exclude-ous-create-delete">Add
+     * or remove OU exclusions </a> in the <i>Amazon VPC User Guide</i>.</p> 
      */
     inline const Aws::Vector<RemoveIpamOrganizationalUnitExclusion>& GetRemoveOrganizationalUnitExclusions() const{ return m_removeOrganizationalUnitExclusions; }
     inline bool RemoveOrganizationalUnitExclusionsHasBeenSet() const { return m_removeOrganizationalUnitExclusionsHasBeenSet; }
