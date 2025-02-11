@@ -15,20 +15,50 @@ namespace ${serviceNamespace} {
 
     class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<>{
 
-        public:        
+        public:
         Aws::Vector<smithy::AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
         {
-            //use resolved endpoint params to return
-            auto authSchemeNameIt = identityProperties.additionalProperties.find(smithy::AUTH_SCHEME_PROPERTY);
-            if(authSchemeNameIt != identityProperties.additionalProperties.end())
+            //pack endpoint params from identityProperties
+            Aws::Endpoint::EndpointParameters epParams;
+
+            for (auto& identParam : identityProperties.additionalProperties) {
+              if (identParam.second.template holds_alternative<bool>())
+              {
+                epParams.emplace_back(Aws::Endpoint::EndpointParameter(identParam.first, identParam.second.template get<bool>()));
+              }
+              if (identParam.second.template holds_alternative<Aws::String>())
+              {
+                epParams.emplace_back(Aws::Endpoint::EndpointParameter(identParam.first ,identParam.second.template get<Aws::String>()));
+              }
+            }
+
+            //resolve endpoint first time to fetch auth schemes
+            if(m_resolveEndpointFunc)
             {
-                auto authSchemeName = authSchemeNameIt->second.template get<Aws::String>().c_str();
-                if(strcmp(authSchemeName, ${serviceNamespace}::S3_EXPRESS_SIGNER_NAME) == 0)
+                auto epResolutionOutcome = m_resolveEndpointFunc(epParams);
+                if (epResolutionOutcome.IsSuccess())
                 {
-                    return {S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption};
+                    auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+                    if (endpoint.GetAttributes())
+                    {
+                        auto authSchemeName = endpoint.GetAttributes()->authScheme.GetName();
+                        if(strcmp(authSchemeName.c_str(),Aws::Auth::ASYMMETRIC_SIGV4_SIGNER) == 0)
+                        {
+                        return {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption};
+                        }
+                        else if(strcmp(authSchemeName.c_str(),Aws::Auth::SIGV4_SIGNER) == 0)
+                        {
+                        return {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption};
+                        }
+                        else if(strcmp(authSchemeName.c_str(), S3::S3_EXPRESS_SIGNER_NAME) == 0)
+                        {
+                            return {S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption};
+                        }
+                    }
                 }
             }
-            return smithy::SigV4MultiAuthSchemeResolver<>::resolveAuthScheme(identityProperties);
+
+            return {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption};
         }
     };
 }

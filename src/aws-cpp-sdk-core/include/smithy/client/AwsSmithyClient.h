@@ -108,6 +108,10 @@ namespace client
     protected:
         void initClient() {
           m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
+          m_authSchemeResolver->Init([&](const Aws::Endpoint::EndpointParameters& endpointParameters) -> ResolveEndpointOutcome
+            {
+                return m_endpointProvider->ResolveEndpoint(endpointParameters);
+            });
         }
 
         inline const char* GetServiceClientName() const override { return m_serviceName.c_str(); }
@@ -149,19 +153,6 @@ namespace client
                     for (const auto& serviceParam : serviceParams->parameterMap) {
                         identityParams.additionalProperties.insert({serviceParam.first, serviceParam.second});
                     }
-                }
-            }
-
-            //resolve endpoint first time to fetch auth schemes
-            Aws::Endpoint::EndpointParameters epParams = ctx.m_pRequest ? ctx.m_pRequest->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
-            auto epResolutionOutcome = this->ResolveEndpoint(epParams, [](Aws::Endpoint::AWSEndpoint&){});
-            if (epResolutionOutcome.IsSuccess())
-            {
-                auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
-                if (endpoint.GetAttributes())
-                {
-                    auto authSchemeName = endpoint.GetAttributes()->authScheme.GetName();
-                    identityParams.additionalProperties.insert({smithy::AUTH_SCHEME_PROPERTY, Aws::String(authSchemeName.c_str())});
                 }
             }
 

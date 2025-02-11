@@ -33,6 +33,10 @@ namespace smithy {
     class AuthSchemeResolverBase
     {
     public:
+       using ResolveEndpointFunctionType = std::function<typename smithy::client::AwsSmithyClientBase::ResolveEndpointOutcome (const Aws::Endpoint::EndpointParameters &)>;
+
+        virtual void Init(ResolveEndpointFunctionType){}
+
         using ServiceAuthSchemeParameters = ServiceAuthSchemeParametersT;
 
         virtual ~AuthSchemeResolverBase() = default;
