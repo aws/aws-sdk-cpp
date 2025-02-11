@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time when the snaphsot entered the Recycle Bin.</p>
+     * <p>The date and time when the snapshot entered the Recycle Bin.</p>
      */
     inline const Aws::Utils::DateTime& GetRecycleBinEnterTime() const{ return m_recycleBinEnterTime; }
     inline bool RecycleBinEnterTimeHasBeenSet() const { return m_recycleBinEnterTimeHasBeenSet; }

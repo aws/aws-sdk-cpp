@@ -60,8 +60,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the value is <code>true</code>, you can't terminate the instance through
-     * the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     * <p>Indicates whether termination protection is enabled. If the value is
+     * <code>true</code>, you can't terminate the instance using the Amazon EC2
+     * console, command line tools, or API.</p>
      */
     inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
     inline void SetDisableApiTermination(const AttributeBooleanValue& value) { m_disableApiTermination = value; }
@@ -83,8 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
-     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves.</p>
      */
     inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
     inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptions = value; }
@@ -153,7 +154,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
@@ -189,12 +190,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enable or disable source/destination checks, which ensure that the instance
-     * is either the source or the destination of any traffic that it receives. If the
-     * value is <code>true</code>, source/destination checks are enabled; otherwise,
-     * they are disabled. The default value is <code>true</code>. You must disable
-     * source/destination checks if the instance runs services such as network address
-     * translation, routing, or firewalls.</p>
+     * <p>Indicates whether source/destination checks are enabled.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheck = value; }
@@ -228,8 +224,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
-     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>Indicates whether stop protection is enabled for the instance.</p>
      */
     inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
     inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStop = value; }

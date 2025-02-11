@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FULL_REQUEST_CACHING,
-    PER_RESOLVER_CACHING
+    PER_RESOLVER_CACHING,
+    OPERATION_LEVEL_CACHING
   };
 
 namespace ApiCachingBehaviorMapper

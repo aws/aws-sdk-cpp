@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FULL_REQUEST_CACHING_HASH = HashingUtils::HashString("FULL_REQUEST_CACHING");
         static const int PER_RESOLVER_CACHING_HASH = HashingUtils::HashString("PER_RESOLVER_CACHING");
+        static const int OPERATION_LEVEL_CACHING_HASH = HashingUtils::HashString("OPERATION_LEVEL_CACHING");
 
 
         ApiCachingBehavior GetApiCachingBehaviorForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == PER_RESOLVER_CACHING_HASH)
           {
             return ApiCachingBehavior::PER_RESOLVER_CACHING;
+          }
+          else if (hashCode == OPERATION_LEVEL_CACHING_HASH)
+          {
+            return ApiCachingBehavior::OPERATION_LEVEL_CACHING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "FULL_REQUEST_CACHING";
           case ApiCachingBehavior::PER_RESOLVER_CACHING:
             return "PER_RESOLVER_CACHING";
+          case ApiCachingBehavior::OPERATION_LEVEL_CACHING:
+            return "OPERATION_LEVEL_CACHING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
