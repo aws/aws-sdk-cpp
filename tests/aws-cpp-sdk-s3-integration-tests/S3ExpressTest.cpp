@@ -507,6 +507,7 @@ namespace {
     AWS_EXPECT_SUCCESS(response);
   }
 
+
   class MyIdentityProvider : public S3ExpressIdentityProvider {
    public:
     explicit MyIdentityProvider(const S3Client& client):S3ExpressIdentityProvider(client) {}
@@ -538,5 +539,90 @@ namespace {
   {
     MyIdentityProvider identityProvider(*client);
    
-  } 
+  }
+
+class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3ExpressIdentityProvider
+  {
+  public:
+    TestSmithyDefaultS3ExpressIdentityProvider(const S3Client& s3Client):SmithyDefaultS3ExpressIdentityProvider(s3Client){}
+
+
+    smithy::AwsCredentialIdentity GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &) override
+    {
+      return m_creds;
+    }
+
+    smithy::AwsCredentialIdentity m_creds{
+      Aws::String("demo_access_key"),
+      Aws::String("demo_secret_key"),
+      Aws::String("demo_sessions_token"),
+      DateTime::Now()
+    };
+
+  };
+
+
+  class S3TestClient : public S3Client {
+  public:
+    template<typename ...ARGS>
+    explicit S3TestClient(ARGS... args) : S3Client(std::forward<ARGS>(args)...) {
+      overrideIdentityProvider();
+    }
+
+    S3TestClient(const S3TestClient&) = default;
+    S3TestClient(S3TestClient&&) noexcept = default;
+    S3TestClient& operator=(const S3TestClient&) = default;
+    S3TestClient& operator=(S3TestClient&&) noexcept = default;
+
+    virtual ~S3TestClient() = default;
+
+    smithy::AwsCredentialIdentity getCreds() {
+
+      for(auto& auth : m_authSchemes) {
+        if(auth.first == S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId)
+        {
+          smithy::IdentityResolverBase<smithy::AwsCredentialIdentity>::IdentityProperties props;
+          auto tmp = auth.second.get<S3::S3ExpressSigV4AuthScheme>();
+          auto outcome = tmp.identityResolver()->getIdentity(props,props);
+
+          return smithy::AwsCredentialIdentity(outcome.GetResult()->accessKeyId(), outcome.GetResult()->secretAccessKey(), outcome.GetResult()->sessionToken(),
+            outcome.GetResult()->expiration());
+
+        }
+      }
+      return smithy::AwsCredentialIdentity{};
+
+    }
+  private:
+    FRIEND_TEST(S3ExpressTest, ExpressSignerBackwardCompatibility);
+
+    void overrideIdentityProvider()
+    {
+      for(auto& auth : m_authSchemes)
+      {
+        if(auth.first == S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId)
+        {
+
+          auth.second = S3::S3ExpressSigV4AuthScheme{Aws::MakeShared<TestSmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false};
+
+          ///auth.second.get<S3::S3ExpressSigV4AuthScheme>().identityResolver() = Aws::MakeShared<TestSmithyDefaultS3ExpressIdentityProvider>("TestSmithyDefaultS3ExpressIdentityProvider", *this);
+
+          break;
+        }
+      }
+    }
+
+
+  };
+
+  TEST_F(S3ExpressTest, TestAuthschemeCopy) {
+    S3ClientConfiguration configuration;
+    configuration.region = "us-east-1";
+    configuration.enableHttpClientTrace = true;
+    auto testclient = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG, configuration);
+    ASSERT_TRUE(testclient->getCreds().accessKeyId() == "demo_access_key");
+    auto cpy = *testclient;
+    ASSERT_TRUE(cpy.getCreds().accessKeyId() == "");
+  }
+
 }

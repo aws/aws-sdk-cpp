@@ -326,7 +326,17 @@ S3Client& S3Client::operator=(S3Client &&rhs) noexcept {
 }
 /* copy/move constructors */
 S3Client::S3Client(const S3Client &rhs) :
-    AwsSmithyClientT(rhs),Aws::Client::ClientWithAsyncTemplateMethods<S3Client>() {}
+    AwsSmithyClientT(rhs),Aws::Client::ClientWithAsyncTemplateMethods<S3Client>() {
+     m_authSchemes =
+          [&]() ->  Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4AuthScheme,S3::S3ExpressSigV4AuthScheme,smithy::SigV4aAuthScheme> > {
+            auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+            return {
+                  {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region),  m_clientConfiguration.payloadSigningPolicy, false}},
+                  {S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId, S3::S3ExpressSigV4AuthScheme{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false}},
+                  {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId, smithy::SigV4aAuthScheme{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region),  m_clientConfiguration.payloadSigningPolicy, false}},
+                };
+          }();
+    }
 
 S3Client::S3Client(S3Client &&rhs) noexcept :
     AwsSmithyClientT(std::move(rhs)) {}
