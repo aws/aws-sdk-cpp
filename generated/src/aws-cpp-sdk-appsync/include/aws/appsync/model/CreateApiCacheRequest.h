@@ -89,8 +89,11 @@ namespace Model
     ///@{
     /**
      * <p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests
-     * are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual
-     * resolvers that you specify are cached.</p> </li> </ul>
+     * from the same user are cached. Individual resolvers are automatically cached.
+     * All API calls will try to return responses from the cache.</p> </li> <li> <p>
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are
+     * cached.</p> </li> <li> <p> <b>OPERATION_LEVEL_CACHING</b>: Full requests are
+     * cached together and returned without executing resolvers.</p> </li> </ul>
      */
     inline const ApiCachingBehavior& GetApiCachingBehavior() const{ return m_apiCachingBehavior; }
     inline bool ApiCachingBehaviorHasBeenSet() const { return m_apiCachingBehaviorHasBeenSet; }
