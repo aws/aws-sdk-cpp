@@ -60,7 +60,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
-                  {${entry}{clientConfiguration.identityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+                  {${entry}{clientConfiguration.smithyIdentityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
 #else
                   {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
 #end
@@ -96,7 +96,7 @@ ${className}::${className}(const AWSCredentials& credentials,
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
-                  {${entry}{clientConfiguration.identityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+                  {${entry}{clientConfiguration.smithyIdentityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
 #else
                   {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
 #end
@@ -132,7 +132,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
-                  {${entry}{clientConfiguration.identityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+                  {${entry}{clientConfiguration.smithyIdentityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
 #else
                   {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
 #end

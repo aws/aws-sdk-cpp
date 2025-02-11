@@ -626,4 +626,14 @@ class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3Express
     ASSERT_TRUE(cpy.getCreds().accessKeyId() == "");
   }
 
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilitySupplier)
+  {
+    S3ClientConfiguration configuration{};
+    configuration.identityProviderSupplier =
+      [](const S3Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
+          return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", client);
+      };
+    S3Client client{configuration};
+  }
+
 }
