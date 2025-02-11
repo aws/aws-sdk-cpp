@@ -506,57 +506,17 @@ namespace {
     const auto response = client->PutObject(request);
     AWS_EXPECT_SUCCESS(response);
   }
-
-  class S3TestClient : public S3Client
-  {
-      public:
-      template<typename ...ARGS>
-      explicit S3TestClient(ARGS... args) : S3Client(std::forward<ARGS>(args)...) {
-        overrideS3ExpressSigner();
-      }
-
-      S3TestClient(const S3TestClient&) = default;
-      S3TestClient(S3TestClient&&) noexcept = default;
-      S3TestClient& operator=(const S3TestClient&) = default;
-      S3TestClient& operator=(S3TestClient&&) noexcept = default;
-
-      ~S3TestClient(){}
-      private:
-      FRIEND_TEST(S3ExpressTest, ExpressSignerBackwardCompatibility);
-      void overrideS3ExpressSigner()
-      {
-        for(auto& auth : m_authSchemes)
-        {
-          if(auth.first == S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId)
-          {
-            auth.second.get<S3::S3ExpressSigV4AuthScheme>().signer() = 
-            Aws::MakeShared<Aws::S3::S3ExpressSigner>(ALLOCATION_TAG,
-              Aws::MakeShared<DefaultS3ExpressIdentityProvider>("S3ClientConfiguration", *this),
-              Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-              GetServiceName(), 
-              Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), 
-              m_clientConfiguration.payloadSigningPolicy, 
-              false,
-              Aws::Auth::AWSSigningAlgorithm::SIGV4);
-            break;
-          }
-        }
-      }
-  };
   
   TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibility) {
-    S3ClientConfiguration configuration;
-    configuration.region = "us-east-1";
-    configuration.enableHttpClientTrace = true;
-    auto testClient = Aws::MakeShared<S3TestClient>("S3ExpressTestClient", configuration);
 
-    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
-    auto keyName = randomString();
-    auto createOutcome = CreateBucket(testClient ,bucketName);
-    AWS_EXPECT_SUCCESS(createOutcome);
-    auto putObjectOutcome = PutObject(testClient, bucketName, keyName);
-    AWS_EXPECT_SUCCESS(putObjectOutcome);
-    EmptyBucketUtil(testClient,{bucketName});
+    auto legacyIdentityProvider = Aws::MakeShared<DefaultS3ExpressIdentityProvider>("ExpressSignerBackwardCompatibility", *client);
+
+    auto serviceParams = Aws::MakeShared<Aws::Http::ServiceSpecificParameters>("ExpressSignerBackwardCompatibility");
+    auto creds = legacyIdentityProvider->GetS3ExpressIdentity(serviceParams);
+
+    ASSERT_TRUE(!creds.getAccessKeyId().empty());
+    ASSERT_TRUE(!creds.getSessionToken().empty());
+
   }
 
 

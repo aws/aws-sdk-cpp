@@ -9,6 +9,8 @@
 
 #include <aws/crt/Variant.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <smithy/client/AwsSmithyClientBase.h>
+
 
 namespace smithy {
     /**
@@ -33,9 +35,8 @@ namespace smithy {
     class AuthSchemeResolverBase
     {
     public:
-       using ResolveEndpointFunctionType = std::function<typename smithy::client::AwsSmithyClientBase::ResolveEndpointOutcome (const Aws::Endpoint::EndpointParameters &)>;
 
-        virtual void Init(ResolveEndpointFunctionType){}
+        virtual void Init(smithy::client::AwsSmithyClientBase::ResolveEndpointFunctionType){}
 
         using ServiceAuthSchemeParameters = ServiceAuthSchemeParametersT;
 

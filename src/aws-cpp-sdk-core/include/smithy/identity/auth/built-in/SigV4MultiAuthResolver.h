@@ -17,9 +17,8 @@ namespace smithy {
     {
     private:
     public:
-        using ResolveEndpointFunctionType = std::function<typename smithy::client::AwsSmithyClientBase::ResolveEndpointOutcome (const Aws::Endpoint::EndpointParameters &)>;
 
-        virtual void Init(ResolveEndpointFunctionType resolverFunc) override{
+        virtual void Init(client::AwsSmithyClientBase::ResolveEndpointFunctionType resolverFunc) override{
             m_resolveEndpointFunc = resolverFunc;
         }
         
@@ -64,6 +63,6 @@ namespace smithy {
             return {SigV4AuthSchemeOption::sigV4AuthSchemeOption};
         }
     protected:
-        ResolveEndpointFunctionType m_resolveEndpointFunc;
+        client::AwsSmithyClientBase::ResolveEndpointFunctionType m_resolveEndpointFunc;
     };
 }
