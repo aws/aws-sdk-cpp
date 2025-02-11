@@ -456,11 +456,10 @@ namespace {
           Aws::MakeShared<StringStream>(ALLOCATION_TAG, testCase.body, std::ios_base::in | std::ios_base::binary);
       request.SetBody(body);
       const auto response = client->PutObject(request);
-      if (!response.IsSuccess()) {
-        EXPECT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
+      if (testCase.responseCode == HttpResponseCode::OK) {
+        AWS_EXPECT_SUCCESS(response);
       } else {
-        EXPECT_EQ(testCase.responseCode, HttpResponseCode::OK);
-        EXPECT_TRUE(response.IsSuccess());
+        EXPECT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
       }
     }
   }
