@@ -633,7 +633,7 @@ class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3Express
       [](const S3Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
           return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", client);
       };
-    S3Client client{configuration};
+    S3Client testclient{configuration};
   }
 
 }
