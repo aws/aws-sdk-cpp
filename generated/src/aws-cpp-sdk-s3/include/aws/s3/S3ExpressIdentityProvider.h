@@ -13,6 +13,7 @@
 #include <aws/s3/S3ExpressIdentity.h>
 #include <thread>
 #include <condition_variable>
+#include <aws/s3/S3_EXPORTS.h>
 
 namespace Aws {
     namespace Http {
@@ -21,7 +22,7 @@ namespace Aws {
 
     namespace S3 {
         class S3Client;
-        class S3ExpressIdentityProvider : public smithy::IdentityResolverBase<S3ExpressIdentity> {
+        class AWS_S3_API S3ExpressIdentityProvider : public smithy::IdentityResolverBase<S3ExpressIdentity> {
          public:
           explicit S3ExpressIdentityProvider(const S3Client& s3Client);
           ResolveIdentityFutureOutcome getIdentity(
@@ -45,7 +46,7 @@ namespace Aws {
         };
         
         
-        class DefaultS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
+        class AWS_S3_API DefaultS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
          public:
           explicit DefaultS3ExpressIdentityProvider(const S3Client& s3Client);
           explicit DefaultS3ExpressIdentityProvider(
@@ -62,7 +63,7 @@ namespace Aws {
           mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
         };
 
-        class DefaultAsyncS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
+        class AWS_S3_API DefaultAsyncS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
          public:
           explicit DefaultAsyncS3ExpressIdentityProvider(
               const S3Client& s3Client,
@@ -97,7 +98,7 @@ namespace Aws {
         };
 
         /*------ Smithy version -----*/
-        class SmithyS3ExpressIdentityProvider : public smithy::IdentityResolverBase<smithy::AwsCredentialIdentityBase> {
+        class AWS_S3_API SmithyS3ExpressIdentityProvider : public smithy::IdentityResolverBase<smithy::AwsCredentialIdentityBase> {
          public:
           explicit SmithyS3ExpressIdentityProvider(const S3Client& s3Client);
           ResolveIdentityFutureOutcome getIdentity(
@@ -118,7 +119,7 @@ namespace Aws {
           std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
         };
 
-        class SmithyDefaultS3ExpressIdentityProvider : public SmithyS3ExpressIdentityProvider {
+        class AWS_S3_API SmithyDefaultS3ExpressIdentityProvider : public SmithyS3ExpressIdentityProvider {
          public:
           explicit SmithyDefaultS3ExpressIdentityProvider(const S3Client& s3Client);
           explicit SmithyDefaultS3ExpressIdentityProvider(
@@ -137,7 +138,7 @@ namespace Aws {
           mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> m_credentialsCache;
         };
         
-        class SmithyDefaultAsyncS3ExpressIdentityProvider : public SmithyS3ExpressIdentityProvider {
+        class AWS_S3_API SmithyDefaultAsyncS3ExpressIdentityProvider : public SmithyS3ExpressIdentityProvider {
          public:
           explicit SmithyDefaultAsyncS3ExpressIdentityProvider(
               const S3Client& s3Client,

@@ -580,7 +580,7 @@ class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3Express
     smithy::AwsCredentialIdentity getCreds() {
 
       for(auto& auth : m_authSchemes) {
-        if(auth.first == S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId)
+        if(auth.first ==  S3::S3ExpressSigV4AuthSchemeOption::GetS3ExpressSigV4AuthSchemeOption().schemeId)
         {
           smithy::IdentityResolverBase<smithy::AwsCredentialIdentity>::IdentityProperties props;
           auto tmp = auth.second.get<S3::S3ExpressSigV4AuthScheme>();
@@ -601,7 +601,7 @@ class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3Express
     {
       for(auto& auth : m_authSchemes)
       {
-        if(auth.first == S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption.schemeId)
+        if(auth.first ==  S3::S3ExpressSigV4AuthSchemeOption::GetS3ExpressSigV4AuthSchemeOption().schemeId)
         {
 
           auth.second = S3::S3ExpressSigV4AuthScheme{Aws::MakeShared<TestSmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false};
@@ -630,8 +630,8 @@ class TestSmithyDefaultS3ExpressIdentityProvider : public SmithyDefaultS3Express
   {
     S3ClientConfiguration configuration{};
     configuration.identityProviderSupplier =
-      [](const S3Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
-          return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", client);
+      [](const S3Client &clientref) -> std::shared_ptr<S3ExpressIdentityProvider> {
+          return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", clientref);
       };
     S3Client testclient{configuration};
   }

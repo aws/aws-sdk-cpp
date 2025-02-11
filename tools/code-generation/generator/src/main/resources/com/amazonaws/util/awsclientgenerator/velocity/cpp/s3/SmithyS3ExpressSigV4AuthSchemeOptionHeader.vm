@@ -11,9 +11,13 @@
 namespace ${rootNamespace} {
 namespace ${serviceNamespace} {
 
-    struct S3ExpressSigV4AuthSchemeOption
+    struct ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigV4AuthSchemeOption
     {
-        static ${CppViewHelper.computeExportValue($serviceNamespace)} smithy::AuthSchemeOption s3ExpressSigV4AuthSchemeOption;
+        static smithy::AuthSchemeOption s3ExpressSigV4AuthSchemeOption;
+        static smithy::AuthSchemeOption GetS3ExpressSigV4AuthSchemeOption() {
+            return s3ExpressSigV4AuthSchemeOption;
+        }
+
     };
 }
 }
