@@ -33,6 +33,8 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <random>
+#include <aws/s3/S3ExpressSigner.h>
+#include <aws/s3/S3ExpressIdentityProvider.h>
 
 #ifdef _WIN32
 #pragma warning(disable: 4127)
@@ -482,4 +484,49 @@ namespace {
     const auto response = client->PutObject(request);
     AWS_EXPECT_SUCCESS(response);
   }
+
+
+  class MyIdentityProvider : public S3ExpressIdentityProvider {
+   public:
+    explicit MyIdentityProvider(const S3Client& client):S3ExpressIdentityProvider(client) {}
+    ~MyIdentityProvider() override = default;
+
+    S3ExpressIdentity GetS3ExpressIdentity(
+      const std::shared_ptr<ServiceSpecificParameters>&
+      ) override
+    {
+     return S3ExpressIdentity{"access_key",
+       "secret_key",
+       "sessions_token",
+       DateTime::Now()};
+    }
+
+    ResolveIdentityFutureOutcome getIdentity(
+        const IdentityProperties& ,
+        const AdditionalParameters& ) override
+    {
+      return Aws::MakeUnique<S3ExpressIdentity>("log",
+        "access_key",
+        "secret_key",
+        "sessions_token",
+        DateTime::Now());
+    }
+  };
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilityCompilation)
+  {
+    MyIdentityProvider identityProvider(*client);
+   
+  }
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilitySupplier)
+  {
+    S3ClientConfiguration configuration{};
+    configuration.identityProviderSupplier =
+      [](const S3Client &clientref) -> std::shared_ptr<S3ExpressIdentityProvider> {
+          return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", clientref);
+      };
+    S3Client testclient{configuration};
+  }
+
 }

@@ -11,6 +11,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
 #include <memory>
+#include <aws/s3/S3ErrorMarshaller.h>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -257,13 +258,25 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   EXPECT_EQ("656c76696e6727732072657175657374", response.GetError().GetRequestId());
 }
 
+class MockRequest : public Aws::AmazonWebServiceRequest
+{
+public:
+  std::shared_ptr<Aws::IOStream> GetBody() const override{
+    return nullptr;
+  }
+
+  Aws::Http::HeaderValueCollection GetHeaders() const override{
+    return Aws::Http::HeaderValueCollection();
+  }
+
+  const char* GetServiceRequestName() const override{
+    return "MockRequest";
+  }
+
+};
 
 //Set http error and error in body in a way to hit generic xml error marshaller, which sets the exception name
 TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
-  const auto request = CopyObjectRequest()
-    .WithBucket("testBucket")
-    .WithKey("testKey")
-    .WithCopySource("testSource");
   
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
   mockRequest->SetResponseStreamFactory([]() -> IOStream* {
@@ -273,22 +286,17 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
   mockResponse->SetResponseCode(HttpResponseCode::ACCEPTED);
-
   mockResponse->AddHeader("Server", "AmazonS3");
   mockResponse->AddHeader("Connection", "close");
   mockResponse->AddHeader("Date", "Mon, 1 Nov 2010 20:34:56 GMT");
   mockResponse->AddHeader("x-amz-request-id", "656c76696e6727732072657175657374");
   mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
-
-  _mockHttpClient->AddResponseToReturn(mockResponse);
- 
-  auto endpointResolutionOutcome =    _s3Client->accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams()); 
-  
-  const auto response =  std::static_pointer_cast<S3TestClient>(_s3Client)->Aws::Client::AWSXMLClient::MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, "dummy");
-
-  EXPECT_TRUE(response.GetError().GetExceptionName() == "InvalidAction");
-
-  EXPECT_FALSE(response.IsSuccess());
+  MockRequest request;
+  auto errorMarshaller = S3ErrorMarshaller();
+  auto error = errorMarshaller.Marshall(*mockResponse);
+  auto outcome = HttpResponseOutcome(std::move(error) );
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_TRUE(outcome.GetError().GetExceptionName() == "InvalidAction");
 }
 
 TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
