@@ -4,22 +4,14 @@
  */
 
 #pragma once
-
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/s3/S3ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
-#include <aws/s3/S3ExpressSigV4AuthScheme.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
-
-#include <aws/s3/S3ErrorMarshaller.h>
-
-
+#include <aws/s3/S3ServiceClientModel.h>
 
 // TODO: temporary fix for naming conflicts on Windows.
 #ifdef _WIN32
@@ -40,7 +32,6 @@ namespace Aws
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
-    AWS_S3_API extern const char SERVICE_NAME[];
 
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
@@ -48,20 +39,12 @@ namespace Aws
     /**
      * <p/>
      */
-    class AWS_S3_API S3Client : public smithy::client::AwsSmithyClientT<Aws::S3::SERVICE_NAME,
-      Aws::S3::S3ClientConfiguration,
-      smithy::SigV4MultiAuthSchemeResolver<S3EndpointProvider, Aws::S3::S3ClientConfiguration>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme,S3::S3ExpressSigV4AuthScheme,smithy::SigV4aAuthScheme>,
-      S3EndpointProviderBase,
-      smithy::client::XmlOutcomeSerializer,
-      smithy::client::XmlOutcome,
-      Aws::Client::S3ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<S3Client>
+    class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3Client>
     {
     public:
+        typedef Aws::Client::AWSXMLClient BASECLASS;
         static const char* GetServiceName();
         static const char* GetAllocationTag();
-        inline const char* GetServiceClientName() const override { return "S3"; }
 
       typedef S3ClientConfiguration ClientConfigurationType;
       typedef S3EndpointProvider EndpointProviderType;
@@ -7006,7 +6989,8 @@ namespace Aws
     private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<S3Client>;
         void init(const S3ClientConfiguration& clientConfiguration);
-
+        S3ClientConfiguration m_clientConfiguration;
+        std::shared_ptr<S3EndpointProviderBase> m_endpointProvider;
     };
 
   } // namespace S3
