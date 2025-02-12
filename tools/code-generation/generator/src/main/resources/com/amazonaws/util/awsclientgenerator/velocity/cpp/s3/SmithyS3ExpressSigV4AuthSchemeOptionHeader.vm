@@ -1,0 +1,23 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <smithy/identity/auth/AuthSchemeOption.h>
+
+namespace ${rootNamespace} {
+namespace ${serviceNamespace} {
+
+    struct ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigV4AuthSchemeOption
+    {
+        static smithy::AuthSchemeOption s3ExpressSigV4AuthSchemeOption;
+        static smithy::AuthSchemeOption GetS3ExpressSigV4AuthSchemeOption() {
+            return s3ExpressSigV4AuthSchemeOption;
+        }
+
+    };
+}
+}

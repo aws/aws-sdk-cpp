@@ -10,6 +10,8 @@
 #include <aws/core/auth/signer/AWSAuthV4Signer.h>
 
 #include <aws/core/auth/AWSCredentials.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/identity/auth/AuthSchemeResolverBase.h>
 
 namespace smithy {
     /**
@@ -24,6 +26,15 @@ namespace smithy {
             : m_serviceName(serviceName),
               m_region(region),
               legacySigner(nullptr, serviceName.c_str(), region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always)
+        {
+        }
+        /*
+            For legacy constructors, this is needed
+        */
+        explicit AwsSigV4Signer(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool urlEscapePath)
+            : m_serviceName(serviceName),
+              m_region(region),
+              legacySigner(nullptr, serviceName.c_str(), region, policy, urlEscapePath)
         {
         }
 
@@ -41,13 +52,18 @@ namespace smithy {
                 return {identity.accessKeyId(), identity.secretAccessKey()};
             }();
 
-
-            
             auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
 
+            auto signerRegionOverrideIt = properties.find(smithy::SIGNER_REGION_PROPERTY);
+            auto region = signerRegionOverrideIt != properties.end() ? signerRegionOverrideIt->second.get<Aws::String>().c_str() : m_region.c_str();
+            
+            auto signerServiceNameOverrideIt = properties.find(smithy::SIGNER_SERVICE_NAME);
+            auto svcName = signerServiceNameOverrideIt != properties.end() ? signerServiceNameOverrideIt->second.get<Aws::String>().c_str() : m_serviceName.c_str();
+      
+
             assert(httpRequest);
-            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, m_region.c_str(), m_serviceName.c_str(), signPayload);
+            bool success = legacySigner.SignRequestWithCreds(*httpRequest, legacyCreds, region, svcName, signPayload);
             if (success)
             {
                 return SigningFutureOutcome(std::move(httpRequest));
@@ -76,9 +92,22 @@ namespace smithy {
                                           false /*retryable*/));
         }
 
-
         virtual ~AwsSigV4Signer() {};
     protected:
+
+        // strictly for backward compatibility
+        explicit AwsSigV4Signer(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> &credentialsProvider, const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, 
+        bool urlEscapePath, Aws::Auth::AWSSigningAlgorithm signingAlgorithm )
+            : m_serviceName(serviceName),
+              m_region(region),
+              legacySigner(credentialsProvider, serviceName.c_str(), region, policy, urlEscapePath, signingAlgorithm)
+        {
+        }
+
+        const Aws::Client::AWSAuthV4Signer& getLegacySigner() const {
+            return legacySigner;
+        }
+
         Aws::String m_serviceName;
         Aws::String m_region;
         Aws::Client::AWSAuthV4Signer legacySigner;

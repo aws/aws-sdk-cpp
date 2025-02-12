@@ -196,6 +196,7 @@ public class C2jModelToGeneratorModelTransformer {
             shortenedRules += "\0";
             serviceModel.setEndpointRules(shortenedRules);
         }
+        serviceModel.setRawEndpointRules(c2jServiceModel.getEndpointRules() );
         serviceModel.setEndpointRuleSetModel(c2jServiceModel.getEndpointRuleSetModel());
         serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());
         serviceModel.setClientContextParams(c2jServiceModel.getClientContextParams());

@@ -282,9 +282,11 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
 
   _mockHttpClient->AddResponseToReturn(mockResponse);
  
-  auto endpointResolutionOutcome =    _s3Client->accessEndpointProvider()->ResolveEndpoint(request.GetEndpointContextParams()); 
-  
-  const auto response =  std::static_pointer_cast<S3TestClient>(_s3Client)->Aws::Client::AWSXMLClient::MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, "dummy");
+  const auto response = _s3Client->MakeRequestDeserialize(&request,
+                          request.GetServiceRequestName(),
+                          Aws::Http::HttpMethod::HTTP_PUT,
+                          [](Aws::Endpoint::AWSEndpoint&) ->  void {}
+                          );
 
   EXPECT_TRUE(response.GetError().GetExceptionName() == "InvalidAction");
 
