@@ -8,12 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/ConcurrentCache.h>
-#include <smithy/identity/resolver/AwsIdentityResolverBase.h>
-#include <smithy/identity/identity/AwsCredentialIdentity.h>
+#include <aws/core/auth/signer/AWSAuthSignerBase.h>
 #include <aws/s3/S3ExpressIdentity.h>
+#include <smithy/identity/resolver/AwsIdentityResolverBase.h>
 #include <thread>
 #include <condition_variable>
-#include <aws/s3/S3_EXPORTS.h>
 
 namespace Aws {
     namespace Http {
@@ -22,155 +21,80 @@ namespace Aws {
 
     namespace S3 {
         class S3Client;
-        class AWS_S3_API S3ExpressIdentityProvider : public smithy::IdentityResolverBase<S3ExpressIdentity> {
-         public:
-          explicit S3ExpressIdentityProvider(const S3Client& s3Client);
-          ResolveIdentityFutureOutcome getIdentity(
-              const IdentityProperties& identityProperties,
-              const AdditionalParameters& additionalParameters) override;
-              
-          virtual S3ExpressIdentity
+        class S3ExpressIdentityProvider: public smithy::IdentityResolverBase<S3ExpressIdentity> {
+        public:
+            explicit S3ExpressIdentityProvider(const S3Client &s3Client) : m_s3Client(s3Client) {}
+
+            virtual S3ExpressIdentity
             GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
 
-         protected:
-         
-          S3ExpressIdentity GetCredentialsFromBucket(const Aws::String& bucketName) const;
+            ResolveIdentityFutureOutcome
+            getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override;
+            S3ExpressIdentity
+            getIdentity(const Aws::String &bucketName);
 
-         private:
-          const Aws::S3::S3Client& m_s3Client;
-          mutable std::mutex m_bucketNameMapMutex;
-          Aws::Map<Aws::String, std::shared_ptr<std::mutex>> m_bucketNameMutex;
+            virtual ~S3ExpressIdentityProvider() {}
 
-         protected:
-          std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
-        };
-        
-        
-        class AWS_S3_API DefaultS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
-         public:
-          explicit DefaultS3ExpressIdentityProvider(const S3Client& s3Client);
-          explicit DefaultS3ExpressIdentityProvider(
-              const S3Client& s3Client,
-              std::shared_ptr<Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache);
-          DefaultS3ExpressIdentityProvider(const DefaultS3ExpressIdentityProvider& other) = delete;
-          DefaultS3ExpressIdentityProvider(DefaultS3ExpressIdentityProvider&& other) noexcept = delete;
-          DefaultS3ExpressIdentityProvider& operator=(const DefaultS3ExpressIdentityProvider& other) = delete;
-          DefaultS3ExpressIdentityProvider& operator=(DefaultS3ExpressIdentityProvider&& other) noexcept = delete;
-          virtual ~DefaultS3ExpressIdentityProvider() override = default;
-          S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
-        
-          private:
-          mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
-        };
-
-        class AWS_S3_API DefaultAsyncS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
-         public:
-          explicit DefaultAsyncS3ExpressIdentityProvider(
-              const S3Client& s3Client,
-              std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
-        
-          explicit DefaultAsyncS3ExpressIdentityProvider(
-              const S3Client& s3Client,
-              std::shared_ptr<Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache,
-              std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
-        
-          DefaultAsyncS3ExpressIdentityProvider(const DefaultAsyncS3ExpressIdentityProvider& other) = delete;
-          DefaultAsyncS3ExpressIdentityProvider(DefaultAsyncS3ExpressIdentityProvider&& other) noexcept = delete;
-          DefaultAsyncS3ExpressIdentityProvider& operator=(
-              const DefaultAsyncS3ExpressIdentityProvider& other) = delete;
-          DefaultAsyncS3ExpressIdentityProvider& operator=(DefaultAsyncS3ExpressIdentityProvider&& other) noexcept = delete;
-          virtual ~DefaultAsyncS3ExpressIdentityProvider() override;
-          S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
-
-         private:
-          void refreshIdentities(std::chrono::minutes refreshPeriod);
-          void threadSafeKeyInsert(const Aws::String& key);
-          bool threadSafeKeyHas(const Aws::String& key);
-          void threadSafeKeyEmpty();
-        
-          mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
-          Aws::Set<Aws::String> m_keysUsed;
-          mutable std::mutex m_keysUsedMutex;
-          mutable bool m_shouldStopBackgroundRefresh;
-          Aws::UniquePtr<std::thread> m_backgroundRefreshThread;
-          mutable std::mutex m_shutDownMutex;
-          mutable std::condition_variable m_shutdownCondition;
-        };
-
-        /*------ Smithy version -----*/
-        class AWS_S3_API SmithyS3ExpressIdentityProvider : public smithy::IdentityResolverBase<smithy::AwsCredentialIdentityBase> {
-         public:
-          explicit SmithyS3ExpressIdentityProvider(const S3Client& s3Client);
-          ResolveIdentityFutureOutcome getIdentity(
-              const IdentityProperties& identityProperties,
-              const AdditionalParameters& additionalParameters) override;
-
-         protected:
-         
-          virtual smithy::AwsCredentialIdentity GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
-          smithy::AwsCredentialIdentity GetCredentialsFromBucket(const Aws::String& bucketName) const;
-
-         private:
-          const Aws::S3::S3Client& m_s3Client;
-          mutable std::mutex m_bucketNameMapMutex;
-          Aws::Map<Aws::String, std::shared_ptr<std::mutex>> m_bucketNameMutex;
-
-         protected:
-          std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
-        };
-
-        class AWS_S3_API SmithyDefaultS3ExpressIdentityProvider : public SmithyS3ExpressIdentityProvider {
-         public:
-          explicit SmithyDefaultS3ExpressIdentityProvider(const S3Client& s3Client);
-          explicit SmithyDefaultS3ExpressIdentityProvider(
-              const S3Client& s3Client,
-              std::shared_ptr<Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> credentialsCache);
-          SmithyDefaultS3ExpressIdentityProvider(const SmithyDefaultS3ExpressIdentityProvider& other) = delete;
-          SmithyDefaultS3ExpressIdentityProvider(SmithyDefaultS3ExpressIdentityProvider&& other) noexcept = delete;
-          SmithyDefaultS3ExpressIdentityProvider& operator=(const SmithyDefaultS3ExpressIdentityProvider& other) = delete;
-          SmithyDefaultS3ExpressIdentityProvider& operator=(SmithyDefaultS3ExpressIdentityProvider&& other) noexcept = delete;
-          virtual ~SmithyDefaultS3ExpressIdentityProvider() override = default;
-
-          protected:
-          smithy::AwsCredentialIdentity GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
-        
-          private:
-          mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> m_credentialsCache;
-        };
-        
-        class AWS_S3_API SmithyDefaultAsyncS3ExpressIdentityProvider : public SmithyS3ExpressIdentityProvider {
-         public:
-          explicit SmithyDefaultAsyncS3ExpressIdentityProvider(
-              const S3Client& s3Client,
-              std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
-        
-          explicit SmithyDefaultAsyncS3ExpressIdentityProvider(
-              const S3Client& s3Client,
-              std::shared_ptr<Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> credentialsCache,
-              std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
-        
-          SmithyDefaultAsyncS3ExpressIdentityProvider(const SmithyDefaultAsyncS3ExpressIdentityProvider& other) = delete;
-          SmithyDefaultAsyncS3ExpressIdentityProvider(SmithyDefaultAsyncS3ExpressIdentityProvider&& other) noexcept = delete;
-          SmithyDefaultAsyncS3ExpressIdentityProvider& operator=(
-              const SmithyDefaultAsyncS3ExpressIdentityProvider& other) = delete;
-          SmithyDefaultAsyncS3ExpressIdentityProvider& operator=(SmithyDefaultAsyncS3ExpressIdentityProvider&& other) noexcept = delete;
-          virtual ~SmithyDefaultAsyncS3ExpressIdentityProvider() override;
         protected:
-          smithy::AwsCredentialIdentity GetS3ExpressAwsIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
+            std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
 
-         private:
-          void refreshIdentities(std::chrono::minutes refreshPeriod);
-          void threadSafeKeyInsert(const Aws::String& key);
-          bool threadSafeKeyHas(const Aws::String& key);
-          void threadSafeKeyEmpty();
-        
-          mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, smithy::AwsCredentialIdentity>> m_credentialsCache;
-          Aws::Set<Aws::String> m_keysUsed;
-          mutable std::mutex m_keysUsedMutex;
-          mutable bool m_shouldStopBackgroundRefresh;
-          Aws::UniquePtr<std::thread> m_backgroundRefreshThread;
-          mutable std::mutex m_shutDownMutex;
-          mutable std::condition_variable m_shutdownCondition;
+        private:
+            const S3Client &m_s3Client;
+            mutable std::mutex m_bucketNameMapMutex;
+            Aws::Map<Aws::String, std::shared_ptr<std::mutex>> m_bucketNameMutex;
+        };
+
+        class DefaultS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
+        public:
+            explicit DefaultS3ExpressIdentityProvider(const S3Client &m_s3Client);
+
+            DefaultS3ExpressIdentityProvider(const S3Client &s3Client,
+                std::shared_ptr<Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache);
+
+            DefaultS3ExpressIdentityProvider(const DefaultS3ExpressIdentityProvider& other) = delete;
+            DefaultS3ExpressIdentityProvider(DefaultS3ExpressIdentityProvider&& other) noexcept = delete;
+            DefaultS3ExpressIdentityProvider& operator=(const DefaultS3ExpressIdentityProvider& other) = delete;
+            DefaultS3ExpressIdentityProvider& operator=(DefaultS3ExpressIdentityProvider&& other) noexcept = delete;
+
+            virtual ~DefaultS3ExpressIdentityProvider() override = default;
+
+            S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
+
+        private:
+            mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
+        };
+
+        class DefaultAsyncS3ExpressIdentityProvider : public S3ExpressIdentityProvider {
+        public:
+            explicit DefaultAsyncS3ExpressIdentityProvider(const S3Client &m_s3Client,
+                std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
+
+            DefaultAsyncS3ExpressIdentityProvider(const S3Client &s3Client,
+                std::shared_ptr<Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> credentialsCache,
+                std::chrono::minutes refreshPeriod = std::chrono::minutes(1));
+
+            DefaultAsyncS3ExpressIdentityProvider(const DefaultAsyncS3ExpressIdentityProvider& other) = delete;
+            DefaultAsyncS3ExpressIdentityProvider(DefaultAsyncS3ExpressIdentityProvider&& other) noexcept = delete;
+            DefaultAsyncS3ExpressIdentityProvider& operator=(const DefaultAsyncS3ExpressIdentityProvider& other) = delete;
+            DefaultAsyncS3ExpressIdentityProvider& operator=(DefaultAsyncS3ExpressIdentityProvider&& other) noexcept = delete;
+
+            virtual ~DefaultAsyncS3ExpressIdentityProvider() override;
+
+            S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
+
+        private:
+            void refreshIdentities(std::chrono::minutes refreshPeriod);
+            void threadSafeKeyInsert(const Aws::String& key);
+            bool threadSafeKeyHas(const Aws::String& key);
+            void threadSafeKeyEmpty();
+
+            mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
+            Aws::Set<Aws::String> m_keysUsed;
+            mutable std::mutex m_keysUsedMutex;
+            mutable bool m_shouldStopBackgroundRefresh;
+            Aws::UniquePtr<std::thread> m_backgroundRefreshThread;
+            mutable std::mutex m_shutDownMutex;
+            mutable std::condition_variable m_shutdownCondition;
         };
     }
 }

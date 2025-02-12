@@ -20,7 +20,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
-#include <aws/core/AmazonWebServiceResult.h>
+
 #include <utility>
 
 namespace Aws
@@ -83,9 +83,6 @@ namespace client
         using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
-        using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSError >;
-        using ResolveEndpointFunctionType = std::function<ResolveEndpointOutcome (const Aws::Endpoint::EndpointParameters &)>;
-
 
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
@@ -97,7 +94,7 @@ namespace client
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
+          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
         {
             baseInit();
         }
@@ -113,7 +110,7 @@ namespace client
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
+          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
         {
           AWS_UNREFERENCED_PARAM(other);
           baseCopyInit();
@@ -137,13 +134,6 @@ namespace client
                                             const char* requestName,
                                             Aws::Http::HttpMethod method,
                                             EndpointUpdateCallback&& endpointCallback) const;
-
-        StreamOutcome MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
-                                const char* requestName,
-                                Aws::Http::HttpMethod method,
-                                EndpointUpdateCallback&& endpointCallback
-                                ) const;
-        void AppendToUserAgent(const Aws::String& valueToAppend);
 
     protected:
         void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
@@ -186,7 +176,6 @@ namespace client
         inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
         inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
         virtual void DisableRequestProcessing();
-        virtual void EnableRequestProcessing();
 
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
@@ -200,9 +189,6 @@ namespace client
         std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
         std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
         Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
-        std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
-    private:
-        void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
     };
 } // namespace client
 } // namespace smithy

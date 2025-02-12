@@ -4,6 +4,7 @@
   */
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
 #include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
+
 using namespace smithy;
 
 AuthSchemeOption SigV4AuthSchemeOption::sigV4AuthSchemeOption = AuthSchemeOption("aws.auth#sigv4");
