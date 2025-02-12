@@ -37,11 +37,38 @@ namespace smithy {
         }
 
         //delegate constructor
+        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
+                                 const Aws::String& serviceName,
+                                 const Aws::String& region,
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy,
+                                 bool urlEscapePath)
+            : AuthScheme(SIGV4), 
+            m_identityResolver{identityResolver}, 
+            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region, policy, urlEscapePath)}
+        {
+            assert(m_identityResolver);
+            assert(m_signer);
+        }
+
+        //delegate constructor
         explicit SigV4AuthScheme(const Aws::String& serviceName,
                                  const Aws::String& region)
             : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
                               serviceName,
                               region)
+        {
+        }
+
+        //For legacy constructors, signing requires additonal input parameters
+        explicit SigV4AuthScheme(const Aws::String& serviceName,
+                                 const Aws::String& region,
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy,
+                                 bool urlEscapePath)
+            : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
+                              serviceName,
+                              region,
+                              policy,
+                              urlEscapePath)
         {
         }
 

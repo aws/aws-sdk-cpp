@@ -10,6 +10,7 @@
 #include <aws/crt/Variant.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
+
 namespace smithy {
     /**
     * A base interface for code-generated interfaces for passing in the data required for determining the
@@ -29,10 +30,15 @@ namespace smithy {
 
     };
 
-    template<typename ServiceAuthSchemeParametersT = DefaultAuthSchemeResolverParameters>
+    template<typename ServiceAuthSchemeParametersT = DefaultAuthSchemeResolverParameters,  typename ClientConfigT = Aws::Client::ClientConfiguration>
     class AuthSchemeResolverBase
     {
     public:
+
+        virtual void Init(const ClientConfigT& config) {
+          AWS_UNREFERENCED_PARAM(config);
+        }
+
         using ServiceAuthSchemeParameters = ServiceAuthSchemeParametersT;
 
         virtual ~AuthSchemeResolverBase() = default;

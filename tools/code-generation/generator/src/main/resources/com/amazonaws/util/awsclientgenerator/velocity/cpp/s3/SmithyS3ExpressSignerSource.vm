@@ -1,23 +1,23 @@
-﻿/**
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * SPDX-License-Identifier: Apache-2.0.
- */
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
-#include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/platform/Environment.h>
-#include <aws/core/utils/UUID.h>
-#include <aws/s3/S3ExpressSigner.h>
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/core/auth/AWSCredentialsProvider.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+\#include <aws/core/platform/Environment.h>
+\#include <aws/core/utils/UUID.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigner.h>
 
-#include <utility>
+\#include <utility>
 
-using namespace Aws::S3;
-using namespace Aws::Client;
-using namespace Aws::Config;
-using namespace Aws::Environment;
-using namespace Aws::Utils;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::Client;
+using namespace ${rootNamespace}::Config;
+using namespace ${rootNamespace}::Environment;
+using namespace ${rootNamespace}::Utils;
 
-AWS_S3_API const char *Aws::S3::S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
+${CppViewHelper.computeExportValue($serviceNamespace)} const char *${rootNamespace}::${serviceNamespace}::S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
 static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
 static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
 static const char *S3_EXPRESS_SERVICE_NAME = "s3express";

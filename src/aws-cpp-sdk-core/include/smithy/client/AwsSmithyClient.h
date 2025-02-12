@@ -23,6 +23,7 @@
 #include <aws/core/utils/threading/SameThreadExecutor.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
 
 namespace smithy {
 namespace client
@@ -80,7 +81,7 @@ namespace client
         }
 
         AwsSmithyClientT& operator=(const AwsSmithyClientT& other)
-        {   
+        {
             if(this != &other)
             {
                 AwsSmithyClientBase::deepCopy(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
@@ -107,6 +108,7 @@ namespace client
     protected:
         void initClient() {
           m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
+          m_authSchemeResolver->Init(m_clientConfiguration);
         }
 
         inline const char* GetServiceClientName() const override { return m_serviceName.c_str(); }
@@ -150,6 +152,7 @@ namespace client
                     }
                 }
             }
+
             Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
 
             auto authSchemeOptionIt = std::find_if(authSchemeOptions.begin(), authSchemeOptions.end(),
@@ -162,7 +165,7 @@ namespace client
             if (authSchemeOptionIt != authSchemeOptions.end()) {
                 return SelectAuthSchemeOptionOutcome(*authSchemeOptionIt);
             }
-            return AWSError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
+            return Aws::Client::AWSError<CoreErrors>(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
                                  "",
                                  "Failed to select an auth scheme",
                                  false/*retryable*/);
@@ -186,7 +189,7 @@ namespace client
             auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
-	
+
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::String& region,
@@ -211,7 +214,35 @@ namespace client
             return {};
         }
 
-        ServiceClientConfigurationT& m_clientConfiguration;
+
+        Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                  Aws::Http::HttpMethod method,
+                                                  const Aws::String& region,
+                                                  const Aws::String& serviceName,
+                                                  long long expirationInSeconds,
+                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
+                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            const Aws::Http::URI& uri = endpoint.GetURI();
+            auto signerRegionOverride = region;
+            auto signerServiceNameOverride = serviceName;
+            //signer name is needed for some identity resolvers
+            if (endpoint.GetAttributes()) {
+                if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+                }
+                if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+                }
+                if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+                    signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+                }
+            }
+            return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
+        }
+
+    protected:
+        ServiceClientConfigurationT m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
