@@ -70,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The HTTP port for the CloudFront VPC origin endpoint configuration.</p>
+     * <p>The HTTP port for the CloudFront VPC origin endpoint configuration. The
+     * default value is <code>80</code>.</p>
      */
     inline int GetHTTPPort() const{ return m_hTTPPort; }
     inline bool HTTPPortHasBeenSet() const { return m_hTTPPortHasBeenSet; }
@@ -80,7 +81,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The HTTPS port of the CloudFront VPC origin endpoint configuration.</p>
+     * <p>The HTTPS port of the CloudFront VPC origin endpoint configuration. The
+     * default value is <code>443</code>.</p>
      */
     inline int GetHTTPSPort() const{ return m_hTTPSPort; }
     inline bool HTTPSPortHasBeenSet() const { return m_hTTPSPortHasBeenSet; }

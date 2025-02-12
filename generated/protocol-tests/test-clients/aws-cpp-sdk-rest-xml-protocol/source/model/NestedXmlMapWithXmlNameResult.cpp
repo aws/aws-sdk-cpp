@@ -42,6 +42,19 @@ NestedXmlMapWithXmlNameResult& NestedXmlMapWithXmlNameResult::operator =(const A
         XmlNode keyNode = nestedXmlMapWithXmlNameMapEntry.FirstChild("key");
         XmlNode valueNode = nestedXmlMapWithXmlNameMapEntry.FirstChild("value");
         m_nestedXmlMapWithXmlNameMap[keyNode.GetText()] =
+            [&valueNode]() -> Aws::Map<Aws::String, Aws::String> {
+            Aws::Map<Aws::String, Aws::String> nestedMapValue;
+            if(valueNode.IsNull())  { return nestedMapValue; }
+            XmlNode nestedMapValueEntryNode = valueNode.FirstChild("entry");
+            while(!nestedMapValueEntryNode.IsNull()) {
+              XmlNode nestedMapValueKeyNode = nestedMapValueEntryNode.FirstChild("InnerKey");
+              XmlNode nestedMapValueValNode = nestedMapValueEntryNode.FirstChild("InnerValue");
+              nestedMapValue[nestedMapValueKeyNode.GetText()] =
+                  nestedMapValueValNode.GetText();
+              nestedMapValueEntryNode = nestedMapValueEntryNode.NextNode("entry");
+            }
+            return nestedMapValue;
+          } (/*IIFE*/);
         nestedXmlMapWithXmlNameMapEntry = nestedXmlMapWithXmlNameMapEntry.NextNode("entry");
       }
 

@@ -94,11 +94,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location of the file that contains the template body. The URL must point
-     * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
-     * bucket or a Systems Manager document.</p> <p>Conditional: You must specify only
-     * one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
+     * <p>The URL of a file that contains the template body. The URL must point to a
+     * template (maximum size: 1 MB) that is located in an Amazon S3 bucket or a
+     * Systems Manager document. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.</p> <p>Conditional: You must specify only one of the
+     * following parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or
+     * set <code>UsePreviousTemplate</code> to true.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
@@ -170,18 +171,18 @@ namespace Model
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must update the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To update the stack set directly, you must acknowledge
      * this capability. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
+     * custom processing on CloudFormation templates with template macros</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.) Even if you specify this
@@ -251,8 +252,8 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
-     * Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
+     * for using CloudFormation StackSets</a> in the <i>CloudFormation User
      * Guide</i>.</p> <p>If you specified a customized administrator role when you
      * created the stack set, you must specify a customized administrator role, even if
      * it is the same customized administrator role used with this stack set
@@ -322,12 +323,12 @@ namespace Model
      * permissions, you must create the administrator and execution roles required to
      * deploy to target accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * self-managed permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
      * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
-     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
+     * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
      */
     inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }

@@ -124,10 +124,10 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>Calculates route matrix containing the results for all pairs of Origins to
-         * Destinations. Each row corresponds to one entry in Origins. Each entry in the
-         * row corresponds to the route from that entry in Origins to an entry in
-         * Destinations positions.</p><p><h3>See Also:</h3>   <a
+         * <p> Use <code>CalculateRouteMatrix</code> to compute results for all pairs of
+         * Origins to Destinations. Each row corresponds to one entry in Origins. Each
+         * entry in the row corresponds to the route from that entry in Origins to an entry
+         * in Destinations positions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRouteMatrix">AWS
          * API Reference</a></p>
          */
@@ -152,8 +152,9 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>Calculates a route given the following required parameters:
-         * <code>Origin</code> and <code>Destination</code>.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>CalculateRoutes</code> computes routes given the following required
+         * parameters: <code>Origin</code> and <code>Destination</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRoutes">AWS
          * API Reference</a></p>
          */
@@ -178,10 +179,10 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>Calculates the optimal order to travel between a set of waypoints to minimize
-         * either the travel time or the distance travelled during the journey, based on
-         * road network restrictions and the traffic pattern data.</p><p><h3>See Also:</h3>
-         * <a
+         * <p> <code>OptimizeWaypoints</code> calculates the optimal order to travel
+         * between a set of waypoints to minimize either the travel time or the distance
+         * travelled during the journey, based on road network restrictions and the traffic
+         * pattern data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/OptimizeWaypoints">AWS
          * API Reference</a></p>
          */
@@ -206,7 +207,7 @@ namespace GeoRoutes
         }
 
         /**
-         * <p>The SnapToRoads action matches GPS trace to roads most likely traveled
+         * <p> <code>SnapToRoads</code> matches GPS trace to roads most likely traveled
          * on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/SnapToRoads">AWS
          * API Reference</a></p>

@@ -80,8 +80,10 @@ namespace Model
      * supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table.</p>  <p>To transcribe speech in Modern Standard
-     * Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of
-     * 16,000 Hz or higher.</p> 
+     * Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West,
+     * us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1),
+     * Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your media file
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p> 
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
@@ -397,8 +399,10 @@ namespace Model
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a>.</p> <p>To transcribe speech in Modern Standard Arabic
-     * (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000
-     * Hz or higher.</p>
+     * (<code>ar-SA</code>)in Amazon Web Services GovCloud (US) (US-West,
+     * us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), in
+     * Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }

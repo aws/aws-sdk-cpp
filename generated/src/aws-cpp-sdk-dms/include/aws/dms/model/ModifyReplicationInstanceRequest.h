@@ -225,8 +225,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ID of the secret that stores the key cache file required for
-     * kerberos authentication, when modifying a replication instance.</p>
+     * <p>Specifies the settings required for kerberos authentication when modifying a
+     * replication instance.</p>
      */
     inline const KerberosAuthenticationSettings& GetKerberosAuthenticationSettings() const{ return m_kerberosAuthenticationSettings; }
     inline bool KerberosAuthenticationSettingsHasBeenSet() const { return m_kerberosAuthenticationSettingsHasBeenSet; }

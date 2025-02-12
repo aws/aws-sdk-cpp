@@ -61,8 +61,8 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the
      * format <code> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</code> (for example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information
-     * about bucket naming restrictions, see <a
+     * <code> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</code>). For
+     * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
      * points</b> - When you use this action with an access point, you must provide the
@@ -81,12 +81,12 @@ namespace Model
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
      *  <p>Access points and Object Lambda access points are not supported by
      * directory buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * action with S3 on Outposts, you must direct requests to the S3 on Outposts
+     * hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
+     * When you use this action with S3 on Outposts, the destination bucket must be the
+     * Outposts access point ARN or the access point alias. For more information about
+     * S3 on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
      * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -448,12 +448,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>To retrieve the checksum, this mode must be enabled.</p> <p> <b>General
-     * purpose buckets</b> - In addition, if you enable checksum mode and the object is
-     * uploaded with a <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a>
-     * and encrypted with an Key Management Service (KMS) key, you must have permission
-     * to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
+     * <p>To retrieve the checksum, this mode must be enabled.</p>
      */
     inline const ChecksumMode& GetChecksumMode() const{ return m_checksumMode; }
     inline bool ChecksumModeHasBeenSet() const { return m_checksumModeHasBeenSet; }

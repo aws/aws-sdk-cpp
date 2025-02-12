@@ -1703,7 +1703,8 @@ namespace DatabaseMigrationService
         }
 
         /**
-         * <p>For internal use only</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of upcoming maintenance events for replication instances in
+         * your account in the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          */

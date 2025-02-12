@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ENABLED,
     DISABLED,
-    STRICT
+    STRICT,
+    MERGE
   };
 
 namespace WebvttStylePassthroughMapper

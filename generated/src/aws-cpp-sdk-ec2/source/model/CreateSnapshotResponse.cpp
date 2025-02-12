@@ -22,6 +22,7 @@ CreateSnapshotResponse::CreateSnapshotResponse() :
     m_sseType(SSEType::NOT_SET),
     m_transferType(TransferType::NOT_SET),
     m_completionDurationMinutes(0),
+    m_fullSnapshotSizeInBytes(0),
     m_state(SnapshotState::NOT_SET),
     m_volumeSize(0),
     m_encrypted(false)
@@ -101,6 +102,11 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     if(!completionTimeNode.IsNull())
     {
       m_completionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(completionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    }
+    XmlNode fullSnapshotSizeInBytesNode = resultNode.FirstChild("fullSnapshotSizeInBytes");
+    if(!fullSnapshotSizeInBytesNode.IsNull())
+    {
+      m_fullSnapshotSizeInBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fullSnapshotSizeInBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())

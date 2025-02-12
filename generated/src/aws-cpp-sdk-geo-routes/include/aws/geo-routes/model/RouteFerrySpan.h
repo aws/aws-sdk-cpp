@@ -57,7 +57,8 @@ namespace Model
     ///@{
     /**
      * <p>Distance of the computed span. This feature doesn't split a span, but is
-     * always computed on a span split by other properties.</p>
+     * always computed on a span split by other properties.</p> <p> <b>Unit</b>:
+     * <code>meters</code> </p>
      */
     inline long long GetDistance() const{ return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }

@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Location of file containing the template body. The URL must point to a
+     * <p>The URL of a file containing the template body. The URL must point to a
      * template that's located in an Amazon S3 bucket or a Systems Manager document.
      * The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
      * <p>Conditional: You must pass <code>TemplateURL</code> or

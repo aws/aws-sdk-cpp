@@ -58,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Self-managed permissions] The names of the Amazon Web Services accounts that
-     * you want to delete stack instances for.</p> <p>You can specify
+     * <p>[Self-managed permissions] The account IDs of the Amazon Web Services
+     * accounts that you want to delete stack instances for.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }

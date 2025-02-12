@@ -27,10 +27,18 @@ namespace Model
    * <p>Describes a security group rule.</p> <p>You must specify exactly one of the
    * following parameters, based on the rule type:</p> <ul> <li> <p>CidrIpv4</p>
    * </li> <li> <p>CidrIpv6</p> </li> <li> <p>PrefixListId</p> </li> <li>
-   * <p>ReferencedGroupId</p> </li> </ul> <p>When you modify a rule, you cannot
-   * change the rule type. For example, if the rule uses an IPv4 address range, you
-   * must use <code>CidrIpv4</code> to specify a new IPv4 address
-   * range.</p><p><h3>See Also:</h3>   <a
+   * <p>ReferencedGroupId</p> </li> </ul>  <p> Amazon Web Services <a
+   * href="https://en.wikipedia.org/wiki/Canonicalization">canonicalizes</a> IPv4 and
+   * IPv6 CIDRs. For example, if you specify 100.68.0.18/18 for the CIDR block,
+   * Amazon Web Services canonicalizes the CIDR block to 100.68.0.0/18. Any
+   * subsequent DescribeSecurityGroups and DescribeSecurityGroupRules calls will
+   * return the canonicalized form of the CIDR block. Additionally, if you attempt to
+   * add another rule with the non-canonical form of the CIDR (such as
+   * 100.68.0.18/18) and there is already a rule for the canonicalized form of the
+   * CIDR block (such as 100.68.0.0/18), the API throws an duplicate rule error.</p>
+   *  <p>When you modify a rule, you cannot change the rule type. For example,
+   * if the rule uses an IPv4 address range, you must use <code>CidrIpv4</code> to
+   * specify a new IPv4 address range.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroupRuleRequest">AWS
    * API Reference</a></p>
    */

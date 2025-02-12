@@ -871,7 +871,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an chat controls configured for an existing Amazon Q
+         * <p>Gets information about chat controls configured for an existing Amazon Q
          * Business application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatControlsConfiguration">AWS
          * API Reference</a></p>
@@ -1874,7 +1874,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an set of chat controls configured for an existing Amazon Q Business
+         * <p>Updates a set of chat controls configured for an existing Amazon Q Business
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatControlsConfiguration">AWS
          * API Reference</a></p>

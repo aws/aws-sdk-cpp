@@ -88,6 +88,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>The filter for the Performance Insights metric.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const{ return m_filter; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    inline void SetFilter(const Aws::Map<Aws::String, Aws::String>& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Map<Aws::String, Aws::String>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+    inline PerformanceInsightsMetric& WithFilter(const Aws::Map<Aws::String, Aws::String>& value) { SetFilter(value); return *this;}
+    inline PerformanceInsightsMetric& WithFilter(Aws::Map<Aws::String, Aws::String>&& value) { SetFilter(std::move(value)); return *this;}
+    inline PerformanceInsightsMetric& AddFilter(const Aws::String& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    inline PerformanceInsightsMetric& AddFilter(Aws::String&& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
+    inline PerformanceInsightsMetric& AddFilter(const Aws::String& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
+    inline PerformanceInsightsMetric& AddFilter(Aws::String&& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
+    inline PerformanceInsightsMetric& AddFilter(const char* key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
+    inline PerformanceInsightsMetric& AddFilter(Aws::String&& key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
+    inline PerformanceInsightsMetric& AddFilter(const char* key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The value of the metric. For example, <code>9</code> for
      * <code>db.load.avg</code>.</p>
      */
@@ -106,6 +125,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_filter;
+    bool m_filterHasBeenSet = false;
 
     double m_value;
     bool m_valueHasBeenSet = false;

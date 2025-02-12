@@ -69,14 +69,16 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
-     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
-     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
-     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
-     * the attributes are only used in one flow and don't need to be referred to
-     * outside of that flow (for example, by a Lambda or another flow), then use flow
-     * attributes. This way you aren't needlessly persisting the 32 KB of information
-     * from one flow to another. For more information, see <a
+     * alphanumeric, dash, and underscore characters.</p> <p>In the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Set
+     * contact attributes</a> block, when the attributes for a contact exceed 32 KB,
+     * the contact is routed down the Error branch of the flow. As a mitigation,
+     * consider the following options:</p> <ul> <li> <p>Remove unnecessary attributes
+     * by setting their values to empty.</p> </li> <li> <p>If the attributes are only
+     * used in one flow and don't need to be referred to outside of that flow (for
+     * example, by a Lambda or another flow), then use flow attributes. This way you
+     * aren't needlessly persisting the 32 KB of information from one flow to another.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
      * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
      * Guide</i>. </p> </li> </ul>

@@ -147,7 +147,7 @@ Aws::Http::HeaderValueCollection InputAndOutputWithHeadersRequest::GetRequestSpe
       std::end(m_headerIntegerList),
       Aws::String{},
       [](const Aws::String &acc, const int &item) -> Aws::String {
-        const auto headerValue = item;
+        const auto headerValue = StringUtils::to_string(item);
         return acc.empty() ? headerValue : acc + "," + headerValue;
       }));
   }
@@ -158,7 +158,7 @@ Aws::Http::HeaderValueCollection InputAndOutputWithHeadersRequest::GetRequestSpe
       std::end(m_headerBooleanList),
       Aws::String{},
       [](const Aws::String &acc, const bool &item) -> Aws::String {
-        const auto headerValue = item;
+        const auto headerValue = StringUtils::to_string(item);
         return acc.empty() ? headerValue : acc + "," + headerValue;
       }));
   }
@@ -169,7 +169,7 @@ Aws::Http::HeaderValueCollection InputAndOutputWithHeadersRequest::GetRequestSpe
       std::end(m_headerTimestampList),
       Aws::String{},
       [](const Aws::String &acc, const Aws::Utils::DateTime &item) -> Aws::String {
-        const auto headerValue = item;
+        const auto headerValue = item.ToGmtString(Aws::Utils::DateFormat::RFC822);
         return acc.empty() ? headerValue : acc + "," + headerValue;
       }));
   }
@@ -203,7 +203,7 @@ Aws::Http::HeaderValueCollection InputAndOutputWithHeadersRequest::GetRequestSpe
       std::end(m_headerIntegerEnumList),
       Aws::String{},
       [](const Aws::String &acc, const int &item) -> Aws::String {
-        const auto headerValue = item;
+        const auto headerValue = StringUtils::to_string(item);
         return acc.empty() ? headerValue : acc + "," + headerValue;
       }));
   }

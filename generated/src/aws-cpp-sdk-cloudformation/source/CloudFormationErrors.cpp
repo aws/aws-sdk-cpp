@@ -19,6 +19,7 @@ namespace CloudFormationErrorMapper
 {
 
 static const int STACK_SET_NOT_FOUND_HASH = HashingUtils::HashString("StackSetNotFoundException");
+static const int STACK_REFACTOR_NOT_FOUND_HASH = HashingUtils::HashString("StackRefactorNotFoundException");
 static const int C_F_N_REGISTRY_HASH = HashingUtils::HashString("CFNRegistryException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int HOOK_RESULT_NOT_FOUND_HASH = HashingUtils::HashString("HookResultNotFound");
@@ -55,6 +56,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == STACK_SET_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_SET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == STACK_REFACTOR_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_REFACTOR_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == C_F_N_REGISTRY_HASH)
   {

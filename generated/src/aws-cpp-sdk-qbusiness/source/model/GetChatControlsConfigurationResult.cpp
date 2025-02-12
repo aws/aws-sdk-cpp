@@ -37,6 +37,12 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
 
   }
 
+  if(jsonValue.ValueExists("orchestrationConfiguration"))
+  {
+    m_orchestrationConfiguration = jsonValue.GetObject("orchestrationConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("blockedPhrases"))
   {
     m_blockedPhrases = jsonValue.GetObject("blockedPhrases");

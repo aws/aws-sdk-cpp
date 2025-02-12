@@ -4,15 +4,14 @@
  */
 
 #include <aws/rest-json-protocol/model/HttpEnumPayloadRequest.h>
-#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::RestJsonProtocol::Model;
-using namespace Aws::Utils::Stream;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws;
 
 HttpEnumPayloadRequest::HttpEnumPayloadRequest() : 
     m_payload(StringEnum::NOT_SET),
@@ -20,7 +19,17 @@ HttpEnumPayloadRequest::HttpEnumPayloadRequest() :
 {
 }
 
+Aws::String HttpEnumPayloadRequest::SerializePayload() const
+{
+  JsonValue payload;
 
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithString("payload", StringEnumMapper::GetNameForStringEnum(m_payload));
+  }
+
+  return payload.View().WriteReadable();
+}
 
 Aws::Http::HeaderValueCollection HttpEnumPayloadRequest::GetRequestSpecificHeaders() const
 {
@@ -36,3 +45,7 @@ Aws::Http::HeaderValueCollection HttpEnumPayloadRequest::GetRequestSpecificHeade
   return headers;
 
 }
+
+
+
+

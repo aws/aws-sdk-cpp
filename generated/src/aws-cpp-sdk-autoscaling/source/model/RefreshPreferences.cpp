@@ -74,7 +74,7 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
       XmlNode checkpointPercentagesMember = checkpointPercentagesNode.FirstChild("member");
       while(!checkpointPercentagesMember.IsNull())
       {
-         m_checkpointPercentages.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(checkpointPercentagesMember.GetText().c_str()).c_str()));
+        m_checkpointPercentages.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(checkpointPercentagesMember.GetText().c_str()).c_str()));
         checkpointPercentagesMember = checkpointPercentagesMember.NextNode("member");
       }
 

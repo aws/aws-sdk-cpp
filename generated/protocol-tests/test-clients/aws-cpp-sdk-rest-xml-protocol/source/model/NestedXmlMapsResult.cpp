@@ -42,6 +42,19 @@ NestedXmlMapsResult& NestedXmlMapsResult::operator =(const Aws::AmazonWebService
         XmlNode keyNode = nestedMapEntry.FirstChild("key");
         XmlNode valueNode = nestedMapEntry.FirstChild("value");
         m_nestedMap[keyNode.GetText()] =
+            [&valueNode]() -> Aws::Map<Aws::String, FooEnum> {
+            Aws::Map<Aws::String, FooEnum> nestedMapValue;
+            if(valueNode.IsNull())  { return nestedMapValue; }
+            XmlNode nestedMapValueEntryNode = valueNode.FirstChild("entry");
+            while(!nestedMapValueEntryNode.IsNull()) {
+              XmlNode nestedMapValueKeyNode = nestedMapValueEntryNode.FirstChild("key");
+              XmlNode nestedMapValueValNode = nestedMapValueEntryNode.FirstChild("value");
+              nestedMapValue[nestedMapValueKeyNode.GetText()] =
+                  FooEnumMapper::GetFooEnumForName(StringUtils::Trim(nestedMapValueValNode.GetText().c_str()));
+              nestedMapValueEntryNode = nestedMapValueEntryNode.NextNode("entry");
+            }
+            return nestedMapValue;
+          } (/*IIFE*/);
         nestedMapEntry = nestedMapEntry.NextNode("entry");
       }
 
@@ -56,6 +69,19 @@ NestedXmlMapsResult& NestedXmlMapsResult::operator =(const Aws::AmazonWebService
         XmlNode keyNode = flatNestedMapEntry.FirstChild("key");
         XmlNode valueNode = flatNestedMapEntry.FirstChild("value");
         m_flatNestedMap[keyNode.GetText()] =
+            [&valueNode]() -> Aws::Map<Aws::String, FooEnum> {
+            Aws::Map<Aws::String, FooEnum> nestedMapValue;
+            if(valueNode.IsNull())  { return nestedMapValue; }
+            XmlNode nestedMapValueEntryNode = valueNode.FirstChild("entry");
+            while(!nestedMapValueEntryNode.IsNull()) {
+              XmlNode nestedMapValueKeyNode = nestedMapValueEntryNode.FirstChild("key");
+              XmlNode nestedMapValueValNode = nestedMapValueEntryNode.FirstChild("value");
+              nestedMapValue[nestedMapValueKeyNode.GetText()] =
+                  FooEnumMapper::GetFooEnumForName(StringUtils::Trim(nestedMapValueValNode.GetText().c_str()));
+              nestedMapValueEntryNode = nestedMapValueEntryNode.NextNode("entry");
+            }
+            return nestedMapValue;
+          } (/*IIFE*/);
         flatNestedMapEntry = flatNestedMapEntry.NextNode("entry");
       }
 

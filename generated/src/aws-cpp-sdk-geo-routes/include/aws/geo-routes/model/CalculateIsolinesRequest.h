@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Features that are allowed while calculating. a route</p>
+     * <p>Features that are allowed while calculating an isoline.</p>
      */
     inline const IsolineAllowOptions& GetAllow() const{ return m_allow; }
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
@@ -163,7 +163,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines the granularity of the returned Isoline</p>
+     * <p>Defines the granularity of the returned Isoline.</p>
      */
     inline const IsolineGranularityOptions& GetIsolineGranularity() const{ return m_isolineGranularity; }
     inline bool IsolineGranularityHasBeenSet() const { return m_isolineGranularityHasBeenSet; }
@@ -246,7 +246,11 @@ namespace Model
     ///@{
     /**
      * <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per
-     * provided type can be requested.</p>
+     * provided type can be requested.</p> <p> You incur a calculation charge for each
+     * threshold. Using a large amount of thresholds in a request can lead you to incur
+     * unexpected charges. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
+     * Amazon Location's pricing page</a> for more information.</p>
      */
     inline const IsolineThresholds& GetThresholds() const{ return m_thresholds; }
     inline bool ThresholdsHasBeenSet() const { return m_thresholdsHasBeenSet; }

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies using Kerberos authentication settings for use with
-   * DMS.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings required for kerberos authentication when creating the
+   * replication instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/KerberosAuthenticationSettings">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the secret ID of the key cache for the replication instance.</p>
+     * <p>Specifies the ID of the secret that stores the key cache file required for
+     * kerberos authentication.</p>
      */
     inline const Aws::String& GetKeyCacheSecretId() const{ return m_keyCacheSecretId; }
     inline bool KeyCacheSecretIdHasBeenSet() const { return m_keyCacheSecretIdHasBeenSet; }
@@ -55,8 +56,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that grants Amazon
-     * Web Services DMS access to the secret containing key cache file for the
-     * replication instance.</p>
+     * Web Services DMS access to the secret containing key cache file for the kerberos
+     * authentication.</p>
      */
     inline const Aws::String& GetKeyCacheSecretIamArn() const{ return m_keyCacheSecretIamArn; }
     inline bool KeyCacheSecretIamArnHasBeenSet() const { return m_keyCacheSecretIamArnHasBeenSet; }
@@ -70,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ID of the secret that stores the key cache file required for
-     * kerberos authentication of the replication instance.</p>
+     * <p>Specifies the contents of krb5 configuration file required for kerberos
+     * authentication.</p>
      */
     inline const Aws::String& GetKrb5FileContents() const{ return m_krb5FileContents; }
     inline bool Krb5FileContentsHasBeenSet() const { return m_krb5FileContentsHasBeenSet; }

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> A filter used to determine which webhooks trigger a build. </p><p><h3>See
+   * <p>A filter used to determine which webhooks trigger a build. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/WebhookFilter">AWS
    * API Reference</a></p>
@@ -92,7 +92,9 @@ namespace Model
      * </p>  </li> </ul> </li> <li> <p>WORKFLOW_NAME</p> <ul> <li> <p>A webhook
      * triggers a build when the workflow name matches the regular expression
      * <code>pattern</code>.</p>  <p> Works with <code>WORKFLOW_JOB_QUEUED</code>
-     * events only. </p>  </li> </ul> </li> </ul>
+     * events only. </p>   <p>For CodeBuild-hosted Buildkite runner
+     * builds, WORKFLOW_NAME filters will filter by pipeline name.</p>  </li>
+     * </ul> </li> </ul>
      */
     inline const WebhookFilterType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

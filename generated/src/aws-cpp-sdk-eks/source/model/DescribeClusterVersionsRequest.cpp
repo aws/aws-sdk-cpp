@@ -25,8 +25,8 @@ DescribeClusterVersionsRequest::DescribeClusterVersionsRequest() :
     m_includeAll(false),
     m_includeAllHasBeenSet(false),
     m_clusterVersionsHasBeenSet(false),
-    m_status(ClusterVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_versionStatus(VersionStatus::NOT_SET),
+    m_versionStatusHasBeenSet(false)
 {
 }
 
@@ -83,10 +83,10 @@ void DescribeClusterVersionsRequest::AddQueryStringParameters(URI& uri) const
       }
     }
 
-    if(m_statusHasBeenSet)
+    if(m_versionStatusHasBeenSet)
     {
-      ss << ClusterVersionStatusMapper::GetNameForClusterVersionStatus(m_status);
-      uri.AddQueryStringParameter("status", ss.str());
+      ss << VersionStatusMapper::GetNameForVersionStatus(m_versionStatus);
+      uri.AddQueryStringParameter("versionStatus", ss.str());
       ss.str("");
     }
 

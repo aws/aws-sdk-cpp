@@ -1,0 +1,49 @@
+##-------------------- deserializeXmlMapPayloadElement macro
+#macro( deserializeXmlMapPayloadElement $memberName $member $memberIsWholePayload $lowerCaseVarName $spaces='')
+#set($macro.spaces = "${spaces}  ")
+#if($member.locationName)##member uses location for serialization
+#set($macro.mapVarName = $CppViewHelper.computeVariableName($member.locationName) + "Entry")
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
+#else##no location specified
+#set($macro.mapVarName = $CppViewHelper.computeVariableName($memberName) + "Entry")
+#if($memberIsWholePayload)##member is whole payload
+    XmlNode ${lowerCaseVarName}Node = resultNode;
+#else
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
+#end##member is whole payload
+
+#end##member uses location for serialization
+#if($member.xmlAttribute)
+    if(!${lowerCaseVarName}.empty())
+    {
+#else
+    if(!${lowerCaseVarName}Node.IsNull())
+    {
+#end
+#if($macro.mapVarName)
+#if($member.locationName)
+    ${macro.spaces}XmlNode ${macro.mapVarName} = ${lowerCaseVarName}Node;
+#else
+    ${macro.spaces}XmlNode ${macro.mapVarName} = ${lowerCaseVarName}Node.FirstChild("entry");
+#end
+#end###if($mapVarName)
+    ${macro.spaces}while(!${macro.mapVarName}.IsNull())
+    ${macro.spaces}{
+#if($member.locationName)
+    ${macro.spaces}  XmlNode keyNode = ${macro.mapVarName}.FirstChild("${member.shape.mapKey.locationName}");
+    ${macro.spaces}  XmlNode valueNode = ${macro.mapVarName}.FirstChild("${member.shape.mapValue.locationName}");
+#else
+    ${macro.spaces}  XmlNode keyNode = ${macro.mapVarName}.FirstChild("key");
+    ${macro.spaces}  XmlNode valueNode = ${macro.mapVarName}.FirstChild("value");
+#end
+#set($macro.memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+    ${macro.spaces}  ${macro.memberVarName}[#deserializeXmlSingleElement($member.shape.mapKey, "keyNode")] =
+    ${macro.spaces}      #deserializeXmlSingleElement($member.shape.mapValue, "valueNode", $macro.spaces, false);
+#if($member.locationName)
+    ${macro.spaces}  ${macro.mapVarName} = ${macro.mapVarName}.NextNode("${member.locationName}");
+#else
+    ${macro.spaces}  ${macro.mapVarName} = ${macro.mapVarName}.NextNode("entry");
+#end
+    ${macro.spaces}}
+
+#end##macro deserializeXmlMapPayloadElement

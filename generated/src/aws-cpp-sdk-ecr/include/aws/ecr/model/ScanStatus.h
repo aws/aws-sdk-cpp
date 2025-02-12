@@ -23,7 +23,8 @@ namespace Model
     ACTIVE,
     PENDING,
     SCAN_ELIGIBILITY_EXPIRED,
-    FINDINGS_UNAVAILABLE
+    FINDINGS_UNAVAILABLE,
+    LIMIT_EXCEEDED
   };
 
 namespace ScanStatusMapper

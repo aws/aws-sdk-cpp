@@ -389,6 +389,32 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Creates a refactor across multiple stacks, with the list of stacks and
+         * resources that are affected.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStackRefactorOutcome CreateStackRefactor(const Model::CreateStackRefactorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateStackRefactor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateStackRefactorRequestT = Model::CreateStackRefactorRequest>
+        Model::CreateStackRefactorOutcomeCallable CreateStackRefactorCallable(const CreateStackRefactorRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::CreateStackRefactor, request);
+        }
+
+        /**
+         * An Async wrapper for CreateStackRefactor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateStackRefactorRequestT = Model::CreateStackRefactorRequest>
+        void CreateStackRefactorAsync(const CreateStackRefactorRequestT& request, const CreateStackRefactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::CreateStackRefactor, request, handler, context);
+        }
+
+        /**
          * <p>Creates a stack set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">AWS
          * API Reference</a></p>
@@ -953,6 +979,31 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Describes the stack refactor status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStackRefactorOutcome DescribeStackRefactor(const Model::DescribeStackRefactorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeStackRefactor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeStackRefactorRequestT = Model::DescribeStackRefactorRequest>
+        Model::DescribeStackRefactorOutcomeCallable DescribeStackRefactorCallable(const DescribeStackRefactorRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DescribeStackRefactor, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeStackRefactor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeStackRefactorRequestT = Model::DescribeStackRefactorRequest>
+        void DescribeStackRefactorAsync(const DescribeStackRefactorRequestT& request, const DescribeStackRefactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DescribeStackRefactor, request, handler, context);
+        }
+
+        /**
          * <p>Returns a description of the specified resource in the specified stack.</p>
          * <p>For deleted stacks, DescribeStackResource returns resource information for up
          * to 90 days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
@@ -1292,8 +1343,8 @@ namespace CloudFormation
          * <p>Detect drift on a stack set. When CloudFormation performs drift detection on
          * a stack set, it performs drift detection on the stack associated with each stack
          * instance in the stack set. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
-         * CloudFormation performs drift detection on a stack set</a>.</p> <p>
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+         * drift detection on CloudFormation StackSets</a>.</p> <p>
          * <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the
          * stack set drift detection operation. Use this operation id with
          * <a>DescribeStackSetOperation</a> to monitor the progress of the drift detection
@@ -1309,13 +1360,9 @@ namespace CloudFormation
          * status and last drift time checked of each instance.</p> </li> <li> <p>Use
          * <a>DescribeStackInstance</a> to return detailed information about a specific
          * stack instance, including its drift status and last drift time checked.</p>
-         * </li> </ul> <p>For more information about performing a drift detection operation
-         * on a stack set, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-         * unmanaged changes in stack sets</a>.</p> <p>You can only run a single drift
-         * detection operation on a given stack set at one time.</p> <p>To stop a drift
-         * detection stack set operation, use <a>StopStackSetOperation</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * </li> </ul> <p>You can only run a single drift detection operation on a given
+         * stack set at one time.</p> <p>To stop a drift detection stack set operation, use
+         * <a>StopStackSetOperation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackSetDrift">AWS
          * API Reference</a></p>
          */
@@ -1400,6 +1447,31 @@ namespace CloudFormation
         void ExecuteChangeSetAsync(const ExecuteChangeSetRequestT& request, const ExecuteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::ExecuteChangeSet, request, handler, context);
+        }
+
+        /**
+         * <p>Executes the stack refactor operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteStackRefactorOutcome ExecuteStackRefactor(const Model::ExecuteStackRefactorRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExecuteStackRefactor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExecuteStackRefactorRequestT = Model::ExecuteStackRefactorRequest>
+        Model::ExecuteStackRefactorOutcomeCallable ExecuteStackRefactorCallable(const ExecuteStackRefactorRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ExecuteStackRefactor, request);
+        }
+
+        /**
+         * An Async wrapper for ExecuteStackRefactor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExecuteStackRefactorRequestT = Model::ExecuteStackRefactorRequest>
+        void ExecuteStackRefactorAsync(const ExecuteStackRefactorRequestT& request, const ExecuteStackRefactorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ExecuteStackRefactor, request, handler, context);
         }
 
         /**
@@ -1826,6 +1898,58 @@ namespace CloudFormation
         void ListStackInstancesAsync(const ListStackInstancesRequestT& request, const ListStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::ListStackInstances, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the stack refactor actions that will be taken after calling the
+         * <a>ExecuteStackRefactor</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackRefactorActionsOutcome ListStackRefactorActions(const Model::ListStackRefactorActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStackRefactorActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStackRefactorActionsRequestT = Model::ListStackRefactorActionsRequest>
+        Model::ListStackRefactorActionsOutcomeCallable ListStackRefactorActionsCallable(const ListStackRefactorActionsRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListStackRefactorActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListStackRefactorActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStackRefactorActionsRequestT = Model::ListStackRefactorActionsRequest>
+        void ListStackRefactorActionsAsync(const ListStackRefactorActionsRequestT& request, const ListStackRefactorActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListStackRefactorActions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all account stack refactor operations and their statuses.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackRefactorsOutcome ListStackRefactors(const Model::ListStackRefactorsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListStackRefactors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStackRefactorsRequestT = Model::ListStackRefactorsRequest>
+        Model::ListStackRefactorsOutcomeCallable ListStackRefactorsCallable(const ListStackRefactorsRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListStackRefactors, request);
+        }
+
+        /**
+         * An Async wrapper for ListStackRefactors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStackRefactorsRequestT = Model::ListStackRefactorsRequest>
+        void ListStackRefactorsAsync(const ListStackRefactorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStackRefactorsRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListStackRefactors, request, handler, context);
         }
 
         /**

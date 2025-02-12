@@ -816,7 +816,7 @@ HttpRequestWithLabelsOutcome RestJsonProtocolClient::HttpRequestWithLabels(const
       resolvedEndpoint.AddPathSegment(request.GetFloat());
       resolvedEndpoint.AddPathSegment(request.GetDouble());
       resolvedEndpoint.AddPathSegment(request.GetBoolean());
-      resolvedEndpoint.AddPathSegment(request.GetTimestamp());
+      resolvedEndpoint.AddPathSegment(request.GetTimestamp().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -874,13 +874,13 @@ HttpRequestWithLabelsAndTimestampFormatOutcome RestJsonProtocolClient::HttpReque
     [&]()-> HttpRequestWithLabelsAndTimestampFormatOutcome {
       return HttpRequestWithLabelsAndTimestampFormatOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       resolvedEndpoint.AddPathSegments("/HttpRequestWithLabelsAndTimestampFormat/");
-      resolvedEndpoint.AddPathSegment(request.GetMemberEpochSeconds());
-      resolvedEndpoint.AddPathSegment(request.GetMemberHttpDate());
-      resolvedEndpoint.AddPathSegment(request.GetMemberDateTime());
-      resolvedEndpoint.AddPathSegment(request.GetDefaultFormat());
-      resolvedEndpoint.AddPathSegment(request.GetTargetEpochSeconds());
-      resolvedEndpoint.AddPathSegment(request.GetTargetHttpDate());
-      resolvedEndpoint.AddPathSegment(request.GetTargetDateTime());
+      resolvedEndpoint.AddPathSegment(request.GetMemberEpochSeconds().Seconds());
+      resolvedEndpoint.AddPathSegment(request.GetMemberHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
+      resolvedEndpoint.AddPathSegment(request.GetMemberDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+      resolvedEndpoint.AddPathSegment(request.GetDefaultFormat().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+      resolvedEndpoint.AddPathSegment(request.GetTargetEpochSeconds().Seconds());
+      resolvedEndpoint.AddPathSegment(request.GetTargetHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
+      resolvedEndpoint.AddPathSegment(request.GetTargetDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

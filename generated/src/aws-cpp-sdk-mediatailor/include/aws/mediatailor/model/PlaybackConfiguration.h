@@ -366,7 +366,8 @@ namespace Model
     ///@{
     /**
      * <p>The setting that indicates what conditioning MediaTailor will perform on ads
-     * that the ad decision server (ADS) returns.</p>
+     * that the ad decision server (ADS) returns, and what priority MediaTailor uses
+     * when inserting ads.</p>
      */
     inline const AdConditioningConfiguration& GetAdConditioningConfiguration() const{ return m_adConditioningConfiguration; }
     inline bool AdConditioningConfigurationHasBeenSet() const { return m_adConditioningConfigurationHasBeenSet; }

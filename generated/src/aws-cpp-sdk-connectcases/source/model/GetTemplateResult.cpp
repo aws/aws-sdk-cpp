@@ -77,6 +77,15 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("rules"))
+  {
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
+    {
+      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("status"));

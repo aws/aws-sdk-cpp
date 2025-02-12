@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AfdSignaling.h>
 #include <aws/mediaconvert/model/AntiAlias.h>
+#include <aws/mediaconvert/model/ChromaPositionMode.h>
 #include <aws/mediaconvert/model/VideoCodecSettings.h>
 #include <aws/mediaconvert/model/ColorMetadata.h>
 #include <aws/mediaconvert/model/Rectangle.h>
@@ -81,14 +82,29 @@ namespace Model
 
     ///@{
     /**
+     * Specify the chroma sample positioning metadata for your H.264 or H.265 output.
+     * To have MediaConvert automatically determine chroma positioning: We recommend
+     * that you keep the default value, Auto. To specify center positioning: Choose
+     * Force center. To specify top left positioning: Choose Force top left.
+     */
+    inline const ChromaPositionMode& GetChromaPositionMode() const{ return m_chromaPositionMode; }
+    inline bool ChromaPositionModeHasBeenSet() const { return m_chromaPositionModeHasBeenSet; }
+    inline void SetChromaPositionMode(const ChromaPositionMode& value) { m_chromaPositionModeHasBeenSet = true; m_chromaPositionMode = value; }
+    inline void SetChromaPositionMode(ChromaPositionMode&& value) { m_chromaPositionModeHasBeenSet = true; m_chromaPositionMode = std::move(value); }
+    inline VideoDescription& WithChromaPositionMode(const ChromaPositionMode& value) { SetChromaPositionMode(value); return *this;}
+    inline VideoDescription& WithChromaPositionMode(ChromaPositionMode&& value) { SetChromaPositionMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Video codec settings contains the group of settings related to video encoding.
      * The settings in this group vary depending on the value that you choose for Video
      * codec. For each codec enum that you choose, define the corresponding settings
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
-     * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
-     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+     * * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2,
+     * Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings *
+     * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
@@ -294,6 +310,9 @@ namespace Model
 
     AntiAlias m_antiAlias;
     bool m_antiAliasHasBeenSet = false;
+
+    ChromaPositionMode m_chromaPositionMode;
+    bool m_chromaPositionModeHasBeenSet = false;
 
     VideoCodecSettings m_codecSettings;
     bool m_codecSettingsHasBeenSet = false;

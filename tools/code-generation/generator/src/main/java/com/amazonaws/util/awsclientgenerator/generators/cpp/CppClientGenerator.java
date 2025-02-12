@@ -59,6 +59,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
         velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
         velocityEngine.setProperty("context.scope_control.template", true);
+        velocityEngine.setProperty("context.scope_control.macro", true);
         // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
         // # Use backward compatible space gobbling
         velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());

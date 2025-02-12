@@ -1,0 +1,32 @@
+##-------------------- deserializeXmlNestedMapElement macro
+#macro( deserializeXmlNestedMapElement $member $memberVarName $spaces='')
+#set($macro.spaces = "${spaces}  ")
+#set($macro.mapCppType = $CppViewHelper.computeCppType($member.shape))
+#set($macro.resultVarName = "nestedMap$CppViewHelper.capitalizeFirstChar(${memberVarName.replace('Node', '')})")
+[&${memberVarName}]() -> ${macro.mapCppType} {
+    ${macro.spaces}  ${macro.mapCppType} ${macro.resultVarName};
+    ${macro.spaces}  if(${memberVarName}.IsNull())  { return ${macro.resultVarName}; }
+##map can be either "wrapped" or "flattened": https://smithy.io/2.0/spec/protocol-traits.html#wrapped-map-serialization
+#if($member.flattened || true)
+##flattened case, get the the first pair of key-val holding node.
+##The name of this repeated node is from the model (or unlikely default "entry").
+    ${macro.spaces}  XmlNode ${macro.resultVarName}EntryNode = ${memberVarName}.FirstChild("${CppViewHelper.ifNotNullOrEmpty($member.locationName, 'entry')}");
+#else
+##Nested maps appear to be always flattened, hence the above branch is forced to true, keeping this branch for reference for a regular map logic
+##wrapped case, get the "values" node first
+    ${macro.spaces}  XmlNode ${macro.resultVarName}EntryNode = ${memberVarName}.FirstChild("${CppViewHelper.ifNotNullOrEmpty($member.locationName, 'value')}");
+    ${macro.spaces}  if(!${macro.resultVarName}EntryNode.IsNull()) {
+    ${macro.spaces}    // The map is wrapped, get the first map entry
+    ${macro.spaces}    ${macro.resultVarName}EntryNode = ${macro.resultVarName}EntryNode.FirstChild("entry");
+    ${macro.spaces}  }
+#end##if(!$member.shape.flattened)
+    ${macro.spaces}  while(!${macro.resultVarName}EntryNode.IsNull()) {
+    ${macro.spaces}    XmlNode ${macro.resultVarName}KeyNode = ${macro.resultVarName}EntryNode.FirstChild("${CppViewHelper.ifNotNullOrEmpty($member.shape.mapKey.locationName, 'key')}");
+    ${macro.spaces}    XmlNode ${macro.resultVarName}ValNode = ${macro.resultVarName}EntryNode.FirstChild("${CppViewHelper.ifNotNullOrEmpty($member.shape.mapValue.locationName, 'value')}");
+    ${macro.spaces}    ${macro.resultVarName}[#deserializeXmlSingleElement($member.shape.mapKey, "${macro.resultVarName}KeyNode")] =
+    ${macro.spaces}        #deserializeXmlSingleElement($member.shape.mapValue, "${macro.resultVarName}ValNode", $macro.spaces, false);
+    ${macro.spaces}    ${macro.resultVarName}EntryNode = ${macro.resultVarName}EntryNode.NextNode("${CppViewHelper.ifNotNullOrEmpty($member.locationName, 'entry')}");
+    ${macro.spaces}  }
+    ${macro.spaces}  return ${macro.resultVarName};
+    ${macro.spaces}} (/*IIFE*/)##
+#end##macro deserializeXmlNestedMapElement

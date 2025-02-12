@@ -121,11 +121,11 @@ namespace Model
      * doesn't change the add-on resource properties. Creation of the add-on might fail
      * if conflicts are detected. This option works differently during the update
      * operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.</p>
-     * </li> </ul> <p>If you don't currently have the self-managed version of the
-     * add-on installed on your cluster, the Amazon EKS add-on is installed. Amazon EKS
-     * sets all values to default values, regardless of the option that you
-     * specify.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">
+     * <code>UpdateAddon</code> </a>.</p> </li> </ul> <p>If you don't currently have
+     * the self-managed version of the add-on installed on your cluster, the Amazon EKS
+     * add-on is installed. Amazon EKS sets all values to default values, regardless of
+     * the option that you specify.</p>
      */
     inline const ResolveConflicts& GetResolveConflicts() const{ return m_resolveConflicts; }
     inline bool ResolveConflictsHasBeenSet() const { return m_resolveConflictsHasBeenSet; }

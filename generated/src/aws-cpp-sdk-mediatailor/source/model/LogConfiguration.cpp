@@ -20,7 +20,8 @@ namespace Model
 
 LogConfiguration::LogConfiguration() : 
     m_percentEnabled(0),
-    m_percentEnabledHasBeenSet(false)
+    m_percentEnabledHasBeenSet(false),
+    m_enabledLoggingStrategiesHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,16 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     m_percentEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnabledLoggingStrategies"))
+  {
+    Aws::Utils::Array<JsonView> enabledLoggingStrategiesJsonList = jsonValue.GetArray("EnabledLoggingStrategies");
+    for(unsigned enabledLoggingStrategiesIndex = 0; enabledLoggingStrategiesIndex < enabledLoggingStrategiesJsonList.GetLength(); ++enabledLoggingStrategiesIndex)
+    {
+      m_enabledLoggingStrategies.push_back(LoggingStrategyMapper::GetLoggingStrategyForName(enabledLoggingStrategiesJsonList[enabledLoggingStrategiesIndex].AsString()));
+    }
+    m_enabledLoggingStrategiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,17 @@ JsonValue LogConfiguration::Jsonize() const
   if(m_percentEnabledHasBeenSet)
   {
    payload.WithInteger("PercentEnabled", m_percentEnabled);
+
+  }
+
+  if(m_enabledLoggingStrategiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> enabledLoggingStrategiesJsonList(m_enabledLoggingStrategies.size());
+   for(unsigned enabledLoggingStrategiesIndex = 0; enabledLoggingStrategiesIndex < enabledLoggingStrategiesJsonList.GetLength(); ++enabledLoggingStrategiesIndex)
+   {
+     enabledLoggingStrategiesJsonList[enabledLoggingStrategiesIndex].AsString(LoggingStrategyMapper::GetNameForLoggingStrategy(m_enabledLoggingStrategies[enabledLoggingStrategiesIndex]));
+   }
+   payload.WithArray("EnabledLoggingStrategies", std::move(enabledLoggingStrategiesJsonList));
 
   }
 

@@ -64,7 +64,7 @@ RequiredActivatedType& RequiredActivatedType::operator =(const XmlNode& xmlNode)
       XmlNode supportedMajorVersionsMember = supportedMajorVersionsNode.FirstChild("member");
       while(!supportedMajorVersionsMember.IsNull())
       {
-         m_supportedMajorVersions.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(supportedMajorVersionsMember.GetText().c_str()).c_str()));
+        m_supportedMajorVersions.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(supportedMajorVersionsMember.GetText().c_str()).c_str()));
         supportedMajorVersionsMember = supportedMajorVersionsMember.NextNode("member");
       }
 

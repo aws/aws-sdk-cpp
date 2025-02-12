@@ -22,6 +22,7 @@ namespace Aws
 
         static const int BUILD_HASH = HashingUtils::HashString("BUILD");
         static const int BUILD_BATCH_HASH = HashingUtils::HashString("BUILD_BATCH");
+        static const int RUNNER_BUILDKITE_BUILD_HASH = HashingUtils::HashString("RUNNER_BUILDKITE_BUILD");
 
 
         WebhookBuildType GetWebhookBuildTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == BUILD_BATCH_HASH)
           {
             return WebhookBuildType::BUILD_BATCH;
+          }
+          else if (hashCode == RUNNER_BUILDKITE_BUILD_HASH)
+          {
+            return WebhookBuildType::RUNNER_BUILDKITE_BUILD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "BUILD";
           case WebhookBuildType::BUILD_BATCH:
             return "BUILD_BATCH";
+          case WebhookBuildType::RUNNER_BUILDKITE_BUILD:
+            return "RUNNER_BUILDKITE_BUILD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     DUPLICATE_DROP,
     INTERPOLATE,
-    FRAMEFORMER
+    FRAMEFORMER,
+    MAINTAIN_FRAME_COUNT
   };
 
 namespace Mpeg2FramerateConversionAlgorithmMapper

@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>Exceptions to the provided avoidance geometry, to be included while
-     * calculating the route.</p>
+     * calculating an isoline.</p>
      */
     inline const Aws::Vector<IsolineAvoidanceAreaGeometry>& GetExcept() const{ return m_except; }
     inline bool ExceptHasBeenSet() const { return m_exceptHasBeenSet; }

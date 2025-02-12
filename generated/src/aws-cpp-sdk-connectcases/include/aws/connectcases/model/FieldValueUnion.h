@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Object to store union of Field values.</p>  <p>The <code>Summary</code>
-   * system field accepts 1500 characters while all other fields accept 500
+   * system field accepts 3000 characters while all other fields accept 500
    * characters.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/FieldValueUnion">AWS
    * API Reference</a></p>

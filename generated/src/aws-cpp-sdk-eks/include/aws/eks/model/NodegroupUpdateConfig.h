@@ -70,16 +70,17 @@ namespace Model
      * <p>The configuration for the behavior to follow during a node group version
      * update of this managed node group. You choose between two possible strategies
      * for replacing nodes during an <a
-     * href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a>
-     * action.</p> <p>An Amazon EKS managed node group updates by replacing nodes with
-     * new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes
-     * the managed node update behavior of the managed node group for each quantity.
-     * The <i>default</i> strategy has guardrails to protect you from misconfiguration
-     * and launches the new instances first, before terminating the old instances. The
-     * <i>minimal</i> strategy removes the guardrails and terminates the old instances
-     * before launching the new instances. This minimal strategy is useful in scenarios
-     * where you are constrained to resources or costs (for example, with hardware
-     * accelerators such as GPUs).</p>
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html">
+     * <code>UpdateNodegroupVersion</code> </a> action.</p> <p>An Amazon EKS managed
+     * node group updates by replacing nodes with new nodes of newer AMI versions in
+     * parallel. The <i>update strategy</i> changes the managed node update behavior of
+     * the managed node group for each quantity. The <i>default</i> strategy has
+     * guardrails to protect you from misconfiguration and launches the new instances
+     * first, before terminating the old instances. The <i>minimal</i> strategy removes
+     * the guardrails and terminates the old instances before launching the new
+     * instances. This minimal strategy is useful in scenarios where you are
+     * constrained to resources or costs (for example, with hardware accelerators such
+     * as GPUs).</p>
      */
     inline const NodegroupUpdateStrategies& GetUpdateStrategy() const{ return m_updateStrategy; }
     inline bool UpdateStrategyHasBeenSet() const { return m_updateStrategyHasBeenSet; }

@@ -23,4 +23,8 @@ namespace smithy {
     inline Aws::Crt::Optional<AwsIdentity::DateTime> AwsCredentialIdentity::expiration() const {
         return m_expiration;
     }
+
+    inline Aws::Crt::Optional<Aws::String> AwsCredentialIdentity::accountId() const {
+        return m_sessionToken;
+    }
 }

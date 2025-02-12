@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
-#include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/rest-xml-protocol/model/StringEnum.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -15,6 +14,13 @@ namespace Aws
 template<typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
+namespace Utils
+{
+namespace Xml
+{
+  class XmlDocument;
+} // namespace Xml
+} // namespace Utils
 namespace RestXmlProtocol
 {
 namespace Model
@@ -23,25 +29,17 @@ namespace Model
   {
   public:
     AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult(HttpEnumPayloadResult&&);
-    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult& operator=(HttpEnumPayloadResult&&);
-    //we delete these because Microsoft doesn't handle move generation correctly
-    //and we therefore don't trust them to get it right here either.
-    HttpEnumPayloadResult(const HttpEnumPayloadResult&) = delete;
-    HttpEnumPayloadResult& operator=(const HttpEnumPayloadResult&) = delete;
-
-
-    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-
+    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
-    inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
-
+    inline const StringEnum& GetPayload() const{ return m_payload; }
+    inline void SetPayload(const StringEnum& value) { m_payload = value; }
+    inline void SetPayload(StringEnum&& value) { m_payload = std::move(value); }
+    inline HttpEnumPayloadResult& WithPayload(const StringEnum& value) { SetPayload(value); return *this;}
+    inline HttpEnumPayloadResult& WithPayload(StringEnum&& value) { SetPayload(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_payload;
+    StringEnum m_payload;
 
     Aws::String m_requestId;
   };

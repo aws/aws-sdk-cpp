@@ -93,7 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the algorithm used to create the checksum for the object when you
+     * <p>Indicates the algorithm used to create the checksum for the request when you
      * use the SDK. This header will not provide any additional functionality if you
      * don't use the SDK. When you send this header, there must be a corresponding
      * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.

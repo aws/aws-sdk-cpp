@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/AssertionEncryptionModeType.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/Tag.h>
+#include <aws/iam/model/SAMLPrivateKey.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +43,19 @@ namespace Model
     AWS_IAM_API GetSAMLProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+
+    ///@{
+    /**
+     * <p>The unique identifier assigned to the SAML provider.</p>
+     */
+    inline const Aws::String& GetSAMLProviderUUID() const{ return m_sAMLProviderUUID; }
+    inline void SetSAMLProviderUUID(const Aws::String& value) { m_sAMLProviderUUID = value; }
+    inline void SetSAMLProviderUUID(Aws::String&& value) { m_sAMLProviderUUID = std::move(value); }
+    inline void SetSAMLProviderUUID(const char* value) { m_sAMLProviderUUID.assign(value); }
+    inline GetSAMLProviderResult& WithSAMLProviderUUID(const Aws::String& value) { SetSAMLProviderUUID(value); return *this;}
+    inline GetSAMLProviderResult& WithSAMLProviderUUID(Aws::String&& value) { SetSAMLProviderUUID(std::move(value)); return *this;}
+    inline GetSAMLProviderResult& WithSAMLProviderUUID(const char* value) { SetSAMLProviderUUID(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -96,6 +111,30 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies the encryption setting for the SAML provider.</p>
+     */
+    inline const AssertionEncryptionModeType& GetAssertionEncryptionMode() const{ return m_assertionEncryptionMode; }
+    inline void SetAssertionEncryptionMode(const AssertionEncryptionModeType& value) { m_assertionEncryptionMode = value; }
+    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType&& value) { m_assertionEncryptionMode = std::move(value); }
+    inline GetSAMLProviderResult& WithAssertionEncryptionMode(const AssertionEncryptionModeType& value) { SetAssertionEncryptionMode(value); return *this;}
+    inline GetSAMLProviderResult& WithAssertionEncryptionMode(AssertionEncryptionModeType&& value) { SetAssertionEncryptionMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The private key metadata for the SAML provider.</p>
+     */
+    inline const Aws::Vector<SAMLPrivateKey>& GetPrivateKeyList() const{ return m_privateKeyList; }
+    inline void SetPrivateKeyList(const Aws::Vector<SAMLPrivateKey>& value) { m_privateKeyList = value; }
+    inline void SetPrivateKeyList(Aws::Vector<SAMLPrivateKey>&& value) { m_privateKeyList = std::move(value); }
+    inline GetSAMLProviderResult& WithPrivateKeyList(const Aws::Vector<SAMLPrivateKey>& value) { SetPrivateKeyList(value); return *this;}
+    inline GetSAMLProviderResult& WithPrivateKeyList(Aws::Vector<SAMLPrivateKey>&& value) { SetPrivateKeyList(std::move(value)); return *this;}
+    inline GetSAMLProviderResult& AddPrivateKeyList(const SAMLPrivateKey& value) { m_privateKeyList.push_back(value); return *this; }
+    inline GetSAMLProviderResult& AddPrivateKeyList(SAMLPrivateKey&& value) { m_privateKeyList.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -105,6 +144,8 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_sAMLProviderUUID;
+
     Aws::String m_sAMLMetadataDocument;
 
     Aws::Utils::DateTime m_createDate;
@@ -112,6 +153,10 @@ namespace Model
     Aws::Utils::DateTime m_validUntil;
 
     Aws::Vector<Tag> m_tags;
+
+    AssertionEncryptionModeType m_assertionEncryptionMode;
+
+    Aws::Vector<SAMLPrivateKey> m_privateKeyList;
 
     ResponseMetadata m_responseMetadata;
   };

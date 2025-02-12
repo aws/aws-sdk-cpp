@@ -140,7 +140,7 @@ public class CppViewHelper {
     }
 
     public static String computeVariableName(String memberName) {
-        return memberName.substring(0, 1).toLowerCase() + memberName.substring(1);
+        return lowercasesFirstChar(memberName).replace("-", "_");
     }
 
     public static String convertToUpperCamel(String lowerCamel) {
@@ -222,6 +222,38 @@ public class CppViewHelper {
         }
     }
 
+    public static boolean isStreamingPayloadMember(Shape parent, String member) {
+        if (!parent.getMembers().containsKey(member)) {
+            throw new RuntimeException("Parent shape " + parent.getName() +
+                    " does not contain member key " + member);
+        }
+        ShapeMember shapeMember = parent.getMembers().get(member);
+        Shape childShape = shapeMember.getShape();
+
+        if (parent.getPayload() != null && parent.getPayload().equals(member)) {
+            if (shapeMember.isStreaming() || childShape.isBlob() || childShape.isString()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String computeCppType(Shape parent, String member) {
+        if (!parent.getMembers().containsKey(member)) {
+            throw new RuntimeException("Parent shape " + parent.getName() +
+                    " does not contain member key " + member);
+        }
+        ShapeMember shapeMember = parent.getMembers().get(member);
+        Shape childShape = shapeMember.getShape();
+
+        if (parent.getPayload() != null && parent.getPayload().equals(member) && parent.isResult()) {
+            if (shapeMember.isStreaming() || childShape.isBlob() || childShape.isString()) {
+                return "Aws::Utils::Stream::ResponseStream";
+            }
+        }
+        return computeCppType(childShape);
+    }
+
     public static String computeJsonCppType(Shape shape) {
         if(shape.isTimeStamp() && shape.getTimestampFormat() != null) {
             return CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.get(shape.getTimestampFormat().toLowerCase());
@@ -266,6 +298,21 @@ public class CppViewHelper {
             return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
         }
         return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601");
+    }
+
+    public static String computeTimeStampAccessInQueryString(final Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            if (C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.containsKey(shape.getTimestampFormat().toLowerCase())) {
+                return String.format("ToGmtString(Aws::Utils::DateFormat::%s)",
+                        C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase()));
+            } else if (shape.getTimestampFormat().equalsIgnoreCase("unixtimestamp")) {
+                return "SecondsWithMSPrecision()";
+            } else {
+                throw new RuntimeException("Illegal timestamp format: " + shape.getTimestampFormat());
+            }
+        }
+        return String.format("ToGmtString(Aws::Utils::DateFormat::%s)",
+                C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601"));
     }
 
     public static String computeTimestampFormatInXml(Shape shape) {
@@ -459,12 +506,29 @@ public class CppViewHelper {
         return CoreErrors.VARIANTS.get(errorName);
     }
 
+    public static String lowercasesFirstChar(final String str) {
+        if (str.length() > 1) {
+            return str.substring(0,1).toLowerCase() + str.substring(1);
+        }
+        else {
+            return str.toLowerCase();
+        }
+    }
+
     public static String capitalizeFirstChar(final String str) {
         if (str.length() > 1) {
             return str.substring(0,1).toUpperCase() + str.substring(1);
         }
         else {
             return str.toUpperCase();
+        }
+    }
+
+    public static String ifNotNullOrEmpty(final String target, final String fallback) {
+        if (target != null && !target.isEmpty()){
+            return target;
+        } else {
+            return fallback;
         }
     }
 

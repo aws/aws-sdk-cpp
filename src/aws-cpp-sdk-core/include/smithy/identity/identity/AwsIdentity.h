@@ -17,5 +17,9 @@ namespace smithy {
         virtual Aws::Crt::Optional<DateTime> expiration() const {
             return Aws::Crt::Optional<DateTime>();
         };
+
+        virtual Aws::Crt::Optional<Aws::String> accountId() const {
+            return Aws::Crt::Optional<Aws::String>{};
+        }
     };
 }

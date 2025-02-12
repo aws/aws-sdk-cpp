@@ -83,10 +83,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
-     * specifies the allocated storage size in gibibytes (GiB). For Aurora,
-     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
-     * storage size isn't fixed, but instead automatically adjusts as needed.</p>
+     * <p> <code>AllocatedStorage</code> specifies the allocated storage size in
+     * gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> can vary because
+     * Aurora DB cluster storage size adjusts as needed.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
@@ -593,7 +592,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the clone group with which the DB cluster is associated.</p>
+     * <p>The ID of the clone group with which the DB cluster is associated. For newly
+     * created clusters, the ID is typically null. </p> <p>If you clone a DB cluster
+     * when the ID is null, the operation populates the ID value for the source cluster
+     * and the clone because both clusters become part of the same clone group. Even if
+     * you delete the clone cluster, the clone group ID remains for the lifetime of the
+     * source cluster to show that it was used in a cloning operation.</p> <p>For PITR,
+     * the clone group ID is inherited from the source cluster. For snapshot restore
+     * operations, the clone group ID isn't inherited from the source cluster.</p>
      */
     inline const Aws::String& GetCloneGroupId() const{ return m_cloneGroupId; }
     inline bool CloneGroupIdHasBeenSet() const { return m_cloneGroupIdHasBeenSet; }

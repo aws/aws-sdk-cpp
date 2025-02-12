@@ -17,6 +17,7 @@ UpdateScraperRequest::UpdateScraperRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_destinationHasBeenSet(false),
+    m_roleConfigurationHasBeenSet(false),
     m_scrapeConfigurationHasBeenSet(false),
     m_scraperIdHasBeenSet(false)
 {
@@ -41,6 +42,12 @@ Aws::String UpdateScraperRequest::SerializePayload() const
   if(m_destinationHasBeenSet)
   {
    payload.WithObject("destination", m_destination.Jsonize());
+
+  }
+
+  if(m_roleConfigurationHasBeenSet)
+  {
+   payload.WithObject("roleConfiguration", m_roleConfiguration.Jsonize());
 
   }
 

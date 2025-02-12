@@ -28,6 +28,7 @@ namespace Aws
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int SCAN_ELIGIBILITY_EXPIRED_HASH = HashingUtils::HashString("SCAN_ELIGIBILITY_EXPIRED");
         static const int FINDINGS_UNAVAILABLE_HASH = HashingUtils::HashString("FINDINGS_UNAVAILABLE");
+        static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
 
 
         ScanStatus GetScanStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return ScanStatus::FINDINGS_UNAVAILABLE;
           }
+          else if (hashCode == LIMIT_EXCEEDED_HASH)
+          {
+            return ScanStatus::LIMIT_EXCEEDED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "SCAN_ELIGIBILITY_EXPIRED";
           case ScanStatus::FINDINGS_UNAVAILABLE:
             return "FINDINGS_UNAVAILABLE";
+          case ScanStatus::LIMIT_EXCEEDED:
+            return "LIMIT_EXCEEDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

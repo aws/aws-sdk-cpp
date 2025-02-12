@@ -25,6 +25,7 @@ ScraperSummary::ScraperSummary() :
     m_destinationHasBeenSet(false),
     m_lastModifiedAtHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_roleConfigurationHasBeenSet(false),
     m_scraperIdHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -81,6 +82,13 @@ ScraperSummary& ScraperSummary::operator =(JsonView jsonValue)
     m_roleArn = jsonValue.GetString("roleArn");
 
     m_roleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("roleConfiguration"))
+  {
+    m_roleConfiguration = jsonValue.GetObject("roleConfiguration");
+
+    m_roleConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scraperId"))
@@ -159,6 +167,12 @@ JsonValue ScraperSummary::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_roleConfigurationHasBeenSet)
+  {
+   payload.WithObject("roleConfiguration", m_roleConfiguration.Jsonize());
 
   }
 

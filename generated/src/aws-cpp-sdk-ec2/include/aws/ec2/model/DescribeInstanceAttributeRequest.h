@@ -66,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
-     * not supported at this time.</p>
+     * <p>The instance attribute.</p> <p>Note that the <code>enaSupport</code>
+     * attribute is not supported.</p>
      */
     inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }

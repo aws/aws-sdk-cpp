@@ -57,7 +57,7 @@ XmlIntEnumsResult& XmlIntEnumsResult::operator =(const Aws::AmazonWebServiceResu
       XmlNode intEnumListMember = intEnumListNode.FirstChild("member");
       while(!intEnumListMember.IsNull())
       {
-         m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
+        m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
         intEnumListMember = intEnumListMember.NextNode("member");
       }
 
@@ -68,7 +68,7 @@ XmlIntEnumsResult& XmlIntEnumsResult::operator =(const Aws::AmazonWebServiceResu
       XmlNode intEnumSetMember = intEnumSetNode.FirstChild("member");
       while(!intEnumSetMember.IsNull())
       {
-         m_intEnumSet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumSetMember.GetText().c_str()).c_str()));
+        m_intEnumSet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumSetMember.GetText().c_str()).c_str()));
         intEnumSetMember = intEnumSetMember.NextNode("member");
       }
 
@@ -83,7 +83,7 @@ XmlIntEnumsResult& XmlIntEnumsResult::operator =(const Aws::AmazonWebServiceResu
         XmlNode keyNode = intEnumMapEntry.FirstChild("key");
         XmlNode valueNode = intEnumMapEntry.FirstChild("value");
         m_intEnumMap[keyNode.GetText()] =
-           StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+            StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
         intEnumMapEntry = intEnumMapEntry.NextNode("entry");
       }
 

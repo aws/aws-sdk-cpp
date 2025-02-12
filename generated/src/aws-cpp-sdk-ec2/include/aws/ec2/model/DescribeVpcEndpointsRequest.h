@@ -87,7 +87,8 @@ namespace Model
      * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
      * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-type</code> - The
      * type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> |
-     * <code>GatewayLoadBalancer</code>).</p> </li> </ul>
+     * <code>GatewayLoadBalancer</code> | <code>Resource</code> |
+     * <code>ServiceNetwork</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

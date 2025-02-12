@@ -1,0 +1,22 @@
+#if($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request)
+#break##CPP SDK has a special "Streaming" common base request type, where the "streamed" payload is set by a "SetBody"
+#end
+#if ($shape.request && $member.value.shape.isEventStream())
+#set($isEventStreamInput = true)
+#else
+#set($isEventStreamInput = false)
+#end
+#set($cppType = $CppViewHelper.computeCppType($shape, $member.key))
+#set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
+#if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
+    Aws::Vector<$cppType> $memberVariableName;
+#elseif($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
+    std::shared_ptr<$cppType> $memberVariableName;
+#elseif($isEventStreamInput)
+    std::shared_ptr<$member.value.shape.name> $memberVariableName;
+#else
+    $cppType $memberVariableName;
+#end
+#if(!$member.value.required && $useRequiredField && !$isEventStreamInput)
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
+#end

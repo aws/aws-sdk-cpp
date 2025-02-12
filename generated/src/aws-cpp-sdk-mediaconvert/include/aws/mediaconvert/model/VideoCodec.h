@@ -19,6 +19,7 @@ namespace Model
     AV1,
     AVC_INTRA,
     FRAME_CAPTURE,
+    GIF,
     H_264,
     H_265,
     MPEG2,
