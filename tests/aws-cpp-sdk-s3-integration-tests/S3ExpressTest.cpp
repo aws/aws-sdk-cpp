@@ -34,7 +34,6 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <random>
 #include <aws/s3/S3ExpressSigner.h>
-#include <aws/s3/S3ExpressSigV4AuthSchemeOption.h>
 #include <aws/s3/S3ExpressIdentityProvider.h>
 
 #ifdef _WIN32
