@@ -40,16 +40,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code for the failed request.</p>
+     * <p>The unique identifier of the VPC endpoint.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline VpcEndpointErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline VpcEndpointErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline VpcEndpointErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    inline const Aws::String& GetId() const{ return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline VpcEndpointErrorDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline VpcEndpointErrorDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline VpcEndpointErrorDetail& WithId(const char* value) { SetId(value); return *this;}
     ///@}
 
     ///@{
@@ -68,27 +68,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the VPC endpoint.</p>
+     * <p>The error code for the failed request.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline VpcEndpointErrorDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline VpcEndpointErrorDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline VpcEndpointErrorDetail& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
+    inline VpcEndpointErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
+    inline VpcEndpointErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline VpcEndpointErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+    Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

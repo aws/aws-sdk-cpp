@@ -19,11 +19,11 @@ namespace Model
 {
 
 CollectionSummary::CollectionSummary() : 
-    m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -35,13 +35,6 @@ CollectionSummary::CollectionSummary(JsonView jsonValue)
 
 CollectionSummary& CollectionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -63,18 +56,19 @@ CollectionSummary& CollectionSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue CollectionSummary::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
 
   if(m_idHasBeenSet)
   {
@@ -91,6 +85,12 @@ JsonValue CollectionSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", CollectionStatusMapper::GetNameForCollectionStatus(m_status));
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
   }
 
   return payload;

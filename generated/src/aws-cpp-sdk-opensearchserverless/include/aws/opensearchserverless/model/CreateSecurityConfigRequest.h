@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
-#include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/SecurityConfigType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/model/SamlConfigOptions.h>
+#include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -40,43 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     * <p>The type of security configuration.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the security configuration.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateSecurityConfigRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSecurityConfigRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSecurityConfigRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Describes IAM Identity Center options in the form of a key-value map. This
-     * field is required if you specify iamidentitycenter for the type parameter.</p>
-     */
-    inline const CreateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const{ return m_iamIdentityCenterOptions; }
-    inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
-    inline void SetIamIdentityCenterOptions(const CreateIamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = value; }
-    inline void SetIamIdentityCenterOptions(CreateIamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::move(value); }
-    inline CreateSecurityConfigRequest& WithIamIdentityCenterOptions(const CreateIamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptions(value); return *this;}
-    inline CreateSecurityConfigRequest& WithIamIdentityCenterOptions(CreateIamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptions(std::move(value)); return *this;}
+    inline const SecurityConfigType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline CreateSecurityConfigRequest& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
+    inline CreateSecurityConfigRequest& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,6 +66,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A description of the security configuration.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateSecurityConfigRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateSecurityConfigRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateSecurityConfigRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Describes SAML options in in the form of a key-value map. This field is
      * required if you specify <code>saml</code> for the <code>type</code>
      * parameter.</p>
@@ -109,34 +94,49 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of security configuration.</p>
+     * <p>Describes IAM Identity Center options in the form of a key-value map. This
+     * field is required if you specify iamidentitycenter for the type parameter.</p>
      */
-    inline const SecurityConfigType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateSecurityConfigRequest& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
-    inline CreateSecurityConfigRequest& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline const CreateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const{ return m_iamIdentityCenterOptions; }
+    inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
+    inline void SetIamIdentityCenterOptions(const CreateIamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = value; }
+    inline void SetIamIdentityCenterOptions(CreateIamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::move(value); }
+    inline CreateSecurityConfigRequest& WithIamIdentityCenterOptions(const CreateIamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptions(value); return *this;}
+    inline CreateSecurityConfigRequest& WithIamIdentityCenterOptions(CreateIamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline CreateSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    CreateIamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
-    bool m_iamIdentityCenterOptionsHasBeenSet = false;
+    SecurityConfigType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     SamlConfigOptions m_samlOptions;
     bool m_samlOptionsHasBeenSet = false;
 
-    SecurityConfigType m_type;
-    bool m_typeHasBeenSet = false;
+    CreateIamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
+    bool m_iamIdentityCenterOptionsHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

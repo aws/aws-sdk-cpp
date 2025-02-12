@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateSecurityConfigRequest::UpdateSecurityConfigRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_idHasBeenSet(false),
     m_configVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_samlOptionsHasBeenSet(false),
     m_iamIdentityCenterOptionsUpdatesHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_samlOptionsHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -27,9 +27,9 @@ Aws::String UpdateSecurityConfigRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("id", m_id);
 
   }
 
@@ -45,21 +45,21 @@ Aws::String UpdateSecurityConfigRequest::SerializePayload() const
 
   }
 
+  if(m_samlOptionsHasBeenSet)
+  {
+   payload.WithObject("samlOptions", m_samlOptions.Jsonize());
+
+  }
+
   if(m_iamIdentityCenterOptionsUpdatesHasBeenSet)
   {
    payload.WithObject("iamIdentityCenterOptionsUpdates", m_iamIdentityCenterOptionsUpdates.Jsonize());
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_samlOptionsHasBeenSet)
-  {
-   payload.WithObject("samlOptions", m_samlOptions.Jsonize());
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

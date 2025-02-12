@@ -19,18 +19,18 @@ namespace Model
 {
 
 UpdateCollectionDetail::UpdateCollectionDetail() : 
-    m_arnHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(CollectionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_type(CollectionType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_createdDate(0),
+    m_createdDateHasBeenSet(false),
+    m_lastModifiedDate(0),
+    m_lastModifiedDateHasBeenSet(false)
 {
 }
 
@@ -42,39 +42,11 @@ UpdateCollectionDetail::UpdateCollectionDetail(JsonView jsonValue)
 
 UpdateCollectionDetail& UpdateCollectionDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdDate"))
-  {
-    m_createdDate = jsonValue.GetInt64("createdDate");
-
-    m_createdDateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
-    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
-
-    m_lastModifiedDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -98,6 +70,34 @@ UpdateCollectionDetail& UpdateCollectionDetail::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdDate"))
+  {
+    m_createdDate = jsonValue.GetInt64("createdDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
+
+    m_lastModifiedDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,33 +105,9 @@ JsonValue UpdateCollectionDetail::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithInt64("createdDate", m_createdDate);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
-
-  }
-
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
 
   }
 
@@ -149,6 +125,30 @@ JsonValue UpdateCollectionDetail::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", CollectionTypeMapper::GetNameForCollectionType(m_type));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithInt64("createdDate", m_createdDate);
+
+  }
+
+  if(m_lastModifiedDateHasBeenSet)
+  {
+   payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
+
   }
 
   return payload;

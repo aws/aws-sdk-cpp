@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateVpcEndpointRequest::UpdateVpcEndpointRequest() : 
-    m_addSecurityGroupIdsHasBeenSet(false),
-    m_addSubnetIdsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
     m_idHasBeenSet(false),
+    m_addSubnetIdsHasBeenSet(false),
+    m_removeSubnetIdsHasBeenSet(false),
+    m_addSecurityGroupIdsHasBeenSet(false),
     m_removeSecurityGroupIdsHasBeenSet(false),
-    m_removeSubnetIdsHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -27,14 +27,9 @@ Aws::String UpdateVpcEndpointRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_addSecurityGroupIdsHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> addSecurityGroupIdsJsonList(m_addSecurityGroupIds.size());
-   for(unsigned addSecurityGroupIdsIndex = 0; addSecurityGroupIdsIndex < addSecurityGroupIdsJsonList.GetLength(); ++addSecurityGroupIdsIndex)
-   {
-     addSecurityGroupIdsJsonList[addSecurityGroupIdsIndex].AsString(m_addSecurityGroupIds[addSecurityGroupIdsIndex]);
-   }
-   payload.WithArray("addSecurityGroupIds", std::move(addSecurityGroupIdsJsonList));
+   payload.WithString("id", m_id);
 
   }
 
@@ -49,15 +44,25 @@ Aws::String UpdateVpcEndpointRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_removeSubnetIdsHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   Aws::Utils::Array<JsonValue> removeSubnetIdsJsonList(m_removeSubnetIds.size());
+   for(unsigned removeSubnetIdsIndex = 0; removeSubnetIdsIndex < removeSubnetIdsJsonList.GetLength(); ++removeSubnetIdsIndex)
+   {
+     removeSubnetIdsJsonList[removeSubnetIdsIndex].AsString(m_removeSubnetIds[removeSubnetIdsIndex]);
+   }
+   payload.WithArray("removeSubnetIds", std::move(removeSubnetIdsJsonList));
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_addSecurityGroupIdsHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   Aws::Utils::Array<JsonValue> addSecurityGroupIdsJsonList(m_addSecurityGroupIds.size());
+   for(unsigned addSecurityGroupIdsIndex = 0; addSecurityGroupIdsIndex < addSecurityGroupIdsJsonList.GetLength(); ++addSecurityGroupIdsIndex)
+   {
+     addSecurityGroupIdsJsonList[addSecurityGroupIdsIndex].AsString(m_addSecurityGroupIds[addSecurityGroupIdsIndex]);
+   }
+   payload.WithArray("addSecurityGroupIds", std::move(addSecurityGroupIdsJsonList));
 
   }
 
@@ -72,14 +77,9 @@ Aws::String UpdateVpcEndpointRequest::SerializePayload() const
 
   }
 
-  if(m_removeSubnetIdsHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> removeSubnetIdsJsonList(m_removeSubnetIds.size());
-   for(unsigned removeSubnetIdsIndex = 0; removeSubnetIdsIndex < removeSubnetIdsJsonList.GetLength(); ++removeSubnetIdsIndex)
-   {
-     removeSubnetIdsJsonList[removeSubnetIdsIndex].AsString(m_removeSubnetIds[removeSubnetIdsIndex]);
-   }
-   payload.WithArray("removeSubnetIds", std::move(removeSubnetIdsJsonList));
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

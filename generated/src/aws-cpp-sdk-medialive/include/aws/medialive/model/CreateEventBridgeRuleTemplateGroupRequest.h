@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -82,6 +83,21 @@ namespace Model
     inline CreateEventBridgeRuleTemplateGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateEventBridgeRuleTemplateGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * An ID that you assign to a create request. This ID ensures idempotency when
+     * creating resources.
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+    inline CreateEventBridgeRuleTemplateGroupRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline CreateEventBridgeRuleTemplateGroupRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline CreateEventBridgeRuleTemplateGroupRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -92,6 +108,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

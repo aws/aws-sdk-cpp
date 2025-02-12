@@ -19,15 +19,15 @@ namespace Model
 {
 
 LifecyclePolicySummary::LifecyclePolicySummary() : 
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
+    m_type(LifecyclePolicyType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_policyVersionHasBeenSet(false),
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_createdDate(0),
+    m_createdDateHasBeenSet(false),
+    m_lastModifiedDate(0),
+    m_lastModifiedDateHasBeenSet(false)
 {
 }
 
@@ -39,25 +39,11 @@ LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue)
 
 LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdDate"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_createdDate = jsonValue.GetInt64("createdDate");
+    m_type = LifecyclePolicyTypeMapper::GetLifecyclePolicyTypeForName(jsonValue.GetString("type"));
 
-    m_createdDateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
-    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
-
-    m_lastModifiedDateHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -74,11 +60,25 @@ LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
     m_policyVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_type = LifecyclePolicyTypeMapper::GetLifecyclePolicyTypeForName(jsonValue.GetString("type"));
+    m_description = jsonValue.GetString("description");
 
-    m_typeHasBeenSet = true;
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdDate"))
+  {
+    m_createdDate = jsonValue.GetInt64("createdDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
+
+    m_lastModifiedDateHasBeenSet = true;
   }
 
   return *this;
@@ -88,22 +88,9 @@ JsonValue LifecyclePolicySummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdDateHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithInt64("createdDate", m_createdDate);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
-
+   payload.WithString("type", LifecyclePolicyTypeMapper::GetNameForLifecyclePolicyType(m_type));
   }
 
   if(m_nameHasBeenSet)
@@ -118,9 +105,22 @@ JsonValue LifecyclePolicySummary::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("type", LifecyclePolicyTypeMapper::GetNameForLifecyclePolicyType(m_type));
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithInt64("createdDate", m_createdDate);
+
+  }
+
+  if(m_lastModifiedDateHasBeenSet)
+  {
+   payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
+
   }
 
   return payload;

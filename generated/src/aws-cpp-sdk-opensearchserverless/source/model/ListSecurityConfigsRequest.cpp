@@ -13,11 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListSecurityConfigsRequest::ListSecurityConfigsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_type(SecurityConfigType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -25,10 +25,9 @@ Aws::String ListSecurityConfigsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
-
+   payload.WithString("type", SecurityConfigTypeMapper::GetNameForSecurityConfigType(m_type));
   }
 
   if(m_nextTokenHasBeenSet)
@@ -37,9 +36,10 @@ Aws::String ListSecurityConfigsRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("type", SecurityConfigTypeMapper::GetNameForSecurityConfigType(m_type));
+   payload.WithInteger("maxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

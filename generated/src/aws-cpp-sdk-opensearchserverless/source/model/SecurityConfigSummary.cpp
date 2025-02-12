@@ -19,15 +19,15 @@ namespace Model
 {
 
 SecurityConfigSummary::SecurityConfigSummary() : 
+    m_idHasBeenSet(false),
+    m_type(SecurityConfigType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_configVersionHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_createdDate(0),
     m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
     m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_type(SecurityConfigType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_lastModifiedDateHasBeenSet(false)
 {
 }
 
@@ -39,39 +39,11 @@ SecurityConfigSummary::SecurityConfigSummary(JsonView jsonValue)
 
 SecurityConfigSummary& SecurityConfigSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("configVersion"))
-  {
-    m_configVersion = jsonValue.GetString("configVersion");
-
-    m_configVersionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdDate"))
-  {
-    m_createdDate = jsonValue.GetInt64("createdDate");
-
-    m_createdDateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
-    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
-
-    m_lastModifiedDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -81,6 +53,34 @@ SecurityConfigSummary& SecurityConfigSummary::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("configVersion"))
+  {
+    m_configVersion = jsonValue.GetString("configVersion");
+
+    m_configVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdDate"))
+  {
+    m_createdDate = jsonValue.GetInt64("createdDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
+
+    m_lastModifiedDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,15 +88,20 @@ JsonValue SecurityConfigSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_configVersionHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("configVersion", m_configVersion);
+   payload.WithString("id", m_id);
 
   }
 
-  if(m_createdDateHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithInt64("createdDate", m_createdDate);
+   payload.WithString("type", SecurityConfigTypeMapper::GetNameForSecurityConfigType(m_type));
+  }
+
+  if(m_configVersionHasBeenSet)
+  {
+   payload.WithString("configVersion", m_configVersion);
 
   }
 
@@ -106,9 +111,9 @@ JsonValue SecurityConfigSummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_createdDateHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithInt64("createdDate", m_createdDate);
 
   }
 
@@ -116,11 +121,6 @@ JsonValue SecurityConfigSummary::Jsonize() const
   {
    payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SecurityConfigTypeMapper::GetNameForSecurityConfigType(m_type));
   }
 
   return payload;

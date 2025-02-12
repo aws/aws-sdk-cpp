@@ -19,11 +19,12 @@ namespace Model
 {
 
 SamlConfigOptions::SamlConfigOptions() : 
-    m_groupAttributeHasBeenSet(false),
     m_metadataHasBeenSet(false),
+    m_userAttributeHasBeenSet(false),
+    m_groupAttributeHasBeenSet(false),
+    m_openSearchServerlessEntityIdHasBeenSet(false),
     m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_userAttributeHasBeenSet(false)
+    m_sessionTimeoutHasBeenSet(false)
 {
 }
 
@@ -35,25 +36,11 @@ SamlConfigOptions::SamlConfigOptions(JsonView jsonValue)
 
 SamlConfigOptions& SamlConfigOptions::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("groupAttribute"))
-  {
-    m_groupAttribute = jsonValue.GetString("groupAttribute");
-
-    m_groupAttributeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetString("metadata");
 
     m_metadataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("sessionTimeout"))
-  {
-    m_sessionTimeout = jsonValue.GetInteger("sessionTimeout");
-
-    m_sessionTimeoutHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("userAttribute"))
@@ -63,6 +50,27 @@ SamlConfigOptions& SamlConfigOptions::operator =(JsonView jsonValue)
     m_userAttributeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("groupAttribute"))
+  {
+    m_groupAttribute = jsonValue.GetString("groupAttribute");
+
+    m_groupAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("openSearchServerlessEntityId"))
+  {
+    m_openSearchServerlessEntityId = jsonValue.GetString("openSearchServerlessEntityId");
+
+    m_openSearchServerlessEntityIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sessionTimeout"))
+  {
+    m_sessionTimeout = jsonValue.GetInteger("sessionTimeout");
+
+    m_sessionTimeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -70,27 +78,33 @@ JsonValue SamlConfigOptions::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_groupAttributeHasBeenSet)
-  {
-   payload.WithString("groupAttribute", m_groupAttribute);
-
-  }
-
   if(m_metadataHasBeenSet)
   {
    payload.WithString("metadata", m_metadata);
 
   }
 
-  if(m_sessionTimeoutHasBeenSet)
-  {
-   payload.WithInteger("sessionTimeout", m_sessionTimeout);
-
-  }
-
   if(m_userAttributeHasBeenSet)
   {
    payload.WithString("userAttribute", m_userAttribute);
+
+  }
+
+  if(m_groupAttributeHasBeenSet)
+  {
+   payload.WithString("groupAttribute", m_groupAttribute);
+
+  }
+
+  if(m_openSearchServerlessEntityIdHasBeenSet)
+  {
+   payload.WithString("openSearchServerlessEntityId", m_openSearchServerlessEntityId);
+
+  }
+
+  if(m_sessionTimeoutHasBeenSet)
+  {
+   payload.WithInteger("sessionTimeout", m_sessionTimeout);
 
   }
 

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/opensearchserverless/model/IamIdentityCenterGroupAttribute.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/IamIdentityCenterUserAttribute.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterGroupAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -43,19 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The group attribute for this IAM Identity Center integration. Defaults to
-     * <code>GroupId</code>.</p>
-     */
-    inline const IamIdentityCenterGroupAttribute& GetGroupAttribute() const{ return m_groupAttribute; }
-    inline bool GroupAttributeHasBeenSet() const { return m_groupAttributeHasBeenSet; }
-    inline void SetGroupAttribute(const IamIdentityCenterGroupAttribute& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = value; }
-    inline void SetGroupAttribute(IamIdentityCenterGroupAttribute&& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = std::move(value); }
-    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(const IamIdentityCenterGroupAttribute& value) { SetGroupAttribute(value); return *this;}
-    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(IamIdentityCenterGroupAttribute&& value) { SetGroupAttribute(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the IAM Identity Center instance used to integrate with OpenSearch
      * Serverless.</p>
      */
@@ -81,16 +68,29 @@ namespace Model
     inline CreateIamIdentityCenterConfigOptions& WithUserAttribute(const IamIdentityCenterUserAttribute& value) { SetUserAttribute(value); return *this;}
     inline CreateIamIdentityCenterConfigOptions& WithUserAttribute(IamIdentityCenterUserAttribute&& value) { SetUserAttribute(std::move(value)); return *this;}
     ///@}
-  private:
 
-    IamIdentityCenterGroupAttribute m_groupAttribute;
-    bool m_groupAttributeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The group attribute for this IAM Identity Center integration. Defaults to
+     * <code>GroupId</code>.</p>
+     */
+    inline const IamIdentityCenterGroupAttribute& GetGroupAttribute() const{ return m_groupAttribute; }
+    inline bool GroupAttributeHasBeenSet() const { return m_groupAttributeHasBeenSet; }
+    inline void SetGroupAttribute(const IamIdentityCenterGroupAttribute& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = value; }
+    inline void SetGroupAttribute(IamIdentityCenterGroupAttribute&& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = std::move(value); }
+    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(const IamIdentityCenterGroupAttribute& value) { SetGroupAttribute(value); return *this;}
+    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(IamIdentityCenterGroupAttribute&& value) { SetGroupAttribute(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
     IamIdentityCenterUserAttribute m_userAttribute;
     bool m_userAttributeHasBeenSet = false;
+
+    IamIdentityCenterGroupAttribute m_groupAttribute;
+    bool m_groupAttributeHasBeenSet = false;
   };
 
 } // namespace Model

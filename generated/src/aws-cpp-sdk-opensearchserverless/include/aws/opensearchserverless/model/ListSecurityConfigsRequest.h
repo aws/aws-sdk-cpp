@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SecurityConfigType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,14 +37,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results. The default
-     * is 20.</p>
+     * <p>The type of security configuration.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListSecurityConfigsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const SecurityConfigType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline ListSecurityConfigsRequest& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
+    inline ListSecurityConfigsRequest& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,25 +66,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of security configuration.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use <code>nextToken</code> to get the next page of results. The default
+     * is 20.</p>
      */
-    inline const SecurityConfigType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListSecurityConfigsRequest& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
-    inline ListSecurityConfigsRequest& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListSecurityConfigsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    SecurityConfigType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SecurityConfigType m_type;
-    bool m_typeHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

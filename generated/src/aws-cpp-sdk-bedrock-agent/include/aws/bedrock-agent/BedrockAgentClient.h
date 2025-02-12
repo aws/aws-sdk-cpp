@@ -727,8 +727,8 @@ namespace BedrockAgent
         /**
          * <p>Deletes documents from a data source and syncs the changes to the knowledge
          * base that is connected to it. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+         * changes directly into a knowledge base</a> in the Amazon Bedrock User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">AWS
          * API Reference</a></p>
@@ -1151,8 +1151,8 @@ namespace BedrockAgent
         /**
          * <p>Retrieves specific documents from a data source that is connected to a
          * knowledge base. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+         * changes directly into a knowledge base</a> in the Amazon Bedrock User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">AWS
          * API Reference</a></p>
@@ -1214,8 +1214,8 @@ namespace BedrockAgent
          * data source. The <code>dataSourceType</code> specified in the content for each
          * document must match the type of the data source that you specify in the header.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+         * changes directly into a knowledge base</a> in the Amazon Bedrock User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">AWS
          * API Reference</a></p>
@@ -1532,8 +1532,8 @@ namespace BedrockAgent
         /**
          * <p>Retrieves all the documents contained in a data source that is connected to a
          * knowledge base. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-         * documents into a knowledge base in real-time</a> in the Amazon Bedrock User
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+         * changes directly into a knowledge base</a> in the Amazon Bedrock User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">AWS
          * API Reference</a></p>

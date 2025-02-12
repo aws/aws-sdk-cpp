@@ -19,25 +19,25 @@ namespace Model
 {
 
 CollectionDetail::CollectionDetail() : 
-    m_arnHasBeenSet(false),
-    m_collectionEndpointHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_dashboardEndpointHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_standbyReplicas(StandbyReplicas::NOT_SET),
-    m_standbyReplicasHasBeenSet(false),
     m_status(CollectionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_type(CollectionType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false),
+    m_standbyReplicas(StandbyReplicas::NOT_SET),
+    m_standbyReplicasHasBeenSet(false),
+    m_createdDate(0),
+    m_createdDateHasBeenSet(false),
+    m_lastModifiedDate(0),
+    m_lastModifiedDateHasBeenSet(false),
+    m_collectionEndpointHasBeenSet(false),
+    m_dashboardEndpointHasBeenSet(false),
+    m_failureCodeHasBeenSet(false),
+    m_failureMessageHasBeenSet(false)
 {
 }
 
@@ -49,55 +49,6 @@ CollectionDetail::CollectionDetail(JsonView jsonValue)
 
 CollectionDetail& CollectionDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("collectionEndpoint"))
-  {
-    m_collectionEndpoint = jsonValue.GetString("collectionEndpoint");
-
-    m_collectionEndpointHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdDate"))
-  {
-    m_createdDate = jsonValue.GetInt64("createdDate");
-
-    m_createdDateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("dashboardEndpoint"))
-  {
-    m_dashboardEndpoint = jsonValue.GetString("dashboardEndpoint");
-
-    m_dashboardEndpointHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("failureCode"))
-  {
-    m_failureCode = jsonValue.GetString("failureCode");
-
-    m_failureCodeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("failureMessage"))
-  {
-    m_failureMessage = jsonValue.GetString("failureMessage");
-
-    m_failureMessageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -105,32 +56,11 @@ CollectionDetail& CollectionDetail::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
-    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
-    m_kmsKeyArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
-    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
-
-    m_lastModifiedDateHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("standbyReplicas"))
-  {
-    m_standbyReplicas = StandbyReplicasMapper::GetStandbyReplicasForName(jsonValue.GetString("standbyReplicas"));
-
-    m_standbyReplicasHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -147,6 +77,76 @@ CollectionDetail& CollectionDetail::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("standbyReplicas"))
+  {
+    m_standbyReplicas = StandbyReplicasMapper::GetStandbyReplicasForName(jsonValue.GetString("standbyReplicas"));
+
+    m_standbyReplicasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdDate"))
+  {
+    m_createdDate = jsonValue.GetInt64("createdDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
+
+    m_lastModifiedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("collectionEndpoint"))
+  {
+    m_collectionEndpoint = jsonValue.GetString("collectionEndpoint");
+
+    m_collectionEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dashboardEndpoint"))
+  {
+    m_dashboardEndpoint = jsonValue.GetString("dashboardEndpoint");
+
+    m_dashboardEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetString("failureCode");
+
+    m_failureCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+
+    m_failureMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,9 +154,60 @@ JsonValue CollectionDetail::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", CollectionStatusMapper::GetNameForCollectionStatus(m_status));
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", CollectionTypeMapper::GetNameForCollectionType(m_type));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
+
+  }
+
+  if(m_standbyReplicasHasBeenSet)
+  {
+   payload.WithString("standbyReplicas", StandbyReplicasMapper::GetNameForStandbyReplicas(m_standbyReplicas));
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithInt64("createdDate", m_createdDate);
+
+  }
+
+  if(m_lastModifiedDateHasBeenSet)
+  {
+   payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
 
   }
 
@@ -166,21 +217,9 @@ JsonValue CollectionDetail::Jsonize() const
 
   }
 
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithInt64("createdDate", m_createdDate);
-
-  }
-
   if(m_dashboardEndpointHasBeenSet)
   {
    payload.WithString("dashboardEndpoint", m_dashboardEndpoint);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
 
   }
 
@@ -194,45 +233,6 @@ JsonValue CollectionDetail::Jsonize() const
   {
    payload.WithString("failureMessage", m_failureMessage);
 
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
-  }
-
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_standbyReplicasHasBeenSet)
-  {
-   payload.WithString("standbyReplicas", StandbyReplicasMapper::GetNameForStandbyReplicas(m_standbyReplicas));
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", CollectionStatusMapper::GetNameForCollectionStatus(m_status));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CollectionTypeMapper::GetNameForCollectionType(m_type));
   }
 
   return payload;

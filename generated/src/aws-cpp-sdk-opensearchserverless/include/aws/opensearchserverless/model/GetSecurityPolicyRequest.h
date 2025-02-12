@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SecurityPolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of security policy.</p>
+     */
+    inline const SecurityPolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const SecurityPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SecurityPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline GetSecurityPolicyRequest& WithType(const SecurityPolicyType& value) { SetType(value); return *this;}
+    inline GetSecurityPolicyRequest& WithType(SecurityPolicyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the security policy.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -48,25 +60,13 @@ namespace Model
     inline GetSecurityPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline GetSecurityPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of security policy.</p>
-     */
-    inline const SecurityPolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetSecurityPolicyRequest& WithType(const SecurityPolicyType& value) { SetType(value); return *this;}
-    inline GetSecurityPolicyRequest& WithType(SecurityPolicyType&& value) { SetType(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     SecurityPolicyType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

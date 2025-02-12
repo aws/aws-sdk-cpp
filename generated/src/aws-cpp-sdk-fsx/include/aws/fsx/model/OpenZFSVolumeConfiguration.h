@@ -86,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from
+     * <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from
      * its parent. You can specify a quota larger than the storage on the parent
      * volume.</p>
      */

@@ -23,7 +23,8 @@ UpdateFileSystemRequest::UpdateFileSystemRequest() :
     m_ontapConfigurationHasBeenSet(false),
     m_openZFSConfigurationHasBeenSet(false),
     m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,12 @@ Aws::String UpdateFileSystemRequest::SerializePayload() const
   if(m_storageTypeHasBeenSet)
   {
    payload.WithString("StorageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
+  }
+
+  if(m_fileSystemTypeVersionHasBeenSet)
+  {
+   payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
+
   }
 
   return payload.View().WriteReadable();

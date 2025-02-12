@@ -42,44 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the collection.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateCollectionDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateCollectionDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateCollectionDetail& WithArn(const char* value) { SetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when the collection was created.</p>
-     */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline UpdateCollectionDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the collection.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateCollectionDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateCollectionDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateCollectionDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the collection.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -90,16 +52,6 @@ namespace Model
     inline UpdateCollectionDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
     inline UpdateCollectionDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline UpdateCollectionDetail& WithId(const char* value) { SetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when the collection was last modified.</p>
-     */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline UpdateCollectionDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
     ///@}
 
     ///@{
@@ -139,22 +91,58 @@ namespace Model
     inline UpdateCollectionDetail& WithType(const CollectionType& value) { SetType(value); return *this;}
     inline UpdateCollectionDetail& WithType(CollectionType&& value) { SetType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The description of the collection.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline UpdateCollectionDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline UpdateCollectionDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline UpdateCollectionDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the collection.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline UpdateCollectionDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline UpdateCollectionDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline UpdateCollectionDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the collection was created.</p>
+     */
+    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline UpdateCollectionDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the collection was last modified.</p>
+     */
+    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline UpdateCollectionDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    long long m_createdDate;
-    bool m_createdDateHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
-
-    long long m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -164,6 +152,18 @@ namespace Model
 
     CollectionType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
+    long long m_createdDate;
+    bool m_createdDateHasBeenSet = false;
+
+    long long m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

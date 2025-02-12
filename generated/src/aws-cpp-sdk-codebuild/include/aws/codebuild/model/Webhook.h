@@ -125,7 +125,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the type of build this webhook will trigger.</p>
+     * <p>Specifies the type of build this webhook will trigger.</p>  <p>
+     * <code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code>
+     * source type projects configured for Buildkite runner builds. For more
+     * information about CodeBuild-hosted Buildkite runner builds, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial:
+     * Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user
+     * guide</i>.</p> 
      */
     inline const WebhookBuildType& GetBuildType() const{ return m_buildType; }
     inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }

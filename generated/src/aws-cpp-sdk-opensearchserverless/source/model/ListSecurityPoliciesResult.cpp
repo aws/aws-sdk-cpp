@@ -29,12 +29,6 @@ ListSecurityPoliciesResult::ListSecurityPoliciesResult(const Aws::AmazonWebServi
 ListSecurityPoliciesResult& ListSecurityPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("securityPolicySummaries"))
   {
     Aws::Utils::Array<JsonView> securityPolicySummariesJsonList = jsonValue.GetArray("securityPolicySummaries");
@@ -42,6 +36,12 @@ ListSecurityPoliciesResult& ListSecurityPoliciesResult::operator =(const Aws::Am
     {
       m_securityPolicySummaries.push_back(securityPolicySummariesJsonList[securityPolicySummariesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

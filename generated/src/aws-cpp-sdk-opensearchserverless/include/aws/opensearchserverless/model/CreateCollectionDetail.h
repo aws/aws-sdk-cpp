@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <utility>
 
 namespace Aws
@@ -43,44 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the collection.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline CreateCollectionDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateCollectionDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateCollectionDetail& WithArn(const char* value) { SetArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Epoch time when the collection was created.</p>
-     */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline CreateCollectionDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the collection.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateCollectionDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateCollectionDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateCollectionDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the collection.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -95,31 +57,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
-     * collection.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline CreateCollectionDetail& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline CreateCollectionDetail& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline CreateCollectionDetail& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when the collection was last modified.</p>
-     */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline CreateCollectionDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the collection.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -130,18 +67,6 @@ namespace Model
     inline CreateCollectionDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline CreateCollectionDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline CreateCollectionDetail& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Creates details about an OpenSearch Serverless collection.</p>
-     */
-    inline const StandbyReplicas& GetStandbyReplicas() const{ return m_standbyReplicas; }
-    inline bool StandbyReplicasHasBeenSet() const { return m_standbyReplicasHasBeenSet; }
-    inline void SetStandbyReplicas(const StandbyReplicas& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = value; }
-    inline void SetStandbyReplicas(StandbyReplicas&& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = std::move(value); }
-    inline CreateCollectionDetail& WithStandbyReplicas(const StandbyReplicas& value) { SetStandbyReplicas(value); return *this;}
-    inline CreateCollectionDetail& WithStandbyReplicas(StandbyReplicas&& value) { SetStandbyReplicas(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,37 +92,112 @@ namespace Model
     inline CreateCollectionDetail& WithType(const CollectionType& value) { SetType(value); return *this;}
     inline CreateCollectionDetail& WithType(CollectionType&& value) { SetType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A description of the collection.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateCollectionDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateCollectionDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateCollectionDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the collection.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline CreateCollectionDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline CreateCollectionDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline CreateCollectionDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * collection.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
+    inline CreateCollectionDetail& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+    inline CreateCollectionDetail& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+    inline CreateCollectionDetail& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Creates details about an OpenSearch Serverless collection.</p>
+     */
+    inline const StandbyReplicas& GetStandbyReplicas() const{ return m_standbyReplicas; }
+    inline bool StandbyReplicasHasBeenSet() const { return m_standbyReplicasHasBeenSet; }
+    inline void SetStandbyReplicas(const StandbyReplicas& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = value; }
+    inline void SetStandbyReplicas(StandbyReplicas&& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = std::move(value); }
+    inline CreateCollectionDetail& WithStandbyReplicas(const StandbyReplicas& value) { SetStandbyReplicas(value); return *this;}
+    inline CreateCollectionDetail& WithStandbyReplicas(StandbyReplicas&& value) { SetStandbyReplicas(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Epoch time when the collection was created.</p>
+     */
+    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline CreateCollectionDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the collection was last modified.</p>
+     */
+    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline CreateCollectionDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    long long m_createdDate;
-    bool m_createdDateHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
-
-    long long m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
-
-    StandbyReplicas m_standbyReplicas;
-    bool m_standbyReplicasHasBeenSet = false;
 
     CollectionStatus m_status;
     bool m_statusHasBeenSet = false;
 
     CollectionType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
+
+    StandbyReplicas m_standbyReplicas;
+    bool m_standbyReplicasHasBeenSet = false;
+
+    long long m_createdDate;
+    bool m_createdDateHasBeenSet = false;
+
+    long long m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/AccessPolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -38,16 +38,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     * <p>The type of policy.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteAccessPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteAccessPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteAccessPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const AccessPolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline DeleteAccessPolicyRequest& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
+    inline DeleteAccessPolicyRequest& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,25 +64,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of policy.</p>
+     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
-    inline const AccessPolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DeleteAccessPolicyRequest& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
-    inline DeleteAccessPolicyRequest& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline DeleteAccessPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline DeleteAccessPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline DeleteAccessPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    AccessPolicyType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AccessPolicyType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

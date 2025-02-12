@@ -29,12 +29,6 @@ ListSecurityConfigsResult::ListSecurityConfigsResult(const Aws::AmazonWebService
 ListSecurityConfigsResult& ListSecurityConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("securityConfigSummaries"))
   {
     Aws::Utils::Array<JsonView> securityConfigSummariesJsonList = jsonValue.GetArray("securityConfigSummaries");
@@ -42,6 +36,12 @@ ListSecurityConfigsResult& ListSecurityConfigsResult::operator =(const Aws::Amaz
     {
       m_securityConfigSummaries.push_back(securityConfigSummariesJsonList[securityConfigSummariesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

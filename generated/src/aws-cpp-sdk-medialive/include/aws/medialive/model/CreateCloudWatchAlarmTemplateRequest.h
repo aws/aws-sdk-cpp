@@ -13,6 +13,7 @@
 #include <aws/medialive/model/CloudWatchAlarmTemplateTargetResourceType.h>
 #include <aws/medialive/model/CloudWatchAlarmTemplateTreatMissingData.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -197,6 +198,21 @@ namespace Model
     inline CreateCloudWatchAlarmTemplateRequest& WithTreatMissingData(const CloudWatchAlarmTemplateTreatMissingData& value) { SetTreatMissingData(value); return *this;}
     inline CreateCloudWatchAlarmTemplateRequest& WithTreatMissingData(CloudWatchAlarmTemplateTreatMissingData&& value) { SetTreatMissingData(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * An ID that you assign to a create request. This ID ensures idempotency when
+     * creating resources.
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+    inline CreateCloudWatchAlarmTemplateRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline CreateCloudWatchAlarmTemplateRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline CreateCloudWatchAlarmTemplateRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
   private:
 
     CloudWatchAlarmTemplateComparisonOperator m_comparisonOperator;
@@ -237,6 +253,9 @@ namespace Model
 
     CloudWatchAlarmTemplateTreatMissingData m_treatMissingData;
     bool m_treatMissingDataHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

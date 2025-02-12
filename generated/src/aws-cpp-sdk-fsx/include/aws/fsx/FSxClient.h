@@ -130,7 +130,7 @@ namespace FSx
         /**
          * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task
          * is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you
-         * cancel am export task, Amazon FSx does the following.</p> <ul> <li> <p>Any files
+         * cancel an export task, Amazon FSx does the following.</p> <ul> <li> <p>Any files
          * that FSx has already exported are not reverted.</p> </li> <li> <p>FSx continues
          * to export any files that are in-flight when the cancel operation is
          * received.</p> </li> <li> <p>FSx does not export any files that have not yet been
@@ -395,12 +395,12 @@ namespace FSx
          * and the parameters don't match, this call returns
          * <code>IncompatibleParameterError</code>. If a file cache with the specified
          * client request token doesn't exist, <code>CreateFileCache</code> does the
-         * following: </p> <ul> <li> <p>Creates a new, empty Amazon File Cache resourcewith
-         * an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p>
-         * </li> <li> <p>Returns the description of the cache in JSON format.</p> </li>
-         * </ul>  <p>The <code>CreateFileCache</code> call returns while the cache's
-         * lifecycle state is still <code>CREATING</code>. You can check the cache creation
-         * status by calling the <a
+         * following: </p> <ul> <li> <p>Creates a new, empty Amazon File Cache resource
+         * with an assigned ID, and an initial lifecycle state of
+         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the cache in
+         * JSON format.</p> </li> </ul>  <p>The <code>CreateFileCache</code> call
+         * returns while the cache's lifecycle state is still <code>CREATING</code>. You
+         * can check the cache creation status by calling the <a
          * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
          * operation, which returns the cache state along with other information.</p>
          * <p><h3>See Also:</h3>   <a
@@ -1542,6 +1542,7 @@ namespace FSx
          * <code>AutomaticBackupRetentionDays</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
          * <code>DataCompressionType</code> </p> </li> <li> <p>
+         * <code>FileSystemTypeVersion</code> </p> </li> <li> <p>
          * <code>LogConfiguration</code> </p> </li> <li> <p>
          * <code>LustreRootSquashConfiguration</code> </p> </li> <li> <p>
          * <code>MetadataConfiguration</code> </p> </li> <li> <p>

@@ -7,8 +7,8 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
+#include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -39,16 +39,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     * <p>The security configuration identifier. For SAML the ID will be
+     * <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example,
+     * <code>saml/123456789123/OKTADev</code>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetId() const{ return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline UpdateSecurityConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline UpdateSecurityConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline UpdateSecurityConfigRequest& WithId(const char* value) { SetId(value); return *this;}
     ///@}
 
     ///@{
@@ -83,6 +85,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>SAML options in in the form of a key-value map.</p>
+     */
+    inline const SamlConfigOptions& GetSamlOptions() const{ return m_samlOptions; }
+    inline bool SamlOptionsHasBeenSet() const { return m_samlOptionsHasBeenSet; }
+    inline void SetSamlOptions(const SamlConfigOptions& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = value; }
+    inline void SetSamlOptions(SamlConfigOptions&& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = std::move(value); }
+    inline UpdateSecurityConfigRequest& WithSamlOptions(const SamlConfigOptions& value) { SetSamlOptions(value); return *this;}
+    inline UpdateSecurityConfigRequest& WithSamlOptions(SamlConfigOptions&& value) { SetSamlOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Describes IAM Identity Center options in the form of a key-value map.</p>
      */
     inline const UpdateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptionsUpdates() const{ return m_iamIdentityCenterOptionsUpdates; }
@@ -95,35 +109,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>The security configuration identifier. For SAML the ID will be
-     * <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example,
-     * <code>saml/123456789123/OKTADev</code>.</p>
+     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateSecurityConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateSecurityConfigRequest& WithId(const char* value) { SetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>SAML options in in the form of a key-value map.</p>
-     */
-    inline const SamlConfigOptions& GetSamlOptions() const{ return m_samlOptions; }
-    inline bool SamlOptionsHasBeenSet() const { return m_samlOptionsHasBeenSet; }
-    inline void SetSamlOptions(const SamlConfigOptions& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = value; }
-    inline void SetSamlOptions(SamlConfigOptions&& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = std::move(value); }
-    inline UpdateSecurityConfigRequest& WithSamlOptions(const SamlConfigOptions& value) { SetSamlOptions(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithSamlOptions(SamlConfigOptions&& value) { SetSamlOptions(std::move(value)); return *this;}
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline UpdateSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline UpdateSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline UpdateSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_configVersion;
     bool m_configVersionHasBeenSet = false;
@@ -131,14 +131,14 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
+    SamlConfigOptions m_samlOptions;
+    bool m_samlOptionsHasBeenSet = false;
+
     UpdateIamIdentityCenterConfigOptions m_iamIdentityCenterOptionsUpdates;
     bool m_iamIdentityCenterOptionsUpdatesHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    SamlConfigOptions m_samlOptions;
-    bool m_samlOptionsHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,20 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The security configuration identifier. For SAML the ID will be
      * <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example,
      * <code>saml/123456789123/OKTADev</code>.</p>
@@ -64,13 +50,27 @@ namespace Model
     inline DeleteSecurityConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline DeleteSecurityConfigRequest& WithId(const char* value) { SetId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline DeleteSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline DeleteSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline DeleteSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

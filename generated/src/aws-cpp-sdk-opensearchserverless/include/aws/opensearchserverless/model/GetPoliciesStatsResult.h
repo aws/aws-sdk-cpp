@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/AccessPolicyStats.h>
-#include <aws/opensearchserverless/model/LifecyclePolicyStats.h>
-#include <aws/opensearchserverless/model/SecurityConfigStats.h>
 #include <aws/opensearchserverless/model/SecurityPolicyStats.h>
+#include <aws/opensearchserverless/model/SecurityConfigStats.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyStats.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -49,13 +49,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the lifecycle policies in your account.</p>
+     * <p>Information about the security policies in your account.</p>
      */
-    inline const LifecyclePolicyStats& GetLifecyclePolicyStats() const{ return m_lifecyclePolicyStats; }
-    inline void SetLifecyclePolicyStats(const LifecyclePolicyStats& value) { m_lifecyclePolicyStats = value; }
-    inline void SetLifecyclePolicyStats(LifecyclePolicyStats&& value) { m_lifecyclePolicyStats = std::move(value); }
-    inline GetPoliciesStatsResult& WithLifecyclePolicyStats(const LifecyclePolicyStats& value) { SetLifecyclePolicyStats(value); return *this;}
-    inline GetPoliciesStatsResult& WithLifecyclePolicyStats(LifecyclePolicyStats&& value) { SetLifecyclePolicyStats(std::move(value)); return *this;}
+    inline const SecurityPolicyStats& GetSecurityPolicyStats() const{ return m_securityPolicyStats; }
+    inline void SetSecurityPolicyStats(const SecurityPolicyStats& value) { m_securityPolicyStats = value; }
+    inline void SetSecurityPolicyStats(SecurityPolicyStats&& value) { m_securityPolicyStats = std::move(value); }
+    inline GetPoliciesStatsResult& WithSecurityPolicyStats(const SecurityPolicyStats& value) { SetSecurityPolicyStats(value); return *this;}
+    inline GetPoliciesStatsResult& WithSecurityPolicyStats(SecurityPolicyStats&& value) { SetSecurityPolicyStats(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,13 +71,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the security policies in your account.</p>
+     * <p>Information about the lifecycle policies in your account.</p>
      */
-    inline const SecurityPolicyStats& GetSecurityPolicyStats() const{ return m_securityPolicyStats; }
-    inline void SetSecurityPolicyStats(const SecurityPolicyStats& value) { m_securityPolicyStats = value; }
-    inline void SetSecurityPolicyStats(SecurityPolicyStats&& value) { m_securityPolicyStats = std::move(value); }
-    inline GetPoliciesStatsResult& WithSecurityPolicyStats(const SecurityPolicyStats& value) { SetSecurityPolicyStats(value); return *this;}
-    inline GetPoliciesStatsResult& WithSecurityPolicyStats(SecurityPolicyStats&& value) { SetSecurityPolicyStats(std::move(value)); return *this;}
+    inline const LifecyclePolicyStats& GetLifecyclePolicyStats() const{ return m_lifecyclePolicyStats; }
+    inline void SetLifecyclePolicyStats(const LifecyclePolicyStats& value) { m_lifecyclePolicyStats = value; }
+    inline void SetLifecyclePolicyStats(LifecyclePolicyStats&& value) { m_lifecyclePolicyStats = std::move(value); }
+    inline GetPoliciesStatsResult& WithLifecyclePolicyStats(const LifecyclePolicyStats& value) { SetLifecyclePolicyStats(value); return *this;}
+    inline GetPoliciesStatsResult& WithLifecyclePolicyStats(LifecyclePolicyStats&& value) { SetLifecyclePolicyStats(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,11 +104,11 @@ namespace Model
 
     AccessPolicyStats m_accessPolicyStats;
 
-    LifecyclePolicyStats m_lifecyclePolicyStats;
+    SecurityPolicyStats m_securityPolicyStats;
 
     SecurityConfigStats m_securityConfigStats;
 
-    SecurityPolicyStats m_securityPolicyStats;
+    LifecyclePolicyStats m_lifecyclePolicyStats;
 
     long long m_totalPolicyCount;
 
