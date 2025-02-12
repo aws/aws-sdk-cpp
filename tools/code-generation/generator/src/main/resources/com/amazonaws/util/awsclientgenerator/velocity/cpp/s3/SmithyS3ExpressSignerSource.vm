@@ -113,7 +113,7 @@ typename S3ExpressSignerBase<BASECLASS>::SigningFutureOutcome S3ExpressSignerBas
     }
     putRequestId(requestId);
     httpRequest->SetHeaderValue(S3_EXPRESS_HEADER, identity.sessionToken().value());
-    auto idCopy = smithy::AwsCredentialIdentity{identity.accessKeyId(), identity.secretAccessKey(), {}, identity.expiration()}; 
+    auto idCopy = smithy::AwsCredentialIdentity{identity.accessKeyId(), identity.secretAccessKey(), {}, identity.expiration(), identity.accountId()}; 
     auto isSigned = BASECLASS::sign(httpRequest, idCopy, properties);
     deleteRequestId(requestId);
     return SigningFutureOutcome(std::move(httpRequest));

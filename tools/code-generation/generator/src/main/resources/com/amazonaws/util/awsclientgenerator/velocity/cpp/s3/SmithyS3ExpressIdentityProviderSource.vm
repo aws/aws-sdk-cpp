@@ -10,6 +10,7 @@
 \#include <aws/core/auth/AWSCredentialsProviderChain.h>
 \#include <utility>
 \#include <thread>
+\#include <aws/crt/Optional.h>
 
 using namespace ${rootNamespace}::${serviceNamespace};
 using namespace ${rootNamespace}::Utils;
@@ -254,7 +255,7 @@ AwsCredentialIdentity SmithyS3ExpressIdentityProvider::GetCredentialsFromBucket(
   // If we fail the connect call return empty credentials and log an error message.
   if (!outcome.IsSuccess()) {
       AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "Failed to make S3Express Connect Call")
-      return {"", "", {""}, {}};
+      return {"", "", {""}, {}, Aws::Crt::Optional<Aws::String>()};
   }
   auto result = outcome.GetResult();
   const auto &credentials = result.GetCredentials();
@@ -268,7 +269,8 @@ AwsCredentialIdentity SmithyS3ExpressIdentityProvider::GetCredentialsFromBucket(
   return {credentials.GetAccessKeyId(),
       credentials.GetSecretAccessKey(),
       credentials.GetSessionToken(),
-      expiry};
+      expiry,
+      Aws::Crt::Optional<Aws::String>()};
 }
 
 
@@ -285,7 +287,7 @@ AwsCredentialIdentity SmithyDefaultS3ExpressIdentityProvider::GetS3ExpressAwsIde
     auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
     if (bucketNameIter == serviceSpecificParameters->parameterMap.end()) {
         AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "property bucketName Required to make call")
-        return {"", "", {""}, {}};
+        return {"", "", {""}, {}, Aws::Crt::Optional<Aws::String>()};
     }
     std::lock_guard<std::mutex> lock(*GetMutexForBucketName(bucketNameIter->second));
     AwsCredentialIdentity identity;
@@ -331,7 +333,7 @@ AwsCredentialIdentity SmithyDefaultAsyncS3ExpressIdentityProvider::GetS3ExpressA
   auto bucketNameIter = serviceSpecificParameters->parameterMap.find("bucketName");
   if (bucketNameIter == serviceSpecificParameters->parameterMap.end()) {
       AWS_LOGSTREAM_ERROR(S3_EXPRESS_IDENTITY_PROVIDER, "property bucketName Required to make call")
-      return {"", "", {""}, {}};
+      return {"", "", {""}, {}, Aws::Crt::Optional<Aws::String>()};
   }
   threadSafeKeyInsert(bucketNameIter->second);
   std::lock_guard<std::mutex> lock(*GetMutexForBucketName(bucketNameIter->second));

@@ -7,6 +7,7 @@
 #include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/CopyObjectRequest.h>
+#include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
@@ -281,16 +282,28 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   mockResponse->AddHeader("x-amz-id-2", "Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==");
 
   _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  ClientConfiguration config;
+  config.region = Aws::Region::US_EAST_1;
+  config.scheme = Scheme::HTTPS;
+  auto client = S3Client(config);
+
+
+  CreateBucketRequest createBucketRequest;
+  createBucketRequest.SetBucket("test");
+  
+  auto outcome = client.CreateBucket(createBucketRequest);
+
+  ASSERT_FALSE(outcome.IsSuccess());
  
-  const auto response = _s3Client->MakeRequestDeserialize(&request,
+  /*const auto response = _s3Client->MakeRequestDeserialize(&request,
                           request.GetServiceRequestName(),
                           Aws::Http::HttpMethod::HTTP_PUT,
                           [](Aws::Endpoint::AWSEndpoint&) ->  void {}
-                          );
+                          );*/
 
-  EXPECT_TRUE(response.GetError().GetExceptionName() == "InvalidAction");
+  EXPECT_TRUE(outcome.GetError().GetExceptionName() == "InvalidAction");
 
-  EXPECT_FALSE(response.IsSuccess());
 }
 
 TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
