@@ -5,13 +5,10 @@
 
 #include <aws/core/utils/logging/DefaultCRTLogSystem.h>
 #include <aws/core/utils/logging/AWSLogging.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/LogSystemInterface.h>
-#include <aws/core/utils/Array.h>
 #include <aws/common/common.h>
 #include <cstdarg>
-#include <chrono>
-#include <thread>
-#include <mutex>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
@@ -48,6 +45,10 @@ namespace Aws
                 if (pLogSystem)
                 {
                      pLogSystem->vaLog(logLevel, subjectName, formatStr, args);
+                     if (LogLevel::Fatal == logLevel)
+                     {
+                          AWS_LOG_FLUSH();
+                     }
                 }
             }
         }

@@ -361,7 +361,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   m_crtCredProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate({
      std::bind([](const std::shared_ptr<AWSCredentialsProvider>& provider) {
          if (provider == nullptr) {
-             AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "No provider provided, using anonymous provider")
+             AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "No provider provided, using anonymous provider");
              return Aws::MakeShared<Aws::Crt::Auth::Credentials>(ALLOCATION_TAG);
          }
          AWSCredentials credentials = provider->GetAWSCredentials();
