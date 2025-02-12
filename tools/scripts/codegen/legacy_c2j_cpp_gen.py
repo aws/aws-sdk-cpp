@@ -19,8 +19,9 @@ from pathlib import Path
 from codegen.model_utils import ServiceModel
 
 SMITHY_SUPPORTED_CLIENTS = [
-    "dynamodb",
-    "s3"
+    "dynamodb"
+# TODO: rollback
+#    "s3"
 ]
 
 # Default configuration variables

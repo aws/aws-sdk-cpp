@@ -17,7 +17,7 @@ using namespace Aws::Config;
 using namespace Aws::Environment;
 using namespace Aws::Utils;
 
-AWS_S3_API const char *Aws::S3::S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
+static const char *S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
 static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
 static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
 static const char *S3_EXPRESS_SERVICE_NAME = "s3express";
@@ -95,51 +95,3 @@ Aws::Auth::AWSCredentials S3ExpressSigner::GetCredentials(const std::shared_ptr<
     auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(serviceSpecificParameters);
     return {identity.getAccessKeyId(), identity.getSecretKeyId()};
 }
-
-template <typename BASECLASS>
-typename S3ExpressSignerBase<BASECLASS>::SigningFutureOutcome S3ExpressSignerBase<BASECLASS>::sign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const smithy::AwsCredentialIdentityBase& identity, S3ExpressSignerBase<BASECLASS>::SigningProperties properties)
-{
-    const auto requestId = Aws::GetWithDefault(httpRequest->GetServiceSpecificParameters()->parameterMap,
-    Aws::String("dedupeId"),
-    Aws::String(Aws::Utils::UUID::RandomUUID()));
-    if(hasRequestId(requestId)) {
-        return SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Refusing to sign request more than once",
-                                    false /*retryable*/);
-    }
-
-    if(!identity.sessionToken().has_value()) {
-        return SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "No session token present",
-                                    false /*retryable*/);
-    }
-    putRequestId(requestId);
-    httpRequest->SetHeaderValue(S3_EXPRESS_HEADER, identity.sessionToken().value());
-    auto idCopy = smithy::AwsCredentialIdentity{identity.accessKeyId(), identity.secretAccessKey(), {}, identity.expiration()}; 
-    auto isSigned = BASECLASS::sign(httpRequest, idCopy, properties);
-    deleteRequestId(requestId);
-    return SigningFutureOutcome(std::move(httpRequest));
-}
-
-template <typename BASECLASS>
-typename S3ExpressSignerBase<BASECLASS>::SigningFutureOutcome S3ExpressSignerBase<BASECLASS>::presign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const smithy::AwsCredentialIdentityBase& identity, S3ExpressSignerBase<BASECLASS>::SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds)
-{
-    const auto requestId = Aws::GetWithDefault(httpRequest->GetServiceSpecificParameters()->parameterMap,
-    Aws::String("dedupeId"),
-    Aws::String(Aws::Utils::UUID::RandomUUID()));
-    if(hasRequestId(requestId)) {
-        return SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Refusing to sign request more than once",
-                                    false /*retryable*/);
-    }
-    if(!identity.sessionToken().has_value()) {
-        return SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "No session token present",
-                                    false /*retryable*/);
-    }
-    putRequestId(requestId);
-    httpRequest->AddQueryStringParameter(S3_EXPRESS_QUERY_PARAM, identity.sessionToken().value());
-    auto isSigned = BASECLASS::presign(httpRequest, identity, properties, region, serviceName, expirationTimeInSeconds);
-    deleteRequestId(requestId);
-    return SigningFutureOutcome(std::move(httpRequest));
-
-}
-
-
-template class Aws::S3::S3ExpressSignerBase<smithy::AwsSigV4Signer>;
