@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearchserverless/model/LifecyclePolicyType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -38,14 +38,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use use <code>nextToken</code> to get the next page of results. The
-     * default is 10.</p>
+     * <p>The type of lifecycle policy.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListLifecyclePoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const LifecyclePolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline ListLifecyclePoliciesRequest& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
+    inline ListLifecyclePoliciesRequest& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Resource filters that policies can apply to. Currently, the only supported
+     * resource type is <code>index</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
+    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
+    inline ListLifecyclePoliciesRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
+    inline ListLifecyclePoliciesRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
+    inline ListLifecyclePoliciesRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline ListLifecyclePoliciesRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
+    inline ListLifecyclePoliciesRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -67,44 +83,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Resource filters that policies can apply to. Currently, the only supported
-     * resource type is <code>index</code>.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use use <code>nextToken</code> to get the next page of results. The
+     * default is 10.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
-    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline ListLifecyclePoliciesRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline ListLifecyclePoliciesRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline ListLifecyclePoliciesRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline ListLifecyclePoliciesRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-    inline ListLifecyclePoliciesRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of lifecycle policy.</p>
-     */
-    inline const LifecyclePolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListLifecyclePoliciesRequest& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
-    inline ListLifecyclePoliciesRequest& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListLifecyclePoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    LifecyclePolicyType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
     bool m_resourcesHasBeenSet = false;
 
-    LifecyclePolicyType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

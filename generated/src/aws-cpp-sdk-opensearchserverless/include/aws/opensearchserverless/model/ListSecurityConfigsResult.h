@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SecurityConfigSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about the security configurations in your account.</p>
+     */
+    inline const Aws::Vector<SecurityConfigSummary>& GetSecurityConfigSummaries() const{ return m_securityConfigSummaries; }
+    inline void SetSecurityConfigSummaries(const Aws::Vector<SecurityConfigSummary>& value) { m_securityConfigSummaries = value; }
+    inline void SetSecurityConfigSummaries(Aws::Vector<SecurityConfigSummary>&& value) { m_securityConfigSummaries = std::move(value); }
+    inline ListSecurityConfigsResult& WithSecurityConfigSummaries(const Aws::Vector<SecurityConfigSummary>& value) { SetSecurityConfigSummaries(value); return *this;}
+    inline ListSecurityConfigsResult& WithSecurityConfigSummaries(Aws::Vector<SecurityConfigSummary>&& value) { SetSecurityConfigSummaries(std::move(value)); return *this;}
+    inline ListSecurityConfigsResult& AddSecurityConfigSummaries(const SecurityConfigSummary& value) { m_securityConfigSummaries.push_back(value); return *this; }
+    inline ListSecurityConfigsResult& AddSecurityConfigSummaries(SecurityConfigSummary&& value) { m_securityConfigSummaries.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Make the call again using the returned token to retrieve the next page.</p>
@@ -50,19 +63,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>Details about the security configurations in your account.</p>
-     */
-    inline const Aws::Vector<SecurityConfigSummary>& GetSecurityConfigSummaries() const{ return m_securityConfigSummaries; }
-    inline void SetSecurityConfigSummaries(const Aws::Vector<SecurityConfigSummary>& value) { m_securityConfigSummaries = value; }
-    inline void SetSecurityConfigSummaries(Aws::Vector<SecurityConfigSummary>&& value) { m_securityConfigSummaries = std::move(value); }
-    inline ListSecurityConfigsResult& WithSecurityConfigSummaries(const Aws::Vector<SecurityConfigSummary>& value) { SetSecurityConfigSummaries(value); return *this;}
-    inline ListSecurityConfigsResult& WithSecurityConfigSummaries(Aws::Vector<SecurityConfigSummary>&& value) { SetSecurityConfigSummaries(std::move(value)); return *this;}
-    inline ListSecurityConfigsResult& AddSecurityConfigSummaries(const SecurityConfigSummary& value) { m_securityConfigSummaries.push_back(value); return *this; }
-    inline ListSecurityConfigsResult& AddSecurityConfigSummaries(SecurityConfigSummary&& value) { m_securityConfigSummaries.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -74,9 +74,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<SecurityConfigSummary> m_securityConfigSummaries;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

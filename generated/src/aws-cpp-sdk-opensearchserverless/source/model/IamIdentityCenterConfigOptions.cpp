@@ -19,14 +19,14 @@ namespace Model
 {
 
 IamIdentityCenterConfigOptions::IamIdentityCenterConfigOptions() : 
-    m_applicationArnHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
-    m_groupAttributeHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
+    m_applicationArnHasBeenSet(false),
+    m_applicationNameHasBeenSet(false),
+    m_applicationDescriptionHasBeenSet(false),
     m_userAttribute(IamIdentityCenterUserAttribute::NOT_SET),
-    m_userAttributeHasBeenSet(false)
+    m_userAttributeHasBeenSet(false),
+    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
+    m_groupAttributeHasBeenSet(false)
 {
 }
 
@@ -38,18 +38,18 @@ IamIdentityCenterConfigOptions::IamIdentityCenterConfigOptions(JsonView jsonValu
 
 IamIdentityCenterConfigOptions& IamIdentityCenterConfigOptions::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("instanceArn"))
+  {
+    m_instanceArn = jsonValue.GetString("instanceArn");
+
+    m_instanceArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("applicationArn"))
   {
     m_applicationArn = jsonValue.GetString("applicationArn");
 
     m_applicationArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("applicationDescription"))
-  {
-    m_applicationDescription = jsonValue.GetString("applicationDescription");
-
-    m_applicationDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("applicationName"))
@@ -59,18 +59,11 @@ IamIdentityCenterConfigOptions& IamIdentityCenterConfigOptions::operator =(JsonV
     m_applicationNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("groupAttribute"))
+  if(jsonValue.ValueExists("applicationDescription"))
   {
-    m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
+    m_applicationDescription = jsonValue.GetString("applicationDescription");
 
-    m_groupAttributeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("instanceArn"))
-  {
-    m_instanceArn = jsonValue.GetString("instanceArn");
-
-    m_instanceArnHasBeenSet = true;
+    m_applicationDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("userAttribute"))
@@ -80,6 +73,13 @@ IamIdentityCenterConfigOptions& IamIdentityCenterConfigOptions::operator =(JsonV
     m_userAttributeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("groupAttribute"))
+  {
+    m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
+
+    m_groupAttributeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,15 +87,15 @@ JsonValue IamIdentityCenterConfigOptions::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_applicationArnHasBeenSet)
+  if(m_instanceArnHasBeenSet)
   {
-   payload.WithString("applicationArn", m_applicationArn);
+   payload.WithString("instanceArn", m_instanceArn);
 
   }
 
-  if(m_applicationDescriptionHasBeenSet)
+  if(m_applicationArnHasBeenSet)
   {
-   payload.WithString("applicationDescription", m_applicationDescription);
+   payload.WithString("applicationArn", m_applicationArn);
 
   }
 
@@ -105,20 +105,20 @@ JsonValue IamIdentityCenterConfigOptions::Jsonize() const
 
   }
 
-  if(m_groupAttributeHasBeenSet)
+  if(m_applicationDescriptionHasBeenSet)
   {
-   payload.WithString("groupAttribute", IamIdentityCenterGroupAttributeMapper::GetNameForIamIdentityCenterGroupAttribute(m_groupAttribute));
-  }
-
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("instanceArn", m_instanceArn);
+   payload.WithString("applicationDescription", m_applicationDescription);
 
   }
 
   if(m_userAttributeHasBeenSet)
   {
    payload.WithString("userAttribute", IamIdentityCenterUserAttributeMapper::GetNameForIamIdentityCenterUserAttribute(m_userAttribute));
+  }
+
+  if(m_groupAttributeHasBeenSet)
+  {
+   payload.WithString("groupAttribute", IamIdentityCenterGroupAttributeMapper::GetNameForIamIdentityCenterGroupAttribute(m_groupAttribute));
   }
 
   return payload;

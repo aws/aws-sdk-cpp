@@ -19,9 +19,9 @@ namespace Model
 {
 
 LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier() : 
-    m_resourceHasBeenSet(false),
     m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_resourceHasBeenSet(false)
 {
 }
 
@@ -33,18 +33,18 @@ LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier(JsonView js
 
 LifecyclePolicyResourceIdentifier& LifecyclePolicyResourceIdentifier::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("resource"))
-  {
-    m_resource = jsonValue.GetString("resource");
-
-    m_resourceHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = LifecyclePolicyTypeMapper::GetLifecyclePolicyTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resource"))
+  {
+    m_resource = jsonValue.GetString("resource");
+
+    m_resourceHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue LifecyclePolicyResourceIdentifier::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", LifecyclePolicyTypeMapper::GetNameForLifecyclePolicyType(m_type));
+  }
+
   if(m_resourceHasBeenSet)
   {
    payload.WithString("resource", m_resource);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", LifecyclePolicyTypeMapper::GetNameForLifecyclePolicyType(m_type));
   }
 
   return payload;

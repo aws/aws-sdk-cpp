@@ -19,10 +19,10 @@ namespace Model
 {
 
 UpdateIamIdentityCenterConfigOptions::UpdateIamIdentityCenterConfigOptions() : 
-    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
-    m_groupAttributeHasBeenSet(false),
     m_userAttribute(IamIdentityCenterUserAttribute::NOT_SET),
-    m_userAttributeHasBeenSet(false)
+    m_userAttributeHasBeenSet(false),
+    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
+    m_groupAttributeHasBeenSet(false)
 {
 }
 
@@ -34,18 +34,18 @@ UpdateIamIdentityCenterConfigOptions::UpdateIamIdentityCenterConfigOptions(JsonV
 
 UpdateIamIdentityCenterConfigOptions& UpdateIamIdentityCenterConfigOptions::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("groupAttribute"))
-  {
-    m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
-
-    m_groupAttributeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("userAttribute"))
   {
     m_userAttribute = IamIdentityCenterUserAttributeMapper::GetIamIdentityCenterUserAttributeForName(jsonValue.GetString("userAttribute"));
 
     m_userAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("groupAttribute"))
+  {
+    m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
+
+    m_groupAttributeHasBeenSet = true;
   }
 
   return *this;
@@ -55,14 +55,14 @@ JsonValue UpdateIamIdentityCenterConfigOptions::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_groupAttributeHasBeenSet)
-  {
-   payload.WithString("groupAttribute", IamIdentityCenterGroupAttributeMapper::GetNameForIamIdentityCenterGroupAttribute(m_groupAttribute));
-  }
-
   if(m_userAttributeHasBeenSet)
   {
    payload.WithString("userAttribute", IamIdentityCenterUserAttributeMapper::GetNameForIamIdentityCenterUserAttribute(m_userAttribute));
+  }
+
+  if(m_groupAttributeHasBeenSet)
+  {
+   payload.WithString("groupAttribute", IamIdentityCenterGroupAttributeMapper::GetNameForIamIdentityCenterGroupAttribute(m_groupAttribute));
   }
 
   return payload;

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/LifecyclePolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,16 +41,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
+     * <p>The type of lifecycle policy.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline LifecyclePolicyErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline LifecyclePolicyErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline LifecyclePolicyErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    inline const LifecyclePolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline LifecyclePolicyErrorDetail& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
+    inline LifecyclePolicyErrorDetail& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the lifecycle policy.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline LifecyclePolicyErrorDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline LifecyclePolicyErrorDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline LifecyclePolicyErrorDetail& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -70,42 +82,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the lifecycle policy.</p>
+     * <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LifecyclePolicyErrorDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LifecyclePolicyErrorDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LifecyclePolicyErrorDetail& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of lifecycle policy.</p>
-     */
-    inline const LifecyclePolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LifecyclePolicyErrorDetail& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
-    inline LifecyclePolicyErrorDetail& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
+    inline LifecyclePolicyErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
+    inline LifecyclePolicyErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline LifecyclePolicyErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
-
-    Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet = false;
+    LifecyclePolicyType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    LifecyclePolicyType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
+
+    Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

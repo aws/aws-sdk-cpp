@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/VpcEndpointSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about each VPC endpoint, including the name and current status.</p>
+     */
+    inline const Aws::Vector<VpcEndpointSummary>& GetVpcEndpointSummaries() const{ return m_vpcEndpointSummaries; }
+    inline void SetVpcEndpointSummaries(const Aws::Vector<VpcEndpointSummary>& value) { m_vpcEndpointSummaries = value; }
+    inline void SetVpcEndpointSummaries(Aws::Vector<VpcEndpointSummary>&& value) { m_vpcEndpointSummaries = std::move(value); }
+    inline ListVpcEndpointsResult& WithVpcEndpointSummaries(const Aws::Vector<VpcEndpointSummary>& value) { SetVpcEndpointSummaries(value); return *this;}
+    inline ListVpcEndpointsResult& WithVpcEndpointSummaries(Aws::Vector<VpcEndpointSummary>&& value) { SetVpcEndpointSummaries(std::move(value)); return *this;}
+    inline ListVpcEndpointsResult& AddVpcEndpointSummaries(const VpcEndpointSummary& value) { m_vpcEndpointSummaries.push_back(value); return *this; }
+    inline ListVpcEndpointsResult& AddVpcEndpointSummaries(VpcEndpointSummary&& value) { m_vpcEndpointSummaries.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Make the call again using the returned token to retrieve the next page.</p>
@@ -50,19 +63,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>Details about each VPC endpoint, including the name and current status.</p>
-     */
-    inline const Aws::Vector<VpcEndpointSummary>& GetVpcEndpointSummaries() const{ return m_vpcEndpointSummaries; }
-    inline void SetVpcEndpointSummaries(const Aws::Vector<VpcEndpointSummary>& value) { m_vpcEndpointSummaries = value; }
-    inline void SetVpcEndpointSummaries(Aws::Vector<VpcEndpointSummary>&& value) { m_vpcEndpointSummaries = std::move(value); }
-    inline ListVpcEndpointsResult& WithVpcEndpointSummaries(const Aws::Vector<VpcEndpointSummary>& value) { SetVpcEndpointSummaries(value); return *this;}
-    inline ListVpcEndpointsResult& WithVpcEndpointSummaries(Aws::Vector<VpcEndpointSummary>&& value) { SetVpcEndpointSummaries(std::move(value)); return *this;}
-    inline ListVpcEndpointsResult& AddVpcEndpointSummaries(const VpcEndpointSummary& value) { m_vpcEndpointSummaries.push_back(value); return *this; }
-    inline ListVpcEndpointsResult& AddVpcEndpointSummaries(VpcEndpointSummary&& value) { m_vpcEndpointSummaries.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -74,9 +74,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<VpcEndpointSummary> m_vpcEndpointSummaries;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

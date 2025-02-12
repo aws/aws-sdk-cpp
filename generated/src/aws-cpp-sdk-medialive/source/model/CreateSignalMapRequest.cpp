@@ -18,7 +18,9 @@ CreateSignalMapRequest::CreateSignalMapRequest() :
     m_discoveryEntryPointArnHasBeenSet(false),
     m_eventBridgeRuleTemplateGroupIdentifiersHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_requestIdHasBeenSet(true)
 {
 }
 
@@ -74,6 +76,12 @@ Aws::String CreateSignalMapRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("requestId", m_requestId);
 
   }
 

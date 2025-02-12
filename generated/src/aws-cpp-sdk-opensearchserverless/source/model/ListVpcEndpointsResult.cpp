@@ -29,12 +29,6 @@ ListVpcEndpointsResult::ListVpcEndpointsResult(const Aws::AmazonWebServiceResult
 ListVpcEndpointsResult& ListVpcEndpointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("vpcEndpointSummaries"))
   {
     Aws::Utils::Array<JsonView> vpcEndpointSummariesJsonList = jsonValue.GetArray("vpcEndpointSummaries");
@@ -42,6 +36,12 @@ ListVpcEndpointsResult& ListVpcEndpointsResult::operator =(const Aws::AmazonWebS
     {
       m_vpcEndpointSummaries.push_back(vpcEndpointSummariesJsonList[vpcEndpointSummariesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

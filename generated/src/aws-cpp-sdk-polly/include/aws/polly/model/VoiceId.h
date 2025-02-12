@@ -113,7 +113,8 @@ namespace Model
     Gregory,
     Burcu,
     Jitka,
-    Sabrina
+    Sabrina,
+    Jasmine
   };
 
 namespace VoiceIdMapper

@@ -19,11 +19,11 @@ namespace Model
 {
 
 CreateIamIdentityCenterConfigOptions::CreateIamIdentityCenterConfigOptions() : 
-    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
-    m_groupAttributeHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
     m_userAttribute(IamIdentityCenterUserAttribute::NOT_SET),
-    m_userAttributeHasBeenSet(false)
+    m_userAttributeHasBeenSet(false),
+    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
+    m_groupAttributeHasBeenSet(false)
 {
 }
 
@@ -35,13 +35,6 @@ CreateIamIdentityCenterConfigOptions::CreateIamIdentityCenterConfigOptions(JsonV
 
 CreateIamIdentityCenterConfigOptions& CreateIamIdentityCenterConfigOptions::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("groupAttribute"))
-  {
-    m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
-
-    m_groupAttributeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
@@ -56,17 +49,19 @@ CreateIamIdentityCenterConfigOptions& CreateIamIdentityCenterConfigOptions::oper
     m_userAttributeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("groupAttribute"))
+  {
+    m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
+
+    m_groupAttributeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue CreateIamIdentityCenterConfigOptions::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_groupAttributeHasBeenSet)
-  {
-   payload.WithString("groupAttribute", IamIdentityCenterGroupAttributeMapper::GetNameForIamIdentityCenterGroupAttribute(m_groupAttribute));
-  }
 
   if(m_instanceArnHasBeenSet)
   {
@@ -77,6 +72,11 @@ JsonValue CreateIamIdentityCenterConfigOptions::Jsonize() const
   if(m_userAttributeHasBeenSet)
   {
    payload.WithString("userAttribute", IamIdentityCenterUserAttributeMapper::GetNameForIamIdentityCenterUserAttribute(m_userAttribute));
+  }
+
+  if(m_groupAttributeHasBeenSet)
+  {
+   payload.WithString("groupAttribute", IamIdentityCenterGroupAttributeMapper::GetNameForIamIdentityCenterGroupAttribute(m_groupAttribute));
   }
 
   return payload;

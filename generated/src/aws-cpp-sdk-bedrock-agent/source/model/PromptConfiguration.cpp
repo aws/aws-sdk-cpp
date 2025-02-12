@@ -19,6 +19,7 @@ namespace Model
 {
 
 PromptConfiguration::PromptConfiguration() : 
+    m_additionalModelRequestFieldsHasBeenSet(false),
     m_basePromptTemplateHasBeenSet(false),
     m_foundationModelHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
@@ -41,6 +42,13 @@ PromptConfiguration::PromptConfiguration(JsonView jsonValue)
 
 PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  {
+    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
+
+    m_additionalModelRequestFieldsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("basePromptTemplate"))
   {
     m_basePromptTemplate = jsonValue.GetString("basePromptTemplate");
@@ -96,6 +104,14 @@ PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
 JsonValue PromptConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalModelRequestFieldsHasBeenSet)
+  {
+    if(!m_additionalModelRequestFields.View().IsNull())
+    {
+       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
+    }
+  }
 
   if(m_basePromptTemplateHasBeenSet)
   {

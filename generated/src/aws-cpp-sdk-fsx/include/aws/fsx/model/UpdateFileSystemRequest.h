@@ -172,6 +172,22 @@ namespace Model
     inline UpdateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
     inline UpdateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Lustre version you are updating an FSx for Lustre file system to. Valid
+     * values are <code>2.12</code> and <code>2.15</code>. The value you choose must be
+     * newer than the file system's current Lustre version.</p>
+     */
+    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+    inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
+    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
+    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
+    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
+    inline UpdateFileSystemRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
+    inline UpdateFileSystemRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
+    inline UpdateFileSystemRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_fileSystemId;
@@ -197,6 +213,9 @@ namespace Model
 
     StorageType m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    Aws::String m_fileSystemTypeVersion;
+    bool m_fileSystemTypeVersionHasBeenSet = false;
   };
 
 } // namespace Model

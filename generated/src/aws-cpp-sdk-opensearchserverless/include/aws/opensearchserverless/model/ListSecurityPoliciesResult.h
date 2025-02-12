@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SecurityPolicySummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about the security policies in your account.</p>
+     */
+    inline const Aws::Vector<SecurityPolicySummary>& GetSecurityPolicySummaries() const{ return m_securityPolicySummaries; }
+    inline void SetSecurityPolicySummaries(const Aws::Vector<SecurityPolicySummary>& value) { m_securityPolicySummaries = value; }
+    inline void SetSecurityPolicySummaries(Aws::Vector<SecurityPolicySummary>&& value) { m_securityPolicySummaries = std::move(value); }
+    inline ListSecurityPoliciesResult& WithSecurityPolicySummaries(const Aws::Vector<SecurityPolicySummary>& value) { SetSecurityPolicySummaries(value); return *this;}
+    inline ListSecurityPoliciesResult& WithSecurityPolicySummaries(Aws::Vector<SecurityPolicySummary>&& value) { SetSecurityPolicySummaries(std::move(value)); return *this;}
+    inline ListSecurityPoliciesResult& AddSecurityPolicySummaries(const SecurityPolicySummary& value) { m_securityPolicySummaries.push_back(value); return *this; }
+    inline ListSecurityPoliciesResult& AddSecurityPolicySummaries(SecurityPolicySummary&& value) { m_securityPolicySummaries.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Make the call again using the returned token to retrieve the next page.</p>
@@ -50,19 +63,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>Details about the security policies in your account.</p>
-     */
-    inline const Aws::Vector<SecurityPolicySummary>& GetSecurityPolicySummaries() const{ return m_securityPolicySummaries; }
-    inline void SetSecurityPolicySummaries(const Aws::Vector<SecurityPolicySummary>& value) { m_securityPolicySummaries = value; }
-    inline void SetSecurityPolicySummaries(Aws::Vector<SecurityPolicySummary>&& value) { m_securityPolicySummaries = std::move(value); }
-    inline ListSecurityPoliciesResult& WithSecurityPolicySummaries(const Aws::Vector<SecurityPolicySummary>& value) { SetSecurityPolicySummaries(value); return *this;}
-    inline ListSecurityPoliciesResult& WithSecurityPolicySummaries(Aws::Vector<SecurityPolicySummary>&& value) { SetSecurityPolicySummaries(std::move(value)); return *this;}
-    inline ListSecurityPoliciesResult& AddSecurityPolicySummaries(const SecurityPolicySummary& value) { m_securityPolicySummaries.push_back(value); return *this; }
-    inline ListSecurityPoliciesResult& AddSecurityPolicySummaries(SecurityPolicySummary&& value) { m_securityPolicySummaries.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -74,9 +74,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<SecurityPolicySummary> m_securityPolicySummaries;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

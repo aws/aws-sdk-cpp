@@ -8,6 +8,7 @@
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -57,6 +58,21 @@ namespace Model
     inline StartMonitorDeploymentRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
     inline StartMonitorDeploymentRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * An ID that you assign to a create request. This ID ensures idempotency when
+     * creating resources.
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+    inline StartMonitorDeploymentRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline StartMonitorDeploymentRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline StartMonitorDeploymentRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun;
@@ -64,6 +80,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

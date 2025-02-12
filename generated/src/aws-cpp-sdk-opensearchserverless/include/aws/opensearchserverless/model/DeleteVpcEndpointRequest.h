@@ -37,20 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The VPC endpoint identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -62,13 +48,27 @@ namespace Model
     inline DeleteVpcEndpointRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline DeleteVpcEndpointRequest& WithId(const char* value) { SetId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline DeleteVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline DeleteVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline DeleteVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

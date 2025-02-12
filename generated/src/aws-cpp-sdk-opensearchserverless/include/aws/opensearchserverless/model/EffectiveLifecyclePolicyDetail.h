@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/ResourceType.h>
-#include <aws/opensearchserverless/model/LifecyclePolicyType.h>
 #include <utility>
 
 namespace Aws
@@ -42,28 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum number of index retention days set. That is an optional param
-     * that will return as <code>true</code> if the minimum number of days or hours is
-     * not set to a index resource.</p>
+     * <p>The type of lifecycle policy.</p>
      */
-    inline bool GetNoMinRetentionPeriod() const{ return m_noMinRetentionPeriod; }
-    inline bool NoMinRetentionPeriodHasBeenSet() const { return m_noMinRetentionPeriodHasBeenSet; }
-    inline void SetNoMinRetentionPeriod(bool value) { m_noMinRetentionPeriodHasBeenSet = true; m_noMinRetentionPeriod = value; }
-    inline EffectiveLifecyclePolicyDetail& WithNoMinRetentionPeriod(bool value) { SetNoMinRetentionPeriod(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the lifecycle policy.</p>
-     */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline EffectiveLifecyclePolicyDetail& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline EffectiveLifecyclePolicyDetail& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline EffectiveLifecyclePolicyDetail& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    inline const LifecyclePolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline EffectiveLifecyclePolicyDetail& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
+    inline EffectiveLifecyclePolicyDetail& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,6 +64,20 @@ namespace Model
     inline EffectiveLifecyclePolicyDetail& WithResource(const Aws::String& value) { SetResource(value); return *this;}
     inline EffectiveLifecyclePolicyDetail& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
     inline EffectiveLifecyclePolicyDetail& WithResource(const char* value) { SetResource(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the lifecycle policy.</p>
+     */
+    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
+    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
+    inline EffectiveLifecyclePolicyDetail& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+    inline EffectiveLifecyclePolicyDetail& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
+    inline EffectiveLifecyclePolicyDetail& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
     ///@}
 
     ///@{
@@ -110,25 +110,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of lifecycle policy.</p>
+     * <p>The minimum number of index retention days set. That is an optional param
+     * that will return as <code>true</code> if the minimum number of days or hours is
+     * not set to a index resource.</p>
      */
-    inline const LifecyclePolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EffectiveLifecyclePolicyDetail& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
-    inline EffectiveLifecyclePolicyDetail& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline bool GetNoMinRetentionPeriod() const{ return m_noMinRetentionPeriod; }
+    inline bool NoMinRetentionPeriodHasBeenSet() const { return m_noMinRetentionPeriodHasBeenSet; }
+    inline void SetNoMinRetentionPeriod(bool value) { m_noMinRetentionPeriodHasBeenSet = true; m_noMinRetentionPeriod = value; }
+    inline EffectiveLifecyclePolicyDetail& WithNoMinRetentionPeriod(bool value) { SetNoMinRetentionPeriod(value); return *this;}
     ///@}
   private:
 
-    bool m_noMinRetentionPeriod;
-    bool m_noMinRetentionPeriodHasBeenSet = false;
-
-    Aws::String m_policyName;
-    bool m_policyNameHasBeenSet = false;
+    LifecyclePolicyType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
+
+    Aws::String m_policyName;
+    bool m_policyNameHasBeenSet = false;
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
@@ -136,8 +136,8 @@ namespace Model
     Aws::String m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet = false;
 
-    LifecyclePolicyType m_type;
-    bool m_typeHasBeenSet = false;
+    bool m_noMinRetentionPeriod;
+    bool m_noMinRetentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

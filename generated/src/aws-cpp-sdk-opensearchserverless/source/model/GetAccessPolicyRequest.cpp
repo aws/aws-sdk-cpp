@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetAccessPolicyRequest::GetAccessPolicyRequest() : 
-    m_nameHasBeenSet(false),
     m_type(AccessPolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -23,15 +23,15 @@ Aws::String GetAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", AccessPolicyTypeMapper::GetNameForAccessPolicyType(m_type));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", AccessPolicyTypeMapper::GetNameForAccessPolicyType(m_type));
   }
 
   return payload.View().WriteReadable();

@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>Specifies the suggested block size for a volume in a ZFS dataset, in
      * kibibytes (KiB). For file systems using the Intelligent-Tiering storage class,
-     * valid values are 128, 256, 512, 1024, 2048, or 4096 KiB, with a default of 2048
+     * valid values are 128, 256, 512, 1024, 2048, or 4096 KiB, with a default of 1024
      * KiB. For all other file systems, valid values are 4, 8, 16, 32, 64, 128, 256,
      * 512, or 1024 KiB, with a default of 128 KiB. We recommend using the default
      * setting for the majority of use cases. Generally, workloads that write in fixed

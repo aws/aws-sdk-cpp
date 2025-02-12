@@ -20,10 +20,10 @@ namespace Model
 
 ServiceQuotaExceededException::ServiceQuotaExceededException() : 
     m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+    m_serviceCodeHasBeenSet(false),
+    m_quotaCodeHasBeenSet(false)
 {
 }
 
@@ -40,13 +40,6 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
     m_message = jsonValue.GetString("message");
 
     m_messageHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("quotaCode"))
-  {
-    m_quotaCode = jsonValue.GetString("quotaCode");
-
-    m_quotaCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -70,6 +63,13 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
     m_serviceCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("quotaCode"))
+  {
+    m_quotaCode = jsonValue.GetString("quotaCode");
+
+    m_quotaCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,12 +80,6 @@ JsonValue ServiceQuotaExceededException::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
-
-  }
-
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("quotaCode", m_quotaCode);
 
   }
 
@@ -104,6 +98,12 @@ JsonValue ServiceQuotaExceededException::Jsonize() const
   if(m_serviceCodeHasBeenSet)
   {
    payload.WithString("serviceCode", m_serviceCode);
+
+  }
+
+  if(m_quotaCodeHasBeenSet)
+  {
+   payload.WithString("quotaCode", m_quotaCode);
 
   }
 

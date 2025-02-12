@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/InferenceConfiguration.h>
 #include <aws/bedrock-agent/model/CreationMode.h>
@@ -43,6 +44,23 @@ namespace Model
     AWS_BEDROCKAGENT_API PromptConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>If the Converse or ConverseStream operations support the model,
+     * <code>additionalModelRequestFields</code> contains additional inference
+     * parameters, beyond the base set of inference parameters in the
+     * <code>inferenceConfiguration</code> field. </p> <p>For more information, see
+     * <i>Inference request parameters and response fields for foundation models</i> in
+     * the Amazon Bedrock user guide.</p>
+     */
+    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
+    inline void SetAdditionalModelRequestFields(const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
+    inline void SetAdditionalModelRequestFields(Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
+    inline PromptConfiguration& WithAdditionalModelRequestFields(const Aws::Utils::Document& value) { SetAdditionalModelRequestFields(value); return *this;}
+    inline PromptConfiguration& WithAdditionalModelRequestFields(Aws::Utils::Document&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -157,6 +175,9 @@ namespace Model
     inline PromptConfiguration& WithPromptType(PromptType&& value) { SetPromptType(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::Utils::Document m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
 
     Aws::String m_basePromptTemplate;
     bool m_basePromptTemplateHasBeenSet = false;

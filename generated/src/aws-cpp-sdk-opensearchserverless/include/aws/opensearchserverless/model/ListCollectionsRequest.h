@@ -49,17 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return. Default is 20. You can use
-     * <code>nextToken</code> to get the next page of results.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListCollectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>If your initial <code>ListCollections</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
      * subsequent <code>ListCollections</code> operations, which returns results in the
@@ -74,16 +63,27 @@ namespace Model
     inline ListCollectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListCollectionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to return. Default is 20. You can use
+     * <code>nextToken</code> to get the next page of results.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListCollectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     CollectionFilters m_collectionFilters;
     bool m_collectionFiltersHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

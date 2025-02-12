@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/LifecyclePolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of lifecycle policy.</p>
+     */
+    inline const LifecyclePolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline LifecyclePolicyResourceIdentifier& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
+    inline LifecyclePolicyResourceIdentifier& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the OpenSearch Serverless ilndex resource.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
@@ -52,25 +64,13 @@ namespace Model
     inline LifecyclePolicyResourceIdentifier& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
     inline LifecyclePolicyResourceIdentifier& WithResource(const char* value) { SetResource(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of lifecycle policy.</p>
-     */
-    inline const LifecyclePolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LifecyclePolicyResourceIdentifier& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
-    inline LifecyclePolicyResourceIdentifier& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_resource;
-    bool m_resourceHasBeenSet = false;
 
     LifecyclePolicyType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_resource;
+    bool m_resourceHasBeenSet = false;
   };
 
 } // namespace Model

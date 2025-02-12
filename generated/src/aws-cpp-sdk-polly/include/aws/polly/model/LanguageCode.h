@@ -56,7 +56,8 @@ namespace Model
     nl_BE,
     fr_BE,
     cs_CZ,
-    de_CH
+    de_CH,
+    en_SG
   };
 
 namespace LanguageCodeMapper

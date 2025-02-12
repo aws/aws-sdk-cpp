@@ -37,20 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteCollectionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteCollectionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteCollectionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the collection. For example,
      * <code>1iu5usc406kd</code>. The ID is part of the collection endpoint. You can
      * also retrieve it using the <a
@@ -66,13 +52,27 @@ namespace Model
     inline DeleteCollectionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline DeleteCollectionRequest& WithId(const char* value) { SetId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline DeleteCollectionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline DeleteCollectionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline DeleteCollectionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model
