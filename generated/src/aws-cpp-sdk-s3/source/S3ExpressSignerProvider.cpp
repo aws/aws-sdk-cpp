@@ -21,12 +21,12 @@ Aws::Auth::S3ExpressSignerProvider::S3ExpressSignerProvider(
         region,
         signingPolicy,
         urlEscapePath) {
-    m_signers.emplace_back(std::static_pointer_cast<Aws::Client::AWSAuthSigner>(Aws::MakeShared<Aws::S3::S3ExpressSigner>(CLASS_TAG,
+    m_signers.emplace_back(Aws::MakeShared<Aws::S3::S3ExpressSigner>(CLASS_TAG,
         S3ExpressIdentityProvider,
         credentialsProvider,
         serviceName.c_str(),
         region,
         signingPolicy,
         urlEscapePath,
-        AWSSigningAlgorithm::SIGV4)));
+        AWSSigningAlgorithm::SIGV4));
 }

@@ -62,10 +62,6 @@ namespace Aws
             IdentityProviderSupplier identityProviderSupplier = [](const S3Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
                 return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("S3ClientConfiguration", client);
             };
-            using SmithyIdentityProviderSupplier = std::function<std::shared_ptr<SmithyS3ExpressIdentityProvider> (const S3Client &)>;
-            SmithyIdentityProviderSupplier smithyIdentityProviderSupplier = [](const S3Client &client) -> std::shared_ptr<SmithyS3ExpressIdentityProvider> {
-                return Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>("S3ClientConfiguration", client);
-            };
         private:
             void LoadS3SpecificConfig(const Aws::String& profileName);
         };
