@@ -33,7 +33,9 @@ CreateCloudWatchAlarmTemplateRequest::CreateCloudWatchAlarmTemplateRequest() :
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_treatMissingData(CloudWatchAlarmTemplateTreatMissingData::NOT_SET),
-    m_treatMissingDataHasBeenSet(false)
+    m_treatMissingDataHasBeenSet(false),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_requestIdHasBeenSet(true)
 {
 }
 
@@ -118,6 +120,12 @@ Aws::String CreateCloudWatchAlarmTemplateRequest::SerializePayload() const
   if(m_treatMissingDataHasBeenSet)
   {
    payload.WithString("treatMissingData", CloudWatchAlarmTemplateTreatMissingDataMapper::GetNameForCloudWatchAlarmTemplateTreatMissingData(m_treatMissingData));
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("requestId", m_requestId);
+
   }
 
   return payload.View().WriteReadable();

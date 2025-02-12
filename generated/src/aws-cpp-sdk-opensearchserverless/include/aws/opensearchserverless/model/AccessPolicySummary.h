@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/AccessPolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,36 +40,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Epoch time when the access policy was created.</p>
+     * <p>The type of access policy. Currently, the only available type is
+     * <code>data</code>.</p>
      */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline AccessPolicySummary& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the access policy.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AccessPolicySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AccessPolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AccessPolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when the collection was last modified.</p>
-     */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline AccessPolicySummary& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
+    inline const AccessPolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline AccessPolicySummary& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
+    inline AccessPolicySummary& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,26 +81,41 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of access policy. Currently, the only available type is
-     * <code>data</code>.</p>
+     * <p>The description of the access policy.</p>
      */
-    inline const AccessPolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AccessPolicySummary& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
-    inline AccessPolicySummary& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline AccessPolicySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline AccessPolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline AccessPolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Epoch time when the access policy was created.</p>
+     */
+    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline AccessPolicySummary& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the collection was last modified.</p>
+     */
+    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline AccessPolicySummary& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
     ///@}
   private:
 
-    long long m_createdDate;
-    bool m_createdDateHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    long long m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet = false;
+    AccessPolicyType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -129,8 +123,14 @@ namespace Model
     Aws::String m_policyVersion;
     bool m_policyVersionHasBeenSet = false;
 
-    AccessPolicyType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    long long m_createdDate;
+    bool m_createdDateHasBeenSet = false;
+
+    long long m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

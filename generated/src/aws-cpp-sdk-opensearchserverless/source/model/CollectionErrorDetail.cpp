@@ -19,10 +19,10 @@ namespace Model
 {
 
 CollectionErrorDetail::CollectionErrorDetail() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
+    m_errorCodeHasBeenSet(false)
 {
 }
 
@@ -34,20 +34,6 @@ CollectionErrorDetail::CollectionErrorDetail(JsonView jsonValue)
 
 CollectionErrorDetail& CollectionErrorDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = jsonValue.GetString("errorCode");
-
-    m_errorCodeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("errorMessage"))
-  {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-
-    m_errorMessageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -62,24 +48,26 @@ CollectionErrorDetail& CollectionErrorDetail::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+
+    m_errorMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = jsonValue.GetString("errorCode");
+
+    m_errorCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue CollectionErrorDetail::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", m_errorCode);
-
-  }
-
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
-  }
 
   if(m_idHasBeenSet)
   {
@@ -90,6 +78,18 @@ JsonValue CollectionErrorDetail::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("errorMessage", m_errorMessage);
+
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", m_errorCode);
 
   }
 

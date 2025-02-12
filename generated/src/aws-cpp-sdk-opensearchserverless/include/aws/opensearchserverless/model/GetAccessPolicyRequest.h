@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/AccessPolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Tye type of policy. Currently, the only supported value is
+     * <code>data</code>.</p>
+     */
+    inline const AccessPolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline GetAccessPolicyRequest& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
+    inline GetAccessPolicyRequest& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the access policy.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -48,26 +61,13 @@ namespace Model
     inline GetAccessPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline GetAccessPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Tye type of policy. Currently, the only supported value is
-     * <code>data</code>.</p>
-     */
-    inline const AccessPolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetAccessPolicyRequest& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
-    inline GetAccessPolicyRequest& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     AccessPolicyType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

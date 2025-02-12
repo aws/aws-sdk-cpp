@@ -66,7 +66,7 @@ namespace Model
      * password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI
      * and REST API to manage your file system resources. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
-     * resources using NetApp Applicaton</a>.</p>
+     * resources using NetApp Application</a>.</p>
      */
     inline const Aws::String& GetFsxAdminPassword() const{ return m_fsxAdminPassword; }
     inline bool FsxAdminPasswordHasBeenSet() const { return m_fsxAdminPasswordHasBeenSet; }

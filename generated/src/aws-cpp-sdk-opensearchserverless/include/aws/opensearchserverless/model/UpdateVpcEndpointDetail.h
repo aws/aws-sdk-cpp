@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearchserverless/model/VpcEndpointStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -56,16 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp of when the endpoint was last modified.</p>
-     */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline UpdateVpcEndpointDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the endpoint.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -76,23 +66,6 @@ namespace Model
     inline UpdateVpcEndpointDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline UpdateVpcEndpointDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline UpdateVpcEndpointDetail& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifiers of the security groups that define the ports,
-     * protocols, and sources for inbound traffic that you are authorizing into your
-     * endpoint.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline UpdateVpcEndpointDetail& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline UpdateVpcEndpointDetail& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline UpdateVpcEndpointDetail& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline UpdateVpcEndpointDetail& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline UpdateVpcEndpointDetail& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -121,25 +94,52 @@ namespace Model
     inline UpdateVpcEndpointDetail& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
     inline UpdateVpcEndpointDetail& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifiers of the security groups that define the ports,
+     * protocols, and sources for inbound traffic that you are authorizing into your
+     * endpoint.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
+    inline UpdateVpcEndpointDetail& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+    inline UpdateVpcEndpointDetail& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
+    inline UpdateVpcEndpointDetail& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline UpdateVpcEndpointDetail& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
+    inline UpdateVpcEndpointDetail& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp of when the endpoint was last modified.</p>
+     */
+    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline UpdateVpcEndpointDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    long long m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
 
     VpcEndpointStatus m_status;
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
+
+    long long m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

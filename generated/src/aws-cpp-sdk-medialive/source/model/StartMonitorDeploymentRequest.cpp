@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 StartMonitorDeploymentRequest::StartMonitorDeploymentRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_identifierHasBeenSet(false)
+    m_identifierHasBeenSet(false),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_requestIdHasBeenSet(true)
 {
 }
 
@@ -26,6 +28,12 @@ Aws::String StartMonitorDeploymentRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("dryRun", m_dryRun);
+
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("requestId", m_requestId);
 
   }
 

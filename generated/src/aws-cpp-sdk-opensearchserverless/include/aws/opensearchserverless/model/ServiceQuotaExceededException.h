@@ -54,20 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Identifier of the resource affected.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -107,13 +93,24 @@ namespace Model
     inline ServiceQuotaExceededException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
     inline ServiceQuotaExceededException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Service Quotas requirement to identify originating quota.</p>
+     */
+    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
+    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
+    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
+    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
+    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
+    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
+    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
@@ -123,6 +120,9 @@ namespace Model
 
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet = false;
+
+    Aws::String m_quotaCode;
+    bool m_quotaCodeHasBeenSet = false;
   };
 
 } // namespace Model

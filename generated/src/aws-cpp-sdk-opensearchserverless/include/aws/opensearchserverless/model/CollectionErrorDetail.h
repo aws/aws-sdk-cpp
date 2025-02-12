@@ -40,35 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
-     */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline CollectionErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline CollectionErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline CollectionErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the error. For example, <code>The specified Collection is
-     * not found.</code> </p>
-     */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline CollectionErrorDetail& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline CollectionErrorDetail& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline CollectionErrorDetail& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>If the request contains collection IDs, the response includes the IDs
      * provided in the request.</p>
      */
@@ -96,19 +67,48 @@ namespace Model
     inline CollectionErrorDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline CollectionErrorDetail& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A description of the error. For example, <code>The specified Collection is
+     * not found.</code> </p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+    inline CollectionErrorDetail& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+    inline CollectionErrorDetail& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+    inline CollectionErrorDetail& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
+     */
+    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
+    inline CollectionErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
+    inline CollectionErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline CollectionErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
-
-    Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
+
+    Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

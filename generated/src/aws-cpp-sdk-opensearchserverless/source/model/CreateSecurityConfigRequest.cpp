@@ -13,14 +13,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateSecurityConfigRequest::CreateSecurityConfigRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_iamIdentityCenterOptionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_samlOptionsHasBeenSet(false),
     m_type(SecurityConfigType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_samlOptionsHasBeenSet(false),
+    m_iamIdentityCenterOptionsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -28,9 +28,14 @@ Aws::String CreateSecurityConfigRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("type", SecurityConfigTypeMapper::GetNameForSecurityConfigType(m_type));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 
@@ -40,27 +45,22 @@ Aws::String CreateSecurityConfigRequest::SerializePayload() const
 
   }
 
-  if(m_iamIdentityCenterOptionsHasBeenSet)
-  {
-   payload.WithObject("iamIdentityCenterOptions", m_iamIdentityCenterOptions.Jsonize());
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_samlOptionsHasBeenSet)
   {
    payload.WithObject("samlOptions", m_samlOptions.Jsonize());
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_iamIdentityCenterOptionsHasBeenSet)
   {
-   payload.WithString("type", SecurityConfigTypeMapper::GetNameForSecurityConfigType(m_type));
+   payload.WithObject("iamIdentityCenterOptions", m_iamIdentityCenterOptions.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/SecurityPolicyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,36 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date the policy was created.</p>
+     * <p>The type of security policy.</p>
      */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline SecurityPolicySummary& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the security policy.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityPolicySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityPolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityPolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The timestamp of when the policy was last modified.</p>
-     */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline SecurityPolicySummary& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
+    inline const SecurityPolicyType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const SecurityPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SecurityPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline SecurityPolicySummary& WithType(const SecurityPolicyType& value) { SetType(value); return *this;}
+    inline SecurityPolicySummary& WithType(SecurityPolicyType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,25 +81,41 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of security policy.</p>
+     * <p>The description of the security policy.</p>
      */
-    inline const SecurityPolicyType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SecurityPolicySummary& WithType(const SecurityPolicyType& value) { SetType(value); return *this;}
-    inline SecurityPolicySummary& WithType(SecurityPolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline SecurityPolicySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline SecurityPolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline SecurityPolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date the policy was created.</p>
+     */
+    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline SecurityPolicySummary& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp of when the policy was last modified.</p>
+     */
+    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline SecurityPolicySummary& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
     ///@}
   private:
 
-    long long m_createdDate;
-    bool m_createdDateHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    long long m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet = false;
+    SecurityPolicyType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -129,8 +123,14 @@ namespace Model
     Aws::String m_policyVersion;
     bool m_policyVersionHasBeenSet = false;
 
-    SecurityPolicyType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    long long m_createdDate;
+    bool m_createdDateHasBeenSet = false;
+
+    long long m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

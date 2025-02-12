@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/opensearchserverless/model/IamIdentityCenterConfigOptions.h>
-#include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/SecurityConfigType.h>
+#include <aws/opensearchserverless/model/SamlConfigOptions.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterConfigOptions.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the security configuration.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline SecurityConfigDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline SecurityConfigDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline SecurityConfigDetail& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of security configuration.</p>
+     */
+    inline const SecurityConfigType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline SecurityConfigDetail& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
+    inline SecurityConfigDetail& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The version of the security configuration.</p>
      */
     inline const Aws::String& GetConfigVersion() const{ return m_configVersion; }
@@ -53,16 +79,6 @@ namespace Model
     inline SecurityConfigDetail& WithConfigVersion(const Aws::String& value) { SetConfigVersion(value); return *this;}
     inline SecurityConfigDetail& WithConfigVersion(Aws::String&& value) { SetConfigVersion(std::move(value)); return *this;}
     inline SecurityConfigDetail& WithConfigVersion(const char* value) { SetConfigVersion(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date the configuration was created.</p>
-     */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline SecurityConfigDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
     ///@}
 
     ///@{
@@ -81,42 +97,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes IAM Identity Center options in the form of a key-value map.</p>
-     */
-    inline const IamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const{ return m_iamIdentityCenterOptions; }
-    inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
-    inline void SetIamIdentityCenterOptions(const IamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = value; }
-    inline void SetIamIdentityCenterOptions(IamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::move(value); }
-    inline SecurityConfigDetail& WithIamIdentityCenterOptions(const IamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptions(value); return *this;}
-    inline SecurityConfigDetail& WithIamIdentityCenterOptions(IamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptions(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the security configuration.</p>
-     */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline SecurityConfigDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline SecurityConfigDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline SecurityConfigDetail& WithId(const char* value) { SetId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The timestamp of when the configuration was last modified.</p>
-     */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline SecurityConfigDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>SAML options for the security configuration in the form of a key-value
      * map.</p>
      */
@@ -130,40 +110,60 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of security configuration.</p>
+     * <p>Describes IAM Identity Center options in the form of a key-value map.</p>
      */
-    inline const SecurityConfigType& GetType() const{ return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SecurityConfigDetail& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
-    inline SecurityConfigDetail& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline const IamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const{ return m_iamIdentityCenterOptions; }
+    inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
+    inline void SetIamIdentityCenterOptions(const IamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = value; }
+    inline void SetIamIdentityCenterOptions(IamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::move(value); }
+    inline SecurityConfigDetail& WithIamIdentityCenterOptions(const IamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptions(value); return *this;}
+    inline SecurityConfigDetail& WithIamIdentityCenterOptions(IamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date the configuration was created.</p>
+     */
+    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline SecurityConfigDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp of when the configuration was last modified.</p>
+     */
+    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline SecurityConfigDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_configVersion;
-    bool m_configVersionHasBeenSet = false;
-
-    long long m_createdDate;
-    bool m_createdDateHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    IamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
-    bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    long long m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet = false;
+    SecurityConfigType m_type;
+    bool m_typeHasBeenSet = false;
+
+    Aws::String m_configVersion;
+    bool m_configVersionHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     SamlConfigOptions m_samlOptions;
     bool m_samlOptionsHasBeenSet = false;
 
-    SecurityConfigType m_type;
-    bool m_typeHasBeenSet = false;
+    IamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
+    bool m_iamIdentityCenterOptionsHasBeenSet = false;
+
+    long long m_createdDate;
+    bool m_createdDateHasBeenSet = false;
+
+    long long m_lastModifiedDate;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

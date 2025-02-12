@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListVpcEndpointsRequest::ListVpcEndpointsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_vpcEndpointFiltersHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_vpcEndpointFiltersHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -24,9 +24,9 @@ Aws::String ListVpcEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_vpcEndpointFiltersHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
+   payload.WithObject("vpcEndpointFilters", m_vpcEndpointFilters.Jsonize());
 
   }
 
@@ -36,9 +36,9 @@ Aws::String ListVpcEndpointsRequest::SerializePayload() const
 
   }
 
-  if(m_vpcEndpointFiltersHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithObject("vpcEndpointFilters", m_vpcEndpointFilters.Jsonize());
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

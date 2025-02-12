@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListLifecyclePoliciesRequest::ListLifecyclePoliciesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
     m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_resourcesHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -26,16 +26,9 @@ Aws::String ListLifecyclePoliciesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+   payload.WithString("type", LifecyclePolicyTypeMapper::GetNameForLifecyclePolicyType(m_type));
   }
 
   if(m_resourcesHasBeenSet)
@@ -49,9 +42,16 @@ Aws::String ListLifecyclePoliciesRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_nextTokenHasBeenSet)
   {
-   payload.WithString("type", LifecyclePolicyTypeMapper::GetNameForLifecyclePolicyType(m_type));
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

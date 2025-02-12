@@ -13,14 +13,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAccessPolicyRequest::UpdateAccessPolicyRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_policyVersionHasBeenSet(false),
     m_type(AccessPolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_policyVersionHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_policyHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -28,27 +28,14 @@ Aws::String UpdateAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+   payload.WithString("type", AccessPolicyTypeMapper::GetNameForAccessPolicyType(m_type));
   }
 
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
-
-  }
-
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("policy", m_policy);
 
   }
 
@@ -58,9 +45,22 @@ Aws::String UpdateAccessPolicyRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("type", AccessPolicyTypeMapper::GetNameForAccessPolicyType(m_type));
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

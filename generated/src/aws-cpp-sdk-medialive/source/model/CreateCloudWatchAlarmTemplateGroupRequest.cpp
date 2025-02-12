@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 CreateCloudWatchAlarmTemplateGroupRequest::CreateCloudWatchAlarmTemplateGroupRequest() : 
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_requestIdHasBeenSet(true)
 {
 }
 
@@ -43,6 +45,12 @@ Aws::String CreateCloudWatchAlarmTemplateGroupRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_requestIdHasBeenSet)
+  {
+   payload.WithString("requestId", m_requestId);
 
   }
 

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/VpcEndpointFilters.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,14 +37,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results. The default
-     * is 20.</p>
+     * <p>Filter the results according to the current status of the VPC endpoint.
+     * Possible statuses are <code>CREATING</code>, <code>DELETING</code>,
+     * <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListVpcEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const VpcEndpointFilters& GetVpcEndpointFilters() const{ return m_vpcEndpointFilters; }
+    inline bool VpcEndpointFiltersHasBeenSet() const { return m_vpcEndpointFiltersHasBeenSet; }
+    inline void SetVpcEndpointFilters(const VpcEndpointFilters& value) { m_vpcEndpointFiltersHasBeenSet = true; m_vpcEndpointFilters = value; }
+    inline void SetVpcEndpointFilters(VpcEndpointFilters&& value) { m_vpcEndpointFiltersHasBeenSet = true; m_vpcEndpointFilters = std::move(value); }
+    inline ListVpcEndpointsRequest& WithVpcEndpointFilters(const VpcEndpointFilters& value) { SetVpcEndpointFilters(value); return *this;}
+    inline ListVpcEndpointsRequest& WithVpcEndpointFilters(VpcEndpointFilters&& value) { SetVpcEndpointFilters(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,27 +68,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filter the results according to the current status of the VPC endpoint.
-     * Possible statuses are <code>CREATING</code>, <code>DELETING</code>,
-     * <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use <code>nextToken</code> to get the next page of results. The default
+     * is 20.</p>
      */
-    inline const VpcEndpointFilters& GetVpcEndpointFilters() const{ return m_vpcEndpointFilters; }
-    inline bool VpcEndpointFiltersHasBeenSet() const { return m_vpcEndpointFiltersHasBeenSet; }
-    inline void SetVpcEndpointFilters(const VpcEndpointFilters& value) { m_vpcEndpointFiltersHasBeenSet = true; m_vpcEndpointFilters = value; }
-    inline void SetVpcEndpointFilters(VpcEndpointFilters&& value) { m_vpcEndpointFiltersHasBeenSet = true; m_vpcEndpointFilters = std::move(value); }
-    inline ListVpcEndpointsRequest& WithVpcEndpointFilters(const VpcEndpointFilters& value) { SetVpcEndpointFilters(value); return *this;}
-    inline ListVpcEndpointsRequest& WithVpcEndpointFilters(VpcEndpointFilters&& value) { SetVpcEndpointFilters(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListVpcEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    VpcEndpointFilters m_vpcEndpointFilters;
+    bool m_vpcEndpointFiltersHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    VpcEndpointFilters m_vpcEndpointFilters;
-    bool m_vpcEndpointFiltersHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model
