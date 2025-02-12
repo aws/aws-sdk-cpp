@@ -16,7 +16,11 @@ ThreadTask::ThreadTask(PooledThreadExecutor& executor) : m_continue(true), m_exe
 ThreadTask::~ThreadTask()
 {
     StopProcessingWork();
-    m_thread.join();
+    if (!m_detached) {
+      m_thread.join();
+    } else {
+      m_thread.detach();
+    }
 }
 
 void ThreadTask::MainTaskRunner()
@@ -38,9 +42,22 @@ void ThreadTask::MainTaskRunner()
             m_executor.m_sync.WaitOne();
         }
     }
+
+    if (m_detached) {
+      Aws::Delete(this);
+    }
 }
 
 void ThreadTask::StopProcessingWork()
 {
     m_continue = false;
 }
+
+std::thread::id ThreadTask::GetThreadId() const {
+  return m_thread.get_id();
+}
+
+void ThreadTask::DetachFromExecutor() {
+  m_detached = true;
+}
+

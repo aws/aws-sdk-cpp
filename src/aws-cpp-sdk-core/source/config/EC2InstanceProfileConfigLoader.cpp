@@ -49,7 +49,7 @@ namespace Aws
             this->credentialsValidUntilMillis = DateTime::Now().Millis();
 
             if (!m_ec2metadataClient) {
-                AWS_LOGSTREAM_FATAL(EC2_INSTANCE_PROFILE_LOG_TAG, "EC2MetadataClient is a nullptr!")
+                AWS_LOGSTREAM_FATAL(EC2_INSTANCE_PROFILE_LOG_TAG, "EC2MetadataClient is a nullptr!");
                 return false;
             }
             auto credentialsStr = m_ec2metadataClient->GetDefaultCredentialsSecurely();
