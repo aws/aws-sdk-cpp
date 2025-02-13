@@ -27,6 +27,7 @@
 #include <aws/storagegateway/model/AssociateFileSystemResult.h>
 #include <aws/storagegateway/model/AttachVolumeResult.h>
 #include <aws/storagegateway/model/CancelArchivalResult.h>
+#include <aws/storagegateway/model/CancelCacheReportResult.h>
 #include <aws/storagegateway/model/CancelRetrievalResult.h>
 #include <aws/storagegateway/model/CreateCachediSCSIVolumeResult.h>
 #include <aws/storagegateway/model/CreateNFSFileShareResult.h>
@@ -39,6 +40,7 @@
 #include <aws/storagegateway/model/CreateTapesResult.h>
 #include <aws/storagegateway/model/DeleteAutomaticTapeCreationPolicyResult.h>
 #include <aws/storagegateway/model/DeleteBandwidthRateLimitResult.h>
+#include <aws/storagegateway/model/DeleteCacheReportResult.h>
 #include <aws/storagegateway/model/DeleteChapCredentialsResult.h>
 #include <aws/storagegateway/model/DeleteFileShareResult.h>
 #include <aws/storagegateway/model/DeleteGatewayResult.h>
@@ -51,6 +53,7 @@
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitResult.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitScheduleResult.h>
 #include <aws/storagegateway/model/DescribeCacheResult.h>
+#include <aws/storagegateway/model/DescribeCacheReportResult.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesResult.h>
 #include <aws/storagegateway/model/DescribeChapCredentialsResult.h>
 #include <aws/storagegateway/model/DescribeFileSystemAssociationsResult.h>
@@ -72,6 +75,7 @@
 #include <aws/storagegateway/model/DisassociateFileSystemResult.h>
 #include <aws/storagegateway/model/JoinDomainResult.h>
 #include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesResult.h>
+#include <aws/storagegateway/model/ListCacheReportsResult.h>
 #include <aws/storagegateway/model/ListFileSharesResult.h>
 #include <aws/storagegateway/model/ListFileSystemAssociationsResult.h>
 #include <aws/storagegateway/model/ListGatewaysResult.h>
@@ -92,6 +96,7 @@
 #include <aws/storagegateway/model/SetSMBGuestPasswordResult.h>
 #include <aws/storagegateway/model/ShutdownGatewayResult.h>
 #include <aws/storagegateway/model/StartAvailabilityMonitorTestResult.h>
+#include <aws/storagegateway/model/StartCacheReportResult.h>
 #include <aws/storagegateway/model/StartGatewayResult.h>
 #include <aws/storagegateway/model/UpdateAutomaticTapeCreationPolicyResult.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitResult.h>
@@ -116,6 +121,7 @@
 #include <aws/storagegateway/model/ListTapePoolsRequest.h>
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListVolumesRequest.h>
+#include <aws/storagegateway/model/ListCacheReportsRequest.h>
 /* End of service model headers required in StorageGatewayClient header */
 
 namespace Aws
@@ -165,6 +171,7 @@ namespace Aws
       class AssociateFileSystemRequest;
       class AttachVolumeRequest;
       class CancelArchivalRequest;
+      class CancelCacheReportRequest;
       class CancelRetrievalRequest;
       class CreateCachediSCSIVolumeRequest;
       class CreateNFSFileShareRequest;
@@ -177,6 +184,7 @@ namespace Aws
       class CreateTapesRequest;
       class DeleteAutomaticTapeCreationPolicyRequest;
       class DeleteBandwidthRateLimitRequest;
+      class DeleteCacheReportRequest;
       class DeleteChapCredentialsRequest;
       class DeleteFileShareRequest;
       class DeleteGatewayRequest;
@@ -189,6 +197,7 @@ namespace Aws
       class DescribeBandwidthRateLimitRequest;
       class DescribeBandwidthRateLimitScheduleRequest;
       class DescribeCacheRequest;
+      class DescribeCacheReportRequest;
       class DescribeCachediSCSIVolumesRequest;
       class DescribeChapCredentialsRequest;
       class DescribeFileSystemAssociationsRequest;
@@ -210,6 +219,7 @@ namespace Aws
       class DisassociateFileSystemRequest;
       class JoinDomainRequest;
       class ListAutomaticTapeCreationPoliciesRequest;
+      class ListCacheReportsRequest;
       class ListFileSharesRequest;
       class ListFileSystemAssociationsRequest;
       class ListGatewaysRequest;
@@ -230,6 +240,7 @@ namespace Aws
       class SetSMBGuestPasswordRequest;
       class ShutdownGatewayRequest;
       class StartAvailabilityMonitorTestRequest;
+      class StartCacheReportRequest;
       class StartGatewayRequest;
       class UpdateAutomaticTapeCreationPolicyRequest;
       class UpdateBandwidthRateLimitRequest;
@@ -258,6 +269,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateFileSystemResult, Aws::StorageGateway::StorageGatewayError> AssociateFileSystemOutcome;
       typedef Aws::Utils::Outcome<AttachVolumeResult, Aws::StorageGateway::StorageGatewayError> AttachVolumeOutcome;
       typedef Aws::Utils::Outcome<CancelArchivalResult, Aws::StorageGateway::StorageGatewayError> CancelArchivalOutcome;
+      typedef Aws::Utils::Outcome<CancelCacheReportResult, Aws::StorageGateway::StorageGatewayError> CancelCacheReportOutcome;
       typedef Aws::Utils::Outcome<CancelRetrievalResult, Aws::StorageGateway::StorageGatewayError> CancelRetrievalOutcome;
       typedef Aws::Utils::Outcome<CreateCachediSCSIVolumeResult, Aws::StorageGateway::StorageGatewayError> CreateCachediSCSIVolumeOutcome;
       typedef Aws::Utils::Outcome<CreateNFSFileShareResult, Aws::StorageGateway::StorageGatewayError> CreateNFSFileShareOutcome;
@@ -270,6 +282,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateTapesResult, Aws::StorageGateway::StorageGatewayError> CreateTapesOutcome;
       typedef Aws::Utils::Outcome<DeleteAutomaticTapeCreationPolicyResult, Aws::StorageGateway::StorageGatewayError> DeleteAutomaticTapeCreationPolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteBandwidthRateLimitResult, Aws::StorageGateway::StorageGatewayError> DeleteBandwidthRateLimitOutcome;
+      typedef Aws::Utils::Outcome<DeleteCacheReportResult, Aws::StorageGateway::StorageGatewayError> DeleteCacheReportOutcome;
       typedef Aws::Utils::Outcome<DeleteChapCredentialsResult, Aws::StorageGateway::StorageGatewayError> DeleteChapCredentialsOutcome;
       typedef Aws::Utils::Outcome<DeleteFileShareResult, Aws::StorageGateway::StorageGatewayError> DeleteFileShareOutcome;
       typedef Aws::Utils::Outcome<DeleteGatewayResult, Aws::StorageGateway::StorageGatewayError> DeleteGatewayOutcome;
@@ -282,6 +295,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeBandwidthRateLimitResult, Aws::StorageGateway::StorageGatewayError> DescribeBandwidthRateLimitOutcome;
       typedef Aws::Utils::Outcome<DescribeBandwidthRateLimitScheduleResult, Aws::StorageGateway::StorageGatewayError> DescribeBandwidthRateLimitScheduleOutcome;
       typedef Aws::Utils::Outcome<DescribeCacheResult, Aws::StorageGateway::StorageGatewayError> DescribeCacheOutcome;
+      typedef Aws::Utils::Outcome<DescribeCacheReportResult, Aws::StorageGateway::StorageGatewayError> DescribeCacheReportOutcome;
       typedef Aws::Utils::Outcome<DescribeCachediSCSIVolumesResult, Aws::StorageGateway::StorageGatewayError> DescribeCachediSCSIVolumesOutcome;
       typedef Aws::Utils::Outcome<DescribeChapCredentialsResult, Aws::StorageGateway::StorageGatewayError> DescribeChapCredentialsOutcome;
       typedef Aws::Utils::Outcome<DescribeFileSystemAssociationsResult, Aws::StorageGateway::StorageGatewayError> DescribeFileSystemAssociationsOutcome;
@@ -303,6 +317,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateFileSystemResult, Aws::StorageGateway::StorageGatewayError> DisassociateFileSystemOutcome;
       typedef Aws::Utils::Outcome<JoinDomainResult, Aws::StorageGateway::StorageGatewayError> JoinDomainOutcome;
       typedef Aws::Utils::Outcome<ListAutomaticTapeCreationPoliciesResult, Aws::StorageGateway::StorageGatewayError> ListAutomaticTapeCreationPoliciesOutcome;
+      typedef Aws::Utils::Outcome<ListCacheReportsResult, Aws::StorageGateway::StorageGatewayError> ListCacheReportsOutcome;
       typedef Aws::Utils::Outcome<ListFileSharesResult, Aws::StorageGateway::StorageGatewayError> ListFileSharesOutcome;
       typedef Aws::Utils::Outcome<ListFileSystemAssociationsResult, Aws::StorageGateway::StorageGatewayError> ListFileSystemAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListGatewaysResult, Aws::StorageGateway::StorageGatewayError> ListGatewaysOutcome;
@@ -323,6 +338,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SetSMBGuestPasswordResult, Aws::StorageGateway::StorageGatewayError> SetSMBGuestPasswordOutcome;
       typedef Aws::Utils::Outcome<ShutdownGatewayResult, Aws::StorageGateway::StorageGatewayError> ShutdownGatewayOutcome;
       typedef Aws::Utils::Outcome<StartAvailabilityMonitorTestResult, Aws::StorageGateway::StorageGatewayError> StartAvailabilityMonitorTestOutcome;
+      typedef Aws::Utils::Outcome<StartCacheReportResult, Aws::StorageGateway::StorageGatewayError> StartCacheReportOutcome;
       typedef Aws::Utils::Outcome<StartGatewayResult, Aws::StorageGateway::StorageGatewayError> StartGatewayOutcome;
       typedef Aws::Utils::Outcome<UpdateAutomaticTapeCreationPolicyResult, Aws::StorageGateway::StorageGatewayError> UpdateAutomaticTapeCreationPolicyOutcome;
       typedef Aws::Utils::Outcome<UpdateBandwidthRateLimitResult, Aws::StorageGateway::StorageGatewayError> UpdateBandwidthRateLimitOutcome;
@@ -351,6 +367,7 @@ namespace Aws
       typedef std::future<AssociateFileSystemOutcome> AssociateFileSystemOutcomeCallable;
       typedef std::future<AttachVolumeOutcome> AttachVolumeOutcomeCallable;
       typedef std::future<CancelArchivalOutcome> CancelArchivalOutcomeCallable;
+      typedef std::future<CancelCacheReportOutcome> CancelCacheReportOutcomeCallable;
       typedef std::future<CancelRetrievalOutcome> CancelRetrievalOutcomeCallable;
       typedef std::future<CreateCachediSCSIVolumeOutcome> CreateCachediSCSIVolumeOutcomeCallable;
       typedef std::future<CreateNFSFileShareOutcome> CreateNFSFileShareOutcomeCallable;
@@ -363,6 +380,7 @@ namespace Aws
       typedef std::future<CreateTapesOutcome> CreateTapesOutcomeCallable;
       typedef std::future<DeleteAutomaticTapeCreationPolicyOutcome> DeleteAutomaticTapeCreationPolicyOutcomeCallable;
       typedef std::future<DeleteBandwidthRateLimitOutcome> DeleteBandwidthRateLimitOutcomeCallable;
+      typedef std::future<DeleteCacheReportOutcome> DeleteCacheReportOutcomeCallable;
       typedef std::future<DeleteChapCredentialsOutcome> DeleteChapCredentialsOutcomeCallable;
       typedef std::future<DeleteFileShareOutcome> DeleteFileShareOutcomeCallable;
       typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
@@ -375,6 +393,7 @@ namespace Aws
       typedef std::future<DescribeBandwidthRateLimitOutcome> DescribeBandwidthRateLimitOutcomeCallable;
       typedef std::future<DescribeBandwidthRateLimitScheduleOutcome> DescribeBandwidthRateLimitScheduleOutcomeCallable;
       typedef std::future<DescribeCacheOutcome> DescribeCacheOutcomeCallable;
+      typedef std::future<DescribeCacheReportOutcome> DescribeCacheReportOutcomeCallable;
       typedef std::future<DescribeCachediSCSIVolumesOutcome> DescribeCachediSCSIVolumesOutcomeCallable;
       typedef std::future<DescribeChapCredentialsOutcome> DescribeChapCredentialsOutcomeCallable;
       typedef std::future<DescribeFileSystemAssociationsOutcome> DescribeFileSystemAssociationsOutcomeCallable;
@@ -396,6 +415,7 @@ namespace Aws
       typedef std::future<DisassociateFileSystemOutcome> DisassociateFileSystemOutcomeCallable;
       typedef std::future<JoinDomainOutcome> JoinDomainOutcomeCallable;
       typedef std::future<ListAutomaticTapeCreationPoliciesOutcome> ListAutomaticTapeCreationPoliciesOutcomeCallable;
+      typedef std::future<ListCacheReportsOutcome> ListCacheReportsOutcomeCallable;
       typedef std::future<ListFileSharesOutcome> ListFileSharesOutcomeCallable;
       typedef std::future<ListFileSystemAssociationsOutcome> ListFileSystemAssociationsOutcomeCallable;
       typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
@@ -416,6 +436,7 @@ namespace Aws
       typedef std::future<SetSMBGuestPasswordOutcome> SetSMBGuestPasswordOutcomeCallable;
       typedef std::future<ShutdownGatewayOutcome> ShutdownGatewayOutcomeCallable;
       typedef std::future<StartAvailabilityMonitorTestOutcome> StartAvailabilityMonitorTestOutcomeCallable;
+      typedef std::future<StartCacheReportOutcome> StartCacheReportOutcomeCallable;
       typedef std::future<StartGatewayOutcome> StartGatewayOutcomeCallable;
       typedef std::future<UpdateAutomaticTapeCreationPolicyOutcome> UpdateAutomaticTapeCreationPolicyOutcomeCallable;
       typedef std::future<UpdateBandwidthRateLimitOutcome> UpdateBandwidthRateLimitOutcomeCallable;
@@ -447,6 +468,7 @@ namespace Aws
     typedef std::function<void(const StorageGatewayClient*, const Model::AssociateFileSystemRequest&, const Model::AssociateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFileSystemResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AttachVolumeRequest&, const Model::AttachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelArchivalRequest&, const Model::CancelArchivalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelArchivalResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::CancelCacheReportRequest&, const Model::CancelCacheReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCacheReportResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelRetrievalRequest&, const Model::CancelRetrievalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRetrievalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateCachediSCSIVolumeRequest&, const Model::CreateCachediSCSIVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCachediSCSIVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateNFSFileShareRequest&, const Model::CreateNFSFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNFSFileShareResponseReceivedHandler;
@@ -459,6 +481,7 @@ namespace Aws
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateTapesRequest&, const Model::CreateTapesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTapesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteAutomaticTapeCreationPolicyRequest&, const Model::DeleteAutomaticTapeCreationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutomaticTapeCreationPolicyResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteBandwidthRateLimitRequest&, const Model::DeleteBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBandwidthRateLimitResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DeleteCacheReportRequest&, const Model::DeleteCacheReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCacheReportResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteChapCredentialsRequest&, const Model::DeleteChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChapCredentialsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteFileShareRequest&, const Model::DeleteFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
@@ -471,6 +494,7 @@ namespace Aws
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeBandwidthRateLimitRequest&, const Model::DescribeBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBandwidthRateLimitResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeBandwidthRateLimitScheduleRequest&, const Model::DescribeBandwidthRateLimitScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBandwidthRateLimitScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCacheRequest&, const Model::DescribeCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCacheReportRequest&, const Model::DescribeCacheReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheReportResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCachediSCSIVolumesRequest&, const Model::DescribeCachediSCSIVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCachediSCSIVolumesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeChapCredentialsRequest&, const Model::DescribeChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChapCredentialsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeFileSystemAssociationsRequest&, const Model::DescribeFileSystemAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemAssociationsResponseReceivedHandler;
@@ -492,6 +516,7 @@ namespace Aws
     typedef std::function<void(const StorageGatewayClient*, const Model::DisassociateFileSystemRequest&, const Model::DisassociateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFileSystemResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::JoinDomainRequest&, const Model::JoinDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > JoinDomainResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListAutomaticTapeCreationPoliciesRequest&, const Model::ListAutomaticTapeCreationPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutomaticTapeCreationPoliciesResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::ListCacheReportsRequest&, const Model::ListCacheReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCacheReportsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListFileSharesRequest&, const Model::ListFileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileSharesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListFileSystemAssociationsRequest&, const Model::ListFileSystemAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileSystemAssociationsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
@@ -512,6 +537,7 @@ namespace Aws
     typedef std::function<void(const StorageGatewayClient*, const Model::SetSMBGuestPasswordRequest&, const Model::SetSMBGuestPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSMBGuestPasswordResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ShutdownGatewayRequest&, const Model::ShutdownGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ShutdownGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::StartAvailabilityMonitorTestRequest&, const Model::StartAvailabilityMonitorTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAvailabilityMonitorTestResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::StartCacheReportRequest&, const Model::StartCacheReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCacheReportResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::StartGatewayRequest&, const Model::StartGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateAutomaticTapeCreationPolicyRequest&, const Model::UpdateAutomaticTapeCreationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutomaticTapeCreationPolicyResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateBandwidthRateLimitRequest&, const Model::UpdateBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBandwidthRateLimitResponseReceivedHandler;

@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The task ID of the task to stop.</p>
+     * <p>Thefull Amazon Resource Name (ARN) of the task.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
     inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }

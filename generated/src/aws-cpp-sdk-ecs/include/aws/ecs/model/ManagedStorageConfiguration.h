@@ -41,6 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+     * <p>The key must be a single Region key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -55,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
+     * storage.</p> <p>The key must be a single Region key.</p>
      */
     inline const Aws::String& GetFargateEphemeralStorageKmsKeyId() const{ return m_fargateEphemeralStorageKmsKeyId; }
     inline bool FargateEphemeralStorageKmsKeyIdHasBeenSet() const { return m_fargateEphemeralStorageKmsKeyIdHasBeenSet; }

@@ -31,6 +31,7 @@
 #include <aws/accessanalyzer/model/GetFindingResult.h>
 #include <aws/accessanalyzer/model/GetFindingRecommendationResult.h>
 #include <aws/accessanalyzer/model/GetFindingV2Result.h>
+#include <aws/accessanalyzer/model/GetFindingsStatisticsResult.h>
 #include <aws/accessanalyzer/model/GetGeneratedPolicyResult.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewFindingsResult.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewsResult.h>
@@ -107,6 +108,7 @@ namespace Aws
       class GetFindingRequest;
       class GetFindingRecommendationRequest;
       class GetFindingV2Request;
+      class GetFindingsStatisticsRequest;
       class GetGeneratedPolicyRequest;
       class ListAccessPreviewFindingsRequest;
       class ListAccessPreviewsRequest;
@@ -146,6 +148,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetFindingResult, AccessAnalyzerError> GetFindingOutcome;
       typedef Aws::Utils::Outcome<GetFindingRecommendationResult, AccessAnalyzerError> GetFindingRecommendationOutcome;
       typedef Aws::Utils::Outcome<GetFindingV2Result, AccessAnalyzerError> GetFindingV2Outcome;
+      typedef Aws::Utils::Outcome<GetFindingsStatisticsResult, AccessAnalyzerError> GetFindingsStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetGeneratedPolicyResult, AccessAnalyzerError> GetGeneratedPolicyOutcome;
       typedef Aws::Utils::Outcome<ListAccessPreviewFindingsResult, AccessAnalyzerError> ListAccessPreviewFindingsOutcome;
       typedef Aws::Utils::Outcome<ListAccessPreviewsResult, AccessAnalyzerError> ListAccessPreviewsOutcome;
@@ -185,6 +188,7 @@ namespace Aws
       typedef std::future<GetFindingOutcome> GetFindingOutcomeCallable;
       typedef std::future<GetFindingRecommendationOutcome> GetFindingRecommendationOutcomeCallable;
       typedef std::future<GetFindingV2Outcome> GetFindingV2OutcomeCallable;
+      typedef std::future<GetFindingsStatisticsOutcome> GetFindingsStatisticsOutcomeCallable;
       typedef std::future<GetGeneratedPolicyOutcome> GetGeneratedPolicyOutcomeCallable;
       typedef std::future<ListAccessPreviewFindingsOutcome> ListAccessPreviewFindingsOutcomeCallable;
       typedef std::future<ListAccessPreviewsOutcome> ListAccessPreviewsOutcomeCallable;
@@ -227,6 +231,7 @@ namespace Aws
     typedef std::function<void(const AccessAnalyzerClient*, const Model::GetFindingRequest&, const Model::GetFindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::GetFindingRecommendationRequest&, const Model::GetFindingRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingRecommendationResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::GetFindingV2Request&, const Model::GetFindingV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingV2ResponseReceivedHandler;
+    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetFindingsStatisticsRequest&, const Model::GetFindingsStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsStatisticsResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::GetGeneratedPolicyRequest&, const Model::GetGeneratedPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeneratedPolicyResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAccessPreviewFindingsRequest&, const Model::ListAccessPreviewFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPreviewFindingsResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAccessPreviewsRequest&, const Model::ListAccessPreviewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPreviewsResponseReceivedHandler;
