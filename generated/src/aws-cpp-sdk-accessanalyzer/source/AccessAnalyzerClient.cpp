@@ -37,6 +37,7 @@
 #include <aws/accessanalyzer/model/GetFindingRequest.h>
 #include <aws/accessanalyzer/model/GetFindingRecommendationRequest.h>
 #include <aws/accessanalyzer/model/GetFindingV2Request.h>
+#include <aws/accessanalyzer/model/GetFindingsStatisticsRequest.h>
 #include <aws/accessanalyzer/model/GetGeneratedPolicyRequest.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewFindingsRequest.h>
 #include <aws/accessanalyzer/model/ListAccessPreviewsRequest.h>
@@ -690,6 +691,28 @@ GetFindingV2Outcome AccessAnalyzerClient::GetFindingV2(const GetFindingV2Request
       return GetFindingV2Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       resolvedEndpoint.AddPathSegments("/findingv2/");
       resolvedEndpoint.AddPathSegment(request.GetId());
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetFindingsStatisticsOutcome AccessAnalyzerClient::GetFindingsStatistics(const GetFindingsStatisticsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetFindingsStatistics);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetFindingsStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetFindingsStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetFindingsStatistics",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetFindingsStatisticsOutcome>(
+    [&]()-> GetFindingsStatisticsOutcome {
+      return GetFindingsStatisticsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/analyzer/findings/statistics");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

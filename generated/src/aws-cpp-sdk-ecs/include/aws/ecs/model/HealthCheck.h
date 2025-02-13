@@ -101,7 +101,12 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
    * platform versions</a>.</p> </li> <li> <p>Container health checks aren't
    * supported for tasks that are part of a service that's configured to use a
-   * Classic Load Balancer.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Classic Load Balancer.</p> </li> </ul> <p>For an example of how to specify a
+   * task definition with multiple containers where container dependency is
+   * specified, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html#example_task_definition-containerdependency">Container
+   * dependency</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
    * Reference</a></p>
    */
@@ -143,7 +148,8 @@ namespace Model
     ///@{
     /**
      * <p>The time period in seconds between each health check execution. You may
-     * specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+     * specify between 5 and 300 seconds. The default value is 30 seconds. This value
+     * applies only when you specify a <code>command</code>. </p>
      */
     inline int GetInterval() const{ return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
@@ -155,7 +161,8 @@ namespace Model
     /**
      * <p>The time period in seconds to wait for a health check to succeed before it is
      * considered a failure. You may specify between 2 and 60 seconds. The default
-     * value is 5.</p>
+     * value is 5. This value applies only when you specify a <code>command</code>.
+     * </p>
      */
     inline int GetTimeout() const{ return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
@@ -167,7 +174,8 @@ namespace Model
     /**
      * <p>The number of times to retry a failed health check before the container is
      * considered unhealthy. You may specify between 1 and 10 retries. The default
-     * value is 3.</p>
+     * value is 3. This value applies only when you specify a <code>command</code>.
+     * </p>
      */
     inline int GetRetries() const{ return m_retries; }
     inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
@@ -180,9 +188,10 @@ namespace Model
      * <p>The optional grace period to provide containers time to bootstrap before
      * failed health checks count towards the maximum number of retries. You can
      * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
-     * off.</p>  <p>If a health check succeeds within the
-     * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> 
+     * off. This value applies only when you specify a <code>command</code>. </p>
+     *  <p>If a health check succeeds within the <code>startPeriod</code>, then
+     * the container is considered healthy and any subsequent failures count toward the
+     * maximum number of retries.</p> 
      */
     inline int GetStartPeriod() const{ return m_startPeriod; }
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }

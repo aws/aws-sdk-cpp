@@ -408,6 +408,36 @@ namespace StorageGateway
         }
 
         /**
+         * <p>Cancels generation of a specified cache report. You can use this operation to
+         * manually cancel an IN-PROGRESS report for any reason. This action changes the
+         * report status from IN-PROGRESS to CANCELLED. You can only cancel in-progress
+         * reports. If the the report you attempt to cancel is in FAILED, ERROR, or
+         * COMPLETED state, the cancel operation returns an error.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelCacheReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelCacheReportOutcome CancelCacheReport(const Model::CancelCacheReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelCacheReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelCacheReportRequestT = Model::CancelCacheReportRequest>
+        Model::CancelCacheReportOutcomeCallable CancelCacheReportCallable(const CancelCacheReportRequestT& request) const
+        {
+            return SubmitCallable(&StorageGatewayClient::CancelCacheReport, request);
+        }
+
+        /**
+         * An Async wrapper for CancelCacheReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelCacheReportRequestT = Model::CancelCacheReportRequest>
+        void CancelCacheReportAsync(const CancelCacheReportRequestT& request, const CancelCacheReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&StorageGatewayClient::CancelCacheReport, request, handler, context);
+        }
+
+        /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
          * to the VTS. This operation is only supported in the tape gateway
@@ -821,6 +851,36 @@ namespace StorageGateway
         }
 
         /**
+         * <p>Deletes the specified cache report and any associated tags from the Storage
+         * Gateway database. You can only delete completed reports. If the status of the
+         * report you attempt to delete still IN-PROGRESS, the delete operation returns an
+         * error. You can use <code>CancelCacheReport</code> to cancel an IN-PROGRESS
+         * report.</p>  <p> <code>DeleteCacheReport</code> does not delete the report
+         * object from your Amazon S3 bucket.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteCacheReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCacheReportOutcome DeleteCacheReport(const Model::DeleteCacheReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCacheReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCacheReportRequestT = Model::DeleteCacheReportRequest>
+        Model::DeleteCacheReportOutcomeCallable DeleteCacheReportCallable(const DeleteCacheReportRequestT& request) const
+        {
+            return SubmitCallable(&StorageGatewayClient::DeleteCacheReport, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCacheReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCacheReportRequestT = Model::DeleteCacheReportRequest>
+        void DeleteCacheReportAsync(const DeleteCacheReportRequestT& request, const DeleteCacheReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&StorageGatewayClient::DeleteCacheReport, request, handler, context);
+        }
+
+        /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
          * specified iSCSI target and initiator pair. This operation is supported in volume
          * and tape gateway types.</p><p><h3>See Also:</h3>   <a
@@ -1192,6 +1252,32 @@ namespace StorageGateway
         void DescribeCacheAsync(const DescribeCacheRequestT& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&StorageGatewayClient::DescribeCache, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about the specified cache report, including completion
+         * status and generation progress.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCacheReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCacheReportOutcome DescribeCacheReport(const Model::DescribeCacheReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCacheReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCacheReportRequestT = Model::DescribeCacheReportRequest>
+        Model::DescribeCacheReportOutcomeCallable DescribeCacheReportCallable(const DescribeCacheReportRequestT& request) const
+        {
+            return SubmitCallable(&StorageGatewayClient::DescribeCacheReport, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCacheReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCacheReportRequestT = Model::DescribeCacheReportRequest>
+        void DescribeCacheReportAsync(const DescribeCacheReportRequestT& request, const DescribeCacheReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&StorageGatewayClient::DescribeCacheReport, request, handler, context);
         }
 
         /**
@@ -1804,6 +1890,35 @@ namespace StorageGateway
         }
 
         /**
+         * <p>Returns a list of existing cache reports for all file shares associated with
+         * your Amazon Web Services account. This list includes all information provided by
+         * the <code>DescribeCacheReport</code> action, such as report name, status,
+         * completion progress, start time, end time, filters, and tags.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListCacheReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCacheReportsOutcome ListCacheReports(const Model::ListCacheReportsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCacheReports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCacheReportsRequestT = Model::ListCacheReportsRequest>
+        Model::ListCacheReportsOutcomeCallable ListCacheReportsCallable(const ListCacheReportsRequestT& request = {}) const
+        {
+            return SubmitCallable(&StorageGatewayClient::ListCacheReports, request);
+        }
+
+        /**
+         * An Async wrapper for ListCacheReports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCacheReportsRequestT = Model::ListCacheReportsRequest>
+        void ListCacheReportsAsync(const ListCacheReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCacheReportsRequestT& request = {}) const
+        {
+            return SubmitAsync(&StorageGatewayClient::ListCacheReports, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of
          * file shares that belong to the calling Amazon Web Services account. This
          * operation is only supported for S3 File Gateways.</p><p><h3>See Also:</h3>   <a
@@ -2110,16 +2225,16 @@ namespace StorageGateway
         }
 
         /**
-         * <p>Sends you notification through CloudWatch Events when all files written to
+         * <p>Sends you notification through Amazon EventBridge when all files written to
          * your file share have been uploaded to Amazon S3.</p> <p>Storage Gateway can send
-         * a notification through Amazon CloudWatch Events when all files written to your
-         * file share up to that point in time have been uploaded to Amazon S3. These files
+         * a notification through Amazon EventBridge when all files written to your file
+         * share up to that point in time have been uploaded to Amazon S3. These files
          * include files written to the file share up to the time that you make a request
          * for notification. When the upload is done, Storage Gateway sends you
-         * notification through an Amazon CloudWatch Event. You can configure CloudWatch
-         * Events to send the notification through event targets such as Amazon SNS or
-         * Lambda function. This operation is only supported for S3 File Gateways.</p>
-         * <p>For more information, see <a
+         * notification through EventBridge. You can configure EventBridge to send the
+         * notification through event targets such as Amazon SNS or Lambda function. This
+         * operation is only supported for S3 File Gateways.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
          * file upload notification</a> in the <i>Amazon S3 File Gateway User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2457,6 +2572,48 @@ namespace StorageGateway
         void StartAvailabilityMonitorTestAsync(const StartAvailabilityMonitorTestRequestT& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&StorageGatewayClient::StartAvailabilityMonitorTest, request, handler, context);
+        }
+
+        /**
+         * <p>Starts generating a report of the file metadata currently cached by an S3
+         * File Gateway for a specific file share. You can use this report to identify and
+         * resolve issues if you have files failing upload from your gateway to Amazon S3.
+         * The report is a CSV file containing a list of files which match the set of
+         * filter parameters you specify in the request.</p>  <p>The <b>Files Failing
+         * Upload</b> flag is reset every 24 hours and during gateway reboot. If this
+         * report captures the files after the reset, but before they become flagged again,
+         * they will not be reported as <b>Files Failing Upload</b>.</p>  <p>The
+         * following requirements must be met to successfully generate a cache report:</p>
+         * <ul> <li> <p>You must have permissions to list the entire Amazon S3 bucket
+         * associated with the specified file share.</p> </li> <li> <p>No other cache
+         * reports can currently be in-progress for the specified file share.</p> </li>
+         * <li> <p>There must be fewer than 10 existing cache reports for the specified
+         * file share.</p> </li> <li> <p>The gateway must be online and connected to Amazon
+         * Web Services.</p> </li> <li> <p>The root disk must have at least 20GB of free
+         * space when report generation starts.</p> </li> <li> <p>You must specify at least
+         * one value for <code>InclusionFilters</code> or <code>ExclusionFilters</code> in
+         * the request.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartCacheReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCacheReportOutcome StartCacheReport(const Model::StartCacheReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCacheReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCacheReportRequestT = Model::StartCacheReportRequest>
+        Model::StartCacheReportOutcomeCallable StartCacheReportCallable(const StartCacheReportRequestT& request) const
+        {
+            return SubmitCallable(&StorageGatewayClient::StartCacheReport, request);
+        }
+
+        /**
+         * An Async wrapper for StartCacheReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCacheReportRequestT = Model::StartCacheReportRequest>
+        void StartCacheReportAsync(const StartCacheReportRequestT& request, const StartCacheReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&StorageGatewayClient::StartCacheReport, request, handler, context);
         }
 
         /**

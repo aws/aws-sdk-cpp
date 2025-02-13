@@ -28,6 +28,7 @@
 #include <aws/storagegateway/model/AssociateFileSystemRequest.h>
 #include <aws/storagegateway/model/AttachVolumeRequest.h>
 #include <aws/storagegateway/model/CancelArchivalRequest.h>
+#include <aws/storagegateway/model/CancelCacheReportRequest.h>
 #include <aws/storagegateway/model/CancelRetrievalRequest.h>
 #include <aws/storagegateway/model/CreateCachediSCSIVolumeRequest.h>
 #include <aws/storagegateway/model/CreateNFSFileShareRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/storagegateway/model/CreateTapesRequest.h>
 #include <aws/storagegateway/model/DeleteAutomaticTapeCreationPolicyRequest.h>
 #include <aws/storagegateway/model/DeleteBandwidthRateLimitRequest.h>
+#include <aws/storagegateway/model/DeleteCacheReportRequest.h>
 #include <aws/storagegateway/model/DeleteChapCredentialsRequest.h>
 #include <aws/storagegateway/model/DeleteFileShareRequest.h>
 #include <aws/storagegateway/model/DeleteGatewayRequest.h>
@@ -52,6 +54,7 @@
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitScheduleRequest.h>
 #include <aws/storagegateway/model/DescribeCacheRequest.h>
+#include <aws/storagegateway/model/DescribeCacheReportRequest.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesRequest.h>
 #include <aws/storagegateway/model/DescribeChapCredentialsRequest.h>
 #include <aws/storagegateway/model/DescribeFileSystemAssociationsRequest.h>
@@ -73,6 +76,7 @@
 #include <aws/storagegateway/model/DisassociateFileSystemRequest.h>
 #include <aws/storagegateway/model/JoinDomainRequest.h>
 #include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesRequest.h>
+#include <aws/storagegateway/model/ListCacheReportsRequest.h>
 #include <aws/storagegateway/model/ListFileSharesRequest.h>
 #include <aws/storagegateway/model/ListFileSystemAssociationsRequest.h>
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
@@ -93,6 +97,7 @@
 #include <aws/storagegateway/model/SetSMBGuestPasswordRequest.h>
 #include <aws/storagegateway/model/ShutdownGatewayRequest.h>
 #include <aws/storagegateway/model/StartAvailabilityMonitorTestRequest.h>
+#include <aws/storagegateway/model/StartCacheReportRequest.h>
 #include <aws/storagegateway/model/StartGatewayRequest.h>
 #include <aws/storagegateway/model/UpdateAutomaticTapeCreationPolicyRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
@@ -437,6 +442,28 @@ CancelArchivalOutcome StorageGatewayClient::CancelArchival(const CancelArchivalR
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CancelCacheReportOutcome StorageGatewayClient::CancelCacheReport(const CancelCacheReportRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelCacheReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelCacheReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CancelCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CancelCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelCacheReport",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CancelCacheReportOutcome>(
+    [&]()-> CancelCacheReportOutcome {
+      return CancelCacheReportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CancelRetrievalOutcome StorageGatewayClient::CancelRetrieval(const CancelRetrievalRequest& request) const
 {
   AWS_OPERATION_GUARD(CancelRetrieval);
@@ -701,6 +728,28 @@ DeleteBandwidthRateLimitOutcome StorageGatewayClient::DeleteBandwidthRateLimit(c
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteCacheReportOutcome StorageGatewayClient::DeleteCacheReport(const DeleteCacheReportRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteCacheReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCacheReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCacheReport",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCacheReportOutcome>(
+    [&]()-> DeleteCacheReportOutcome {
+      return DeleteCacheReportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteChapCredentialsOutcome StorageGatewayClient::DeleteChapCredentials(const DeleteChapCredentialsRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteChapCredentials);
@@ -957,6 +1006,28 @@ DescribeCacheOutcome StorageGatewayClient::DescribeCache(const DescribeCacheRequ
   return TracingUtils::MakeCallWithTiming<DescribeCacheOutcome>(
     [&]()-> DescribeCacheOutcome {
       return DescribeCacheOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeCacheReportOutcome StorageGatewayClient::DescribeCacheReport(const DescribeCacheReportRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeCacheReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCacheReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DescribeCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeCacheReport",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeCacheReportOutcome>(
+    [&]()-> DescribeCacheReportOutcome {
+      return DescribeCacheReportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
@@ -1427,6 +1498,28 @@ ListAutomaticTapeCreationPoliciesOutcome StorageGatewayClient::ListAutomaticTape
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListCacheReportsOutcome StorageGatewayClient::ListCacheReports(const ListCacheReportsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCacheReports);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCacheReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListCacheReports, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCacheReports, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCacheReports",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCacheReportsOutcome>(
+    [&]()-> ListCacheReportsOutcome {
+      return ListCacheReportsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListFileShares);
@@ -1859,6 +1952,28 @@ StartAvailabilityMonitorTestOutcome StorageGatewayClient::StartAvailabilityMonit
   return TracingUtils::MakeCallWithTiming<StartAvailabilityMonitorTestOutcome>(
     [&]()-> StartAvailabilityMonitorTestOutcome {
       return StartAvailabilityMonitorTestOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartCacheReportOutcome StorageGatewayClient::StartCacheReport(const StartCacheReportRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartCacheReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCacheReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartCacheReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartCacheReport",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartCacheReportOutcome>(
+    [&]()-> StartCacheReportOutcome {
+      return StartCacheReportOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },

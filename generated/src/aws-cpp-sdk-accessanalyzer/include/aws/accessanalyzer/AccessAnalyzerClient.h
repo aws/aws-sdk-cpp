@@ -601,6 +601,32 @@ namespace AccessAnalyzer
         }
 
         /**
+         * <p>Retrieves a list of aggregated finding statistics for an external access or
+         * unused access analyzer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingsStatisticsOutcome GetFindingsStatistics(const Model::GetFindingsStatisticsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFindingsStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFindingsStatisticsRequestT = Model::GetFindingsStatisticsRequest>
+        Model::GetFindingsStatisticsOutcomeCallable GetFindingsStatisticsCallable(const GetFindingsStatisticsRequestT& request) const
+        {
+            return SubmitCallable(&AccessAnalyzerClient::GetFindingsStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for GetFindingsStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFindingsStatisticsRequestT = Model::GetFindingsStatisticsRequest>
+        void GetFindingsStatisticsAsync(const GetFindingsStatisticsRequestT& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccessAnalyzerClient::GetFindingsStatistics, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the policy that was generated using
          * <code>StartPolicyGeneration</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetGeneratedPolicy">AWS

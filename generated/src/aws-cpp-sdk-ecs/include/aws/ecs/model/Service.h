@@ -538,8 +538,8 @@ namespace Model
      * <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
-     * an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic
-     * Container Service Developer Guide</i>.</p>
+     * an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic
+     * Container Service Developer Guide</i> </i>.</p>
      */
     inline const AvailabilityZoneRebalancing& GetAvailabilityZoneRebalancing() const{ return m_availabilityZoneRebalancing; }
     inline bool AvailabilityZoneRebalancingHasBeenSet() const { return m_availabilityZoneRebalancingHasBeenSet; }

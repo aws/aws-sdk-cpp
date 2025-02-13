@@ -55,8 +55,11 @@ namespace Model
     ///@{
     /**
      * <p>Indicates the status of the gateway as a member of the Active Directory
-     * domain.</p> <ul> <li> <p> <code>ACCESS_DENIED</code>: Indicates that the
-     * <code>JoinDomain</code> operation failed due to an authentication error.</p>
+     * domain.</p>  <p>This field is only used as part of a
+     * <code>JoinDomain</code> request. It is not affected by Active Directory
+     * connectivity changes that occur after the <code>JoinDomain</code> request
+     * succeeds.</p>  <ul> <li> <p> <code>ACCESS_DENIED</code>: Indicates that
+     * the <code>JoinDomain</code> operation failed due to an authentication error.</p>
      * </li> <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a
      * domain.</p> </li> <li> <p> <code>JOINED</code>: Indicates that the gateway has
      * successfully joined a domain.</p> </li> <li> <p> <code>JOINING</code>: Indicates
