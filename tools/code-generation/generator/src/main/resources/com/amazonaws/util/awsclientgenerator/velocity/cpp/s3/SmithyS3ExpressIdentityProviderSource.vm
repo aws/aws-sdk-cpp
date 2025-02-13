@@ -1,20 +1,20 @@
-﻿/**
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * SPDX-License-Identifier: Apache-2.0.
- */
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/s3/S3Client.h>
-#include <aws/s3/S3ExpressIdentityProvider.h>
-#include <aws/s3/model/CreateSessionRequest.h>
-#include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <utility>
-#include <thread>
-#include <aws/crt/Optional.h>
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/core/utils/logging/LogMacros.h>
+\#include <aws/${metadata.projectName}/${serviceNamespace}Client.h>
+\#include <aws/${metadata.projectName}/S3ExpressIdentityProvider.h>
+\#include <aws/${metadata.projectName}/model/CreateSessionRequest.h>
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <utility>
+\#include <thread>
+\#include <aws/crt/Optional.h>
 
-using namespace Aws::S3;
-using namespace Aws::Utils;
-using namespace Aws::Http;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::Utils;
+using namespace ${rootNamespace}::Http;
 using namespace std::chrono;
 using namespace smithy;
 using CacheValueType = typename Aws::Utils::Cache<Aws::String, S3ExpressIdentity>::Value;

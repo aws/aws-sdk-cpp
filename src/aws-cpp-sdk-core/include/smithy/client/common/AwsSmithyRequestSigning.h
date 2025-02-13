@@ -17,6 +17,7 @@
 #include <aws/crt/Variant.h>
 #include <aws/crt/Optional.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <smithy/identity/signer/built-in/SignerProperties.h>
 
 #include <cassert>
 
@@ -41,7 +42,7 @@ namespace smithy
         static SigningOutcome SignRequest(std::shared_ptr<HttpRequest> HTTPRequest, const AuthSchemeOption& authSchemeOption,
                                           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
-            
+
             auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
             if (authSchemeIt == authSchemes.end())
             {
@@ -56,15 +57,14 @@ namespace smithy
 
             return SignWithAuthScheme(std::move(HTTPRequest), authScheme, authSchemeOption);
         }
-
-        static SigningOutcome PreSignRequest(std::shared_ptr<HttpRequest> httpRequest, 
+        static SigningOutcome PreSignRequest(std::shared_ptr<HttpRequest> httpRequest,
                                   const AuthSchemeOption& authSchemeOption,
                                   const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
                                   const Aws::String& region,
                                   const Aws::String& serviceName,
                                   long long expirationTimeInSeconds)
         {
-            
+
             auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
             if (authSchemeIt == authSchemes.end())
             {
@@ -78,7 +78,7 @@ namespace smithy
             const AuthSchemesVariantT& authScheme = authSchemeIt->second;
 
             PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
-            AuthSchemesVariantT authSchemesVariantCopy(authScheme); 
+            AuthSchemesVariantT authSchemesVariantCopy(authScheme);
             authSchemesVariantCopy.Visit(visitor);
 
             if (!visitor.result) {
@@ -145,7 +145,19 @@ namespace smithy
                     return;
                 }
 
-                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
+                //relay service params in additional properties which will be relevant in credential resolution
+                // example: bucket Name
+                Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additionalIdentityProperties;
+                const auto& serviceSpecificParameters = m_httpRequest->GetServiceSpecificParameters();
+                if(serviceSpecificParameters)
+                {
+                    for(const auto& propPair : serviceSpecificParameters->parameterMap)
+                    {
+                        additionalIdentityProperties.emplace(propPair.first,Aws::Crt::Variant<Aws::String, bool>{propPair.second} );
+                    }
+                }
+
+                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), additionalIdentityProperties);
 
                 if (!identityResult.IsSuccess())
                 {
@@ -170,12 +182,12 @@ namespace smithy
 
         //for presigning, region and expiration can be passed in runtime
         struct PreSignerVisitor {
-          explicit PreSignerVisitor(std::shared_ptr<HttpRequest> httpRequest, 
+          explicit PreSignerVisitor(std::shared_ptr<HttpRequest> httpRequest,
                           const AuthSchemeOption& targetAuthSchemeOption,
                           const Aws::String& region,
                           const Aws::String& serviceName,
                           long long expirationTimeInSeconds)
-              : m_httpRequest(std::move(httpRequest)), 
+              : m_httpRequest(std::move(httpRequest)),
               m_targetAuthSchemeOption(targetAuthSchemeOption) ,
               m_region(region),
               m_serviceName(serviceName),
@@ -205,7 +217,6 @@ namespace smithy
                                           "Auth scheme provided a nullptr identityResolver", false /*retryable*/));
               return;
             }
-
             auto identityResult =
                 identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
 

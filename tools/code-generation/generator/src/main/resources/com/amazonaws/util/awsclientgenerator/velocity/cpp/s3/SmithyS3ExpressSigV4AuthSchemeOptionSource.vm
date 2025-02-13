@@ -1,0 +1,10 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthSchemeOption.h>
+namespace ${rootNamespace} {
+namespace ${serviceNamespace} {
+
+${CppViewHelper.computeExportValue($serviceNamespace)} smithy::AuthSchemeOption S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption = smithy::AuthSchemeOption("sigv4-s3express");
+
+}
+}

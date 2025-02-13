@@ -33,6 +33,8 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <random>
+#include <aws/s3/S3ExpressSigner.h>
+#include <aws/s3/S3ExpressIdentityProvider.h>
 
 #ifdef _WIN32
 #pragma warning(disable: 4127)
@@ -55,9 +57,12 @@ namespace {
 
   class S3ExpressTest : public Aws::Testing::AwsCppSdkGTestSuite {
   public:
-    CreateBucketOutcome CreateBucket(const Aws::String &bucketName = randomString() + S3_EXPRESS_SUFFIX) {
+
+    CreateBucketOutcome CreateBucket(std::shared_ptr<S3Client> client_sp ,
+                                    const Aws::String &bucketName)
+    {
       bucketsToCleanup.push_back(bucketName);
-      CreateBucketOutcome outcome = client->CreateBucket(CreateBucketRequest()
+      CreateBucketOutcome outcome = client_sp->CreateBucket(CreateBucketRequest()
         .WithBucket(bucketName)
         .WithCreateBucketConfiguration(CreateBucketConfiguration()
           .WithLocation(LocationInfo()
@@ -76,8 +81,17 @@ namespace {
       return outcome;
     }
 
+    CreateBucketOutcome CreateBucket(const Aws::String &bucketName = randomString() + S3_EXPRESS_SUFFIX) {
+
+      return CreateBucket( client, bucketName);
+    }
+
+    DeleteBucketOutcome DeleteBucket(std::shared_ptr<S3Client> client_sp , const Aws::String &bucketName) {
+      return client_sp->DeleteBucket(DeleteBucketRequest().WithBucket(bucketName));
+    }
+
     DeleteBucketOutcome DeleteBucket(const Aws::String &bucketName) {
-      return client->DeleteBucket(DeleteBucketRequest().WithBucket(bucketName));
+      return DeleteBucket(client ,bucketName);
     }
 
     HeadBucketOutcome HeadBucket(const Aws::String &bucketName) {
@@ -114,13 +128,18 @@ namespace {
       return client->DeleteBucketPolicy(DeleteBucketPolicyRequest().WithBucket(bucketName));
     }
 
-    PutObjectOutcome PutObject(const Aws::String &bucketName, const Aws::String &keyName) {
+    PutObjectOutcome PutObject( std::shared_ptr<S3Client> client_sp, const Aws::String &bucketName, const Aws::String &keyName) {
       auto request = PutObjectRequest().WithBucket(bucketName).WithKey(keyName);
       std::shared_ptr<Aws::IOStream> inputData = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG,
         "I'll take a quiet life a handshake of carbon monoxide",
         std::ios_base::in | std::ios_base::binary);
       request.SetBody(inputData);
-      return client->PutObject(request);
+      return client_sp->PutObject(request);
+    }
+
+    PutObjectOutcome PutObject(const Aws::String &bucketName, const Aws::String &keyName) {
+
+      return PutObject(client, bucketName, keyName);
     }
 
     ListObjectsV2Outcome ListObjectsV2(const Aws::String &bucketName) {
@@ -260,41 +279,45 @@ namespace {
         .WithBucket(bucketName).WithKey(keyName)
         .WithUploadId(createOutcome.GetResult().GetUploadId()));
     }
-
-    void EmptyBucketUtil(const Aws::Vector<Aws::String> &buckets) {
+    void EmptyBucketUtil(std::shared_ptr<S3Client> client_sp , const Aws::Vector<Aws::String> &buckets) {
       for (const auto&bucket: buckets) {
         auto bucketExists = HeadBucket(bucket);
         if (!bucketExists.IsSuccess()) {
           continue;
         }
-        auto objects = client->ListObjectsV2(ListObjectsV2Request().WithBucket(bucket));
+        auto objects = client_sp->ListObjectsV2(ListObjectsV2Request().WithBucket(bucket));
         AWS_EXPECT_SUCCESS(objects);
         while (objects.GetResult().GetIsTruncated() || !objects.GetResult().GetContents().empty()) {
           for (const auto&object: objects.GetResult().GetContents()) {
             DeleteObject(bucket, object.GetKey());
           }
-          objects = client->ListObjectsV2(ListObjectsV2Request()
+          objects = client_sp->ListObjectsV2(ListObjectsV2Request()
             .WithBucket(bucket)
             .WithContinuationToken(objects.GetResult().GetContinuationToken()));
         }
-        auto uploads = client->ListMultipartUploads(ListMultipartUploadsRequest().
+        auto uploads = client_sp->ListMultipartUploads(ListMultipartUploadsRequest().
           WithBucket(bucket));
         AWS_EXPECT_SUCCESS(uploads);
         while (uploads.GetResult().GetIsTruncated() || !uploads.GetResult().GetUploads().empty()) {
           for (const auto&upload: uploads.GetResult().GetUploads()) {
-            auto abortMPU = client->AbortMultipartUpload(AbortMultipartUploadRequest()
+            auto abortMPU = client_sp->AbortMultipartUpload(AbortMultipartUploadRequest()
               .WithBucket(bucket)
               .WithKey(upload.GetKey())
               .WithUploadId(upload.GetUploadId()));
             AWS_EXPECT_SUCCESS(abortMPU);
           }
-          uploads = client->ListMultipartUploads(ListMultipartUploadsRequest().WithBucket(bucket));
+          uploads = client_sp->ListMultipartUploads(ListMultipartUploadsRequest().WithBucket(bucket));
         }
-        auto outcome = client->DeleteBucket(DeleteBucketRequest().WithBucket(bucket));
+        auto outcome = client_sp->DeleteBucket(DeleteBucketRequest().WithBucket(bucket));
         if (!outcome.IsSuccess()) {
           std::cout << "Failed to delete bucket: " << outcome.GetError().GetMessage() << "\n";
         }
       }
+    }
+
+
+    void EmptyBucketUtil(const Aws::Vector<Aws::String> &buckets) {
+      EmptyBucketUtil(client,buckets );
     }
 
   protected:
@@ -482,4 +505,49 @@ namespace {
     const auto response = client->PutObject(request);
     AWS_EXPECT_SUCCESS(response);
   }
+
+
+  class MyIdentityProvider : public S3ExpressIdentityProvider {
+   public:
+    explicit MyIdentityProvider(const S3Client& client):S3ExpressIdentityProvider(client) {}
+    ~MyIdentityProvider() override = default;
+
+    S3ExpressIdentity GetS3ExpressIdentity(
+      const std::shared_ptr<ServiceSpecificParameters>&
+      ) override
+    {
+     return S3ExpressIdentity{"access_key",
+       "secret_key",
+       "sessions_token",
+       DateTime::Now()};
+    }
+
+    ResolveIdentityFutureOutcome getIdentity(
+        const IdentityProperties& ,
+        const AdditionalParameters& ) override
+    {
+      return Aws::MakeUnique<S3ExpressIdentity>("log",
+        "access_key",
+        "secret_key",
+        "sessions_token",
+        DateTime::Now());
+    }
+  };
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilityCompilation)
+  {
+    MyIdentityProvider identityProvider(*client);
+
+  }
+
+  TEST_F(S3ExpressTest, ExpressSignerBackwardCompatibilitySupplier)
+  {
+    S3ClientConfiguration configuration{};
+    configuration.identityProviderSupplier =
+      [](const S3Client &clientref) -> std::shared_ptr<S3ExpressIdentityProvider> {
+          return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("log_tag", clientref);
+      };
+    S3Client testclient{configuration};
+  }
+
 }

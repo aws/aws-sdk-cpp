@@ -1,0 +1,65 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($clientConfiguration = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
+#pragma once
+
+\#include <aws/${metadata.projectName}/S3ExpressSigner.h>
+\#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthSchemeOption.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthScheme.h>
+
+namespace ${rootNamespace} {
+namespace ${serviceNamespace} {
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}>{
+
+        public:
+        Aws::Vector<smithy::AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
+        {
+            //pack endpoint params from identityProperties
+            Aws::Endpoint::EndpointParameters epParams;
+
+            for (auto& identParam : identityProperties.additionalProperties) {
+              if (identParam.second.template holds_alternative<bool>())
+              {
+                epParams.emplace_back(Aws::Endpoint::EndpointParameter(identParam.first, identParam.second.template get<bool>()));
+              }
+              if (identParam.second.template holds_alternative<Aws::String>())
+              {
+                epParams.emplace_back(Aws::Endpoint::EndpointParameter(identParam.first ,identParam.second.template get<Aws::String>()));
+              }
+            }
+
+            //resolve endpoint first time to fetch auth schemes
+            if(m_endpointProviderForAuth)
+            {
+                auto epResolutionOutcome = m_endpointProviderForAuth->ResolveEndpoint(epParams);
+                if (epResolutionOutcome.IsSuccess())
+                {
+                    auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+                    if (endpoint.GetAttributes())
+                    {
+                        auto authSchemeName = endpoint.GetAttributes()->authScheme.GetName();
+                        if(strcmp(authSchemeName.c_str(),Aws::Auth::ASYMMETRIC_SIGV4_SIGNER) == 0)
+                        {
+                        return {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption};
+                        }
+                        else if(strcmp(authSchemeName.c_str(),Aws::Auth::SIGV4_SIGNER) == 0)
+                        {
+                        return {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption};
+                        }
+                        else if(strcmp(authSchemeName.c_str(), S3::S3_EXPRESS_SIGNER_NAME) == 0)
+                        {
+                            return {S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption};
+                        }
+                    }
+                }
+            }
+
+            return {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption};
+        }
+    };
+}
+}

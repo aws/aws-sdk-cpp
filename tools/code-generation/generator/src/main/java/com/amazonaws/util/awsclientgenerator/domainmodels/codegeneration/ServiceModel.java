@@ -90,4 +90,5 @@ public class ServiceModel {
     ClientContextParams clientContextParams;
     boolean useSmithyClient;
     List<String> authSchemes;
+    String rawEndpointRules;
 }
