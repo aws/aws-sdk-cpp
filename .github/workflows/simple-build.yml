@@ -1,0 +1,32 @@
+name: simple-build
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  simple-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install zlib1g-dev libssl-dev libcurl4-openssl-dev
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          path: aws-sdk-cpp
+          submodules: recursive
+      - name: configure
+        run: |
+          cd aws-sdk-cpp
+          mkdir build
+          cd build
+          cmake -DBUILD_ONLY="s3;s3-crt;dynamodb;logs;kms;sqs;firehose;kinesis;sns;mediastore;mediastore-data;monitoring;secretsmanager;athena;kafka;cognito-idp;rds;ecs" ..
+      - name: build
+        run: |
+          cd aws-sdk-cpp/build
+          cmake --build .
+
