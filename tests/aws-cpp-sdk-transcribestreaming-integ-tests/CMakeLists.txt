@@ -4,7 +4,7 @@ add_project(aws-cpp-sdk-transcribestreaming-integ-tests
     testing-resources
     aws-cpp-sdk-core)
 
-set(AWS_TRANSCRIBESTREAMING_INTEGRATION_TESTS_SRC "RunTests.cpp" "TranscribeTests.cpp")
+set(AWS_TRANSCRIBESTREAMING_INTEGRATION_TESTS_SRC "RunTests.cpp" "TranscribeTests.cpp" "TranscribeErrorCaseTests.cpp")
 
 add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 
