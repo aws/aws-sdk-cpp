@@ -139,8 +139,10 @@ namespace Model
      * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
-     * group or web ACL defines the label namespace. </p> <p>Rules that run after this
-     * rule in the web ACL can match against these labels using a
+     * group or web ACL defines the label namespace. </p>  <p>Any rule that isn't
+     * a rule group reference statement or managed rule group statement can add labels
+     * to matching web requests.</p>  <p>Rules that run after this rule in the
+     * web ACL can match against these labels using a
      * <code>LabelMatchStatement</code>.</p> <p>For each label, provide a
      * case-sensitive string containing optional namespaces and a label name, according
      * to the following guidelines:</p> <ul> <li> <p>Separate each component of the

@@ -161,7 +161,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This
+     * <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This
      * checksum is only present if the object was uploaded with the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
@@ -178,7 +178,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This
+     * <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This
      * will only be present if the object was uploaded with the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
@@ -195,8 +195,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object.
-     * For more information, see <a
+     * <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity in the Amazon S3 User Guide</a>.</p>
      */
@@ -211,8 +211,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This
-     * will only be present if the object was uploaded with the object. For more
+     * <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will
+     * only be present if the object was uploaded with the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -228,7 +228,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This
+     * <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This
      * will only be present if the object was uploaded with the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">

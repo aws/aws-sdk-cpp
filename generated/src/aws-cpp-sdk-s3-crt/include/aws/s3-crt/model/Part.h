@@ -87,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the part. This
-     * checksum is present if the object was uploaded with the <code>CRC-32</code>
+     * <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the part. This
+     * checksum is present if the object was uploaded with the <code>CRC32</code>
      * checksum algorithm. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -105,8 +105,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the part. This
-     * checksum is present if the object was uploaded with the <code>CRC-32C</code>
+     * <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the part. This
+     * checksum is present if the object was uploaded with the <code>CRC32C</code>
      * checksum algorithm. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -123,11 +123,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the part. This
+     * <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the part. This
      * checksum is present if the multipart upload request was created with the
-     * <code>CRC-64NVME</code> checksum algorithm, or if the object was uploaded
-     * without a checksum (and Amazon S3 added the default checksum,
-     * <code>CRC-64NVME</code>, to the uploaded object). For more information, see <a
+     * <code>CRC64NVME</code> checksum algorithm, or if the object was uploaded without
+     * a checksum (and Amazon S3 added the default checksum, <code>CRC64NVME</code>, to
+     * the uploaded object). For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -143,8 +143,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 160-bit <code>SHA-1</code> checksum of the part. This
-     * checksum is present if the object was uploaded with the <code>SHA-1</code>
+     * <p>The Base64 encoded, 160-bit <code>SHA1</code> checksum of the part. This
+     * checksum is present if the object was uploaded with the <code>SHA1</code>
      * checksum algorithm. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -161,8 +161,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 256-bit <code>SHA-256</code> checksum of the part. This
-     * checksum is present if the object was uploaded with the <code>SHA-256</code>
+     * <p>The Base64 encoded, 256-bit <code>SHA256</code> checksum of the part. This
+     * checksum is present if the object was uploaded with the <code>SHA256</code>
      * checksum algorithm. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

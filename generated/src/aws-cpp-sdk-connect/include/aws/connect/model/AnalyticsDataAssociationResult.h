@@ -96,6 +96,20 @@ namespace Model
     inline AnalyticsDataAssociationResult& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
     inline AnalyticsDataAssociationResult& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services Resource Access Manager status of association.</p>
+     */
+    inline const Aws::String& GetResourceShareStatus() const{ return m_resourceShareStatus; }
+    inline bool ResourceShareStatusHasBeenSet() const { return m_resourceShareStatusHasBeenSet; }
+    inline void SetResourceShareStatus(const Aws::String& value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus = value; }
+    inline void SetResourceShareStatus(Aws::String&& value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus = std::move(value); }
+    inline void SetResourceShareStatus(const char* value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus.assign(value); }
+    inline AnalyticsDataAssociationResult& WithResourceShareStatus(const Aws::String& value) { SetResourceShareStatus(value); return *this;}
+    inline AnalyticsDataAssociationResult& WithResourceShareStatus(Aws::String&& value) { SetResourceShareStatus(std::move(value)); return *this;}
+    inline AnalyticsDataAssociationResult& WithResourceShareStatus(const char* value) { SetResourceShareStatus(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dataSetId;
@@ -109,6 +123,9 @@ namespace Model
 
     Aws::String m_resourceShareArn;
     bool m_resourceShareArnHasBeenSet = false;
+
+    Aws::String m_resourceShareStatus;
+    bool m_resourceShareStatusHasBeenSet = false;
   };
 
 } // namespace Model

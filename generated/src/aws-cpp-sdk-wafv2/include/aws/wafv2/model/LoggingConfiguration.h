@@ -32,15 +32,17 @@ namespace Model
    * <p>Defines an association between logging destinations and a web ACL resource,
    * for logging from WAF. As part of the association, you can specify parts of the
    * standard logging fields to keep out of the logs and you can specify filters so
-   * that you log only a subset of the logging records. </p>  <p>You can define
-   * one logging destination per web ACL.</p>  <p>You can access information
-   * about the traffic that WAF inspects using the following steps:</p> <ol> <li>
-   * <p>Create your logging destination. You can use an Amazon CloudWatch Logs log
-   * group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis
-   * Data Firehose. </p> <p>The name that you give the destination must start with
-   * <code>aws-waf-logs-</code>. Depending on the type of destination, you might need
-   * to configure additional settings or permissions. </p> <p>For configuration
-   * requirements and pricing information for each destination type, see <a
+   * that you log only a subset of the logging records. </p> <p>If you configure data
+   * protection for the web ACL, the protection applies to the data that WAF sends to
+   * the logs. </p>  <p>You can define one logging destination per web ACL.</p>
+   *  <p>You can access information about the traffic that WAF inspects using
+   * the following steps:</p> <ol> <li> <p>Create your logging destination. You can
+   * use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service
+   * (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. </p> <p>The name that
+   * you give the destination must start with <code>aws-waf-logs-</code>. Depending
+   * on the type of destination, you might need to configure additional settings or
+   * permissions. </p> <p>For configuration requirements and pricing information for
+   * each destination type, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
    * web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p> </li> <li>
    * <p>Associate your logging destination to your web ACL using a
@@ -104,15 +106,17 @@ namespace Model
      * example, if you redact the <code>SingleHeader</code> field, the
      * <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all
      * rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.
-     * </p> <p>Redaction applies only to the component that's specified in the rule's
-     * <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction
-     * doesn't apply to rules that use the <code>Headers</code>
-     * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
-     * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
-     * setting has no impact on request sampling. With request sampling, the only way
-     * to exclude fields is by disabling sampling in the web ACL visibility
-     * configuration. </p> 
+     * </p> <p>If you configure data protection for the web ACL, the protection applies
+     * to the data that WAF sends to the logs. </p> <p>Redaction applies only to the
+     * component that's specified in the rule's <code>FieldToMatch</code> setting, so
+     * the <code>SingleHeader</code> redaction doesn't apply to rules that use the
+     * <code>Headers</code> <code>FieldToMatch</code>.</p>  <p>You can specify
+     * only the following fields for redaction: <code>UriPath</code>,
+     * <code>QueryString</code>, <code>SingleHeader</code>, and
+     * <code>Method</code>.</p>   <p>This setting has no impact on request
+     * sampling. You can only exclude fields from request sampling by disabling
+     * sampling in the web ACL visibility configuration or by configuring data
+     * protection for the web ACL.</p> 
      */
     inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const{ return m_redactedFields; }
     inline bool RedactedFieldsHasBeenSet() const { return m_redactedFieldsHasBeenSet; }

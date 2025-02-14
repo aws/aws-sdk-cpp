@@ -21,6 +21,7 @@ UpdateWebACLRequest::UpdateWebACLRequest() :
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
+    m_dataProtectionConfigHasBeenSet(false),
     m_lockTokenHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false),
     m_captchaConfigHasBeenSet(false),
@@ -77,6 +78,12 @@ Aws::String UpdateWebACLRequest::SerializePayload() const
   if(m_visibilityConfigHasBeenSet)
   {
    payload.WithObject("VisibilityConfig", m_visibilityConfig.Jsonize());
+
+  }
+
+  if(m_dataProtectionConfigHasBeenSet)
+  {
+   payload.WithObject("DataProtectionConfig", m_dataProtectionConfig.Jsonize());
 
   }
 

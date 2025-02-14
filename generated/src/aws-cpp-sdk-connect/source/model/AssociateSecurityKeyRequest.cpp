@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 AssociateSecurityKeyRequest::AssociateSecurityKeyRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -25,6 +27,12 @@ Aws::String AssociateSecurityKeyRequest::SerializePayload() const
   if(m_keyHasBeenSet)
   {
    payload.WithString("Key", m_key);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

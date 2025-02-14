@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateInstanceRequest::CreateInstanceRequest() : 
-    m_clientTokenHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_identityManagementType(DirectoryType::NOT_SET),
     m_identityManagementTypeHasBeenSet(false),
     m_instanceAliasHasBeenSet(false),

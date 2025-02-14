@@ -56,9 +56,10 @@ namespace Model
    * the web request component to inspect, but for field redaction, you are
    * specifying the component type to redact from the logs. </p> </li> <li> <p>If you
    * have request sampling enabled, the redacted fields configuration for logging has
-   * no impact on sampling. The only way to exclude fields from request sampling is
-   * by disabling sampling in the web ACL visibility configuration. </p> </li> </ul>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * no impact on sampling. You can only exclude fields from request sampling by
+   * disabling sampling in the web ACL visibility configuration or by configuring
+   * data protection for the web ACL.</p> </li> </ul> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */

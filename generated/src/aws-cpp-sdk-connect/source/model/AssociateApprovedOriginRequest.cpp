@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 AssociateApprovedOriginRequest::AssociateApprovedOriginRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_originHasBeenSet(false)
+    m_originHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -25,6 +27,12 @@ Aws::String AssociateApprovedOriginRequest::SerializePayload() const
   if(m_originHasBeenSet)
   {
    payload.WithString("Origin", m_origin);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

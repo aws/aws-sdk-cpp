@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>This API is in preview release for Amazon Connect and is subject to change.
-   * To request access to this API, contact Amazon Web Services Support.</p> <p>A
+   * To request access to this API, contact Amazon Web ServicesSupport.</p> <p>A
    * summary of a given authentication profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AuthenticationProfileSummary">AWS
    * API Reference</a></p>

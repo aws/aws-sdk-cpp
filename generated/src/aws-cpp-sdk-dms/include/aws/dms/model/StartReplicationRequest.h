@@ -81,6 +81,43 @@ namespace Model
 
     ///@{
     /**
+     * <p>User-defined settings for the premigration assessment. The possible values
+     * are:</p> <ul> <li> <p> <code>ResultLocationFinder</code>: The folder within an
+     * Amazon Amazon S3 bucket where you want DMS to store the results of this
+     * assessment run.</p> </li> <li> <p> <code>ResultEncryptionMode</code>: The
+     * supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these
+     * values are not provided, then the files are not encrypted at rest. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating
+     * Amazon Web Services KMS keys to encrypt Amazon Amazon S3 target objects</a>.</p>
+     * </li> <li> <p> <code>ResultKmsKeyArn</code>: The ARN of a customer KMS
+     * encryption key that you specify when you set <code>ResultEncryptionMode</code>
+     * to <code>SSE_KMS</code>.</p> </li> <li> <p> <code>IncludeOnly</code>: A
+     * space-separated list of names for specific individual assessments that you want
+     * to include. These names come from the default list of individual assessments
+     * that Database Migration Service supports for the associated migration.</p> </li>
+     * <li> <p> <code>Exclude</code>: A space-separated list of names for specific
+     * individual assessments that you want to exclude. These names come from the
+     * default list of individual assessments that Database Migration Service supports
+     * for the associated migration.</p> </li> <li> <p>
+     * <code>FailOnAssessmentFailure</code>: A configurable setting you can set to
+     * <code>true</code> (the default setting) or <code>false</code>. Use this setting
+     * to to stop the replication from starting automatically if the assessment fails.
+     * This can help you evaluate the issue that is preventing the replication from
+     * running successfully.</p> </li> </ul>
+     */
+    inline const Aws::String& GetPremigrationAssessmentSettings() const{ return m_premigrationAssessmentSettings; }
+    inline bool PremigrationAssessmentSettingsHasBeenSet() const { return m_premigrationAssessmentSettingsHasBeenSet; }
+    inline void SetPremigrationAssessmentSettings(const Aws::String& value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings = value; }
+    inline void SetPremigrationAssessmentSettings(Aws::String&& value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings = std::move(value); }
+    inline void SetPremigrationAssessmentSettings(const char* value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings.assign(value); }
+    inline StartReplicationRequest& WithPremigrationAssessmentSettings(const Aws::String& value) { SetPremigrationAssessmentSettings(value); return *this;}
+    inline StartReplicationRequest& WithPremigrationAssessmentSettings(Aws::String&& value) { SetPremigrationAssessmentSettings(std::move(value)); return *this;}
+    inline StartReplicationRequest& WithPremigrationAssessmentSettings(const char* value) { SetPremigrationAssessmentSettings(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the start time for a change data capture (CDC) operation. Use
      * either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify
      * when you want a CDC operation to start. Specifying both values results in an
@@ -132,6 +169,9 @@ namespace Model
 
     Aws::String m_startReplicationType;
     bool m_startReplicationTypeHasBeenSet = false;
+
+    Aws::String m_premigrationAssessmentSettings;
+    bool m_premigrationAssessmentSettingsHasBeenSet = false;
 
     Aws::Utils::DateTime m_cdcStartTime;
     bool m_cdcStartTimeHasBeenSet = false;

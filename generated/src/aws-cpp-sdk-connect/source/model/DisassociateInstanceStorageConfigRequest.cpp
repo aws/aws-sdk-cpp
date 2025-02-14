@@ -19,7 +19,9 @@ DisassociateInstanceStorageConfigRequest::DisassociateInstanceStorageConfigReque
     m_instanceIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_resourceType(InstanceStorageResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -35,6 +37,13 @@ void DisassociateInstanceStorageConfigRequest::AddQueryStringParameters(URI& uri
     {
       ss << InstanceStorageResourceTypeMapper::GetNameForInstanceStorageResourceType(m_resourceType);
       uri.AddQueryStringParameter("resourceType", ss.str());
+      ss.str("");
+    }
+
+    if(m_clientTokenHasBeenSet)
+    {
+      ss << m_clientToken;
+      uri.AddQueryStringParameter("clientToken", ss.str());
       ss.str("");
     }
 

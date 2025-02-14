@@ -10,6 +10,7 @@
 #include <aws/connect/model/DirectoryType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

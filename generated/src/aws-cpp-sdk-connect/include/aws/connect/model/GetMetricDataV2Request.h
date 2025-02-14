@@ -145,11 +145,14 @@ namespace Model
      * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
      * <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>DISCONNECT_REASON</code> | <code>FEATURE</code> |
+     * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
+     * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
+     * <code>EVALUATION_SOURCE</code> | <code>FEATURE</code> |
      * <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> |
      * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> |
      * <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> |
-     * <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> |
+     * <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> |
+     * <code>INITIATION_METHOD</code> |
      * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
      * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
      * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
@@ -207,15 +210,18 @@ namespace Model
      * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
      * <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> |
+     * <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> |
+     * <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> |
+     * <code>EVALUATION_SOURCE</code> | <code>FLOWS_RESOURCE_ID</code> |
      * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> |
      * <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> |
-     * <code>INITIATION_METHOD</code> |
+     * <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> |
      * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
      * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
      * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
      * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
-     * <code>ROUTING_STEP_EXPRESSION</code> </p>
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> <p>Type: Array of strings</p> <p>Array
+     * Members: Maximum number of 4 items</p> <p>Required: No</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupings() const{ return m_groupings; }
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
@@ -350,8 +356,13 @@ namespace Model
      * groupings and filters: Agent, Campaign, Queue, Routing Profile</p> <p>UI name:
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average
-     * dials per minute</a> </p> </dd> <dt>AVG_FLOW_TIME</dt> <dd> <p>Unit: Seconds</p>
-     * <p>Valid groupings and filters: Channel,
+     * dials per minute</a> </p> </dd> <dt>AVG_EVALUATION_SCORE</dt> <dd> <p>Unit:
+     * Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel,
+     * Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation
+     * Source, Form Version, Queue, Routing Profile</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-evaluation-score-historical">Average
+     * agent evaluation score</a> </p> </dd> <dt>AVG_FLOW_TIME</dt> <dd> <p>Unit:
+     * Seconds</p> <p>Valid groupings and filters: Channel,
      * contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID,
      * Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows
      * resource ID, Initiation method, Resource published timestamp</p> <p>UI name: <a
@@ -450,6 +461,12 @@ namespace Model
      * filters: Campaign</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average
      * wait time after customer connection</a> </p> </dd>
+     * <dt>AVG_WEIGHTED_EVALUATION_SCORE</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form Id,
+     * Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version,
+     * Queue, Routing Profile</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-weighted-agent-evaluation-score-historical">Average
+     * weighted agent evaluation score</a> </p> </dd>
      * <dt>BOT_CONVERSATIONS_COMPLETED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
      * and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot
      * alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID,
@@ -613,11 +630,15 @@ namespace Model
      * and grouping are only available for SMS and Email campaign delivery modes.
      * Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect
      * Reason are only available for agent assisted voice and automated voice delivery
-     * modes. </p>  </dd> <dt>FLOWS_OUTCOME</dt> <dd> <p>Unit: Count</p>
-     * <p>Valid groupings and filters: Channel,
-     * contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID,
-     * Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows
-     * resource ID, Initiation method, Resource published timestamp</p> <p>UI name: <a
+     * modes. </p>  </dd> <dt>EVALUATIONS_PERFORMED</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form
+     * ID, Evaluation Source, Form Version, Queue, Routing Profile</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#evaluations-performed-historical">Evaluations
+     * performed</a> </p> </dd> <dt>FLOWS_OUTCOME</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow
+     * type, Flows module resource ID, Flows next resource ID, Flows next resource
+     * queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource
+     * published timestamp</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flows
      * outcome</a> </p> </dd> <dt>FLOWS_STARTED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow
@@ -647,7 +668,12 @@ namespace Model
      * Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows
      * resource ID, Initiation method, Resource published timestamp</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum
-     * flow time</a> </p> </dd> <dt>PERCENT_BOT_CONVERSATIONS_OUTCOME</dt> <dd>
+     * flow time</a> </p> </dd> <dt>PERCENT_AUTOMATIC_FAILS</dt> <dd> <p>Unit:
+     * Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel,
+     * Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+     * <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#percent-evaluation-automatic-failures-historical">Automatic
+     * fails percent</a> </p> </dd> <dt>PERCENT_BOT_CONVERSATIONS_OUTCOME</dt> <dd>
      * <p>Unit: Percent</p> <p>Valid groupings and filters: Channel,
      * contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot
      * locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID,

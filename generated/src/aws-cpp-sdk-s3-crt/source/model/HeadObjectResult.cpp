@@ -179,6 +179,12 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
     m_contentType = contentTypeIter->second;
   }
 
+  const auto& contentRangeIter = headers.find("content-range");
+  if(contentRangeIter != headers.end())
+  {
+    m_contentRange = contentRangeIter->second;
+  }
+
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {

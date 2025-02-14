@@ -20,7 +20,7 @@ namespace WAFV2
 {
   AWS_WAFV2_API extern const char SERVICE_NAME[];
   /**
-   * <fullname>WAF</fullname>  <p>This is the latest version of the <b>WAF</b>
+   * <fullname>WAF </fullname>  <p>This is the latest version of the <b>WAF</b>
    * API, released in November, 2019. The names of the entities that you use to
    * access this API, like endpoints and namespaces, all have the versioning
    * information added, like "V2" or "v2", to distinguish from the prior version. We
@@ -32,31 +32,31 @@ namespace WAFV2
    * see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
    * Developer Guide</a>. </p>  <p>WAF is a web application firewall that lets
-   * you monitor the HTTP and HTTPS requests that are forwarded to an Amazon
-   * CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer,
-   * AppSync GraphQL API, Amazon Cognito user pool, App Runner service, or Amazon Web
-   * Services Verified Access instance. WAF also lets you control access to your
-   * content, to protect the Amazon Web Services resource that WAF is monitoring.
-   * Based on conditions that you specify, such as the IP addresses that requests
-   * originate from or the values of query strings, the protected resource responds
-   * to requests with either the requested content, an HTTP 403 status code
-   * (Forbidden), or with a custom response. </p> <p>This API guide is for developers
-   * who need detailed information about WAF API actions, data types, and errors. For
-   * detailed information about WAF features and guidance for configuring and using
-   * WAF, see the <a
+   * you monitor the HTTP and HTTPS requests that are forwarded to a protected
+   * resource. Protected resource types include Amazon CloudFront distribution,
+   * Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API,
+   * Amazon Cognito user pool, App Runner service, and Amazon Web Services Verified
+   * Access instance. WAF also lets you control access to your content, to protect
+   * the Amazon Web Services resource that WAF is monitoring. Based on conditions
+   * that you specify, such as the IP addresses that requests originate from or the
+   * values of query strings, the protected resource responds to requests with either
+   * the requested content, an HTTP 403 status code (Forbidden), or with a custom
+   * response. </p> <p>This API guide is for developers who need detailed information
+   * about WAF API actions, data types, and errors. For detailed information about
+   * WAF features and guidance for configuring and using WAF, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
    * Developer Guide</a>.</p> <p>You can make calls using the endpoints listed in <a
    * href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF endpoints and
-   * quotas</a>. </p> <ul> <li> <p>For regional applications, you can use any of the
+   * quotas</a>. </p> <ul> <li> <p>For regional resources, you can use any of the
    * endpoints in the list. A regional application can be an Application Load
    * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
    * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services
-   * Verified Access instance. </p> </li> <li> <p>For Amazon CloudFront applications,
-   * you must use the API endpoint listed for US East (N. Virginia): us-east-1.</p>
-   * </li> </ul> <p>Alternatively, you can use one of the Amazon Web Services SDKs to
-   * access an API that's tailored to the programming language or platform that
-   * you're using. For more information, see <a
-   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p>
+   * Verified Access instance. </p> </li> <li> <p>For Amazon CloudFront, you must use
+   * the API endpoint listed for US East (N. Virginia): us-east-1.</p> </li> </ul>
+   * <p>Alternatively, you can use one of the Amazon Web Services SDKs to access an
+   * API that's tailored to the programming language or platform that you're using.
+   * For more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web
+   * Services SDKs</a>.</p>
    */
   class AWS_WAFV2_API WAFV2Client : smithy::client::AwsSmithyClientT<Aws::WAFV2::SERVICE_NAME,
       Aws::WAFV2::WAFV2ClientConfiguration,
@@ -125,14 +125,11 @@ namespace WAFV2
         virtual ~WAFV2Client();
 
         /**
-         * <p>Associates a web ACL with a regional application resource, to protect the
-         * resource. A regional application can be an Application Load Balancer (ALB), an
-         * Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user
-         * pool, an App Runner service, or an Amazon Web Services Verified Access instance.
-         * </p> <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront
-         * distribution configuration. To associate a web ACL, in the CloudFront call
-         * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
-         * (ARN) of the web ACL. For information, see <a
+         * <p>Associates a web ACL with a resource, to protect the resource. </p> <p>Use
+         * this for all resource types except for Amazon CloudFront distributions. For
+         * Amazon CloudFront, call <code>UpdateDistribution</code> for the distribution and
+         * provide the Amazon Resource Name (ARN) of the web ACL in the web ACL ID. For
+         * information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
          * in the <i>Amazon CloudFront Developer Guide</i>. </p> <p> <b>Required
          * permissions for customer-managed IAM policies</b> </p> <p>This call requires
@@ -340,11 +337,11 @@ namespace WAFV2
          * assign a default action to take (allow, block) for any request that does not
          * match any of the rules. The rules in a web ACL can be a combination of the types
          * <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web
-         * ACL with one or more Amazon Web Services resources to protect. The resources can
-         * be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an
-         * Application Load Balancer, an AppSync GraphQL API, an Amazon Cognito user pool,
-         * an App Runner service, or an Amazon Web Services Verified Access instance.
-         * </p><p><h3>See Also:</h3>   <a
+         * ACL with one or more Amazon Web Services resources to protect. The resource
+         * types include Amazon CloudFront distribution, Amazon API Gateway REST API,
+         * Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App
+         * Runner service, and Amazon Web Services Verified Access instance. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
          */
@@ -557,18 +554,18 @@ namespace WAFV2
          * <code>ManagedByFirewallManager</code> is false in the web ACL. </p> 
          * <p>Before deleting any web ACL, first disassociate it from all resources.</p>
          * <ul> <li> <p>To retrieve a list of the resources that are associated with a web
-         * ACL, use the following calls:</p> <ul> <li> <p>For regional resources, call
-         * <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront
+         * ACL, use the following calls:</p> <ul> <li> <p>For Amazon CloudFront
          * distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
          * For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
-         * in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> <li> <p>To
+         * in the <i>Amazon CloudFront API Reference</i>. </p> </li> <li> <p>For all other
+         * resources, call <a>ListResourcesForWebACL</a>.</p> </li> </ul> </li> <li> <p>To
          * disassociate a resource from a web ACL, use the following calls:</p> <ul> <li>
-         * <p>For regional resources, call <a>DisassociateWebACL</a>.</p> </li> <li> <p>For
-         * Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
-         * call <code>UpdateDistribution</code>. For information, see <a
+         * <p>For Amazon CloudFront distributions, provide an empty web ACL ID in the
+         * CloudFront call <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
-         * in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> </ul>
+         * in the <i>Amazon CloudFront API Reference</i>. </p> </li> <li> <p>For all other
+         * resources, call <a>DisassociateWebACL</a>.</p> </li> </ul> </li> </ul>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
@@ -673,15 +670,10 @@ namespace WAFV2
         }
 
         /**
-         * <p>Disassociates the specified regional application resource from any existing
-         * web ACL association. A resource can have at most one web ACL association. A
-         * regional application can be an Application Load Balancer (ALB), an Amazon API
-         * Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
-         * Runner service, or an Amazon Web Services Verified Access instance. </p> <p>For
-         * Amazon CloudFront, don't use this call. Instead, use your CloudFront
-         * distribution configuration. To disassociate a web ACL, provide an empty web ACL
-         * ID in the CloudFront call <code>UpdateDistribution</code>. For information, see
-         * <a
+         * <p>Disassociates the specified resource from its web ACL association, if it has
+         * one. </p> <p>Use this for all resource types except for Amazon CloudFront
+         * distributions. For Amazon CloudFront, call <code>UpdateDistribution</code> for
+         * the distribution and provide an empty web ACL ID. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
          * in the <i>Amazon CloudFront API Reference</i>. </p> <p> <b>Required permissions
          * for customer-managed IAM policies</b> </p> <p>This call requires permissions
@@ -1337,9 +1329,9 @@ namespace WAFV2
         }
 
         /**
-         * <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional
-         * resources that are associated with the specified web ACL. </p> <p>For Amazon
-         * CloudFront, don't use this call. Instead, use the CloudFront call
+         * <p>Retrieves an array of the Amazon Resource Names (ARNs) for the resources that
+         * are associated with the specified web ACL. </p> <p>For Amazon CloudFront, don't
+         * use this call. Instead, use the CloudFront call
          * <code>ListDistributionsByWebACLId</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
          * in the <i>Amazon CloudFront API Reference</i>. </p> <p> <b>Required permissions
@@ -1457,22 +1449,23 @@ namespace WAFV2
 
         /**
          * <p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a
-         * web ACL, according to the configuration provided. </p>  <p>This operation
-         * completely replaces any mutable specifications that you already have for a
-         * logging configuration with the ones that you provide to this call. </p> <p>To
-         * modify an existing logging configuration, do the following: </p> <ol> <li>
-         * <p>Retrieve it by calling <a>GetLoggingConfiguration</a> </p> </li> <li>
-         * <p>Update its settings as needed</p> </li> <li> <p>Provide the complete logging
-         * configuration specification to this call</p> </li> </ol>   <p>You
-         * can define one logging destination per web ACL.</p>  <p>You can access
-         * information about the traffic that WAF inspects using the following steps:</p>
-         * <ol> <li> <p>Create your logging destination. You can use an Amazon CloudWatch
-         * Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an
-         * Amazon Kinesis Data Firehose. </p> <p>The name that you give the destination
-         * must start with <code>aws-waf-logs-</code>. Depending on the type of
-         * destination, you might need to configure additional settings or permissions.
-         * </p> <p>For configuration requirements and pricing information for each
-         * destination type, see <a
+         * web ACL, according to the configuration provided. </p> <p>If you configure data
+         * protection for the web ACL, the protection applies to the data that WAF sends to
+         * the logs. </p>  <p>This operation completely replaces any mutable
+         * specifications that you already have for a logging configuration with the ones
+         * that you provide to this call. </p> <p>To modify an existing logging
+         * configuration, do the following: </p> <ol> <li> <p>Retrieve it by calling
+         * <a>GetLoggingConfiguration</a> </p> </li> <li> <p>Update its settings as
+         * needed</p> </li> <li> <p>Provide the complete logging configuration
+         * specification to this call</p> </li> </ol>   <p>You can define one
+         * logging destination per web ACL.</p>  <p>You can access information about
+         * the traffic that WAF inspects using the following steps:</p> <ol> <li> <p>Create
+         * your logging destination. You can use an Amazon CloudWatch Logs log group, an
+         * Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data
+         * Firehose. </p> <p>The name that you give the destination must start with
+         * <code>aws-waf-logs-</code>. Depending on the type of destination, you might need
+         * to configure additional settings or permissions. </p> <p>For configuration
+         * requirements and pricing information for each destination type, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p> </li> <li>
          * <p>Associate your logging destination to your web ACL using a
@@ -1836,24 +1829,23 @@ namespace WAFV2
          * block) for any request that does not match any of the rules. The rules in a web
          * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed
          * rule group. You can associate a web ACL with one or more Amazon Web Services
-         * resources to protect. The resources can be an Amazon CloudFront distribution, an
-         * Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL
-         * API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
-         * Services Verified Access instance. </p> <p> <b>Temporary inconsistencies during
-         * updates</b> </p> <p>When you create or change a web ACL or other WAF resources,
-         * the changes take a small amount of time to propagate to all areas where the
-         * resources are stored. The propagation time can be from a few seconds to a number
-         * of minutes. </p> <p>The following are examples of the temporary inconsistencies
-         * that you might notice during change propagation: </p> <ul> <li> <p>After you
-         * create a web ACL, if you try to associate it with a resource, you might get an
-         * exception indicating that the web ACL is unavailable. </p> </li> <li> <p>After
-         * you add a rule group to a web ACL, the new rule group rules might be in effect
-         * in one area where the web ACL is used and not in another.</p> </li> <li>
-         * <p>After you change a rule action setting, you might see the old action in some
-         * places and the new action in others. </p> </li> <li> <p>After you add an IP
-         * address to an IP set that is in use in a blocking rule, the new address might be
-         * blocked in one area while still allowed in another.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * resources to protect. The resource types include Amazon CloudFront distribution,
+         * Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API,
+         * Amazon Cognito user pool, App Runner service, and Amazon Web Services Verified
+         * Access instance. </p> <p> <b>Temporary inconsistencies during updates</b> </p>
+         * <p>When you create or change a web ACL or other WAF resources, the changes take
+         * a small amount of time to propagate to all areas where the resources are stored.
+         * The propagation time can be from a few seconds to a number of minutes. </p>
+         * <p>The following are examples of the temporary inconsistencies that you might
+         * notice during change propagation: </p> <ul> <li> <p>After you create a web ACL,
+         * if you try to associate it with a resource, you might get an exception
+         * indicating that the web ACL is unavailable. </p> </li> <li> <p>After you add a
+         * rule group to a web ACL, the new rule group rules might be in effect in one area
+         * where the web ACL is used and not in another.</p> </li> <li> <p>After you change
+         * a rule action setting, you might see the old action in some places and the new
+         * action in others. </p> </li> <li> <p>After you add an IP address to an IP set
+         * that is in use in a blocking rule, the new address might be blocked in one area
+         * while still allowed in another.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
          */

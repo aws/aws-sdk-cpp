@@ -17,7 +17,9 @@ using namespace Aws::Http;
 
 DisassociateLambdaFunctionRequest::DisassociateLambdaFunctionRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_functionArnHasBeenSet(false)
+    m_functionArnHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -33,6 +35,13 @@ void DisassociateLambdaFunctionRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_functionArn;
       uri.AddQueryStringParameter("functionArn", ss.str());
+      ss.str("");
+    }
+
+    if(m_clientTokenHasBeenSet)
+    {
+      ss << m_clientToken;
+      uri.AddQueryStringParameter("clientToken", ss.str());
       ss.str("");
     }
 

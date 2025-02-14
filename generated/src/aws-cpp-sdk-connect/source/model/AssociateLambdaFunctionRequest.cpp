@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 AssociateLambdaFunctionRequest::AssociateLambdaFunctionRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_functionArnHasBeenSet(false)
+    m_functionArnHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -25,6 +27,12 @@ Aws::String AssociateLambdaFunctionRequest::SerializePayload() const
   if(m_functionArnHasBeenSet)
   {
    payload.WithString("FunctionArn", m_functionArn);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

@@ -30,6 +30,7 @@ static const int DATABASE_RESUMING_HASH = HashingUtils::HashString("DatabaseResu
 static const int HTTP_ENDPOINT_NOT_ENABLED_HASH = HashingUtils::HashString("HttpEndpointNotEnabledException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int INVALID_SECRET_HASH = HashingUtils::HashString("InvalidSecretException");
+static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
 static const int UNSUPPORTED_RESULT_HASH = HashingUtils::HashString("UnsupportedResultException");
 static const int STATEMENT_TIMEOUT_HASH = HashingUtils::HashString("StatementTimeoutException");
 static const int SECRETS_ERROR_HASH = HashingUtils::HashString("SecretsErrorException");
@@ -61,6 +62,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SECRET_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::INVALID_SECRET), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_RESOURCE_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::INVALID_RESOURCE_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_RESULT_HASH)
   {

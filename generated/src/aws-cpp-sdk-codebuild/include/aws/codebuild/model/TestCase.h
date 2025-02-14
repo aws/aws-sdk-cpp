@@ -151,6 +151,20 @@ namespace Model
     inline TestCase& WithExpired(const Aws::Utils::DateTime& value) { SetExpired(value); return *this;}
     inline TestCase& WithExpired(Aws::Utils::DateTime&& value) { SetExpired(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the test suite that the test case is a part of.</p>
+     */
+    inline const Aws::String& GetTestSuiteName() const{ return m_testSuiteName; }
+    inline bool TestSuiteNameHasBeenSet() const { return m_testSuiteNameHasBeenSet; }
+    inline void SetTestSuiteName(const Aws::String& value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName = value; }
+    inline void SetTestSuiteName(Aws::String&& value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName = std::move(value); }
+    inline void SetTestSuiteName(const char* value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName.assign(value); }
+    inline TestCase& WithTestSuiteName(const Aws::String& value) { SetTestSuiteName(value); return *this;}
+    inline TestCase& WithTestSuiteName(Aws::String&& value) { SetTestSuiteName(std::move(value)); return *this;}
+    inline TestCase& WithTestSuiteName(const char* value) { SetTestSuiteName(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_reportArn;
@@ -176,6 +190,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expired;
     bool m_expiredHasBeenSet = false;
+
+    Aws::String m_testSuiteName;
+    bool m_testSuiteNameHasBeenSet = false;
   };
 
 } // namespace Model

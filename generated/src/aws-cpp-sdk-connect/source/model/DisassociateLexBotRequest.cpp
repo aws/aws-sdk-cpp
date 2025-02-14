@@ -18,7 +18,9 @@ using namespace Aws::Http;
 DisassociateLexBotRequest::DisassociateLexBotRequest() : 
     m_instanceIdHasBeenSet(false),
     m_botNameHasBeenSet(false),
-    m_lexRegionHasBeenSet(false)
+    m_lexRegionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -41,6 +43,13 @@ void DisassociateLexBotRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_lexRegion;
       uri.AddQueryStringParameter("lexRegion", ss.str());
+      ss.str("");
+    }
+
+    if(m_clientTokenHasBeenSet)
+    {
+      ss << m_clientToken;
+      uri.AddQueryStringParameter("clientToken", ss.str());
       ss.str("");
     }
 

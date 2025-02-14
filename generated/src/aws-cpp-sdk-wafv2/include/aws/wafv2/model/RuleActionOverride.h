@@ -27,8 +27,11 @@ namespace Model
   /**
    * <p>Action setting to use in the place of a rule action that is configured inside
    * the rule group. You specify one override for each rule whose action you want to
-   * change. </p> <p>You can use overrides for testing, for example you can override
-   * all of rule actions to <code>Count</code> and then monitor the resulting count
+   * change. </p>  <p>Take care to verify the rule names in your overrides. If
+   * you provide a rule name that doesn't match the name of any rule in the rule
+   * group, WAF doesn't return an error and doesn't apply the override setting.</p>
+   *  <p>You can use overrides for testing, for example you can override all
+   * of rule actions to <code>Count</code> and then monitor the resulting count
    * metrics to understand how the rule group would handle your web traffic. You can
    * also permanently override some or all actions, to modify how the rule group
    * manages your web traffic.</p><p><h3>See Also:</h3>   <a
@@ -46,7 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the rule to override.</p>
+     * <p>The name of the rule to override.</p>  <p>Take care to verify the rule
+     * names in your overrides. If you provide a rule name that doesn't match the name
+     * of any rule in the rule group, WAF doesn't return an error and doesn't apply the
+     * override setting.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
