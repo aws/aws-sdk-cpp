@@ -22,7 +22,8 @@ AnalyticsDataAssociationResult::AnalyticsDataAssociationResult() :
     m_dataSetIdHasBeenSet(false),
     m_targetAccountIdHasBeenSet(false),
     m_resourceShareIdHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false)
+    m_resourceShareArnHasBeenSet(false),
+    m_resourceShareStatusHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,13 @@ AnalyticsDataAssociationResult& AnalyticsDataAssociationResult::operator =(JsonV
     m_resourceShareArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceShareStatus"))
+  {
+    m_resourceShareStatus = jsonValue.GetString("ResourceShareStatus");
+
+    m_resourceShareStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +98,12 @@ JsonValue AnalyticsDataAssociationResult::Jsonize() const
   if(m_resourceShareArnHasBeenSet)
   {
    payload.WithString("ResourceShareArn", m_resourceShareArn);
+
+  }
+
+  if(m_resourceShareStatusHasBeenSet)
+  {
+   payload.WithString("ResourceShareStatus", m_resourceShareStatus);
 
   }
 

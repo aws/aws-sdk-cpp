@@ -148,7 +148,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 32-bit <code>CRC-32 checksum</code> of the object. This
+     * <p>The Base64 encoded, 32-bit <code>CRC32 checksum</code> of the object. This
      * checksum is only be present if the checksum was uploaded with the object. When
      * you use an API operation on an object that was uploaded using multipart uploads,
      * this value may not be a direct checksum value of the full object. Instead, it's
@@ -168,7 +168,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This
+     * <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This
      * checksum is only present if the checksum was uploaded with the object. When you
      * use an API operation on an object that was uploaded using multipart uploads,
      * this value may not be a direct checksum value of the full object. Instead, it's
@@ -188,8 +188,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object.
-     * For more information, see <a
+     * <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity in the Amazon S3 User Guide</a>.</p>
      */
@@ -204,12 +204,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This
-     * will only be present if the object was uploaded with the object. When you use
-     * the API operation on an object that was uploaded using multipart uploads, this
-     * value may not be a direct checksum value of the full object. Instead, it's a
-     * calculation based on the checksum values of each individual part. For more
-     * information about how checksums are calculated with multipart uploads, see <a
+     * <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will
+     * only be present if the object was uploaded with the object. When you use the API
+     * operation on an object that was uploaded using multipart uploads, this value may
+     * not be a direct checksum value of the full object. Instead, it's a calculation
+     * based on the checksum values of each individual part. For more information about
+     * how checksums are calculated with multipart uploads, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -224,7 +224,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This
+     * <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This
      * will only be present if the object was uploaded with the object. When you use an
      * API operation on an object that was uploaded using multipart uploads, this value
      * may not be a direct checksum value of the full object. Instead, it's a
@@ -366,6 +366,20 @@ namespace Model
     inline HeadObjectResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
     inline HeadObjectResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
     inline HeadObjectResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The portion of the object returned in the response for a <code>GET</code>
+     * request.</p>
+     */
+    inline const Aws::String& GetContentRange() const{ return m_contentRange; }
+    inline void SetContentRange(const Aws::String& value) { m_contentRange = value; }
+    inline void SetContentRange(Aws::String&& value) { m_contentRange = std::move(value); }
+    inline void SetContentRange(const char* value) { m_contentRange.assign(value); }
+    inline HeadObjectResult& WithContentRange(const Aws::String& value) { SetContentRange(value); return *this;}
+    inline HeadObjectResult& WithContentRange(Aws::String&& value) { SetContentRange(std::move(value)); return *this;}
+    inline HeadObjectResult& WithContentRange(const char* value) { SetContentRange(value); return *this;}
     ///@}
 
     ///@{
@@ -673,6 +687,8 @@ namespace Model
     Aws::String m_contentLanguage;
 
     Aws::String m_contentType;
+
+    Aws::String m_contentRange;
 
     Aws::Utils::DateTime m_expires;
 

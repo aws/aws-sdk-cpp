@@ -54,6 +54,7 @@
 #include <aws/connect/model/ImportPhoneNumberRequest.h>
 #include <aws/connect/model/ListAgentStatusesRequest.h>
 #include <aws/connect/model/ListAnalyticsDataAssociationsRequest.h>
+#include <aws/connect/model/ListAnalyticsDataLakeDataSetsRequest.h>
 #include <aws/connect/model/ListApprovedOriginsRequest.h>
 #include <aws/connect/model/ListAssociatedContactsRequest.h>
 #include <aws/connect/model/ListAuthenticationProfilesRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/connect/model/SearchPredefinedAttributesRequest.h>
 #include <aws/connect/model/SearchPromptsRequest.h>
 #include <aws/connect/model/SearchQueuesRequest.h>
-#include <aws/connect/model/SearchQuickConnectsRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -1283,6 +1283,35 @@ ListAnalyticsDataAssociationsOutcome ConnectClient::ListAnalyticsDataAssociation
       resolvedEndpoint.AddPathSegments("/analytics-data/instance/");
       resolvedEndpoint.AddPathSegment(request.GetInstanceId());
       resolvedEndpoint.AddPathSegments("/association");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListAnalyticsDataLakeDataSetsOutcome ConnectClient::ListAnalyticsDataLakeDataSets(const ListAnalyticsDataLakeDataSetsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAnalyticsDataLakeDataSets);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnalyticsDataLakeDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAnalyticsDataLakeDataSets", "Required field: InstanceId, is not set");
+    return ListAnalyticsDataLakeDataSetsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListAnalyticsDataLakeDataSets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAnalyticsDataLakeDataSets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAnalyticsDataLakeDataSets",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAnalyticsDataLakeDataSetsOutcome>(
+    [&]()-> ListAnalyticsDataLakeDataSetsOutcome {
+      return ListAnalyticsDataLakeDataSetsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/analytics-data/instance/");
+      resolvedEndpoint.AddPathSegment(request.GetInstanceId());
+      resolvedEndpoint.AddPathSegments("/datasets");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -3091,28 +3120,6 @@ SearchQueuesOutcome ConnectClient::SearchQueues(const SearchQueuesRequest& reque
     [&]()-> SearchQueuesOutcome {
       return SearchQueuesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       resolvedEndpoint.AddPathSegments("/search-queues");
-      }));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-SearchQuickConnectsOutcome ConnectClient::SearchQuickConnects(const SearchQuickConnectsRequest& request) const
-{
-  AWS_OPERATION_GUARD(SearchQuickConnects);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, SearchQuickConnects, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, SearchQuickConnects, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchQuickConnects",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SearchQuickConnectsOutcome>(
-    [&]()-> SearchQuickConnectsOutcome {
-      return SearchQuickConnectsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-      resolvedEndpoint.AddPathSegments("/search-quick-connects");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. For more
+     * Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. For more
+     * Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -185,7 +185,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the part. For more
+     * Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the part. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -204,7 +204,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. For more
+     * Base64 encoded, 160-bit <code>SHA1</code> digest of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -223,7 +223,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. For more
+     * Base64 encoded, 256-bit <code>SHA256</code> digest of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

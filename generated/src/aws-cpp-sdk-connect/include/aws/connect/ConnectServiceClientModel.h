@@ -117,6 +117,7 @@
 #include <aws/connect/model/ImportPhoneNumberResult.h>
 #include <aws/connect/model/ListAgentStatusesResult.h>
 #include <aws/connect/model/ListAnalyticsDataAssociationsResult.h>
+#include <aws/connect/model/ListAnalyticsDataLakeDataSetsResult.h>
 #include <aws/connect/model/ListApprovedOriginsResult.h>
 #include <aws/connect/model/ListAssociatedContactsResult.h>
 #include <aws/connect/model/ListAuthenticationProfilesResult.h>
@@ -408,6 +409,7 @@ namespace Aws
       class ImportPhoneNumberRequest;
       class ListAgentStatusesRequest;
       class ListAnalyticsDataAssociationsRequest;
+      class ListAnalyticsDataLakeDataSetsRequest;
       class ListApprovedOriginsRequest;
       class ListAssociatedContactsRequest;
       class ListAuthenticationProfilesRequest;
@@ -692,6 +694,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportPhoneNumberResult, ConnectError> ImportPhoneNumberOutcome;
       typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
       typedef Aws::Utils::Outcome<ListAnalyticsDataAssociationsResult, ConnectError> ListAnalyticsDataAssociationsOutcome;
+      typedef Aws::Utils::Outcome<ListAnalyticsDataLakeDataSetsResult, ConnectError> ListAnalyticsDataLakeDataSetsOutcome;
       typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprovedOriginsOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedContactsResult, ConnectError> ListAssociatedContactsOutcome;
       typedef Aws::Utils::Outcome<ListAuthenticationProfilesResult, ConnectError> ListAuthenticationProfilesOutcome;
@@ -976,6 +979,7 @@ namespace Aws
       typedef std::future<ImportPhoneNumberOutcome> ImportPhoneNumberOutcomeCallable;
       typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
       typedef std::future<ListAnalyticsDataAssociationsOutcome> ListAnalyticsDataAssociationsOutcomeCallable;
+      typedef std::future<ListAnalyticsDataLakeDataSetsOutcome> ListAnalyticsDataLakeDataSetsOutcomeCallable;
       typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallable;
       typedef std::future<ListAssociatedContactsOutcome> ListAssociatedContactsOutcomeCallable;
       typedef std::future<ListAuthenticationProfilesOutcome> ListAuthenticationProfilesOutcomeCallable;
@@ -1263,6 +1267,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ImportPhoneNumberRequest&, const Model::ImportPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgentStatusesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAnalyticsDataAssociationsRequest&, const Model::ListAnalyticsDataAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalyticsDataAssociationsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListAnalyticsDataLakeDataSetsRequest&, const Model::ListAnalyticsDataLakeDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalyticsDataLakeDataSetsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListApprovedOriginsRequest&, const Model::ListApprovedOriginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovedOriginsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAssociatedContactsRequest&, const Model::ListAssociatedContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedContactsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAuthenticationProfilesRequest&, const Model::ListAuthenticationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuthenticationProfilesResponseReceivedHandler;

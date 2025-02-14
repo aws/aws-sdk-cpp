@@ -51,11 +51,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Used for web ACLs that are scoped for regional applications. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner
-     * service, or an Amazon Web Services Verified Access instance. </p>  <p>If
-     * you don't provide a resource type, the call uses the resource type
+     * <p>Retrieves the web ACLs that are used by the specified resource type. </p>
+     * <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call
+     * <code>ListDistributionsByWebACLId</code>. For information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+     * in the <i>Amazon CloudFront API Reference</i>. </p>  <p>If you don't
+     * provide a resource type, the call uses the resource type
      * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
      * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */

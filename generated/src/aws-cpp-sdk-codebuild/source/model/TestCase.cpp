@@ -27,7 +27,8 @@ TestCase::TestCase() :
     m_durationInNanoSeconds(0),
     m_durationInNanoSecondsHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_expiredHasBeenSet(false)
+    m_expiredHasBeenSet(false),
+    m_testSuiteNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,13 @@ TestCase& TestCase::operator =(JsonView jsonValue)
     m_expiredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("testSuiteName"))
+  {
+    m_testSuiteName = jsonValue.GetString("testSuiteName");
+
+    m_testSuiteNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +155,12 @@ JsonValue TestCase::Jsonize() const
   if(m_expiredHasBeenSet)
   {
    payload.WithDouble("expired", m_expired.SecondsWithMSPrecision());
+  }
+
+  if(m_testSuiteNameHasBeenSet)
+  {
+   payload.WithString("testSuiteName", m_testSuiteName);
+
   }
 
   return payload;

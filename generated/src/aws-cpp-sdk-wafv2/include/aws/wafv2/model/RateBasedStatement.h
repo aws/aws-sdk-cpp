@@ -103,14 +103,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The limit on requests per 5-minute period for a single aggregation instance
-     * for the rate-based rule. If the rate-based statement includes a
-     * <code>ScopeDownStatement</code>, this limit is applied only to the requests that
-     * match the statement.</p> <p>Examples: </p> <ul> <li> <p>If you aggregate on just
-     * the IP address, this is the limit on requests from any single IP address. </p>
-     * </li> <li> <p>If you aggregate on the HTTP method and the query argument name
-     * "city", then this is the limit on requests for any single method, city pair.
-     * </p> </li> </ul>
+     * <p>The limit on requests during the specified evaluation window for a single
+     * aggregation instance for the rate-based rule. If the rate-based statement
+     * includes a <code>ScopeDownStatement</code>, this limit is applied only to the
+     * requests that match the statement.</p> <p>Examples: </p> <ul> <li> <p>If you
+     * aggregate on just the IP address, this is the limit on requests from any single
+     * IP address. </p> </li> <li> <p>If you aggregate on the HTTP method and the query
+     * argument name "city", then this is the limit on requests for any single method,
+     * city pair. </p> </li> </ul>
      */
     inline long long GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

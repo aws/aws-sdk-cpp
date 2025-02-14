@@ -10,6 +10,7 @@
 #include <aws/connect/model/InstanceStorageResourceType.h>
 #include <aws/connect/model/InstanceStorageConfig.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -85,6 +86,24 @@ namespace Model
     inline AssociateInstanceStorageConfigRequest& WithStorageConfig(const InstanceStorageConfig& value) { SetStorageConfig(value); return *this;}
     inline AssociateInstanceStorageConfigRequest& WithStorageConfig(InstanceStorageConfig&& value) { SetStorageConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline AssociateInstanceStorageConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline AssociateInstanceStorageConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline AssociateInstanceStorageConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -95,6 +114,9 @@ namespace Model
 
     InstanceStorageConfig m_storageConfig;
     bool m_storageConfigHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

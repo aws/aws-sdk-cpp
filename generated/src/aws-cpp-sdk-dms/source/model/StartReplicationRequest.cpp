@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 StartReplicationRequest::StartReplicationRequest() : 
     m_replicationConfigArnHasBeenSet(false),
     m_startReplicationTypeHasBeenSet(false),
+    m_premigrationAssessmentSettingsHasBeenSet(false),
     m_cdcStartTimeHasBeenSet(false),
     m_cdcStartPositionHasBeenSet(false),
     m_cdcStopPositionHasBeenSet(false)
@@ -34,6 +35,12 @@ Aws::String StartReplicationRequest::SerializePayload() const
   if(m_startReplicationTypeHasBeenSet)
   {
    payload.WithString("StartReplicationType", m_startReplicationType);
+
+  }
+
+  if(m_premigrationAssessmentSettingsHasBeenSet)
+  {
+   payload.WithString("PremigrationAssessmentSettings", m_premigrationAssessmentSettings);
 
   }
 

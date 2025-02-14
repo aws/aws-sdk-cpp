@@ -247,10 +247,10 @@ namespace Model
      * <code>400 Bad Request</code>.</p> <p>For the
      * <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code>
      * <i>algorithm</i> </code> with the supported algorithm from the following list:
-     * </p> <ul> <li> <p> <code>CRC-32</code> </p> </li> <li> <p> <code>CRC-32C</code>
-     * </p> </li> <li> <p> <code>CRC-64NVME</code> </p> </li> <li> <p>
-     * <code>SHA-1</code> </p> </li> <li> <p> <code>SHA-256</code> </p> </li> </ul>
-     * <p>For more information, see <a
+     * </p> <ul> <li> <p> <code>CRC32</code> </p> </li> <li> <p> <code>CRC32C</code>
+     * </p> </li> <li> <p> <code>CRC64NVME</code> </p> </li> <li> <p> <code>SHA1</code>
+     * </p> </li> <li> <p> <code>SHA256</code> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If the
      * individual checksum value you provide through
@@ -278,7 +278,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. For more
+     * Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -297,7 +297,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. For more
+     * Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -316,8 +316,8 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object. The
-     * <code>CRC-64NVME</code> checksum is always a full object checksum. For more
+     * Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. The
+     * <code>CRC64NVME</code> checksum is always a full object checksum. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity in the Amazon S3 User Guide</a>.</p>
@@ -336,7 +336,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. For more
+     * Base64 encoded, 160-bit <code>SHA1</code> digest of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -355,7 +355,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. For more
+     * Base64 encoded, 256-bit <code>SHA256</code> digest of the object. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

@@ -11,6 +11,7 @@
 #include <aws/wafv2/model/DefaultAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
+#include <aws/wafv2/model/DataProtectionConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
@@ -61,13 +62,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
-     * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, an App Runner service, or an Amazon Web Services Verified Access
-     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
-     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
-     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * <p>Specifies whether this is for a global resource type, such as a Amazon
+     * CloudFront distribution. </p> <p>To work with CloudFront, you must also specify
+     * the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -149,6 +147,24 @@ namespace Model
     inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
     inline UpdateWebACLRequest& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
     inline UpdateWebACLRequest& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies data protection to apply to the web request data that WAF stores
+     * for the web ACL. This is a web ACL level data protection option. </p> <p>The
+     * data protection that you configure for the web ACL alters the data that's
+     * available for any other data collection activity, including WAF logging, web ACL
+     * request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake
+     * data collection and management. Your other option for data protection is in the
+     * logging configuration, which only affects logging. </p>
+     */
+    inline const DataProtectionConfig& GetDataProtectionConfig() const{ return m_dataProtectionConfig; }
+    inline bool DataProtectionConfigHasBeenSet() const { return m_dataProtectionConfigHasBeenSet; }
+    inline void SetDataProtectionConfig(const DataProtectionConfig& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = value; }
+    inline void SetDataProtectionConfig(DataProtectionConfig&& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = std::move(value); }
+    inline UpdateWebACLRequest& WithDataProtectionConfig(const DataProtectionConfig& value) { SetDataProtectionConfig(value); return *this;}
+    inline UpdateWebACLRequest& WithDataProtectionConfig(DataProtectionConfig&& value) { SetDataProtectionConfig(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -294,6 +310,9 @@ namespace Model
 
     VisibilityConfig m_visibilityConfig;
     bool m_visibilityConfigHasBeenSet = false;
+
+    DataProtectionConfig m_dataProtectionConfig;
+    bool m_dataProtectionConfigHasBeenSet = false;
 
     Aws::String m_lockToken;
     bool m_lockTokenHasBeenSet = false;

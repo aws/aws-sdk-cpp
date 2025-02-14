@@ -9,6 +9,7 @@
 #include <aws/wafv2/model/DefaultAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
+#include <aws/wafv2/model/DataProtectionConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
@@ -41,10 +42,10 @@ namespace Model
    * that does not match any of the rules. The rules in a web ACL can be a
    * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
    * You can associate a web ACL with one or more Amazon Web Services resources to
-   * protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-   * Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an
-   * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services
-   * Verified Access instance. </p><p><h3>See Also:</h3>   <a
+   * protect. The resource types include Amazon CloudFront distribution, Amazon API
+   * Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+   * user pool, App Runner service, and Amazon Web Services Verified Access instance.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */
@@ -157,6 +158,24 @@ namespace Model
     inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
     inline WebACL& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
     inline WebACL& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies data protection to apply to the web request data that WAF stores
+     * for the web ACL. This is a web ACL level data protection option. </p> <p>The
+     * data protection that you configure for the web ACL alters the data that's
+     * available for any other data collection activity, including WAF logging, web ACL
+     * request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake
+     * data collection and management. Your other option for data protection is in the
+     * logging configuration, which only affects logging. </p>
+     */
+    inline const DataProtectionConfig& GetDataProtectionConfig() const{ return m_dataProtectionConfig; }
+    inline bool DataProtectionConfigHasBeenSet() const { return m_dataProtectionConfigHasBeenSet; }
+    inline void SetDataProtectionConfig(const DataProtectionConfig& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = value; }
+    inline void SetDataProtectionConfig(DataProtectionConfig&& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = std::move(value); }
+    inline WebACL& WithDataProtectionConfig(const DataProtectionConfig& value) { SetDataProtectionConfig(value); return *this;}
+    inline WebACL& WithDataProtectionConfig(DataProtectionConfig&& value) { SetDataProtectionConfig(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -392,6 +411,9 @@ namespace Model
 
     VisibilityConfig m_visibilityConfig;
     bool m_visibilityConfigHasBeenSet = false;
+
+    DataProtectionConfig m_dataProtectionConfig;
+    bool m_dataProtectionConfigHasBeenSet = false;
 
     long long m_capacity;
     bool m_capacityHasBeenSet = false;

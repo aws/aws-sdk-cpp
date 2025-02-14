@@ -26,6 +26,7 @@ WebACL::WebACL() :
     m_descriptionHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
+    m_dataProtectionConfigHasBeenSet(false),
     m_capacity(0),
     m_capacityHasBeenSet(false),
     m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
@@ -101,6 +102,13 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
 
     m_visibilityConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataProtectionConfig"))
+  {
+    m_dataProtectionConfig = jsonValue.GetObject("DataProtectionConfig");
+
+    m_dataProtectionConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Capacity"))
@@ -243,6 +251,12 @@ JsonValue WebACL::Jsonize() const
   if(m_visibilityConfigHasBeenSet)
   {
    payload.WithObject("VisibilityConfig", m_visibilityConfig.Jsonize());
+
+  }
+
+  if(m_dataProtectionConfigHasBeenSet)
+  {
+   payload.WithObject("DataProtectionConfig", m_dataProtectionConfig.Jsonize());
 
   }
 

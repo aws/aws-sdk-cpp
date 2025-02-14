@@ -27,6 +27,7 @@ Replication::Replication() :
     m_replicationTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_provisionDataHasBeenSet(false),
+    m_premigrationAssessmentStatusesHasBeenSet(false),
     m_stopReasonHasBeenSet(false),
     m_failureMessagesHasBeenSet(false),
     m_replicationStatsHasBeenSet(false),
@@ -97,6 +98,16 @@ Replication& Replication::operator =(JsonView jsonValue)
     m_provisionData = jsonValue.GetObject("ProvisionData");
 
     m_provisionDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PremigrationAssessmentStatuses"))
+  {
+    Aws::Utils::Array<JsonView> premigrationAssessmentStatusesJsonList = jsonValue.GetArray("PremigrationAssessmentStatuses");
+    for(unsigned premigrationAssessmentStatusesIndex = 0; premigrationAssessmentStatusesIndex < premigrationAssessmentStatusesJsonList.GetLength(); ++premigrationAssessmentStatusesIndex)
+    {
+      m_premigrationAssessmentStatuses.push_back(premigrationAssessmentStatusesJsonList[premigrationAssessmentStatusesIndex].AsObject());
+    }
+    m_premigrationAssessmentStatusesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StopReason"))
@@ -231,6 +242,17 @@ JsonValue Replication::Jsonize() const
   if(m_provisionDataHasBeenSet)
   {
    payload.WithObject("ProvisionData", m_provisionData.Jsonize());
+
+  }
+
+  if(m_premigrationAssessmentStatusesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> premigrationAssessmentStatusesJsonList(m_premigrationAssessmentStatuses.size());
+   for(unsigned premigrationAssessmentStatusesIndex = 0; premigrationAssessmentStatusesIndex < premigrationAssessmentStatusesJsonList.GetLength(); ++premigrationAssessmentStatusesIndex)
+   {
+     premigrationAssessmentStatusesJsonList[premigrationAssessmentStatusesIndex].AsObject(m_premigrationAssessmentStatuses[premigrationAssessmentStatusesIndex].Jsonize());
+   }
+   payload.WithArray("PremigrationAssessmentStatuses", std::move(premigrationAssessmentStatusesJsonList));
 
   }
 

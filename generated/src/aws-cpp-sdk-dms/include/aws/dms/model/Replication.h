@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/ReplicationStats.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/dms/model/PremigrationAssessmentStatus.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,20 @@ namespace Model
     inline void SetProvisionData(ProvisionData&& value) { m_provisionDataHasBeenSet = true; m_provisionData = std::move(value); }
     inline Replication& WithProvisionData(const ProvisionData& value) { SetProvisionData(value); return *this;}
     inline Replication& WithProvisionData(ProvisionData&& value) { SetProvisionData(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status output of premigration assessment in describe-replications.</p>
+     */
+    inline const Aws::Vector<PremigrationAssessmentStatus>& GetPremigrationAssessmentStatuses() const{ return m_premigrationAssessmentStatuses; }
+    inline bool PremigrationAssessmentStatusesHasBeenSet() const { return m_premigrationAssessmentStatusesHasBeenSet; }
+    inline void SetPremigrationAssessmentStatuses(const Aws::Vector<PremigrationAssessmentStatus>& value) { m_premigrationAssessmentStatusesHasBeenSet = true; m_premigrationAssessmentStatuses = value; }
+    inline void SetPremigrationAssessmentStatuses(Aws::Vector<PremigrationAssessmentStatus>&& value) { m_premigrationAssessmentStatusesHasBeenSet = true; m_premigrationAssessmentStatuses = std::move(value); }
+    inline Replication& WithPremigrationAssessmentStatuses(const Aws::Vector<PremigrationAssessmentStatus>& value) { SetPremigrationAssessmentStatuses(value); return *this;}
+    inline Replication& WithPremigrationAssessmentStatuses(Aws::Vector<PremigrationAssessmentStatus>&& value) { SetPremigrationAssessmentStatuses(std::move(value)); return *this;}
+    inline Replication& AddPremigrationAssessmentStatuses(const PremigrationAssessmentStatus& value) { m_premigrationAssessmentStatusesHasBeenSet = true; m_premigrationAssessmentStatuses.push_back(value); return *this; }
+    inline Replication& AddPremigrationAssessmentStatuses(PremigrationAssessmentStatus&& value) { m_premigrationAssessmentStatusesHasBeenSet = true; m_premigrationAssessmentStatuses.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -347,6 +362,9 @@ namespace Model
 
     ProvisionData m_provisionData;
     bool m_provisionDataHasBeenSet = false;
+
+    Aws::Vector<PremigrationAssessmentStatus> m_premigrationAssessmentStatuses;
+    bool m_premigrationAssessmentStatusesHasBeenSet = false;
 
     Aws::String m_stopReason;
     bool m_stopReasonHasBeenSet = false;

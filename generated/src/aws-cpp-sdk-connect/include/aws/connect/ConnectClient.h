@@ -2381,7 +2381,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web Services Support.</p>
+         * To request access to this API, contact Amazon Web ServicesSupport.</p>
          * <p>Describes the target authentication profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">AWS
          * API Reference</a></p>
@@ -2408,11 +2408,12 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the specified contact. </p>  <p>Contact
-         * information remains available in Amazon Connect for 24 months from the
-         * InitiationTimestamp, and then it is deleted. Only contact information that is
-         * available in Amazon Connect is returned by this API</p> <p><h3>See
-         * Also:</h3>   <a
+         * change.</p> <p>Describes the specified contact. </p>  <ul> <li> <p>
+         * <code>CustomerEndpoint</code> and <code>SystemEndpoint</code> are only populated
+         * for EMAIL contacts. </p> </li> <li> <p>Contact information remains available in
+         * Amazon Connect for 24 months from the <code>InitiationTimestamp</code>, and then
+         * it is deleted. Only contact information that is available in Amazon Connect is
+         * returned by this API.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
          */
@@ -3856,7 +3857,7 @@ namespace Connect
          * service level quota of 99 phone numbers, and in any 180 day period you release
          * 99, claim 99, and then release 99, you will have exceeded the 200% limit. At
          * that point you are blocked from claiming any more numbers until you open an
-         * Amazon Web Services Support ticket. </p><p><h3>See Also:</h3>   <a
+         * Amazon Web ServicesSupport ticket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -3933,6 +3934,32 @@ namespace Connect
         }
 
         /**
+         * <p>Lists the data lake datasets available to associate with for a given Amazon
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnalyticsDataLakeDataSetsOutcome ListAnalyticsDataLakeDataSets(const Model::ListAnalyticsDataLakeDataSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnalyticsDataLakeDataSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnalyticsDataLakeDataSetsRequestT = Model::ListAnalyticsDataLakeDataSetsRequest>
+        Model::ListAnalyticsDataLakeDataSetsOutcomeCallable ListAnalyticsDataLakeDataSetsCallable(const ListAnalyticsDataLakeDataSetsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListAnalyticsDataLakeDataSets, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnalyticsDataLakeDataSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnalyticsDataLakeDataSetsRequestT = Model::ListAnalyticsDataLakeDataSetsRequest>
+        void ListAnalyticsDataLakeDataSetsAsync(const ListAnalyticsDataLakeDataSetsRequestT& request, const ListAnalyticsDataLakeDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListAnalyticsDataLakeDataSets, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns a paginated list of all approved origins associated with
          * the instance.</p><p><h3>See Also:</h3>   <a
@@ -3987,7 +4014,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web Services Support.</p>
+         * To request access to this API, contact Amazon Web ServicesSupport.</p>
          * <p>Provides summary information about the authentication profiles in a specified
          * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">AWS
@@ -5307,7 +5334,7 @@ namespace Connect
          * <p>After releasing a phone number, the phone number enters into a cooldown
          * period for up to 180 days. It cannot be searched for or claimed again until the
          * period has ended. If you accidentally release a phone number, contact Amazon Web
-         * Services Support.</p>  <p>If you plan to claim and release numbers
+         * ServicesSupport.</p>  <p>If you plan to claim and release numbers
          * frequently, contact us for a service quota exception. Otherwise, it is possible
          * you will be blocked from claiming and releasing any more numbers until up to 180
          * days past the oldest number released has expired.</p> <p>By default you can
@@ -6026,7 +6053,7 @@ namespace Connect
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the
          * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
          * account may not support the ability to configure custom chat durations. For more
-         * information, contact Amazon Web Services Support. </p> <p>For more information
+         * information, contact Amazon Web ServicesSupport. </p> <p>For more information
          * about chat, see the following topics in the <i>Amazon Connect Administrator
          * Guide</i>: </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
@@ -6745,7 +6772,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web Services Support.</p>
+         * To request access to this API, contact Amazon Web ServicesSupport.</p>
          * <p>Updates the selected authentication profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">AWS
          * API Reference</a></p>

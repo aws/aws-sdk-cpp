@@ -16,7 +16,9 @@ AssociateInstanceStorageConfigRequest::AssociateInstanceStorageConfigRequest() :
     m_instanceIdHasBeenSet(false),
     m_resourceType(InstanceStorageResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_storageConfigHasBeenSet(false)
+    m_storageConfigHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -32,6 +34,12 @@ Aws::String AssociateInstanceStorageConfigRequest::SerializePayload() const
   if(m_storageConfigHasBeenSet)
   {
    payload.WithObject("StorageConfig", m_storageConfig.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

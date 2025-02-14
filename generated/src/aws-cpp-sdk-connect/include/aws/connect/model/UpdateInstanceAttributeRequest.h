@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/InstanceAttributeType.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -52,8 +53,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of attribute.</p>  <p>Only allowlisted customers can consume
-     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services
-     * Support for allowlisting.</p> 
+     * USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web
+     * ServicesSupport for allowlisting.</p> 
      */
     inline const InstanceAttributeType& GetAttributeType() const{ return m_attributeType; }
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
@@ -76,6 +77,24 @@ namespace Model
     inline UpdateInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
     inline UpdateInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline UpdateInstanceAttributeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline UpdateInstanceAttributeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline UpdateInstanceAttributeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -86,6 +105,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

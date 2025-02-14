@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The initial number of machines allocated to the compute ﬂeet, which deﬁnes
+     * <p>The initial number of machines allocated to the compute ���eet, which deﬁnes
      * the number of builds that can run in parallel.</p>
      */
     inline int GetBaseCapacity() const{ return m_baseCapacity; }
