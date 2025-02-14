@@ -20,7 +20,7 @@ from codegen.model_utils import ServiceModel
 
 SMITHY_SUPPORTED_CLIENTS = [
     "dynamodb",
-    "s3"
+    #"s3"
 ]
 
 # Default configuration variables
