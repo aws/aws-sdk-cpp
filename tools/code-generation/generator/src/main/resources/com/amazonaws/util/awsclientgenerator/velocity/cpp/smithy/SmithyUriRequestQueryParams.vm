@@ -96,3 +96,12 @@ ${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
 #if($queryStart)
 ${indent}  resolvedEndpoint.SetQueryString(ss.str());
 #end
+#if(($serviceModel.metadata.namespace == "S3" || ($serviceModel.metadata.namespace == "S3Crt" && !$operation.s3CrtEnabled)) && $operation.shouldUsePropertyBag)
+${indent}  request.SetServiceSpecificParameters(
+${indent}   [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+${indent}   Aws::Map<Aws::String, Aws::String> params;
+${indent}   params.emplace("bucketName", request.GetBucket());
+${indent}   ServiceSpecificParameters serviceSpecificParameters{params};
+${indent}   return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+${indent}  }());
+#end

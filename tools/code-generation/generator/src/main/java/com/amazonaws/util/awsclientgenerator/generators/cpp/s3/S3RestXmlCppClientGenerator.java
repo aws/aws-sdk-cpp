@@ -195,6 +195,11 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
     @Override
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+        if(serviceModel.isUseSmithyClient())
+        {
+            updateAuthSchemesFromEndpointRules(serviceModel, serviceModel.getRawEndpointRules());
+            updateAuthSchemesFromOperations(serviceModel);
+        }
 
         // Add ID2 and RequestId to GetObjectResult
         hackGetObjectOutputResponse(serviceModel);
@@ -438,10 +443,21 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientHeader.vm");
 
+        Template template;
+        if (serviceModel.isUseSmithyClient())
+        {
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/SmithyS3ClientHeader.vm");
+        }
+        else
+        {
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientHeader.vm");
+        }
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
+        context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
+
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
@@ -453,8 +469,15 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
         List<SdkFileEntry> sourceFiles = new ArrayList<>();
         for (int i = 0; i < serviceModels.size(); i++) {
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
-
+            Template template;
+            if (serviceModels.get(i).isUseSmithyClient())
+            {
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/SmithyS3ClientSource.vm");
+            }
+            else
+            {
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
+            }
             Map<String, String> templateOverride = new HashMap<>();
             if ("S3-CRT".equalsIgnoreCase(serviceModels.get(i).getMetadata().getProjectName())) {
                 templateOverride.put("ServiceClientSourceInit_template",
@@ -463,6 +486,10 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
             VelocityContext context = createContext(serviceModels.get(i));
             context.put("CppViewHelper", CppViewHelper.class);
             context.put("TemplateOverride", templateOverride);
+            context.put("AuthSchemeResolver", "S3ExpressAuthSchemeResolver");
+            context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModels.get(i)));
+            context.put("AuthSchemes", getSupportedAuthSchemes(serviceModels.get(i)));
+            context.put("AuthSchemeVariants", serviceModels.get(i).getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
 
             final String fileName;
             if (i == 0) {
@@ -493,6 +520,29 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
                 .map(__ -> Stream.of(Pair.of(includePath + "S3CrtIdentityProviderAdapter.h", String.format(vmFilePrefixFormat, "S3CrtIdentityProviderAdapterHeader.vm")),
                         Pair.of("source/S3CrtIdentityProviderAdapter.cpp", String.format(vmFilePrefixFormat, "S3CrtIdentityProviderAdapterSource.vm"))))
                 .orElse(Stream.of());
+
+        if (serviceModel.isUseSmithyClient())
+        {
+            return Stream.concat(
+                Stream.of(
+                        Pair.of(includePath + "S3ExpressIdentity.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityHeader.vm")),
+                        Pair.of(includePath + "S3ExpressIdentityProvider.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressIdentityProviderHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSigner.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressSignerHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSignerProvider.h", String.format(vmFilePrefixFormat, "S3ExpressSignerProviderHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSigV4AuthScheme.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressSigV4AuthSchemeHeader.vm")),
+                        Pair.of(includePath + "S3ExpressSigV4AuthSchemeOption.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressSigV4AuthSchemeOptionHeader.vm")),
+                        Pair.of(includePath + "S3ExpressAuthSchemeResolver.h", String.format(vmFilePrefixFormat, "SmithyS3ExpressAuthSchemeResolverHeader.vm")),
+                        Pair.of("source/S3ExpressSigV4AuthSchemeOption.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressSigV4AuthSchemeOptionSource.vm")),
+                        Pair.of("source/S3ExpressIdentityProvider.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressIdentityProviderSource.vm")),
+                        Pair.of("source/S3ExpressSigner.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressSignerSource.vm")),
+                        Pair.of("source/S3ExpressSignerProvider.cpp", String.format(vmFilePrefixFormat, "SmithyS3ExpressSignerProviderSource.vm"))),
+                crtAdapters)
+        .map(codeGenPair -> makeFile(velocityEngine.getTemplate(codeGenPair.getValue()),
+                context,
+                codeGenPair.getKey(),
+                true))
+        .collect(Collectors.toList());
+        }
 
         return Stream.concat(
                         Stream.of(Pair.of(includePath + "S3ExpressIdentity.h", String.format(vmFilePrefixFormat, "S3ExpressIdentityHeader.vm")),

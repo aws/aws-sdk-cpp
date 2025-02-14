@@ -1,4 +1,5 @@
 #set($clientConfiguration = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
+#set($s3_express_auth = "sigv4-s3express")
 #if($serviceModel.hasOnlyBearerAuth())
 ##BEARER TOKEN AUTH PROVIDER C-TOR
 ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
@@ -47,10 +48,29 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+#if($serviceModel.metadata.serviceId == "S3")
+        Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
+#else
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#end
         {
+#if($serviceModel.metadata.serviceId == "S3")
+            [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+                  return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{clientConfiguration.smithyIdentityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+                  };
+            }()
+#else
 #foreach($entry in $AuthSchemeMapEntries)
             {${entry}{GetServiceName(), clientConfiguration.region}},
+#end
 #end
         })
 {}
@@ -64,10 +84,29 @@ ${className}::${className}(const AWSCredentials& credentials,
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+#if($serviceModel.metadata.serviceId == "S3")
+        Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
+#else
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#end
         {
+#if($serviceModel.metadata.serviceId == "S3")
+            [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+                  auto credsResolver = Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials );
+                  return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{clientConfiguration.smithyIdentityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+                  };
+            }()
+#else
 #foreach($entry in $AuthSchemeMapEntries)
             {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+#end
 #end
         })
 {}
@@ -81,15 +120,205 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::Http::CreateHttpClient(clientConfiguration),
         Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
         endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+#if($serviceModel.metadata.serviceId == "S3")
+        Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
+#else
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+#end
         {
+#if($serviceModel.metadata.serviceId == "S3")
+            [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+                  auto credsResolver = Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider );
+                  return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{clientConfiguration.smithyIdentityProviderSupplier(*this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+                  };
+            }()
+#else
 #foreach($entry in $AuthSchemeMapEntries)
             {${entry}{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+#end
 #end
         })
 {}
 
 /* Legacy constructors due deprecation */
+#if($serviceModel.metadata.serviceId == "S3")
+${className}::${className}(const Client::ClientConfiguration& clientConfiguration,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+        bool useVirtualAddressing /*= true*/,
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
+    AwsSmithyClientT(
+      ${clientConfiguration}{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
+      GetServiceName(),
+      "${metadata.serviceId}",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
+      {
+            [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+                  return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+#end
+#end
+                  };
+            }()
+        })
+{}
+
+${className}::${className}(
+        const Aws::Auth::AWSCredentials& credentials,
+        const Client::ClientConfiguration& clientConfiguration,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+        bool useVirtualAddressing /*= true*/,
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
+    AwsSmithyClientT(
+      ${clientConfiguration}{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
+      GetServiceName(),
+      "${metadata.serviceId}",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
+      {
+            [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+                  auto credsResolver = Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials );
+                  return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+#end
+#end
+                  };
+            }()
+        })
+{}
+
+${className}::${className}(
+        const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+        const Client::ClientConfiguration& clientConfiguration,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
+        bool useVirtualAddressing /*= true*/,
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
+    AwsSmithyClientT(
+      ${clientConfiguration}{clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption},
+      GetServiceName(),
+      "${metadata.serviceId}",
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
+      {
+            [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+                  auto credsResolver = Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider );
+                  return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false}},
+#end
+#end
+                  };
+            }()
+        })
+{}
+
+${className}& ${className}::operator=(const ${className} &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+
+    AwsSmithyClientBase::deepCopy(Aws::MakeUnique<${clientConfiguration}>(GetServiceName(), rhs.m_clientConfiguration),
+                   GetServiceName(),
+                   Aws::Http::CreateHttpClient(rhs.m_clientConfiguration),
+                   Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(GetServiceName()));
+    m_endpointProvider = rhs.m_endpointProvider;
+    m_authSchemeResolver = Aws::MakeShared<${AuthSchemeResolver}>(GetServiceName());
+    m_errorMarshaller = Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(GetServiceName());
+    if (m_clientConfig.get()) {
+      m_clientConfiguration = *static_cast<${clientConfiguration}*>(m_clientConfig.get());
+      m_serializer = Aws::MakeShared<smithy::client::XmlOutcomeSerializer>(GetServiceName(), m_clientConfiguration.telemetryProvider);
+    }
+    initClient();
+    m_authSchemes =
+      [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+        auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+        return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region),  m_clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+            };
+      }();
+    return *this;
+}
+
+
+${className}& ${className}::operator=(${className} &&rhs) noexcept {
+  if (&rhs == this) {
+    return *this;
+  }
+  m_endpointProvider = std::move(rhs.m_endpointProvider);
+  m_authSchemeResolver = std::move(rhs.m_authSchemeResolver);
+  m_errorMarshaller = std::move(rhs.m_errorMarshaller);
+  if (m_clientConfig.get()) {
+    m_clientConfiguration = *static_cast<${clientConfiguration}*>(m_clientConfig.get());
+    m_serializer = std::move(rhs.m_serializer);
+  }
+
+  m_authSchemes =
+      [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+        auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+        return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region),  m_clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+            };
+      }();
+  return *this;
+}
+/* copy/move constructors */
+${className}::${className}(const ${className} &rhs) :
+    AwsSmithyClientT(rhs),Aws::Client::ClientWithAsyncTemplateMethods<S3Client>() {
+     m_authSchemes =
+          [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
+            auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+            return {
+#foreach($entry in $AuthSchemeMapEntries)
+#if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
+                  {${entry}{Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region), m_clientConfiguration.payloadSigningPolicy, false}},
+#else
+                  {${entry}{credsResolver, GetServiceName(), Aws::Region::ComputeSignerRegion(m_clientConfiguration.region),  m_clientConfiguration.payloadSigningPolicy, false}},
+#end
+#end
+                };
+          }();
+    }
+
+S3Client::S3Client(${className} &&rhs) noexcept :
+    AwsSmithyClientT(std::move(rhs)) {}
+#else
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
@@ -136,6 +365,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 #end
         })
 {}
+#end
 #end
 /* End of legacy constructors due deprecation */
 

@@ -154,7 +154,7 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setServiceName(c2jServiceModel.getServiceName());
         serviceModel.setAuthSchemes(c2jServiceModel.getMetadata().getAuth());
         //if auth field is not present, check for SignatureVersion
-        if( (c2jServiceModel.getMetadata().getAuth() == null || c2jServiceModel.getMetadata().getAuth().isEmpty() ) 
+        if( (c2jServiceModel.getMetadata().getAuth() == null || c2jServiceModel.getMetadata().getAuth().isEmpty() )
             && (c2jServiceModel.getMetadata().getSignatureVersion() != null))
         {
             serviceModel.setAuthSchemes(Arrays.asList(c2jServiceModel.getMetadata().getSignatureVersion()));
@@ -196,6 +196,7 @@ public class C2jModelToGeneratorModelTransformer {
             shortenedRules += "\0";
             serviceModel.setEndpointRules(shortenedRules);
         }
+        serviceModel.setRawEndpointRules(c2jServiceModel.getEndpointRules() );
         serviceModel.setEndpointRuleSetModel(c2jServiceModel.getEndpointRuleSetModel());
         serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());
         serviceModel.setClientContextParams(c2jServiceModel.getClientContextParams());
@@ -327,7 +328,7 @@ public class C2jModelToGeneratorModelTransformer {
                     if (shape.getMembers().size() == 1) {
                         shape.getMembers().entrySet().stream().forEach(memberEntry -> {
                             /**
-                             * Note: this is complicated and potentially not completely correct. 
+                             * Note: this is complicated and potentially not completely correct.
                              * So touch at your own risk until we have protocol tests supported.
                              * In summary:
                              * - we need to determine how to serialize events in eventstream
@@ -339,8 +340,8 @@ public class C2jModelToGeneratorModelTransformer {
                              * - if there is more than one field then parent shape is the payload
                              */
                             Shape memberShape = memberEntry.getValue().getShape();
-                            if (memberShape.isString() || 
-                                memberShape.isBlob() || 
+                            if (memberShape.isString() ||
+                                memberShape.isBlob() ||
                                 memberShape.isStructure()) {
                                 memberEntry.getValue().setEventPayload(true);
                                 shape.setEventPayloadMemberName(memberEntry.getKey());
