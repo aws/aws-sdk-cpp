@@ -411,37 +411,32 @@ int CurlHttpClient::CurlProgressCallback(void *userdata, double, double, double,
     CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
 
     const std::shared_ptr<Aws::IOStream>& ioStream = context->m_request->GetContentBody();
-    if (ioStream->eof())
-    {
-        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
-        return 0;
+    if (!ioStream || ioStream->bad()) {
+      AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Input stream is bad!");
+      return 1;  // libcurl abort the transfer and return CURLE_ABORTED_BY_CALLBACK.
     }
 
-    if (context->m_client->m_perfMode == TransferLibPerformanceMode::LOW_LATENCY)
-    {
-        // forcing "underflow" on the IOStream with ConcurrentStreamBuf to move data from back buffer to put area
-        int peekVal = ioStream->peek();
-        AWS_UNREFERENCED_PARAM(peekVal);
-
-        // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
-        // This is a spin pause-unpause in case of no data provided by a customer callback
-        // But otherwise curl will slow down the transfer and start calling as at frequency of 1s
-        //   see https://curl.se/mail/lib-2020-07/0046.html
-        // we should use multi handle or another HTTP client in the future to avoid this
-        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+    const int peekVal = ioStream->peek();
+    if (ioStream->eof() && peekVal == std::char_traits<char>::eof()) {
+      // curl won't call ReadBody after the last ReadBody call returns 0
+      // however, this Progress method is still called few times for incoming data.
+      return 0;
     }
-    else
-    {
-        char output[1];
-        if (ioStream->readsome(output, 1) > 0)
-        {
-            ioStream->unget();
-            if (!ioStream->good())
-            {
-                AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG, "Input stream failed to perform unget().");
-            }
-            curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
-        }
+
+    if (context->m_client->m_perfMode == TransferLibPerformanceMode::LOW_LATENCY) {
+      AWS_UNREFERENCED_PARAM(peekVal);
+      // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
+      // This is a spin pause-unpause in case of no data provided by a customer callback
+      // But otherwise curl will slow down the transfer and start calling as at frequency of 1s
+      //   see https://curl.se/mail/lib-2020-07/0046.html
+      // we should use multi handle or another HTTP client in the future to avoid this
+      curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+    } else {
+      if (peekVal != std::char_traits<char>::eof()) {
+        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
+      } else {
+        curl_easy_pause(context->m_curlHandle, CURLPAUSE_SEND);
+      }
     }
 
     return 0;

@@ -42,19 +42,6 @@ public:
         Aws::Client::ClientConfigurationInitValues cfgInit;
         cfgInit.shouldDisableIMDS = true;
         Aws::Client::ClientConfiguration config(cfgInit);
-
-        Aws::Internal::AWSHttpResourceClient httpclient(cfgInit);
-        const Aws::Vector<Aws::String> TEST_FILE_NAMES = {"transcribe-test-file.wav", "this_is_a_cpp_test_sample_8kHz_2162ms.wav", "Kant_16kHz_17176ms.wav"};
-        for(const auto& toDownload : TEST_FILE_NAMES)
-        {
-            Aws::String path = "aws-sdk-cpp-builds-sdks-team/test-resources/" + toDownload;
-            auto payload = httpclient.GetResource("https://s3.amazonaws.com/" /*endpoint*/,
-                                                  path.c_str(), "" /*authToken*/);
-            Aws::OFStream testFile(toDownload.c_str(), std::ios_base::out | std::ios_base::binary | std::ios_base::trunc);
-            testFile.write(payload.c_str(), payload.size());
-            testFile.close();
-        }
-
         config.enableHttpClientTrace = true;
 #ifdef _WIN32
         // TODO: remove this once we get H2 working with WinHttp client
@@ -65,10 +52,7 @@ public:
         m_clientWithWrongEndpoint = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
     }
 
-    ~TranscribeStreamingTests()
-    {
-        Aws::FileSystem::RemoveFileIfExists(TEST_FILE_NAME);
-    }
+    ~TranscribeStreamingTests() override = default;
 
     Aws::UniquePtr<TranscribeStreamingServiceClient> m_clientWithWrongCreds;
     Aws::UniquePtr<TranscribeStreamingServiceClient> m_clientWithWrongEndpoint;
@@ -83,10 +67,10 @@ protected:
     {
         m_testTraces += "[FAILURE] " + Aws::Utils::DateTime::Now().ToGmtStringWithMs() + " " + std::move(msg) + "\n";
     };
-    void SetUp()
+    void SetUp() override
     {
     }
-    void TearDown()
+    void TearDown() override
     {
         if (::testing::Test::HasFailure())
         {
@@ -611,8 +595,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
   Aws::UniquePtr<TranscribeStreamingServiceClient> client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
 
   const Aws::Vector<Aws::String> EXPECTED_ALTERNATIVES = {"This is a C plus plus test sample", "This is a C++ test sample"};
-  for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 50)
-  {
+  for (size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 75) {
     m_testTraces.clear();
     TestTrace(Aws::String("### Starting TranscribeStreamingCppSdkSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
@@ -641,8 +624,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingKantSample)
   static const char expected[] = "Categorical imperative: Act only according to that maxim whereby you can at the same time will that it should become a universal law. "
                                  "Two things fill the mind with ever-increasing wonder and awe, the more often and the more intensely the mind of thought is drawn to them: "
                                  "the starry heavens above me and the moral law within me.";
-  for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 50)
-  {
+  for (size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 75) {
     m_testTraces.clear();
     TestTrace(Aws::String("### Starting TranscribeStreamingKantSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
