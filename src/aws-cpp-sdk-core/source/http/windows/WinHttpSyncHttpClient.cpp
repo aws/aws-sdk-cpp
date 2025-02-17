@@ -533,7 +533,7 @@ void* WinHttpSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
 {
     LPCWSTR accept[2] = { nullptr, nullptr };
 
-    DWORD requestFlags = request->GetUri().GetScheme() == Scheme::HTTPS && m_verifySSL ? WINHTTP_FLAG_SECURE : 0;
+    DWORD requestFlags = request->GetUri().GetScheme() == Scheme::HTTPS ? WINHTTP_FLAG_SECURE : 0;
     if (m_usingProxy) {
         // Avoid force adding "Cache-Control: no-cache" header.
         requestFlags |= WINHTTP_FLAG_REFRESH;
