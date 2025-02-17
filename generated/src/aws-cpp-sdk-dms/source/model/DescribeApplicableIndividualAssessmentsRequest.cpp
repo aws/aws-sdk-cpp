@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 DescribeApplicableIndividualAssessmentsRequest::DescribeApplicableIndividualAssessmentsRequest() : 
     m_replicationTaskArnHasBeenSet(false),
     m_replicationInstanceArnHasBeenSet(false),
+    m_replicationConfigArnHasBeenSet(false),
     m_sourceEngineNameHasBeenSet(false),
     m_targetEngineNameHasBeenSet(false),
     m_migrationType(MigrationTypeValue::NOT_SET),
@@ -38,6 +39,12 @@ Aws::String DescribeApplicableIndividualAssessmentsRequest::SerializePayload() c
   if(m_replicationInstanceArnHasBeenSet)
   {
    payload.WithString("ReplicationInstanceArn", m_replicationInstanceArn);
+
+  }
+
+  if(m_replicationConfigArnHasBeenSet)
+  {
+   payload.WithString("ReplicationConfigArn", m_replicationConfigArn);
 
   }
 

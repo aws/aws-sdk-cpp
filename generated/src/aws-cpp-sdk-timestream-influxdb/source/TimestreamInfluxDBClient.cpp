@@ -19,16 +19,22 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrorMarshaller.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBEndpointProvider.h>
+#include <aws/timestream-influxdb/model/CreateDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/CreateDbInstanceRequest.h>
 #include <aws/timestream-influxdb/model/CreateDbParameterGroupRequest.h>
+#include <aws/timestream-influxdb/model/DeleteDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/DeleteDbInstanceRequest.h>
+#include <aws/timestream-influxdb/model/GetDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/GetDbInstanceRequest.h>
 #include <aws/timestream-influxdb/model/GetDbParameterGroupRequest.h>
+#include <aws/timestream-influxdb/model/ListDbClustersRequest.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesRequest.h>
+#include <aws/timestream-influxdb/model/ListDbInstancesForClusterRequest.h>
 #include <aws/timestream-influxdb/model/ListDbParameterGroupsRequest.h>
 #include <aws/timestream-influxdb/model/ListTagsForResourceRequest.h>
 #include <aws/timestream-influxdb/model/TagResourceRequest.h>
 #include <aws/timestream-influxdb/model/UntagResourceRequest.h>
+#include <aws/timestream-influxdb/model/UpdateDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/UpdateDbInstanceRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -160,6 +166,28 @@ void TimestreamInfluxDBClient::OverrideEndpoint(const Aws::String& endpoint)
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
+CreateDbClusterOutcome TimestreamInfluxDBClient::CreateDbCluster(const CreateDbClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateDbCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDbCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CreateDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDbCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDbClusterOutcome>(
+    [&]()-> CreateDbClusterOutcome {
+      return CreateDbClusterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateDbInstanceOutcome TimestreamInfluxDBClient::CreateDbInstance(const CreateDbInstanceRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateDbInstance);
@@ -204,6 +232,28 @@ CreateDbParameterGroupOutcome TimestreamInfluxDBClient::CreateDbParameterGroup(c
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteDbClusterOutcome TimestreamInfluxDBClient::DeleteDbCluster(const DeleteDbClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteDbCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDbCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDbCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDbClusterOutcome>(
+    [&]()-> DeleteDbClusterOutcome {
+      return DeleteDbClusterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteDbInstanceOutcome TimestreamInfluxDBClient::DeleteDbInstance(const DeleteDbInstanceRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteDbInstance);
@@ -218,6 +268,28 @@ DeleteDbInstanceOutcome TimestreamInfluxDBClient::DeleteDbInstance(const DeleteD
   return TracingUtils::MakeCallWithTiming<DeleteDbInstanceOutcome>(
     [&]()-> DeleteDbInstanceOutcome {
       return DeleteDbInstanceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDbClusterOutcome TimestreamInfluxDBClient::GetDbCluster(const GetDbClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDbCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDbCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDbCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDbClusterOutcome>(
+    [&]()-> GetDbClusterOutcome {
+      return GetDbClusterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
@@ -270,6 +342,28 @@ GetDbParameterGroupOutcome TimestreamInfluxDBClient::GetDbParameterGroup(const G
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListDbClustersOutcome TimestreamInfluxDBClient::ListDbClusters(const ListDbClustersRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDbClusters);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDbClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDbClusters, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDbClusters, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDbClusters",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDbClustersOutcome>(
+    [&]()-> ListDbClustersOutcome {
+      return ListDbClustersOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListDbInstancesOutcome TimestreamInfluxDBClient::ListDbInstances(const ListDbInstancesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListDbInstances);
@@ -284,6 +378,28 @@ ListDbInstancesOutcome TimestreamInfluxDBClient::ListDbInstances(const ListDbIns
   return TracingUtils::MakeCallWithTiming<ListDbInstancesOutcome>(
     [&]()-> ListDbInstancesOutcome {
       return ListDbInstancesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDbInstancesForClusterOutcome TimestreamInfluxDBClient::ListDbInstancesForCluster(const ListDbInstancesForClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDbInstancesForCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDbInstancesForCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListDbInstancesForCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDbInstancesForCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDbInstancesForCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDbInstancesForClusterOutcome>(
+    [&]()-> ListDbInstancesForClusterOutcome {
+      return ListDbInstancesForClusterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
@@ -372,6 +488,28 @@ UntagResourceOutcome TimestreamInfluxDBClient::UntagResource(const UntagResource
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateDbClusterOutcome TimestreamInfluxDBClient::UpdateDbCluster(const UpdateDbClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateDbCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDbCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UpdateDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateDbCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDbCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateDbClusterOutcome>(
+    [&]()-> UpdateDbClusterOutcome {
+      return UpdateDbClusterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },

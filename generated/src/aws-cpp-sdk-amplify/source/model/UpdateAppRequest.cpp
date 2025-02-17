@@ -18,6 +18,7 @@ UpdateAppRequest::UpdateAppRequest() :
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_computeRoleArnHasBeenSet(false),
     m_iamServiceRoleArnHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_enableBranchAutoBuild(false),
@@ -60,6 +61,12 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_computeRoleArnHasBeenSet)
+  {
+   payload.WithString("computeRoleArn", m_computeRoleArn);
+
   }
 
   if(m_iamServiceRoleArnHasBeenSet)

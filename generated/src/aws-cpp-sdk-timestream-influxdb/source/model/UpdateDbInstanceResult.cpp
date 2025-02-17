@@ -25,7 +25,8 @@ UpdateDbInstanceResult::UpdateDbInstanceResult() :
     m_dbStorageType(DbStorageType::NOT_SET),
     m_allocatedStorage(0),
     m_deploymentType(DeploymentType::NOT_SET),
-    m_publiclyAccessible(false)
+    m_publiclyAccessible(false),
+    m_instanceMode(InstanceMode::NOT_SET)
 {
 }
 
@@ -155,6 +156,18 @@ UpdateDbInstanceResult& UpdateDbInstanceResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("influxAuthParametersSecretArn"))
   {
     m_influxAuthParametersSecretArn = jsonValue.GetString("influxAuthParametersSecretArn");
+
+  }
+
+  if(jsonValue.ValueExists("dbClusterId"))
+  {
+    m_dbClusterId = jsonValue.GetString("dbClusterId");
+
+  }
+
+  if(jsonValue.ValueExists("instanceMode"))
+  {
+    m_instanceMode = InstanceModeMapper::GetInstanceModeForName(jsonValue.GetString("instanceMode"));
 
   }
 
