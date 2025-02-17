@@ -104,8 +104,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The
+     * SSR Compute role allows the Amplify Hosting compute service to securely access
+     * specific Amazon Web Services resources based on the role's permissions. For more
+     * information about the SSR Compute role, see <a
+     * href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding
+     * an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+     */
+    inline const Aws::String& GetComputeRoleArn() const{ return m_computeRoleArn; }
+    inline bool ComputeRoleArnHasBeenSet() const { return m_computeRoleArnHasBeenSet; }
+    inline void SetComputeRoleArn(const Aws::String& value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn = value; }
+    inline void SetComputeRoleArn(Aws::String&& value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn = std::move(value); }
+    inline void SetComputeRoleArn(const char* value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn.assign(value); }
+    inline UpdateAppRequest& WithComputeRoleArn(const Aws::String& value) { SetComputeRoleArn(value); return *this;}
+    inline UpdateAppRequest& WithComputeRoleArn(Aws::String&& value) { SetComputeRoleArn(std::move(value)); return *this;}
+    inline UpdateAppRequest& WithComputeRoleArn(const char* value) { SetComputeRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify
+     * app.</p>
      */
     inline const Aws::String& GetIamServiceRoleArn() const{ return m_iamServiceRoleArn; }
     inline bool IamServiceRoleArnHasBeenSet() const { return m_iamServiceRoleArnHasBeenSet; }
@@ -353,6 +372,9 @@ namespace Model
 
     Platform m_platform;
     bool m_platformHasBeenSet = false;
+
+    Aws::String m_computeRoleArn;
+    bool m_computeRoleArnHasBeenSet = false;
 
     Aws::String m_iamServiceRoleArn;
     bool m_iamServiceRoleArnHasBeenSet = false;

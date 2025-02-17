@@ -36,7 +36,8 @@ UpdateBranchRequest::UpdateBranchRequest() :
     m_enablePullRequestPreviewHasBeenSet(false),
     m_pullRequestEnvironmentNameHasBeenSet(false),
     m_backendEnvironmentArnHasBeenSet(false),
-    m_backendHasBeenSet(false)
+    m_backendHasBeenSet(false),
+    m_computeRoleArnHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,12 @@ Aws::String UpdateBranchRequest::SerializePayload() const
   if(m_backendHasBeenSet)
   {
    payload.WithObject("backend", m_backend.Jsonize());
+
+  }
+
+  if(m_computeRoleArnHasBeenSet)
+  {
+   payload.WithString("computeRoleArn", m_computeRoleArn);
 
   }
 

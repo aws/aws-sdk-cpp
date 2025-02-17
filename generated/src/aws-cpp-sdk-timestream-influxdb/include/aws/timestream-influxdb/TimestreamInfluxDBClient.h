@@ -94,6 +94,31 @@ namespace TimestreamInfluxDB
         virtual ~TimestreamInfluxDBClient();
 
         /**
+         * <p>Creates a new Timestream for InfluxDB cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDbClusterOutcome CreateDbCluster(const Model::CreateDbClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDbCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDbClusterRequestT = Model::CreateDbClusterRequest>
+        Model::CreateDbClusterOutcomeCallable CreateDbClusterCallable(const CreateDbClusterRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamInfluxDBClient::CreateDbCluster, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDbCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDbClusterRequestT = Model::CreateDbClusterRequest>
+        void CreateDbClusterAsync(const CreateDbClusterRequestT& request, const CreateDbClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamInfluxDBClient::CreateDbCluster, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new Timestream for InfluxDB DB instance.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbInstance">AWS
@@ -146,6 +171,31 @@ namespace TimestreamInfluxDB
         }
 
         /**
+         * <p>Deletes a Timestream for InfluxDB cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDbClusterOutcome DeleteDbCluster(const Model::DeleteDbClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDbCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDbClusterRequestT = Model::DeleteDbClusterRequest>
+        Model::DeleteDbClusterOutcomeCallable DeleteDbClusterCallable(const DeleteDbClusterRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamInfluxDBClient::DeleteDbCluster, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDbCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDbClusterRequestT = Model::DeleteDbClusterRequest>
+        void DeleteDbClusterAsync(const DeleteDbClusterRequestT& request, const DeleteDbClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamInfluxDBClient::DeleteDbCluster, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a Timestream for InfluxDB DB instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbInstance">AWS
          * API Reference</a></p>
@@ -168,6 +218,32 @@ namespace TimestreamInfluxDB
         void DeleteDbInstanceAsync(const DeleteDbInstanceRequestT& request, const DeleteDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TimestreamInfluxDBClient::DeleteDbInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a Timestream for InfluxDB cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDbClusterOutcome GetDbCluster(const Model::GetDbClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDbCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDbClusterRequestT = Model::GetDbClusterRequest>
+        Model::GetDbClusterOutcomeCallable GetDbClusterCallable(const GetDbClusterRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamInfluxDBClient::GetDbCluster, request);
+        }
+
+        /**
+         * An Async wrapper for GetDbCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDbClusterRequestT = Model::GetDbClusterRequest>
+        void GetDbClusterAsync(const GetDbClusterRequestT& request, const GetDbClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamInfluxDBClient::GetDbCluster, request, handler, context);
         }
 
         /**
@@ -222,6 +298,32 @@ namespace TimestreamInfluxDB
         }
 
         /**
+         * <p>Returns a list of Timestream for InfluxDB DB clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDbClustersOutcome ListDbClusters(const Model::ListDbClustersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDbClusters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDbClustersRequestT = Model::ListDbClustersRequest>
+        Model::ListDbClustersOutcomeCallable ListDbClustersCallable(const ListDbClustersRequestT& request = {}) const
+        {
+            return SubmitCallable(&TimestreamInfluxDBClient::ListDbClusters, request);
+        }
+
+        /**
+         * An Async wrapper for ListDbClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDbClustersRequestT = Model::ListDbClustersRequest>
+        void ListDbClustersAsync(const ListDbClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDbClustersRequestT& request = {}) const
+        {
+            return SubmitAsync(&TimestreamInfluxDBClient::ListDbClusters, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of Timestream for InfluxDB DB instances.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstances">AWS
@@ -245,6 +347,32 @@ namespace TimestreamInfluxDB
         void ListDbInstancesAsync(const ListDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDbInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamInfluxDBClient::ListDbInstances, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of Timestream for InfluxDB clusters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDbInstancesForClusterOutcome ListDbInstancesForCluster(const Model::ListDbInstancesForClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDbInstancesForCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDbInstancesForClusterRequestT = Model::ListDbInstancesForClusterRequest>
+        Model::ListDbInstancesForClusterOutcomeCallable ListDbInstancesForClusterCallable(const ListDbInstancesForClusterRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamInfluxDBClient::ListDbInstancesForCluster, request);
+        }
+
+        /**
+         * An Async wrapper for ListDbInstancesForCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDbInstancesForClusterRequestT = Model::ListDbInstancesForClusterRequest>
+        void ListDbInstancesForClusterAsync(const ListDbInstancesForClusterRequestT& request, const ListDbInstancesForClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamInfluxDBClient::ListDbInstancesForCluster, request, handler, context);
         }
 
         /**
@@ -347,6 +475,31 @@ namespace TimestreamInfluxDB
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TimestreamInfluxDBClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a Timestream for InfluxDB cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDbClusterOutcome UpdateDbCluster(const Model::UpdateDbClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDbCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDbClusterRequestT = Model::UpdateDbClusterRequest>
+        Model::UpdateDbClusterOutcomeCallable UpdateDbClusterCallable(const UpdateDbClusterRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamInfluxDBClient::UpdateDbCluster, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDbCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDbClusterRequestT = Model::UpdateDbClusterRequest>
+        void UpdateDbClusterAsync(const UpdateDbClusterRequestT& request, const UpdateDbClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamInfluxDBClient::UpdateDbCluster, request, handler, context);
         }
 
         /**

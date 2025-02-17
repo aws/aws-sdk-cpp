@@ -70,6 +70,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Amazon Resource Name (ARN) of a serverless replication on which you want to
+     * base the default list of individual assessments.</p>
+     */
+    inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
+    inline bool ReplicationConfigArnHasBeenSet() const { return m_replicationConfigArnHasBeenSet; }
+    inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = value; }
+    inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::move(value); }
+    inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn.assign(value); }
+    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
+    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
+    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Name of a database engine that the specified replication instance supports as
      * a source.</p>
      */
@@ -146,6 +161,9 @@ namespace Model
 
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet = false;
+
+    Aws::String m_replicationConfigArn;
+    bool m_replicationConfigArnHasBeenSet = false;
 
     Aws::String m_sourceEngineName;
     bool m_sourceEngineNameHasBeenSet = false;

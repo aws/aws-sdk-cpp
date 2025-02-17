@@ -29,6 +29,7 @@ App::App() :
     m_platformHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
+    m_computeRoleArnHasBeenSet(false),
     m_iamServiceRoleArnHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_defaultDomainHasBeenSet(false),
@@ -127,6 +128,13 @@ App& App::operator =(JsonView jsonValue)
     m_updateTime = jsonValue.GetDouble("updateTime");
 
     m_updateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("computeRoleArn"))
+  {
+    m_computeRoleArn = jsonValue.GetString("computeRoleArn");
+
+    m_computeRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("iamServiceRoleArn"))
@@ -325,6 +333,12 @@ JsonValue App::Jsonize() const
   if(m_updateTimeHasBeenSet)
   {
    payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_computeRoleArnHasBeenSet)
+  {
+   payload.WithString("computeRoleArn", m_computeRoleArn);
+
   }
 
   if(m_iamServiceRoleArnHasBeenSet)

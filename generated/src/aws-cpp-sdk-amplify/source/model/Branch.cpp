@@ -52,7 +52,8 @@ Branch::Branch() :
     m_destinationBranchHasBeenSet(false),
     m_sourceBranchHasBeenSet(false),
     m_backendEnvironmentArnHasBeenSet(false),
-    m_backendHasBeenSet(false)
+    m_backendHasBeenSet(false),
+    m_computeRoleArnHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,13 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_backendHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computeRoleArn"))
+  {
+    m_computeRoleArn = jsonValue.GetString("computeRoleArn");
+
+    m_computeRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -461,6 +469,12 @@ JsonValue Branch::Jsonize() const
   if(m_backendHasBeenSet)
   {
    payload.WithObject("backend", m_backend.Jsonize());
+
+  }
+
+  if(m_computeRoleArnHasBeenSet)
+  {
+   payload.WithString("computeRoleArn", m_computeRoleArn);
 
   }
 

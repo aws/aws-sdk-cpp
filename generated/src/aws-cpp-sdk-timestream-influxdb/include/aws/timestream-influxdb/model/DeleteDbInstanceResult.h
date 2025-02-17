@@ -13,6 +13,7 @@
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/InstanceMode.h>
 #include <utility>
 
 namespace Aws
@@ -275,6 +276,30 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
+     */
+    inline const Aws::String& GetDbClusterId() const{ return m_dbClusterId; }
+    inline void SetDbClusterId(const Aws::String& value) { m_dbClusterId = value; }
+    inline void SetDbClusterId(Aws::String&& value) { m_dbClusterId = std::move(value); }
+    inline void SetDbClusterId(const char* value) { m_dbClusterId.assign(value); }
+    inline DeleteDbInstanceResult& WithDbClusterId(const Aws::String& value) { SetDbClusterId(value); return *this;}
+    inline DeleteDbInstanceResult& WithDbClusterId(Aws::String&& value) { SetDbClusterId(std::move(value)); return *this;}
+    inline DeleteDbInstanceResult& WithDbClusterId(const char* value) { SetDbClusterId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the DbInstance's role in the cluster.</p>
+     */
+    inline const InstanceMode& GetInstanceMode() const{ return m_instanceMode; }
+    inline void SetInstanceMode(const InstanceMode& value) { m_instanceMode = value; }
+    inline void SetInstanceMode(InstanceMode&& value) { m_instanceMode = std::move(value); }
+    inline DeleteDbInstanceResult& WithInstanceMode(const InstanceMode& value) { SetInstanceMode(value); return *this;}
+    inline DeleteDbInstanceResult& WithInstanceMode(InstanceMode&& value) { SetInstanceMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -323,6 +348,10 @@ namespace Model
     LogDeliveryConfiguration m_logDeliveryConfiguration;
 
     Aws::String m_influxAuthParametersSecretArn;
+
+    Aws::String m_dbClusterId;
+
+    InstanceMode m_instanceMode;
 
     Aws::String m_requestId;
   };

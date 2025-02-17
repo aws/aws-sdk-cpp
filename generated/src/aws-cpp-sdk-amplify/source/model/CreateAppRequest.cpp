@@ -18,6 +18,7 @@ CreateAppRequest::CreateAppRequest() :
     m_repositoryHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_computeRoleArnHasBeenSet(false),
     m_iamServiceRoleArnHasBeenSet(false),
     m_oauthTokenHasBeenSet(false),
     m_accessTokenHasBeenSet(false),
@@ -66,6 +67,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_computeRoleArnHasBeenSet)
+  {
+   payload.WithString("computeRoleArn", m_computeRoleArn);
+
   }
 
   if(m_iamServiceRoleArnHasBeenSet)
