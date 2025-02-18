@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The fair share policy for a scheduling policy.</p><p><h3>See Also:</h3>   <a
+   * <p>The fair-share scheduling policy details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/FairsharePolicy">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The amount of time (in seconds) to use to calculate a fair share percentage
-     * for each fair share identifier in use. A value of zero (0) indicates the default
+     * <p>The amount of time (in seconds) to use to calculate a fair-share percentage
+     * for each share identifier in use. A value of zero (0) indicates the default
      * minimum time window (600 seconds). The maximum supported value is 604800 (1
      * week).</p> <p>The decay allows for more recently run jobs to have more weight
      * than jobs that ran earlier. Consider adjusting this number if you have jobs that
@@ -57,19 +57,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>A value used to reserve some of the available maximum vCPU for fair share
+     * <p>A value used to reserve some of the available maximum vCPU for share
      * identifiers that aren't already used.</p> <p>The reserved ratio is
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
-     * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
+     * <code> <i>ActiveFairShares</i> </code> is the number of active share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
      * indicates that Batch reserves 50% of the maximum available vCPU if there's only
-     * one fair share identifier. It reserves 25% if there are two fair share
-     * identifiers. It reserves 12.5% if there are three fair share identifiers. A
+     * one share identifier. It reserves 25% if there are two share identifiers. It
+     * reserves 12.5% if there are three share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
-     * 25% of the maximum available vCPU if there's only one fair share identifier,
-     * 6.25% if there are two fair share identifiers, and 1.56% if there are three fair
-     * share identifiers.</p> <p>The minimum value is 0 and the maximum value is
-     * 99.</p>
+     * 25% of the maximum available vCPU if there's only one share identifier, 6.25% if
+     * there are two fair share identifiers, and 1.56% if there are three share
+     * identifiers.</p> <p>The minimum value is 0 and the maximum value is 99.</p>
      */
     inline int GetComputeReservation() const{ return m_computeReservation; }
     inline bool ComputeReservationHasBeenSet() const { return m_computeReservationHasBeenSet; }
@@ -80,8 +79,8 @@ namespace Model
     ///@{
     /**
      * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
-     * for the fair share identifiers for the fair share policy. Fair share identifiers
-     * that aren't included have a default weight of <code>1.0</code>.</p>
+     * for the share identifiers for the fair-share policy. Share identifiers that
+     * aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline const Aws::Vector<ShareAttributes>& GetShareDistribution() const{ return m_shareDistribution; }
     inline bool ShareDistributionHasBeenSet() const { return m_shareDistributionHasBeenSet; }

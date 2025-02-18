@@ -28,6 +28,7 @@ namespace Aws
         static const int MEDIAPACKAGE_ORIGIN_ENDPOINT_HASH = HashingUtils::HashString("MEDIAPACKAGE_ORIGIN_ENDPOINT");
         static const int MEDIACONNECT_FLOW_HASH = HashingUtils::HashString("MEDIACONNECT_FLOW");
         static const int S3_BUCKET_HASH = HashingUtils::HashString("S3_BUCKET");
+        static const int MEDIATAILOR_PLAYBACK_CONFIGURATION_HASH = HashingUtils::HashString("MEDIATAILOR_PLAYBACK_CONFIGURATION");
 
 
         CloudWatchAlarmTemplateTargetResourceType GetCloudWatchAlarmTemplateTargetResourceTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return CloudWatchAlarmTemplateTargetResourceType::S3_BUCKET;
           }
+          else if (hashCode == MEDIATAILOR_PLAYBACK_CONFIGURATION_HASH)
+          {
+            return CloudWatchAlarmTemplateTargetResourceType::MEDIATAILOR_PLAYBACK_CONFIGURATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "MEDIACONNECT_FLOW";
           case CloudWatchAlarmTemplateTargetResourceType::S3_BUCKET:
             return "S3_BUCKET";
+          case CloudWatchAlarmTemplateTargetResourceType::MEDIATAILOR_PLAYBACK_CONFIGURATION:
+            return "MEDIATAILOR_PLAYBACK_CONFIGURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -23,7 +23,8 @@ namespace Model
     MEDIAPACKAGE_CHANNEL,
     MEDIAPACKAGE_ORIGIN_ENDPOINT,
     MEDIACONNECT_FLOW,
-    S3_BUCKET
+    S3_BUCKET,
+    MEDIATAILOR_PLAYBACK_CONFIGURATION
   };
 
 namespace CloudWatchAlarmTemplateTargetResourceTypeMapper

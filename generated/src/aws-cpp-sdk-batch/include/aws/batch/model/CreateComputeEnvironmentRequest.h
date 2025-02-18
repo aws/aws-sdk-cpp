@@ -106,8 +106,8 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of vCPUs for an unmanaged compute environment. This
-     * parameter is only used for fair share scheduling to reserve vCPU capacity for
-     * new share identifiers. If this parameter isn't provided for a fair share job
+     * parameter is only used for fair-share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter isn't provided for a fair-share job
      * queue, no vCPU capacity is reserved.</p>  <p>This parameter is only
      * supported when the <code>type</code> parameter is set to
      * <code>UNMANAGED</code>.</p> 

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
+#include <aws/emr-containers/model/ManagedLogs.h>
 #include <aws/emr-containers/model/PersistentAppUI.h>
 #include <aws/emr-containers/model/CloudWatchMonitoringConfiguration.h>
 #include <aws/emr-containers/model/S3MonitoringConfiguration.h>
@@ -39,6 +40,18 @@ namespace Model
     AWS_EMRCONTAINERS_API MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The entity that controls configuration for managed logs.</p>
+     */
+    inline const ManagedLogs& GetManagedLogs() const{ return m_managedLogs; }
+    inline bool ManagedLogsHasBeenSet() const { return m_managedLogsHasBeenSet; }
+    inline void SetManagedLogs(const ManagedLogs& value) { m_managedLogsHasBeenSet = true; m_managedLogs = value; }
+    inline void SetManagedLogs(ManagedLogs&& value) { m_managedLogsHasBeenSet = true; m_managedLogs = std::move(value); }
+    inline MonitoringConfiguration& WithManagedLogs(const ManagedLogs& value) { SetManagedLogs(value); return *this;}
+    inline MonitoringConfiguration& WithManagedLogs(ManagedLogs&& value) { SetManagedLogs(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -88,6 +101,9 @@ namespace Model
     inline MonitoringConfiguration& WithContainerLogRotationConfiguration(ContainerLogRotationConfiguration&& value) { SetContainerLogRotationConfiguration(std::move(value)); return *this;}
     ///@}
   private:
+
+    ManagedLogs m_managedLogs;
+    bool m_managedLogsHasBeenSet = false;
 
     PersistentAppUI m_persistentAppUI;
     bool m_persistentAppUIHasBeenSet = false;

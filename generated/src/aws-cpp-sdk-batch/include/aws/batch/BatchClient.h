@@ -685,10 +685,10 @@ namespace Batch
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
          * definition parameters in a <code>resourceRequirements</code> object that's
          * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
-         * queues with a scheduling policy are limited to 500 active fair share identifiers
-         * at a time. </p>   <p>Jobs that run on Fargate resources can't
-         * be guaranteed to run for more than 14 days. This is because, after 14 days,
-         * Fargate resources might become unavailable and job might be terminated.</p>
+         * queues with a scheduling policy are limited to 500 active share identifiers at a
+         * time. </p>   <p>Jobs that run on Fargate resources can't be
+         * guaranteed to run for more than 14 days. This is because, after 14 days, Fargate
+         * resources might become unavailable and job might be terminated.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS API
          * Reference</a></p>
