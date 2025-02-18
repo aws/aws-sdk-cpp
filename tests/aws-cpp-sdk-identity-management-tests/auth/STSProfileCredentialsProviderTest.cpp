@@ -34,12 +34,17 @@ public:
     Model::AssumeRoleOutcome AssumeRole(const Model::AssumeRoleRequest& request) const override
     {
         m_capturedRequest = request;
-        return m_mockedOutcome;
+        if (!m_mockedOutcomes.empty()) {
+          auto outcome = m_mockedOutcomes.front();
+          m_mockedOutcomes.pop();
+          return outcome;
+        }
+        return STSError{};
     }
 
     void MockAssumeRole(const Model::AssumeRoleOutcome& outcome)
     {
-        m_mockedOutcome = outcome;
+        m_mockedOutcomes.push(outcome);
     }
 
     const Model::AssumeRoleRequest& CapturedRequest() const
@@ -54,7 +59,7 @@ public:
 
 private:
     mutable Model::AssumeRoleRequest m_capturedRequest;
-    Model::AssumeRoleOutcome m_mockedOutcome;
+    mutable Aws::Queue<Model::AssumeRoleOutcome> m_mockedOutcomes;
     AWSCredentials m_credentials;
 };
 
@@ -620,5 +625,73 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleRecursivelyCircularReference
     auto actualCredentials = credsProvider.GetAWSCredentials();
 
     ASSERT_TRUE(actualCredentials.IsExpiredOrEmpty());
+}
+
+TEST_F(STSProfileCredentialsProviderTest, ShouldRefreshCredentialsNearExpiry)
+{
+    Aws::OFStream configFile {m_configFilename.c_str(), Aws::OFStream::out | Aws::OFStream::trunc};
+
+    configFile << std::endl;
+    configFile << "[default]" << std::endl;
+    configFile << "source_profile = default" << std::endl;
+    configFile << "role_arn = " << ROLE_ARN_1 << std::endl;
+    configFile << "aws_access_key_id = " << ACCESS_KEY_ID_1 << std::endl;
+    configFile << "aws_secret_access_key = " << SECRET_ACCESS_KEY_ID_1 << std::endl;
+    configFile.close();
+    Aws::Config::ReloadCachedConfigFile();
+
+    constexpr auto roleSessionDuration = std::chrono::seconds(5);
+    const DateTime expiryTime{DateTime::Now() + roleSessionDuration};
+
+    Model::Credentials stsCredentials;
+    stsCredentials.WithAccessKeyId(ACCESS_KEY_ID_2)
+        .WithSecretAccessKey(SECRET_ACCESS_KEY_ID_2)
+        .WithSessionToken(SESSION_TOKEN)
+        .WithExpiration(expiryTime);
+
+    Model::Credentials refreshedStsCredentials;
+    refreshedStsCredentials.WithAccessKeyId(ACCESS_KEY_ID_3)
+        .WithSecretAccessKey(SECRET_ACCESS_KEY_ID_3)
+        .WithSessionToken(SESSION_TOKEN)
+        .WithExpiration(expiryTime);
+
+    Model::AssumeRoleResult mockResult;
+    mockResult.SetCredentials(stsCredentials);
+    Model::AssumeRoleResult refreshedMockResult;
+    refreshedMockResult.SetCredentials(refreshedStsCredentials);
+    Aws::UniquePtr<MockSTSClient> stsClient;
+    std::once_flag stsClientInitialized;
+
+    int stsCallCounter = 0;
+    STSProfileCredentialsProvider credsProvider("default", std::chrono::minutes(60), [&](const AWSCredentials& creds)
+        {
+            ++stsCallCounter;
+            std::call_once(stsClientInitialized, [&] {
+              stsClient = Aws::MakeUnique<MockSTSClient>(CLASS_TAG, creds);
+              stsClient->MockAssumeRole(mockResult);
+              stsClient->MockAssumeRole(refreshedMockResult);
+            });
+            return stsClient.get();
+        });
+
+    auto actualCredentials = credsProvider.GetAWSCredentials();
+
+    ASSERT_STREQ(ACCESS_KEY_ID_2, actualCredentials.GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ(SECRET_ACCESS_KEY_ID_2, actualCredentials.GetAWSSecretKey().c_str());
+    ASSERT_STREQ(SESSION_TOKEN, actualCredentials.GetSessionToken().c_str());
+    ASSERT_EQ(expiryTime, actualCredentials.GetExpiration());
+
+    ASSERT_EQ(1, stsCallCounter);
+    ASSERT_TRUE(stsClient);
+    ASSERT_STREQ(ACCESS_KEY_ID_1, stsClient->Credentials().GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ(SECRET_ACCESS_KEY_ID_1, stsClient->Credentials().GetAWSSecretKey().c_str());
+
+    actualCredentials = credsProvider.GetAWSCredentials();
+    ASSERT_STREQ(ACCESS_KEY_ID_3, actualCredentials.GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ(SECRET_ACCESS_KEY_ID_3, actualCredentials.GetAWSSecretKey().c_str());
+    ASSERT_STREQ(SESSION_TOKEN, actualCredentials.GetSessionToken().c_str());
+    ASSERT_EQ(expiryTime, actualCredentials.GetExpiration());
+    //should have called refresh
+    ASSERT_EQ(2, stsCallCounter);
 }
 } // namespace
