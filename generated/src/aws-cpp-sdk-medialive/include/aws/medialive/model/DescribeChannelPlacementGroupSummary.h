@@ -114,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * An array with one item, which is the signle Node that is associated with the
+     * An array with one item, which is the single Node that is associated with the
      * ChannelPlacementGroup.
      */
     inline const Aws::Vector<Aws::String>& GetNodes() const{ return m_nodes; }

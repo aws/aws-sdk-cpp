@@ -122,7 +122,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling priority of the job definition. This only affects jobs in job
-     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * queues with a fair-share policy. Jobs with a higher scheduling priority are
      * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline int GetSchedulingPriority() const{ return m_schedulingPriority; }

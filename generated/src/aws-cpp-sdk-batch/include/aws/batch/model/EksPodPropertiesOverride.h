@@ -57,7 +57,7 @@ namespace Model
     ///@{
     /**
      * <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS
-     * pod. These containers run before application containers, always runs to
+     * pod. These containers run before application containers, always run to
      * completion, and must complete successfully before the next container starts.
      * These containers are registered with the Amazon EKS Connector agent and persists
      * the registration information in the Kubernetes backend data store. For more

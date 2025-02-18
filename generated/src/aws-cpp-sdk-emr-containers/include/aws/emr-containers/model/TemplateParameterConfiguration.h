@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
-     * ‘NUMBER’.</p>
+     * ���NUMBER’.</p>
      */
     inline const TemplateParameterDataType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

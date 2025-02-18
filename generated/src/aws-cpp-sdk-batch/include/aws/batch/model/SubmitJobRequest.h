@@ -80,9 +80,10 @@ namespace Model
     ///@{
     /**
      * <p>The share identifier for the job. Don't specify this parameter if the job
-     * queue doesn't have a scheduling policy. If the job queue has a scheduling
-     * policy, then this parameter must be specified.</p> <p>This string is limited to
-     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
+     * queue doesn't have a fair-share scheduling policy. If the job queue has a
+     * fair-share scheduling policy, then this parameter must be specified.</p> <p>This
+     * string is limited to 255 alphanumeric characters, and can be followed by an
+     * asterisk (*).</p>
      */
     inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
@@ -97,7 +98,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling priority for the job. This only affects jobs in job queues
-     * with a fair share policy. Jobs with a higher scheduling priority are scheduled
+     * with a fair-share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
      * priority in the job definition and works only within a single share
      * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
