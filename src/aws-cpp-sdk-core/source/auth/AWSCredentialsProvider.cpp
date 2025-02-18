@@ -274,7 +274,7 @@ bool InstanceProfileCredentialsProvider::ExpiresSoon() const
         credentials = profileIter->second.GetCredentials();
     }
 
-    return ((credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
+    return credentials.ExpiresSoon(AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
 }
 
 void InstanceProfileCredentialsProvider::Reload()

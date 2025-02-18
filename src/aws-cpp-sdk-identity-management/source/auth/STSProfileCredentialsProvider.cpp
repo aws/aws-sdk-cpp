@@ -45,13 +45,13 @@ AWSCredentials STSProfileCredentialsProvider::GetAWSCredentials()
 void STSProfileCredentialsProvider::RefreshIfExpired()
 {
     Utils::Threading::ReaderLockGuard guard(m_reloadLock);
-    if (!IsTimeToRefresh(static_cast<long>(m_reloadFrequency.count())) || !m_credentials.IsExpiredOrEmpty())
+    if (!IsTimeToRefresh(static_cast<long>(m_reloadFrequency.count())) && !m_credentials.IsEmpty() && !m_credentials.ExpiresSoon(m_reloadFrequency.count()))
     {
        return;
     }
 
     guard.UpgradeToWriterLock();
-    if (!IsTimeToRefresh(static_cast<long>(m_reloadFrequency.count())) || !m_credentials.IsExpiredOrEmpty()) // double-checked lock to avoid refreshing twice
+    if (!IsTimeToRefresh(static_cast<long>(m_reloadFrequency.count())) && !m_credentials.IsEmpty() && !m_credentials.ExpiresSoon(m_reloadFrequency.count())) // double-checked lock to avoid refreshing twice
     {
         return;
     }
