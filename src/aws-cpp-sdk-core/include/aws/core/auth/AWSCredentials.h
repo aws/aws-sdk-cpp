@@ -91,6 +91,14 @@ namespace Aws
 
             inline bool IsExpired() const { return m_expiration <= Aws::Utils::DateTime::Now(); }
 
+            /**
+             * Checks to see if the credentials will expire in a threshold of time
+             *
+             * @param millisecondThreshold the milliseconds of threshold we will check for expiry.
+             * @return true if the credentials will expire before the threshold
+             */
+            inline bool ExpiresSoon(int64_t millisecondThreshold = 5000) const { return (m_expiration - Aws::Utils::DateTime::Now()).count() < millisecondThreshold; }
+
             inline bool IsExpiredOrEmpty() const { return IsEmpty() || IsExpired(); }
 
             /**
