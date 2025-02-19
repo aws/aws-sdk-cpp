@@ -33,7 +33,10 @@ namespace Model
    * adversely effect your firewall's functionality. For example, if Network Firewall
    * detects a rule that's routing traffic asymmetrically, which impacts the
    * service's ability to properly process traffic, the service includes the rule in
-   * a list of analysis results.</p><p><h3>See Also:</h3>   <a
+   * a list of analysis results.</p> <p>The <code>AnalysisResult</code> data type is
+   * not related to traffic analysis reports you generate using
+   * <a>StartAnalysisReport</a>. For information on traffic analysis report results,
+   * see <a>AnalysisTypeReportResult</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AnalysisResult">AWS
    * API Reference</a></p>
    */

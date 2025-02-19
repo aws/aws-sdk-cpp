@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The name for the bucket.</p> <p>For more information about bucket names, see
      * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/bucket-naming-rules-in-amazon-lightsail">Bucket
      * naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
      * Guide</i>.</p>
      */
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>A Boolean value that indicates whether to enable versioning of objects in the
      * bucket.</p> <p>For more information about versioning, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-managing-bucket-object-versioning">Enabling
      * and suspending object versioning in a bucket in Amazon Lightsail</a> in the
      * <i>Amazon Lightsail Developer Guide</i>.</p>
      */

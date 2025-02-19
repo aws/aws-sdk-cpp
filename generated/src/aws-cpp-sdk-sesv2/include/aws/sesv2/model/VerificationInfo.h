@@ -95,8 +95,9 @@ namespace Model
      * and multi-level replication is not supported; the primary identity must be a
      * non-replica identity. </p> </li> <li> <p>
      * <code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to
-     * an invalid primary region specified. Ensure you provide a valid AWS region where
-     * Amazon SES is available and different from the replica region. </p> </li> </ul>
+     * an invalid primary region specified. Ensure you provide a valid Amazon Web
+     * Services region where Amazon SES is available and different from the replica
+     * region. </p> </li> </ul>
      */
     inline const VerificationError& GetErrorType() const{ return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }

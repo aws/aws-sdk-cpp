@@ -20,7 +20,8 @@ namespace Model
     Missing,
     CannotParse,
     FieldValidationFailed,
-    Other
+    Other,
+    UnknownField
   };
 
 namespace ValidationExceptionReasonMapper

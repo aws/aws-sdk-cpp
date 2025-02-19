@@ -20,7 +20,8 @@ CreateConfigurationSetRequest::CreateConfigurationSetRequest() :
     m_sendingOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_suppressionOptionsHasBeenSet(false),
-    m_vdmOptionsHasBeenSet(false)
+    m_vdmOptionsHasBeenSet(false),
+    m_archivingOptionsHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const
   if(m_vdmOptionsHasBeenSet)
   {
    payload.WithObject("VdmOptions", m_vdmOptions.Jsonize());
+
+  }
+
+  if(m_archivingOptionsHasBeenSet)
+  {
+   payload.WithObject("ArchivingOptions", m_archivingOptions.Jsonize());
 
   }
 

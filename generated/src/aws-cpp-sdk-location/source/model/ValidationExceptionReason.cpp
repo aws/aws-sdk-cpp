@@ -25,6 +25,7 @@ namespace Aws
         static const int CannotParse_HASH = HashingUtils::HashString("CannotParse");
         static const int FieldValidationFailed_HASH = HashingUtils::HashString("FieldValidationFailed");
         static const int Other_HASH = HashingUtils::HashString("Other");
+        static const int UnknownField_HASH = HashingUtils::HashString("UnknownField");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == Other_HASH)
           {
             return ValidationExceptionReason::Other;
+          }
+          else if (hashCode == UnknownField_HASH)
+          {
+            return ValidationExceptionReason::UnknownField;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "FieldValidationFailed";
           case ValidationExceptionReason::Other:
             return "Other";
+          case ValidationExceptionReason::UnknownField:
+            return "UnknownField";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

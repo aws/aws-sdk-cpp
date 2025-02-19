@@ -43,7 +43,7 @@ namespace Model
    * you must manually add the Lightsail DNS zone name servers to your domain in
    * order to delegate management of its DNS to Lightsail. For more information, see
    * <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-create-dns-entry">Creating
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-create-dns-entry">Creating
    * a DNS zone to manage your domain’s records in Amazon Lightsail</a> in the
    * <i>Amazon Lightsail Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisteredDomainDelegationInfo">AWS

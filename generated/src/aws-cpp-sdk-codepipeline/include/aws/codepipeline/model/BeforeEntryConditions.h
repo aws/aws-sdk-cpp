@@ -25,8 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>The conditions for making checks for entry to a stage. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The conditions for making checks for entry to a stage. For more information
+   * about conditions, see <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+   * conditions</a> and <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+   * do stage conditions work?</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/BeforeEntryConditions">AWS
    * API Reference</a></p>
    */

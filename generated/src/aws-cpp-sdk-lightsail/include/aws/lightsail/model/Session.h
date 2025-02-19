@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a web-based, remote graphical user interface (GUI), NICE DCV
+   * <p>Describes a web-based, remote graphical user interface (GUI), Amazon DCV
    * session. The session is used to access a virtual computer’s operating system or
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Session">AWS

@@ -28,8 +28,9 @@ namespace Model
 
   /**
    * <p>The event criteria for the pull request trigger configuration, such as the
-   * lists of branches or file paths to include and exclude.</p><p><h3>See Also:</h3>
-   * <a
+   * lists of branches or file paths to include and exclude.</p> <p>The following are
+   * valid values for the events for this filter:</p> <ul> <li> <p>CLOSED</p> </li>
+   * <li> <p>OPEN</p> </li> <li> <p>UPDATED</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GitPullRequestFilter">AWS
    * API Reference</a></p>
    */
@@ -44,8 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The field that specifies which pull request events to filter on (opened,
-     * updated, closed) for the trigger configuration.</p>
+     * <p>The field that specifies which pull request events to filter on (OPEN,
+     * UPDATED, CLOSED) for the trigger configuration.</p>
      */
     inline const Aws::Vector<GitPullRequestEventType>& GetEvents() const{ return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }

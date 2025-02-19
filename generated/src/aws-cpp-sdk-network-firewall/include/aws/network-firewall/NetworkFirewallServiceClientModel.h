@@ -37,14 +37,18 @@
 #include <aws/network-firewall/model/DescribeRuleGroupMetadataResult.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationResult.h>
 #include <aws/network-firewall/model/DisassociateSubnetsResult.h>
+#include <aws/network-firewall/model/GetAnalysisReportResultsResult.h>
+#include <aws/network-firewall/model/ListAnalysisReportsResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
 #include <aws/network-firewall/model/ListFirewallsResult.h>
 #include <aws/network-firewall/model/ListRuleGroupsResult.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsResult.h>
 #include <aws/network-firewall/model/ListTagsForResourceResult.h>
 #include <aws/network-firewall/model/PutResourcePolicyResult.h>
+#include <aws/network-firewall/model/StartAnalysisReportResult.h>
 #include <aws/network-firewall/model/TagResourceResult.h>
 #include <aws/network-firewall/model/UntagResourceResult.h>
+#include <aws/network-firewall/model/UpdateFirewallAnalysisSettingsResult.h>
 #include <aws/network-firewall/model/UpdateFirewallDeleteProtectionResult.h>
 #include <aws/network-firewall/model/UpdateFirewallDescriptionResult.h>
 #include <aws/network-firewall/model/UpdateFirewallEncryptionConfigurationResult.h>
@@ -63,10 +67,12 @@
 #include <aws/network-firewall/model/DescribeRuleGroupMetadataRequest.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
 #include <aws/network-firewall/model/ListRuleGroupsRequest.h>
+#include <aws/network-firewall/model/UpdateFirewallAnalysisSettingsRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupRequest.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsRequest.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationRequest.h>
+#include <aws/network-firewall/model/ListAnalysisReportsRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallRequest.h>
 #include <aws/network-firewall/model/DeleteRuleGroupRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallRequest.h>
@@ -130,14 +136,18 @@ namespace Aws
       class DescribeRuleGroupMetadataRequest;
       class DescribeTLSInspectionConfigurationRequest;
       class DisassociateSubnetsRequest;
+      class GetAnalysisReportResultsRequest;
+      class ListAnalysisReportsRequest;
       class ListFirewallPoliciesRequest;
       class ListFirewallsRequest;
       class ListRuleGroupsRequest;
       class ListTLSInspectionConfigurationsRequest;
       class ListTagsForResourceRequest;
       class PutResourcePolicyRequest;
+      class StartAnalysisReportRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateFirewallAnalysisSettingsRequest;
       class UpdateFirewallDeleteProtectionRequest;
       class UpdateFirewallDescriptionRequest;
       class UpdateFirewallEncryptionConfigurationRequest;
@@ -169,14 +179,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeRuleGroupMetadataResult, NetworkFirewallError> DescribeRuleGroupMetadataOutcome;
       typedef Aws::Utils::Outcome<DescribeTLSInspectionConfigurationResult, NetworkFirewallError> DescribeTLSInspectionConfigurationOutcome;
       typedef Aws::Utils::Outcome<DisassociateSubnetsResult, NetworkFirewallError> DisassociateSubnetsOutcome;
+      typedef Aws::Utils::Outcome<GetAnalysisReportResultsResult, NetworkFirewallError> GetAnalysisReportResultsOutcome;
+      typedef Aws::Utils::Outcome<ListAnalysisReportsResult, NetworkFirewallError> ListAnalysisReportsOutcome;
       typedef Aws::Utils::Outcome<ListFirewallPoliciesResult, NetworkFirewallError> ListFirewallPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListFirewallsResult, NetworkFirewallError> ListFirewallsOutcome;
       typedef Aws::Utils::Outcome<ListRuleGroupsResult, NetworkFirewallError> ListRuleGroupsOutcome;
       typedef Aws::Utils::Outcome<ListTLSInspectionConfigurationsResult, NetworkFirewallError> ListTLSInspectionConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkFirewallError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutResourcePolicyResult, NetworkFirewallError> PutResourcePolicyOutcome;
+      typedef Aws::Utils::Outcome<StartAnalysisReportResult, NetworkFirewallError> StartAnalysisReportOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, NetworkFirewallError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, NetworkFirewallError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateFirewallAnalysisSettingsResult, NetworkFirewallError> UpdateFirewallAnalysisSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateFirewallDeleteProtectionResult, NetworkFirewallError> UpdateFirewallDeleteProtectionOutcome;
       typedef Aws::Utils::Outcome<UpdateFirewallDescriptionResult, NetworkFirewallError> UpdateFirewallDescriptionOutcome;
       typedef Aws::Utils::Outcome<UpdateFirewallEncryptionConfigurationResult, NetworkFirewallError> UpdateFirewallEncryptionConfigurationOutcome;
@@ -208,14 +222,18 @@ namespace Aws
       typedef std::future<DescribeRuleGroupMetadataOutcome> DescribeRuleGroupMetadataOutcomeCallable;
       typedef std::future<DescribeTLSInspectionConfigurationOutcome> DescribeTLSInspectionConfigurationOutcomeCallable;
       typedef std::future<DisassociateSubnetsOutcome> DisassociateSubnetsOutcomeCallable;
+      typedef std::future<GetAnalysisReportResultsOutcome> GetAnalysisReportResultsOutcomeCallable;
+      typedef std::future<ListAnalysisReportsOutcome> ListAnalysisReportsOutcomeCallable;
       typedef std::future<ListFirewallPoliciesOutcome> ListFirewallPoliciesOutcomeCallable;
       typedef std::future<ListFirewallsOutcome> ListFirewallsOutcomeCallable;
       typedef std::future<ListRuleGroupsOutcome> ListRuleGroupsOutcomeCallable;
       typedef std::future<ListTLSInspectionConfigurationsOutcome> ListTLSInspectionConfigurationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+      typedef std::future<StartAnalysisReportOutcome> StartAnalysisReportOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateFirewallAnalysisSettingsOutcome> UpdateFirewallAnalysisSettingsOutcomeCallable;
       typedef std::future<UpdateFirewallDeleteProtectionOutcome> UpdateFirewallDeleteProtectionOutcomeCallable;
       typedef std::future<UpdateFirewallDescriptionOutcome> UpdateFirewallDescriptionOutcomeCallable;
       typedef std::future<UpdateFirewallEncryptionConfigurationOutcome> UpdateFirewallEncryptionConfigurationOutcomeCallable;
@@ -250,14 +268,18 @@ namespace Aws
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeRuleGroupMetadataRequest&, const Model::DescribeRuleGroupMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupMetadataResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeTLSInspectionConfigurationRequest&, const Model::DescribeTLSInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTLSInspectionConfigurationResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DisassociateSubnetsRequest&, const Model::DisassociateSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetsResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::GetAnalysisReportResultsRequest&, const Model::GetAnalysisReportResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnalysisReportResultsResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::ListAnalysisReportsRequest&, const Model::ListAnalysisReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalysisReportsResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallPoliciesRequest&, const Model::ListFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallPoliciesResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallsRequest&, const Model::ListFirewallsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallsResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListRuleGroupsRequest&, const Model::ListRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListTLSInspectionConfigurationsRequest&, const Model::ListTLSInspectionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTLSInspectionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::StartAnalysisReportRequest&, const Model::StartAnalysisReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAnalysisReportResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallAnalysisSettingsRequest&, const Model::UpdateFirewallAnalysisSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallAnalysisSettingsResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallDeleteProtectionRequest&, const Model::UpdateFirewallDeleteProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallDeleteProtectionResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallDescriptionRequest&, const Model::UpdateFirewallDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallDescriptionResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallEncryptionConfigurationRequest&, const Model::UpdateFirewallEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallEncryptionConfigurationResponseReceivedHandler;

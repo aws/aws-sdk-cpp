@@ -64,7 +64,7 @@ namespace Model
      * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-burst-capacity">Viewing
      * instance burst capacity in Amazon Lightsail</a>.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
@@ -79,7 +79,7 @@ namespace Model
      * minutes at a 50% rate in that period. Your instance consumed 2 minutes and 30
      * seconds of CPU burst capacity minutes in the 5-minute period. For more
      * information, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-burst-capacity">Viewing
      * instance burst capacity in Amazon Lightsail</a>.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is

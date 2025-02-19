@@ -44,7 +44,7 @@ namespace Model
      * <p>The keyword for the Suricata compatible rule option. You must include a
      * <code>sid</code> (signature ID), and can optionally include other keywords. For
      * information about Suricata compatible keywords, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html#rule-options">Rule
      * options</a> in the Suricata documentation.</p>
      */
     inline const Aws::String& GetKeyword() const{ return m_keyword; }
@@ -63,7 +63,7 @@ namespace Model
      * or more setting values, and the number of possible and required settings depends
      * on the <code>Keyword</code>. For more information about the settings for
      * specific options, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html#rule-options">Rule
      * options</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSettings() const{ return m_settings; }

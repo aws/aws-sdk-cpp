@@ -40,6 +40,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the configuration set used when sent through a configuration set
+     * with archiving enabled.</p>
+     */
+    inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
+    inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
+    inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
+    inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
+    inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
+    inline Metadata& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
+    inline Metadata& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
+    inline Metadata& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the ingress endpoint through which the email was received.</p>
      */
     inline const Aws::String& GetIngressPointId() const{ return m_ingressPointId; }
@@ -92,6 +107,66 @@ namespace Model
     inline Metadata& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
     inline Metadata& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
     inline Metadata& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the API call used when sent through a configuration set with
+     * archiving enabled.</p>
+     */
+    inline const Aws::String& GetSendingMethod() const{ return m_sendingMethod; }
+    inline bool SendingMethodHasBeenSet() const { return m_sendingMethodHasBeenSet; }
+    inline void SetSendingMethod(const Aws::String& value) { m_sendingMethodHasBeenSet = true; m_sendingMethod = value; }
+    inline void SetSendingMethod(Aws::String&& value) { m_sendingMethodHasBeenSet = true; m_sendingMethod = std::move(value); }
+    inline void SetSendingMethod(const char* value) { m_sendingMethodHasBeenSet = true; m_sendingMethod.assign(value); }
+    inline Metadata& WithSendingMethod(const Aws::String& value) { SetSendingMethod(value); return *this;}
+    inline Metadata& WithSendingMethod(Aws::String&& value) { SetSendingMethod(std::move(value)); return *this;}
+    inline Metadata& WithSendingMethod(const char* value) { SetSendingMethod(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the dedicated IP pool used when sent through a configuration set
+     * with archiving enabled.</p>
+     */
+    inline const Aws::String& GetSendingPool() const{ return m_sendingPool; }
+    inline bool SendingPoolHasBeenSet() const { return m_sendingPoolHasBeenSet; }
+    inline void SetSendingPool(const Aws::String& value) { m_sendingPoolHasBeenSet = true; m_sendingPool = value; }
+    inline void SetSendingPool(Aws::String&& value) { m_sendingPoolHasBeenSet = true; m_sendingPool = std::move(value); }
+    inline void SetSendingPool(const char* value) { m_sendingPoolHasBeenSet = true; m_sendingPool.assign(value); }
+    inline Metadata& WithSendingPool(const Aws::String& value) { SetSendingPool(value); return *this;}
+    inline Metadata& WithSendingPool(Aws::String&& value) { SetSendingPool(std::move(value)); return *this;}
+    inline Metadata& WithSendingPool(const char* value) { SetSendingPool(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the archived email source, identified by either a Rule Set's ARN
+     * with an Archive action, or a Configuration Set's Archive ARN.</p>
+     */
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+    inline Metadata& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+    inline Metadata& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
+    inline Metadata& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identity name used to authorize the sending action when sent through a
+     * configuration set with archiving enabled.</p>
+     */
+    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
+    inline bool SourceIdentityHasBeenSet() const { return m_sourceIdentityHasBeenSet; }
+    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = value; }
+    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::move(value); }
+    inline void SetSourceIdentity(const char* value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity.assign(value); }
+    inline Metadata& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
+    inline Metadata& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
+    inline Metadata& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
     ///@}
 
     ///@{
@@ -152,6 +227,9 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_configurationSet;
+    bool m_configurationSetHasBeenSet = false;
+
     Aws::String m_ingressPointId;
     bool m_ingressPointIdHasBeenSet = false;
 
@@ -163,6 +241,18 @@ namespace Model
 
     Aws::String m_senderIpAddress;
     bool m_senderIpAddressHasBeenSet = false;
+
+    Aws::String m_sendingMethod;
+    bool m_sendingMethodHasBeenSet = false;
+
+    Aws::String m_sendingPool;
+    bool m_sendingPoolHasBeenSet = false;
+
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
+
+    Aws::String m_sourceIdentity;
+    bool m_sourceIdentityHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet = false;

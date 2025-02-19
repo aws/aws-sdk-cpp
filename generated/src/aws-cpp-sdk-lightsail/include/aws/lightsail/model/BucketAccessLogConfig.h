@@ -27,7 +27,7 @@ namespace Model
    * <p>Describes the access log configuration for a bucket in the Amazon Lightsail
    * object storage service.</p> <p>For more information about bucket access logs,
    * see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs">Logging
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bucket-access-logs">Logging
    * bucket requests using access logging in Amazon Lightsail</a> in the <i>Amazon
    * Lightsail Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/BucketAccessLogConfig">AWS

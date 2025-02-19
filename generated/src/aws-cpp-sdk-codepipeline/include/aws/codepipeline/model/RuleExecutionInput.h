@@ -44,7 +44,12 @@ namespace Model
     ///@{
     /**
      * <p>The ID for the rule type, which is made up of the combined values for
-     * category, owner, provider, and version.</p>
+     * category, owner, provider, and version. For more information about conditions,
+     * see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+     * conditions</a>. For more information about rules, see the <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+     * rule reference</a>.</p>
      */
     inline const RuleTypeId& GetRuleTypeId() const{ return m_ruleTypeId; }
     inline bool RuleTypeIdHasBeenSet() const { return m_ruleTypeIdHasBeenSet; }

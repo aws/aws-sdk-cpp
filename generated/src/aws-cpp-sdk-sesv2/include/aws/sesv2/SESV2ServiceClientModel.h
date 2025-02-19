@@ -86,6 +86,7 @@
 #include <aws/sesv2/model/PutAccountSendingAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesResult.h>
 #include <aws/sesv2/model/PutAccountVdmAttributesResult.h>
+#include <aws/sesv2/model/PutConfigurationSetArchivingOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetReputationOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetSendingOptionsResult.h>
@@ -240,6 +241,7 @@ namespace Aws
       class PutAccountSendingAttributesRequest;
       class PutAccountSuppressionAttributesRequest;
       class PutAccountVdmAttributesRequest;
+      class PutConfigurationSetArchivingOptionsRequest;
       class PutConfigurationSetDeliveryOptionsRequest;
       class PutConfigurationSetReputationOptionsRequest;
       class PutConfigurationSetSendingOptionsRequest;
@@ -339,6 +341,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutAccountSendingAttributesResult, SESV2Error> PutAccountSendingAttributesOutcome;
       typedef Aws::Utils::Outcome<PutAccountSuppressionAttributesResult, SESV2Error> PutAccountSuppressionAttributesOutcome;
       typedef Aws::Utils::Outcome<PutAccountVdmAttributesResult, SESV2Error> PutAccountVdmAttributesOutcome;
+      typedef Aws::Utils::Outcome<PutConfigurationSetArchivingOptionsResult, SESV2Error> PutConfigurationSetArchivingOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetDeliveryOptionsResult, SESV2Error> PutConfigurationSetDeliveryOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetReputationOptionsResult, SESV2Error> PutConfigurationSetReputationOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetSendingOptionsResult, SESV2Error> PutConfigurationSetSendingOptionsOutcome;
@@ -438,6 +441,7 @@ namespace Aws
       typedef std::future<PutAccountSendingAttributesOutcome> PutAccountSendingAttributesOutcomeCallable;
       typedef std::future<PutAccountSuppressionAttributesOutcome> PutAccountSuppressionAttributesOutcomeCallable;
       typedef std::future<PutAccountVdmAttributesOutcome> PutAccountVdmAttributesOutcomeCallable;
+      typedef std::future<PutConfigurationSetArchivingOptionsOutcome> PutConfigurationSetArchivingOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetDeliveryOptionsOutcome> PutConfigurationSetDeliveryOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetReputationOptionsOutcome> PutConfigurationSetReputationOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetSendingOptionsOutcome> PutConfigurationSetSendingOptionsOutcomeCallable;
@@ -540,6 +544,7 @@ namespace Aws
     typedef std::function<void(const SESV2Client*, const Model::PutAccountSendingAttributesRequest&, const Model::PutAccountSendingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSendingAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountSuppressionAttributesRequest&, const Model::PutAccountSuppressionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSuppressionAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountVdmAttributesRequest&, const Model::PutAccountVdmAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountVdmAttributesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetArchivingOptionsRequest&, const Model::PutConfigurationSetArchivingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetArchivingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetDeliveryOptionsRequest&, const Model::PutConfigurationSetDeliveryOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetDeliveryOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetReputationOptionsRequest&, const Model::PutConfigurationSetReputationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetReputationOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetSendingOptionsRequest&, const Model::PutConfigurationSetSendingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetSendingOptionsResponseReceivedHandler;

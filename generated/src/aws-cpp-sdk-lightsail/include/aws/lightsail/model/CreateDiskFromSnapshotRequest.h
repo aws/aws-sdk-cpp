@@ -135,7 +135,7 @@ namespace Model
      * disk name</code> and <code>disk snapshot name</code> parameters are mutually
      * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
      * from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDiskName() const{ return m_sourceDiskName; }
@@ -159,7 +159,7 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new disk from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
@@ -180,7 +180,7 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new disk from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }

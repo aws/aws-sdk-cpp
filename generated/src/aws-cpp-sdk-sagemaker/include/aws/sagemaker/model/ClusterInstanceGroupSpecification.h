@@ -175,22 +175,32 @@ namespace Model
 
     ///@{
     /**
-     * <p>To configure multi-AZ deployments, customize the VPC configuration at the
-     * instance group level. You can specify different subnets and security groups
+     * <p>To configure multi-AZ deployments, customize the Amazon VPC configuration at
+     * the instance group level. You can specify different subnets and security groups
      * across different AZs in the instance group specification to override a SageMaker
-     * HyperPod cluster's default VPC configuration. For more information about
+     * HyperPod cluster's default Amazon VPC configuration. For more information about
      * deploying a cluster in multiple AZs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones">Setting
-     * up SageMaker HyperPod clusters across multiple AZs</a>.</p>  <p> If you
-     * configure your VPC with IPv6 support and specify subnets with IPv6 addressing
-     * enabled in your instance group VPC configuration, the nodes automatically use
-     * IPv6 addressing for network communication.</p> <p> For information about adding
-     * IPv6 support for your VPC, see <a
+     * up SageMaker HyperPod clusters across multiple AZs</a>.</p>  <p>When your
+     * Amazon VPC and subnets support IPv6, network communications differ based on the
+     * cluster orchestration platform:</p> <ul> <li> <p>Slurm-orchestrated clusters
+     * automatically configure nodes with dual IPv6 and IPv4 addresses, allowing
+     * immediate IPv6 network communications.</p> </li> <li> <p>In Amazon
+     * EKS-orchestrated clusters, nodes receive dual-stack addressing, but pods can
+     * only use IPv6 when the Amazon EKS cluster is explicitly IPv6-enabled. For
+     * information about deploying an IPv6 Amazon EKS cluster, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/deploy-ipv6-cluster.html#_deploy_an_ipv6_cluster_with_eksctl">Amazon
+     * EKS IPv6 Cluster Deployment</a>.</p> </li> </ul> <p>Additional resources for
+     * IPv6 configuration:</p> <ul> <li> <p>For information about adding IPv6 support
+     * to your VPC, see to <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html">IPv6
-     * support for your VPC</a>.</p> <p> For information about creating a new VPC for
-     * use with IPv6, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Create a
-     * VPC</a>.</p> 
+     * Support for VPC</a>.</p> </li> <li> <p>For information about creating a new
+     * IPv6-compatible VPC, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Amazon
+     * VPC Creation Guide</a>.</p> </li> <li> <p>To configure SageMaker HyperPod with a
+     * custom Amazon VPC, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-optional-vpc">Custom
+     * Amazon VPC Setup for SageMaker HyperPod</a>.</p> </li> </ul> 
      */
     inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
     inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }

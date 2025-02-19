@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
      * in Amazon Lightsail</a>.</p>
      */
     inline const ContactProtocol& GetProtocol() const{ return m_protocol; }

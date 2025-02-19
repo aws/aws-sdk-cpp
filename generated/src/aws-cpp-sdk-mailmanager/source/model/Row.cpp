@@ -33,6 +33,7 @@ Row::Row() :
     m_receivedTimestampHasBeenSet(false),
     m_senderHostnameHasBeenSet(false),
     m_senderIpAddressHasBeenSet(false),
+    m_sourceArnHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_toHasBeenSet(false),
     m_xMailerHasBeenSet(false),
@@ -141,6 +142,13 @@ Row& Row::operator =(JsonView jsonValue)
     m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
 
     m_senderIpAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceArn"))
+  {
+    m_sourceArn = jsonValue.GetString("SourceArn");
+
+    m_sourceArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Subject"))
@@ -264,6 +272,12 @@ JsonValue Row::Jsonize() const
   if(m_senderIpAddressHasBeenSet)
   {
    payload.WithString("SenderIpAddress", m_senderIpAddress);
+
+  }
+
+  if(m_sourceArnHasBeenSet)
+  {
+   payload.WithString("SourceArn", m_sourceArn);
 
   }
 

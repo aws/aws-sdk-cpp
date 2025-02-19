@@ -100,9 +100,10 @@ namespace Model
      * <a>GetPipelineState</a> action. It is used to validate that the approval request
      * corresponding to this token is still valid.</p>  <p>For a pipeline
      * where the execution mode is set to PARALLEL, the token required to
-     * approve/reject approval request as detailed above is not available. Instead, use
-     * the <code>externalExecutionId</code> from the <code>GetPipelineState</code>
-     * action as the token in the approval request.</p> 
+     * approve/reject an approval request as detailed above is not available. Instead,
+     * use the <code>externalExecutionId</code> in the response output from the
+     * <a>ListActionExecutions</a> action as the token in the approval request.</p>
+     * 
      */
     inline const Aws::String& GetToken() const{ return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }

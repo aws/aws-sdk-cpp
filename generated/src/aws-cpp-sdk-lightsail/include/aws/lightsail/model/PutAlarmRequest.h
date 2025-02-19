@@ -76,7 +76,7 @@ namespace Model
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
      * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
      * about these metrics, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
      * available in Lightsail</a>.</p>
      */
     inline const MetricName& GetMetricName() const{ return m_metricName; }

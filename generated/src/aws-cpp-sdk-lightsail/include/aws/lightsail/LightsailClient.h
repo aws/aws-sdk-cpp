@@ -30,7 +30,7 @@ namespace Lightsail
    * price.</p> <p>You can manage your Lightsail resources using the Lightsail
    * console, Lightsail API, Command Line Interface (CLI), or SDKs. For more
    * information about Lightsail concepts and tasks, see the <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Amazon
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Amazon
    * Lightsail Developer Guide</a>.</p> <p>This API Reference provides detailed
    * information about the actions, data types, parameters, and errors of the
    * Lightsail service. For more information about the supported Amazon Web Services
@@ -170,7 +170,7 @@ namespace Lightsail
          * disk</code> operation supports tag-based access control via resource tags
          * applied to the resource identified by <code>disk name</code>. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
          * API Reference</a></p>
@@ -202,7 +202,7 @@ namespace Lightsail
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>load balancer name</code>. For more information,
          * see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
@@ -238,7 +238,7 @@ namespace Lightsail
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>load balancer name</code>. For more information,
          * see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
@@ -294,7 +294,7 @@ namespace Lightsail
          * <code>CloseInstancePublicPorts</code> action supports tag-based access control
          * via resource tags applied to the resource identified by
          * <code>instanceName</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
          * API Reference</a></p>
@@ -359,7 +359,7 @@ namespace Lightsail
          * resource available in the Lightsail object storage service. Use buckets to store
          * objects such as data and its descriptive metadata. For more information about
          * buckets, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/buckets-in-amazon-lightsail">Buckets
          * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket">AWS
@@ -393,7 +393,7 @@ namespace Lightsail
          * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a>
          * action to get a list of current access keys for a specific bucket. For more
          * information about access keys, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-creating-bucket-access-keys">Creating
          * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
          * Developer Guide</i>.</p>  <p>The <code>secretAccessKey</code> value
          * is returned only in response to the <code>CreateBucketAccessKey</code> action.
@@ -497,7 +497,7 @@ namespace Lightsail
          * Web Services Region. However, SMS text messaging is not supported in some Amazon
          * Web Services Regions, and SMS text messages cannot be sent to some
          * countries/regions. For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
          * API Reference</a></p>
@@ -526,7 +526,7 @@ namespace Lightsail
          * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
          * service is a compute resource to which you can deploy containers. For more
          * information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-container-services">Container
          * services in Amazon Lightsail</a> in the <i>Lightsail Dev
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">AWS
@@ -562,7 +562,7 @@ namespace Lightsail
          * can deploy containers to your container service using container images from a
          * public registry such as Amazon ECR Public, or from your local machine. For more
          * information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-creating-container-images">Creating
          * container images for your Amazon Lightsail container services</a> in the
          * <i>Amazon Lightsail Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment">AWS
@@ -605,7 +605,7 @@ namespace Lightsail
          * if you install and use the Lightsail Control (lightsailctl) plugin to push
          * container images to your Lightsail container service. For more information, see
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-pushing-container-images">Pushing
          * and managing container images on your Amazon Lightsail container services</a> in
          * the <i>Amazon Lightsail Developer Guide</i>.</p> <p><h3>See Also:</h3>  
          * <a
@@ -637,7 +637,7 @@ namespace Lightsail
          * instance in the same Availability Zone (<code>us-east-2a</code>).</p> <p>The
          * <code>create disk</code> operation supports tag-based access control via request
          * tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
          * API Reference</a></p>
@@ -669,7 +669,7 @@ namespace Lightsail
          * snapshot</code> operation supports tag-based access control via request tags and
          * resource tags applied to the resource identified by <code>disk snapshot
          * name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
          * API Reference</a></p>
@@ -716,7 +716,7 @@ namespace Lightsail
          * disk from the snapshot and attach it to a running instance to access the data on
          * the disk.</p> <p>The <code>create disk snapshot</code> operation supports
          * tag-based access control via request tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
          * API Reference</a></p>
@@ -746,7 +746,7 @@ namespace Lightsail
          * <p>A distribution is a globally distributed network of caching servers that
          * improve the performance of your website or web application hosted on a Lightsail
          * instance. For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-content-delivery-network-distributions">Content
          * delivery networks in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution">AWS
          * API Reference</a></p>
@@ -775,7 +775,7 @@ namespace Lightsail
          * <p>Creates a domain resource for the specified domain (example.com).</p> <p>The
          * <code>create domain</code> operation supports tag-based access control via
          * request tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
          * API Reference</a></p>
@@ -807,7 +807,7 @@ namespace Lightsail
          * <code>create domain entry</code> operation supports tag-based access control via
          * resource tags applied to the resource identified by <code>domain name</code>.
          * For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
          * API Reference</a></p>
@@ -834,10 +834,11 @@ namespace Lightsail
 
         /**
          * <p>Creates two URLs that are used to access a virtual computer’s graphical user
-         * interface (GUI) session. The primary URL initiates a web-based NICE DCV session
-         * to the virtual computer's application. The secondary URL initiates a web-based
-         * NICE DCV session to the virtual computer's operating session. </p> <p>Use
-         * <code>StartGUISession</code> to open the session.</p><p><h3>See Also:</h3>   <a
+         * interface (GUI) session. The primary URL initiates a web-based Amazon DCV
+         * session to the virtual computer's application. The secondary URL initiates a
+         * web-based Amazon DCV session to the virtual computer's operating session. </p>
+         * <p>Use <code>StartGUISession</code> to open the session.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails">AWS
          * API Reference</a></p>
          */
@@ -866,7 +867,7 @@ namespace Lightsail
          * You can use a snapshot to create a new instance that is based on that
          * snapshot.</p> <p>The <code>create instance snapshot</code> operation supports
          * tag-based access control via request tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
          * API Reference</a></p>
@@ -895,7 +896,7 @@ namespace Lightsail
          * <p>Creates one or more Amazon Lightsail instances.</p> <p>The <code>create
          * instances</code> operation supports tag-based access control via request tags.
          * For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
          * API Reference</a></p>
@@ -926,7 +927,7 @@ namespace Lightsail
          * supports tag-based access control via request tags and resource tags applied to
          * the resource identified by <code>instance snapshot name</code>. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
          * API Reference</a></p>
@@ -959,7 +960,7 @@ namespace Lightsail
          * where a default key pair does not currently exist.</p>  <p>The
          * <code>create key pair</code> operation supports tag-based access control via
          * request tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
          * API Reference</a></p>
@@ -987,14 +988,14 @@ namespace Lightsail
         /**
          * <p>Creates a Lightsail load balancer. To learn more about deciding whether to
          * load balance your application, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">Configure
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-lightsail-instances-for-load-balancing">Configure
          * your Lightsail instances for load balancing</a>. You can create up to 5 load
          * balancers per AWS Region in your account.</p> <p>When you create a load
          * balancer, you can specify a unique name and port settings. To change additional
          * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
          * operation.</p> <p>The <code>create load balancer</code> operation supports
          * tag-based access control via request tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
@@ -1025,7 +1026,7 @@ namespace Lightsail
          * <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
@@ -1054,7 +1055,7 @@ namespace Lightsail
          * <p>Creates a new database in Amazon Lightsail.</p> <p>The <code>create
          * relational database</code> operation supports tag-based access control via
          * request tags. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase">AWS
          * API Reference</a></p>
@@ -1087,7 +1088,7 @@ namespace Lightsail
          * database from snapshot</code> operation supports tag-based access control via
          * request tags and resource tags applied to the resource identified by
          * relationalDatabaseSnapshotName. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot">AWS
          * API Reference</a></p>
@@ -1118,7 +1119,7 @@ namespace Lightsail
          * deleting a database.</p> <p>The <code>create relational database snapshot</code>
          * operation supports tag-based access control via request tags. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
@@ -1148,7 +1149,7 @@ namespace Lightsail
          * of your resources. When a metric condition is met, the alarm can notify you by
          * email, SMS text message, and a banner displayed on the Amazon Lightsail console.
          * For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-alarms">Alarms
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">AWS
          * API Reference</a></p>
@@ -1176,7 +1177,7 @@ namespace Lightsail
         /**
          * <p>Deletes an automatic snapshot of an instance or disk. For more information,
          * see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">AWS
          * API Reference</a></p>
@@ -1232,7 +1233,7 @@ namespace Lightsail
          * <p>Deletes an access key for the specified Amazon Lightsail bucket.</p> <p>We
          * recommend that you delete an access key if the secret access key is
          * compromised.</p> <p>For more information about access keys, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-creating-bucket-access-keys">Creating
          * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey">AWS
@@ -1294,7 +1295,7 @@ namespace Lightsail
          * Region. However, SMS text messaging is not supported in some Amazon Web Services
          * Regions, and SMS text messages cannot be sent to some countries/regions. For
          * more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
          * API Reference</a></p>
@@ -1378,7 +1379,7 @@ namespace Lightsail
          * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
          * API Reference</a></p>
@@ -1413,7 +1414,7 @@ namespace Lightsail
          * <code>delete disk snapshot</code> operation supports tag-based access control
          * via resource tags applied to the resource identified by <code>disk snapshot
          * name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
          * API Reference</a></p>
@@ -1469,7 +1470,7 @@ namespace Lightsail
          * <p>The <code>delete domain</code> operation supports tag-based access control
          * via resource tags applied to the resource identified by <code>domain
          * name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
          * API Reference</a></p>
@@ -1499,7 +1500,7 @@ namespace Lightsail
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>domain name</code>. For more information, see the
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
          * API Reference</a></p>
@@ -1529,7 +1530,7 @@ namespace Lightsail
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>instance name</code>. For more information, see the
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
          * API Reference</a></p>
@@ -1560,7 +1561,7 @@ namespace Lightsail
          * supports tag-based access control via resource tags applied to the resource
          * identified by <code>instance snapshot name</code>. For more information, see the
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
          * API Reference</a></p>
@@ -1598,7 +1599,7 @@ namespace Lightsail
          * API. </p> <p>The <code>delete key pair</code> operation supports tag-based
          * access control via resource tags applied to the resource identified by <code>key
          * pair name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
          * API Reference</a></p>
@@ -1631,7 +1632,7 @@ namespace Lightsail
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
          * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
@@ -1664,7 +1665,7 @@ namespace Lightsail
          * <p>The <code>delete load balancer</code> operation supports tag-based access
          * control via resource tags applied to the resource identified by <code>load
          * balancer name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
@@ -1694,7 +1695,7 @@ namespace Lightsail
          * <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
@@ -1724,7 +1725,7 @@ namespace Lightsail
          * database</code> operation supports tag-based access control via resource tags
          * applied to the resource identified by relationalDatabaseName. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase">AWS
          * API Reference</a></p>
@@ -1754,7 +1755,7 @@ namespace Lightsail
          * relational database snapshot</code> operation supports tag-based access control
          * via resource tags applied to the resource identified by relationalDatabaseName.
          * For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
@@ -1814,7 +1815,7 @@ namespace Lightsail
          * disk</code> operation supports tag-based access control via resource tags
          * applied to the resource identified by <code>disk name</code>. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
          * API Reference</a></p>
@@ -1846,7 +1847,7 @@ namespace Lightsail
          * balancer</code> operation supports tag-based access control via resource tags
          * applied to the resource identified by <code>load balancer name</code>. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
@@ -1900,7 +1901,7 @@ namespace Lightsail
         /**
          * <p>Disables an add-on for an Amazon Lightsail resource. For more information,
          * see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DisableAddOn">AWS
          * API Reference</a></p>
@@ -1955,7 +1956,7 @@ namespace Lightsail
         /**
          * <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/EnableAddOn">AWS
          * API Reference</a></p>
@@ -1992,7 +1993,7 @@ namespace Lightsail
          * snapshot.</p> <p/> <p>The <code>export snapshot</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p>  <p>Use the <code>get instance
          * snapshots</code> or <code>get disk snapshots</code> operations to get a list of
          * snapshots that you can export to Amazon EC2.</p> <p><h3>See Also:</h3>  
@@ -2054,7 +2055,7 @@ namespace Lightsail
          * resources. When a metric condition is met, the alarm can notify you by email,
          * SMS text message, and a banner displayed on the Amazon Lightsail console. For
          * more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-alarms">Alarms
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">AWS
          * API Reference</a></p>
@@ -2082,7 +2083,7 @@ namespace Lightsail
         /**
          * <p>Returns the available automatic snapshots for an instance or disk. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAutoSnapshots">AWS
          * API Reference</a></p>
@@ -2234,7 +2235,7 @@ namespace Lightsail
          * information returned includes the synchronization status of the Amazon Simple
          * Storage Service (Amazon S3) account-level block public access feature for your
          * Lightsail buckets.</p> <p>For more information about buckets, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/buckets-in-amazon-lightsail">Buckets
          * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">AWS
@@ -2355,7 +2356,7 @@ namespace Lightsail
          * method in each Amazon Web Services Region. However, SMS text messaging is not
          * supported in some Amazon Web Services Regions, and SMS text messages cannot be
          * sent to some countries/regions. For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
          * API Reference</a></p>
@@ -2939,7 +2940,7 @@ namespace Lightsail
          * details</code> operation supports tag-based access control via resource tags
          * applied to the resource identified by <code>instance name</code>. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
          * API Reference</a></p>
@@ -3263,7 +3264,7 @@ namespace Lightsail
          * <p>Returns a list of TLS security policies that you can apply to Lightsail load
          * balancers.</p> <p>For more information about load balancer TLS security
          * policies, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
          * TLS security policies on your Amazon Lightsail load balancers</a> in the
          * <i>Amazon Lightsail Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsPolicies">AWS
@@ -3887,7 +3888,7 @@ namespace Lightsail
          * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instanceName</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
          * API Reference</a></p>
@@ -3944,7 +3945,7 @@ namespace Lightsail
          * metric condition is met, the alarm can notify you by email, SMS text message,
          * and a banner displayed on the Amazon Lightsail console. For more information,
          * see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-alarms">Alarms
          * in Amazon Lightsail</a>.</p> <p>When this action creates an alarm, the alarm
          * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
          * evaluated and its state is set appropriately. Any actions associated with the
@@ -3985,7 +3986,7 @@ namespace Lightsail
          * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
          * supports tag-based access control via resource tags applied to the resource
          * identified by <code>instanceName</code>. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
          * API Reference</a></p>
@@ -4015,7 +4016,7 @@ namespace Lightsail
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>instance name</code>. For more information, see the
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
          * API Reference</a></p>
@@ -4045,7 +4046,7 @@ namespace Lightsail
          * relational database</code> operation supports tag-based access control via
          * resource tags applied to the resource identified by relationalDatabaseName. For
          * more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase">AWS
          * API Reference</a></p>
@@ -4075,7 +4076,7 @@ namespace Lightsail
          *  <p>This action is not required if you install and use the Lightsail
          * Control (lightsailctl) plugin to push container images to your Lightsail
          * container service. For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-pushing-container-images">Pushing
          * and managing container images on your Amazon Lightsail container services</a> in
          * the <i>Amazon Lightsail Developer Guide</i>.</p> <p><h3>See Also:</h3>  
          * <a
@@ -4163,7 +4164,7 @@ namespace Lightsail
          * method in each Amazon Web Services Region. However, SMS text messaging is not
          * supported in some Amazon Web Services Regions, and SMS text messages cannot be
          * sent to some countries/regions. For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
@@ -4312,12 +4313,12 @@ namespace Lightsail
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-create-static-ip">Amazon
          * Lightsail Developer Guide</a>.</p>  <p>The <code>start instance</code>
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>instance name</code>. For more information, see the
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
          * API Reference</a></p>
@@ -4348,7 +4349,7 @@ namespace Lightsail
          * operation.</p> <p>The <code>start relational database</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * relationalDatabaseName. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase">AWS
          * API Reference</a></p>
@@ -4374,7 +4375,7 @@ namespace Lightsail
         }
 
         /**
-         * <p>Terminates a web-based NICE DCV session that’s used to access a virtual
+         * <p>Terminates a web-based Amazon DCV session that’s used to access a virtual
          * computer’s operating system or application. The session will close and any
          * unsaved data will be lost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession">AWS
@@ -4406,12 +4407,12 @@ namespace Lightsail
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-create-static-ip">Amazon
          * Lightsail Developer Guide</a>.</p>  <p>The <code>stop instance</code>
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>instance name</code>. For more information, see the
          * <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
          * API Reference</a></p>
@@ -4438,10 +4439,14 @@ namespace Lightsail
 
         /**
          * <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
-         * <p>The <code>stop relational database</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by
-         * relationalDatabaseName. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         *  <p>If you don't manually start your database instance after it has been
+         * stopped for seven consecutive days, Amazon Lightsail automatically starts it for
+         * you. This action helps ensure that your database instance doesn't fall behind on
+         * any required maintenance updates.</p>  <p>The <code>stop relational
+         * database</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by relationalDatabaseName. For more
+         * information, see the <a
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase">AWS
          * API Reference</a></p>
@@ -4471,12 +4476,12 @@ namespace Lightsail
          * resource can have a maximum of 50 tags. Each tag consists of a key and an
          * optional value. Tag keys must be unique per resource. For more information about
          * tags, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
          * Lightsail Developer Guide</a>.</p> <p>The <code>tag resource</code> operation
          * supports tag-based access control via request tags and resource tags applied to
          * the resource identified by <code>resource name</code>. For more information, see
          * the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource">AWS
          * API Reference</a></p>
@@ -4509,7 +4514,7 @@ namespace Lightsail
          * single metric for one of your resources. When a metric condition is met, the
          * alarm can notify you by email, SMS text message, and a banner displayed on the
          * Amazon Lightsail console. For more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-alarms">Alarms
          * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">AWS
          * API Reference</a></p>
@@ -4566,7 +4571,7 @@ namespace Lightsail
          * supports tag-based access control via request tags and resource tags applied to
          * the resource identified by <code>resource name</code>. For more information, see
          * the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -4751,7 +4756,7 @@ namespace Lightsail
          * domain entry</code> operation supports tag-based access control via resource
          * tags applied to the resource identified by <code>domain name</code>. For more
          * information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
          * API Reference</a></p>
@@ -4784,7 +4789,7 @@ namespace Lightsail
          * are successfully applied, the state changes to <code>applied</code> in
          * subsequent <code>GetInstance</code> or <code>GetInstances</code> API calls. For
          * more information, see <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service">Use
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-instance-metadata-service">Use
          * IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions">AWS
@@ -4816,7 +4821,7 @@ namespace Lightsail
          * operation supports tag-based access control via resource tags applied to the
          * resource identified by <code>load balancer name</code>. For more information,
          * see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
@@ -4848,7 +4853,7 @@ namespace Lightsail
          * maintenance window.</p> <p>The <code>update relational database</code> operation
          * supports tag-based access control via resource tags applied to the resource
          * identified by relationalDatabaseName. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase">AWS
          * API Reference</a></p>
@@ -4885,7 +4890,7 @@ namespace Lightsail
          * <code>update relational database parameters</code> operation supports tag-based
          * access control via resource tags applied to the resource identified by
          * relationalDatabaseName. For more information, see the <a
-         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+         * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters">AWS
          * API Reference</a></p>

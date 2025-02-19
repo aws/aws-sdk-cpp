@@ -33,7 +33,8 @@ Firewall::Firewall() :
     m_descriptionHasBeenSet(false),
     m_firewallIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_enabledAnalysisTypesHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ Firewall& Firewall::operator =(JsonView jsonValue)
     m_encryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnabledAnalysisTypes"))
+  {
+    Aws::Utils::Array<JsonView> enabledAnalysisTypesJsonList = jsonValue.GetArray("EnabledAnalysisTypes");
+    for(unsigned enabledAnalysisTypesIndex = 0; enabledAnalysisTypesIndex < enabledAnalysisTypesJsonList.GetLength(); ++enabledAnalysisTypesIndex)
+    {
+      m_enabledAnalysisTypes.push_back(EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(enabledAnalysisTypesJsonList[enabledAnalysisTypesIndex].AsString()));
+    }
+    m_enabledAnalysisTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -221,6 +232,17 @@ JsonValue Firewall::Jsonize() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_enabledAnalysisTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> enabledAnalysisTypesJsonList(m_enabledAnalysisTypes.size());
+   for(unsigned enabledAnalysisTypesIndex = 0; enabledAnalysisTypesIndex < enabledAnalysisTypesJsonList.GetLength(); ++enabledAnalysisTypesIndex)
+   {
+     enabledAnalysisTypesJsonList[enabledAnalysisTypesIndex].AsString(EnabledAnalysisTypeMapper::GetNameForEnabledAnalysisType(m_enabledAnalysisTypes[enabledAnalysisTypesIndex]));
+   }
+   payload.WithArray("EnabledAnalysisTypes", std::move(enabledAnalysisTypesJsonList));
 
   }
 

@@ -31,7 +31,7 @@ namespace Model
   /**
    * <p>Describes a contact method.</p> <p>A contact method is a way to send you
    * notifications. For more information, see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
    * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContactMethod">AWS
    * API Reference</a></p>

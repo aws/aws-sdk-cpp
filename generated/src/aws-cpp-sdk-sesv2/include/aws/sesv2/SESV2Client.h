@@ -2000,6 +2000,34 @@ namespace SESV2
         }
 
         /**
+         * <p>Associate the configuration set with a MailManager archive. When you send
+         * email using the <code>SendEmail</code> or <code>SendBulkEmail</code> operations
+         * the message as it will be given to the receiving SMTP server will be archived,
+         * along with the recipient information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetArchivingOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutConfigurationSetArchivingOptionsOutcome PutConfigurationSetArchivingOptions(const Model::PutConfigurationSetArchivingOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutConfigurationSetArchivingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutConfigurationSetArchivingOptionsRequestT = Model::PutConfigurationSetArchivingOptionsRequest>
+        Model::PutConfigurationSetArchivingOptionsOutcomeCallable PutConfigurationSetArchivingOptionsCallable(const PutConfigurationSetArchivingOptionsRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::PutConfigurationSetArchivingOptions, request);
+        }
+
+        /**
+         * An Async wrapper for PutConfigurationSetArchivingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutConfigurationSetArchivingOptionsRequestT = Model::PutConfigurationSetArchivingOptionsRequest>
+        void PutConfigurationSetArchivingOptionsAsync(const PutConfigurationSetArchivingOptionsRequestT& request, const PutConfigurationSetArchivingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::PutConfigurationSetArchivingOptions, request, handler, context);
+        }
+
+        /**
          * <p>Associate a configuration set with a dedicated IP pool. You can use dedicated
          * IP pools to create groups of dedicated IP addresses for sending specific types
          * of email.</p><p><h3>See Also:</h3>   <a

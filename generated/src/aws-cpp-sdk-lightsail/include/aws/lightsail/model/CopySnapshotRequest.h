@@ -57,7 +57,7 @@ namespace Model
      * snapshot was created.</p> <p>Constraint:</p> <ul> <li> <p>Define this parameter
      * only when copying an automatic snapshot as a manual snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceResourceName() const{ return m_sourceResourceName; }
@@ -81,7 +81,7 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when copying an automatic snapshot as a manual snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
@@ -103,7 +103,7 @@ namespace Model
      * <code>restore date</code> parameters are mutually exclusive.</p> </li> <li>
      * <p>Define this parameter only when copying an automatic snapshot as a manual
      * snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }

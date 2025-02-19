@@ -33,7 +33,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
    * action to create an access key for a specific bucket. For more information about
    * access keys, see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-creating-bucket-access-keys">Creating
    * access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail
    * Developer Guide</i>.</p>  <p>The <code>secretAccessKey</code> value
    * is returned only in response to the <code>CreateBucketAccessKey</code> action.
