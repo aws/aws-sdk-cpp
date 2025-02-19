@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Describes an alarm.</p> <p>An alarm is a way to monitor your Lightsail
    * resource metrics. For more information, see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-alarms">Alarms
    * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Alarm">AWS API
    * Reference</a></p>

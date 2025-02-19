@@ -19,10 +19,15 @@ namespace Model
 {
 
 Metadata::Metadata() : 
+    m_configurationSetHasBeenSet(false),
     m_ingressPointIdHasBeenSet(false),
     m_ruleSetIdHasBeenSet(false),
     m_senderHostnameHasBeenSet(false),
     m_senderIpAddressHasBeenSet(false),
+    m_sendingMethodHasBeenSet(false),
+    m_sendingPoolHasBeenSet(false),
+    m_sourceArnHasBeenSet(false),
+    m_sourceIdentityHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_tlsCipherSuiteHasBeenSet(false),
     m_tlsProtocolHasBeenSet(false),
@@ -38,6 +43,13 @@ Metadata::Metadata(JsonView jsonValue)
 
 Metadata& Metadata::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ConfigurationSet"))
+  {
+    m_configurationSet = jsonValue.GetString("ConfigurationSet");
+
+    m_configurationSetHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
@@ -64,6 +76,34 @@ Metadata& Metadata::operator =(JsonView jsonValue)
     m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
 
     m_senderIpAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SendingMethod"))
+  {
+    m_sendingMethod = jsonValue.GetString("SendingMethod");
+
+    m_sendingMethodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SendingPool"))
+  {
+    m_sendingPool = jsonValue.GetString("SendingPool");
+
+    m_sendingPoolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceArn"))
+  {
+    m_sourceArn = jsonValue.GetString("SourceArn");
+
+    m_sourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceIdentity"))
+  {
+    m_sourceIdentity = jsonValue.GetString("SourceIdentity");
+
+    m_sourceIdentityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Timestamp"))
@@ -101,6 +141,12 @@ JsonValue Metadata::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_configurationSetHasBeenSet)
+  {
+   payload.WithString("ConfigurationSet", m_configurationSet);
+
+  }
+
   if(m_ingressPointIdHasBeenSet)
   {
    payload.WithString("IngressPointId", m_ingressPointId);
@@ -122,6 +168,30 @@ JsonValue Metadata::Jsonize() const
   if(m_senderIpAddressHasBeenSet)
   {
    payload.WithString("SenderIpAddress", m_senderIpAddress);
+
+  }
+
+  if(m_sendingMethodHasBeenSet)
+  {
+   payload.WithString("SendingMethod", m_sendingMethod);
+
+  }
+
+  if(m_sendingPoolHasBeenSet)
+  {
+   payload.WithString("SendingPool", m_sendingPool);
+
+  }
+
+  if(m_sourceArnHasBeenSet)
+  {
+   payload.WithString("SourceArn", m_sourceArn);
+
+  }
+
+  if(m_sourceIdentityHasBeenSet)
+  {
+   payload.WithString("SourceIdentity", m_sourceIdentity);
 
   }
 

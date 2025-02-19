@@ -113,7 +113,7 @@ namespace Model
      * scheduler may stop two existing tasks to free up cluster capacity before
      * starting two new tasks. </p> <p> If any tasks are unhealthy and if
      * <code>maximumPercent</code> doesn't allow the Amazon ECS scheduler to start
-     * replacement tasks, the scheduler stops the unhealthy tasks one-by-one — using
+     * replacement tasks, the scheduler stops the unhealthy tasks one-by-one ��� using
      * the <code>minimumHealthyPercent</code> as a constraint — to clear up capacity to
      * launch replacement tasks. For more information about how the scheduler replaces
      * unhealthy tasks, see <a

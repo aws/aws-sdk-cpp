@@ -117,7 +117,7 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon
      * Lightsail Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/OutputArtifact.h>
 #include <aws/codepipeline/model/InputArtifact.h>
+#include <aws/codepipeline/model/EnvironmentVariable.h>
 #include <utility>
 
 namespace Aws
@@ -233,6 +234,20 @@ namespace Model
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
     inline ActionDeclaration& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The environment variables for the action.</p>
+     */
+    inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+    inline void SetEnvironmentVariables(const Aws::Vector<EnvironmentVariable>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
+    inline void SetEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
+    inline ActionDeclaration& WithEnvironmentVariables(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironmentVariables(value); return *this;}
+    inline ActionDeclaration& WithEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
+    inline ActionDeclaration& AddEnvironmentVariables(const EnvironmentVariable& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(value); return *this; }
+    inline ActionDeclaration& AddEnvironmentVariables(EnvironmentVariable&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -270,6 +285,9 @@ namespace Model
 
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet = false;
+
+    Aws::Vector<EnvironmentVariable> m_environmentVariables;
+    bool m_environmentVariablesHasBeenSet = false;
   };
 
 } // namespace Model

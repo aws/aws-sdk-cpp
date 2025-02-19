@@ -28,7 +28,11 @@ namespace Model
 
   /**
    * <p>The configuration that specifies the result, such as rollback, to occur upon
-   * stage failure. </p><p><h3>See Also:</h3>   <a
+   * stage failure. For more information about conditions, see <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+   * conditions</a> and <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+   * do stage conditions work?</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/FailureConditions">AWS
    * API Reference</a></p>
    */
@@ -69,7 +73,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The conditions that are configured as failure conditions.</p>
+     * <p>The conditions that are configured as failure conditions. For more
+     * information about conditions, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+     * conditions</a> and <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+     * do stage conditions work?</a>.</p>
      */
     inline const Aws::Vector<Condition>& GetConditions() const{ return m_conditions; }
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }

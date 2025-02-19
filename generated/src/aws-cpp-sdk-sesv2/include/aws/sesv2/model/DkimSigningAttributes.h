@@ -113,12 +113,11 @@ namespace Model
      * (DEED). </p> </li> <li> <p> <code>AWS_SES_EU_SOUTH_1</code> – Configure DKIM for
      * the identity by replicating from a parent identity in Europe (Milan) region
      * using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-     * <code>AWS_SES_EU_WEST_1</code> ��� Configure DKIM for the identity by
-     * replicating from a parent identity in Europe (Ireland) region using
-     * Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-     * <code>AWS_SES_AP_NORTHEAST_3</code> – Configure DKIM for the identity by
-     * replicating from a parent identity in Asia Pacific (Osaka) region using
-     * Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
+     * <code>AWS_SES_EU_WEST_1</code> – Configure DKIM for the identity by replicating
+     * from a parent identity in Europe (Ireland) region using Deterministic Easy-DKIM
+     * (DEED). </p> </li> <li> <p> <code>AWS_SES_AP_NORTHEAST_3</code> – Configure DKIM
+     * for the identity by replicating from a parent identity in Asia Pacific (Osaka)
+     * region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
      * <code>AWS_SES_AP_NORTHEAST_2</code> – Configure DKIM for the identity by
      * replicating from a parent identity in Asia Pacific (Seoul) region using
      * Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>

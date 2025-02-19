@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
 #include <aws/sesv2/model/VdmOptions.h>
+#include <aws/sesv2/model/ArchivingOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -148,6 +149,19 @@ namespace Model
     inline CreateConfigurationSetRequest& WithVdmOptions(const VdmOptions& value) { SetVdmOptions(value); return *this;}
     inline CreateConfigurationSetRequest& WithVdmOptions(VdmOptions&& value) { SetVdmOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object that defines the MailManager archiving options for emails that you
+     * send using the configuration set.</p>
+     */
+    inline const ArchivingOptions& GetArchivingOptions() const{ return m_archivingOptions; }
+    inline bool ArchivingOptionsHasBeenSet() const { return m_archivingOptionsHasBeenSet; }
+    inline void SetArchivingOptions(const ArchivingOptions& value) { m_archivingOptionsHasBeenSet = true; m_archivingOptions = value; }
+    inline void SetArchivingOptions(ArchivingOptions&& value) { m_archivingOptionsHasBeenSet = true; m_archivingOptions = std::move(value); }
+    inline CreateConfigurationSetRequest& WithArchivingOptions(const ArchivingOptions& value) { SetArchivingOptions(value); return *this;}
+    inline CreateConfigurationSetRequest& WithArchivingOptions(ArchivingOptions&& value) { SetArchivingOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_configurationSetName;
@@ -173,6 +187,9 @@ namespace Model
 
     VdmOptions m_vdmOptions;
     bool m_vdmOptionsHasBeenSet = false;
+
+    ArchivingOptions m_archivingOptions;
+    bool m_archivingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

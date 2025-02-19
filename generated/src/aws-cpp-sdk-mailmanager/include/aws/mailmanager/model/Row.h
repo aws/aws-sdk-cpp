@@ -204,7 +204,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of the host from which the email was received.</p>
+     * <ul> <li> <p>Mail archived with Mail Manager: The IP address of the client that
+     * connects to the ingress endpoint.</p> </li> <li> <p>Mail sent through a
+     * configuration set with the archiving option enabled: The IP address of the
+     * client that makes the SendEmail API call.</p> </li> </ul>
      */
     inline const Aws::String& GetSenderIpAddress() const{ return m_senderIpAddress; }
     inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
@@ -214,6 +217,21 @@ namespace Model
     inline Row& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
     inline Row& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
     inline Row& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the archived email source, identified by either a Rule Set's ARN
+     * with an Archive action, or a Configuration Set's Archive ARN.</p>
+     */
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+    inline Row& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+    inline Row& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
+    inline Row& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
     ///@}
 
     ///@{
@@ -325,6 +343,9 @@ namespace Model
 
     Aws::String m_senderIpAddress;
     bool m_senderIpAddressHasBeenSet = false;
+
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet = false;

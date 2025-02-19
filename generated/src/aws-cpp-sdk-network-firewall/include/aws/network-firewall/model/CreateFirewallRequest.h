@@ -11,6 +11,7 @@
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
 #include <aws/network-firewall/model/Tag.h>
+#include <aws/network-firewall/model/EnabledAnalysisType.h>
 #include <utility>
 
 namespace Aws
@@ -181,6 +182,21 @@ namespace Model
     inline CreateFirewallRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
     inline CreateFirewallRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An optional setting indicating the specific traffic analysis types to enable
+     * on the firewall. </p>
+     */
+    inline const Aws::Vector<EnabledAnalysisType>& GetEnabledAnalysisTypes() const{ return m_enabledAnalysisTypes; }
+    inline bool EnabledAnalysisTypesHasBeenSet() const { return m_enabledAnalysisTypesHasBeenSet; }
+    inline void SetEnabledAnalysisTypes(const Aws::Vector<EnabledAnalysisType>& value) { m_enabledAnalysisTypesHasBeenSet = true; m_enabledAnalysisTypes = value; }
+    inline void SetEnabledAnalysisTypes(Aws::Vector<EnabledAnalysisType>&& value) { m_enabledAnalysisTypesHasBeenSet = true; m_enabledAnalysisTypes = std::move(value); }
+    inline CreateFirewallRequest& WithEnabledAnalysisTypes(const Aws::Vector<EnabledAnalysisType>& value) { SetEnabledAnalysisTypes(value); return *this;}
+    inline CreateFirewallRequest& WithEnabledAnalysisTypes(Aws::Vector<EnabledAnalysisType>&& value) { SetEnabledAnalysisTypes(std::move(value)); return *this;}
+    inline CreateFirewallRequest& AddEnabledAnalysisTypes(const EnabledAnalysisType& value) { m_enabledAnalysisTypesHasBeenSet = true; m_enabledAnalysisTypes.push_back(value); return *this; }
+    inline CreateFirewallRequest& AddEnabledAnalysisTypes(EnabledAnalysisType&& value) { m_enabledAnalysisTypesHasBeenSet = true; m_enabledAnalysisTypes.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_firewallName;
@@ -212,6 +228,9 @@ namespace Model
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet = false;
+
+    Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
+    bool m_enabledAnalysisTypesHasBeenSet = false;
   };
 
 } // namespace Model

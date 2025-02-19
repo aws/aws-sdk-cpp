@@ -71,7 +71,7 @@ namespace Model
      * version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to
      * track the number of calls to the instance metadata service that are using
      * version 1.0 credentials. For more information, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-health-metrics">Viewing
      * instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
      * Guide</i>.</p> 
      */

@@ -28,7 +28,7 @@ namespace Model
    * <p>Describes the state of the name server records update made by Amazon
    * Lightsail to an Amazon Route 53 registered domain.</p> <p>For more information,
    * see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/understanding-dns-in-amazon-lightsail">DNS
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/understanding-dns-in-amazon-lightsail">DNS
    * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/NameServersUpdateState">AWS

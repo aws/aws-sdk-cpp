@@ -47,17 +47,21 @@ namespace NetworkFirewall
    * traffic at the perimeter of your VPC. This includes filtering traffic going to
    * and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
    * Network Firewall uses rules that are compatible with Suricata, a free, open
-   * source network analysis and threat detection engine. </p> <p>You can use Network
-   * Firewall to monitor and protect your VPC traffic in a number of ways. The
-   * following are just a few examples: </p> <ul> <li> <p>Allow domains or IP
-   * addresses for known Amazon Web Services service endpoints, such as Amazon S3,
-   * and block all other forms of traffic.</p> </li> <li> <p>Use custom lists of
-   * known bad domains to limit the types of domain names that your applications can
-   * access.</p> </li> <li> <p>Perform deep packet inspection on traffic entering or
-   * leaving your VPC.</p> </li> <li> <p>Use stateful protocol detection to filter
-   * protocols like HTTPS, regardless of the port used.</p> </li> </ul> <p>To enable
-   * Network Firewall for your VPCs, you perform steps in both Amazon VPC and in
-   * Network Firewall. For information about using Amazon VPC, see <a
+   * source network analysis and threat detection engine. Network Firewall supports
+   * Suricata version 7.0.3. For information about Suricata, see the <a
+   * href="https://suricata.io/">Suricata website</a> and the <a
+   * href="https://suricata.readthedocs.io/en/suricata-7.0.3/">Suricata User
+   * Guide</a>. </p> <p>You can use Network Firewall to monitor and protect your VPC
+   * traffic in a number of ways. The following are just a few examples: </p> <ul>
+   * <li> <p>Allow domains or IP addresses for known Amazon Web Services service
+   * endpoints, such as Amazon S3, and block all other forms of traffic.</p> </li>
+   * <li> <p>Use custom lists of known bad domains to limit the types of domain names
+   * that your applications can access.</p> </li> <li> <p>Perform deep packet
+   * inspection on traffic entering or leaving your VPC.</p> </li> <li> <p>Use
+   * stateful protocol detection to filter protocols like HTTPS, regardless of the
+   * port used.</p> </li> </ul> <p>To enable Network Firewall for your VPCs, you
+   * perform steps in both Amazon VPC and in Network Firewall. For information about
+   * using Amazon VPC, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon VPC User
    * Guide</a>.</p> <p>To start using Network Firewall, do the following: </p> <ol>
    * <li> <p>(Optional) If you don't already have a VPC that you want to protect,
@@ -214,7 +218,9 @@ namespace NetworkFirewall
          * manage a firewall's tags, use the standard Amazon Web Services resource tagging
          * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
          * <a>UntagResource</a>.</p> <p>To retrieve information about firewalls, use
-         * <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p> <p>To generate a report on
+         * the last 30 days of traffic monitored by a firewall, use
+         * <a>StartAnalysisReport</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">AWS
          * API Reference</a></p>
          */
@@ -689,6 +695,59 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>The results of a <code>COMPLETED</code> analysis report generated with
+         * <a>StartAnalysisReport</a>.</p> <p>For more information, see
+         * <a>AnalysisTypeReportResult</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAnalysisReportResultsOutcome GetAnalysisReportResults(const Model::GetAnalysisReportResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAnalysisReportResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAnalysisReportResultsRequestT = Model::GetAnalysisReportResultsRequest>
+        Model::GetAnalysisReportResultsOutcomeCallable GetAnalysisReportResultsCallable(const GetAnalysisReportResultsRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::GetAnalysisReportResults, request);
+        }
+
+        /**
+         * An Async wrapper for GetAnalysisReportResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAnalysisReportResultsRequestT = Model::GetAnalysisReportResultsRequest>
+        void GetAnalysisReportResultsAsync(const GetAnalysisReportResultsRequestT& request, const GetAnalysisReportResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::GetAnalysisReportResults, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all traffic analysis reports generated within the last 30
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnalysisReportsOutcome ListAnalysisReports(const Model::ListAnalysisReportsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAnalysisReports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnalysisReportsRequestT = Model::ListAnalysisReportsRequest>
+        Model::ListAnalysisReportsOutcomeCallable ListAnalysisReportsCallable(const ListAnalysisReportsRequestT& request = {}) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::ListAnalysisReports, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnalysisReports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnalysisReportsRequestT = Model::ListAnalysisReportsRequest>
+        void ListAnalysisReportsAsync(const ListAnalysisReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnalysisReportsRequestT& request = {}) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::ListAnalysisReports, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the metadata for the firewall policies that you have defined.
          * Depending on your setting for max results and the number of firewall policies, a
          * single call might not return the full list. </p><p><h3>See Also:</h3>   <a
@@ -873,6 +932,33 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Generates a traffic analysis report for the timeframe and traffic type you
+         * specify.</p> <p>For information on the contents of a traffic analysis report,
+         * see <a>AnalysisReport</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAnalysisReportOutcome StartAnalysisReport(const Model::StartAnalysisReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAnalysisReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAnalysisReportRequestT = Model::StartAnalysisReportRequest>
+        Model::StartAnalysisReportOutcomeCallable StartAnalysisReportCallable(const StartAnalysisReportRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::StartAnalysisReport, request);
+        }
+
+        /**
+         * An Async wrapper for StartAnalysisReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAnalysisReportRequestT = Model::StartAnalysisReportRequest>
+        void StartAnalysisReportAsync(const StartAnalysisReportRequestT& request, const StartAnalysisReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::StartAnalysisReport, request, handler, context);
+        }
+
+        /**
          * <p>Adds the specified tags to the specified resource. Tags are key:value pairs
          * that you can use to categorize and manage your resources, for purposes like
          * billing. For example, you might set the tag key to "customer" and the value to
@@ -933,6 +1019,32 @@ namespace NetworkFirewall
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkFirewallClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Enables specific types of firewall analysis on a specific firewall you
+         * define.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFirewallAnalysisSettingsOutcome UpdateFirewallAnalysisSettings(const Model::UpdateFirewallAnalysisSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for UpdateFirewallAnalysisSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFirewallAnalysisSettingsRequestT = Model::UpdateFirewallAnalysisSettingsRequest>
+        Model::UpdateFirewallAnalysisSettingsOutcomeCallable UpdateFirewallAnalysisSettingsCallable(const UpdateFirewallAnalysisSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::UpdateFirewallAnalysisSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFirewallAnalysisSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFirewallAnalysisSettingsRequestT = Model::UpdateFirewallAnalysisSettingsRequest>
+        void UpdateFirewallAnalysisSettingsAsync(const UpdateFirewallAnalysisSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateFirewallAnalysisSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::UpdateFirewallAnalysisSettings, request, handler, context);
         }
 
         /**

@@ -87,6 +87,7 @@
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountVdmAttributesRequest.h>
+#include <aws/sesv2/model/PutConfigurationSetArchivingOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetReputationOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetSendingOptionsRequest.h>
@@ -2016,6 +2017,35 @@ PutAccountVdmAttributesOutcome SESV2Client::PutAccountVdmAttributes(const PutAcc
     [&]()-> PutAccountVdmAttributesOutcome {
       return PutAccountVdmAttributesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       resolvedEndpoint.AddPathSegments("/v2/email/account/vdm");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutConfigurationSetArchivingOptionsOutcome SESV2Client::PutConfigurationSetArchivingOptions(const PutConfigurationSetArchivingOptionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutConfigurationSetArchivingOptions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetArchivingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetArchivingOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetArchivingOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutConfigurationSetArchivingOptions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutConfigurationSetArchivingOptions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutConfigurationSetArchivingOptions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutConfigurationSetArchivingOptionsOutcome>(
+    [&]()-> PutConfigurationSetArchivingOptionsOutcome {
+      return PutConfigurationSetArchivingOptionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/v2/email/configuration-sets/");
+      resolvedEndpoint.AddPathSegment(request.GetConfigurationSetName());
+      resolvedEndpoint.AddPathSegments("/archiving-options");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

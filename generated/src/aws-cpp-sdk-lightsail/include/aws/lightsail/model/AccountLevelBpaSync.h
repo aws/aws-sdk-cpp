@@ -39,7 +39,7 @@ namespace Model
    * synchronized and it applies to your Lightsail buckets. For more information
    * about Amazon Simple Storage Service account-level BPA and how it affects
    * Lightsail buckets, see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block
    * public access for buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail
    * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AccountLevelBpaSync">AWS
@@ -107,7 +107,7 @@ namespace Model
      * occur. This means that all your buckets are private and not publicly accessible.
      * For more information about how to create the required service-linked role to
      * allow synchronization, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using
      * Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail
      * Developer Guide</i>.</p> </li> <li> <p>
      * <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed
@@ -116,10 +116,10 @@ namespace Model
      * buckets. Therefore, only the bucket access permissions and individual object
      * access permissions apply to your Lightsail buckets. For more information about
      * how to create the required service-linked role to allow synchronization, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using
      * Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail
      * Developer Guide</i>.</p> </li> <li> <p> <code>Unknown</code> - The reason that
-     * synchronization failed is unknown. Contact Amazon Web Services Support for more
+     * synchronization failed is unknown. Contact Amazon Web ServicesSupport for more
      * information.</p> </li> </ul>
      */
     inline const BPAStatusMessage& GetMessage() const{ return m_message; }

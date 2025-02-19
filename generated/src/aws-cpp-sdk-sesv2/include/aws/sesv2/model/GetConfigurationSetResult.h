@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
 #include <aws/sesv2/model/VdmOptions.h>
+#include <aws/sesv2/model/ArchivingOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -145,6 +146,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An object that defines the MailManager archive where sent emails are archived
+     * that you send using the configuration set.</p>
+     */
+    inline const ArchivingOptions& GetArchivingOptions() const{ return m_archivingOptions; }
+    inline void SetArchivingOptions(const ArchivingOptions& value) { m_archivingOptions = value; }
+    inline void SetArchivingOptions(ArchivingOptions&& value) { m_archivingOptions = std::move(value); }
+    inline GetConfigurationSetResult& WithArchivingOptions(const ArchivingOptions& value) { SetArchivingOptions(value); return *this;}
+    inline GetConfigurationSetResult& WithArchivingOptions(ArchivingOptions&& value) { SetArchivingOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -171,6 +184,8 @@ namespace Model
     SuppressionOptions m_suppressionOptions;
 
     VdmOptions m_vdmOptions;
+
+    ArchivingOptions m_archivingOptions;
 
     Aws::String m_requestId;
   };

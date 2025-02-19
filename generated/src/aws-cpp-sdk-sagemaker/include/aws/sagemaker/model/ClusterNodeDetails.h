@@ -124,8 +124,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The customized VPC configuration at the instance group level that overrides
-     * the default VPC configuration of the SageMaker HyperPod cluster.</p>
+     * <p>The customized Amazon VPC configuration at the instance group level that
+     * overrides the default Amazon VPC configuration of the SageMaker HyperPod
+     * cluster.</p>
      */
     inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
     inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }
@@ -179,8 +180,8 @@ namespace Model
     /**
      * <p>The private primary IPv6 address of the SageMaker HyperPod cluster node when
      * configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6
-     * addressing enabled in either the cluster VPC configuration or the instance group
-     * VPC configuration.</p>
+     * addressing enabled in either the cluster Amazon VPC configuration or the
+     * instance group Amazon VPC configuration.</p>
      */
     inline const Aws::String& GetPrivatePrimaryIpv6() const{ return m_privatePrimaryIpv6; }
     inline bool PrivatePrimaryIpv6HasBeenSet() const { return m_privatePrimaryIpv6HasBeenSet; }

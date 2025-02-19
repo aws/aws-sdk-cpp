@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns information about the specified NICE DCV GUI session.</p>
+     * <p>Returns information about the specified Amazon DCV GUI session.</p>
      */
     inline const Aws::Vector<Session>& GetSessions() const{ return m_sessions; }
     inline void SetSessions(const Aws::Vector<Session>& value) { m_sessions = value; }

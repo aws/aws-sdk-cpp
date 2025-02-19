@@ -347,7 +347,7 @@ namespace Model
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }

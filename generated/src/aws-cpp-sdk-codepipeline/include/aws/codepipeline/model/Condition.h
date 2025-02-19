@@ -29,7 +29,9 @@ namespace Model
    * <p>The condition for the stage. A condition is made up of the rules and the
    * result for the condition. For more information about conditions, see <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
-   * conditions</a>. For more information about rules, see the <a
+   * conditions</a> and <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+   * do stage conditions work?</a>.. For more information about rules, see the <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
    * rule reference</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/Condition">AWS

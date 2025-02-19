@@ -166,7 +166,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
      * action to get a list of TLS policy names that you can specify.</p> <p>For more
      * information about load balancer TLS policies, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
      * TLS security policies on your Amazon Lightsail load balancers</a> in the
      * <i>Amazon Lightsail Developer Guide</i>.</p>
      */

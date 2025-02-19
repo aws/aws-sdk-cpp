@@ -243,14 +243,14 @@ namespace Model
      * Amazon Web Services Neuron driver versions.</p> <p>The AMI version names, and
      * their configurations, are the following:</p> <dl>
      * <dt>al2-ami-sagemaker-inference-gpu-2</dt> <dd> <ul> <li> <p>Accelerator:
-     * GPU</p> </li> <li> <p>NVIDIA driver version: 535.54.03</p> </li> <li> <p>CUDA
-     * version: 12.2</p> </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-2-1</dt>
-     * <dd> <ul> <li> <p>Accelerator: GPU</p> </li> <li> <p>NVIDIA driver version:
-     * 535.54.03</p> </li> <li> <p>CUDA driver version: 12.2</p> </li> <li> <p>CUDA
-     * Container Toolkit with disabled CUDA-compat mounting</p> </li> </ul> </dd>
+     * GPU</p> </li> <li> <p>NVIDIA driver version: 535</p> </li> <li> <p>CUDA version:
+     * 12.2</p> </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-2-1</dt> <dd>
+     * <ul> <li> <p>Accelerator: GPU</p> </li> <li> <p>NVIDIA driver version: 535</p>
+     * </li> <li> <p>CUDA version: 12.2</p> </li> <li> <p>NVIDIA Container Toolkit with
+     * disabled CUDA-compat mounting</p> </li> </ul> </dd>
      * <dt>al2-ami-sagemaker-inference-gpu-3-1</dt> <dd> <ul> <li> <p>Accelerator:
-     * GPU</p> </li> <li> <p>NVIDIA driver version: 550.144.01</p> </li> <li> <p>CUDA
-     * version: 12.4</p> </li> <li> <p>Container Toolkit with disabled CUDA-compat
+     * GPU</p> </li> <li> <p>NVIDIA driver version: 550</p> </li> <li> <p>CUDA version:
+     * 12.4</p> </li> <li> <p>NVIDIA Container Toolkit with disabled CUDA-compat
      * mounting</p> </li> </ul> </dd> </dl>
      */
     inline const ProductionVariantInferenceAmiVersion& GetInferenceAmiVersion() const{ return m_inferenceAmiVersion; }

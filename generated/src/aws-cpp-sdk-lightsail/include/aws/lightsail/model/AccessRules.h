@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>Describes the anonymous access permissions for an Amazon Lightsail bucket and
    * its objects.</p> <p>For more information about bucket access permissions, see <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-understanding-bucket-permissions">Understanding
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-understanding-bucket-permissions">Understanding
    * bucket permissions in Amazon Lightsail</a> in the </p> <p> <i>Amazon Lightsail
    * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AccessRules">AWS

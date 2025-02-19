@@ -80,6 +80,12 @@ GetConfigurationSetResult& GetConfigurationSetResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("ArchivingOptions"))
+  {
+    m_archivingOptions = jsonValue.GetObject("ArchivingOptions");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

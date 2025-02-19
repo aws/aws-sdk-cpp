@@ -59,7 +59,8 @@ namespace Model
     ///@{
     /**
      * <p>The recommendation type, with values like <code>DKIM</code>,
-     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+     * <code>SPF</code>, <code>DMARC</code>, <code>BIMI</code>, or
+     * <code>COMPLAINT</code>.</p>
      */
     inline const RecommendationType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

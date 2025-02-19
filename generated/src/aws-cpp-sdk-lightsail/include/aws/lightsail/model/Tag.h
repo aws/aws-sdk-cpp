@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>Describes a tag key and optional value assigned to an Amazon Lightsail
    * resource.</p> <p>For more information about tags in Lightsail, see the <a
-   * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
    * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Tag">AWS API
    * Reference</a></p>

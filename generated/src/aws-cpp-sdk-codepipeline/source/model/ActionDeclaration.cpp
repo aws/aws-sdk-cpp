@@ -32,7 +32,8 @@ ActionDeclaration::ActionDeclaration() :
     m_regionHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
+    m_timeoutInMinutesHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,16 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     m_timeoutInMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("environmentVariables"))
+  {
+    Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
+    for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
+    {
+      m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
+    }
+    m_environmentVariablesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -244,6 +255,17 @@ JsonValue ActionDeclaration::Jsonize() const
   if(m_timeoutInMinutesHasBeenSet)
   {
    payload.WithInteger("timeoutInMinutes", m_timeoutInMinutes);
+
+  }
+
+  if(m_environmentVariablesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+   for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
+   {
+     environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
+   }
+   payload.WithArray("environmentVariables", std::move(environmentVariablesJsonList));
 
   }
 

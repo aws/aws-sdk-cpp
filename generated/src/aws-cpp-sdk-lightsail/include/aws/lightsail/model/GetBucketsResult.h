@@ -70,7 +70,7 @@ namespace Model
      * <p>An object that describes the synchronization status of the Amazon S3
      * account-level block public access feature for your Lightsail buckets.</p> <p>For
      * more information about this feature and how it affects Lightsail buckets, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block
      * public access for buckets in Amazon Lightsail</a>.</p>
      */
     inline const AccountLevelBpaSync& GetAccountLevelBpaSync() const{ return m_accountLevelBpaSync; }

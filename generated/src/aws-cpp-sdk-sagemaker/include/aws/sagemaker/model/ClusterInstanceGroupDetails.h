@@ -222,8 +222,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The customized VPC configuration at the instance group level that overrides
-     * the default VPC configuration of the SageMaker HyperPod cluster.</p>
+     * <p>The customized Amazon VPC configuration at the instance group level that
+     * overrides the default Amazon VPC configuration of the SageMaker HyperPod
+     * cluster.</p>
      */
     inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
     inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }

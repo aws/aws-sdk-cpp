@@ -134,7 +134,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon
      * Lightsail Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
@@ -216,7 +216,7 @@ namespace Model
      * parameters are mutually exclusive.</p> </li> <li> <p>Define this parameter only
      * when creating a new instance from an automatic snapshot. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceInstanceName() const{ return m_sourceInstanceName; }
@@ -240,7 +240,7 @@ namespace Model
      * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
      * parameter only when creating a new instance from an automatic snapshot. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
@@ -261,7 +261,7 @@ namespace Model
      * restorable auto snapshot</code> and <code>restore date</code> parameters are
      * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
      * new instance from an automatic snapshot. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }

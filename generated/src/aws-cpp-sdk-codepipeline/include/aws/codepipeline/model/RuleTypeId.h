@@ -27,7 +27,12 @@ namespace Model
 
   /**
    * <p>The ID for the rule type, which is made up of the combined values for
-   * category, owner, provider, and version.</p><p><h3>See Also:</h3>   <a
+   * category, owner, provider, and version. For more information about conditions,
+   * see <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+   * conditions</a>. For more information about rules, see the <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+   * rule reference</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RuleTypeId">AWS
    * API Reference</a></p>
    */
@@ -68,7 +73,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
+     * <p>The rule provider, such as the <code>DeploymentWindow</code> rule. For a list
+     * of rule provider names, see the rules listed in the <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+     * rule reference</a>.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
