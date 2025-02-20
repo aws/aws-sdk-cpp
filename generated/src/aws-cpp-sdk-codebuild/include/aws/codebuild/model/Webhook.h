@@ -10,6 +10,7 @@
 #include <aws/codebuild/model/WebhookBuildType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codebuild/model/ScopeConfiguration.h>
+#include <aws/codebuild/model/WebhookStatus.h>
 #include <aws/codebuild/model/WebhookFilter.h>
 #include <utility>
 
@@ -181,6 +182,36 @@ namespace Model
     inline Webhook& WithScopeConfiguration(const ScopeConfiguration& value) { SetScopeConfiguration(value); return *this;}
     inline Webhook& WithScopeConfiguration(ScopeConfiguration&& value) { SetScopeConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The status of the webhook. Valid values include:</p> <ul> <li> <p>
+     * <code>CREATING</code>: The webhook is being created.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code>: The webhook has failed to create.</p> </li> <li> <p>
+     * <code>ACTIVE</code>: The webhook has succeeded and is active.</p> </li> <li> <p>
+     * <code>DELETING</code>: The webhook is being deleted.</p> </li> </ul>
+     */
+    inline const WebhookStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const WebhookStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(WebhookStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline Webhook& WithStatus(const WebhookStatus& value) { SetStatus(value); return *this;}
+    inline Webhook& WithStatus(WebhookStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A message associated with the status of a webhook.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+    inline Webhook& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+    inline Webhook& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+    inline Webhook& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_url;
@@ -209,6 +240,12 @@ namespace Model
 
     ScopeConfiguration m_scopeConfiguration;
     bool m_scopeConfigurationHasBeenSet = false;
+
+    WebhookStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

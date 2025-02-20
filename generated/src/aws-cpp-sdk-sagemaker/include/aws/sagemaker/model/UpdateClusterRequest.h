@@ -76,6 +76,22 @@ namespace Model
     inline UpdateClusterRequest& WithNodeRecovery(const ClusterNodeRecovery& value) { SetNodeRecovery(value); return *this;}
     inline UpdateClusterRequest& WithNodeRecovery(ClusterNodeRecovery&& value) { SetNodeRecovery(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specify the names of the instance groups to delete. Use a single
+     * <code>,</code> as the separator between multiple names.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceGroupsToDelete() const{ return m_instanceGroupsToDelete; }
+    inline bool InstanceGroupsToDeleteHasBeenSet() const { return m_instanceGroupsToDeleteHasBeenSet; }
+    inline void SetInstanceGroupsToDelete(const Aws::Vector<Aws::String>& value) { m_instanceGroupsToDeleteHasBeenSet = true; m_instanceGroupsToDelete = value; }
+    inline void SetInstanceGroupsToDelete(Aws::Vector<Aws::String>&& value) { m_instanceGroupsToDeleteHasBeenSet = true; m_instanceGroupsToDelete = std::move(value); }
+    inline UpdateClusterRequest& WithInstanceGroupsToDelete(const Aws::Vector<Aws::String>& value) { SetInstanceGroupsToDelete(value); return *this;}
+    inline UpdateClusterRequest& WithInstanceGroupsToDelete(Aws::Vector<Aws::String>&& value) { SetInstanceGroupsToDelete(std::move(value)); return *this;}
+    inline UpdateClusterRequest& AddInstanceGroupsToDelete(const Aws::String& value) { m_instanceGroupsToDeleteHasBeenSet = true; m_instanceGroupsToDelete.push_back(value); return *this; }
+    inline UpdateClusterRequest& AddInstanceGroupsToDelete(Aws::String&& value) { m_instanceGroupsToDeleteHasBeenSet = true; m_instanceGroupsToDelete.push_back(std::move(value)); return *this; }
+    inline UpdateClusterRequest& AddInstanceGroupsToDelete(const char* value) { m_instanceGroupsToDeleteHasBeenSet = true; m_instanceGroupsToDelete.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -86,6 +102,9 @@ namespace Model
 
     ClusterNodeRecovery m_nodeRecovery;
     bool m_nodeRecoveryHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceGroupsToDelete;
+    bool m_instanceGroupsToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

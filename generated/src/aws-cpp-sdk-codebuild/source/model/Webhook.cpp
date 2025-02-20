@@ -29,7 +29,10 @@ Webhook::Webhook() :
     m_manualCreation(false),
     m_manualCreationHasBeenSet(false),
     m_lastModifiedSecretHasBeenSet(false),
-    m_scopeConfigurationHasBeenSet(false)
+    m_scopeConfigurationHasBeenSet(false),
+    m_status(WebhookStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
 }
 
@@ -114,6 +117,20 @@ Webhook& Webhook::operator =(JsonView jsonValue)
     m_scopeConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = WebhookStatusMapper::GetWebhookStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+
+    m_statusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +197,17 @@ JsonValue Webhook::Jsonize() const
   if(m_scopeConfigurationHasBeenSet)
   {
    payload.WithObject("scopeConfiguration", m_scopeConfiguration.Jsonize());
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", WebhookStatusMapper::GetNameForWebhookStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("statusMessage", m_statusMessage);
 
   }
 

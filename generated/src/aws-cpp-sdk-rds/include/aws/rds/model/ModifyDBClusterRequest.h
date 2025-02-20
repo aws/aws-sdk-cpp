@@ -619,7 +619,7 @@ namespace Model
      * parameter to 465.</p> <p>If you change the value from <code>advanced</code> to
      * <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code>
      * parameter to <code>false</code>.</p> <p>Valid for Cluster Type: Aurora DB
-     * clusters only</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
