@@ -11,6 +11,7 @@
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces-web/model/ToolbarConfiguration.h>
 #include <aws/workspaces-web/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -207,6 +208,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration of the toolbar. This allows administrators to select the
+     * toolbar type and visual mode, set maximum display resolution for sessions, and
+     * choose which items are visible to end users during their sessions. If
+     * administrators do not modify these settings, end users retain control over their
+     * toolbar preferences.</p>
+     */
+    inline const ToolbarConfiguration& GetToolbarConfiguration() const{ return m_toolbarConfiguration; }
+    inline bool ToolbarConfigurationHasBeenSet() const { return m_toolbarConfigurationHasBeenSet; }
+    inline void SetToolbarConfiguration(const ToolbarConfiguration& value) { m_toolbarConfigurationHasBeenSet = true; m_toolbarConfiguration = value; }
+    inline void SetToolbarConfiguration(ToolbarConfiguration&& value) { m_toolbarConfigurationHasBeenSet = true; m_toolbarConfiguration = std::move(value); }
+    inline CreateUserSettingsRequest& WithToolbarConfiguration(const ToolbarConfiguration& value) { SetToolbarConfiguration(value); return *this;}
+    inline CreateUserSettingsRequest& WithToolbarConfiguration(ToolbarConfiguration&& value) { SetToolbarConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether the user can upload files from the local device to the
      * streaming session.</p>
      */
@@ -254,6 +271,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ToolbarConfiguration m_toolbarConfiguration;
+    bool m_toolbarConfigurationHasBeenSet = false;
 
     EnabledType m_uploadAllowed;
     bool m_uploadAllowedHasBeenSet = false;

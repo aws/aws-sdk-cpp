@@ -1022,9 +1022,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The mode of Database Insights to enable for the DB instance.</p> <p>This
-     * setting only applies to Amazon Aurora DB instances.</p>  <p>Currently,
-     * this value is inherited from the DB cluster and can't be changed.</p> 
+     * <p>The mode of Database Insights to enable for the DB instance.</p> 
+     * <p>Aurora DB instances inherit this value from the DB cluster, so you can't
+     * change this value.</p> 
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }

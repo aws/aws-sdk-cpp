@@ -30,6 +30,7 @@ UpdateUserSettingsRequest::UpdateUserSettingsRequest() :
     m_pasteAllowedHasBeenSet(false),
     m_printAllowed(EnabledType::NOT_SET),
     m_printAllowedHasBeenSet(false),
+    m_toolbarConfigurationHasBeenSet(false),
     m_uploadAllowed(EnabledType::NOT_SET),
     m_uploadAllowedHasBeenSet(false),
     m_userSettingsArnHasBeenSet(false)
@@ -87,6 +88,12 @@ Aws::String UpdateUserSettingsRequest::SerializePayload() const
   if(m_printAllowedHasBeenSet)
   {
    payload.WithString("printAllowed", EnabledTypeMapper::GetNameForEnabledType(m_printAllowed));
+  }
+
+  if(m_toolbarConfigurationHasBeenSet)
+  {
+   payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
+
   }
 
   if(m_uploadAllowedHasBeenSet)

@@ -51,7 +51,8 @@ namespace Model
     /**
      * <p>The name of the user-based subscription product.</p> <p>Valid values:
      * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
-     * | <code>OFFICE_PROFESSIONAL_PLUS</code> </p>
+     * | <code>OFFICE_PROFESSIONAL_PLUS</code> | <code>REMOTE_DESKTOP_SERVICES</code>
+     * </p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }

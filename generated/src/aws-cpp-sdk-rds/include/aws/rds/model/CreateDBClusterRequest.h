@@ -879,7 +879,7 @@ namespace Model
      * this value to <code>advanced</code>, you must also set the
      * <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the
      * <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p> <p>Valid
-     * for Cluster Type: Aurora DB clusters only</p>
+     * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }

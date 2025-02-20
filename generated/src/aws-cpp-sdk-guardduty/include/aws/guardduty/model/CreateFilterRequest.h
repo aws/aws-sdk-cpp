@@ -222,7 +222,7 @@ namespace Model
      * <p>resource.rdsDbInstanceDetails.tags.value</p> </li> <li>
      * <p>service.runtimeDetails.process.executableSha256</p> </li> <li>
      * <p>service.runtimeDetails.process.name</p> </li> <li>
-     * <p>service.runtimeDetails.process.name</p> </li> <li>
+     * <p>service.runtimeDetails.process.executablePath</p> </li> <li>
      * <p>resource.lambdaDetails.functionName</p> </li> <li>
      * <p>resource.lambdaDetails.functionArn</p> </li> <li>
      * <p>resource.lambdaDetails.tags.key</p> </li> <li>

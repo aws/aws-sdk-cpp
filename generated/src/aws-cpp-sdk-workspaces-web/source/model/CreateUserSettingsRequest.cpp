@@ -33,6 +33,7 @@ CreateUserSettingsRequest::CreateUserSettingsRequest() :
     m_printAllowed(EnabledType::NOT_SET),
     m_printAllowedHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_toolbarConfigurationHasBeenSet(false),
     m_uploadAllowed(EnabledType::NOT_SET),
     m_uploadAllowedHasBeenSet(false)
 {
@@ -116,6 +117,12 @@ Aws::String CreateUserSettingsRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_toolbarConfigurationHasBeenSet)
+  {
+   payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
 
   }
 

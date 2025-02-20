@@ -16,7 +16,8 @@ UpdateClusterRequest::UpdateClusterRequest() :
     m_clusterNameHasBeenSet(false),
     m_instanceGroupsHasBeenSet(false),
     m_nodeRecovery(ClusterNodeRecovery::NOT_SET),
-    m_nodeRecoveryHasBeenSet(false)
+    m_nodeRecoveryHasBeenSet(false),
+    m_instanceGroupsToDeleteHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,17 @@ Aws::String UpdateClusterRequest::SerializePayload() const
   if(m_nodeRecoveryHasBeenSet)
   {
    payload.WithString("NodeRecovery", ClusterNodeRecoveryMapper::GetNameForClusterNodeRecovery(m_nodeRecovery));
+  }
+
+  if(m_instanceGroupsToDeleteHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceGroupsToDeleteJsonList(m_instanceGroupsToDelete.size());
+   for(unsigned instanceGroupsToDeleteIndex = 0; instanceGroupsToDeleteIndex < instanceGroupsToDeleteJsonList.GetLength(); ++instanceGroupsToDeleteIndex)
+   {
+     instanceGroupsToDeleteJsonList[instanceGroupsToDeleteIndex].AsString(m_instanceGroupsToDelete[instanceGroupsToDeleteIndex]);
+   }
+   payload.WithArray("InstanceGroupsToDelete", std::move(instanceGroupsToDeleteJsonList));
+
   }
 
   return payload.View().WriteReadable();

@@ -7,6 +7,7 @@
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
+#include <aws/workspaces-web/model/ToolbarConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -141,6 +142,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration of the toolbar. This allows administrators to select the
+     * toolbar type and visual mode, set maximum display resolution for sessions, and
+     * choose which items are visible to end users during their sessions. If
+     * administrators do not modify these settings, end users retain control over their
+     * toolbar preferences.</p>
+     */
+    inline const ToolbarConfiguration& GetToolbarConfiguration() const{ return m_toolbarConfiguration; }
+    inline bool ToolbarConfigurationHasBeenSet() const { return m_toolbarConfigurationHasBeenSet; }
+    inline void SetToolbarConfiguration(const ToolbarConfiguration& value) { m_toolbarConfigurationHasBeenSet = true; m_toolbarConfiguration = value; }
+    inline void SetToolbarConfiguration(ToolbarConfiguration&& value) { m_toolbarConfigurationHasBeenSet = true; m_toolbarConfiguration = std::move(value); }
+    inline UserSettingsSummary& WithToolbarConfiguration(const ToolbarConfiguration& value) { SetToolbarConfiguration(value); return *this;}
+    inline UserSettingsSummary& WithToolbarConfiguration(ToolbarConfiguration&& value) { SetToolbarConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether the user can upload files from the local device to the
      * streaming session.</p>
      */
@@ -190,6 +207,9 @@ namespace Model
 
     EnabledType m_printAllowed;
     bool m_printAllowedHasBeenSet = false;
+
+    ToolbarConfiguration m_toolbarConfiguration;
+    bool m_toolbarConfigurationHasBeenSet = false;
 
     EnabledType m_uploadAllowed;
     bool m_uploadAllowedHasBeenSet = false;

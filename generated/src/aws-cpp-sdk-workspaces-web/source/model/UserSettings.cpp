@@ -37,6 +37,7 @@ UserSettings::UserSettings() :
     m_pasteAllowedHasBeenSet(false),
     m_printAllowed(EnabledType::NOT_SET),
     m_printAllowedHasBeenSet(false),
+    m_toolbarConfigurationHasBeenSet(false),
     m_uploadAllowed(EnabledType::NOT_SET),
     m_uploadAllowedHasBeenSet(false),
     m_userSettingsArnHasBeenSet(false)
@@ -134,6 +135,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_printAllowedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("toolbarConfiguration"))
+  {
+    m_toolbarConfiguration = jsonValue.GetObject("toolbarConfiguration");
+
+    m_toolbarConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("uploadAllowed"))
   {
     m_uploadAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("uploadAllowed"));
@@ -224,6 +232,12 @@ JsonValue UserSettings::Jsonize() const
   if(m_printAllowedHasBeenSet)
   {
    payload.WithString("printAllowed", EnabledTypeMapper::GetNameForEnabledType(m_printAllowed));
+  }
+
+  if(m_toolbarConfigurationHasBeenSet)
+  {
+   payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
+
   }
 
   if(m_uploadAllowedHasBeenSet)

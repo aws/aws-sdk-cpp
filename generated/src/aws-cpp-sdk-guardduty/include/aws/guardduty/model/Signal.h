@@ -62,8 +62,8 @@ namespace Model
      * can be GuardDuty findings or activities observed in data sources that GuardDuty
      * monitors. For more information, see <a
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational
-     * data sources</a> in the <i>GuardDuty User Guide</i>.</p> <p>A signal type can be
-     * one of the valid values listed in this API. Here are the related
+     * data sources</a> in the <i>Amazon GuardDuty User Guide</i>.</p> <p>A signal type
+     * can be one of the valid values listed in this API. Here are the related
      * descriptions:</p> <ul> <li> <p> <code>FINDING</code> - Individually generated
      * GuardDuty finding.</p> </li> <li> <p> <code>CLOUD_TRAIL</code> - Activity
      * observed from CloudTrail logs</p> </li> <li> <p> <code>S3_DATA_EVENTS</code> -
@@ -72,7 +72,7 @@ namespace Model
      * feature in your account. For more information about S3 Protection and steps to
      * enable it, see <a
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3
-     * Protection</a> in the <i>GuardDuty User Guide</i>.</p> </li> </ul>
+     * Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p> </li> </ul>
      */
     inline const SignalType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -167,7 +167,7 @@ namespace Model
      * <p>The severity associated with the signal. For more information about severity,
      * see <a
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
-     * severity levels</a> in the <i>GuardDuty User Guide</i>.</p>
+     * severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
      */
     inline double GetSeverity() const{ return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }

@@ -480,7 +480,7 @@ namespace Model
     ///@{
     /**
      * <p>The mode of Database Insights to enable for the read replica.</p> 
-     * <p>Currently, this setting is not supported.</p> 
+     * <p>This setting isn't supported.</p> 
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }

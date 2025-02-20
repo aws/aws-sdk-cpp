@@ -42,7 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specific indicator keys observed in the attack sequence.</p>
+     * <p>Specific indicator keys observed in the attack sequence. For description of
+     * the valid values for key, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack
+     * sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
      */
     inline const IndicatorType& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -57,9 +60,7 @@ namespace Model
      * <p>Values associated with each indicator key. For example, if the indicator key
      * is <code>SUSPICIOUS_NETWORK</code>, then the value will be the name of the
      * network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will
-     * be one of the MITRE tactics. </p> <p>For more information about the values
-     * associated with the key, see GuardDuty Extended Threat Detection in the
-     * <i>GuardDuty User Guide.</i> </p>
+     * be one of the MITRE tactics. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
