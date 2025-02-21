@@ -253,7 +253,26 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+  std::weak_ptr<Utils::ServiceRequestAsyncContextWrapper::Context> asyncCtx = request.GetAsyncContextWrapper().GetContext();
+  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext, sem, asyncCtx] () mutable {
+      const Aws::Utils::ServiceRequestAsyncContextLock requestLock(asyncCtx);
+      if (!requestLock.IsValid()) {
+        auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>(CoreErrors::USER_CANCELLED,
+          "",
+          "Request object is already destroyed",
+          false);
+
+        AWS_LOGSTREAM_FATAL("StartCallAnalyticsStreamTranscription", "Service operation "
+          << "TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscription" <<
+          " has been scheduled for async execution but request object is already destroyed now!");
+
+        handler(this,
+                StartCallAnalyticsStreamTranscriptionRequest(), /* dummy request */
+                std::move(error), /* no request execution! */
+                handlerContext);
+        return StartCallAnalyticsStreamTranscriptionOutcome(error);;
+      }
+
       JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
@@ -264,6 +283,7 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
         request.GetAudioStream()->Close();
         handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
+      sem->ReleaseAll();
       return StartCallAnalyticsStreamTranscriptionOutcome(NoResult());
   });
   sem->WaitOne();
@@ -319,7 +339,26 @@ void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(Model::Star
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+  std::weak_ptr<Utils::ServiceRequestAsyncContextWrapper::Context> asyncCtx = request.GetAsyncContextWrapper().GetContext();
+  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext, sem, asyncCtx] () mutable {
+      const Aws::Utils::ServiceRequestAsyncContextLock requestLock(asyncCtx);
+      if (!requestLock.IsValid()) {
+        auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>(CoreErrors::USER_CANCELLED,
+          "",
+          "Request object is already destroyed",
+          false);
+
+        AWS_LOGSTREAM_FATAL("StartMedicalScribeStream", "Service operation "
+          << "TranscribeStreamingServiceClient::StartMedicalScribeStream" <<
+          " has been scheduled for async execution but request object is already destroyed now!");
+
+        handler(this,
+                StartMedicalScribeStreamRequest(), /* dummy request */
+                std::move(error), /* no request execution! */
+                handlerContext);
+        return StartMedicalScribeStreamOutcome(error);;
+      }
+
       JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
@@ -330,6 +369,7 @@ void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(Model::Star
         request.GetInputStream()->Close();
         handler(this, request, StartMedicalScribeStreamOutcome(outcome.GetError()), handlerContext);
       }
+      sem->ReleaseAll();
       return StartMedicalScribeStreamOutcome(NoResult());
   });
   sem->WaitOne();
@@ -397,7 +437,26 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+  std::weak_ptr<Utils::ServiceRequestAsyncContextWrapper::Context> asyncCtx = request.GetAsyncContextWrapper().GetContext();
+  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext, sem, asyncCtx] () mutable {
+      const Aws::Utils::ServiceRequestAsyncContextLock requestLock(asyncCtx);
+      if (!requestLock.IsValid()) {
+        auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>(CoreErrors::USER_CANCELLED,
+          "",
+          "Request object is already destroyed",
+          false);
+
+        AWS_LOGSTREAM_FATAL("StartMedicalStreamTranscription", "Service operation "
+          << "TranscribeStreamingServiceClient::StartMedicalStreamTranscription" <<
+          " has been scheduled for async execution but request object is already destroyed now!");
+
+        handler(this,
+                StartMedicalStreamTranscriptionRequest(), /* dummy request */
+                std::move(error), /* no request execution! */
+                handlerContext);
+        return StartMedicalStreamTranscriptionOutcome(error);;
+      }
+
       JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
@@ -408,6 +467,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
         request.GetAudioStream()->Close();
         handler(this, request, StartMedicalStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
+      sem->ReleaseAll();
       return StartMedicalStreamTranscriptionOutcome(NoResult());
   });
   sem->WaitOne();
@@ -457,7 +517,26 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+  std::weak_ptr<Utils::ServiceRequestAsyncContextWrapper::Context> asyncCtx = request.GetAsyncContextWrapper().GetContext();
+  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext, sem, asyncCtx] () mutable {
+      const Aws::Utils::ServiceRequestAsyncContextLock requestLock(asyncCtx);
+      if (!requestLock.IsValid()) {
+        auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>(CoreErrors::USER_CANCELLED,
+          "",
+          "Request object is already destroyed",
+          false);
+
+        AWS_LOGSTREAM_FATAL("StartStreamTranscription", "Service operation "
+          << "TranscribeStreamingServiceClient::StartStreamTranscription" <<
+          " has been scheduled for async execution but request object is already destroyed now!");
+
+        handler(this,
+                StartStreamTranscriptionRequest(), /* dummy request */
+                std::move(error), /* no request execution! */
+                handlerContext);
+        return StartStreamTranscriptionOutcome(error);;
+      }
+
       JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
@@ -468,6 +547,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         request.GetAudioStream()->Close();
         handler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
+      sem->ReleaseAll();
       return StartStreamTranscriptionOutcome(NoResult());
   });
   sem->WaitOne();

@@ -15,6 +15,7 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/async/ServiceRequestAsyncContext.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -222,7 +223,9 @@ namespace Aws
          */
         Aws::Set<Aws::Client::UserAgentFeature> GetUserAgentFeatures() const { return m_userAgentFeatures; }
 
-      inline virtual bool RequestChecksumRequired() const { return false; }
+        inline virtual bool RequestChecksumRequired() const { return false; }
+
+        Aws::Utils::ServiceRequestAsyncContextWrapper& GetAsyncContextWrapper() const { return m_asyncCtx; };
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the
@@ -242,6 +245,7 @@ namespace Aws
         RequestRetryHandler m_requestRetryHandler;
         mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
         mutable Aws::Set<Client::UserAgentFeature> m_userAgentFeatures;
+        mutable Aws::Utils::ServiceRequestAsyncContextWrapper m_asyncCtx;
     };
 
 } // namespace Aws

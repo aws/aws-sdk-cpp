@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/async/ServiceRequestAsyncContext.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <aws/core/utils/threading/Executor.h>
@@ -16,6 +17,8 @@ namespace Aws
 {
 namespace Client
 {
+    using RequestAsyncContext = Aws::Utils::ServiceRequestAsyncContextWrapper::Context;
+    using ServiceRequestAsyncContextLock = Aws::Utils::ServiceRequestAsyncContextLock;
     /**
      * A template function that is used to create an Async Operation function body for AWS Operations
      */
@@ -63,13 +66,32 @@ namespace Client
                                             const HandlerContextT& context,
                                             ExecutorT* pExecutor)
     {
+        std::weak_ptr<RequestAsyncContext> asyncCtx = request.GetAsyncContextWrapper().GetContext();
         std::function<void()> asyncTask =
-            [operationFunc, clientThis, &request, handler, context]() // note capture by ref
+            [operationFunc, clientThis, &request, handler, context, asyncCtx]() // note capture by ref
             {
+              const ServiceRequestAsyncContextLock requestLock(asyncCtx);
+              if (!requestLock.IsValid()) {
+                auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>(CoreErrors::USER_CANCELLED,
+                  "",
+                  "Request object is already destroyed",
+                  false);
+
+                AWS_LOGSTREAM_FATAL(RequestT().GetServiceRequestName(), "Service operation "
+                  << ClientT::GetServiceName() << "::" << RequestT().GetServiceRequestName() <<
+                  " has been scheduled for async execution but request object is already destroyed now!");
+
                 handler(clientThis,
-                        request,
-                        (clientThis->*operationFunc)(request),
+                        RequestT(), /* dummy request */
+                        std::move(error), /* no request execution! */
                         context);
+                return;
+              }
+
+              handler(clientThis,
+                      request,
+                      (clientThis->*operationFunc)(request),
+                      context);
             };
 
         pExecutor->Submit(std::move(asyncTask));
@@ -146,12 +168,26 @@ namespace Client
                                                ExecutorT* pExecutor) -> std::future<decltype((clientThis->*operationFunc)(request))>
     {
         using OperationOutcomeT = decltype((clientThis->*operationFunc)(request));
-
+        std::weak_ptr<RequestAsyncContext> asyncCtx = request.GetAsyncContextWrapper().GetContext();
         auto task = Aws::MakeShared< std::packaged_task< OperationOutcomeT() > >(
                 ALLOCATION_TAG,
-                [clientThis, operationFunc, &request]()  // note capture by ref
+                [clientThis, operationFunc, &request, asyncCtx]()  // note capture by ref
                 {
-                    return (clientThis->*operationFunc)(request);
+                  const ServiceRequestAsyncContextLock requestLock(asyncCtx);
+                  if (!requestLock.IsValid()) {
+                    auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>(CoreErrors::USER_CANCELLED,
+                      "",
+                      "Request object is already destroyed",
+                      false);
+
+                    AWS_LOGSTREAM_FATAL(RequestT().GetServiceRequestName(), "Service operation "
+                      << ClientT::GetServiceName() << "::" << RequestT().GetServiceRequestName() <<
+                      " has been scheduled for async execution but request object is already destroyed now!");
+
+                    return error;
+                  }
+
+                  return (clientThis->*operationFunc)(request);
                 } );
 
         std::function<void()> packagedFunction =

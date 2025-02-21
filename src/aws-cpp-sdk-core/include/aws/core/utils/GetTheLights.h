@@ -22,7 +22,9 @@ namespace Aws
          * When you are finished with the shared resources call LeaveRoom(). The last caller will
          * have its callable executed.
          */
-        class AWS_CORE_API GetTheLights
+        class
+        AWS_DEPRECATED("Deprecated SDK core internal utility class.")
+        AWS_CORE_API GetTheLights
         {
         public:
             GetTheLights();

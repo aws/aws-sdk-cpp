@@ -58,6 +58,7 @@ file(GLOB ENDPOINT_INTERNAL_HEADERS "include/aws/core/endpoint/internal/*.h")
 file(GLOB MONITORING_HEADERS "include/aws/core/monitoring/*.h")
 file(GLOB PLATFORM_HEADERS "include/aws/core/platform/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
+file(GLOB UTILS_ASYNC_HEADERS "include/aws/core/utils/async/*.h")
 file(GLOB UTILS_EVENT_HEADERS "include/aws/core/utils/event/*.h")
 file(GLOB UTILS_BASE64_HEADERS "include/aws/core/utils/base64/*.h")
 file(GLOB UTILS_CRYPTO_HEADERS "include/aws/core/utils/crypto/*.h")
@@ -111,6 +112,7 @@ file(GLOB ENDPOINT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/*.cpp")
 file(GLOB ENDPOINT_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/internal/*.cpp")
 file(GLOB MONITORING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/monitoring/*.cpp")
 file(GLOB UTILS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/*.cpp")
+file(GLOB UTILS_ASYNC_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/async/*.cpp")
 file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.cpp")
 file(GLOB UTILS_BASE64_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/*.cpp")
 file(GLOB UTILS_CRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/*.cpp")
@@ -264,6 +266,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_CLIENT_HEADERS}
   ${PLATFORM_HEADERS}
   ${UTILS_HEADERS}
+  ${UTILS_ASYNC_HEADERS}
   ${UTILS_EVENT_HEADERS}
   ${UTILS_BASE64_HEADERS}
   ${UTILS_CRYPTO_HEADERS}
@@ -348,6 +351,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${MONITORING_SOURCE}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_JSON_SOURCE}
+    ${UTILS_ASYNC_SOURCE}
     ${UTILS_EVENT_SOURCE}
     ${UTILS_SOURCE}
     ${NET_SOURCE}
@@ -403,6 +407,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\crypto\\crt" FILES ${UTILS_CRYPTO_CRT_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\async" FILES ${UTILS_ASYNC_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\event" FILES ${UTILS_EVENT_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
@@ -470,6 +475,7 @@ if(MSVC)
     source_group("Source Files\\utils\\base64" FILES ${UTILS_BASE64_SOURCE})
     source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SOURCE})
     source_group("Source Files\\utils\\crypto\\factory" FILES ${UTILS_CRYPTO_FACTORY_SOURCE})
+    source_group("Source Files\\utils\\async" FILES ${UTILS_ASYNC_SOURCE})
     source_group("Source Files\\utils\\event" FILES ${UTILS_EVENT_SOURCE})
     source_group("Source Files\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_SOURCE})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SOURCE})
@@ -680,6 +686,7 @@ install (FILES ${ENDPOINT_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws
 install (FILES ${MONITORING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/monitoring)
 install (FILES ${PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/platform)
 install (FILES ${UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils)
+install (FILES ${UTILS_ASYNC_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/async)
 install (FILES ${UTILS_EVENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/event)
 install (FILES ${UTILS_BASE64_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/base64)
 install (FILES ${UTILS_CRYPTO_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto)
