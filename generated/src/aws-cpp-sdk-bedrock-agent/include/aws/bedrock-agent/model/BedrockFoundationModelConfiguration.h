@@ -26,10 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Settings for a foundation model or <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-   * profile</a> used to parse documents for a data source.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Settings for a foundation model used to parse documents for a data
+   * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/BedrockFoundationModelConfiguration">AWS
    * API Reference</a></p>
    */
@@ -44,9 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the foundation model or <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-     * profile</a> to use for parsing.</p>
+     * <p>The ARN of the foundation model to use for parsing.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }

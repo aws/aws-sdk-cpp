@@ -109,11 +109,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string used for identifying the crawler or a bot when it accesses a web
-     * server. By default, this is set to <code>bedrockbot_UUID</code> for your
-     * crawler. You can optionally append a custom string to
-     * <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to
-     * access your source URLs. </p>
+     * <p>Returns the user agent suffix for your web crawler.</p>
      */
     inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
     inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
@@ -123,6 +119,25 @@ namespace Model
     inline WebCrawlerConfiguration& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
     inline WebCrawlerConfiguration& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
     inline WebCrawlerConfiguration& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A string used for identifying the crawler or bot when it accesses a web
+     * server. The user agent header value consists of the <code>bedrockbot</code>,
+     * UUID, and a user agent suffix for your crawler (if one is provided). By default,
+     * it is set to <code>bedrockbot_UUID</code>. You can optionally append a custom
+     * suffix to <code>bedrockbot_UUID</code> to allowlist a specific user agent
+     * permitted to access your source URLs. </p>
+     */
+    inline const Aws::String& GetUserAgentHeader() const{ return m_userAgentHeader; }
+    inline bool UserAgentHeaderHasBeenSet() const { return m_userAgentHeaderHasBeenSet; }
+    inline void SetUserAgentHeader(const Aws::String& value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader = value; }
+    inline void SetUserAgentHeader(Aws::String&& value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader = std::move(value); }
+    inline void SetUserAgentHeader(const char* value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader.assign(value); }
+    inline WebCrawlerConfiguration& WithUserAgentHeader(const Aws::String& value) { SetUserAgentHeader(value); return *this;}
+    inline WebCrawlerConfiguration& WithUserAgentHeader(Aws::String&& value) { SetUserAgentHeader(std::move(value)); return *this;}
+    inline WebCrawlerConfiguration& WithUserAgentHeader(const char* value) { SetUserAgentHeader(value); return *this;}
     ///@}
   private:
 
@@ -140,6 +155,9 @@ namespace Model
 
     Aws::String m_userAgent;
     bool m_userAgentHasBeenSet = false;
+
+    Aws::String m_userAgentHeader;
+    bool m_userAgentHeaderHasBeenSet = false;
   };
 
 } // namespace Model
