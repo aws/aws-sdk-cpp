@@ -24,7 +24,8 @@ WebCrawlerConfiguration::WebCrawlerConfiguration() :
     m_inclusionFiltersHasBeenSet(false),
     m_scope(WebScopeType::NOT_SET),
     m_scopeHasBeenSet(false),
-    m_userAgentHasBeenSet(false)
+    m_userAgentHasBeenSet(false),
+    m_userAgentHeaderHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,13 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
     m_userAgentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userAgentHeader"))
+  {
+    m_userAgentHeader = jsonValue.GetString("userAgentHeader");
+
+    m_userAgentHeaderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +128,12 @@ JsonValue WebCrawlerConfiguration::Jsonize() const
   if(m_userAgentHasBeenSet)
   {
    payload.WithString("userAgent", m_userAgent);
+
+  }
+
+  if(m_userAgentHeaderHasBeenSet)
+  {
+   payload.WithString("userAgentHeader", m_userAgentHeader);
 
   }
 

@@ -42,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the model or inference profile used to
-     * create vector embeddings for the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline const Aws::String& GetEmbeddingModelArn() const{ return m_embeddingModelArn; }
     inline bool EmbeddingModelArnHasBeenSet() const { return m_embeddingModelArnHasBeenSet; }
