@@ -119,7 +119,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The engine for a specific user. </p>
+     * <p>Modifies the engine listed for a user. The options are valkey or redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

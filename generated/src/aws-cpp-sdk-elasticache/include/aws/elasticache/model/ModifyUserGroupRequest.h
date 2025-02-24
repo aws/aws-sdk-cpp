@@ -83,7 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The engine for a user group. </p>
+     * <p>Modifies the engine listed in a user group. The options are valkey or
+     * redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

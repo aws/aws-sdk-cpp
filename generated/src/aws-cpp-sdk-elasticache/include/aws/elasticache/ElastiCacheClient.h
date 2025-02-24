@@ -635,8 +635,8 @@ namespace ElastiCache
         }
 
         /**
-         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates
-         * a user. For more information, see <a
+         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a
+         * user. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">AWS
@@ -663,7 +663,7 @@ namespace ElastiCache
         }
 
         /**
-         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a
+         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a
          * user group. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a

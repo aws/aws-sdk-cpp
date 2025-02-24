@@ -20,7 +20,8 @@ namespace Model
 
 ContentBlockDelta::ContentBlockDelta() : 
     m_textHasBeenSet(false),
-    m_toolUseHasBeenSet(false)
+    m_toolUseHasBeenSet(false),
+    m_reasoningContentHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ ContentBlockDelta& ContentBlockDelta::operator =(JsonView jsonValue)
     m_toolUseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reasoningContent"))
+  {
+    m_reasoningContent = jsonValue.GetObject("reasoningContent");
+
+    m_reasoningContentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue ContentBlockDelta::Jsonize() const
   if(m_toolUseHasBeenSet)
   {
    payload.WithObject("toolUse", m_toolUse.Jsonize());
+
+  }
+
+  if(m_reasoningContentHasBeenSet)
+  {
+   payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
 
   }
 
