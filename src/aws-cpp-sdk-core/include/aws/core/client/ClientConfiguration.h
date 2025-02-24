@@ -453,6 +453,18 @@ namespace Aws
              * Provide TelemetryProvider here or via a factory method.
              */
             std::shared_ptr<smithy::components::tracing::TelemetryProvider> telemetryProvider;
+
+            /**
+             * Configuration that is specifically used for the windows http client
+             */
+            struct WinHTTPOptions {
+              /**
+               * Sets the windows http client to use WINHTTP_NO_CLIENT_CERT_CONTEXT when connecting
+               * to a service, specifically only useful when disabling ssl verification and using
+               * a different type of authentication.
+               */
+              bool useAnonymousAuth = false;
+            } winHTTPOptions;
         };
 
         /**

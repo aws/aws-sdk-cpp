@@ -402,7 +402,8 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     Base(),
     m_usingProxy(!config.proxyHost.empty()),
     m_verifySSL(config.verifySSL),
-    m_version(config.version)
+    m_version(config.version),
+    m_useAnonymousAuth(config.winHTTPOptions.useAnonymousAuth)
 {
     m_enableHttpClientTrace = config.enableHttpClientTrace;
 
@@ -533,7 +534,10 @@ void* WinHttpSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
 {
     LPCWSTR accept[2] = { nullptr, nullptr };
 
-    DWORD requestFlags = request->GetUri().GetScheme() == Scheme::HTTPS && m_verifySSL ? WINHTTP_FLAG_SECURE : 0;
+    DWORD requestFlags{0};
+    if (request->GetUri().GetScheme() == Scheme::HTTPS) {
+        requestFlags |= WINHTTP_FLAG_SECURE;
+    }
     if (m_usingProxy) {
         // Avoid force adding "Cache-Control: no-cache" header.
         requestFlags |= WINHTTP_FLAG_REFRESH;
@@ -569,10 +573,21 @@ void* WinHttpSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
 
     if (!m_verifySSL) // Turning ssl unknown ca verification off
     {
-        DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | SECURITY_FLAG_IGNORE_CERT_CN_INVALID;
+        DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA |
+            SECURITY_FLAG_IGNORE_CERT_CN_INVALID |
+            SECURITY_FLAG_IGNORE_CERT_DATE_INVALID |
+            SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE;
         if (!AzCallWinHttp("WinHttpSetOption", WinHttpSetOption, hHttpRequest, WINHTTP_OPTION_SECURITY_FLAGS, &flags, (DWORD) sizeof(flags)))
         {
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+        }
+
+        if (m_useAnonymousAuth)
+        {
+            if (!WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_CLIENT_CERT_CONTEXT, WINHTTP_NO_CLIENT_CERT_CONTEXT, 0))
+            {
+                AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to set anonymous auth on.");
+            }
         }
     }
 
