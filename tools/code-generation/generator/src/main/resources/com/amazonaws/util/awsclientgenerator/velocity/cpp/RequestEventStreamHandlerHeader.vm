@@ -57,6 +57,7 @@ namespace Model
     public:
         ${exportMacro} ${operation.name}Handler();
         ${exportMacro} ${operation.name}Handler& operator=(const ${operation.name}Handler&) = default;
+        ${exportMacro} ${operation.name}Handler(const ${operation.name}Handler&) = default;
 
         ${exportMacro} virtual void OnEvent() override;
 

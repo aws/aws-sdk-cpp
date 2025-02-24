@@ -26,6 +26,7 @@
          * The streamReadyHandler is triggered when the stream is ready to be written to.
          * The handler is triggered when the request is finished.
          */
+##TODO 1.12: add const to the request
         $virtual void ${operation.name}Async(Model::${operation.request.shape.name}& request,
                 const ${operation.name}StreamReadyHandler& streamReadyHandler,
                 const ${operation.name}ResponseReceivedHandler& handler,

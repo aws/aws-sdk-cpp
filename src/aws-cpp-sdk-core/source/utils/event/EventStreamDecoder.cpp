@@ -53,6 +53,7 @@ namespace Aws
 
             void EventStreamDecoder::ResetEventStreamHandler(EventStreamHandler* handler)
             {
+                m_eventStreamHandler = handler;
                 aws_event_stream_streaming_decoder_init(&m_decoder, get_aws_allocator(),
                     onPayloadSegment,
                     onPreludeReceived,

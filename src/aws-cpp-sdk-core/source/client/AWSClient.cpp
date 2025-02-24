@@ -305,7 +305,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
         TracingUtils::EmitCoreHttpMetrics(httpRequest->GetRequestMetrics(),
             *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
         {
             Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, outcome, coreMetrics, contexts);
