@@ -81,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current supported value is Redis.</p>
+     * <p>The options are valkey or redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

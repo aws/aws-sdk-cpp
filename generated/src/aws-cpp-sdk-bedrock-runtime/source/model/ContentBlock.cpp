@@ -25,7 +25,8 @@ ContentBlock::ContentBlock() :
     m_videoHasBeenSet(false),
     m_toolUseHasBeenSet(false),
     m_toolResultHasBeenSet(false),
-    m_guardContentHasBeenSet(false)
+    m_guardContentHasBeenSet(false),
+    m_reasoningContentHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,13 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
     m_guardContentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reasoningContent"))
+  {
+    m_reasoningContent = jsonValue.GetObject("reasoningContent");
+
+    m_reasoningContentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +140,12 @@ JsonValue ContentBlock::Jsonize() const
   if(m_guardContentHasBeenSet)
   {
    payload.WithObject("guardContent", m_guardContent.Jsonize());
+
+  }
+
+  if(m_reasoningContentHasBeenSet)
+  {
+   payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
 
   }
 

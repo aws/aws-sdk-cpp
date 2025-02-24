@@ -22,6 +22,7 @@ PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput() :
     m_metadataHasBeenSet(false),
     m_parsedResponseHasBeenSet(false),
     m_rawResponseHasBeenSet(false),
+    m_reasoningContentHasBeenSet(false),
     m_traceIdHasBeenSet(false)
 {
 }
@@ -55,6 +56,13 @@ PostProcessingModelInvocationOutput& PostProcessingModelInvocationOutput::operat
     m_rawResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reasoningContent"))
+  {
+    m_reasoningContent = jsonValue.GetObject("reasoningContent");
+
+    m_reasoningContentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
@@ -84,6 +92,12 @@ JsonValue PostProcessingModelInvocationOutput::Jsonize() const
   if(m_rawResponseHasBeenSet)
   {
    payload.WithObject("rawResponse", m_rawResponse.Jsonize());
+
+  }
+
+  if(m_reasoningContentHasBeenSet)
+  {
+   payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
 
   }
 

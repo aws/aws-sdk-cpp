@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/ToolUseBlockDelta.h>
+#include <aws/bedrock-runtime/model/ReasoningContentBlockDelta.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A bock of content in a streaming response.</p><p><h3>See Also:</h3>   <a
+   * <p>A block of content in a streaming response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ContentBlockDelta">AWS
    * API Reference</a></p>
    */
@@ -63,6 +64,20 @@ namespace Model
     inline ContentBlockDelta& WithToolUse(const ToolUseBlockDelta& value) { SetToolUse(value); return *this;}
     inline ContentBlockDelta& WithToolUse(ToolUseBlockDelta&& value) { SetToolUse(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains content regarding the reasoning that is carried out by the model.
+     * Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance
+     * the accuracy of its final response.</p>
+     */
+    inline const ReasoningContentBlockDelta& GetReasoningContent() const{ return m_reasoningContent; }
+    inline bool ReasoningContentHasBeenSet() const { return m_reasoningContentHasBeenSet; }
+    inline void SetReasoningContent(const ReasoningContentBlockDelta& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = value; }
+    inline void SetReasoningContent(ReasoningContentBlockDelta&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::move(value); }
+    inline ContentBlockDelta& WithReasoningContent(const ReasoningContentBlockDelta& value) { SetReasoningContent(value); return *this;}
+    inline ContentBlockDelta& WithReasoningContent(ReasoningContentBlockDelta&& value) { SetReasoningContent(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
@@ -70,6 +85,9 @@ namespace Model
 
     ToolUseBlockDelta m_toolUse;
     bool m_toolUseHasBeenSet = false;
+
+    ReasoningContentBlockDelta m_reasoningContent;
+    bool m_reasoningContentHasBeenSet = false;
   };
 
 } // namespace Model

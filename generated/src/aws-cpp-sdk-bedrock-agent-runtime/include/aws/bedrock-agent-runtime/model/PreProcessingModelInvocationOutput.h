@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <aws/bedrock-agent-runtime/model/PreProcessingParsedResponse.h>
 #include <aws/bedrock-agent-runtime/model/RawResponse.h>
+#include <aws/bedrock-agent-runtime/model/ReasoningContentBlock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -81,6 +82,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains content about the reasoning that the model made during the
+     * pre-processing step. </p>
+     */
+    inline const ReasoningContentBlock& GetReasoningContent() const{ return m_reasoningContent; }
+    inline bool ReasoningContentHasBeenSet() const { return m_reasoningContentHasBeenSet; }
+    inline void SetReasoningContent(const ReasoningContentBlock& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = value; }
+    inline void SetReasoningContent(ReasoningContentBlock&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::move(value); }
+    inline PreProcessingModelInvocationOutput& WithReasoningContent(const ReasoningContentBlock& value) { SetReasoningContent(value); return *this;}
+    inline PreProcessingModelInvocationOutput& WithReasoningContent(ReasoningContentBlock&& value) { SetReasoningContent(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the trace.</p>
      */
     inline const Aws::String& GetTraceId() const{ return m_traceId; }
@@ -102,6 +116,9 @@ namespace Model
 
     RawResponse m_rawResponse;
     bool m_rawResponseHasBeenSet = false;
+
+    ReasoningContentBlock m_reasoningContent;
+    bool m_reasoningContentHasBeenSet = false;
 
     Aws::String m_traceId;
     bool m_traceIdHasBeenSet = false;

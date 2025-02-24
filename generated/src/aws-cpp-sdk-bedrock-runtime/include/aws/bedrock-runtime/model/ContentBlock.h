@@ -12,6 +12,7 @@
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
+#include <aws/bedrock-runtime/model/ReasoningContentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +139,20 @@ namespace Model
     inline ContentBlock& WithGuardContent(const GuardrailConverseContentBlock& value) { SetGuardContent(value); return *this;}
     inline ContentBlock& WithGuardContent(GuardrailConverseContentBlock&& value) { SetGuardContent(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains content regarding the reasoning that is carried out by the model.
+     * Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance
+     * the accuracy of its final response.</p>
+     */
+    inline const ReasoningContentBlock& GetReasoningContent() const{ return m_reasoningContent; }
+    inline bool ReasoningContentHasBeenSet() const { return m_reasoningContentHasBeenSet; }
+    inline void SetReasoningContent(const ReasoningContentBlock& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = value; }
+    inline void SetReasoningContent(ReasoningContentBlock&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::move(value); }
+    inline ContentBlock& WithReasoningContent(const ReasoningContentBlock& value) { SetReasoningContent(value); return *this;}
+    inline ContentBlock& WithReasoningContent(ReasoningContentBlock&& value) { SetReasoningContent(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
@@ -160,6 +175,9 @@ namespace Model
 
     GuardrailConverseContentBlock m_guardContent;
     bool m_guardContentHasBeenSet = false;
+
+    ReasoningContentBlock m_reasoningContent;
+    bool m_reasoningContentHasBeenSet = false;
   };
 
 } // namespace Model
