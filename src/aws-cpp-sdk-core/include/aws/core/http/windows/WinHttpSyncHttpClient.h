@@ -59,6 +59,7 @@ namespace Aws
 
             bool m_usingProxy = false;
             bool m_verifySSL = true;
+            bool m_useAnonymousAuth = false;
             Aws::Http::Version m_version = Aws::Http::Version::HTTP_VERSION_2TLS;
             Aws::WString m_proxyUserName;
             Aws::WString m_proxyPassword;
