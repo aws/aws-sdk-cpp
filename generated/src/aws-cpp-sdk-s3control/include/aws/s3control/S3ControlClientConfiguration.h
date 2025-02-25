@@ -18,6 +18,36 @@ namespace Aws
         {
             using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
+            S3ControlClientConfiguration(const S3ControlClientConfiguration& other)
+                : Aws::Client::GenericClientConfiguration(other),
+                  accountId{other.accountId}
+            {
+            }
+
+            S3ControlClientConfiguration(S3ControlClientConfiguration&& other) noexcept
+                : Aws::Client::GenericClientConfiguration(std::move(other)),
+                  accountId{std::move(other.accountId)}
+            {
+            }
+
+            S3ControlClientConfiguration& operator=(const S3ControlClientConfiguration& other)
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(other);
+                accountId = other.accountId;
+                return *this;
+            }
+
+            S3ControlClientConfiguration& operator=(S3ControlClientConfiguration&& other) noexcept
+            {
+                if (this == &other)
+                    return *this;
+                Aws::Client::GenericClientConfiguration::operator =(std::move(other));
+                accountId = std::move(other.accountId);
+                return *this;
+            }
+
             S3ControlClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
             /**

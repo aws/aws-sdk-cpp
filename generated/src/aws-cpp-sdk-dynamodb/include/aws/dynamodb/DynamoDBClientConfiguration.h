@@ -21,13 +21,17 @@ namespace Aws
 
             DynamoDBClientConfiguration(const DynamoDBClientConfiguration& other)
                 : Aws::Client::GenericClientConfiguration(other),
-                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery),
+                  accountId{other.accountId},
+                  accountIdEndpointMode{other.accountIdEndpointMode}
             {
             }
 
             DynamoDBClientConfiguration(DynamoDBClientConfiguration&& other) noexcept
                 : Aws::Client::GenericClientConfiguration(std::move(other)),
-                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery),
+                  accountId{std::move(other.accountId)},
+                  accountIdEndpointMode{std::move(other.accountIdEndpointMode)}
             {
             }
 
@@ -36,6 +40,8 @@ namespace Aws
                 if (this == &other)
                     return *this;
                 Aws::Client::GenericClientConfiguration::operator =(other);
+                accountId = other.accountId;
+                accountIdEndpointMode = other.accountIdEndpointMode;
                 return *this;
             }
 
@@ -44,6 +50,8 @@ namespace Aws
                 if (this == &other)
                     return *this;
                 Aws::Client::GenericClientConfiguration::operator =(std::move(other));
+                accountId = std::move(other.accountId);
+                accountIdEndpointMode = std::move(other.accountIdEndpointMode);
                 return *this;
             }
 
