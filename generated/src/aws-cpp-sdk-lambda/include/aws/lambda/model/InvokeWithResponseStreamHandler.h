@@ -39,6 +39,7 @@ namespace Model
     public:
         AWS_LAMBDA_API InvokeWithResponseStreamHandler();
         AWS_LAMBDA_API InvokeWithResponseStreamHandler& operator=(const InvokeWithResponseStreamHandler&) = default;
+        AWS_LAMBDA_API InvokeWithResponseStreamHandler(const InvokeWithResponseStreamHandler&) = default;
 
         AWS_LAMBDA_API virtual void OnEvent() override;
 

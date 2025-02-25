@@ -51,6 +51,7 @@ namespace Model
     public:
         AWS_LEXRUNTIMEV2_API StartConversationHandler();
         AWS_LEXRUNTIMEV2_API StartConversationHandler& operator=(const StartConversationHandler&) = default;
+        AWS_LEXRUNTIMEV2_API StartConversationHandler(const StartConversationHandler&) = default;
 
         AWS_LEXRUNTIMEV2_API virtual void OnEvent() override;
 
