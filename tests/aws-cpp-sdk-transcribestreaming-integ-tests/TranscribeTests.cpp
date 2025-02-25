@@ -578,6 +578,10 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(
         ) << "Did not get a response after " << Aws::Utils::StringUtils::to_string(timeoutMs) << " ms";
     EXPECT_FALSE(operationRequestId.empty()) << "Did not receive a request id for the StartStreamTranscription";
 
+    /* TODO: this API legacy contract is the final piece preventing us from making the async
+     * request to be const ref. Otherwise, the request is fully copied and independent from the original one now.
+     * (i.e. nothing prevents from going const ref but someone might still use the function below)
+     */
     request.GetAudioStream()->Close();
     shouldContinue = false;
 

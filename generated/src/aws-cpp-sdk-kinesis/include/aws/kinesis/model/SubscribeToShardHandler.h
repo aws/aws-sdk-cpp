@@ -36,6 +36,7 @@ namespace Model
     public:
         AWS_KINESIS_API SubscribeToShardHandler();
         AWS_KINESIS_API SubscribeToShardHandler& operator=(const SubscribeToShardHandler&) = default;
+        AWS_KINESIS_API SubscribeToShardHandler(const SubscribeToShardHandler&) = default;
 
         AWS_KINESIS_API virtual void OnEvent() override;
 

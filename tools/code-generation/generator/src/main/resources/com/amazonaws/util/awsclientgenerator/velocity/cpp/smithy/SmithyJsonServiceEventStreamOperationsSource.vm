@@ -11,6 +11,14 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
+  if (!request.GetHeadersReceivedEventHandler()) {
+    request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+      AWS_CHECK_PTR("${operation.name}", response);
+      if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+        initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+      }
+    });
+  }
 #else
       JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, 
       [ & #if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {

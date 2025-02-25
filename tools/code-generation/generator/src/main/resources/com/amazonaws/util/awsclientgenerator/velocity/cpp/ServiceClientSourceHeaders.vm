@@ -1,10 +1,17 @@
-#set($hasEventStream = false)
+#set($hasEventStreamResult = false)
+#set($hasEventStreamRequest = false)
 #foreach($operation in $serviceModel.operations)
 #if($operation.result.shape.hasEventStreamMembers())
-    #set($hasEventStream = true)
+#set($hasEventStreamResult = true)
+#end
+#if($operation.request.shape.hasEventStreamMembers())
+#set($hasEventStreamRequest = true)
 #end
 #end
-#if($hasEventStream)
+#if($hasEventStreamResult)
+#if($hasEventStreamRequest)
+\#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
+#end
 \#include <aws/core/utils/event/EventStream.h>
 #end
 #if($arnEndpointSupported || $metadata.hasEndpointDiscoveryTrait)

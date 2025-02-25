@@ -39,6 +39,7 @@ namespace Model
     public:
         AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionHandler();
         AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionHandler& operator=(const StartCallAnalyticsStreamTranscriptionHandler&) = default;
+        AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionHandler(const StartCallAnalyticsStreamTranscriptionHandler&) = default;
 
         AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 

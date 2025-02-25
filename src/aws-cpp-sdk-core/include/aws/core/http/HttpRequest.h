@@ -581,10 +581,10 @@ namespace Aws
             Aws::String GetResolvedRemoteHost() const { return m_resolvedRemoteHost; }
             void SetResolvedRemoteHost(const Aws::String& ip) { m_resolvedRemoteHost = ip; }
 
-            bool IsEventStreamRequest() { return m_isEvenStreamRequest; }
+            bool IsEventStreamRequest() const { return m_isEvenStreamRequest; }
             void SetEventStreamRequest(bool eventStreamRequest) { m_isEvenStreamRequest = eventStreamRequest; }
             
-            bool HasEventStreamResponse() { return m_hasEvenStreamResponse; }
+            bool HasEventStreamResponse() const { return m_hasEvenStreamResponse; }
             void SetHasEventStreamResponse(bool hasEventStreamResponse) { m_hasEvenStreamResponse = hasEventStreamResponse; }
 
             virtual std::shared_ptr<Aws::Crt::Http::HttpRequest> ToCrtHttpRequest();

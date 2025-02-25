@@ -72,7 +72,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const SelectObjectContentHandler& GetEventStreamHandler() const { return m_handler; }
+    inline SelectObjectContentHandler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

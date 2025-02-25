@@ -8,6 +8,8 @@
 
 using namespace Aws;
 
+static const char AWS_REQUEST_TAG[] = "AmazonWebServiceRequest";
+
 AmazonWebServiceRequest::AmazonWebServiceRequest() :
     m_responseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod),
     m_onDataReceived(nullptr),
@@ -31,4 +33,10 @@ const Aws::Http::HeaderValueCollection& AmazonWebServiceRequest::GetAdditionalCu
 void AmazonWebServiceRequest::SetAdditionalCustomHeaderValue(const Aws::String& headerName, const Aws::String& headerValue)
 {
     m_additionalCustomHeaders[Utils::StringUtils::ToLower(headerName.c_str())] = Utils::StringUtils::Trim(headerValue.c_str());
+}
+
+const char* AmazonWebServiceRequest::GetServiceRequestName() const
+{
+  AWS_LOGSTREAM_ERROR(AWS_REQUEST_TAG, "GetServiceRequestName has been called on a base abstract request class!");
+  return "AmazonWebServiceRequest";
 }

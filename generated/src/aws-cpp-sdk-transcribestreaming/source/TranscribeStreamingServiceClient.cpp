@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/utils/event/EventStream.h>
 
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
@@ -243,31 +244,23 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
       return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/call-analytics-stream-transcription");
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+  auto requestCopy = Aws::MakeShared<StartCallAnalyticsStreamTranscriptionRequest>("StartCallAnalyticsStreamTranscription", request);
+  requestCopy->SetAudioStream(eventEncoderStream); // this becomes the body of the request
+  request.SetAudioStream(eventEncoderStream);
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
-      if(outcome.IsSuccess())
-      {
-        handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(NoResult()), handlerContext);
-      }
-      else
-      {
-        request.GetAudioStream()->Close();
-        handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
-      }
-      return StartCallAnalyticsStreamTranscriptionOutcome(NoResult());
-  });
+  auto asyncTask = CreateBidirectionalEventStreamTask<StartCallAnalyticsStreamTranscriptionOutcome>(this,
+                                         endpointResolutionOutcome.GetResultWithOwnership(),
+                                         requestCopy,
+                                         handler,
+                                         handlerContext,
+                                         eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
-  streamReadyHandler(*request.GetAudioStream());
+  streamReadyHandler(*eventEncoderStream);
 }
 void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(Model::StartMedicalScribeStreamRequest& request,
                 const StartMedicalScribeStreamStreamReadyHandler& streamReadyHandler,
@@ -309,31 +302,23 @@ void TranscribeStreamingServiceClient::StartMedicalScribeStreamAsync(Model::Star
       return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/medical-scribe-stream");
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
 
   auto eventEncoderStream = Aws::MakeShared<Model::MedicalScribeInputStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.SetInputStream(eventEncoderStream); // this becomes the body of the request
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+  auto requestCopy = Aws::MakeShared<StartMedicalScribeStreamRequest>("StartMedicalScribeStream", request);
+  requestCopy->SetInputStream(eventEncoderStream); // this becomes the body of the request
+  request.SetInputStream(eventEncoderStream);
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
-      if(outcome.IsSuccess())
-      {
-        handler(this, request, StartMedicalScribeStreamOutcome(NoResult()), handlerContext);
-      }
-      else
-      {
-        request.GetInputStream()->Close();
-        handler(this, request, StartMedicalScribeStreamOutcome(outcome.GetError()), handlerContext);
-      }
-      return StartMedicalScribeStreamOutcome(NoResult());
-  });
+  auto asyncTask = CreateBidirectionalEventStreamTask<StartMedicalScribeStreamOutcome>(this,
+                                         endpointResolutionOutcome.GetResultWithOwnership(),
+                                         requestCopy,
+                                         handler,
+                                         handlerContext,
+                                         eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
-  streamReadyHandler(*request.GetInputStream());
+  streamReadyHandler(*eventEncoderStream);
 }
 void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
                 const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -387,31 +372,23 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
       return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/medical-stream-transcription");
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+  auto requestCopy = Aws::MakeShared<StartMedicalStreamTranscriptionRequest>("StartMedicalStreamTranscription", request);
+  requestCopy->SetAudioStream(eventEncoderStream); // this becomes the body of the request
+  request.SetAudioStream(eventEncoderStream);
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
-      if(outcome.IsSuccess())
-      {
-        handler(this, request, StartMedicalStreamTranscriptionOutcome(NoResult()), handlerContext);
-      }
-      else
-      {
-        request.GetAudioStream()->Close();
-        handler(this, request, StartMedicalStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
-      }
-      return StartMedicalStreamTranscriptionOutcome(NoResult());
-  });
+  auto asyncTask = CreateBidirectionalEventStreamTask<StartMedicalStreamTranscriptionOutcome>(this,
+                                         endpointResolutionOutcome.GetResultWithOwnership(),
+                                         requestCopy,
+                                         handler,
+                                         handlerContext,
+                                         eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
-  streamReadyHandler(*request.GetAudioStream());
+  streamReadyHandler(*eventEncoderStream);
 }
 void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::StartStreamTranscriptionRequest& request,
                 const StartStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -447,29 +424,21 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
       return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/stream-transcription");
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+  auto requestCopy = Aws::MakeShared<StartStreamTranscriptionRequest>("StartStreamTranscription", request);
+  requestCopy->SetAudioStream(eventEncoderStream); // this becomes the body of the request
+  request.SetAudioStream(eventEncoderStream);
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
-      if(outcome.IsSuccess())
-      {
-        handler(this, request, StartStreamTranscriptionOutcome(NoResult()), handlerContext);
-      }
-      else
-      {
-        request.GetAudioStream()->Close();
-        handler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
-      }
-      return StartStreamTranscriptionOutcome(NoResult());
-  });
+  auto asyncTask = CreateBidirectionalEventStreamTask<StartStreamTranscriptionOutcome>(this,
+                                         endpointResolutionOutcome.GetResultWithOwnership(),
+                                         requestCopy,
+                                         handler,
+                                         handlerContext,
+                                         eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
-  streamReadyHandler(*request.GetAudioStream());
+  streamReadyHandler(*eventEncoderStream);
 }

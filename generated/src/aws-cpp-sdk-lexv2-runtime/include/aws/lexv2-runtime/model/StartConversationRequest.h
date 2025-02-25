@@ -50,7 +50,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const StartConversationHandler& GetEventStreamHandler() const { return m_handler; }
+    inline StartConversationHandler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

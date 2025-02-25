@@ -36,6 +36,7 @@ namespace Model
     public:
         AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalScribeStreamHandler();
         AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalScribeStreamHandler& operator=(const StartMedicalScribeStreamHandler&) = default;
+        AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalScribeStreamHandler(const StartMedicalScribeStreamHandler&) = default;
 
         AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 

@@ -53,13 +53,6 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_vocabularyFilterNamesHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
-    AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
-    {
-        auto& initialResponseHandler = m_handler.GetInitialResponseCallbackEx();
-        if (initialResponseHandler) {
-            initialResponseHandler(StartStreamTranscriptionInitialResponse(response->GetHeaders()), Utils::Event::InitialResponseType::ON_RESPONSE);
-        }
-    });
 }
 
 std::shared_ptr<Aws::IOStream> StartStreamTranscriptionRequest::GetBody() const
