@@ -82,7 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the subnets.</p>
+     * <p>The IDs of the subnets. You can specify only one subnet per Availability
+     * Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }

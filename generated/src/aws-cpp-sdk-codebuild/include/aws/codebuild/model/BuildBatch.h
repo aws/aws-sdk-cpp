@@ -464,6 +464,22 @@ namespace Model
     inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
     inline BuildBatch& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An array that contains the ARNs of reports created by merging reports from
+     * builds associated with this batch build.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReportArns() const{ return m_reportArns; }
+    inline bool ReportArnsHasBeenSet() const { return m_reportArnsHasBeenSet; }
+    inline void SetReportArns(const Aws::Vector<Aws::String>& value) { m_reportArnsHasBeenSet = true; m_reportArns = value; }
+    inline void SetReportArns(Aws::Vector<Aws::String>&& value) { m_reportArnsHasBeenSet = true; m_reportArns = std::move(value); }
+    inline BuildBatch& WithReportArns(const Aws::Vector<Aws::String>& value) { SetReportArns(value); return *this;}
+    inline BuildBatch& WithReportArns(Aws::Vector<Aws::String>&& value) { SetReportArns(std::move(value)); return *this;}
+    inline BuildBatch& AddReportArns(const Aws::String& value) { m_reportArnsHasBeenSet = true; m_reportArns.push_back(value); return *this; }
+    inline BuildBatch& AddReportArns(Aws::String&& value) { m_reportArnsHasBeenSet = true; m_reportArns.push_back(std::move(value)); return *this; }
+    inline BuildBatch& AddReportArns(const char* value) { m_reportArnsHasBeenSet = true; m_reportArns.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -555,6 +571,9 @@ namespace Model
 
     bool m_debugSessionEnabled;
     bool m_debugSessionEnabledHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_reportArns;
+    bool m_reportArnsHasBeenSet = false;
   };
 
 } // namespace Model

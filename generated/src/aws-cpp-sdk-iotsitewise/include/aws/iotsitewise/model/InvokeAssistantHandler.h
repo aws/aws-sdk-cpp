@@ -39,6 +39,7 @@ namespace Model
     public:
         AWS_IOTSITEWISE_API InvokeAssistantHandler();
         AWS_IOTSITEWISE_API InvokeAssistantHandler& operator=(const InvokeAssistantHandler&) = default;
+        AWS_IOTSITEWISE_API InvokeAssistantHandler(const InvokeAssistantHandler&) = default;
 
         AWS_IOTSITEWISE_API virtual void OnEvent() override;
 

@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/taxsettings/model/CanadaAdditionalInfo.h>
+#include <aws/taxsettings/model/EgyptAdditionalInfo.h>
 #include <aws/taxsettings/model/EstoniaAdditionalInfo.h>
 #include <aws/taxsettings/model/GeorgiaAdditionalInfo.h>
+#include <aws/taxsettings/model/GreeceAdditionalInfo.h>
 #include <aws/taxsettings/model/IsraelAdditionalInfo.h>
 #include <aws/taxsettings/model/ItalyAdditionalInfo.h>
 #include <aws/taxsettings/model/KenyaAdditionalInfo.h>
@@ -19,6 +21,7 @@
 #include <aws/taxsettings/model/SpainAdditionalInfo.h>
 #include <aws/taxsettings/model/TurkeyAdditionalInfo.h>
 #include <aws/taxsettings/model/UkraineAdditionalInfo.h>
+#include <aws/taxsettings/model/VietnamAdditionalInfo.h>
 #include <utility>
 
 namespace Aws
@@ -71,6 +74,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Additional tax information to specify for a TRN in Egypt. </p>
+     */
+    inline const EgyptAdditionalInfo& GetEgyptAdditionalInfo() const{ return m_egyptAdditionalInfo; }
+    inline bool EgyptAdditionalInfoHasBeenSet() const { return m_egyptAdditionalInfoHasBeenSet; }
+    inline void SetEgyptAdditionalInfo(const EgyptAdditionalInfo& value) { m_egyptAdditionalInfoHasBeenSet = true; m_egyptAdditionalInfo = value; }
+    inline void SetEgyptAdditionalInfo(EgyptAdditionalInfo&& value) { m_egyptAdditionalInfoHasBeenSet = true; m_egyptAdditionalInfo = std::move(value); }
+    inline AdditionalInfoRequest& WithEgyptAdditionalInfo(const EgyptAdditionalInfo& value) { SetEgyptAdditionalInfo(value); return *this;}
+    inline AdditionalInfoRequest& WithEgyptAdditionalInfo(EgyptAdditionalInfo&& value) { SetEgyptAdditionalInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Additional tax information to specify for a TRN in Estonia.</p>
      */
     inline const EstoniaAdditionalInfo& GetEstoniaAdditionalInfo() const{ return m_estoniaAdditionalInfo; }
@@ -91,6 +106,18 @@ namespace Model
     inline void SetGeorgiaAdditionalInfo(GeorgiaAdditionalInfo&& value) { m_georgiaAdditionalInfoHasBeenSet = true; m_georgiaAdditionalInfo = std::move(value); }
     inline AdditionalInfoRequest& WithGeorgiaAdditionalInfo(const GeorgiaAdditionalInfo& value) { SetGeorgiaAdditionalInfo(value); return *this;}
     inline AdditionalInfoRequest& WithGeorgiaAdditionalInfo(GeorgiaAdditionalInfo&& value) { SetGeorgiaAdditionalInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Additional tax information to specify for a TRN in Greece.</p>
+     */
+    inline const GreeceAdditionalInfo& GetGreeceAdditionalInfo() const{ return m_greeceAdditionalInfo; }
+    inline bool GreeceAdditionalInfoHasBeenSet() const { return m_greeceAdditionalInfoHasBeenSet; }
+    inline void SetGreeceAdditionalInfo(const GreeceAdditionalInfo& value) { m_greeceAdditionalInfoHasBeenSet = true; m_greeceAdditionalInfo = value; }
+    inline void SetGreeceAdditionalInfo(GreeceAdditionalInfo&& value) { m_greeceAdditionalInfoHasBeenSet = true; m_greeceAdditionalInfo = std::move(value); }
+    inline AdditionalInfoRequest& WithGreeceAdditionalInfo(const GreeceAdditionalInfo& value) { SetGreeceAdditionalInfo(value); return *this;}
+    inline AdditionalInfoRequest& WithGreeceAdditionalInfo(GreeceAdditionalInfo&& value) { SetGreeceAdditionalInfo(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,16 +251,34 @@ namespace Model
     inline AdditionalInfoRequest& WithUkraineAdditionalInfo(const UkraineAdditionalInfo& value) { SetUkraineAdditionalInfo(value); return *this;}
     inline AdditionalInfoRequest& WithUkraineAdditionalInfo(UkraineAdditionalInfo&& value) { SetUkraineAdditionalInfo(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Additional tax information to specify for a TRN in Vietnam. </p>
+     */
+    inline const VietnamAdditionalInfo& GetVietnamAdditionalInfo() const{ return m_vietnamAdditionalInfo; }
+    inline bool VietnamAdditionalInfoHasBeenSet() const { return m_vietnamAdditionalInfoHasBeenSet; }
+    inline void SetVietnamAdditionalInfo(const VietnamAdditionalInfo& value) { m_vietnamAdditionalInfoHasBeenSet = true; m_vietnamAdditionalInfo = value; }
+    inline void SetVietnamAdditionalInfo(VietnamAdditionalInfo&& value) { m_vietnamAdditionalInfoHasBeenSet = true; m_vietnamAdditionalInfo = std::move(value); }
+    inline AdditionalInfoRequest& WithVietnamAdditionalInfo(const VietnamAdditionalInfo& value) { SetVietnamAdditionalInfo(value); return *this;}
+    inline AdditionalInfoRequest& WithVietnamAdditionalInfo(VietnamAdditionalInfo&& value) { SetVietnamAdditionalInfo(std::move(value)); return *this;}
+    ///@}
   private:
 
     CanadaAdditionalInfo m_canadaAdditionalInfo;
     bool m_canadaAdditionalInfoHasBeenSet = false;
+
+    EgyptAdditionalInfo m_egyptAdditionalInfo;
+    bool m_egyptAdditionalInfoHasBeenSet = false;
 
     EstoniaAdditionalInfo m_estoniaAdditionalInfo;
     bool m_estoniaAdditionalInfoHasBeenSet = false;
 
     GeorgiaAdditionalInfo m_georgiaAdditionalInfo;
     bool m_georgiaAdditionalInfoHasBeenSet = false;
+
+    GreeceAdditionalInfo m_greeceAdditionalInfo;
+    bool m_greeceAdditionalInfoHasBeenSet = false;
 
     IsraelAdditionalInfo m_israelAdditionalInfo;
     bool m_israelAdditionalInfoHasBeenSet = false;
@@ -267,6 +312,9 @@ namespace Model
 
     UkraineAdditionalInfo m_ukraineAdditionalInfo;
     bool m_ukraineAdditionalInfoHasBeenSet = false;
+
+    VietnamAdditionalInfo m_vietnamAdditionalInfo;
+    bool m_vietnamAdditionalInfoHasBeenSet = false;
   };
 
 } // namespace Model

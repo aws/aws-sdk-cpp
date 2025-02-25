@@ -51,6 +51,7 @@ namespace Model
     public:
         AWS_BEDROCKRUNTIME_API ConverseStreamHandler();
         AWS_BEDROCKRUNTIME_API ConverseStreamHandler& operator=(const ConverseStreamHandler&) = default;
+        AWS_BEDROCKRUNTIME_API ConverseStreamHandler(const ConverseStreamHandler&) = default;
 
         AWS_BEDROCKRUNTIME_API virtual void OnEvent() override;
 

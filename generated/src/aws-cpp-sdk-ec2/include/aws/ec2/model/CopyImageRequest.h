@@ -216,6 +216,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specify a completion duration, in 15 minute increments, to initiate a
+     * time-based AMI copy. The specified completion duration applies to each of the
+     * snapshots associated with the AMI. Each snapshot associated with the AMI will be
+     * completed within the specified completion duration, regardless of their
+     * size.</p> <p>If you do not specify a value, the AMI copy operation is completed
+     * on a best-effort basis.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
+     * Time-based copies</a>.</p>
+     */
+    inline long long GetSnapshotCopyCompletionDurationMinutes() const{ return m_snapshotCopyCompletionDurationMinutes; }
+    inline bool SnapshotCopyCompletionDurationMinutesHasBeenSet() const { return m_snapshotCopyCompletionDurationMinutesHasBeenSet; }
+    inline void SetSnapshotCopyCompletionDurationMinutes(long long value) { m_snapshotCopyCompletionDurationMinutesHasBeenSet = true; m_snapshotCopyCompletionDurationMinutes = value; }
+    inline CopyImageRequest& WithSnapshotCopyCompletionDurationMinutes(long long value) { SetSnapshotCopyCompletionDurationMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -257,6 +274,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    long long m_snapshotCopyCompletionDurationMinutes;
+    bool m_snapshotCopyCompletionDurationMinutesHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;

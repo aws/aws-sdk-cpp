@@ -46,6 +46,7 @@ namespace Model
     public:
         AWS_S3CRT_API SelectObjectContentHandler();
         AWS_S3CRT_API SelectObjectContentHandler& operator=(const SelectObjectContentHandler&) = default;
+        AWS_S3CRT_API SelectObjectContentHandler(const SelectObjectContentHandler&) = default;
 
         AWS_S3CRT_API virtual void OnEvent() override;
 

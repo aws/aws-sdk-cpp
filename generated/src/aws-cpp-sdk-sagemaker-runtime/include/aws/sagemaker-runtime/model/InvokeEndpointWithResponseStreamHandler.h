@@ -36,6 +36,7 @@ namespace Model
     public:
         AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamHandler();
         AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamHandler& operator=(const InvokeEndpointWithResponseStreamHandler&) = default;
+        AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamHandler(const InvokeEndpointWithResponseStreamHandler&) = default;
 
         AWS_SAGEMAKERRUNTIME_API virtual void OnEvent() override;
 

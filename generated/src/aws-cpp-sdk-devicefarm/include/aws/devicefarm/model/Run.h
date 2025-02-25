@@ -15,6 +15,7 @@
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/NetworkProfile.h>
+#include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/devicefarm/model/ExecutionResultCode.h>
 #include <aws/devicefarm/model/Radios.h>
 #include <aws/devicefarm/model/Location.h>
@@ -264,6 +265,18 @@ namespace Model
     inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfileHasBeenSet = true; m_networkProfile = std::move(value); }
     inline Run& WithNetworkProfile(const NetworkProfile& value) { SetNetworkProfile(value); return *this;}
     inline Run& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The device proxy configured for the devices in the run.</p>
+     */
+    inline const DeviceProxy& GetDeviceProxy() const{ return m_deviceProxy; }
+    inline bool DeviceProxyHasBeenSet() const { return m_deviceProxyHasBeenSet; }
+    inline void SetDeviceProxy(const DeviceProxy& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = value; }
+    inline void SetDeviceProxy(DeviceProxy&& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = std::move(value); }
+    inline Run& WithDeviceProxy(const DeviceProxy& value) { SetDeviceProxy(value); return *this;}
+    inline Run& WithDeviceProxy(DeviceProxy&& value) { SetDeviceProxy(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -520,6 +533,9 @@ namespace Model
 
     NetworkProfile m_networkProfile;
     bool m_networkProfileHasBeenSet = false;
+
+    DeviceProxy m_deviceProxy;
+    bool m_deviceProxyHasBeenSet = false;
 
     Aws::String m_parsingResultUrl;
     bool m_parsingResultUrlHasBeenSet = false;

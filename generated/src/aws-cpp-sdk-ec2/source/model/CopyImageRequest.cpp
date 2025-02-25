@@ -23,6 +23,8 @@ CopyImageRequest::CopyImageRequest() :
     m_copyImageTags(false),
     m_copyImageTagsHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
+    m_snapshotCopyCompletionDurationMinutes(0),
+    m_snapshotCopyCompletionDurationMinutesHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -85,6 +87,11 @@ Aws::String CopyImageRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_snapshotCopyCompletionDurationMinutesHasBeenSet)
+  {
+    ss << "SnapshotCopyCompletionDurationMinutes=" << m_snapshotCopyCompletionDurationMinutes << "&";
   }
 
   if(m_dryRunHasBeenSet)

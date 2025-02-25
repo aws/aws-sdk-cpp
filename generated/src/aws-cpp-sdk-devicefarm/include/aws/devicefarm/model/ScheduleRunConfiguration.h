@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Location.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <aws/devicefarm/model/Radios.h>
 #include <aws/devicefarm/model/BillingMethod.h>
@@ -116,6 +117,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The device proxy to be configured on the device for the run.</p>
+     */
+    inline const DeviceProxy& GetDeviceProxy() const{ return m_deviceProxy; }
+    inline bool DeviceProxyHasBeenSet() const { return m_deviceProxyHasBeenSet; }
+    inline void SetDeviceProxy(const DeviceProxy& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = value; }
+    inline void SetDeviceProxy(DeviceProxy&& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = std::move(value); }
+    inline ScheduleRunConfiguration& WithDeviceProxy(const DeviceProxy& value) { SetDeviceProxy(value); return *this;}
+    inline ScheduleRunConfiguration& WithDeviceProxy(DeviceProxy&& value) { SetDeviceProxy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
      * configuration.</p>
      */
@@ -185,6 +198,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;
     bool m_vpceConfigurationArnsHasBeenSet = false;
+
+    DeviceProxy m_deviceProxy;
+    bool m_deviceProxyHasBeenSet = false;
 
     CustomerArtifactPaths m_customerArtifactPaths;
     bool m_customerArtifactPathsHasBeenSet = false;

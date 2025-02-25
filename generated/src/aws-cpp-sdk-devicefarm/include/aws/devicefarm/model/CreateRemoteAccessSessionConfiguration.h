@@ -7,6 +7,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -66,6 +67,19 @@ namespace Model
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(Aws::String&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(std::move(value)); return *this; }
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const char* value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The device proxy to be configured on the device for the remote access
+     * session.</p>
+     */
+    inline const DeviceProxy& GetDeviceProxy() const{ return m_deviceProxy; }
+    inline bool DeviceProxyHasBeenSet() const { return m_deviceProxyHasBeenSet; }
+    inline void SetDeviceProxy(const DeviceProxy& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = value; }
+    inline void SetDeviceProxy(DeviceProxy&& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = std::move(value); }
+    inline CreateRemoteAccessSessionConfiguration& WithDeviceProxy(const DeviceProxy& value) { SetDeviceProxy(value); return *this;}
+    inline CreateRemoteAccessSessionConfiguration& WithDeviceProxy(DeviceProxy&& value) { SetDeviceProxy(std::move(value)); return *this;}
+    ///@}
   private:
 
     BillingMethod m_billingMethod;
@@ -73,6 +87,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;
     bool m_vpceConfigurationArnsHasBeenSet = false;
+
+    DeviceProxy m_deviceProxy;
+    bool m_deviceProxyHasBeenSet = false;
   };
 
 } // namespace Model

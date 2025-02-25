@@ -39,6 +39,7 @@ namespace Model
     public:
         AWS_CLOUDWATCHLOGS_API StartLiveTailHandler();
         AWS_CLOUDWATCHLOGS_API StartLiveTailHandler& operator=(const StartLiveTailHandler&) = default;
+        AWS_CLOUDWATCHLOGS_API StartLiveTailHandler(const StartLiveTailHandler&) = default;
 
         AWS_CLOUDWATCHLOGS_API virtual void OnEvent() override;
 
