@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/utils/event/EventStream.h>
 
 #include <aws/lexv2-runtime/LexRuntimeV2Client.h>
@@ -502,29 +503,21 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
   endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/conversation");
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
 
   auto eventEncoderStream = Aws::MakeShared<Model::StartConversationRequestEventStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.SetRequestEventStream(eventEncoderStream); // this becomes the body of the request
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+  auto requestCopy = Aws::MakeShared<StartConversationRequest>("StartConversation", request);
+  requestCopy->SetRequestEventStream(eventEncoderStream); // this becomes the body of the request
+  request.SetRequestEventStream(eventEncoderStream);
 
-  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
-      if(outcome.IsSuccess())
-      {
-        handler(this, request, StartConversationOutcome(NoResult()), handlerContext);
-      }
-      else
-      {
-        request.GetRequestEventStream()->Close();
-        handler(this, request, StartConversationOutcome(outcome.GetError()), handlerContext);
-      }
-      return StartConversationOutcome(NoResult());
-  });
+  auto asyncTask = CreateBidirectionalEventStreamTask<StartConversationOutcome>(this,
+                                         endpointResolutionOutcome.GetResultWithOwnership(),
+                                         requestCopy,
+                                         handler,
+                                         handlerContext,
+                                         eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
-  streamReadyHandler(*request.GetRequestEventStream());
+  streamReadyHandler(*eventEncoderStream);
 }

@@ -137,7 +137,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const ${operation.name}Handler& GetEventStreamHandler() const { return m_handler; }
+    inline ${operation.name}Handler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

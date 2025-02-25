@@ -36,6 +36,7 @@ namespace Model
     public:
         AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler();
         AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler&) = default;
+        AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler(const StartStreamTranscriptionHandler&) = default;
 
         AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 

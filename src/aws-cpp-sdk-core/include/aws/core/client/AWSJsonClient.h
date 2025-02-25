@@ -22,7 +22,11 @@ namespace Aws
 
     namespace Client
     {
-        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;
+        using JsonOutcome = Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>>;
+
+        template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
+        class BidirectionalEventStreamingTask;
+
         /**
          *  AWSClient that handles marshalling json response bodies. You would inherit from this class
          *  to create a client that uses Json as its payload format.
@@ -49,6 +53,8 @@ namespace Aws
             virtual ~AWSJsonClient() = default;
 
         protected:
+            template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
+            friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to MakeRequests
             /**
              * Converts/Parses an http response into a meaningful AWSError object using the json message structure.
              */
