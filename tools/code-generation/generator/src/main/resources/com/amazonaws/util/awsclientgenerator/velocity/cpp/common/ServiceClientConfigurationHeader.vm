@@ -50,32 +50,68 @@ namespace ${rootNamespace}
 #end
 #end
 
+#set($copyCtorStatements = [])
+#set($moveCtorStatements = [])
+#set($copyAssignmentStatements = [])
+#set($moveAssignemntStatements = [])
 #if($metadata.hasEndpointDiscoveryTrait)
+#set($addArgDummy = $copyCtorStatements.add("enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)"))
+#set($addArgDummy = $moveCtorStatements.add("enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)"))
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+#set($addArgDummy = $copyCtorStatements.add("accountId{other.accountId}"))
+#set($addArgDummy = $moveCtorStatements.add("accountId{std::move(other.accountId)}"))
+#set($addArgDummy = $copyAssignmentStatements.add("accountId = other.accountId;"))
+#set($addArgDummy = $moveAssignemntStatements.add("accountId = std::move(other.accountId);"))
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+#set($addArgDummy = $copyCtorStatements.add("accountIdEndpointMode{other.accountIdEndpointMode}"))
+#set($addArgDummy = $moveCtorStatements.add("accountIdEndpointMode{std::move(other.accountIdEndpointMode)}"))
+#set($addArgDummy = $copyAssignmentStatements.add("accountIdEndpointMode = other.accountIdEndpointMode;"))
+#set($addArgDummy = $moveAssignemntStatements.add("accountIdEndpointMode = std::move(other.accountIdEndpointMode);"))
+#end
+#if(!$copyCtorStatements.isEmpty())
             ${metadata.classNamePrefix}ClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& other)
                 : Aws::Client::GenericClientConfiguration(other),
-                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+                  #foreach($statement in $copyCtorStatements)$statement#if($foreach.hasNext),
+                  #end#end
+
             {
             }
 
+#end
+#if(!$moveCtorStatements.isEmpty())
             ${metadata.classNamePrefix}ClientConfiguration(${metadata.classNamePrefix}ClientConfiguration&& other) noexcept
                 : Aws::Client::GenericClientConfiguration(std::move(other)),
-                  enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)
+                  #foreach($statement in $moveCtorStatements)$statement#if($foreach.hasNext),
+                  #end#end
+
             {
             }
 
+#end
+#if(!$copyAssignmentStatements.isEmpty() || $metadata.hasEndpointDiscoveryTrait)
             ${metadata.classNamePrefix}ClientConfiguration& operator=(const ${metadata.classNamePrefix}ClientConfiguration& other)
             {
                 if (this == &other)
                     return *this;
                 Aws::Client::GenericClientConfiguration::operator =(other);
+#foreach($statment in ${copyAssignmentStatements})
+                ${statment}
+#end
                 return *this;
             }
 
+#end
+#if(!$moveAssignemntStatements.isEmpty() || $metadata.hasEndpointDiscoveryTrait)
             ${metadata.classNamePrefix}ClientConfiguration& operator=(${metadata.classNamePrefix}ClientConfiguration&& other) noexcept
             {
                 if (this == &other)
                     return *this;
                 Aws::Client::GenericClientConfiguration::operator =(std::move(other));
+#foreach($statment in ${moveAssignemntStatements})
+                ${statment}
+#end
                 return *this;
             }
 
