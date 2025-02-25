@@ -39,6 +39,7 @@ namespace Model
     public:
         AWS_BEDROCKAGENTRUNTIME_API OptimizePromptHandler();
         AWS_BEDROCKAGENTRUNTIME_API OptimizePromptHandler& operator=(const OptimizePromptHandler&) = default;
+        AWS_BEDROCKAGENTRUNTIME_API OptimizePromptHandler(const OptimizePromptHandler&) = default;
 
         AWS_BEDROCKAGENTRUNTIME_API virtual void OnEvent() override;
 

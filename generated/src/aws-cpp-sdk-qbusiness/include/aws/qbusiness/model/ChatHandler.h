@@ -48,6 +48,7 @@ namespace Model
     public:
         AWS_QBUSINESS_API ChatHandler();
         AWS_QBUSINESS_API ChatHandler& operator=(const ChatHandler&) = default;
+        AWS_QBUSINESS_API ChatHandler(const ChatHandler&) = default;
 
         AWS_QBUSINESS_API virtual void OnEvent() override;
 

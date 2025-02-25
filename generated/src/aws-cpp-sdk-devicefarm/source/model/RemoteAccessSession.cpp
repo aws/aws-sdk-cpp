@@ -47,7 +47,8 @@ RemoteAccessSession::RemoteAccessSession() :
     m_interactionModeHasBeenSet(false),
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_deviceProxyHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,13 @@ RemoteAccessSession& RemoteAccessSession::operator =(JsonView jsonValue)
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deviceProxy"))
+  {
+    m_deviceProxy = jsonValue.GetObject("deviceProxy");
+
+    m_deviceProxyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -342,6 +350,12 @@ JsonValue RemoteAccessSession::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_deviceProxyHasBeenSet)
+  {
+   payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
 
   }
 

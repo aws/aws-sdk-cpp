@@ -88,8 +88,7 @@ namespace Model
 
     ///@{
     /**
-     *  <p>This parameter is in preview and may not be available for your
-     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
+     * <p>The ID of the transit gateway (if applicable).</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
     inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }

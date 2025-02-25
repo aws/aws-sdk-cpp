@@ -43,7 +43,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const OptimizePromptHandler& GetEventStreamHandler() const { return m_handler; }
+    inline OptimizePromptHandler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

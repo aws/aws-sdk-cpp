@@ -14,6 +14,7 @@
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/InteractionMode.h>
 #include <aws/devicefarm/model/VpcConfig.h>
+#include <aws/devicefarm/model/DeviceProxy.h>
 #include <utility>
 
 namespace Aws
@@ -361,6 +362,18 @@ namespace Model
     inline RemoteAccessSession& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
     inline RemoteAccessSession& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The device proxy configured for the remote access session.</p>
+     */
+    inline const DeviceProxy& GetDeviceProxy() const{ return m_deviceProxy; }
+    inline bool DeviceProxyHasBeenSet() const { return m_deviceProxyHasBeenSet; }
+    inline void SetDeviceProxy(const DeviceProxy& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = value; }
+    inline void SetDeviceProxy(DeviceProxy&& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = std::move(value); }
+    inline RemoteAccessSession& WithDeviceProxy(const DeviceProxy& value) { SetDeviceProxy(value); return *this;}
+    inline RemoteAccessSession& WithDeviceProxy(DeviceProxy&& value) { SetDeviceProxy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -428,6 +441,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
+
+    DeviceProxy m_deviceProxy;
+    bool m_deviceProxyHasBeenSet = false;
   };
 
 } // namespace Model

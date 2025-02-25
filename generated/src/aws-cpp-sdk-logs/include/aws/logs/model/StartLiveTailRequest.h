@@ -45,7 +45,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const StartLiveTailHandler& GetEventStreamHandler() const { return m_handler; }
+    inline StartLiveTailHandler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

@@ -126,8 +126,8 @@ namespace TaxSettings
         }
 
         /**
-         * <p>Get the active tax exemptions for a given list of accounts. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Get the active tax exemptions for a given list of accounts. The IAM action is
+         * <code>tax:GetExemptions</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">AWS
          * API Reference</a></p>
          */
@@ -318,7 +318,8 @@ namespace TaxSettings
         }
 
         /**
-         * <p>Get supported tax exemption types. </p><p><h3>See Also:</h3>   <a
+         * <p>Get supported tax exemption types. The IAM action is
+         * <code>tax:GetExemptions</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">AWS
          * API Reference</a></p>
          */
@@ -447,7 +448,8 @@ namespace TaxSettings
 
         /**
          * <p>Retrieves the tax exemption of accounts listed in a consolidated billing
-         * family. </p><p><h3>See Also:</h3>   <a
+         * family. The IAM action is <code>tax:GetExemptions</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">AWS
          * API Reference</a></p>
          */
@@ -526,7 +528,8 @@ namespace TaxSettings
 
         /**
          * <p>Adds the tax exemption for a single account or all accounts listed in a
-         * consolidated billing family. </p><p><h3>See Also:</h3>   <a
+         * consolidated billing family. The IAM action is
+         * <code>tax:UpdateExemptions</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">AWS
          * API Reference</a></p>
          */

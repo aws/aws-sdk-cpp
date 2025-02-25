@@ -42,6 +42,7 @@ Run::Run() :
     m_billingMethodHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false),
     m_networkProfileHasBeenSet(false),
+    m_deviceProxyHasBeenSet(false),
     m_parsingResultUrlHasBeenSet(false),
     m_resultCode(ExecutionResultCode::NOT_SET),
     m_resultCodeHasBeenSet(false),
@@ -184,6 +185,13 @@ Run& Run::operator =(JsonView jsonValue)
     m_networkProfile = jsonValue.GetObject("networkProfile");
 
     m_networkProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceProxy"))
+  {
+    m_deviceProxy = jsonValue.GetObject("deviceProxy");
+
+    m_deviceProxyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parsingResultUrl"))
@@ -390,6 +398,12 @@ JsonValue Run::Jsonize() const
   if(m_networkProfileHasBeenSet)
   {
    payload.WithObject("networkProfile", m_networkProfile.Jsonize());
+
+  }
+
+  if(m_deviceProxyHasBeenSet)
+  {
+   payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
 
   }
 

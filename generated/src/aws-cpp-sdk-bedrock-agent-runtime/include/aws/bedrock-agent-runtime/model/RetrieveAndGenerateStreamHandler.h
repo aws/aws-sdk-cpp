@@ -42,6 +42,7 @@ namespace Model
     public:
         AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateStreamHandler();
         AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateStreamHandler& operator=(const RetrieveAndGenerateStreamHandler&) = default;
+        AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateStreamHandler(const RetrieveAndGenerateStreamHandler&) = default;
 
         AWS_BEDROCKAGENTRUNTIME_API virtual void OnEvent() override;
 

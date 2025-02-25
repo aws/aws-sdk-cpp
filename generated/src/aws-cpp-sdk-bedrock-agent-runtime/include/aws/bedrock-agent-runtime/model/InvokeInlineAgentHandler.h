@@ -45,6 +45,7 @@ namespace Model
     public:
         AWS_BEDROCKAGENTRUNTIME_API InvokeInlineAgentHandler();
         AWS_BEDROCKAGENTRUNTIME_API InvokeInlineAgentHandler& operator=(const InvokeInlineAgentHandler&) = default;
+        AWS_BEDROCKAGENTRUNTIME_API InvokeInlineAgentHandler(const InvokeInlineAgentHandler&) = default;
 
         AWS_BEDROCKAGENTRUNTIME_API virtual void OnEvent() override;
 

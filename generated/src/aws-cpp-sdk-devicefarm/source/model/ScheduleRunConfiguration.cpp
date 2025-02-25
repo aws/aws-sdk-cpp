@@ -24,6 +24,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration() :
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_vpceConfigurationArnsHasBeenSet(false),
+    m_deviceProxyHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
@@ -76,6 +77,13 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(JsonView jsonValu
       m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());
     }
     m_vpceConfigurationArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceProxy"))
+  {
+    m_deviceProxy = jsonValue.GetObject("deviceProxy");
+
+    m_deviceProxyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customerArtifactPaths"))
@@ -148,6 +156,12 @@ JsonValue ScheduleRunConfiguration::Jsonize() const
      vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);
    }
    payload.WithArray("vpceConfigurationArns", std::move(vpceConfigurationArnsJsonList));
+
+  }
+
+  if(m_deviceProxyHasBeenSet)
+  {
+   payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
 
   }
 

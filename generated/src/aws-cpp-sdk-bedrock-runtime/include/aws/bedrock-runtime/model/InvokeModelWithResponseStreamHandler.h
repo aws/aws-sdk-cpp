@@ -36,6 +36,7 @@ namespace Model
     public:
         AWS_BEDROCKRUNTIME_API InvokeModelWithResponseStreamHandler();
         AWS_BEDROCKRUNTIME_API InvokeModelWithResponseStreamHandler& operator=(const InvokeModelWithResponseStreamHandler&) = default;
+        AWS_BEDROCKRUNTIME_API InvokeModelWithResponseStreamHandler(const InvokeModelWithResponseStreamHandler&) = default;
 
         AWS_BEDROCKRUNTIME_API virtual void OnEvent() override;
 

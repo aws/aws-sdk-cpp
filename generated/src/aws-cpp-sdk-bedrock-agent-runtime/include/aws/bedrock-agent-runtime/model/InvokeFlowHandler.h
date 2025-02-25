@@ -45,6 +45,7 @@ namespace Model
     public:
         AWS_BEDROCKAGENTRUNTIME_API InvokeFlowHandler();
         AWS_BEDROCKAGENTRUNTIME_API InvokeFlowHandler& operator=(const InvokeFlowHandler&) = default;
+        AWS_BEDROCKAGENTRUNTIME_API InvokeFlowHandler(const InvokeFlowHandler&) = default;
 
         AWS_BEDROCKAGENTRUNTIME_API virtual void OnEvent() override;
 

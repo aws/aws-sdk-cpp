@@ -54,7 +54,8 @@ BuildBatch::BuildBatch() :
     m_buildBatchConfigHasBeenSet(false),
     m_buildGroupsHasBeenSet(false),
     m_debugSessionEnabled(false),
-    m_debugSessionEnabledHasBeenSet(false)
+    m_debugSessionEnabledHasBeenSet(false),
+    m_reportArnsHasBeenSet(false)
 {
 }
 
@@ -294,6 +295,16 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
     m_debugSessionEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reportArns"))
+  {
+    Aws::Utils::Array<JsonView> reportArnsJsonList = jsonValue.GetArray("reportArns");
+    for(unsigned reportArnsIndex = 0; reportArnsIndex < reportArnsJsonList.GetLength(); ++reportArnsIndex)
+    {
+      m_reportArns.push_back(reportArnsJsonList[reportArnsIndex].AsString());
+    }
+    m_reportArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -505,6 +516,17 @@ JsonValue BuildBatch::Jsonize() const
   if(m_debugSessionEnabledHasBeenSet)
   {
    payload.WithBool("debugSessionEnabled", m_debugSessionEnabled);
+
+  }
+
+  if(m_reportArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> reportArnsJsonList(m_reportArns.size());
+   for(unsigned reportArnsIndex = 0; reportArnsIndex < reportArnsJsonList.GetLength(); ++reportArnsIndex)
+   {
+     reportArnsJsonList[reportArnsIndex].AsString(m_reportArns[reportArnsIndex]);
+   }
+   payload.WithArray("reportArns", std::move(reportArnsJsonList));
 
   }
 

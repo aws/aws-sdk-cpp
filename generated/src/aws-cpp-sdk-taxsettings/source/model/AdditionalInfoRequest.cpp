@@ -20,8 +20,10 @@ namespace Model
 
 AdditionalInfoRequest::AdditionalInfoRequest() : 
     m_canadaAdditionalInfoHasBeenSet(false),
+    m_egyptAdditionalInfoHasBeenSet(false),
     m_estoniaAdditionalInfoHasBeenSet(false),
     m_georgiaAdditionalInfoHasBeenSet(false),
+    m_greeceAdditionalInfoHasBeenSet(false),
     m_israelAdditionalInfoHasBeenSet(false),
     m_italyAdditionalInfoHasBeenSet(false),
     m_kenyaAdditionalInfoHasBeenSet(false),
@@ -32,7 +34,8 @@ AdditionalInfoRequest::AdditionalInfoRequest() :
     m_southKoreaAdditionalInfoHasBeenSet(false),
     m_spainAdditionalInfoHasBeenSet(false),
     m_turkeyAdditionalInfoHasBeenSet(false),
-    m_ukraineAdditionalInfoHasBeenSet(false)
+    m_ukraineAdditionalInfoHasBeenSet(false),
+    m_vietnamAdditionalInfoHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,13 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator =(JsonView jsonValue)
     m_canadaAdditionalInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("egyptAdditionalInfo"))
+  {
+    m_egyptAdditionalInfo = jsonValue.GetObject("egyptAdditionalInfo");
+
+    m_egyptAdditionalInfoHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("estoniaAdditionalInfo"))
   {
     m_estoniaAdditionalInfo = jsonValue.GetObject("estoniaAdditionalInfo");
@@ -63,6 +73,13 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator =(JsonView jsonValue)
     m_georgiaAdditionalInfo = jsonValue.GetObject("georgiaAdditionalInfo");
 
     m_georgiaAdditionalInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("greeceAdditionalInfo"))
+  {
+    m_greeceAdditionalInfo = jsonValue.GetObject("greeceAdditionalInfo");
+
+    m_greeceAdditionalInfoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("israelAdditionalInfo"))
@@ -142,6 +159,13 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator =(JsonView jsonValue)
     m_ukraineAdditionalInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vietnamAdditionalInfo"))
+  {
+    m_vietnamAdditionalInfo = jsonValue.GetObject("vietnamAdditionalInfo");
+
+    m_vietnamAdditionalInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +179,12 @@ JsonValue AdditionalInfoRequest::Jsonize() const
 
   }
 
+  if(m_egyptAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("egyptAdditionalInfo", m_egyptAdditionalInfo.Jsonize());
+
+  }
+
   if(m_estoniaAdditionalInfoHasBeenSet)
   {
    payload.WithObject("estoniaAdditionalInfo", m_estoniaAdditionalInfo.Jsonize());
@@ -164,6 +194,12 @@ JsonValue AdditionalInfoRequest::Jsonize() const
   if(m_georgiaAdditionalInfoHasBeenSet)
   {
    payload.WithObject("georgiaAdditionalInfo", m_georgiaAdditionalInfo.Jsonize());
+
+  }
+
+  if(m_greeceAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("greeceAdditionalInfo", m_greeceAdditionalInfo.Jsonize());
 
   }
 
@@ -230,6 +266,12 @@ JsonValue AdditionalInfoRequest::Jsonize() const
   if(m_ukraineAdditionalInfoHasBeenSet)
   {
    payload.WithObject("ukraineAdditionalInfo", m_ukraineAdditionalInfo.Jsonize());
+
+  }
+
+  if(m_vietnamAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("vietnamAdditionalInfo", m_vietnamAdditionalInfo.Jsonize());
 
   }
 

@@ -42,7 +42,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const InvokeAssistantHandler& GetEventStreamHandler() const { return m_handler; }
+    inline InvokeAssistantHandler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

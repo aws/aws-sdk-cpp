@@ -52,7 +52,7 @@ namespace Model
     /**
      * Underlying Event Stream Handler which is used to define callback functions.
      */
-    inline const ConverseStreamHandler& GetEventStreamHandler() const { return m_handler; }
+    inline ConverseStreamHandler& GetEventStreamHandler() { return m_handler; }
 
     /**
      * Underlying Event Stream Handler which is used to define callback functions.

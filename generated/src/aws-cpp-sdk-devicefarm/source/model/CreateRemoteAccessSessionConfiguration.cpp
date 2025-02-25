@@ -21,7 +21,8 @@ namespace Model
 CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration() : 
     m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
-    m_vpceConfigurationArnsHasBeenSet(false)
+    m_vpceConfigurationArnsHasBeenSet(false),
+    m_deviceProxyHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,13 @@ CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::
     m_vpceConfigurationArnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deviceProxy"))
+  {
+    m_deviceProxy = jsonValue.GetObject("deviceProxy");
+
+    m_deviceProxyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -70,6 +78,12 @@ JsonValue CreateRemoteAccessSessionConfiguration::Jsonize() const
      vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);
    }
    payload.WithArray("vpceConfigurationArns", std::move(vpceConfigurationArnsJsonList));
+
+  }
+
+  if(m_deviceProxyHasBeenSet)
+  {
+   payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
 
   }
 
