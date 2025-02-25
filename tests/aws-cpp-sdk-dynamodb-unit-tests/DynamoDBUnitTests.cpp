@@ -331,3 +331,29 @@ TEST_F(DynamoDBUnitTest, ListTablesShouldHaveCorrectUserAgent)
   EXPECT_TRUE(crtMetadata <  archMetadata);
   EXPECT_TRUE(archMetadata < businessMetrics);
 }
+
+TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpoint)
+{
+  // create client with account id configuration
+  AWSCredentials credentials{"mock", "credentials"};
+  const auto epProvider = Aws::MakeShared<DynamoDBEndpointProvider>(LOG_TAG);
+  DynamoDBClientConfiguration configuration;
+  configuration.accountId = "123456789012";
+  configuration.region = "us-east-1";
+  const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, credentials, epProvider, configuration);
+
+  // mock response
+  auto successStream = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "the_grand_budapest.hotel/zero", HttpMethod::HTTP_GET);
+  successStream->SetResponseStreamFactory([]() -> IOStream* {
+    auto listTablesString =  R"({"LastEvaluatedTableName": "Hotels","TableNames": ["Hotels"]}))";
+    return Aws::New<StringStream>(LOG_TAG, listTablesString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, successStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+
+  mock_http_client_->AddResponseToReturn(successResponse);
+  const auto listTablesOutcome = accountIdClient->ListTables();
+  EXPECT_TRUE(listTablesOutcome.IsSuccess());
+  const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
+  EXPECT_EQ("https://123456789012.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+}
