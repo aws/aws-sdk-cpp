@@ -36,7 +36,14 @@ Aws::String NestedXmlMapsRequest::SerializePayload() const
      XmlNode nestedMapKeyNode = nestedMapMapEntryNode.CreateChildElement("key");
      nestedMapKeyNode.SetText(mapItem.first);
      XmlNode nestedMapValueNode = nestedMapMapEntryNode.CreateChildElement("value");
-     nestedMapValueNode.SetText(mapItem.second);
+     for(const auto& nestedMapValueNestedItem : mapItem.second)
+     {
+       XmlNode nestedMapValueMapEntryNode = nestedMapValueNode.CreateChildElement("entry");
+       XmlNode nestedMapValueKeyNode = nestedMapValueMapEntryNode.CreateChildElement("key");
+       nestedMapValueKeyNode.SetText(nestedMapValueNestedItem.first);
+       XmlNode nestedMapValueValueNode = nestedMapValueMapEntryNode.CreateChildElement("value");
+       nestedMapValueValueNode.SetText(FooEnumMapper::GetNameForFooEnum(nestedMapValueNestedItem.second));
+     }
    }
   }
 
@@ -49,7 +56,14 @@ Aws::String NestedXmlMapsRequest::SerializePayload() const
      XmlNode flatNestedMapKeyNode = flatNestedMapMapEntryNode.CreateChildElement("key");
      flatNestedMapKeyNode.SetText(mapItem.first);
      XmlNode flatNestedMapValueNode = flatNestedMapMapEntryNode.CreateChildElement("value");
-     flatNestedMapValueNode.SetText(mapItem.second);
+     for(const auto& flatNestedMapValueNestedItem : mapItem.second)
+     {
+       XmlNode flatNestedMapValueMapEntryNode = flatNestedMapValueNode.CreateChildElement("entry");
+       XmlNode flatNestedMapValueKeyNode = flatNestedMapValueMapEntryNode.CreateChildElement("key");
+       flatNestedMapValueKeyNode.SetText(flatNestedMapValueNestedItem.first);
+       XmlNode flatNestedMapValueValueNode = flatNestedMapValueMapEntryNode.CreateChildElement("value");
+       flatNestedMapValueValueNode.SetText(FooEnumMapper::GetNameForFooEnum(flatNestedMapValueNestedItem.second));
+     }
    }
   }
 

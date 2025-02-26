@@ -64,7 +64,7 @@
     if(!${lowerCaseVarName}Node.IsNull())
 #end
     {
-#if($member.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
       ${memberVarName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.shape)>("${typeInfo.className}", #deserializeXmlSingleElement($member, $srcXmlarName, "", true));
 #else
       ${memberVarName} = #deserializeXmlSingleElement($member, $srcXmlarName, "", true);

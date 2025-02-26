@@ -102,7 +102,7 @@ void TestResult::AddToNode(XmlNode& parentNode) const
    XmlNode functionExecutionLogsParentNode = parentNode.CreateChildElement("FunctionExecutionLogs");
    for(const auto& item : m_functionExecutionLogs)
    {
-     XmlNode functionExecutionLogsNode = functionExecutionLogsParentNode.CreateChildElement("String");
+     XmlNode functionExecutionLogsNode = functionExecutionLogsParentNode.CreateChildElement("member");
      functionExecutionLogsNode.SetText(item);
    }
   }
