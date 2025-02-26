@@ -63,7 +63,7 @@ Aws::String XmlIntEnumsRequest::SerializePayload() const
    XmlNode intEnumListParentNode = parentNode.CreateChildElement("intEnumList");
    for(const auto& item : m_intEnumList)
    {
-     XmlNode intEnumListNode = intEnumListParentNode.CreateChildElement("IntegerEnum");
+     XmlNode intEnumListNode = intEnumListParentNode.CreateChildElement("member");
      ss << item;
      intEnumListNode.SetText(ss.str());
      ss.str("");
@@ -75,7 +75,7 @@ Aws::String XmlIntEnumsRequest::SerializePayload() const
    XmlNode intEnumSetParentNode = parentNode.CreateChildElement("intEnumSet");
    for(const auto& item : m_intEnumSet)
    {
-     XmlNode intEnumSetNode = intEnumSetParentNode.CreateChildElement("IntegerEnum");
+     XmlNode intEnumSetNode = intEnumSetParentNode.CreateChildElement("member");
      ss << item;
      intEnumSetNode.SetText(ss.str());
      ss.str("");
