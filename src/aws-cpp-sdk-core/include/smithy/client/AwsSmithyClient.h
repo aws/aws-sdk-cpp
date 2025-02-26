@@ -171,14 +171,22 @@ namespace client
                                  false/*retryable*/);
         }
 
-        SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const override
+        SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AwsSmithyClientAsyncRequestContext& ctx) const override
         {
-            return AwsClientRequestSigning<AuthSchemesVariantT>::SignRequest(httpRequest, targetAuthSchemeOption, m_authSchemes);
+            return AwsClientRequestSigning<AuthSchemesVariantT>::SignRequest(httpRequest, ctx, m_authSchemes);
         }
 
         bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const override
         {
             return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
+        }
+
+        IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const override {
+          return AwsClientRequestSigning<AuthSchemesVariantT>::ResolveIdentity(ctx, m_authSchemes);
+        }
+
+        RefreshBuiltInOutcome RefreshBuiltinParameters(const AwsSmithyClientAsyncRequestContext& ctx) const override {
+          return RefreshBuiltinParametersImpl(ctx);
         }
 
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
@@ -247,6 +255,29 @@ namespace client
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
         std::shared_ptr<SerializerT> m_serializer{};
+
+    private:
+      template<typename T, typename = void>
+      struct HasAccountId : std::false_type {};
+
+      template<typename T>
+      struct HasAccountId<T, decltype(void(std::declval<T>().accountId))> : std::true_type {};
+
+      template<typename ConfigT = ServiceClientConfigurationT, typename std::enable_if<HasAccountId<ConfigT>::value, int>::type = 0>
+      RefreshBuiltInOutcome RefreshBuiltinParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
+        const auto resolvedAccountId = ctx.m_awsIdentity->accountId();
+        if (resolvedAccountId.has_value() && !resolvedAccountId.value().empty() && (m_clientConfiguration.accountId.empty() || resolvedAccountId.value() != m_clientConfiguration.accountId)) {
+          m_clientConfiguration.accountId = resolvedAccountId.value();
+          m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
+        }
+        return Aws::NoResult{};
+      }
+
+      template<typename ConfigT = ServiceClientConfigurationT, typename std::enable_if<!HasAccountId<ConfigT>::value, int>::type = 0>
+      RefreshBuiltInOutcome RefreshBuiltinParametersImpl(const AwsSmithyClientAsyncRequestContext& ctx) const {
+        AWS_UNREFERENCED_PARAM(ctx);
+        return Aws::NoResult{};
+      }
     };
 
 } // namespace client
