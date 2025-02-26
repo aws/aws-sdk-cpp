@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
      * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair-share scheduling (FSS) job queues, jobs
+     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
      * are ordered based on their job priority and share usage.</p>
      */
     inline const Aws::Vector<FrontOfQueueJobSummary>& GetJobs() const{ return m_jobs; }

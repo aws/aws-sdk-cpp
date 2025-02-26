@@ -217,6 +217,7 @@
 #include <aws/ec2/model/DeprovisionIpamByoasnResponse.h>
 #include <aws/ec2/model/DeprovisionIpamPoolCidrResponse.h>
 #include <aws/ec2/model/DeprovisionPublicIpv4PoolCidrResponse.h>
+#include <aws/ec2/model/DeregisterImageResponse.h>
 #include <aws/ec2/model/DeregisterInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
@@ -1745,7 +1746,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeprovisionIpamByoasnResponse, EC2Error> DeprovisionIpamByoasnOutcome;
       typedef Aws::Utils::Outcome<DeprovisionIpamPoolCidrResponse, EC2Error> DeprovisionIpamPoolCidrOutcome;
       typedef Aws::Utils::Outcome<DeprovisionPublicIpv4PoolCidrResponse, EC2Error> DeprovisionPublicIpv4PoolCidrOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeregisterImageOutcome;
+      typedef Aws::Utils::Outcome<DeregisterImageResponse, EC2Error> DeregisterImageOutcome;
       typedef Aws::Utils::Outcome<DeregisterInstanceEventNotificationAttributesResponse, EC2Error> DeregisterInstanceEventNotificationAttributesOutcome;
       typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupMembersResponse, EC2Error> DeregisterTransitGatewayMulticastGroupMembersOutcome;
       typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, EC2Error> DeregisterTransitGatewayMulticastGroupSourcesOutcome;

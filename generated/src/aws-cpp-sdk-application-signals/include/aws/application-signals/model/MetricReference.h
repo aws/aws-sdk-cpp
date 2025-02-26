@@ -99,6 +99,20 @@ namespace Model
     inline MetricReference& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
     inline MetricReference& WithMetricName(const char* value) { SetMetricName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Web Services account ID.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+    inline MetricReference& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline MetricReference& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+    inline MetricReference& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_namespace;
@@ -112,6 +126,9 @@ namespace Model
 
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

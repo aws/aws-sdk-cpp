@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfigSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/InferenceComponentStatus.h>
+#include <aws/sagemaker/model/InferenceComponentDeploymentConfig.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +175,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The deployment and rollback settings that you assigned to the inference
+     * component.</p>
+     */
+    inline const InferenceComponentDeploymentConfig& GetLastDeploymentConfig() const{ return m_lastDeploymentConfig; }
+    inline void SetLastDeploymentConfig(const InferenceComponentDeploymentConfig& value) { m_lastDeploymentConfig = value; }
+    inline void SetLastDeploymentConfig(InferenceComponentDeploymentConfig&& value) { m_lastDeploymentConfig = std::move(value); }
+    inline DescribeInferenceComponentResult& WithLastDeploymentConfig(const InferenceComponentDeploymentConfig& value) { SetLastDeploymentConfig(value); return *this;}
+    inline DescribeInferenceComponentResult& WithLastDeploymentConfig(InferenceComponentDeploymentConfig&& value) { SetLastDeploymentConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -206,6 +219,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     InferenceComponentStatus m_inferenceComponentStatus;
+
+    InferenceComponentDeploymentConfig m_lastDeploymentConfig;
 
     Aws::String m_requestId;
   };

@@ -8,6 +8,7 @@
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotfleetwise/model/ListResponseScope.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,20 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListVehiclesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>When you set the <code>listResponseScope</code> parameter to
+     * <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon
+     * Resource Name (ARN), creation time, and last modification time.</p>
+     */
+    inline const ListResponseScope& GetListResponseScope() const{ return m_listResponseScope; }
+    inline bool ListResponseScopeHasBeenSet() const { return m_listResponseScopeHasBeenSet; }
+    inline void SetListResponseScope(const ListResponseScope& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
+    inline void SetListResponseScope(ListResponseScope&& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = std::move(value); }
+    inline ListVehiclesRequest& WithListResponseScope(const ListResponseScope& value) { SetListResponseScope(value); return *this;}
+    inline ListVehiclesRequest& WithListResponseScope(ListResponseScope&& value) { SetListResponseScope(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelManifestArn;
@@ -147,6 +162,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    ListResponseScope m_listResponseScope;
+    bool m_listResponseScopeHasBeenSet = false;
   };
 
 } // namespace Model

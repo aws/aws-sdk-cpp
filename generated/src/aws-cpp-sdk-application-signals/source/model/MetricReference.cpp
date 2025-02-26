@@ -22,7 +22,8 @@ MetricReference::MetricReference() :
     m_namespaceHasBeenSet(false),
     m_metricTypeHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,13 @@ MetricReference& MetricReference::operator =(JsonView jsonValue)
     m_metricNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +106,12 @@ JsonValue MetricReference::Jsonize() const
   if(m_metricNameHasBeenSet)
   {
    payload.WithString("MetricName", m_metricName);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

@@ -31,6 +31,7 @@ FleetLaunchTemplateOverridesRequest::FleetLaunchTemplateOverridesRequest() :
     m_priority(0.0),
     m_priorityHasBeenSet(false),
     m_placementHasBeenSet(false),
+    m_blockDeviceMappingsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
     m_imageIdHasBeenSet(false)
 {
@@ -90,6 +91,18 @@ FleetLaunchTemplateOverridesRequest& FleetLaunchTemplateOverridesRequest::operat
       m_placement = placementNode;
       m_placementHasBeenSet = true;
     }
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMapping");
+    if(!blockDeviceMappingsNode.IsNull())
+    {
+      XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("BlockDeviceMapping");
+      while(!blockDeviceMappingsMember.IsNull())
+      {
+        m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
+        blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("BlockDeviceMapping");
+      }
+
+      m_blockDeviceMappingsHasBeenSet = true;
+    }
     XmlNode instanceRequirementsNode = resultNode.FirstChild("InstanceRequirements");
     if(!instanceRequirementsNode.IsNull())
     {
@@ -146,6 +159,17 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
       m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
   }
 
+  if(m_blockDeviceMappingsHasBeenSet)
+  {
+      unsigned blockDeviceMappingsIdx = 1;
+      for(auto& item : m_blockDeviceMappings)
+      {
+        Aws::StringStream blockDeviceMappingsSs;
+        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
+        item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
+      }
+  }
+
   if(m_instanceRequirementsHasBeenSet)
   {
       Aws::StringStream instanceRequirementsLocationAndMemberSs;
@@ -191,6 +215,16 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
       Aws::String placementLocationAndMember(location);
       placementLocationAndMember += ".Placement";
       m_placement.OutputToStream(oStream, placementLocationAndMember.c_str());
+  }
+  if(m_blockDeviceMappingsHasBeenSet)
+  {
+      unsigned blockDeviceMappingsIdx = 1;
+      for(auto& item : m_blockDeviceMappings)
+      {
+        Aws::StringStream blockDeviceMappingsSs;
+        blockDeviceMappingsSs << location <<  ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
+        item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
+      }
   }
   if(m_instanceRequirementsHasBeenSet)
   {

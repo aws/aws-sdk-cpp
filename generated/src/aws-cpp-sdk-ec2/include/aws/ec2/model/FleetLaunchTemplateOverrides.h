@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PlacementResponse.h>
 #include <aws/ec2/model/InstanceRequirements.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/BlockDeviceMappingResponse.h>
 #include <utility>
 
 namespace Aws
@@ -64,7 +66,9 @@ namespace Model
      * increased interruptions. If you do not specify this parameter, you will pay the
      * current Spot price. </p>  <p>If you specify a maximum price, your
      * instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p> <p>If you specify a maximum price, it must be more than USD
+     * $0.001. Specifying a value below USD $0.001 will result in an
+     * <code>InvalidParameterValue</code> error message.</p> 
      */
     inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
@@ -203,6 +207,24 @@ namespace Model
     inline FleetLaunchTemplateOverrides& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
     inline FleetLaunchTemplateOverrides& WithImageId(const char* value) { SetImageId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2
+     * User Guide</i>.</p>
+     */
+    inline const Aws::Vector<BlockDeviceMappingResponse>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMappingResponse>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMappingResponse>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
+    inline FleetLaunchTemplateOverrides& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMappingResponse>& value) { SetBlockDeviceMappings(value); return *this;}
+    inline FleetLaunchTemplateOverrides& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMappingResponse>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+    inline FleetLaunchTemplateOverrides& AddBlockDeviceMappings(const BlockDeviceMappingResponse& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline FleetLaunchTemplateOverrides& AddBlockDeviceMappings(BlockDeviceMappingResponse&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     InstanceType m_instanceType;
@@ -231,6 +253,9 @@ namespace Model
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
+
+    Aws::Vector<BlockDeviceMappingResponse> m_blockDeviceMappings;
+    bool m_blockDeviceMappingsHasBeenSet = false;
   };
 
 } // namespace Model

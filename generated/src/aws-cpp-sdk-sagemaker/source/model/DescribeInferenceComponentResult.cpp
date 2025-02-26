@@ -97,6 +97,12 @@ DescribeInferenceComponentResult& DescribeInferenceComponentResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("LastDeploymentConfig"))
+  {
+    m_lastDeploymentConfig = jsonValue.GetObject("LastDeploymentConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

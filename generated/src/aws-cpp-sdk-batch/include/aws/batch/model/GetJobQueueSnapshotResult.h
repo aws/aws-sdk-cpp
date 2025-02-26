@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For
      * first-in-first-out (FIFO) job queues, jobs are ordered based on their submission
-     * time. For fair-share scheduling (FSS) job queues, jobs are ordered based on
+     * time. For fair share scheduling (FSS) job queues, jobs are ordered based on
      * their job priority and share usage.</p>
      */
     inline const FrontOfQueueDetail& GetFrontOfQueue() const{ return m_frontOfQueue; }

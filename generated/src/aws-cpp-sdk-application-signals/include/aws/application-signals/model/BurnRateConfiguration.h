@@ -28,7 +28,7 @@ namespace Model
    * rate of exactly 1 indicates that the SLO goal will be met exactly.</p> <p>For
    * example, if you specify 60 as the number of minutes in the look-back window, the
    * burn rate is calculated as the following:</p> <p> <i>burn rate = error rate over
-   * the look-back window / (1 - attainment goal percentage)</i> </p> <p>For more
+   * the look-back window / (100% - attainment goal percentage)</i> </p> <p>For more
    * information about burn rates, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-ServiceLevelObjectives.html#CloudWatch-ServiceLevelObjectives-burn">Calculate
    * burn rates</a>.</p><p><h3>See Also:</h3>   <a

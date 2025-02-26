@@ -9,7 +9,9 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Placement.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
+#include <aws/ec2/model/FleetBlockDeviceMappingRequest.h>
 #include <utility>
 
 namespace Aws
@@ -64,7 +66,9 @@ namespace Model
      * increased interruptions. If you do not specify this parameter, you will pay the
      * current Spot price. </p>  <p>If you specify a maximum price, your
      * instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p> <p>If you specify a maximum price, it must be more than USD
+     * $0.001. Specifying a value below USD $0.001 will result in an
+     * <code>InvalidParameterValue</code> error message.</p> 
      */
     inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
@@ -162,6 +166,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2
+     * User Guide</i>.</p> <p>To override a block device mapping specified in the
+     * launch template:</p> <ul> <li> <p>Specify the exact same <code>DeviceName</code>
+     * here as specified in the launch template.</p> </li> <li> <p>Only specify the
+     * parameters you want to change.</p> </li> <li> <p>Any parameters you don't
+     * specify here will keep their original launch template values.</p> </li> </ul>
+     * <p>To add a new block device mapping:</p> <ul> <li> <p>Specify a
+     * <code>DeviceName</code> that doesn't exist in the launch template.</p> </li>
+     * <li> <p>Specify all desired parameters here.</p> </li> </ul>
+     */
+    inline const Aws::Vector<FleetBlockDeviceMappingRequest>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+    inline void SetBlockDeviceMappings(const Aws::Vector<FleetBlockDeviceMappingRequest>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<FleetBlockDeviceMappingRequest>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
+    inline FleetLaunchTemplateOverridesRequest& WithBlockDeviceMappings(const Aws::Vector<FleetBlockDeviceMappingRequest>& value) { SetBlockDeviceMappings(value); return *this;}
+    inline FleetLaunchTemplateOverridesRequest& WithBlockDeviceMappings(Aws::Vector<FleetBlockDeviceMappingRequest>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+    inline FleetLaunchTemplateOverridesRequest& AddBlockDeviceMappings(const FleetBlockDeviceMappingRequest& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline FleetLaunchTemplateOverridesRequest& AddBlockDeviceMappings(FleetBlockDeviceMappingRequest&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The attributes for the instance types. When you specify instance attributes,
      * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
      * you specify <code>InstanceRequirements</code>, you can't specify
@@ -229,6 +258,9 @@ namespace Model
 
     Placement m_placement;
     bool m_placementHasBeenSet = false;
+
+    Aws::Vector<FleetBlockDeviceMappingRequest> m_blockDeviceMappings;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     InstanceRequirementsRequest m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet = false;

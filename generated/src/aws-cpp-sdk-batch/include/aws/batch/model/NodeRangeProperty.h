@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/EcsProperties.h>
 #include <aws/batch/model/EksProperties.h>
+#include <aws/batch/model/ConsumableResourceProperties.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,18 @@ namespace Model
     inline NodeRangeProperty& WithEksProperties(const EksProperties& value) { SetEksProperties(value); return *this;}
     inline NodeRangeProperty& WithEksProperties(EksProperties&& value) { SetEksProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains a list of consumable resources required by a job.</p>
+     */
+    inline const ConsumableResourceProperties& GetConsumableResourceProperties() const{ return m_consumableResourceProperties; }
+    inline bool ConsumableResourcePropertiesHasBeenSet() const { return m_consumableResourcePropertiesHasBeenSet; }
+    inline void SetConsumableResourceProperties(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = value; }
+    inline void SetConsumableResourceProperties(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = std::move(value); }
+    inline NodeRangeProperty& WithConsumableResourceProperties(const ConsumableResourceProperties& value) { SetConsumableResourceProperties(value); return *this;}
+    inline NodeRangeProperty& WithConsumableResourceProperties(ConsumableResourceProperties&& value) { SetConsumableResourceProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_targetNodes;
@@ -134,6 +147,9 @@ namespace Model
 
     EksProperties m_eksProperties;
     bool m_eksPropertiesHasBeenSet = false;
+
+    ConsumableResourceProperties m_consumableResourceProperties;
+    bool m_consumableResourcePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

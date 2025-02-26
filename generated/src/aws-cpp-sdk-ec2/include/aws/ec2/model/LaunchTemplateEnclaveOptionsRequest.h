@@ -25,8 +25,8 @@ namespace Model
    * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
    * Enclaves. For more information, see <a
    * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
-   * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
-   * Enclaves User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateEnclaveOptionsRequest">AWS
    * API Reference</a></p>
    */

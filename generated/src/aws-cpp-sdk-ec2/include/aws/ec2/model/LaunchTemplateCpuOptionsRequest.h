@@ -67,7 +67,7 @@ namespace Model
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
      * supported with M6a, R6a, and C6a instance types only. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
-     * SEV-SNP</a>.</p>
+     * SEV-SNP for Amazon EC2 instances</a>.</p>
      */
     inline const AmdSevSnpSpecification& GetAmdSevSnp() const{ return m_amdSevSnp; }
     inline bool AmdSevSnpHasBeenSet() const { return m_amdSevSnpHasBeenSet; }

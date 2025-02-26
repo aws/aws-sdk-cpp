@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fair-share policy scheduling details.</p>
+     * <p>The fair share policy.</p>
      */
     inline const FairsharePolicy& GetFairsharePolicy() const{ return m_fairsharePolicy; }
     inline bool FairsharePolicyHasBeenSet() const { return m_fairsharePolicyHasBeenSet; }

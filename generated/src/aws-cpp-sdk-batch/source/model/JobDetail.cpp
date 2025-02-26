@@ -55,7 +55,8 @@ JobDetail::JobDetail() :
     m_isCancelled(false),
     m_isCancelledHasBeenSet(false),
     m_isTerminated(false),
-    m_isTerminatedHasBeenSet(false)
+    m_isTerminatedHasBeenSet(false),
+    m_consumableResourcePropertiesHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,13 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_isTerminatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("consumableResourceProperties"))
+  {
+    m_consumableResourceProperties = jsonValue.GetObject("consumableResourceProperties");
+
+    m_consumableResourcePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -495,6 +503,12 @@ JsonValue JobDetail::Jsonize() const
   if(m_isTerminatedHasBeenSet)
   {
    payload.WithBool("isTerminated", m_isTerminated);
+
+  }
+
+  if(m_consumableResourcePropertiesHasBeenSet)
+  {
+   payload.WithObject("consumableResourceProperties", m_consumableResourceProperties.Jsonize());
 
   }
 

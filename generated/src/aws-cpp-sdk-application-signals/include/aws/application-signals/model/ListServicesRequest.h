@@ -94,6 +94,32 @@ namespace Model
     inline ListServicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListServicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If you are using this operation in a monitoring account, specify
+     * <code>true</code> to include services from source accounts in the returned data.
+     * <pre><code> &lt;/p&gt; </code></pre>
+     */
+    inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
+    inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
+    inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
+    inline ListServicesRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Web Services Account ID.</p>
+     */
+    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
+    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
+    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
+    inline ListServicesRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
+    inline ListServicesRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
+    inline ListServicesRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime;
@@ -107,6 +133,12 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_includeLinkedAccounts;
+    bool m_includeLinkedAccountsHasBeenSet = false;
+
+    Aws::String m_awsAccountId;
+    bool m_awsAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

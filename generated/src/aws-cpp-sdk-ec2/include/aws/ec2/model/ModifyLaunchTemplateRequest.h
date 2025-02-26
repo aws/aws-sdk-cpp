@@ -54,7 +54,8 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     * idempotency in Amazon EC2 API requests</a>.</p> <p>Constraint: Maximum 128 ASCII
+     * characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>A filter name and value pair that's used to return a more specific list of
-   * results from a <code>ListJobs</code> API operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * results from a <code>ListJobs</code> or
+   * <code>ListJobsByConsumableResource</code> API operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/KeyValuesPair">AWS
    * API Reference</a></p>
    */

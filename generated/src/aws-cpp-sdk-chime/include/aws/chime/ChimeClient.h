@@ -433,7 +433,7 @@ namespace Chime
          * the From number belongs to the customer.</p> <p>To play welcome audio or
          * implement an interactive voice response (IVR), use the
          * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP
-         * media application ID.</p>  <p> <b>This API is is not available in a
+         * media application ID.</p>  <p> <b>This API is not available in a
          * dedicated namespace.</b> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut">AWS
          * API Reference</a></p>

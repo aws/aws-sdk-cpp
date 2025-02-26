@@ -74,7 +74,7 @@ namespace Model
      * - 16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
      * <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li> </ul> <p>For
      * <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
      * built on the Nitro System</a>. On other instances, you can achieve performance
      * up to 32,000 IOPS.</p> <p>This parameter is supported for <code>io1</code>,
      * <code>io2</code>, and <code>gp3</code> volumes only.</p>

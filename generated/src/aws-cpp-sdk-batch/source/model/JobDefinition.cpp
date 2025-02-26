@@ -39,7 +39,8 @@ JobDefinition::JobDefinition() :
     m_ecsPropertiesHasBeenSet(false),
     m_eksPropertiesHasBeenSet(false),
     m_containerOrchestrationType(OrchestrationType::NOT_SET),
-    m_containerOrchestrationTypeHasBeenSet(false)
+    m_containerOrchestrationTypeHasBeenSet(false),
+    m_consumableResourcePropertiesHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,13 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_containerOrchestrationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("consumableResourceProperties"))
+  {
+    m_consumableResourceProperties = jsonValue.GetObject("consumableResourceProperties");
+
+    m_consumableResourcePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -300,6 +308,12 @@ JsonValue JobDefinition::Jsonize() const
   if(m_containerOrchestrationTypeHasBeenSet)
   {
    payload.WithString("containerOrchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_containerOrchestrationType));
+  }
+
+  if(m_consumableResourcePropertiesHasBeenSet)
+  {
+   payload.WithObject("consumableResourceProperties", m_consumableResourceProperties.Jsonize());
+
   }
 
   return payload;

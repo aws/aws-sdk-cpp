@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateInferenceComponentRequest::UpdateInferenceComponentRequest() : 
     m_inferenceComponentNameHasBeenSet(false),
     m_specificationHasBeenSet(false),
-    m_runtimeConfigHasBeenSet(false)
+    m_runtimeConfigHasBeenSet(false),
+    m_deploymentConfigHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String UpdateInferenceComponentRequest::SerializePayload() const
   if(m_runtimeConfigHasBeenSet)
   {
    payload.WithObject("RuntimeConfig", m_runtimeConfig.Jsonize());
+
+  }
+
+  if(m_deploymentConfigHasBeenSet)
+  {
+   payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
 
   }
 

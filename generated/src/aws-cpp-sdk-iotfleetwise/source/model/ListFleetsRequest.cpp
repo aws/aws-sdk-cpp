@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 ListFleetsRequest::ListFleetsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_listResponseScope(ListResponseScope::NOT_SET),
+    m_listResponseScopeHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,11 @@ Aws::String ListFleetsRequest::SerializePayload() const
   {
    payload.WithInteger("maxResults", m_maxResults);
 
+  }
+
+  if(m_listResponseScopeHasBeenSet)
+  {
+   payload.WithString("listResponseScope", ListResponseScopeMapper::GetNameForListResponseScope(m_listResponseScope));
   }
 
   return payload.View().WriteReadable();

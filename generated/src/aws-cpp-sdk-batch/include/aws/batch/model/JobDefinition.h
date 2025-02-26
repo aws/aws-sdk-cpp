@@ -15,6 +15,7 @@
 #include <aws/batch/model/EcsProperties.h>
 #include <aws/batch/model/EksProperties.h>
 #include <aws/batch/model/OrchestrationType.h>
+#include <aws/batch/model/ConsumableResourceProperties.h>
 #include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
@@ -122,7 +123,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling priority of the job definition. This only affects jobs in job
-     * queues with a fair-share policy. Jobs with a higher scheduling priority are
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
      * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
@@ -307,6 +308,18 @@ namespace Model
     inline JobDefinition& WithContainerOrchestrationType(const OrchestrationType& value) { SetContainerOrchestrationType(value); return *this;}
     inline JobDefinition& WithContainerOrchestrationType(OrchestrationType&& value) { SetContainerOrchestrationType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains a list of consumable resources required by the job.</p>
+     */
+    inline const ConsumableResourceProperties& GetConsumableResourceProperties() const{ return m_consumableResourceProperties; }
+    inline bool ConsumableResourcePropertiesHasBeenSet() const { return m_consumableResourcePropertiesHasBeenSet; }
+    inline void SetConsumableResourceProperties(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = value; }
+    inline void SetConsumableResourceProperties(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = std::move(value); }
+    inline JobDefinition& WithConsumableResourceProperties(const ConsumableResourceProperties& value) { SetConsumableResourceProperties(value); return *this;}
+    inline JobDefinition& WithConsumableResourceProperties(ConsumableResourceProperties&& value) { SetConsumableResourceProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobDefinitionName;
@@ -359,6 +372,9 @@ namespace Model
 
     OrchestrationType m_containerOrchestrationType;
     bool m_containerOrchestrationTypeHasBeenSet = false;
+
+    ConsumableResourceProperties m_consumableResourceProperties;
+    bool m_consumableResourcePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

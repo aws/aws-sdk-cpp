@@ -16,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/EksProperties.h>
 #include <aws/batch/model/EcsProperties.h>
+#include <aws/batch/model/ConsumableResourceProperties.h>
 #include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
@@ -108,7 +109,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling priority for jobs that are submitted with this job definition.
-     * This only affects jobs in job queues with a fair-share policy. Jobs with a
+     * This only affects jobs in job queues with a fair share policy. Jobs with a
      * higher scheduling priority are scheduled before jobs with a lower scheduling
      * priority.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
@@ -274,6 +275,18 @@ namespace Model
     inline RegisterJobDefinitionRequest& WithEcsProperties(const EcsProperties& value) { SetEcsProperties(value); return *this;}
     inline RegisterJobDefinitionRequest& WithEcsProperties(EcsProperties&& value) { SetEcsProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains a list of consumable resources required by the job.</p>
+     */
+    inline const ConsumableResourceProperties& GetConsumableResourceProperties() const{ return m_consumableResourceProperties; }
+    inline bool ConsumableResourcePropertiesHasBeenSet() const { return m_consumableResourcePropertiesHasBeenSet; }
+    inline void SetConsumableResourceProperties(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = value; }
+    inline void SetConsumableResourceProperties(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = std::move(value); }
+    inline RegisterJobDefinitionRequest& WithConsumableResourceProperties(const ConsumableResourceProperties& value) { SetConsumableResourceProperties(value); return *this;}
+    inline RegisterJobDefinitionRequest& WithConsumableResourceProperties(ConsumableResourceProperties&& value) { SetConsumableResourceProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobDefinitionName;
@@ -314,6 +327,9 @@ namespace Model
 
     EcsProperties m_ecsProperties;
     bool m_ecsPropertiesHasBeenSet = false;
+
+    ConsumableResourceProperties m_consumableResourceProperties;
+    bool m_consumableResourcePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

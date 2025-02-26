@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InferenceComponentSpecification.h>
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfig.h>
+#include <aws/sagemaker/model/InferenceComponentDeploymentConfig.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,19 @@ namespace Model
     inline UpdateInferenceComponentRequest& WithRuntimeConfig(const InferenceComponentRuntimeConfig& value) { SetRuntimeConfig(value); return *this;}
     inline UpdateInferenceComponentRequest& WithRuntimeConfig(InferenceComponentRuntimeConfig&& value) { SetRuntimeConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The deployment configuration for the inference component. The configuration
+     * contains the desired deployment strategy and rollback settings.</p>
+     */
+    inline const InferenceComponentDeploymentConfig& GetDeploymentConfig() const{ return m_deploymentConfig; }
+    inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+    inline void SetDeploymentConfig(const InferenceComponentDeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
+    inline void SetDeploymentConfig(InferenceComponentDeploymentConfig&& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = std::move(value); }
+    inline UpdateInferenceComponentRequest& WithDeploymentConfig(const InferenceComponentDeploymentConfig& value) { SetDeploymentConfig(value); return *this;}
+    inline UpdateInferenceComponentRequest& WithDeploymentConfig(InferenceComponentDeploymentConfig&& value) { SetDeploymentConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_inferenceComponentName;
@@ -85,6 +99,9 @@ namespace Model
 
     InferenceComponentRuntimeConfig m_runtimeConfig;
     bool m_runtimeConfigHasBeenSet = false;
+
+    InferenceComponentDeploymentConfig m_deploymentConfig;
+    bool m_deploymentConfigHasBeenSet = false;
   };
 
 } // namespace Model

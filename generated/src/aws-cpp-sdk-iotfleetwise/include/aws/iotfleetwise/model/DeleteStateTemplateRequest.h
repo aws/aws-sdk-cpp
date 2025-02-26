@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, service-generated identifier.</p>
+     * <p>The unique ID of the state template.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
