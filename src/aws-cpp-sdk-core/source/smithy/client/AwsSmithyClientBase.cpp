@@ -223,9 +223,35 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
     pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
     assert(pRequestCtx->m_authSchemeOption.schemeId);
+
+    // resolve identity
+    auto identityOutcome = this->ResolveIdentity(*pRequestCtx);
+    if (!identityOutcome.IsSuccess())
+    {
+      pExecutor->Submit([identityOutcome, responseHandler]() mutable
+        {
+            responseHandler(std::move(identityOutcome));
+        });
+      return;
+    }
+    pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
+
+    // get endpoint params from operation context
+    const auto contextEndpointParameters = this->GetContextEndpointParameters(*pRequestCtx);
+    if (!contextEndpointParameters.IsSuccess())
+    {
+      pExecutor->Submit([contextEndpointParameters, responseHandler]() mutable
+        {
+            responseHandler(std::move(contextEndpointParameters.GetError()));
+        });
+      return;
+    }
+
     Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
     const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
     epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+    const auto contextParams = contextEndpointParameters.GetResult();
+    epParams.insert(epParams.end(), contextParams.begin(), contextParams.end());
     auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
     if (!epResolutionOutcome.IsSuccess())
     {
@@ -348,7 +374,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     };
 
     SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>([&]() -> SigningOutcome {
-            return this->SignHttpRequest(pRequestCtx->m_httpRequest, pRequestCtx->m_authSchemeOption);
+            return this->SignHttpRequest(pRequestCtx->m_httpRequest, *pRequestCtx);
         },
         TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
         *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
