@@ -1,0 +1,30 @@
+##-------------------- serializeXmlMapPayloadElement macro
+#macro( serializeXmlMapPayloadElement $spaces $serializationName $lowerCaseVarName $member $memberVarName $isNested=false $parentNode="parentNode" )
+##https://smithy.io/2.0/spec/protocol-traits.html#xml-map-serialization
+##TODO: might not be 100% correct, pending validation by protocol tests
+##// /* --- the actual shape member is $member; the actual shape is $member.shape; --- */
+##// /* --- key member: ${member.shape.mapKey} */
+##// /* --- key shape: ${member.shape.mapKey.shape} */
+##// /* --- key member: ${member.shape.mapValue} */
+##// /* --- key shape: ${member.shape.mapValue.shape} */
+#set($macro.mapEntryParentNode = $parentNode)
+#if(!$isNested && !($member.locationName && $member.shape.flattened))
+##Nested maps appear to be always flattened
+  ${spaces}XmlNode ${lowerCaseVarName}ParentNode = ${parentNode}.CreateChildElement("${serializationName}");
+#set($macro.mapEntryParentNode = "${lowerCaseVarName}ParentNode")
+#end
+#set($macro.mapItemVarName = "mapItem")
+#if($memberVarName == "mapItem.second")
+#set($macro.mapItemVarName = "${lowerCaseVarName}NestedItem")
+#end
+  ${spaces}for(const auto& $macro.mapItemVarName : $memberVarName)
+  ${spaces}{
+#set($macro.mapSpaces = $spaces + "  ")
+#set($macro.mapEntrySerializationName = "#if($member.locationName)$member.locationName#{else}entry#end")
+  ${spaces}  XmlNode ${lowerCaseVarName}MapEntryNode = ${macro.mapEntryParentNode}.CreateChildElement("${macro.mapEntrySerializationName}");
+#set($macro.mapKeySerializationName = "#if($member.shape.mapKey.locationName)$member.shape.mapKey.locationName#{else}key#end")
+#serializeXmlSinglePayloadElement($macro.mapSpaces, $macro.mapKeySerializationName, "${lowerCaseVarName}Key", $member.shape.mapKey, "${macro.mapItemVarName}.first", "${lowerCaseVarName}MapEntryNode")
+#set($macro.mapValueSerializationName = "#if($member.shape.mapValue.locationName)$member.shape.mapValue.locationName#{else}value#end")
+#serializeXmlSinglePayloadElement($macro.mapSpaces, $macro.mapValueSerializationName, "${lowerCaseVarName}Value", $member.shape.mapValue, "${macro.mapItemVarName}.second", "${lowerCaseVarName}MapEntryNode")
+  ${spaces}}
+#end##macro serializeXmlMapPayloadElement

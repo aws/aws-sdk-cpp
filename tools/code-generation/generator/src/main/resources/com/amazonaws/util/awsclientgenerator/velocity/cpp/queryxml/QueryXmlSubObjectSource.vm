@@ -71,7 +71,11 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.structure)
   ${spaces}Aws::StringStream ${lowerCaseVarName}LocationAndMemberSs;
   ${spaces}${lowerCaseVarName}LocationAndMemberSs << location << index << locationValue << ".${memberName}";
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->OutputToStream(oStream, ${lowerCaseVarName}LocationAndMemberSs.str().c_str());
+#else
   ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMemberSs.str().c_str());
+#end
 #elseif($member.shape.string)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.shape.timeStamp)
@@ -211,7 +215,11 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #if($member.shape.structure)
   ${spaces}Aws::String ${lowerCaseVarName}LocationAndMember(location);
   ${spaces}${lowerCaseVarName}LocationAndMember += ".${memberName}";
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->OutputToStream(oStream, ${lowerCaseVarName}LocationAndMember.c_str());
+#else
   ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMember.c_str());
+#end
 #elseif($member.shape.string)
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.shape.timeStamp)
