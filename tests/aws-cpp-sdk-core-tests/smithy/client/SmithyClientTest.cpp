@@ -24,7 +24,9 @@
 #include <smithy/identity/auth/built-in/SigV4aAuthSchemeResolver.h>
 #include <smithy/identity/resolver/AwsBearerTokenIdentityResolver.h>
 
-static const char ALLOC_TAG[] = "SmithyClientTest";
+namespace {
+  const char* ALLOC_TAG = "SmithyClientTest";
+}
 
 struct TestEndPointProvider : public Aws::Endpoint::EndpointProviderBase<>
 {
@@ -195,14 +197,34 @@ class TestClient : public MySmithyClient
     {}
 
 
-    SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const smithy::client::AwsSmithyClientAsyncRequestContext& ctx) const
-    {
-        return MySmithyClient::SelectAuthSchemeOption(ctx);
+    SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const smithy::client::AwsSmithyClientAsyncRequestContext& ctx) const override {
+      return MySmithyClient::SelectAuthSchemeOption(ctx);
     }
 
-    SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const smithy::AuthSchemeOption& targetAuthSchemeOption) const
+    IdentityOutcome ResolveIdentity(const smithy::client::AwsSmithyClientAsyncRequestContext& ctx) const override {
+      AWS_UNREFERENCED_PARAM(ctx);
+      if (Aws::String{ctx.m_authSchemeOption.schemeId} == "smithy.api#HTTPBearerAuth") {
+        auto bearerIdentity = Aws::MakeShared<smithy::AwsBearerTokenIdentity>(ALLOC_TAG);
+        bearerIdentity->token() = "testBearerToken";
+        return IdentityOutcome{bearerIdentity};
+      }
+      return IdentityOutcome{Aws::MakeShared<smithy::AwsCredentialIdentity>(ALLOC_TAG,
+        "dummyAccessId",
+        "secret_key",
+        Aws::Crt::Optional<Aws::String>{"session_token"},
+        Aws::Crt::Optional<Aws::Utils::DateTime>{std::numeric_limits<int64_t>::max()},
+        Aws::Crt::Optional<Aws::String>{"123456789012"})};
+    }
+
+    GetContextEndpointParametersOutcome GetContextEndpointParameters(const smithy::client::AwsSmithyClientAsyncRequestContext& ctx) const override {
+        AWS_UNREFERENCED_PARAM(ctx);
+        return Aws::Vector<Aws::Endpoint::EndpointParameter>{};
+    }
+
+   public:
+    SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const smithy::client::AwsSmithyClientAsyncRequestContext& ctx) const
     {
-        return MySmithyClient::SignHttpRequest(httpRequest, targetAuthSchemeOption);
+        return MySmithyClient::SignHttpRequest(httpRequest, ctx);
     }
 
 
@@ -239,20 +261,19 @@ TEST_F(SmithyClientTest, testSigV4) {
     ctx.m_pRequest = nullptr;
 
     auto res = ptr->SelectAuthSchemeOption(ctx);
-
     EXPECT_EQ(res.IsSuccess(), true);
     EXPECT_EQ(res.GetResult().schemeId, key);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
+    ctx.m_awsIdentity = ptr->ResolveIdentity(ctx).GetResultWithOwnership();
 
     Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
 
     EXPECT_EQ(res2.IsSuccess(), true);
     EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
-
-
 }
 
 
@@ -287,22 +308,20 @@ TEST_F(SmithyClientTest, testSigV4a) {
     ctx.m_pRequest = nullptr;
 
     auto res = ptr->SelectAuthSchemeOption(ctx);
-
     EXPECT_EQ(res.IsSuccess(), true);
     EXPECT_EQ(res.GetResult().schemeId, key);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
+    ctx.m_awsIdentity = ptr->ResolveIdentity(ctx).GetResultWithOwnership();
 
     Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
 
     EXPECT_EQ(res2.IsSuccess(), true);
-
     EXPECT_TRUE(!res2.GetResult()->GetSigningAccessKey().empty());
-
     EXPECT_FALSE(res2.GetResult()->GetUri().GetURIString(true).empty());
-
 }
 
 TEST_F(SmithyClientTest, bearer)
@@ -333,9 +352,10 @@ TEST_F(SmithyClientTest, bearer)
     ctx.m_pRequest = nullptr;
 
     auto res = ptr->SelectAuthSchemeOption(ctx);
-
     EXPECT_EQ(res.IsSuccess(), true);
     EXPECT_EQ(res.GetResult().schemeId, key);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
+    ctx.m_awsIdentity = ptr->ResolveIdentity(ctx).GetResultWithOwnership();
 
     Aws::String uri{
         "https://"
@@ -346,7 +366,7 @@ TEST_F(SmithyClientTest, bearer)
             uri, Aws::Http::HttpMethod::HTTP_GET,
             Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
 
     EXPECT_EQ(res2.IsSuccess(), true);
 
