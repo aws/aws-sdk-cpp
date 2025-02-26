@@ -44,12 +44,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum hourly price you're willing to pay for the Spot Instances. We do
-     * not recommend using this parameter because it can lead to increased
-     * interruptions. If you do not specify this parameter, you will pay the current
-     * Spot price.</p>  <p>If you specify a maximum price, your Spot
-     * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * <p>The maximum hourly price you're willing to pay for a Spot Instance. We do not
+     * recommend using this parameter because it can lead to increased interruptions.
+     * If you do not specify this parameter, you will pay the current Spot price. If
+     * you do specify this parameter, it must be more than USD $0.001. Specifying a
+     * value below USD $0.001 will result in an <code>InvalidParameterValue</code>
+     * error message when the launch template is used to launch an instance.</p>
      */
     inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }

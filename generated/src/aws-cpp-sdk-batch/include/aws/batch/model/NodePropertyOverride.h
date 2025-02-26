@@ -10,6 +10,7 @@
 #include <aws/batch/model/EcsPropertiesOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/EksPropertiesOverride.h>
+#include <aws/batch/model/ConsumableResourceProperties.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +117,18 @@ namespace Model
     inline NodePropertyOverride& WithEksPropertiesOverride(const EksPropertiesOverride& value) { SetEksPropertiesOverride(value); return *this;}
     inline NodePropertyOverride& WithEksPropertiesOverride(EksPropertiesOverride&& value) { SetEksPropertiesOverride(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains overrides for the consumable resources of a job.</p>
+     */
+    inline const ConsumableResourceProperties& GetConsumableResourcePropertiesOverride() const{ return m_consumableResourcePropertiesOverride; }
+    inline bool ConsumableResourcePropertiesOverrideHasBeenSet() const { return m_consumableResourcePropertiesOverrideHasBeenSet; }
+    inline void SetConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = value; }
+    inline void SetConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = std::move(value); }
+    inline NodePropertyOverride& WithConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { SetConsumableResourcePropertiesOverride(value); return *this;}
+    inline NodePropertyOverride& WithConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { SetConsumableResourcePropertiesOverride(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_targetNodes;
@@ -132,6 +145,9 @@ namespace Model
 
     EksPropertiesOverride m_eksPropertiesOverride;
     bool m_eksPropertiesOverrideHasBeenSet = false;
+
+    ConsumableResourceProperties m_consumableResourcePropertiesOverride;
+    bool m_consumableResourcePropertiesOverrideHasBeenSet = false;
   };
 
 } // namespace Model

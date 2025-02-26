@@ -53,7 +53,7 @@ namespace Model
      * Wavelength Zone and want to associate a Carrier IP address with the network
      * interface. For more information about Carrier IP addresses, see <a
      * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
-     * IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
+     * IP address</a> in the <i>Wavelength Developer Guide</i>.</p>
      */
     inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
     inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }

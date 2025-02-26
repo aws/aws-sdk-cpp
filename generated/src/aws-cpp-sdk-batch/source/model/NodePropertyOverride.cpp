@@ -23,7 +23,8 @@ NodePropertyOverride::NodePropertyOverride() :
     m_containerOverridesHasBeenSet(false),
     m_ecsPropertiesOverrideHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
-    m_eksPropertiesOverrideHasBeenSet(false)
+    m_eksPropertiesOverrideHasBeenSet(false),
+    m_consumableResourcePropertiesOverrideHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,13 @@ NodePropertyOverride& NodePropertyOverride::operator =(JsonView jsonValue)
     m_eksPropertiesOverrideHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("consumableResourcePropertiesOverride"))
+  {
+    m_consumableResourcePropertiesOverride = jsonValue.GetObject("consumableResourcePropertiesOverride");
+
+    m_consumableResourcePropertiesOverrideHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +120,12 @@ JsonValue NodePropertyOverride::Jsonize() const
   if(m_eksPropertiesOverrideHasBeenSet)
   {
    payload.WithObject("eksPropertiesOverride", m_eksPropertiesOverride.Jsonize());
+
+  }
+
+  if(m_consumableResourcePropertiesOverrideHasBeenSet)
+  {
+   payload.WithObject("consumableResourcePropertiesOverride", m_consumableResourcePropertiesOverride.Jsonize());
 
   }
 

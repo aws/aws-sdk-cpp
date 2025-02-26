@@ -52,9 +52,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of node IDs to be deleted from the specified cluster.</p> 
-     * <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot
-     * remove instances that are configured as Slurm controller nodes.</p> 
+     * <p>A list of node IDs to be deleted from the specified cluster.</p>  <ul>
+     * <li> <p>For SageMaker HyperPod clusters using the Slurm workload manager, you
+     * cannot remove instances that are configured as Slurm controller nodes.</p> </li>
+     * <li> <p>If you need to delete more than 99 instances, contact <a
+     * href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p> </li>
+     * </ul> 
      */
     inline const Aws::Vector<Aws::String>& GetNodeIds() const{ return m_nodeIds; }
     inline bool NodeIdsHasBeenSet() const { return m_nodeIdsHasBeenSet; }

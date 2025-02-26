@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>A group of versioned models in the model registry.</p><p><h3>See Also:</h3>  
+   * <p>A group of versioned models in the Model Registry.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageGroup">AWS
    * API Reference</a></p>

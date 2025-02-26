@@ -28,9 +28,9 @@ namespace Model
 
   /**
    * <p>The metadata options for the instance. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-   * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Use
+   * instance metadata to manage your EC2 instance</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptionsRequest">AWS
    * API Reference</a></p>
    */
@@ -113,8 +113,8 @@ namespace Model
      * <p>Set to <code>enabled</code> to allow access to instance tags from the
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View
+     * tags for your EC2 instances using instance metadata</a>.</p> <p>Default:
      * <code>disabled</code> </p>
      */
     inline const LaunchTemplateInstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }

@@ -139,7 +139,7 @@ namespace Model
      * <p>If a Systems Manager parameter was specified in the request, and
      * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
      * parameter value.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
      * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
      * Guide</i>.</p>
      */
@@ -369,8 +369,8 @@ namespace Model
     ///@{
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
-     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU
+     * options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateCpuOptions& GetCpuOptions() const{ return m_cpuOptions; }
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
@@ -424,8 +424,9 @@ namespace Model
     ///@{
     /**
      * <p>The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the Instance Metadata Service options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const LaunchTemplateInstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -492,7 +493,8 @@ namespace Model
      * <p>Indicates whether the instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
-     * stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * stop protection for your EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }

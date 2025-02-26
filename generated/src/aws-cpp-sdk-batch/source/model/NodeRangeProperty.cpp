@@ -23,7 +23,8 @@ NodeRangeProperty::NodeRangeProperty() :
     m_containerHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_ecsPropertiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false)
+    m_eksPropertiesHasBeenSet(false),
+    m_consumableResourcePropertiesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,13 @@ NodeRangeProperty& NodeRangeProperty::operator =(JsonView jsonValue)
     m_eksPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("consumableResourceProperties"))
+  {
+    m_consumableResourceProperties = jsonValue.GetObject("consumableResourceProperties");
+
+    m_consumableResourcePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +120,12 @@ JsonValue NodeRangeProperty::Jsonize() const
   if(m_eksPropertiesHasBeenSet)
   {
    payload.WithObject("eksProperties", m_eksProperties.Jsonize());
+
+  }
+
+  if(m_consumableResourcePropertiesHasBeenSet)
+  {
+   payload.WithObject("consumableResourceProperties", m_consumableResourceProperties.Jsonize());
 
   }
 

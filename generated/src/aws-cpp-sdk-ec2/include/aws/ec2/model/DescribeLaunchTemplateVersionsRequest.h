@@ -205,8 +205,8 @@ namespace Model
      * <code>ImageId</code>, the AMI ID is displayed in the response for
      * <code>imageId</code>.</p> <p>If <code>false</code>, and if a Systems Manager
      * parameter is specified for <code>ImageId</code>, the parameter is displayed in
-     * the response for <code>imageId</code>.</p> <p> For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * the response for <code>imageId</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
      * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
      * Guide</i>.</p> <p>Default: <code>false</code> </p>
      */

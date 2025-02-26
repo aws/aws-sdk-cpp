@@ -25,6 +25,8 @@ namespace Aws
         static const int AWS_XRay_Trace_HASH = HashingUtils::HashString("AWS::XRay::Trace");
         static const int AWS_ApplicationInsights_Application_HASH = HashingUtils::HashString("AWS::ApplicationInsights::Application");
         static const int AWS_InternetMonitor_Monitor_HASH = HashingUtils::HashString("AWS::InternetMonitor::Monitor");
+        static const int AWS_ApplicationSignals_Service_HASH = HashingUtils::HashString("AWS::ApplicationSignals::Service");
+        static const int AWS_ApplicationSignals_ServiceLevelObjective_HASH = HashingUtils::HashString("AWS::ApplicationSignals::ServiceLevelObjective");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == AWS_InternetMonitor_Monitor_HASH)
           {
             return ResourceType::AWS_InternetMonitor_Monitor;
+          }
+          else if (hashCode == AWS_ApplicationSignals_Service_HASH)
+          {
+            return ResourceType::AWS_ApplicationSignals_Service;
+          }
+          else if (hashCode == AWS_ApplicationSignals_ServiceLevelObjective_HASH)
+          {
+            return ResourceType::AWS_ApplicationSignals_ServiceLevelObjective;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "AWS::ApplicationInsights::Application";
           case ResourceType::AWS_InternetMonitor_Monitor:
             return "AWS::InternetMonitor::Monitor";
+          case ResourceType::AWS_ApplicationSignals_Service:
+            return "AWS::ApplicationSignals::Service";
+          case ResourceType::AWS_ApplicationSignals_ServiceLevelObjective:
+            return "AWS::ApplicationSignals::ServiceLevelObjective";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

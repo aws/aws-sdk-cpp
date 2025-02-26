@@ -16,6 +16,7 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/EksPropertiesOverride.h>
 #include <aws/batch/model/EcsPropertiesOverride.h>
+#include <aws/batch/model/ConsumableResourceProperties.h>
 #include <aws/batch/model/JobDependency.h>
 #include <utility>
 
@@ -80,10 +81,9 @@ namespace Model
     ///@{
     /**
      * <p>The share identifier for the job. Don't specify this parameter if the job
-     * queue doesn't have a fair-share scheduling policy. If the job queue has a
-     * fair-share scheduling policy, then this parameter must be specified.</p> <p>This
-     * string is limited to 255 alphanumeric characters, and can be followed by an
-     * asterisk (*).</p>
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
@@ -98,7 +98,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling priority for the job. This only affects jobs in job queues
-     * with a fair-share policy. Jobs with a higher scheduling priority are scheduled
+     * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
      * priority in the job definition and works only within a single share
      * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
@@ -321,6 +321,18 @@ namespace Model
     inline SubmitJobRequest& WithEcsPropertiesOverride(const EcsPropertiesOverride& value) { SetEcsPropertiesOverride(value); return *this;}
     inline SubmitJobRequest& WithEcsPropertiesOverride(EcsPropertiesOverride&& value) { SetEcsPropertiesOverride(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains overrides for the consumable resources of a job.</p>
+     */
+    inline const ConsumableResourceProperties& GetConsumableResourcePropertiesOverride() const{ return m_consumableResourcePropertiesOverride; }
+    inline bool ConsumableResourcePropertiesOverrideHasBeenSet() const { return m_consumableResourcePropertiesOverrideHasBeenSet; }
+    inline void SetConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = value; }
+    inline void SetConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = std::move(value); }
+    inline SubmitJobRequest& WithConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { SetConsumableResourcePropertiesOverride(value); return *this;}
+    inline SubmitJobRequest& WithConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { SetConsumableResourcePropertiesOverride(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobName;
@@ -370,6 +382,9 @@ namespace Model
 
     EcsPropertiesOverride m_ecsPropertiesOverride;
     bool m_ecsPropertiesOverrideHasBeenSet = false;
+
+    ConsumableResourceProperties m_consumableResourcePropertiesOverride;
+    bool m_consumableResourcePropertiesOverrideHasBeenSet = false;
   };
 
 } // namespace Model

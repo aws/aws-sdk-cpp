@@ -20,7 +20,10 @@ ListServiceLevelObjectivesRequest::ListServiceLevelObjectivesRequest() :
     m_operationNameHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeLinkedAccounts(false),
+    m_includeLinkedAccountsHasBeenSet(false),
+    m_sloOwnerAwsAccountIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,20 @@ void ListServiceLevelObjectivesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("NextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeLinkedAccountsHasBeenSet)
+    {
+      ss << m_includeLinkedAccounts;
+      uri.AddQueryStringParameter("IncludeLinkedAccounts", ss.str());
+      ss.str("");
+    }
+
+    if(m_sloOwnerAwsAccountIdHasBeenSet)
+    {
+      ss << m_sloOwnerAwsAccountId;
+      uri.AddQueryStringParameter("SloOwnerAwsAccountId", ss.str());
       ss.str("");
     }
 

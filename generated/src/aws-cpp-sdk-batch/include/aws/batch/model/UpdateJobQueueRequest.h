@@ -71,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Resource Name (ARN) of the fair-share scheduling policy. Once a job
-     * queue is created, the fair-share scheduling policy can be replaced but not
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
      * removed. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,

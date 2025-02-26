@@ -20,7 +20,10 @@ ListServicesRequest::ListServicesRequest() :
     m_endTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeLinkedAccounts(false),
+    m_includeLinkedAccountsHasBeenSet(false),
+    m_awsAccountIdHasBeenSet(false)
 {
 }
 
@@ -57,6 +60,20 @@ void ListServicesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("NextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeLinkedAccountsHasBeenSet)
+    {
+      ss << m_includeLinkedAccounts;
+      uri.AddQueryStringParameter("IncludeLinkedAccounts", ss.str());
+      ss.str("");
+    }
+
+    if(m_awsAccountIdHasBeenSet)
+    {
+      ss << m_awsAccountId;
+      uri.AddQueryStringParameter("AwsAccountId", ss.str());
       ss.str("");
     }
 

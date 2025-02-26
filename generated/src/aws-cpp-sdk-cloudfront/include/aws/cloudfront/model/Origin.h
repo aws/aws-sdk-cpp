@@ -32,6 +32,7 @@ namespace Model
    * which CloudFront gets content to serve to viewers. To specify an origin:</p>
    * <ul> <li> <p>Use <code>S3OriginConfig</code> to specify an Amazon S3 bucket that
    * is not configured with static website hosting.</p> </li> <li> <p>Use
+   * <code>VpcOriginConfig</code> to specify a VPC origin.</p> </li> <li> <p>Use
    * <code>CustomOriginConfig</code> to specify all other kinds of origins,
    * including:</p> <ul> <li> <p>An Amazon S3 bucket that is configured with static
    * website hosting</p> </li> <li> <p>An Elastic Load Balancing load balancer</p>

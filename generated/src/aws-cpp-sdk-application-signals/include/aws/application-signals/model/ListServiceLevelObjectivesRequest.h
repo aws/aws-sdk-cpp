@@ -111,6 +111,36 @@ namespace Model
     inline ListServiceLevelObjectivesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListServiceLevelObjectivesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If you are using this operation in a monitoring account, specify
+     * <code>true</code> to include SLO from source accounts in the returned data.
+     * <pre><code> &lt;/p&gt; &lt;p&gt;When you are monitoring an account, you can use
+     * Amazon Web Services account ID in &lt;code&gt;KeyAttribute&lt;/code&gt; filter
+     * for service source account and &lt;code&gt;SloOwnerawsaccountID&lt;/code&gt; for
+     * SLO source account with &lt;code&gt;IncludeLinkedAccounts&lt;/code&gt; to filter
+     * the returned data to only a single source account. &lt;/p&gt; </code></pre>
+     */
+    inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
+    inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
+    inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
+    inline ListServiceLevelObjectivesRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>SLO's Amazon Web Services account ID.</p>
+     */
+    inline const Aws::String& GetSloOwnerAwsAccountId() const{ return m_sloOwnerAwsAccountId; }
+    inline bool SloOwnerAwsAccountIdHasBeenSet() const { return m_sloOwnerAwsAccountIdHasBeenSet; }
+    inline void SetSloOwnerAwsAccountId(const Aws::String& value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId = value; }
+    inline void SetSloOwnerAwsAccountId(Aws::String&& value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId = std::move(value); }
+    inline void SetSloOwnerAwsAccountId(const char* value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId.assign(value); }
+    inline ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(const Aws::String& value) { SetSloOwnerAwsAccountId(value); return *this;}
+    inline ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(Aws::String&& value) { SetSloOwnerAwsAccountId(std::move(value)); return *this;}
+    inline ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(const char* value) { SetSloOwnerAwsAccountId(value); return *this;}
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_keyAttributes;
@@ -124,6 +154,12 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_includeLinkedAccounts;
+    bool m_includeLinkedAccountsHasBeenSet = false;
+
+    Aws::String m_sloOwnerAwsAccountId;
+    bool m_sloOwnerAwsAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

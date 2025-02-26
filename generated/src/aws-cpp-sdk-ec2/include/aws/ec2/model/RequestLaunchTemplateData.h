@@ -69,8 +69,8 @@ namespace Model
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-     * provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User
+     * provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
@@ -280,12 +280,12 @@ namespace Model
      * <p>The user data to make available to the instance. You must provide
      * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
-     * commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User
-     * Guide</i>.</p> <p>If you are creating the launch template for use with Batch,
-     * the user data must be provided in the <a
+     * commands when you launch an EC2 instance with user data input</a> in the
+     * <i>Amazon EC2 User Guide</i>.</p> <p>If you are creating the launch template for
+     * use with Batch, the user data must be provided in the <a
      * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME
      * multi-part archive format</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon
      * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
@@ -418,8 +418,8 @@ namespace Model
     ///@{
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
-     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU
+     * options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateCpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
@@ -478,8 +478,9 @@ namespace Model
     ///@{
     /**
      * <p>The metadata options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+     * the Instance Metadata Service options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const LaunchTemplateInstanceMetadataOptionsRequest& GetMetadataOptions() const{ return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -494,9 +495,9 @@ namespace Model
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
-     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
-     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
-     * Enclaves and hibernation on the same instance.</p>
+     * is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User
+     * Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro Enclaves and
+     * hibernation on the same instance.</p>
      */
     inline const LaunchTemplateEnclaveOptionsRequest& GetEnclaveOptions() const{ return m_enclaveOptions; }
     inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
@@ -576,7 +577,8 @@ namespace Model
      * <p>Indicates whether to enable the instance for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
-     * stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * stop protection for your EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }

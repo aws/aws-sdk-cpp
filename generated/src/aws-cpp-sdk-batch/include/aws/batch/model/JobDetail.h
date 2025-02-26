@@ -17,6 +17,7 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/EksPropertiesDetail.h>
 #include <aws/batch/model/EcsPropertiesDetail.h>
+#include <aws/batch/model/ConsumableResourceProperties.h>
 #include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
 #include <aws/batch/model/PlatformCapability.h>
@@ -142,7 +143,7 @@ namespace Model
     ///@{
     /**
      * <p>The scheduling policy of the job definition. This only affects jobs in job
-     * queues with a fair-share policy. Jobs with a higher scheduling priority are
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
      * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
@@ -463,6 +464,18 @@ namespace Model
     inline void SetIsTerminated(bool value) { m_isTerminatedHasBeenSet = true; m_isTerminated = value; }
     inline JobDetail& WithIsTerminated(bool value) { SetIsTerminated(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains a list of consumable resources required by the job.</p>
+     */
+    inline const ConsumableResourceProperties& GetConsumableResourceProperties() const{ return m_consumableResourceProperties; }
+    inline bool ConsumableResourcePropertiesHasBeenSet() const { return m_consumableResourcePropertiesHasBeenSet; }
+    inline void SetConsumableResourceProperties(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = value; }
+    inline void SetConsumableResourceProperties(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesHasBeenSet = true; m_consumableResourceProperties = std::move(value); }
+    inline JobDetail& WithConsumableResourceProperties(const ConsumableResourceProperties& value) { SetConsumableResourceProperties(value); return *this;}
+    inline JobDetail& WithConsumableResourceProperties(ConsumableResourceProperties&& value) { SetConsumableResourceProperties(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobArn;
@@ -551,6 +564,9 @@ namespace Model
 
     bool m_isTerminated;
     bool m_isTerminatedHasBeenSet = false;
+
+    ConsumableResourceProperties m_consumableResourceProperties;
+    bool m_consumableResourcePropertiesHasBeenSet = false;
   };
 
 } // namespace Model
