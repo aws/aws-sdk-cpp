@@ -18,6 +18,7 @@
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -84,6 +85,8 @@ namespace client
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
         using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSError >;
+        using IdentityOutcome = Aws::Utils::Outcome<std::shared_ptr<smithy::AwsIdentity>, AWSError>;
+        using RefreshBuiltInOutcome = Aws::Utils::Outcome<Aws::NoResult, AWSError>;
 
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
@@ -188,8 +191,10 @@ namespace client
 
         virtual ResolveEndpointOutcome ResolveEndpoint(const Aws::Endpoint::EndpointParameters& endpointParameters, EndpointUpdateCallback&& epCallback) const = 0;
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
-        virtual SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
+        virtual SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
+        virtual IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
+        virtual RefreshBuiltInOutcome RefreshBuiltinParameters(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
 
         std::shared_ptr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;

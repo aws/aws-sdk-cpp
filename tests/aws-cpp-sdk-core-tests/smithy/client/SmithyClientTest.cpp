@@ -200,9 +200,9 @@ class TestClient : public MySmithyClient
         return MySmithyClient::SelectAuthSchemeOption(ctx);
     }
 
-    SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const smithy::AuthSchemeOption& targetAuthSchemeOption) const
+    SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const smithy::client::AwsSmithyClientAsyncRequestContext& ctx) const
     {
-        return MySmithyClient::SignHttpRequest(httpRequest, targetAuthSchemeOption);
+        return MySmithyClient::SignHttpRequest(httpRequest, ctx);
     }
 
 
@@ -239,15 +239,15 @@ TEST_F(SmithyClientTest, testSigV4) {
     ctx.m_pRequest = nullptr;
 
     auto res = ptr->SelectAuthSchemeOption(ctx);
-
     EXPECT_EQ(res.IsSuccess(), true);
     EXPECT_EQ(res.GetResult().schemeId, key);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
 
     Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
 
     EXPECT_EQ(res2.IsSuccess(), true);
     EXPECT_EQ(res2.GetResult()->GetSigningAccessKey(), "dummyAccessId");
@@ -287,15 +287,15 @@ TEST_F(SmithyClientTest, testSigV4a) {
     ctx.m_pRequest = nullptr;
 
     auto res = ptr->SelectAuthSchemeOption(ctx);
-
     EXPECT_EQ(res.IsSuccess(), true);
     EXPECT_EQ(res.GetResult().schemeId, key);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
 
     Aws::String uri{"https://treasureisland-cb93079d-24a0-4862-8es2-88456ead.xyz.amazonaws.com"};
 
     std::shared_ptr<Aws::Http::HttpRequest> httpRequest(Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
 
     EXPECT_EQ(res2.IsSuccess(), true);
 
@@ -333,9 +333,9 @@ TEST_F(SmithyClientTest, bearer)
     ctx.m_pRequest = nullptr;
 
     auto res = ptr->SelectAuthSchemeOption(ctx);
-
     EXPECT_EQ(res.IsSuccess(), true);
     EXPECT_EQ(res.GetResult().schemeId, key);
+    ctx.m_authSchemeOption = res.GetResultWithOwnership();
 
     Aws::String uri{
         "https://"
@@ -346,7 +346,7 @@ TEST_F(SmithyClientTest, bearer)
             uri, Aws::Http::HttpMethod::HTTP_GET,
             Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
-    auto res2 = ptr->SignRequest(httpRequest, res.GetResult());
+    auto res2 = ptr->SignRequest(httpRequest, ctx);
 
     EXPECT_EQ(res2.IsSuccess(), true);
 
