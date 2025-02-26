@@ -25,6 +25,6 @@ namespace smithy {
     }
 
     inline Aws::Crt::Optional<Aws::String> AwsCredentialIdentity::accountId() const {
-        return m_sessionToken;
+        return m_accountId;
     }
 }

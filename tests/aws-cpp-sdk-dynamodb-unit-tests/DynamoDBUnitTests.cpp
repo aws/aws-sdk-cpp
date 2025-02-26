@@ -1,20 +1,23 @@
 /**
-* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-
-#include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/client/RetryStrategy.h>
-#include <aws/core/monitoring/MonitoringInterface.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
+#include <aws/core/monitoring/MonitoringInterface.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/dynamodb/DynamoDBClient.h>
-#include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
-#include <aws/testing/mocks/http/MockHttpClient.h>
+#include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
+#include <aws/testing/mocks/http/MockHttpClient.h>
+#include <aws/testing/platform/PlatformTesting.h>
+#include <gtest/gtest.h>
+
 #include <memory>
 
 using namespace Aws;
@@ -28,6 +31,7 @@ using namespace Aws::Http::Standard;
 namespace {
 const char* LOG_TAG = "DynamoDBUnitTest";
 const int MAX_RETRIES = 2;
+const char* CREDS_FILE_ENV_VAR = "AWS_SHARED_CREDENTIALS_FILE";
 }  // namespace
 
 class  MonitoringContext
@@ -177,8 +181,17 @@ protected:
 
   void SetUp() override
   {
+    m_envVars.emplace_back(CREDS_FILE_ENV_VAR, Environment::GetEnv(CREDS_FILE_ENV_VAR));
+    Environment::UnSetEnv(CREDS_FILE_ENV_VAR);
     monitoring_context_->Reset();
   };
+
+  void TearDown() override
+  {
+    std::for_each(m_envVars.begin(),
+      m_envVars.end(),
+      [](const std::pair<Aws::String, Aws::String>& var) -> void { Environment::SetEnv(var.first.c_str(), var.second.c_str(), true);});
+  }
 
   static void TearDownTestSuite() {
     mock_client_factory_.reset();
@@ -207,6 +220,8 @@ protected:
 #ifdef USE_AWS_MEMORY_MANAGEMENT
   static std::unique_ptr<ExactTestMemorySystem> test_memory_system;
 #endif
+private:
+  Aws::Vector<std::pair<Aws::String, Aws::String>> m_envVars{};
 };
 
 SDKOptions DynamoDBUnitTest::options_;
@@ -332,7 +347,7 @@ TEST_F(DynamoDBUnitTest, ListTablesShouldHaveCorrectUserAgent)
   EXPECT_TRUE(archMetadata < businessMetrics);
 }
 
-TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpoint)
+TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointSetOnConfiguration)
 {
   // create client with account id configuration
   AWSCredentials credentials{"mock", "credentials"};
@@ -356,4 +371,70 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpoint)
   EXPECT_TRUE(listTablesOutcome.IsSuccess());
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_EQ("https://123456789012.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+}
+
+TEST_F(DynamoDBUnitTest, ShouldUseStandardEndpointIfAccountIdMissingFromCredentialsFile)
+{
+  // create shared credentials file with account id
+  Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+  configFile << "[default]" << std::endl;
+  configFile << "aws_access_key_id = ballad" << std::endl;
+  configFile << "aws_secret_access_key = of-fallen" << std::endl;
+  configFile << "aws_session_token = angels" << std::endl;
+  Environment::SetEnv(CREDS_FILE_ENV_VAR, configFile.GetFileName().c_str(), 1);
+  Aws::Config::ReloadCachedCredentialsFile();
+
+  DynamoDBClientConfiguration configuration;
+  configuration.region = "us-east-1";
+  const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, configuration);
+
+  // mock response
+  auto successStream = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "cowboy.bebop/planets", HttpMethod::HTTP_GET);
+  successStream->SetResponseStreamFactory([]() -> IOStream* {
+    auto listTablesString =  R"({"LastEvaluatedTableName": "Planets","TableNames": ["Planets"]}))";
+    return Aws::New<StringStream>(LOG_TAG, listTablesString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, successStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+
+  mock_http_client_->AddResponseToReturn(successResponse);
+  const auto listTablesOutcome = accountIdClient->ListTables();
+  EXPECT_TRUE(listTablesOutcome.IsSuccess());
+  const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
+  EXPECT_EQ("https://dynamodb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
+}
+
+
+TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromCredentialsFile)
+{
+  // create shared credentials file with account id
+  Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+  configFile << "[default]" << std::endl;
+  configFile << "aws_access_key_id = ballad" << std::endl;
+  configFile << "aws_secret_access_key = of-fallen" << std::endl;
+  configFile << "aws_session_token = angels" << std::endl;
+  configFile << "aws_account_id = spike-spiegel" << std::endl;;
+  Environment::SetEnv(CREDS_FILE_ENV_VAR, configFile.GetFileName().c_str(), 1);
+  Aws::Config::ReloadCachedCredentialsFile();
+
+  DynamoDBClientConfiguration configuration;
+  configuration.region = "us-east-1";
+  const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, configuration);
+
+  // mock response
+  auto successStream = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "cowboy.bebop/planets", HttpMethod::HTTP_GET);
+  successStream->SetResponseStreamFactory([]() -> IOStream* {
+    auto listTablesString =  R"({"LastEvaluatedTableName": "Planets","TableNames": ["Planets"]}))";
+    return Aws::New<StringStream>(LOG_TAG, listTablesString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, successStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+
+  mock_http_client_->AddResponseToReturn(successResponse);
+  const auto listTablesOutcome = accountIdClient->ListTables();
+  EXPECT_TRUE(listTablesOutcome.IsSuccess());
+  const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
+  EXPECT_EQ("https://spike-spiegel.ddb.us-east-1.amazonaws.com", requestSeen.GetUri().GetURIString());
 }
