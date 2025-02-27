@@ -549,6 +549,32 @@ namespace QBusiness
         }
 
         /**
+         * <p>Deletes an attachment associated with a specific Amazon Q Business
+         * conversation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAttachmentOutcome DeleteAttachment(const Model::DeleteAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAttachmentRequestT = Model::DeleteAttachmentRequest>
+        Model::DeleteAttachmentOutcomeCallable DeleteAttachmentCallable(const DeleteAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::DeleteAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAttachmentRequestT = Model::DeleteAttachmentRequest>
+        void DeleteAttachmentAsync(const DeleteAttachmentRequestT& request, const DeleteAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::DeleteAttachment, request, handler, context);
+        }
+
+        /**
          * <p>Deletes chat controls configured for an existing Amazon Q Business
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatControlsConfiguration">AWS

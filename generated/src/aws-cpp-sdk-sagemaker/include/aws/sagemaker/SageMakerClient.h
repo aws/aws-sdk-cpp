@@ -9586,6 +9586,81 @@ namespace SageMaker
         }
 
         /**
+         * <p>Updates SageMaker hub content (either a <code>Model</code> or
+         * <code>Notebook</code> resource).</p> <p>You can update the metadata that
+         * describes the resource. In addition to the required request fields, specify at
+         * least one of the following fields to update:</p> <ul> <li> <p>
+         * <code>HubContentDescription</code> </p> </li> <li> <p>
+         * <code>HubContentDisplayName</code> </p> </li> <li> <p>
+         * <code>HubContentMarkdown</code> </p> </li> <li> <p>
+         * <code>HubContentSearchKeywords</code> </p> </li> <li> <p>
+         * <code>SupportStatus</code> </p> </li> </ul> <p>For more information about hubs,
+         * see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs.html">Private
+         * curated hubs for foundation model access control in JumpStart</a>.</p> 
+         * <p>If you want to update a <code>ModelReference</code> resource in your hub, use
+         * the <code>UpdateHubContentResource</code> API instead.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHubContentOutcome UpdateHubContent(const Model::UpdateHubContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateHubContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateHubContentRequestT = Model::UpdateHubContentRequest>
+        Model::UpdateHubContentOutcomeCallable UpdateHubContentCallable(const UpdateHubContentRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdateHubContent, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateHubContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateHubContentRequestT = Model::UpdateHubContentRequest>
+        void UpdateHubContentAsync(const UpdateHubContentRequestT& request, const UpdateHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdateHubContent, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the contents of a SageMaker hub for a <code>ModelReference</code>
+         * resource. A <code>ModelReference</code> allows you to access public SageMaker
+         * JumpStart models from within your private hub.</p> <p>When using this API, you
+         * can update the <code>MinVersion</code> field for additional flexibility in the
+         * model version. You shouldn't update any additional fields when using this API,
+         * because the metadata in your private hub should match the public JumpStart
+         * model's metadata.</p>  <p>If you want to update a <code>Model</code> or
+         * <code>Notebook</code> resource in your hub, use the
+         * <code>UpdateHubContent</code> API instead.</p>  <p>For more information
+         * about adding model references to your hub, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs-admin-guide-add-models.html">
+         * Add models to a private hub</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContentReference">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHubContentReferenceOutcome UpdateHubContentReference(const Model::UpdateHubContentReferenceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateHubContentReference that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateHubContentReferenceRequestT = Model::UpdateHubContentReferenceRequest>
+        Model::UpdateHubContentReferenceOutcomeCallable UpdateHubContentReferenceCallable(const UpdateHubContentReferenceRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdateHubContentReference, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateHubContentReference that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateHubContentReferenceRequestT = Model::UpdateHubContentReferenceRequest>
+        void UpdateHubContentReferenceAsync(const UpdateHubContentReferenceRequestT& request, const UpdateHubContentReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdateHubContentReference, request, handler, context);
+        }
+
+        /**
          * <p>Updates the properties of a SageMaker AI image. To change the image's tags,
          * use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>

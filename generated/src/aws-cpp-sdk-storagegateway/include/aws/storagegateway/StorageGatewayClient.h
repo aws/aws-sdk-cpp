@@ -1828,6 +1828,41 @@ namespace StorageGateway
         }
 
         /**
+         * <p>Starts a process that cleans the specified file share's cache of file entries
+         * that are failing upload to Amazon S3. This API operation reports success if the
+         * request is received with valid arguments, and there are no other cache clean
+         * operations currently in-progress for the specified file share. After a
+         * successful request, the cache clean operation occurs asynchronously and reports
+         * progress using CloudWatch logs and notifications.</p>  <p>If
+         * <code>ForceRemove</code> is set to <code>True</code>, the cache clean operation
+         * will delete file data from the gateway which might otherwise be recoverable. We
+         * recommend using this operation only after all other methods to clear files
+         * failing upload have been exhausted, and if your business need outweighs the
+         * potential data loss.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/EvictFilesFailingUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EvictFilesFailingUploadOutcome EvictFilesFailingUpload(const Model::EvictFilesFailingUploadRequest& request) const;
+
+        /**
+         * A Callable wrapper for EvictFilesFailingUpload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EvictFilesFailingUploadRequestT = Model::EvictFilesFailingUploadRequest>
+        Model::EvictFilesFailingUploadOutcomeCallable EvictFilesFailingUploadCallable(const EvictFilesFailingUploadRequestT& request) const
+        {
+            return SubmitCallable(&StorageGatewayClient::EvictFilesFailingUpload, request);
+        }
+
+        /**
+         * An Async wrapper for EvictFilesFailingUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EvictFilesFailingUploadRequestT = Model::EvictFilesFailingUploadRequest>
+        void EvictFilesFailingUploadAsync(const EvictFilesFailingUploadRequestT& request, const EvictFilesFailingUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&StorageGatewayClient::EvictFilesFailingUpload, request, handler, context);
+        }
+
+        /**
          * <p>Adds a file gateway to an Active Directory domain. This operation is only
          * supported for file gateways that support the SMB file protocol.</p> 
          * <p>Joining a domain creates an Active Directory computer account in the default

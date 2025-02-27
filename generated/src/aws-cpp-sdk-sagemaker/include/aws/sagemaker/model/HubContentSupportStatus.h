@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Supported,
-    Deprecated
+    Deprecated,
+    Restricted
   };
 
 namespace HubContentSupportStatusMapper

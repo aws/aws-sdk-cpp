@@ -291,6 +291,8 @@
 #include <aws/sagemaker/model/UpdateExperimentResult.h>
 #include <aws/sagemaker/model/UpdateFeatureGroupResult.h>
 #include <aws/sagemaker/model/UpdateHubResult.h>
+#include <aws/sagemaker/model/UpdateHubContentResult.h>
+#include <aws/sagemaker/model/UpdateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/UpdateImageResult.h>
 #include <aws/sagemaker/model/UpdateImageVersionResult.h>
 #include <aws/sagemaker/model/UpdateInferenceComponentResult.h>
@@ -759,6 +761,8 @@ namespace Aws
       class UpdateFeatureGroupRequest;
       class UpdateFeatureMetadataRequest;
       class UpdateHubRequest;
+      class UpdateHubContentRequest;
+      class UpdateHubContentReferenceRequest;
       class UpdateImageRequest;
       class UpdateImageVersionRequest;
       class UpdateInferenceComponentRequest;
@@ -1118,6 +1122,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateFeatureGroupResult, SageMakerError> UpdateFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateFeatureMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdateHubResult, SageMakerError> UpdateHubOutcome;
+      typedef Aws::Utils::Outcome<UpdateHubContentResult, SageMakerError> UpdateHubContentOutcome;
+      typedef Aws::Utils::Outcome<UpdateHubContentReferenceResult, SageMakerError> UpdateHubContentReferenceOutcome;
       typedef Aws::Utils::Outcome<UpdateImageResult, SageMakerError> UpdateImageOutcome;
       typedef Aws::Utils::Outcome<UpdateImageVersionResult, SageMakerError> UpdateImageVersionOutcome;
       typedef Aws::Utils::Outcome<UpdateInferenceComponentResult, SageMakerError> UpdateInferenceComponentOutcome;
@@ -1477,6 +1483,8 @@ namespace Aws
       typedef std::future<UpdateFeatureGroupOutcome> UpdateFeatureGroupOutcomeCallable;
       typedef std::future<UpdateFeatureMetadataOutcome> UpdateFeatureMetadataOutcomeCallable;
       typedef std::future<UpdateHubOutcome> UpdateHubOutcomeCallable;
+      typedef std::future<UpdateHubContentOutcome> UpdateHubContentOutcomeCallable;
+      typedef std::future<UpdateHubContentReferenceOutcome> UpdateHubContentReferenceOutcomeCallable;
       typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
       typedef std::future<UpdateImageVersionOutcome> UpdateImageVersionOutcomeCallable;
       typedef std::future<UpdateInferenceComponentOutcome> UpdateInferenceComponentOutcomeCallable;
@@ -1839,6 +1847,8 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureGroupRequest&, const Model::UpdateFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureMetadataRequest&, const Model::UpdateFeatureMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateHubRequest&, const Model::UpdateHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHubResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateHubContentRequest&, const Model::UpdateHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHubContentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateHubContentReferenceRequest&, const Model::UpdateHubContentReferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHubContentReferenceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateImageRequest&, const Model::UpdateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateImageVersionRequest&, const Model::UpdateImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateInferenceComponentRequest&, const Model::UpdateInferenceComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceComponentResponseReceivedHandler;

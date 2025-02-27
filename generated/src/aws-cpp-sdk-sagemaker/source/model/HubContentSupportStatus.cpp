@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Supported_HASH = HashingUtils::HashString("Supported");
         static const int Deprecated_HASH = HashingUtils::HashString("Deprecated");
+        static const int Restricted_HASH = HashingUtils::HashString("Restricted");
 
 
         HubContentSupportStatus GetHubContentSupportStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Deprecated_HASH)
           {
             return HubContentSupportStatus::Deprecated;
+          }
+          else if (hashCode == Restricted_HASH)
+          {
+            return HubContentSupportStatus::Restricted;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "Supported";
           case HubContentSupportStatus::Deprecated:
             return "Deprecated";
+          case HubContentSupportStatus::Restricted:
+            return "Restricted";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

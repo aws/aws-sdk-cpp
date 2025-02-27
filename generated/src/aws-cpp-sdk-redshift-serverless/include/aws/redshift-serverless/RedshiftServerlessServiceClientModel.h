@@ -45,6 +45,7 @@
 #include <aws/redshift-serverless/model/GetScheduledActionResult.h>
 #include <aws/redshift-serverless/model/GetSnapshotResult.h>
 #include <aws/redshift-serverless/model/GetTableRestoreStatusResult.h>
+#include <aws/redshift-serverless/model/GetTrackResult.h>
 #include <aws/redshift-serverless/model/GetUsageLimitResult.h>
 #include <aws/redshift-serverless/model/GetWorkgroupResult.h>
 #include <aws/redshift-serverless/model/ListCustomDomainAssociationsResult.h>
@@ -57,6 +58,7 @@
 #include <aws/redshift-serverless/model/ListSnapshotsResult.h>
 #include <aws/redshift-serverless/model/ListTableRestoreStatusResult.h>
 #include <aws/redshift-serverless/model/ListTagsForResourceResult.h>
+#include <aws/redshift-serverless/model/ListTracksResult.h>
 #include <aws/redshift-serverless/model/ListUsageLimitsResult.h>
 #include <aws/redshift-serverless/model/ListWorkgroupsResult.h>
 #include <aws/redshift-serverless/model/PutResourcePolicyResult.h>
@@ -75,6 +77,7 @@
 #include <aws/redshift-serverless/model/UpdateUsageLimitResult.h>
 #include <aws/redshift-serverless/model/UpdateWorkgroupResult.h>
 #include <aws/redshift-serverless/model/ListWorkgroupsRequest.h>
+#include <aws/redshift-serverless/model/ListTracksRequest.h>
 #include <aws/redshift-serverless/model/ListCustomDomainAssociationsRequest.h>
 #include <aws/redshift-serverless/model/GetSnapshotRequest.h>
 #include <aws/redshift-serverless/model/ListEndpointAccessRequest.h>
@@ -154,6 +157,7 @@ namespace Aws
       class GetScheduledActionRequest;
       class GetSnapshotRequest;
       class GetTableRestoreStatusRequest;
+      class GetTrackRequest;
       class GetUsageLimitRequest;
       class GetWorkgroupRequest;
       class ListCustomDomainAssociationsRequest;
@@ -166,6 +170,7 @@ namespace Aws
       class ListSnapshotsRequest;
       class ListTableRestoreStatusRequest;
       class ListTagsForResourceRequest;
+      class ListTracksRequest;
       class ListUsageLimitsRequest;
       class ListWorkgroupsRequest;
       class PutResourcePolicyRequest;
@@ -213,6 +218,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetScheduledActionResult, RedshiftServerlessError> GetScheduledActionOutcome;
       typedef Aws::Utils::Outcome<GetSnapshotResult, RedshiftServerlessError> GetSnapshotOutcome;
       typedef Aws::Utils::Outcome<GetTableRestoreStatusResult, RedshiftServerlessError> GetTableRestoreStatusOutcome;
+      typedef Aws::Utils::Outcome<GetTrackResult, RedshiftServerlessError> GetTrackOutcome;
       typedef Aws::Utils::Outcome<GetUsageLimitResult, RedshiftServerlessError> GetUsageLimitOutcome;
       typedef Aws::Utils::Outcome<GetWorkgroupResult, RedshiftServerlessError> GetWorkgroupOutcome;
       typedef Aws::Utils::Outcome<ListCustomDomainAssociationsResult, RedshiftServerlessError> ListCustomDomainAssociationsOutcome;
@@ -225,6 +231,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListSnapshotsResult, RedshiftServerlessError> ListSnapshotsOutcome;
       typedef Aws::Utils::Outcome<ListTableRestoreStatusResult, RedshiftServerlessError> ListTableRestoreStatusOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, RedshiftServerlessError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListTracksResult, RedshiftServerlessError> ListTracksOutcome;
       typedef Aws::Utils::Outcome<ListUsageLimitsResult, RedshiftServerlessError> ListUsageLimitsOutcome;
       typedef Aws::Utils::Outcome<ListWorkgroupsResult, RedshiftServerlessError> ListWorkgroupsOutcome;
       typedef Aws::Utils::Outcome<PutResourcePolicyResult, RedshiftServerlessError> PutResourcePolicyOutcome;
@@ -272,6 +279,7 @@ namespace Aws
       typedef std::future<GetScheduledActionOutcome> GetScheduledActionOutcomeCallable;
       typedef std::future<GetSnapshotOutcome> GetSnapshotOutcomeCallable;
       typedef std::future<GetTableRestoreStatusOutcome> GetTableRestoreStatusOutcomeCallable;
+      typedef std::future<GetTrackOutcome> GetTrackOutcomeCallable;
       typedef std::future<GetUsageLimitOutcome> GetUsageLimitOutcomeCallable;
       typedef std::future<GetWorkgroupOutcome> GetWorkgroupOutcomeCallable;
       typedef std::future<ListCustomDomainAssociationsOutcome> ListCustomDomainAssociationsOutcomeCallable;
@@ -284,6 +292,7 @@ namespace Aws
       typedef std::future<ListSnapshotsOutcome> ListSnapshotsOutcomeCallable;
       typedef std::future<ListTableRestoreStatusOutcome> ListTableRestoreStatusOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListTracksOutcome> ListTracksOutcomeCallable;
       typedef std::future<ListUsageLimitsOutcome> ListUsageLimitsOutcomeCallable;
       typedef std::future<ListWorkgroupsOutcome> ListWorkgroupsOutcomeCallable;
       typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
@@ -334,6 +343,7 @@ namespace Aws
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetScheduledActionRequest&, const Model::GetScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetScheduledActionResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetSnapshotRequest&, const Model::GetSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetTableRestoreStatusRequest&, const Model::GetTableRestoreStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableRestoreStatusResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::GetTrackRequest&, const Model::GetTrackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrackResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetUsageLimitRequest&, const Model::GetUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageLimitResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::GetWorkgroupRequest&, const Model::GetWorkgroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkgroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListCustomDomainAssociationsRequest&, const Model::ListCustomDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomDomainAssociationsResponseReceivedHandler;
@@ -346,6 +356,7 @@ namespace Aws
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListSnapshotsRequest&, const Model::ListSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSnapshotsResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListTableRestoreStatusRequest&, const Model::ListTableRestoreStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableRestoreStatusResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const RedshiftServerlessClient*, const Model::ListTracksRequest&, const Model::ListTracksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTracksResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListUsageLimitsRequest&, const Model::ListUsageLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsageLimitsResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::ListWorkgroupsRequest&, const Model::ListWorkgroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkgroupsResponseReceivedHandler;
     typedef std::function<void(const RedshiftServerlessClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;

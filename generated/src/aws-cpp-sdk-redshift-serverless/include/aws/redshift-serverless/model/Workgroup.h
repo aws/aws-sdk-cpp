@@ -229,6 +229,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name for the track that you want to assign to the workgroup. When the
+     * track changes, the workgroup is switched to the latest workgroup release
+     * available for the track. At this point, the track name is applied.</p>
+     */
+    inline const Aws::String& GetPendingTrackName() const{ return m_pendingTrackName; }
+    inline bool PendingTrackNameHasBeenSet() const { return m_pendingTrackNameHasBeenSet; }
+    inline void SetPendingTrackName(const Aws::String& value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName = value; }
+    inline void SetPendingTrackName(Aws::String&& value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName = std::move(value); }
+    inline void SetPendingTrackName(const char* value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName.assign(value); }
+    inline Workgroup& WithPendingTrackName(const Aws::String& value) { SetPendingTrackName(value); return *this;}
+    inline Workgroup& WithPendingTrackName(Aws::String&& value) { SetPendingTrackName(std::move(value)); return *this;}
+    inline Workgroup& WithPendingTrackName(const char* value) { SetPendingTrackName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
      * 5431-5455 and 8191-8215. The default is 5439.</p>
      */
@@ -302,6 +318,20 @@ namespace Model
     inline Workgroup& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
     inline Workgroup& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
     inline Workgroup& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the track for the workgroup.</p>
+     */
+    inline const Aws::String& GetTrackName() const{ return m_trackName; }
+    inline bool TrackNameHasBeenSet() const { return m_trackNameHasBeenSet; }
+    inline void SetTrackName(const Aws::String& value) { m_trackNameHasBeenSet = true; m_trackName = value; }
+    inline void SetTrackName(Aws::String&& value) { m_trackNameHasBeenSet = true; m_trackName = std::move(value); }
+    inline void SetTrackName(const char* value) { m_trackNameHasBeenSet = true; m_trackName.assign(value); }
+    inline Workgroup& WithTrackName(const Aws::String& value) { SetTrackName(value); return *this;}
+    inline Workgroup& WithTrackName(Aws::String&& value) { SetTrackName(std::move(value)); return *this;}
+    inline Workgroup& WithTrackName(const char* value) { SetTrackName(value); return *this;}
     ///@}
 
     ///@{
@@ -403,6 +433,9 @@ namespace Model
     Aws::String m_patchVersion;
     bool m_patchVersionHasBeenSet = false;
 
+    Aws::String m_pendingTrackName;
+    bool m_pendingTrackNameHasBeenSet = false;
+
     int m_port;
     bool m_portHasBeenSet = false;
 
@@ -420,6 +453,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    Aws::String m_trackName;
+    bool m_trackNameHasBeenSet = false;
 
     Aws::String m_workgroupArn;
     bool m_workgroupArnHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/HubContentType.h>
+#include <aws/sagemaker/model/HubContentSupportStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -165,6 +166,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the hub content resource.</p>
+     */
+    inline const HubContentSupportStatus& GetSupportStatus() const{ return m_supportStatus; }
+    inline bool SupportStatusHasBeenSet() const { return m_supportStatusHasBeenSet; }
+    inline void SetSupportStatus(const HubContentSupportStatus& value) { m_supportStatusHasBeenSet = true; m_supportStatus = value; }
+    inline void SetSupportStatus(HubContentSupportStatus&& value) { m_supportStatusHasBeenSet = true; m_supportStatus = std::move(value); }
+    inline ImportHubContentRequest& WithSupportStatus(const HubContentSupportStatus& value) { SetSupportStatus(value); return *this;}
+    inline ImportHubContentRequest& WithSupportStatus(HubContentSupportStatus&& value) { SetSupportStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The searchable keywords of the hub content.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHubContentSearchKeywords() const{ return m_hubContentSearchKeywords; }
@@ -219,6 +232,9 @@ namespace Model
 
     Aws::String m_hubContentDocument;
     bool m_hubContentDocumentHasBeenSet = false;
+
+    HubContentSupportStatus m_supportStatus;
+    bool m_supportStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hubContentSearchKeywords;
     bool m_hubContentSearchKeywordsHasBeenSet = false;

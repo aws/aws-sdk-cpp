@@ -35,6 +35,7 @@ Workgroup::Workgroup() :
     m_maxCapacityHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_patchVersionHasBeenSet(false),
+    m_pendingTrackNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_pricePerformanceTargetHasBeenSet(false),
@@ -44,6 +45,7 @@ Workgroup::Workgroup() :
     m_status(WorkgroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_trackNameHasBeenSet(false),
     m_workgroupArnHasBeenSet(false),
     m_workgroupIdHasBeenSet(false),
     m_workgroupNameHasBeenSet(false),
@@ -156,6 +158,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_patchVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pendingTrackName"))
+  {
+    m_pendingTrackName = jsonValue.GetString("pendingTrackName");
+
+    m_pendingTrackNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
@@ -202,6 +211,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trackName"))
+  {
+    m_trackName = jsonValue.GetString("trackName");
+
+    m_trackNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("workgroupArn"))
@@ -325,6 +341,12 @@ JsonValue Workgroup::Jsonize() const
 
   }
 
+  if(m_pendingTrackNameHasBeenSet)
+  {
+   payload.WithString("pendingTrackName", m_pendingTrackName);
+
+  }
+
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
@@ -367,6 +389,12 @@ JsonValue Workgroup::Jsonize() const
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
    }
    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_trackNameHasBeenSet)
+  {
+   payload.WithString("trackName", m_trackName);
 
   }
 

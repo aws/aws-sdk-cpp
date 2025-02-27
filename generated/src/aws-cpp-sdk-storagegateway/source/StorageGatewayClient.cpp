@@ -74,6 +74,7 @@
 #include <aws/storagegateway/model/DetachVolumeRequest.h>
 #include <aws/storagegateway/model/DisableGatewayRequest.h>
 #include <aws/storagegateway/model/DisassociateFileSystemRequest.h>
+#include <aws/storagegateway/model/EvictFilesFailingUploadRequest.h>
 #include <aws/storagegateway/model/JoinDomainRequest.h>
 #include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesRequest.h>
 #include <aws/storagegateway/model/ListCacheReportsRequest.h>
@@ -1446,6 +1447,28 @@ DisassociateFileSystemOutcome StorageGatewayClient::DisassociateFileSystem(const
   return TracingUtils::MakeCallWithTiming<DisassociateFileSystemOutcome>(
     [&]()-> DisassociateFileSystemOutcome {
       return DisassociateFileSystemOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+EvictFilesFailingUploadOutcome StorageGatewayClient::EvictFilesFailingUpload(const EvictFilesFailingUploadRequest& request) const
+{
+  AWS_OPERATION_GUARD(EvictFilesFailingUpload);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvictFilesFailingUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, EvictFilesFailingUpload, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, EvictFilesFailingUpload, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".EvictFilesFailingUpload",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<EvictFilesFailingUploadOutcome>(
+    [&]()-> EvictFilesFailingUploadOutcome {
+      return EvictFilesFailingUploadOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },

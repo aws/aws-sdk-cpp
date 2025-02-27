@@ -28,6 +28,7 @@ UpdateWorkgroupRequest::UpdateWorkgroupRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_trackNameHasBeenSet(false),
     m_workgroupNameHasBeenSet(false)
 {
 }
@@ -108,6 +109,12 @@ Aws::String UpdateWorkgroupRequest::SerializePayload() const
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
    }
    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_trackNameHasBeenSet)
+  {
+   payload.WithString("trackName", m_trackName);
 
   }
 

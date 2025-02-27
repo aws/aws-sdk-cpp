@@ -1,0 +1,27 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agent-runtime/model/GetSessionRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::BedrockAgentRuntime::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+GetSessionRequest::GetSessionRequest() : 
+    m_sessionIdentifierHasBeenSet(false)
+{
+}
+
+Aws::String GetSessionRequest::SerializePayload() const
+{
+  return {};
+}
+
+
+
+

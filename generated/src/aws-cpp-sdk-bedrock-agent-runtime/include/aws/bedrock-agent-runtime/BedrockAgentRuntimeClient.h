@@ -90,6 +90,92 @@ namespace BedrockAgentRuntime
         virtual ~BedrockAgentRuntimeClient();
 
         /**
+         * <p>Creates a new invocation within a session. An invocation groups the related
+         * invocation steps that store the content from a conversation. For more
+         * information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p> <p>Related APIs</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListInvocations</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html">GetSession</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CreateInvocation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInvocationOutcome CreateInvocation(const Model::CreateInvocationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateInvocation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateInvocationRequestT = Model::CreateInvocationRequest>
+        Model::CreateInvocationOutcomeCallable CreateInvocationCallable(const CreateInvocationRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::CreateInvocation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateInvocation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateInvocationRequestT = Model::CreateInvocationRequest>
+        void CreateInvocationAsync(const CreateInvocationRequestT& request, const CreateInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::CreateInvocation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a session to temporarily store conversations for generative AI
+         * (GenAI) applications built with open-source frameworks such as LangGraph and
+         * LlamaIndex. Sessions enable you to save the state of conversations at
+         * checkpoints, with the added security and infrastructure of Amazon Web Services.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p> <p>By default, Amazon Bedrock uses Amazon Web Services-managed
+         * keys for session encryption, including session metadata, or you can use your own
+         * KMS key. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
+         * Bedrock session encryption</a>.</p>  <p> You use a session to store state
+         * and conversation history for generative AI applications built with open-source
+         * frameworks. For Amazon Bedrock Agents, the service automatically manages
+         * conversation context and associates them with the agent-specific sessionId you
+         * specify in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+         * API operation. </p>  <p>Related APIs:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html">GetSession</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html">EndSession</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteSession.html">DeleteSession</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CreateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSessionOutcome CreateSession(const Model::CreateSessionRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for CreateSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSessionRequestT = Model::CreateSessionRequest>
+        Model::CreateSessionOutcomeCallable CreateSessionCallable(const CreateSessionRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::CreateSession, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSessionRequestT = Model::CreateSessionRequest>
+        void CreateSessionAsync(const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateSessionRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::CreateSession, request, handler, context);
+        }
+
+        /**
          * <p>Deletes memory from the specified memory identifier.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">AWS
@@ -113,6 +199,68 @@ namespace BedrockAgentRuntime
         void DeleteAgentMemoryAsync(const DeleteAgentMemoryRequestT& request, const DeleteAgentMemoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::DeleteAgentMemory, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a session that you ended. You can't delete a session with an
+         * <code>ACTIVE</code> status. To delete an active session, you must first end it
+         * with the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html">EndSession</a>
+         * API operation. For more information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSessionRequestT = Model::DeleteSessionRequest>
+        Model::DeleteSessionOutcomeCallable DeleteSessionCallable(const DeleteSessionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::DeleteSession, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSessionRequestT = Model::DeleteSessionRequest>
+        void DeleteSessionAsync(const DeleteSessionRequestT& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::DeleteSession, request, handler, context);
+        }
+
+        /**
+         * <p>Ends the session. After you end a session, you can still access its content
+         * but you can’t add to it. To delete the session and it's content, you use the
+         * DeleteSession API operation. For more information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/EndSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EndSessionOutcome EndSession(const Model::EndSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for EndSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EndSessionRequestT = Model::EndSessionRequest>
+        Model::EndSessionOutcomeCallable EndSessionCallable(const EndSessionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::EndSession, request);
+        }
+
+        /**
+         * An Async wrapper for EndSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EndSessionRequestT = Model::EndSessionRequest>
+        void EndSessionAsync(const EndSessionRequestT& request, const EndSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::EndSession, request, handler, context);
         }
 
         /**
@@ -168,6 +316,64 @@ namespace BedrockAgentRuntime
         void GetAgentMemoryAsync(const GetAgentMemoryRequestT& request, const GetAgentMemoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::GetAgentMemory, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the details of a specific invocation step within an invocation in a
+         * session. For more information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetInvocationStep">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInvocationStepOutcome GetInvocationStep(const Model::GetInvocationStepRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInvocationStep that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInvocationStepRequestT = Model::GetInvocationStepRequest>
+        Model::GetInvocationStepOutcomeCallable GetInvocationStepCallable(const GetInvocationStepRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GetInvocationStep, request);
+        }
+
+        /**
+         * An Async wrapper for GetInvocationStep that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInvocationStepRequestT = Model::GetInvocationStepRequest>
+        void GetInvocationStepAsync(const GetInvocationStepRequestT& request, const GetInvocationStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GetInvocationStep, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about a specific session. For more information about
+         * sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSessionRequestT = Model::GetSessionRequest>
+        Model::GetSessionOutcomeCallable GetSessionCallable(const GetSessionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GetSession, request);
+        }
+
+        /**
+         * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSessionRequestT = Model::GetSessionRequest>
+        void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GetSession, request, handler, context);
         }
 
         /**
@@ -296,6 +502,118 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p>Lists all invocation steps associated with a session and optionally, an
+         * invocation within the session. For more information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListInvocationSteps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInvocationStepsOutcome ListInvocationSteps(const Model::ListInvocationStepsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInvocationSteps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInvocationStepsRequestT = Model::ListInvocationStepsRequest>
+        Model::ListInvocationStepsOutcomeCallable ListInvocationStepsCallable(const ListInvocationStepsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::ListInvocationSteps, request);
+        }
+
+        /**
+         * An Async wrapper for ListInvocationSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInvocationStepsRequestT = Model::ListInvocationStepsRequest>
+        void ListInvocationStepsAsync(const ListInvocationStepsRequestT& request, const ListInvocationStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::ListInvocationSteps, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all invocations associated with a specific session. For more
+         * information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListInvocations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInvocationsOutcome ListInvocations(const Model::ListInvocationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInvocations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInvocationsRequestT = Model::ListInvocationsRequest>
+        Model::ListInvocationsOutcomeCallable ListInvocationsCallable(const ListInvocationsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::ListInvocations, request);
+        }
+
+        /**
+         * An Async wrapper for ListInvocations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInvocationsRequestT = Model::ListInvocationsRequest>
+        void ListInvocationsAsync(const ListInvocationsRequestT& request, const ListInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::ListInvocations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all sessions in your Amazon Web Services account. For more information
+         * about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionsRequestT = Model::ListSessionsRequest>
+        Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::ListSessions, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionsRequestT = Model::ListSessionsRequest>
+        void ListSessionsAsync(const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSessionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::ListSessions, request, handler, context);
+        }
+
+        /**
+         * <p>List all the tags for the resource you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Optimizes a prompt for the task that you specify. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html">Optimize
@@ -323,6 +641,44 @@ namespace BedrockAgentRuntime
         void OptimizePromptAsync(OptimizePromptRequestT& request, const OptimizePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::OptimizePrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Add an invocation step to an invocation in a session. An invocation step
+         * stores fine-grained state checkpoints, including text and images, for each
+         * interaction. For more information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p> <p>Related APIs:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetInvocationStep.html">GetInvocationStep</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocationSteps.html">ListInvocationSteps</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListInvocations</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListSessions</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/PutInvocationStep">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutInvocationStepOutcome PutInvocationStep(const Model::PutInvocationStepRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutInvocationStep that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutInvocationStepRequestT = Model::PutInvocationStepRequest>
+        Model::PutInvocationStepOutcomeCallable PutInvocationStepCallable(const PutInvocationStepRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::PutInvocationStep, request);
+        }
+
+        /**
+         * An Async wrapper for PutInvocationStep that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutInvocationStepRequestT = Model::PutInvocationStepRequest>
+        void PutInvocationStepAsync(const PutInvocationStepRequestT& request, const PutInvocationStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::PutInvocationStep, request, handler, context);
         }
 
         /**
@@ -437,6 +793,87 @@ namespace BedrockAgentRuntime
         void RetrieveAndGenerateStreamAsync(RetrieveAndGenerateStreamRequestT& request, const RetrieveAndGenerateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::RetrieveAndGenerateStream, request, handler, context);
+        }
+
+        /**
+         * <p>Associate tags with a resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+         * resources</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the metadata or encryption settings of a session. For more
+         * information about sessions, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+         * and retrieve conversation history and context with Amazon Bedrock
+         * sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/UpdateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSessionOutcome UpdateSession(const Model::UpdateSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSessionRequestT = Model::UpdateSessionRequest>
+        Model::UpdateSessionOutcomeCallable UpdateSessionCallable(const UpdateSessionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::UpdateSession, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSessionRequestT = Model::UpdateSessionRequest>
+        void UpdateSessionAsync(const UpdateSessionRequestT& request, const UpdateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::UpdateSession, request, handler, context);
         }
 
 
