@@ -45,7 +45,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode stringListParentNode = parentNode.CreateChildElement("stringList");
    for(const auto& item : m_stringList)
    {
-     XmlNode stringListNode = stringListParentNode.CreateChildElement("String");
+     XmlNode stringListNode = stringListParentNode.CreateChildElement("member");
      stringListNode.SetText(item);
    }
   }
@@ -55,7 +55,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode stringSetParentNode = parentNode.CreateChildElement("stringSet");
    for(const auto& item : m_stringSet)
    {
-     XmlNode stringSetNode = stringSetParentNode.CreateChildElement("String");
+     XmlNode stringSetNode = stringSetParentNode.CreateChildElement("member");
      stringSetNode.SetText(item);
    }
   }
@@ -65,7 +65,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode integerListParentNode = parentNode.CreateChildElement("integerList");
    for(const auto& item : m_integerList)
    {
-     XmlNode integerListNode = integerListParentNode.CreateChildElement("Integer");
+     XmlNode integerListNode = integerListParentNode.CreateChildElement("member");
      ss << item;
      integerListNode.SetText(ss.str());
      ss.str("");
@@ -77,7 +77,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode booleanListParentNode = parentNode.CreateChildElement("booleanList");
    for(const auto& item : m_booleanList)
    {
-     XmlNode booleanListNode = booleanListParentNode.CreateChildElement("Boolean");
+     XmlNode booleanListNode = booleanListParentNode.CreateChildElement("member");
      ss << std::boolalpha << item;
      booleanListNode.SetText(ss.str());
      ss.str("");
@@ -89,7 +89,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode timestampListParentNode = parentNode.CreateChildElement("timestampList");
    for(const auto& item : m_timestampList)
    {
-     XmlNode timestampListNode = timestampListParentNode.CreateChildElement("Timestamp");
+     XmlNode timestampListNode = timestampListParentNode.CreateChildElement("member");
      timestampListNode.SetText(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
    }
   }
@@ -99,7 +99,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode enumListParentNode = parentNode.CreateChildElement("enumList");
    for(const auto& item : m_enumList)
    {
-     XmlNode enumListNode = enumListParentNode.CreateChildElement("FooEnum");
+     XmlNode enumListNode = enumListParentNode.CreateChildElement("member");
      enumListNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
    }
   }
@@ -109,7 +109,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode intEnumListParentNode = parentNode.CreateChildElement("intEnumList");
    for(const auto& item : m_intEnumList)
    {
-     XmlNode intEnumListNode = intEnumListParentNode.CreateChildElement("IntegerEnum");
+     XmlNode intEnumListNode = intEnumListParentNode.CreateChildElement("member");
      ss << item;
      intEnumListNode.SetText(ss.str());
      ss.str("");
@@ -121,8 +121,12 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode nestedStringListParentNode = parentNode.CreateChildElement("nestedStringList");
    for(const auto& item : m_nestedStringList)
    {
-     XmlNode nestedStringListNode = nestedStringListParentNode.CreateChildElement("StringList");
-     nestedStringListNode.SetText(item);
+     XmlNode nestedStringListNode = nestedStringListParentNode.CreateChildElement("member");
+     for(const auto& nestedStringListNestedItem : item)
+     {
+       XmlNode nestedStringListNestedNode = nestedStringListNode.CreateChildElement("member");
+       nestedStringListNestedNode.SetText(nestedStringListNestedItem);
+     }
    }
   }
 
@@ -140,7 +144,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
   {
    for(const auto& item : m_flattenedList)
    {
-     XmlNode flattenedListNode = parentNode.CreateChildElement("item");
+     XmlNode flattenedListNode = parentNode.CreateChildElement("flattenedList");
      flattenedListNode.SetText(item);
    }
   }
@@ -149,7 +153,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
   {
    for(const auto& item : m_flattenedList2)
    {
-     XmlNode flattenedList2Node = parentNode.CreateChildElement("item");
+     XmlNode flattenedList2Node = parentNode.CreateChildElement("customName");
      flattenedList2Node.SetText(item);
    }
   }
@@ -159,7 +163,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode flattenedListWithMemberNamespaceParentNode = parentNode.CreateChildElement("flattenedListWithMemberNamespace");
    for(const auto& item : m_flattenedListWithMemberNamespace)
    {
-     XmlNode flattenedListWithMemberNamespaceNode = flattenedListWithMemberNamespaceParentNode.CreateChildElement("String");
+     XmlNode flattenedListWithMemberNamespaceNode = flattenedListWithMemberNamespaceParentNode.CreateChildElement("flattenedListWithMemberNamespace");
      flattenedListWithMemberNamespaceNode.SetText(item);
    }
   }
@@ -169,7 +173,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
    XmlNode flattenedListWithNamespaceParentNode = parentNode.CreateChildElement("flattenedListWithNamespace");
    for(const auto& item : m_flattenedListWithNamespace)
    {
-     XmlNode flattenedListWithNamespaceNode = flattenedListWithNamespaceParentNode.CreateChildElement("String");
+     XmlNode flattenedListWithNamespaceNode = flattenedListWithNamespaceParentNode.CreateChildElement("flattenedListWithNamespace");
      flattenedListWithNamespaceNode.SetText(item);
    }
   }
@@ -188,7 +192,7 @@ Aws::String XmlEmptyListsRequest::SerializePayload() const
   {
    for(const auto& item : m_flattenedStructureList)
    {
-     XmlNode flattenedStructureListNode = parentNode.CreateChildElement("item");
+     XmlNode flattenedStructureListNode = parentNode.CreateChildElement("flattenedStructureList");
      item.AddToNode(flattenedStructureListNode);
    }
   }

@@ -76,7 +76,7 @@ void JobManifestSpec::AddToNode(XmlNode& parentNode) const
    XmlNode fieldsParentNode = parentNode.CreateChildElement("Fields");
    for(const auto& item : m_fields)
    {
-     XmlNode fieldsNode = fieldsParentNode.CreateChildElement("JobManifestFieldName");
+     XmlNode fieldsNode = fieldsParentNode.CreateChildElement("member");
      fieldsNode.SetText(JobManifestFieldNameMapper::GetNameForJobManifestFieldName(item));
    }
   }

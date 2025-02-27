@@ -1,0 +1,22 @@
+##-------------------- serializeXmlSingleElementToText macro
+#macro( serializeXmlSingleElementToText $shapeMember $memberVarName $parentNode="parentNode" )
+##/* --- the actual shape member is $shapeMember; the actual shape is $shapeMember.shape; --- */
+#if($shapeMember.shape.enum)
+${shapeMember.shape.name}Mapper::GetNameFor${shapeMember.shape.name}(${memberVarName})##
+#elseif($shapeMember.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
+#set($macro.timestamptFormatStr = $CppViewHelper.computeTimestampFormatInXml($shapeMember.shape))
+${memberVarName}.ToGmtString(Aws::Utils::DateFormat::${macro.timestamptFormatStr})##
+#else
+StringUtils::to_string(${memberVarName}.Seconds())##
+#end
+#elseif($shapeMember.shape.boolean)
+std::boolalpha << ${memberVarName}##
+#elseif($shapeMember.shape.blob)
+HashingUtils::Base64Encode(${memberVarName})##
+#elseif($shapeMember.shape.primitive || $shapeMember.shape.string)
+${memberVarName}##
+#else
+${memberVarName} /* serialization to text guessed for unknown shape type ${shapeMember.shape.type} */##
+#end
+#end##macro serializeXmlSingleElementToText

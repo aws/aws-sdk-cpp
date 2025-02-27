@@ -1,0 +1,34 @@
+##-------------------- serializeXmlListPayloadElement macro
+#macro( serializeXmlListPayloadElement $spaces $serializationName $lowerCaseVarName $member $memberVarName $isNested=false $parentNode="parentNode" )
+##  // /* --- the actual shape member is $member; */
+##  // /* --- the actual shape is $member.shape; --- */
+##  // /* --- list member: ${member.shape.listMember} */
+#set($macro.listMemberParentNode = $parentNode)
+#if(!$isNested && !($member.locationName && $member.shape.flattened) && !(${member.shape.listMember.locationName} && ${member.isFlattened()}))
+  ${spaces}XmlNode ${lowerCaseVarName}ParentNode = ${parentNode}.CreateChildElement("${serializationName}");
+#set($macro.listMemberParentNode = "${lowerCaseVarName}ParentNode")
+#end
+#if($macro.listMemberParentNode == "${lowerCaseVarName}Node")
+#set($lowerCaseVarName = "${lowerCaseVarName}Nested")
+#end
+#set($macro.listItemVarName = "item")
+#if($memberVarName == "item")
+#set($macro.listItemVarName = "${lowerCaseVarName}Item")
+#end
+  ${spaces}for(const auto& $macro.listItemVarName : $memberVarName)
+  ${spaces}{
+#set($macro.listSpaces = $spaces + "  ")
+###set($macro.listMemberSerializationName = ${CppViewHelper.ifNotNullOrEmpty($member.shape.listMember.locationName, $member.shape.listMember.shape.name)})
+#set($macro.listMemberSerializationName = "member")
+#if($member.shape.listMember.shape.structure)
+## not very well docummented but expected logic by s3control,route53,cloudfront: normally repeated element is member except if list member is a structure
+#set($macro.listMemberSerializationName = $member.shape.listMember.shape.name)
+#end
+#set($macro.listMemberSerializationName = ${CppViewHelper.ifNotNullOrEmpty($member.shape.listMember.locationName, $macro.listMemberSerializationName)})
+#if($member.isFlattened() || $member.shape.flattened || $isNested)
+## if list is flattened than the name of repeated XML element is ShapeMember name in parent name OR explicitly set by parent's locationName
+#set($macro.listMemberSerializationName = ${CppViewHelper.ifNotNullOrEmpty($member.locationName, $serializationName)})
+#end
+#serializeXmlSinglePayloadElement($macro.listSpaces, $macro.listMemberSerializationName, $lowerCaseVarName, $member.shape.listMember, $macro.listItemVarName, $macro.listMemberParentNode)
+  ${spaces}}
+#end##macro serializeXmlListPayloadElement

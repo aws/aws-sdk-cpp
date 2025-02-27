@@ -186,7 +186,11 @@ ${spaces}}
 #elseif($member.value.shape.enum)
   ${spaces}ss << "${location}=" << ${member.value.shape.name}Mapper::GetNameFor${member.value.shape.name}(${memberVarName}) << "&";
 #elseif($member.value.shape.structure)
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->OutputToStream(ss, "${location}");
+#else
   ${spaces}${memberVarName}.OutputToStream(ss, "${location}");
+#end
 #elseif($member.value.shape.double)
   ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}) << "&";
 #elseif($member.value.shape.boolean)
