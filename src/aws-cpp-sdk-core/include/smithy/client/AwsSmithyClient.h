@@ -24,6 +24,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
 
 namespace smithy {
 namespace client
@@ -153,7 +154,26 @@ namespace client
                 }
             }
 
-            Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+            Aws::Vector<AuthSchemeOption> authSchemeOptions;
+            /*for backwards compatibility, signer name override is used to filter auth schemes by id equivalent to legacy signer name*/
+            if(ctx.m_signerNameOverride.has_value())
+            {
+                auto allAuthSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+                const std::unordered_map<Aws::String, Aws::String> signerNameMap {
+                    {Aws::Auth::SIGV4_SIGNER, Aws::String{smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId}},
+                };
+                //use mapped name of legacy signer override if any
+                auto signerNameIt = signerNameMap.find(ctx.m_signerNameOverride.value());
+                auto signerName = signerNameIt != signerNameMap.end() ? signerNameIt->second : ctx.m_signerNameOverride.value();
+                auto filterCondition = [&signerName](const AuthSchemeOption& option) {
+                    return signerName == option.schemeId;
+                };
+                std::copy_if(allAuthSchemeOptions.begin(), allAuthSchemeOptions.end(), std::back_inserter(authSchemeOptions), filterCondition);
+            }
+            else
+            {
+                authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+            }
 
             auto authSchemeOptionIt = std::find_if(authSchemeOptions.begin(), authSchemeOptions.end(),
                                                    [this](const AuthSchemeOption& opt)
@@ -240,8 +260,43 @@ namespace client
             }
             return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
         }
+        
+        //for legacy
+        ResponseT MakeRequest(const Aws::Http::URI& uri,
+            const Aws::AmazonWebServiceRequest& request,
+            Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
+            const char* signerName = Aws::Auth::SIGV4_SIGNER,
+            const char* signerRegionOverride = nullptr,
+            const char* signerServiceNameOverride = nullptr) const
+        {
 
-    protected:
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(ServiceNameT);
+            assert(pExecutor);
+            HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+            {
+                outcome = std::move(asyncOutcome);
+            };
+
+            pExecutor->Submit([&]()
+            {
+                this->MakeRequestWithUriAsync(&request,
+                    uri,
+                    signerName,
+                    signerRegionOverride,
+                    signerServiceNameOverride,
+                    request.GetServiceRequestName(),
+                    method,
+                    std::move(responseHandler),
+                    pExecutor
+                );
+            });
+            pExecutor->WaitUntilStopped();
+
+            return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), request.GetServiceRequestName());
+        }
+
+    
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};

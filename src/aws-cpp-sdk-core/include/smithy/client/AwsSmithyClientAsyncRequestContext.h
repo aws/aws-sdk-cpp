@@ -70,6 +70,10 @@ namespace smithy
             ResponseHandlerFunc m_responseHandler;
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
+            //For Backwards Compatible APIs
+            Aws::Crt::Optional<Aws::String> m_signerNameOverride;
+            Aws::Crt::Optional<Aws::String> m_signerRegionOverride;
+            Aws::Crt::Optional<Aws::String> m_signerServiceNameOverride;
         };
     } // namespace client
 } // namespace smithy
