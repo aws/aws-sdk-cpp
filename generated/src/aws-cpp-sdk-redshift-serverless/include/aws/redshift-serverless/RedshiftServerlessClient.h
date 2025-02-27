@@ -818,6 +818,32 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Get the Redshift Serverless version for a specified track.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTrackOutcome GetTrack(const Model::GetTrackRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTrack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTrackRequestT = Model::GetTrackRequest>
+        Model::GetTrackOutcomeCallable GetTrackCallable(const GetTrackRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::GetTrack, request);
+        }
+
+        /**
+         * An Async wrapper for GetTrack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTrackRequestT = Model::GetTrackRequest>
+        void GetTrackAsync(const GetTrackRequestT& request, const GetTrackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::GetTrack, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a usage limit.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetUsageLimit">AWS
          * API Reference</a></p>
@@ -1121,6 +1147,31 @@ namespace RedshiftServerless
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>List the Amazon Redshift Serverless versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTracksOutcome ListTracks(const Model::ListTracksRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTracks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTracksRequestT = Model::ListTracksRequest>
+        Model::ListTracksOutcomeCallable ListTracksCallable(const ListTracksRequestT& request = {}) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::ListTracks, request);
+        }
+
+        /**
+         * An Async wrapper for ListTracks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTracksRequestT = Model::ListTracksRequest>
+        void ListTracksAsync(const ListTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTracksRequestT& request = {}) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::ListTracks, request, handler, context);
         }
 
         /**

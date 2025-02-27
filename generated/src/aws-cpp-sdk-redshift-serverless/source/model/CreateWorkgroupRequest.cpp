@@ -30,6 +30,7 @@ CreateWorkgroupRequest::CreateWorkgroupRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_trackNameHasBeenSet(false),
     m_workgroupNameHasBeenSet(false)
 {
 }
@@ -127,6 +128,12 @@ Aws::String CreateWorkgroupRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_trackNameHasBeenSet)
+  {
+   payload.WithString("trackName", m_trackName);
 
   }
 

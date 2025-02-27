@@ -33,6 +33,7 @@
 #include <aws/qbusiness/model/CreateUserResult.h>
 #include <aws/qbusiness/model/CreateWebExperienceResult.h>
 #include <aws/qbusiness/model/DeleteApplicationResult.h>
+#include <aws/qbusiness/model/DeleteAttachmentResult.h>
 #include <aws/qbusiness/model/DeleteChatControlsConfigurationResult.h>
 #include <aws/qbusiness/model/DeleteConversationResult.h>
 #include <aws/qbusiness/model/DeleteDataAccessorResult.h>
@@ -155,6 +156,7 @@ namespace Aws
       class CreateUserRequest;
       class CreateWebExperienceRequest;
       class DeleteApplicationRequest;
+      class DeleteAttachmentRequest;
       class DeleteChatControlsConfigurationRequest;
       class DeleteConversationRequest;
       class DeleteDataAccessorRequest;
@@ -232,6 +234,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateUserResult, QBusinessError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<CreateWebExperienceResult, QBusinessError> CreateWebExperienceOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationResult, QBusinessError> DeleteApplicationOutcome;
+      typedef Aws::Utils::Outcome<DeleteAttachmentResult, QBusinessError> DeleteAttachmentOutcome;
       typedef Aws::Utils::Outcome<DeleteChatControlsConfigurationResult, QBusinessError> DeleteChatControlsConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteConversationResult, QBusinessError> DeleteConversationOutcome;
       typedef Aws::Utils::Outcome<DeleteDataAccessorResult, QBusinessError> DeleteDataAccessorOutcome;
@@ -309,6 +312,7 @@ namespace Aws
       typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
       typedef std::future<CreateWebExperienceOutcome> CreateWebExperienceOutcomeCallable;
       typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
+      typedef std::future<DeleteAttachmentOutcome> DeleteAttachmentOutcomeCallable;
       typedef std::future<DeleteChatControlsConfigurationOutcome> DeleteChatControlsConfigurationOutcomeCallable;
       typedef std::future<DeleteConversationOutcome> DeleteConversationOutcomeCallable;
       typedef std::future<DeleteDataAccessorOutcome> DeleteDataAccessorOutcomeCallable;
@@ -390,6 +394,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateWebExperienceRequest&, const Model::CreateWebExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebExperienceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::DeleteAttachmentRequest&, const Model::DeleteAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttachmentResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteChatControlsConfigurationRequest&, const Model::DeleteChatControlsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChatControlsConfigurationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteConversationRequest&, const Model::DeleteConversationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConversationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::DeleteDataAccessorRequest&, const Model::DeleteDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataAccessorResponseReceivedHandler;

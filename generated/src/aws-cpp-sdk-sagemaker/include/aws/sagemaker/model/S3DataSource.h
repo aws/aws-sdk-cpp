@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/S3DataDistribution.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/ModelAccessConfig.h>
+#include <aws/sagemaker/model/HubAccessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -157,6 +159,29 @@ namespace Model
     inline S3DataSource& AddInstanceGroupNames(Aws::String&& value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames.push_back(std::move(value)); return *this; }
     inline S3DataSource& AddInstanceGroupNames(const char* value) { m_instanceGroupNamesHasBeenSet = true; m_instanceGroupNames.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const ModelAccessConfig& GetModelAccessConfig() const{ return m_modelAccessConfig; }
+    inline bool ModelAccessConfigHasBeenSet() const { return m_modelAccessConfigHasBeenSet; }
+    inline void SetModelAccessConfig(const ModelAccessConfig& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = value; }
+    inline void SetModelAccessConfig(ModelAccessConfig&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::move(value); }
+    inline S3DataSource& WithModelAccessConfig(const ModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
+    inline S3DataSource& WithModelAccessConfig(ModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for a private hub model reference that points to a
+     * SageMaker JumpStart public hub model.</p>
+     */
+    inline const HubAccessConfig& GetHubAccessConfig() const{ return m_hubAccessConfig; }
+    inline bool HubAccessConfigHasBeenSet() const { return m_hubAccessConfigHasBeenSet; }
+    inline void SetHubAccessConfig(const HubAccessConfig& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = value; }
+    inline void SetHubAccessConfig(HubAccessConfig&& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = std::move(value); }
+    inline S3DataSource& WithHubAccessConfig(const HubAccessConfig& value) { SetHubAccessConfig(value); return *this;}
+    inline S3DataSource& WithHubAccessConfig(HubAccessConfig&& value) { SetHubAccessConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     S3DataType m_s3DataType;
@@ -173,6 +198,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceGroupNames;
     bool m_instanceGroupNamesHasBeenSet = false;
+
+    ModelAccessConfig m_modelAccessConfig;
+    bool m_modelAccessConfigHasBeenSet = false;
+
+    HubAccessConfig m_hubAccessConfig;
+    bool m_hubAccessConfigHasBeenSet = false;
   };
 
 } // namespace Model

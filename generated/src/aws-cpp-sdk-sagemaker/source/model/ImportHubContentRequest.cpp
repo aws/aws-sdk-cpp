@@ -23,6 +23,8 @@ ImportHubContentRequest::ImportHubContentRequest() :
     m_hubContentDescriptionHasBeenSet(false),
     m_hubContentMarkdownHasBeenSet(false),
     m_hubContentDocumentHasBeenSet(false),
+    m_supportStatus(HubContentSupportStatus::NOT_SET),
+    m_supportStatusHasBeenSet(false),
     m_hubContentSearchKeywordsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -83,6 +85,11 @@ Aws::String ImportHubContentRequest::SerializePayload() const
   {
    payload.WithString("HubContentDocument", m_hubContentDocument);
 
+  }
+
+  if(m_supportStatusHasBeenSet)
+  {
+   payload.WithString("SupportStatus", HubContentSupportStatusMapper::GetNameForHubContentSupportStatus(m_supportStatus));
   }
 
   if(m_hubContentSearchKeywordsHasBeenSet)

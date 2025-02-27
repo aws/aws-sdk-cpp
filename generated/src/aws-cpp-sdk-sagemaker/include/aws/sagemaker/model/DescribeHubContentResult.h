@@ -282,6 +282,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The last modified time of the hub content.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+    inline DescribeHubContentResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+    inline DescribeHubContentResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -330,6 +341,8 @@ namespace Model
     Aws::String m_failureReason;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
 
     Aws::String m_requestId;
   };

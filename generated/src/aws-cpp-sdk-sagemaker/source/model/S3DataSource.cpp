@@ -25,7 +25,9 @@ S3DataSource::S3DataSource() :
     m_s3DataDistributionType(S3DataDistribution::NOT_SET),
     m_s3DataDistributionTypeHasBeenSet(false),
     m_attributeNamesHasBeenSet(false),
-    m_instanceGroupNamesHasBeenSet(false)
+    m_instanceGroupNamesHasBeenSet(false),
+    m_modelAccessConfigHasBeenSet(false),
+    m_hubAccessConfigHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,20 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
     m_instanceGroupNamesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelAccessConfig"))
+  {
+    m_modelAccessConfig = jsonValue.GetObject("ModelAccessConfig");
+
+    m_modelAccessConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HubAccessConfig"))
+  {
+    m_hubAccessConfig = jsonValue.GetObject("HubAccessConfig");
+
+    m_hubAccessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +136,18 @@ JsonValue S3DataSource::Jsonize() const
      instanceGroupNamesJsonList[instanceGroupNamesIndex].AsString(m_instanceGroupNames[instanceGroupNamesIndex]);
    }
    payload.WithArray("InstanceGroupNames", std::move(instanceGroupNamesJsonList));
+
+  }
+
+  if(m_modelAccessConfigHasBeenSet)
+  {
+   payload.WithObject("ModelAccessConfig", m_modelAccessConfig.Jsonize());
+
+  }
+
+  if(m_hubAccessConfigHasBeenSet)
+  {
+   payload.WithObject("HubAccessConfig", m_hubAccessConfig.Jsonize());
 
   }
 

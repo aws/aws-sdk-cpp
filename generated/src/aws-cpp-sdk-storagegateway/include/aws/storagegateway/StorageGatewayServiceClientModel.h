@@ -73,6 +73,7 @@
 #include <aws/storagegateway/model/DetachVolumeResult.h>
 #include <aws/storagegateway/model/DisableGatewayResult.h>
 #include <aws/storagegateway/model/DisassociateFileSystemResult.h>
+#include <aws/storagegateway/model/EvictFilesFailingUploadResult.h>
 #include <aws/storagegateway/model/JoinDomainResult.h>
 #include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesResult.h>
 #include <aws/storagegateway/model/ListCacheReportsResult.h>
@@ -217,6 +218,7 @@ namespace Aws
       class DetachVolumeRequest;
       class DisableGatewayRequest;
       class DisassociateFileSystemRequest;
+      class EvictFilesFailingUploadRequest;
       class JoinDomainRequest;
       class ListAutomaticTapeCreationPoliciesRequest;
       class ListCacheReportsRequest;
@@ -315,6 +317,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DetachVolumeResult, Aws::StorageGateway::StorageGatewayError> DetachVolumeOutcome;
       typedef Aws::Utils::Outcome<DisableGatewayResult, Aws::StorageGateway::StorageGatewayError> DisableGatewayOutcome;
       typedef Aws::Utils::Outcome<DisassociateFileSystemResult, Aws::StorageGateway::StorageGatewayError> DisassociateFileSystemOutcome;
+      typedef Aws::Utils::Outcome<EvictFilesFailingUploadResult, Aws::StorageGateway::StorageGatewayError> EvictFilesFailingUploadOutcome;
       typedef Aws::Utils::Outcome<JoinDomainResult, Aws::StorageGateway::StorageGatewayError> JoinDomainOutcome;
       typedef Aws::Utils::Outcome<ListAutomaticTapeCreationPoliciesResult, Aws::StorageGateway::StorageGatewayError> ListAutomaticTapeCreationPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListCacheReportsResult, Aws::StorageGateway::StorageGatewayError> ListCacheReportsOutcome;
@@ -413,6 +416,7 @@ namespace Aws
       typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
       typedef std::future<DisableGatewayOutcome> DisableGatewayOutcomeCallable;
       typedef std::future<DisassociateFileSystemOutcome> DisassociateFileSystemOutcomeCallable;
+      typedef std::future<EvictFilesFailingUploadOutcome> EvictFilesFailingUploadOutcomeCallable;
       typedef std::future<JoinDomainOutcome> JoinDomainOutcomeCallable;
       typedef std::future<ListAutomaticTapeCreationPoliciesOutcome> ListAutomaticTapeCreationPoliciesOutcomeCallable;
       typedef std::future<ListCacheReportsOutcome> ListCacheReportsOutcomeCallable;
@@ -514,6 +518,7 @@ namespace Aws
     typedef std::function<void(const StorageGatewayClient*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DisableGatewayRequest&, const Model::DisableGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DisassociateFileSystemRequest&, const Model::DisassociateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFileSystemResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::EvictFilesFailingUploadRequest&, const Model::EvictFilesFailingUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EvictFilesFailingUploadResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::JoinDomainRequest&, const Model::JoinDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > JoinDomainResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListAutomaticTapeCreationPoliciesRequest&, const Model::ListAutomaticTapeCreationPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutomaticTapeCreationPoliciesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListCacheReportsRequest&, const Model::ListCacheReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCacheReportsResponseReceivedHandler;

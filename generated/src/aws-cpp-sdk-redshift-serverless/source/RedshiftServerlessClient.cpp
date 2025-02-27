@@ -46,6 +46,7 @@
 #include <aws/redshift-serverless/model/GetScheduledActionRequest.h>
 #include <aws/redshift-serverless/model/GetSnapshotRequest.h>
 #include <aws/redshift-serverless/model/GetTableRestoreStatusRequest.h>
+#include <aws/redshift-serverless/model/GetTrackRequest.h>
 #include <aws/redshift-serverless/model/GetUsageLimitRequest.h>
 #include <aws/redshift-serverless/model/GetWorkgroupRequest.h>
 #include <aws/redshift-serverless/model/ListCustomDomainAssociationsRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/redshift-serverless/model/ListSnapshotsRequest.h>
 #include <aws/redshift-serverless/model/ListTableRestoreStatusRequest.h>
 #include <aws/redshift-serverless/model/ListTagsForResourceRequest.h>
+#include <aws/redshift-serverless/model/ListTracksRequest.h>
 #include <aws/redshift-serverless/model/ListUsageLimitsRequest.h>
 #include <aws/redshift-serverless/model/ListWorkgroupsRequest.h>
 #include <aws/redshift-serverless/model/PutResourcePolicyRequest.h>
@@ -799,6 +801,28 @@ GetTableRestoreStatusOutcome RedshiftServerlessClient::GetTableRestoreStatus(con
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetTrackOutcome RedshiftServerlessClient::GetTrack(const GetTrackRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetTrack);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrack, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetTrack, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTrack, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTrack",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTrackOutcome>(
+    [&]()-> GetTrackOutcome {
+      return GetTrackOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetUsageLimitOutcome RedshiftServerlessClient::GetUsageLimit(const GetUsageLimitRequest& request) const
 {
   AWS_OPERATION_GUARD(GetUsageLimit);
@@ -1055,6 +1079,28 @@ ListTagsForResourceOutcome RedshiftServerlessClient::ListTagsForResource(const L
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListTracksOutcome RedshiftServerlessClient::ListTracks(const ListTracksRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListTracks);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTracks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListTracks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListTracks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTracks",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListTracksOutcome>(
+    [&]()-> ListTracksOutcome {
+      return ListTracksOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },

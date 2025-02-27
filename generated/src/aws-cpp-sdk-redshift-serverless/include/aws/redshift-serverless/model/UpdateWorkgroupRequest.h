@@ -174,6 +174,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>An optional parameter for the name of the track for the workgroup. If you
+     * don't provide a track name, the workgroup is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline const Aws::String& GetTrackName() const{ return m_trackName; }
+    inline bool TrackNameHasBeenSet() const { return m_trackNameHasBeenSet; }
+    inline void SetTrackName(const Aws::String& value) { m_trackNameHasBeenSet = true; m_trackName = value; }
+    inline void SetTrackName(Aws::String&& value) { m_trackNameHasBeenSet = true; m_trackName = std::move(value); }
+    inline void SetTrackName(const char* value) { m_trackNameHasBeenSet = true; m_trackName.assign(value); }
+    inline UpdateWorkgroupRequest& WithTrackName(const Aws::String& value) { SetTrackName(value); return *this;}
+    inline UpdateWorkgroupRequest& WithTrackName(Aws::String&& value) { SetTrackName(std::move(value)); return *this;}
+    inline UpdateWorkgroupRequest& WithTrackName(const char* value) { SetTrackName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the workgroup to update. You can't update the name of a workgroup
      * once it is created.</p>
      */
@@ -217,6 +233,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    Aws::String m_trackName;
+    bool m_trackNameHasBeenSet = false;
 
     Aws::String m_workgroupName;
     bool m_workgroupNameHasBeenSet = false;
