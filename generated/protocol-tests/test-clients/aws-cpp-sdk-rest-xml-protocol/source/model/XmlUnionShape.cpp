@@ -104,7 +104,7 @@ XmlUnionShape& XmlUnionShape::operator =(const XmlNode& xmlNode)
     XmlNode unionValueNode = resultNode.FirstChild("unionValue");
     if(!unionValueNode.IsNull())
     {
-      m_unionValue = unionValueNode;
+      m_unionValue = Aws::MakeShared<XmlUnionShape>("XmlUnionShape", unionValueNode);
       m_unionValueHasBeenSet = true;
     }
     XmlNode structValueNode = resultNode.FirstChild("structValue");
@@ -186,7 +186,7 @@ void XmlUnionShape::AddToNode(XmlNode& parentNode) const
   if(m_unionValueHasBeenSet)
   {
    XmlNode unionValueNode = parentNode.CreateChildElement("unionValue");
-   m_unionValue.AddToNode(unionValueNode);
+   m_unionValue->AddToNode(unionValueNode);
   }
 
   if(m_structValueHasBeenSet)

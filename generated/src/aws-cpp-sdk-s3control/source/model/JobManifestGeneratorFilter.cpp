@@ -140,7 +140,7 @@ void JobManifestGeneratorFilter::AddToNode(XmlNode& parentNode) const
    XmlNode objectReplicationStatusesParentNode = parentNode.CreateChildElement("ObjectReplicationStatuses");
    for(const auto& item : m_objectReplicationStatuses)
    {
-     XmlNode objectReplicationStatusesNode = objectReplicationStatusesParentNode.CreateChildElement("ReplicationStatus");
+     XmlNode objectReplicationStatusesNode = objectReplicationStatusesParentNode.CreateChildElement("member");
      objectReplicationStatusesNode.SetText(ReplicationStatusMapper::GetNameForReplicationStatus(item));
    }
   }
@@ -172,7 +172,7 @@ void JobManifestGeneratorFilter::AddToNode(XmlNode& parentNode) const
    XmlNode matchAnyStorageClassParentNode = parentNode.CreateChildElement("MatchAnyStorageClass");
    for(const auto& item : m_matchAnyStorageClass)
    {
-     XmlNode matchAnyStorageClassNode = matchAnyStorageClassParentNode.CreateChildElement("S3StorageClass");
+     XmlNode matchAnyStorageClassNode = matchAnyStorageClassParentNode.CreateChildElement("member");
      matchAnyStorageClassNode.SetText(S3StorageClassMapper::GetNameForS3StorageClass(item));
    }
   }

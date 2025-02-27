@@ -55,7 +55,7 @@ StructArg& StructArg::operator =(const XmlNode& xmlNode)
     XmlNode recursiveArgNode = resultNode.FirstChild("RecursiveArg");
     if(!recursiveArgNode.IsNull())
     {
-      m_recursiveArg = recursiveArgNode;
+      m_recursiveArg = Aws::MakeShared<StructArg>("StructArg", recursiveArgNode);
       m_recursiveArgHasBeenSet = true;
     }
   }
@@ -79,7 +79,7 @@ void StructArg::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       Aws::StringStream recursiveArgLocationAndMemberSs;
       recursiveArgLocationAndMemberSs << location << index << locationValue << ".RecursiveArg";
-      m_recursiveArg.OutputToStream(oStream, recursiveArgLocationAndMemberSs.str().c_str());
+      m_recursiveArg->OutputToStream(oStream, recursiveArgLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -98,7 +98,7 @@ void StructArg::OutputToStream(Aws::OStream& oStream, const char* location) cons
   {
       Aws::String recursiveArgLocationAndMember(location);
       recursiveArgLocationAndMember += ".RecursiveArg";
-      m_recursiveArg.OutputToStream(oStream, recursiveArgLocationAndMember.c_str());
+      m_recursiveArg->OutputToStream(oStream, recursiveArgLocationAndMember.c_str());
   }
 }
 

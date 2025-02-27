@@ -67,7 +67,7 @@ void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream& oStream, cons
   {
       Aws::StringStream nestedLocationAndMemberSs;
       nestedLocationAndMemberSs << location << index << locationValue << ".nested";
-      m_nested.OutputToStream(oStream, nestedLocationAndMemberSs.str().c_str());
+      m_nested->OutputToStream(oStream, nestedLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -82,7 +82,7 @@ void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream& oStream, cons
   {
       Aws::String nestedLocationAndMember(location);
       nestedLocationAndMember += ".nested";
-      m_nested.OutputToStream(oStream, nestedLocationAndMember.c_str());
+      m_nested->OutputToStream(oStream, nestedLocationAndMember.c_str());
   }
 }
 

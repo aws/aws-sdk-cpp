@@ -1,0 +1,36 @@
+##-------------------- serializeXmlSinglePayloadElement macro
+#macro( serializeXmlSinglePayloadElement $spaces $serializationName $lowerCaseVarName $shapeMember $memberVarName $parentNode="parentNode")
+#if($shapeMember.xmlAttribute)
+## member should be serialized an XML Attribute
+#if($shapeMember.shape.boolean || $shapeMember.shape.primitive)
+  ${spaces}ss << #serializeXmlSingleElementToText($shapeMember, $memberVarName);
+  ${spaces}${parentNode}.SetAttributeValue("${serializationName}", ss.str());
+  ${spaces}ss.str("");
+#else
+  ${spaces}${parentNode}.SetAttributeValue("${serializationName}", #serializeXmlSingleElementToText($shapeMember, $memberVarName));
+#end
+#break##return
+#end##($shapeMember.xmlAttribute)
+## member should be serialized to an XML Element not Attribute
+  ${spaces}XmlNode ${lowerCaseVarName}Node = ${parentNode}.CreateChildElement("${serializationName}");
+#if($shapeMember.shape.boolean || $shapeMember.shape.primitive)
+  ${spaces}ss << #serializeXmlSingleElementToText($shapeMember, $memberVarName);
+  ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
+  ${spaces}ss.str("");
+#else
+#if($shapeMember.shape.structure)
+#if($shapeMember.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+##Also covers the union case
+  ${spaces}${memberVarName}->AddToNode(${lowerCaseVarName}Node);
+#else
+  ${spaces}${memberVarName}.AddToNode(${lowerCaseVarName}Node);
+#end
+#elseif($shapeMember.shape.list)
+#serializeXmlListPayloadElement($spaces, $serializationName, $lowerCaseVarName, $shapeMember, $memberVarName, true, "${lowerCaseVarName}Node")
+#elseif($shapeMember.shape.map)
+#serializeXmlMapPayloadElement($spaces, $serializationName, $lowerCaseVarName, $shapeMember, $memberVarName, true, "${lowerCaseVarName}Node")
+#else
+  ${spaces}${lowerCaseVarName}Node.SetText(#serializeXmlSingleElementToText($shapeMember, $memberVarName));
+#end
+#end
+#end##macro serializeXmlSinglePayloadElement

@@ -57,7 +57,7 @@ Aws::String XmlEnumsRequest::SerializePayload() const
    XmlNode fooEnumListParentNode = parentNode.CreateChildElement("fooEnumList");
    for(const auto& item : m_fooEnumList)
    {
-     XmlNode fooEnumListNode = fooEnumListParentNode.CreateChildElement("FooEnum");
+     XmlNode fooEnumListNode = fooEnumListParentNode.CreateChildElement("member");
      fooEnumListNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
    }
   }
@@ -67,7 +67,7 @@ Aws::String XmlEnumsRequest::SerializePayload() const
    XmlNode fooEnumSetParentNode = parentNode.CreateChildElement("fooEnumSet");
    for(const auto& item : m_fooEnumSet)
    {
-     XmlNode fooEnumSetNode = fooEnumSetParentNode.CreateChildElement("FooEnum");
+     XmlNode fooEnumSetNode = fooEnumSetParentNode.CreateChildElement("member");
      fooEnumSetNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
    }
   }

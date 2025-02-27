@@ -37,7 +37,14 @@ Aws::String NestedXmlMapWithXmlNameRequest::SerializePayload() const
      XmlNode nestedXmlMapWithXmlNameMapKeyNode = nestedXmlMapWithXmlNameMapMapEntryNode.CreateChildElement("OuterKey");
      nestedXmlMapWithXmlNameMapKeyNode.SetText(mapItem.first);
      XmlNode nestedXmlMapWithXmlNameMapValueNode = nestedXmlMapWithXmlNameMapMapEntryNode.CreateChildElement("value");
-     nestedXmlMapWithXmlNameMapValueNode.SetText(mapItem.second);
+     for(const auto& nestedXmlMapWithXmlNameMapValueNestedItem : mapItem.second)
+     {
+       XmlNode nestedXmlMapWithXmlNameMapValueMapEntryNode = nestedXmlMapWithXmlNameMapValueNode.CreateChildElement("entry");
+       XmlNode nestedXmlMapWithXmlNameMapValueKeyNode = nestedXmlMapWithXmlNameMapValueMapEntryNode.CreateChildElement("InnerKey");
+       nestedXmlMapWithXmlNameMapValueKeyNode.SetText(nestedXmlMapWithXmlNameMapValueNestedItem.first);
+       XmlNode nestedXmlMapWithXmlNameMapValueValueNode = nestedXmlMapWithXmlNameMapValueMapEntryNode.CreateChildElement("InnerValue");
+       nestedXmlMapWithXmlNameMapValueValueNode.SetText(nestedXmlMapWithXmlNameMapValueNestedItem.second);
+     }
    }
   }
 

@@ -76,7 +76,7 @@ void XmlNamespaceNested::AddToNode(XmlNode& parentNode) const
    XmlNode valuesParentNode = parentNode.CreateChildElement("values");
    for(const auto& item : m_values)
    {
-     XmlNode valuesNode = valuesParentNode.CreateChildElement("String");
+     XmlNode valuesNode = valuesParentNode.CreateChildElement("member");
      valuesNode.SetText(item);
    }
   }
