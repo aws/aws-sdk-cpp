@@ -91,6 +91,16 @@ class AWS_CORE_LOCAL BidirectionalEventStreamingTask final {
    * @return OutcomeT, operation response, NoResult on success. (Check InitialResponse for the actual service reply).
    */
   OutcomeT operator()() {
+    if(!m_clientThis->m_isInitialized)
+    {
+      AWS_LOGSTREAM_ERROR("BidirectionalEventStreamingTask", "Unable to call " <<
+        m_pRequest->GetServiceRequestName() << ": client is not initialized (or already terminated)");
+      m_handler(m_clientThis, *m_pRequest, Aws::Client::AWSError<CoreErrors>(CoreErrors::NOT_INITIALIZED,
+        "NOT_INITIALIZED", "Client is not initialized or already terminated", false), m_handlerContext);
+      return OutcomeT(NoResult());
+    }
+    Aws::Utils::RAIICounter raiiGuard(m_clientThis->m_operationsProcessed, &m_clientThis->m_shutdownSignal);
+
     const auto outcome = m_clientThis->MakeRequest(*m_pRequest, m_endpoint, m_method, m_signerName);
     if (outcome.IsSuccess()) {
       m_handler(m_clientThis, *m_pRequest, OutcomeT(NoResult()), m_handlerContext);

@@ -64,7 +64,7 @@ if(!m_isInitialized) \
   AWS_LOGSTREAM_ERROR(#OPERATION, "Unable to call " #OPERATION ": client is not initialized (or already terminated)"); \
   return Aws::Client::AWSError<CoreErrors>(CoreErrors::NOT_INITIALIZED, "NOT_INITIALIZED", "Client is not initialized or already terminated", false); \
 } \
-Aws::Utils::RAIICounter(this->m_operationsProcessed, &this->m_shutdownSignal)
+Aws::Utils::RAIICounter raiiGuard(this->m_operationsProcessed, &this->m_shutdownSignal)
 
 #define AWS_ASYNC_OPERATION_GUARD(OPERATION) \
 if(!m_isInitialized) \
@@ -72,4 +72,4 @@ if(!m_isInitialized) \
   AWS_LOGSTREAM_ERROR(#OPERATION, "Unable to call " #OPERATION ": client is not initialized (or already terminated)"); \
   return handler(this, request, Aws::Client::AWSError<CoreErrors>(CoreErrors::NOT_INITIALIZED, "NOT_INITIALIZED", "Client is not initialized or already terminated", false), handlerContext); \
 } \
-Aws::Utils::RAIICounter(this->m_operationsProcessed, &this->m_shutdownSignal)
+Aws::Utils::RAIICounter raiiGuard(this->m_operationsProcessed, &this->m_shutdownSignal)

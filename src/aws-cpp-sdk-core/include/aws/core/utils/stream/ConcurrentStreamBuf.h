@@ -41,6 +41,11 @@ namespace Aws
                  */
                 bool WaitForDrain(int64_t timeoutMs);
 
+                /**
+                 * A flag returned by underflow() if there is no data available at the moment but stream must not be closed yet.
+                 */
+                static const int noData;
+
             protected:
                 std::streampos seekoff(std::streamoff off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
                 std::streampos seekpos(std::streampos pos, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;

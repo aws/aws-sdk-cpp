@@ -15,6 +15,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 #include <aws/core/utils/stream/AwsChunkedStream.h>
+#include <aws/core/utils/stream/ConcurrentStreamBuf.h>
 
 #include <algorithm>
 #include <cassert>
@@ -315,12 +316,18 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
     {
         size_t amountRead = 0;
         if (isStreaming) {
-          if (!ioStream->eof() && ioStream->peek() != EOF) {
-            amountRead = (size_t)ioStream->readsome(ptr, amountToRead);
+          if (ioStream->bad()) {
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Input stream is bad!");
+            return CURL_READFUNC_ABORT;
           }
-          if (amountRead == 0 && !ioStream->eof()) {
+          const int peekVal = ioStream->peek();
+          if (peekVal == ConcurrentStreamBuf::noData) {
             return CURL_READFUNC_PAUSE;
           }
+          if (ioStream->eof() || peekVal == EOF) {
+            return 0;
+          }
+          amountRead = (size_t)ioStream->readsome(ptr, amountToRead);
         } else if (isAwsChunked && context->m_chunkedStream != nullptr) {
           amountRead = context->m_chunkedStream->BufferedRead(ptr, amountToRead);
         } else {
@@ -417,9 +424,9 @@ int CurlHttpClient::CurlProgressCallback(void *userdata, double, double, double,
     }
 
     const int peekVal = ioStream->peek();
-    if (ioStream->eof() && peekVal == std::char_traits<char>::eof()) {
+    if (ioStream->eof() || peekVal == std::char_traits<char>::eof()) {
       // curl won't call ReadBody after the last ReadBody call returns 0
-      // however, this Progress method is still called few times for incoming data.
+      curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
       return 0;
     }
 
@@ -432,10 +439,10 @@ int CurlHttpClient::CurlProgressCallback(void *userdata, double, double, double,
       // we should use multi handle or another HTTP client in the future to avoid this
       curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
     } else {
-      if (peekVal != std::char_traits<char>::eof()) {
-        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
-      } else {
+      if (peekVal == ConcurrentStreamBuf::noData) {
         curl_easy_pause(context->m_curlHandle, CURLPAUSE_SEND);
+      } else {
+        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
       }
     }
 
