@@ -15,10 +15,11 @@ namespace Aws
         namespace Stream
         {
             const char TAG[] = "ConcurrentStreamBuf";
+
+            const int ConcurrentStreamBuf::noData = ((((('n' << 8) | 'z') << 8) | 'm') << 8) | 'a';
+
             ConcurrentStreamBuf::ConcurrentStreamBuf(size_t bufferLength) :
-                m_putArea(bufferLength), // we access [0] of the put area below so we must initialize it.
-                m_eofInput(false),
-                m_eofOutput(false)
+                m_putArea(bufferLength) // we access [0] of the put area below so we must initialize it.
             {
                 m_getArea.reserve(bufferLength);
                 m_backbuf.reserve(bufferLength);
@@ -163,7 +164,7 @@ namespace Aws
                     if (!lock.try_lock())
                     {
                         // don't block consumer, it will retry asking later
-                        return 'z'; // just returning some valid value other than EOF
+                        return noData;
                     }
 
                     if (m_eofInput && m_backbuf.empty())
@@ -187,10 +188,10 @@ namespace Aws
                 char* gbegin = reinterpret_cast<char*>(m_getArea.data());
                 setg(gbegin, gbegin, gbegin + m_getArea.size());
 
-                if (!m_getArea.empty())
+                if (!m_getArea.empty()) {
                   return std::char_traits<char>::to_int_type(*gptr());
-                else
-                  return 'a'; // just returning some valid value other than EOF
+                }
+                return noData;
             }
 
             int ConcurrentStreamBuf::uflow()

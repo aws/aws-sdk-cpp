@@ -217,7 +217,7 @@ TEST_F(TranscribeStreamingErrorTests, TranscribeTerminateByLowSpeedLimit) {
         }
         TestTrace(Aws::String("Writing good event"));
         if (!stream.WriteAudioEvent(event)) {
-          AWS_ADD_FAILURE("Failed to write an audio event");
+          // the stream may be force closed by timeout, no test assertion here.
           break;
         }
       }
