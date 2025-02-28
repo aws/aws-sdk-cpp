@@ -14,6 +14,8 @@ namespace Aws
 namespace Client
 {
     class AsyncCallerContext;
+    template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
+    class BidirectionalEventStreamingTask;
 
     /**
      * A helper to determine if AWS Operation is EventStream-enabled or not (based on const-ness of the request)
@@ -204,6 +206,9 @@ namespace Client
             return Aws::Client::MakeCallableOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, clientThis->m_clientConfiguration.executor.get());
         }
     protected:
+        template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
+        friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to access m_isInitialized
+
         std::atomic<bool> m_isInitialized;
         mutable std::atomic<size_t> m_operationsProcessed;
         mutable std::condition_variable m_shutdownSignal;

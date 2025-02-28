@@ -126,7 +126,6 @@ void DefaultExecutor::impl::Detach(std::thread::id id) {
   assert(it != m_tasks.end());
   it->second.first.detach();
   m_tasks.erase(it);
-  m_state = State::Free;
   m_cv.notify_one();
 }
 
