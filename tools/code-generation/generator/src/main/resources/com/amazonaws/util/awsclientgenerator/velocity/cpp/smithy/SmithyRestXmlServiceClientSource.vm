@@ -82,7 +82,7 @@ Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableW
   ss << "?" << requestToConvert.SerializePayload();
   endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
 
-  return GeneratePresignedUrl(endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, region, GetServiceName(), 3600, {}, {});
 }
 
 #end
