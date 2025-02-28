@@ -718,15 +718,25 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
         context.put("RequestlessOperations", requestlessOperations);
-        Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
-        if(firstAuthScheme.isPresent())
+        
+        if(serviceModel.getAuthSchemes().size() > 1)
         {
-            context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
+            context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
+            context.put("IsMultiAuth", true);
         }
         else
         {
-            throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
-            ));
+            Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
+
+            if(firstAuthScheme.isPresent())
+            {
+                context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
+            }
+            else
+            {
+                throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
+                ));
+            }
         }
         context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
 
@@ -736,23 +746,34 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    protected SdkFileEntry GenerateSmithyClientSourceFile(final ServiceModel serviceModel, int i) {
+    protected SdkFileEntry GenerateSmithyClientSourceFile(final ServiceModel serviceModel, int i, Optional<String> templateFile) {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSource.vm", StandardCharsets.UTF_8.name());
+        String templatePath = templateFile.orElse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSource.vm");
+        Template template = velocityEngine.getTemplate(templatePath, StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
-        Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
-        if(firstAuthScheme.isPresent())
+            
+        if(serviceModel.getAuthSchemes().size() > 1)
         {
-            context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
+            context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
         }
         else
         {
-            throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
-            ));
+            Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
+
+            if(firstAuthScheme.isPresent())
+            {
+                context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
+            }
+            else
+            {
+                throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
+                ));
+            }
         }
         context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModel));
+        context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
 
         final String fileName;
         if (i == 0) {
@@ -788,7 +809,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
             "bearer", "smithy::BearerTokenAuthScheme",
             "v4","smithy::SigV4AuthScheme",
-            "sigv4-s3express","S3::S3ExpressSigV4AuthScheme"
+            "sigv4-s3express","S3::S3ExpressSigV4AuthScheme",
+            "v2","smithy::SigV4AuthScheme"
     );
 
     protected String mapAuthSchemes(final String authSchemeName) {
@@ -804,14 +826,16 @@ public abstract class CppClientGenerator implements ClientGenerator {
             "aws.auth#sigv4a", "smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption",
             "bearer", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption",
             "v4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
-            "sigv4-s3express", "S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption"
+            "sigv4-s3express", "S3::S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption",
+            "v2", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption"
     );
 
-    private static final Map<String, String> ResolverMapping = ImmutableMap.of(
+    protected static final Map<String, String> ResolverMapping = ImmutableMap.of(
             "aws.auth#sigv4", "SigV4AuthSchemeResolver",
             "aws.auth#sigv4a", "SigV4aAuthSchemeResolver",
             "bearer", "BearerTokenAuthSchemeResolver",
-            "v4", "SigV4AuthSchemeResolver"
+            "v4", "SigV4AuthSchemeResolver",
+            "v2", "SigV4AuthSchemeResolver"
     );
 
 

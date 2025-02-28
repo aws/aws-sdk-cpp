@@ -6,16 +6,19 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudfront/CloudFrontServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <aws/cloudfront/CloudFrontErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudFront
 {
+  AWS_CLOUDFRONT_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront
    * API Reference</i>. This guide is for developers who need detailed information
@@ -24,12 +27,20 @@ namespace CloudFront
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
    * CloudFront Developer Guide</a>.</p></p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>
+  class AWS_CLOUDFRONT_API CloudFrontClient : smithy::client::AwsSmithyClientT<Aws::CloudFront::SERVICE_NAME,
+      Aws::CloudFront::CloudFrontClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudFrontEndpointProviderBase,
+      smithy::client::XmlOutcomeSerializer,
+      smithy::client::XmlOutcome,
+      Aws::Client::CloudFrontErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>
   {
     public:
-      typedef Aws::Client::AWSXMLClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudFront"; }
 
       typedef CloudFrontClientConfiguration ClientConfigurationType;
       typedef CloudFrontEndpointProvider EndpointProviderType;
@@ -81,7 +92,6 @@ namespace CloudFront
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudFrontClient();
-
 
         /**
          * <p>Associates an alias (also known as a CNAME or an alternate domain name) with
@@ -3692,14 +3702,11 @@ namespace CloudFront
         }
 
 
-        void OverrideEndpoint(const Aws::String& endpoint);
-        std::shared_ptr<CloudFrontEndpointProviderBase>& accessEndpointProvider();
-  private:
-        friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>;
-        void init(const CloudFrontClientConfiguration& clientConfiguration);
+      void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudFrontEndpointProviderBase>& accessEndpointProvider();
+    private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>;
 
-        CloudFrontClientConfiguration m_clientConfiguration;
-        std::shared_ptr<CloudFrontEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudFront
