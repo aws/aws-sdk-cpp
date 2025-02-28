@@ -15,10 +15,15 @@ import com.google.common.collect.ImmutableMap;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import static com.amazonaws.util.awsclientgenerator.generators.cpp.CppClientGenerator.ResolverMapping;
+
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
@@ -29,8 +34,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
     @Override
     protected SdkFileEntry generateErrorMarshallerHeaderFile(ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
-
+        Template template  = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
 
@@ -42,11 +46,39 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
         context.put("RequestlessOperations", requestlessOperations);
+        Template template;
+        if (serviceModel.isUseSmithyClient())
+        {
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientHeader.vm", StandardCharsets.UTF_8.name());
+            if(serviceModel.getAuthSchemes().size() > 1)
+            {
+                context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
+                context.put("IsMultiAuth", true);
+            }
+            else
+            {
+                Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
+
+                if(firstAuthScheme.isPresent())
+                {
+                    context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
+                }
+                else
+                {
+                    throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
+                    ));
+                }
+            }
+            context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));    
+        }
+        else 
+        {
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm", StandardCharsets.UTF_8.name());
+        }
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
@@ -55,25 +87,38 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
     }
 
     @Override
-    protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
-        List<SdkFileEntry> sourceFiles = new ArrayList<>();
+    protected SdkFileEntry GenerateLegacyClientSourceFile(final ServiceModel serviceModel, int i){
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm", StandardCharsets.UTF_8.name());
-        for (int i = 0; i < serviceModels.size(); i++) {
-            VelocityContext context = createContext(serviceModels.get(i));
-            context.put("CppViewHelper", CppViewHelper.class);
 
-            final String fileName;
-            if (i == 0) {
-                context.put("onlyGeneratedOperations", false);
-                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
-            } else {
-                context.put("onlyGeneratedOperations", true);
-                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
-            }
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
 
-            sourceFiles.add(makeFile(template, context, fileName, true));
+        final String fileName;
+        if (i == 0) {
+            context.put("onlyGeneratedOperations", false);
+            fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        } else {
+            context.put("onlyGeneratedOperations", true);
+            fileName = String.format("source/%sClient%d.cpp", serviceModel.getMetadata().getClassNamePrefix(), i);
         }
-        return sourceFiles;
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
+        List<Integer> serviceModelsIndices = IntStream.range(0, serviceModels.size()).boxed().collect(Collectors.toList());
+
+        return serviceModelsIndices.stream().map(index -> 
+        {
+            if(serviceModels.get(index).isUseSmithyClient() && !serviceModels.get(index).hasEventStreamingRequestShapes())
+            {
+                return GenerateSmithyClientSourceFile(serviceModels.get(index), index, Optional.of("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyRestXmlServiceClientSource.vm"));
+            }
+            else
+            {
+                return GenerateLegacyClientSourceFile(serviceModels.get(index), index);
+            }
+        }).collect(Collectors.toList()); 
     }
 
     @Override
