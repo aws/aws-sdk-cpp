@@ -44,7 +44,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals(c2jMetadata.getApiVersion(), metadata.getApiVersion());
         assertEquals(c2jMetadata.getEndpointPrefix(), metadata.getEndpointPrefix());
         assertEquals(c2jMetadata.getJsonVersion(), metadata.getJsonVersion());
-        assertEquals(c2jMetadata.getProtocol(), metadata.getProtocol());
+        assertEquals(c2jMetadata.getProtocol(), metadata.findFirstSupportedProtocol());
         assertEquals("ServiceAbbr", metadata.getNamespace());
         assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
         assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
@@ -57,7 +57,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals(c2jMetadata.getApiVersion(), metadata.getApiVersion());
         assertEquals(c2jMetadata.getEndpointPrefix(), metadata.getEndpointPrefix());
         assertEquals(c2jMetadata.getJsonVersion(), metadata.getJsonVersion());
-        assertEquals(c2jMetadata.getProtocol(), metadata.getProtocol());
+        assertEquals(c2jMetadata.getProtocol(), metadata.findFirstSupportedProtocol());
         assertEquals("ServiceAbbr", metadata.getNamespace());
         assertEquals(c2jMetadata.getServiceFullName(), metadata.getServiceFullName());
         assertEquals(c2jMetadata.getSignatureVersion(), metadata.getSignatureVersion());
@@ -84,7 +84,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertTrue(metadata.isStandalone());
         assertTrue(metadata.isApigateway());
         assertEquals("service-abbr.execute-api", metadata.getEndpointPrefix());
-        assertEquals("application-json", metadata.getProtocol());
+        assertEquals("application-json", metadata.findFirstSupportedProtocol());
     }
 
     @Test

@@ -47,7 +47,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($spaces = "  ")
 #end
 #if($member.value.shape.list)
-#if($metadata.protocol != "ec2")
+#if($metadata.findFirstSupportedProtocol() != "ec2")
 #set($spaces = "    ")
     if (${memberVarName}.empty())
     {
@@ -64,7 +64,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($location = $member.value.shape.listMember.queryName)
 #elseif($member.value.shape.listMember.locationName)
 #set($location = $member.value.shape.listMember.locationName)
-#if($metadata.protocol == "ec2")
+#if($metadata.findFirstSupportedProtocol() == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
 #end
 #else
@@ -75,10 +75,10 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($location = $member.value.queryName)
 #elseif($member.value.locationName)
 #set($location = $member.value.locationName)
-#if($metadata.protocol == "ec2")
+#if($metadata.findFirstSupportedProtocol() == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
 #end
-#elseif($metadata.protocol == "ec2")
+#elseif($metadata.findFirstSupportedProtocol() == "ec2")
 #set($location = $member.key)
 #elseif($member.value.shape.listMember.locationName)
 #set($location = $member.key + "." + $member.value.shape.listMember.locationName)
@@ -106,7 +106,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
   ${spaces}  ${varName}Count++;
   ${spaces}}
-#if($metadata.protocol != "ec2")
+#if($metadata.findFirstSupportedProtocol() != "ec2")
 ${spaces}}
 #end
 #elseif($member.value.shape.map)##--#if($member.value.shape.list)
@@ -171,7 +171,7 @@ ${spaces}}
 #set($location = $member.value.queryName)
 #elseif($member.value.locationName)
 #set($location = $member.value.locationName)
-#if($metadata.protocol == "ec2")
+#if($metadata.findFirstSupportedProtocol() == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
 #end
 #else

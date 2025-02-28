@@ -3,7 +3,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
-#set($payloadType = ${CppViewHelper.computeServicePayloadType($metadata.protocol)})
+#set($payloadType = ${CppViewHelper.computeServicePayloadType($metadata.findFirstSupportedProtocol())})
 #set($nonCoreServiceErrors = $serviceModel.getNonCoreServiceErrors())
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/HashingUtils.h>

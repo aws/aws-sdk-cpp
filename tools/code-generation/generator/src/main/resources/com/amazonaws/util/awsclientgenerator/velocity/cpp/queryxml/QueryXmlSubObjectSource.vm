@@ -94,7 +94,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
   ${spaces}for(auto& item : ${memberVarName})
   ${spaces}{
-#if($metadata.protocol == "ec2")
+#if($metadata.findFirstSupportedProtocol() == "ec2")
 #if($member.queryName)
 #set($location = $member.queryName)
 #elseif($member.locationName)
@@ -246,10 +246,10 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #set($location = $member.shape.listMember.queryName)
 #elseif($member.shape.listMember.locationName)
 #set($location = $member.shape.listMember.locationName)
-#if($metadata.protocol == "ec2")
+#if($metadata.findFirstSupportedProtocol() == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
 #end
-#elseif($metadata.protocol == "ec2")
+#elseif($metadata.findFirstSupportedProtocol() == "ec2")
 #set($location = $memberName)
 #else
 #set($location = $memberName + ".member")

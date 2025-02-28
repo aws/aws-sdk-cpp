@@ -176,7 +176,9 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
 
         // add protocol check. only for json, query protocols
-        if (serviceModel.getMetadata().getProtocol().equals("json")) {
+        final String protocol = serviceModel.getMetadata().findFirstSupportedProtocol();
+
+        if ("json".equals(protocol)) {
             serviceModel.getMetadata().setAwsQueryCompatible(
                     c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
         } else {
@@ -258,6 +260,7 @@ public class C2jModelToGeneratorModelTransformer {
             metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
             metadata.setProtocol(c2jMetadata.getProtocol());
         }
+        metadata.setProtocols(c2jMetadata.getProtocols());
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
         metadata.setServiceFullName(c2jMetadata.getServiceFullName());
         metadata.setSignatureVersion(c2jMetadata.getSignatureVersion());

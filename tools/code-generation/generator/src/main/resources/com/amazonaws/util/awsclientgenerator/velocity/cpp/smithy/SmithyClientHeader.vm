@@ -4,10 +4,10 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 #set($className = "${metadata.classNamePrefix}Client")
-#if($serviceModel.metadata.protocol == "json" || $serviceModel.metadata.protocol == "rest-json" || $serviceModel.metadata.protocol == "application-json")
+#if($serviceModel.metadata.findFirstSupportedProtocol() == "json" || $serviceModel.metadata.findFirstSupportedProtocol() == "rest-json" || $serviceModel.metadata.findFirstSupportedProtocol() == "application-json")
 #set($serializer = "JsonOutcomeSerializer")
 #set($serializerOutcome = "JsonOutcome")
-#elseif($serviceModel.metadata.protocol == "rest-xml" || $serviceModel.metadata.protocol == "query")
+#elseif($serviceModel.metadata.findFirstSupportedProtocol() == "rest-xml" || $serviceModel.metadata.findFirstSupportedProtocol() == "query")
 #set($serializer = "XmlOutcomeSerializer")
 #set($serializerOutcome = "XmlOutcome")
 #end

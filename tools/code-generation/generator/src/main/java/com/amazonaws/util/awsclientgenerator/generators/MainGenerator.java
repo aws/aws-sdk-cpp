@@ -49,7 +49,7 @@ public class MainGenerator {
 
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 
-        String protocol = serviceModel.getMetadata().getProtocol();
+        String protocol = serviceModel.getMetadata().findFirstSupportedProtocol();
         ClientGenerator clientGenerator = ServiceGeneratorConfig.findGenerator(spec, protocol);
 
         //use serviceName and version to convert the json over.
