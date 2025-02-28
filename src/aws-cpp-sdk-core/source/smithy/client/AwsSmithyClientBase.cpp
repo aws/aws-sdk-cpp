@@ -152,10 +152,129 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
     return httpRequest;
 }
 
-void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request,
+
+void AwsSmithyClientBase::MakeRequestWithUriAsync(Aws::AmazonWebServiceRequest const* const request,
+    const Aws::Http::URI& uri,
+    const char* signerName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride,
+    const char* requestName,
+    Aws::Http::HttpMethod method,
+    ResponseHandlerFunc&& responseHandler,
+    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor
+) const
+{
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
+        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
+
+    if (signerName) {
+        pRequestCtx->m_signerNameOverride = signerName;
+    }
+    if (signerRegionOverride) {
+        pRequestCtx->m_signerRegionOverride = signerRegionOverride;
+    }
+    if (signerServiceNameOverride) {
+        pRequestCtx->m_signerServiceNameOverride = signerServiceNameOverride;
+    }
+
+    ResolveEndpointCallback resolveEndpointCb = 
+    [&](std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) -> bool{ 
+
+        if(!pRequestCtx)
+        {
+            return false;
+        }
+
+        pRequestCtx->m_endpoint.SetURI(uri);
+
+        if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
+        {
+            AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
+            auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+            pExecutor->Submit([outcome, responseHandler]() mutable
+            {
+                responseHandler(std::move(outcome));
+            } );
+            return false;
+        }
+        return true;
+    };
+
+    MakeRequestAsyncHelper(
+        pRequestCtx,
+        request,
+        requestName,
+        method,
+        std::move(resolveEndpointCb),
+        std::move(responseHandler),
+        pExecutor);
+}
+
+
+void AwsSmithyClientBase::MakeRequestWithEndpointAsync(Aws::AmazonWebServiceRequest const* const request,
+    const Aws::Endpoint::AWSEndpoint& endpoint,
+    const char* signerName,
+    const char* signerRegionOverride,
+    const char* signerServiceNameOverride,
+    const char* requestName,
+    Aws::Http::HttpMethod method,
+    ResponseHandlerFunc&& responseHandler,
+    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor
+) const
+{
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
+        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
+
+    if (signerName) {
+        pRequestCtx->m_signerNameOverride = signerName;
+    }
+    if (signerRegionOverride) {
+        pRequestCtx->m_signerRegionOverride = signerRegionOverride;
+    }
+    if (signerServiceNameOverride) {
+        pRequestCtx->m_signerServiceNameOverride = signerServiceNameOverride;
+    }
+
+    ResolveEndpointCallback resolveEndpointCb = 
+    [&](std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) -> bool{ 
+
+        if(!pRequestCtx)
+        {
+            return false;
+        }
+
+        pRequestCtx->m_endpoint = endpoint;
+
+        if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
+        {
+            AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
+            auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+            pExecutor->Submit([outcome, responseHandler]() mutable
+            {
+                responseHandler(std::move(outcome));
+            } );
+            return false;
+        }
+        return true;
+    };
+
+    MakeRequestAsyncHelper(
+        pRequestCtx,
+        request,
+        requestName,
+        method,
+        std::move(resolveEndpointCb),
+        std::move(responseHandler),
+        pExecutor);
+}
+
+
+
+void AwsSmithyClientBase::MakeRequestAsyncHelper(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+                                           Aws::AmazonWebServiceRequest const* const request,
                                            const char* requestName,
                                            Aws::Http::HttpMethod method,
-                                           EndpointUpdateCallback&& endpointCallback,
+                                           ResolveEndpointCallback&& resolveEndpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
 {
@@ -166,8 +285,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         return;
     }
 
-    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
-        Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
     if (!pRequestCtx)
     {
         AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
@@ -198,45 +315,87 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
     pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
     assert(pRequestCtx->m_authSchemeOption.schemeId);
-    Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
-    const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
-    epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
-    auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
-    if (!epResolutionOutcome.IsSuccess())
+    if (resolveEndpointCallback)
     {
-        auto epOutcome = ResolveEndpointOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
-            Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-            epResolutionOutcome.GetError().GetExceptionName(),
-            epResolutionOutcome.GetError().GetMessage(),
-            false});
-
-        pExecutor->Submit([epOutcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(epOutcome));
-          } );
-        return;
-    }
-    pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
-
-    if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
-    {
-        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
-        auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
-        pExecutor->Submit([outcome, responseHandler]() mutable
-          {
-              responseHandler(std::move(outcome));
-          } );
-        return;
+        if(!resolveEndpointCallback(pRequestCtx))
+        {
+            return;
+        }
     }
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
-    pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
+    if (request)
+    {
+      pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
+    }
     pRequestCtx->m_responseHandler = std::move(responseHandler);
     AttemptOneRequestAsync(std::move(pRequestCtx));
 }
 
-void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, smithy::AuthSchemeOption& authscheme) const
+
+void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request,
+                                           const char* requestName,
+                                           Aws::Http::HttpMethod method,
+                                           EndpointUpdateCallback&& endpointCallback,
+                                           ResponseHandlerFunc&& responseHandler,
+                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
 {
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
+    Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
+    
+    ResolveEndpointCallback resolveEndpointCb = 
+    [&](std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) -> bool{ 
+        if(!pRequestCtx)
+        {
+            return false;
+        }
+        Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
+        const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
+        epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+        auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+        if (!epResolutionOutcome.IsSuccess())
+        {
+            auto epOutcome = ResolveEndpointOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
+                Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                epResolutionOutcome.GetError().GetExceptionName(),
+                epResolutionOutcome.GetError().GetMessage(),
+                false});
+
+            pExecutor->Submit([epOutcome, responseHandler]() mutable
+            {
+                responseHandler(std::move(epOutcome));
+            } );
+            return false;
+        }
+        pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+
+        if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
+        {
+            AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Invalid DNS Label found in URI host");
+            auto outcome = HttpResponseOutcome(ClientError(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+            pExecutor->Submit([outcome, responseHandler]() mutable
+            {
+                responseHandler(std::move(outcome));
+            } );
+            return false;
+        }
+        return true;
+    };
+
+    MakeRequestAsyncHelper(
+        pRequestCtx,
+        request,
+        requestName,
+        method,
+        std::move(resolveEndpointCb),
+        std::move(responseHandler),
+        pExecutor);
+}
+
+void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) const
+{
+    auto& authscheme = pRequestCtx->m_authSchemeOption;
+    const auto& endpoint = pRequestCtx->m_endpoint;
     //Overrides from endpoint
     if (endpoint.GetAttributes()) {
         auto authschemeName = endpoint.GetAttributes()->authScheme.GetName();
@@ -251,6 +410,17 @@ void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSE
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             auto signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName();
             authscheme.putSignerProperty(smithy::SIGNER_SERVICE_NAME, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
+        }
+    }
+    else
+    {
+        if(pRequestCtx->m_signerRegionOverride.has_value())
+        {
+            authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY, Aws::Crt::Variant<Aws::String, bool>(Aws::String(pRequestCtx->m_signerRegionOverride.value().c_str())));
+        }
+        if(pRequestCtx->m_signerServiceNameOverride.has_value())
+        {
+            authscheme.putSignerProperty(smithy::SIGNER_SERVICE_NAME, Aws::Crt::Variant<Aws::String, bool>(Aws::String(pRequestCtx->m_signerServiceNameOverride.value().c_str())));
         }
     }
 }
@@ -268,7 +438,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
     auto pExecutor = pRequestCtx->m_pExecutor;
 
     //This is extracted here so that on retry with correct region, signer region override is honored
-    UpdateAuthSchemeFromEndpoint(pRequestCtx->m_endpoint, pRequestCtx->m_authSchemeOption);
+    UpdateAuthSchemeFromEndpoint(pRequestCtx);
 
     TracingUtils::MakeCallWithTiming(
       [&]() -> void {
@@ -290,18 +460,21 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
         return;
     }
 
-    pRequestCtx->m_interceptorContext->SetTransmitRequest(pRequestCtx->m_httpRequest);
-    for (const auto& interceptor : m_interceptors)
+    if (pRequestCtx->m_interceptorContext)
     {
+      pRequestCtx->m_interceptorContext->SetTransmitRequest(pRequestCtx->m_httpRequest);
+      for (const auto& interceptor : m_interceptors)
+      {
         auto modifiedRequest = interceptor->ModifyBeforeSigning(*pRequestCtx->m_interceptorContext);
         if (!modifiedRequest.IsSuccess())
         {
-            pExecutor->Submit([modifiedRequest, responseHandler]() mutable
-              {
-                  responseHandler(modifiedRequest.GetError());
-              });
-            return;
+          pExecutor->Submit([modifiedRequest, responseHandler]() mutable
+            {
+                responseHandler(modifiedRequest.GetError());
+            });
+          return;
         }
+      }
     }
 
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
@@ -392,15 +565,18 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 {
     assert(pRequestCtx && httpResponse);
 
-    pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
-    for (const auto& interceptor : m_interceptors)
+    if (pRequestCtx->m_interceptorContext)
     {
+      pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
+      for (const auto& interceptor : m_interceptors)
+      {
         const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(*pRequestCtx->m_interceptorContext);
         if (!modifiedResponse.IsSuccess())
         {
-            return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
+          return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
         }
-    };
+      };
+    }
 
     Aws::Client::HttpResponseOutcome outcome = [&]()
     {

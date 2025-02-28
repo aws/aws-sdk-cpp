@@ -74,16 +74,17 @@ namespace client
         using HttpRequest = Aws::Http::HttpRequest;
         using HttpResponse = Aws::Http::HttpResponse;
         using CoreErrors = Aws::Client::CoreErrors;
-        using AWSError = Aws::Client::AWSError<CoreErrors>;
-        using ClientError = AWSError;
-        using SigningError = AWSError;
+        using AWSCoreError = Aws::Client::AWSError<CoreErrors>;
+        using ClientError = AWSCoreError;
+        using SigningError = AWSCoreError;
         using SigningOutcome = Aws::Utils::FutureOutcome<std::shared_ptr<Aws::Http::HttpRequest>, SigningError>;
         using EndpointUpdateCallback = std::function<void(Aws::Endpoint::AWSEndpoint&)>;
-        using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError>;
+        using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSCoreError>;
         using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
-        using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
-        using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
-        using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSError >;
+        using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSCoreError>;
+        using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSCoreError>;
+        using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSCoreError >;
+        using ResolveEndpointCallback = std::function <bool (std::shared_ptr<AwsSmithyClientAsyncRequestContext>& )>;
 
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
@@ -144,6 +145,42 @@ namespace client
         void AppendToUserAgent(const Aws::String& valueToAppend);
 
     protected:
+        
+        //for backwards compatibility
+        void MakeRequestWithUriAsync(Aws::AmazonWebServiceRequest const* const request,
+            const Aws::Http::URI& uri,
+            const char* signerName,
+            const char* signerRegionOverride,
+            const char* signerServiceNameOverride,
+            const char* requestName,
+            Aws::Http::HttpMethod method,
+            ResponseHandlerFunc&& responseHandler,
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+
+        void MakeRequestAsyncHelper(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+            Aws::AmazonWebServiceRequest const* const request,
+            const char* requestName,
+            Aws::Http::HttpMethod method,
+            ResolveEndpointCallback&& resolveEndpointCallback,
+            ResponseHandlerFunc&& responseHandler,
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+
+        void MakeRequestWithEndpointAsync(Aws::AmazonWebServiceRequest const* const request,
+                const Aws::Endpoint::AWSEndpoint& endpoint,
+                const char* signerName,
+                const char* signerRegionOverride,
+                const char* signerServiceNameOverride,
+                const char* requestName,
+                Aws::Http::HttpMethod method,
+                ResponseHandlerFunc&& responseHandler,
+                std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor
+            ) const;
+
+        const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& GetErrorMarshaller() const
+        {
+            return m_errorMarshaller;
+        }
+
         void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
           const Aws::String& serviceName,
           std::shared_ptr<Aws::Http::HttpClient> httpClient,
@@ -200,7 +237,7 @@ namespace client
         Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
         std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
     private:
-        void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
+        void UpdateAuthSchemeFromEndpoint(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) const;
     };
 } // namespace client
 } // namespace smithy

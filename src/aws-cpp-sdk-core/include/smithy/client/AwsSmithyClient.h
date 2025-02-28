@@ -24,6 +24,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
 
 namespace smithy {
 namespace client
@@ -153,7 +154,26 @@ namespace client
                 }
             }
 
-            Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+            Aws::Vector<AuthSchemeOption> authSchemeOptions;
+            /*for backwards compatibility, signer name override is used to filter auth schemes by id equivalent to legacy signer name*/
+            if(ctx.m_signerNameOverride.has_value())
+            {
+                auto allAuthSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+                const std::unordered_map<Aws::String, Aws::String> signerNameMap {
+                    {Aws::Auth::SIGV4_SIGNER, Aws::String{smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId}},
+                };
+                //use mapped name of legacy signer override if any
+                auto signerNameIt = signerNameMap.find(ctx.m_signerNameOverride.value());
+                auto signerName = signerNameIt != signerNameMap.end() ? signerNameIt->second : ctx.m_signerNameOverride.value();
+                auto filterCondition = [&signerName](const AuthSchemeOption& option) {
+                    return signerName == option.schemeId;
+                };
+                std::copy_if(allAuthSchemeOptions.begin(), allAuthSchemeOptions.end(), std::back_inserter(authSchemeOptions), filterCondition);
+            }
+            else
+            {
+                authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
+            }
 
             auto authSchemeOptionIt = std::find_if(authSchemeOptions.begin(), authSchemeOptions.end(),
                                                    [this](const AuthSchemeOption& opt)
@@ -190,13 +210,68 @@ namespace client
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 
+        Aws::String GeneratePresignedUrl(
+            const Aws::String& bucket,
+            EndpointUpdateCallback&& endpointCallback,
+            Aws::Http::HttpMethod method,
+            const Aws::String& region,
+            const Aws::String& serviceName,
+            long long expirationInSeconds,
+            const Aws::Http::HeaderValueCollection& customizedHeaders,
+            const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            AwsSmithyClientAsyncRequestContext ctx;
+            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
+            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+            
+            Aws::Endpoint::EndpointParameters epParams = Aws::Endpoint::EndpointParameters();
+            const auto authSchemeEpParams = authSchemeOption.endpointParameters();
+            epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+            epParams.emplace_back(Aws::String("Bucket"), bucket);
+
+            auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+            if (!epResolutionOutcome.IsSuccess())
+            {
+                AWS_LOGSTREAM_ERROR(ServiceNameT, "Presigned URL generating failed. Encountered error: " << epResolutionOutcome.GetError().GetMessage());
+                return {};
+            }
+            auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+            const Aws::Http::URI& uri = endpoint.GetURI();
+            auto signerRegionOverride = region;
+            auto signerServiceNameOverride = serviceName;
+            //signer name is needed for some identity resolvers
+            if (endpoint.GetAttributes()) {
+                if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+                }
+                if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+                }
+                if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+                    signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+                }
+            }
+            std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            request->SetServiceSpecificParameters(serviceSpecificParameters);
+            for (const auto& it: customizedHeaders)
+            {
+                request->SetHeaderValue(it.first.c_str(), it.second);
+            }
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, signerRegionOverride, signerServiceNameOverride, expirationInSeconds).IsSuccess())
+            {
+                return request->GetURIString();
+            }
+            return {};
+        }
+
+        //legacy
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
-                                                  Aws::Http::HttpMethod method,
-                                                  const Aws::String& region,
-                                                  const Aws::String& serviceName,
-                                                  long long expirationInSeconds,
-                                                  const Aws::Http::HeaderValueCollection& customizedHeaders,
-                                                  const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+            Aws::Http::HttpMethod method,
+            const Aws::String& region,
+            const Aws::String& serviceName,
+            long long expirationInSeconds,
+            const Aws::Http::HeaderValueCollection& customizedHeaders,
+            const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
         {
             std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
             request->SetServiceSpecificParameters(serviceSpecificParameters);
@@ -213,7 +288,6 @@ namespace client
             }
             return {};
         }
-
 
         Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
                                                   Aws::Http::HttpMethod method,
@@ -240,8 +314,141 @@ namespace client
             }
             return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
         }
+        
+        ResponseT MakeRequest(const Aws::Http::URI& uri,
+            const Aws::AmazonWebServiceRequest& request,
+            Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
+            const char* signerName = Aws::Auth::SIGV4_SIGNER,
+            const char* signerRegionOverride = nullptr,
+            const char* signerServiceNameOverride = nullptr) const
+        {
 
-    protected:
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(ServiceNameT);
+            assert(pExecutor);
+            HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+            {
+                outcome = std::move(asyncOutcome);
+            };
+
+            pExecutor->Submit([&]()
+            {
+                this->MakeRequestWithUriAsync(&request,
+                    uri,
+                    signerName,
+                    signerRegionOverride,
+                    signerServiceNameOverride,
+                    request.GetServiceRequestName(),
+                    method,
+                    std::move(responseHandler),
+                    pExecutor
+                );
+            });
+            pExecutor->WaitUntilStopped();
+
+            return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), request.GetServiceRequestName());
+        }
+
+        ResponseT MakeRequest(const Aws::Http::URI& uri,
+            Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
+            const char* signerName = Aws::Auth::SIGV4_SIGNER,
+            const char* requestName = "",
+            const char* signerRegionOverride = nullptr,
+            const char* signerServiceNameOverride = nullptr) const
+        {
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(ServiceNameT);
+            assert(pExecutor);
+            HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+            {
+                outcome = std::move(asyncOutcome);
+            };
+
+            pExecutor->Submit([&]()
+            {
+                this->MakeRequestWithUriAsync(nullptr,
+                    uri,
+                    signerName,
+                    signerRegionOverride,
+                    signerServiceNameOverride,
+                    requestName,
+                    method,
+                    std::move(responseHandler),
+                    pExecutor
+                );
+            });
+            pExecutor->WaitUntilStopped();
+
+            return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), requestName);
+        }
+
+        ResponseT MakeRequest(const Aws::AmazonWebServiceRequest& request,
+            const Aws::Endpoint::AWSEndpoint& endpoint,
+            Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
+            const char* signerName = Aws::Auth::SIGV4_SIGNER,
+            const char* signerRegionOverride = nullptr,
+            const char* signerServiceNameOverride = nullptr) const
+        {
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(ServiceNameT);
+            assert(pExecutor);
+            HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+            {
+                outcome = std::move(asyncOutcome);
+            };
+
+            pExecutor->Submit([&]()
+            {
+                this->MakeRequestWithEndpointAsync(&request,
+                    endpoint,
+                    signerName,
+                    signerRegionOverride,
+                    signerServiceNameOverride,
+                    request.GetServiceRequestName(),
+                    method,
+                    std::move(responseHandler),
+                    pExecutor
+                );
+            });
+            pExecutor->WaitUntilStopped();
+
+            return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), request.GetServiceRequestName());
+        }
+
+
+        ResponseT MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
+            const char* requestName = "",
+            Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
+            const char* signerName = Aws::Auth::SIGV4_SIGNER,
+            const char* signerRegionOverride = nullptr,
+            const char* signerServiceNameOverride = nullptr) const
+        {
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(ServiceNameT);
+            assert(pExecutor);
+            HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+            {
+                outcome = std::move(asyncOutcome);
+            };
+
+            pExecutor->Submit([&]()
+            {
+                this->MakeRequestWithEndpointAsync(nullptr,
+                    endpoint,
+                    signerName,
+                    signerRegionOverride,
+                    signerServiceNameOverride,
+                    requestName,
+                    method,
+                    std::move(responseHandler),
+                    pExecutor
+                );
+            });
+            pExecutor->WaitUntilStopped();
+
+            return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), requestName);
+        }
+    
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
