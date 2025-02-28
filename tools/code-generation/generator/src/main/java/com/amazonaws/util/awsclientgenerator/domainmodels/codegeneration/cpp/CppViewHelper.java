@@ -266,7 +266,7 @@ public class CppViewHelper {
     }
 
     public static String computeRequestContentType(Metadata metadata) {
-        String protocolAndVersion = metadata.getProtocol();
+        String protocolAndVersion = metadata.findFirstSupportedProtocol();
 
         if(metadata.getJsonVersion() != null) {
             protocolAndVersion += metadata.getJsonVersion();
