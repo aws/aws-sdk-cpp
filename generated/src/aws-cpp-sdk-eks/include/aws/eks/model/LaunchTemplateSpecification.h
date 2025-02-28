@@ -59,7 +59,8 @@ namespace Model
     ///@{
     /**
      * <p>The name of the launch template.</p> <p>You must specify either the launch
-     * template name or the launch template ID in the request, but not both.</p>
+     * template name or the launch template ID in the request, but not both. After node
+     * group creation, you cannot use a different name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -74,7 +75,8 @@ namespace Model
     ///@{
     /**
      * <p>The version number of the launch template to use. If no version is specified,
-     * then the template's default version is used.</p>
+     * then the template's default version is used. You can use a different version for
+     * node group updates.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
@@ -89,7 +91,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the launch template.</p> <p>You must specify either the launch
-     * template ID or the launch template name in the request, but not both.</p>
+     * template ID or the launch template name in the request, but not both. After node
+     * group creation, you cannot use a different ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

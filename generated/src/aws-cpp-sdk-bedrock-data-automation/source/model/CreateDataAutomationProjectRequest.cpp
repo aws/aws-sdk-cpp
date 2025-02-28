@@ -22,7 +22,8 @@ CreateDataAutomationProjectRequest::CreateDataAutomationProjectRequest() :
     m_overrideConfigurationHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,17 @@ Aws::String CreateDataAutomationProjectRequest::SerializePayload() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

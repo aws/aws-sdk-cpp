@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the
-     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * <p>The fully qualified name of the parameter that you want to create or
+     * update.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
      * parameter, only the parameter name itself.</p>  <p>The fully qualified
      * name includes the complete hierarchy of the parameter path and name. For
      * parameters in a hierarchy, you must include a leading forward slash character
@@ -113,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of parameter that you want to add to the system.</p>  <p>
+     * <p>The type of parameter that you want to create.</p>  <p>
      * <code>SecureString</code> isn't currently supported for CloudFormation
      * templates.</p>  <p>Items in a <code>StringList</code> must be separated
      * by a comma (,). You can't use other punctuation or special character to escape
@@ -136,7 +136,7 @@ namespace Model
      * parameter. Use a custom key for better security. Required for parameters that
      * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
      * ID, the system uses the default key associated with your Amazon Web Services
-     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * account, which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
      * custom KMS key, choose the <code>SecureString</code> data type with the
      * <code>Key ID</code> parameter.</p> </li> </ul>
      */

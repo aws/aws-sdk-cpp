@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int AUDIO_SUMMARY_HASH = HashingUtils::HashString("AUDIO_SUMMARY");
-        static const int CHAPTER_SUMMARY_HASH = HashingUtils::HashString("CHAPTER_SUMMARY");
         static const int IAB_HASH = HashingUtils::HashString("IAB");
+        static const int TOPIC_SUMMARY_HASH = HashingUtils::HashString("TOPIC_SUMMARY");
 
 
         AudioStandardGenerativeFieldType GetAudioStandardGenerativeFieldTypeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return AudioStandardGenerativeFieldType::AUDIO_SUMMARY;
           }
-          else if (hashCode == CHAPTER_SUMMARY_HASH)
-          {
-            return AudioStandardGenerativeFieldType::CHAPTER_SUMMARY;
-          }
           else if (hashCode == IAB_HASH)
           {
             return AudioStandardGenerativeFieldType::IAB;
+          }
+          else if (hashCode == TOPIC_SUMMARY_HASH)
+          {
+            return AudioStandardGenerativeFieldType::TOPIC_SUMMARY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -58,10 +58,10 @@ namespace Aws
             return {};
           case AudioStandardGenerativeFieldType::AUDIO_SUMMARY:
             return "AUDIO_SUMMARY";
-          case AudioStandardGenerativeFieldType::CHAPTER_SUMMARY:
-            return "CHAPTER_SUMMARY";
           case AudioStandardGenerativeFieldType::IAB:
             return "IAB";
+          case AudioStandardGenerativeFieldType::TOPIC_SUMMARY:
+            return "TOPIC_SUMMARY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

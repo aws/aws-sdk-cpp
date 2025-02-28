@@ -20,7 +20,9 @@ InvokeDataAutomationAsyncRequest::InvokeDataAutomationAsyncRequest() :
     m_dataAutomationConfigurationHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_notificationConfigurationHasBeenSet(false),
-    m_blueprintsHasBeenSet(false)
+    m_blueprintsHasBeenSet(false),
+    m_dataAutomationProfileArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,23 @@ Aws::String InvokeDataAutomationAsyncRequest::SerializePayload() const
      blueprintsJsonList[blueprintsIndex].AsObject(m_blueprints[blueprintsIndex].Jsonize());
    }
    payload.WithArray("blueprints", std::move(blueprintsJsonList));
+
+  }
+
+  if(m_dataAutomationProfileArnHasBeenSet)
+  {
+   payload.WithString("dataAutomationProfileArn", m_dataAutomationProfileArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

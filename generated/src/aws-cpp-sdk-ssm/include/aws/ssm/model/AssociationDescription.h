@@ -381,7 +381,8 @@ namespace Model
      * documents your associations are gated under. The associations only run when that
      * change calendar is open. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
-     * Web Services Systems Manager Change Calendar</a>.</p>
+     * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
     inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }

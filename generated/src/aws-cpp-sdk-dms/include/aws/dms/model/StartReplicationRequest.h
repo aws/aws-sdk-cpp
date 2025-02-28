@@ -82,17 +82,16 @@ namespace Model
     ///@{
     /**
      * <p>User-defined settings for the premigration assessment. The possible values
-     * are:</p> <ul> <li> <p> <code>ResultLocationFinder</code>: The folder within an
-     * Amazon Amazon S3 bucket where you want DMS to store the results of this
-     * assessment run.</p> </li> <li> <p> <code>ResultEncryptionMode</code>: The
-     * supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these
-     * values are not provided, then the files are not encrypted at rest. For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>ResultLocationFolder</code>: The folder within an
+     * Amazon S3 bucket where you want DMS to store the results of this assessment
+     * run.</p> </li> <li> <p> <code>ResultEncryptionMode</code>: The supported values
+     * are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these values are not
+     * provided, then the files are not encrypted at rest. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating
-     * Amazon Web Services KMS keys to encrypt Amazon Amazon S3 target objects</a>.</p>
-     * </li> <li> <p> <code>ResultKmsKeyArn</code>: The ARN of a customer KMS
-     * encryption key that you specify when you set <code>ResultEncryptionMode</code>
-     * to <code>SSE_KMS</code>.</p> </li> <li> <p> <code>IncludeOnly</code>: A
+     * Amazon Web Services KMS keys to encrypt Amazon S3 target objects</a>.</p> </li>
+     * <li> <p> <code>ResultKmsKeyArn</code>: The ARN of a customer KMS encryption key
+     * that you specify when you set <code>ResultEncryptionMode</code> to
+     * <code>SSE_KMS</code>.</p> </li> <li> <p> <code>IncludeOnly</code>: A
      * space-separated list of names for specific individual assessments that you want
      * to include. These names come from the default list of individual assessments
      * that Database Migration Service supports for the associated migration.</p> </li>

@@ -40,16 +40,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Data automation arn.</p>
+     * <p>Data automation project arn.</p>
      */
-    inline const Aws::String& GetDataAutomationArn() const{ return m_dataAutomationArn; }
-    inline bool DataAutomationArnHasBeenSet() const { return m_dataAutomationArnHasBeenSet; }
-    inline void SetDataAutomationArn(const Aws::String& value) { m_dataAutomationArnHasBeenSet = true; m_dataAutomationArn = value; }
-    inline void SetDataAutomationArn(Aws::String&& value) { m_dataAutomationArnHasBeenSet = true; m_dataAutomationArn = std::move(value); }
-    inline void SetDataAutomationArn(const char* value) { m_dataAutomationArnHasBeenSet = true; m_dataAutomationArn.assign(value); }
-    inline DataAutomationConfiguration& WithDataAutomationArn(const Aws::String& value) { SetDataAutomationArn(value); return *this;}
-    inline DataAutomationConfiguration& WithDataAutomationArn(Aws::String&& value) { SetDataAutomationArn(std::move(value)); return *this;}
-    inline DataAutomationConfiguration& WithDataAutomationArn(const char* value) { SetDataAutomationArn(value); return *this;}
+    inline const Aws::String& GetDataAutomationProjectArn() const{ return m_dataAutomationProjectArn; }
+    inline bool DataAutomationProjectArnHasBeenSet() const { return m_dataAutomationProjectArnHasBeenSet; }
+    inline void SetDataAutomationProjectArn(const Aws::String& value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn = value; }
+    inline void SetDataAutomationProjectArn(Aws::String&& value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn = std::move(value); }
+    inline void SetDataAutomationProjectArn(const char* value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn.assign(value); }
+    inline DataAutomationConfiguration& WithDataAutomationProjectArn(const Aws::String& value) { SetDataAutomationProjectArn(value); return *this;}
+    inline DataAutomationConfiguration& WithDataAutomationProjectArn(Aws::String&& value) { SetDataAutomationProjectArn(std::move(value)); return *this;}
+    inline DataAutomationConfiguration& WithDataAutomationProjectArn(const char* value) { SetDataAutomationProjectArn(value); return *this;}
     ///@}
 
     ///@{
@@ -65,8 +65,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_dataAutomationArn;
-    bool m_dataAutomationArnHasBeenSet = false;
+    Aws::String m_dataAutomationProjectArn;
+    bool m_dataAutomationProjectArnHasBeenSet = false;
 
     DataAutomationStage m_stage;
     bool m_stageHasBeenSet = false;

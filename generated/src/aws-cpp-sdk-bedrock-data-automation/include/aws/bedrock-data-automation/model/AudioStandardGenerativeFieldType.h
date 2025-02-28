@@ -17,8 +17,8 @@ namespace Model
   {
     NOT_SET,
     AUDIO_SUMMARY,
-    CHAPTER_SUMMARY,
-    IAB
+    IAB,
+    TOPIC_SUMMARY
   };
 
 namespace AudioStandardGenerativeFieldTypeMapper

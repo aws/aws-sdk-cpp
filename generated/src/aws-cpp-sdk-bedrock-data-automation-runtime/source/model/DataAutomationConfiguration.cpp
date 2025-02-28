@@ -19,7 +19,7 @@ namespace Model
 {
 
 DataAutomationConfiguration::DataAutomationConfiguration() : 
-    m_dataAutomationArnHasBeenSet(false),
+    m_dataAutomationProjectArnHasBeenSet(false),
     m_stage(DataAutomationStage::NOT_SET),
     m_stageHasBeenSet(false)
 {
@@ -33,11 +33,11 @@ DataAutomationConfiguration::DataAutomationConfiguration(JsonView jsonValue)
 
 DataAutomationConfiguration& DataAutomationConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dataAutomationArn"))
+  if(jsonValue.ValueExists("dataAutomationProjectArn"))
   {
-    m_dataAutomationArn = jsonValue.GetString("dataAutomationArn");
+    m_dataAutomationProjectArn = jsonValue.GetString("dataAutomationProjectArn");
 
-    m_dataAutomationArnHasBeenSet = true;
+    m_dataAutomationProjectArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stage"))
@@ -54,9 +54,9 @@ JsonValue DataAutomationConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataAutomationArnHasBeenSet)
+  if(m_dataAutomationProjectArnHasBeenSet)
   {
-   payload.WithString("dataAutomationArn", m_dataAutomationArn);
+   payload.WithString("dataAutomationProjectArn", m_dataAutomationProjectArn);
 
   }
 

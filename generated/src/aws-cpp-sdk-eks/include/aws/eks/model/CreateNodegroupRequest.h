@@ -292,9 +292,10 @@ namespace Model
     /**
      * <p>An object representing a node group's launch template specification. When
      * using this object, don't directly specify <code>instanceTypes</code>,
-     * <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch
-     * template meets the requirements in <code>launchTemplateSpecification</code>.
-     * Also refer to <a
+     * <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a
+     * different launch template ID or name than what was used to create the node
+     * group.</p> <p>Make sure that the launch template meets the requirements in
+     * <code>launchTemplateSpecification</code>. Also refer to <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */

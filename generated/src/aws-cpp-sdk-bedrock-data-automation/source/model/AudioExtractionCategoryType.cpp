@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int AUDIO_CONTENT_MODERATION_HASH = HashingUtils::HashString("AUDIO_CONTENT_MODERATION");
-        static const int CHAPTER_CONTENT_MODERATION_HASH = HashingUtils::HashString("CHAPTER_CONTENT_MODERATION");
         static const int TRANSCRIPT_HASH = HashingUtils::HashString("TRANSCRIPT");
+        static const int TOPIC_CONTENT_MODERATION_HASH = HashingUtils::HashString("TOPIC_CONTENT_MODERATION");
 
 
         AudioExtractionCategoryType GetAudioExtractionCategoryTypeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return AudioExtractionCategoryType::AUDIO_CONTENT_MODERATION;
           }
-          else if (hashCode == CHAPTER_CONTENT_MODERATION_HASH)
-          {
-            return AudioExtractionCategoryType::CHAPTER_CONTENT_MODERATION;
-          }
           else if (hashCode == TRANSCRIPT_HASH)
           {
             return AudioExtractionCategoryType::TRANSCRIPT;
+          }
+          else if (hashCode == TOPIC_CONTENT_MODERATION_HASH)
+          {
+            return AudioExtractionCategoryType::TOPIC_CONTENT_MODERATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -58,10 +58,10 @@ namespace Aws
             return {};
           case AudioExtractionCategoryType::AUDIO_CONTENT_MODERATION:
             return "AUDIO_CONTENT_MODERATION";
-          case AudioExtractionCategoryType::CHAPTER_CONTENT_MODERATION:
-            return "CHAPTER_CONTENT_MODERATION";
           case AudioExtractionCategoryType::TRANSCRIPT:
             return "TRANSCRIPT";
+          case AudioExtractionCategoryType::TOPIC_CONTENT_MODERATION:
+            return "TOPIC_CONTENT_MODERATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

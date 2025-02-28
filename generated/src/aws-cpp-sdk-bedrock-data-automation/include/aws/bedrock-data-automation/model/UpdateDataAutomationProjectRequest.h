@@ -11,6 +11,7 @@
 #include <aws/bedrock-data-automation/model/StandardOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/CustomOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/OverrideConfiguration.h>
+#include <aws/bedrock-data-automation/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,16 @@ namespace Model
     inline UpdateDataAutomationProjectRequest& WithOverrideConfiguration(const OverrideConfiguration& value) { SetOverrideConfiguration(value); return *this;}
     inline UpdateDataAutomationProjectRequest& WithOverrideConfiguration(OverrideConfiguration&& value) { SetOverrideConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+    inline UpdateDataAutomationProjectRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+    inline UpdateDataAutomationProjectRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_projectArn;
@@ -123,6 +134,9 @@ namespace Model
 
     OverrideConfiguration m_overrideConfiguration;
     bool m_overrideConfigurationHasBeenSet = false;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

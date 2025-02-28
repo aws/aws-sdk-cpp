@@ -19,7 +19,8 @@ UpdateDataAutomationProjectRequest::UpdateDataAutomationProjectRequest() :
     m_projectDescriptionHasBeenSet(false),
     m_standardOutputConfigurationHasBeenSet(false),
     m_customOutputConfigurationHasBeenSet(false),
-    m_overrideConfigurationHasBeenSet(false)
+    m_overrideConfigurationHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String UpdateDataAutomationProjectRequest::SerializePayload() const
   if(m_overrideConfigurationHasBeenSet)
   {
    payload.WithObject("overrideConfiguration", m_overrideConfiguration.Jsonize());
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

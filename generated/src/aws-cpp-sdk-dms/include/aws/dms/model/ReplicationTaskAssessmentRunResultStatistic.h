@@ -89,6 +89,17 @@ namespace Model
     inline void SetCancelled(int value) { m_cancelledHasBeenSet = true; m_cancelled = value; }
     inline ReplicationTaskAssessmentRunResultStatistic& WithCancelled(int value) { SetCancelled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of individual assessments that were skipped during the assessment
+     * run.</p>
+     */
+    inline int GetSkipped() const{ return m_skipped; }
+    inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
+    inline void SetSkipped(int value) { m_skippedHasBeenSet = true; m_skipped = value; }
+    inline ReplicationTaskAssessmentRunResultStatistic& WithSkipped(int value) { SetSkipped(value); return *this;}
+    ///@}
   private:
 
     int m_passed;
@@ -105,6 +116,9 @@ namespace Model
 
     int m_cancelled;
     bool m_cancelledHasBeenSet = false;
+
+    int m_skipped;
+    bool m_skippedHasBeenSet = false;
   };
 
 } // namespace Model

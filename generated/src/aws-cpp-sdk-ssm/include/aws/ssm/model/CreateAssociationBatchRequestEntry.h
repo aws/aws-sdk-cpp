@@ -279,10 +279,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>By default, when you create a new associations, the system runs it
-     * immediately after it is created and then according to the schedule you
-     * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter isn't supported for rate
+     * <p>By default, when you create a new association, the system runs it immediately
+     * after it is created and then according to the schedule you specified and when
+     * target changes are detected. Specify <code>true</code> for
+     * <code>ApplyOnlyAtCronInterval</code> if you want the association to run only
+     * according to the schedule you specified.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#state-manager-about-scheduling">Understanding
+     * when associations are applied to resources</a> and <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#runbook-target-updates">&gt;About
+     * target updates with Automation runbooks</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p> <p>This parameter isn't supported for rate
      * expressions.</p>
      */
     inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
@@ -297,7 +303,8 @@ namespace Model
      * documents your associations are gated under. The associations only run when that
      * Change Calendar is open. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
-     * Web Services Systems Manager Change Calendar</a>.</p>
+     * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
     inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }

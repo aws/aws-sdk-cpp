@@ -16,7 +16,8 @@ UpdateBlueprintRequest::UpdateBlueprintRequest() :
     m_blueprintArnHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_blueprintStage(BlueprintStage::NOT_SET),
-    m_blueprintStageHasBeenSet(false)
+    m_blueprintStageHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,12 @@ Aws::String UpdateBlueprintRequest::SerializePayload() const
   if(m_blueprintStageHasBeenSet)
   {
    payload.WithString("blueprintStage", BlueprintStageMapper::GetNameForBlueprintStage(m_blueprintStage));
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

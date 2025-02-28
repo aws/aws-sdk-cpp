@@ -17,8 +17,8 @@ namespace Model
   {
     NOT_SET,
     AUDIO_CONTENT_MODERATION,
-    CHAPTER_CONTENT_MODERATION,
-    TRANSCRIPT
+    TRANSCRIPT,
+    TOPIC_CONTENT_MODERATION
   };
 
 namespace AudioExtractionCategoryTypeMapper

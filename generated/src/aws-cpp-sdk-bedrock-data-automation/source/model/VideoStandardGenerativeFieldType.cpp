@@ -21,8 +21,8 @@ namespace Aws
       {
 
         static const int VIDEO_SUMMARY_HASH = HashingUtils::HashString("VIDEO_SUMMARY");
-        static const int SCENE_SUMMARY_HASH = HashingUtils::HashString("SCENE_SUMMARY");
         static const int IAB_HASH = HashingUtils::HashString("IAB");
+        static const int CHAPTER_SUMMARY_HASH = HashingUtils::HashString("CHAPTER_SUMMARY");
 
 
         VideoStandardGenerativeFieldType GetVideoStandardGenerativeFieldTypeForName(const Aws::String& name)
@@ -32,13 +32,13 @@ namespace Aws
           {
             return VideoStandardGenerativeFieldType::VIDEO_SUMMARY;
           }
-          else if (hashCode == SCENE_SUMMARY_HASH)
-          {
-            return VideoStandardGenerativeFieldType::SCENE_SUMMARY;
-          }
           else if (hashCode == IAB_HASH)
           {
             return VideoStandardGenerativeFieldType::IAB;
+          }
+          else if (hashCode == CHAPTER_SUMMARY_HASH)
+          {
+            return VideoStandardGenerativeFieldType::CHAPTER_SUMMARY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -58,10 +58,10 @@ namespace Aws
             return {};
           case VideoStandardGenerativeFieldType::VIDEO_SUMMARY:
             return "VIDEO_SUMMARY";
-          case VideoStandardGenerativeFieldType::SCENE_SUMMARY:
-            return "SCENE_SUMMARY";
           case VideoStandardGenerativeFieldType::IAB:
             return "IAB";
+          case VideoStandardGenerativeFieldType::CHAPTER_SUMMARY:
+            return "CHAPTER_SUMMARY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

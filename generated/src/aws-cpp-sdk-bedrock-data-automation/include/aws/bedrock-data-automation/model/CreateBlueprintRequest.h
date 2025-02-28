@@ -10,6 +10,8 @@
 #include <aws/bedrock-data-automation/model/Type.h>
 #include <aws/bedrock-data-automation/model/BlueprintStage.h>
 #include <aws/bedrock-data-automation/model/EncryptionConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-data-automation/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -104,6 +106,18 @@ namespace Model
     inline CreateBlueprintRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
     inline CreateBlueprintRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline CreateBlueprintRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CreateBlueprintRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CreateBlueprintRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateBlueprintRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_blueprintName;
@@ -123,6 +137,9 @@ namespace Model
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

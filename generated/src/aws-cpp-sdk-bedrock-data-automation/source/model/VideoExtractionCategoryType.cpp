@@ -23,6 +23,7 @@ namespace Aws
         static const int CONTENT_MODERATION_HASH = HashingUtils::HashString("CONTENT_MODERATION");
         static const int TEXT_DETECTION_HASH = HashingUtils::HashString("TEXT_DETECTION");
         static const int TRANSCRIPT_HASH = HashingUtils::HashString("TRANSCRIPT");
+        static const int LOGOS_HASH = HashingUtils::HashString("LOGOS");
 
 
         VideoExtractionCategoryType GetVideoExtractionCategoryTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == TRANSCRIPT_HASH)
           {
             return VideoExtractionCategoryType::TRANSCRIPT;
+          }
+          else if (hashCode == LOGOS_HASH)
+          {
+            return VideoExtractionCategoryType::LOGOS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "TEXT_DETECTION";
           case VideoExtractionCategoryType::TRANSCRIPT:
             return "TRANSCRIPT";
+          case VideoExtractionCategoryType::LOGOS:
+            return "LOGOS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

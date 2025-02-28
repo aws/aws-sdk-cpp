@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
+     * <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents
      * (SSM documents) that represent the calendar entries for which you want to get
      * the state.</p>
      */

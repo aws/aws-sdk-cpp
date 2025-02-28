@@ -116,7 +116,8 @@ namespace Model
     /**
      * <p>An object representing a node group's launch template specification. You can
      * only update a node group using a launch template if the node group was
-     * originally deployed with a launch template.</p>
+     * originally deployed with a launch template. When updating, you must specify the
+     * same launch template ID or name that was used to create the node group.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }

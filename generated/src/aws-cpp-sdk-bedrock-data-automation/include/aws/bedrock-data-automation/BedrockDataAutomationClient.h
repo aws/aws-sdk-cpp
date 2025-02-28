@@ -323,6 +323,83 @@ namespace BedrockDataAutomation
         }
 
         /**
+         * <p>List tags for an Amazon Bedrock Data Automation resource</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockDataAutomationClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockDataAutomationClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Tag an Amazon Bedrock Data Automation resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockDataAutomationClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockDataAutomationClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Untag an Amazon Bedrock Data Automation resource</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockDataAutomationClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockDataAutomationClient::UntagResource, request, handler, context);
+        }
+
+        /**
          * <p>Updates an existing Amazon Bedrock Data Automation Blueprint</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateBlueprint">AWS

@@ -11,6 +11,7 @@
 #include <aws/eks/model/EksAnywhereSubscriptionTerm.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/eks/model/License.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Includes all of the claims in the license token necessary to validate the
+     * license for extended support.</p>
+     */
+    inline const Aws::Vector<License>& GetLicenses() const{ return m_licenses; }
+    inline bool LicensesHasBeenSet() const { return m_licensesHasBeenSet; }
+    inline void SetLicenses(const Aws::Vector<License>& value) { m_licensesHasBeenSet = true; m_licenses = value; }
+    inline void SetLicenses(Aws::Vector<License>&& value) { m_licensesHasBeenSet = true; m_licenses = std::move(value); }
+    inline EksAnywhereSubscription& WithLicenses(const Aws::Vector<License>& value) { SetLicenses(value); return *this;}
+    inline EksAnywhereSubscription& WithLicenses(Aws::Vector<License>&& value) { SetLicenses(std::move(value)); return *this;}
+    inline EksAnywhereSubscription& AddLicenses(const License& value) { m_licensesHasBeenSet = true; m_licenses.push_back(value); return *this; }
+    inline EksAnywhereSubscription& AddLicenses(License&& value) { m_licensesHasBeenSet = true; m_licenses.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The metadata for a subscription to assist with categorization and
      * organization. Each tag consists of a key and an optional value. Subscription
      * tags do not propagate to any other resources associated with the
@@ -241,6 +257,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_licenseArns;
     bool m_licenseArnsHasBeenSet = false;
+
+    Aws::Vector<License> m_licenses;
+    bool m_licensesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

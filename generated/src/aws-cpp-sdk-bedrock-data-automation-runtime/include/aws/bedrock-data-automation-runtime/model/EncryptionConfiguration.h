@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>KMS key id.</p>
+     * <p>Customer KMS key used for encryption</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

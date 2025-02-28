@@ -290,7 +290,7 @@ namespace Model
      * table couldn't be validated because of an unexpected error.</p> </li> <li>
      * <p>Pending validation – The table is waiting validation.</p> </li> <li>
      * <p>Preparing table – Preparing the table enabled in the migration task for
-     * validation.</p> </li> <li> <p>Pending revalidation – All rows in the table are
+     * validation.</p> </li> <li> <p>Pending revalidation ��� All rows in the table are
      * pending validation after the table was updated.</p> </li> </ul>
      */
     inline const Aws::String& GetValidationState() const{ return m_validationState; }
