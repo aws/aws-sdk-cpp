@@ -2,7 +2,7 @@
 #set($awsProjectProtocolTestSrc = "AWS_" + ${projectNameCaps.replace("-", "_")} +"_SRC")
 #set($awsProjectProtocolTestSrcVar = "${" + $awsProjectProtocolTestSrc +"}")
 add_project($projectName
-    "Tests for the protocol $serviceModel.metadata.protocol of AWS C++ SDK"
+    "Tests for the protocol $serviceModel.metadata.findFirstSupportedProtocol() of AWS C++ SDK"
     testing-resources
     aws-cpp-sdk-${serviceModel.metadata.projectName}
     aws-cpp-sdk-core)

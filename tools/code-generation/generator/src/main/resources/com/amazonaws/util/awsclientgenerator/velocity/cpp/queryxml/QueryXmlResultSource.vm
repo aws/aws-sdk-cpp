@@ -51,7 +51,7 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
   }
 
   if (!rootNode.IsNull()) {
-#if ($metadata.protocol == "ec2" )
+#if ($metadata.findFirstSupportedProtocol() == "ec2" )
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
     if (!requestIdNode.IsNull())
     {

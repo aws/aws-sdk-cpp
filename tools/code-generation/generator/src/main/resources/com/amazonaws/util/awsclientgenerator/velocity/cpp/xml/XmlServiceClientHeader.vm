@@ -36,7 +36,7 @@ namespace ${serviceNamespace}
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
-#if($metadata.protocol == "query")
+#if($metadata.findFirstSupportedProtocol() == "query")
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
