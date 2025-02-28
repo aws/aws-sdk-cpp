@@ -28,7 +28,9 @@ ReplicationTaskAssessmentRunResultStatistic::ReplicationTaskAssessmentRunResultS
     m_warning(0),
     m_warningHasBeenSet(false),
     m_cancelled(0),
-    m_cancelledHasBeenSet(false)
+    m_cancelledHasBeenSet(false),
+    m_skipped(0),
+    m_skippedHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,13 @@ ReplicationTaskAssessmentRunResultStatistic& ReplicationTaskAssessmentRunResultS
     m_cancelledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Skipped"))
+  {
+    m_skipped = jsonValue.GetInteger("Skipped");
+
+    m_skippedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue ReplicationTaskAssessmentRunResultStatistic::Jsonize() const
   if(m_cancelledHasBeenSet)
   {
    payload.WithInteger("Cancelled", m_cancelled);
+
+  }
+
+  if(m_skippedHasBeenSet)
+  {
+   payload.WithInteger("Skipped", m_skipped);
 
   }
 

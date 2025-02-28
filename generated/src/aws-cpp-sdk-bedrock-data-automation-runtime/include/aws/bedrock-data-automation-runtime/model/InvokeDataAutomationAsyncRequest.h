@@ -14,6 +14,7 @@
 #include <aws/bedrock-data-automation-runtime/model/NotificationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-data-automation-runtime/model/Blueprint.h>
+#include <aws/bedrock-data-automation-runtime/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -132,6 +133,34 @@ namespace Model
     inline InvokeDataAutomationAsyncRequest& AddBlueprints(const Blueprint& value) { m_blueprintsHasBeenSet = true; m_blueprints.push_back(value); return *this; }
     inline InvokeDataAutomationAsyncRequest& AddBlueprints(Blueprint&& value) { m_blueprintsHasBeenSet = true; m_blueprints.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Data automation profile ARN</p>
+     */
+    inline const Aws::String& GetDataAutomationProfileArn() const{ return m_dataAutomationProfileArn; }
+    inline bool DataAutomationProfileArnHasBeenSet() const { return m_dataAutomationProfileArnHasBeenSet; }
+    inline void SetDataAutomationProfileArn(const Aws::String& value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn = value; }
+    inline void SetDataAutomationProfileArn(Aws::String&& value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn = std::move(value); }
+    inline void SetDataAutomationProfileArn(const char* value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn.assign(value); }
+    inline InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(const Aws::String& value) { SetDataAutomationProfileArn(value); return *this;}
+    inline InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(Aws::String&& value) { SetDataAutomationProfileArn(std::move(value)); return *this;}
+    inline InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(const char* value) { SetDataAutomationProfileArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline InvokeDataAutomationAsyncRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline InvokeDataAutomationAsyncRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline InvokeDataAutomationAsyncRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline InvokeDataAutomationAsyncRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -154,6 +183,12 @@ namespace Model
 
     Aws::Vector<Blueprint> m_blueprints;
     bool m_blueprintsHasBeenSet = false;
+
+    Aws::String m_dataAutomationProfileArn;
+    bool m_dataAutomationProfileArnHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

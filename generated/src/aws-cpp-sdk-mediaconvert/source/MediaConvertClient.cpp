@@ -41,6 +41,7 @@
 #include <aws/mediaconvert/model/ListQueuesRequest.h>
 #include <aws/mediaconvert/model/ListTagsForResourceRequest.h>
 #include <aws/mediaconvert/model/ListVersionsRequest.h>
+#include <aws/mediaconvert/model/ProbeRequest.h>
 #include <aws/mediaconvert/model/PutPolicyRequest.h>
 #include <aws/mediaconvert/model/SearchJobsRequest.h>
 #include <aws/mediaconvert/model/TagResourceRequest.h>
@@ -715,6 +716,28 @@ ListVersionsOutcome MediaConvertClient::ListVersions(const ListVersionsRequest& 
     [&]()-> ListVersionsOutcome {
       return ListVersionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
       resolvedEndpoint.AddPathSegments("/2017-08-29/versions");
+      }));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ProbeOutcome MediaConvertClient::Probe(const ProbeRequest& request) const
+{
+  AWS_OPERATION_GUARD(Probe);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Probe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, Probe, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, Probe, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".Probe",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ProbeOutcome>(
+    [&]()-> ProbeOutcome {
+      return ProbeOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      resolvedEndpoint.AddPathSegments("/2017-08-29/probe");
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

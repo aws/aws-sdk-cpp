@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CONTENT_MODERATION_HASH = HashingUtils::HashString("CONTENT_MODERATION");
         static const int TEXT_DETECTION_HASH = HashingUtils::HashString("TEXT_DETECTION");
+        static const int LOGOS_HASH = HashingUtils::HashString("LOGOS");
 
 
         ImageExtractionCategoryType GetImageExtractionCategoryTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == TEXT_DETECTION_HASH)
           {
             return ImageExtractionCategoryType::TEXT_DETECTION;
+          }
+          else if (hashCode == LOGOS_HASH)
+          {
+            return ImageExtractionCategoryType::LOGOS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "CONTENT_MODERATION";
           case ImageExtractionCategoryType::TEXT_DETECTION:
             return "TEXT_DETECTION";
+          case ImageExtractionCategoryType::LOGOS:
+            return "LOGOS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

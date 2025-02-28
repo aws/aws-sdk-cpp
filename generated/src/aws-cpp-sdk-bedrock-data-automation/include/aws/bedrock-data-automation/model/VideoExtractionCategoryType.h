@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CONTENT_MODERATION,
     TEXT_DETECTION,
-    TRANSCRIPT
+    TRANSCRIPT,
+    LOGOS
   };
 
 namespace VideoExtractionCategoryTypeMapper

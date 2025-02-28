@@ -27,6 +27,9 @@
 #include <aws/bedrock-data-automation/model/GetDataAutomationProjectResult.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsResult.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsResult.h>
+#include <aws/bedrock-data-automation/model/ListTagsForResourceResult.h>
+#include <aws/bedrock-data-automation/model/TagResourceResult.h>
+#include <aws/bedrock-data-automation/model/UntagResourceResult.h>
 #include <aws/bedrock-data-automation/model/UpdateBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/UpdateDataAutomationProjectResult.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsRequest.h>
@@ -80,6 +83,9 @@ namespace Aws
       class GetDataAutomationProjectRequest;
       class ListBlueprintsRequest;
       class ListDataAutomationProjectsRequest;
+      class ListTagsForResourceRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateBlueprintRequest;
       class UpdateDataAutomationProjectRequest;
       /* End of service model forward declarations required in BedrockDataAutomationClient header */
@@ -94,6 +100,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDataAutomationProjectResult, BedrockDataAutomationError> GetDataAutomationProjectOutcome;
       typedef Aws::Utils::Outcome<ListBlueprintsResult, BedrockDataAutomationError> ListBlueprintsOutcome;
       typedef Aws::Utils::Outcome<ListDataAutomationProjectsResult, BedrockDataAutomationError> ListDataAutomationProjectsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockDataAutomationError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, BedrockDataAutomationError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, BedrockDataAutomationError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateBlueprintResult, BedrockDataAutomationError> UpdateBlueprintOutcome;
       typedef Aws::Utils::Outcome<UpdateDataAutomationProjectResult, BedrockDataAutomationError> UpdateDataAutomationProjectOutcome;
       /* End of service model Outcome class definitions */
@@ -108,6 +117,9 @@ namespace Aws
       typedef std::future<GetDataAutomationProjectOutcome> GetDataAutomationProjectOutcomeCallable;
       typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
       typedef std::future<ListDataAutomationProjectsOutcome> ListDataAutomationProjectsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateBlueprintOutcome> UpdateBlueprintOutcomeCallable;
       typedef std::future<UpdateDataAutomationProjectOutcome> UpdateDataAutomationProjectOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -125,6 +137,9 @@ namespace Aws
     typedef std::function<void(const BedrockDataAutomationClient*, const Model::GetDataAutomationProjectRequest&, const Model::GetDataAutomationProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataAutomationProjectResponseReceivedHandler;
     typedef std::function<void(const BedrockDataAutomationClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBlueprintsResponseReceivedHandler;
     typedef std::function<void(const BedrockDataAutomationClient*, const Model::ListDataAutomationProjectsRequest&, const Model::ListDataAutomationProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataAutomationProjectsResponseReceivedHandler;
+    typedef std::function<void(const BedrockDataAutomationClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const BedrockDataAutomationClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const BedrockDataAutomationClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockDataAutomationClient*, const Model::UpdateBlueprintRequest&, const Model::UpdateBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBlueprintResponseReceivedHandler;
     typedef std::function<void(const BedrockDataAutomationClient*, const Model::UpdateDataAutomationProjectRequest&, const Model::UpdateDataAutomationProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataAutomationProjectResponseReceivedHandler;
     /* End of service model async handlers definitions */

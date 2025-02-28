@@ -38,9 +38,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the resource data sync to retrieve information about. Required
-     * for cross-account/cross-Region configurations. Optional for single
-     * account/single-Region configurations.</p>
+     * <p>The name of the Amazon Web Services managed resource data sync to retrieve
+     * information about.</p> <p>For cross-account/cross-Region configurations, this
+     * parameter is required, and the name of the supported resource data sync is
+     * <code>AWS-QuickSetup-ManagedNode</code>.</p> <p>For single account/single-Region
+     * configurations, the parameter is not required.</p>
      */
     inline const Aws::String& GetSyncName() const{ return m_syncName; }
     inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CONTENT_MODERATION,
-    TEXT_DETECTION
+    TEXT_DETECTION,
+    LOGOS
   };
 
 namespace ImageExtractionCategoryTypeMapper

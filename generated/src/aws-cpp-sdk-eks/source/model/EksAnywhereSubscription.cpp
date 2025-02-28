@@ -33,6 +33,7 @@ EksAnywhereSubscription::EksAnywhereSubscription() :
     m_autoRenew(false),
     m_autoRenewHasBeenSet(false),
     m_licenseArnsHasBeenSet(false),
+    m_licensesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -125,6 +126,16 @@ EksAnywhereSubscription& EksAnywhereSubscription::operator =(JsonView jsonValue)
     m_licenseArnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("licenses"))
+  {
+    Aws::Utils::Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
+    for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
+    {
+      m_licenses.push_back(licensesJsonList[licensesIndex].AsObject());
+    }
+    m_licensesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -206,6 +217,17 @@ JsonValue EksAnywhereSubscription::Jsonize() const
      licenseArnsJsonList[licenseArnsIndex].AsString(m_licenseArns[licenseArnsIndex]);
    }
    payload.WithArray("licenseArns", std::move(licenseArnsJsonList));
+
+  }
+
+  if(m_licensesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> licensesJsonList(m_licenses.size());
+   for(unsigned licensesIndex = 0; licensesIndex < licensesJsonList.GetLength(); ++licensesIndex)
+   {
+     licensesJsonList[licensesIndex].AsObject(m_licenses[licensesIndex].Jsonize());
+   }
+   payload.WithArray("licenses", std::move(licensesJsonList));
 
   }
 

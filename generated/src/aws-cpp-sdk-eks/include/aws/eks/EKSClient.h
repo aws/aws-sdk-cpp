@@ -406,8 +406,12 @@ namespace EKS
          * create a node group for your cluster that is equal to the current Kubernetes
          * version for the cluster. All node groups are created with the latest AMI release
          * version for the respective minor Kubernetes version of the cluster, unless you
-         * deploy a custom AMI using a launch template. For more information about using
-         * launch templates, see <a
+         * deploy a custom AMI using a launch template.</p> <p>For later updates, you will
+         * only be able to update a node group using a launch template only if it was
+         * originally deployed with a launch template. Additionally, the launch template ID
+         * or name must match what was used when the node group was created. You can update
+         * the launch template version with necessary changes. For more information about
+         * using launch templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
          * managed nodes with launch templates</a>.</p> <p>An Amazon EKS managed node group
          * is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
@@ -1752,16 +1756,18 @@ namespace EKS
         /**
          * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
          * group.</p> <p>You can update a node group using a launch template only if the
-         * node group was originally deployed with a launch template. If you need to update
-         * a custom AMI in a node group that was deployed with a launch template, then
-         * update your custom AMI, specify the new ID in a new version of the launch
-         * template, and then update the node group to the new version of the launch
-         * template.</p> <p>If you update without a launch template, then you can update to
-         * the latest available AMI version of a node group's current Kubernetes version by
-         * not specifying a Kubernetes version in the request. You can update to the latest
-         * AMI version of your cluster's current Kubernetes version by specifying your
-         * cluster's Kubernetes version in the request. For information about Linux
-         * versions, see <a
+         * node group was originally deployed with a launch template. Additionally, the
+         * launch template ID or name must match what was used when the node group was
+         * created. You can update the launch template version with necessary changes.</p>
+         * <p>If you need to update a custom AMI in a node group that was deployed with a
+         * launch template, then update your custom AMI, specify the new ID in a new
+         * version of the launch template, and then update the node group to the new
+         * version of the launch template.</p> <p>If you update without a launch template,
+         * then you can update to the latest available AMI version of a node group's
+         * current Kubernetes version by not specifying a Kubernetes version in the
+         * request. You can update to the latest AMI version of your cluster's current
+         * Kubernetes version by specifying your cluster's Kubernetes version in the
+         * request. For information about Linux versions, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
          * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
          * For information about Windows versions, see <a

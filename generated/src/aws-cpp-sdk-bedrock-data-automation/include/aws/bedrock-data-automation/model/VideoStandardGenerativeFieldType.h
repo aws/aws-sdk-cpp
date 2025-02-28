@@ -17,8 +17,8 @@ namespace Model
   {
     NOT_SET,
     VIDEO_SUMMARY,
-    SCENE_SUMMARY,
-    IAB
+    IAB,
+    CHAPTER_SUMMARY
   };
 
 namespace VideoStandardGenerativeFieldTypeMapper

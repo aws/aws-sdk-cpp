@@ -667,6 +667,33 @@ namespace MediaConvert
         }
 
         /**
+         * The Probe operation analyzes the provided media file and returns comprehensive
+         * metadata about its container format, tracks, and any encountered
+         * errors.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProbeOutcome Probe(const Model::ProbeRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for Probe that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ProbeRequestT = Model::ProbeRequest>
+        Model::ProbeOutcomeCallable ProbeCallable(const ProbeRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaConvertClient::Probe, request);
+        }
+
+        /**
+         * An Async wrapper for Probe that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ProbeRequestT = Model::ProbeRequest>
+        void ProbeAsync(const ProbeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ProbeRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaConvertClient::Probe, request, handler, context);
+        }
+
+        /**
          * Create or change your policy. For more information about policies, see the user
          * guide at
          * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See

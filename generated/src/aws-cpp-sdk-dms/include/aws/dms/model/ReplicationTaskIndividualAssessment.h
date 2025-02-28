@@ -88,7 +88,8 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>"cancelled"</code> </p> </li> <li> <p>
      * <code>"error"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
      * <p> <code>"passed"</code> </p> </li> <li> <p> <code>"pending"</code> </p> </li>
-     * <li> <p> <code>"running"</code> </p> </li> </ul>
+     * <li> <p> <code>"skipped"</code> </p> </li> <li> <p> <code>"running"</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
