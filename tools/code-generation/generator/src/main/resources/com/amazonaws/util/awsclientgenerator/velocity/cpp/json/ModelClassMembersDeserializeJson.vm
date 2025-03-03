@@ -43,15 +43,11 @@
 #else
   ${spaces}${memberVarName} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
 #end
-
+    $varNameHasBeenSet = true;
 #end
 #end
 #if(!$member.required && !$memberIsWholePayload)
-#if($useRequiredField)
-    $varNameHasBeenSet = true;
-#end
   }
-
 #end
 #end
 #end

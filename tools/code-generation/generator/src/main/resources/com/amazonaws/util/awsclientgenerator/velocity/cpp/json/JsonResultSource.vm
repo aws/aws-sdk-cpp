@@ -19,12 +19,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-#set($useRequiredField = false)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
-
+###set($useRequiredField = false)
+###parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
+##${typeInfo.className}::${typeInfo.className}()$initializers
+##{
+##}
+##
 ${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<JsonValue>& result)
 #if($initializers)
   : ${typeInfo.className}()
