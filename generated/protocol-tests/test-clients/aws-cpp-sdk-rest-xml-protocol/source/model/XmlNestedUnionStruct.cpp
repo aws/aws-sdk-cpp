@@ -20,27 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-XmlNestedUnionStruct::XmlNestedUnionStruct() : 
-    m_stringValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_byteValue(0),
-    m_byteValueHasBeenSet(false),
-    m_shortValue(0),
-    m_shortValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_floatValue(0.0),
-    m_floatValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false)
-{
-}
-
 XmlNestedUnionStruct::XmlNestedUnionStruct(const XmlNode& xmlNode)
-  : XmlNestedUnionStruct()
 {
   *this = xmlNode;
 }

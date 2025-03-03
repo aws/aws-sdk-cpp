@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonListsResult::JsonListsResult()
-{
-}
-
 JsonListsResult::JsonListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_stringList.push_back(stringListJsonList[stringListIndex].AsString());
     }
   }
-
   if(jsonValue.ValueExists("stringSet"))
   {
     Aws::Utils::Array<JsonView> stringSetJsonList = jsonValue.GetArray("stringSet");
@@ -46,7 +41,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_stringSet.push_back(stringSetJsonList[stringSetIndex].AsString());
     }
   }
-
   if(jsonValue.ValueExists("integerList"))
   {
     Aws::Utils::Array<JsonView> integerListJsonList = jsonValue.GetArray("integerList");
@@ -55,7 +49,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_integerList.push_back(integerListJsonList[integerListIndex].AsInteger());
     }
   }
-
   if(jsonValue.ValueExists("booleanList"))
   {
     Aws::Utils::Array<JsonView> booleanListJsonList = jsonValue.GetArray("booleanList");
@@ -64,7 +57,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_booleanList.push_back(booleanListJsonList[booleanListIndex].AsBool());
     }
   }
-
   if(jsonValue.ValueExists("timestampList"))
   {
     Aws::Utils::Array<JsonView> timestampListJsonList = jsonValue.GetArray("timestampList");
@@ -73,7 +65,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_timestampList.push_back(timestampListJsonList[timestampListIndex].AsDouble());
     }
   }
-
   if(jsonValue.ValueExists("enumList"))
   {
     Aws::Utils::Array<JsonView> enumListJsonList = jsonValue.GetArray("enumList");
@@ -82,7 +73,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_enumList.push_back(FooEnumMapper::GetFooEnumForName(enumListJsonList[enumListIndex].AsString()));
     }
   }
-
   if(jsonValue.ValueExists("intEnumList"))
   {
     Aws::Utils::Array<JsonView> intEnumListJsonList = jsonValue.GetArray("intEnumList");
@@ -91,7 +81,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_intEnumList.push_back(intEnumListJsonList[intEnumListIndex].AsInteger());
     }
   }
-
   if(jsonValue.ValueExists("nestedStringList"))
   {
     Aws::Utils::Array<JsonView> nestedStringListJsonList = jsonValue.GetArray("nestedStringList");
@@ -107,7 +96,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_nestedStringList.push_back(std::move(stringListList));
     }
   }
-
   if(jsonValue.ValueExists("myStructureList"))
   {
     Aws::Utils::Array<JsonView> myStructureListJsonList = jsonValue.GetArray("myStructureList");
@@ -116,7 +104,6 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_structureList.push_back(myStructureListJsonList[myStructureListIndex].AsObject());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

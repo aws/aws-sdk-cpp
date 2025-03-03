@@ -25,7 +25,7 @@ namespace Model
   class XmlEmptyListsRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlEmptyListsRequest();
+    AWS_RESTXMLPROTOCOL_API XmlEmptyListsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,186 +38,178 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetStringList() const{ return m_stringList; }
+    inline const Aws::Vector<Aws::String>& GetStringList() const { return m_stringList; }
     inline bool StringListHasBeenSet() const { return m_stringListHasBeenSet; }
-    inline void SetStringList(const Aws::Vector<Aws::String>& value) { m_stringListHasBeenSet = true; m_stringList = value; }
-    inline void SetStringList(Aws::Vector<Aws::String>&& value) { m_stringListHasBeenSet = true; m_stringList = std::move(value); }
-    inline XmlEmptyListsRequest& WithStringList(const Aws::Vector<Aws::String>& value) { SetStringList(value); return *this;}
-    inline XmlEmptyListsRequest& WithStringList(Aws::Vector<Aws::String>&& value) { SetStringList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddStringList(const Aws::String& value) { m_stringListHasBeenSet = true; m_stringList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddStringList(Aws::String&& value) { m_stringListHasBeenSet = true; m_stringList.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddStringList(const char* value) { m_stringListHasBeenSet = true; m_stringList.push_back(value); return *this; }
+    template<typename StringListT = Aws::Vector<Aws::String>>
+    void SetStringList(StringListT&& value) { m_stringListHasBeenSet = true; m_stringList = std::forward<StringListT>(value); }
+    template<typename StringListT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithStringList(StringListT&& value) { SetStringList(std::forward<StringListT>(value)); return *this;}
+    template<typename StringListT = Aws::String>
+    XmlEmptyListsRequest& AddStringList(StringListT&& value) { m_stringListHasBeenSet = true; m_stringList.emplace_back(std::forward<StringListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetStringSet() const{ return m_stringSet; }
+    inline const Aws::Vector<Aws::String>& GetStringSet() const { return m_stringSet; }
     inline bool StringSetHasBeenSet() const { return m_stringSetHasBeenSet; }
-    inline void SetStringSet(const Aws::Vector<Aws::String>& value) { m_stringSetHasBeenSet = true; m_stringSet = value; }
-    inline void SetStringSet(Aws::Vector<Aws::String>&& value) { m_stringSetHasBeenSet = true; m_stringSet = std::move(value); }
-    inline XmlEmptyListsRequest& WithStringSet(const Aws::Vector<Aws::String>& value) { SetStringSet(value); return *this;}
-    inline XmlEmptyListsRequest& WithStringSet(Aws::Vector<Aws::String>&& value) { SetStringSet(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddStringSet(const Aws::String& value) { m_stringSetHasBeenSet = true; m_stringSet.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddStringSet(Aws::String&& value) { m_stringSetHasBeenSet = true; m_stringSet.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddStringSet(const char* value) { m_stringSetHasBeenSet = true; m_stringSet.push_back(value); return *this; }
+    template<typename StringSetT = Aws::Vector<Aws::String>>
+    void SetStringSet(StringSetT&& value) { m_stringSetHasBeenSet = true; m_stringSet = std::forward<StringSetT>(value); }
+    template<typename StringSetT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithStringSet(StringSetT&& value) { SetStringSet(std::forward<StringSetT>(value)); return *this;}
+    template<typename StringSetT = Aws::String>
+    XmlEmptyListsRequest& AddStringSet(StringSetT&& value) { m_stringSetHasBeenSet = true; m_stringSet.emplace_back(std::forward<StringSetT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<int>& GetIntegerList() const{ return m_integerList; }
+    inline const Aws::Vector<int>& GetIntegerList() const { return m_integerList; }
     inline bool IntegerListHasBeenSet() const { return m_integerListHasBeenSet; }
-    inline void SetIntegerList(const Aws::Vector<int>& value) { m_integerListHasBeenSet = true; m_integerList = value; }
-    inline void SetIntegerList(Aws::Vector<int>&& value) { m_integerListHasBeenSet = true; m_integerList = std::move(value); }
-    inline XmlEmptyListsRequest& WithIntegerList(const Aws::Vector<int>& value) { SetIntegerList(value); return *this;}
-    inline XmlEmptyListsRequest& WithIntegerList(Aws::Vector<int>&& value) { SetIntegerList(std::move(value)); return *this;}
+    template<typename IntegerListT = Aws::Vector<int>>
+    void SetIntegerList(IntegerListT&& value) { m_integerListHasBeenSet = true; m_integerList = std::forward<IntegerListT>(value); }
+    template<typename IntegerListT = Aws::Vector<int>>
+    XmlEmptyListsRequest& WithIntegerList(IntegerListT&& value) { SetIntegerList(std::forward<IntegerListT>(value)); return *this;}
     inline XmlEmptyListsRequest& AddIntegerList(int value) { m_integerListHasBeenSet = true; m_integerList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<bool>& GetBooleanList() const{ return m_booleanList; }
+    inline const Aws::Vector<bool>& GetBooleanList() const { return m_booleanList; }
     inline bool BooleanListHasBeenSet() const { return m_booleanListHasBeenSet; }
-    inline void SetBooleanList(const Aws::Vector<bool>& value) { m_booleanListHasBeenSet = true; m_booleanList = value; }
-    inline void SetBooleanList(Aws::Vector<bool>&& value) { m_booleanListHasBeenSet = true; m_booleanList = std::move(value); }
-    inline XmlEmptyListsRequest& WithBooleanList(const Aws::Vector<bool>& value) { SetBooleanList(value); return *this;}
-    inline XmlEmptyListsRequest& WithBooleanList(Aws::Vector<bool>&& value) { SetBooleanList(std::move(value)); return *this;}
+    template<typename BooleanListT = Aws::Vector<bool>>
+    void SetBooleanList(BooleanListT&& value) { m_booleanListHasBeenSet = true; m_booleanList = std::forward<BooleanListT>(value); }
+    template<typename BooleanListT = Aws::Vector<bool>>
+    XmlEmptyListsRequest& WithBooleanList(BooleanListT&& value) { SetBooleanList(std::forward<BooleanListT>(value)); return *this;}
     inline XmlEmptyListsRequest& AddBooleanList(bool value) { m_booleanListHasBeenSet = true; m_booleanList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestampList() const{ return m_timestampList; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestampList() const { return m_timestampList; }
     inline bool TimestampListHasBeenSet() const { return m_timestampListHasBeenSet; }
-    inline void SetTimestampList(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestampListHasBeenSet = true; m_timestampList = value; }
-    inline void SetTimestampList(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestampListHasBeenSet = true; m_timestampList = std::move(value); }
-    inline XmlEmptyListsRequest& WithTimestampList(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestampList(value); return *this;}
-    inline XmlEmptyListsRequest& WithTimestampList(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestampList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddTimestampList(const Aws::Utils::DateTime& value) { m_timestampListHasBeenSet = true; m_timestampList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddTimestampList(Aws::Utils::DateTime&& value) { m_timestampListHasBeenSet = true; m_timestampList.push_back(std::move(value)); return *this; }
+    template<typename TimestampListT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetTimestampList(TimestampListT&& value) { m_timestampListHasBeenSet = true; m_timestampList = std::forward<TimestampListT>(value); }
+    template<typename TimestampListT = Aws::Vector<Aws::Utils::DateTime>>
+    XmlEmptyListsRequest& WithTimestampList(TimestampListT&& value) { SetTimestampList(std::forward<TimestampListT>(value)); return *this;}
+    template<typename TimestampListT = Aws::Utils::DateTime>
+    XmlEmptyListsRequest& AddTimestampList(TimestampListT&& value) { m_timestampListHasBeenSet = true; m_timestampList.emplace_back(std::forward<TimestampListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<FooEnum>& GetEnumList() const{ return m_enumList; }
+    inline const Aws::Vector<FooEnum>& GetEnumList() const { return m_enumList; }
     inline bool EnumListHasBeenSet() const { return m_enumListHasBeenSet; }
-    inline void SetEnumList(const Aws::Vector<FooEnum>& value) { m_enumListHasBeenSet = true; m_enumList = value; }
-    inline void SetEnumList(Aws::Vector<FooEnum>&& value) { m_enumListHasBeenSet = true; m_enumList = std::move(value); }
-    inline XmlEmptyListsRequest& WithEnumList(const Aws::Vector<FooEnum>& value) { SetEnumList(value); return *this;}
-    inline XmlEmptyListsRequest& WithEnumList(Aws::Vector<FooEnum>&& value) { SetEnumList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddEnumList(const FooEnum& value) { m_enumListHasBeenSet = true; m_enumList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddEnumList(FooEnum&& value) { m_enumListHasBeenSet = true; m_enumList.push_back(std::move(value)); return *this; }
+    template<typename EnumListT = Aws::Vector<FooEnum>>
+    void SetEnumList(EnumListT&& value) { m_enumListHasBeenSet = true; m_enumList = std::forward<EnumListT>(value); }
+    template<typename EnumListT = Aws::Vector<FooEnum>>
+    XmlEmptyListsRequest& WithEnumList(EnumListT&& value) { SetEnumList(std::forward<EnumListT>(value)); return *this;}
+    inline XmlEmptyListsRequest& AddEnumList(FooEnum value) { m_enumListHasBeenSet = true; m_enumList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<int>& GetIntEnumList() const{ return m_intEnumList; }
+    inline const Aws::Vector<int>& GetIntEnumList() const { return m_intEnumList; }
     inline bool IntEnumListHasBeenSet() const { return m_intEnumListHasBeenSet; }
-    inline void SetIntEnumList(const Aws::Vector<int>& value) { m_intEnumListHasBeenSet = true; m_intEnumList = value; }
-    inline void SetIntEnumList(Aws::Vector<int>&& value) { m_intEnumListHasBeenSet = true; m_intEnumList = std::move(value); }
-    inline XmlEmptyListsRequest& WithIntEnumList(const Aws::Vector<int>& value) { SetIntEnumList(value); return *this;}
-    inline XmlEmptyListsRequest& WithIntEnumList(Aws::Vector<int>&& value) { SetIntEnumList(std::move(value)); return *this;}
+    template<typename IntEnumListT = Aws::Vector<int>>
+    void SetIntEnumList(IntEnumListT&& value) { m_intEnumListHasBeenSet = true; m_intEnumList = std::forward<IntEnumListT>(value); }
+    template<typename IntEnumListT = Aws::Vector<int>>
+    XmlEmptyListsRequest& WithIntEnumList(IntEnumListT&& value) { SetIntEnumList(std::forward<IntEnumListT>(value)); return *this;}
     inline XmlEmptyListsRequest& AddIntEnumList(int value) { m_intEnumListHasBeenSet = true; m_intEnumList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetNestedStringList() const{ return m_nestedStringList; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetNestedStringList() const { return m_nestedStringList; }
     inline bool NestedStringListHasBeenSet() const { return m_nestedStringListHasBeenSet; }
-    inline void SetNestedStringList(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_nestedStringListHasBeenSet = true; m_nestedStringList = value; }
-    inline void SetNestedStringList(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_nestedStringListHasBeenSet = true; m_nestedStringList = std::move(value); }
-    inline XmlEmptyListsRequest& WithNestedStringList(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetNestedStringList(value); return *this;}
-    inline XmlEmptyListsRequest& WithNestedStringList(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetNestedStringList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddNestedStringList(const Aws::Vector<Aws::String>& value) { m_nestedStringListHasBeenSet = true; m_nestedStringList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddNestedStringList(Aws::Vector<Aws::String>&& value) { m_nestedStringListHasBeenSet = true; m_nestedStringList.push_back(std::move(value)); return *this; }
+    template<typename NestedStringListT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetNestedStringList(NestedStringListT&& value) { m_nestedStringListHasBeenSet = true; m_nestedStringList = std::forward<NestedStringListT>(value); }
+    template<typename NestedStringListT = Aws::Vector<Aws::Vector<Aws::String>>>
+    XmlEmptyListsRequest& WithNestedStringList(NestedStringListT&& value) { SetNestedStringList(std::forward<NestedStringListT>(value)); return *this;}
+    template<typename NestedStringListT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& AddNestedStringList(NestedStringListT&& value) { m_nestedStringListHasBeenSet = true; m_nestedStringList.emplace_back(std::forward<NestedStringListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetRenamedListMembers() const{ return m_renamedListMembers; }
+    inline const Aws::Vector<Aws::String>& GetRenamedListMembers() const { return m_renamedListMembers; }
     inline bool RenamedListMembersHasBeenSet() const { return m_renamedListMembersHasBeenSet; }
-    inline void SetRenamedListMembers(const Aws::Vector<Aws::String>& value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers = value; }
-    inline void SetRenamedListMembers(Aws::Vector<Aws::String>&& value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers = std::move(value); }
-    inline XmlEmptyListsRequest& WithRenamedListMembers(const Aws::Vector<Aws::String>& value) { SetRenamedListMembers(value); return *this;}
-    inline XmlEmptyListsRequest& WithRenamedListMembers(Aws::Vector<Aws::String>&& value) { SetRenamedListMembers(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddRenamedListMembers(const Aws::String& value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddRenamedListMembers(Aws::String&& value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddRenamedListMembers(const char* value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers.push_back(value); return *this; }
+    template<typename RenamedListMembersT = Aws::Vector<Aws::String>>
+    void SetRenamedListMembers(RenamedListMembersT&& value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers = std::forward<RenamedListMembersT>(value); }
+    template<typename RenamedListMembersT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithRenamedListMembers(RenamedListMembersT&& value) { SetRenamedListMembers(std::forward<RenamedListMembersT>(value)); return *this;}
+    template<typename RenamedListMembersT = Aws::String>
+    XmlEmptyListsRequest& AddRenamedListMembers(RenamedListMembersT&& value) { m_renamedListMembersHasBeenSet = true; m_renamedListMembers.emplace_back(std::forward<RenamedListMembersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetFlattenedList() const{ return m_flattenedList; }
+    inline const Aws::Vector<Aws::String>& GetFlattenedList() const { return m_flattenedList; }
     inline bool FlattenedListHasBeenSet() const { return m_flattenedListHasBeenSet; }
-    inline void SetFlattenedList(const Aws::Vector<Aws::String>& value) { m_flattenedListHasBeenSet = true; m_flattenedList = value; }
-    inline void SetFlattenedList(Aws::Vector<Aws::String>&& value) { m_flattenedListHasBeenSet = true; m_flattenedList = std::move(value); }
-    inline XmlEmptyListsRequest& WithFlattenedList(const Aws::Vector<Aws::String>& value) { SetFlattenedList(value); return *this;}
-    inline XmlEmptyListsRequest& WithFlattenedList(Aws::Vector<Aws::String>&& value) { SetFlattenedList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddFlattenedList(const Aws::String& value) { m_flattenedListHasBeenSet = true; m_flattenedList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedList(Aws::String&& value) { m_flattenedListHasBeenSet = true; m_flattenedList.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedList(const char* value) { m_flattenedListHasBeenSet = true; m_flattenedList.push_back(value); return *this; }
+    template<typename FlattenedListT = Aws::Vector<Aws::String>>
+    void SetFlattenedList(FlattenedListT&& value) { m_flattenedListHasBeenSet = true; m_flattenedList = std::forward<FlattenedListT>(value); }
+    template<typename FlattenedListT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithFlattenedList(FlattenedListT&& value) { SetFlattenedList(std::forward<FlattenedListT>(value)); return *this;}
+    template<typename FlattenedListT = Aws::String>
+    XmlEmptyListsRequest& AddFlattenedList(FlattenedListT&& value) { m_flattenedListHasBeenSet = true; m_flattenedList.emplace_back(std::forward<FlattenedListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetFlattenedList2() const{ return m_flattenedList2; }
+    inline const Aws::Vector<Aws::String>& GetFlattenedList2() const { return m_flattenedList2; }
     inline bool FlattenedList2HasBeenSet() const { return m_flattenedList2HasBeenSet; }
-    inline void SetFlattenedList2(const Aws::Vector<Aws::String>& value) { m_flattenedList2HasBeenSet = true; m_flattenedList2 = value; }
-    inline void SetFlattenedList2(Aws::Vector<Aws::String>&& value) { m_flattenedList2HasBeenSet = true; m_flattenedList2 = std::move(value); }
-    inline XmlEmptyListsRequest& WithFlattenedList2(const Aws::Vector<Aws::String>& value) { SetFlattenedList2(value); return *this;}
-    inline XmlEmptyListsRequest& WithFlattenedList2(Aws::Vector<Aws::String>&& value) { SetFlattenedList2(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddFlattenedList2(const Aws::String& value) { m_flattenedList2HasBeenSet = true; m_flattenedList2.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedList2(Aws::String&& value) { m_flattenedList2HasBeenSet = true; m_flattenedList2.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedList2(const char* value) { m_flattenedList2HasBeenSet = true; m_flattenedList2.push_back(value); return *this; }
+    template<typename FlattenedList2T = Aws::Vector<Aws::String>>
+    void SetFlattenedList2(FlattenedList2T&& value) { m_flattenedList2HasBeenSet = true; m_flattenedList2 = std::forward<FlattenedList2T>(value); }
+    template<typename FlattenedList2T = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithFlattenedList2(FlattenedList2T&& value) { SetFlattenedList2(std::forward<FlattenedList2T>(value)); return *this;}
+    template<typename FlattenedList2T = Aws::String>
+    XmlEmptyListsRequest& AddFlattenedList2(FlattenedList2T&& value) { m_flattenedList2HasBeenSet = true; m_flattenedList2.emplace_back(std::forward<FlattenedList2T>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetFlattenedListWithMemberNamespace() const{ return m_flattenedListWithMemberNamespace; }
+    inline const Aws::Vector<Aws::String>& GetFlattenedListWithMemberNamespace() const { return m_flattenedListWithMemberNamespace; }
     inline bool FlattenedListWithMemberNamespaceHasBeenSet() const { return m_flattenedListWithMemberNamespaceHasBeenSet; }
-    inline void SetFlattenedListWithMemberNamespace(const Aws::Vector<Aws::String>& value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace = value; }
-    inline void SetFlattenedListWithMemberNamespace(Aws::Vector<Aws::String>&& value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace = std::move(value); }
-    inline XmlEmptyListsRequest& WithFlattenedListWithMemberNamespace(const Aws::Vector<Aws::String>& value) { SetFlattenedListWithMemberNamespace(value); return *this;}
-    inline XmlEmptyListsRequest& WithFlattenedListWithMemberNamespace(Aws::Vector<Aws::String>&& value) { SetFlattenedListWithMemberNamespace(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddFlattenedListWithMemberNamespace(const Aws::String& value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedListWithMemberNamespace(Aws::String&& value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedListWithMemberNamespace(const char* value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace.push_back(value); return *this; }
+    template<typename FlattenedListWithMemberNamespaceT = Aws::Vector<Aws::String>>
+    void SetFlattenedListWithMemberNamespace(FlattenedListWithMemberNamespaceT&& value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace = std::forward<FlattenedListWithMemberNamespaceT>(value); }
+    template<typename FlattenedListWithMemberNamespaceT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithFlattenedListWithMemberNamespace(FlattenedListWithMemberNamespaceT&& value) { SetFlattenedListWithMemberNamespace(std::forward<FlattenedListWithMemberNamespaceT>(value)); return *this;}
+    template<typename FlattenedListWithMemberNamespaceT = Aws::String>
+    XmlEmptyListsRequest& AddFlattenedListWithMemberNamespace(FlattenedListWithMemberNamespaceT&& value) { m_flattenedListWithMemberNamespaceHasBeenSet = true; m_flattenedListWithMemberNamespace.emplace_back(std::forward<FlattenedListWithMemberNamespaceT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetFlattenedListWithNamespace() const{ return m_flattenedListWithNamespace; }
+    inline const Aws::Vector<Aws::String>& GetFlattenedListWithNamespace() const { return m_flattenedListWithNamespace; }
     inline bool FlattenedListWithNamespaceHasBeenSet() const { return m_flattenedListWithNamespaceHasBeenSet; }
-    inline void SetFlattenedListWithNamespace(const Aws::Vector<Aws::String>& value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace = value; }
-    inline void SetFlattenedListWithNamespace(Aws::Vector<Aws::String>&& value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace = std::move(value); }
-    inline XmlEmptyListsRequest& WithFlattenedListWithNamespace(const Aws::Vector<Aws::String>& value) { SetFlattenedListWithNamespace(value); return *this;}
-    inline XmlEmptyListsRequest& WithFlattenedListWithNamespace(Aws::Vector<Aws::String>&& value) { SetFlattenedListWithNamespace(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddFlattenedListWithNamespace(const Aws::String& value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedListWithNamespace(Aws::String&& value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace.push_back(std::move(value)); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedListWithNamespace(const char* value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace.push_back(value); return *this; }
+    template<typename FlattenedListWithNamespaceT = Aws::Vector<Aws::String>>
+    void SetFlattenedListWithNamespace(FlattenedListWithNamespaceT&& value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace = std::forward<FlattenedListWithNamespaceT>(value); }
+    template<typename FlattenedListWithNamespaceT = Aws::Vector<Aws::String>>
+    XmlEmptyListsRequest& WithFlattenedListWithNamespace(FlattenedListWithNamespaceT&& value) { SetFlattenedListWithNamespace(std::forward<FlattenedListWithNamespaceT>(value)); return *this;}
+    template<typename FlattenedListWithNamespaceT = Aws::String>
+    XmlEmptyListsRequest& AddFlattenedListWithNamespace(FlattenedListWithNamespaceT&& value) { m_flattenedListWithNamespaceHasBeenSet = true; m_flattenedListWithNamespace.emplace_back(std::forward<FlattenedListWithNamespaceT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<StructureListMember>& GetStructureList() const{ return m_structureList; }
+    inline const Aws::Vector<StructureListMember>& GetStructureList() const { return m_structureList; }
     inline bool StructureListHasBeenSet() const { return m_structureListHasBeenSet; }
-    inline void SetStructureList(const Aws::Vector<StructureListMember>& value) { m_structureListHasBeenSet = true; m_structureList = value; }
-    inline void SetStructureList(Aws::Vector<StructureListMember>&& value) { m_structureListHasBeenSet = true; m_structureList = std::move(value); }
-    inline XmlEmptyListsRequest& WithStructureList(const Aws::Vector<StructureListMember>& value) { SetStructureList(value); return *this;}
-    inline XmlEmptyListsRequest& WithStructureList(Aws::Vector<StructureListMember>&& value) { SetStructureList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddStructureList(const StructureListMember& value) { m_structureListHasBeenSet = true; m_structureList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddStructureList(StructureListMember&& value) { m_structureListHasBeenSet = true; m_structureList.push_back(std::move(value)); return *this; }
+    template<typename StructureListT = Aws::Vector<StructureListMember>>
+    void SetStructureList(StructureListT&& value) { m_structureListHasBeenSet = true; m_structureList = std::forward<StructureListT>(value); }
+    template<typename StructureListT = Aws::Vector<StructureListMember>>
+    XmlEmptyListsRequest& WithStructureList(StructureListT&& value) { SetStructureList(std::forward<StructureListT>(value)); return *this;}
+    template<typename StructureListT = StructureListMember>
+    XmlEmptyListsRequest& AddStructureList(StructureListT&& value) { m_structureListHasBeenSet = true; m_structureList.emplace_back(std::forward<StructureListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<StructureListMember>& GetFlattenedStructureList() const{ return m_flattenedStructureList; }
+    inline const Aws::Vector<StructureListMember>& GetFlattenedStructureList() const { return m_flattenedStructureList; }
     inline bool FlattenedStructureListHasBeenSet() const { return m_flattenedStructureListHasBeenSet; }
-    inline void SetFlattenedStructureList(const Aws::Vector<StructureListMember>& value) { m_flattenedStructureListHasBeenSet = true; m_flattenedStructureList = value; }
-    inline void SetFlattenedStructureList(Aws::Vector<StructureListMember>&& value) { m_flattenedStructureListHasBeenSet = true; m_flattenedStructureList = std::move(value); }
-    inline XmlEmptyListsRequest& WithFlattenedStructureList(const Aws::Vector<StructureListMember>& value) { SetFlattenedStructureList(value); return *this;}
-    inline XmlEmptyListsRequest& WithFlattenedStructureList(Aws::Vector<StructureListMember>&& value) { SetFlattenedStructureList(std::move(value)); return *this;}
-    inline XmlEmptyListsRequest& AddFlattenedStructureList(const StructureListMember& value) { m_flattenedStructureListHasBeenSet = true; m_flattenedStructureList.push_back(value); return *this; }
-    inline XmlEmptyListsRequest& AddFlattenedStructureList(StructureListMember&& value) { m_flattenedStructureListHasBeenSet = true; m_flattenedStructureList.push_back(std::move(value)); return *this; }
+    template<typename FlattenedStructureListT = Aws::Vector<StructureListMember>>
+    void SetFlattenedStructureList(FlattenedStructureListT&& value) { m_flattenedStructureListHasBeenSet = true; m_flattenedStructureList = std::forward<FlattenedStructureListT>(value); }
+    template<typename FlattenedStructureListT = Aws::Vector<StructureListMember>>
+    XmlEmptyListsRequest& WithFlattenedStructureList(FlattenedStructureListT&& value) { SetFlattenedStructureList(std::forward<FlattenedStructureListT>(value)); return *this;}
+    template<typename FlattenedStructureListT = StructureListMember>
+    XmlEmptyListsRequest& AddFlattenedStructureList(FlattenedStructureListT&& value) { m_flattenedStructureListHasBeenSet = true; m_flattenedStructureList.emplace_back(std::forward<FlattenedStructureListT>(value)); return *this; }
     ///@}
   private:
 

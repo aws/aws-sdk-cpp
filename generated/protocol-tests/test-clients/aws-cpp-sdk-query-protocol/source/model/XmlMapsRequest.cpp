@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-XmlMapsRequest::XmlMapsRequest()
-{
-}
-
 Aws::String XmlMapsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

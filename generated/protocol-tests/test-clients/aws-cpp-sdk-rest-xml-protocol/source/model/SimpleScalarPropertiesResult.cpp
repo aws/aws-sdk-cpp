@@ -16,20 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SimpleScalarPropertiesResult::SimpleScalarPropertiesResult() : 
-    m_trueBooleanValue(false),
-    m_falseBooleanValue(false),
-    m_byteValue(0),
-    m_shortValue(0),
-    m_integerValue(0),
-    m_longValue(0),
-    m_floatValue(0.0),
-    m_doubleValue(0.0)
-{
-}
-
 SimpleScalarPropertiesResult::SimpleScalarPropertiesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : SimpleScalarPropertiesResult()
 {
   *this = result;
 }

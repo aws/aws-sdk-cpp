@@ -16,15 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlIntEnumsResult::XmlIntEnumsResult() : 
-    m_intEnum1(0),
-    m_intEnum2(0),
-    m_intEnum3(0)
-{
-}
-
 XmlIntEnumsResult::XmlIntEnumsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : XmlIntEnumsResult()
 {
   *this = result;
 }

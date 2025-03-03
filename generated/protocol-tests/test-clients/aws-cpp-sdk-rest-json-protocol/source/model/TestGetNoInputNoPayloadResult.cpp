@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestGetNoInputNoPayloadResult::TestGetNoInputNoPayloadResult()
-{
-}
-
 TestGetNoInputNoPayloadResult::TestGetNoInputNoPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;

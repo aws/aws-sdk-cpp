@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FractionalSecondsResult::FractionalSecondsResult()
-{
-}
-
 FractionalSecondsResult::FractionalSecondsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ FractionalSecondsResult& FractionalSecondsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("datetime"))
   {
     m_datetime = jsonValue.GetString("datetime");
-
+    m_datetimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

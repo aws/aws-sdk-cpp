@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RecursiveShapesResult::RecursiveShapesResult()
-{
-}
-
 RecursiveShapesResult::RecursiveShapesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ RecursiveShapesResult& RecursiveShapesResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("nested"))
   {
     m_nested = jsonValue.GetObject("nested");
-
+    m_nestedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

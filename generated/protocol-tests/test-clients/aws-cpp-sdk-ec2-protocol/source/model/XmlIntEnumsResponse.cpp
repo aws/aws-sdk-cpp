@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlIntEnumsResponse::XmlIntEnumsResponse() : 
-    m_intEnum1(0),
-    m_intEnum2(0),
-    m_intEnum3(0)
-{
-}
-
 XmlIntEnumsResponse::XmlIntEnumsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : XmlIntEnumsResponse()
 {
   *this = result;
 }

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlMapWithXmlNamespaceResult::XmlMapWithXmlNamespaceResult()
-{
-}
-
 XmlMapWithXmlNamespaceResult::XmlMapWithXmlNamespaceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

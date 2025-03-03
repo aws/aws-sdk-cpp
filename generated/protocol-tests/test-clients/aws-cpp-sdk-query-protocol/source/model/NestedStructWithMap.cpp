@@ -20,13 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-NestedStructWithMap::NestedStructWithMap() : 
-    m_mapArgHasBeenSet(false)
-{
-}
-
 NestedStructWithMap::NestedStructWithMap(const XmlNode& xmlNode)
-  : NestedStructWithMap()
 {
   *this = xmlNode;
 }

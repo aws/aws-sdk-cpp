@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-FractionalSecondsRequest::FractionalSecondsRequest()
-{
-}
-
 Aws::String FractionalSecondsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

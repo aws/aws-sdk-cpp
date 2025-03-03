@@ -15,29 +15,6 @@ using namespace Aws::RestXmlProtocolNamespace::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-SimpleScalarPropertiesRequest::SimpleScalarPropertiesRequest() : 
-    m_fooHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_trueBooleanValue(false),
-    m_trueBooleanValueHasBeenSet(false),
-    m_falseBooleanValue(false),
-    m_falseBooleanValueHasBeenSet(false),
-    m_byteValue(0),
-    m_byteValueHasBeenSet(false),
-    m_shortValue(0),
-    m_shortValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_floatValue(0.0),
-    m_floatValueHasBeenSet(false),
-    m_nestedHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String SimpleScalarPropertiesRequest::SerializePayload() const
 {

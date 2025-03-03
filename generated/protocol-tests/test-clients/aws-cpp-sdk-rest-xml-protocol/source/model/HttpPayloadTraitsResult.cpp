@@ -16,31 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPayloadTraitsResult::HttpPayloadTraitsResult()
-{
-}
-
-HttpPayloadTraitsResult::HttpPayloadTraitsResult(HttpPayloadTraitsResult&& toMove) : 
-    m_foo(std::move(toMove.m_foo)),
-    m_blob(std::move(toMove.m_blob)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-HttpPayloadTraitsResult& HttpPayloadTraitsResult::operator=(HttpPayloadTraitsResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_foo = std::move(toMove.m_foo);
-   m_blob = std::move(toMove.m_blob);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 HttpPayloadTraitsResult::HttpPayloadTraitsResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);

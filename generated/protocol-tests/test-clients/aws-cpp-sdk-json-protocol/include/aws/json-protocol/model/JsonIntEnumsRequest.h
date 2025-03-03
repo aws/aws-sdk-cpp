@@ -23,7 +23,7 @@ namespace Model
   class JsonIntEnumsRequest : public JsonProtocolRequest
   {
   public:
-    AWS_JSONPROTOCOL_API JsonIntEnumsRequest();
+    AWS_JSONPROTOCOL_API JsonIntEnumsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     
-    inline int GetIntEnum1() const{ return m_intEnum1; }
+    inline int GetIntEnum1() const { return m_intEnum1; }
     inline bool IntEnum1HasBeenSet() const { return m_intEnum1HasBeenSet; }
     inline void SetIntEnum1(int value) { m_intEnum1HasBeenSet = true; m_intEnum1 = value; }
     inline JsonIntEnumsRequest& WithIntEnum1(int value) { SetIntEnum1(value); return *this;}
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     
-    inline int GetIntEnum2() const{ return m_intEnum2; }
+    inline int GetIntEnum2() const { return m_intEnum2; }
     inline bool IntEnum2HasBeenSet() const { return m_intEnum2HasBeenSet; }
     inline void SetIntEnum2(int value) { m_intEnum2HasBeenSet = true; m_intEnum2 = value; }
     inline JsonIntEnumsRequest& WithIntEnum2(int value) { SetIntEnum2(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     
-    inline int GetIntEnum3() const{ return m_intEnum3; }
+    inline int GetIntEnum3() const { return m_intEnum3; }
     inline bool IntEnum3HasBeenSet() const { return m_intEnum3HasBeenSet; }
     inline void SetIntEnum3(int value) { m_intEnum3HasBeenSet = true; m_intEnum3 = value; }
     inline JsonIntEnumsRequest& WithIntEnum3(int value) { SetIntEnum3(value); return *this;}
@@ -62,59 +62,57 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<int>& GetIntEnumList() const{ return m_intEnumList; }
+    inline const Aws::Vector<int>& GetIntEnumList() const { return m_intEnumList; }
     inline bool IntEnumListHasBeenSet() const { return m_intEnumListHasBeenSet; }
-    inline void SetIntEnumList(const Aws::Vector<int>& value) { m_intEnumListHasBeenSet = true; m_intEnumList = value; }
-    inline void SetIntEnumList(Aws::Vector<int>&& value) { m_intEnumListHasBeenSet = true; m_intEnumList = std::move(value); }
-    inline JsonIntEnumsRequest& WithIntEnumList(const Aws::Vector<int>& value) { SetIntEnumList(value); return *this;}
-    inline JsonIntEnumsRequest& WithIntEnumList(Aws::Vector<int>&& value) { SetIntEnumList(std::move(value)); return *this;}
+    template<typename IntEnumListT = Aws::Vector<int>>
+    void SetIntEnumList(IntEnumListT&& value) { m_intEnumListHasBeenSet = true; m_intEnumList = std::forward<IntEnumListT>(value); }
+    template<typename IntEnumListT = Aws::Vector<int>>
+    JsonIntEnumsRequest& WithIntEnumList(IntEnumListT&& value) { SetIntEnumList(std::forward<IntEnumListT>(value)); return *this;}
     inline JsonIntEnumsRequest& AddIntEnumList(int value) { m_intEnumListHasBeenSet = true; m_intEnumList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<int>& GetIntEnumSet() const{ return m_intEnumSet; }
+    inline const Aws::Vector<int>& GetIntEnumSet() const { return m_intEnumSet; }
     inline bool IntEnumSetHasBeenSet() const { return m_intEnumSetHasBeenSet; }
-    inline void SetIntEnumSet(const Aws::Vector<int>& value) { m_intEnumSetHasBeenSet = true; m_intEnumSet = value; }
-    inline void SetIntEnumSet(Aws::Vector<int>&& value) { m_intEnumSetHasBeenSet = true; m_intEnumSet = std::move(value); }
-    inline JsonIntEnumsRequest& WithIntEnumSet(const Aws::Vector<int>& value) { SetIntEnumSet(value); return *this;}
-    inline JsonIntEnumsRequest& WithIntEnumSet(Aws::Vector<int>&& value) { SetIntEnumSet(std::move(value)); return *this;}
+    template<typename IntEnumSetT = Aws::Vector<int>>
+    void SetIntEnumSet(IntEnumSetT&& value) { m_intEnumSetHasBeenSet = true; m_intEnumSet = std::forward<IntEnumSetT>(value); }
+    template<typename IntEnumSetT = Aws::Vector<int>>
+    JsonIntEnumsRequest& WithIntEnumSet(IntEnumSetT&& value) { SetIntEnumSet(std::forward<IntEnumSetT>(value)); return *this;}
     inline JsonIntEnumsRequest& AddIntEnumSet(int value) { m_intEnumSetHasBeenSet = true; m_intEnumSet.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, int>& GetIntEnumMap() const{ return m_intEnumMap; }
+    inline const Aws::Map<Aws::String, int>& GetIntEnumMap() const { return m_intEnumMap; }
     inline bool IntEnumMapHasBeenSet() const { return m_intEnumMapHasBeenSet; }
-    inline void SetIntEnumMap(const Aws::Map<Aws::String, int>& value) { m_intEnumMapHasBeenSet = true; m_intEnumMap = value; }
-    inline void SetIntEnumMap(Aws::Map<Aws::String, int>&& value) { m_intEnumMapHasBeenSet = true; m_intEnumMap = std::move(value); }
-    inline JsonIntEnumsRequest& WithIntEnumMap(const Aws::Map<Aws::String, int>& value) { SetIntEnumMap(value); return *this;}
-    inline JsonIntEnumsRequest& WithIntEnumMap(Aws::Map<Aws::String, int>&& value) { SetIntEnumMap(std::move(value)); return *this;}
-    inline JsonIntEnumsRequest& AddIntEnumMap(const Aws::String& key, int value) { m_intEnumMapHasBeenSet = true; m_intEnumMap.emplace(key, value); return *this; }
-    inline JsonIntEnumsRequest& AddIntEnumMap(Aws::String&& key, int value) { m_intEnumMapHasBeenSet = true; m_intEnumMap.emplace(std::move(key), value); return *this; }
-    inline JsonIntEnumsRequest& AddIntEnumMap(const char* key, int value) { m_intEnumMapHasBeenSet = true; m_intEnumMap.emplace(key, value); return *this; }
+    template<typename IntEnumMapT = Aws::Map<Aws::String, int>>
+    void SetIntEnumMap(IntEnumMapT&& value) { m_intEnumMapHasBeenSet = true; m_intEnumMap = std::forward<IntEnumMapT>(value); }
+    template<typename IntEnumMapT = Aws::Map<Aws::String, int>>
+    JsonIntEnumsRequest& WithIntEnumMap(IntEnumMapT&& value) { SetIntEnumMap(std::forward<IntEnumMapT>(value)); return *this;}
+    inline JsonIntEnumsRequest& AddIntEnumMap(Aws::String key, int value) {
+      m_intEnumMapHasBeenSet = true; m_intEnumMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline JsonIntEnumsRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline JsonIntEnumsRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline JsonIntEnumsRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    JsonIntEnumsRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_intEnum1;
+    int m_intEnum1{0};
     bool m_intEnum1HasBeenSet = false;
 
-    int m_intEnum2;
+    int m_intEnum2{0};
     bool m_intEnum2HasBeenSet = false;
 
-    int m_intEnum3;
+    int m_intEnum3{0};
     bool m_intEnum3HasBeenSet = false;
 
     Aws::Vector<int> m_intEnumList;

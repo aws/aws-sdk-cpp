@@ -13,16 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonMapsRequest::JsonMapsRequest() : 
-    m_denseStructMapHasBeenSet(false),
-    m_denseNumberMapHasBeenSet(false),
-    m_denseBooleanMapHasBeenSet(false),
-    m_denseStringMapHasBeenSet(false),
-    m_denseSetMapHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String JsonMapsRequest::SerializePayload() const
 {
   JsonValue payload;

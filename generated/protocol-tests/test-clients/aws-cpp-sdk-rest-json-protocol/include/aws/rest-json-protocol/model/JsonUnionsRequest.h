@@ -26,7 +26,7 @@ namespace Model
   class JsonUnionsRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API JsonUnionsRequest();
+    AWS_RESTJSONPROTOCOL_API JsonUnionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,24 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const MyUnion& GetContents() const{ return m_contents; }
+    inline const MyUnion& GetContents() const { return m_contents; }
     inline bool ContentsHasBeenSet() const { return m_contentsHasBeenSet; }
-    inline void SetContents(const MyUnion& value) { m_contentsHasBeenSet = true; m_contents = value; }
-    inline void SetContents(MyUnion&& value) { m_contentsHasBeenSet = true; m_contents = std::move(value); }
-    inline JsonUnionsRequest& WithContents(const MyUnion& value) { SetContents(value); return *this;}
-    inline JsonUnionsRequest& WithContents(MyUnion&& value) { SetContents(std::move(value)); return *this;}
+    template<typename ContentsT = MyUnion>
+    void SetContents(ContentsT&& value) { m_contentsHasBeenSet = true; m_contents = std::forward<ContentsT>(value); }
+    template<typename ContentsT = MyUnion>
+    JsonUnionsRequest& WithContents(ContentsT&& value) { SetContents(std::forward<ContentsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline JsonUnionsRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline JsonUnionsRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline JsonUnionsRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    JsonUnionsRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

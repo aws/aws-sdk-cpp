@@ -18,13 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-UnionPayload::UnionPayload() : 
-    m_greetingHasBeenSet(false)
-{
-}
-
 UnionPayload::UnionPayload(JsonView jsonValue)
-  : UnionPayload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnionPayload& UnionPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("greeting"))
   {
     m_greeting = jsonValue.GetString("greeting");
-
     m_greetingHasBeenSet = true;
   }
-
   return *this;
 }
 

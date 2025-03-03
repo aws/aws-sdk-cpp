@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FractionalSecondsResponse::FractionalSecondsResponse()
-{
-}
-
 FractionalSecondsResponse::FractionalSecondsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

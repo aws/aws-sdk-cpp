@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonIntEnumsResult::JsonIntEnumsResult() : 
-    m_integerEnum1(0),
-    m_integerEnum2(0),
-    m_integerEnum3(0)
-{
-}
-
 JsonIntEnumsResult::JsonIntEnumsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : JsonIntEnumsResult()
 {
   *this = result;
 }
@@ -36,21 +28,18 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("integerEnum1"))
   {
     m_integerEnum1 = jsonValue.GetInteger("integerEnum1");
-
+    m_integerEnum1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerEnum2"))
   {
     m_integerEnum2 = jsonValue.GetInteger("integerEnum2");
-
+    m_integerEnum2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerEnum3"))
   {
     m_integerEnum3 = jsonValue.GetInteger("integerEnum3");
-
+    m_integerEnum3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerEnumList"))
   {
     Aws::Utils::Array<JsonView> integerEnumListJsonList = jsonValue.GetArray("integerEnumList");
@@ -59,7 +48,6 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
       m_integerEnumList.push_back(integerEnumListJsonList[integerEnumListIndex].AsInteger());
     }
   }
-
   if(jsonValue.ValueExists("integerEnumSet"))
   {
     Aws::Utils::Array<JsonView> integerEnumSetJsonList = jsonValue.GetArray("integerEnumSet");
@@ -68,7 +56,6 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
       m_integerEnumSet.push_back(integerEnumSetJsonList[integerEnumSetIndex].AsInteger());
     }
   }
-
   if(jsonValue.ValueExists("integerEnumMap"))
   {
     Aws::Map<Aws::String, JsonView> integerEnumMapJsonMap = jsonValue.GetObject("integerEnumMap").GetAllObjects();
@@ -77,7 +64,6 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
       m_integerEnumMap[integerEnumMapItem.first] = integerEnumMapItem.second.AsInteger();
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-GreetingWithErrorsRequest::GreetingWithErrorsRequest()
-{
-}
-
 Aws::String GreetingWithErrorsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,14 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-XmlNamespaceNested::XmlNamespaceNested() : 
-    m_fooHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 XmlNamespaceNested::XmlNamespaceNested(const XmlNode& xmlNode)
-  : XmlNamespaceNested()
 {
   *this = xmlNode;
 }

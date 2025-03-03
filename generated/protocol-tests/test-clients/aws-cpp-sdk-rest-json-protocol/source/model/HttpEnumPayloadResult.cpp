@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpEnumPayloadResult::HttpEnumPayloadResult() : 
-    m_payload(StringEnum::NOT_SET)
-{
-}
-
 HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : HttpEnumPayloadResult()
 {
   *this = result;
 }

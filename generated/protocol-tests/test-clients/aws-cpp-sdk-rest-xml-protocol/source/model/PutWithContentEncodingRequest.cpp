@@ -15,11 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutWithContentEncodingRequest::PutWithContentEncodingRequest() : 
-    m_encodingHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
 
 Aws::String PutWithContentEncodingRequest::SerializePayload() const
 {

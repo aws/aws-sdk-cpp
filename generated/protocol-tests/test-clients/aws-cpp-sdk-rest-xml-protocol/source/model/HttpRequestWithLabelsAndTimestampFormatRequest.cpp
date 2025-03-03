@@ -14,16 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-HttpRequestWithLabelsAndTimestampFormatRequest::HttpRequestWithLabelsAndTimestampFormatRequest() : 
-    m_memberEpochSecondsHasBeenSet(false),
-    m_memberHttpDateHasBeenSet(false),
-    m_memberDateTimeHasBeenSet(false),
-    m_defaultFormatHasBeenSet(false),
-    m_targetEpochSecondsHasBeenSet(false),
-    m_targetHttpDateHasBeenSet(false),
-    m_targetDateTimeHasBeenSet(false)
-{
-}
 
 Aws::String HttpRequestWithLabelsAndTimestampFormatRequest::SerializePayload() const
 {

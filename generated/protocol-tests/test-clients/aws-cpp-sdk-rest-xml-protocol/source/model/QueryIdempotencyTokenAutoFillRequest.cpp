@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-QueryIdempotencyTokenAutoFillRequest::QueryIdempotencyTokenAutoFillRequest() : 
-    m_token(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_tokenHasBeenSet(true)
-{
-}
 
 Aws::String QueryIdempotencyTokenAutoFillRequest::SerializePayload() const
 {

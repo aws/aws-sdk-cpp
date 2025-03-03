@@ -15,10 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlEmptyBlobsRequest::XmlEmptyBlobsRequest() : 
-    m_dataHasBeenSet(false)
-{
-}
 
 Aws::String XmlEmptyBlobsRequest::SerializePayload() const
 {

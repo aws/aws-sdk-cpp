@@ -14,10 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-FlattenedXmlMapWithXmlNameRequest::FlattenedXmlMapWithXmlNameRequest() : 
-    m_myMapHasBeenSet(false)
-{
-}
 
 Aws::String FlattenedXmlMapWithXmlNameRequest::SerializePayload() const
 {

@@ -26,7 +26,7 @@ namespace Model
   class UnionWithJsonName
   {
   public:
-    AWS_RESTJSONPROTOCOL_API UnionWithJsonName();
+    AWS_RESTJSONPROTOCOL_API UnionWithJsonName() = default;
     AWS_RESTJSONPROTOCOL_API UnionWithJsonName(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESTJSONPROTOCOL_API UnionWithJsonName& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESTJSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -34,38 +34,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
+    inline const Aws::String& GetFoo() const { return m_foo; }
     inline bool FooHasBeenSet() const { return m_fooHasBeenSet; }
-    inline void SetFoo(const Aws::String& value) { m_fooHasBeenSet = true; m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_fooHasBeenSet = true; m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_fooHasBeenSet = true; m_foo.assign(value); }
-    inline UnionWithJsonName& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline UnionWithJsonName& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline UnionWithJsonName& WithFoo(const char* value) { SetFoo(value); return *this;}
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    UnionWithJsonName& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBar() const{ return m_bar; }
+    inline const Aws::String& GetBar() const { return m_bar; }
     inline bool BarHasBeenSet() const { return m_barHasBeenSet; }
-    inline void SetBar(const Aws::String& value) { m_barHasBeenSet = true; m_bar = value; }
-    inline void SetBar(Aws::String&& value) { m_barHasBeenSet = true; m_bar = std::move(value); }
-    inline void SetBar(const char* value) { m_barHasBeenSet = true; m_bar.assign(value); }
-    inline UnionWithJsonName& WithBar(const Aws::String& value) { SetBar(value); return *this;}
-    inline UnionWithJsonName& WithBar(Aws::String&& value) { SetBar(std::move(value)); return *this;}
-    inline UnionWithJsonName& WithBar(const char* value) { SetBar(value); return *this;}
+    template<typename BarT = Aws::String>
+    void SetBar(BarT&& value) { m_barHasBeenSet = true; m_bar = std::forward<BarT>(value); }
+    template<typename BarT = Aws::String>
+    UnionWithJsonName& WithBar(BarT&& value) { SetBar(std::forward<BarT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBaz() const{ return m_baz; }
+    inline const Aws::String& GetBaz() const { return m_baz; }
     inline bool BazHasBeenSet() const { return m_bazHasBeenSet; }
-    inline void SetBaz(const Aws::String& value) { m_bazHasBeenSet = true; m_baz = value; }
-    inline void SetBaz(Aws::String&& value) { m_bazHasBeenSet = true; m_baz = std::move(value); }
-    inline void SetBaz(const char* value) { m_bazHasBeenSet = true; m_baz.assign(value); }
-    inline UnionWithJsonName& WithBaz(const Aws::String& value) { SetBaz(value); return *this;}
-    inline UnionWithJsonName& WithBaz(Aws::String&& value) { SetBaz(std::move(value)); return *this;}
-    inline UnionWithJsonName& WithBaz(const char* value) { SetBaz(value); return *this;}
+    template<typename BazT = Aws::String>
+    void SetBaz(BazT&& value) { m_bazHasBeenSet = true; m_baz = std::forward<BazT>(value); }
+    template<typename BazT = Aws::String>
+    UnionWithJsonName& WithBaz(BazT&& value) { SetBaz(std::forward<BazT>(value)); return *this;}
     ///@}
   private:
 

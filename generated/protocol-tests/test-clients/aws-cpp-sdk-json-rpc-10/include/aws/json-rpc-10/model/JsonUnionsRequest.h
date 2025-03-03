@@ -21,7 +21,7 @@ namespace Model
   class JsonUnionsRequest : public JSONRPC10Request
   {
   public:
-    AWS_JSONRPC10_API JsonUnionsRequest();
+    AWS_JSONRPC10_API JsonUnionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const MyUnion& GetContents() const{ return m_contents; }
+    inline const MyUnion& GetContents() const { return m_contents; }
     inline bool ContentsHasBeenSet() const { return m_contentsHasBeenSet; }
-    inline void SetContents(const MyUnion& value) { m_contentsHasBeenSet = true; m_contents = value; }
-    inline void SetContents(MyUnion&& value) { m_contentsHasBeenSet = true; m_contents = std::move(value); }
-    inline JsonUnionsRequest& WithContents(const MyUnion& value) { SetContents(value); return *this;}
-    inline JsonUnionsRequest& WithContents(MyUnion&& value) { SetContents(std::move(value)); return *this;}
+    template<typename ContentsT = MyUnion>
+    void SetContents(ContentsT&& value) { m_contentsHasBeenSet = true; m_contents = std::forward<ContentsT>(value); }
+    template<typename ContentsT = MyUnion>
+    JsonUnionsRequest& WithContents(ContentsT&& value) { SetContents(std::forward<ContentsT>(value)); return *this;}
     ///@}
   private:
 

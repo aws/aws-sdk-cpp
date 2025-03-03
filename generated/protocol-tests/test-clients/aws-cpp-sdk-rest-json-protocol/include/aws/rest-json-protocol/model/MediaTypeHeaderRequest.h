@@ -21,7 +21,7 @@ namespace Model
   class MediaTypeHeaderRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API MediaTypeHeaderRequest();
+    AWS_RESTJSONPROTOCOL_API MediaTypeHeaderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetJson() const{ return m_json; }
+    inline const Aws::String& GetJson() const { return m_json; }
     inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
-    inline void SetJson(const Aws::String& value) { m_jsonHasBeenSet = true; m_json = value; }
-    inline void SetJson(Aws::String&& value) { m_jsonHasBeenSet = true; m_json = std::move(value); }
-    inline void SetJson(const char* value) { m_jsonHasBeenSet = true; m_json.assign(value); }
-    inline MediaTypeHeaderRequest& WithJson(const Aws::String& value) { SetJson(value); return *this;}
-    inline MediaTypeHeaderRequest& WithJson(Aws::String&& value) { SetJson(std::move(value)); return *this;}
-    inline MediaTypeHeaderRequest& WithJson(const char* value) { SetJson(value); return *this;}
+    template<typename JsonT = Aws::String>
+    void SetJson(JsonT&& value) { m_jsonHasBeenSet = true; m_json = std::forward<JsonT>(value); }
+    template<typename JsonT = Aws::String>
+    MediaTypeHeaderRequest& WithJson(JsonT&& value) { SetJson(std::forward<JsonT>(value)); return *this;}
     ///@}
   private:
 

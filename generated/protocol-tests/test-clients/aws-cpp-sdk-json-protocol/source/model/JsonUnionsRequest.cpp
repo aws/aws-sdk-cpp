@@ -13,12 +13,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonUnionsRequest::JsonUnionsRequest() : 
-    m_contentsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String JsonUnionsRequest::SerializePayload() const
 {
   JsonValue payload;

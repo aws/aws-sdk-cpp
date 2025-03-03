@@ -27,7 +27,7 @@ namespace Model
   class NestedStructWithMap
   {
   public:
-    AWS_QUERYPROTOCOL_API NestedStructWithMap();
+    AWS_QUERYPROTOCOL_API NestedStructWithMap() = default;
     AWS_QUERYPROTOCOL_API NestedStructWithMap(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_QUERYPROTOCOL_API NestedStructWithMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -37,19 +37,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetMapArg() const{ return m_mapArg; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMapArg() const { return m_mapArg; }
     inline bool MapArgHasBeenSet() const { return m_mapArgHasBeenSet; }
-    inline void SetMapArg(const Aws::Map<Aws::String, Aws::String>& value) { m_mapArgHasBeenSet = true; m_mapArg = value; }
-    inline void SetMapArg(Aws::Map<Aws::String, Aws::String>&& value) { m_mapArgHasBeenSet = true; m_mapArg = std::move(value); }
-    inline NestedStructWithMap& WithMapArg(const Aws::Map<Aws::String, Aws::String>& value) { SetMapArg(value); return *this;}
-    inline NestedStructWithMap& WithMapArg(Aws::Map<Aws::String, Aws::String>&& value) { SetMapArg(std::move(value)); return *this;}
-    inline NestedStructWithMap& AddMapArg(const Aws::String& key, const Aws::String& value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(key, value); return *this; }
-    inline NestedStructWithMap& AddMapArg(Aws::String&& key, const Aws::String& value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(std::move(key), value); return *this; }
-    inline NestedStructWithMap& AddMapArg(const Aws::String& key, Aws::String&& value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(key, std::move(value)); return *this; }
-    inline NestedStructWithMap& AddMapArg(Aws::String&& key, Aws::String&& value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(std::move(key), std::move(value)); return *this; }
-    inline NestedStructWithMap& AddMapArg(const char* key, Aws::String&& value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(key, std::move(value)); return *this; }
-    inline NestedStructWithMap& AddMapArg(Aws::String&& key, const char* value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(std::move(key), value); return *this; }
-    inline NestedStructWithMap& AddMapArg(const char* key, const char* value) { m_mapArgHasBeenSet = true; m_mapArg.emplace(key, value); return *this; }
+    template<typename MapArgT = Aws::Map<Aws::String, Aws::String>>
+    void SetMapArg(MapArgT&& value) { m_mapArgHasBeenSet = true; m_mapArg = std::forward<MapArgT>(value); }
+    template<typename MapArgT = Aws::Map<Aws::String, Aws::String>>
+    NestedStructWithMap& WithMapArg(MapArgT&& value) { SetMapArg(std::forward<MapArgT>(value)); return *this;}
+    template<typename MapArgKeyT = Aws::String, typename MapArgValueT = Aws::String>
+    NestedStructWithMap& AddMapArg(MapArgKeyT&& key, MapArgValueT&& value) {
+      m_mapArgHasBeenSet = true; m_mapArg.emplace(std::forward<MapArgKeyT>(key), std::forward<MapArgValueT>(value)); return *this;
+    }
     ///@}
   private:
 

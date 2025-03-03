@@ -12,10 +12,6 @@ using namespace Aws::JSONRPC10::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NoInputAndOutputRequest::NoInputAndOutputRequest()
-{
-}
-
 Aws::String NoInputAndOutputRequest::SerializePayload() const
 {
   return "{}";

@@ -20,16 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-StructArg::StructArg() : 
-    m_stringArgHasBeenSet(false),
-    m_otherArg(false),
-    m_otherArgHasBeenSet(false),
-    m_recursiveArgHasBeenSet(false)
-{
-}
-
 StructArg::StructArg(const XmlNode& xmlNode)
-  : StructArg()
 {
   *this = xmlNode;
 }
@@ -79,7 +70,7 @@ void StructArg::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       Aws::StringStream recursiveArgLocationAndMemberSs;
       recursiveArgLocationAndMemberSs << location << index << locationValue << ".RecursiveArg";
-      m_recursiveArg->OutputToStream(oStream, recursiveArgLocationAndMemberSs.str().c_str());
+      m_recursiveArg.OutputToStream(oStream, recursiveArgLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -98,7 +89,7 @@ void StructArg::OutputToStream(Aws::OStream& oStream, const char* location) cons
   {
       Aws::String recursiveArgLocationAndMember(location);
       recursiveArgLocationAndMember += ".RecursiveArg";
-      m_recursiveArg->OutputToStream(oStream, recursiveArgLocationAndMember.c_str());
+      m_recursiveArg.OutputToStream(oStream, recursiveArgLocationAndMember.c_str());
   }
 }
 

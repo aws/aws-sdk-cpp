@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NullAndEmptyHeadersClientResult::NullAndEmptyHeadersClientResult()
-{
-}
-
 NullAndEmptyHeadersClientResult::NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
