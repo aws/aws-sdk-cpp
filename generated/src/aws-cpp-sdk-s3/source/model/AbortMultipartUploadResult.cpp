@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AbortMultipartUploadResult::AbortMultipartUploadResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 AbortMultipartUploadResult::AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : AbortMultipartUploadResult()
 {
   *this = result;
 }

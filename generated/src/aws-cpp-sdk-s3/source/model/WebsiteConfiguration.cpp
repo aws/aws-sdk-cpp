@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-WebsiteConfiguration::WebsiteConfiguration() : 
-    m_errorDocumentHasBeenSet(false),
-    m_indexDocumentHasBeenSet(false),
-    m_redirectAllRequestsToHasBeenSet(false),
-    m_routingRulesHasBeenSet(false)
-{
-}
-
 WebsiteConfiguration::WebsiteConfiguration(const XmlNode& xmlNode)
-  : WebsiteConfiguration()
 {
   *this = xmlNode;
 }

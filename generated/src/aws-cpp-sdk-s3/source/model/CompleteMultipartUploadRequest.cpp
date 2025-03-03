@@ -17,31 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_multipartUploadHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_mpuObjectSize(0),
-    m_mpuObjectSizeHasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_ifMatchHasBeenSet(false),
-    m_ifNoneMatchHasBeenSet(false),
-    m_sSECustomerAlgorithmHasBeenSet(false),
-    m_sSECustomerKeyHasBeenSet(false),
-    m_sSECustomerKeyMD5HasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool CompleteMultipartUploadRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

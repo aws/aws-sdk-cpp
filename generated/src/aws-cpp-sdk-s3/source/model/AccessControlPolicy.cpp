@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-AccessControlPolicy::AccessControlPolicy() : 
-    m_grantsHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 AccessControlPolicy::AccessControlPolicy(const XmlNode& xmlNode)
-  : AccessControlPolicy()
 {
   *this = xmlNode;
 }

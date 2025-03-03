@@ -20,21 +20,7 @@ namespace S3
 namespace Model
 {
 
-CSVInput::CSVInput() : 
-    m_fileHeaderInfo(FileHeaderInfo::NOT_SET),
-    m_fileHeaderInfoHasBeenSet(false),
-    m_commentsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false),
-    m_allowQuotedRecordDelimiter(false),
-    m_allowQuotedRecordDelimiterHasBeenSet(false)
-{
-}
-
 CSVInput::CSVInput(const XmlNode& xmlNode)
-  : CSVInput()
 {
   *this = xmlNode;
 }

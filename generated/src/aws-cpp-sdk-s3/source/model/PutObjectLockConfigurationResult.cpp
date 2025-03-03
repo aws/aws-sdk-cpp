@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectLockConfigurationResult::PutObjectLockConfigurationResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 PutObjectLockConfigurationResult::PutObjectLockConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PutObjectLockConfigurationResult()
 {
   *this = result;
 }

@@ -20,27 +20,7 @@ namespace S3
 namespace Model
 {
 
-ObjectVersion::ObjectVersion() : 
-    m_eTagHasBeenSet(false),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_storageClass(ObjectVersionStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isLatest(false),
-    m_isLatestHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_restoreStatusHasBeenSet(false)
-{
-}
-
 ObjectVersion::ObjectVersion(const XmlNode& xmlNode)
-  : ObjectVersion()
 {
   *this = xmlNode;
 }

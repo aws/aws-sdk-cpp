@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-LambdaFunctionConfiguration::LambdaFunctionConfiguration() : 
-    m_idHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 LambdaFunctionConfiguration::LambdaFunctionConfiguration(const XmlNode& xmlNode)
-  : LambdaFunctionConfiguration()
 {
   *this = xmlNode;
 }

@@ -17,15 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBucketsRequest::ListBucketsRequest() : 
-    m_maxBuckets(0),
-    m_maxBucketsHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool ListBucketsRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

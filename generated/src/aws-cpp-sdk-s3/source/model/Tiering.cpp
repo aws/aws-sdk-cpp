@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-Tiering::Tiering() : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_accessTier(IntelligentTieringAccessTier::NOT_SET),
-    m_accessTierHasBeenSet(false)
-{
-}
-
 Tiering::Tiering(const XmlNode& xmlNode)
-  : Tiering()
 {
   *this = xmlNode;
 }

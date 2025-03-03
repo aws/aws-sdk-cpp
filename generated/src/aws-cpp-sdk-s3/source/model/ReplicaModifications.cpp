@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-ReplicaModifications::ReplicaModifications() : 
-    m_status(ReplicaModificationsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ReplicaModifications::ReplicaModifications(const XmlNode& xmlNode)
-  : ReplicaModifications()
 {
   *this = xmlNode;
 }

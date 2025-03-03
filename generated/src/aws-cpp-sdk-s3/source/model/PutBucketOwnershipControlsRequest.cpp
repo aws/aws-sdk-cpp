@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutBucketOwnershipControlsRequest::PutBucketOwnershipControlsRequest() : 
-    m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_ownershipControlsHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool PutBucketOwnershipControlsRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

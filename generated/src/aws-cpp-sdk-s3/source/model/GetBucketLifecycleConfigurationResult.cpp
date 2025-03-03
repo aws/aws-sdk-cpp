@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketLifecycleConfigurationResult::GetBucketLifecycleConfigurationResult() : 
-    m_transitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize::NOT_SET)
-{
-}
-
 GetBucketLifecycleConfigurationResult::GetBucketLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetBucketLifecycleConfigurationResult()
 {
   *this = result;
 }

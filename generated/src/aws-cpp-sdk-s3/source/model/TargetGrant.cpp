@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-TargetGrant::TargetGrant() : 
-    m_granteeHasBeenSet(false),
-    m_permission(BucketLogsPermission::NOT_SET),
-    m_permissionHasBeenSet(false)
-{
-}
-
 TargetGrant::TargetGrant(const XmlNode& xmlNode)
-  : TargetGrant()
 {
   *this = xmlNode;
 }

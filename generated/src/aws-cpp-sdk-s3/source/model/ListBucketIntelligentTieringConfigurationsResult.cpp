@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBucketIntelligentTieringConfigurationsResult::ListBucketIntelligentTieringConfigurationsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListBucketIntelligentTieringConfigurationsResult::ListBucketIntelligentTieringConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListBucketIntelligentTieringConfigurationsResult()
 {
   *this = result;
 }

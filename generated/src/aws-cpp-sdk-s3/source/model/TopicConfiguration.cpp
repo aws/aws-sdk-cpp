@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-TopicConfiguration::TopicConfiguration() : 
-    m_idHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 TopicConfiguration::TopicConfiguration(const XmlNode& xmlNode)
-  : TopicConfiguration()
 {
   *this = xmlNode;
 }

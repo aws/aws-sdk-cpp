@@ -20,22 +20,7 @@ namespace S3
 namespace Model
 {
 
-RestoreRequest::RestoreRequest() : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_glacierJobParametersHasBeenSet(false),
-    m_type(RestoreRequestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
-{
-}
-
 RestoreRequest::RestoreRequest(const XmlNode& xmlNode)
-  : RestoreRequest()
 {
   *this = xmlNode;
 }

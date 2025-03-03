@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-AnalyticsAndOperator::AnalyticsAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AnalyticsAndOperator::AnalyticsAndOperator(const XmlNode& xmlNode)
-  : AnalyticsAndOperator()
 {
   *this = xmlNode;
 }

@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-MetadataTableConfiguration::MetadataTableConfiguration() : 
-    m_s3TablesDestinationHasBeenSet(false)
-{
-}
-
 MetadataTableConfiguration::MetadataTableConfiguration(const XmlNode& xmlNode)
-  : MetadataTableConfiguration()
 {
   *this = xmlNode;
 }

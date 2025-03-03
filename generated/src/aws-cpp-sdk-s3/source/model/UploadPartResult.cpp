@@ -16,15 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadPartResult::UploadPartResult() : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 UploadPartResult::UploadPartResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : UploadPartResult()
 {
   *this = result;
 }

@@ -32,7 +32,7 @@ namespace Model
   class StorageClassAnalysis
   {
   public:
-    AWS_S3_API StorageClassAnalysis();
+    AWS_S3_API StorageClassAnalysis() = default;
     AWS_S3_API StorageClassAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API StorageClassAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
      * <p>Specifies how data related to the storage class analysis for an Amazon S3
      * bucket should be exported.</p>
      */
-    inline const StorageClassAnalysisDataExport& GetDataExport() const{ return m_dataExport; }
+    inline const StorageClassAnalysisDataExport& GetDataExport() const { return m_dataExport; }
     inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
-    inline void SetDataExport(const StorageClassAnalysisDataExport& value) { m_dataExportHasBeenSet = true; m_dataExport = value; }
-    inline void SetDataExport(StorageClassAnalysisDataExport&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::move(value); }
-    inline StorageClassAnalysis& WithDataExport(const StorageClassAnalysisDataExport& value) { SetDataExport(value); return *this;}
-    inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(std::move(value)); return *this;}
+    template<typename DataExportT = StorageClassAnalysisDataExport>
+    void SetDataExport(DataExportT&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::forward<DataExportT>(value); }
+    template<typename DataExportT = StorageClassAnalysisDataExport>
+    StorageClassAnalysis& WithDataExport(DataExportT&& value) { SetDataExport(std::forward<DataExportT>(value)); return *this;}
     ///@}
   private:
 

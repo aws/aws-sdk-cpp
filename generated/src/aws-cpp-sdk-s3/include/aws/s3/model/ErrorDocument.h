@@ -30,7 +30,7 @@ namespace Model
   class ErrorDocument
   {
   public:
-    AWS_S3_API ErrorDocument();
+    AWS_S3_API ErrorDocument() = default;
     AWS_S3_API ErrorDocument(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API ErrorDocument& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ErrorDocument& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ErrorDocument& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ErrorDocument& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

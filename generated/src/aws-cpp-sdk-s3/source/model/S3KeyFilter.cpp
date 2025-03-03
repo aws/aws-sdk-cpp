@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-S3KeyFilter::S3KeyFilter() : 
-    m_filterRulesHasBeenSet(false)
-{
-}
-
 S3KeyFilter::S3KeyFilter(const XmlNode& xmlNode)
-  : S3KeyFilter()
 {
   *this = xmlNode;
 }

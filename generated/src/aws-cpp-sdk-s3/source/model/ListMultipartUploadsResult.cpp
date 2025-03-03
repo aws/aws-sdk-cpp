@@ -16,16 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMultipartUploadsResult::ListMultipartUploadsResult() : 
-    m_maxUploads(0),
-    m_isTruncated(false),
-    m_encodingType(EncodingType::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 ListMultipartUploadsResult::ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListMultipartUploadsResult()
 {
   *this = result;
 }

@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-DeleteMarkerEntry::DeleteMarkerEntry() : 
-    m_ownerHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isLatest(false),
-    m_isLatestHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
-{
-}
-
 DeleteMarkerEntry::DeleteMarkerEntry(const XmlNode& xmlNode)
-  : DeleteMarkerEntry()
 {
   *this = xmlNode;
 }

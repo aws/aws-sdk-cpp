@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-StatsEvent::StatsEvent() : 
-    m_detailsHasBeenSet(false)
-{
-}
-
 StatsEvent::StatsEvent(const XmlNode& xmlNode)
-  : StatsEvent()
 {
   *this = xmlNode;
 }

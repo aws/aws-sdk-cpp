@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-Delete::Delete() : 
-    m_objectsHasBeenSet(false),
-    m_quiet(false),
-    m_quietHasBeenSet(false)
-{
-}
-
 Delete::Delete(const XmlNode& xmlNode)
-  : Delete()
 {
   *this = xmlNode;
 }

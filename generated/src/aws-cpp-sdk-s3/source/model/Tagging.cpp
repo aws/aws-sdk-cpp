@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-Tagging::Tagging() : 
-    m_tagSetHasBeenSet(false)
-{
-}
-
 Tagging::Tagging(const XmlNode& xmlNode)
-  : Tagging()
 {
   *this = xmlNode;
 }

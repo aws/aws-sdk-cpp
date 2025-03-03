@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-Grant::Grant() : 
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false)
-{
-}
-
 Grant::Grant(const XmlNode& xmlNode)
-  : Grant()
 {
   *this = xmlNode;
 }

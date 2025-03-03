@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDirectoryBucketsRequest::ListDirectoryBucketsRequest() : 
-    m_continuationTokenHasBeenSet(false),
-    m_maxDirectoryBuckets(0),
-    m_maxDirectoryBucketsHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool ListDirectoryBucketsRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

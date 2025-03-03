@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-NoncurrentVersionTransition::NoncurrentVersionTransition() : 
-    m_noncurrentDays(0),
-    m_noncurrentDaysHasBeenSet(false),
-    m_storageClass(TransitionStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_newerNoncurrentVersions(0),
-    m_newerNoncurrentVersionsHasBeenSet(false)
-{
-}
-
 NoncurrentVersionTransition::NoncurrentVersionTransition(const XmlNode& xmlNode)
-  : NoncurrentVersionTransition()
 {
   *this = xmlNode;
 }

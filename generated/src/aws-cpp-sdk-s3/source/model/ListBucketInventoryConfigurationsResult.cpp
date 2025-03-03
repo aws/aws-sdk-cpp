@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListBucketInventoryConfigurationsResult()
 {
   *this = result;
 }

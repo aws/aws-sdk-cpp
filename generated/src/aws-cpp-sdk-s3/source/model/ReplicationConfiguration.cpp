@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-ReplicationConfiguration::ReplicationConfiguration() : 
-    m_roleHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode)
-  : ReplicationConfiguration()
 {
   *this = xmlNode;
 }

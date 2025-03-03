@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-Redirect::Redirect() : 
-    m_hostNameHasBeenSet(false),
-    m_httpRedirectCodeHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_replaceKeyPrefixWithHasBeenSet(false),
-    m_replaceKeyWithHasBeenSet(false)
-{
-}
-
 Redirect::Redirect(const XmlNode& xmlNode)
-  : Redirect()
 {
   *this = xmlNode;
 }

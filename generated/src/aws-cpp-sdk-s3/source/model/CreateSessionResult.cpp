@@ -16,14 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSessionResult::CreateSessionResult() : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false)
-{
-}
-
 CreateSessionResult::CreateSessionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CreateSessionResult()
 {
   *this = result;
 }

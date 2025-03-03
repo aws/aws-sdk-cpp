@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectLegalHoldResult::GetObjectLegalHoldResult()
-{
-}
-
 GetObjectLegalHoldResult::GetObjectLegalHoldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

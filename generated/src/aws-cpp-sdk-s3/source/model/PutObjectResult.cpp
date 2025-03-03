@@ -16,17 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectResult::PutObjectResult() : 
-    m_checksumType(ChecksumType::NOT_SET),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_size(0),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PutObjectResult()
 {
   *this = result;
 }

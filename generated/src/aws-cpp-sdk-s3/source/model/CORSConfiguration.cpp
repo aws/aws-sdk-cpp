@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-CORSConfiguration::CORSConfiguration() : 
-    m_cORSRulesHasBeenSet(false)
-{
-}
-
 CORSConfiguration::CORSConfiguration(const XmlNode& xmlNode)
-  : CORSConfiguration()
 {
   *this = xmlNode;
 }
