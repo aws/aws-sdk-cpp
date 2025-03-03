@@ -12,13 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TransactGetItemsRequest::TransactGetItemsRequest() : 
-    m_transactItemsHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false)
-{
-}
-
 Aws::String TransactGetItemsRequest::SerializePayload() const
 {
   JsonValue payload;

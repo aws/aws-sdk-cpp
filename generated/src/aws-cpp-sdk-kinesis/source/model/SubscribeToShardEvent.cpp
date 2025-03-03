@@ -18,17 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-SubscribeToShardEvent::SubscribeToShardEvent() : 
-    m_recordsHasBeenSet(false),
-    m_continuationSequenceNumberHasBeenSet(false),
-    m_millisBehindLatest(0),
-    m_millisBehindLatestHasBeenSet(false),
-    m_childShardsHasBeenSet(false)
-{
-}
-
 SubscribeToShardEvent::SubscribeToShardEvent(JsonView jsonValue)
-  : SubscribeToShardEvent()
 {
   *this = jsonValue;
 }
@@ -42,23 +32,17 @@ SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
-    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContinuationSequenceNumber"))
   {
     m_continuationSequenceNumber = jsonValue.GetString("ContinuationSequenceNumber");
-
     m_continuationSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MillisBehindLatest"))
   {
     m_millisBehindLatest = jsonValue.GetInt64("MillisBehindLatest");
-
     m_millisBehindLatestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChildShards"))
   {
     Aws::Utils::Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
@@ -66,9 +50,7 @@ SubscribeToShardEvent& SubscribeToShardEvent::operator =(JsonView jsonValue)
     {
       m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());
     }
-    m_childShardsHasBeenSet = true;
   }
-
   return *this;
 }
 

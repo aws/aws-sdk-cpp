@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTableReplicaAutoScalingResult::UpdateTableReplicaAutoScalingResult()
-{
-}
-
 UpdateTableReplicaAutoScalingResult::UpdateTableReplicaAutoScalingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ UpdateTableReplicaAutoScalingResult& UpdateTableReplicaAutoScalingResult::operat
   if(jsonValue.ValueExists("TableAutoScalingDescription"))
   {
     m_tableAutoScalingDescription = jsonValue.GetObject("TableAutoScalingDescription");
-
+    m_tableAutoScalingDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

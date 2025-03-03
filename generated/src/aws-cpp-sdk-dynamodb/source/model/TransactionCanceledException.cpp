@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TransactionCanceledException::TransactionCanceledException() : 
-    m_messageHasBeenSet(false),
-    m_cancellationReasonsHasBeenSet(false)
-{
-}
-
 TransactionCanceledException::TransactionCanceledException(JsonView jsonValue)
-  : TransactionCanceledException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TransactionCanceledException& TransactionCanceledException::operator =(JsonView 
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CancellationReasons"))
   {
     Aws::Utils::Array<JsonView> cancellationReasonsJsonList = jsonValue.GetArray("CancellationReasons");
@@ -46,9 +37,7 @@ TransactionCanceledException& TransactionCanceledException::operator =(JsonView 
     {
       m_cancellationReasons.push_back(cancellationReasonsJsonList[cancellationReasonsIndex].AsObject());
     }
-    m_cancellationReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

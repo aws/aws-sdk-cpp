@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-KeysAndAttributes::KeysAndAttributes() : 
-    m_keysHasBeenSet(false),
-    m_attributesToGetHasBeenSet(false),
-    m_consistentRead(false),
-    m_consistentReadHasBeenSet(false),
-    m_projectionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false)
-{
-}
-
 KeysAndAttributes::KeysAndAttributes(JsonView jsonValue)
-  : KeysAndAttributes()
 {
   *this = jsonValue;
 }
@@ -49,9 +38,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
       }
       m_keys.push_back(std::move(keyMap));
     }
-    m_keysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributesToGet"))
   {
     Aws::Utils::Array<JsonView> attributesToGetJsonList = jsonValue.GetArray("AttributesToGet");
@@ -59,23 +46,17 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
     {
       m_attributesToGet.push_back(attributesToGetJsonList[attributesToGetIndex].AsString());
     }
-    m_attributesToGetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsistentRead"))
   {
     m_consistentRead = jsonValue.GetBool("ConsistentRead");
-
     m_consistentReadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectionExpression"))
   {
     m_projectionExpression = jsonValue.GetString("ProjectionExpression");
-
     m_projectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpressionAttributeNames"))
   {
     Aws::Map<Aws::String, JsonView> expressionAttributeNamesJsonMap = jsonValue.GetObject("ExpressionAttributeNames").GetAllObjects();
@@ -83,9 +64,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
     {
       m_expressionAttributeNames[expressionAttributeNamesItem.first] = expressionAttributeNamesItem.second.AsString();
     }
-    m_expressionAttributeNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

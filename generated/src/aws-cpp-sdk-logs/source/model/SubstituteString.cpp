@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-SubstituteString::SubstituteString() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 SubstituteString::SubstituteString(JsonView jsonValue)
-  : SubstituteString()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ SubstituteString& SubstituteString::operator =(JsonView jsonValue)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
-    m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

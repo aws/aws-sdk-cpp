@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLogAnomalyDetectorResult::GetLogAnomalyDetectorResult() : 
-    m_evaluationFrequency(EvaluationFrequency::NOT_SET),
-    m_anomalyDetectorStatus(AnomalyDetectorStatus::NOT_SET),
-    m_creationTimeStamp(0),
-    m_lastModifiedTimeStamp(0),
-    m_anomalyVisibilityTime(0)
-{
-}
-
 GetLogAnomalyDetectorResult::GetLogAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLogAnomalyDetectorResult()
 {
   *this = result;
 }
@@ -38,9 +28,8 @@ GetLogAnomalyDetectorResult& GetLogAnomalyDetectorResult::operator =(const Aws::
   if(jsonValue.ValueExists("detectorName"))
   {
     m_detectorName = jsonValue.GetString("detectorName");
-
+    m_detectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupArnList"))
   {
     Aws::Utils::Array<JsonView> logGroupArnListJsonList = jsonValue.GetArray("logGroupArnList");
@@ -49,49 +38,41 @@ GetLogAnomalyDetectorResult& GetLogAnomalyDetectorResult::operator =(const Aws::
       m_logGroupArnList.push_back(logGroupArnListJsonList[logGroupArnListIndex].AsString());
     }
   }
-
   if(jsonValue.ValueExists("evaluationFrequency"))
   {
     m_evaluationFrequency = EvaluationFrequencyMapper::GetEvaluationFrequencyForName(jsonValue.GetString("evaluationFrequency"));
 
   }
-
   if(jsonValue.ValueExists("filterPattern"))
   {
     m_filterPattern = jsonValue.GetString("filterPattern");
-
+    m_filterPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anomalyDetectorStatus"))
   {
     m_anomalyDetectorStatus = AnomalyDetectorStatusMapper::GetAnomalyDetectorStatusForName(jsonValue.GetString("anomalyDetectorStatus"));
 
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimeStamp"))
   {
     m_creationTimeStamp = jsonValue.GetInt64("creationTimeStamp");
-
+    m_creationTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimeStamp"))
   {
     m_lastModifiedTimeStamp = jsonValue.GetInt64("lastModifiedTimeStamp");
-
+    m_lastModifiedTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anomalyVisibilityTime"))
   {
     m_anomalyVisibilityTime = jsonValue.GetInt64("anomalyVisibilityTime");
-
+    m_anomalyVisibilityTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

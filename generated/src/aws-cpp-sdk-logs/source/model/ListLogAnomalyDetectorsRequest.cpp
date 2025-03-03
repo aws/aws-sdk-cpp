@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLogAnomalyDetectorsRequest::ListLogAnomalyDetectorsRequest() : 
-    m_filterLogGroupArnHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListLogAnomalyDetectorsRequest::SerializePayload() const
 {
   JsonValue payload;

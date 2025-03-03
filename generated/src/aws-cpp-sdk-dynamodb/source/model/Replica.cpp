@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-Replica::Replica() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 Replica::Replica(JsonView jsonValue)
-  : Replica()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Replica& Replica::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

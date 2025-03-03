@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchCollection::OpenSearchCollection() : 
-    m_collectionEndpointHasBeenSet(false),
-    m_collectionArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OpenSearchCollection::OpenSearchCollection(JsonView jsonValue)
-  : OpenSearchCollection()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OpenSearchCollection& OpenSearchCollection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("collectionEndpoint"))
   {
     m_collectionEndpoint = jsonValue.GetString("collectionEndpoint");
-
     m_collectionEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collectionArn"))
   {
     m_collectionArn = jsonValue.GetString("collectionArn");
-
     m_collectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

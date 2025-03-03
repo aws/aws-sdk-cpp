@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ItemCollectionMetrics::ItemCollectionMetrics() : 
-    m_itemCollectionKeyHasBeenSet(false),
-    m_sizeEstimateRangeGBHasBeenSet(false)
-{
-}
-
 ItemCollectionMetrics::ItemCollectionMetrics(JsonView jsonValue)
-  : ItemCollectionMetrics()
 {
   *this = jsonValue;
 }
@@ -39,9 +32,7 @@ ItemCollectionMetrics& ItemCollectionMetrics::operator =(JsonView jsonValue)
     {
       m_itemCollectionKey[itemCollectionKeyItem.first] = itemCollectionKeyItem.second.AsObject();
     }
-    m_itemCollectionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeEstimateRangeGB"))
   {
     Aws::Utils::Array<JsonView> sizeEstimateRangeGBJsonList = jsonValue.GetArray("SizeEstimateRangeGB");
@@ -49,9 +40,7 @@ ItemCollectionMetrics& ItemCollectionMetrics::operator =(JsonView jsonValue)
     {
       m_sizeEstimateRangeGB.push_back(sizeEstimateRangeGBJsonList[sizeEstimateRangeGBIndex].AsDouble());
     }
-    m_sizeEstimateRangeGBHasBeenSet = true;
   }
-
   return *this;
 }
 

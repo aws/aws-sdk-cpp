@@ -36,7 +36,7 @@ namespace Model
   class ReplicaAutoScalingDescription
   {
   public:
-    AWS_DYNAMODB_API ReplicaAutoScalingDescription();
+    AWS_DYNAMODB_API ReplicaAutoScalingDescription() = default;
     AWS_DYNAMODB_API ReplicaAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ReplicaAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,46 @@ namespace Model
     /**
      * <p>The Region where the replica exists.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline ReplicaAutoScalingDescription& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline ReplicaAutoScalingDescription& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline ReplicaAutoScalingDescription& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    ReplicaAutoScalingDescription& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Replica-specific global secondary index auto scaling settings.</p>
      */
-    inline const Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
+    inline const Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>& GetGlobalSecondaryIndexes() const { return m_globalSecondaryIndexes; }
     inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
-    inline void SetGlobalSecondaryIndexes(const Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
-    inline void SetGlobalSecondaryIndexes(Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
-    inline ReplicaAutoScalingDescription& WithGlobalSecondaryIndexes(const Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>& value) { SetGlobalSecondaryIndexes(value); return *this;}
-    inline ReplicaAutoScalingDescription& WithGlobalSecondaryIndexes(Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
-    inline ReplicaAutoScalingDescription& AddGlobalSecondaryIndexes(const ReplicaGlobalSecondaryIndexAutoScalingDescription& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
-    inline ReplicaAutoScalingDescription& AddGlobalSecondaryIndexes(ReplicaGlobalSecondaryIndexAutoScalingDescription&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>>
+    void SetGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::forward<GlobalSecondaryIndexesT>(value); }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription>>
+    ReplicaAutoScalingDescription& WithGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { SetGlobalSecondaryIndexes(std::forward<GlobalSecondaryIndexesT>(value)); return *this;}
+    template<typename GlobalSecondaryIndexesT = ReplicaGlobalSecondaryIndexAutoScalingDescription>
+    ReplicaAutoScalingDescription& AddGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.emplace_back(std::forward<GlobalSecondaryIndexesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const AutoScalingSettingsDescription& GetReplicaProvisionedReadCapacityAutoScalingSettings() const{ return m_replicaProvisionedReadCapacityAutoScalingSettings; }
+    inline const AutoScalingSettingsDescription& GetReplicaProvisionedReadCapacityAutoScalingSettings() const { return m_replicaProvisionedReadCapacityAutoScalingSettings; }
     inline bool ReplicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet() const { return m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet; }
-    inline void SetReplicaProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = value; }
-    inline void SetReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = std::move(value); }
-    inline ReplicaAutoScalingDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(value); return *this;}
-    inline ReplicaAutoScalingDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(std::move(value)); return *this;}
+    template<typename ReplicaProvisionedReadCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    void SetReplicaProvisionedReadCapacityAutoScalingSettings(ReplicaProvisionedReadCapacityAutoScalingSettingsT&& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = std::forward<ReplicaProvisionedReadCapacityAutoScalingSettingsT>(value); }
+    template<typename ReplicaProvisionedReadCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    ReplicaAutoScalingDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(ReplicaProvisionedReadCapacityAutoScalingSettingsT&& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(std::forward<ReplicaProvisionedReadCapacityAutoScalingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoScalingSettingsDescription& GetReplicaProvisionedWriteCapacityAutoScalingSettings() const{ return m_replicaProvisionedWriteCapacityAutoScalingSettings; }
+    inline const AutoScalingSettingsDescription& GetReplicaProvisionedWriteCapacityAutoScalingSettings() const { return m_replicaProvisionedWriteCapacityAutoScalingSettings; }
     inline bool ReplicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet() const { return m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet; }
-    inline void SetReplicaProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = value; }
-    inline void SetReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = std::move(value); }
-    inline ReplicaAutoScalingDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(value); return *this;}
-    inline ReplicaAutoScalingDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(std::move(value)); return *this;}
+    template<typename ReplicaProvisionedWriteCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    void SetReplicaProvisionedWriteCapacityAutoScalingSettings(ReplicaProvisionedWriteCapacityAutoScalingSettingsT&& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = std::forward<ReplicaProvisionedWriteCapacityAutoScalingSettingsT>(value); }
+    template<typename ReplicaProvisionedWriteCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    ReplicaAutoScalingDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(ReplicaProvisionedWriteCapacityAutoScalingSettingsT&& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(std::forward<ReplicaProvisionedWriteCapacityAutoScalingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,10 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> </ul>
      */
-    inline const ReplicaStatus& GetReplicaStatus() const{ return m_replicaStatus; }
+    inline ReplicaStatus GetReplicaStatus() const { return m_replicaStatus; }
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
-    inline void SetReplicaStatus(const ReplicaStatus& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
-    inline void SetReplicaStatus(ReplicaStatus&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
-    inline ReplicaAutoScalingDescription& WithReplicaStatus(const ReplicaStatus& value) { SetReplicaStatus(value); return *this;}
-    inline ReplicaAutoScalingDescription& WithReplicaStatus(ReplicaStatus&& value) { SetReplicaStatus(std::move(value)); return *this;}
+    inline void SetReplicaStatus(ReplicaStatus value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
+    inline ReplicaAutoScalingDescription& WithReplicaStatus(ReplicaStatus value) { SetReplicaStatus(value); return *this;}
     ///@}
   private:
 
@@ -119,7 +115,7 @@ namespace Model
     AutoScalingSettingsDescription m_replicaProvisionedWriteCapacityAutoScalingSettings;
     bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
 
-    ReplicaStatus m_replicaStatus;
+    ReplicaStatus m_replicaStatus{ReplicaStatus::NOT_SET};
     bool m_replicaStatusHasBeenSet = false;
   };
 

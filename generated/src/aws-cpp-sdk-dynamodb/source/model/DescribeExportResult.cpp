@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeExportResult::DescribeExportResult()
-{
-}
-
 DescribeExportResult::DescribeExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeExportResult& DescribeExportResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ExportDescription"))
   {
     m_exportDescription = jsonValue.GetObject("ExportDescription");
-
+    m_exportDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

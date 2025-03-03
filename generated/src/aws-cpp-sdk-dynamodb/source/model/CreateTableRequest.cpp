@@ -12,28 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTableRequest::CreateTableRequest() : 
-    m_attributeDefinitionsHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tableClass(TableClass::NOT_SET),
-    m_tableClassHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false),
-    m_resourcePolicyHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false)
-{
-}
-
 Aws::String CreateTableRequest::SerializePayload() const
 {
   JsonValue payload;

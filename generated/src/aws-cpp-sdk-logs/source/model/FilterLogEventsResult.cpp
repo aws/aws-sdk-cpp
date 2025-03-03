@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FilterLogEventsResult::FilterLogEventsResult()
-{
-}
-
 FilterLogEventsResult::FilterLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ FilterLogEventsResult& FilterLogEventsResult::operator =(const Aws::AmazonWebSer
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("searchedLogStreams"))
   {
     Aws::Utils::Array<JsonView> searchedLogStreamsJsonList = jsonValue.GetArray("searchedLogStreams");
@@ -46,13 +41,11 @@ FilterLogEventsResult& FilterLogEventsResult::operator =(const Aws::AmazonWebSer
       m_searchedLogStreams.push_back(searchedLogStreamsJsonList[searchedLogStreamsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

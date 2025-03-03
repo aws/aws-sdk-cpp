@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTransformerRequest::PutTransformerRequest() : 
-    m_logGroupIdentifierHasBeenSet(false),
-    m_transformerConfigHasBeenSet(false)
-{
-}
-
 Aws::String PutTransformerRequest::SerializePayload() const
 {
   JsonValue payload;

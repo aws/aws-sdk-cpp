@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreTableFromBackupResult::RestoreTableFromBackupResult()
-{
-}
-
 RestoreTableFromBackupResult::RestoreTableFromBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ RestoreTableFromBackupResult& RestoreTableFromBackupResult::operator =(const Aws
   if(jsonValue.ValueExists("TableDescription"))
   {
     m_tableDescription = jsonValue.GetObject("TableDescription");
-
+    m_tableDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

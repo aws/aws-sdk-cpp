@@ -18,16 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-StartingPosition::StartingPosition() : 
-    m_type(ShardIteratorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 StartingPosition::StartingPosition(JsonView jsonValue)
-  : StartingPosition()
 {
   *this = jsonValue;
 }
@@ -38,23 +29,17 @@ StartingPosition& StartingPosition::operator =(JsonView jsonValue)
   {
     m_type = ShardIteratorTypeMapper::GetShardIteratorTypeForName(jsonValue.GetString("Type"));
 
-    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
-
     m_sequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

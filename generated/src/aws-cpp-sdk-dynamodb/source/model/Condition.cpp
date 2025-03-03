@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-Condition::Condition() : 
-    m_attributeValueListHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -40,16 +32,12 @@ Condition& Condition::operator =(JsonView jsonValue)
     {
       m_attributeValueList.push_back(attributeValueListJsonList[attributeValueListIndex].AsObject());
     }
-    m_attributeValueListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
 
-    m_comparisonOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

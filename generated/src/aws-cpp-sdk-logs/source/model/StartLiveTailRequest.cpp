@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartLiveTailRequest::StartLiveTailRequest() : 
-    m_logGroupIdentifiersHasBeenSet(false),
-    m_logStreamNamesHasBeenSet(false),
-    m_logStreamNamePrefixesHasBeenSet(false),
-    m_logEventFilterPatternHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String StartLiveTailRequest::SerializePayload() const
 {
   JsonValue payload;

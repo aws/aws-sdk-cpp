@@ -37,7 +37,7 @@ namespace Model
   class GlobalSecondaryIndexUpdate
   {
   public:
-    AWS_DYNAMODB_API GlobalSecondaryIndexUpdate();
+    AWS_DYNAMODB_API GlobalSecondaryIndexUpdate() = default;
     AWS_DYNAMODB_API GlobalSecondaryIndexUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API GlobalSecondaryIndexUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * <p>The name of an existing global secondary index, along with new provisioned
      * throughput settings to be applied to that index.</p>
      */
-    inline const UpdateGlobalSecondaryIndexAction& GetUpdate() const{ return m_update; }
+    inline const UpdateGlobalSecondaryIndexAction& GetUpdate() const { return m_update; }
     inline bool UpdateHasBeenSet() const { return m_updateHasBeenSet; }
-    inline void SetUpdate(const UpdateGlobalSecondaryIndexAction& value) { m_updateHasBeenSet = true; m_update = value; }
-    inline void SetUpdate(UpdateGlobalSecondaryIndexAction&& value) { m_updateHasBeenSet = true; m_update = std::move(value); }
-    inline GlobalSecondaryIndexUpdate& WithUpdate(const UpdateGlobalSecondaryIndexAction& value) { SetUpdate(value); return *this;}
-    inline GlobalSecondaryIndexUpdate& WithUpdate(UpdateGlobalSecondaryIndexAction&& value) { SetUpdate(std::move(value)); return *this;}
+    template<typename UpdateT = UpdateGlobalSecondaryIndexAction>
+    void SetUpdate(UpdateT&& value) { m_updateHasBeenSet = true; m_update = std::forward<UpdateT>(value); }
+    template<typename UpdateT = UpdateGlobalSecondaryIndexAction>
+    GlobalSecondaryIndexUpdate& WithUpdate(UpdateT&& value) { SetUpdate(std::forward<UpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +64,24 @@ namespace Model
      * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
      * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
-    inline const CreateGlobalSecondaryIndexAction& GetCreate() const{ return m_create; }
+    inline const CreateGlobalSecondaryIndexAction& GetCreate() const { return m_create; }
     inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
-    inline void SetCreate(const CreateGlobalSecondaryIndexAction& value) { m_createHasBeenSet = true; m_create = value; }
-    inline void SetCreate(CreateGlobalSecondaryIndexAction&& value) { m_createHasBeenSet = true; m_create = std::move(value); }
-    inline GlobalSecondaryIndexUpdate& WithCreate(const CreateGlobalSecondaryIndexAction& value) { SetCreate(value); return *this;}
-    inline GlobalSecondaryIndexUpdate& WithCreate(CreateGlobalSecondaryIndexAction&& value) { SetCreate(std::move(value)); return *this;}
+    template<typename CreateT = CreateGlobalSecondaryIndexAction>
+    void SetCreate(CreateT&& value) { m_createHasBeenSet = true; m_create = std::forward<CreateT>(value); }
+    template<typename CreateT = CreateGlobalSecondaryIndexAction>
+    GlobalSecondaryIndexUpdate& WithCreate(CreateT&& value) { SetCreate(std::forward<CreateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of an existing global secondary index to be removed.</p>
      */
-    inline const DeleteGlobalSecondaryIndexAction& GetDelete() const{ return m_delete; }
+    inline const DeleteGlobalSecondaryIndexAction& GetDelete() const { return m_delete; }
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
-    inline void SetDelete(const DeleteGlobalSecondaryIndexAction& value) { m_deleteHasBeenSet = true; m_delete = value; }
-    inline void SetDelete(DeleteGlobalSecondaryIndexAction&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
-    inline GlobalSecondaryIndexUpdate& WithDelete(const DeleteGlobalSecondaryIndexAction& value) { SetDelete(value); return *this;}
-    inline GlobalSecondaryIndexUpdate& WithDelete(DeleteGlobalSecondaryIndexAction&& value) { SetDelete(std::move(value)); return *this;}
+    template<typename DeleteT = DeleteGlobalSecondaryIndexAction>
+    void SetDelete(DeleteT&& value) { m_deleteHasBeenSet = true; m_delete = std::forward<DeleteT>(value); }
+    template<typename DeleteT = DeleteGlobalSecondaryIndexAction>
+    GlobalSecondaryIndexUpdate& WithDelete(DeleteT&& value) { SetDelete(std::forward<DeleteT>(value)); return *this;}
     ///@}
   private:
 

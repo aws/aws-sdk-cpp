@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-TypeConverter::TypeConverter() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 TypeConverter::TypeConverter(JsonView jsonValue)
-  : TypeConverter()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ TypeConverter& TypeConverter::operator =(JsonView jsonValue)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
-    m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

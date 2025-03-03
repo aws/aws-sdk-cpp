@@ -24,7 +24,7 @@ namespace Model
   class SubscribeToShardRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API SubscribeToShardRequest();
+    AWS_KINESIS_API SubscribeToShardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -67,14 +67,12 @@ namespace Model
      * <p>For this parameter, use the value you obtained when you called
      * <a>RegisterStreamConsumer</a>.</p>
      */
-    inline const Aws::String& GetConsumerARN() const{ return m_consumerARN; }
+    inline const Aws::String& GetConsumerARN() const { return m_consumerARN; }
     inline bool ConsumerARNHasBeenSet() const { return m_consumerARNHasBeenSet; }
-    inline void SetConsumerARN(const Aws::String& value) { m_consumerARNHasBeenSet = true; m_consumerARN = value; }
-    inline void SetConsumerARN(Aws::String&& value) { m_consumerARNHasBeenSet = true; m_consumerARN = std::move(value); }
-    inline void SetConsumerARN(const char* value) { m_consumerARNHasBeenSet = true; m_consumerARN.assign(value); }
-    inline SubscribeToShardRequest& WithConsumerARN(const Aws::String& value) { SetConsumerARN(value); return *this;}
-    inline SubscribeToShardRequest& WithConsumerARN(Aws::String&& value) { SetConsumerARN(std::move(value)); return *this;}
-    inline SubscribeToShardRequest& WithConsumerARN(const char* value) { SetConsumerARN(value); return *this;}
+    template<typename ConsumerARNT = Aws::String>
+    void SetConsumerARN(ConsumerARNT&& value) { m_consumerARNHasBeenSet = true; m_consumerARN = std::forward<ConsumerARNT>(value); }
+    template<typename ConsumerARNT = Aws::String>
+    SubscribeToShardRequest& WithConsumerARN(ConsumerARNT&& value) { SetConsumerARN(std::forward<ConsumerARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,26 +80,24 @@ namespace Model
      * <p>The ID of the shard you want to subscribe to. To see a list of all the shards
      * for a given stream, use <a>ListShards</a>.</p>
      */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
+    inline const Aws::String& GetShardId() const { return m_shardId; }
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-    inline SubscribeToShardRequest& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-    inline SubscribeToShardRequest& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-    inline SubscribeToShardRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
+    template<typename ShardIdT = Aws::String>
+    void SetShardId(ShardIdT&& value) { m_shardIdHasBeenSet = true; m_shardId = std::forward<ShardIdT>(value); }
+    template<typename ShardIdT = Aws::String>
+    SubscribeToShardRequest& WithShardId(ShardIdT&& value) { SetShardId(std::forward<ShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The starting position in the data stream from which to start streaming.</p>
      */
-    inline const StartingPosition& GetStartingPosition() const{ return m_startingPosition; }
+    inline const StartingPosition& GetStartingPosition() const { return m_startingPosition; }
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
-    inline void SetStartingPosition(const StartingPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
-    inline void SetStartingPosition(StartingPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
-    inline SubscribeToShardRequest& WithStartingPosition(const StartingPosition& value) { SetStartingPosition(value); return *this;}
-    inline SubscribeToShardRequest& WithStartingPosition(StartingPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
+    template<typename StartingPositionT = StartingPosition>
+    void SetStartingPosition(StartingPositionT&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::forward<StartingPositionT>(value); }
+    template<typename StartingPositionT = StartingPosition>
+    SubscribeToShardRequest& WithStartingPosition(StartingPositionT&& value) { SetStartingPosition(std::forward<StartingPositionT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,7 +110,7 @@ namespace Model
     StartingPosition m_startingPosition;
     bool m_startingPositionHasBeenSet = false;
     SubscribeToShardHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

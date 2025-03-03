@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLogRecordResult::GetLogRecordResult()
-{
-}
-
 GetLogRecordResult::GetLogRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ GetLogRecordResult& GetLogRecordResult::operator =(const Aws::AmazonWebServiceRe
       m_logRecord[logRecordItem.first] = logRecordItem.second.AsString();
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

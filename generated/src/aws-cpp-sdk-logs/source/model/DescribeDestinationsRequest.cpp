@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDestinationsRequest::DescribeDestinationsRequest() : 
-    m_destinationNamePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDestinationsRequest::SerializePayload() const
 {
   JsonValue payload;

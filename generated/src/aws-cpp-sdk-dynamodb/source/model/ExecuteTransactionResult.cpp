@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExecuteTransactionResult::ExecuteTransactionResult()
-{
-}
-
 ExecuteTransactionResult::ExecuteTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ ExecuteTransactionResult& ExecuteTransactionResult::operator =(const Aws::Amazon
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
@@ -46,7 +41,6 @@ ExecuteTransactionResult& ExecuteTransactionResult::operator =(const Aws::Amazon
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

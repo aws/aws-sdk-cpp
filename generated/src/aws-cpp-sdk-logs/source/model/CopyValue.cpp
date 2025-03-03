@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-CopyValue::CopyValue() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 CopyValue::CopyValue(JsonView jsonValue)
-  : CopyValue()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ CopyValue& CopyValue::operator =(JsonView jsonValue)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
-    m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

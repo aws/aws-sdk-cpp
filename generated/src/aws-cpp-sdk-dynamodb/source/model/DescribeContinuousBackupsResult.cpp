@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeContinuousBackupsResult::DescribeContinuousBackupsResult()
-{
-}
-
 DescribeContinuousBackupsResult::DescribeContinuousBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator =(con
   if(jsonValue.ValueExists("ContinuousBackupsDescription"))
   {
     m_continuousBackupsDescription = jsonValue.GetObject("ContinuousBackupsDescription");
-
+    m_continuousBackupsDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

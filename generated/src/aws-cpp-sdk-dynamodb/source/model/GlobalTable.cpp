@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalTable::GlobalTable() : 
-    m_globalTableNameHasBeenSet(false),
-    m_replicationGroupHasBeenSet(false)
-{
-}
-
 GlobalTable::GlobalTable(JsonView jsonValue)
-  : GlobalTable()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GlobalTable& GlobalTable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GlobalTableName"))
   {
     m_globalTableName = jsonValue.GetString("GlobalTableName");
-
     m_globalTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationGroup"))
   {
     Aws::Utils::Array<JsonView> replicationGroupJsonList = jsonValue.GetArray("ReplicationGroup");
@@ -46,9 +37,7 @@ GlobalTable& GlobalTable::operator =(JsonView jsonValue)
     {
       m_replicationGroup.push_back(replicationGroupJsonList[replicationGroupIndex].AsObject());
     }
-    m_replicationGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

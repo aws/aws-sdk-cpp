@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-BatchStatementResponse::BatchStatementResponse() : 
-    m_errorHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_itemHasBeenSet(false)
-{
-}
-
 BatchStatementResponse::BatchStatementResponse(JsonView jsonValue)
-  : BatchStatementResponse()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchStatementResponse& BatchStatementResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Item"))
   {
     Aws::Map<Aws::String, JsonView> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
@@ -54,9 +42,7 @@ BatchStatementResponse& BatchStatementResponse::operator =(JsonView jsonValue)
     {
       m_item[itemItem.first] = itemItem.second.AsObject();
     }
-    m_itemHasBeenSet = true;
   }
-
   return *this;
 }
 

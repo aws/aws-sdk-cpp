@@ -36,7 +36,7 @@ namespace Model
   class UpdateReplicationGroupMemberAction
   {
   public:
-    AWS_DYNAMODB_API UpdateReplicationGroupMemberAction();
+    AWS_DYNAMODB_API UpdateReplicationGroupMemberAction() = default;
     AWS_DYNAMODB_API UpdateReplicationGroupMemberAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API UpdateReplicationGroupMemberAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Region where the replica exists.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline UpdateReplicationGroupMemberAction& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    UpdateReplicationGroupMemberAction& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * Note that you should only provide this parameter if the key is different from
      * the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
-    inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
+    inline const Aws::String& GetKMSMasterKeyId() const { return m_kMSMasterKeyId; }
     inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
-    inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
-    inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
-    inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
-    inline UpdateReplicationGroupMemberAction& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithKMSMasterKeyId(const char* value) { SetKMSMasterKeyId(value); return *this;}
+    template<typename KMSMasterKeyIdT = Aws::String>
+    void SetKMSMasterKeyId(KMSMasterKeyIdT&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::forward<KMSMasterKeyIdT>(value); }
+    template<typename KMSMasterKeyIdT = Aws::String>
+    UpdateReplicationGroupMemberAction& WithKMSMasterKeyId(KMSMasterKeyIdT&& value) { SetKMSMasterKeyId(std::forward<KMSMasterKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,38 +74,38 @@ namespace Model
      * <p>Replica-specific provisioned throughput. If not specified, uses the source
      * table's provisioned throughput settings.</p>
      */
-    inline const ProvisionedThroughputOverride& GetProvisionedThroughputOverride() const{ return m_provisionedThroughputOverride; }
+    inline const ProvisionedThroughputOverride& GetProvisionedThroughputOverride() const { return m_provisionedThroughputOverride; }
     inline bool ProvisionedThroughputOverrideHasBeenSet() const { return m_provisionedThroughputOverrideHasBeenSet; }
-    inline void SetProvisionedThroughputOverride(const ProvisionedThroughputOverride& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = value; }
-    inline void SetProvisionedThroughputOverride(ProvisionedThroughputOverride&& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = std::move(value); }
-    inline UpdateReplicationGroupMemberAction& WithProvisionedThroughputOverride(const ProvisionedThroughputOverride& value) { SetProvisionedThroughputOverride(value); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithProvisionedThroughputOverride(ProvisionedThroughputOverride&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputOverrideT = ProvisionedThroughputOverride>
+    void SetProvisionedThroughputOverride(ProvisionedThroughputOverrideT&& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = std::forward<ProvisionedThroughputOverrideT>(value); }
+    template<typename ProvisionedThroughputOverrideT = ProvisionedThroughputOverride>
+    UpdateReplicationGroupMemberAction& WithProvisionedThroughputOverride(ProvisionedThroughputOverrideT&& value) { SetProvisionedThroughputOverride(std::forward<ProvisionedThroughputOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Overrides the maximum on-demand throughput for the replica table.</p>
      */
-    inline const OnDemandThroughputOverride& GetOnDemandThroughputOverride() const{ return m_onDemandThroughputOverride; }
+    inline const OnDemandThroughputOverride& GetOnDemandThroughputOverride() const { return m_onDemandThroughputOverride; }
     inline bool OnDemandThroughputOverrideHasBeenSet() const { return m_onDemandThroughputOverrideHasBeenSet; }
-    inline void SetOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = value; }
-    inline void SetOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = std::move(value); }
-    inline UpdateReplicationGroupMemberAction& WithOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { SetOnDemandThroughputOverride(value); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { SetOnDemandThroughputOverride(std::move(value)); return *this;}
+    template<typename OnDemandThroughputOverrideT = OnDemandThroughputOverride>
+    void SetOnDemandThroughputOverride(OnDemandThroughputOverrideT&& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = std::forward<OnDemandThroughputOverrideT>(value); }
+    template<typename OnDemandThroughputOverrideT = OnDemandThroughputOverride>
+    UpdateReplicationGroupMemberAction& WithOnDemandThroughputOverride(OnDemandThroughputOverrideT&& value) { SetOnDemandThroughputOverride(std::forward<OnDemandThroughputOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Replica-specific global secondary index settings.</p>
      */
-    inline const Aws::Vector<ReplicaGlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
+    inline const Aws::Vector<ReplicaGlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const { return m_globalSecondaryIndexes; }
     inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
-    inline void SetGlobalSecondaryIndexes(const Aws::Vector<ReplicaGlobalSecondaryIndex>& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
-    inline void SetGlobalSecondaryIndexes(Aws::Vector<ReplicaGlobalSecondaryIndex>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
-    inline UpdateReplicationGroupMemberAction& WithGlobalSecondaryIndexes(const Aws::Vector<ReplicaGlobalSecondaryIndex>& value) { SetGlobalSecondaryIndexes(value); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithGlobalSecondaryIndexes(Aws::Vector<ReplicaGlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
-    inline UpdateReplicationGroupMemberAction& AddGlobalSecondaryIndexes(const ReplicaGlobalSecondaryIndex& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
-    inline UpdateReplicationGroupMemberAction& AddGlobalSecondaryIndexes(ReplicaGlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<ReplicaGlobalSecondaryIndex>>
+    void SetGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::forward<GlobalSecondaryIndexesT>(value); }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<ReplicaGlobalSecondaryIndex>>
+    UpdateReplicationGroupMemberAction& WithGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { SetGlobalSecondaryIndexes(std::forward<GlobalSecondaryIndexesT>(value)); return *this;}
+    template<typename GlobalSecondaryIndexesT = ReplicaGlobalSecondaryIndex>
+    UpdateReplicationGroupMemberAction& AddGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.emplace_back(std::forward<GlobalSecondaryIndexesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,12 +113,10 @@ namespace Model
      * <p>Replica-specific table class. If not specified, uses the source table's table
      * class.</p>
      */
-    inline const TableClass& GetTableClassOverride() const{ return m_tableClassOverride; }
+    inline TableClass GetTableClassOverride() const { return m_tableClassOverride; }
     inline bool TableClassOverrideHasBeenSet() const { return m_tableClassOverrideHasBeenSet; }
-    inline void SetTableClassOverride(const TableClass& value) { m_tableClassOverrideHasBeenSet = true; m_tableClassOverride = value; }
-    inline void SetTableClassOverride(TableClass&& value) { m_tableClassOverrideHasBeenSet = true; m_tableClassOverride = std::move(value); }
-    inline UpdateReplicationGroupMemberAction& WithTableClassOverride(const TableClass& value) { SetTableClassOverride(value); return *this;}
-    inline UpdateReplicationGroupMemberAction& WithTableClassOverride(TableClass&& value) { SetTableClassOverride(std::move(value)); return *this;}
+    inline void SetTableClassOverride(TableClass value) { m_tableClassOverrideHasBeenSet = true; m_tableClassOverride = value; }
+    inline UpdateReplicationGroupMemberAction& WithTableClassOverride(TableClass value) { SetTableClassOverride(value); return *this;}
     ///@}
   private:
 
@@ -141,7 +135,7 @@ namespace Model
     Aws::Vector<ReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet = false;
 
-    TableClass m_tableClassOverride;
+    TableClass m_tableClassOverride{TableClass::NOT_SET};
     bool m_tableClassOverrideHasBeenSet = false;
   };
 

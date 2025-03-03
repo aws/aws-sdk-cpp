@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-DeleteReplicaAction::DeleteReplicaAction() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 DeleteReplicaAction::DeleteReplicaAction(JsonView jsonValue)
-  : DeleteReplicaAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteReplicaAction& DeleteReplicaAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

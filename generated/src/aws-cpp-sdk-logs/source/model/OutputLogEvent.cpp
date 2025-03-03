@@ -18,17 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OutputLogEvent::OutputLogEvent() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_ingestionTime(0),
-    m_ingestionTimeHasBeenSet(false)
-{
-}
-
 OutputLogEvent::OutputLogEvent(JsonView jsonValue)
-  : OutputLogEvent()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OutputLogEvent& OutputLogEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestionTime"))
   {
     m_ingestionTime = jsonValue.GetInt64("ingestionTime");
-
     m_ingestionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

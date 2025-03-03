@@ -22,7 +22,7 @@ namespace Model
   class UpdateLogAnomalyDetectorRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API UpdateLogAnomalyDetectorRequest();
+    AWS_CLOUDWATCHLOGS_API UpdateLogAnomalyDetectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ARN of the anomaly detector that you want to update.</p>
      */
-    inline const Aws::String& GetAnomalyDetectorArn() const{ return m_anomalyDetectorArn; }
+    inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
     inline bool AnomalyDetectorArnHasBeenSet() const { return m_anomalyDetectorArnHasBeenSet; }
-    inline void SetAnomalyDetectorArn(const Aws::String& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = value; }
-    inline void SetAnomalyDetectorArn(Aws::String&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::move(value); }
-    inline void SetAnomalyDetectorArn(const char* value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn.assign(value); }
-    inline UpdateLogAnomalyDetectorRequest& WithAnomalyDetectorArn(const Aws::String& value) { SetAnomalyDetectorArn(value); return *this;}
-    inline UpdateLogAnomalyDetectorRequest& WithAnomalyDetectorArn(Aws::String&& value) { SetAnomalyDetectorArn(std::move(value)); return *this;}
-    inline UpdateLogAnomalyDetectorRequest& WithAnomalyDetectorArn(const char* value) { SetAnomalyDetectorArn(value); return *this;}
+    template<typename AnomalyDetectorArnT = Aws::String>
+    void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value); }
+    template<typename AnomalyDetectorArnT = Aws::String>
+    UpdateLogAnomalyDetectorRequest& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) { SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,24 +55,20 @@ namespace Model
      * <code>evaluationFrequency</code> to <code>FIFTEEN_MIN</code> might be
      * appropriate.</p>
      */
-    inline const EvaluationFrequency& GetEvaluationFrequency() const{ return m_evaluationFrequency; }
+    inline EvaluationFrequency GetEvaluationFrequency() const { return m_evaluationFrequency; }
     inline bool EvaluationFrequencyHasBeenSet() const { return m_evaluationFrequencyHasBeenSet; }
-    inline void SetEvaluationFrequency(const EvaluationFrequency& value) { m_evaluationFrequencyHasBeenSet = true; m_evaluationFrequency = value; }
-    inline void SetEvaluationFrequency(EvaluationFrequency&& value) { m_evaluationFrequencyHasBeenSet = true; m_evaluationFrequency = std::move(value); }
-    inline UpdateLogAnomalyDetectorRequest& WithEvaluationFrequency(const EvaluationFrequency& value) { SetEvaluationFrequency(value); return *this;}
-    inline UpdateLogAnomalyDetectorRequest& WithEvaluationFrequency(EvaluationFrequency&& value) { SetEvaluationFrequency(std::move(value)); return *this;}
+    inline void SetEvaluationFrequency(EvaluationFrequency value) { m_evaluationFrequencyHasBeenSet = true; m_evaluationFrequency = value; }
+    inline UpdateLogAnomalyDetectorRequest& WithEvaluationFrequency(EvaluationFrequency value) { SetEvaluationFrequency(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+    inline const Aws::String& GetFilterPattern() const { return m_filterPattern; }
     inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
-    inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
-    inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
-    inline UpdateLogAnomalyDetectorRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
-    inline UpdateLogAnomalyDetectorRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
-    inline UpdateLogAnomalyDetectorRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+    template<typename FilterPatternT = Aws::String>
+    void SetFilterPattern(FilterPatternT&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::forward<FilterPatternT>(value); }
+    template<typename FilterPatternT = Aws::String>
+    UpdateLogAnomalyDetectorRequest& WithFilterPattern(FilterPatternT&& value) { SetFilterPattern(std::forward<FilterPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +79,7 @@ namespace Model
      * cause of an anomaly during this time, it will be considered normal going forward
      * and will not be detected.</p>
      */
-    inline long long GetAnomalyVisibilityTime() const{ return m_anomalyVisibilityTime; }
+    inline long long GetAnomalyVisibilityTime() const { return m_anomalyVisibilityTime; }
     inline bool AnomalyVisibilityTimeHasBeenSet() const { return m_anomalyVisibilityTimeHasBeenSet; }
     inline void SetAnomalyVisibilityTime(long long value) { m_anomalyVisibilityTimeHasBeenSet = true; m_anomalyVisibilityTime = value; }
     inline UpdateLogAnomalyDetectorRequest& WithAnomalyVisibilityTime(long long value) { SetAnomalyVisibilityTime(value); return *this;}
@@ -95,7 +89,7 @@ namespace Model
     /**
      * <p>Use this parameter to pause or restart the anomaly detector. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline UpdateLogAnomalyDetectorRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -105,16 +99,16 @@ namespace Model
     Aws::String m_anomalyDetectorArn;
     bool m_anomalyDetectorArnHasBeenSet = false;
 
-    EvaluationFrequency m_evaluationFrequency;
+    EvaluationFrequency m_evaluationFrequency{EvaluationFrequency::NOT_SET};
     bool m_evaluationFrequencyHasBeenSet = false;
 
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet = false;
 
-    long long m_anomalyVisibilityTime;
+    long long m_anomalyVisibilityTime{0};
     bool m_anomalyVisibilityTimeHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

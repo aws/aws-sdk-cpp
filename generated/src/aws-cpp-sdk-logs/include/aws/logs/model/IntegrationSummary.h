@@ -36,7 +36,7 @@ namespace Model
   class IntegrationSummary
   {
   public:
-    AWS_CLOUDWATCHLOGS_API IntegrationSummary();
+    AWS_CLOUDWATCHLOGS_API IntegrationSummary() = default;
     AWS_CLOUDWATCHLOGS_API IntegrationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API IntegrationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of this integration.</p>
      */
-    inline const Aws::String& GetIntegrationName() const{ return m_integrationName; }
+    inline const Aws::String& GetIntegrationName() const { return m_integrationName; }
     inline bool IntegrationNameHasBeenSet() const { return m_integrationNameHasBeenSet; }
-    inline void SetIntegrationName(const Aws::String& value) { m_integrationNameHasBeenSet = true; m_integrationName = value; }
-    inline void SetIntegrationName(Aws::String&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::move(value); }
-    inline void SetIntegrationName(const char* value) { m_integrationNameHasBeenSet = true; m_integrationName.assign(value); }
-    inline IntegrationSummary& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
-    inline IntegrationSummary& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
-    inline IntegrationSummary& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    template<typename IntegrationNameT = Aws::String>
+    void SetIntegrationName(IntegrationNameT&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::forward<IntegrationNameT>(value); }
+    template<typename IntegrationNameT = Aws::String>
+    IntegrationSummary& WithIntegrationName(IntegrationNameT&& value) { SetIntegrationName(std::forward<IntegrationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,34 +59,30 @@ namespace Model
      * <p>The type of integration. Integrations with OpenSearch Service have the type
      * <code>OPENSEARCH</code>.</p>
      */
-    inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline IntegrationType GetIntegrationType() const { return m_integrationType; }
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
-    inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
-    inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
-    inline IntegrationSummary& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
-    inline IntegrationSummary& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    inline void SetIntegrationType(IntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline IntegrationSummary& WithIntegrationType(IntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of this integration.</p>
      */
-    inline const IntegrationStatus& GetIntegrationStatus() const{ return m_integrationStatus; }
+    inline IntegrationStatus GetIntegrationStatus() const { return m_integrationStatus; }
     inline bool IntegrationStatusHasBeenSet() const { return m_integrationStatusHasBeenSet; }
-    inline void SetIntegrationStatus(const IntegrationStatus& value) { m_integrationStatusHasBeenSet = true; m_integrationStatus = value; }
-    inline void SetIntegrationStatus(IntegrationStatus&& value) { m_integrationStatusHasBeenSet = true; m_integrationStatus = std::move(value); }
-    inline IntegrationSummary& WithIntegrationStatus(const IntegrationStatus& value) { SetIntegrationStatus(value); return *this;}
-    inline IntegrationSummary& WithIntegrationStatus(IntegrationStatus&& value) { SetIntegrationStatus(std::move(value)); return *this;}
+    inline void SetIntegrationStatus(IntegrationStatus value) { m_integrationStatusHasBeenSet = true; m_integrationStatus = value; }
+    inline IntegrationSummary& WithIntegrationStatus(IntegrationStatus value) { SetIntegrationStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_integrationName;
     bool m_integrationNameHasBeenSet = false;
 
-    IntegrationType m_integrationType;
+    IntegrationType m_integrationType{IntegrationType::NOT_SET};
     bool m_integrationTypeHasBeenSet = false;
 
-    IntegrationStatus m_integrationStatus;
+    IntegrationStatus m_integrationStatus{IntegrationStatus::NOT_SET};
     bool m_integrationStatusHasBeenSet = false;
   };
 

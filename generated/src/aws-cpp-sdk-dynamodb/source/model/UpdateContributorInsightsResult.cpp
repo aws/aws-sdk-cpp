@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateContributorInsightsResult::UpdateContributorInsightsResult() : 
-    m_contributorInsightsStatus(ContributorInsightsStatus::NOT_SET)
-{
-}
-
 UpdateContributorInsightsResult::UpdateContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateContributorInsightsResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ UpdateContributorInsightsResult& UpdateContributorInsightsResult::operator =(con
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
+    m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
+    m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributorInsightsStatus"))
   {
     m_contributorInsightsStatus = ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(jsonValue.GetString("ContributorInsightsStatus"));
 
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

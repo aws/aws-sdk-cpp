@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointsResult::DescribeEndpointsResult()
-{
-}
-
 DescribeEndpointsResult::DescribeEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ DescribeEndpointsResult& DescribeEndpointsResult::operator =(const Aws::AmazonWe
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

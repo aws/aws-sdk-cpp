@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIntegrationResult::PutIntegrationResult() : 
-    m_integrationStatus(IntegrationStatus::NOT_SET)
-{
-}
-
 PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutIntegrationResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("integrationName"))
   {
     m_integrationName = jsonValue.GetString("integrationName");
-
+    m_integrationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationStatus"))
   {
     m_integrationStatus = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("integrationStatus"));
 
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

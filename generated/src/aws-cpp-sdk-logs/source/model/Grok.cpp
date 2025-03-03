@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-Grok::Grok() : 
-    m_sourceHasBeenSet(false),
-    m_matchHasBeenSet(false)
-{
-}
-
 Grok::Grok(JsonView jsonValue)
-  : Grok()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Grok& Grok::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetString("match");
-
     m_matchHasBeenSet = true;
   }
-
   return *this;
 }
 

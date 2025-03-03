@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRecordResult::PutRecordResult() : 
-    m_encryptionType(EncryptionType::NOT_SET)
-{
-}
-
 PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutRecordResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ PutRecordResult& PutRecordResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("ShardId"))
   {
     m_shardId = jsonValue.GetString("ShardId");
-
+    m_shardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
-
+    m_sequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
 
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

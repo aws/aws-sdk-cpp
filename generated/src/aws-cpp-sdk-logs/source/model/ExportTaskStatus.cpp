@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ExportTaskStatus::ExportTaskStatus() : 
-    m_code(ExportTaskStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ExportTaskStatus::ExportTaskStatus(JsonView jsonValue)
-  : ExportTaskStatus()
 {
   *this = jsonValue;
 }
@@ -37,16 +29,12 @@ ExportTaskStatus& ExportTaskStatus::operator =(JsonView jsonValue)
   {
     m_code = ExportTaskStatusCodeMapper::GetExportTaskStatusCodeForName(jsonValue.GetString("code"));
 
-    m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

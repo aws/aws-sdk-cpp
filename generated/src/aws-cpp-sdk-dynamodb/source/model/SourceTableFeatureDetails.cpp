@@ -18,17 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-SourceTableFeatureDetails::SourceTableFeatureDetails() : 
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_streamDescriptionHasBeenSet(false),
-    m_timeToLiveDescriptionHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
-{
-}
-
 SourceTableFeatureDetails::SourceTableFeatureDetails(JsonView jsonValue)
-  : SourceTableFeatureDetails()
 {
   *this = jsonValue;
 }
@@ -42,9 +32,7 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(JsonView jsonVa
     {
       m_localSecondaryIndexes.push_back(localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject());
     }
-    m_localSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
@@ -52,30 +40,22 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(JsonView jsonVa
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
     }
-    m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamDescription"))
   {
     m_streamDescription = jsonValue.GetObject("StreamDescription");
-
     m_streamDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeToLiveDescription"))
   {
     m_timeToLiveDescription = jsonValue.GetObject("TimeToLiveDescription");
-
     m_timeToLiveDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSEDescription"))
   {
     m_sSEDescription = jsonValue.GetObject("SSEDescription");
-
     m_sSEDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

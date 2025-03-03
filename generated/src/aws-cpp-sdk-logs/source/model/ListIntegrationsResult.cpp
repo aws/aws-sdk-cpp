@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIntegrationsResult::ListIntegrationsResult()
-{
-}
-
 ListIntegrationsResult::ListIntegrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ ListIntegrationsResult& ListIntegrationsResult::operator =(const Aws::AmazonWebS
       m_integrationSummaries.push_back(integrationSummariesJsonList[integrationSummariesIndex].AsObject());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

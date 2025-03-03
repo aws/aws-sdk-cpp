@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableEnhancedMonitoringResult::EnableEnhancedMonitoringResult()
-{
-}
-
 EnableEnhancedMonitoringResult::EnableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ EnableEnhancedMonitoringResult& EnableEnhancedMonitoringResult::operator =(const
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
+    m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentShardLevelMetrics"))
   {
     Aws::Utils::Array<JsonView> currentShardLevelMetricsJsonList = jsonValue.GetArray("CurrentShardLevelMetrics");
@@ -43,7 +38,6 @@ EnableEnhancedMonitoringResult& EnableEnhancedMonitoringResult::operator =(const
       m_currentShardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(currentShardLevelMetricsJsonList[currentShardLevelMetricsIndex].AsString()));
     }
   }
-
   if(jsonValue.ValueExists("DesiredShardLevelMetrics"))
   {
     Aws::Utils::Array<JsonView> desiredShardLevelMetricsJsonList = jsonValue.GetArray("DesiredShardLevelMetrics");
@@ -52,13 +46,11 @@ EnableEnhancedMonitoringResult& EnableEnhancedMonitoringResult::operator =(const
       m_desiredShardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(desiredShardLevelMetricsJsonList[desiredShardLevelMetricsIndex].AsString()));
     }
   }
-
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
+    m_streamARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGlobalTableResult::CreateGlobalTableResult()
-{
-}
-
 CreateGlobalTableResult::CreateGlobalTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateGlobalTableResult& CreateGlobalTableResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("GlobalTableDescription"))
   {
     m_globalTableDescription = jsonValue.GetObject("GlobalTableDescription");
-
+    m_globalTableDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

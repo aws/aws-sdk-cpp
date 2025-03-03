@@ -18,20 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ProvisionedThroughputDescription::ProvisionedThroughputDescription() : 
-    m_lastIncreaseDateTimeHasBeenSet(false),
-    m_lastDecreaseDateTimeHasBeenSet(false),
-    m_numberOfDecreasesToday(0),
-    m_numberOfDecreasesTodayHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
-{
-}
-
 ProvisionedThroughputDescription::ProvisionedThroughputDescription(JsonView jsonValue)
-  : ProvisionedThroughputDescription()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ProvisionedThroughputDescription& ProvisionedThroughputDescription::operator =(J
   if(jsonValue.ValueExists("LastIncreaseDateTime"))
   {
     m_lastIncreaseDateTime = jsonValue.GetDouble("LastIncreaseDateTime");
-
     m_lastIncreaseDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDecreaseDateTime"))
   {
     m_lastDecreaseDateTime = jsonValue.GetDouble("LastDecreaseDateTime");
-
     m_lastDecreaseDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDecreasesToday"))
   {
     m_numberOfDecreasesToday = jsonValue.GetInt64("NumberOfDecreasesToday");
-
     m_numberOfDecreasesTodayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInt64("ReadCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteCapacityUnits"))
   {
     m_writeCapacityUnits = jsonValue.GetInt64("WriteCapacityUnits");
-
     m_writeCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TimeToLiveDescription::TimeToLiveDescription() : 
-    m_timeToLiveStatus(TimeToLiveStatus::NOT_SET),
-    m_timeToLiveStatusHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
-{
-}
-
 TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue)
-  : TimeToLiveDescription()
 {
   *this = jsonValue;
 }
@@ -37,16 +29,12 @@ TimeToLiveDescription& TimeToLiveDescription::operator =(JsonView jsonValue)
   {
     m_timeToLiveStatus = TimeToLiveStatusMapper::GetTimeToLiveStatusForName(jsonValue.GetString("TimeToLiveStatus"));
 
-    m_timeToLiveStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

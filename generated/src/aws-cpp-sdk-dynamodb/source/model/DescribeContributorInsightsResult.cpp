@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeContributorInsightsResult::DescribeContributorInsightsResult() : 
-    m_contributorInsightsStatus(ContributorInsightsStatus::NOT_SET)
-{
-}
-
 DescribeContributorInsightsResult::DescribeContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeContributorInsightsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator =
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
+    m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
+    m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributorInsightsRuleList"))
   {
     Aws::Utils::Array<JsonView> contributorInsightsRuleListJsonList = jsonValue.GetArray("ContributorInsightsRuleList");
@@ -51,25 +43,21 @@ DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator =
       m_contributorInsightsRuleList.push_back(contributorInsightsRuleListJsonList[contributorInsightsRuleListIndex].AsString());
     }
   }
-
   if(jsonValue.ValueExists("ContributorInsightsStatus"))
   {
     m_contributorInsightsStatus = ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(jsonValue.GetString("ContributorInsightsStatus"));
 
   }
-
   if(jsonValue.ValueExists("LastUpdateDateTime"))
   {
     m_lastUpdateDateTime = jsonValue.GetDouble("LastUpdateDateTime");
-
+    m_lastUpdateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureException"))
   {
     m_failureException = jsonValue.GetObject("FailureException");
-
+    m_failureExceptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

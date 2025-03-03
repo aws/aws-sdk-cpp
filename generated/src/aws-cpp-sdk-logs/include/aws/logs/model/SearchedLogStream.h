@@ -31,7 +31,7 @@ namespace Model
   class SearchedLogStream
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SearchedLogStream();
+    AWS_CLOUDWATCHLOGS_API SearchedLogStream() = default;
     AWS_CLOUDWATCHLOGS_API SearchedLogStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SearchedLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+    inline const Aws::String& GetLogStreamName() const { return m_logStreamName; }
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
-    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
-    inline SearchedLogStream& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
-    inline SearchedLogStream& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
-    inline SearchedLogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+    template<typename LogStreamNameT = Aws::String>
+    void SetLogStreamName(LogStreamNameT&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::forward<LogStreamNameT>(value); }
+    template<typename LogStreamNameT = Aws::String>
+    SearchedLogStream& WithLogStreamName(LogStreamNameT&& value) { SetLogStreamName(std::forward<LogStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether all the events in this log stream were searched.</p>
      */
-    inline bool GetSearchedCompletely() const{ return m_searchedCompletely; }
+    inline bool GetSearchedCompletely() const { return m_searchedCompletely; }
     inline bool SearchedCompletelyHasBeenSet() const { return m_searchedCompletelyHasBeenSet; }
     inline void SetSearchedCompletely(bool value) { m_searchedCompletelyHasBeenSet = true; m_searchedCompletely = value; }
     inline SearchedLogStream& WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet = false;
 
-    bool m_searchedCompletely;
+    bool m_searchedCompletely{false};
     bool m_searchedCompletelyHasBeenSet = false;
   };
 

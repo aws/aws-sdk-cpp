@@ -12,19 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSubscriptionFilterRequest::PutSubscriptionFilterRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_filterNameHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_distribution(Distribution::NOT_SET),
-    m_distributionHasBeenSet(false),
-    m_applyOnTransformedLogs(false),
-    m_applyOnTransformedLogsHasBeenSet(false)
-{
-}
-
 Aws::String PutSubscriptionFilterRequest::SerializePayload() const
 {
   JsonValue payload;

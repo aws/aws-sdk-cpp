@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteItemResult::DeleteItemResult()
-{
-}
-
 DeleteItemResult::DeleteItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,19 +33,16 @@ DeleteItemResult& DeleteItemResult::operator =(const Aws::AmazonWebServiceResult
       m_attributes[attributesItem.first] = attributesItem.second.AsObject();
     }
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
-
+    m_consumedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCollectionMetrics"))
   {
     m_itemCollectionMetrics = jsonValue.GetObject("ItemCollectionMetrics");
-
+    m_itemCollectionMetricsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

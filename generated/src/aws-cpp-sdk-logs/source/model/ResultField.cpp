@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ResultField::ResultField() : 
-    m_fieldHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ResultField::ResultField(JsonView jsonValue)
-  : ResultField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResultField& ResultField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("field"))
   {
     m_field = jsonValue.GetString("field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

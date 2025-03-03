@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-MoveKeys::MoveKeys() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 MoveKeys::MoveKeys(JsonView jsonValue)
-  : MoveKeys()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ MoveKeys& MoveKeys::operator =(JsonView jsonValue)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
-    m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 
