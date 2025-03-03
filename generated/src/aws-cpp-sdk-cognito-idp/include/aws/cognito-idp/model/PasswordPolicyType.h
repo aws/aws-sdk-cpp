@@ -23,14 +23,7 @@ namespace Model
 
   /**
    * <p>The password policy settings for a user pool, including complexity, history,
-   * and length requirements.</p> <p>This data type is a request and response
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * and length requirements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/PasswordPolicyType">AWS
    * API Reference</a></p>
    */
@@ -103,13 +96,7 @@ namespace Model
      * <p>The number of previous passwords that you want Amazon Cognito to restrict
      * each user from reusing. Users can't set a password that matches any of
      * <code>n</code> previous passwords, where <code>n</code> is the value of
-     * <code>PasswordHistorySize</code>.</p> <p>Password history isn't enforced and
-     * isn't displayed in <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
-     * responses when you set this value to <code>0</code> or don't provide it. To
-     * activate this setting, <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-     * advanced security features</a> must be active in your user pool.</p>
+     * <code>PasswordHistorySize</code>.</p>
      */
     inline int GetPasswordHistorySize() const{ return m_passwordHistorySize; }
     inline bool PasswordHistorySizeHasBeenSet() const { return m_passwordHistorySizeHasBeenSet; }

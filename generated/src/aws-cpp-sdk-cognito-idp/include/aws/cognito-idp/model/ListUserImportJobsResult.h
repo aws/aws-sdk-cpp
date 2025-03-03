@@ -42,7 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user import jobs.</p>
+     * <p>An array of user import jobs from the requested user pool. For each, the
+     * response includes logging destination, status, and the Amazon S3 pre-signed URL
+     * for CSV upload.</p>
      */
     inline const Aws::Vector<UserImportJobType>& GetUserImportJobs() const{ return m_userImportJobs; }
     inline void SetUserImportJobs(const Aws::Vector<UserImportJobType>& value) { m_userImportJobs = value; }

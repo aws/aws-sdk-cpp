@@ -29,16 +29,8 @@ namespace Model
    * user signs in with an unrecognized device. Amazon Cognito presents a new device
    * key that you can use to set up <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">device
-   * authentication</a> in a "Remember me on this device" authentication model.</p>
-   * <p>This data type is a response parameter of authentication operations like <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * authentication</a> in a "Remember me on this device" authentication
+   * model.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NewDeviceMetadataType">AWS
    * API Reference</a></p>
    */

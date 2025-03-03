@@ -37,7 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool.</p>
+     * <p>The ID of the user pool where you want to apply branding to the classic
+     * hosted UI.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -51,7 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client ID for the client app.</p>
+     * <p>The ID of the app client that you want to customize. To apply a default style
+     * to all app clients not configured with client-level branding, set this parameter
+     * value to <code>ALL</code>.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -65,7 +68,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CSS values in the UI customization.</p>
+     * <p>A plaintext CSS file that contains the custom fields that you want to apply
+     * to your user pool or app client. To download a template, go to the Amazon
+     * Cognito console. Navigate to your user pool <i>App clients</i> tab, select
+     * <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link
+     * to <code>CSS template.css</code>.</p>
      */
     inline const Aws::String& GetCSS() const{ return m_cSS; }
     inline bool CSSHasBeenSet() const { return m_cSSHasBeenSet; }
@@ -79,7 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The uploaded logo image for the UI customization.</p>
+     * <p>The image that you want to set as your login in the classic hosted UI, as a
+     * Base64-formatted binary object.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetImageFile() const{ return m_imageFile; }
     inline bool ImageFileHasBeenSet() const { return m_imageFileHasBeenSet; }

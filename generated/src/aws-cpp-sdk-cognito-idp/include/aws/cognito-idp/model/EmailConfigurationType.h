@@ -32,20 +32,8 @@ namespace Model
    * Region where you created your user pool, and in alternate Regions in some cases.
    * For more information on the supported Regions, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email
-   * settings for Amazon Cognito user pools</a>.</p>  <p>This data type is a
-   * request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
+   * settings for Amazon Cognito user pools</a>.</p> <p><h3>See Also:</h3>  
    * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.</p><p><h3>See
-   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EmailConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -147,7 +135,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Either the sender’s email address or the sender��s name with their email
+     * <p>Either the sender’s email address or the sender’s name with their email
      * address. For example, <code>testuser@example.com</code> or <code>Test User
      * &lt;testuser@example.com&gt;</code>. This address appears before the body of the
      * email.</p>

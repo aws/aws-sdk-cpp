@@ -19,7 +19,9 @@ namespace Model
 {
 
 MediaExtractionConfiguration::MediaExtractionConfiguration() : 
-    m_imageExtractionConfigurationHasBeenSet(false)
+    m_imageExtractionConfigurationHasBeenSet(false),
+    m_audioExtractionConfigurationHasBeenSet(false),
+    m_videoExtractionConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,20 @@ MediaExtractionConfiguration& MediaExtractionConfiguration::operator =(JsonView 
     m_imageExtractionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioExtractionConfiguration"))
+  {
+    m_audioExtractionConfiguration = jsonValue.GetObject("audioExtractionConfiguration");
+
+    m_audioExtractionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoExtractionConfiguration"))
+  {
+    m_videoExtractionConfiguration = jsonValue.GetObject("videoExtractionConfiguration");
+
+    m_videoExtractionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +64,18 @@ JsonValue MediaExtractionConfiguration::Jsonize() const
   if(m_imageExtractionConfigurationHasBeenSet)
   {
    payload.WithObject("imageExtractionConfiguration", m_imageExtractionConfiguration.Jsonize());
+
+  }
+
+  if(m_audioExtractionConfigurationHasBeenSet)
+  {
+   payload.WithObject("audioExtractionConfiguration", m_audioExtractionConfiguration.Jsonize());
+
+  }
+
+  if(m_videoExtractionConfigurationHasBeenSet)
+  {
+   payload.WithObject("videoExtractionConfiguration", m_videoExtractionConfiguration.Jsonize());
 
   }
 

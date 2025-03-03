@@ -37,8 +37,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose passkey
-     * registration you want to complete.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>A <a
-     * href="https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a>
+     * href="https://www.w3.org/TR/WebAuthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a>
      * public-key credential response from the user's passkey provider.</p>
      */
     inline Aws::Utils::DocumentView GetCredential() const{ return m_credential; }

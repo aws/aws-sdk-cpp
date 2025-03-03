@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The username of the currently sign-in user.</p>
+     * <p>The name of the user who is eligible for the authentication factors in the
+     * response.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline void SetUsername(const Aws::String& value) { m_username = value; }
@@ -49,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user's preferred MFA setting.</p>
+     * <p>The challenge method that Amazon Cognito returns to the user in response to
+     * sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
      */
     inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
     inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }
@@ -79,7 +81,8 @@ namespace Model
     ///@{
     /**
      * <p>The authentication types that are available to the user with
-     * <code>USER_AUTH</code> sign-in. </p>
+     * <code>USER_AUTH</code> sign-in, for example <code>["PASSWORD",
+     * "WEB_AUTHN"]</code>.</p>
      */
     inline const Aws::Vector<AuthFactorType>& GetConfiguredUserAuthFactors() const{ return m_configuredUserAuthFactors; }
     inline void SetConfiguredUserAuthFactors(const Aws::Vector<AuthFactorType>& value) { m_configuredUserAuthFactors = value; }

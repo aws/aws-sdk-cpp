@@ -23,12 +23,15 @@
 #include <aws/rum/model/BatchGetRumMetricDefinitionsResult.h>
 #include <aws/rum/model/CreateAppMonitorResult.h>
 #include <aws/rum/model/DeleteAppMonitorResult.h>
+#include <aws/rum/model/DeleteResourcePolicyResult.h>
 #include <aws/rum/model/DeleteRumMetricsDestinationResult.h>
 #include <aws/rum/model/GetAppMonitorResult.h>
 #include <aws/rum/model/GetAppMonitorDataResult.h>
+#include <aws/rum/model/GetResourcePolicyResult.h>
 #include <aws/rum/model/ListAppMonitorsResult.h>
 #include <aws/rum/model/ListRumMetricsDestinationsResult.h>
 #include <aws/rum/model/ListTagsForResourceResult.h>
+#include <aws/rum/model/PutResourcePolicyResult.h>
 #include <aws/rum/model/PutRumEventsResult.h>
 #include <aws/rum/model/PutRumMetricsDestinationResult.h>
 #include <aws/rum/model/TagResourceResult.h>
@@ -81,12 +84,15 @@ namespace Aws
       class BatchGetRumMetricDefinitionsRequest;
       class CreateAppMonitorRequest;
       class DeleteAppMonitorRequest;
+      class DeleteResourcePolicyRequest;
       class DeleteRumMetricsDestinationRequest;
       class GetAppMonitorRequest;
       class GetAppMonitorDataRequest;
+      class GetResourcePolicyRequest;
       class ListAppMonitorsRequest;
       class ListRumMetricsDestinationsRequest;
       class ListTagsForResourceRequest;
+      class PutResourcePolicyRequest;
       class PutRumEventsRequest;
       class PutRumMetricsDestinationRequest;
       class TagResourceRequest;
@@ -101,12 +107,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetRumMetricDefinitionsResult, CloudWatchRUMError> BatchGetRumMetricDefinitionsOutcome;
       typedef Aws::Utils::Outcome<CreateAppMonitorResult, CloudWatchRUMError> CreateAppMonitorOutcome;
       typedef Aws::Utils::Outcome<DeleteAppMonitorResult, CloudWatchRUMError> DeleteAppMonitorOutcome;
+      typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, CloudWatchRUMError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteRumMetricsDestinationResult, CloudWatchRUMError> DeleteRumMetricsDestinationOutcome;
       typedef Aws::Utils::Outcome<GetAppMonitorResult, CloudWatchRUMError> GetAppMonitorOutcome;
       typedef Aws::Utils::Outcome<GetAppMonitorDataResult, CloudWatchRUMError> GetAppMonitorDataOutcome;
+      typedef Aws::Utils::Outcome<GetResourcePolicyResult, CloudWatchRUMError> GetResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<ListAppMonitorsResult, CloudWatchRUMError> ListAppMonitorsOutcome;
       typedef Aws::Utils::Outcome<ListRumMetricsDestinationsResult, CloudWatchRUMError> ListRumMetricsDestinationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchRUMError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<PutResourcePolicyResult, CloudWatchRUMError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<PutRumEventsResult, CloudWatchRUMError> PutRumEventsOutcome;
       typedef Aws::Utils::Outcome<PutRumMetricsDestinationResult, CloudWatchRUMError> PutRumMetricsDestinationOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchRUMError> TagResourceOutcome;
@@ -121,12 +130,15 @@ namespace Aws
       typedef std::future<BatchGetRumMetricDefinitionsOutcome> BatchGetRumMetricDefinitionsOutcomeCallable;
       typedef std::future<CreateAppMonitorOutcome> CreateAppMonitorOutcomeCallable;
       typedef std::future<DeleteAppMonitorOutcome> DeleteAppMonitorOutcomeCallable;
+      typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DeleteRumMetricsDestinationOutcome> DeleteRumMetricsDestinationOutcomeCallable;
       typedef std::future<GetAppMonitorOutcome> GetAppMonitorOutcomeCallable;
       typedef std::future<GetAppMonitorDataOutcome> GetAppMonitorDataOutcomeCallable;
+      typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
       typedef std::future<ListAppMonitorsOutcome> ListAppMonitorsOutcomeCallable;
       typedef std::future<ListRumMetricsDestinationsOutcome> ListRumMetricsDestinationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<PutRumEventsOutcome> PutRumEventsOutcomeCallable;
       typedef std::future<PutRumMetricsDestinationOutcome> PutRumMetricsDestinationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -144,12 +156,15 @@ namespace Aws
     typedef std::function<void(const CloudWatchRUMClient*, const Model::BatchGetRumMetricDefinitionsRequest&, const Model::BatchGetRumMetricDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRumMetricDefinitionsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::CreateAppMonitorRequest&, const Model::CreateAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppMonitorResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::DeleteAppMonitorRequest&, const Model::DeleteAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppMonitorResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchRUMClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::DeleteRumMetricsDestinationRequest&, const Model::DeleteRumMetricsDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRumMetricsDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::GetAppMonitorRequest&, const Model::GetAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppMonitorResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::GetAppMonitorDataRequest&, const Model::GetAppMonitorDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppMonitorDataResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchRUMClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::ListAppMonitorsRequest&, const Model::ListAppMonitorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppMonitorsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::ListRumMetricsDestinationsRequest&, const Model::ListRumMetricsDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRumMetricsDestinationsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchRUMClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::PutRumEventsRequest&, const Model::PutRumEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRumEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::PutRumMetricsDestinationRequest&, const Model::PutRumMetricsDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRumMetricsDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchRUMClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

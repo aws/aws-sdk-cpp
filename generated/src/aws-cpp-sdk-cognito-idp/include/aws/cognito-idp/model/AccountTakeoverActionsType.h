@@ -25,12 +25,7 @@ namespace Model
 
   /**
    * <p>A list of account-takeover actions for each level of risk that Amazon Cognito
-   * might assess with advanced security features.</p> <p>This data type is a request
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * might assess with threat protection features.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverActionsType">AWS
    * API Reference</a></p>
    */
@@ -45,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action that you assign to a low-risk assessment by advanced security
-     * features.</p>
+     * <p>The action that you assign to a low-risk assessment by threat protection.</p>
      */
     inline const AccountTakeoverActionType& GetLowAction() const{ return m_lowAction; }
     inline bool LowActionHasBeenSet() const { return m_lowActionHasBeenSet; }
@@ -58,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action that you assign to a medium-risk assessment by advanced security
-     * features.</p>
+     * <p>The action that you assign to a medium-risk assessment by threat
+     * protection.</p>
      */
     inline const AccountTakeoverActionType& GetMediumAction() const{ return m_mediumAction; }
     inline bool MediumActionHasBeenSet() const { return m_mediumActionHasBeenSet; }
@@ -71,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action that you assign to a high-risk assessment by advanced security
-     * features.</p>
+     * <p>The action that you assign to a high-risk assessment by threat
+     * protection.</p>
      */
     inline const AccountTakeoverActionType& GetHighAction() const{ return m_highAction; }
     inline bool HighActionHasBeenSet() const { return m_highActionHasBeenSet; }

@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The username of the user that you want to query or modify. The value of this
+     * <p>The name of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
      * this value must be the <code>sub</code> of a local user or the username of a
@@ -70,9 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication event ID. To query authentication events for a user, see
-     * <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p>
+     * <p>The ID of the threat protection authentication event that you want to
+     * update.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
@@ -86,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication event feedback value. When you provide a
+     * <p>Your feedback to the authentication event. When you provide a
      * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
      * that you trust a user session where Amazon Cognito has evaluated some level of
      * risk. When you provide a <code>FeedbackValue</code> value of

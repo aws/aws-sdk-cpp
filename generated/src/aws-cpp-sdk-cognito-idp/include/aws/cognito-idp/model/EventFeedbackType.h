@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The feedback that your application submitted to an advanced security features
-   * event log, as displayed in an <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+   * <p>The feedback that your application submitted to a threat protection event
+   * log, as displayed in an <code>AdminListUserAuthEvents</code>
    * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventFeedbackType">AWS
    * API Reference</a></p>
@@ -44,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication event feedback value. When you provide a
+     * <p>Your feedback to the authentication event. When you provide a
      * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
      * that you trust a user session where Amazon Cognito has evaluated some level of
      * risk. When you provide a <code>FeedbackValue</code> value of

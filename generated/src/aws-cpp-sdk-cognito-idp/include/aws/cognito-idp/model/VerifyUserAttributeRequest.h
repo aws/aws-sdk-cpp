@@ -40,8 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose user
-     * attributes you want to verify.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -55,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attribute name in the request to verify user attributes.</p>
+     * <p>The name of the attribute that you want to verify.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
@@ -69,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The verification code in the request to verify user attributes.</p>
+     * <p>The verification code that your user pool sent to the added or changed
+     * attribute, for example the user's email address.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }

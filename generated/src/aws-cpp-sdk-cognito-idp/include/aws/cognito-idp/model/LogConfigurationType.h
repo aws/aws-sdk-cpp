@@ -29,12 +29,8 @@ namespace Model
 
   /**
    * <p>The configuration of user event logs to an external Amazon Web Services
-   * service like Amazon Data Firehose, Amazon S3, or Amazon CloudWatch Logs.</p>
-   * <p>This data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html">SetLogDeliveryConfiguration</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * service like Amazon Data Firehose, Amazon S3, or Amazon CloudWatch
+   * Logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LogConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -52,11 +48,11 @@ namespace Model
      * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
      * detailed activity logging. To send <code>userNotification</code> activity with
      * <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">information
      * about message delivery</a>, choose <code>ERROR</code> with
      * <code>CloudWatchLogsConfiguration</code>. To send <code>userAuthEvents</code>
-     * activity with user logs from advanced security features, choose
-     * <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>,
+     * activity with user logs from threat protection with the Plus feature plan,
+     * choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>,
      * <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
@@ -71,8 +67,9 @@ namespace Model
     /**
      * <p>The source of events that your user pool sends for logging. To send
      * error-level logs about user notification activity, set to
-     * <code>userNotification</code>. To send info-level logs about advanced security
-     * features user activity, set to <code>userAuthEvents</code>.</p>
+     * <code>userNotification</code>. To send info-level logs about threat-protection
+     * user activity in user pools with the Plus feature plan, set to
+     * <code>userAuthEvents</code>.</p>
      */
     inline const EventSourceName& GetEventSource() const{ return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
@@ -85,7 +82,7 @@ namespace Model
     ///@{
     /**
      * <p>The CloudWatch log group destination of user pool detailed activity logs, or
-     * of user activity log export with advanced security features.</p>
+     * of user activity log export with threat protection.</p>
      */
     inline const CloudWatchLogsConfigurationType& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
     inline bool CloudWatchLogsConfigurationHasBeenSet() const { return m_cloudWatchLogsConfigurationHasBeenSet; }
@@ -97,10 +94,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon S3 bucket destination of user activity log export with advanced
-     * security features. To activate this setting, <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-     * advanced security features</a> must be active in your user pool.</p>
+     * <p>The Amazon S3 bucket destination of user activity log export with threat
+     * protection. To activate this setting, your user pool must be on the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+     * Plus tier</a>.</p>
      */
     inline const S3ConfigurationType& GetS3Configuration() const{ return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
@@ -113,9 +110,9 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Data Firehose stream destination of user activity log export with
-     * advanced security features. To activate this setting, <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-     * advanced security features</a> must be active in your user pool.</p>
+     * threat protection. To activate this setting, your user pool must be on the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+     * Plus tier</a>.</p>
      */
     inline const FirehoseConfigurationType& GetFirehoseConfiguration() const{ return m_firehoseConfiguration; }
     inline bool FirehoseConfigurationHasBeenSet() const { return m_firehoseConfigurationHasBeenSet; }

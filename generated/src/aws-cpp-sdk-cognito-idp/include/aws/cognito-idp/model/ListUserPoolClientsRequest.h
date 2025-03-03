@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results you want the request to return when listing the
-     * user pool clients.</p>
+     * <p>The maximum number of app clients that you want Amazon Cognito to return in
+     * the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -65,8 +65,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

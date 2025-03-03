@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>Configuration for the Amazon Data Firehose stream destination of user
-   * activity log export with advanced security features.</p><p><h3>See Also:</h3>  
-   * <a
+   * activity log export with threat protection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/FirehoseConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -41,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of an Amazon Data Firehose stream that's the destination for advanced
-     * security features log export.</p>
+     * <p>The ARN of an Amazon Data Firehose stream that's the destination for threat
+     * protection log export.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }

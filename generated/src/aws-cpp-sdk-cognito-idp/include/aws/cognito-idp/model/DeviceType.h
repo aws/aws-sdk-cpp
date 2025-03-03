@@ -30,14 +30,7 @@ namespace Model
    * <p>Information about a user's device that they've registered for device SRP
    * authentication in your application. For more information, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
-   * with user devices in your user pool</a>.</p> <p>The data type is a response
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html">AdminGetDevice</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html">GetDevice</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * with user devices in your user pool</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceType">AWS
    * API Reference</a></p>
    */

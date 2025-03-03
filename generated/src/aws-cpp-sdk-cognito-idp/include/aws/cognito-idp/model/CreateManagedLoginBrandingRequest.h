@@ -54,10 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>The app client that you want to create the branding style for. Each style is
-     * permanently linked to an app client. To change the style for an app client,
-     * delete the existing style with <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a>
-     * and create a new one.</p>
+     * linked to an app client until you delete it.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -98,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of image files that you want to apply to roles like backgrounds,
+     * <p>An array of image files that you want to apply to functions like backgrounds,
      * logos, and icons. Each object must also indicate whether it is for dark mode,
      * light mode, or browser-adaptive mode.</p>
      */

@@ -30,14 +30,8 @@ namespace Model
    * available in all Amazon Web Services Regions. For a list of available Regions,
    * see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html#cognito-user-pools-find-region-mappings">Amazon
-   * Cognito and Amazon Pinpoint Region availability</a>.</p> <p>This data type is a
-   * request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * Cognito and Amazon Pinpoint Region availability</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */

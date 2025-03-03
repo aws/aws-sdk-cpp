@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource servers.</p>
+     * <p>An array of resource servers and the details of their configuration. For
+     * each, the response includes names, identifiers, and custom scopes.</p>
      */
     inline const Aws::Vector<ResourceServerType>& GetResourceServers() const{ return m_resourceServers; }
     inline void SetResourceServers(const Aws::Vector<ResourceServerType>& value) { m_resourceServers = value; }
@@ -49,7 +50,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

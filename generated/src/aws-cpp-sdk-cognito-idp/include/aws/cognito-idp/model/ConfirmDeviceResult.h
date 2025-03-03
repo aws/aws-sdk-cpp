@@ -40,22 +40,12 @@ namespace Model
     ///@{
     /**
      * <p>When <code>true</code>, your user must confirm that they want to remember the
-     * device. Prompt the user for an answer. You must then make an <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a>
-     * request that sets the device to <code>remembered</code> or
-     * <code>not_remembered</code>.</p> <p>When <code>false</code>, immediately sets
-     * the device as remembered and eligible for device authentication.</p> <p>You can
-     * configure your user pool to always remember devices, in which case this response
-     * is <code>false</code>, or to allow users to opt in, in which case this response
-     * is <code>true</code>. Configure this option under <i>Device tracking</i> in the
-     * <i>Sign-in</i> menu of your user pool. You can also configure this option with
-     * the <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a>
-     * parameter of a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-     * or <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>
-     * request.</p>
+     * device. Prompt the user for an answer.</p> <p>When <code>false</code>,
+     * immediately sets the device as remembered and eligible for device
+     * authentication.</p> <p>You can configure your user pool to always remember
+     * devices, in which case this response is <code>false</code>, or to allow users to
+     * opt in, in which case this response is <code>true</code>. Configure this option
+     * under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
      */
     inline bool GetUserConfirmationNecessary() const{ return m_userConfirmationNecessary; }
     inline void SetUserConfirmationNecessary(bool value) { m_userConfirmationNecessary = value; }

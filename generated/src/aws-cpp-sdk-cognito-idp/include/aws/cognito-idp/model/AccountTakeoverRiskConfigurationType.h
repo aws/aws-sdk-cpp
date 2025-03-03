@@ -26,12 +26,7 @@ namespace Model
 
   /**
    * <p>The settings for automated responses and notification templates for adaptive
-   * authentication with advanced security features.</p> <p>This data type is a
-   * request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * authentication with threat protection features.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverRiskConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -46,11 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The settings for composing and sending an email message when advanced
-     * security features assesses a risk level with adaptive authentication. When you
-     * choose to notify users in <code>AccountTakeoverRiskConfiguration</code>, Amazon
-     * Cognito sends an email message using the method and template that you set with
-     * this data type.</p>
+     * <p>The settings for composing and sending an email message when threat
+     * protection assesses a risk level with adaptive authentication. When you choose
+     * to notify users in <code>AccountTakeoverRiskConfiguration</code>, Amazon Cognito
+     * sends an email message using the method and template that you set with this data
+     * type.</p>
      */
     inline const NotifyConfigurationType& GetNotifyConfiguration() const{ return m_notifyConfiguration; }
     inline bool NotifyConfigurationHasBeenSet() const { return m_notifyConfigurationHasBeenSet; }
@@ -63,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of account-takeover actions for each level of risk that Amazon Cognito
-     * might assess with advanced security features.</p>
+     * might assess with threat protection.</p>
      */
     inline const AccountTakeoverActionsType& GetActions() const{ return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }

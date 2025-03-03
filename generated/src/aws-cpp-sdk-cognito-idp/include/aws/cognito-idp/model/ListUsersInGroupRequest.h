@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool.</p>
+     * <p>The ID of the user pool where you want to view the membership of the
+     * requested group.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -50,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the group.</p>
+     * <p>The name of the group that you want to query for user membership.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
@@ -64,7 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of users that you want to retrieve before pagination.</p>
+     * <p>The maximum number of groups that you want Amazon Cognito to return in the
+     * response.</p>
      */
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
@@ -74,8 +76,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

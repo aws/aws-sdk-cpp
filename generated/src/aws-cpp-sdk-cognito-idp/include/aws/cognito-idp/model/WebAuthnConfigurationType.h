@@ -25,19 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>Settings for multi-factor authentication (MFA) with passkey, or webauthN,
-   * biometric and security-key devices in a user pool. Configures the following:</p>
-   * <ul> <li> <p>Configuration at the user-pool level for whether you want to
-   * require passkey configuration as an MFA factor, or include it as a choice.</p>
-   * </li> <li> <p>The user pool relying-party ID. This is the user pool domain that
-   * user's passkey providers should trust as a receiver of passkey
+   * <p>Settings for authentication (MFA) with passkey, or webauthN, biometric and
+   * security-key devices in a user pool. Configures the following:</p> <ul> <li>
+   * <p>Configuration for requiring user-verification support in passkeys.</p> </li>
+   * <li> <p>The user pool relying-party ID. This is the domain, typically your user
+   * pool domain, that user's passkey providers should trust as a receiver of passkey
    * authentication.</p> </li> <li> <p>The providers that you want to allow as
-   * origins for passkey authentication.</p> </li> </ul> <p>This data type is a
-   * request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * origins for passkey authentication.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/WebAuthnConfigurationType">AWS
    * API Reference</a></p>
    */

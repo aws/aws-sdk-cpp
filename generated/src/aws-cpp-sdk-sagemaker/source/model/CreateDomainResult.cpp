@@ -35,6 +35,12 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("DomainId"))
+  {
+    m_domainId = jsonValue.GetString("DomainId");
+
+  }
+
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");

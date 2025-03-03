@@ -32,13 +32,7 @@ namespace Model
    * <code>2</code>, your user pool sends account-recovery messages to a verified
    * email address but falls back to an SMS message if the user has a verified phone
    * number. The <code>admin_only</code> option prevents self-service account
-   * recovery.</p> <p>This data type is a request and response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * recovery.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RecoveryOptionType">AWS
    * API Reference</a></p>
    */

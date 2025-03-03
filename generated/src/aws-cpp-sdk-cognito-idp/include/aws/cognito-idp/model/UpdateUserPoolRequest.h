@@ -69,7 +69,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A container with the policies you want to update in a user pool.</p>
+     * <p>The password policy and sign-in policy in the user pool. The password policy
+     * sets options like password complexity requirements and password history. The
+     * sign-in policy sets the options available to applications in <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+     * authentication</a>.</p>
      */
     inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
@@ -100,8 +104,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Lambda configuration information from the request to update the user
-     * pool.</p>
+     * <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at
+     * several possible stages of authentication operations. Triggers can modify the
+     * outcome of the operations that invoked them.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
@@ -113,8 +118,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attributes that are automatically verified when Amazon Cognito requests
-     * to update user pools.</p>
+     * <p>The attributes that you want your user pool to automatically verify. Possible
+     * values: <b>email</b>, <b>phone_number</b>. For more information see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves">Verifying
+     * contact information at sign-up</a>.</p>
      */
     inline const Aws::Vector<VerifiedAttributeType>& GetAutoVerifiedAttributes() const{ return m_autoVerifiedAttributes; }
     inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
@@ -128,8 +135,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetSmsVerificationMessage() const{ return m_smsVerificationMessage; }
     inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
@@ -143,8 +149,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
@@ -158,8 +163,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
@@ -173,7 +177,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The template for verification messages.</p>
+     * <p>The template for the verification message that your user pool delivers to
+     * users who set an email address or phone number attribute.</p> <p>Set the email
+     * message type that corresponds to your <code>DefaultEmailOption</code> selection.
+     * For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code>
+     * and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>,
+     * specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code>
+     * blank. When you supply both parameters with either choice, Amazon Cognito
+     * returns an error.</p>
      */
     inline const VerificationMessageTemplateType& GetVerificationMessageTemplate() const{ return m_verificationMessageTemplate; }
     inline bool VerificationMessageTemplateHasBeenSet() const { return m_verificationMessageTemplateHasBeenSet; }
@@ -185,7 +196,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The contents of the SMS authentication message.</p>
+     * <p>The contents of the SMS message that your user pool sends to users in SMS
+     * authentication.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
@@ -216,15 +228,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
-     * aren't required and can't be specified during user registration.</p> </li> <li>
-     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
-     * can only specify ON when you're initially creating a user pool. You can use the
-     * <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
-     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
-     * token.</p> </li> </ul>
+     * <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When
+     * <code>ON</code>, all users must set up MFA before they can sign in. When
+     * <code>OPTIONAL</code>, your application must make a client-side determination of
+     * whether a user wants to register an MFA device. For user pools with adaptive
+     * authentication with threat protection, choose <code>OPTIONAL</code>.</p> <p>When
+     * <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't
+     * automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts
+     * in API responses and in managed login for users who have chosen and configured a
+     * preferred MFA factor.</p>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
@@ -236,10 +248,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device-remembering configuration for a user pool. A null value indicates
-     * that you have deactivated device remembering in your user pool.</p> 
-     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
-     * activate the Amazon Cognito device-remembering feature.</p> 
+     * <p>The device-remembering configuration for a user pool. Device remembering or
+     * device tracking is a "Remember me on this device" option for user pools that
+     * perform authentication with the device key of a trusted device in the back end,
+     * instead of a user-provided MFA code. For more information about device
+     * authentication, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>. A null value indicates that you have
+     * deactivated device remembering in your user pool.</p>  <p>When you provide
+     * a value for any <code>DeviceConfiguration</code> field, you activate the Amazon
+     * Cognito device-remembering feature. For more infor</p> 
      */
     inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
     inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
@@ -265,12 +283,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
-     * must use to send an SMS message from your Amazon Web Services account through
-     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
-     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
-     * Identity and Access Management (IAM) role in your Amazon Web Services
-     * account.</p>
+     * <p>The SMS configuration with the settings for your Amazon Cognito user pool to
+     * send SMS message with Amazon Simple Notification Service. To send SMS messages
+     * with Amazon SNS in the Amazon Web Services Region that you want, the Amazon
+     * Cognito user pool uses an Identity and Access Management (IAM) role in your
+     * Amazon Web Services account. For more information see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings</a>.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
@@ -303,7 +322,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+     * <p>The configuration for administrative creation of users. Includes the template
+     * for the invitation message for new users, the duration of temporary passwords,
+     * and permitting self-service sign-up.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
     inline bool AdminCreateUserConfigHasBeenSet() const { return m_adminCreateUserConfigHasBeenSet; }
@@ -315,13 +336,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>User pool add-ons. Contains settings for activation of advanced security
-     * features. To log user security information but take no action, set to
-     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
-     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
-     * see <a
+     * <p>Contains settings for activation of threat protection, including the
+     * operating mode and additional authentication types. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure
+     * automatic security responses to potentially unwanted traffic to your user pool,
+     * set to <code>ENFORCED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
-     * advanced security to a user pool</a>.</p>
+     * advanced security to a user pool</a>. To activate this setting, your user pool
+     * must be on the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+     * Plus tier</a>.</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }

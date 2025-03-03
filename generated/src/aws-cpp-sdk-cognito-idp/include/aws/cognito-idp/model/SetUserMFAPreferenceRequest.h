@@ -68,9 +68,9 @@ namespace Model
     /**
      * <p>User preferences for email message MFA. Activates or deactivates email MFA
      * and sets it as the preferred MFA method when multiple methods are available. To
-     * activate this setting, <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-     * advanced security features</a> must be active in your user pool.</p>
+     * activate this setting, your user pool must be in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+     * Essentials tier</a> or higher.</p>
      */
     inline const EmailMfaSettingsType& GetEmailMfaSettings() const{ return m_emailMfaSettings; }
     inline bool EmailMfaSettingsHasBeenSet() const { return m_emailMfaSettingsHasBeenSet; }
@@ -82,8 +82,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose MFA
-     * preference you want to set.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }

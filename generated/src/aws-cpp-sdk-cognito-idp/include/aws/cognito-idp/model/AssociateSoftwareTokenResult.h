@@ -49,9 +49,7 @@ namespace Model
     ///@{
     /**
      * <p>The session identifier that maintains the state of authentication requests
-     * and challenge responses. This session ID is valid for the next request in this
-     * flow, <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.</p>
+     * and challenge responses.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
     inline void SetSession(const Aws::String& value) { m_session = value; }

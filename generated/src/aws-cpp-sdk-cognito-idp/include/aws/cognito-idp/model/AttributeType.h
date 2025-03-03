@@ -24,12 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The name and value of a user attribute.</p> <p>This data type is a request
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The name and value of a user attribute.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AttributeType">AWS
    * API Reference</a></p>
    */

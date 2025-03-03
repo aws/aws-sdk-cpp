@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool on which the search should be performed.</p>
+     * <p>The ID of the user pool where you want to display or search for users.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -78,7 +78,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of users to be returned.</p>
+     * <p>The maximum number of users that you want Amazon Cognito to return in the
+     * response.</p>
      */
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

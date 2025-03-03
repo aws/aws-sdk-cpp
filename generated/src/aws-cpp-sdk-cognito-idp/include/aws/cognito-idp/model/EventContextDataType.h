@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>The context data that your application submitted in an authentication request
-   * with advanced security features, as displayed in an <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+   * with threat protection, as displayed in an <code>AdminListUserAuthEvents</code>
    * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventContextDataType">AWS
    * API Reference</a></p>

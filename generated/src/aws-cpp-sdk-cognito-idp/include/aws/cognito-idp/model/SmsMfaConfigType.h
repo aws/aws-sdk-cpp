@@ -26,11 +26,7 @@ namespace Model
 
   /**
    * <p>The configuration of multi-factor authentication (MFA) with SMS messages in a
-   * user pool.</p> <p>This data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsMfaConfigType">AWS
    * API Reference</a></p>
    */

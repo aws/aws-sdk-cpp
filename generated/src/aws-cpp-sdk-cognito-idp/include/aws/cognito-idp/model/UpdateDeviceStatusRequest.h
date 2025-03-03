@@ -41,8 +41,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * status you want to update.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -56,7 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device key.</p>
+     * <p>The device key of the device you want to update, for example
+     * <code>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
@@ -70,7 +72,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of whether a device is remembered.</p>
+     * <p>To enable device authentication with the specified device, set to
+     * <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
      */
     inline const DeviceRememberedStatusType& GetDeviceRememberedStatus() const{ return m_deviceRememberedStatus; }
     inline bool DeviceRememberedStatusHasBeenSet() const { return m_deviceRememberedStatusHasBeenSet; }

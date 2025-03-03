@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Configuration for the Amazon S3 bucket destination of user activity log
-   * export with advanced security features.</p><p><h3>See Also:</h3>   <a
+   * export with threat protection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/S3ConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of an Amazon S3 bucket that's the destination for advanced security
-     * features log export.</p>
+     * <p>The ARN of an Amazon S3 bucket that's the destination for threat protection
+     * log export.</p>
      */
     inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }

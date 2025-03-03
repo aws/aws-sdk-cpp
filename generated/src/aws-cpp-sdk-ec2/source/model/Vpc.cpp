@@ -28,6 +28,7 @@ Vpc::Vpc() :
     m_cidrBlockAssociationSetHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false),
+    m_encryptionControlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_blockPublicAccessStatesHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
@@ -91,6 +92,12 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+    }
+    XmlNode encryptionControlNode = resultNode.FirstChild("encryptionControl");
+    if(!encryptionControlNode.IsNull())
+    {
+      m_encryptionControl = encryptionControlNode;
+      m_encryptionControlHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -178,6 +185,13 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
       oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
+  if(m_encryptionControlHasBeenSet)
+  {
+      Aws::StringStream encryptionControlLocationAndMemberSs;
+      encryptionControlLocationAndMemberSs << location << index << locationValue << ".EncryptionControl";
+      m_encryptionControl.OutputToStream(oStream, encryptionControlLocationAndMemberSs.str().c_str());
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -251,6 +265,12 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_isDefaultHasBeenSet)
   {
       oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+  if(m_encryptionControlHasBeenSet)
+  {
+      Aws::String encryptionControlLocationAndMember(location);
+      encryptionControlLocationAndMember += ".EncryptionControl";
+      m_encryptionControl.OutputToStream(oStream, encryptionControlLocationAndMember.c_str());
   }
   if(m_tagsHasBeenSet)
   {

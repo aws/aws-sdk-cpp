@@ -26,9 +26,7 @@ namespace Model
 
   /**
    * <p>A container for the UI customization information for the hosted UI in a user
-   * pool.</p> <p>This data type is a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">GetUICustomization</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UICustomizationType">AWS
    * API Reference</a></p>
    */
@@ -87,10 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CSS values in the UI customization. To get a template with your UI
-     * customization options, make a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUiCustomization.html">GetUiCustomization</a>
-     * request.</p>
+     * <p>The CSS values in the UI customization.</p>
      */
     inline const Aws::String& GetCSS() const{ return m_cSS; }
     inline bool CSSHasBeenSet() const { return m_cSSHasBeenSet; }

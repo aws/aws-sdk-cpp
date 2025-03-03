@@ -41,8 +41,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A response from the server indicating that a user registration has been
-     * confirmed.</p>
+     * <p>Indicates whether the user was automatically confirmed. You can auto-confirm
+     * users with a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline bool GetUserConfirmed() const{ return m_userConfirmed; }
     inline void SetUserConfirmed(bool value) { m_userConfirmed = value; }
@@ -51,8 +53,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The code delivery details returned by the server response to the user
-     * registration request.</p>
+     * <p>In user pools that automatically verify and confirm new users, Amazon Cognito
+     * sends users a message with a code or link that confirms ownership of the phone
+     * number or email address that they entered. The <code>CodeDeliveryDetails</code>
+     * object is information about the delivery destination for that link or code.</p>
      */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
@@ -63,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The 128-bit ID of the authenticated user. This isn't the same as
-     * <code>username</code>.</p>
+     * <p>The unique identifier of the new user, for example
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline const Aws::String& GetUserSub() const{ return m_userSub; }
     inline void SetUserSub(const Aws::String& value) { m_userSub = value; }

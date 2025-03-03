@@ -28,12 +28,8 @@ namespace Model
    * is a member of <code>ResourceServerScopeType</code>. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">
-   * Scopes, M2M, and API authorization with resource servers</a>. </p> <p>This data
-   * type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * Scopes, M2M, and API authorization with resource servers</a>. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResourceServerScopeType">AWS
    * API Reference</a></p>
    */

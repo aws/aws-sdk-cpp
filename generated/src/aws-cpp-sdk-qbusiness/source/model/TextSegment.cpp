@@ -24,8 +24,7 @@ TextSegment::TextSegment() :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_snippetExcerptHasBeenSet(false),
-    m_mediaIdHasBeenSet(false),
-    m_mediaMimeTypeHasBeenSet(false)
+    m_sourceDetailsHasBeenSet(false)
 {
 }
 
@@ -58,18 +57,11 @@ TextSegment& TextSegment::operator =(JsonView jsonValue)
     m_snippetExcerptHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("mediaId"))
+  if(jsonValue.ValueExists("sourceDetails"))
   {
-    m_mediaId = jsonValue.GetString("mediaId");
+    m_sourceDetails = jsonValue.GetObject("sourceDetails");
 
-    m_mediaIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("mediaMimeType"))
-  {
-    m_mediaMimeType = jsonValue.GetString("mediaMimeType");
-
-    m_mediaMimeTypeHasBeenSet = true;
+    m_sourceDetailsHasBeenSet = true;
   }
 
   return *this;
@@ -97,15 +89,9 @@ JsonValue TextSegment::Jsonize() const
 
   }
 
-  if(m_mediaIdHasBeenSet)
+  if(m_sourceDetailsHasBeenSet)
   {
-   payload.WithString("mediaId", m_mediaId);
-
-  }
-
-  if(m_mediaMimeTypeHasBeenSet)
-  {
-   payload.WithString("mediaMimeType", m_mediaMimeType);
+   payload.WithObject("sourceDetails", m_sourceDetails.Jsonize());
 
   }
 

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The UI customization information.</p>
+     * <p>Information about the hosted UI branding that you applied.</p>
      */
     inline const UICustomizationType& GetUICustomization() const{ return m_uICustomization; }
     inline void SetUICustomization(const UICustomizationType& value) { m_uICustomization = value; }

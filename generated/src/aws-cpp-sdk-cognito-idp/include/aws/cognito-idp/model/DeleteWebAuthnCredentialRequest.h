@@ -36,8 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose passkey
-     * credential you want to delete.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -51,9 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the passkey that you want to delete. Look up
-     * registered devices with <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
+     * <p>The unique identifier of the passkey that you want to delete.</p>
      */
     inline const Aws::String& GetCredentialId() const{ return m_credentialId; }
     inline bool CredentialIdHasBeenSet() const { return m_credentialIdHasBeenSet; }

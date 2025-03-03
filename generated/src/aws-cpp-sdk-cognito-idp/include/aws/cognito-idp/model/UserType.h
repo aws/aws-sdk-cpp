@@ -29,12 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>A user profile in a Amazon Cognito user pool.</p> <p>This data type is a
-   * response parameter to <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html">ListUsers</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A user profile in a Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType">AWS
    * API Reference</a></p>
    */

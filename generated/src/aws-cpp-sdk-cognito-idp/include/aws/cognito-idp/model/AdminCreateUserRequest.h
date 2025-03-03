@@ -95,21 +95,19 @@ namespace Model
      * <p>You must also provide an email address or phone number when you expect the
      * user to do passwordless sign-in with an email or SMS OTP. These attributes must
      * be provided when passwordless options are the only available, or when you don't
-     * submit a <code>TemporaryPassword</code>.</p> <p>In your call to
-     * <code>AdminCreateUser</code>, you can set the <code>email_verified</code>
-     * attribute to <code>True</code>, and you can set the
-     * <code>phone_number_verified</code> attribute to <code>True</code>. You can also
-     * do this by calling <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.</p>
-     * <ul> <li> <p> <b>email</b>: The email address of the user to whom the message
-     * that contains the code and username will be sent. Required if the
-     * <code>email_verified</code> attribute is set to <code>True</code>, or if
-     * <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
-     * parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user
-     * to whom the message that contains the code and username will be sent. Required
-     * if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
-     * or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
-     * parameter.</p> </li> </ul>
+     * submit a <code>TemporaryPassword</code>.</p> <p>In your
+     * <code>AdminCreateUser</code> request, you can set the
+     * <code>email_verified</code> and <code>phone_number_verified</code> attributes to
+     * <code>true</code>. The following conditions apply:</p> <dl> <dt>email</dt> <dd>
+     * <p>The email address where you want the user to receive their confirmation code
+     * and username. You must provide a value for the <code>email</code> when you want
+     * to set <code>email_verified</code> to <code>true</code>, or if you set
+     * <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+     * </dd> <dt>phone_number</dt> <dd> <p>The phone number where you want the user to
+     * receive their confirmation code and username. You must provide a value for the
+     * <code>email</code> when you want to set <code>phone_number</code> to
+     * <code>true</code>, or if you set <code>SMS</code> in the
+     * <code>DesiredDeliveryMediums</code> parameter.</p> </dd> </dl>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
@@ -127,11 +125,10 @@ namespace Model
      * Lambda trigger. This set of key-value pairs are for custom validation of
      * information that you collect from your users but don't need to retain.</p>
      * <p>Your Lambda function can analyze this additional data and act on it. Your
-     * function might perform external API operations like logging user attributes and
-     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
-     * response that your function returns to Amazon Cognito, like automatically
-     * confirming the user if they sign up from within your network.</p> <p>For more
-     * information about the pre sign-up Lambda trigger, see <a
+     * function can automatically confirm and verify select users or perform external
+     * API operations like logging user attributes and validation data to Amazon
+     * CloudWatch Logs.</p> <p>For more information about the pre sign-up Lambda
+     * trigger, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
      * sign-up Lambda trigger</a>.</p>
      */
@@ -152,21 +149,15 @@ namespace Model
      * to the requirement for a password is when your user pool supports passwordless
      * sign-in with email or SMS OTPs. To create a user with no password, omit this
      * parameter or submit a blank value. You can only create a passwordless user when
-     * passwordless sign-in is available. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
-     * SignInPolicyType</a> property of <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.</p>
-     * <p>The temporary password is valid only once. To complete the Admin Create User
-     * flow, the user must enter the temporary password in the sign-in page, along with
-     * a new password to be used in all future sign-ins.</p> <p>If you don't specify a
-     * value, Amazon Cognito generates one for you unless you have passwordless options
-     * active for your user pool.</p> <p>The temporary password can only be used until
-     * the user account expiration limit that you set for your user pool. To reset the
-     * account after that time limit, you must call <code>AdminCreateUser</code> again
-     * and specify <code>RESEND</code> for the <code>MessageAction</code>
-     * parameter.</p>
+     * passwordless sign-in is available.</p> <p>The temporary password is valid only
+     * once. To complete the Admin Create User flow, the user must enter the temporary
+     * password in the sign-in page, along with a new password to be used in all future
+     * sign-ins.</p> <p>If you don't specify a value, Amazon Cognito generates one for
+     * you unless you have passwordless options active for your user pool.</p> <p>The
+     * temporary password can only be used until the user account expiration limit that
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
     inline bool TemporaryPasswordHasBeenSet() const { return m_temporaryPasswordHasBeenSet; }
@@ -241,16 +232,16 @@ namespace Model
      * value to enhance your workflow for your specific needs.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the
-     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
-     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
-     * data is available only to Lambda triggers that are assigned to a user pool to
-     * support custom workflows. If your user pool configuration doesn't include
-     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
-     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
-     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
-     * information in this parameter.</p> </li> </ul> 
+     * Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+     *  <p>When you use the <code>ClientMetadata</code> parameter, note that
+     * Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * <code>ClientMetadata</code> value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the
+     * <code>ClientMetadata</code> parameter serves no purpose.</p> </li> <li>
+     * <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li> <p>Encrypt the
+     * <code>ClientMetadata</code> value. Don't send sensitive information in this
+     * parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }

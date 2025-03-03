@@ -27,9 +27,7 @@ namespace Model
    * <p>A Secure Remote Password (SRP) value that your application generates when you
    * register a user's device. For more information, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-getting-a-device-key">Getting
-   * a device key</a>.</p> <p>This data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * a device key</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceSecretVerifierConfigType">AWS
    * API Reference</a></p>
    */

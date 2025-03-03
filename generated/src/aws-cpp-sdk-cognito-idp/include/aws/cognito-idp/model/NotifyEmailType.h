@@ -24,13 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The template for email messages that advanced security features sends to a
-   * user when your threat protection automated response has a <i>Notify</i>
-   * action.</p> <p>This data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The template for email messages that threat protection sends to a user when
+   * your threat protection automated response has a <i>Notify</i>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NotifyEmailType">AWS
    * API Reference</a></p>
    */

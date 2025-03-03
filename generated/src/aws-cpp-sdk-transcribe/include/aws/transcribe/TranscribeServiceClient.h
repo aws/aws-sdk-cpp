@@ -1105,27 +1105,27 @@ namespace TranscribeService
          * categories for real-time transcriptions</a>.</p> <p>To make a
          * <code>StartCallAnalyticsJob</code> request, you must first upload your media
          * file into an Amazon S3 bucket; you can then specify the Amazon S3 location of
-         * the file using the <code>Media</code> parameter.</p> <p>Note that job queuing is
-         * enabled by default for Call Analytics jobs.</p> <p>You must include the
-         * following parameters in your <code>StartCallAnalyticsJob</code> request:</p>
-         * <ul> <li> <p> <code>region</code>: The Amazon Web Services Region where you are
-         * making your request. For a list of Amazon Web Services Regions supported with
-         * Amazon Transcribe, refer to <a
+         * the file using the <code>Media</code> parameter.</p> <p>Job queuing is available
+         * for Call Analytics jobs. If you pass a <code>DataAccessRoleArn</code> in your
+         * request and you exceed your Concurrent Job Limit, your job will automatically be
+         * added to a queue to be processed once your concurrent job count is below the
+         * limit.</p> <p>You must include the following parameters in your
+         * <code>StartCallAnalyticsJob</code> request:</p> <ul> <li> <p>
+         * <code>region</code>: The Amazon Web Services Region where you are making your
+         * request. For a list of Amazon Web Services Regions supported with Amazon
+         * Transcribe, refer to <a
          * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon
          * Transcribe endpoints and quotas</a>.</p> </li> <li> <p>
          * <code>CallAnalyticsJobName</code>: A custom name that you create for your
          * transcription job that's unique within your Amazon Web Services account.</p>
-         * </li> <li> <p> <code>DataAccessRoleArn</code>: The Amazon Resource Name (ARN) of
-         * an IAM role that has permissions to access the Amazon S3 bucket that contains
-         * your input files.</p> </li> <li> <p> <code>Media</code>
-         * (<code>MediaFileUri</code> or <code>RedactedMediaFileUri</code>): The Amazon S3
-         * location of your media file.</p> </li> </ul>  <p>With Call Analytics, you
-         * can redact the audio contained in your media file by including
-         * <code>RedactedMediaFileUri</code>, instead of <code>MediaFileUri</code>, to
-         * specify the location of your input audio. If you choose to redact your audio,
-         * you can find your redacted media at the location specified in the
-         * <code>RedactedMediaFileUri</code> field of your response.</p> <p><h3>See
-         * Also:</h3>   <a
+         * </li> <li> <p> <code>Media</code> (<code>MediaFileUri</code> or
+         * <code>RedactedMediaFileUri</code>): The Amazon S3 location of your media
+         * file.</p> </li> </ul>  <p>With Call Analytics, you can redact the audio
+         * contained in your media file by including <code>RedactedMediaFileUri</code>,
+         * instead of <code>MediaFileUri</code>, to specify the location of your input
+         * audio. If you choose to redact your audio, you can find your redacted media at
+         * the location specified in the <code>RedactedMediaFileUri</code> field of your
+         * response.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">AWS
          * API Reference</a></p>
          */

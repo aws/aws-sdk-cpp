@@ -26,13 +26,7 @@ namespace Model
   /**
    * <p>The settings for administrator creation of users in a user pool. Contains
    * settings for allowing user sign-up, customizing invitation messages to new
-   * users, and the amount of time before temporary passwords expire.</p> <p>This
-   * data type is a request and response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * users, and the amount of time before temporary passwords expire.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType">AWS
    * API Reference</a></p>
@@ -50,8 +44,7 @@ namespace Model
     /**
      * <p>The setting for allowing self-service sign-up. When <code>true</code>, only
      * administrators can create new user profiles. When <code>false</code>, users can
-     * register themselves and create a new user profile with the <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>
+     * register themselves and create a new user profile with the <code>SignUp</code>
      * operation.</p>
      */
     inline bool GetAllowAdminCreateUserOnly() const{ return m_allowAdminCreateUserOnly; }
@@ -62,13 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer in use. Configure the duration of temporary
-     * passwords with the <code>TemporaryPasswordValidityDays</code> parameter of <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_PasswordPolicyType.html">PasswordPolicyType</a>.
-     * For older user pools that have a <code>UnusedAccountValidityDays</code>
-     * configuration, that value is effective until you set a value for
-     * <code>TemporaryPasswordValidityDays</code>.</p> <p>The password expiration limit
-     * in days for administrator-created users. When this time expires, the user can't
+     * <p>This parameter is no longer in use.</p> <p>The password expiration limit in
+     * days for administrator-created users. When this time expires, the user can't
      * sign in with their temporary password. To reset the account after that time
      * limit, you must call <code>AdminCreateUser</code> again, specifying
      * <code>RESEND</code> for the <code>MessageAction</code> parameter. </p> <p>The

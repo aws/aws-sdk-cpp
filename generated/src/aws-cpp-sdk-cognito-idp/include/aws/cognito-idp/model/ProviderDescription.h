@@ -27,9 +27,7 @@ namespace Model
 
   /**
    * <p>The details of a user pool identity provider (IdP), including name and
-   * type.</p> <p>This data type is a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html">ListIdentityProviders</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderDescription">AWS
    * API Reference</a></p>
    */

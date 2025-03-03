@@ -68,11 +68,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>When true, applies the default branding style options. This option reverts to
-     * default style options that are managed by Amazon Cognito. You can modify them
-     * later in the branding designer.</p> <p>When you specify <code>true</code> for
-     * this option, you must also omit values for <code>Settings</code> and
-     * <code>Assets</code> in the request.</p>
+     * <p>When <code>true</code>, applies the default branding style options. This
+     * option reverts to default style options that are managed by Amazon Cognito. You
+     * can modify them later in the branding designer.</p> <p>When you specify
+     * <code>true</code> for this option, you must also omit values for
+     * <code>Settings</code> and <code>Assets</code> in the request.</p>
      */
     inline bool GetUseCognitoProvidedValues() const{ return m_useCognitoProvidedValues; }
     inline bool UseCognitoProvidedValuesHasBeenSet() const { return m_useCognitoProvidedValuesHasBeenSet; }

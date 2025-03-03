@@ -26,12 +26,7 @@ namespace Model
 
   /**
    * <p>Exceptions to the risk evaluation configuration, including always-allow and
-   * always-block IP address ranges. </p> <p>This data type is a request parameter of
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * always-block IP address ranges. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RiskExceptionConfigurationType">AWS
    * API Reference</a></p>
    */

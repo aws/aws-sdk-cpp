@@ -27,10 +27,7 @@ namespace Model
 
   /**
    * <p>The details of a passkey, or webauthN, biometric or security-key
-   * authentication factor for a user.</p> <p>This data type is a response parameter
-   * of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * authentication factor for a user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/WebAuthnCredentialDescription">AWS
    * API Reference</a></p>
    */

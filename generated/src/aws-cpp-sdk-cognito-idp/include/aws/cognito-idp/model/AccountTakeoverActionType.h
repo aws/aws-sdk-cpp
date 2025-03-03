@@ -26,12 +26,7 @@ namespace Model
   /**
    * <p>The automated response to a risk level for adaptive authentication in
    * full-function, or <code>ENFORCED</code>, mode. You can assign an action to each
-   * risk level that advanced security features evaluates.</p> <p>This data type is a
-   * request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * risk level that threat protection evaluates.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverActionType">AWS
    * API Reference</a></p>
    */
