@@ -98,11 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the user is activated for sign-in. The <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a>
-     * API operations deactivate and activate user sign-in, respectively.</p>
+     * <p>Indicates whether the user is activated for sign-in.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline void SetEnabled(bool value) { m_enabled = value; }
@@ -163,11 +159,7 @@ namespace Model
     /**
      * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and
-     * <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who
-     * have more than one available MFA factor with <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
-     * or <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
+     * <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
     inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }

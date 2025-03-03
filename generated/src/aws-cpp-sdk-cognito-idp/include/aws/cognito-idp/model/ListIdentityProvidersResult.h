@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of IdP objects.</p>
+     * <p>An array of the IdPs in your user pool. For each, the response includes
+     * identifiers, the IdP name and type, and trust-relationship details like the
+     * issuer URL.</p>
      */
     inline const Aws::Vector<ProviderDescription>& GetProviders() const{ return m_providers; }
     inline void SetProviders(const Aws::Vector<ProviderDescription>& value) { m_providers = value; }
@@ -49,7 +51,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A pagination token.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

@@ -41,7 +41,7 @@ namespace Model
    * <code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER":
    * "WEB_AUTHN", "USERNAME": "[username]", "CREDENTIAL":
    * "[AuthenticationResponseJSON]"}</code> </p> <p>See <a
-   * href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson">
+   * href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson">
    * AuthenticationResponseJSON</a>.</p> </li> <li> <p> <code>"ChallengeName":
    * "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME":
    * "[username]", "PASSWORD": "[password]"}</code> </p> </li> <li> <p>
@@ -80,12 +80,14 @@ namespace Model
    * parameter can also set values for writable attributes that aren't required by
    * your user pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge
    * response, you can't modify a required attribute that already has a value. In
-   * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
-   * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
-   * <code>UpdateUserAttributes</code> API operation to modify the value of any
-   * additional attributes.</p>  </dd> <dt>SOFTWARE_TOKEN_MFA</dt> <dd> <p>
-   * <code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME":
-   * "[username]", "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code> </p> </dd>
+   * <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>,
+   * set a value for any keys that Amazon Cognito returned in the
+   * <code>requiredAttributes</code> parameter, then use the
+   * <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API
+   * operation to modify the value of any additional attributes.</p>  </dd>
+   * <dt>SOFTWARE_TOKEN_MFA</dt> <dd> <p> <code>"ChallengeName":
+   * "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "[username]",
+   * "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code> </p> </dd>
    * <dt>DEVICE_SRP_AUTH</dt> <dd> <p> <code>"ChallengeName": "DEVICE_SRP_AUTH",
    * "ChallengeResponses": {"USERNAME": "[username]", "DEVICE_KEY": "[device_key]",
    * "SRP_A": "[srp_a]"}</code> </p> </dd> <dt>DEVICE_PASSWORD_VERIFIER</dt> <dd> <p>
@@ -102,12 +104,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
    * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
-   * with user devices in your user pool</a>.</p> <p>This data type is a request
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * with user devices in your user pool</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChallengeResponseType">AWS
    * API Reference</a></p>
    */

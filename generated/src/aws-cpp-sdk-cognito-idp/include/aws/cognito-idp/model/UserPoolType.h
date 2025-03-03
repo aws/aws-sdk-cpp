@@ -45,14 +45,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration of a user pool.</p> <p>This data type is a response
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The configuration of a user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType">AWS
    * API Reference</a></p>
    */
@@ -236,8 +229,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetSmsVerificationMessage() const{ return m_smsVerificationMessage; }
     inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
@@ -251,8 +243,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
@@ -266,8 +257,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
@@ -506,13 +496,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>User pool add-ons. Contains settings for activation of advanced security
-     * features. To log user security information but take no action, set to
-     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
-     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
-     * see <a
+     * <p>Contains settings for activation of threat protection, including the
+     * operating mode and additional authentication types. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure
+     * automatic security responses to potentially unwanted traffic to your user pool,
+     * set to <code>ENFORCED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
-     * advanced security to a user pool</a>.</p>
+     * advanced security to a user pool</a>. To activate this setting, your user pool
+     * must be on the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+     * Plus tier</a>.</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
@@ -533,9 +526,6 @@ namespace Model
      * a best practice. When usernames and email addresses are case insensitive, Amazon
      * Cognito treats any variation in case as the same user, and prevents a case
      * variation from being assigned to the same attribute for a different user.</p>
-     * <p>This configuration is immutable after you set it. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }

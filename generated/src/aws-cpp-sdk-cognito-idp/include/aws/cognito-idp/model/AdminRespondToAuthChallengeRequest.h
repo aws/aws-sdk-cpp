@@ -73,10 +73,71 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the challenge that you are responding to. You can find more
-     * information about values for <code>ChallengeName</code> in the response
-     * parameters of <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.</p>
+     * <p>The name of the challenge that you are responding to.</p> <p>Possible
+     * challenges include the following:</p>  <p>All of the following challenges
+     * require <code>USERNAME</code> and, when the app client has a client secret,
+     * <code>SECRET_HASH</code> in the parameters.</p>  <ul> <li> <p>
+     * <code>WEB_AUTHN</code>: Respond to the challenge with the results of a
+     * successful authentication with a WebAuthn authenticator, or passkey. Examples of
+     * WebAuthn authenticators include biometric devices and security keys.</p> </li>
+     * <li> <p> <code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code>
+     * parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p> <code>PASSWORD_SRP</code>:
+     * Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code>
+     * (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if
+     * the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p> <code>SELECT_CHALLENGE</code>: Respond to the challenge with
+     * <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the
+     * challenge types in the <code>AvailableChallenges</code> response parameter.</p>
+     * </li> <li> <p> <code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code>
+     * that your user pool delivered in an SMS message.</p> </li> <li> <p>
+     * <code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your
+     * user pool delivered in an email message.</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: Respond with
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * and <code>TIMESTAMP</code> after client-side SRP calculations.</p> </li> <li>
+     * <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom
+     * authentication flow determines that the user should pass another challenge
+     * before tokens are issued. The parameters of the challenge are determined by your
+     * Lambda function.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: Respond with
+     * the initial parameters of device SRP authentication. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing
+     * in with a device</a>.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>:
+     * Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after
+     * client-side SRP calculations. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing
+     * in with a device</a>.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For
+     * users who are required to change their passwords after successful first login.
+     * Respond to this challenge with <code>NEW_PASSWORD</code> and any required
+     * attributes that Amazon Cognito returned in the <code>requiredAttributes</code>
+     * parameter. You can also set values for attributes that aren't required by your
+     * user pool and that your app client can write.</p> <p>Amazon Cognito only returns
+     * this challenge for users who have temporary passwords. When you create
+     * passwordless users, you must provide values for all required attributes.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>,
+     * set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API
+     * operation to modify the value of any additional attributes.</p>  </li>
+     * <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA
+     * factor before they can sign in. The MFA types activated for the user pool will
+     * be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value. </p>
+     * <p>To set up time-based one-time password (TOTP) MFA, use the session returned
+     * in this challenge from <code>InitiateAuth</code> or
+     * <code>AdminInitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>. Then, use the session returned by
+     * <code>VerifySoftwareToken</code> as an input to
+     * <code>RespondToAuthChallenge</code> or <code>AdminRespondToAuthChallenge</code>
+     * with challenge name <code>MFA_SETUP</code> to complete sign-in. </p> <p>To set
+     * up SMS or email MFA, collect a <code>phone_number</code> or <code>email</code>
+     * attribute for the user. Then restart the authentication flow with an
+     * <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request. </p> </li>
+     * </ul>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
     inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
@@ -104,7 +165,7 @@ namespace Model
      * <code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER":
      * "WEB_AUTHN", "USERNAME": "[username]", "CREDENTIAL":
      * "[AuthenticationResponseJSON]"}</code> </p> <p>See <a
-     * href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson">
+     * href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson">
      * AuthenticationResponseJSON</a>.</p> </li> <li> <p> <code>"ChallengeName":
      * "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME":
      * "[username]", "PASSWORD": "[password]"}</code> </p> </li> <li> <p>
@@ -143,12 +204,14 @@ namespace Model
      * parameter can also set values for writable attributes that aren't required by
      * your user pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge
      * response, you can't modify a required attribute that already has a value. In
-     * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
-     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
-     * <code>UpdateUserAttributes</code> API operation to modify the value of any
-     * additional attributes.</p>  </dd> <dt>SOFTWARE_TOKEN_MFA</dt> <dd> <p>
-     * <code>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME":
-     * "[username]", "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code> </p> </dd>
+     * <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>,
+     * set a value for any keys that Amazon Cognito returned in the
+     * <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API
+     * operation to modify the value of any additional attributes.</p>  </dd>
+     * <dt>SOFTWARE_TOKEN_MFA</dt> <dd> <p> <code>"ChallengeName":
+     * "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "[username]",
+     * "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</code> </p> </dd>
      * <dt>DEVICE_SRP_AUTH</dt> <dd> <p> <code>"ChallengeName": "DEVICE_SRP_AUTH",
      * "ChallengeResponses": {"USERNAME": "[username]", "DEVICE_KEY": "[device_key]",
      * "SRP_A": "[srp_a]"}</code> </p> </dd> <dt>DEVICE_PASSWORD_VERIFIER</dt> <dd> <p>
@@ -203,8 +266,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-     * <code>AdminRespondToAuthChallenge</code> calls.</p>
+     * <p>Information that supports analytics outcomes with Amazon Pinpoint, including
+     * the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint
+     * push notifications, for example a device identifier, email address, or phone
+     * number.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
@@ -216,8 +281,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contextual data about your user session, such as the device fingerprint, IP
-     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * <p>Contextual data about your user session like the device fingerprint, IP
+     * address, or location. Amazon Cognito threat protection evaluates the risk of an
      * authentication event based on the context that your app generates and passes to
      * Amazon Cognito when it makes API requests.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
@@ -250,16 +315,16 @@ namespace Model
      * value to enhance your workflow for your specific needs.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the
-     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
-     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
-     * data is available only to Lambda triggers that are assigned to a user pool to
-     * support custom workflows. If your user pool configuration doesn't include
-     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
-     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
-     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
-     * information in this parameter.</p> </li> </ul> 
+     * Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+     *  <p>When you use the <code>ClientMetadata</code> parameter, note that
+     * Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * <code>ClientMetadata</code> value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the
+     * <code>ClientMetadata</code> parameter serves no purpose.</p> </li> <li>
+     * <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li> <p>Encrypt the
+     * <code>ClientMetadata</code> value. Don't send sensitive information in this
+     * parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }

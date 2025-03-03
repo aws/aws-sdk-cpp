@@ -81,10 +81,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configures user pool email messages for MFA. Sets the subject and body of the
-     * email message template for MFA messages. To activate this setting, <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-     * advanced security features</a> must be active in your user pool.</p>
+     * <p>Sets configuration for user pool email message MFA and sign-in with one-time
+     * passwords (OTPs). Includes the subject and body of the email message template
+     * for sign-in and MFA messages. To activate this setting, your user pool must be
+     * in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+     * Essentials tier</a> or higher.</p>
      */
     inline const EmailMfaConfigType& GetEmailMfaConfiguration() const{ return m_emailMfaConfiguration; }
     inline bool EmailMfaConfigurationHasBeenSet() const { return m_emailMfaConfigurationHasBeenSet; }
@@ -96,14 +98,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
-     * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
-     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
-     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
-     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
-     * MFA factor activated.</p> </li> </ul>
+     * <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When
+     * <code>ON</code>, all users must set up MFA before they can sign in. When
+     * <code>OPTIONAL</code>, your application must make a client-side determination of
+     * whether a user wants to register an MFA device. For user pools with adaptive
+     * authentication with threat protection, choose <code>OPTIONAL</code>.</p> <p>When
+     * <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't
+     * automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts
+     * in API responses and in managed login for users who have chosen and configured a
+     * preferred MFA factor.</p>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
@@ -115,7 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration of your user pool for passkey, or webauthN, authentication
+     * <p>The configuration of your user pool for passkey, or WebAuthn, authentication
      * and registration. You can set this configuration independent of the MFA
      * configuration options in this operation.</p>
      */

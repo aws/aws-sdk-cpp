@@ -40,11 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. One example might be <code>auth.example.com</code>.
-     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
-     * Don't use a hyphen for the first or last character. Use periods to separate
-     * subdomain names.</p>
+     * <p>The name of the domain that you want to update. For custom domains, this is
+     * the fully-qualified domain name, for example <code>auth.example.com</code>. For
+     * prefix domains, this is the prefix alone, such as <code>myprefix</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -58,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool that is associated with the custom domain whose
-     * certificate you're updating.</p>
+     * <p>The ID of the user pool that is associated with the domain you're
+     * updating.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -87,15 +85,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
-     * pages for your application. Use this object to specify an SSL certificate that
-     * is managed by ACM.</p> <p>When you create a custom domain, the passkey RP ID
-     * defaults to the custom domain. If you had a prefix domain active, this will
-     * cause passkey integration for your prefix domain to stop working due to a
-     * mismatch in RP ID. To keep the prefix domain passkey integration working, you
-     * can explicitly set RP ID to the prefix domain. Update the RP ID in a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-     * request.</p>
+     * <p>The configuration for a custom domain that hosts managed login for your
+     * application. In an <code>UpdateUserPoolDomain</code> request, this parameter
+     * specifies an SSL certificate for the managed login hosted webserver. The
+     * certificate must be an ACM ARN in <code>us-east-1</code>.</p> <p>When you create
+     * a custom domain, the passkey RP ID defaults to the custom domain. If you had a
+     * prefix domain active, this will cause passkey integration for your prefix domain
+     * to stop working due to a mismatch in RP ID. To keep the prefix domain passkey
+     * integration working, you can explicitly set RP ID to the prefix domain.</p>
      */
     inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
     inline bool CustomDomainConfigHasBeenSet() const { return m_customDomainConfigHasBeenSet; }

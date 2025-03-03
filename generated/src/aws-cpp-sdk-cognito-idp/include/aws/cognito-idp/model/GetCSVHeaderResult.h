@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool that the users are to be imported into.</p>
+     * <p>The ID of the requested user pool.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolId = value; }
@@ -55,7 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The header information of the CSV file for the user import job.</p>
+     * <p>A comma-separated list of attributes from your user pool. Save this output to
+     * a <code>.csv</code> file and populate it with the attributes of the users that
+     * you want to import.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCSVHeader() const{ return m_cSVHeader; }
     inline void SetCSVHeader(const Aws::Vector<Aws::String>& value) { m_cSVHeader = value; }

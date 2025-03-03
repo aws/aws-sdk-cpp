@@ -26,12 +26,7 @@ namespace Model
    * multi-factor authentication (MFA). Turns TOTP MFA on and off, and can set TOTP
    * as preferred when other MFA options are available. You can't turn off TOTP MFA
    * for any of your users when MFA is required in your user pool; you can only set
-   * the type that your user prefers. </p> <p>This data type is a request parameter
-   * of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * the type that your user prefers. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SoftwareTokenMfaSettingsType">AWS
    * API Reference</a></p>
    */

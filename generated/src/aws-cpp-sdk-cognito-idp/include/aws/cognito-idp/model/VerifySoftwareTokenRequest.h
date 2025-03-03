@@ -36,8 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose software
-     * token you want to verify.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -51,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
+     * <p>The session ID from an <code>AssociateSoftwareToken</code> request.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
     inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
@@ -66,8 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The one- time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+     * <p>A TOTP that the user generated in their configured authenticator app.</p>
      */
     inline const Aws::String& GetUserCode() const{ return m_userCode; }
     inline bool UserCodeHasBeenSet() const { return m_userCodeHasBeenSet; }
@@ -81,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The friendly device name.</p>
+     * <p>A friendly name for the device that's running the TOTP authenticator.</p>
      */
     inline const Aws::String& GetFriendlyDeviceName() const{ return m_friendlyDeviceName; }
     inline bool FriendlyDeviceNameHasBeenSet() const { return m_friendlyDeviceNameHasBeenSet; }

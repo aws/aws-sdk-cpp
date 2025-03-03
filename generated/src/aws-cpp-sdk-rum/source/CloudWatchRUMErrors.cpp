@@ -48,8 +48,12 @@ namespace CloudWatchRUMErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int POLICY_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PolicySizeLimitExceededException");
+static const int INVALID_POLICY_REVISION_ID_HASH = HashingUtils::HashString("InvalidPolicyRevisionIdException");
+static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -60,6 +64,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
@@ -67,6 +75,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == POLICY_SIZE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::POLICY_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_POLICY_REVISION_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::INVALID_POLICY_REVISION_ID), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchRUMErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -28,13 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The settings of risk configuration for threat protection with advanced
-   * security features in a user pool.</p> <p>This data type is a response parameter
-   * of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The settings of risk configuration for threat protection with threat
+   * protection in a user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RiskConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -80,7 +75,7 @@ namespace Model
     ///@{
     /**
      * <p>Settings for compromised-credentials actions and authentication types with
-     * advanced security features in full-function <code>ENFORCED</code> mode.</p>
+     * threat protection in full-function <code>ENFORCED</code> mode.</p>
      */
     inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const{ return m_compromisedCredentialsRiskConfiguration; }
     inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
@@ -93,7 +88,7 @@ namespace Model
     ///@{
     /**
      * <p>The settings for automated responses and notification templates for adaptive
-     * authentication with advanced security features.</p>
+     * authentication with threat protection.</p>
      */
     inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
     inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }

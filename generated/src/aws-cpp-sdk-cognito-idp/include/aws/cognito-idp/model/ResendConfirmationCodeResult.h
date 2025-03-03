@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The code delivery details returned by the server in response to the request
-     * to resend the confirmation code.</p>
+     * <p>Information about the phone number or email address that Amazon Cognito sent
+     * the confirmation code to.</p>
      */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }

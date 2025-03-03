@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The details of the user import job.</p>
+     * <p>The details of the user import job. Includes logging destination, status, and
+     * the Amazon S3 pre-signed URL for CSV upload.</p>
      */
     inline const UserImportJobType& GetUserImportJob() const{ return m_userImportJob; }
     inline void SetUserImportJob(const UserImportJobType& value) { m_userImportJob = value; }

@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The keys of the tags to remove from the user pool.</p>
+     * <p>An array of tag keys that you want to remove from the user pool.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }

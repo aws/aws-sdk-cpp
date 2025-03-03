@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The logging configuration of the requested user pool.</p>
+     * <p>The logging configuration of the requested user pool. Includes types of logs
+     * configured and their destinations.</p>
      */
     inline const LogDeliveryConfigurationType& GetLogDeliveryConfiguration() const{ return m_logDeliveryConfiguration; }
     inline void SetLogDeliveryConfiguration(const LogDeliveryConfigurationType& value) { m_logDeliveryConfiguration = value; }

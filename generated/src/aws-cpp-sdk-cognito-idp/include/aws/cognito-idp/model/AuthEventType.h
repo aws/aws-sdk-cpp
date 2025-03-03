@@ -33,11 +33,8 @@ namespace Model
 
   /**
    * <p>One authentication event that Amazon Cognito logged in a user pool with
-   * advanced security features active. Contains user and device metadata and a risk
-   * assessment from your user pool.</p> <p>This data type is a request parameter of
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * threat protection active. Contains user and device metadata and a risk
+   * assessment from your user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthEventType">AWS
    * API Reference</a></p>
    */
@@ -147,15 +144,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html">UpdateAuthEventFeedback</a>
-     * or <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html">AdminUpdateAuthEventFeedback</a>
-     * feedback that you or your user provided in response to the event. A value of
-     * <code>Valid</code> indicates that you disagreed with the level of risk that your
-     * user pool assigned, and evaluated a session to be valid, or likely safe. A value
-     * of <code>Invalid</code> indicates that you agreed with the user pool risk level
-     * and evaluated a session to be invalid, or likely malicious.</p>
+     * <p>The <code>UpdateAuthEventFeedback</code> or
+     * <code>AdminUpdateAuthEventFeedback</code> feedback that you or your user
+     * provided in response to the event. A value of <code>Valid</code> indicates that
+     * you disagreed with the level of risk that your user pool assigned, and evaluated
+     * a session to be valid, or likely safe. A value of <code>Invalid</code> indicates
+     * that you agreed with the user pool risk level and evaluated a session to be
+     * invalid, or likely malicious.</p>
      */
     inline const EventFeedbackType& GetEventFeedback() const{ return m_eventFeedback; }
     inline bool EventFeedbackHasBeenSet() const { return m_eventFeedbackHasBeenSet; }

@@ -60,7 +60,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of custom SageMaker AI images that are configured to run as a
-     * KernelGateway app.</p>
+     * KernelGateway app.</p> <p>The maximum number of custom images are as
+     * follows.</p> <ul> <li> <p>On a domain level: 200</p> </li> <li> <p>On a space
+     * level: 5</p> </li> <li> <p>On a user profile level: 5</p> </li> </ul>
      */
     inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
     inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }

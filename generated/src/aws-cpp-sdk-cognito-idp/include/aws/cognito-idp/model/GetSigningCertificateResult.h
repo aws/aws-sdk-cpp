@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The signing certificate.</p>
+     * <p>The x.509 certificate that signs SAML 2.0 authentication requests for your
+     * user pool.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
     inline void SetCertificate(const Aws::String& value) { m_certificate = value; }

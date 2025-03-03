@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The group object for the group.</p>
+     * <p>Contains the updated details of the group, including precedence, IAM role,
+     * and description.</p>
      */
     inline const GroupType& GetGroup() const{ return m_group; }
     inline void SetGroup(const GroupType& value) { m_group = value; }

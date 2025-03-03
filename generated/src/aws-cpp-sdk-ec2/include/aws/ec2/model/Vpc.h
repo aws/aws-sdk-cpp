@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VpcEncryptionControl.h>
 #include <aws/ec2/model/BlockPublicAccessStates.h>
 #include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
@@ -111,6 +112,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const VpcEncryptionControl& GetEncryptionControl() const{ return m_encryptionControl; }
+    inline bool EncryptionControlHasBeenSet() const { return m_encryptionControlHasBeenSet; }
+    inline void SetEncryptionControl(const VpcEncryptionControl& value) { m_encryptionControlHasBeenSet = true; m_encryptionControl = value; }
+    inline void SetEncryptionControl(VpcEncryptionControl&& value) { m_encryptionControlHasBeenSet = true; m_encryptionControl = std::move(value); }
+    inline Vpc& WithEncryptionControl(const VpcEncryptionControl& value) { SetEncryptionControl(value); return *this;}
+    inline Vpc& WithEncryptionControl(VpcEncryptionControl&& value) { SetEncryptionControl(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Any tags assigned to the VPC.</p>
      */
@@ -205,6 +216,9 @@ namespace Model
 
     bool m_isDefault;
     bool m_isDefaultHasBeenSet = false;
+
+    VpcEncryptionControl m_encryptionControl;
+    bool m_encryptionControlHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

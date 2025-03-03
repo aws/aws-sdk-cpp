@@ -25,12 +25,7 @@ namespace Model
 
   /**
    * <p>The characteristics of a source or destination user for linking a federated
-   * user profile to a local user profile.</p> <p>This data type is a request
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * user profile to a local user profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderUserIdentifierType">AWS
    * API Reference</a></p>
    */

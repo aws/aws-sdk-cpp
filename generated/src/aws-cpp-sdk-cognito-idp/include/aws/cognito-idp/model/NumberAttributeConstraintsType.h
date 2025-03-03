@@ -25,17 +25,7 @@ namespace Model
 
   /**
    * <p>The minimum and maximum values of an attribute that is of the number type,
-   * for example <code>custom:age</code>.</p> <p>This data type is part of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SchemaAttributeType.html">SchemaAttributeType</a>.
-   * It defines the length constraints on number-type attributes that you configure
-   * in <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-   * and displays the length constraints of all number-type attributes in the
-   * response to <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * for example <code>custom:age</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NumberAttributeConstraintsType">AWS
    * API Reference</a></p>
    */

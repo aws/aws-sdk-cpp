@@ -27,12 +27,7 @@ namespace Model
 
   /**
    * <p>Contextual user data used for evaluating the risk of an authentication event
-   * by user pool threat protection.</p> <p>This data type is a request parameter of
-   * server-side authentication operations like <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * by user pool threat protection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ContextDataType">AWS
    * API Reference</a></p>
    */

@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The risk configuration.</p>
+     * <p>The API response that contains the risk configuration that you set and the
+     * timestamp of the most recent change.</p>
      */
     inline const RiskConfigurationType& GetRiskConfiguration() const{ return m_riskConfiguration; }
     inline void SetRiskConfiguration(const RiskConfigurationType& value) { m_riskConfiguration = value; }

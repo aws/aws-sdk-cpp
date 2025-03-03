@@ -39,7 +39,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID. </p>
+     * <p>The ID of the user pool where you want to set a risk configuration. If you
+     * include <code>UserPoolId</code> in your request, don't include
+     * <code>ClientId</code>. When the client ID is null, the same risk configuration
+     * is applied to all the clients in the userPool. When you include both
+     * <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the
+     * configuration to the app client only.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -53,12 +58,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The app client ID. If <code>ClientId</code> is null, then the risk
-     * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
-     * the same risk configuration is applied to all the clients in the userPool.</p>
-     * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * isn't null, the user pool configuration is overridden and the risk configuration
-     * for the client is used instead.</p>
+     * <p>The ID of the app client where you want to set a risk configuration. If
+     * <code>ClientId</code> is null, then the risk configuration is mapped to
+     * <code>UserPoolId</code>. When the client ID is null, the same risk configuration
+     * is applied to all the clients in the userPool.</p> <p>When you include a
+     * <code>ClientId</code> parameter, Amazon Cognito maps the configuration to the
+     * app client. When you include both <code>ClientId</code> and
+     * <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client
+     * only.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -72,7 +79,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The compromised credentials risk configuration.</p>
+     * <p>The configuration of automated reactions to detected compromised credentials.
+     * Includes settings for blocking future sign-in requests and for the types of
+     * password-submission events you want to monitor.</p>
      */
     inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const{ return m_compromisedCredentialsRiskConfiguration; }
     inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
@@ -84,7 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account takeover risk configuration.</p>
+     * <p>The settings for automated responses and notification templates for adaptive
+     * authentication with threat protection.</p>
      */
     inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
     inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
@@ -96,7 +106,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration to override the risk decision.</p>
+     * <p>A set of IP-address overrides to threat protection. You can set up IP-address
+     * always-block and always-allow lists.</p>
      */
     inline const RiskExceptionConfigurationType& GetRiskExceptionConfiguration() const{ return m_riskExceptionConfiguration; }
     inline bool RiskExceptionConfigurationHasBeenSet() const { return m_riskExceptionConfigurationHasBeenSet; }

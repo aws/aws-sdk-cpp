@@ -35,7 +35,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the verify software token.</p>
+     * <p>Amazon Cognito can accept or reject the code that you provide. This response
+     * parameter indicates the success of TOTP verification. Some reasons that this
+     * operation might return an error are clock skew on the user's device and
+     * excessive retries.</p>
      */
     inline const VerifySoftwareTokenResponseType& GetStatus() const{ return m_status; }
     inline void SetStatus(const VerifySoftwareTokenResponseType& value) { m_status = value; }
@@ -46,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service.</p>
+     * <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the
+     * session ID in your challenge response.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
     inline void SetSession(const Aws::String& value) { m_session = value; }

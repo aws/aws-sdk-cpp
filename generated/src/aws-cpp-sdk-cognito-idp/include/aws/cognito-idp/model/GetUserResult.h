@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The username of the user that you requested.</p>
+     * <p>The name of the user that you requested.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline void SetUsername(const Aws::String& value) { m_username = value; }
@@ -56,9 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
-     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
-     * name.</p>
+     * <p>An array of name-value pairs representing user attributes.</p> <p>Custom
+     * attributes are prepended with the <code>custom:</code> prefix.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
     inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributes = value; }
@@ -88,7 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user's preferred MFA setting.</p>
+     * <p>The user's preferred MFA. Users can prefer SMS message, email message, or
+     * TOTP MFA.</p>
      */
     inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
     inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }

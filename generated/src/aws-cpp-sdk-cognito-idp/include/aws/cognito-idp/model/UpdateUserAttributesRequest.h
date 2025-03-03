@@ -44,7 +44,7 @@ namespace Model
     ///@{
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
-     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * attributes, you must add a <code>custom:</code> prefix to the attribute
      * name.</p> <p>If you have set an attribute to require verification before Amazon
      * Cognito updates its value, this request doesn’t immediately update the value of
      * that attribute. After your user receives and responds to a verification message
@@ -64,8 +64,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose user
-     * attributes you want to update.</p>
+     * <p>A valid access token that Amazon Cognito issued to the currently signed-in
+     * user. Must include a scope claim for
+     * <code>aws.cognito.signin.user.admin</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -91,16 +92,16 @@ namespace Model
      * the <code>clientMetadata</code> value to enhance your workflow for your specific
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the
-     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
-     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
-     * data is available only to Lambda triggers that are assigned to a user pool to
-     * support custom workflows. If your user pool configuration doesn't include
-     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
-     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
-     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
-     * information in this parameter.</p> </li> </ul> 
+     * Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+     *  <p>When you use the <code>ClientMetadata</code> parameter, note that
+     * Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * <code>ClientMetadata</code> value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the
+     * <code>ClientMetadata</code> parameter serves no purpose.</p> </li> <li>
+     * <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li> <p>Encrypt the
+     * <code>ClientMetadata</code> value. Don't send sensitive information in this
+     * parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }

@@ -31,14 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration of a user pool client.</p> <p>This data type is a request
-   * parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The configuration of a user pool client.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientType">AWS
    * API Reference</a></p>
    */
@@ -217,14 +210,10 @@ namespace Model
     /**
      * <p>The list of user attributes that you want your app client to have read access
      * to. After your user authenticates in your app, their access token authorizes
-     * them to read their own attribute value for any attribute in this list. An
-     * example of this kind of activity is when your user selects a link to view their
-     * profile information. Your app makes a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
-     * API request to retrieve and display your user's profile data.</p> <p>When you
-     * don't specify the <code>ReadAttributes</code> for your app client, your app can
-     * read the values of <code>email_verified</code>,
-     * <code>phone_number_verified</code>, and the Standard attributes of your user
+     * them to read their own attribute value for any attribute in this list.</p>
+     * <p>When you don't specify the <code>ReadAttributes</code> for your app client,
+     * your app can read the values of <code>email_verified</code>,
+     * <code>phone_number_verified</code>, and the standard attributes of your user
      * pool. When your user pool app client has read access to these default
      * attributes, <code>ReadAttributes</code> doesn't return any information. Amazon
      * Cognito only populates <code>ReadAttributes</code> in the API response if you
@@ -246,22 +235,17 @@ namespace Model
      * <p>The list of user attributes that you want your app client to have write
      * access to. After your user authenticates in your app, their access token
      * authorizes them to set or modify their own attribute value for any attribute in
-     * this list. An example of this kind of activity is when you present your user
-     * with a form to update their profile information and they change their last name.
-     * Your app then makes an <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a>
-     * API request and sets <code>family_name</code> to the new value. </p> <p>When you
-     * don't specify the <code>WriteAttributes</code> for your app client, your app can
-     * write the values of the Standard attributes of your user pool. When your user
-     * pool has write access to these default attributes, <code>WriteAttributes</code>
-     * doesn't return any information. Amazon Cognito only populates
-     * <code>WriteAttributes</code> in the API response if you have specified your own
-     * custom set of write attributes.</p> <p>If your app client allows users to sign
-     * in through an IdP, this array must include all attributes that you have mapped
-     * to IdP attributes. Amazon Cognito updates mapped attributes when users sign in
-     * to your application through an IdP. If your app client does not have write
-     * access to a mapped attribute, Amazon Cognito throws an error when it tries to
-     * update the attribute. For more information, see <a
+     * this list.</p> <p>When you don't specify the <code>WriteAttributes</code> for
+     * your app client, your app can write the values of the Standard attributes of
+     * your user pool. When your user pool has write access to these default
+     * attributes, <code>WriteAttributes</code> doesn't return any information. Amazon
+     * Cognito only populates <code>WriteAttributes</code> in the API response if you
+     * have specified your own custom set of write attributes.</p> <p>If your app
+     * client allows users to sign in through an IdP, this array must include all
+     * attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped
+     * attributes when users sign in to your application through an IdP. If your app
+     * client does not have write access to a mapped attribute, Amazon Cognito throws
+     * an error when it tries to update the attribute. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * IdP Attribute Mappings for Your user pool</a>.</p>
      */
@@ -278,22 +262,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication flows that you want your user pool client to support. For
-     * each app client in your user pool, you can sign in your users with any
-     * combination of one or more flows, including with a user name and Secure Remote
-     * Password (SRP), a user name and password, or a custom authentication process
-     * that you define with Lambda functions.</p>  <p>If you don't specify a
-     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html">authentication
+     * flows</a> that you want your user pool client to support. For each app client in
+     * your user pool, you can sign in your users with any combination of one or more
+     * flows, including with a user name and Secure Remote Password (SRP), a user name
+     * and password, or a custom authentication process that you define with Lambda
+     * functions.</p>  <p>If you don't specify a value for
+     * <code>ExplicitAuthFlows</code>, your app client supports
      * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
-     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
-     * <li> <p> <code>ALLOW_USER_AUTH</code>: Enable selection-based sign-in with
+     * <code>ALLOW_CUSTOM_AUTH</code>. </p>  <p>The values for authentication
+     * flow options include the following.</p> <ul> <li> <p>
+     * <code>ALLOW_USER_AUTH</code>: Enable selection-based sign-in with
      * <code>USER_AUTH</code>. This setting covers username-password, secure remote
      * password (SRP), passwordless, and passkey authentication. This authentiation
      * flow can do username-password and SRP authentication without other
      * <code>ExplicitAuthFlows</code> permitting them. For example users can complete
      * an SRP challenge through <code>USER_AUTH</code> without the flow
      * <code>USER_SRP_AUTH</code> being active for the app client. This flow doesn't
-     * include <code>CUSTOM_AUTH</code>. </p> </li> <li> <p>
+     * include <code>CUSTOM_AUTH</code>. </p> <p>To activate this setting, your user
+     * pool must be in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+     * Essentials tier</a> or higher.</p> </li> <li> <p>
      * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
      * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
      * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your
@@ -330,15 +320,14 @@ namespace Model
      * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
      * <code>LoginWithAmazon</code>. You can also specify the names that you configured
      * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
-     * or <code>MyOIDCIdP</code>.</p> <p>This setting applies to providers that you can
-     * access with <a
+     * or <code>MyOIDCIdP</code>.</p> <p>This parameter sets the IdPs that <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
-     * login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent
-     * authentication operations for local users with the user pools API in an Amazon
-     * Web Services SDK. The only way to prevent API-based authentication is to block
-     * access with a <a
+     * login</a> will display on the login page for your app client. The removal of
+     * <code>COGNITO</code> from this list doesn't prevent authentication operations
+     * for local users with the user pools API in an Amazon Web Services SDK. The only
+     * way to prevent SDK-based authentication is to block access with a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
-     * rule</a>.</p>
+     * rule</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
@@ -453,20 +442,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
-     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
-     * <code>true</code> before you can configure the following features in your app
-     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
-     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 authorization server features in
+     * your app client.</p> <p>This parameter must have a value of <code>true</code>
+     * before you can configure the following features in your app client.</p> <ul>
+     * <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li> <li> <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
      * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
      * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
-     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
-     * features, configure one of these features in the Amazon Cognito console or set
-     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use authorization
+     * server features, configure one of these features in the Amazon Cognito console
+     * or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
      * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
      * request. If you don't set a value for
      * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
-     * it defaults to <code>false</code>.</p>
+     * it defaults to <code>false</code>. When <code>false</code>, only SDK-based API
+     * sign-in is permitted.</p>
      */
     inline bool GetAllowedOAuthFlowsUserPoolClient() const{ return m_allowedOAuthFlowsUserPoolClient; }
     inline bool AllowedOAuthFlowsUserPoolClientHasBeenSet() const { return m_allowedOAuthFlowsUserPoolClientHasBeenSet; }
@@ -493,19 +483,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Errors and responses that you want Amazon Cognito APIs to return during
+     * <p>When <code>ENABLED</code>, suppresses messages that might indicate a valid
+     * user exists when someone attempts sign-in. This parameters sets your preference
+     * for the errors and responses that you want Amazon Cognito APIs to return during
      * authentication, account confirmation, and password recovery when the user
      * doesn't exist in the user pool. When set to <code>ENABLED</code> and the user
      * doesn't exist, authentication returns an error indicating either the username or
      * password was incorrect. Account confirmation and password recovery return a
      * response indicating a code was sent to a simulated destination. When set to
      * <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code>
-     * exception if the user doesn't exist in the user pool.</p> <p>Valid values
-     * include:</p> <ul> <li> <p> <code>ENABLED</code> - This prevents user
-     * existence-related errors.</p> </li> <li> <p> <code>LEGACY</code> - This
-     * represents the early behavior of Amazon Cognito where user existence related
-     * errors aren't prevented.</p> </li> </ul> <p>Defaults to <code>LEGACY</code> when
-     * you don't provide a value.</p>
+     * exception if the user doesn't exist in the user pool.</p> <p>Defaults to
+     * <code>LEGACY</code>.</p>
      */
     inline const PreventUserExistenceErrorTypes& GetPreventUserExistenceErrors() const{ return m_preventUserExistenceErrors; }
     inline bool PreventUserExistenceErrorsHasBeenSet() const { return m_preventUserExistenceErrorsHasBeenSet; }
@@ -519,8 +507,7 @@ namespace Model
     /**
      * <p>Indicates whether token revocation is activated for the user pool client.
      * When you create a new user pool client, token revocation is activated by
-     * default. For more information about revoking tokens, see <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+     * default.</p>
      */
     inline bool GetEnableTokenRevocation() const{ return m_enableTokenRevocation; }
     inline bool EnableTokenRevocationHasBeenSet() const { return m_enableTokenRevocationHasBeenSet; }
@@ -533,12 +520,12 @@ namespace Model
      * <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon
      * Cognito accepts an <code>IpAddress</code> value that you send in the
      * <code>UserContextData</code> parameter. The <code>UserContextData</code>
-     * parameter sends information to Amazon Cognito advanced security for risk
+     * parameter sends information to Amazon Cognito threat protection for risk
      * analysis. You can send <code>UserContextData</code> when you sign in Amazon
      * Cognito native users with the <code>InitiateAuth</code> and
      * <code>RespondToAuthChallenge</code> API operations.</p> <p>When
      * <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send
-     * your user's source IP address to Amazon Cognito advanced security with
+     * your user's source IP address to Amazon Cognito threat protection with
      * unauthenticated API operations.
      * <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you
      * can send a source IP address in a <code>ContextData</code> parameter with the

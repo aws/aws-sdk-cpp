@@ -28,17 +28,7 @@ namespace Model
    * <p>A user pool group. Contains details about the group and the way that it
    * contributes to IAM role decisions with identity pools. Identity pools can make
    * decisions about the IAM role to assign based on groups: users get credentials
-   * for the role associated with their highest-priority group.</p> <p>This data type
-   * is a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html">AdminListGroupsForUser</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html">GetGroup</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html">ListGroups</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html">UpdateGroup</a>.</p><p><h3>See
+   * for the role associated with their highest-priority group.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GroupType">AWS
    * API Reference</a></p>

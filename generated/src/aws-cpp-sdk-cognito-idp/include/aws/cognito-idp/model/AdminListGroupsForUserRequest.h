@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The username of the user that you want to query or modify. The value of this
+     * <p>The name of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
      * this value must be the <code>sub</code> of a local user or the username of a

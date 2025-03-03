@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A friendlhy name for your user pool.</p>
+     * <p>A friendly name for your user pool.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
@@ -122,8 +122,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attributes that you want your user pool to automatically verify. Possible
-     * values: <b>email</b>, <b>phone_number</b>. For more information see <a
+     * <p>The attributes that you want your user pool to automatically verify. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves">Verifying
      * contact information at sign-up</a>.</p>
      */
@@ -139,9 +139,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Attributes supported as an alias for this user pool. Possible values:
-     * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>. For more
-     * information about alias attributes, see <a
+     * <p>Attributes supported as an alias for this user pool. For more information
+     * about alias attributes, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
      * sign-in attributes</a>.</p>
      */
@@ -174,8 +173,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetSmsVerificationMessage() const{ return m_smsVerificationMessage; }
     inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
@@ -189,8 +187,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
@@ -204,8 +201,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter is no longer used. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
+     * <p>This parameter is no longer used.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
@@ -238,7 +234,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string representing the SMS authentication message.</p>
+     * <p>The contents of the SMS message that your user pool sends to users in SMS OTP
+     * and MFA authentication.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
@@ -256,7 +253,11 @@ namespace Model
      * <code>ON</code>, all users must set up MFA before they can sign in. When
      * <code>OPTIONAL</code>, your application must make a client-side determination of
      * whether a user wants to register an MFA device. For user pools with adaptive
-     * authentication with threat protection, choose <code>OPTIONAL</code>.</p>
+     * authentication with threat protection, choose <code>OPTIONAL</code>.</p> <p>When
+     * <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't
+     * automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts
+     * in API responses and in managed login for users who have chosen and configured a
+     * preferred MFA factor.</p>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
@@ -320,8 +321,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
-     * must use to send an SMS message from your Amazon Web Services account through
+     * <p>The settings for your Amazon Cognito user pool to send SMS messages with
      * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
      * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
      * Identity and Access Management (IAM) role in your Amazon Web Services account.
@@ -360,10 +360,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
-     * requests. Includes the template for the invitation message for new users, the
-     * duration of temporary passwords, and permitting self-service sign-up.</p>
+     * <p>The configuration for administrative creation of users. Includes the template
+     * for the invitation message for new users, the duration of temporary passwords,
+     * and permitting self-service sign-up.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
     inline bool AdminCreateUserConfigHasBeenSet() const { return m_adminCreateUserConfigHasBeenSet; }
@@ -394,13 +393,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>User pool add-ons. Contains settings for activation of advanced security
-     * features. To log user security information but take no action, set to
-     * <code>AUDIT</code>. To configure automatic security responses to risky traffic
-     * to your user pool, set to <code>ENFORCED</code>.</p> <p>For more information,
-     * see <a
+     * <p>Contains settings for activation of threat protection, including the
+     * operating mode and additional authentication types. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure
+     * automatic security responses to potentially unwanted traffic to your user pool,
+     * set to <code>ENFORCED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
-     * advanced security to a user pool</a>.</p>
+     * advanced security to a user pool</a>. To activate this setting, your user pool
+     * must be on the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+     * Plus tier</a>.</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
@@ -439,9 +441,12 @@ namespace Model
      * they call <code>ForgotPassword</code>. You can use this setting to define a
      * preferred method when a user has more than one method available. With this
      * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
-     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
-     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
-     * method where SMS is preferred through email.</p>
+     * also has SMS multi-factor authentication (MFA) activated. Email MFA is also
+     * disqualifying for account recovery with email. In the absence of this setting,
+     * Amazon Cognito uses the legacy behavior to determine the recovery method where
+     * SMS is preferred over email.</p> <p>As a best practice, configure both
+     * <code>verified_email</code> and <code>verified_phone_number</code>, with one
+     * having a higher priority than the other.</p>
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }

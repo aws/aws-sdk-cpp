@@ -45,11 +45,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
+     * <p>The fully-qualified domain name (FQDN) of the Amazon CloudFront distribution
+     * that hosts your managed login or classic hosted UI pages. Your domain-name
+     * authority must have an alias record that points requests for your custom domain
+     * to this FQDN. Amazon Cognito returns this value if you set a custom domain with
+     * <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain,
+     * this parameter returns null.</p>
      */
     inline const Aws::String& GetCloudFrontDomain() const{ return m_cloudFrontDomain; }
     inline void SetCloudFrontDomain(const Aws::String& value) { m_cloudFrontDomain = value; }

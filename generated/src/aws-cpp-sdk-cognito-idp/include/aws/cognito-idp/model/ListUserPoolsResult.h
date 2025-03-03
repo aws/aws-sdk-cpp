@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pools from the response to list users.</p>
+     * <p>An array of user pools and their configuration details.</p>
      */
     inline const Aws::Vector<UserPoolDescriptionType>& GetUserPools() const{ return m_userPools; }
     inline void SetUserPools(const Aws::Vector<UserPoolDescriptionType>& value) { m_userPools = value; }
@@ -54,8 +54,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>The identifier that Amazon Cognito returned with the previous request to this
+     * operation. When you include a pagination token in your request, Amazon Cognito
+     * returns the next set of items in the list. By use of this token, you can
+     * paginate through the full list of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

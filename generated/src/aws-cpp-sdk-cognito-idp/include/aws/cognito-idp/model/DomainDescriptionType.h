@@ -27,10 +27,7 @@ namespace Model
 
   /**
    * <p>A container for information about the user pool domain associated with the
-   * hosted UI and OAuth endpoints.</p> <p>This data type is a response parameter of
-   * <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html">DescribeUserPoolDomain</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * hosted UI and OAuth endpoints.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DomainDescriptionType">AWS
    * API Reference</a></p>
    */

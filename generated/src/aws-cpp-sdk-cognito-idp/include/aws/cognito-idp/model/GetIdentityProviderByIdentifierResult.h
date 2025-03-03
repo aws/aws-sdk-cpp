@@ -35,7 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity provider details.</p>
+     * <p>The configuration of the IdP in your user pool. Includes additional
+     * identifiers, the IdP name and type, and trust-relationship details like the
+     * issuer URL.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }

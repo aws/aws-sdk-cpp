@@ -47,6 +47,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the created domain.</p>
+     */
+    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
+    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
+    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
+    inline CreateDomainResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
+    inline CreateDomainResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
+    inline CreateDomainResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The URL to the created domain.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
@@ -71,6 +84,8 @@ namespace Model
   private:
 
     Aws::String m_domainArn;
+
+    Aws::String m_domainId;
 
     Aws::String m_url;
 

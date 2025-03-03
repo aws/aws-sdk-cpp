@@ -27,13 +27,7 @@ namespace Model
    * <p>The time units that, with <code>IdTokenValidity</code>,
    * <code>AccessTokenValidity</code>, and <code>RefreshTokenValidity</code>, set and
    * display the duration of ID, access, and refresh tokens for an app client. You
-   * can assign a separate token validity unit to each type of token. </p> <p>This
-   * data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p><p><h3>See
+   * can assign a separate token validity unit to each type of token. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/TokenValidityUnitsType">AWS
    * API Reference</a></p>

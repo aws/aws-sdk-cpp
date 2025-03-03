@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The Id of the user pool where you want to update your IdP.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -52,7 +52,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP name.</p>
+     * <p>The name of the IdP that you want to update. You can pass the identity
+     * provider name in the <code>identity_provider</code> query parameter of requests
+     * to the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize
+     * endpoint</a> to silently redirect to sign-in with the associated IdP.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
@@ -165,7 +169,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP attribute mapping to be changed.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.
+     * Specify a user pool attribute as the key of the key-value pair, and the IdP
+     * attribute claim name as the value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributeMapping() const{ return m_attributeMapping; }
     inline bool AttributeMappingHasBeenSet() const { return m_attributeMappingHasBeenSet; }
@@ -184,7 +190,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of IdP identifiers.</p>
+     * <p>An array of IdP identifiers, for example <code>"IdPIdentifiers": [ "MyIdP",
+     * "MyIdP2" ]</code>. Identifiers are friendly names that you can pass in the
+     * <code>idp_identifier</code> query parameter of requests to the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize
+     * endpoint</a> to silently redirect to sign-in with the associated IdP.
+     * Identifiers in a domain format also enable the use of <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html">email-address
+     * matching with SAML providers</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const{ return m_idpIdentifiers; }
     inline bool IdpIdentifiersHasBeenSet() const { return m_idpIdentifiersHasBeenSet; }

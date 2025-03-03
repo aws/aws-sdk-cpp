@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/ImageExtractionConfiguration.h>
+#include <aws/qbusiness/model/AudioExtractionConfiguration.h>
+#include <aws/qbusiness/model/VideoExtractionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -52,10 +54,42 @@ namespace Model
     inline MediaExtractionConfiguration& WithImageExtractionConfiguration(const ImageExtractionConfiguration& value) { SetImageExtractionConfiguration(value); return *this;}
     inline MediaExtractionConfiguration& WithImageExtractionConfiguration(ImageExtractionConfiguration&& value) { SetImageExtractionConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration settings for extracting and processing audio content from media
+     * files.</p>
+     */
+    inline const AudioExtractionConfiguration& GetAudioExtractionConfiguration() const{ return m_audioExtractionConfiguration; }
+    inline bool AudioExtractionConfigurationHasBeenSet() const { return m_audioExtractionConfigurationHasBeenSet; }
+    inline void SetAudioExtractionConfiguration(const AudioExtractionConfiguration& value) { m_audioExtractionConfigurationHasBeenSet = true; m_audioExtractionConfiguration = value; }
+    inline void SetAudioExtractionConfiguration(AudioExtractionConfiguration&& value) { m_audioExtractionConfigurationHasBeenSet = true; m_audioExtractionConfiguration = std::move(value); }
+    inline MediaExtractionConfiguration& WithAudioExtractionConfiguration(const AudioExtractionConfiguration& value) { SetAudioExtractionConfiguration(value); return *this;}
+    inline MediaExtractionConfiguration& WithAudioExtractionConfiguration(AudioExtractionConfiguration&& value) { SetAudioExtractionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration settings for extracting and processing video content from media
+     * files.</p>
+     */
+    inline const VideoExtractionConfiguration& GetVideoExtractionConfiguration() const{ return m_videoExtractionConfiguration; }
+    inline bool VideoExtractionConfigurationHasBeenSet() const { return m_videoExtractionConfigurationHasBeenSet; }
+    inline void SetVideoExtractionConfiguration(const VideoExtractionConfiguration& value) { m_videoExtractionConfigurationHasBeenSet = true; m_videoExtractionConfiguration = value; }
+    inline void SetVideoExtractionConfiguration(VideoExtractionConfiguration&& value) { m_videoExtractionConfigurationHasBeenSet = true; m_videoExtractionConfiguration = std::move(value); }
+    inline MediaExtractionConfiguration& WithVideoExtractionConfiguration(const VideoExtractionConfiguration& value) { SetVideoExtractionConfiguration(value); return *this;}
+    inline MediaExtractionConfiguration& WithVideoExtractionConfiguration(VideoExtractionConfiguration&& value) { SetVideoExtractionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     ImageExtractionConfiguration m_imageExtractionConfiguration;
     bool m_imageExtractionConfigurationHasBeenSet = false;
+
+    AudioExtractionConfiguration m_audioExtractionConfiguration;
+    bool m_audioExtractionConfigurationHasBeenSet = false;
+
+    VideoExtractionConfiguration m_videoExtractionConfiguration;
+    bool m_videoExtractionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

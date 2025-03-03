@@ -27,11 +27,7 @@ namespace Model
 
   /**
    * <p>The details of a resource server configuration and associated custom scopes
-   * in a user pool.</p> <p>This data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * in a user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResourceServerType">AWS
    * API Reference</a></p>
    */

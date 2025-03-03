@@ -50,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client ID for the token that you want to revoke.</p>
+     * <p>The ID of the app client where the token that you want to revoke was
+     * issued.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -64,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The secret for the client ID. This is required only if the client ID has a
+     * <p>The client secret of the requested app client, if the client has a
      * secret.</p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }

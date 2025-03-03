@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool.</p>
+     * <p>The ID of the user pool that you want to query for branding settings.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client ID for the client app.</p>
+     * <p>The ID of the app client that you want to query for branding settings.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }

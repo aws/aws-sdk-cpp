@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/rum/CloudWatchRUMRequest.h>
-#include <aws/rum/model/AppMonitorDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rum/model/AppMonitorDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rum/model/UserDetails.h>
 #include <aws/rum/model/RumEvent.h>
@@ -35,6 +35,25 @@ namespace Model
 
     AWS_CLOUDWATCHRUM_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>If the app monitor uses a resource-based policy that requires
+     * <code>PutRumEvents</code> requests to specify a certain alias, specify that
+     * alias here. This alias will be compared to the <code>rum:alias</code> context
+     * key in the resource-based policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using
+     * resource-based policies with CloudWatch RUM</a>.</p>
+     */
+    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
+    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
+    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
+    inline PutRumEventsRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
+    inline PutRumEventsRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
+    inline PutRumEventsRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -104,6 +123,9 @@ namespace Model
     inline PutRumEventsRequest& WithUserDetails(UserDetails&& value) { SetUserDetails(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_alias;
+    bool m_aliasHasBeenSet = false;
 
     AppMonitorDetails m_appMonitorDetails;
     bool m_appMonitorDetailsHasBeenSet = false;

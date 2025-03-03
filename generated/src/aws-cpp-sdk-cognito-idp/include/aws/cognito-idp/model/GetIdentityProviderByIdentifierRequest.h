@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where you want to get information about the IdP.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -50,7 +50,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP identifier.</p>
+     * <p>The identifier that you assigned to your user pool. The identifier is an
+     * alternative name for an IdP that is distinct from the IdP name. For example, an
+     * IdP with a name of <code>MyIdP</code> might have an identifier of the email
+     * domain <code>example.com</code>.</p>
      */
     inline const Aws::String& GetIdpIdentifier() const{ return m_idpIdentifier; }
     inline bool IdpIdentifierHasBeenSet() const { return m_idpIdentifierHasBeenSet; }

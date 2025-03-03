@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The logging parameters of a user pool, as returned in the response to a <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>The logging parameters of a user pool, as returned in the response to a
+   * <code>GetLogDeliveryConfiguration</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LogDeliveryConfigurationType">AWS
    * API Reference</a></p>
    */

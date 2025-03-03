@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags to assign to the user pool.</p>
+     * <p>An array of tag keys and values that you want to assign to the user pool.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

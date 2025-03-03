@@ -28,14 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>An image file from a managed login branding style in a user pool.</p> <p>This
-   * data type is a request parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateManagedLoginBranding.html">CreateManagedLoginBranding</a>
-   * and <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateManagedLoginBranding.html">UpdateManagedLoginBranding</a>,
-   * and a response parameter of <a
-   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBranding.html">DescribeManagedLoginBranding</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An image file from a managed login branding style in a user
+   * pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssetType">AWS
    * API Reference</a></p>
    */

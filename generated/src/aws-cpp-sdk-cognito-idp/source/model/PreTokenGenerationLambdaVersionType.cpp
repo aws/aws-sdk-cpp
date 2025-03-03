@@ -22,6 +22,7 @@ namespace Aws
 
         static const int V1_0_HASH = HashingUtils::HashString("V1_0");
         static const int V2_0_HASH = HashingUtils::HashString("V2_0");
+        static const int V3_0_HASH = HashingUtils::HashString("V3_0");
 
 
         PreTokenGenerationLambdaVersionType GetPreTokenGenerationLambdaVersionTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == V2_0_HASH)
           {
             return PreTokenGenerationLambdaVersionType::V2_0;
+          }
+          else if (hashCode == V3_0_HASH)
+          {
+            return PreTokenGenerationLambdaVersionType::V3_0;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "V1_0";
           case PreTokenGenerationLambdaVersionType::V2_0:
             return "V2_0";
+          case PreTokenGenerationLambdaVersionType::V3_0:
+            return "V3_0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

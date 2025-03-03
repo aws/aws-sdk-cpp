@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Advanced security configuration options for additional authentication types
+   * <p>Threat protection configuration options for additional authentication types
    * in your user pool, including custom authentication. </p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdvancedSecurityAdditionalFlowsType">AWS
@@ -41,8 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operating mode of advanced security features in custom authentication
-     * with <a
+     * <p>The operating mode of threat protection in custom authentication with <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">
      * Custom authentication challenge Lambda triggers</a>. </p>
      */

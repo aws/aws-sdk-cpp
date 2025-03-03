@@ -38,7 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool.</p>
+     * <p>The ID of the user pool that contains the resource server that you want to
+     * update.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -71,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the resource server.</p>
+     * <p>The updated name of the resource server.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -85,7 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The scope values to be set for the resource server.</p>
+     * <p>An array of updated custom scope names and descriptions that you want to
+     * associate with your resource server.</p>
      */
     inline const Aws::Vector<ResourceServerScopeType>& GetScopes() const{ return m_scopes; }
     inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }

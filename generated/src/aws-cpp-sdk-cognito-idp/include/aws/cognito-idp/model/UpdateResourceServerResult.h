@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource server.</p>
+     * <p>The updated details of the requested resource server.</p>
      */
     inline const ResourceServerType& GetResourceServer() const{ return m_resourceServer; }
     inline void SetResourceServer(const ResourceServerType& value) { m_resourceServer = value; }

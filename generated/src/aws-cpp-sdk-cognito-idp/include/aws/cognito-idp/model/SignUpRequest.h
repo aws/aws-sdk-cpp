@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client where the user wants to sign up.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -92,16 +92,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The password of the user you want to register.</p> <p>Users can sign up
-     * without a password when your user pool supports passwordless sign-in with email
-     * or SMS OTPs. To create a user with no password, omit this parameter or submit a
-     * blank value. You can only create a passwordless user when passwordless sign-in
-     * is available. See <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
-     * SignInPolicyType</a> property of <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.</p>
+     * <p>The user's proposed password. The password must comply with the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html">password
+     * requirements</a> of your user pool.</p> <p>Users can sign up without a password
+     * when your user pool supports passwordless sign-in with email or SMS OTPs. To
+     * create a user with no password, omit this parameter or submit a blank value. You
+     * can only create a passwordless user when passwordless sign-in is available.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
@@ -116,8 +112,8 @@ namespace Model
     ///@{
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
-     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
-     * name.</p>
+     * attributes, include a <code>custom:</code> prefix in the attribute name, for
+     * example <code>custom:department</code>.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
@@ -135,11 +131,10 @@ namespace Model
      * Lambda trigger. This set of key-value pairs are for custom validation of
      * information that you collect from your users but don't need to retain.</p>
      * <p>Your Lambda function can analyze this additional data and act on it. Your
-     * function might perform external API operations like logging user attributes and
-     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
-     * response that your function returns to Amazon Cognito, like automatically
-     * confirming the user if they sign up from within your network.</p> <p>For more
-     * information about the pre sign-up Lambda trigger, see <a
+     * function can automatically confirm and verify select users or perform external
+     * API operations like logging user attributes and validation data to Amazon
+     * CloudWatch Logs.</p> <p>For more information about the pre sign-up Lambda
+     * trigger, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
      * sign-up Lambda trigger</a>.</p>
      */
@@ -155,8 +150,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
-     * <code>SignUp</code> calls.</p>
+     * <p>Information that supports analytics outcomes with Amazon Pinpoint, including
+     * the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint
+     * push notifications, for example a device identifier, email address, or phone
+     * number.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
@@ -168,8 +165,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contextual data about your user session, such as the device fingerprint, IP
-     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * <p>Contextual data about your user session like the device fingerprint, IP
+     * address, or location. Amazon Cognito threat protection evaluates the risk of an
      * authentication event based on the context that your app generates and passes to
      * Amazon Cognito when it makes API requests.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
@@ -197,16 +194,16 @@ namespace Model
      * Lambda, you can process the <code>clientMetadata</code> value to enhance your
      * workflow for your specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-     * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the
-     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
-     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
-     * data is available only to Lambda triggers that are assigned to a user pool to
-     * support custom workflows. If your user pool configuration doesn't include
-     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
-     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
-     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
-     * information in this parameter.</p> </li> </ul> 
+     * Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+     *  <p>When you use the <code>ClientMetadata</code> parameter, note that
+     * Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * <code>ClientMetadata</code> value. This data is available only to Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration doesn't include triggers, the
+     * <code>ClientMetadata</code> parameter serves no purpose.</p> </li> <li>
+     * <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li> <p>Encrypt the
+     * <code>ClientMetadata</code> value. Don't send sensitive information in this
+     * parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }

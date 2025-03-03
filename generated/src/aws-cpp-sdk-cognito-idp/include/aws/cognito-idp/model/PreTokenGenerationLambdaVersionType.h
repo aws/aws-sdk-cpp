@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     V1_0,
-    V2_0
+    V2_0,
+    V3_0
   };
 
 namespace PreTokenGenerationLambdaVersionTypeMapper

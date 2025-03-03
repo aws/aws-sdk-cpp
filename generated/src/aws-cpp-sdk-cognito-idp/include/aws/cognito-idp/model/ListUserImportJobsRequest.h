@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the user pool that the users are being imported into.</p>
+     * <p>The ID of the user pool where you want to list import jobs.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -54,7 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of import jobs you want the request to return.</p>
+     * <p>The maximum number of import jobs that you want Amazon Cognito to return in
+     * the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

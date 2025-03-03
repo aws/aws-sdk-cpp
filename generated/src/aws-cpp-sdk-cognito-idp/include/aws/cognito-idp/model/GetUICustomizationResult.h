@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The UI customization information.</p>
+     * <p>Information about the classic hosted UI custom CSS and logo-image branding
+     * that you applied to the user pool or app client.</p>
      */
     inline const UICustomizationType& GetUICustomization() const{ return m_uICustomization; }
     inline void SetUICustomization(const UICustomizationType& value) { m_uICustomization = value; }
