@@ -6,16 +6,19 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/route53/Route53ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <aws/route53/Route53ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Route53
 {
+  AWS_ROUTE53_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS)
    * web service.</p> <p>You can use Route 53 to:</p> <ul> <li> <p>Register domain
@@ -29,12 +32,20 @@ namespace Route53
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
    * Route 53 checks the health of your resources</a>.</p> </li> </ul>
    */
-  class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>
+  class AWS_ROUTE53_API Route53Client : smithy::client::AwsSmithyClientT<Aws::Route53::SERVICE_NAME,
+      Aws::Route53::Route53ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Route53EndpointProviderBase,
+      smithy::client::XmlOutcomeSerializer,
+      smithy::client::XmlOutcome,
+      Aws::Client::Route53ErrorMarshaller>,
+    Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>
   {
     public:
-      typedef Aws::Client::AWSXMLClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Route 53"; }
 
       typedef Route53ClientConfiguration ClientConfigurationType;
       typedef Route53EndpointProvider EndpointProviderType;
@@ -86,7 +97,6 @@ namespace Route53
 
         /* End of legacy constructors due deprecation */
         virtual ~Route53Client();
-
 
         /**
          * <p>Activates a key-signing key (KSK) so that it can be used for signing by
@@ -2560,14 +2570,11 @@ namespace Route53
         }
 
 
-        void OverrideEndpoint(const Aws::String& endpoint);
-        std::shared_ptr<Route53EndpointProviderBase>& accessEndpointProvider();
-  private:
-        friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>;
-        void init(const Route53ClientConfiguration& clientConfiguration);
+      void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<Route53EndpointProviderBase>& accessEndpointProvider();
+    private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>;
 
-        Route53ClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Route53EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53
