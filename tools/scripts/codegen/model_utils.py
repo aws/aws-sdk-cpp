@@ -177,8 +177,9 @@ class ModelUtils(object):
             with open(models_dir + "/" + c2j_model_filename, 'r') as json_file:
                 model = json.load(json_file)
                 model_protocol = model.get("metadata", dict()).get("protocol", "UNKNOWN_PROTOCOL")
-                if model_protocol in {"json", "rest-json"}:
-                    use_smithy = True
+                # TODO: re-enable
+                # if model_protocol in {"json", "rest-json"}:
+                #     use_smithy = True
         return use_smithy
 
     @staticmethod
