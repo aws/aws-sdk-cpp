@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/directconnect/DirectConnectErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DirectConnect
 {
-  AWS_DIRECTCONNECT_API extern const char SERVICE_NAME[];
   /**
    * <p>Direct Connect links your internal network to an Direct Connect location over
    * a standard Ethernet fiber-optic cable. One end of the cable is connected to your
@@ -30,20 +26,12 @@ namespace DirectConnect
    * Regions. Amazon Web Services resources in the China Regions can only be accessed
    * through locations associated with those Regions.</p>
    */
-  class AWS_DIRECTCONNECT_API DirectConnectClient : smithy::client::AwsSmithyClientT<Aws::DirectConnect::SERVICE_NAME,
-      Aws::DirectConnect::DirectConnectClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DirectConnectEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DirectConnectErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>
+  class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Direct Connect"; }
 
       typedef DirectConnectClientConfiguration ClientConfigurationType;
       typedef DirectConnectEndpointProvider EndpointProviderType;
@@ -1881,7 +1869,10 @@ namespace DirectConnect
       std::shared_ptr<DirectConnectEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>;
+      void init(const DirectConnectClientConfiguration& clientConfiguration);
 
+      DirectConnectClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DirectConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DirectConnect

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support/SupportServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/support/SupportErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Support
 {
-  AWS_SUPPORT_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Web Services Support</fullname> <p>The <i>Amazon Web Services
    * Support API Reference</i> is intended for programmers who need detailed
@@ -59,20 +55,12 @@ namespace Support
    * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
    * User Guide</i>.</p>
    */
-  class AWS_SUPPORT_API SupportClient : smithy::client::AwsSmithyClientT<Aws::Support::SERVICE_NAME,
-      Aws::Support::SupportClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SupportEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SupportErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>
+  class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Support"; }
 
       typedef SupportClientConfiguration ClientConfigurationType;
       typedef SupportEndpointProvider EndpointProviderType;
@@ -784,7 +772,10 @@ namespace Support
       std::shared_ptr<SupportEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>;
+      void init(const SupportClientConfiguration& clientConfiguration);
 
+      SupportClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SupportEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Support

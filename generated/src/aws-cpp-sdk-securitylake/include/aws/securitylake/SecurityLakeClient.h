@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/securitylake/SecurityLakeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/securitylake/SecurityLakeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SecurityLake
 {
-  AWS_SECURITYLAKE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Security Lake is a fully managed security data lake service. You can
    * use Security Lake to automatically centralize security data from cloud,
@@ -53,20 +49,12 @@ namespace SecurityLake
    * services and third-party services can subscribe to the data that's stored in
    * Security Lake for incident response and security data analytics.</p>
    */
-  class AWS_SECURITYLAKE_API SecurityLakeClient : smithy::client::AwsSmithyClientT<Aws::SecurityLake::SERVICE_NAME,
-      Aws::SecurityLake::SecurityLakeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SecurityLakeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SecurityLakeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>
+  class AWS_SECURITYLAKE_API SecurityLakeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "SecurityLake"; }
 
       typedef SecurityLakeClientConfiguration ClientConfigurationType;
       typedef SecurityLakeEndpointProvider EndpointProviderType;
@@ -1038,7 +1026,10 @@ namespace SecurityLake
       std::shared_ptr<SecurityLakeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>;
+      void init(const SecurityLakeClientConfiguration& clientConfiguration);
 
+      SecurityLakeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SecurityLakeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SecurityLake

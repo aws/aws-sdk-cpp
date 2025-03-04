@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cleanrooms/CleanRoomsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/cleanrooms/CleanRoomsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CleanRooms
 {
-  AWS_CLEANROOMS_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the <i>Clean Rooms API Reference</i>.</p> <p>Clean Rooms is an
    * Amazon Web Services service that helps multiple parties to join their data
@@ -33,20 +29,12 @@ namespace CleanRooms
    * href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean
    * Rooms SQL Reference</a>.</p>
    */
-  class AWS_CLEANROOMS_API CleanRoomsClient : smithy::client::AwsSmithyClientT<Aws::CleanRooms::SERVICE_NAME,
-      Aws::CleanRooms::CleanRoomsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CleanRoomsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CleanRoomsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>
+  class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CleanRooms"; }
 
       typedef CleanRoomsClientConfiguration ClientConfigurationType;
       typedef CleanRoomsEndpointProvider EndpointProviderType;
@@ -2157,7 +2145,10 @@ namespace CleanRooms
       std::shared_ptr<CleanRoomsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>;
+      void init(const CleanRoomsClientConfiguration& clientConfiguration);
 
+      CleanRoomsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CleanRoomsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CleanRooms

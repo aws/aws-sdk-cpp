@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/migrationhub-config/MigrationHubConfigErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MigrationHubConfig
 {
-  AWS_MIGRATIONHUBCONFIG_API extern const char SERVICE_NAME[];
   /**
    * <p>The AWS Migration Hub home region APIs are available specifically for working
    * with your Migration Hub home region. You can use these APIs to determine a home
@@ -33,20 +29,12 @@ namespace MigrationHubConfig
    * home region.</p> </li> </ul> <p>For specific API usage, see the sections that
    * follow in this AWS Migration Hub Home Region API reference. </p>
    */
-  class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : smithy::client::AwsSmithyClientT<Aws::MigrationHubConfig::SERVICE_NAME,
-      Aws::MigrationHubConfig::MigrationHubConfigClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MigrationHubConfigEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MigrationHubConfigErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>
+  class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "MigrationHub Config"; }
 
       typedef MigrationHubConfigClientConfiguration ClientConfigurationType;
       typedef MigrationHubConfigEndpointProvider EndpointProviderType;
@@ -213,7 +201,10 @@ namespace MigrationHubConfig
       std::shared_ptr<MigrationHubConfigEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>;
+      void init(const MigrationHubConfigClientConfiguration& clientConfiguration);
 
+      MigrationHubConfigClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MigrationHubConfigEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MigrationHubConfig

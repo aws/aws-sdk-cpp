@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime/ChimeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/chime/ChimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Chime
 {
-  AWS_CHIME_API extern const char SERVICE_NAME[];
   /**
    *  <p> <b>Most of these APIs are no longer supported and will not be
    * updated.</b> We recommend using the latest versions in the <a
@@ -63,20 +59,12 @@ namespace Chime
    * and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration
    * Guide</i>.</p>
    */
-  class AWS_CHIME_API ChimeClient : smithy::client::AwsSmithyClientT<Aws::Chime::SERVICE_NAME,
-      Aws::Chime::ChimeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ChimeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ChimeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>
+  class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Chime"; }
 
       typedef ChimeClientConfiguration ClientConfigurationType;
       typedef ChimeEndpointProvider EndpointProviderType;
@@ -1854,7 +1842,10 @@ namespace Chime
       std::shared_ptr<ChimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>;
+      void init(const ChimeClientConfiguration& clientConfiguration);
 
+      ChimeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ChimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Chime

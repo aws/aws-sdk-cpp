@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecs/ECSServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/ecs/ECSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ECS
 {
-  AWS_ECS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Elastic Container Service</fullname> <p>Amazon Elastic
    * Container Service (Amazon ECS) is a highly scalable, fast, container management
@@ -36,20 +32,12 @@ namespace ECS
    * management systems. You also don't need to worry about scaling your management
    * infrastructure. </p>
    */
-  class AWS_ECS_API ECSClient : smithy::client::AwsSmithyClientT<Aws::ECS::SERVICE_NAME,
-      Aws::ECS::ECSClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ECSEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ECSErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
+  class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "ECS"; }
 
       typedef ECSClientConfiguration ClientConfigurationType;
       typedef ECSEndpointProvider EndpointProviderType;
@@ -2225,7 +2213,10 @@ namespace ECS
       std::shared_ptr<ECSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>;
+      void init(const ECSClientConfiguration& clientConfiguration);
 
+      ECSClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ECSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ECS

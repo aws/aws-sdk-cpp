@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-serverless/RedshiftServerlessServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/redshift-serverless/RedshiftServerlessErrorMarshaller.h>
 
 namespace Aws
 {
 namespace RedshiftServerless
 {
-  AWS_REDSHIFTSERVERLESS_API extern const char SERVICE_NAME[];
   /**
    * <p>This is an interface reference for Amazon Redshift Serverless. It contains
    * documentation for one of the programming or command line interfaces you can use
@@ -33,20 +29,12 @@ namespace RedshiftServerless
    * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-whatis.html">What
    * is Amazon Redshift Serverless?</a>.</p>
    */
-  class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : smithy::client::AwsSmithyClientT<Aws::RedshiftServerless::SERVICE_NAME,
-      Aws::RedshiftServerless::RedshiftServerlessClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      RedshiftServerlessEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::RedshiftServerlessErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>
+  class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Redshift Serverless"; }
 
       typedef RedshiftServerlessClientConfiguration ClientConfigurationType;
       typedef RedshiftServerlessEndpointProvider EndpointProviderType;
@@ -1634,7 +1622,10 @@ namespace RedshiftServerless
       std::shared_ptr<RedshiftServerlessEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>;
+      void init(const RedshiftServerlessClientConfiguration& clientConfiguration);
 
+      RedshiftServerlessClientConfiguration m_clientConfiguration;
+      std::shared_ptr<RedshiftServerlessEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RedshiftServerless

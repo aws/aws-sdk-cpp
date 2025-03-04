@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/memorydb/MemoryDBServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/memorydb/MemoryDBErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MemoryDB
 {
-  AWS_MEMORYDB_API extern const char SERVICE_NAME[];
   /**
    * <p>MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that
    * delivers ultra-fast performance and Multi-AZ durability for modern applications
@@ -28,20 +24,12 @@ namespace MemoryDB
    * leverage Redis OSS’ flexible and friendly data structures, APIs, and
    * commands.</p>
    */
-  class AWS_MEMORYDB_API MemoryDBClient : smithy::client::AwsSmithyClientT<Aws::MemoryDB::SERVICE_NAME,
-      Aws::MemoryDB::MemoryDBClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MemoryDBEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MemoryDBErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>
+  class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "MemoryDB"; }
 
       typedef MemoryDBClientConfiguration ClientConfigurationType;
       typedef MemoryDBEndpointProvider EndpointProviderType;
@@ -1260,7 +1248,10 @@ namespace MemoryDB
       std::shared_ptr<MemoryDBEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>;
+      void init(const MemoryDBClientConfiguration& clientConfiguration);
 
+      MemoryDBClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MemoryDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MemoryDB

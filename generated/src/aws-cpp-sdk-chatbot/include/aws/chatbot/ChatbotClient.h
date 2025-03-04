@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chatbot/ChatbotServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/chatbot/ChatbotErrorMarshaller.h>
 
 namespace Aws
 {
 namespace chatbot
 {
-  AWS_CHATBOT_API extern const char SERVICE_NAME[];
   /**
    * <p>The <i>AWS Chatbot API Reference</i> provides descriptions, API request
    * parameters, and the XML response for each of the AWS Chatbot API actions.</p>
@@ -32,20 +28,12 @@ namespace chatbot
    * logged in whatever Region you call from, not US East (N. Virginia) by
    * default.</p> 
    */
-  class AWS_CHATBOT_API ChatbotClient : smithy::client::AwsSmithyClientT<Aws::chatbot::SERVICE_NAME,
-      Aws::chatbot::ChatbotClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ChatbotEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ChatbotErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>
+  class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "chatbot"; }
 
       typedef ChatbotClientConfiguration ClientConfigurationType;
       typedef ChatbotEndpointProvider EndpointProviderType;
@@ -983,7 +971,10 @@ namespace chatbot
       std::shared_ptr<ChatbotEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>;
+      void init(const ChatbotClientConfiguration& clientConfiguration);
 
+      ChatbotClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ChatbotEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace chatbot

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/eks/EKSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EKS
 {
-  AWS_EKS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that
    * makes it easy for you to run Kubernetes on Amazon Web Services without needing
@@ -32,20 +28,12 @@ namespace EKS
    * means that you can easily migrate any standard Kubernetes application to Amazon
    * EKS without any code modification required.</p>
    */
-  class AWS_EKS_API EKSClient : smithy::client::AwsSmithyClientT<Aws::EKS::SERVICE_NAME,
-      Aws::EKS::EKSClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      EKSEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::EKSErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
+  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "EKS"; }
 
       typedef EKSClientConfiguration ClientConfigurationType;
       typedef EKSEndpointProvider EndpointProviderType;
@@ -1837,7 +1825,10 @@ namespace EKS
       std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
+      void init(const EKSClientConfiguration& clientConfiguration);
 
+      EKSClientConfiguration m_clientConfiguration;
+      std::shared_ptr<EKSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EKS

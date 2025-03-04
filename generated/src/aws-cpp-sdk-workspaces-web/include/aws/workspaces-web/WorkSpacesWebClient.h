@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-web/WorkSpacesWebServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/workspaces-web/WorkSpacesWebErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkSpacesWeb
 {
-  AWS_WORKSPACESWEB_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon WorkSpaces Secure Browser is a low cost, fully managed WorkSpace built
    * specifically to facilitate secure, web-based workloads. WorkSpaces Secure
@@ -29,20 +25,12 @@ namespace WorkSpacesWeb
    * common tasks like capacity management, scaling, and maintaining browser
    * images.</p>
    */
-  class AWS_WORKSPACESWEB_API WorkSpacesWebClient : smithy::client::AwsSmithyClientT<Aws::WorkSpacesWeb::SERVICE_NAME,
-      Aws::WorkSpacesWeb::WorkSpacesWebClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      WorkSpacesWebEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::WorkSpacesWebErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>
+  class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "WorkSpaces Web"; }
 
       typedef WorkSpacesWebClientConfiguration ClientConfigurationType;
       typedef WorkSpacesWebEndpointProvider EndpointProviderType;
@@ -1833,7 +1821,10 @@ namespace WorkSpacesWeb
       std::shared_ptr<WorkSpacesWebEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>;
+      void init(const WorkSpacesWebClientConfiguration& clientConfiguration);
 
+      WorkSpacesWebClientConfiguration m_clientConfiguration;
+      std::shared_ptr<WorkSpacesWebEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkSpacesWeb

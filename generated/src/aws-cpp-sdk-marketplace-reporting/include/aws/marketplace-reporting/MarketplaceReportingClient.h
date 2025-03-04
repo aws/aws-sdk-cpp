@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-reporting/MarketplaceReportingServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/marketplace-reporting/MarketplaceReportingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MarketplaceReporting
 {
-  AWS_MARKETPLACEREPORTING_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Web Services Marketplace <code>GetBuyerDashboard</code> API
    * enables you to get a procurement insights dashboard programmatically. The API
@@ -72,20 +68,12 @@ namespace MarketplaceReporting
    * access to Organizations</a> in the <i>Amazon Web Services Marketplace Buyer
    * Guide</i>.</p> </li> </ul>
    */
-  class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient : smithy::client::AwsSmithyClientT<Aws::MarketplaceReporting::SERVICE_NAME,
-      Aws::MarketplaceReporting::MarketplaceReportingClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MarketplaceReportingEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MarketplaceReportingErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>
+  class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Marketplace Reporting"; }
 
       typedef MarketplaceReportingClientConfiguration ClientConfigurationType;
       typedef MarketplaceReportingEndpointProvider EndpointProviderType;
@@ -177,7 +165,10 @@ namespace MarketplaceReporting
       std::shared_ptr<MarketplaceReportingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>;
+      void init(const MarketplaceReportingClientConfiguration& clientConfiguration);
 
+      MarketplaceReportingClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MarketplaceReportingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MarketplaceReporting

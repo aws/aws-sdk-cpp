@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/serverlessrepo/ServerlessApplicationRepositoryErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ServerlessApplicationRepository
 {
-  AWS_SERVERLESSAPPLICATIONREPOSITORY_API extern const char SERVICE_NAME[];
   /**
    * <p>The AWS Serverless Application Repository makes it easy for developers and
    * enterprises to quickly find
@@ -66,20 +62,12 @@ namespace ServerlessApplicationRepository
    * </li>
  </ul>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryClient : smithy::client::AwsSmithyClientT<Aws::ServerlessApplicationRepository::SERVICE_NAME,
-      Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ServerlessApplicationRepositoryEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ServerlessApplicationRepositoryErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>
+  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "ServerlessApplicationRepository"; }
 
       typedef ServerlessApplicationRepositoryClientConfiguration ClientConfigurationType;
       typedef ServerlessApplicationRepositoryEndpointProvider EndpointProviderType;
@@ -498,7 +486,10 @@ namespace ServerlessApplicationRepository
       std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>;
+      void init(const ServerlessApplicationRepositoryClientConfiguration& clientConfiguration);
 
+      ServerlessApplicationRepositoryClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ServerlessApplicationRepository

@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/mediapackage-vod/MediaPackageVodErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MediaPackageVod
 {
-  AWS_MEDIAPACKAGEVOD_API extern const char SERVICE_NAME[];
   /**
    * AWS Elemental MediaPackage VOD
    */
-  class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : smithy::client::AwsSmithyClientT<Aws::MediaPackageVod::SERVICE_NAME,
-      Aws::MediaPackageVod::MediaPackageVodClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MediaPackageVodEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MediaPackageVodErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>
+  class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "MediaPackage Vod"; }
 
       typedef MediaPackageVodClientConfiguration ClientConfigurationType;
       typedef MediaPackageVodEndpointProvider EndpointProviderType;
@@ -532,7 +520,10 @@ namespace MediaPackageVod
       std::shared_ptr<MediaPackageVodEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>;
+      void init(const MediaPackageVodClientConfiguration& clientConfiguration);
 
+      MediaPackageVodClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MediaPackageVodEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaPackageVod

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/workspaces-thin-client/WorkSpacesThinClientErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkSpacesThinClient
 {
-  AWS_WORKSPACESTHINCLIENT_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon WorkSpaces Thin Client is an affordable device built to work with
    * Amazon Web Services End User Computing (EUC) virtual desktops to provide users
@@ -38,20 +34,12 @@ namespace WorkSpacesThinClient
    * href="https://docs.aws.amazon.com/cli/latest/reference/workspaces-thin-client/index.html">WorkSpaces
    * Thin Client section of the CLI Reference</a>.</p>
    */
-  class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient : smithy::client::AwsSmithyClientT<Aws::WorkSpacesThinClient::SERVICE_NAME,
-      Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      WorkSpacesThinClientEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::WorkSpacesThinClientErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>
+  class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "WorkSpaces Thin Client"; }
 
       typedef WorkSpacesThinClientClientConfiguration ClientConfigurationType;
       typedef WorkSpacesThinClientEndpointProvider EndpointProviderType;
@@ -511,7 +499,10 @@ namespace WorkSpacesThinClient
       std::shared_ptr<WorkSpacesThinClientEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>;
+      void init(const WorkSpacesThinClientClientConfiguration& clientConfiguration);
 
+      WorkSpacesThinClientClientConfiguration m_clientConfiguration;
+      std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkSpacesThinClient

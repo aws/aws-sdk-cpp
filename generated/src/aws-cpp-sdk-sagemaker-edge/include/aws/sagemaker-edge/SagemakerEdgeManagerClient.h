@@ -6,37 +6,25 @@
 #pragma once
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/sagemaker-edge/SagemakerEdgeManagerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SagemakerEdgeManager
 {
-  AWS_SAGEMAKEREDGEMANAGER_API extern const char SERVICE_NAME[];
   /**
    * <p>SageMaker Edge Manager dataplane service for communicating with active
    * agents.</p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient : smithy::client::AwsSmithyClientT<Aws::SagemakerEdgeManager::SERVICE_NAME,
-      Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SagemakerEdgeManagerEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SagemakerEdgeManagerErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>
+  class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Sagemaker Edge"; }
 
       typedef SagemakerEdgeManagerClientConfiguration ClientConfigurationType;
       typedef SagemakerEdgeManagerEndpointProvider EndpointProviderType;
@@ -172,7 +160,10 @@ namespace SagemakerEdgeManager
       std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>;
+      void init(const SagemakerEdgeManagerClientConfiguration& clientConfiguration);
 
+      SagemakerEdgeManagerClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SagemakerEdgeManager

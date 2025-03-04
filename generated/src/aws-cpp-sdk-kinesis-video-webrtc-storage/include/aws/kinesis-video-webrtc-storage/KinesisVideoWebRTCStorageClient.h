@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorage_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KinesisVideoWebRTCStorage
 {
-  AWS_KINESISVIDEOWEBRTCSTORAGE_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>webrtc</fullname> <p> </p></p>
    */
-  class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageClient : smithy::client::AwsSmithyClientT<Aws::KinesisVideoWebRTCStorage::SERVICE_NAME,
-      Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      KinesisVideoWebRTCStorageEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::KinesisVideoWebRTCStorageErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>
+  class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Kinesis Video WebRTC Storage"; }
 
       typedef KinesisVideoWebRTCStorageClientConfiguration ClientConfigurationType;
       typedef KinesisVideoWebRTCStorageEndpointProvider EndpointProviderType;
@@ -187,7 +175,10 @@ namespace KinesisVideoWebRTCStorage
       std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>;
+      void init(const KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration);
 
+      KinesisVideoWebRTCStorageClientConfiguration m_clientConfiguration;
+      std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideoWebRTCStorage

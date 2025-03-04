@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeconnections/CodeConnectionsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/codeconnections/CodeConnectionsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeConnections
 {
-  AWS_CODECONNECTIONS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>AWS CodeConnections</fullname> <p>This Amazon Web Services
    * CodeConnections API Reference provides descriptions and usage examples of the
@@ -61,20 +57,12 @@ namespace CodeConnections
    * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
    * Tools User Guide</a>.</p>
    */
-  class AWS_CODECONNECTIONS_API CodeConnectionsClient : smithy::client::AwsSmithyClientT<Aws::CodeConnections::SERVICE_NAME,
-      Aws::CodeConnections::CodeConnectionsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CodeConnectionsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CodeConnectionsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CodeConnectionsClient>
+  class AWS_CODECONNECTIONS_API CodeConnectionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeConnectionsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CodeConnections"; }
 
       typedef CodeConnectionsClientConfiguration ClientConfigurationType;
       typedef CodeConnectionsEndpointProvider EndpointProviderType;
@@ -849,7 +837,10 @@ namespace CodeConnections
       std::shared_ptr<CodeConnectionsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeConnectionsClient>;
+      void init(const CodeConnectionsClientConfiguration& clientConfiguration);
 
+      CodeConnectionsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CodeConnectionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeConnections

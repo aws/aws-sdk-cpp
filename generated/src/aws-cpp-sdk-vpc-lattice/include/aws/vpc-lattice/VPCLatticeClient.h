@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/vpc-lattice/VPCLatticeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/vpc-lattice/VPCLatticeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace VPCLattice
 {
-  AWS_VPCLATTICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon VPC Lattice is a fully managed application networking service that you
    * use to connect, secure, and monitor all of your services across multiple
@@ -28,20 +24,12 @@ namespace VPCLattice
    * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/">Amazon VPC Lattice
    * User Guide</a> </p>
    */
-  class AWS_VPCLATTICE_API VPCLatticeClient : smithy::client::AwsSmithyClientT<Aws::VPCLattice::SERVICE_NAME,
-      Aws::VPCLattice::VPCLatticeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      VPCLatticeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::VPCLatticeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<VPCLatticeClient>
+  class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VPCLatticeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "VPC Lattice"; }
 
       typedef VPCLatticeClientConfiguration ClientConfigurationType;
       typedef VPCLatticeEndpointProvider EndpointProviderType;
@@ -1983,7 +1971,10 @@ namespace VPCLattice
       std::shared_ptr<VPCLatticeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<VPCLatticeClient>;
+      void init(const VPCLatticeClientConfiguration& clientConfiguration);
 
+      VPCLatticeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<VPCLatticeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace VPCLattice

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wisdom/ConnectWisdomServiceServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/wisdom/ConnectWisdomServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ConnectWisdomService
 {
-  AWS_CONNECTWISDOMSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Connect Wisdom delivers agents the information they need to solve
    * customer issues as they're actively speaking with customers. Agents can search
@@ -26,20 +22,12 @@ namespace ConnectWisdomService
    * quickly. Use Amazon Connect Wisdom to create an assistant and a knowledge base,
    * for example, or manage content by uploading custom files.</p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient : smithy::client::AwsSmithyClientT<Aws::ConnectWisdomService::SERVICE_NAME,
-      Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ConnectWisdomServiceEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ConnectWisdomServiceErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>
+  class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Wisdom"; }
 
       typedef ConnectWisdomServiceClientConfiguration ClientConfigurationType;
       typedef ConnectWisdomServiceEndpointProvider EndpointProviderType;
@@ -1136,7 +1124,10 @@ namespace ConnectWisdomService
       std::shared_ptr<ConnectWisdomServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>;
+      void init(const ConnectWisdomServiceClientConfiguration& clientConfiguration);
 
+      ConnectWisdomServiceClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectWisdomService

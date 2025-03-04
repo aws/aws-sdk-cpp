@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/pricing/Pricing_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pricing/PricingServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/pricing/PricingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Pricing
 {
-  AWS_PRICING_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Web Services Price List API is a centralized and convenient way to
    * programmatically query Amazon Web Services for services, products, and pricing
@@ -41,20 +37,12 @@ namespace Pricing
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Using
    * the Amazon Web Services Price List API</a> in the <i>Billing User Guide</i>.</p>
    */
-  class AWS_PRICING_API PricingClient : smithy::client::AwsSmithyClientT<Aws::Pricing::SERVICE_NAME,
-      Aws::Pricing::PricingClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PricingEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PricingErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>
+  class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Pricing"; }
 
       typedef PricingClientConfiguration ClientConfigurationType;
       typedef PricingEndpointProvider EndpointProviderType;
@@ -273,7 +261,10 @@ namespace Pricing
       std::shared_ptr<PricingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>;
+      void init(const PricingClientConfiguration& clientConfiguration);
 
+      PricingClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PricingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Pricing

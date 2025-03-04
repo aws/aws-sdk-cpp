@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/quicksight/QuickSightErrorMarshaller.h>
 
 namespace Aws
 {
 namespace QuickSight
 {
-  AWS_QUICKSIGHT_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon QuickSight API Reference</fullname> <p>Amazon QuickSight is a
    * fully managed, serverless business intelligence service for the Amazon Web
@@ -26,20 +22,12 @@ namespace QuickSight
    * your organization. This API reference contains documentation for a programming
    * interface that you can use to manage Amazon QuickSight. </p>
    */
-  class AWS_QUICKSIGHT_API QuickSightClient : smithy::client::AwsSmithyClientT<Aws::QuickSight::SERVICE_NAME,
-      Aws::QuickSight::QuickSightClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      QuickSightEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::QuickSightErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>
+  class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "QuickSight"; }
 
       typedef QuickSightClientConfiguration ClientConfigurationType;
       typedef QuickSightEndpointProvider EndpointProviderType;
@@ -5880,7 +5868,10 @@ namespace QuickSight
       std::shared_ptr<QuickSightEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>;
+      void init(const QuickSightClientConfiguration& clientConfiguration);
 
+      QuickSightClientConfiguration m_clientConfiguration;
+      std::shared_ptr<QuickSightEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace QuickSight

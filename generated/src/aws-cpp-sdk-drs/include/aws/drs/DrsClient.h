@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/drs/DrsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/drs/DrsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace drs
 {
-  AWS_DRS_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS Elastic Disaster Recovery Service.</p>
    */
-  class AWS_DRS_API DrsClient : smithy::client::AwsSmithyClientT<Aws::drs::SERVICE_NAME,
-      Aws::drs::DrsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DrsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DrsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>
+  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "drs"; }
 
       typedef DrsClientConfiguration ClientConfigurationType;
       typedef DrsEndpointProvider EndpointProviderType;
@@ -1400,7 +1388,10 @@ namespace drs
       std::shared_ptr<DrsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;
+      void init(const DrsClientConfiguration& clientConfiguration);
 
+      DrsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DrsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace drs

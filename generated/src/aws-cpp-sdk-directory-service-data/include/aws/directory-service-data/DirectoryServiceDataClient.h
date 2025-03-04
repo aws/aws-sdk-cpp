@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directory-service-data/DirectoryServiceDataServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/directory-service-data/DirectoryServiceDataErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DirectoryServiceData
 {
-  AWS_DIRECTORYSERVICEDATA_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon Web Services Directory Service Data is an extension of Directory
    * Service. This API reference provides detailed information about Directory
@@ -70,20 +66,12 @@ namespace DirectoryServiceData
    * vs additional Regions</a> in the <i>Directory Service Administration Guide</i>.
    * </p>
    */
-  class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient : smithy::client::AwsSmithyClientT<Aws::DirectoryServiceData::SERVICE_NAME,
-      Aws::DirectoryServiceData::DirectoryServiceDataClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DirectoryServiceDataEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DirectoryServiceDataErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>
+  class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Directory Service Data"; }
 
       typedef DirectoryServiceDataClientConfiguration ClientConfigurationType;
       typedef DirectoryServiceDataEndpointProvider EndpointProviderType;
@@ -610,7 +598,10 @@ namespace DirectoryServiceData
       std::shared_ptr<DirectoryServiceDataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>;
+      void init(const DirectoryServiceDataClientConfiguration& clientConfiguration);
 
+      DirectoryServiceDataClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DirectoryServiceDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DirectoryServiceData

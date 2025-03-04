@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/budgets/BudgetsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/budgets/BudgetsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Budgets
 {
-  AWS_BUDGETS_API extern const char SERVICE_NAME[];
   /**
    * <p>Use the Amazon Web Services Budgets API to plan your service usage, service
    * costs, and instance reservations. This API reference provides descriptions,
@@ -47,20 +43,12 @@ namespace Budgets
    * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">Amazon
    * Web Services Cost Management Pricing</a>.</p>
    */
-  class AWS_BUDGETS_API BudgetsClient : smithy::client::AwsSmithyClientT<Aws::Budgets::SERVICE_NAME,
-      Aws::Budgets::BudgetsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      BudgetsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::BudgetsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>
+  class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Budgets"; }
 
       typedef BudgetsClientConfiguration ClientConfigurationType;
       typedef BudgetsEndpointProvider EndpointProviderType;
@@ -810,7 +798,10 @@ namespace Budgets
       std::shared_ptr<BudgetsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>;
+      void init(const BudgetsClientConfiguration& clientConfiguration);
 
+      BudgetsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<BudgetsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Budgets

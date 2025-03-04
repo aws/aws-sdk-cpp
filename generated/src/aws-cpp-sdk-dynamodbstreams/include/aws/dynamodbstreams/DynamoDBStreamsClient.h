@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/dynamodbstreams/DynamoDBStreamsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DynamoDBStreams
 {
-  AWS_DYNAMODBSTREAMS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB Streams provides API
    * actions for accessing streams and processing stream records. To learn more about
@@ -27,20 +23,12 @@ namespace DynamoDBStreams
    * Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer
    * Guide.</p>
    */
-  class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : smithy::client::AwsSmithyClientT<Aws::DynamoDBStreams::SERVICE_NAME,
-      Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DynamoDBStreamsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DynamoDBStreamsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>
+  class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "DynamoDB Streams"; }
 
       typedef DynamoDBStreamsClientConfiguration ClientConfigurationType;
       typedef DynamoDBStreamsEndpointProvider EndpointProviderType;
@@ -224,7 +212,10 @@ namespace DynamoDBStreams
       std::shared_ptr<DynamoDBStreamsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>;
+      void init(const DynamoDBStreamsClientConfiguration& clientConfiguration);
 
+      DynamoDBStreamsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DynamoDBStreamsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DynamoDBStreams

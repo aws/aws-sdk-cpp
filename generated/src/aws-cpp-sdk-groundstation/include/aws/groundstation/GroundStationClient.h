@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/groundstation/GroundStationServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/groundstation/GroundStationErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GroundStation
 {
-  AWS_GROUNDSTATION_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the AWS Ground Station API Reference. AWS Ground Station is a
    * fully managed service that enables you to control satellite communications,
@@ -26,20 +22,12 @@ namespace GroundStation
    * efficiently and cost-effectively without having to build or manage your own
    * ground station infrastructure.</p>
    */
-  class AWS_GROUNDSTATION_API GroundStationClient : smithy::client::AwsSmithyClientT<Aws::GroundStation::SERVICE_NAME,
-      Aws::GroundStation::GroundStationClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      GroundStationEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::GroundStationErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>
+  class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "GroundStation"; }
 
       typedef GroundStationClientConfiguration ClientConfigurationType;
       typedef GroundStationEndpointProvider EndpointProviderType;
@@ -951,7 +939,10 @@ namespace GroundStation
       std::shared_ptr<GroundStationEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>;
+      void init(const GroundStationClientConfiguration& clientConfiguration);
 
+      GroundStationClientConfiguration m_clientConfiguration;
+      std::shared_ptr<GroundStationEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GroundStation

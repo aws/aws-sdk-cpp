@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/chime-sdk-identity/ChimeSDKIdentityErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ChimeSDKIdentity
 {
-  AWS_CHIMESDKIDENTITY_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Chime SDK Identity APIs in this section allow software developers
    * to create and manage unique instances of their messaging applications. These
@@ -27,20 +23,12 @@ namespace ChimeSDKIdentity
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Identity.html">Amazon
    * Chime SDK identity</a>.</p>
    */
-  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : smithy::client::AwsSmithyClientT<Aws::ChimeSDKIdentity::SERVICE_NAME,
-      Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ChimeSDKIdentityEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ChimeSDKIdentityErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>
+  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Chime SDK Identity"; }
 
       typedef ChimeSDKIdentityClientConfiguration ClientConfigurationType;
       typedef ChimeSDKIdentityEndpointProvider EndpointProviderType;
@@ -891,7 +879,10 @@ namespace ChimeSDKIdentity
       std::shared_ptr<ChimeSDKIdentityEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>;
+      void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
 
+      ChimeSDKIdentityClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKIdentity

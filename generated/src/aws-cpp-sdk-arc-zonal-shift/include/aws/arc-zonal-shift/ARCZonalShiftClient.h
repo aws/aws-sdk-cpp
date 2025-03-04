@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/arc-zonal-shift/ARCZonalShiftErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ARCZonalShift
 {
-  AWS_ARCZONALSHIFT_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the API Reference Guide for zonal shift and zonal autoshift in
    * Amazon Route 53 Application Recovery Controller (Route 53 ARC).</p> <p>You can
@@ -59,20 +55,12 @@ namespace ARCZonalShift
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html">Amazon
    * Route 53 Application Recovery Controller Developer Guide</a>.</p>
    */
-  class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : smithy::client::AwsSmithyClientT<Aws::ARCZonalShift::SERVICE_NAME,
-      Aws::ARCZonalShift::ARCZonalShiftClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ARCZonalShiftEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ARCZonalShiftErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>
+  class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "ARC Zonal Shift"; }
 
       typedef ARCZonalShiftClientConfiguration ClientConfigurationType;
       typedef ARCZonalShiftEndpointProvider EndpointProviderType;
@@ -548,7 +536,10 @@ namespace ARCZonalShift
       std::shared_ptr<ARCZonalShiftEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>;
+      void init(const ARCZonalShiftClientConfiguration& clientConfiguration);
 
+      ARCZonalShiftClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ARCZonalShiftEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ARCZonalShift

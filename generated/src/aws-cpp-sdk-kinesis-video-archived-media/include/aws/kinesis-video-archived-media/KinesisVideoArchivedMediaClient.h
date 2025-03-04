@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KinesisVideoArchivedMedia
 {
-  AWS_KINESISVIDEOARCHIVEDMEDIA_API extern const char SERVICE_NAME[];
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient : smithy::client::AwsSmithyClientT<Aws::KinesisVideoArchivedMedia::SERVICE_NAME,
-      Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      KinesisVideoArchivedMediaEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::KinesisVideoArchivedMediaErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>
+  class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Kinesis Video Archived Media"; }
 
       typedef KinesisVideoArchivedMediaClientConfiguration ClientConfigurationType;
       typedef KinesisVideoArchivedMediaEndpointProvider EndpointProviderType;
@@ -547,7 +535,10 @@ namespace KinesisVideoArchivedMedia
       std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>;
+      void init(const KinesisVideoArchivedMediaClientConfiguration& clientConfiguration);
 
+      KinesisVideoArchivedMediaClientConfiguration m_clientConfiguration;
+      std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideoArchivedMedia

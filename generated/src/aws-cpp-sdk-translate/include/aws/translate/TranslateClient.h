@@ -6,37 +6,25 @@
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/translate/TranslateServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/translate/TranslateErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Translate
 {
-  AWS_TRANSLATE_API extern const char SERVICE_NAME[];
   /**
    * <p>Provides translation of the input content from the source language to the
    * target language.</p>
    */
-  class AWS_TRANSLATE_API TranslateClient : smithy::client::AwsSmithyClientT<Aws::Translate::SERVICE_NAME,
-      Aws::Translate::TranslateClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      TranslateEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::TranslateErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>
+  class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Translate"; }
 
       typedef TranslateClientConfiguration ClientConfigurationType;
       typedef TranslateEndpointProvider EndpointProviderType;
@@ -630,7 +618,10 @@ namespace Translate
       std::shared_ptr<TranslateEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>;
+      void init(const TranslateClientConfiguration& clientConfiguration);
 
+      TranslateClientConfiguration m_clientConfiguration;
+      std::shared_ptr<TranslateEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Translate

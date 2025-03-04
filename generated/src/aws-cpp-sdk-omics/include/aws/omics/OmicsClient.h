@@ -6,38 +6,26 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/omics/OmicsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/omics/OmicsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Omics
 {
-  AWS_OMICS_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the
    * service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS
    * HealthOmics?</a> in the <i>AWS HealthOmics User Guide</i>.</p>
    */
-  class AWS_OMICS_API OmicsClient : smithy::client::AwsSmithyClientT<Aws::Omics::SERVICE_NAME,
-      Aws::Omics::OmicsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      OmicsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::OmicsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>
+  class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Omics"; }
 
       typedef OmicsClientConfiguration ClientConfigurationType;
       typedef OmicsEndpointProvider EndpointProviderType;
@@ -2437,7 +2425,10 @@ namespace Omics
       std::shared_ptr<OmicsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>;
+      void init(const OmicsClientConfiguration& clientConfiguration);
 
+      OmicsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<OmicsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Omics

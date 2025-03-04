@@ -6,37 +6,25 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BedrockAgentRuntime
 {
-  AWS_BEDROCKAGENTRUNTIME_API extern const char SERVICE_NAME[];
   /**
    * <p>Contains APIs related to model invocation and querying of knowledge
    * bases.</p>
    */
-  class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient : smithy::client::AwsSmithyClientT<Aws::BedrockAgentRuntime::SERVICE_NAME,
-      Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      BedrockAgentRuntimeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::BedrockAgentRuntimeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>
+  class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Bedrock Agent Runtime"; }
 
       typedef BedrockAgentRuntimeClientConfiguration ClientConfigurationType;
       typedef BedrockAgentRuntimeEndpointProvider EndpointProviderType;
@@ -881,7 +869,10 @@ namespace BedrockAgentRuntime
       std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>;
+      void init(const BedrockAgentRuntimeClientConfiguration& clientConfiguration);
 
+      BedrockAgentRuntimeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BedrockAgentRuntime

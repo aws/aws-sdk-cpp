@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint/PinpointServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/pinpoint/PinpointErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Pinpoint
 {
-  AWS_PINPOINT_API extern const char SERVICE_NAME[];
   /**
    * <p>Doc Engage API - Amazon Pinpoint API</p>
    */
-  class AWS_PINPOINT_API PinpointClient : smithy::client::AwsSmithyClientT<Aws::Pinpoint::SERVICE_NAME,
-      Aws::Pinpoint::PinpointClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PinpointEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PinpointErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>
+  class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Pinpoint"; }
 
       typedef PinpointClientConfiguration ClientConfigurationType;
       typedef PinpointEndpointProvider EndpointProviderType;
@@ -3268,7 +3256,10 @@ namespace Pinpoint
       std::shared_ptr<PinpointEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>;
+      void init(const PinpointClientConfiguration& clientConfiguration);
 
+      PinpointClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PinpointEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Pinpoint

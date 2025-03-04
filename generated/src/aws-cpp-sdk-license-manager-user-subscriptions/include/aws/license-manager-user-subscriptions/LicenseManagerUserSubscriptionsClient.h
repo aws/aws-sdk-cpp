@@ -6,37 +6,25 @@
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LicenseManagerUserSubscriptions
 {
-  AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API extern const char SERVICE_NAME[];
   /**
    * <p>With License Manager, you can create user-based subscriptions to utilize
    * licensed software with a per user subscription fee on Amazon EC2 instances.</p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : smithy::client::AwsSmithyClientT<Aws::LicenseManagerUserSubscriptions::SERVICE_NAME,
-      Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      LicenseManagerUserSubscriptionsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::LicenseManagerUserSubscriptionsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>
+  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "License Manager User Subscriptions"; }
 
       typedef LicenseManagerUserSubscriptionsClientConfiguration ClientConfigurationType;
       typedef LicenseManagerUserSubscriptionsEndpointProvider EndpointProviderType;
@@ -546,7 +534,10 @@ namespace LicenseManagerUserSubscriptions
       std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>;
+      void init(const LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration);
 
+      LicenseManagerUserSubscriptionsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LicenseManagerUserSubscriptions

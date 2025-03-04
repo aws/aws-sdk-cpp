@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ChimeSDKMeetings
 {
-  AWS_CHIMESDKMEETINGS_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Chime SDK meetings APIs in this section allow software developers
    * to create Amazon Chime SDK meetings, set the Amazon Web Services Regions for
@@ -27,20 +23,12 @@ namespace ChimeSDKMeetings
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
    * Chime SDK meetings</a>.</p>
    */
-  class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : smithy::client::AwsSmithyClientT<Aws::ChimeSDKMeetings::SERVICE_NAME,
-      Aws::ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ChimeSDKMeetingsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ChimeSDKMeetingsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>
+  class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Chime SDK Meetings"; }
 
       typedef ChimeSDKMeetingsClientConfiguration ClientConfigurationType;
       typedef ChimeSDKMeetingsEndpointProvider EndpointProviderType;
@@ -657,7 +645,10 @@ namespace ChimeSDKMeetings
       std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>;
+      void init(const ChimeSDKMeetingsClientConfiguration& clientConfiguration);
 
+      ChimeSDKMeetingsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKMeetings

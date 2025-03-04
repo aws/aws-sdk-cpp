@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fis/FISServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/fis/FISErrorMarshaller.h>
 
 namespace Aws
 {
 namespace FIS
 {
-  AWS_FIS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Fault Injection Service is a managed service that enables
    * you to perform fault injection experiments on your Amazon Web Services
@@ -26,20 +22,12 @@ namespace FIS
    * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service
    * User Guide</a>.</p>
    */
-  class AWS_FIS_API FISClient : smithy::client::AwsSmithyClientT<Aws::FIS::SERVICE_NAME,
-      Aws::FIS::FISClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      FISEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::FISErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<FISClient>
+  class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "fis"; }
 
       typedef FISClientConfiguration ClientConfigurationType;
       typedef FISEndpointProvider EndpointProviderType;
@@ -779,7 +767,10 @@ namespace FIS
       std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FISClient>;
+      void init(const FISClientConfiguration& clientConfiguration);
 
+      FISClientConfiguration m_clientConfiguration;
+      std::shared_ptr<FISEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FIS

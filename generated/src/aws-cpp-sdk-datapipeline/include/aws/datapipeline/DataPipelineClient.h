@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datapipeline/DataPipelineServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/datapipeline/DataPipelineErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DataPipeline
 {
-  AWS_DATAPIPELINE_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS Data Pipeline configures and manages a data-driven workflow called a
    * pipeline. AWS Data Pipeline handles the details of scheduling and ensuring that
@@ -39,20 +35,12 @@ namespace DataPipeline
    * web service as it does so. When the task is done, the task runner reports the
    * final success or failure of the task to the web service.</p>
    */
-  class AWS_DATAPIPELINE_API DataPipelineClient : smithy::client::AwsSmithyClientT<Aws::DataPipeline::SERVICE_NAME,
-      Aws::DataPipeline::DataPipelineClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DataPipelineEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DataPipelineErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>
+  class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Data Pipeline"; }
 
       typedef DataPipelineClientConfiguration ClientConfigurationType;
       typedef DataPipelineEndpointProvider EndpointProviderType;
@@ -666,7 +654,10 @@ namespace DataPipeline
       std::shared_ptr<DataPipelineEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>;
+      void init(const DataPipelineClientConfiguration& clientConfiguration);
 
+      DataPipelineClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DataPipelineEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DataPipeline

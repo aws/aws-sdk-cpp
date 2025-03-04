@@ -6,38 +6,26 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/kinesis/KinesisErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Kinesis
 {
-  AWS_KINESIS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Kinesis Data Streams Service API Reference</fullname> <p>Amazon
    * Kinesis Data Streams is a managed service that scales elastically for real-time
    * processing of streaming big data.</p>
    */
-  class AWS_KINESIS_API KinesisClient : smithy::client::AwsSmithyClientT<Aws::Kinesis::SERVICE_NAME,
-      Aws::Kinesis::KinesisClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      KinesisEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::KinesisErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>
+  class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Kinesis"; }
 
       typedef KinesisClientConfiguration ClientConfigurationType;
       typedef KinesisEndpointProvider EndpointProviderType;
@@ -1494,7 +1482,10 @@ namespace Kinesis
       std::shared_ptr<KinesisEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>;
+      void init(const KinesisClientConfiguration& clientConfiguration);
 
+      KinesisClientConfiguration m_clientConfiguration;
+      std::shared_ptr<KinesisEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Kinesis

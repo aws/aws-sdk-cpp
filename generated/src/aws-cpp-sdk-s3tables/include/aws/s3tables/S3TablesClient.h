@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/s3tables/S3TablesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace S3Tables
 {
-  AWS_S3TABLES_API extern const char SERVICE_NAME[];
   /**
    * <p>An Amazon S3 table represents a structured dataset consisting of tabular data
    * in <a href="https://parquet.apache.org/docs/">Apache Parquet</a> format and
@@ -37,20 +33,12 @@ namespace S3Tables
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">Amazon
    * S3 table buckets</a>.</p>
    */
-  class AWS_S3TABLES_API S3TablesClient : smithy::client::AwsSmithyClientT<Aws::S3Tables::SERVICE_NAME,
-      Aws::S3Tables::S3TablesClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      S3TablesEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::S3TablesErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>
+  class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "S3Tables"; }
 
       typedef S3TablesClientConfiguration ClientConfigurationType;
       typedef S3TablesEndpointProvider EndpointProviderType;
@@ -894,7 +882,10 @@ namespace S3Tables
       std::shared_ptr<S3TablesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>;
+      void init(const S3TablesClientConfiguration& clientConfiguration);
 
+      S3TablesClientConfiguration m_clientConfiguration;
+      std::shared_ptr<S3TablesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace S3Tables

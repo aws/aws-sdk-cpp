@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/braket/BraketServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/braket/BraketErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Braket
 {
-  AWS_BRAKET_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Braket API Reference provides information about the operations and
    * structures supported in Amazon Braket.</p> <p>Additional Resources:</p> <ul>
@@ -26,20 +22,12 @@ namespace Braket
    * href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">Amazon
    * Braket Developer Guide</a> </p> </li> </ul>
    */
-  class AWS_BRAKET_API BraketClient : smithy::client::AwsSmithyClientT<Aws::Braket::SERVICE_NAME,
-      Aws::Braket::BraketClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      BraketEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::BraketErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>
+  class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Braket"; }
 
       typedef BraketClientConfiguration ClientConfigurationType;
       typedef BraketEndpointProvider EndpointProviderType;
@@ -433,7 +421,10 @@ namespace Braket
       std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>;
+      void init(const BraketClientConfiguration& clientConfiguration);
 
+      BraketClientConfiguration m_clientConfiguration;
+      std::shared_ptr<BraketEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Braket

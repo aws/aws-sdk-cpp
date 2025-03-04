@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/rolesanywhere/RolesAnywhereErrorMarshaller.h>
 
 namespace Aws
 {
 namespace RolesAnywhere
 {
-  AWS_ROLESANYWHERE_API extern const char SERVICE_NAME[];
   /**
    * <p>Identity and Access Management Roles Anywhere provides a secure way for your
    * workloads such as servers, containers, and applications that run outside of
@@ -37,20 +33,12 @@ namespace RolesAnywhere
    * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html">IAM
    * Roles Anywhere User Guide</a>.</p>
    */
-  class AWS_ROLESANYWHERE_API RolesAnywhereClient : smithy::client::AwsSmithyClientT<Aws::RolesAnywhere::SERVICE_NAME,
-      Aws::RolesAnywhere::RolesAnywhereClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      RolesAnywhereEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::RolesAnywhereErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>
+  class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "RolesAnywhere"; }
 
       typedef RolesAnywhereClientConfiguration ClientConfigurationType;
       typedef RolesAnywhereEndpointProvider EndpointProviderType;
@@ -933,7 +921,10 @@ namespace RolesAnywhere
       std::shared_ptr<RolesAnywhereEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>;
+      void init(const RolesAnywhereClientConfiguration& clientConfiguration);
 
+      RolesAnywhereClientConfiguration m_clientConfiguration;
+      std::shared_ptr<RolesAnywhereEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RolesAnywhere

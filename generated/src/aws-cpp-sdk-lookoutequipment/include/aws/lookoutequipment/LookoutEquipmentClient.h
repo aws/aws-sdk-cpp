@@ -6,38 +6,26 @@
 #pragma once
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutequipment/LookoutEquipmentServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/lookoutequipment/LookoutEquipmentErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LookoutEquipment
 {
-  AWS_LOOKOUTEQUIPMENT_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Lookout for Equipment is a machine learning service that uses advanced
    * analytics to identify anomalies in machines from sensor data for use in
    * predictive maintenance. </p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : smithy::client::AwsSmithyClientT<Aws::LookoutEquipment::SERVICE_NAME,
-      Aws::LookoutEquipment::LookoutEquipmentClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      LookoutEquipmentEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::LookoutEquipmentErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>
+  class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "LookoutEquipment"; }
 
       typedef LookoutEquipmentClientConfiguration ClientConfigurationType;
       typedef LookoutEquipmentEndpointProvider EndpointProviderType;
@@ -1381,7 +1369,10 @@ namespace LookoutEquipment
       std::shared_ptr<LookoutEquipmentEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>;
+      void init(const LookoutEquipmentClientConfiguration& clientConfiguration);
 
+      LookoutEquipmentClientConfiguration m_clientConfiguration;
+      std::shared_ptr<LookoutEquipmentEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LookoutEquipment

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wafv2/WAFV2ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/wafv2/WAFV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WAFV2
 {
-  AWS_WAFV2_API extern const char SERVICE_NAME[];
   /**
    * <fullname>WAF </fullname>  <p>This is the latest version of the <b>WAF</b>
    * API, released in November, 2019. The names of the entities that you use to
@@ -58,20 +54,12 @@ namespace WAFV2
    * For more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web
    * Services SDKs</a>.</p>
    */
-  class AWS_WAFV2_API WAFV2Client : smithy::client::AwsSmithyClientT<Aws::WAFV2::SERVICE_NAME,
-      Aws::WAFV2::WAFV2ClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      WAFV2EndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::WAFV2ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>
+  class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "WAFV2"; }
 
       typedef WAFV2ClientConfiguration ClientConfigurationType;
       typedef WAFV2EndpointProvider EndpointProviderType;
@@ -1874,7 +1862,10 @@ namespace WAFV2
       std::shared_ptr<WAFV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>;
+      void init(const WAFV2ClientConfiguration& clientConfiguration);
 
+      WAFV2ClientConfiguration m_clientConfiguration;
+      std::shared_ptr<WAFV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WAFV2

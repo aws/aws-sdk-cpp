@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/identitystore/IdentityStoreErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IdentityStore
 {
-  AWS_IDENTITYSTORE_API extern const char SERVICE_NAME[];
   /**
    * <p>The Identity Store service used by IAM Identity Center provides a single
    * place to retrieve all of your identities (users and groups). For more
@@ -30,20 +26,12 @@ namespace IdentityStore
    * Center uses the <code>sso</code> and <code>identitystore</code> API
    * namespaces.</p> 
    */
-  class AWS_IDENTITYSTORE_API IdentityStoreClient : smithy::client::AwsSmithyClientT<Aws::IdentityStore::SERVICE_NAME,
-      Aws::IdentityStore::IdentityStoreClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IdentityStoreEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IdentityStoreErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>
+  class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "identitystore"; }
 
       typedef IdentityStoreClientConfiguration ClientConfigurationType;
       typedef IdentityStoreEndpointProvider EndpointProviderType;
@@ -650,7 +638,10 @@ namespace IdentityStore
       std::shared_ptr<IdentityStoreEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>;
+      void init(const IdentityStoreClientConfiguration& clientConfiguration);
 
+      IdentityStoreClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IdentityStoreEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IdentityStore

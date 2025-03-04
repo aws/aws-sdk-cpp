@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AugmentedAIRuntime
 {
-  AWS_AUGMENTEDAIRUNTIME_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any
    * machine learning application. When an AI application can't evaluate data with a
@@ -50,20 +46,12 @@ namespace AugmentedAIRuntime
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html">Use
    * APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.</p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : smithy::client::AwsSmithyClientT<Aws::AugmentedAIRuntime::SERVICE_NAME,
-      Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      AugmentedAIRuntimeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::AugmentedAIRuntimeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>
+  class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "SageMaker A2I Runtime"; }
 
       typedef AugmentedAIRuntimeClientConfiguration ClientConfigurationType;
       typedef AugmentedAIRuntimeEndpointProvider EndpointProviderType;
@@ -252,7 +240,10 @@ namespace AugmentedAIRuntime
       std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>;
+      void init(const AugmentedAIRuntimeClientConfiguration& clientConfiguration);
 
+      AugmentedAIRuntimeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AugmentedAIRuntime

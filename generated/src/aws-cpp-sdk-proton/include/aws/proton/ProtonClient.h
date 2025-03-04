@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/proton/ProtonServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/proton/ProtonErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Proton
 {
-  AWS_PROTON_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the Proton Service API Reference. It provides descriptions, syntax
    * and usage examples for each of the <a
@@ -107,20 +103,12 @@ namespace Proton
    * retry returns an empty response.</p> <p>Asynchronous idempotent delete APIs:</p>
    * <ul> <li> <p>DeleteEnvironment</p> </li> <li> <p>DeleteService</p> </li> </ul>
    */
-  class AWS_PROTON_API ProtonClient : smithy::client::AwsSmithyClientT<Aws::Proton::SERVICE_NAME,
-      Aws::Proton::ProtonClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ProtonEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ProtonErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>
+  class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Proton"; }
 
       typedef ProtonClientConfiguration ClientConfigurationType;
       typedef ProtonEndpointProvider EndpointProviderType;
@@ -2685,7 +2673,10 @@ namespace Proton
       std::shared_ptr<ProtonEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>;
+      void init(const ProtonClientConfiguration& clientConfiguration);
 
+      ProtonClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ProtonEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Proton

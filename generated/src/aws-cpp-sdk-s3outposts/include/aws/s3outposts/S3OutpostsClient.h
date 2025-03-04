@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/s3outposts/S3OutpostsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace S3Outposts
 {
-  AWS_S3OUTPOSTS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon S3 on Outposts provides access to S3 on Outposts operations.</p>
    */
-  class AWS_S3OUTPOSTS_API S3OutpostsClient : smithy::client::AwsSmithyClientT<Aws::S3Outposts::SERVICE_NAME,
-      Aws::S3Outposts::S3OutpostsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      S3OutpostsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::S3OutpostsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>
+  class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "S3Outposts"; }
 
       typedef S3OutpostsClientConfiguration ClientConfigurationType;
       typedef S3OutpostsEndpointProvider EndpointProviderType;
@@ -244,7 +232,10 @@ namespace S3Outposts
       std::shared_ptr<S3OutpostsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>;
+      void init(const S3OutpostsClientConfiguration& clientConfiguration);
 
+      S3OutpostsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<S3OutpostsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace S3Outposts

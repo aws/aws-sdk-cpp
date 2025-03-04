@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotwireless/IoTWirelessServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/iotwireless/IoTWirelessErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTWireless
 {
-  AWS_IOTWIRELESS_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS IoT Wireless provides bi-directional communication between
    * internet-connected wireless devices and the AWS Cloud. To onboard both LoRaWAN
@@ -37,20 +33,12 @@ namespace IoTWireless
    * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT
    * Wireless Service endpoints</a> in the <i>AWS General Reference</i>.</p>
    */
-  class AWS_IOTWIRELESS_API IoTWirelessClient : smithy::client::AwsSmithyClientT<Aws::IoTWireless::SERVICE_NAME,
-      Aws::IoTWireless::IoTWirelessClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IoTWirelessEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IoTWirelessErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>
+  class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "IoT Wireless"; }
 
       typedef IoTWirelessClientConfiguration ClientConfigurationType;
       typedef IoTWirelessEndpointProvider EndpointProviderType;
@@ -2869,7 +2857,10 @@ namespace IoTWireless
       std::shared_ptr<IoTWirelessEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>;
+      void init(const IoTWirelessClientConfiguration& clientConfiguration);
 
+      IoTWirelessClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IoTWirelessEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTWireless

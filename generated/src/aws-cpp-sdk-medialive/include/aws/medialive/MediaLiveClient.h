@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/medialive/MediaLiveServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/medialive/MediaLiveErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MediaLive
 {
-  AWS_MEDIALIVE_API extern const char SERVICE_NAME[];
   /**
    * API for AWS Elemental MediaLive
    */
-  class AWS_MEDIALIVE_API MediaLiveClient : smithy::client::AwsSmithyClientT<Aws::MediaLive::SERVICE_NAME,
-      Aws::MediaLive::MediaLiveClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MediaLiveEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MediaLiveErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>
+  class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "MediaLive"; }
 
       typedef MediaLiveClientConfiguration ClientConfigurationType;
       typedef MediaLiveEndpointProvider EndpointProviderType;
@@ -3033,7 +3021,10 @@ namespace MediaLive
       std::shared_ptr<MediaLiveEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>;
+      void init(const MediaLiveClientConfiguration& clientConfiguration);
 
+      MediaLiveClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MediaLiveEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaLive

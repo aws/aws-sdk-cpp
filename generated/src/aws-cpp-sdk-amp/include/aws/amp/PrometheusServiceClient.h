@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/amp/PrometheusServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PrometheusService
 {
-  AWS_PROMETHEUSSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible
    * monitoring service for container metrics that makes it easier to securely
@@ -37,20 +33,12 @@ namespace PrometheusService
    * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis">Prometheus-compatible
    * API</a> to work within your Prometheus workspace.</p> </li> </ul>
    */
-  class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : smithy::client::AwsSmithyClientT<Aws::PrometheusService::SERVICE_NAME,
-      Aws::PrometheusService::PrometheusServiceClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PrometheusServiceEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PrometheusServiceErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>
+  class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "amp"; }
 
       typedef PrometheusServiceClientConfiguration ClientConfigurationType;
       typedef PrometheusServiceEndpointProvider EndpointProviderType;
@@ -854,7 +842,10 @@ namespace PrometheusService
       std::shared_ptr<PrometheusServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>;
+      void init(const PrometheusServiceClientConfiguration& clientConfiguration);
 
+      PrometheusServiceClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PrometheusServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PrometheusService

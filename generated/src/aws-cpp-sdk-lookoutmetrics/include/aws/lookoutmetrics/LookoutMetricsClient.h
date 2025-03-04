@@ -6,39 +6,27 @@
 #pragma once
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutmetrics/LookoutMetricsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/lookoutmetrics/LookoutMetricsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LookoutMetrics
 {
-  AWS_LOOKOUTMETRICS_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Amazon Lookout for Metrics API Reference</i>. For an
    * introduction to the service with tutorials for getting started, visit <a
    * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for
    * Metrics Developer Guide</a>.</p>
    */
-  class AWS_LOOKOUTMETRICS_API LookoutMetricsClient : smithy::client::AwsSmithyClientT<Aws::LookoutMetrics::SERVICE_NAME,
-      Aws::LookoutMetrics::LookoutMetricsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      LookoutMetricsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::LookoutMetricsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<LookoutMetricsClient>
+  class AWS_LOOKOUTMETRICS_API LookoutMetricsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutMetricsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "LookoutMetrics"; }
 
       typedef LookoutMetricsClientConfiguration ClientConfigurationType;
       typedef LookoutMetricsEndpointProvider EndpointProviderType;
@@ -881,7 +869,10 @@ namespace LookoutMetrics
       std::shared_ptr<LookoutMetricsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutMetricsClient>;
+      void init(const LookoutMetricsClientConfiguration& clientConfiguration);
 
+      LookoutMetricsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<LookoutMetricsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LookoutMetrics

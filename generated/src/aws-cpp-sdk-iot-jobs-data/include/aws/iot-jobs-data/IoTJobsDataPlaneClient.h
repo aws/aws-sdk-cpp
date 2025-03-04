@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/iot-jobs-data/IoTJobsDataPlaneErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTJobsDataPlane
 {
-  AWS_IOTJOBSDATAPLANE_API extern const char SERVICE_NAME[];
   /**
    * <p>IoT Jobs is a service that allows you to define a set of jobs — remote
    * operations that are sent to and executed on one or more devices connected to
@@ -40,20 +36,12 @@ namespace IoTJobsDataPlane
    * provides commands to track the progress of a job on a specific target and for
    * all the targets of the job</p>
    */
-  class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : smithy::client::AwsSmithyClientT<Aws::IoTJobsDataPlane::SERVICE_NAME,
-      Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IoTJobsDataPlaneEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IoTJobsDataPlaneErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>
+  class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "IoT Jobs Data Plane"; }
 
       typedef IoTJobsDataPlaneClientConfiguration ClientConfigurationType;
       typedef IoTJobsDataPlaneEndpointProvider EndpointProviderType;
@@ -248,7 +236,10 @@ namespace IoTJobsDataPlane
       std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;
+      void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
 
+      IoTJobsDataPlaneClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTJobsDataPlane

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/appflow/AppflowErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Appflow
 {
-  AWS_APPFLOW_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the Amazon AppFlow API reference. This guide is for developers who
    * need detailed information about the Amazon AppFlow API operations, data types,
@@ -48,20 +44,12 @@ namespace Appflow
    * href="https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm">
    * <i>Authorize Apps with OAuth</i> </a> documentation.</p>
    */
-  class AWS_APPFLOW_API AppflowClient : smithy::client::AwsSmithyClientT<Aws::Appflow::SERVICE_NAME,
-      Aws::Appflow::AppflowClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      AppflowEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::AppflowErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>
+  class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Appflow"; }
 
       typedef AppflowClientConfiguration ClientConfigurationType;
       typedef AppflowEndpointProvider EndpointProviderType;
@@ -818,7 +806,10 @@ namespace Appflow
       std::shared_ptr<AppflowEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>;
+      void init(const AppflowClientConfiguration& clientConfiguration);
 
+      AppflowClientConfiguration m_clientConfiguration;
+      std::shared_ptr<AppflowEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Appflow

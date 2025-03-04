@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/timestream-influxdb/TimestreamInfluxDBErrorMarshaller.h>
 
 namespace Aws
 {
 namespace TimestreamInfluxDB
 {
-  AWS_TIMESTREAMINFLUXDB_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Timestream for InfluxDB is a managed time-series database engine that
    * makes it easy for application developers and DevOps teams to run InfluxDB
@@ -27,20 +23,12 @@ namespace TimestreamInfluxDB
    * up, operate, and scale time-series workloads that can answer queries with
    * single-digit millisecond query response time.</p>
    */
-  class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : smithy::client::AwsSmithyClientT<Aws::TimestreamInfluxDB::SERVICE_NAME,
-      Aws::TimestreamInfluxDB::TimestreamInfluxDBClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      TimestreamInfluxDBEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::TimestreamInfluxDBErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>
+  class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Timestream InfluxDB"; }
 
       typedef TimestreamInfluxDBClientConfiguration ClientConfigurationType;
       typedef TimestreamInfluxDBEndpointProvider EndpointProviderType;
@@ -532,7 +520,10 @@ namespace TimestreamInfluxDB
       std::shared_ptr<TimestreamInfluxDBEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>;
+      void init(const TimestreamInfluxDBClientConfiguration& clientConfiguration);
 
+      TimestreamInfluxDBClientConfiguration m_clientConfiguration;
+      std::shared_ptr<TimestreamInfluxDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TimestreamInfluxDB

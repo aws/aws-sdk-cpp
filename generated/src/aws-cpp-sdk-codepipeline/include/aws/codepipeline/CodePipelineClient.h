@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codepipeline/CodePipelineServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/codepipeline/CodePipelineErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodePipeline
 {
-  AWS_CODEPIPELINE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>CodePipeline</fullname> <p> <b>Overview</b> </p> <p>This is the
    * CodePipeline API Reference. This guide provides descriptions of the actions and
@@ -100,20 +96,12 @@ namespace CodePipeline
    * <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job
    * success.</p> </li> </ul>
    */
-  class AWS_CODEPIPELINE_API CodePipelineClient : smithy::client::AwsSmithyClientT<Aws::CodePipeline::SERVICE_NAME,
-      Aws::CodePipeline::CodePipelineClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CodePipelineEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CodePipelineErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>
+  class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CodePipeline"; }
 
       typedef CodePipelineClientConfiguration ClientConfigurationType;
       typedef CodePipelineEndpointProvider EndpointProviderType;
@@ -1373,7 +1361,10 @@ namespace CodePipeline
       std::shared_ptr<CodePipelineEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>;
+      void init(const CodePipelineClientConfiguration& clientConfiguration);
 
+      CodePipelineClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CodePipelineEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodePipeline
