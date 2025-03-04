@@ -177,6 +177,56 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
     return httpRequest;
 }
 
+bool AwsSmithyClientBase::ResolveAuthEndpoint(
+    std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+    Aws::AmazonWebServiceRequest const * const request,
+    const char* requestName,
+    Aws::Http::HttpMethod method,
+    ResponseHandlerFunc&& responseHandler,
+    EndpointUpdateCallback&& endpointCallback,
+    std::shared_ptr<Aws::Utils::Threading::Executor>& pExecutor
+) const
+{
+    pRequestCtx->m_pRequest = request;
+    if (requestName)
+      pRequestCtx->m_requestName = requestName;
+    else if (pRequestCtx->m_pRequest)
+      pRequestCtx->m_requestName = pRequestCtx->m_pRequest->GetServiceRequestName();
+    pRequestCtx->m_method = method;
+    pRequestCtx->m_retryCount = 0;
+    pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+    auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
+    if (!authSchemeOptionOutcome.IsSuccess())
+    {
+        pExecutor->Submit([authSchemeOptionOutcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(authSchemeOptionOutcome));
+          } );
+        return false;
+    }
+    pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+    assert(pRequestCtx->m_authSchemeOption.schemeId);
+    Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
+    const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
+    epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+    auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+    if (!epResolutionOutcome.IsSuccess())
+    {
+        auto epOutcome = ResolveEndpointOutcome(Aws::Client::AWSError<Aws::Client::CoreErrors>{
+            Aws::Client::CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+            epResolutionOutcome.GetError().GetExceptionName(),
+            epResolutionOutcome.GetError().GetMessage(),
+            false});
+
+        pExecutor->Submit([epOutcome, responseHandler]() mutable
+          {
+              responseHandler(std::move(epOutcome));
+          } );
+        return false;
+    }
+    return true;
+}
+
 void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request,
                                            const char* requestName,
                                            Aws::Http::HttpMethod method,
