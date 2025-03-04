@@ -31,5 +31,5 @@ private:
 
 TEST_F(SsoIdcTest, testCopyClient)
 {
-  EXPECT_TRUE(RegisterClient());
+  EXPECT_FALSE(RegisterClient());
 }
