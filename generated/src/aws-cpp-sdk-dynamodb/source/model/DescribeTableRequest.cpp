@@ -12,11 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTableRequest::DescribeTableRequest() : 
-    m_tableNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTableRequest::SerializePayload() const
 {
   JsonValue payload;

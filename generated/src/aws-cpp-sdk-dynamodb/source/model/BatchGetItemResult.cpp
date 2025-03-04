@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetItemResult::BatchGetItemResult()
-{
-}
-
 BatchGetItemResult::BatchGetItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -50,7 +46,6 @@ BatchGetItemResult& BatchGetItemResult::operator =(const Aws::AmazonWebServiceRe
       m_responses[responsesItem.first] = std::move(itemListList);
     }
   }
-
   if(jsonValue.ValueExists("UnprocessedKeys"))
   {
     Aws::Map<Aws::String, JsonView> unprocessedKeysJsonMap = jsonValue.GetObject("UnprocessedKeys").GetAllObjects();
@@ -59,7 +54,6 @@ BatchGetItemResult& BatchGetItemResult::operator =(const Aws::AmazonWebServiceRe
       m_unprocessedKeys[unprocessedKeysItem.first] = unprocessedKeysItem.second.AsObject();
     }
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
@@ -68,7 +62,6 @@ BatchGetItemResult& BatchGetItemResult::operator =(const Aws::AmazonWebServiceRe
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

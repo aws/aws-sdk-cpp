@@ -10,13 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-QueryTimestampsRequest::QueryTimestampsRequest() : 
-    m_normalFormatHasBeenSet(false),
-    m_epochMemberHasBeenSet(false),
-    m_epochTargetHasBeenSet(false)
-{
-}
-
 Aws::String QueryTimestampsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

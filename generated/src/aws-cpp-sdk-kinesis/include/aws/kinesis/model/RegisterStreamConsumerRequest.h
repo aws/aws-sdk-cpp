@@ -21,7 +21,7 @@ namespace Model
   class RegisterStreamConsumerRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API RegisterStreamConsumerRequest();
+    AWS_KINESIS_API RegisterStreamConsumerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline RegisterStreamConsumerRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline RegisterStreamConsumerRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline RegisterStreamConsumerRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    RegisterStreamConsumerRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>For a given Kinesis data stream, each consumer must have a unique name.
      * However, consumer names don't have to be unique across data streams.</p>
      */
-    inline const Aws::String& GetConsumerName() const{ return m_consumerName; }
+    inline const Aws::String& GetConsumerName() const { return m_consumerName; }
     inline bool ConsumerNameHasBeenSet() const { return m_consumerNameHasBeenSet; }
-    inline void SetConsumerName(const Aws::String& value) { m_consumerNameHasBeenSet = true; m_consumerName = value; }
-    inline void SetConsumerName(Aws::String&& value) { m_consumerNameHasBeenSet = true; m_consumerName = std::move(value); }
-    inline void SetConsumerName(const char* value) { m_consumerNameHasBeenSet = true; m_consumerName.assign(value); }
-    inline RegisterStreamConsumerRequest& WithConsumerName(const Aws::String& value) { SetConsumerName(value); return *this;}
-    inline RegisterStreamConsumerRequest& WithConsumerName(Aws::String&& value) { SetConsumerName(std::move(value)); return *this;}
-    inline RegisterStreamConsumerRequest& WithConsumerName(const char* value) { SetConsumerName(value); return *this;}
+    template<typename ConsumerNameT = Aws::String>
+    void SetConsumerName(ConsumerNameT&& value) { m_consumerNameHasBeenSet = true; m_consumerName = std::forward<ConsumerNameT>(value); }
+    template<typename ConsumerNameT = Aws::String>
+    RegisterStreamConsumerRequest& WithConsumerName(ConsumerNameT&& value) { SetConsumerName(std::forward<ConsumerNameT>(value)); return *this;}
     ///@}
   private:
 

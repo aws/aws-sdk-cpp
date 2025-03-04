@@ -20,13 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-NestedStructWithList::NestedStructWithList() : 
-    m_listArgHasBeenSet(false)
-{
-}
-
 NestedStructWithList::NestedStructWithList(const XmlNode& xmlNode)
-  : NestedStructWithList()
 {
   *this = xmlNode;
 }

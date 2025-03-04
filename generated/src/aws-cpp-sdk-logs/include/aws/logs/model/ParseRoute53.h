@@ -37,7 +37,7 @@ namespace Model
   class ParseRoute53
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ParseRoute53();
+    AWS_CLOUDWATCHLOGS_API ParseRoute53() = default;
     AWS_CLOUDWATCHLOGS_API ParseRoute53(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ParseRoute53& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * processor. No other value than <code>@message</code> is allowed for
      * <code>source</code>.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline ParseRoute53& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline ParseRoute53& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline ParseRoute53& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    ParseRoute53& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

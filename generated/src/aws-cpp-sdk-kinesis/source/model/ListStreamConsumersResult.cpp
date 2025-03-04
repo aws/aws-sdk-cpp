@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStreamConsumersResult::ListStreamConsumersResult()
-{
-}
-
 ListStreamConsumersResult::ListStreamConsumersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,13 +33,11 @@ ListStreamConsumersResult& ListStreamConsumersResult::operator =(const Aws::Amaz
       m_consumers.push_back(consumersJsonList[consumersIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

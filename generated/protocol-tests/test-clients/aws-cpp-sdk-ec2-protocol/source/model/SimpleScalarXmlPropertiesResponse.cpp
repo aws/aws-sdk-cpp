@@ -17,20 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SimpleScalarXmlPropertiesResponse::SimpleScalarXmlPropertiesResponse() : 
-    m_trueBooleanValue(false),
-    m_falseBooleanValue(false),
-    m_byteValue(0),
-    m_shortValue(0),
-    m_integerValue(0),
-    m_longValue(0),
-    m_floatValue(0.0),
-    m_doubleValue(0.0)
-{
-}
-
 SimpleScalarXmlPropertiesResponse::SimpleScalarXmlPropertiesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : SimpleScalarXmlPropertiesResponse()
 {
   *this = result;
 }

@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-CompletedMultipartUpload::CompletedMultipartUpload() : 
-    m_partsHasBeenSet(false)
-{
-}
-
 CompletedMultipartUpload::CompletedMultipartUpload(const XmlNode& xmlNode)
-  : CompletedMultipartUpload()
 {
   *this = xmlNode;
 }

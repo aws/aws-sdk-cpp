@@ -22,7 +22,7 @@ namespace Model
   class TestMetricFilterRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API TestMetricFilterRequest();
+    AWS_CLOUDWATCHLOGS_API TestMetricFilterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,29 +37,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+    inline const Aws::String& GetFilterPattern() const { return m_filterPattern; }
     inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
-    inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
-    inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
-    inline TestMetricFilterRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
-    inline TestMetricFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
-    inline TestMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+    template<typename FilterPatternT = Aws::String>
+    void SetFilterPattern(FilterPatternT&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::forward<FilterPatternT>(value); }
+    template<typename FilterPatternT = Aws::String>
+    TestMetricFilterRequest& WithFilterPattern(FilterPatternT&& value) { SetFilterPattern(std::forward<FilterPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log event messages to test.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogEventMessages() const{ return m_logEventMessages; }
+    inline const Aws::Vector<Aws::String>& GetLogEventMessages() const { return m_logEventMessages; }
     inline bool LogEventMessagesHasBeenSet() const { return m_logEventMessagesHasBeenSet; }
-    inline void SetLogEventMessages(const Aws::Vector<Aws::String>& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = value; }
-    inline void SetLogEventMessages(Aws::Vector<Aws::String>&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = std::move(value); }
-    inline TestMetricFilterRequest& WithLogEventMessages(const Aws::Vector<Aws::String>& value) { SetLogEventMessages(value); return *this;}
-    inline TestMetricFilterRequest& WithLogEventMessages(Aws::Vector<Aws::String>&& value) { SetLogEventMessages(std::move(value)); return *this;}
-    inline TestMetricFilterRequest& AddLogEventMessages(const Aws::String& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
-    inline TestMetricFilterRequest& AddLogEventMessages(Aws::String&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(std::move(value)); return *this; }
-    inline TestMetricFilterRequest& AddLogEventMessages(const char* value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
+    template<typename LogEventMessagesT = Aws::Vector<Aws::String>>
+    void SetLogEventMessages(LogEventMessagesT&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = std::forward<LogEventMessagesT>(value); }
+    template<typename LogEventMessagesT = Aws::Vector<Aws::String>>
+    TestMetricFilterRequest& WithLogEventMessages(LogEventMessagesT&& value) { SetLogEventMessages(std::forward<LogEventMessagesT>(value)); return *this;}
+    template<typename LogEventMessagesT = Aws::String>
+    TestMetricFilterRequest& AddLogEventMessages(LogEventMessagesT&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.emplace_back(std::forward<LogEventMessagesT>(value)); return *this; }
     ///@}
   private:
 

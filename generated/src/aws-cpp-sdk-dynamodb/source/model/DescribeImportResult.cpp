@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeImportResult::DescribeImportResult()
-{
-}
-
 DescribeImportResult::DescribeImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeImportResult& DescribeImportResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ImportTableDescription"))
   {
     m_importTableDescription = jsonValue.GetObject("ImportTableDescription");
-
+    m_importTableDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

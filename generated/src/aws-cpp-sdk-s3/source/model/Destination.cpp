@@ -20,20 +20,7 @@ namespace S3
 namespace Model
 {
 
-Destination::Destination() : 
-    m_bucketHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_accessControlTranslationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_replicationTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 Destination::Destination(const XmlNode& xmlNode)
-  : Destination()
 {
   *this = xmlNode;
 }

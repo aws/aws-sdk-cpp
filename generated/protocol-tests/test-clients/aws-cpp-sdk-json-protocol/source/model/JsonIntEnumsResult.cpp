@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonIntEnumsResult::JsonIntEnumsResult() : 
-    m_intEnum1(0),
-    m_intEnum2(0),
-    m_intEnum3(0)
-{
-}
-
 JsonIntEnumsResult::JsonIntEnumsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : JsonIntEnumsResult()
 {
   *this = result;
 }
@@ -36,21 +28,18 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("intEnum1"))
   {
     m_intEnum1 = jsonValue.GetInteger("intEnum1");
-
+    m_intEnum1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intEnum2"))
   {
     m_intEnum2 = jsonValue.GetInteger("intEnum2");
-
+    m_intEnum2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intEnum3"))
   {
     m_intEnum3 = jsonValue.GetInteger("intEnum3");
-
+    m_intEnum3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intEnumList"))
   {
     Aws::Utils::Array<JsonView> intEnumListJsonList = jsonValue.GetArray("intEnumList");
@@ -59,7 +48,6 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
       m_intEnumList.push_back(intEnumListJsonList[intEnumListIndex].AsInteger());
     }
   }
-
   if(jsonValue.ValueExists("intEnumSet"))
   {
     Aws::Utils::Array<JsonView> intEnumSetJsonList = jsonValue.GetArray("intEnumSet");
@@ -68,7 +56,6 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
       m_intEnumSet.push_back(intEnumSetJsonList[intEnumSetIndex].AsInteger());
     }
   }
-
   if(jsonValue.ValueExists("intEnumMap"))
   {
     Aws::Map<Aws::String, JsonView> intEnumMapJsonMap = jsonValue.GetObject("intEnumMap").GetAllObjects();
@@ -77,7 +64,6 @@ JsonIntEnumsResult& JsonIntEnumsResult::operator =(const Aws::AmazonWebServiceRe
       m_intEnumMap[intEnumMapItem.first] = intEnumMapItem.second.AsInteger();
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

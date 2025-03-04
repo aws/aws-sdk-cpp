@@ -32,7 +32,7 @@ namespace Model
   class S3DeliveryConfiguration
   {
   public:
-    AWS_CLOUDWATCHLOGS_API S3DeliveryConfiguration();
+    AWS_CLOUDWATCHLOGS_API S3DeliveryConfiguration() = default;
     AWS_CLOUDWATCHLOGS_API S3DeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API S3DeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * operation and check the <code>allowedSuffixPathFields</code> field in the
      * response.</p>
      */
-    inline const Aws::String& GetSuffixPath() const{ return m_suffixPath; }
+    inline const Aws::String& GetSuffixPath() const { return m_suffixPath; }
     inline bool SuffixPathHasBeenSet() const { return m_suffixPathHasBeenSet; }
-    inline void SetSuffixPath(const Aws::String& value) { m_suffixPathHasBeenSet = true; m_suffixPath = value; }
-    inline void SetSuffixPath(Aws::String&& value) { m_suffixPathHasBeenSet = true; m_suffixPath = std::move(value); }
-    inline void SetSuffixPath(const char* value) { m_suffixPathHasBeenSet = true; m_suffixPath.assign(value); }
-    inline S3DeliveryConfiguration& WithSuffixPath(const Aws::String& value) { SetSuffixPath(value); return *this;}
-    inline S3DeliveryConfiguration& WithSuffixPath(Aws::String&& value) { SetSuffixPath(std::move(value)); return *this;}
-    inline S3DeliveryConfiguration& WithSuffixPath(const char* value) { SetSuffixPath(value); return *this;}
+    template<typename SuffixPathT = Aws::String>
+    void SetSuffixPath(SuffixPathT&& value) { m_suffixPathHasBeenSet = true; m_suffixPath = std::forward<SuffixPathT>(value); }
+    template<typename SuffixPathT = Aws::String>
+    S3DeliveryConfiguration& WithSuffixPath(SuffixPathT&& value) { SetSuffixPath(std::forward<SuffixPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <p>This parameter causes the S3 objects that contain delivered logs to use a
      * prefix structure that allows for integration with Apache Hive.</p>
      */
-    inline bool GetEnableHiveCompatiblePath() const{ return m_enableHiveCompatiblePath; }
+    inline bool GetEnableHiveCompatiblePath() const { return m_enableHiveCompatiblePath; }
     inline bool EnableHiveCompatiblePathHasBeenSet() const { return m_enableHiveCompatiblePathHasBeenSet; }
     inline void SetEnableHiveCompatiblePath(bool value) { m_enableHiveCompatiblePathHasBeenSet = true; m_enableHiveCompatiblePath = value; }
     inline S3DeliveryConfiguration& WithEnableHiveCompatiblePath(bool value) { SetEnableHiveCompatiblePath(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
     Aws::String m_suffixPath;
     bool m_suffixPathHasBeenSet = false;
 
-    bool m_enableHiveCompatiblePath;
+    bool m_enableHiveCompatiblePath{false};
     bool m_enableHiveCompatiblePathHasBeenSet = false;
   };
 

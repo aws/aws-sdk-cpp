@@ -18,21 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TableCreationParameters::TableCreationParameters() : 
-    m_tableNameHasBeenSet(false),
-    m_attributeDefinitionsHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
-{
-}
-
 TableCreationParameters::TableCreationParameters(JsonView jsonValue)
-  : TableCreationParameters()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeDefinitions"))
   {
     Aws::Utils::Array<JsonView> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
@@ -53,9 +37,7 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
     {
       m_attributeDefinitions.push_back(attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject());
     }
-    m_attributeDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -63,37 +45,27 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
     }
-    m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingMode"))
   {
     m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
 
-    m_billingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughput"))
   {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
-
     m_onDemandThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSESpecification"))
   {
     m_sSESpecification = jsonValue.GetObject("SSESpecification");
-
     m_sSESpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
@@ -101,9 +73,7 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
     }
-    m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   return *this;
 }
 

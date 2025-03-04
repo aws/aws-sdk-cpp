@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FlattenedXmlMapWithXmlNameResult::FlattenedXmlMapWithXmlNameResult()
-{
-}
-
 FlattenedXmlMapWithXmlNameResult::FlattenedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

@@ -34,7 +34,7 @@ namespace Model
   class ReplicaGlobalSecondaryIndexSettingsDescription
   {
   public:
-    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexSettingsDescription();
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexSettingsDescription() = default;
     AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the global secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The global secondary
      * index is ready for use.</p> </li> </ul>
      */
-    inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+    inline IndexStatus GetIndexStatus() const { return m_indexStatus; }
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
-    inline void SetIndexStatus(const IndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
-    inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
+    inline void SetIndexStatus(IndexStatus value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
+    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithIndexStatus(IndexStatus value) { SetIndexStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * <p>The maximum number of strongly consistent reads consumed per second before
      * DynamoDB returns a <code>ThrottlingException</code>.</p>
      */
-    inline long long GetProvisionedReadCapacityUnits() const{ return m_provisionedReadCapacityUnits; }
+    inline long long GetProvisionedReadCapacityUnits() const { return m_provisionedReadCapacityUnits; }
     inline bool ProvisionedReadCapacityUnitsHasBeenSet() const { return m_provisionedReadCapacityUnitsHasBeenSet; }
     inline void SetProvisionedReadCapacityUnits(long long value) { m_provisionedReadCapacityUnitsHasBeenSet = true; m_provisionedReadCapacityUnits = value; }
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityUnits(long long value) { SetProvisionedReadCapacityUnits(value); return *this;}
@@ -88,12 +84,12 @@ namespace Model
      * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
-    inline const AutoScalingSettingsDescription& GetProvisionedReadCapacityAutoScalingSettings() const{ return m_provisionedReadCapacityAutoScalingSettings; }
+    inline const AutoScalingSettingsDescription& GetProvisionedReadCapacityAutoScalingSettings() const { return m_provisionedReadCapacityAutoScalingSettings; }
     inline bool ProvisionedReadCapacityAutoScalingSettingsHasBeenSet() const { return m_provisionedReadCapacityAutoScalingSettingsHasBeenSet; }
-    inline void SetProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = value; }
-    inline void SetProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = std::move(value); }
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetProvisionedReadCapacityAutoScalingSettings(value); return *this;}
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetProvisionedReadCapacityAutoScalingSettings(std::move(value)); return *this;}
+    template<typename ProvisionedReadCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    void SetProvisionedReadCapacityAutoScalingSettings(ProvisionedReadCapacityAutoScalingSettingsT&& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = std::forward<ProvisionedReadCapacityAutoScalingSettingsT>(value); }
+    template<typename ProvisionedReadCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(ProvisionedReadCapacityAutoScalingSettingsT&& value) { SetProvisionedReadCapacityAutoScalingSettings(std::forward<ProvisionedReadCapacityAutoScalingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +97,7 @@ namespace Model
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>.</p>
      */
-    inline long long GetProvisionedWriteCapacityUnits() const{ return m_provisionedWriteCapacityUnits; }
+    inline long long GetProvisionedWriteCapacityUnits() const { return m_provisionedWriteCapacityUnits; }
     inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
     inline void SetProvisionedWriteCapacityUnits(long long value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityUnits(long long value) { SetProvisionedWriteCapacityUnits(value); return *this;}
@@ -112,28 +108,28 @@ namespace Model
      * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
-    inline const AutoScalingSettingsDescription& GetProvisionedWriteCapacityAutoScalingSettings() const{ return m_provisionedWriteCapacityAutoScalingSettings; }
+    inline const AutoScalingSettingsDescription& GetProvisionedWriteCapacityAutoScalingSettings() const { return m_provisionedWriteCapacityAutoScalingSettings; }
     inline bool ProvisionedWriteCapacityAutoScalingSettingsHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet; }
-    inline void SetProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = value; }
-    inline void SetProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = std::move(value); }
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetProvisionedWriteCapacityAutoScalingSettings(value); return *this;}
-    inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetProvisionedWriteCapacityAutoScalingSettings(std::move(value)); return *this;}
+    template<typename ProvisionedWriteCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    void SetProvisionedWriteCapacityAutoScalingSettings(ProvisionedWriteCapacityAutoScalingSettingsT&& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = std::forward<ProvisionedWriteCapacityAutoScalingSettingsT>(value); }
+    template<typename ProvisionedWriteCapacityAutoScalingSettingsT = AutoScalingSettingsDescription>
+    ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(ProvisionedWriteCapacityAutoScalingSettingsT&& value) { SetProvisionedWriteCapacityAutoScalingSettings(std::forward<ProvisionedWriteCapacityAutoScalingSettingsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet = false;
 
-    IndexStatus m_indexStatus;
+    IndexStatus m_indexStatus{IndexStatus::NOT_SET};
     bool m_indexStatusHasBeenSet = false;
 
-    long long m_provisionedReadCapacityUnits;
+    long long m_provisionedReadCapacityUnits{0};
     bool m_provisionedReadCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_provisionedReadCapacityAutoScalingSettings;
     bool m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
-    long long m_provisionedWriteCapacityUnits;
+    long long m_provisionedWriteCapacityUnits{0};
     bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_provisionedWriteCapacityAutoScalingSettings;

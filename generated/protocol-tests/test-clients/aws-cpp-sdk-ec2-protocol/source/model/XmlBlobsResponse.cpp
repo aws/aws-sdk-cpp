@@ -18,10 +18,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlBlobsResponse::XmlBlobsResponse()
-{
-}
-
 XmlBlobsResponse::XmlBlobsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-CloudFunctionConfiguration::CloudFunctionConfiguration() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_cloudFunctionHasBeenSet(false),
-    m_invocationRoleHasBeenSet(false)
-{
-}
-
 CloudFunctionConfiguration::CloudFunctionConfiguration(const XmlNode& xmlNode)
-  : CloudFunctionConfiguration()
 {
   *this = xmlNode;
 }

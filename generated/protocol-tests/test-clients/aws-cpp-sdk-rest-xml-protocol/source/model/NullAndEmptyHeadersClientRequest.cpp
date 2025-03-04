@@ -16,13 +16,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-NullAndEmptyHeadersClientRequest::NullAndEmptyHeadersClientRequest() : 
-    m_aHasBeenSet(false),
-    m_bHasBeenSet(false),
-    m_cHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String NullAndEmptyHeadersClientRequest::SerializePayload() const
 {

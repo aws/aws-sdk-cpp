@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBackupResult::DescribeBackupResult()
-{
-}
-
 DescribeBackupResult::DescribeBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeBackupResult& DescribeBackupResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("BackupDescription"))
   {
     m_backupDescription = jsonValue.GetObject("BackupDescription");
-
+    m_backupDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRecordsResult::GetRecordsResult() : 
-    m_millisBehindLatest(0)
-{
-}
-
 GetRecordsResult::GetRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRecordsResult()
 {
   *this = result;
 }
@@ -39,19 +33,16 @@ GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("NextShardIterator"))
   {
     m_nextShardIterator = jsonValue.GetString("NextShardIterator");
-
+    m_nextShardIteratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MillisBehindLatest"))
   {
     m_millisBehindLatest = jsonValue.GetInt64("MillisBehindLatest");
-
+    m_millisBehindLatestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChildShards"))
   {
     Aws::Utils::Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
@@ -60,7 +51,6 @@ GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult
       m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -35,7 +35,7 @@ namespace Model
   class TopicConfiguration
   {
   public:
-    AWS_S3_API TopicConfiguration();
+    AWS_S3_API TopicConfiguration() = default;
     AWS_S3_API TopicConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API TopicConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TopicConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TopicConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TopicConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TopicConfiguration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
      * publishes a message when it detects events of the specified type.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline TopicConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline TopicConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline TopicConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    TopicConfiguration& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,24 +72,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
      * Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<Event>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline TopicConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
-    inline TopicConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
-    inline TopicConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline TopicConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<Event>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<Event>>
+    TopicConfiguration& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    inline TopicConfiguration& AddEvents(Event value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+    inline const NotificationConfigurationFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline TopicConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
-    inline TopicConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = NotificationConfigurationFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = NotificationConfigurationFilter>
+    TopicConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 

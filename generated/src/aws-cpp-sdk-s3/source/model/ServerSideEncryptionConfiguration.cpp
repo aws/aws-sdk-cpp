@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(const XmlNode& xmlNode)
-  : ServerSideEncryptionConfiguration()
 {
   *this = xmlNode;
 }

@@ -32,7 +32,7 @@ namespace Model
   class SuppressionPeriod
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SuppressionPeriod();
+    AWS_CLOUDWATCHLOGS_API SuppressionPeriod() = default;
     AWS_CLOUDWATCHLOGS_API SuppressionPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SuppressionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Specifies the number of seconds, minutes or hours to suppress this anomaly.
      * There is no maximum.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline SuppressionPeriod& WithValue(int value) { SetValue(value); return *this;}
@@ -54,19 +54,17 @@ namespace Model
      * <p>Specifies whether the value of <code>value</code> is in seconds, minutes, or
      * hours.</p>
      */
-    inline const SuppressionUnit& GetSuppressionUnit() const{ return m_suppressionUnit; }
+    inline SuppressionUnit GetSuppressionUnit() const { return m_suppressionUnit; }
     inline bool SuppressionUnitHasBeenSet() const { return m_suppressionUnitHasBeenSet; }
-    inline void SetSuppressionUnit(const SuppressionUnit& value) { m_suppressionUnitHasBeenSet = true; m_suppressionUnit = value; }
-    inline void SetSuppressionUnit(SuppressionUnit&& value) { m_suppressionUnitHasBeenSet = true; m_suppressionUnit = std::move(value); }
-    inline SuppressionPeriod& WithSuppressionUnit(const SuppressionUnit& value) { SetSuppressionUnit(value); return *this;}
-    inline SuppressionPeriod& WithSuppressionUnit(SuppressionUnit&& value) { SetSuppressionUnit(std::move(value)); return *this;}
+    inline void SetSuppressionUnit(SuppressionUnit value) { m_suppressionUnitHasBeenSet = true; m_suppressionUnit = value; }
+    inline SuppressionPeriod& WithSuppressionUnit(SuppressionUnit value) { SetSuppressionUnit(value); return *this;}
     ///@}
   private:
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
 
-    SuppressionUnit m_suppressionUnit;
+    SuppressionUnit m_suppressionUnit{SuppressionUnit::NOT_SET};
     bool m_suppressionUnitHasBeenSet = false;
   };
 

@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreObjectResult::RestoreObjectResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 RestoreObjectResult::RestoreObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RestoreObjectResult()
 {
   *this = result;
 }

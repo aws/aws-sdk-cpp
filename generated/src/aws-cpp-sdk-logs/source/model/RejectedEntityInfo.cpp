@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-RejectedEntityInfo::RejectedEntityInfo() : 
-    m_errorType(EntityRejectionErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
-{
-}
-
 RejectedEntityInfo::RejectedEntityInfo(JsonView jsonValue)
-  : RejectedEntityInfo()
 {
   *this = jsonValue;
 }
@@ -36,9 +29,7 @@ RejectedEntityInfo& RejectedEntityInfo::operator =(JsonView jsonValue)
   {
     m_errorType = EntityRejectionErrorTypeMapper::GetEntityRejectionErrorTypeForName(jsonValue.GetString("errorType"));
 
-    m_errorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

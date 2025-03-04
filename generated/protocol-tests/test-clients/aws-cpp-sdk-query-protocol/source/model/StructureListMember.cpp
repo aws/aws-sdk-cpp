@@ -20,14 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-StructureListMember::StructureListMember() : 
-    m_aHasBeenSet(false),
-    m_bHasBeenSet(false)
-{
-}
-
 StructureListMember::StructureListMember(const XmlNode& xmlNode)
-  : StructureListMember()
 {
   *this = xmlNode;
 }

@@ -14,12 +14,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonBlobsRequest::JsonBlobsRequest() : 
-    m_dataHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String JsonBlobsRequest::SerializePayload() const
 {
   JsonValue payload;

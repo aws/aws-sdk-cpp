@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubscribeToShardRequest::SubscribeToShardRequest() : 
-    m_consumerARNHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_startingPositionHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String SubscribeToShardRequest::SerializePayload() const
 {
   JsonValue payload;

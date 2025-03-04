@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetShardIteratorResult::GetShardIteratorResult()
-{
-}
-
 GetShardIteratorResult::GetShardIteratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetShardIteratorResult& GetShardIteratorResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ShardIterator"))
   {
     m_shardIterator = jsonValue.GetString("ShardIterator");
-
+    m_shardIteratorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

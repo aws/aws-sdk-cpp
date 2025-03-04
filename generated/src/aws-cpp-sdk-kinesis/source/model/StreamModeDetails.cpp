@@ -18,14 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-StreamModeDetails::StreamModeDetails() : 
-    m_streamMode(StreamMode::NOT_SET),
-    m_streamModeHasBeenSet(false)
-{
-}
-
 StreamModeDetails::StreamModeDetails(JsonView jsonValue)
-  : StreamModeDetails()
 {
   *this = jsonValue;
 }
@@ -36,9 +29,7 @@ StreamModeDetails& StreamModeDetails::operator =(JsonView jsonValue)
   {
     m_streamMode = StreamModeMapper::GetStreamModeForName(jsonValue.GetString("StreamMode"));
 
-    m_streamModeHasBeenSet = true;
   }
-
   return *this;
 }
 

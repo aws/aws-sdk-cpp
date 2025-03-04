@@ -16,14 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult() : 
-    m_status(BucketAccelerateStatus::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetBucketAccelerateConfigurationResult()
 {
   *this = result;
 }

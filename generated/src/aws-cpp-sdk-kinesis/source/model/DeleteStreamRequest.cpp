@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStreamRequest::DeleteStreamRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_enforceConsumerDeletion(false),
-    m_enforceConsumerDeletionHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStreamRequest::SerializePayload() const
 {
   JsonValue payload;

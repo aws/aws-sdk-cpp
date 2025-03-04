@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-ReplicationRuleAndOperator::ReplicationRuleAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ReplicationRuleAndOperator::ReplicationRuleAndOperator(const XmlNode& xmlNode)
-  : ReplicationRuleAndOperator()
 {
   *this = xmlNode;
 }

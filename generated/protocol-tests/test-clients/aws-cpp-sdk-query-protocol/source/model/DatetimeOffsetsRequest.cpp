@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-DatetimeOffsetsRequest::DatetimeOffsetsRequest()
-{
-}
-
 Aws::String DatetimeOffsetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

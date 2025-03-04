@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpResponseCodeResult::HttpResponseCodeResult() : 
-    m_status(0)
-{
-}
-
 HttpResponseCodeResult::HttpResponseCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : HttpResponseCodeResult()
 {
   *this = result;
 }

@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-OwnershipControls::OwnershipControls() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 OwnershipControls::OwnershipControls(const XmlNode& xmlNode)
-  : OwnershipControls()
 {
   *this = xmlNode;
 }

@@ -33,7 +33,7 @@ namespace Model
   class ContinuousBackupsDescription
   {
   public:
-    AWS_DYNAMODB_API ContinuousBackupsDescription();
+    AWS_DYNAMODB_API ContinuousBackupsDescription() = default;
     AWS_DYNAMODB_API ContinuousBackupsDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ContinuousBackupsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
-    inline const ContinuousBackupsStatus& GetContinuousBackupsStatus() const{ return m_continuousBackupsStatus; }
+    inline ContinuousBackupsStatus GetContinuousBackupsStatus() const { return m_continuousBackupsStatus; }
     inline bool ContinuousBackupsStatusHasBeenSet() const { return m_continuousBackupsStatusHasBeenSet; }
-    inline void SetContinuousBackupsStatus(const ContinuousBackupsStatus& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = value; }
-    inline void SetContinuousBackupsStatus(ContinuousBackupsStatus&& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = std::move(value); }
-    inline ContinuousBackupsDescription& WithContinuousBackupsStatus(const ContinuousBackupsStatus& value) { SetContinuousBackupsStatus(value); return *this;}
-    inline ContinuousBackupsDescription& WithContinuousBackupsStatus(ContinuousBackupsStatus&& value) { SetContinuousBackupsStatus(std::move(value)); return *this;}
+    inline void SetContinuousBackupsStatus(ContinuousBackupsStatus value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = value; }
+    inline ContinuousBackupsDescription& WithContinuousBackupsStatus(ContinuousBackupsStatus value) { SetContinuousBackupsStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <p>The description of the point in time recovery settings applied to the
      * table.</p>
      */
-    inline const PointInTimeRecoveryDescription& GetPointInTimeRecoveryDescription() const{ return m_pointInTimeRecoveryDescription; }
+    inline const PointInTimeRecoveryDescription& GetPointInTimeRecoveryDescription() const { return m_pointInTimeRecoveryDescription; }
     inline bool PointInTimeRecoveryDescriptionHasBeenSet() const { return m_pointInTimeRecoveryDescriptionHasBeenSet; }
-    inline void SetPointInTimeRecoveryDescription(const PointInTimeRecoveryDescription& value) { m_pointInTimeRecoveryDescriptionHasBeenSet = true; m_pointInTimeRecoveryDescription = value; }
-    inline void SetPointInTimeRecoveryDescription(PointInTimeRecoveryDescription&& value) { m_pointInTimeRecoveryDescriptionHasBeenSet = true; m_pointInTimeRecoveryDescription = std::move(value); }
-    inline ContinuousBackupsDescription& WithPointInTimeRecoveryDescription(const PointInTimeRecoveryDescription& value) { SetPointInTimeRecoveryDescription(value); return *this;}
-    inline ContinuousBackupsDescription& WithPointInTimeRecoveryDescription(PointInTimeRecoveryDescription&& value) { SetPointInTimeRecoveryDescription(std::move(value)); return *this;}
+    template<typename PointInTimeRecoveryDescriptionT = PointInTimeRecoveryDescription>
+    void SetPointInTimeRecoveryDescription(PointInTimeRecoveryDescriptionT&& value) { m_pointInTimeRecoveryDescriptionHasBeenSet = true; m_pointInTimeRecoveryDescription = std::forward<PointInTimeRecoveryDescriptionT>(value); }
+    template<typename PointInTimeRecoveryDescriptionT = PointInTimeRecoveryDescription>
+    ContinuousBackupsDescription& WithPointInTimeRecoveryDescription(PointInTimeRecoveryDescriptionT&& value) { SetPointInTimeRecoveryDescription(std::forward<PointInTimeRecoveryDescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    ContinuousBackupsStatus m_continuousBackupsStatus;
+    ContinuousBackupsStatus m_continuousBackupsStatus{ContinuousBackupsStatus::NOT_SET};
     bool m_continuousBackupsStatusHasBeenSet = false;
 
     PointInTimeRecoveryDescription m_pointInTimeRecoveryDescription;

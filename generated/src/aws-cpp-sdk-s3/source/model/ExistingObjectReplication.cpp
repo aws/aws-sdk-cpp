@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-ExistingObjectReplication::ExistingObjectReplication() : 
-    m_status(ExistingObjectReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ExistingObjectReplication::ExistingObjectReplication(const XmlNode& xmlNode)
-  : ExistingObjectReplication()
 {
   *this = xmlNode;
 }

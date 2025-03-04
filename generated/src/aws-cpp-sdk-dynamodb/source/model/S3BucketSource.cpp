@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-S3BucketSource::S3BucketSource() : 
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
-{
-}
-
 S3BucketSource::S3BucketSource(JsonView jsonValue)
-  : S3BucketSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3BucketSource& S3BucketSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketOwner"))
   {
     m_s3BucketOwner = jsonValue.GetString("S3BucketOwner");
-
     m_s3BucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectRetentionResult::PutObjectRetentionResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 PutObjectRetentionResult::PutObjectRetentionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PutObjectRetentionResult()
 {
   *this = result;
 }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMetricFiltersResult::DescribeMetricFiltersResult()
-{
-}
-
 DescribeMetricFiltersResult::DescribeMetricFiltersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,13 +33,11 @@ DescribeMetricFiltersResult& DescribeMetricFiltersResult::operator =(const Aws::
       m_metricFilters.push_back(metricFiltersJsonList[metricFiltersIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

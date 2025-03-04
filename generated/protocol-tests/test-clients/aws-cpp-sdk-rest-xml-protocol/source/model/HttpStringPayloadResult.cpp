@@ -15,29 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpStringPayloadResult::HttpStringPayloadResult()
-{
-}
-
-HttpStringPayloadResult::HttpStringPayloadResult(HttpStringPayloadResult&& toMove) : 
-    m_payload(std::move(toMove.m_payload)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-HttpStringPayloadResult& HttpStringPayloadResult::operator=(HttpStringPayloadResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_payload = std::move(toMove.m_payload);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 HttpStringPayloadResult::HttpStringPayloadResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);

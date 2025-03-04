@@ -18,23 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-LogStream::LogStream() : 
-    m_logStreamNameHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_firstEventTimestamp(0),
-    m_firstEventTimestampHasBeenSet(false),
-    m_lastEventTimestamp(0),
-    m_lastEventTimestampHasBeenSet(false),
-    m_lastIngestionTime(0),
-    m_lastIngestionTimeHasBeenSet(false),
-    m_uploadSequenceTokenHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 LogStream::LogStream(JsonView jsonValue)
-  : LogStream()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ LogStream& LogStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logStreamName"))
   {
     m_logStreamName = jsonValue.GetString("logStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetInt64("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstEventTimestamp"))
   {
     m_firstEventTimestamp = jsonValue.GetInt64("firstEventTimestamp");
-
     m_firstEventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastEventTimestamp"))
   {
     m_lastEventTimestamp = jsonValue.GetInt64("lastEventTimestamp");
-
     m_lastEventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastIngestionTime"))
   {
     m_lastIngestionTime = jsonValue.GetInt64("lastIngestionTime");
-
     m_lastIngestionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadSequenceToken"))
   {
     m_uploadSequenceToken = jsonValue.GetString("uploadSequenceToken");
-
     m_uploadSequenceTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

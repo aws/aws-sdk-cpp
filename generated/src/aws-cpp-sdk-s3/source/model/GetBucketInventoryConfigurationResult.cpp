@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult()
-{
-}
-
 GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

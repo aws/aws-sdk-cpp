@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutBucketLifecycleConfigurationResult::PutBucketLifecycleConfigurationResult() : 
-    m_transitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize::NOT_SET)
-{
-}
-
 PutBucketLifecycleConfigurationResult::PutBucketLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PutBucketLifecycleConfigurationResult()
 {
   *this = result;
 }

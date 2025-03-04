@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-BucketInfo::BucketInfo() : 
-    m_dataRedundancy(DataRedundancy::NOT_SET),
-    m_dataRedundancyHasBeenSet(false),
-    m_type(BucketType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 BucketInfo::BucketInfo(const XmlNode& xmlNode)
-  : BucketInfo()
 {
   *this = xmlNode;
 }

@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-CreateReplicaAction::CreateReplicaAction() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 CreateReplicaAction::CreateReplicaAction(JsonView jsonValue)
-  : CreateReplicaAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CreateReplicaAction& CreateReplicaAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

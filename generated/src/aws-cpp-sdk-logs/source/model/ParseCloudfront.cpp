@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ParseCloudfront::ParseCloudfront() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 ParseCloudfront::ParseCloudfront(JsonView jsonValue)
-  : ParseCloudfront()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParseCloudfront& ParseCloudfront::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

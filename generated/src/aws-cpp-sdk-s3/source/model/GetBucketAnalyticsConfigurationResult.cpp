@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketAnalyticsConfigurationResult::GetBucketAnalyticsConfigurationResult()
-{
-}
-
 GetBucketAnalyticsConfigurationResult::GetBucketAnalyticsConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

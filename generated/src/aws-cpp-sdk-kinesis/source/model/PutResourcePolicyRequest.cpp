@@ -12,12 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResourcePolicyRequest::PutResourcePolicyRequest() : 
-    m_resourceARNHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

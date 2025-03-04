@@ -16,16 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompleteMultipartUploadResult::CompleteMultipartUploadResult() : 
-    m_checksumType(ChecksumType::NOT_SET),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 CompleteMultipartUploadResult::CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CompleteMultipartUploadResult()
 {
   *this = result;
 }

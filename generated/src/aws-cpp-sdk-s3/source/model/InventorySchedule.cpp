@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-InventorySchedule::InventorySchedule() : 
-    m_frequency(InventoryFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false)
-{
-}
-
 InventorySchedule::InventorySchedule(const XmlNode& xmlNode)
-  : InventorySchedule()
 {
   *this = xmlNode;
 }

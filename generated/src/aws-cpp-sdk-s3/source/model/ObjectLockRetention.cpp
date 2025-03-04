@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-ObjectLockRetention::ObjectLockRetention() : 
-    m_mode(ObjectLockRetentionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_retainUntilDateHasBeenSet(false)
-{
-}
-
 ObjectLockRetention::ObjectLockRetention(const XmlNode& xmlNode)
-  : ObjectLockRetention()
 {
   *this = xmlNode;
 }

@@ -20,23 +20,7 @@ namespace S3
 namespace Model
 {
 
-MultipartUpload::MultipartUpload() : 
-    m_uploadIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_initiatedHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false)
-{
-}
-
 MultipartUpload::MultipartUpload(const XmlNode& xmlNode)
-  : MultipartUpload()
 {
   *this = xmlNode;
 }

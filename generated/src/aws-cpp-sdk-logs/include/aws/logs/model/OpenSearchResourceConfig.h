@@ -33,7 +33,7 @@ namespace Model
   class OpenSearchResourceConfig
   {
   public:
-    AWS_CLOUDWATCHLOGS_API OpenSearchResourceConfig();
+    AWS_CLOUDWATCHLOGS_API OpenSearchResourceConfig() = default;
     AWS_CLOUDWATCHLOGS_API OpenSearchResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API OpenSearchResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * CloudWatch Logs default encryption method, specify the ARN of the KMS key that
      * you want to use.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline OpenSearchResourceConfig& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline OpenSearchResourceConfig& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline OpenSearchResourceConfig& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    OpenSearchResourceConfig& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-CreateRole.html">Permissions
      * that the integration needs</a> in the CloudWatch Logs User Guide.</p>
      */
-    inline const Aws::String& GetDataSourceRoleArn() const{ return m_dataSourceRoleArn; }
+    inline const Aws::String& GetDataSourceRoleArn() const { return m_dataSourceRoleArn; }
     inline bool DataSourceRoleArnHasBeenSet() const { return m_dataSourceRoleArnHasBeenSet; }
-    inline void SetDataSourceRoleArn(const Aws::String& value) { m_dataSourceRoleArnHasBeenSet = true; m_dataSourceRoleArn = value; }
-    inline void SetDataSourceRoleArn(Aws::String&& value) { m_dataSourceRoleArnHasBeenSet = true; m_dataSourceRoleArn = std::move(value); }
-    inline void SetDataSourceRoleArn(const char* value) { m_dataSourceRoleArnHasBeenSet = true; m_dataSourceRoleArn.assign(value); }
-    inline OpenSearchResourceConfig& WithDataSourceRoleArn(const Aws::String& value) { SetDataSourceRoleArn(value); return *this;}
-    inline OpenSearchResourceConfig& WithDataSourceRoleArn(Aws::String&& value) { SetDataSourceRoleArn(std::move(value)); return *this;}
-    inline OpenSearchResourceConfig& WithDataSourceRoleArn(const char* value) { SetDataSourceRoleArn(value); return *this;}
+    template<typename DataSourceRoleArnT = Aws::String>
+    void SetDataSourceRoleArn(DataSourceRoleArnT&& value) { m_dataSourceRoleArnHasBeenSet = true; m_dataSourceRoleArn = std::forward<DataSourceRoleArnT>(value); }
+    template<typename DataSourceRoleArnT = Aws::String>
+    OpenSearchResourceConfig& WithDataSourceRoleArn(DataSourceRoleArnT&& value) { SetDataSourceRoleArn(std::forward<DataSourceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,15 +80,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/OpenSearch-Dashboards-UserRoles.html">IAM
      * policies for users</a>.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetDashboardViewerPrincipals() const{ return m_dashboardViewerPrincipals; }
+    inline const Aws::Vector<Aws::String>& GetDashboardViewerPrincipals() const { return m_dashboardViewerPrincipals; }
     inline bool DashboardViewerPrincipalsHasBeenSet() const { return m_dashboardViewerPrincipalsHasBeenSet; }
-    inline void SetDashboardViewerPrincipals(const Aws::Vector<Aws::String>& value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals = value; }
-    inline void SetDashboardViewerPrincipals(Aws::Vector<Aws::String>&& value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals = std::move(value); }
-    inline OpenSearchResourceConfig& WithDashboardViewerPrincipals(const Aws::Vector<Aws::String>& value) { SetDashboardViewerPrincipals(value); return *this;}
-    inline OpenSearchResourceConfig& WithDashboardViewerPrincipals(Aws::Vector<Aws::String>&& value) { SetDashboardViewerPrincipals(std::move(value)); return *this;}
-    inline OpenSearchResourceConfig& AddDashboardViewerPrincipals(const Aws::String& value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals.push_back(value); return *this; }
-    inline OpenSearchResourceConfig& AddDashboardViewerPrincipals(Aws::String&& value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals.push_back(std::move(value)); return *this; }
-    inline OpenSearchResourceConfig& AddDashboardViewerPrincipals(const char* value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals.push_back(value); return *this; }
+    template<typename DashboardViewerPrincipalsT = Aws::Vector<Aws::String>>
+    void SetDashboardViewerPrincipals(DashboardViewerPrincipalsT&& value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals = std::forward<DashboardViewerPrincipalsT>(value); }
+    template<typename DashboardViewerPrincipalsT = Aws::Vector<Aws::String>>
+    OpenSearchResourceConfig& WithDashboardViewerPrincipals(DashboardViewerPrincipalsT&& value) { SetDashboardViewerPrincipals(std::forward<DashboardViewerPrincipalsT>(value)); return *this;}
+    template<typename DashboardViewerPrincipalsT = Aws::String>
+    OpenSearchResourceConfig& AddDashboardViewerPrincipals(DashboardViewerPrincipalsT&& value) { m_dashboardViewerPrincipalsHasBeenSet = true; m_dashboardViewerPrincipals.emplace_back(std::forward<DashboardViewerPrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,14 +96,12 @@ namespace Model
      * integration with OpenSearch Service, specify it here. If you omit this, a new
      * application will be created.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline OpenSearchResourceConfig& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline OpenSearchResourceConfig& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline OpenSearchResourceConfig& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    OpenSearchResourceConfig& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,7 +111,7 @@ namespace Model
      * maximum time period that you can choose when viewing data in the dashboard.
      * Choosing a longer time frame will incur additional costs. </p>
      */
-    inline int GetRetentionDays() const{ return m_retentionDays; }
+    inline int GetRetentionDays() const { return m_retentionDays; }
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
     inline OpenSearchResourceConfig& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
@@ -137,7 +130,7 @@ namespace Model
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    int m_retentionDays;
+    int m_retentionDays{0};
     bool m_retentionDaysHasBeenSet = false;
   };
 

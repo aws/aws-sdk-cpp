@@ -30,7 +30,7 @@ namespace Model
   class StatsEvent
   {
   public:
-    AWS_S3_API StatsEvent();
+    AWS_S3_API StatsEvent() = default;
     AWS_S3_API StatsEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API StatsEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Stats event details.</p>
      */
-    inline const Stats& GetDetails() const{ return m_details; }
+    inline const Stats& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Stats& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Stats&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline StatsEvent& WithDetails(const Stats& value) { SetDetails(value); return *this;}
-    inline StatsEvent& WithDetails(Stats&& value) { SetDetails(std::move(value)); return *this;}
+    template<typename DetailsT = Stats>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Stats>
+    StatsEvent& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

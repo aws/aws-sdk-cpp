@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTableResult::DescribeTableResult()
-{
-}
-
 DescribeTableResult::DescribeTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeTableResult& DescribeTableResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetObject("Table");
-
+    m_tableHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

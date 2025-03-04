@@ -12,15 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchWriteItemRequest::BatchWriteItemRequest() : 
-    m_requestItemsHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
-    m_returnItemCollectionMetricsHasBeenSet(false)
-{
-}
-
 Aws::String BatchWriteItemRequest::SerializePayload() const
 {
   JsonValue payload;

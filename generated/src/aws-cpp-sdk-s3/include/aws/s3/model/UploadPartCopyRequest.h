@@ -28,7 +28,7 @@ namespace Model
   class UploadPartCopyRequest : public S3Request
   {
   public:
-    AWS_S3_API UploadPartCopyRequest();
+    AWS_S3_API UploadPartCopyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -87,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
      * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline UploadPartCopyRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline UploadPartCopyRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    UploadPartCopyRequest& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +141,12 @@ namespace Model
      * the <code>x-amz-copy-source</code>. </p>  <p> <b>Directory buckets</b> -
      * S3 Versioning isn't enabled and supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetCopySource() const{ return m_copySource; }
+    inline const Aws::String& GetCopySource() const { return m_copySource; }
     inline bool CopySourceHasBeenSet() const { return m_copySourceHasBeenSet; }
-    inline void SetCopySource(const Aws::String& value) { m_copySourceHasBeenSet = true; m_copySource = value; }
-    inline void SetCopySource(Aws::String&& value) { m_copySourceHasBeenSet = true; m_copySource = std::move(value); }
-    inline void SetCopySource(const char* value) { m_copySourceHasBeenSet = true; m_copySource.assign(value); }
-    inline UploadPartCopyRequest& WithCopySource(const Aws::String& value) { SetCopySource(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySource(Aws::String&& value) { SetCopySource(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySource(const char* value) { SetCopySource(value); return *this;}
+    template<typename CopySourceT = Aws::String>
+    void SetCopySource(CopySourceT&& value) { m_copySourceHasBeenSet = true; m_copySource = std::forward<CopySourceT>(value); }
+    template<typename CopySourceT = Aws::String>
+    UploadPartCopyRequest& WithCopySource(CopySourceT&& value) { SetCopySource(std::forward<CopySourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +160,12 @@ namespace Model
      * <code>false</code>;</p> <p>Amazon S3 returns <code>200 OK</code> and copies the
      * data. </p>
      */
-    inline const Aws::String& GetCopySourceIfMatch() const{ return m_copySourceIfMatch; }
+    inline const Aws::String& GetCopySourceIfMatch() const { return m_copySourceIfMatch; }
     inline bool CopySourceIfMatchHasBeenSet() const { return m_copySourceIfMatchHasBeenSet; }
-    inline void SetCopySourceIfMatch(const Aws::String& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = value; }
-    inline void SetCopySourceIfMatch(Aws::String&& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = std::move(value); }
-    inline void SetCopySourceIfMatch(const char* value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch.assign(value); }
-    inline UploadPartCopyRequest& WithCopySourceIfMatch(const Aws::String& value) { SetCopySourceIfMatch(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceIfMatch(Aws::String&& value) { SetCopySourceIfMatch(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceIfMatch(const char* value) { SetCopySourceIfMatch(value); return *this;}
+    template<typename CopySourceIfMatchT = Aws::String>
+    void SetCopySourceIfMatch(CopySourceIfMatchT&& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = std::forward<CopySourceIfMatchT>(value); }
+    template<typename CopySourceIfMatchT = Aws::String>
+    UploadPartCopyRequest& WithCopySourceIfMatch(CopySourceIfMatchT&& value) { SetCopySourceIfMatch(std::forward<CopySourceIfMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,12 +179,12 @@ namespace Model
      * <code>true</code>;</p> <p>Amazon S3 returns <code>412 Precondition Failed</code>
      * response code. </p>
      */
-    inline const Aws::Utils::DateTime& GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
+    inline const Aws::Utils::DateTime& GetCopySourceIfModifiedSince() const { return m_copySourceIfModifiedSince; }
     inline bool CopySourceIfModifiedSinceHasBeenSet() const { return m_copySourceIfModifiedSinceHasBeenSet; }
-    inline void SetCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
-    inline void SetCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = std::move(value); }
-    inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfModifiedSince(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfModifiedSince(std::move(value)); return *this;}
+    template<typename CopySourceIfModifiedSinceT = Aws::Utils::DateTime>
+    void SetCopySourceIfModifiedSince(CopySourceIfModifiedSinceT&& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = std::forward<CopySourceIfModifiedSinceT>(value); }
+    template<typename CopySourceIfModifiedSinceT = Aws::Utils::DateTime>
+    UploadPartCopyRequest& WithCopySourceIfModifiedSince(CopySourceIfModifiedSinceT&& value) { SetCopySourceIfModifiedSince(std::forward<CopySourceIfModifiedSinceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,14 +198,12 @@ namespace Model
      * <code>true</code>;</p> <p>Amazon S3 returns <code>412 Precondition Failed</code>
      * response code. </p>
      */
-    inline const Aws::String& GetCopySourceIfNoneMatch() const{ return m_copySourceIfNoneMatch; }
+    inline const Aws::String& GetCopySourceIfNoneMatch() const { return m_copySourceIfNoneMatch; }
     inline bool CopySourceIfNoneMatchHasBeenSet() const { return m_copySourceIfNoneMatchHasBeenSet; }
-    inline void SetCopySourceIfNoneMatch(const Aws::String& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = value; }
-    inline void SetCopySourceIfNoneMatch(Aws::String&& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = std::move(value); }
-    inline void SetCopySourceIfNoneMatch(const char* value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch.assign(value); }
-    inline UploadPartCopyRequest& WithCopySourceIfNoneMatch(const Aws::String& value) { SetCopySourceIfNoneMatch(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceIfNoneMatch(Aws::String&& value) { SetCopySourceIfNoneMatch(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceIfNoneMatch(const char* value) { SetCopySourceIfNoneMatch(value); return *this;}
+    template<typename CopySourceIfNoneMatchT = Aws::String>
+    void SetCopySourceIfNoneMatch(CopySourceIfNoneMatchT&& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = std::forward<CopySourceIfNoneMatchT>(value); }
+    template<typename CopySourceIfNoneMatchT = Aws::String>
+    UploadPartCopyRequest& WithCopySourceIfNoneMatch(CopySourceIfNoneMatchT&& value) { SetCopySourceIfNoneMatch(std::forward<CopySourceIfNoneMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,12 +217,12 @@ namespace Model
      * <code>false</code>;</p> <p>Amazon S3 returns <code>200 OK</code> and copies the
      * data. </p>
      */
-    inline const Aws::Utils::DateTime& GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
+    inline const Aws::Utils::DateTime& GetCopySourceIfUnmodifiedSince() const { return m_copySourceIfUnmodifiedSince; }
     inline bool CopySourceIfUnmodifiedSinceHasBeenSet() const { return m_copySourceIfUnmodifiedSinceHasBeenSet; }
-    inline void SetCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
-    inline void SetCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = std::move(value); }
-    inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfUnmodifiedSince(std::move(value)); return *this;}
+    template<typename CopySourceIfUnmodifiedSinceT = Aws::Utils::DateTime>
+    void SetCopySourceIfUnmodifiedSince(CopySourceIfUnmodifiedSinceT&& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = std::forward<CopySourceIfUnmodifiedSinceT>(value); }
+    template<typename CopySourceIfUnmodifiedSinceT = Aws::Utils::DateTime>
+    UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(CopySourceIfUnmodifiedSinceT&& value) { SetCopySourceIfUnmodifiedSince(std::forward<CopySourceIfUnmodifiedSinceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,28 +233,24 @@ namespace Model
      * first 10 bytes of the source. You can copy a range only if the source object is
      * greater than 5 MB.</p>
      */
-    inline const Aws::String& GetCopySourceRange() const{ return m_copySourceRange; }
+    inline const Aws::String& GetCopySourceRange() const { return m_copySourceRange; }
     inline bool CopySourceRangeHasBeenSet() const { return m_copySourceRangeHasBeenSet; }
-    inline void SetCopySourceRange(const Aws::String& value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange = value; }
-    inline void SetCopySourceRange(Aws::String&& value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange = std::move(value); }
-    inline void SetCopySourceRange(const char* value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange.assign(value); }
-    inline UploadPartCopyRequest& WithCopySourceRange(const Aws::String& value) { SetCopySourceRange(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceRange(Aws::String&& value) { SetCopySourceRange(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceRange(const char* value) { SetCopySourceRange(value); return *this;}
+    template<typename CopySourceRangeT = Aws::String>
+    void SetCopySourceRange(CopySourceRangeT&& value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange = std::forward<CopySourceRangeT>(value); }
+    template<typename CopySourceRangeT = Aws::String>
+    UploadPartCopyRequest& WithCopySourceRange(CopySourceRangeT&& value) { SetCopySourceRange(std::forward<CopySourceRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Object key for which the multipart upload was initiated.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline UploadPartCopyRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline UploadPartCopyRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    UploadPartCopyRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -270,7 +258,7 @@ namespace Model
      * <p>Part number of part being copied. This is a positive integer between 1 and
      * 10,000.</p>
      */
-    inline int GetPartNumber() const{ return m_partNumber; }
+    inline int GetPartNumber() const { return m_partNumber; }
     inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
     inline UploadPartCopyRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
@@ -280,14 +268,12 @@ namespace Model
     /**
      * <p>Upload ID identifying the multipart upload whose part is being copied.</p>
      */
-    inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
     inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
-    inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
-    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
-    inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
-    inline UploadPartCopyRequest& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
-    inline UploadPartCopyRequest& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    UploadPartCopyRequest& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -296,14 +282,12 @@ namespace Model
      * AES256).</p>  <p>This functionality is not supported when the destination
      * bucket is a directory bucket.</p> 
      */
-    inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+    inline const Aws::String& GetSSECustomerAlgorithm() const { return m_sSECustomerAlgorithm; }
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
-    inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
-    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
-    inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
-    inline UploadPartCopyRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
-    inline UploadPartCopyRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+    template<typename SSECustomerAlgorithmT = Aws::String>
+    void SetSSECustomerAlgorithm(SSECustomerAlgorithmT&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::forward<SSECustomerAlgorithmT>(value); }
+    template<typename SSECustomerAlgorithmT = Aws::String>
+    UploadPartCopyRequest& WithSSECustomerAlgorithm(SSECustomerAlgorithmT&& value) { SetSSECustomerAlgorithm(std::forward<SSECustomerAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -317,14 +301,12 @@ namespace Model
      * request.</p>  <p>This functionality is not supported when the destination
      * bucket is a directory bucket.</p> 
      */
-    inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
+    inline const Aws::String& GetSSECustomerKey() const { return m_sSECustomerKey; }
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
-    inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
-    inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
-    inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
-    inline UploadPartCopyRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
-    inline UploadPartCopyRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
+    template<typename SSECustomerKeyT = Aws::String>
+    void SetSSECustomerKey(SSECustomerKeyT&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::forward<SSECustomerKeyT>(value); }
+    template<typename SSECustomerKeyT = Aws::String>
+    UploadPartCopyRequest& WithSSECustomerKey(SSECustomerKeyT&& value) { SetSSECustomerKey(std::forward<SSECustomerKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -334,14 +316,12 @@ namespace Model
      * encryption key was transmitted without error.</p>  <p>This functionality
      * is not supported when the destination bucket is a directory bucket.</p> 
      */
-    inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
+    inline const Aws::String& GetSSECustomerKeyMD5() const { return m_sSECustomerKeyMD5; }
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
-    inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
-    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
-    inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
-    inline UploadPartCopyRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
-    inline UploadPartCopyRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
+    template<typename SSECustomerKeyMD5T = Aws::String>
+    void SetSSECustomerKeyMD5(SSECustomerKeyMD5T&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::forward<SSECustomerKeyMD5T>(value); }
+    template<typename SSECustomerKeyMD5T = Aws::String>
+    UploadPartCopyRequest& WithSSECustomerKeyMD5(SSECustomerKeyMD5T&& value) { SetSSECustomerKeyMD5(std::forward<SSECustomerKeyMD5T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -350,14 +330,12 @@ namespace Model
      * example, <code>AES256</code>).</p>  <p>This functionality is not supported
      * when the source object is in a directory bucket.</p> 
      */
-    inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const{ return m_copySourceSSECustomerAlgorithm; }
+    inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const { return m_copySourceSSECustomerAlgorithm; }
     inline bool CopySourceSSECustomerAlgorithmHasBeenSet() const { return m_copySourceSSECustomerAlgorithmHasBeenSet; }
-    inline void SetCopySourceSSECustomerAlgorithm(const Aws::String& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = value; }
-    inline void SetCopySourceSSECustomerAlgorithm(Aws::String&& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = std::move(value); }
-    inline void SetCopySourceSSECustomerAlgorithm(const char* value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm.assign(value); }
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerAlgorithm(const Aws::String& value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerAlgorithm(Aws::String&& value) { SetCopySourceSSECustomerAlgorithm(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerAlgorithm(const char* value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
+    template<typename CopySourceSSECustomerAlgorithmT = Aws::String>
+    void SetCopySourceSSECustomerAlgorithm(CopySourceSSECustomerAlgorithmT&& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = std::forward<CopySourceSSECustomerAlgorithmT>(value); }
+    template<typename CopySourceSSECustomerAlgorithmT = Aws::String>
+    UploadPartCopyRequest& WithCopySourceSSECustomerAlgorithm(CopySourceSSECustomerAlgorithmT&& value) { SetCopySourceSSECustomerAlgorithm(std::forward<CopySourceSSECustomerAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -368,14 +346,12 @@ namespace Model
      * functionality is not supported when the source object is in a directory
      * bucket.</p> 
      */
-    inline const Aws::String& GetCopySourceSSECustomerKey() const{ return m_copySourceSSECustomerKey; }
+    inline const Aws::String& GetCopySourceSSECustomerKey() const { return m_copySourceSSECustomerKey; }
     inline bool CopySourceSSECustomerKeyHasBeenSet() const { return m_copySourceSSECustomerKeyHasBeenSet; }
-    inline void SetCopySourceSSECustomerKey(const Aws::String& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = value; }
-    inline void SetCopySourceSSECustomerKey(Aws::String&& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = std::move(value); }
-    inline void SetCopySourceSSECustomerKey(const char* value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey.assign(value); }
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerKey(const Aws::String& value) { SetCopySourceSSECustomerKey(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerKey(Aws::String&& value) { SetCopySourceSSECustomerKey(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerKey(const char* value) { SetCopySourceSSECustomerKey(value); return *this;}
+    template<typename CopySourceSSECustomerKeyT = Aws::String>
+    void SetCopySourceSSECustomerKey(CopySourceSSECustomerKeyT&& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = std::forward<CopySourceSSECustomerKeyT>(value); }
+    template<typename CopySourceSSECustomerKeyT = Aws::String>
+    UploadPartCopyRequest& WithCopySourceSSECustomerKey(CopySourceSSECustomerKeyT&& value) { SetCopySourceSSECustomerKey(std::forward<CopySourceSSECustomerKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -385,24 +361,20 @@ namespace Model
      * encryption key was transmitted without error.</p>  <p>This functionality
      * is not supported when the source object is in a directory bucket.</p> 
      */
-    inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const{ return m_copySourceSSECustomerKeyMD5; }
+    inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const { return m_copySourceSSECustomerKeyMD5; }
     inline bool CopySourceSSECustomerKeyMD5HasBeenSet() const { return m_copySourceSSECustomerKeyMD5HasBeenSet; }
-    inline void SetCopySourceSSECustomerKeyMD5(const Aws::String& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = value; }
-    inline void SetCopySourceSSECustomerKeyMD5(Aws::String&& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = std::move(value); }
-    inline void SetCopySourceSSECustomerKeyMD5(const char* value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5.assign(value); }
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerKeyMD5(const Aws::String& value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerKeyMD5(Aws::String&& value) { SetCopySourceSSECustomerKeyMD5(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithCopySourceSSECustomerKeyMD5(const char* value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
+    template<typename CopySourceSSECustomerKeyMD5T = Aws::String>
+    void SetCopySourceSSECustomerKeyMD5(CopySourceSSECustomerKeyMD5T&& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = std::forward<CopySourceSSECustomerKeyMD5T>(value); }
+    template<typename CopySourceSSECustomerKeyMD5T = Aws::String>
+    UploadPartCopyRequest& WithCopySourceSSECustomerKeyMD5(CopySourceSSECustomerKeyMD5T&& value) { SetCopySourceSSECustomerKeyMD5(std::forward<CopySourceSSECustomerKeyMD5T>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+    inline RequestPayer GetRequestPayer() const { return m_requestPayer; }
     inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
-    inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
-    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
-    inline UploadPartCopyRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
-    inline UploadPartCopyRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+    inline void SetRequestPayer(RequestPayer value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+    inline UploadPartCopyRequest& WithRequestPayer(RequestPayer value) { SetRequestPayer(value); return *this;}
     ///@}
 
     ///@{
@@ -412,14 +384,12 @@ namespace Model
      * request fails with the HTTP status code <code>403 Forbidden</code> (access
      * denied).</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline UploadPartCopyRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline UploadPartCopyRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    UploadPartCopyRequest& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -428,31 +398,26 @@ namespace Model
      * you provide does not match the actual owner of the source bucket, the request
      * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
-    inline const Aws::String& GetExpectedSourceBucketOwner() const{ return m_expectedSourceBucketOwner; }
+    inline const Aws::String& GetExpectedSourceBucketOwner() const { return m_expectedSourceBucketOwner; }
     inline bool ExpectedSourceBucketOwnerHasBeenSet() const { return m_expectedSourceBucketOwnerHasBeenSet; }
-    inline void SetExpectedSourceBucketOwner(const Aws::String& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = value; }
-    inline void SetExpectedSourceBucketOwner(Aws::String&& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = std::move(value); }
-    inline void SetExpectedSourceBucketOwner(const char* value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner.assign(value); }
-    inline UploadPartCopyRequest& WithExpectedSourceBucketOwner(const Aws::String& value) { SetExpectedSourceBucketOwner(value); return *this;}
-    inline UploadPartCopyRequest& WithExpectedSourceBucketOwner(Aws::String&& value) { SetExpectedSourceBucketOwner(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& WithExpectedSourceBucketOwner(const char* value) { SetExpectedSourceBucketOwner(value); return *this;}
+    template<typename ExpectedSourceBucketOwnerT = Aws::String>
+    void SetExpectedSourceBucketOwner(ExpectedSourceBucketOwnerT&& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = std::forward<ExpectedSourceBucketOwnerT>(value); }
+    template<typename ExpectedSourceBucketOwnerT = Aws::String>
+    UploadPartCopyRequest& WithExpectedSourceBucketOwner(ExpectedSourceBucketOwnerT&& value) { SetExpectedSourceBucketOwner(std::forward<ExpectedSourceBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-    inline UploadPartCopyRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-    inline UploadPartCopyRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline UploadPartCopyRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::forward<CustomizedAccessLogTagT>(value); }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    UploadPartCopyRequest& WithCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { SetCustomizedAccessLogTag(std::forward<CustomizedAccessLogTagT>(value)); return *this;}
+    template<typename CustomizedAccessLogTagKeyT = Aws::String, typename CustomizedAccessLogTagValueT = Aws::String>
+    UploadPartCopyRequest& AddCustomizedAccessLogTag(CustomizedAccessLogTagKeyT&& key, CustomizedAccessLogTagValueT&& value) {
+      m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::forward<CustomizedAccessLogTagKeyT>(key), std::forward<CustomizedAccessLogTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -465,13 +430,13 @@ namespace Model
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet = false;
 
-    Aws::Utils::DateTime m_copySourceIfModifiedSince;
+    Aws::Utils::DateTime m_copySourceIfModifiedSince{};
     bool m_copySourceIfModifiedSinceHasBeenSet = false;
 
     Aws::String m_copySourceIfNoneMatch;
     bool m_copySourceIfNoneMatchHasBeenSet = false;
 
-    Aws::Utils::DateTime m_copySourceIfUnmodifiedSince;
+    Aws::Utils::DateTime m_copySourceIfUnmodifiedSince{};
     bool m_copySourceIfUnmodifiedSinceHasBeenSet = false;
 
     Aws::String m_copySourceRange;
@@ -480,7 +445,7 @@ namespace Model
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    int m_partNumber;
+    int m_partNumber{0};
     bool m_partNumberHasBeenSet = false;
 
     Aws::String m_uploadId;
@@ -504,7 +469,7 @@ namespace Model
     Aws::String m_copySourceSSECustomerKeyMD5;
     bool m_copySourceSSECustomerKeyMD5HasBeenSet = false;
 
-    RequestPayer m_requestPayer;
+    RequestPayer m_requestPayer{RequestPayer::NOT_SET};
     bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;

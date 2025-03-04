@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListBucketAnalyticsConfigurationsResult()
 {
   *this = result;
 }

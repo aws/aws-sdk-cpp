@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpEnumPayloadResult::HttpEnumPayloadResult() : 
-    m_payload(StringEnum::NOT_SET)
-{
-}
-
 HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : HttpEnumPayloadResult()
 {
   *this = result;
 }

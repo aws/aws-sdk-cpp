@@ -21,7 +21,7 @@ namespace Model
   class PutWithContentEncodingRequest : public JsonProtocolRequest
   {
   public:
-    AWS_JSONPROTOCOL_API PutWithContentEncodingRequest();
+    AWS_JSONPROTOCOL_API PutWithContentEncodingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetEncoding() const{ return m_encoding; }
+    inline const Aws::String& GetEncoding() const { return m_encoding; }
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-    inline void SetEncoding(const Aws::String& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-    inline void SetEncoding(Aws::String&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-    inline void SetEncoding(const char* value) { m_encodingHasBeenSet = true; m_encoding.assign(value); }
-    inline PutWithContentEncodingRequest& WithEncoding(const Aws::String& value) { SetEncoding(value); return *this;}
-    inline PutWithContentEncodingRequest& WithEncoding(Aws::String&& value) { SetEncoding(std::move(value)); return *this;}
-    inline PutWithContentEncodingRequest& WithEncoding(const char* value) { SetEncoding(value); return *this;}
+    template<typename EncodingT = Aws::String>
+    void SetEncoding(EncodingT&& value) { m_encodingHasBeenSet = true; m_encoding = std::forward<EncodingT>(value); }
+    template<typename EncodingT = Aws::String>
+    PutWithContentEncodingRequest& WithEncoding(EncodingT&& value) { SetEncoding(std::forward<EncodingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetData() const{ return m_data; }
+    inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-    inline PutWithContentEncodingRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
-    inline PutWithContentEncodingRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-    inline PutWithContentEncodingRequest& WithData(const char* value) { SetData(value); return *this;}
+    template<typename DataT = Aws::String>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::String>
+    PutWithContentEncodingRequest& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 

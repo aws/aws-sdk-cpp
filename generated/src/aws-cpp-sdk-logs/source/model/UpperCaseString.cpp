@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-UpperCaseString::UpperCaseString() : 
-    m_withKeysHasBeenSet(false)
-{
-}
-
 UpperCaseString::UpperCaseString(JsonView jsonValue)
-  : UpperCaseString()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ UpperCaseString& UpperCaseString::operator =(JsonView jsonValue)
     {
       m_withKeys.push_back(withKeysJsonList[withKeysIndex].AsString());
     }
-    m_withKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

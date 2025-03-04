@@ -16,14 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HeadBucketResult::HeadBucketResult() : 
-    m_bucketLocationType(LocationType::NOT_SET),
-    m_accessPointAlias(false)
-{
-}
-
 HeadBucketResult::HeadBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : HeadBucketResult()
 {
   *this = result;
 }

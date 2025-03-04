@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-OperationWithOptionalInputOutputResult::OperationWithOptionalInputOutputResult()
-{
-}
-
 OperationWithOptionalInputOutputResult::OperationWithOptionalInputOutputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ OperationWithOptionalInputOutputResult& OperationWithOptionalInputOutputResult::
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
+    m_valueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-RedirectAllRequestsTo::RedirectAllRequestsTo() : 
-    m_hostNameHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 RedirectAllRequestsTo::RedirectAllRequestsTo(const XmlNode& xmlNode)
-  : RedirectAllRequestsTo()
 {
   *this = xmlNode;
 }

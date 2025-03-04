@@ -12,14 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableReplicaAutoScalingRequest::UpdateTableReplicaAutoScalingRequest() : 
-    m_globalSecondaryIndexUpdatesHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet(false),
-    m_replicaUpdatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableReplicaAutoScalingRequest::SerializePayload() const
 {
   JsonValue payload;

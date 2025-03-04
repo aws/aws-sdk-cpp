@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteObjectTaggingResult::DeleteObjectTaggingResult()
-{
-}
-
 DeleteObjectTaggingResult::DeleteObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

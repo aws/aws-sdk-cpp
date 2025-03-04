@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlEnumsResult::XmlEnumsResult() : 
-    m_fooEnum1(FooEnum::NOT_SET),
-    m_fooEnum2(FooEnum::NOT_SET),
-    m_fooEnum3(FooEnum::NOT_SET)
-{
-}
-
 XmlEnumsResult::XmlEnumsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : XmlEnumsResult()
 {
   *this = result;
 }

@@ -16,20 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPartsResult::ListPartsResult() : 
-    m_partNumberMarker(0),
-    m_nextPartNumberMarker(0),
-    m_maxParts(0),
-    m_isTruncated(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumType(ChecksumType::NOT_SET)
-{
-}
-
 ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListPartsResult()
 {
   *this = result;
 }

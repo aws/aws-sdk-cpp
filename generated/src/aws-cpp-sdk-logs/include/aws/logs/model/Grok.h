@@ -35,7 +35,7 @@ namespace Model
   class Grok
   {
   public:
-    AWS_CLOUDWATCHLOGS_API Grok();
+    AWS_CLOUDWATCHLOGS_API Grok() = default;
     AWS_CLOUDWATCHLOGS_API Grok(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Grok& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The path to the field in the log event that you want to parse. If you omit
      * this value, the whole log message is parsed.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline Grok& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline Grok& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline Grok& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    Grok& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#Grok-Patterns">Supported
      * grok patterns</a>.</p>
      */
-    inline const Aws::String& GetMatch() const{ return m_match; }
+    inline const Aws::String& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const Aws::String& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(Aws::String&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline void SetMatch(const char* value) { m_matchHasBeenSet = true; m_match.assign(value); }
-    inline Grok& WithMatch(const Aws::String& value) { SetMatch(value); return *this;}
-    inline Grok& WithMatch(Aws::String&& value) { SetMatch(std::move(value)); return *this;}
-    inline Grok& WithMatch(const char* value) { SetMatch(value); return *this;}
+    template<typename MatchT = Aws::String>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = Aws::String>
+    Grok& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
   private:
 

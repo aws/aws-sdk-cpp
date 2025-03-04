@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourceResult::ListTagsForResourceResult()
-{
-}
-
 ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,7 +33,6 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

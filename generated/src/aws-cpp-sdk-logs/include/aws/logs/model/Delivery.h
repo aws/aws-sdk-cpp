@@ -42,7 +42,7 @@ namespace Model
   class Delivery
   {
   public:
-    AWS_CLOUDWATCHLOGS_API Delivery();
+    AWS_CLOUDWATCHLOGS_API Delivery() = default;
     AWS_CLOUDWATCHLOGS_API Delivery(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Delivery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,42 +52,36 @@ namespace Model
     /**
      * <p>The unique ID that identifies this delivery in your account.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Delivery& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Delivery& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Delivery& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Delivery& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Delivery& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Delivery& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Delivery& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Delivery& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the delivery source that is associated with this delivery.</p>
      */
-    inline const Aws::String& GetDeliverySourceName() const{ return m_deliverySourceName; }
+    inline const Aws::String& GetDeliverySourceName() const { return m_deliverySourceName; }
     inline bool DeliverySourceNameHasBeenSet() const { return m_deliverySourceNameHasBeenSet; }
-    inline void SetDeliverySourceName(const Aws::String& value) { m_deliverySourceNameHasBeenSet = true; m_deliverySourceName = value; }
-    inline void SetDeliverySourceName(Aws::String&& value) { m_deliverySourceNameHasBeenSet = true; m_deliverySourceName = std::move(value); }
-    inline void SetDeliverySourceName(const char* value) { m_deliverySourceNameHasBeenSet = true; m_deliverySourceName.assign(value); }
-    inline Delivery& WithDeliverySourceName(const Aws::String& value) { SetDeliverySourceName(value); return *this;}
-    inline Delivery& WithDeliverySourceName(Aws::String&& value) { SetDeliverySourceName(std::move(value)); return *this;}
-    inline Delivery& WithDeliverySourceName(const char* value) { SetDeliverySourceName(value); return *this;}
+    template<typename DeliverySourceNameT = Aws::String>
+    void SetDeliverySourceName(DeliverySourceNameT&& value) { m_deliverySourceNameHasBeenSet = true; m_deliverySourceName = std::forward<DeliverySourceNameT>(value); }
+    template<typename DeliverySourceNameT = Aws::String>
+    Delivery& WithDeliverySourceName(DeliverySourceNameT&& value) { SetDeliverySourceName(std::forward<DeliverySourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>The ARN of the delivery destination that is associated with this
      * delivery.</p>
      */
-    inline const Aws::String& GetDeliveryDestinationArn() const{ return m_deliveryDestinationArn; }
+    inline const Aws::String& GetDeliveryDestinationArn() const { return m_deliveryDestinationArn; }
     inline bool DeliveryDestinationArnHasBeenSet() const { return m_deliveryDestinationArnHasBeenSet; }
-    inline void SetDeliveryDestinationArn(const Aws::String& value) { m_deliveryDestinationArnHasBeenSet = true; m_deliveryDestinationArn = value; }
-    inline void SetDeliveryDestinationArn(Aws::String&& value) { m_deliveryDestinationArnHasBeenSet = true; m_deliveryDestinationArn = std::move(value); }
-    inline void SetDeliveryDestinationArn(const char* value) { m_deliveryDestinationArnHasBeenSet = true; m_deliveryDestinationArn.assign(value); }
-    inline Delivery& WithDeliveryDestinationArn(const Aws::String& value) { SetDeliveryDestinationArn(value); return *this;}
-    inline Delivery& WithDeliveryDestinationArn(Aws::String&& value) { SetDeliveryDestinationArn(std::move(value)); return *this;}
-    inline Delivery& WithDeliveryDestinationArn(const char* value) { SetDeliveryDestinationArn(value); return *this;}
+    template<typename DeliveryDestinationArnT = Aws::String>
+    void SetDeliveryDestinationArn(DeliveryDestinationArnT&& value) { m_deliveryDestinationArnHasBeenSet = true; m_deliveryDestinationArn = std::forward<DeliveryDestinationArnT>(value); }
+    template<typename DeliveryDestinationArnT = Aws::String>
+    Delivery& WithDeliveryDestinationArn(DeliveryDestinationArnT&& value) { SetDeliveryDestinationArn(std::forward<DeliveryDestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,27 +102,24 @@ namespace Model
      * <p>Displays whether the delivery destination associated with this delivery is
      * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
-    inline const DeliveryDestinationType& GetDeliveryDestinationType() const{ return m_deliveryDestinationType; }
+    inline DeliveryDestinationType GetDeliveryDestinationType() const { return m_deliveryDestinationType; }
     inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }
-    inline void SetDeliveryDestinationType(const DeliveryDestinationType& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
-    inline void SetDeliveryDestinationType(DeliveryDestinationType&& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = std::move(value); }
-    inline Delivery& WithDeliveryDestinationType(const DeliveryDestinationType& value) { SetDeliveryDestinationType(value); return *this;}
-    inline Delivery& WithDeliveryDestinationType(DeliveryDestinationType&& value) { SetDeliveryDestinationType(std::move(value)); return *this;}
+    inline void SetDeliveryDestinationType(DeliveryDestinationType value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
+    inline Delivery& WithDeliveryDestinationType(DeliveryDestinationType value) { SetDeliveryDestinationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The record fields used in this delivery.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecordFields() const{ return m_recordFields; }
+    inline const Aws::Vector<Aws::String>& GetRecordFields() const { return m_recordFields; }
     inline bool RecordFieldsHasBeenSet() const { return m_recordFieldsHasBeenSet; }
-    inline void SetRecordFields(const Aws::Vector<Aws::String>& value) { m_recordFieldsHasBeenSet = true; m_recordFields = value; }
-    inline void SetRecordFields(Aws::Vector<Aws::String>&& value) { m_recordFieldsHasBeenSet = true; m_recordFields = std::move(value); }
-    inline Delivery& WithRecordFields(const Aws::Vector<Aws::String>& value) { SetRecordFields(value); return *this;}
-    inline Delivery& WithRecordFields(Aws::Vector<Aws::String>&& value) { SetRecordFields(std::move(value)); return *this;}
-    inline Delivery& AddRecordFields(const Aws::String& value) { m_recordFieldsHasBeenSet = true; m_recordFields.push_back(value); return *this; }
-    inline Delivery& AddRecordFields(Aws::String&& value) { m_recordFieldsHasBeenSet = true; m_recordFields.push_back(std::move(value)); return *this; }
-    inline Delivery& AddRecordFields(const char* value) { m_recordFieldsHasBeenSet = true; m_recordFields.push_back(value); return *this; }
+    template<typename RecordFieldsT = Aws::Vector<Aws::String>>
+    void SetRecordFields(RecordFieldsT&& value) { m_recordFieldsHasBeenSet = true; m_recordFields = std::forward<RecordFieldsT>(value); }
+    template<typename RecordFieldsT = Aws::Vector<Aws::String>>
+    Delivery& WithRecordFields(RecordFieldsT&& value) { SetRecordFields(std::forward<RecordFieldsT>(value)); return *this;}
+    template<typename RecordFieldsT = Aws::String>
+    Delivery& AddRecordFields(RecordFieldsT&& value) { m_recordFieldsHasBeenSet = true; m_recordFields.emplace_back(std::forward<RecordFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,14 +128,12 @@ namespace Model
      * format of a delivery is in <code>Plain</code>, <code>W3C</code>, or
      * <code>Raw</code> format.</p>
      */
-    inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
+    inline const Aws::String& GetFieldDelimiter() const { return m_fieldDelimiter; }
     inline bool FieldDelimiterHasBeenSet() const { return m_fieldDelimiterHasBeenSet; }
-    inline void SetFieldDelimiter(const Aws::String& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = value; }
-    inline void SetFieldDelimiter(Aws::String&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::move(value); }
-    inline void SetFieldDelimiter(const char* value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter.assign(value); }
-    inline Delivery& WithFieldDelimiter(const Aws::String& value) { SetFieldDelimiter(value); return *this;}
-    inline Delivery& WithFieldDelimiter(Aws::String&& value) { SetFieldDelimiter(std::move(value)); return *this;}
-    inline Delivery& WithFieldDelimiter(const char* value) { SetFieldDelimiter(value); return *this;}
+    template<typename FieldDelimiterT = Aws::String>
+    void SetFieldDelimiter(FieldDelimiterT&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::forward<FieldDelimiterT>(value); }
+    template<typename FieldDelimiterT = Aws::String>
+    Delivery& WithFieldDelimiter(FieldDelimiterT&& value) { SetFieldDelimiter(std::forward<FieldDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,31 +141,28 @@ namespace Model
      * <p>This structure contains delivery configurations that apply only when the
      * delivery destination resource is an S3 bucket.</p>
      */
-    inline const S3DeliveryConfiguration& GetS3DeliveryConfiguration() const{ return m_s3DeliveryConfiguration; }
+    inline const S3DeliveryConfiguration& GetS3DeliveryConfiguration() const { return m_s3DeliveryConfiguration; }
     inline bool S3DeliveryConfigurationHasBeenSet() const { return m_s3DeliveryConfigurationHasBeenSet; }
-    inline void SetS3DeliveryConfiguration(const S3DeliveryConfiguration& value) { m_s3DeliveryConfigurationHasBeenSet = true; m_s3DeliveryConfiguration = value; }
-    inline void SetS3DeliveryConfiguration(S3DeliveryConfiguration&& value) { m_s3DeliveryConfigurationHasBeenSet = true; m_s3DeliveryConfiguration = std::move(value); }
-    inline Delivery& WithS3DeliveryConfiguration(const S3DeliveryConfiguration& value) { SetS3DeliveryConfiguration(value); return *this;}
-    inline Delivery& WithS3DeliveryConfiguration(S3DeliveryConfiguration&& value) { SetS3DeliveryConfiguration(std::move(value)); return *this;}
+    template<typename S3DeliveryConfigurationT = S3DeliveryConfiguration>
+    void SetS3DeliveryConfiguration(S3DeliveryConfigurationT&& value) { m_s3DeliveryConfigurationHasBeenSet = true; m_s3DeliveryConfiguration = std::forward<S3DeliveryConfigurationT>(value); }
+    template<typename S3DeliveryConfigurationT = S3DeliveryConfiguration>
+    Delivery& WithS3DeliveryConfiguration(S3DeliveryConfigurationT&& value) { SetS3DeliveryConfiguration(std::forward<S3DeliveryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags that have been assigned to this delivery.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Delivery& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Delivery& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Delivery& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Delivery& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Delivery& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Delivery& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Delivery& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Delivery& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Delivery& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Delivery& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Delivery& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -194,7 +178,7 @@ namespace Model
     Aws::String m_deliveryDestinationArn;
     bool m_deliveryDestinationArnHasBeenSet = false;
 
-    DeliveryDestinationType m_deliveryDestinationType;
+    DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
     bool m_deliveryDestinationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recordFields;

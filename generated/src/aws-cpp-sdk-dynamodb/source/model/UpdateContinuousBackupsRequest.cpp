@@ -12,12 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContinuousBackupsRequest::UpdateContinuousBackupsRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_pointInTimeRecoverySpecificationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContinuousBackupsRequest::SerializePayload() const
 {
   JsonValue payload;

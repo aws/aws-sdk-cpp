@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQueryDefinitionRequest::DeleteQueryDefinitionRequest() : 
-    m_queryDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQueryDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

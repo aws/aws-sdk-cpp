@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-PointInTimeRecoveryDescription::PointInTimeRecoveryDescription() : 
-    m_pointInTimeRecoveryStatus(PointInTimeRecoveryStatus::NOT_SET),
-    m_pointInTimeRecoveryStatusHasBeenSet(false),
-    m_recoveryPeriodInDays(0),
-    m_recoveryPeriodInDaysHasBeenSet(false),
-    m_earliestRestorableDateTimeHasBeenSet(false),
-    m_latestRestorableDateTimeHasBeenSet(false)
-{
-}
-
 PointInTimeRecoveryDescription::PointInTimeRecoveryDescription(JsonView jsonValue)
-  : PointInTimeRecoveryDescription()
 {
   *this = jsonValue;
 }
@@ -40,30 +29,22 @@ PointInTimeRecoveryDescription& PointInTimeRecoveryDescription::operator =(JsonV
   {
     m_pointInTimeRecoveryStatus = PointInTimeRecoveryStatusMapper::GetPointInTimeRecoveryStatusForName(jsonValue.GetString("PointInTimeRecoveryStatus"));
 
-    m_pointInTimeRecoveryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPeriodInDays"))
   {
     m_recoveryPeriodInDays = jsonValue.GetInteger("RecoveryPeriodInDays");
-
     m_recoveryPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EarliestRestorableDateTime"))
   {
     m_earliestRestorableDateTime = jsonValue.GetDouble("EarliestRestorableDateTime");
-
     m_earliestRestorableDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestRestorableDateTime"))
   {
     m_latestRestorableDateTime = jsonValue.GetDouble("LatestRestorableDateTime");
-
     m_latestRestorableDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

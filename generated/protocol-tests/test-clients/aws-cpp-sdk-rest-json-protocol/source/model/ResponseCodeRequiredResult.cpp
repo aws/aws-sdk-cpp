@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResponseCodeRequiredResult::ResponseCodeRequiredResult() : 
-    m_responseCode(0)
-{
-}
-
 ResponseCodeRequiredResult::ResponseCodeRequiredResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ResponseCodeRequiredResult()
 {
   *this = result;
 }

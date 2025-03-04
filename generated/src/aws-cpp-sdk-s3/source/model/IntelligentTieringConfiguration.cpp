@@ -20,17 +20,7 @@ namespace S3
 namespace Model
 {
 
-IntelligentTieringConfiguration::IntelligentTieringConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(IntelligentTieringStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tieringsHasBeenSet(false)
-{
-}
-
 IntelligentTieringConfiguration::IntelligentTieringConfiguration(const XmlNode& xmlNode)
-  : IntelligentTieringConfiguration()
 {
   *this = xmlNode;
 }

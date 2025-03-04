@@ -38,7 +38,7 @@ namespace Model
   class CopyValue
   {
   public:
-    AWS_CLOUDWATCHLOGS_API CopyValue();
+    AWS_CLOUDWATCHLOGS_API CopyValue() = default;
     AWS_CLOUDWATCHLOGS_API CopyValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API CopyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * <p>An array of <code>CopyValueEntry</code> objects, where each object contains
      * the information about one field value to copy. </p>
      */
-    inline const Aws::Vector<CopyValueEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<CopyValueEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<CopyValueEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<CopyValueEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline CopyValue& WithEntries(const Aws::Vector<CopyValueEntry>& value) { SetEntries(value); return *this;}
-    inline CopyValue& WithEntries(Aws::Vector<CopyValueEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline CopyValue& AddEntries(const CopyValueEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline CopyValue& AddEntries(CopyValueEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<CopyValueEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<CopyValueEntry>>
+    CopyValue& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = CopyValueEntry>
+    CopyValue& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

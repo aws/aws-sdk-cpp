@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpResponseCodeResult::HttpResponseCodeResult() : 
-    m_status(0)
-{
-}
-
 HttpResponseCodeResult::HttpResponseCodeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : HttpResponseCodeResult()
 {
   *this = result;
 }

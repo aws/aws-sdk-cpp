@@ -18,12 +18,12 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-#set($useRequiredField = false)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
-
+###set($useRequiredField = false)
+###parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
+##${typeInfo.className}::${typeInfo.className}()$initializers
+##{
+##}
+##
 ${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 #if($initializers)
   : ${typeInfo.className}()

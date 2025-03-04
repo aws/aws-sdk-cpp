@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ParsePostgres::ParsePostgres() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 ParsePostgres::ParsePostgres(JsonView jsonValue)
-  : ParsePostgres()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParsePostgres& ParsePostgres::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

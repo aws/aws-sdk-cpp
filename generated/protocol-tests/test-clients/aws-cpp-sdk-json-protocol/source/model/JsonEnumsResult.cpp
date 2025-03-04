@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonEnumsResult::JsonEnumsResult() : 
-    m_fooEnum1(FooEnum::NOT_SET),
-    m_fooEnum2(FooEnum::NOT_SET),
-    m_fooEnum3(FooEnum::NOT_SET)
-{
-}
-
 JsonEnumsResult::JsonEnumsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : JsonEnumsResult()
 {
   *this = result;
 }
@@ -38,19 +30,16 @@ JsonEnumsResult& JsonEnumsResult::operator =(const Aws::AmazonWebServiceResult<J
     m_fooEnum1 = FooEnumMapper::GetFooEnumForName(jsonValue.GetString("fooEnum1"));
 
   }
-
   if(jsonValue.ValueExists("fooEnum2"))
   {
     m_fooEnum2 = FooEnumMapper::GetFooEnumForName(jsonValue.GetString("fooEnum2"));
 
   }
-
   if(jsonValue.ValueExists("fooEnum3"))
   {
     m_fooEnum3 = FooEnumMapper::GetFooEnumForName(jsonValue.GetString("fooEnum3"));
 
   }
-
   if(jsonValue.ValueExists("fooEnumList"))
   {
     Aws::Utils::Array<JsonView> fooEnumListJsonList = jsonValue.GetArray("fooEnumList");
@@ -59,7 +48,6 @@ JsonEnumsResult& JsonEnumsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_fooEnumList.push_back(FooEnumMapper::GetFooEnumForName(fooEnumListJsonList[fooEnumListIndex].AsString()));
     }
   }
-
   if(jsonValue.ValueExists("fooEnumSet"))
   {
     Aws::Utils::Array<JsonView> fooEnumSetJsonList = jsonValue.GetArray("fooEnumSet");
@@ -68,7 +56,6 @@ JsonEnumsResult& JsonEnumsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_fooEnumSet.push_back(FooEnumMapper::GetFooEnumForName(fooEnumSetJsonList[fooEnumSetIndex].AsString()));
     }
   }
-
   if(jsonValue.ValueExists("fooEnumMap"))
   {
     Aws::Map<Aws::String, JsonView> fooEnumMapJsonMap = jsonValue.GetObject("fooEnumMap").GetAllObjects();
@@ -77,7 +64,6 @@ JsonEnumsResult& JsonEnumsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_fooEnumMap[fooEnumMapItem.first] = FooEnumMapper::GetFooEnumForName(fooEnumMapItem.second.AsString());
     }
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

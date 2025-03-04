@@ -16,16 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListObjectsResult::ListObjectsResult() : 
-    m_isTruncated(false),
-    m_maxKeys(0),
-    m_encodingType(EncodingType::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 ListObjectsResult::ListObjectsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListObjectsResult()
 {
   *this = result;
 }

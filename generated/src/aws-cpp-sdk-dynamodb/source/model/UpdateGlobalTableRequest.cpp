@@ -12,12 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlobalTableRequest::UpdateGlobalTableRequest() : 
-    m_globalTableNameHasBeenSet(false),
-    m_replicaUpdatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGlobalTableRequest::SerializePayload() const
 {
   JsonValue payload;

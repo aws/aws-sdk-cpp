@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-NoInputAndNoOutputRequest::NoInputAndNoOutputRequest()
-{
-}
-
 Aws::String NoInputAndNoOutputRequest::SerializePayload() const
 {
   Aws::StringStream ss;

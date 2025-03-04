@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-DeleteMarkerReplication::DeleteMarkerReplication() : 
-    m_status(DeleteMarkerReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DeleteMarkerReplication::DeleteMarkerReplication(const XmlNode& xmlNode)
-  : DeleteMarkerReplication()
 {
   *this = xmlNode;
 }

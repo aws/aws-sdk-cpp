@@ -21,7 +21,7 @@ namespace Model
   class GetResourcePolicyRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API GetResourcePolicyRequest();
+    AWS_KINESIS_API GetResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline GetResourcePolicyRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline GetResourcePolicyRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline GetResourcePolicyRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    GetResourcePolicyRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
   private:
 

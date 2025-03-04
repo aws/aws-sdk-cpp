@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-PartitionedPrefix::PartitionedPrefix() : 
-    m_partitionDateSource(PartitionDateSource::NOT_SET),
-    m_partitionDateSourceHasBeenSet(false)
-{
-}
-
 PartitionedPrefix::PartitionedPrefix(const XmlNode& xmlNode)
-  : PartitionedPrefix()
 {
   *this = xmlNode;
 }

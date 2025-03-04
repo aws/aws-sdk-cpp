@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EmptyInputAndEmptyOutputResult::EmptyInputAndEmptyOutputResult()
-{
-}
-
 EmptyInputAndEmptyOutputResult::EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;

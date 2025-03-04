@@ -31,11 +31,11 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 #end
 
-#set($useRequiredField = true)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
+###set($useRequiredField = true)
+###parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
+##${typeInfo.className}::${typeInfo.className}()$initializers
+##{
+##}
 #if($shape.hasEmbeddedErrors())
 
 bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,

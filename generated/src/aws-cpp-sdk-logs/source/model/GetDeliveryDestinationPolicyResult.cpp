@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeliveryDestinationPolicyResult::GetDeliveryDestinationPolicyResult()
-{
-}
-
 GetDeliveryDestinationPolicyResult::GetDeliveryDestinationPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetDeliveryDestinationPolicyResult& GetDeliveryDestinationPolicyResult::operator
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetObject("policy");
-
+    m_policyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

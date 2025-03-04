@@ -16,21 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InputAndOutputWithHeadersResult::InputAndOutputWithHeadersResult() : 
-    m_headerByte(0),
-    m_headerShort(0),
-    m_headerInteger(0),
-    m_headerLong(0),
-    m_headerFloat(0.0),
-    m_headerDouble(0.0),
-    m_headerTrueBool(false),
-    m_headerFalseBool(false),
-    m_headerEnum(FooEnum::NOT_SET)
-{
-}
-
 InputAndOutputWithHeadersResult::InputAndOutputWithHeadersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : InputAndOutputWithHeadersResult()
 {
   *this = result;
 }

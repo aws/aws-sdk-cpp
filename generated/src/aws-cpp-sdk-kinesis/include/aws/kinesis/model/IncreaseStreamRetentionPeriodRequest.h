@@ -25,7 +25,7 @@ namespace Model
   class IncreaseStreamRetentionPeriodRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API IncreaseStreamRetentionPeriodRequest();
+    AWS_KINESIS_API IncreaseStreamRetentionPeriodRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the stream to modify.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline IncreaseStreamRetentionPeriodRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    IncreaseStreamRetentionPeriodRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>The new retention period of the stream, in hours. Must be more than the
      * current retention period.</p>
      */
-    inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+    inline int GetRetentionPeriodHours() const { return m_retentionPeriodHours; }
     inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
     inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
     inline IncreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
@@ -71,21 +69,19 @@ namespace Model
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline IncreaseStreamRetentionPeriodRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline IncreaseStreamRetentionPeriodRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline IncreaseStreamRetentionPeriodRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    IncreaseStreamRetentionPeriodRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet = false;
 
-    int m_retentionPeriodHours;
+    int m_retentionPeriodHours{0};
     bool m_retentionPeriodHoursHasBeenSet = false;
 
     Aws::String m_streamARN;

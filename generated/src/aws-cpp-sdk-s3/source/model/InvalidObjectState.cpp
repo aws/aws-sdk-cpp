@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-InvalidObjectState::InvalidObjectState() : 
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_accessTier(IntelligentTieringAccessTier::NOT_SET),
-    m_accessTierHasBeenSet(false)
-{
-}
-
 InvalidObjectState::InvalidObjectState(const XmlNode& xmlNode)
-  : InvalidObjectState()
 {
   *this = xmlNode;
 }

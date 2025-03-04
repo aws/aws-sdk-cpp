@@ -12,17 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConfigurationTemplatesRequest::DescribeConfigurationTemplatesRequest() : 
-    m_serviceHasBeenSet(false),
-    m_logTypesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_deliveryDestinationTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

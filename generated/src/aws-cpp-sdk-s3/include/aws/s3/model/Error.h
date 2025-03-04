@@ -30,7 +30,7 @@ namespace Model
   class Error
   {
   public:
-    AWS_S3_API Error();
+    AWS_S3_API Error() = default;
     AWS_S3_API Error(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API Error& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The error key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline Error& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline Error& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline Error& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    Error& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The version ID of the error.</p>  <p>This functionality is not
      * supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline Error& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline Error& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline Error& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    Error& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -432,14 +428,12 @@ namespace Model
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> </ul>
      * <p/>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline Error& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline Error& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline Error& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    Error& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -451,14 +445,12 @@ namespace Model
      * error handling and proper internationalization are more likely to ignore the
      * error message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline Error& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline Error& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline Error& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    Error& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

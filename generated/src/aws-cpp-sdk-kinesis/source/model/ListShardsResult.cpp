@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListShardsResult::ListShardsResult()
-{
-}
-
 ListShardsResult::ListShardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,13 +33,11 @@ ListShardsResult& ListShardsResult::operator =(const Aws::AmazonWebServiceResult
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

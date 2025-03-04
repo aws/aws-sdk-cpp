@@ -18,13 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-EnhancedMetrics::EnhancedMetrics() : 
-    m_shardLevelMetricsHasBeenSet(false)
-{
-}
-
 EnhancedMetrics::EnhancedMetrics(JsonView jsonValue)
-  : EnhancedMetrics()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ EnhancedMetrics& EnhancedMetrics::operator =(JsonView jsonValue)
     {
       m_shardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString()));
     }
-    m_shardLevelMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

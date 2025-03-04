@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLogEventsResult::GetLogEventsResult()
-{
-}
-
 GetLogEventsResult::GetLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,19 +33,16 @@ GetLogEventsResult& GetLogEventsResult::operator =(const Aws::AmazonWebServiceRe
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("nextForwardToken"))
   {
     m_nextForwardToken = jsonValue.GetString("nextForwardToken");
-
+    m_nextForwardTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextBackwardToken"))
   {
     m_nextBackwardToken = jsonValue.GetString("nextBackwardToken");
-
+    m_nextBackwardTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

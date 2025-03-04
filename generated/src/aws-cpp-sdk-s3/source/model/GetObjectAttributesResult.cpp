@@ -16,16 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectAttributesResult::GetObjectAttributesResult() : 
-    m_deleteMarker(false),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_storageClass(StorageClass::NOT_SET),
-    m_objectSize(0)
-{
-}
-
 GetObjectAttributesResult::GetObjectAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetObjectAttributesResult()
 {
   *this = result;
 }

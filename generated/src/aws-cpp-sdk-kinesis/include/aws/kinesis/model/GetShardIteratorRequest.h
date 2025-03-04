@@ -27,7 +27,7 @@ namespace Model
   class GetShardIteratorRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API GetShardIteratorRequest();
+    AWS_KINESIS_API GetShardIteratorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis data stream.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline GetShardIteratorRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline GetShardIteratorRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    GetShardIteratorRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
+    inline const Aws::String& GetShardId() const { return m_shardId; }
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-    inline GetShardIteratorRequest& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-    inline GetShardIteratorRequest& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
+    template<typename ShardIdT = Aws::String>
+    void SetShardId(ShardIdT&& value) { m_shardIdHasBeenSet = true; m_shardId = std::forward<ShardIdT>(value); }
+    template<typename ShardIdT = Aws::String>
+    GetShardIteratorRequest& WithShardId(ShardIdT&& value) { SetShardId(std::forward<ShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,10 @@ namespace Model
      * Start reading just after the most recent record in the shard, so that you always
      * read the most recent data in the shard.</p> </li> </ul>
      */
-    inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
+    inline ShardIteratorType GetShardIteratorType() const { return m_shardIteratorType; }
     inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }
-    inline void SetShardIteratorType(const ShardIteratorType& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
-    inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = std::move(value); }
-    inline GetShardIteratorRequest& WithShardIteratorType(const ShardIteratorType& value) { SetShardIteratorType(value); return *this;}
-    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(std::move(value)); return *this;}
+    inline void SetShardIteratorType(ShardIteratorType value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
+    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType value) { SetShardIteratorType(value); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,12 @@ namespace Model
      * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
      * AFTER_SEQUENCE_NUMBER.</p>
      */
-    inline const Aws::String& GetStartingSequenceNumber() const{ return m_startingSequenceNumber; }
+    inline const Aws::String& GetStartingSequenceNumber() const { return m_startingSequenceNumber; }
     inline bool StartingSequenceNumberHasBeenSet() const { return m_startingSequenceNumberHasBeenSet; }
-    inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
-    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = std::move(value); }
-    inline void SetStartingSequenceNumber(const char* value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber.assign(value); }
-    inline GetShardIteratorRequest& WithStartingSequenceNumber(const Aws::String& value) { SetStartingSequenceNumber(value); return *this;}
-    inline GetShardIteratorRequest& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithStartingSequenceNumber(const char* value) { SetStartingSequenceNumber(value); return *this;}
+    template<typename StartingSequenceNumberT = Aws::String>
+    void SetStartingSequenceNumber(StartingSequenceNumberT&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = std::forward<StartingSequenceNumberT>(value); }
+    template<typename StartingSequenceNumberT = Aws::String>
+    GetShardIteratorRequest& WithStartingSequenceNumber(StartingSequenceNumberT&& value) { SetStartingSequenceNumber(std::forward<StartingSequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,26 +115,24 @@ namespace Model
      * horizon, the iterator returned is for the oldest untrimmed data record
      * (TRIM_HORIZON).</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline GetShardIteratorRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline GetShardIteratorRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    GetShardIteratorRequest& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline GetShardIteratorRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline GetShardIteratorRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    GetShardIteratorRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -152,13 +142,13 @@ namespace Model
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet = false;
 
-    ShardIteratorType m_shardIteratorType;
+    ShardIteratorType m_shardIteratorType{ShardIteratorType::NOT_SET};
     bool m_shardIteratorTypeHasBeenSet = false;
 
     Aws::String m_startingSequenceNumber;
     bool m_startingSequenceNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_streamARN;

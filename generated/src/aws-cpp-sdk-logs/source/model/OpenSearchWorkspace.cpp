@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchWorkspace::OpenSearchWorkspace() : 
-    m_workspaceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OpenSearchWorkspace::OpenSearchWorkspace(JsonView jsonValue)
-  : OpenSearchWorkspace()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenSearchWorkspace& OpenSearchWorkspace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

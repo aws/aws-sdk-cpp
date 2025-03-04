@@ -21,7 +21,7 @@ namespace Model
   class EndpointWithHostLabelOperationRequest : public JSONRPC10Request
   {
   public:
-    AWS_JSONRPC10_API EndpointWithHostLabelOperationRequest();
+    AWS_JSONRPC10_API EndpointWithHostLabelOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline EndpointWithHostLabelOperationRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline EndpointWithHostLabelOperationRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline EndpointWithHostLabelOperationRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    EndpointWithHostLabelOperationRequest& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
   private:
 

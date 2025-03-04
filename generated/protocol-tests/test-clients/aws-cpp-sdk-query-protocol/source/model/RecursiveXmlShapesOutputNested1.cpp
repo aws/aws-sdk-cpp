@@ -21,14 +21,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-RecursiveXmlShapesOutputNested1::RecursiveXmlShapesOutputNested1() : 
-    m_fooHasBeenSet(false),
-    m_nestedHasBeenSet(false)
-{
-}
-
 RecursiveXmlShapesOutputNested1::RecursiveXmlShapesOutputNested1(const XmlNode& xmlNode)
-  : RecursiveXmlShapesOutputNested1()
 {
   *this = xmlNode;
 }
@@ -67,7 +60,7 @@ void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream& oStream, cons
   {
       Aws::StringStream nestedLocationAndMemberSs;
       nestedLocationAndMemberSs << location << index << locationValue << ".nested";
-      m_nested->OutputToStream(oStream, nestedLocationAndMemberSs.str().c_str());
+      m_nested.OutputToStream(oStream, nestedLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -82,7 +75,7 @@ void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream& oStream, cons
   {
       Aws::String nestedLocationAndMember(location);
       nestedLocationAndMember += ".nested";
-      m_nested->OutputToStream(oStream, nestedLocationAndMember.c_str());
+      m_nested.OutputToStream(oStream, nestedLocationAndMember.c_str());
   }
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGlobalTablesResult::ListGlobalTablesResult()
-{
-}
-
 ListGlobalTablesResult::ListGlobalTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,13 +33,11 @@ ListGlobalTablesResult& ListGlobalTablesResult::operator =(const Aws::AmazonWebS
       m_globalTables.push_back(globalTablesJsonList[globalTablesIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("LastEvaluatedGlobalTableName"))
   {
     m_lastEvaluatedGlobalTableName = jsonValue.GetString("LastEvaluatedGlobalTableName");
-
+    m_lastEvaluatedGlobalTableNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

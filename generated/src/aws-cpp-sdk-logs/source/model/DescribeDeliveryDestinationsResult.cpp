@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDeliveryDestinationsResult::DescribeDeliveryDestinationsResult()
-{
-}
-
 DescribeDeliveryDestinationsResult::DescribeDeliveryDestinationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,13 +33,11 @@ DescribeDeliveryDestinationsResult& DescribeDeliveryDestinationsResult::operator
       m_deliveryDestinations.push_back(deliveryDestinationsJsonList[deliveryDestinationsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

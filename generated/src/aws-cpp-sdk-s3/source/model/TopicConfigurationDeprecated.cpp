@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-TopicConfigurationDeprecated::TopicConfigurationDeprecated() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_topicHasBeenSet(false)
-{
-}
-
 TopicConfigurationDeprecated::TopicConfigurationDeprecated(const XmlNode& xmlNode)
-  : TopicConfigurationDeprecated()
 {
   *this = xmlNode;
 }

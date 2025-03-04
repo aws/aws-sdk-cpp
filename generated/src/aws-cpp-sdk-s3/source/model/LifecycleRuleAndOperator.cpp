@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-LifecycleRuleAndOperator::LifecycleRuleAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_objectSizeGreaterThan(0),
-    m_objectSizeGreaterThanHasBeenSet(false),
-    m_objectSizeLessThan(0),
-    m_objectSizeLessThanHasBeenSet(false)
-{
-}
-
 LifecycleRuleAndOperator::LifecycleRuleAndOperator(const XmlNode& xmlNode)
-  : LifecycleRuleAndOperator()
 {
   *this = xmlNode;
 }

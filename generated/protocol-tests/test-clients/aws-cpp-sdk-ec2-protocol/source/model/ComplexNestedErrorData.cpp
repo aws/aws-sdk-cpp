@@ -20,13 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-ComplexNestedErrorData::ComplexNestedErrorData() : 
-    m_fooHasBeenSet(false)
-{
-}
-
 ComplexNestedErrorData::ComplexNestedErrorData(const XmlNode& xmlNode)
-  : ComplexNestedErrorData()
 {
   *this = xmlNode;
 }

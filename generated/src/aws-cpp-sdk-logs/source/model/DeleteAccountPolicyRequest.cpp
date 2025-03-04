@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccountPolicyRequest::DeleteAccountPolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccountPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

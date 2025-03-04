@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-SplitString::SplitString() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 SplitString::SplitString(JsonView jsonValue)
-  : SplitString()
 {
   *this = jsonValue;
 }
@@ -38,9 +32,7 @@ SplitString& SplitString::operator =(JsonView jsonValue)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
-    m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

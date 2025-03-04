@@ -14,16 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlTimestampsRequest::XmlTimestampsRequest() : 
-    m_normalHasBeenSet(false),
-    m_dateTimeHasBeenSet(false),
-    m_dateTimeOnTargetHasBeenSet(false),
-    m_epochSecondsHasBeenSet(false),
-    m_epochSecondsOnTargetHasBeenSet(false),
-    m_httpDateHasBeenSet(false),
-    m_httpDateOnTargetHasBeenSet(false)
-{
-}
 
 Aws::String XmlTimestampsRequest::SerializePayload() const
 {

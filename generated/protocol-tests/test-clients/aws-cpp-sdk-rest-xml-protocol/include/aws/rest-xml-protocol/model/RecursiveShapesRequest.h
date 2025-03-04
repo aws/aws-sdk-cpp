@@ -21,7 +21,7 @@ namespace Model
   class RecursiveShapesRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API RecursiveShapesRequest();
+    AWS_RESTXMLPROTOCOL_API RecursiveShapesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const RecursiveShapesInputOutputNested1& GetNested() const{ return m_nested; }
+    inline const RecursiveShapesInputOutputNested1& GetNested() const { return m_nested; }
     inline bool NestedHasBeenSet() const { return m_nestedHasBeenSet; }
-    inline void SetNested(const RecursiveShapesInputOutputNested1& value) { m_nestedHasBeenSet = true; m_nested = value; }
-    inline void SetNested(RecursiveShapesInputOutputNested1&& value) { m_nestedHasBeenSet = true; m_nested = std::move(value); }
-    inline RecursiveShapesRequest& WithNested(const RecursiveShapesInputOutputNested1& value) { SetNested(value); return *this;}
-    inline RecursiveShapesRequest& WithNested(RecursiveShapesInputOutputNested1&& value) { SetNested(std::move(value)); return *this;}
+    template<typename NestedT = RecursiveShapesInputOutputNested1>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = RecursiveShapesInputOutputNested1>
+    RecursiveShapesRequest& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class EventBridgeConfiguration
   {
   public:
-    AWS_S3_API EventBridgeConfiguration();
+    AWS_S3_API EventBridgeConfiguration() = default;
     AWS_S3_API EventBridgeConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API EventBridgeConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

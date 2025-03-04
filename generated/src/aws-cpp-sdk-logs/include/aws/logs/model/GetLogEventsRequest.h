@@ -21,7 +21,7 @@ namespace Model
   class GetLogEventsRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetLogEventsRequest();
+    AWS_CLOUDWATCHLOGS_API GetLogEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
      * 
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline GetLogEventsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline GetLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline GetLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    GetLogEventsRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
      * 
      */
-    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
+    inline const Aws::String& GetLogGroupIdentifier() const { return m_logGroupIdentifier; }
     inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
-    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
-    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
-    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
-    inline GetLogEventsRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
-    inline GetLogEventsRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
-    inline GetLogEventsRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
+    template<typename LogGroupIdentifierT = Aws::String>
+    void SetLogGroupIdentifier(LogGroupIdentifierT&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::forward<LogGroupIdentifierT>(value); }
+    template<typename LogGroupIdentifierT = Aws::String>
+    GetLogEventsRequest& WithLogGroupIdentifier(LogGroupIdentifierT&& value) { SetLogGroupIdentifier(std::forward<LogGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the log stream.</p>
      */
-    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+    inline const Aws::String& GetLogStreamName() const { return m_logStreamName; }
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
-    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
-    inline GetLogEventsRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
-    inline GetLogEventsRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
-    inline GetLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+    template<typename LogStreamNameT = Aws::String>
+    void SetLogStreamName(LogStreamNameT&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::forward<LogStreamNameT>(value); }
+    template<typename LogStreamNameT = Aws::String>
+    GetLogEventsRequest& WithLogStreamName(LogStreamNameT&& value) { SetLogStreamName(std::forward<LogStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * time or later than this time are included. Events with a timestamp earlier than
      * this time are not included.</p>
      */
-    inline long long GetStartTime() const{ return m_startTime; }
+    inline long long GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
     inline GetLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
@@ -101,7 +95,7 @@ namespace Model
      * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later
      * than this time are not included.</p>
      */
-    inline long long GetEndTime() const{ return m_endTime; }
+    inline long long GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
     inline GetLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -112,14 +106,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetLogEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetLogEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,7 +120,7 @@ namespace Model
      * default is as many log events as can fit in a response size of 1 MB (up to
      * 10,000 log events).</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -142,7 +134,7 @@ namespace Model
      * the <code>nextToken</code> in this operation, you must specify <code>true</code>
      * for <code>startFromHead</code>.</p>
      */
-    inline bool GetStartFromHead() const{ return m_startFromHead; }
+    inline bool GetStartFromHead() const { return m_startFromHead; }
     inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
     inline GetLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
@@ -155,7 +147,7 @@ namespace Model
      * operation with this parameter, you must be signed into an account with the
      * <code>logs:Unmask</code> permission.</p>
      */
-    inline bool GetUnmask() const{ return m_unmask; }
+    inline bool GetUnmask() const { return m_unmask; }
     inline bool UnmaskHasBeenSet() const { return m_unmaskHasBeenSet; }
     inline void SetUnmask(bool value) { m_unmaskHasBeenSet = true; m_unmask = value; }
     inline GetLogEventsRequest& WithUnmask(bool value) { SetUnmask(value); return *this;}
@@ -171,22 +163,22 @@ namespace Model
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet = false;
 
-    long long m_startTime;
+    long long m_startTime{0};
     bool m_startTimeHasBeenSet = false;
 
-    long long m_endTime;
+    long long m_endTime{0};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    bool m_startFromHead;
+    bool m_startFromHead{false};
     bool m_startFromHeadHasBeenSet = false;
 
-    bool m_unmask;
+    bool m_unmask{false};
     bool m_unmaskHasBeenSet = false;
   };
 

@@ -26,7 +26,7 @@ namespace Model
   class ComplexNestedErrorData
   {
   public:
-    AWS_EC2PROTOCOL_API ComplexNestedErrorData();
+    AWS_EC2PROTOCOL_API ComplexNestedErrorData() = default;
     AWS_EC2PROTOCOL_API ComplexNestedErrorData(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2PROTOCOL_API ComplexNestedErrorData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
+    inline const Aws::String& GetFoo() const { return m_foo; }
     inline bool FooHasBeenSet() const { return m_fooHasBeenSet; }
-    inline void SetFoo(const Aws::String& value) { m_fooHasBeenSet = true; m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_fooHasBeenSet = true; m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_fooHasBeenSet = true; m_foo.assign(value); }
-    inline ComplexNestedErrorData& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline ComplexNestedErrorData& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline ComplexNestedErrorData& WithFoo(const char* value) { SetFoo(value); return *this;}
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    ComplexNestedErrorData& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
   private:
 

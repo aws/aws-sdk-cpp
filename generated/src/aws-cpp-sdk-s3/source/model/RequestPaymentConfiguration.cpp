@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-RequestPaymentConfiguration::RequestPaymentConfiguration() : 
-    m_payer(Payer::NOT_SET),
-    m_payerHasBeenSet(false)
-{
-}
-
 RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode)
-  : RequestPaymentConfiguration()
 {
   *this = xmlNode;
 }

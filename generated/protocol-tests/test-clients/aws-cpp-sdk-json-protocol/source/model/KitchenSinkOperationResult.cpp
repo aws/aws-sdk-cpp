@@ -18,17 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-KitchenSinkOperationResult::KitchenSinkOperationResult() : 
-    m_boolean(false),
-    m_double(0.0),
-    m_float(0.0),
-    m_integer(0),
-    m_long(0)
-{
-}
-
 KitchenSinkOperationResult::KitchenSinkOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : KitchenSinkOperationResult()
 {
   *this = result;
 }
@@ -40,55 +30,46 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
   {
     m_blob = HashingUtils::Base64Decode(jsonValue.GetString("Blob"));
   }
-
   if(jsonValue.ValueExists("Boolean"))
   {
     m_boolean = jsonValue.GetBool("Boolean");
-
+    m_booleanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Double"))
   {
     m_double = jsonValue.GetDouble("Double");
-
+    m_doubleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmptyStruct"))
   {
     m_emptyStruct = jsonValue.GetObject("EmptyStruct");
-
+    m_emptyStructHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Float"))
   {
     m_float = jsonValue.GetDouble("Float");
-
+    m_floatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpdateTimestamp"))
   {
     m_httpdateTimestamp = jsonValue.GetString("HttpdateTimestamp");
-
+    m_httpdateTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Integer"))
   {
     m_integer = jsonValue.GetInteger("Integer");
-
+    m_integerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iso8601Timestamp"))
   {
     m_iso8601Timestamp = jsonValue.GetString("Iso8601Timestamp");
-
+    m_iso8601TimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonValue"))
   {
     m_jsonValue = jsonValue.GetString("JsonValue");
-
+    m_jsonValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOfLists"))
   {
     Aws::Utils::Array<JsonView> listOfListsJsonList = jsonValue.GetArray("ListOfLists");
@@ -104,7 +85,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_listOfLists.push_back(std::move(listOfStringsList));
     }
   }
-
   if(jsonValue.ValueExists("ListOfMapsOfStrings"))
   {
     Aws::Utils::Array<JsonView> listOfMapsOfStringsJsonList = jsonValue.GetArray("ListOfMapsOfStrings");
@@ -119,7 +99,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_listOfMapsOfStrings.push_back(std::move(mapOfStringsMap));
     }
   }
-
   if(jsonValue.ValueExists("ListOfStrings"))
   {
     Aws::Utils::Array<JsonView> listOfStringsJsonList = jsonValue.GetArray("ListOfStrings");
@@ -128,7 +107,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_listOfStrings.push_back(listOfStringsJsonList[listOfStringsIndex].AsString());
     }
   }
-
   if(jsonValue.ValueExists("ListOfStructs"))
   {
     Aws::Utils::Array<JsonView> listOfStructsJsonList = jsonValue.GetArray("ListOfStructs");
@@ -137,13 +115,11 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_listOfStructs.push_back(listOfStructsJsonList[listOfStructsIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("Long"))
   {
     m_long = jsonValue.GetInt64("Long");
-
+    m_longHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapOfListsOfStrings"))
   {
     Aws::Map<Aws::String, JsonView> mapOfListsOfStringsJsonMap = jsonValue.GetObject("MapOfListsOfStrings").GetAllObjects();
@@ -159,7 +135,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_mapOfListsOfStrings[mapOfListsOfStringsItem.first] = std::move(listOfStringsList);
     }
   }
-
   if(jsonValue.ValueExists("MapOfMaps"))
   {
     Aws::Map<Aws::String, JsonView> mapOfMapsJsonMap = jsonValue.GetObject("MapOfMaps").GetAllObjects();
@@ -174,7 +149,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_mapOfMaps[mapOfMapsItem.first] = std::move(mapOfStringsMap);
     }
   }
-
   if(jsonValue.ValueExists("MapOfStrings"))
   {
     Aws::Map<Aws::String, JsonView> mapOfStringsJsonMap = jsonValue.GetObject("MapOfStrings").GetAllObjects();
@@ -183,7 +157,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_mapOfStrings[mapOfStringsItem.first] = mapOfStringsItem.second.AsString();
     }
   }
-
   if(jsonValue.ValueExists("MapOfStructs"))
   {
     Aws::Map<Aws::String, JsonView> mapOfStructsJsonMap = jsonValue.GetObject("MapOfStructs").GetAllObjects();
@@ -192,7 +165,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_mapOfStructs[mapOfStructsItem.first] = mapOfStructsItem.second.AsObject();
     }
   }
-
   if(jsonValue.ValueExists("RecursiveList"))
   {
     Aws::Utils::Array<JsonView> recursiveListJsonList = jsonValue.GetArray("RecursiveList");
@@ -201,7 +173,6 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_recursiveList.push_back(recursiveListJsonList[recursiveListIndex].AsObject());
     }
   }
-
   if(jsonValue.ValueExists("RecursiveMap"))
   {
     Aws::Map<Aws::String, JsonView> recursiveMapJsonMap = jsonValue.GetObject("RecursiveMap").GetAllObjects();
@@ -210,43 +181,36 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator =(const Aws::Am
       m_recursiveMap[recursiveMapItem.first] = recursiveMapItem.second.AsObject();
     }
   }
-
   if(jsonValue.ValueExists("RecursiveStruct"))
   {
     m_recursiveStruct = jsonValue.GetObject("RecursiveStruct");
-
+    m_recursiveStructHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SimpleStruct"))
   {
     m_simpleStruct = jsonValue.GetObject("SimpleStruct");
-
+    m_simpleStructHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("String"))
   {
     m_string = jsonValue.GetString("String");
-
+    m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StructWithJsonName"))
   {
     m_structWithJsonName = jsonValue.GetObject("StructWithJsonName");
-
+    m_structWithJsonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
+    m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnixTimestamp"))
   {
     m_unixTimestamp = jsonValue.GetDouble("UnixTimestamp");
-
+    m_unixTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-StorageClassAnalysisDataExport::StorageClassAnalysisDataExport() : 
-    m_outputSchemaVersion(StorageClassAnalysisSchemaVersion::NOT_SET),
-    m_outputSchemaVersionHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 StorageClassAnalysisDataExport::StorageClassAnalysisDataExport(const XmlNode& xmlNode)
-  : StorageClassAnalysisDataExport()
 {
   *this = xmlNode;
 }

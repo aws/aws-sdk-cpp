@@ -16,15 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyObjectResult::CopyObjectResult() : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 CopyObjectResult::CopyObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CopyObjectResult()
 {
   *this = result;
 }

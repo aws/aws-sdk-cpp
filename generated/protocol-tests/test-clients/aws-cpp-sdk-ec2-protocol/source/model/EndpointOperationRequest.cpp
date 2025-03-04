@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-EndpointOperationRequest::EndpointOperationRequest()
-{
-}
-
 Aws::String EndpointOperationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

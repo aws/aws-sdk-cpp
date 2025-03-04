@@ -14,14 +14,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NullAndEmptyHeadersServerRequest::NullAndEmptyHeadersServerRequest() : 
-    m_aHasBeenSet(false),
-    m_bHasBeenSet(false),
-    m_cHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String NullAndEmptyHeadersServerRequest::SerializePayload() const
 {
   return {};

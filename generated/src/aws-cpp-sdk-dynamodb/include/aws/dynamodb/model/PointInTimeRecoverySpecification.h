@@ -30,7 +30,7 @@ namespace Model
   class PointInTimeRecoverySpecification
   {
   public:
-    AWS_DYNAMODB_API PointInTimeRecoverySpecification();
+    AWS_DYNAMODB_API PointInTimeRecoverySpecification() = default;
     AWS_DYNAMODB_API PointInTimeRecoverySpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API PointInTimeRecoverySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Indicates whether point in time recovery is enabled (true) or disabled
      * (false) on the table.</p>
      */
-    inline bool GetPointInTimeRecoveryEnabled() const{ return m_pointInTimeRecoveryEnabled; }
+    inline bool GetPointInTimeRecoveryEnabled() const { return m_pointInTimeRecoveryEnabled; }
     inline bool PointInTimeRecoveryEnabledHasBeenSet() const { return m_pointInTimeRecoveryEnabledHasBeenSet; }
     inline void SetPointInTimeRecoveryEnabled(bool value) { m_pointInTimeRecoveryEnabledHasBeenSet = true; m_pointInTimeRecoveryEnabled = value; }
     inline PointInTimeRecoverySpecification& WithPointInTimeRecoveryEnabled(bool value) { SetPointInTimeRecoveryEnabled(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * the configured recovery period. This parameter is optional. If no value is
      * provided, the value will default to 35.</p>
      */
-    inline int GetRecoveryPeriodInDays() const{ return m_recoveryPeriodInDays; }
+    inline int GetRecoveryPeriodInDays() const { return m_recoveryPeriodInDays; }
     inline bool RecoveryPeriodInDaysHasBeenSet() const { return m_recoveryPeriodInDaysHasBeenSet; }
     inline void SetRecoveryPeriodInDays(int value) { m_recoveryPeriodInDaysHasBeenSet = true; m_recoveryPeriodInDays = value; }
     inline PointInTimeRecoverySpecification& WithRecoveryPeriodInDays(int value) { SetRecoveryPeriodInDays(value); return *this;}
     ///@}
   private:
 
-    bool m_pointInTimeRecoveryEnabled;
+    bool m_pointInTimeRecoveryEnabled{false};
     bool m_pointInTimeRecoveryEnabledHasBeenSet = false;
 
-    int m_recoveryPeriodInDays;
+    int m_recoveryPeriodInDays{0};
     bool m_recoveryPeriodInDaysHasBeenSet = false;
   };
 

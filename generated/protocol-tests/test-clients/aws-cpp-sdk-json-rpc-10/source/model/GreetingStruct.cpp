@@ -18,13 +18,7 @@ namespace JSONRPC10
 namespace Model
 {
 
-GreetingStruct::GreetingStruct() : 
-    m_hiHasBeenSet(false)
-{
-}
-
 GreetingStruct::GreetingStruct(JsonView jsonValue)
-  : GreetingStruct()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GreetingStruct& GreetingStruct::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hi"))
   {
     m_hi = jsonValue.GetString("hi");
-
     m_hiHasBeenSet = true;
   }
-
   return *this;
 }
 

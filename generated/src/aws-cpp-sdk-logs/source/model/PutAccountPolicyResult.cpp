@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutAccountPolicyResult::PutAccountPolicyResult()
-{
-}
-
 PutAccountPolicyResult::PutAccountPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ PutAccountPolicyResult& PutAccountPolicyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("accountPolicy"))
   {
     m_accountPolicy = jsonValue.GetObject("accountPolicy");
-
+    m_accountPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
