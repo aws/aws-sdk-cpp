@@ -66,7 +66,7 @@ namespace smithy {
 
         SigV4aAuthScheme(SigV4aAuthScheme&& ) = default;
 
-        SigV4aAuthScheme(const SigV4aAuthScheme& other) :AuthScheme(SIGV4),
+        SigV4aAuthScheme(const SigV4aAuthScheme& other) :AuthScheme(other.schemeId),
           m_identityResolver{other.m_identityResolver},
           m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4aAuthScheme", other.m_serviceName, other.m_region)},
           m_serviceName{other.m_serviceName},
