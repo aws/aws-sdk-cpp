@@ -6,39 +6,27 @@
 #pragma once
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/servicecatalog-appregistry/AppRegistryErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppRegistry
 {
-  AWS_APPREGISTRY_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon Web Services Service Catalog AppRegistry enables organizations to
    * understand the application context of their Amazon Web Services resources.
    * AppRegistry provides a repository of your applications, their resources, and the
    * application metadata that you use within your enterprise.</p>
    */
-  class AWS_APPREGISTRY_API AppRegistryClient : smithy::client::AwsSmithyClientT<Aws::AppRegistry::SERVICE_NAME,
-      Aws::AppRegistry::AppRegistryClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      AppRegistryEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::AppRegistryErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>
+  class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Service Catalog AppRegistry"; }
 
       typedef AppRegistryClientConfiguration ClientConfigurationType;
       typedef AppRegistryEndpointProvider EndpointProviderType;
@@ -777,7 +765,10 @@ namespace AppRegistry
       std::shared_ptr<AppRegistryEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>;
+      void init(const AppRegistryClientConfiguration& clientConfiguration);
 
+      AppRegistryClientConfiguration m_clientConfiguration;
+      std::shared_ptr<AppRegistryEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppRegistry

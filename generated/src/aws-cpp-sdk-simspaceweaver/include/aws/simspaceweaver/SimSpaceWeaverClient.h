@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/simspaceweaver/SimSpaceWeaverServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/simspaceweaver/SimSpaceWeaverErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SimSpaceWeaver
 {
-  AWS_SIMSPACEWEAVER_API extern const char SERVICE_NAME[];
   /**
    * <p>SimSpace Weaver (SimSpace Weaver) is a service that you can use to build and
    * run large-scale spatial simulations in the Amazon Web Services Cloud. For
@@ -33,20 +29,12 @@ namespace SimSpaceWeaver
    * included in the SimSpace Weaver app SDK documentation. This documentation is
    * part of the SimSpace Weaver app SDK distributable package.</p>
    */
-  class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : smithy::client::AwsSmithyClientT<Aws::SimSpaceWeaver::SERVICE_NAME,
-      Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SimSpaceWeaverEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SimSpaceWeaverErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>
+  class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "SimSpaceWeaver"; }
 
       typedef SimSpaceWeaverClientConfiguration ClientConfigurationType;
       typedef SimSpaceWeaverEndpointProvider EndpointProviderType;
@@ -550,7 +538,10 @@ namespace SimSpaceWeaver
       std::shared_ptr<SimSpaceWeaverEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>;
+      void init(const SimSpaceWeaverClientConfiguration& clientConfiguration);
 
+      SimSpaceWeaverClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SimSpaceWeaverEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SimSpaceWeaver

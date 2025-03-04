@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workdocs/WorkDocsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/workdocs/WorkDocsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkDocs
 {
-  AWS_WORKDOCS_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon WorkDocs API is designed for the following use cases:</p> <ul>
    * <li> <p>File Migration: File migration applications are supported for users who
@@ -53,20 +49,12 @@ namespace WorkDocs
    * href="https://aws.amazon.com/workdocs/pricing/">Amazon WorkDocs Pricing</a>.</p>
    * 
    */
-  class AWS_WORKDOCS_API WorkDocsClient : smithy::client::AwsSmithyClientT<Aws::WorkDocs::SERVICE_NAME,
-      Aws::WorkDocs::WorkDocsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      WorkDocsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::WorkDocsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>
+  class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "WorkDocs"; }
 
       typedef WorkDocsClientConfiguration ClientConfigurationType;
       typedef WorkDocsEndpointProvider EndpointProviderType;
@@ -1309,7 +1297,10 @@ namespace WorkDocs
       std::shared_ptr<WorkDocsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>;
+      void init(const WorkDocsClientConfiguration& clientConfiguration);
 
+      WorkDocsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<WorkDocsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkDocs

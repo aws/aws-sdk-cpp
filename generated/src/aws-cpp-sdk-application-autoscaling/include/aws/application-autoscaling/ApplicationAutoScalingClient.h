@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/application-autoscaling/ApplicationAutoScalingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ApplicationAutoScaling
 {
-  AWS_APPLICATIONAUTOSCALING_API extern const char SERVICE_NAME[];
   /**
    * <p>With Application Auto Scaling, you can configure automatic scaling for the
    * following resources:</p> <ul> <li> <p>Amazon AppStream 2.0 fleets</p> </li> <li>
@@ -54,20 +50,12 @@ namespace ApplicationAutoScaling
    * by a scaling policy, scale-in activities that are triggered by a scaling policy,
    * and scheduled scaling.</p> </li> </ul>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : smithy::client::AwsSmithyClientT<Aws::ApplicationAutoScaling::SERVICE_NAME,
-      Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ApplicationAutoScalingEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ApplicationAutoScalingErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>
+  class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Application Auto Scaling"; }
 
       typedef ApplicationAutoScalingClientConfiguration ClientConfigurationType;
       typedef ApplicationAutoScalingEndpointProvider EndpointProviderType;
@@ -622,7 +610,10 @@ namespace ApplicationAutoScaling
       std::shared_ptr<ApplicationAutoScalingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>;
+      void init(const ApplicationAutoScalingClientConfiguration& clientConfiguration);
 
+      ApplicationAutoScalingClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationAutoScaling

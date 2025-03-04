@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/payment-cryptography-data/PaymentCryptographyDataErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PaymentCryptographyData
 {
-  AWS_PAYMENTCRYPTOGRAPHYDATA_API extern const char SERVICE_NAME[];
   /**
    * <p>You use the Amazon Web Services Payment Cryptography Data Plane to manage how
    * encryption keys are used for payment-related transaction processing and
@@ -33,20 +29,12 @@ namespace PaymentCryptographyData
    * export, share, manage, and delete keys. You can also manage Identity and Access
    * Management (IAM) policies for keys. </p>
    */
-  class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient : smithy::client::AwsSmithyClientT<Aws::PaymentCryptographyData::SERVICE_NAME,
-      Aws::PaymentCryptographyData::PaymentCryptographyDataClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PaymentCryptographyDataEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PaymentCryptographyDataErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>
+  class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Payment Cryptography Data"; }
 
       typedef PaymentCryptographyDataClientConfiguration ClientConfigurationType;
       typedef PaymentCryptographyDataEndpointProvider EndpointProviderType;
@@ -757,7 +745,10 @@ namespace PaymentCryptographyData
       std::shared_ptr<PaymentCryptographyDataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>;
+      void init(const PaymentCryptographyDataClientConfiguration& clientConfiguration);
 
+      PaymentCryptographyDataClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PaymentCryptographyDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PaymentCryptographyData

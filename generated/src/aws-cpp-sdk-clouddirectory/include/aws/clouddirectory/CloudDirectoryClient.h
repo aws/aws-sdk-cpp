@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/clouddirectory/CloudDirectoryServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/clouddirectory/CloudDirectoryErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudDirectory
 {
-  AWS_CLOUDDIRECTORY_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Cloud Directory</fullname> <p>Amazon Cloud Directory is a
    * component of the AWS Directory Service that simplifies the development and
@@ -31,20 +27,12 @@ namespace CloudDirectory
    * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon
    * Cloud Directory Developer Guide</a>.</p>
    */
-  class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : smithy::client::AwsSmithyClientT<Aws::CloudDirectory::SERVICE_NAME,
-      Aws::CloudDirectory::CloudDirectoryClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CloudDirectoryEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CloudDirectoryErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>
+  class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CloudDirectory"; }
 
       typedef CloudDirectoryClientConfiguration ClientConfigurationType;
       typedef CloudDirectoryEndpointProvider EndpointProviderType;
@@ -1888,7 +1876,10 @@ namespace CloudDirectory
       std::shared_ptr<CloudDirectoryEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>;
+      void init(const CloudDirectoryClientConfiguration& clientConfiguration);
 
+      CloudDirectoryClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CloudDirectoryEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudDirectory

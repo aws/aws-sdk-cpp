@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pcs/PCSServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/pcs/PCSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PCS
 {
-  AWS_PCS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Parallel Computing Service (Amazon Web Services PCS) is a
    * managed service that makes it easier for you to run and scale your high
@@ -44,20 +40,12 @@ namespace PCS
    * automatically terminates your compute nodes when you delete the Amazon Web
    * Services PCS resources related to those compute nodes.</p>
    */
-  class AWS_PCS_API PCSClient : smithy::client::AwsSmithyClientT<Aws::PCS::SERVICE_NAME,
-      Aws::PCS::PCSClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PCSEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PCSErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>
+  class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "PCS"; }
 
       typedef PCSClientConfiguration ClientConfigurationType;
       typedef PCSEndpointProvider EndpointProviderType;
@@ -615,7 +603,10 @@ namespace PCS
       std::shared_ptr<PCSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>;
+      void init(const PCSClientConfiguration& clientConfiguration);
 
+      PCSClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PCSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PCS

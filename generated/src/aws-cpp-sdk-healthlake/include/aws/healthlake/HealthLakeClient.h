@@ -6,38 +6,26 @@
 #pragma once
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/healthlake/HealthLakeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/healthlake/HealthLakeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace HealthLake
 {
-  AWS_HEALTHLAKE_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS HealthLake is a HIPAA eligibile service that allows customers to store,
    * transform, query, and analyze their FHIR-formatted data in a consistent fashion
    * in the cloud.</p>
    */
-  class AWS_HEALTHLAKE_API HealthLakeClient : smithy::client::AwsSmithyClientT<Aws::HealthLake::SERVICE_NAME,
-      Aws::HealthLake::HealthLakeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      HealthLakeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::HealthLakeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>
+  class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "HealthLake"; }
 
       typedef HealthLakeClientConfiguration ClientConfigurationType;
       typedef HealthLakeEndpointProvider EndpointProviderType;
@@ -431,7 +419,10 @@ namespace HealthLake
       std::shared_ptr<HealthLakeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>;
+      void init(const HealthLakeClientConfiguration& clientConfiguration);
 
+      HealthLakeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<HealthLakeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace HealthLake

@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage/MediaPackageServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/mediapackage/MediaPackageErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MediaPackage
 {
-  AWS_MEDIAPACKAGE_API extern const char SERVICE_NAME[];
   /**
    * AWS Elemental MediaPackage
    */
-  class AWS_MEDIAPACKAGE_API MediaPackageClient : smithy::client::AwsSmithyClientT<Aws::MediaPackage::SERVICE_NAME,
-      Aws::MediaPackage::MediaPackageClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MediaPackageEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MediaPackageErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>
+  class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "MediaPackage"; }
 
       typedef MediaPackageClientConfiguration ClientConfigurationType;
       typedef MediaPackageEndpointProvider EndpointProviderType;
@@ -539,7 +527,10 @@ namespace MediaPackage
       std::shared_ptr<MediaPackageEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>;
+      void init(const MediaPackageClientConfiguration& clientConfiguration);
 
+      MediaPackageClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MediaPackageEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaPackage

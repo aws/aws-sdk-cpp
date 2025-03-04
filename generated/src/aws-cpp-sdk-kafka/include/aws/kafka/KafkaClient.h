@@ -6,39 +6,27 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafka/KafkaServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/kafka/KafkaErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Kafka
 {
-  AWS_KAFKA_API extern const char SERVICE_NAME[];
   /**
    * 
                <p>The operations for managing an Amazon MSK cluster.</p>
       
    *      
    */
-  class AWS_KAFKA_API KafkaClient : smithy::client::AwsSmithyClientT<Aws::Kafka::SERVICE_NAME,
-      Aws::Kafka::KafkaClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      KafkaEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::KafkaErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>
+  class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Kafka"; }
 
       typedef KafkaClientConfiguration ClientConfigurationType;
       typedef KafkaEndpointProvider EndpointProviderType;
@@ -1540,7 +1528,10 @@ namespace Kafka
       std::shared_ptr<KafkaEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>;
+      void init(const KafkaClientConfiguration& clientConfiguration);
 
+      KafkaClientConfiguration m_clientConfiguration;
+      std::shared_ptr<KafkaEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Kafka

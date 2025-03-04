@@ -6,38 +6,26 @@
 #pragma once
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/cloudcontrol/CloudControlApiErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudControlApi
 {
-  AWS_CLOUDCONTROLAPI_API extern const char SERVICE_NAME[];
   /**
    * <p>For more information about Amazon Web Services Cloud Control API, see the <a
    * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
    * Web Services Cloud Control API User Guide</a>.</p>
    */
-  class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : smithy::client::AwsSmithyClientT<Aws::CloudControlApi::SERVICE_NAME,
-      Aws::CloudControlApi::CloudControlApiClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CloudControlApiEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CloudControlApiErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>
+  class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CloudControl"; }
 
       typedef CloudControlApiClientConfiguration ClientConfigurationType;
       typedef CloudControlApiEndpointProvider EndpointProviderType;
@@ -353,7 +341,10 @@ namespace CloudControlApi
       std::shared_ptr<CloudControlApiEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>;
+      void init(const CloudControlApiClientConfiguration& clientConfiguration);
 
+      CloudControlApiClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CloudControlApiEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudControlApi

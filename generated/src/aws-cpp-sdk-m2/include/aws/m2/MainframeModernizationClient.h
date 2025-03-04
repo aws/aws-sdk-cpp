@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/m2/MainframeModernizationErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MainframeModernization
 {
-  AWS_MAINFRAMEMODERNIZATION_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Mainframe Modernization provides tools and resources to
    * help you plan and implement migration and modernization from mainframes to
@@ -27,20 +23,12 @@ namespace MainframeModernization
    * applications using COBOL or PL/I, and implementing an automated pipeline for
    * continuous integration and continuous delivery (CI/CD) of the applications.</p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient : smithy::client::AwsSmithyClientT<Aws::MainframeModernization::SERVICE_NAME,
-      Aws::MainframeModernization::MainframeModernizationClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MainframeModernizationEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MainframeModernizationErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>
+  class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "m2"; }
 
       typedef MainframeModernizationClientConfiguration ClientConfigurationType;
       typedef MainframeModernizationEndpointProvider EndpointProviderType;
@@ -991,7 +979,10 @@ namespace MainframeModernization
       std::shared_ptr<MainframeModernizationEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>;
+      void init(const MainframeModernizationClientConfiguration& clientConfiguration);
 
+      MainframeModernizationClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MainframeModernizationEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MainframeModernization

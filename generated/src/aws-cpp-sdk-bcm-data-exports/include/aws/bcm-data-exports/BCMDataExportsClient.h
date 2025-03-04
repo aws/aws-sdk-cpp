@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bcm-data-exports/BCMDataExportsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/bcm-data-exports/BCMDataExportsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BCMDataExports
 {
-  AWS_BCMDATAEXPORTS_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use the Data Exports API to create customized exports from multiple
    * Amazon Web Services cost management and billing datasets, such as cost and usage
@@ -26,20 +22,12 @@ namespace BCMDataExports
    * the following endpoint:</p> <ul> <li>
    * <p>https://bcm-data-exports.us-east-1.api.aws</p> </li> </ul>
    */
-  class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : smithy::client::AwsSmithyClientT<Aws::BCMDataExports::SERVICE_NAME,
-      Aws::BCMDataExports::BCMDataExportsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      BCMDataExportsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::BCMDataExportsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>
+  class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "BCM Data Exports"; }
 
       typedef BCMDataExportsClientConfiguration ClientConfigurationType;
       typedef BCMDataExportsEndpointProvider EndpointProviderType;
@@ -426,7 +414,10 @@ namespace BCMDataExports
       std::shared_ptr<BCMDataExportsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>;
+      void init(const BCMDataExportsClientConfiguration& clientConfiguration);
 
+      BCMDataExportsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<BCMDataExportsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BCMDataExports

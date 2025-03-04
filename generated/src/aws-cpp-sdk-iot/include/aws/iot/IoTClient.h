@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot/IoTServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/iot/IoTErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoT
 {
-  AWS_IOT_API extern const char SERVICE_NAME[];
   /**
    * <fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication
    * between Internet-connected devices (such as sensors, actuators, embedded
@@ -41,20 +37,12 @@ namespace IoT
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
    * Direct Calls to Amazon Web Services Services</a>.</p>
    */
-  class AWS_IOT_API IoTClient : smithy::client::AwsSmithyClientT<Aws::IoT::SERVICE_NAME,
-      Aws::IoT::IoTClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IoTEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IoTErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>
+  class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "IoT"; }
 
       typedef IoTClientConfiguration ClientConfigurationType;
       typedef IoTEndpointProvider EndpointProviderType;
@@ -7724,7 +7712,10 @@ namespace IoT
       std::shared_ptr<IoTEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>;
+      void init(const IoTClientConfiguration& clientConfiguration);
 
+      IoTClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IoTEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoT

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SageMakerFeatureStoreRuntime
 {
-  AWS_SAGEMAKERFEATURESTORERUNTIME_API extern const char SERVICE_NAME[];
   /**
    * <p>Contains all data plane API operations and data types for the Amazon
    * SageMaker Feature Store. Use this API to put, delete, and retrieve (get)
@@ -34,20 +30,12 @@ namespace SageMakerFeatureStoreRuntime
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListFeatureGroups.html">ListFeatureGroups</a>
    * </p> </li> </ul>
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient : smithy::client::AwsSmithyClientT<Aws::SageMakerFeatureStoreRuntime::SERVICE_NAME,
-      Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SageMakerFeatureStoreRuntimeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SageMakerFeatureStoreRuntimeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>
+  class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "SageMaker FeatureStore Runtime"; }
 
       typedef SageMakerFeatureStoreRuntimeClientConfiguration ClientConfigurationType;
       typedef SageMakerFeatureStoreRuntimeEndpointProvider EndpointProviderType;
@@ -253,7 +241,10 @@ namespace SageMakerFeatureStoreRuntime
       std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>;
+      void init(const SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration);
 
+      SageMakerFeatureStoreRuntimeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SageMakerFeatureStoreRuntime

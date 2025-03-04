@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/codedeploy/CodeDeployErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeDeploy
 {
-  AWS_CODEDEPLOY_API extern const char SERVICE_NAME[];
   /**
    * <p>CodeDeploy is a deployment service that automates application deployments to
    * Amazon EC2 instances, on-premises instances running in your own facility,
@@ -76,20 +72,12 @@ namespace CodeDeploy
    * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer
    * Forum</a> </p> </li> </ul>
    */
-  class AWS_CODEDEPLOY_API CodeDeployClient : smithy::client::AwsSmithyClientT<Aws::CodeDeploy::SERVICE_NAME,
-      Aws::CodeDeploy::CodeDeployClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CodeDeployEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CodeDeployErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>
+  class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CodeDeploy"; }
 
       typedef CodeDeployClientConfiguration ClientConfigurationType;
       typedef CodeDeployEndpointProvider EndpointProviderType;
@@ -1293,7 +1281,10 @@ namespace CodeDeploy
       std::shared_ptr<CodeDeployEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>;
+      void init(const CodeDeployClientConfiguration& clientConfiguration);
 
+      CodeDeployClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CodeDeployEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeDeploy

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PinpointSMSVoiceV2
 {
-  AWS_PINPOINTSMSVOICEV2_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the <i>AWS End User Messaging SMS and Voice, version 2 API
    * Reference</i>. This guide provides information about AWS End User Messaging SMS
@@ -60,20 +56,12 @@ namespace PinpointSMSVoiceV2
    * href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web
    * Services Global Infrastructure.</a> </p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : smithy::client::AwsSmithyClientT<Aws::PinpointSMSVoiceV2::SERVICE_NAME,
-      Aws::PinpointSMSVoiceV2::PinpointSMSVoiceV2ClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PinpointSMSVoiceV2EndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PinpointSMSVoiceV2ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>
+  class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Pinpoint SMS Voice V2"; }
 
       typedef PinpointSMSVoiceV2ClientConfiguration ClientConfigurationType;
       typedef PinpointSMSVoiceV2EndpointProvider EndpointProviderType;
@@ -2694,7 +2682,10 @@ namespace PinpointSMSVoiceV2
       std::shared_ptr<PinpointSMSVoiceV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>;
+      void init(const PinpointSMSVoiceV2ClientConfiguration& clientConfiguration);
 
+      PinpointSMSVoiceV2ClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PinpointSMSVoiceV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PinpointSMSVoiceV2

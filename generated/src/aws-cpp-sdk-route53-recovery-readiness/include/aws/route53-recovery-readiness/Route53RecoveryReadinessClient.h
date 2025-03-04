@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/route53-recovery-readiness/Route53RecoveryReadiness_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/route53-recovery-readiness/Route53RecoveryReadinessErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Route53RecoveryReadiness
 {
-  AWS_ROUTE53RECOVERYREADINESS_API extern const char SERVICE_NAME[];
   /**
    * <p>Recovery readiness</p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessClient : smithy::client::AwsSmithyClientT<Aws::Route53RecoveryReadiness::SERVICE_NAME,
-      Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      Route53RecoveryReadinessEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::Route53RecoveryReadinessErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryReadinessClient>
+  class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryReadinessClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Route53 Recovery Readiness"; }
 
       typedef Route53RecoveryReadinessClientConfiguration ClientConfigurationType;
       typedef Route53RecoveryReadinessEndpointProvider EndpointProviderType;
@@ -922,7 +910,10 @@ namespace Route53RecoveryReadiness
       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryReadinessClient>;
+      void init(const Route53RecoveryReadinessClientConfiguration& clientConfiguration);
 
+      Route53RecoveryReadinessClientConfiguration m_clientConfiguration;
+      std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53RecoveryReadiness

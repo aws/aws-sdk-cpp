@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devops-guru/DevOpsGuruServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/devops-guru/DevOpsGuruErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DevOpsGuru
 {
-  AWS_DEVOPSGURU_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon DevOps Guru is a fully managed service that helps you identify
    * anomalous behavior in business critical operational applications. You specify
@@ -39,20 +35,12 @@ namespace DevOpsGuru
    * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/concepts.html">Concepts
    * in DevOps Guru</a>. </p>
    */
-  class AWS_DEVOPSGURU_API DevOpsGuruClient : smithy::client::AwsSmithyClientT<Aws::DevOpsGuru::SERVICE_NAME,
-      Aws::DevOpsGuru::DevOpsGuruClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DevOpsGuruEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DevOpsGuruErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>
+  class AWS_DEVOPSGURU_API DevOpsGuruClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "DevOps Guru"; }
 
       typedef DevOpsGuruClientConfiguration ClientConfigurationType;
       typedef DevOpsGuruEndpointProvider EndpointProviderType;
@@ -986,7 +974,10 @@ namespace DevOpsGuru
       std::shared_ptr<DevOpsGuruEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>;
+      void init(const DevOpsGuruClientConfiguration& clientConfiguration);
 
+      DevOpsGuruClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DevOpsGuruEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DevOpsGuru

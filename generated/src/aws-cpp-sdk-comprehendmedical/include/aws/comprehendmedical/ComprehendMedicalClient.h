@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/comprehendmedical/ComprehendMedicalServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/comprehendmedical/ComprehendMedicalErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ComprehendMedical
 {
-  AWS_COMPREHENDMEDICAL_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Comprehend Medical extracts structured information from unstructured
    * clinical text. Use these actions to gain insight in your documents. Amazon
@@ -28,20 +24,12 @@ namespace ComprehendMedical
    * href="https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html">Guidelines
    * and quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.</p>
    */
-  class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : smithy::client::AwsSmithyClientT<Aws::ComprehendMedical::SERVICE_NAME,
-      Aws::ComprehendMedical::ComprehendMedicalClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ComprehendMedicalEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ComprehendMedicalErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>
+  class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "ComprehendMedical"; }
 
       typedef ComprehendMedicalClientConfiguration ClientConfigurationType;
       typedef ComprehendMedicalEndpointProvider EndpointProviderType;
@@ -772,7 +760,10 @@ namespace ComprehendMedical
       std::shared_ptr<ComprehendMedicalEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>;
+      void init(const ComprehendMedicalClientConfiguration& clientConfiguration);
 
+      ComprehendMedicalClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ComprehendMedicalEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ComprehendMedical

@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/taxsettings/TaxSettingsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/taxsettings/TaxSettingsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace TaxSettings
 {
-  AWS_TAXSETTINGS_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use the tax setting API to programmatically set, modify, and delete
    * the tax registration number (TRN), associated business legal name, and address
@@ -28,20 +24,12 @@ namespace TaxSettings
    * console.</p> <p>Service Endpoint</p> <ul> <li>
    * <p>https://tax.us-east-1.amazonaws.com</p> </li> </ul>
    */
-  class AWS_TAXSETTINGS_API TaxSettingsClient : smithy::client::AwsSmithyClientT<Aws::TaxSettings::SERVICE_NAME,
-      Aws::TaxSettings::TaxSettingsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      TaxSettingsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::TaxSettingsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<TaxSettingsClient>
+  class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TaxSettingsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "TaxSettings"; }
 
       typedef TaxSettingsClientConfiguration ClientConfigurationType;
       typedef TaxSettingsEndpointProvider EndpointProviderType;
@@ -693,7 +681,10 @@ namespace TaxSettings
       std::shared_ptr<TaxSettingsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TaxSettingsClient>;
+      void init(const TaxSettingsClientConfiguration& clientConfiguration);
 
+      TaxSettingsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<TaxSettingsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TaxSettings

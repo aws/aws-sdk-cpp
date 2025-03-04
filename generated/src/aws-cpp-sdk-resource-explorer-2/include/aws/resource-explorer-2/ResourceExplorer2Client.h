@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/resource-explorer-2/ResourceExplorer2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ResourceExplorer2
 {
-  AWS_RESOURCEEXPLORER2_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Resource Explorer is a resource search and discovery
    * service. By using Resource Explorer, you can explore your resources using an
@@ -50,20 +46,12 @@ namespace ResourceExplorer2
    * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/">Amazon
    * Web Services Resource Explorer User Guide</a>.</p>
    */
-  class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : smithy::client::AwsSmithyClientT<Aws::ResourceExplorer2::SERVICE_NAME,
-      Aws::ResourceExplorer2::ResourceExplorer2ClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ResourceExplorer2EndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ResourceExplorer2ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>
+  class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Resource Explorer 2"; }
 
       typedef ResourceExplorer2ClientConfiguration ClientConfigurationType;
       typedef ResourceExplorer2EndpointProvider EndpointProviderType;
@@ -890,7 +878,10 @@ namespace ResourceExplorer2
       std::shared_ptr<ResourceExplorer2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>;
+      void init(const ResourceExplorer2ClientConfiguration& clientConfiguration);
 
+      ResourceExplorer2ClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ResourceExplorer2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ResourceExplorer2

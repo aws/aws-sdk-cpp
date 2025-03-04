@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/health/HealthErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Health
 {
-  AWS_HEALTH_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Health</fullname> <p>The Health API provides access to the Health
    * information that appears in the <a
@@ -66,20 +62,12 @@ namespace Health
    * <code>nextToken</code> in the next request to return more results.</p> </li>
    * </ul> 
    */
-  class AWS_HEALTH_API HealthClient : smithy::client::AwsSmithyClientT<Aws::Health::SERVICE_NAME,
-      Aws::Health::HealthClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      HealthEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::HealthErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>
+  class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Health"; }
 
       typedef HealthClientConfiguration ClientConfigurationType;
       typedef HealthEndpointProvider EndpointProviderType;
@@ -659,7 +647,10 @@ namespace Health
       std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>;
+      void init(const HealthClientConfiguration& clientConfiguration);
 
+      HealthClientConfiguration m_clientConfiguration;
+      std::shared_ptr<HealthEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Health

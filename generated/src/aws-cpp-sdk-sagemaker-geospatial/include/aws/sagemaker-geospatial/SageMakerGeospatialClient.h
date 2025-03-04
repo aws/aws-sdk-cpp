@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/sagemaker-geospatial/SageMakerGeospatialErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SageMakerGeospatial
 {
-  AWS_SAGEMAKERGEOSPATIAL_API extern const char SERVICE_NAME[];
   /**
    * <p>Provides APIs for creating and managing SageMaker geospatial resources.</p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialClient : smithy::client::AwsSmithyClientT<Aws::SageMakerGeospatial::SERVICE_NAME,
-      Aws::SageMakerGeospatial::SageMakerGeospatialClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SageMakerGeospatialEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SageMakerGeospatialErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SageMakerGeospatialClient>
+  class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerGeospatialClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "SageMaker Geospatial"; }
 
       typedef SageMakerGeospatialClientConfiguration ClientConfigurationType;
       typedef SageMakerGeospatialEndpointProvider EndpointProviderType;
@@ -586,7 +574,10 @@ namespace SageMakerGeospatial
       std::shared_ptr<SageMakerGeospatialEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerGeospatialClient>;
+      void init(const SageMakerGeospatialClientConfiguration& clientConfiguration);
 
+      SageMakerGeospatialClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SageMakerGeospatialEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SageMakerGeospatial

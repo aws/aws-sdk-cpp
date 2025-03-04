@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/kafkaconnect/KafkaConnectErrorMarshaller.h>
 
 namespace Aws
 {
 namespace KafkaConnect
 {
-  AWS_KAFKACONNECT_API extern const char SERVICE_NAME[];
   /**
    * <p/>
    */
-  class AWS_KAFKACONNECT_API KafkaConnectClient : smithy::client::AwsSmithyClientT<Aws::KafkaConnect::SERVICE_NAME,
-      Aws::KafkaConnect::KafkaConnectClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      KafkaConnectEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::KafkaConnectErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>
+  class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "KafkaConnect"; }
 
       typedef KafkaConnectClientConfiguration ClientConfigurationType;
       typedef KafkaConnectEndpointProvider EndpointProviderType;
@@ -556,7 +544,10 @@ namespace KafkaConnect
       std::shared_ptr<KafkaConnectEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>;
+      void init(const KafkaConnectClientConfiguration& clientConfiguration);
 
+      KafkaConnectClientConfiguration m_clientConfiguration;
+      std::shared_ptr<KafkaConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KafkaConnect

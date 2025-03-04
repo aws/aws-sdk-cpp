@@ -6,37 +6,25 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/personalize/PersonalizeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Personalize
 {
-  AWS_PERSONALIZE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Personalize is a machine learning service that makes it easy to add
    * individualized recommendations to customers.</p>
    */
-  class AWS_PERSONALIZE_API PersonalizeClient : smithy::client::AwsSmithyClientT<Aws::Personalize::SERVICE_NAME,
-      Aws::Personalize::PersonalizeClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PersonalizeEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PersonalizeErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>
+  class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Personalize"; }
 
       typedef PersonalizeClientConfiguration ClientConfigurationType;
       typedef PersonalizeEndpointProvider EndpointProviderType;
@@ -2447,7 +2435,10 @@ namespace Personalize
       std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>;
+      void init(const PersonalizeClientConfiguration& clientConfiguration);
 
+      PersonalizeClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PersonalizeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Personalize

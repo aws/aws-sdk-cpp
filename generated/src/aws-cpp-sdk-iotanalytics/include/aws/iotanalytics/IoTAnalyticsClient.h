@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotanalytics/IoTAnalyticsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/iotanalytics/IoTAnalyticsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTAnalytics
 {
-  AWS_IOTANALYTICS_API extern const char SERVICE_NAME[];
   /**
    * <p>IoT Analytics allows you to collect large amounts of device data, process
    * messages, and store them. You can then query the data and run sophisticated
@@ -42,20 +38,12 @@ namespace IoTAnalytics
    * are about to fail or which customers are at risk of abandoning their wearable
    * devices.</p>
    */
-  class AWS_IOTANALYTICS_API IoTAnalyticsClient : smithy::client::AwsSmithyClientT<Aws::IoTAnalytics::SERVICE_NAME,
-      Aws::IoTAnalytics::IoTAnalyticsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IoTAnalyticsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IoTAnalyticsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IoTAnalyticsClient>
+  class AWS_IOTANALYTICS_API IoTAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTAnalyticsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "IoTAnalytics"; }
 
       typedef IoTAnalyticsClientConfiguration ClientConfigurationType;
       typedef IoTAnalyticsEndpointProvider EndpointProviderType;
@@ -997,7 +985,10 @@ namespace IoTAnalytics
       std::shared_ptr<IoTAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTAnalyticsClient>;
+      void init(const IoTAnalyticsClientConfiguration& clientConfiguration);
 
+      IoTAnalyticsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IoTAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTAnalytics

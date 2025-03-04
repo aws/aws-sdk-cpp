@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/transcribe/TranscribeServiceServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/transcribe/TranscribeServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace TranscribeService
 {
-  AWS_TRANSCRIBESERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Transcribe offers three main types of batch transcription:
    * <b>Standard</b>, <b>Medical</b>, and <b>Call Analytics</b>.</p> <ul> <li> <p>
@@ -31,20 +27,12 @@ namespace TranscribeService
    * looking for insight into customer service calls, use this option. Refer to for
    * details.</p> </li> </ul>
    */
-  class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : smithy::client::AwsSmithyClientT<Aws::TranscribeService::SERVICE_NAME,
-      Aws::TranscribeService::TranscribeServiceClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      TranscribeServiceEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::TranscribeServiceErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>
+  class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Transcribe"; }
 
       typedef TranscribeServiceClientConfiguration ClientConfigurationType;
       typedef TranscribeServiceEndpointProvider EndpointProviderType;
@@ -1475,7 +1463,10 @@ namespace TranscribeService
       std::shared_ptr<TranscribeServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>;
+      void init(const TranscribeServiceClientConfiguration& clientConfiguration);
 
+      TranscribeServiceClientConfiguration m_clientConfiguration;
+      std::shared_ptr<TranscribeServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TranscribeService

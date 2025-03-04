@@ -6,38 +6,26 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector2/Inspector2ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/inspector2/Inspector2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Inspector2
 {
-  AWS_INSPECTOR2_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Inspector is a vulnerability discovery service that automates
    * continuous scanning for security vulnerabilities within your Amazon EC2, Amazon
    * ECR, and Amazon Web Services Lambda environments.</p>
    */
-  class AWS_INSPECTOR2_API Inspector2Client : smithy::client::AwsSmithyClientT<Aws::Inspector2::SERVICE_NAME,
-      Aws::Inspector2::Inspector2ClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      Inspector2EndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::Inspector2ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>
+  class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Inspector2"; }
 
       typedef Inspector2ClientConfiguration ClientConfigurationType;
       typedef Inspector2EndpointProvider EndpointProviderType;
@@ -1638,7 +1626,10 @@ namespace Inspector2
       std::shared_ptr<Inspector2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>;
+      void init(const Inspector2ClientConfiguration& clientConfiguration);
 
+      Inspector2ClientConfiguration m_clientConfiguration;
+      std::shared_ptr<Inspector2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Inspector2

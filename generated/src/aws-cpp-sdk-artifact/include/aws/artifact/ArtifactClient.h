@@ -6,37 +6,25 @@
 #pragma once
 #include <aws/artifact/Artifact_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/artifact/ArtifactServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/artifact/ArtifactErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Artifact
 {
-  AWS_ARTIFACT_API extern const char SERVICE_NAME[];
   /**
    * <p>This reference provides descriptions of the low-level AWS Artifact Service
    * API.</p>
    */
-  class AWS_ARTIFACT_API ArtifactClient : smithy::client::AwsSmithyClientT<Aws::Artifact::SERVICE_NAME,
-      Aws::Artifact::ArtifactClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ArtifactEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ArtifactErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>
+  class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Artifact"; }
 
       typedef ArtifactClientConfiguration ClientConfigurationType;
       typedef ArtifactEndpointProvider EndpointProviderType;
@@ -271,7 +259,10 @@ namespace Artifact
       std::shared_ptr<ArtifactEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>;
+      void init(const ArtifactClientConfiguration& clientConfiguration);
 
+      ArtifactClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ArtifactEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Artifact
