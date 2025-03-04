@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/datasync/DataSyncErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DataSync
 {
-  AWS_DATASYNC_API extern const char SERVICE_NAME[];
   /**
    * <fullname>DataSync</fullname> <p>DataSync is an online data movement and
    * discovery service that simplifies data migration and helps you quickly, easily,
@@ -29,20 +25,12 @@ namespace DataSync
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
    * User Guide</a> </i>.</p>
    */
-  class AWS_DATASYNC_API DataSyncClient : smithy::client::AwsSmithyClientT<Aws::DataSync::SERVICE_NAME,
-      Aws::DataSync::DataSyncClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      DataSyncEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::DataSyncErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>
+  class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "DataSync"; }
 
       typedef DataSyncClientConfiguration ClientConfigurationType;
       typedef DataSyncEndpointProvider EndpointProviderType;
@@ -1985,7 +1973,10 @@ namespace DataSync
       std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>;
+      void init(const DataSyncClientConfiguration& clientConfiguration);
 
+      DataSyncClientConfiguration m_clientConfiguration;
+      std::shared_ptr<DataSyncEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DataSync

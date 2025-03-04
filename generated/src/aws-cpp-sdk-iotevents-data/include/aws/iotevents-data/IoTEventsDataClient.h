@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents-data/IoTEventsDataServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/iotevents-data/IoTEventsDataErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTEventsData
 {
-  AWS_IOTEVENTSDATA_API extern const char SERVICE_NAME[];
   /**
    * <p>IoT Events monitors your equipment or device fleets for failures or changes
    * in operation, and triggers actions when such events occur. You can use IoT
@@ -27,20 +23,12 @@ namespace IoTEventsData
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
    * is IoT Events?</a> in the <i>IoT Events Developer Guide</i>.</p>
    */
-  class AWS_IOTEVENTSDATA_API IoTEventsDataClient : smithy::client::AwsSmithyClientT<Aws::IoTEventsData::SERVICE_NAME,
-      Aws::IoTEventsData::IoTEventsDataClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IoTEventsDataEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IoTEventsDataErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>
+  class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "IoT Events Data"; }
 
       typedef IoTEventsDataClientConfiguration ClientConfigurationType;
       typedef IoTEventsDataEndpointProvider EndpointProviderType;
@@ -419,7 +407,10 @@ namespace IoTEventsData
       std::shared_ptr<IoTEventsDataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>;
+      void init(const IoTEventsDataClientConfiguration& clientConfiguration);
 
+      IoTEventsDataClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IoTEventsDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTEventsData

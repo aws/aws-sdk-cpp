@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/cost-optimization-hub/CostOptimizationHubErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CostOptimizationHub
 {
-  AWS_COSTOPTIMIZATIONHUB_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use the Cost Optimization Hub API to programmatically identify,
    * filter, aggregate, and quantify savings for your cost optimization
@@ -27,20 +23,12 @@ namespace CostOptimizationHub
    * provides the following endpoint:</p> <ul> <li> <p>
    * https://cost-optimization-hub.us-east-1.amazonaws.com </p> </li> </ul>
    */
-  class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient : smithy::client::AwsSmithyClientT<Aws::CostOptimizationHub::SERVICE_NAME,
-      Aws::CostOptimizationHub::CostOptimizationHubClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CostOptimizationHubEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CostOptimizationHubErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>
+  class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Cost Optimization Hub"; }
 
       typedef CostOptimizationHubClientConfiguration ClientConfigurationType;
       typedef CostOptimizationHubEndpointProvider EndpointProviderType;
@@ -296,7 +284,10 @@ namespace CostOptimizationHub
       std::shared_ptr<CostOptimizationHubEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>;
+      void init(const CostOptimizationHubClientConfiguration& clientConfiguration);
 
+      CostOptimizationHubClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CostOptimizationHubEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CostOptimizationHub

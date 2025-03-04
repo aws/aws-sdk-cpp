@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/inspector/InspectorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Inspector
 {
-  AWS_INSPECTOR_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Inspector</fullname> <p>Amazon Inspector enables you to analyze
    * the behavior of your AWS resources and to identify potential security issues.
@@ -26,20 +22,12 @@ namespace Inspector
    * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
    * Amazon Inspector User Guide</a>.</p>
    */
-  class AWS_INSPECTOR_API InspectorClient : smithy::client::AwsSmithyClientT<Aws::Inspector::SERVICE_NAME,
-      Aws::Inspector::InspectorClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      InspectorEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::InspectorErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>
+  class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Inspector"; }
 
       typedef InspectorClientConfiguration ClientConfigurationType;
       typedef InspectorEndpointProvider EndpointProviderType;
@@ -1091,7 +1079,10 @@ namespace Inspector
       std::shared_ptr<InspectorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>;
+      void init(const InspectorClientConfiguration& clientConfiguration);
 
+      InspectorClientConfiguration m_clientConfiguration;
+      std::shared_ptr<InspectorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Inspector

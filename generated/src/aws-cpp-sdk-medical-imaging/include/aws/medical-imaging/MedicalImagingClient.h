@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/medical-imaging/MedicalImagingServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/medical-imaging/MedicalImagingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MedicalImaging
 {
-  AWS_MEDICALIMAGING_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>AWS HealthImaging API Reference</i>. AWS HealthImaging is a
    * HIPAA eligible service that empowers healthcare providers, life science
@@ -113,20 +109,12 @@ namespace MedicalImaging
    * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/untag-resource.html">Untagging
    * a resource</a>.</p> </li> </ul>
    */
-  class AWS_MEDICALIMAGING_API MedicalImagingClient : smithy::client::AwsSmithyClientT<Aws::MedicalImaging::SERVICE_NAME,
-      Aws::MedicalImaging::MedicalImagingClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      MedicalImagingEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::MedicalImagingErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>
+  class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Medical Imaging"; }
 
       typedef MedicalImagingClientConfiguration ClientConfigurationType;
       typedef MedicalImagingEndpointProvider EndpointProviderType;
@@ -657,7 +645,10 @@ namespace MedicalImaging
       std::shared_ptr<MedicalImagingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>;
+      void init(const MedicalImagingClientConfiguration& clientConfiguration);
 
+      MedicalImagingClientConfiguration m_clientConfiguration;
+      std::shared_ptr<MedicalImagingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MedicalImaging

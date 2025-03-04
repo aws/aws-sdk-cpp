@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iottwinmaker/IoTTwinMakerServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/iottwinmaker/IoTTwinMakerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTTwinMaker
 {
-  AWS_IOTTWINMAKER_API extern const char SERVICE_NAME[];
   /**
    * <p>IoT TwinMaker is a service with which you can build operational digital twins
    * of physical systems. IoT TwinMaker overlays measurements and analysis from
@@ -27,20 +23,12 @@ namespace IoTTwinMaker
    * You can use this real-world data to monitor operations and diagnose and repair
    * errors.</p>
    */
-  class AWS_IOTTWINMAKER_API IoTTwinMakerClient : smithy::client::AwsSmithyClientT<Aws::IoTTwinMaker::SERVICE_NAME,
-      Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      IoTTwinMakerEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::IoTTwinMakerErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>
+  class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "IoTTwinMaker"; }
 
       typedef IoTTwinMakerClientConfiguration ClientConfigurationType;
       typedef IoTTwinMakerEndpointProvider EndpointProviderType;
@@ -1112,7 +1100,10 @@ namespace IoTTwinMaker
       std::shared_ptr<IoTTwinMakerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>;
+      void init(const IoTTwinMakerClientConfiguration& clientConfiguration);
 
+      IoTTwinMakerClientConfiguration m_clientConfiguration;
+      std::shared_ptr<IoTTwinMakerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTTwinMaker

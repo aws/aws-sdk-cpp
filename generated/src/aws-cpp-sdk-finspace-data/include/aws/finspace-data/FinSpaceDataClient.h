@@ -6,36 +6,24 @@
 #pragma once
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/finspace-data/FinSpaceDataServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/finspace-data/FinSpaceDataErrorMarshaller.h>
 
 namespace Aws
 {
 namespace FinSpaceData
 {
-  AWS_FINSPACEDATA_API extern const char SERVICE_NAME[];
   /**
    * <p> The FinSpace APIs let you take actions inside the FinSpace.</p>
    */
-  class AWS_FINSPACEDATA_API FinSpaceDataClient : smithy::client::AwsSmithyClientT<Aws::FinSpaceData::SERVICE_NAME,
-      Aws::FinSpaceData::FinSpaceDataClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      FinSpaceDataEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::FinSpaceDataErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>
+  class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "finspace data"; }
 
       typedef FinSpaceDataClientConfiguration ClientConfigurationType;
       typedef FinSpaceDataEndpointProvider EndpointProviderType;
@@ -93,7 +81,10 @@ namespace FinSpaceData
       std::shared_ptr<FinSpaceDataEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>;
+      void init(const FinSpaceDataClientConfiguration& clientConfiguration);
 
+      FinSpaceDataClientConfiguration m_clientConfiguration;
+      std::shared_ptr<FinSpaceDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FinSpaceData

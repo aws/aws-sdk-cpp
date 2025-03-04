@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/auditmanager/AuditManagerServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/auditmanager/AuditManagerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AuditManager
 {
-  AWS_AUDITMANAGER_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the Audit Manager API reference. This guide is for developers who
    * need detailed information about the Audit Manager API operations, data types,
@@ -46,20 +42,12 @@ namespace AuditManager
    * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html">
    * Audit Manager User Guide</a>.</p>
    */
-  class AWS_AUDITMANAGER_API AuditManagerClient : smithy::client::AwsSmithyClientT<Aws::AuditManager::SERVICE_NAME,
-      Aws::AuditManager::AuditManagerClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      AuditManagerEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::AuditManagerErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>
+  class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "AuditManager"; }
 
       typedef AuditManagerClientConfiguration ClientConfigurationType;
       typedef AuditManagerEndpointProvider EndpointProviderType;
@@ -1888,7 +1876,10 @@ namespace AuditManager
       std::shared_ptr<AuditManagerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>;
+      void init(const AuditManagerClientConfiguration& clientConfiguration);
 
+      AuditManagerClientConfiguration m_clientConfiguration;
+      std::shared_ptr<AuditManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AuditManager

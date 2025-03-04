@@ -6,39 +6,27 @@
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex-models/LexModelBuildingServiceServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/lex-models/LexModelBuildingServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LexModelBuildingService
 {
-  AWS_LEXMODELBUILDINGSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Lex Build-Time Actions</fullname> <p> Amazon Lex is an AWS
    * service for building conversational voice and text interfaces. Use these actions
    * to create, update, and delete conversational bots for new and existing client
    * applications. </p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient : smithy::client::AwsSmithyClientT<Aws::LexModelBuildingService::SERVICE_NAME,
-      Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      LexModelBuildingServiceEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::LexModelBuildingServiceErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>
+  class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Lex Model Building Service"; }
 
       typedef LexModelBuildingServiceClientConfiguration ClientConfigurationType;
       typedef LexModelBuildingServiceEndpointProvider EndpointProviderType;
@@ -1404,7 +1392,10 @@ namespace LexModelBuildingService
       std::shared_ptr<LexModelBuildingServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>;
+      void init(const LexModelBuildingServiceClientConfiguration& clientConfiguration);
 
+      LexModelBuildingServiceClientConfiguration m_clientConfiguration;
+      std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexModelBuildingService

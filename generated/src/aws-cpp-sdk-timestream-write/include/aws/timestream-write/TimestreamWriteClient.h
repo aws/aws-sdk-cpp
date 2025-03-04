@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/timestream-write/TimestreamWriteErrorMarshaller.h>
 
 namespace Aws
 {
 namespace TimestreamWrite
 {
-  AWS_TIMESTREAMWRITE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Timestream Write</fullname> <p>Amazon Timestream is a fast,
    * scalable, fully managed time-series database service that makes it easy to store
@@ -35,20 +31,12 @@ namespace TimestreamWrite
    * engine spans across storage tiers to provide fast analysis while reducing
    * costs.</p>
    */
-  class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : smithy::client::AwsSmithyClientT<Aws::TimestreamWrite::SERVICE_NAME,
-      Aws::TimestreamWrite::TimestreamWriteClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      TimestreamWriteEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::TimestreamWriteErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>
+  class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Timestream Write"; }
 
       typedef TimestreamWriteClientConfiguration ClientConfigurationType;
       typedef TimestreamWriteEndpointProvider EndpointProviderType;
@@ -718,13 +706,11 @@ namespace TimestreamWrite
       std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;
+      void init(const TimestreamWriteClientConfiguration& clientConfiguration);
 
-      void OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint,
-        const Aws::String& operationName,
-        const Aws::String& endpointKey,
-        const Aws::TimestreamWrite::Model::DescribeEndpointsRequest& endpointRequest,
-        bool enforceDiscovery) const;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
+      TimestreamWriteClientConfiguration m_clientConfiguration;
+      std::shared_ptr<TimestreamWriteEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TimestreamWrite

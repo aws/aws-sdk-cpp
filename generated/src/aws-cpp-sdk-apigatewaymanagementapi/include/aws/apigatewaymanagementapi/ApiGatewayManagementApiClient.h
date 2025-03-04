@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ApiGatewayManagementApi
 {
-  AWS_APIGATEWAYMANAGEMENTAPI_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon API Gateway Management API allows you to directly manage runtime
    * aspects of your deployed APIs. To use it, you must explicitly set the SDK's
@@ -27,20 +23,12 @@ namespace ApiGatewayManagementApi
    * the endpoint corresponding to your API's custom domain and base path, if
    * applicable.</p>
    */
-  class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiClient : smithy::client::AwsSmithyClientT<Aws::ApiGatewayManagementApi::SERVICE_NAME,
-      Aws::ApiGatewayManagementApi::ApiGatewayManagementApiClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ApiGatewayManagementApiEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ApiGatewayManagementApiErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>
+  class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "ApiGatewayManagementApi"; }
 
       typedef ApiGatewayManagementApiClientConfiguration ClientConfigurationType;
       typedef ApiGatewayManagementApiEndpointProvider EndpointProviderType;
@@ -175,7 +163,10 @@ namespace ApiGatewayManagementApi
       std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>;
+      void init(const ApiGatewayManagementApiClientConfiguration& clientConfiguration);
 
+      ApiGatewayManagementApiClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApiGatewayManagementApi

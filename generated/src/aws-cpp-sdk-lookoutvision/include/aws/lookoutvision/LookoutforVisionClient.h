@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutvision/LookoutforVisionServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/lookoutvision/LookoutforVisionErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LookoutforVision
 {
-  AWS_LOOKOUTFORVISION_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the Amazon Lookout for Vision API Reference. It provides descriptions
    * of actions, data types, common parameters, and common errors.</p> <p>Amazon
@@ -29,20 +25,12 @@ namespace LookoutforVision
    * physical item where quality is important such as a missing capacitor on printed
    * circuit boards.</p>
    */
-  class AWS_LOOKOUTFORVISION_API LookoutforVisionClient : smithy::client::AwsSmithyClientT<Aws::LookoutforVision::SERVICE_NAME,
-      Aws::LookoutforVision::LookoutforVisionClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      LookoutforVisionEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::LookoutforVisionErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>
+  class AWS_LOOKOUTFORVISION_API LookoutforVisionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "LookoutVision"; }
 
       typedef LookoutforVisionClientConfiguration ClientConfigurationType;
       typedef LookoutforVisionEndpointProvider EndpointProviderType;
@@ -797,7 +785,10 @@ namespace LookoutforVision
       std::shared_ptr<LookoutforVisionEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>;
+      void init(const LookoutforVisionClientConfiguration& clientConfiguration);
 
+      LookoutforVisionClientConfiguration m_clientConfiguration;
+      std::shared_ptr<LookoutforVisionEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LookoutforVision

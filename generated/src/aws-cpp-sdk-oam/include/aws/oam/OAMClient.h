@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/oam/OAM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/oam/OAMServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/oam/OAMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace OAM
 {
-  AWS_OAM_API extern const char SERVICE_NAME[];
   /**
    * <p>Use Amazon CloudWatch Observability Access Manager to create and manage links
    * between source accounts and monitoring accounts by using <i>CloudWatch
@@ -42,20 +38,12 @@ namespace OAM
    * a subset of namespaces. And for CloudWatch Logs, you can choose to share all log
    * groups with the monitoring account, or filter to a subset of log groups. </p>
    */
-  class AWS_OAM_API OAMClient : smithy::client::AwsSmithyClientT<Aws::OAM::SERVICE_NAME,
-      Aws::OAM::OAMClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      OAMEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::OAMErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>
+  class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "OAM"; }
 
       typedef OAMClientConfiguration ClientConfigurationType;
       typedef OAMEndpointProvider EndpointProviderType;
@@ -569,7 +557,10 @@ namespace OAM
       std::shared_ptr<OAMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>;
+      void init(const OAMClientConfiguration& clientConfiguration);
 
+      OAMClientConfiguration m_clientConfiguration;
+      std::shared_ptr<OAMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OAM

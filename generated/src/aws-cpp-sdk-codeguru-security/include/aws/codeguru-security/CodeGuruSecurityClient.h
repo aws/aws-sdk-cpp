@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguru-security/CodeGuruSecurityServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/codeguru-security/CodeGuruSecurityErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeGuruSecurity
 {
-  AWS_CODEGURUSECURITY_API extern const char SERVICE_NAME[];
   /**
    *  <p>Amazon CodeGuru Security is in preview release and is subject to
    * change.</p>  <p>This section provides documentation for the Amazon
@@ -31,20 +27,12 @@ namespace CodeGuruSecurity
    * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html">Amazon
    * CodeGuru Security User Guide</a>. </p>
    */
-  class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : smithy::client::AwsSmithyClientT<Aws::CodeGuruSecurity::SERVICE_NAME,
-      Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CodeGuruSecurityEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CodeGuruSecurityErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>
+  class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CodeGuru Security"; }
 
       typedef CodeGuruSecurityClientConfiguration ClientConfigurationType;
       typedef CodeGuruSecurityEndpointProvider EndpointProviderType;
@@ -444,7 +432,10 @@ namespace CodeGuruSecurity
       std::shared_ptr<CodeGuruSecurityEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>;
+      void init(const CodeGuruSecurityClientConfiguration& clientConfiguration);
 
+      CodeGuruSecurityClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CodeGuruSecurityEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeGuruSecurity

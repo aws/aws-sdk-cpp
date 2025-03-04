@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/connect-contact-lens/ConnectContactLensErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ConnectContactLens
 {
-  AWS_CONNECTCONTACTLENS_API extern const char SERVICE_NAME[];
   /**
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html">Contact
@@ -35,20 +31,12 @@ namespace ConnectContactLens
    * conversations using speech analytics</a> in the <i>Amazon Connect Administrator
    * Guide</i>. </p>
    */
-  class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : smithy::client::AwsSmithyClientT<Aws::ConnectContactLens::SERVICE_NAME,
-      Aws::ConnectContactLens::ConnectContactLensClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      ConnectContactLensEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::ConnectContactLensErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>
+  class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Connect Contact Lens"; }
 
       typedef ConnectContactLensClientConfiguration ClientConfigurationType;
       typedef ConnectContactLensEndpointProvider EndpointProviderType;
@@ -132,7 +120,10 @@ namespace ConnectContactLens
       std::shared_ptr<ConnectContactLensEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>;
+      void init(const ConnectContactLensClientConfiguration& clientConfiguration);
 
+      ConnectContactLensClientConfiguration m_clientConfiguration;
+      std::shared_ptr<ConnectContactLensEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectContactLens

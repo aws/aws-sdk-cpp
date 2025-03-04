@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/storagegateway/StorageGatewayServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/storagegateway/StorageGatewayErrorMarshaller.h>
 
 namespace Aws
 {
 namespace StorageGateway
 {
-  AWS_STORAGEGATEWAY_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Storage Gateway Service</fullname>  <p>Amazon FSx File
    * Gateway is no longer available to new customers. Existing customers of FSx File
@@ -69,20 +65,12 @@ namespace StorageGateway
    * Longer Storage Gateway volume and snapshot IDs coming in 2016</a>.</p>
    * 
    */
-  class AWS_STORAGEGATEWAY_API StorageGatewayClient : smithy::client::AwsSmithyClientT<Aws::StorageGateway::SERVICE_NAME,
-      Aws::StorageGateway::StorageGatewayClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      StorageGatewayEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::StorageGatewayErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>
+  class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Storage Gateway"; }
 
       typedef StorageGatewayClientConfiguration ClientConfigurationType;
       typedef StorageGatewayEndpointProvider EndpointProviderType;
@@ -3163,7 +3151,10 @@ namespace StorageGateway
       std::shared_ptr<StorageGatewayEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>;
+      void init(const StorageGatewayClientConfiguration& clientConfiguration);
 
+      StorageGatewayClientConfiguration m_clientConfiguration;
+      std::shared_ptr<StorageGatewayEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace StorageGateway

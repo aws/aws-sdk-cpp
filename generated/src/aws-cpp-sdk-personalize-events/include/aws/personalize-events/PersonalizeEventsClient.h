@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize-events/PersonalizeEventsServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/personalize-events/PersonalizeEventsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PersonalizeEvents
 {
-  AWS_PERSONALIZEEVENTS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Personalize can consume real-time user event data, such as
    * <i>stream</i> or <i>click</i> data, and use it for model training either alone
@@ -26,20 +22,12 @@ namespace PersonalizeEvents
    * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
    * item interaction events</a>.</p>
    */
-  class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : smithy::client::AwsSmithyClientT<Aws::PersonalizeEvents::SERVICE_NAME,
-      Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PersonalizeEventsEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PersonalizeEventsErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>
+  class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Personalize Events"; }
 
       typedef PersonalizeEventsClientConfiguration ClientConfigurationType;
       typedef PersonalizeEventsEndpointProvider EndpointProviderType;
@@ -238,7 +226,10 @@ namespace PersonalizeEvents
       std::shared_ptr<PersonalizeEventsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>;
+      void init(const PersonalizeEventsClientConfiguration& clientConfiguration);
 
+      PersonalizeEventsClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PersonalizeEventsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PersonalizeEvents

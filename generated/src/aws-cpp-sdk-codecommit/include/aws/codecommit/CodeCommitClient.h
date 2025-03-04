@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/codecommit/CodeCommitErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeCommit
 {
-  AWS_CODECOMMIT_API extern const char SERVICE_NAME[];
   /**
    * <fullname>CodeCommit</fullname> <p>This is the <i>CodeCommit API Reference</i>.
    * This reference provides descriptions of the operations and data types for
@@ -183,20 +179,12 @@ namespace CodeCommit
    * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit
    * User Guide</a>.</p>
    */
-  class AWS_CODECOMMIT_API CodeCommitClient : smithy::client::AwsSmithyClientT<Aws::CodeCommit::SERVICE_NAME,
-      Aws::CodeCommit::CodeCommitClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      CodeCommitEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::CodeCommitErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>
+  class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "CodeCommit"; }
 
       typedef CodeCommitClientConfiguration ClientConfigurationType;
       typedef CodeCommitEndpointProvider EndpointProviderType;
@@ -2397,7 +2385,10 @@ namespace CodeCommit
       std::shared_ptr<CodeCommitEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>;
+      void init(const CodeCommitClientConfiguration& clientConfiguration);
 
+      CodeCommitClientConfiguration m_clientConfiguration;
+      std::shared_ptr<CodeCommitEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeCommit

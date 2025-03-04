@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/batch/BatchServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/batch/BatchErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Batch
 {
-  AWS_BATCH_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Batch</fullname> <p>Using Batch, you can run batch computing workloads
    * on the Amazon Web Services Cloud. Batch computing is a common means for
@@ -35,20 +31,12 @@ namespace Batch
    * install or manage batch computing software. This means that you can focus on
    * analyzing results and solving your specific problems instead.</p>
    */
-  class AWS_BATCH_API BatchClient : smithy::client::AwsSmithyClientT<Aws::Batch::SERVICE_NAME,
-      Aws::Batch::BatchClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      BatchEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::BatchErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>
+  class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Batch"; }
 
       typedef BatchClientConfiguration ClientConfigurationType;
       typedef BatchEndpointProvider EndpointProviderType;
@@ -1029,7 +1017,10 @@ namespace Batch
       std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>;
+      void init(const BatchClientConfiguration& clientConfiguration);
 
+      BatchClientConfiguration m_clientConfiguration;
+      std::shared_ptr<BatchEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Batch

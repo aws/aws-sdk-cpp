@@ -6,39 +6,27 @@
 #pragma once
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/launch-wizard/LaunchWizardServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/launch-wizard/LaunchWizardErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LaunchWizard
 {
-  AWS_LAUNCHWIZARD_API extern const char SERVICE_NAME[];
   /**
    * <p>Launch Wizard offers a guided way of sizing, configuring, and deploying
    * Amazon Web Services resources for third party applications, such as Microsoft
    * SQL Server Always On and HANA based SAP systems, without the need to manually
    * identify and provision individual Amazon Web Services resources.</p>
    */
-  class AWS_LAUNCHWIZARD_API LaunchWizardClient : smithy::client::AwsSmithyClientT<Aws::LaunchWizard::SERVICE_NAME,
-      Aws::LaunchWizard::LaunchWizardClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      LaunchWizardEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::LaunchWizardErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<LaunchWizardClient>
+  class AWS_LAUNCHWIZARD_API LaunchWizardClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LaunchWizardClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Launch Wizard"; }
 
       typedef LaunchWizardClientConfiguration ClientConfigurationType;
       typedef LaunchWizardEndpointProvider EndpointProviderType;
@@ -413,7 +401,10 @@ namespace LaunchWizard
       std::shared_ptr<LaunchWizardEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LaunchWizardClient>;
+      void init(const LaunchWizardClientConfiguration& clientConfiguration);
 
+      LaunchWizardClientConfiguration m_clientConfiguration;
+      std::shared_ptr<LaunchWizardEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LaunchWizard

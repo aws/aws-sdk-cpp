@@ -6,39 +6,27 @@
 #pragma once
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pca-connector-scep/PcaConnectorScepServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/pca-connector-scep/PcaConnectorScepErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PcaConnectorScep
 {
-  AWS_PCACONNECTORSCEP_API extern const char SERVICE_NAME[];
   /**
    * <p>Connector for SCEP creates a connector between Amazon Web Services Private CA
    * and your SCEP-enabled clients and devices. For more information, see <a
    * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep.html">Connector
    * for SCEP</a> in the <i>Amazon Web Services Private CA User Guide</i>.</p>
    */
-  class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : smithy::client::AwsSmithyClientT<Aws::PcaConnectorScep::SERVICE_NAME,
-      Aws::PcaConnectorScep::PcaConnectorScepClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      PcaConnectorScepEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::PcaConnectorScepErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>
+  class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Pca Connector Scep"; }
 
       typedef PcaConnectorScepClientConfiguration ClientConfigurationType;
       typedef PcaConnectorScepEndpointProvider EndpointProviderType;
@@ -431,7 +419,10 @@ namespace PcaConnectorScep
       std::shared_ptr<PcaConnectorScepEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>;
+      void init(const PcaConnectorScepClientConfiguration& clientConfiguration);
 
+      PcaConnectorScepClientConfiguration m_clientConfiguration;
+      std::shared_ptr<PcaConnectorScepEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PcaConnectorScep

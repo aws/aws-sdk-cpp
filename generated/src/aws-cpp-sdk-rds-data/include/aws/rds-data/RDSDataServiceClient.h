@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rds-data/RDSDataServiceServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/rds-data/RDSDataServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace RDSDataService
 {
-  AWS_RDSDATASERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>RDS Data API</fullname> <p>Amazon RDS provides an HTTP endpoint to
    * run SQL statements on an Amazon Aurora DB cluster. To run these statements, you
@@ -30,20 +26,12 @@ namespace RDSDataService
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
    * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
-  class AWS_RDSDATASERVICE_API RDSDataServiceClient : smithy::client::AwsSmithyClientT<Aws::RDSDataService::SERVICE_NAME,
-      Aws::RDSDataService::RDSDataServiceClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      RDSDataServiceEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::RDSDataServiceErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>
+  class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "RDS Data"; }
 
       typedef RDSDataServiceClientConfiguration ClientConfigurationType;
       typedef RDSDataServiceEndpointProvider EndpointProviderType;
@@ -253,7 +241,10 @@ namespace RDSDataService
       std::shared_ptr<RDSDataServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>;
+      void init(const RDSDataServiceClientConfiguration& clientConfiguration);
 
+      RDSDataServiceClientConfiguration m_clientConfiguration;
+      std::shared_ptr<RDSDataServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RDSDataService

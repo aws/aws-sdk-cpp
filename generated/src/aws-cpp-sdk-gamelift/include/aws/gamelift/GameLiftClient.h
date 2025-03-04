@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/gamelift/GameLiftErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GameLift
 {
-  AWS_GAMELIFT_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon GameLift provides solutions for hosting session-based multiplayer game
    * servers in the cloud, including tools for deploying, operating, and scaling game
@@ -57,20 +53,12 @@ namespace GameLift
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html">
    * Amazon GameLift tools and resources</a> </p> </li> </ul>
    */
-  class AWS_GAMELIFT_API GameLiftClient : smithy::client::AwsSmithyClientT<Aws::GameLift::SERVICE_NAME,
-      Aws::GameLift::GameLiftClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      GameLiftEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::GameLiftErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>
+  class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "GameLift"; }
 
       typedef GameLiftClientConfiguration ClientConfigurationType;
       typedef GameLiftEndpointProvider EndpointProviderType;
@@ -4902,7 +4890,10 @@ namespace GameLift
       std::shared_ptr<GameLiftEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>;
+      void init(const GameLiftClientConfiguration& clientConfiguration);
 
+      GameLiftClientConfiguration m_clientConfiguration;
+      std::shared_ptr<GameLiftEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GameLift

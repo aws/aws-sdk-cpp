@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/backup-gateway/BackupGatewayErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BackupGateway
 {
-  AWS_BACKUPGATEWAY_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Backup gateway</fullname> <p>Backup gateway connects Backup to your
    * hypervisor, so you can create, store, and restore backups of your virtual
@@ -32,20 +28,12 @@ namespace BackupGateway
    * navigate to the Backup console, choose <b>Gateways</b>, then choose <b>Create
    * gateway</b>.</p></p>
    */
-  class AWS_BACKUPGATEWAY_API BackupGatewayClient : smithy::client::AwsSmithyClientT<Aws::BackupGateway::SERVICE_NAME,
-      Aws::BackupGateway::BackupGatewayClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      BackupGatewayEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::BackupGatewayErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>
+  class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Backup Gateway"; }
 
       typedef BackupGatewayClientConfiguration ClientConfigurationType;
       typedef BackupGatewayEndpointProvider EndpointProviderType;
@@ -764,7 +752,10 @@ namespace BackupGateway
       std::shared_ptr<BackupGatewayEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>;
+      void init(const BackupGatewayClientConfiguration& clientConfiguration);
 
+      BackupGatewayClientConfiguration m_clientConfiguration;
+      std::shared_ptr<BackupGatewayEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BackupGateway

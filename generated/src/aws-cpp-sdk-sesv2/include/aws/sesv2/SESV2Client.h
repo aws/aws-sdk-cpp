@@ -6,19 +6,15 @@
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sesv2/SESV2ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/sesv2/SESV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SESV2
 {
-  AWS_SESV2_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon SES API v2</fullname> <p> <a
    * href="http://aws.amazon.com/ses">Amazon SES</a> is an Amazon Web Services
@@ -29,20 +25,12 @@ namespace SESV2
    * provides information and code samples that demonstrate how to use Amazon SES API
    * v2 features programmatically.</p>
    */
-  class AWS_SESV2_API SESV2Client : smithy::client::AwsSmithyClientT<Aws::SESV2::SERVICE_NAME,
-      Aws::SESV2::SESV2ClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      SESV2EndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::SESV2ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>
+  class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "SESv2"; }
 
       typedef SESV2ClientConfiguration ClientConfigurationType;
       typedef SESV2EndpointProvider EndpointProviderType;
@@ -2837,7 +2825,10 @@ namespace SESV2
       std::shared_ptr<SESV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>;
+      void init(const SESV2ClientConfiguration& clientConfiguration);
 
+      SESV2ClientConfiguration m_clientConfiguration;
+      std::shared_ptr<SESV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SESV2
