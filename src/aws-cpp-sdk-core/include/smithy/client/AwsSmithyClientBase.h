@@ -159,6 +159,16 @@ namespace client
             return m_errorMarshaller;
         }
 
+        bool ResolveAuthEndpoint(
+            std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+            Aws::AmazonWebServiceRequest const * const request,
+            const char* requestName,
+            Aws::Http::HttpMethod method,
+            ResponseHandlerFunc&& responseHandler,
+            EndpointUpdateCallback&& endpointCallback,
+            std::shared_ptr<Aws::Utils::Threading::Executor>& pExecutor
+        ) const;
+
         /**
          * Initialize client configuration with their factory method, unless the user has explicitly set the
          * configuration, and it is to be shallow copied between different clients, in which case, delete the

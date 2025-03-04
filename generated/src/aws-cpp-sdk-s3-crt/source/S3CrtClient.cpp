@@ -1217,6 +1217,7 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
           CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
       return;
   }
+
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
 
   request.SetServiceSpecificParameters(
@@ -1226,6 +1227,22 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
           ServiceSpecificParameters serviceSpecificParameters{params};
           return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
       }());
+    
+    //changes
+    EndpointUpdateCallback endpointCallback = [&](Aws::Endpoint::AWSEndpoint& endpoint){
+      endpoint.AddPathSegments(request.GetKey());
+    };
+  
+    auto endpointResolutionOutcome = ResolveEndpoint(
+      &request,
+      request.GetServiceRequestName(),
+      Aws::Http::HttpMethod method,
+      std::move(endpointCallback))
+    if (!endpointResolutionOutcome.IsSuccess()) {
+        handler(this, request, PutObjectOutcome(Aws::Client::AWSError<CoreErrors>(
+            CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+        return;
+    }
 
   // make aws_s3_meta_request with callbacks
   CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
