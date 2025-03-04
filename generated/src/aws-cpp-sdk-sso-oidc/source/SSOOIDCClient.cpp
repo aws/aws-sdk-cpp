@@ -51,6 +51,31 @@ namespace Aws
 const char* SSOOIDCClient::GetServiceName() {return SERVICE_NAME;}
 const char* SSOOIDCClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
+/*
+SSOOIDCClient& SSOOIDCClient::operator=(const SSOOIDCClient &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    AwsSmithyClientBase::deepCopy(Aws::MakeUnique<SSOOIDCClientConfiguration>(GetServiceName(), rhs.m_clientConfiguration),
+            GetServiceName(),
+            Aws::Http::CreateHttpClient(rhs.m_clientConfiguration),
+            Aws::MakeShared<SSOOIDCErrorMarshaller>(GetServiceName()));
+    m_endpointProvider = rhs.m_endpointProvider;
+    m_authSchemeResolver = Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(GetServiceName());
+    m_errorMarshaller = Aws::MakeShared<SSOOIDCErrorMarshaller>(GetServiceName());
+    if (m_clientConfig.get()) {
+      m_clientConfiguration = *static_cast<SSOOIDCClientConfiguration*>(m_clientConfig.get());
+      m_serializer = Aws::MakeShared<smithy::client::JsonOutcomeSerializer>(GetServiceName(), m_clientConfiguration.telemetryProvider);
+    }
+    initClient();
+  m_authSchemes = {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), m_clientConfiguration.region}},
+  };
+    return *this;
+  }
+*/
+
+
 SSOOIDCClient::SSOOIDCClient(const SSOOIDC::SSOOIDCClientConfiguration& clientConfiguration,
                            std::shared_ptr<SSOOIDCEndpointProviderBase> endpointProvider) :
     AwsSmithyClientT(clientConfiguration,

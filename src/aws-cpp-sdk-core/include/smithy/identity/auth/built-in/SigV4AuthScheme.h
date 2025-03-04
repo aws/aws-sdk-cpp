@@ -30,7 +30,8 @@ namespace smithy {
                                  const Aws::String& region)
             : AuthScheme(SIGV4),
             m_identityResolver{identityResolver},
-            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region)}
+            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region)},
+            m_serviceName{serviceName},m_region{region}
         {
             assert(m_identityResolver);
             assert(m_signer);
@@ -44,7 +45,8 @@ namespace smithy {
                                  bool urlEscapePath)
             : AuthScheme(SIGV4),
             m_identityResolver{identityResolver},
-            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region, policy, urlEscapePath)}
+            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region, policy, urlEscapePath)},
+            m_serviceName{serviceName},m_region{region}
         {
             assert(m_identityResolver);
             assert(m_signer);
@@ -83,8 +85,32 @@ namespace smithy {
         {
             return m_signer;
         }
+        SigV4AuthScheme(SigV4AuthScheme&& ) = default;
+
+        SigV4AuthScheme(const SigV4AuthScheme& other) :AuthScheme(SIGV4),
+          m_identityResolver{other.m_identityResolver},
+          m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", other.m_serviceName, other.m_region)},
+          m_serviceName{other.m_serviceName},
+          m_region{other.m_region}
+        {
+        }
+
+        SigV4AuthScheme& operator=(const SigV4AuthScheme& other) {
+          if (this != &other) {
+            m_identityResolver = other.m_identityResolver;
+            m_signer = Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", other.m_serviceName, other.m_region);
+            m_serviceName = other.m_serviceName;
+            m_region = other.m_region;
+          }
+          return *this;
+        }
+
+        SigV4AuthScheme& operator=( SigV4AuthScheme&&) = default;
+
     protected:
         std::shared_ptr<AwsCredentialIdentityResolverT> m_identityResolver;
         std::shared_ptr<AwsCredentialSignerT> m_signer;
+        Aws::String m_serviceName;
+        Aws::String m_region;
     };
 }

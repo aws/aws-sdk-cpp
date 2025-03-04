@@ -54,7 +54,9 @@ def main():
         "aws-cpp-sdk-elasticfilesystem-integration-tests",
         "aws-cpp-sdk-rds-integration-tests",
         "aws-cpp-sdk-ec2-integration-tests",
-        "aws-cpp-sdk-timestream-query-integration-tests"]
+        "aws-cpp-sdk-timestream-query-integration-tests",
+        "aws-cpp-sdk-sso-oidc-integration-tests"
+    ]
 
     # check for existence of these binaries before adding them to tests
     # as they will not always be present

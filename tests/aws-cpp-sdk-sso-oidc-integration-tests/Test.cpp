@@ -6,42 +6,30 @@ using namespace Aws;
 using namespace Aws::SSOOIDC;
 using namespace Aws::SSOOIDC::Model;
  
-class ClientHolder {
+class SsoIdcTest : public ::testing::Test{
 public:
-  ClientHolder() {
-    client = makeClient();
+  void SetUp(){
+    m_client = makeClient();
   }
  
-  void Foo() {
-    const auto response = client.RegisterClient(RegisterClientRequest{});
-    assert(!response.IsSuccess());
+  bool RegisterClient() {
+    const auto response = m_client.RegisterClient(RegisterClientRequest{});
+    //assert(!response.IsSuccess());
+    return response.IsSuccess();
   }
  
 private:
   SSOOIDCClient makeClient() {
     Aws::Client::ClientConfiguration client_config;
     client_config.region = Aws::Region::US_EAST_1;
-    return SSOOIDCClient{client_config};
+    auto _client = SSOOIDCClient{client_config};
+    return _client;
   }
  
-  SSOOIDCClient client;
+  SSOOIDCClient m_client;
 };
 
-TEST(test, sso)
+TEST_F(SsoIdcTest, testCopyClient)
 {
-  ClientHolder client{};
-  client.Foo();
+  EXPECT_TRUE(RegisterClient());
 }
- 
-/*auto main() -> int {
-  SDKOptions options{};
-  options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Debug;
-  InitAPI(options);
-  {
-      ClientHolder client{};
-      client.Foo();
-  }
-  ShutdownAPI(options);
-  return 0;
-}
-*/

@@ -120,6 +120,8 @@ namespace SSOOIDC
         /* End of legacy constructors due deprecation */
         virtual ~SSOOIDCClient();
 
+        //SSOOIDCClient& operator=(const SSOOIDCClient &rhs);
+
         /**
          * <p>Creates and returns access and refresh tokens for clients that are
          * authenticated using client secrets. The access token can be used to fetch
