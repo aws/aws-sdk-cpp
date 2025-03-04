@@ -76,6 +76,7 @@ namespace smithy {
 
         SigV4aAuthScheme& operator=(const SigV4aAuthScheme& other) {
           if (this != &other) {
+            memcpy(schemeId, other.schemeId, sizeof(other.schemeId));
             m_identityResolver = other.m_identityResolver;
             m_signer = Aws::MakeShared<AwsSigV4Signer>("SigV4aAuthScheme", other.m_serviceName, other.m_region);
             m_serviceName = other.m_serviceName;
