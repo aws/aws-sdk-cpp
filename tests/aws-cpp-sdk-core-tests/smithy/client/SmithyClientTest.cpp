@@ -417,3 +417,174 @@ TEST_F(SmithyClientTest, SmithyClientShouldCopyAssignAndMove) {
   SampleClient moveAssign = std::move(client);
   AWS_UNREFERENCED_PARAM(assign);
 }
+
+class TestAuthSchemeResolver : public smithy::SigV4AuthSchemeResolver<>
+{
+public:
+  virtual Aws::String GetTestId() const { return "BaseClass"; }
+};
+
+class TestAuthSchemeResolverDerived : public TestAuthSchemeResolver
+{
+public:
+   TestAuthSchemeResolverDerived(const Aws::String& id):m_testId{id}{}
+   Aws::String GetTestId() const override { return m_testId; }
+protected:
+   Aws::String m_testId;
+};
+
+using TestSmithyClientT = smithy::client::AwsSmithyClientT<MyServiceName,
+                                                        MySmithyClientConfig,
+                                                        TestAuthSchemeResolver,
+                                                        SigVariant,
+                                                        TestEndPointProvider,
+                                                        MockDeserializer,
+                                                        Aws::String,
+                                                        Aws::Client::XmlErrorMarshaller>;
+
+class TestCopyClient : public TestSmithyClientT
+{
+    public:
+    TestCopyClient(const MySmithyClientConfig& clientConfig,
+            const Aws::String& serviceName,
+            const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
+            const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& errorMarshaller,
+            const std::shared_ptr<TestEndPointProvider> endpointProvider,
+            const std::shared_ptr<TestAuthSchemeResolver>& authSchemeResolver,
+            const Aws::UnorderedMap<Aws::String, SigVariant>& authSchemesMap):
+            TestSmithyClientT(
+                clientConfig,
+                serviceName,
+                "ServiceUserAgentName",
+                httpClient,
+                errorMarshaller,
+                endpointProvider,
+                authSchemeResolver,
+                authSchemesMap)
+    {}
+
+    TestCopyClient(const TestCopyClient& other)
+      : TestSmithyClientT(other)
+    {
+    }
+    TestCopyClient(TestCopyClient&& other)
+      : TestSmithyClientT(std::move(other))
+    {
+    }
+
+    template<class ... Args>
+    TestCopyClient& operator=(Args&& ... args)
+    {
+      TestSmithyClientT::operator=(std::forward<Args>(args)...);
+      return *this;
+    }
+
+    std::shared_ptr<TestAuthSchemeResolver> AuthSchemeResolver()
+    {
+        return m_authSchemeResolver;
+    }
+
+    const Aws::String TestGetServiceClientName() const {
+      return GetServiceClientName();
+    }
+};
+
+TEST_F(SmithyClientTest, TestCopyMove) {
+  //derived
+  std::shared_ptr<TestAuthSchemeResolver> authSchemeResolver = Aws::MakeShared<TestAuthSchemeResolverDerived >(ALLOCATION_TAG,"DerivedClass");
+  //base
+  std::shared_ptr<TestAuthSchemeResolver> authSchemeResolver2 = Aws::MakeShared<TestAuthSchemeResolver >(ALLOCATION_TAG);
+
+  Aws::UnorderedMap<Aws::String, SigVariant> authSchemesMap;
+
+  Aws::String key{"aws.auth#sigv4"};
+
+  //add mock credentials provider for the test to the credentials provider chain
+  AddCredentialsProvider(Aws::MakeShared<TestCredentialsProvider>("TestCredentialsProviderChain"));
+
+  //create resolver with the credentials provider chain
+  auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, credsProviderChain);
+
+  SigVariant val{smithy::SigV4AuthScheme( credentialsResolver, "MyService", "us-west-2")};
+
+  authSchemesMap.emplace(key, val);
+
+  // test copy c-tor
+  {
+    TestCopyClient toCopy = TestCopyClient(
+        clientConfig,
+        "MyServiceCtorCopied",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap);
+
+      TestCopyClient ctorCopied(toCopy);
+      EXPECT_EQ(ctorCopied.TestGetServiceClientName(), "MyServiceCtorCopied");
+  }
+
+  // test copy assign aka operator(const &)
+  {
+    TestCopyClient source = TestCopyClient(
+        clientConfig,
+        "MyServiceSource",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap);
+
+    TestCopyClient destination = TestCopyClient(
+        clientConfig,
+        "MyServiceDestination",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver2,
+        authSchemesMap);
+
+    destination = source;
+    EXPECT_EQ(destination.AuthSchemeResolver()->GetTestId(), "DerivedClass");
+    EXPECT_EQ(destination.TestGetServiceClientName(), "MyServiceSource");
+  }
+
+  // test move c-tor
+  {
+    TestCopyClient toMove = TestCopyClient(
+        clientConfig,
+        "MyServiceCtorMoved",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap);
+
+      TestCopyClient ctorMoved(std::move(toMove));
+      EXPECT_EQ(ctorMoved.TestGetServiceClientName(), "MyServiceCtorMoved");
+  }
+
+  // test move assign aka operator=(&&)
+  {
+    TestCopyClient toMoveAssign = TestCopyClient(
+        clientConfig,
+        "MyServiceMoveAssigned",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver,
+        authSchemesMap);
+
+    TestCopyClient moveDestination = TestCopyClient(
+        clientConfig,
+        "MyServiceMoveDestination",
+        httpClient,
+        errorMarshaller,
+        endPointProvider,
+        authSchemeResolver2,
+        authSchemesMap);
+
+    moveDestination = std::move(toMoveAssign);
+    EXPECT_EQ(moveDestination.TestGetServiceClientName(), "MyServiceMoveAssigned");
+  }
+}
