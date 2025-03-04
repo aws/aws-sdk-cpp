@@ -306,7 +306,7 @@ namespace Model
      * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a
      * value for the <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3
      * | io1 | io2 | standard</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }

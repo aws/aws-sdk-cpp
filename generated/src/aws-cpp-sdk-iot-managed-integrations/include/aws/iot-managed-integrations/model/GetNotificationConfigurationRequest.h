@@ -1,0 +1,55 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
+#include <aws/iot-managed-integrations/model/EventType.h>
+#include <utility>
+
+namespace Aws
+{
+namespace IoTManagedIntegrations
+{
+namespace Model
+{
+
+  /**
+   */
+  class GetNotificationConfigurationRequest : public IoTManagedIntegrationsRequest
+  {
+  public:
+    AWS_IOTMANAGEDINTEGRATIONS_API GetNotificationConfigurationRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "GetNotificationConfiguration"; }
+
+    AWS_IOTMANAGEDINTEGRATIONS_API Aws::String SerializePayload() const override;
+
+
+    ///@{
+    /**
+     * <p>The type of event triggering a device notification to the customer-managed
+     * destination.</p>
+     */
+    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
+    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
+    inline GetNotificationConfigurationRequest& WithEventType(const EventType& value) { SetEventType(value); return *this;}
+    inline GetNotificationConfigurationRequest& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    EventType m_eventType;
+    bool m_eventTypeHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace IoTManagedIntegrations
+} // namespace Aws

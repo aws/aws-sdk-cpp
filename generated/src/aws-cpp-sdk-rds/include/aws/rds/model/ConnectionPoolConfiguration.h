@@ -118,12 +118,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>One or more SQL statements for the proxy to run when opening each new
-     * database connection. Typically used with <code>SET</code> statements to make
-     * sure that each connection has identical settings such as time zone and character
-     * set. For multiple statements, use semicolons as the separator. You can also
-     * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>.</p> <p>Default: no initialization query</p>
+     * <p>Add an initialization query, or modify the current one. You can specify one
+     * or more SQL statements for the proxy to run when opening each new database
+     * connection. The setting is typically used with <code>SET</code> statements to
+     * make sure that each connection has identical settings. Make sure that the query
+     * you add is valid. To include multiple variables in a single <code>SET</code>
+     * statement, use comma separators.</p> <p>For example: <code>SET variable1=value1,
+     * variable2=value2</code> </p> <p>For multiple statements, use semicolons as the
+     * separator.</p> <p>Default: no initialization query</p>
      */
     inline const Aws::String& GetInitQuery() const{ return m_initQuery; }
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }

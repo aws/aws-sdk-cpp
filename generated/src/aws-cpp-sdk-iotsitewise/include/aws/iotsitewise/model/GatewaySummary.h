@@ -81,6 +81,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of the gateway. A value of <code>3</code> indicates an
+     * MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2
+     * gateway.</p>
+     */
+    inline const Aws::String& GetGatewayVersion() const{ return m_gatewayVersion; }
+    inline bool GatewayVersionHasBeenSet() const { return m_gatewayVersionHasBeenSet; }
+    inline void SetGatewayVersion(const Aws::String& value) { m_gatewayVersionHasBeenSet = true; m_gatewayVersion = value; }
+    inline void SetGatewayVersion(Aws::String&& value) { m_gatewayVersionHasBeenSet = true; m_gatewayVersion = std::move(value); }
+    inline void SetGatewayVersion(const char* value) { m_gatewayVersionHasBeenSet = true; m_gatewayVersion.assign(value); }
+    inline GatewaySummary& WithGatewayVersion(const Aws::String& value) { SetGatewayVersion(value); return *this;}
+    inline GatewaySummary& WithGatewayVersion(Aws::String&& value) { SetGatewayVersion(std::move(value)); return *this;}
+    inline GatewaySummary& WithGatewayVersion(const char* value) { SetGatewayVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of gateway capability summaries that each contain a namespace and
      * status. Each gateway capability defines data sources for the gateway. To
      * retrieve a capability configuration's definition, use <a
@@ -129,6 +145,9 @@ namespace Model
 
     GatewayPlatform m_gatewayPlatform;
     bool m_gatewayPlatformHasBeenSet = false;
+
+    Aws::String m_gatewayVersion;
+    bool m_gatewayVersionHasBeenSet = false;
 
     Aws::Vector<GatewayCapabilitySummary> m_gatewayCapabilitySummaries;
     bool m_gatewayCapabilitySummariesHasBeenSet = false;

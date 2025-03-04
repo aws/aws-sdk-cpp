@@ -462,9 +462,10 @@ namespace Model
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used.</p> <p>
      * <b>Aurora MySQL</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, <code>instance</code>, and
-     * <code>slowquery</code>.</p> <p> <b>Aurora PostgreSQL</b> </p> <p>Possible value
-     * are <code>instance</code> and <code>postgresql</code>.</p> <p>For more
+     * <code>error</code>, <code>general</code>, <code>instance</code>,
+     * <code>slowquery</code>, and <code>iam-db-auth-error</code>.</p> <p> <b>Aurora
+     * PostgreSQL</b> </p> <p>Possible value are <code>instance</code>,
+     * <code>postgresql</code>, and <code>iam-db-auth-error</code>.</p> <p>For more
      * information about exporting CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User

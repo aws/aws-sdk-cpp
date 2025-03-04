@@ -722,7 +722,7 @@ namespace Model
      * Amazon Aurora DB instances. Storage is managed by the DB cluster.</p> <p>Valid
      * Values: <code>gp2 | gp3 | io1 | io2 | standard</code> </p> <p>Default:
      * <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
-     * <code>gp2</code>.</p>
+     * <code>gp3</code>.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -1096,12 +1096,13 @@ namespace Model
      * <ul> <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB
      * cluster.)</p> </li> <li> <p>RDS Custom</p> </li> </ul> <p>The following values
      * are valid for each DB engine:</p> <ul> <li> <p>RDS for Db2 - <code>diag.log |
-     * notify.log</code> </p> </li> <li> <p>RDS for MariaDB - <code>audit | error |
-     * general | slowquery</code> </p> </li> <li> <p>RDS for Microsoft SQL Server -
-     * <code>agent | error</code> </p> </li> <li> <p>RDS for MySQL - <code>audit |
-     * error | general | slowquery</code> </p> </li> <li> <p>RDS for Oracle -
-     * <code>alert | audit | listener | trace | oemagent</code> </p> </li> <li> <p>RDS
-     * for PostgreSQL - <code>postgresql | upgrade</code> </p> </li> </ul>
+     * notify.log | iam-db-auth-error</code> </p> </li> <li> <p>RDS for MariaDB -
+     * <code>audit | error | general | slowquery | iam-db-auth-error</code> </p> </li>
+     * <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
+     * <li> <p>RDS for MySQL - <code>audit | error | general | slowquery |
+     * iam-db-auth-error</code> </p> </li> <li> <p>RDS for Oracle - <code>alert | audit
+     * | listener | trace | oemagent</code> </p> </li> <li> <p>RDS for PostgreSQL -
+     * <code>postgresql | upgrade | iam-db-auth-error</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
