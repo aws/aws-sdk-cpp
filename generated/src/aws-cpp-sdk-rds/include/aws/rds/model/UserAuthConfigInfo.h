@@ -104,9 +104,7 @@ namespace Model
     ///@{
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy. The
-     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
-     * Server.</p>
+     * Management (IAM) authentication for connections to the proxy. </p>
      */
     inline const IAMAuthMode& GetIAMAuth() const{ return m_iAMAuth; }
     inline bool IAMAuthHasBeenSet() const { return m_iAMAuthHasBeenSet; }

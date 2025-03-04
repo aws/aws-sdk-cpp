@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/model/CoreDeviceOperatingSystem.h>
 #include <utility>
 
 namespace Aws
@@ -58,10 +59,25 @@ namespace Model
     inline GreengrassV2& WithCoreDeviceThingName(Aws::String&& value) { SetCoreDeviceThingName(std::move(value)); return *this;}
     inline GreengrassV2& WithCoreDeviceThingName(const char* value) { SetCoreDeviceThingName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The operating system of the core device in IoT Greengrass V2.</p>
+     */
+    inline const CoreDeviceOperatingSystem& GetCoreDeviceOperatingSystem() const{ return m_coreDeviceOperatingSystem; }
+    inline bool CoreDeviceOperatingSystemHasBeenSet() const { return m_coreDeviceOperatingSystemHasBeenSet; }
+    inline void SetCoreDeviceOperatingSystem(const CoreDeviceOperatingSystem& value) { m_coreDeviceOperatingSystemHasBeenSet = true; m_coreDeviceOperatingSystem = value; }
+    inline void SetCoreDeviceOperatingSystem(CoreDeviceOperatingSystem&& value) { m_coreDeviceOperatingSystemHasBeenSet = true; m_coreDeviceOperatingSystem = std::move(value); }
+    inline GreengrassV2& WithCoreDeviceOperatingSystem(const CoreDeviceOperatingSystem& value) { SetCoreDeviceOperatingSystem(value); return *this;}
+    inline GreengrassV2& WithCoreDeviceOperatingSystem(CoreDeviceOperatingSystem&& value) { SetCoreDeviceOperatingSystem(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_coreDeviceThingName;
     bool m_coreDeviceThingNameHasBeenSet = false;
+
+    CoreDeviceOperatingSystem m_coreDeviceOperatingSystem;
+    bool m_coreDeviceOperatingSystemHasBeenSet = false;
   };
 
 } // namespace Model

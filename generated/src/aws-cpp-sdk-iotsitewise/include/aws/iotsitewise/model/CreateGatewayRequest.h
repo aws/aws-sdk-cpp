@@ -62,6 +62,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of the gateway to create. Specify <code>3</code> to create an
+     * MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2
+     * gateway. If the version isn't specified, a Classic streams, V2 gateway is
+     * created by default.</p> <p> We recommend creating an MQTT-enabled, V3 gateway
+     * for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge
+     * should use gateway version <code>2</code>. For more information on gateway
+     * versions, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html">
+     * Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+     */
+    inline const Aws::String& GetGatewayVersion() const{ return m_gatewayVersion; }
+    inline bool GatewayVersionHasBeenSet() const { return m_gatewayVersionHasBeenSet; }
+    inline void SetGatewayVersion(const Aws::String& value) { m_gatewayVersionHasBeenSet = true; m_gatewayVersion = value; }
+    inline void SetGatewayVersion(Aws::String&& value) { m_gatewayVersionHasBeenSet = true; m_gatewayVersion = std::move(value); }
+    inline void SetGatewayVersion(const char* value) { m_gatewayVersionHasBeenSet = true; m_gatewayVersion.assign(value); }
+    inline CreateGatewayRequest& WithGatewayVersion(const Aws::String& value) { SetGatewayVersion(value); return *this;}
+    inline CreateGatewayRequest& WithGatewayVersion(Aws::String&& value) { SetGatewayVersion(std::move(value)); return *this;}
+    inline CreateGatewayRequest& WithGatewayVersion(const char* value) { SetGatewayVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of key-value pairs that contain metadata for the gateway. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
@@ -88,6 +110,9 @@ namespace Model
 
     GatewayPlatform m_gatewayPlatform;
     bool m_gatewayPlatformHasBeenSet = false;
+
+    Aws::String m_gatewayVersion;
+    bool m_gatewayVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -75,8 +75,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>ConfigureShard</code> objects that can be used to configure
-     * each shard in a Valkey or Redis OSS (cluster mode enabled) replication group.
-     * The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>,
+     * each shard in a Valkey or Redis OSS replication group. The
+     * <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>,
      * <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
      */
     inline const Aws::Vector<ConfigureShard>& GetReplicaConfiguration() const{ return m_replicaConfiguration; }

@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/iot-managed-integrations/model/ListNotificationConfigurationsResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::IoTManagedIntegrations::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListNotificationConfigurationsResult::ListNotificationConfigurationsResult()
+{
+}
+
+ListNotificationConfigurationsResult::ListNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  *this = result;
+}
+
+ListNotificationConfigurationsResult& ListNotificationConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NotificationConfigurationList"))
+  {
+    Aws::Utils::Array<JsonView> notificationConfigurationListJsonList = jsonValue.GetArray("NotificationConfigurationList");
+    for(unsigned notificationConfigurationListIndex = 0; notificationConfigurationListIndex < notificationConfigurationListJsonList.GetLength(); ++notificationConfigurationListIndex)
+    {
+      m_notificationConfigurationList.push_back(notificationConfigurationListJsonList[notificationConfigurationListIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

@@ -53,6 +53,12 @@ DescribeGatewayResult& DescribeGatewayResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("gatewayVersion"))
+  {
+    m_gatewayVersion = jsonValue.GetString("gatewayVersion");
+
+  }
+
   if(jsonValue.ValueExists("gatewayCapabilitySummaries"))
   {
     Aws::Utils::Array<JsonView> gatewayCapabilitySummariesJsonList = jsonValue.GetArray("gatewayCapabilitySummaries");

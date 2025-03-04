@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateGatewayRequest::CreateGatewayRequest() : 
     m_gatewayNameHasBeenSet(false),
     m_gatewayPlatformHasBeenSet(false),
+    m_gatewayVersionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +33,12 @@ Aws::String CreateGatewayRequest::SerializePayload() const
   if(m_gatewayPlatformHasBeenSet)
   {
    payload.WithObject("gatewayPlatform", m_gatewayPlatform.Jsonize());
+
+  }
+
+  if(m_gatewayVersionHasBeenSet)
+  {
+   payload.WithString("gatewayVersion", m_gatewayVersion);
 
   }
 

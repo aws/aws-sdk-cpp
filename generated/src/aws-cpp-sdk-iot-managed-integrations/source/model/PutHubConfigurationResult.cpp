@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/iot-managed-integrations/model/PutHubConfigurationResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::IoTManagedIntegrations::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+PutHubConfigurationResult::PutHubConfigurationResult() : 
+    m_hubTokenTimerExpirySettingInSeconds(0)
+{
+}
+
+PutHubConfigurationResult::PutHubConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutHubConfigurationResult()
+{
+  *this = result;
+}
+
+PutHubConfigurationResult& PutHubConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("HubTokenTimerExpirySettingInSeconds"))
+  {
+    m_hubTokenTimerExpirySettingInSeconds = jsonValue.GetInt64("HubTokenTimerExpirySettingInSeconds");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

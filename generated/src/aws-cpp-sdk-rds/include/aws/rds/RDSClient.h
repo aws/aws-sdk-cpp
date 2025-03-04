@@ -4981,8 +4981,10 @@ namespace Aws
         /**
          * <p>Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided
          * IAM role must have access to the S3 bucket.</p> <p>You can't export snapshot
-         * data from Db2 or RDS Custom DB instances.</p> <p>For more information on
-         * exporting DB snapshot data, see <a
+         * data from RDS Custom DB instances. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.ExportSnapshotToS3.html">
+         * Supported Regions and DB engines for exporting snapshots to S3 in Amazon
+         * RDS</a>.</p> <p>For more information on exporting DB snapshot data, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
          * DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
