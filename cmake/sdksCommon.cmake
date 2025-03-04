@@ -112,6 +112,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "transcribestreaming:tests/aws-cpp-sdk-transcr
 list(APPEND SDK_TEST_PROJECT_LIST "eventbridge:tests/aws-cpp-sdk-eventbridge-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "timestream-query:tests/aws-cpp-sdk-timestream-query-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "dsql:tests/aws-cpp-sdk-dsql-unit-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "sso-oidc:tests/aws-cpp-sdk-sso-oidc-integration-tests")
 
 build_sdk_list()
 
