@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sso-oidc/SSOOIDCErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SSOOIDC
 {
+  AWS_SSOOIDC_API extern const char SERVICE_NAME[];
   /**
    * <p>IAM Identity Center OpenID Connect (OIDC) is a web service that enables a
    * client (such as CLI or a native application) to register with IAM Identity
@@ -50,12 +54,20 @@ namespace SSOOIDC
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">What
    * is IAM Identity Center?</a> in the <i>IAM Identity Center User Guide</i>.</p>
    */
-  class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>
+  class AWS_SSOOIDC_API SSOOIDCClient : Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>,
+    smithy::client::AwsSmithyClientT<Aws::SSOOIDC::SERVICE_NAME,
+      Aws::SSOOIDC::SSOOIDCClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SSOOIDCEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SSOOIDCErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SSO OIDC"; }
 
       typedef SSOOIDCClientConfiguration ClientConfigurationType;
       typedef SSOOIDCEndpointProvider EndpointProviderType;
@@ -223,10 +235,7 @@ namespace SSOOIDC
       std::shared_ptr<SSOOIDCEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>;
-      void init(const SSOOIDCClientConfiguration& clientConfiguration);
 
-      SSOOIDCClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SSOOIDCEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSOOIDC
