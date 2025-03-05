@@ -59,7 +59,8 @@ namespace
             ClientConfiguration config;
             config.scheme = Scheme::HTTPS;
             config.region = AWS_TEST_REGION;
-            m_client = Aws::MakeUnique<Aws::CloudWatchLogs::CloudWatchLogsClient>(ALLOCATION_TAG, config);
+            CloudWatchLogsClient tmpClient(config);  // test copy c-tor
+            m_client = Aws::MakeUnique<CloudWatchLogsClient>(ALLOCATION_TAG, tmpClient);
             CreateLogsGroup(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP));
 
             auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");

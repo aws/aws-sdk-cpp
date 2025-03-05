@@ -60,55 +60,78 @@ namespace client
               m_authSchemes(authSchemes),
               m_serializer(Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider))
         {
-          m_serviceName = ServiceNameT;
           initClient();
         }
 
-        AwsSmithyClientT(const AwsSmithyClientT& other):
-            AwsSmithyClientBase(other,
-              Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
-              ServiceNameT,
-              other.m_serviceUserAgentName,
-              Aws::Http::CreateHttpClient(other.m_clientConfiguration),
-              Aws::MakeShared<ErrorMarshallerT>(ServiceNameT)),
-            m_clientConfiguration{*static_cast<ServiceClientConfigurationT*>(m_clientConfig.get())},
-            m_endpointProvider{other.m_endpointProvider},
-            m_authSchemeResolver{Aws::MakeShared<ServiceAuthSchemeResolverT>(ServiceNameT)},
-            m_authSchemes{other.m_authSchemes},
-            m_serializer{Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider)}
+        AwsSmithyClientT(const AwsSmithyClientT& other)
+          : AwsSmithyClientBase(other,
+                                Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
+                                Aws::Http::CreateHttpClient(other.m_clientConfiguration),
+                                Aws::MakeShared<ErrorMarshallerT>(ServiceNameT)),
+            m_clientConfiguration(*static_cast<ServiceClientConfigurationT*>(m_clientConfig.get()))
         {
-            initClient();
+          m_endpointProvider = other.m_endpointProvider;  /* shallow copy */
+          m_authSchemeResolver = other.m_authSchemeResolver;  /* shallow copy */
+          m_authSchemes = other.m_authSchemes;
+          m_serializer = Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider);
+          initClient();
         }
 
         AwsSmithyClientT& operator=(const AwsSmithyClientT& other)
         {
             if(this != &other)
             {
-                AwsSmithyClientBase::deepCopy(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
-                  ServiceNameT,
-                  Aws::Http::CreateHttpClient(other.m_clientConfiguration),
+                m_clientConfiguration = other.m_clientConfiguration;
+                AwsSmithyClientBase::baseCopyAssign(other,
+                  Aws::Http::CreateHttpClient(m_clientConfiguration),
                   Aws::MakeShared<ErrorMarshallerT>(ServiceNameT));
-                m_clientConfiguration = *static_cast<ServiceClientConfigurationT*>(m_clientConfig.get());
-                m_endpointProvider = other.m_endpointProvider;
-                m_authSchemeResolver = Aws::MakeShared<ServiceAuthSchemeResolverT>(ServiceNameT);
+
+                m_endpointProvider = other.m_endpointProvider; /* shallow copy */
+                m_authSchemeResolver = other.m_authSchemeResolver;  /* shallow copy */
                 m_authSchemes = other.m_authSchemes;
                 m_serializer = Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider);
-                m_errorMarshaller = Aws::MakeShared<ErrorMarshallerT>(ServiceNameT);
                 initClient();
             }
             return *this;
         }
 
-        AwsSmithyClientT (AwsSmithyClientT&&) = default;
+        AwsSmithyClientT(AwsSmithyClientT&& other)  :
+            AwsSmithyClientBase(std::move(static_cast<AwsSmithyClientBase&&>(other)),
+              Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, std::move(other.m_clientConfiguration))),
+            m_clientConfiguration{*static_cast<ServiceClientConfigurationT*>(m_clientConfig.get())},
+            m_endpointProvider(std::move(other.m_endpointProvider)),
+            m_authSchemeResolver(std::move(other.m_authSchemeResolver)),
+            m_authSchemes(std::move(other.m_authSchemes)),
+            m_serializer(std::move(other.m_serializer))
+        {
+        }
 
-        AwsSmithyClientT& operator=(AwsSmithyClientT&&) = default;
+        AwsSmithyClientT& operator=(AwsSmithyClientT&& other)
+        {
+            if(this != &other)
+            {
+                m_clientConfiguration = std::move(other.m_clientConfiguration);
+                AwsSmithyClientBase::baseMoveAssign(std::move(static_cast<AwsSmithyClientBase&&>(other)));
+
+                m_endpointProvider = std::move(other.m_endpointProvider);
+                m_authSchemeResolver = std::move(other.m_authSchemeResolver);
+                m_authSchemes = std::move(other.m_authSchemes);
+                m_serializer = std::move(other.m_serializer);
+            }
+            return *this;
+        }
 
         virtual ~AwsSmithyClientT() = default;
 
     protected:
         void initClient() {
-          m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
-          m_authSchemeResolver->Init(m_clientConfiguration);
+          if (m_endpointProvider && m_authSchemeResolver) {
+            m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
+            m_authSchemeResolver->Init(m_clientConfiguration);
+          } else {
+            AWS_LOGSTREAM_FATAL(ServiceNameT, "Unable to init client: endpoint provider=" << m_endpointProvider
+              << " or " << "authSchemeResolver=" << m_authSchemeResolver << " are null!");
+          }
         }
 
         inline const char* GetServiceClientName() const override { return m_serviceName.c_str(); }
@@ -226,7 +249,7 @@ namespace client
             const Aws::Http::URI& uri = endpoint.GetURI();
             auto signerRegionOverride = region;
             auto signerServiceNameOverride = serviceName;
-            //signer name is needed for some identity resolvers
+            // signer name is needed for some identity resolvers
             if (endpoint.GetAttributes()) {
                 if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
                     signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
@@ -242,6 +265,10 @@ namespace client
         }
 
     protected:
+        /* Service client specific config, the actual object is stored in AwsSmithyClientBase by pointer
+         * In order to avoid config object duplication, smithy template client access it by a reference.
+         * So that base client has it by base config pointer, child smithy client has it by child config reference.
+         */
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};

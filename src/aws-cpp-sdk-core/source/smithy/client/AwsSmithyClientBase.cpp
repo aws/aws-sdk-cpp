@@ -7,20 +7,22 @@
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
-
-#include "aws/core/client/AWSErrorMarshaller.h"
-#include "aws/core/client/RetryStrategy.h"
-#include "aws/core/http/HttpClientFactory.h"
-#include "aws/core/monitoring/CoreMetrics.h"
-#include "aws/core/monitoring/MonitoringManager.h"
-#include "aws/core/utils/DNS.h"
-#include "aws/core/utils/threading/Executor.h"
-#include "aws/core/utils/threading/SameThreadExecutor.h"
-#include "smithy/tracing/TracingUtils.h"
-#include <aws/core/utils/stream/ResponseStream.h>
-#include <aws/crt/Variant.h>
-#include <aws/core/client/CoreErrors.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/tracing/TracingUtils.h>
+
+#include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/client/CoreErrors.h>
+#include <aws/core/client/RetryStrategy.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/monitoring/CoreMetrics.h>
+#include <aws/core/monitoring/MonitoringManager.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/SameThreadExecutor.h>
+#include <aws/crt/Variant.h>
+
 
 using namespace smithy::client;
 using namespace smithy::interceptor;
@@ -62,6 +64,7 @@ void createFromFactoriesIfPresent(T& entity, std::function<T()>& factory) {
 }  // namespace
 
 void AwsSmithyClientBase::baseInit() {
+  AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
   createFromFactories(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
   createFromFactories(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactories(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
@@ -77,6 +80,7 @@ void AwsSmithyClientBase::baseInit() {
 }
 
 void AwsSmithyClientBase::baseCopyInit() {
+  AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
   createFromFactoriesIfPresent(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
@@ -89,6 +93,27 @@ void AwsSmithyClientBase::baseCopyInit() {
                                                                       m_serviceUserAgentName);
     m_interceptors.emplace_back(m_userAgentInterceptor);
   }
+}
+
+void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
+                                         std::shared_ptr<Aws::Http::HttpClient> httpClient,
+                                         std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) {
+  m_serviceName = other.m_serviceName;
+  m_serviceUserAgentName = other.m_serviceUserAgentName;
+  m_httpClient = std::move(httpClient);
+  m_errorMarshaller = std::move(errorMarshaller);
+  m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")};
+
+  baseCopyInit();
+}
+
+void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
+  m_serviceName = std::move(other.m_serviceName);
+  m_serviceUserAgentName = std::move(other.m_serviceUserAgentName);
+  m_httpClient = std::move(other.m_httpClient);
+  m_errorMarshaller = std::move(other.m_errorMarshaller);
+  m_interceptors = std::move(other.m_interceptors);
+  m_userAgentInterceptor = std::move(other.m_userAgentInterceptor);
 }
 
 std::shared_ptr<Aws::Http::HttpRequest>

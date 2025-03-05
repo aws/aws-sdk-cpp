@@ -85,6 +85,7 @@ namespace client
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
         using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSError >;
 
+        /* primary constructor */
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
                             Aws::String serviceUserAgentName,
@@ -100,27 +101,31 @@ namespace client
             baseInit();
         }
 
+        /* copy constructor substitute */
         AwsSmithyClientBase(const AwsSmithyClientBase& other,
                             Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
-                            Aws::String serviceName,
-                            Aws::String serviceUserAgentName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
-          m_clientConfig(std::move(clientConfig)),
-          m_serviceName(std::move(serviceName)),
-          m_serviceUserAgentName(std::move(serviceUserAgentName)),
-          m_httpClient(std::move(httpClient)),
-          m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
+                            m_clientConfig(std::move(clientConfig))
         {
-          AWS_UNREFERENCED_PARAM(other);
-          baseCopyInit();
+          // this c-tor needs httpClient and errorMarshaller passed explicitly because this base class stores them
+          // by their parent pointer classes
+          // and base client class has no idea how to re-create or copy them, and "lombok toBuilder" is not a thing in cpp.
+          baseCopyAssign(other, std::move(httpClient), std::move(errorMarshaller));
+        }
+
+        /* move constructor substitute */
+        AwsSmithyClientBase(AwsSmithyClientBase&& other,
+                            Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig) :
+          m_clientConfig(std::move(clientConfig))
+        {
+          baseMoveAssign(std::move(other));
         }
 
         AwsSmithyClientBase(AwsSmithyClientBase& target) = delete;
         AwsSmithyClientBase& operator=(AwsSmithyClientBase& target) = delete;
-        AwsSmithyClientBase(AwsSmithyClientBase&& target) = default;
-        AwsSmithyClientBase& operator=(AwsSmithyClientBase&& target) = default;
+        AwsSmithyClientBase(AwsSmithyClientBase&& target) = delete;
+        AwsSmithyClientBase& operator=(AwsSmithyClientBase&& target) = delete;
 
         virtual ~AwsSmithyClientBase() = default;
 
@@ -144,19 +149,6 @@ namespace client
         void AppendToUserAgent(const Aws::String& valueToAppend);
 
     protected:
-        void deepCopy(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
-          const Aws::String& serviceName,
-          std::shared_ptr<Aws::Http::HttpClient> httpClient,
-          std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller)
-        {
-          m_clientConfig = std::move(clientConfig);
-          m_serviceName = serviceName;
-          m_httpClient = std::move(httpClient);
-          m_errorMarshaller = std::move(errorMarshaller);
-          m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")};
-          baseCopyInit();
-        }
-
         /**
          * Initialize client configuration with their factory method, unless the user has explicitly set the
          * configuration, and it is to be shallow copied between different clients, in which case, delete the
@@ -169,6 +161,18 @@ namespace client
          * shared configuration.
          */
         void baseCopyInit();
+
+        /**
+         * A helper utility to re-initialize on copy assignment
+         */
+        void baseCopyAssign(const AwsSmithyClientBase& other,
+                            std::shared_ptr<Aws::Http::HttpClient> httpClient,
+                            std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller);
+
+        /**
+         * A helper utility to move assign base client
+         */
+        void baseMoveAssign(AwsSmithyClientBase&& other);
 
         /**
          * Transforms the AmazonWebServicesResult object into an HttpRequest.
@@ -191,7 +195,10 @@ namespace client
         virtual SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
-        std::shared_ptr<Aws::Client::ClientConfiguration> m_clientConfig;
+        /* AwsSmithyClientT class binds its config reference to this pointer, so don't remove const and don't re-allocate it.
+         * This is done to avoid duplication of config object between this base and actual service template classes.
+         */
+        const Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_serviceUserAgentName;
 
