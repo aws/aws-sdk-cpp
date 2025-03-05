@@ -1,0 +1,124 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/gameliftstreams/model/StartStreamSessionRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::GameLiftStreams::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+StartStreamSessionRequest::StartStreamSessionRequest() : 
+    m_additionalEnvironmentVariablesHasBeenSet(false),
+    m_additionalLaunchArgsHasBeenSet(false),
+    m_applicationIdentifierHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
+    m_connectionTimeoutSeconds(0),
+    m_connectionTimeoutSecondsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_identifierHasBeenSet(false),
+    m_locationsHasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false),
+    m_sessionLengthSeconds(0),
+    m_sessionLengthSecondsHasBeenSet(false),
+    m_signalRequestHasBeenSet(false),
+    m_userIdHasBeenSet(false)
+{
+}
+
+Aws::String StartStreamSessionRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_additionalEnvironmentVariablesHasBeenSet)
+  {
+   JsonValue additionalEnvironmentVariablesJsonMap;
+   for(auto& additionalEnvironmentVariablesItem : m_additionalEnvironmentVariables)
+   {
+     additionalEnvironmentVariablesJsonMap.WithString(additionalEnvironmentVariablesItem.first, additionalEnvironmentVariablesItem.second);
+   }
+   payload.WithObject("AdditionalEnvironmentVariables", std::move(additionalEnvironmentVariablesJsonMap));
+
+  }
+
+  if(m_additionalLaunchArgsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalLaunchArgsJsonList(m_additionalLaunchArgs.size());
+   for(unsigned additionalLaunchArgsIndex = 0; additionalLaunchArgsIndex < additionalLaunchArgsJsonList.GetLength(); ++additionalLaunchArgsIndex)
+   {
+     additionalLaunchArgsJsonList[additionalLaunchArgsIndex].AsString(m_additionalLaunchArgs[additionalLaunchArgsIndex]);
+   }
+   payload.WithArray("AdditionalLaunchArgs", std::move(additionalLaunchArgsJsonList));
+
+  }
+
+  if(m_applicationIdentifierHasBeenSet)
+  {
+   payload.WithString("ApplicationIdentifier", m_applicationIdentifier);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_connectionTimeoutSecondsHasBeenSet)
+  {
+   payload.WithInteger("ConnectionTimeoutSeconds", m_connectionTimeoutSeconds);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_locationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
+   for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
+   {
+     locationsJsonList[locationsIndex].AsString(m_locations[locationsIndex]);
+   }
+   payload.WithArray("Locations", std::move(locationsJsonList));
+
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("Protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+  }
+
+  if(m_sessionLengthSecondsHasBeenSet)
+  {
+   payload.WithInteger("SessionLengthSeconds", m_sessionLengthSeconds);
+
+  }
+
+  if(m_signalRequestHasBeenSet)
+  {
+   payload.WithString("SignalRequest", m_signalRequest);
+
+  }
+
+  if(m_userIdHasBeenSet)
+  {
+   payload.WithString("UserId", m_userId);
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+
+
+

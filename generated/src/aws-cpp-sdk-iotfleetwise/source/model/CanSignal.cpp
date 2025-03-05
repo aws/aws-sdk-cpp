@@ -33,7 +33,9 @@ CanSignal::CanSignal() :
     m_factorHasBeenSet(false),
     m_length(0),
     m_lengthHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_signalValueType(SignalValueType::NOT_SET),
+    m_signalValueTypeHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,13 @@ CanSignal& CanSignal::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("signalValueType"))
+  {
+    m_signalValueType = SignalValueTypeMapper::GetSignalValueTypeForName(jsonValue.GetString("signalValueType"));
+
+    m_signalValueTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,11 @@ JsonValue CanSignal::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_signalValueTypeHasBeenSet)
+  {
+   payload.WithString("signalValueType", SignalValueTypeMapper::GetNameForSignalValueType(m_signalValueType));
   }
 
   return payload;

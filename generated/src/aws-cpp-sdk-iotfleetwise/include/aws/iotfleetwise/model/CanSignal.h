@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/model/SignalValueType.h>
 #include <utility>
 
 namespace Aws
@@ -60,7 +61,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether the message data is specified as a signed value.</p>
+     * <p>Determines whether the message is signed (<code>true</code>) or not
+     * (<code>false</code>). If it's signed, the message can represent both positive
+     * and negative numbers. The <code>isSigned</code> parameter only applies to the
+     * <code>INTEGER</code> raw signal type, and it doesn't affect the
+     * <code>FLOATING_POINT</code> raw signal type.</p>
      */
     inline bool GetIsSigned() const{ return m_isSigned; }
     inline bool IsSignedHasBeenSet() const { return m_isSignedHasBeenSet; }
@@ -127,6 +132,18 @@ namespace Model
     inline CanSignal& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline CanSignal& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+     */
+    inline const SignalValueType& GetSignalValueType() const{ return m_signalValueType; }
+    inline bool SignalValueTypeHasBeenSet() const { return m_signalValueTypeHasBeenSet; }
+    inline void SetSignalValueType(const SignalValueType& value) { m_signalValueTypeHasBeenSet = true; m_signalValueType = value; }
+    inline void SetSignalValueType(SignalValueType&& value) { m_signalValueTypeHasBeenSet = true; m_signalValueType = std::move(value); }
+    inline CanSignal& WithSignalValueType(const SignalValueType& value) { SetSignalValueType(value); return *this;}
+    inline CanSignal& WithSignalValueType(SignalValueType&& value) { SetSignalValueType(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_messageId;
@@ -152,6 +169,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    SignalValueType m_signalValueType;
+    bool m_signalValueTypeHasBeenSet = false;
   };
 
 } // namespace Model

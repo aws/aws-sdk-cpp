@@ -71,6 +71,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server
+     * that your DataSync agent connects to.</p>
+     */
+    inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
+    inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
+    inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
+    inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
+    inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
+    inline UpdateLocationNfsRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
+    inline UpdateLocationNfsRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
+    inline UpdateLocationNfsRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const OnPremConfig& GetOnPremConfig() const{ return m_onPremConfig; }
     inline bool OnPremConfigHasBeenSet() const { return m_onPremConfigHasBeenSet; }
@@ -96,6 +111,9 @@ namespace Model
 
     Aws::String m_subdirectory;
     bool m_subdirectoryHasBeenSet = false;
+
+    Aws::String m_serverHostname;
+    bool m_serverHostnameHasBeenSet = false;
 
     OnPremConfig m_onPremConfig;
     bool m_onPremConfigHasBeenSet = false;

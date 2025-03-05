@@ -94,6 +94,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the domain name or IP version 4 (IPv4) address of the object
+     * storage server that your DataSync agent connects to.</p>
+     */
+    inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
+    inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
+    inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
+    inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
+    inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
+    inline UpdateLocationObjectStorageRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
+    inline UpdateLocationObjectStorageRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
+    inline UpdateLocationObjectStorageRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the access key (for example, a user name) if credentials are
      * required to authenticate with the object storage server.</p>
      */
@@ -178,6 +193,9 @@ namespace Model
 
     Aws::String m_subdirectory;
     bool m_subdirectoryHasBeenSet = false;
+
+    Aws::String m_serverHostname;
+    bool m_serverHostnameHasBeenSet = false;
 
     Aws::String m_accessKey;
     bool m_accessKeyHasBeenSet = false;

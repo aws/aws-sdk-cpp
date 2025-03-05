@@ -20,6 +20,7 @@ UpdateLocationObjectStorageRequest::UpdateLocationObjectStorageRequest() :
     m_serverProtocol(ObjectStorageServerProtocol::NOT_SET),
     m_serverProtocolHasBeenSet(false),
     m_subdirectoryHasBeenSet(false),
+    m_serverHostnameHasBeenSet(false),
     m_accessKeyHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_agentArnsHasBeenSet(false),
@@ -51,6 +52,12 @@ Aws::String UpdateLocationObjectStorageRequest::SerializePayload() const
   if(m_subdirectoryHasBeenSet)
   {
    payload.WithString("Subdirectory", m_subdirectory);
+
+  }
+
+  if(m_serverHostnameHasBeenSet)
+  {
+   payload.WithString("ServerHostname", m_serverHostname);
 
   }
 
