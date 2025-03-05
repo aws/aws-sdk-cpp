@@ -1,0 +1,148 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/gameliftstreams/model/LocationState.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace GameLiftStreams
+{
+namespace Model
+{
+
+LocationState::LocationState() : 
+    m_allocatedCapacity(0),
+    m_allocatedCapacityHasBeenSet(false),
+    m_alwaysOnCapacity(0),
+    m_alwaysOnCapacityHasBeenSet(false),
+    m_idleCapacity(0),
+    m_idleCapacityHasBeenSet(false),
+    m_locationNameHasBeenSet(false),
+    m_onDemandCapacity(0),
+    m_onDemandCapacityHasBeenSet(false),
+    m_requestedCapacity(0),
+    m_requestedCapacityHasBeenSet(false),
+    m_status(StreamGroupLocationStatus::NOT_SET),
+    m_statusHasBeenSet(false)
+{
+}
+
+LocationState::LocationState(JsonView jsonValue)
+  : LocationState()
+{
+  *this = jsonValue;
+}
+
+LocationState& LocationState::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("AllocatedCapacity"))
+  {
+    m_allocatedCapacity = jsonValue.GetInteger("AllocatedCapacity");
+
+    m_allocatedCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AlwaysOnCapacity"))
+  {
+    m_alwaysOnCapacity = jsonValue.GetInteger("AlwaysOnCapacity");
+
+    m_alwaysOnCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdleCapacity"))
+  {
+    m_idleCapacity = jsonValue.GetInteger("IdleCapacity");
+
+    m_idleCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LocationName"))
+  {
+    m_locationName = jsonValue.GetString("LocationName");
+
+    m_locationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnDemandCapacity"))
+  {
+    m_onDemandCapacity = jsonValue.GetInteger("OnDemandCapacity");
+
+    m_onDemandCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RequestedCapacity"))
+  {
+    m_requestedCapacity = jsonValue.GetInteger("RequestedCapacity");
+
+    m_requestedCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = StreamGroupLocationStatusMapper::GetStreamGroupLocationStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue LocationState::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_allocatedCapacityHasBeenSet)
+  {
+   payload.WithInteger("AllocatedCapacity", m_allocatedCapacity);
+
+  }
+
+  if(m_alwaysOnCapacityHasBeenSet)
+  {
+   payload.WithInteger("AlwaysOnCapacity", m_alwaysOnCapacity);
+
+  }
+
+  if(m_idleCapacityHasBeenSet)
+  {
+   payload.WithInteger("IdleCapacity", m_idleCapacity);
+
+  }
+
+  if(m_locationNameHasBeenSet)
+  {
+   payload.WithString("LocationName", m_locationName);
+
+  }
+
+  if(m_onDemandCapacityHasBeenSet)
+  {
+   payload.WithInteger("OnDemandCapacity", m_onDemandCapacity);
+
+  }
+
+  if(m_requestedCapacityHasBeenSet)
+  {
+   payload.WithInteger("RequestedCapacity", m_requestedCapacity);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", StreamGroupLocationStatusMapper::GetNameForStreamGroupLocationStatus(m_status));
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace GameLiftStreams
+} // namespace Aws

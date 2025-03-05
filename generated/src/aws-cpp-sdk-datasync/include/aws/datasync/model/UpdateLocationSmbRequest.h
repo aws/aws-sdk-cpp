@@ -75,6 +75,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the domain name or IP address of the SMB file server that your
+     * DataSync agent connects to.</p> <p>Remember the following when configuring this
+     * parameter:</p> <ul> <li> <p>You can't specify an IP version 6 (IPv6)
+     * address.</p> </li> <li> <p>If you're using Kerberos authentication, you must
+     * specify a domain name.</p> </li> </ul>
+     */
+    inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
+    inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
+    inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
+    inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
+    inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
+    inline UpdateLocationSmbRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
+    inline UpdateLocationSmbRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
+    inline UpdateLocationSmbRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the user name that can mount your SMB file server and has
      * permission to access the files and folders involved in your transfer. This
      * parameter applies only if <code>AuthenticationType</code> is set to
@@ -158,7 +176,9 @@ namespace Model
     /**
      * <p>Specifies the authentication protocol that DataSync uses to connect to your
      * SMB file server. DataSync supports <code>NTLM</code> (default) and
-     * <code>KERBEROS</code> authentication.</p>
+     * <code>KERBEROS</code> authentication.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+     * DataSync access to SMB file servers</a>.</p>
      */
     inline const SmbAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
@@ -192,7 +212,7 @@ namespace Model
      * <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm
      * that has permission to access the files, folders, and file metadata in your SMB
      * file server.</p> <p>A Kerberos principal might look like
-     * <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p> <p>Principal names are case
+     * <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p> <p>Principal names are case
      * sensitive. Your DataSync task execution will fail if the principal that you
      * specify for this parameter doesn’t exactly match the principal that you use to
      * create the keytab file.</p>
@@ -244,6 +264,9 @@ namespace Model
 
     Aws::String m_subdirectory;
     bool m_subdirectoryHasBeenSet = false;
+
+    Aws::String m_serverHostname;
+    bool m_serverHostnameHasBeenSet = false;
 
     Aws::String m_user;
     bool m_userHasBeenSet = false;

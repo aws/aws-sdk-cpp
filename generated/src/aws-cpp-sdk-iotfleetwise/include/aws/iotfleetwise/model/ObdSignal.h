@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
+#include <aws/iotfleetwise/model/SignalValueType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -126,6 +128,33 @@ namespace Model
     inline void SetBitMaskLength(int value) { m_bitMaskLengthHasBeenSet = true; m_bitMaskLength = value; }
     inline ObdSignal& WithBitMaskLength(int value) { SetBitMaskLength(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines whether the message is signed (<code>true</code>) or not
+     * (<code>false</code>). If it's signed, the message can represent both positive
+     * and negative numbers. The <code>isSigned</code> parameter only applies to the
+     * <code>INTEGER</code> raw signal type, and it doesn't affect the
+     * <code>FLOATING_POINT</code> raw signal type. The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool GetIsSigned() const{ return m_isSigned; }
+    inline bool IsSignedHasBeenSet() const { return m_isSignedHasBeenSet; }
+    inline void SetIsSigned(bool value) { m_isSignedHasBeenSet = true; m_isSigned = value; }
+    inline ObdSignal& WithIsSigned(bool value) { SetIsSigned(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+     */
+    inline const SignalValueType& GetSignalValueType() const{ return m_signalValueType; }
+    inline bool SignalValueTypeHasBeenSet() const { return m_signalValueTypeHasBeenSet; }
+    inline void SetSignalValueType(const SignalValueType& value) { m_signalValueTypeHasBeenSet = true; m_signalValueType = value; }
+    inline void SetSignalValueType(SignalValueType&& value) { m_signalValueTypeHasBeenSet = true; m_signalValueType = std::move(value); }
+    inline ObdSignal& WithSignalValueType(const SignalValueType& value) { SetSignalValueType(value); return *this;}
+    inline ObdSignal& WithSignalValueType(SignalValueType&& value) { SetSignalValueType(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_pidResponseLength;
@@ -154,6 +183,12 @@ namespace Model
 
     int m_bitMaskLength;
     bool m_bitMaskLengthHasBeenSet = false;
+
+    bool m_isSigned;
+    bool m_isSignedHasBeenSet = false;
+
+    SignalValueType m_signalValueType;
+    bool m_signalValueTypeHasBeenSet = false;
   };
 
 } // namespace Model

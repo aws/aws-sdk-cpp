@@ -16,6 +16,7 @@ using namespace Aws::Utils;
 UpdateLocationSmbRequest::UpdateLocationSmbRequest() : 
     m_locationArnHasBeenSet(false),
     m_subdirectoryHasBeenSet(false),
+    m_serverHostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_passwordHasBeenSet(false),
@@ -43,6 +44,12 @@ Aws::String UpdateLocationSmbRequest::SerializePayload() const
   if(m_subdirectoryHasBeenSet)
   {
    payload.WithString("Subdirectory", m_subdirectory);
+
+  }
+
+  if(m_serverHostnameHasBeenSet)
+  {
+   payload.WithString("ServerHostname", m_serverHostname);
 
   }
 

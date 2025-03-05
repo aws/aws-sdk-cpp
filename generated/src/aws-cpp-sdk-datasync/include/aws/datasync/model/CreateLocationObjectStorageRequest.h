@@ -43,9 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the domain name or IP address of the object storage server. A
-     * DataSync agent uses this hostname to mount the object storage server in a
-     * network.</p>
+     * <p>Specifies the domain name or IP version 4 (IPv4) address of the object
+     * storage server that your DataSync agent connects to.</p>
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }

@@ -139,6 +139,19 @@ namespace Model
     inline WorkspaceAccessProperties& WithDeviceTypeLinux(const AccessPropertyValue& value) { SetDeviceTypeLinux(value); return *this;}
     inline WorkspaceAccessProperties& WithDeviceTypeLinux(AccessPropertyValue&& value) { SetDeviceTypeLinux(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin
+     * Client.</p>
+     */
+    inline const AccessPropertyValue& GetDeviceTypeWorkSpacesThinClient() const{ return m_deviceTypeWorkSpacesThinClient; }
+    inline bool DeviceTypeWorkSpacesThinClientHasBeenSet() const { return m_deviceTypeWorkSpacesThinClientHasBeenSet; }
+    inline void SetDeviceTypeWorkSpacesThinClient(const AccessPropertyValue& value) { m_deviceTypeWorkSpacesThinClientHasBeenSet = true; m_deviceTypeWorkSpacesThinClient = value; }
+    inline void SetDeviceTypeWorkSpacesThinClient(AccessPropertyValue&& value) { m_deviceTypeWorkSpacesThinClientHasBeenSet = true; m_deviceTypeWorkSpacesThinClient = std::move(value); }
+    inline WorkspaceAccessProperties& WithDeviceTypeWorkSpacesThinClient(const AccessPropertyValue& value) { SetDeviceTypeWorkSpacesThinClient(value); return *this;}
+    inline WorkspaceAccessProperties& WithDeviceTypeWorkSpacesThinClient(AccessPropertyValue&& value) { SetDeviceTypeWorkSpacesThinClient(std::move(value)); return *this;}
+    ///@}
   private:
 
     AccessPropertyValue m_deviceTypeWindows;
@@ -164,6 +177,9 @@ namespace Model
 
     AccessPropertyValue m_deviceTypeLinux;
     bool m_deviceTypeLinuxHasBeenSet = false;
+
+    AccessPropertyValue m_deviceTypeWorkSpacesThinClient;
+    bool m_deviceTypeWorkSpacesThinClientHasBeenSet = false;
   };
 
 } // namespace Model

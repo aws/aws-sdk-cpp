@@ -62,8 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the
-     * NFS file server that your DataSync agent connects to.</p>
+     * <p>Specifies the DNS name or IP version 4 address of the NFS file server that
+     * your DataSync agent connects to.</p>
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }

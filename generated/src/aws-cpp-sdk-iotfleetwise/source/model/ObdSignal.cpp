@@ -36,7 +36,11 @@ ObdSignal::ObdSignal() :
     m_bitRightShift(0),
     m_bitRightShiftHasBeenSet(false),
     m_bitMaskLength(0),
-    m_bitMaskLengthHasBeenSet(false)
+    m_bitMaskLengthHasBeenSet(false),
+    m_isSigned(false),
+    m_isSignedHasBeenSet(false),
+    m_signalValueType(SignalValueType::NOT_SET),
+    m_signalValueTypeHasBeenSet(false)
 {
 }
 
@@ -111,6 +115,20 @@ ObdSignal& ObdSignal::operator =(JsonView jsonValue)
     m_bitMaskLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isSigned"))
+  {
+    m_isSigned = jsonValue.GetBool("isSigned");
+
+    m_isSignedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("signalValueType"))
+  {
+    m_signalValueType = SignalValueTypeMapper::GetSignalValueTypeForName(jsonValue.GetString("signalValueType"));
+
+    m_signalValueTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -170,6 +188,17 @@ JsonValue ObdSignal::Jsonize() const
   {
    payload.WithInteger("bitMaskLength", m_bitMaskLength);
 
+  }
+
+  if(m_isSignedHasBeenSet)
+  {
+   payload.WithBool("isSigned", m_isSigned);
+
+  }
+
+  if(m_signalValueTypeHasBeenSet)
+  {
+   payload.WithString("signalValueType", SignalValueTypeMapper::GetNameForSignalValueType(m_signalValueType));
   }
 
   return payload;

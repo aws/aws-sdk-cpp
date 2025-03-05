@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 UpdateLocationNfsRequest::UpdateLocationNfsRequest() : 
     m_locationArnHasBeenSet(false),
     m_subdirectoryHasBeenSet(false),
+    m_serverHostnameHasBeenSet(false),
     m_onPremConfigHasBeenSet(false),
     m_mountOptionsHasBeenSet(false)
 {
@@ -33,6 +34,12 @@ Aws::String UpdateLocationNfsRequest::SerializePayload() const
   if(m_subdirectoryHasBeenSet)
   {
    payload.WithString("Subdirectory", m_subdirectory);
+
+  }
+
+  if(m_serverHostnameHasBeenSet)
+  {
+   payload.WithString("ServerHostname", m_serverHostname);
 
   }
 
