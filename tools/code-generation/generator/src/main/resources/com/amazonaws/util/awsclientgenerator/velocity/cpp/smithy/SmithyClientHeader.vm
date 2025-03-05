@@ -42,15 +42,15 @@ namespace ${serviceNamespace}
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
 #end
-  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
+    smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
       ${serviceConfiguration},
       smithy::${AuthSchemeResolver}<>,
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
       ${metadata.classNamePrefix}EndpointProviderBase,
       smithy::client::$serializer,
       smithy::client::$serializerOutcome,
-      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<${className}>
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>
   {
     public:
       static const char* GetServiceName();
