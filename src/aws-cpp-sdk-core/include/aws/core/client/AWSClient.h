@@ -72,6 +72,13 @@ namespace Aws
         typedef Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError<CoreErrors>> HttpResponseOutcome;
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Stream::ResponseStream>, AWSError<CoreErrors>> StreamOutcome;
 
+        class AWS_CORE_API AWSClient;
+        class FeatureLogger{
+            public:
+            void LogFeature(const AWSClient* clientPtr, const std::string& featureMetadata) const;
+        };
+
+
         /**
          * Abstract AWS Client. Contains most of the functionality necessary to build an http request, get it signed, and send it across the wire.
          */
@@ -333,6 +340,7 @@ namespace Aws
             static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
             std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
             std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
+            FeatureLogger m_featureLogger;
         private:
             /**
              * Try to adjust signer's clock
@@ -356,6 +364,8 @@ namespace Aws
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
+
+            friend class FeatureLogger;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

@@ -34,6 +34,7 @@ class AWS_CORE_API UserAgent {
   Aws::String SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const;
   void SetApiName(const Aws::String& apiName) { m_api = apiName; }
   void AddLegacyFeature(const Aws::String& legacyFeature);
+  void SetFeatureMetadataIfNotSet(const Aws::String& metadata) { if(m_featureMetadata.empty()){m_featureMetadata = metadata;} }
 
  private:
   const Aws::String m_sdkVersion;
@@ -48,6 +49,7 @@ class AWS_CORE_API UserAgent {
   const Aws::String m_execEnv;
   const Aws::String m_appId;
   const Aws::String m_customizations;
+  Aws::String m_featureMetadata;
   Aws::Set<UserAgentFeature> m_features;
 };
 }  // namespace Client

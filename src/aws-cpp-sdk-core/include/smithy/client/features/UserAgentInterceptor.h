@@ -35,6 +35,8 @@ class UserAgentInterceptor : public interceptor::Interceptor {
     return context.GetTransmitResponse();
   }
 
+  void SetFeatureMetadataIfNotSet(const Aws::String& metadata) { m_userAgent.SetFeatureMetadataIfNotSet(metadata); }
+
   void SetApiName(const Aws::String& apiName) { m_userAgent.SetApiName(apiName); }
 
   void AddLegacyFeaturesToUserAgent(const Aws::String& valueToAppend) { m_userAgent.AddLegacyFeature(valueToAppend); }

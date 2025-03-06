@@ -667,6 +667,7 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
     if (httpResponseOutcome.IsSuccess())
     {
@@ -685,6 +686,7 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
     if (httpResponseOutcome.IsSuccess())
     {
@@ -703,6 +705,7 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::AmazonWebSer
                                                          const char* signerRegionOverride,
                                                          const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     const Aws::Http::URI& uri = endpoint.GetURI();
     if (endpoint.GetAttributes()) {
         signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
@@ -727,6 +730,7 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::AmazonWebServiceR
                                                     const char* signerRegionOverride,
                                                     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     const Aws::Http::URI& uri = endpoint.GetURI();
     if (endpoint.GetAttributes()) {
         signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
@@ -751,6 +755,7 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
     if (httpOutcome.IsSuccess())
     {
@@ -767,6 +772,7 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
     if (httpOutcome.IsSuccess())
     {
@@ -925,31 +931,37 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
@@ -960,6 +972,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameter);
 }
 
@@ -972,18 +985,21 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& en
                                             const char* signerServiceNameOverride /* = nullptr */,
                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(endpoint, method, customizedHeaders, expirationInSeconds, signerName, signerRegionOverride, signerServiceNameOverride, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, extraParams, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, serviceName, extraParams, expirationInSeconds, serviceSpecificParameter);
 }
 
@@ -997,17 +1013,20 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
                                             long long expirationInSeconds,
                                             const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, serviceName, signerName, extraParams, expirationInSeconds, serviceSpecificParameter);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, extraParams, expirationInSeconds, serviceSpecificParameter);
 }
 
 std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const
 {
+    m_featureLogger.LogFeature(this, __func__);
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
 }
 
@@ -1046,3 +1065,11 @@ void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRe
 
     ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
 }
+
+void FeatureLogger::LogFeature(const AWSClient* clientPtr, const std::string& featureMetadata) const
+{
+    if(clientPtr)
+    {
+      clientPtr->m_userAgentInterceptor->SetFeatureMetadataIfNotSet(featureMetadata);
+    }
+ }
