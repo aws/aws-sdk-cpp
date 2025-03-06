@@ -39,6 +39,118 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetAccessControlAllowOrigin() const{ return m_accessControlAllowOrigin; }
+    inline bool AccessControlAllowOriginHasBeenSet() const { return m_accessControlAllowOriginHasBeenSet; }
+    inline void SetAccessControlAllowOrigin(const Aws::String& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = value; }
+    inline void SetAccessControlAllowOrigin(Aws::String&& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = std::move(value); }
+    inline void SetAccessControlAllowOrigin(const char* value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin.assign(value); }
+    inline ResourceNotFoundException& WithAccessControlAllowOrigin(const Aws::String& value) { SetAccessControlAllowOrigin(value); return *this;}
+    inline ResourceNotFoundException& WithAccessControlAllowOrigin(Aws::String&& value) { SetAccessControlAllowOrigin(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithAccessControlAllowOrigin(const char* value) { SetAccessControlAllowOrigin(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetAccessControlExposeHeaders() const{ return m_accessControlExposeHeaders; }
+    inline bool AccessControlExposeHeadersHasBeenSet() const { return m_accessControlExposeHeadersHasBeenSet; }
+    inline void SetAccessControlExposeHeaders(const Aws::String& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = value; }
+    inline void SetAccessControlExposeHeaders(Aws::String&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::move(value); }
+    inline void SetAccessControlExposeHeaders(const char* value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders.assign(value); }
+    inline ResourceNotFoundException& WithAccessControlExposeHeaders(const Aws::String& value) { SetAccessControlExposeHeaders(value); return *this;}
+    inline ResourceNotFoundException& WithAccessControlExposeHeaders(Aws::String&& value) { SetAccessControlExposeHeaders(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithAccessControlExposeHeaders(const char* value) { SetAccessControlExposeHeaders(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+    inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
+    inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
+    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
+    inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
+    inline ResourceNotFoundException& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
+    inline ResourceNotFoundException& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetContentSecurityPolicy() const{ return m_contentSecurityPolicy; }
+    inline bool ContentSecurityPolicyHasBeenSet() const { return m_contentSecurityPolicyHasBeenSet; }
+    inline void SetContentSecurityPolicy(const Aws::String& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = value; }
+    inline void SetContentSecurityPolicy(Aws::String&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::move(value); }
+    inline void SetContentSecurityPolicy(const char* value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy.assign(value); }
+    inline ResourceNotFoundException& WithContentSecurityPolicy(const Aws::String& value) { SetContentSecurityPolicy(value); return *this;}
+    inline ResourceNotFoundException& WithContentSecurityPolicy(Aws::String&& value) { SetContentSecurityPolicy(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithContentSecurityPolicy(const char* value) { SetContentSecurityPolicy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetStrictTransportSecurity() const{ return m_strictTransportSecurity; }
+    inline bool StrictTransportSecurityHasBeenSet() const { return m_strictTransportSecurityHasBeenSet; }
+    inline void SetStrictTransportSecurity(const Aws::String& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = value; }
+    inline void SetStrictTransportSecurity(Aws::String&& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = std::move(value); }
+    inline void SetStrictTransportSecurity(const char* value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity.assign(value); }
+    inline ResourceNotFoundException& WithStrictTransportSecurity(const Aws::String& value) { SetStrictTransportSecurity(value); return *this;}
+    inline ResourceNotFoundException& WithStrictTransportSecurity(Aws::String&& value) { SetStrictTransportSecurity(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithStrictTransportSecurity(const char* value) { SetStrictTransportSecurity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetXContentTypeOptions() const{ return m_xContentTypeOptions; }
+    inline bool XContentTypeOptionsHasBeenSet() const { return m_xContentTypeOptionsHasBeenSet; }
+    inline void SetXContentTypeOptions(const Aws::String& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = value; }
+    inline void SetXContentTypeOptions(Aws::String&& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = std::move(value); }
+    inline void SetXContentTypeOptions(const char* value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions.assign(value); }
+    inline ResourceNotFoundException& WithXContentTypeOptions(const Aws::String& value) { SetXContentTypeOptions(value); return *this;}
+    inline ResourceNotFoundException& WithXContentTypeOptions(Aws::String&& value) { SetXContentTypeOptions(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithXContentTypeOptions(const char* value) { SetXContentTypeOptions(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetXFrameOptions() const{ return m_xFrameOptions; }
+    inline bool XFrameOptionsHasBeenSet() const { return m_xFrameOptionsHasBeenSet; }
+    inline void SetXFrameOptions(const Aws::String& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = value; }
+    inline void SetXFrameOptions(Aws::String&& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = std::move(value); }
+    inline void SetXFrameOptions(const char* value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions.assign(value); }
+    inline ResourceNotFoundException& WithXFrameOptions(const Aws::String& value) { SetXFrameOptions(value); return *this;}
+    inline ResourceNotFoundException& WithXFrameOptions(Aws::String&& value) { SetXFrameOptions(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithXFrameOptions(const char* value) { SetXFrameOptions(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetXAmznErrorType() const{ return m_xAmznErrorType; }
+    inline bool XAmznErrorTypeHasBeenSet() const { return m_xAmznErrorTypeHasBeenSet; }
+    inline void SetXAmznErrorType(const Aws::String& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = value; }
+    inline void SetXAmznErrorType(Aws::String&& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = std::move(value); }
+    inline void SetXAmznErrorType(const char* value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType.assign(value); }
+    inline ResourceNotFoundException& WithXAmznErrorType(const Aws::String& value) { SetXAmznErrorType(value); return *this;}
+    inline ResourceNotFoundException& WithXAmznErrorType(Aws::String&& value) { SetXAmznErrorType(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithXAmznErrorType(const char* value) { SetXAmznErrorType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Request references a resource which does not exist.</p>
      */
     inline const Aws::String& GetExceptionMessage() const{ return m_exceptionMessage; }
@@ -51,6 +163,30 @@ namespace Model
     inline ResourceNotFoundException& WithExceptionMessage(const char* value) { SetExceptionMessage(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_accessControlAllowOrigin;
+    bool m_accessControlAllowOriginHasBeenSet = false;
+
+    Aws::String m_accessControlExposeHeaders;
+    bool m_accessControlExposeHeadersHasBeenSet = false;
+
+    Aws::String m_cacheControl;
+    bool m_cacheControlHasBeenSet = false;
+
+    Aws::String m_contentSecurityPolicy;
+    bool m_contentSecurityPolicyHasBeenSet = false;
+
+    Aws::String m_strictTransportSecurity;
+    bool m_strictTransportSecurityHasBeenSet = false;
+
+    Aws::String m_xContentTypeOptions;
+    bool m_xContentTypeOptionsHasBeenSet = false;
+
+    Aws::String m_xFrameOptions;
+    bool m_xFrameOptionsHasBeenSet = false;
+
+    Aws::String m_xAmznErrorType;
+    bool m_xAmznErrorTypeHasBeenSet = false;
 
     Aws::String m_exceptionMessage;
     bool m_exceptionMessageHasBeenSet = false;

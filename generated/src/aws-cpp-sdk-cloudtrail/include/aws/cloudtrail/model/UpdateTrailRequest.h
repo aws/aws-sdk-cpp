@@ -97,8 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the name of the Amazon SNS topic defined for notification of log
-     * file delivery. The maximum length is 256 characters.</p>
+     * <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of
+     * log file delivery. The maximum length is 256 characters.</p>
      */
     inline const Aws::String& GetSnsTopicName() const{ return m_snsTopicName; }
     inline bool SnsTopicNameHasBeenSet() const { return m_snsTopicNameHasBeenSet; }

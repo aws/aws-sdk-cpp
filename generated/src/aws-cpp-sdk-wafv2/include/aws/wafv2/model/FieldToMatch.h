@@ -17,6 +17,7 @@
 #include <aws/wafv2/model/Cookies.h>
 #include <aws/wafv2/model/HeaderOrder.h>
 #include <aws/wafv2/model/JA3Fingerprint.h>
+#include <aws/wafv2/model/JA4Fingerprint.h>
 #include <utility>
 
 namespace Aws
@@ -285,6 +286,33 @@ namespace Model
     inline FieldToMatch& WithJA3Fingerprint(const JA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
     inline FieldToMatch& WithJA3Fingerprint(JA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a
+     * 36-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA4 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA4
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline const JA4Fingerprint& GetJA4Fingerprint() const{ return m_jA4Fingerprint; }
+    inline bool JA4FingerprintHasBeenSet() const { return m_jA4FingerprintHasBeenSet; }
+    inline void SetJA4Fingerprint(const JA4Fingerprint& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = value; }
+    inline void SetJA4Fingerprint(JA4Fingerprint&& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = std::move(value); }
+    inline FieldToMatch& WithJA4Fingerprint(const JA4Fingerprint& value) { SetJA4Fingerprint(value); return *this;}
+    inline FieldToMatch& WithJA4Fingerprint(JA4Fingerprint&& value) { SetJA4Fingerprint(std::move(value)); return *this;}
+    ///@}
   private:
 
     SingleHeader m_singleHeader;
@@ -322,6 +350,9 @@ namespace Model
 
     JA3Fingerprint m_jA3Fingerprint;
     bool m_jA3FingerprintHasBeenSet = false;
+
+    JA4Fingerprint m_jA4Fingerprint;
+    bool m_jA4FingerprintHasBeenSet = false;
   };
 
 } // namespace Model

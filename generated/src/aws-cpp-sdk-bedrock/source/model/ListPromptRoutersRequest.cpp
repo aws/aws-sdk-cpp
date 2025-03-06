@@ -18,7 +18,9 @@ using namespace Aws::Http;
 ListPromptRoutersRequest::ListPromptRoutersRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_type(PromptRouterType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,13 @@ void ListPromptRoutersRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_typeHasBeenSet)
+    {
+      ss << PromptRouterTypeMapper::GetNameForPromptRouterType(m_type);
+      uri.AddQueryStringParameter("type", ss.str());
       ss.str("");
     }
 

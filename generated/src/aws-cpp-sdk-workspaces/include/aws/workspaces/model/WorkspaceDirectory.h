@@ -15,6 +15,7 @@
 #include <aws/workspaces/model/SelfservicePermissions.h>
 #include <aws/workspaces/model/SamlProperties.h>
 #include <aws/workspaces/model/CertificateBasedAuthProperties.h>
+#include <aws/workspaces/model/EndpointEncryptionMode.h>
 #include <aws/workspaces/model/MicrosoftEntraConfig.h>
 #include <aws/workspaces/model/UserIdentityType.h>
 #include <aws/workspaces/model/WorkspaceType.h>
@@ -314,6 +315,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Endpoint encryption mode that allows you to configure the specified directory
+     * between Standard TLS and FIPS 140-2 validated mode.</p>
+     */
+    inline const EndpointEncryptionMode& GetEndpointEncryptionMode() const{ return m_endpointEncryptionMode; }
+    inline bool EndpointEncryptionModeHasBeenSet() const { return m_endpointEncryptionModeHasBeenSet; }
+    inline void SetEndpointEncryptionMode(const EndpointEncryptionMode& value) { m_endpointEncryptionModeHasBeenSet = true; m_endpointEncryptionMode = value; }
+    inline void SetEndpointEncryptionMode(EndpointEncryptionMode&& value) { m_endpointEncryptionModeHasBeenSet = true; m_endpointEncryptionMode = std::move(value); }
+    inline WorkspaceDirectory& WithEndpointEncryptionMode(const EndpointEncryptionMode& value) { SetEndpointEncryptionMode(value); return *this;}
+    inline WorkspaceDirectory& WithEndpointEncryptionMode(EndpointEncryptionMode&& value) { SetEndpointEncryptionMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies details about Microsoft Entra configurations.</p>
      */
     inline const MicrosoftEntraConfig& GetMicrosoftEntraConfig() const{ return m_microsoftEntraConfig; }
@@ -480,6 +494,9 @@ namespace Model
 
     CertificateBasedAuthProperties m_certificateBasedAuthProperties;
     bool m_certificateBasedAuthPropertiesHasBeenSet = false;
+
+    EndpointEncryptionMode m_endpointEncryptionMode;
+    bool m_endpointEncryptionModeHasBeenSet = false;
 
     MicrosoftEntraConfig m_microsoftEntraConfig;
     bool m_microsoftEntraConfigHasBeenSet = false;

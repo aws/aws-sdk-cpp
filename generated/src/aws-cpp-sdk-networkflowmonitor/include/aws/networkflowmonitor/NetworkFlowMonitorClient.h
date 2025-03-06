@@ -266,13 +266,17 @@ namespace NetworkFlowMonitor
         /**
          * <p>Return the data for a query with the Network Flow Monitor query interface.
          * You specify the query that you want to return results for by providing a query
-         * ID and a monitor name. This query returns the top contributors for a specific
-         * monitor.</p> <p>Create a query ID for this call by calling the corresponding API
-         * call to start the query, <code>StartQueryWorkloadInsightsTopContributors</code>.
-         * Use the scope ID that was returned for your account by
-         * <code>CreateScope</code>.</p> <p>Top contributors in Network Flow Monitor are
-         * network flows with the highest values for a specific metric type, related to a
-         * scope (for workload insights) or a monitor.</p><p><h3>See Also:</h3>   <a
+         * ID and a monitor name.</p> <p>This query returns the top contributors for a
+         * scope for workload insights. Workload insights provide a high level view of
+         * network flow performance data collected by agents. To return the data for the
+         * top contributors, see
+         * <code>GetQueryResultsWorkloadInsightsTopContributorsData</code>.</p> <p>Create a
+         * query ID for this call by calling the corresponding API call to start the query,
+         * <code>StartQueryWorkloadInsightsTopContributors</code>. Use the scope ID that
+         * was returned for your account by <code>CreateScope</code>.</p> <p>Top
+         * contributors in Network Flow Monitor are network flows with the highest values
+         * for a specific metric type, related to a scope (for workload insights) or a
+         * monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsWorkloadInsightsTopContributors">AWS
          * API Reference</a></p>
          */
@@ -299,10 +303,12 @@ namespace NetworkFlowMonitor
         /**
          * <p>Return the data for a query with the Network Flow Monitor query interface.
          * Specify the query that you want to return results for by providing a query ID
-         * and a scope ID. This query returns data for the top contributors for workload
-         * insights. Workload insights provide a high level view of network flow
-         * performance data collected by agents for a scope.</p> <p>Create a query ID for
-         * this call by calling the corresponding API call to start the query,
+         * and a scope ID.</p> <p>This query returns the data for top contributors for
+         * workload insights for a specific scope. Workload insights provide a high level
+         * view of network flow performance data collected by agents for a scope. To return
+         * just the top contributors, see
+         * <code>GetQueryResultsWorkloadInsightsTopContributors</code>.</p> <p>Create a
+         * query ID for this call by calling the corresponding API call to start the query,
          * <code>StartQueryWorkloadInsightsTopContributorsData</code>. Use the scope ID
          * that was returned for your account by <code>CreateScope</code>.</p> <p>Top
          * contributors in Network Flow Monitor are network flows with the highest values
@@ -337,8 +343,9 @@ namespace NetworkFlowMonitor
          * interface, for a specified query ID and monitor. This call returns the query
          * status for the top contributors for a monitor.</p> <p>When you start a query,
          * use this call to check the status of the query to make sure that it has has
-         * <code>SUCCEEDED</code> before you review the results. Use the same query ID that
-         * you used for the corresponding API call to start the query,
+         * <code>SUCCEEDED</code> before you
+         * reviewStartQueryWorkloadInsightsTopContributorsData the results. Use the same
+         * query ID that you used for the corresponding API call to start the query,
          * <code>StartQueryMonitorTopContributors</code>.</p> <p>When you run a query, use
          * this call to check the status of the query to make sure that the query has
          * <code>SUCCEEDED</code> before you review the results.</p><p><h3>See Also:</h3>  
@@ -600,16 +607,12 @@ namespace NetworkFlowMonitor
         }
 
         /**
-         * <p>Return the data for a query with the Network Flow Monitor query interface.
-         * Specify the query that you want to return results for by providing a query ID
-         * and a scope ID. This query returns data for the top contributors for workload
-         * insights. Workload insights provide a high level view of network flow
-         * performance data collected by agents for a scope.</p> <p>A query ID is returned
-         * from an API call to start a query of a specific type; for example </p> <p>Top
-         * contributors in Network Flow Monitor are network flows with the highest values
-         * for a specific metric type, related to a scope (for workload insights) or a
-         * monitor.</p> <p>The top contributor network flows overall for a specific metric
-         * type, for example, the number of retransmissions.</p><p><h3>See Also:</h3>   <a
+         * <p>Start a query to return the with the Network Flow Monitor query interface.
+         * Specify the query that you want to start by providing a query ID and a monitor
+         * name. This query returns the data for top contributors for workload
+         * insights.</p> <p>Top contributors in Network Flow Monitor are network flows with
+         * the highest values for a specific metric type, related to a scope (for workload
+         * insights) or a monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryWorkloadInsightsTopContributorsData">AWS
          * API Reference</a></p>
          */

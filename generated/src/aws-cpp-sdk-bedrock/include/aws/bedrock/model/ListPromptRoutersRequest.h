@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/PromptRouterType.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,18 @@ namespace Model
     inline ListPromptRoutersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListPromptRoutersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of the prompt routers, such as whether it's default or custom.</p>
+     */
+    inline const PromptRouterType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const PromptRouterType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PromptRouterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline ListPromptRoutersRequest& WithType(const PromptRouterType& value) { SetType(value); return *this;}
+    inline ListPromptRoutersRequest& WithType(PromptRouterType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_maxResults;
@@ -69,6 +82,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    PromptRouterType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

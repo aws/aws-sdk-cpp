@@ -5,6 +5,7 @@
 
 #include <aws/ivs-realtime/model/InternalServerException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -19,6 +20,14 @@ namespace Model
 {
 
 InternalServerException::InternalServerException() : 
+    m_accessControlAllowOriginHasBeenSet(false),
+    m_accessControlExposeHeadersHasBeenSet(false),
+    m_cacheControlHasBeenSet(false),
+    m_contentSecurityPolicyHasBeenSet(false),
+    m_strictTransportSecurityHasBeenSet(false),
+    m_xContentTypeOptionsHasBeenSet(false),
+    m_xFrameOptionsHasBeenSet(false),
+    m_xAmznErrorTypeHasBeenSet(false),
     m_exceptionMessageHasBeenSet(false)
 {
 }
