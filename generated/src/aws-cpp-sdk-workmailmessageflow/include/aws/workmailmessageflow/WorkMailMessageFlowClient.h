@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/workmailmessageflow/WorkMailMessageFlow_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkMailMessageFlow
 {
+  AWS_WORKMAILMESSAGEFLOW_API extern const char SERVICE_NAME[];
   /**
    * <p>The WorkMail Message Flow API provides access to email messages as they are
    * being sent and received by a WorkMail organization.</p>
    */
-  class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>
+  class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>,
+    smithy::client::AwsSmithyClientT<Aws::WorkMailMessageFlow::SERVICE_NAME,
+      Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WorkMailMessageFlowEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WorkMailMessageFlowErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WorkMailMessageFlow"; }
 
       typedef WorkMailMessageFlowClientConfiguration ClientConfigurationType;
       typedef WorkMailMessageFlowEndpointProvider EndpointProviderType;
@@ -144,10 +156,7 @@ namespace WorkMailMessageFlow
       std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>;
-      void init(const WorkMailMessageFlowClientConfiguration& clientConfiguration);
 
-      WorkMailMessageFlowClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkMailMessageFlow

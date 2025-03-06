@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/swf/SWFServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/swf/SWFErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SWF
 {
+  AWS_SWF_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple
    * Workflow Service (Amazon SWF) makes it easy to build applications that use
@@ -30,12 +34,20 @@ namespace SWF
    * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
    * Developer Guide</a> </i>.</p>
    */
-  class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>
+  class AWS_SWF_API SWFClient : Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>,
+    smithy::client::AwsSmithyClientT<Aws::SWF::SERVICE_NAME,
+      Aws::SWF::SWFClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SWFEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SWFErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SWF"; }
 
       typedef SWFClientConfiguration ClientConfigurationType;
       typedef SWFEndpointProvider EndpointProviderType;
@@ -1847,10 +1859,7 @@ namespace SWF
       std::shared_ptr<SWFEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>;
-      void init(const SWFClientConfiguration& clientConfiguration);
 
-      SWFClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SWFEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SWF

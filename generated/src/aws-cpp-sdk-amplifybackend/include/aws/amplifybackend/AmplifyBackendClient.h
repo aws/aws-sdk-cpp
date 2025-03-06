@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplifybackend/AmplifyBackendServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/amplifybackend/AmplifyBackendErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AmplifyBackend
 {
+  AWS_AMPLIFYBACKEND_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS Amplify Admin API</p>
    */
-  class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>
+  class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>,
+    smithy::client::AwsSmithyClientT<Aws::AmplifyBackend::SERVICE_NAME,
+      Aws::AmplifyBackend::AmplifyBackendClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AmplifyBackendEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AmplifyBackendErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AmplifyBackend"; }
 
       typedef AmplifyBackendClientConfiguration ClientConfigurationType;
       typedef AmplifyBackendEndpointProvider EndpointProviderType;
@@ -871,10 +883,7 @@ namespace AmplifyBackend
       std::shared_ptr<AmplifyBackendEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>;
-      void init(const AmplifyBackendClientConfiguration& clientConfiguration);
 
-      AmplifyBackendClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AmplifyBackendEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AmplifyBackend

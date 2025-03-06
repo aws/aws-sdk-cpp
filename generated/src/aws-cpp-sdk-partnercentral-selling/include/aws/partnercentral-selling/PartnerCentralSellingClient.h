@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/partnercentral-selling/PartnerCentralSellingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PartnerCentralSelling
 {
+  AWS_PARTNERCENTRALSELLING_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>AWS Partner Central API for Selling</fullname> <p> <b>AWS Partner
    * Central API for Selling Reference Guide</b> </p> <p>This Amazon Web Services
@@ -51,12 +55,20 @@ namespace PartnerCentralSelling
    * <i>Engagement Invitation Accepted</i>, <i>Engagement Invitation Rejected</i>,
    * and <i>Engagement Invitation Created</i>.</p> </li> </ol></p>
    */
-  class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>
+  class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient : Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>,
+    smithy::client::AwsSmithyClientT<Aws::PartnerCentralSelling::SERVICE_NAME,
+      Aws::PartnerCentralSelling::PartnerCentralSellingClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PartnerCentralSellingEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PartnerCentralSellingErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "PartnerCentral Selling"; }
 
       typedef PartnerCentralSellingClientConfiguration ClientConfigurationType;
       typedef PartnerCentralSellingEndpointProvider EndpointProviderType;
@@ -1231,10 +1243,7 @@ namespace PartnerCentralSelling
       std::shared_ptr<PartnerCentralSellingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>;
-      void init(const PartnerCentralSellingClientConfiguration& clientConfiguration);
 
-      PartnerCentralSellingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PartnerCentralSellingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PartnerCentralSelling

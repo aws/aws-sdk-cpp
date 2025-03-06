@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mturk-requester/MTurkServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mturk-requester/MTurkErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MTurk
 {
+  AWS_MTURK_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Mechanical Turk API Reference</fullname>
    */
-  class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>
+  class AWS_MTURK_API MTurkClient : Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>,
+    smithy::client::AwsSmithyClientT<Aws::MTurk::SERVICE_NAME,
+      Aws::MTurk::MTurkClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MTurkEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MTurkErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MTurk"; }
 
       typedef MTurkClientConfiguration ClientConfigurationType;
       typedef MTurkEndpointProvider EndpointProviderType;
@@ -1300,10 +1312,7 @@ namespace MTurk
       std::shared_ptr<MTurkEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>;
-      void init(const MTurkClientConfiguration& clientConfiguration);
 
-      MTurkClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MTurkEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MTurk

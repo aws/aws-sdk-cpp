@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrationsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTManagedIntegrations
 {
+  AWS_IOTMANAGEDINTEGRATIONS_API extern const char SERVICE_NAME[];
   /**
    * <p>Managed integrations is a feature of AWS IoT Device Management that enables
    * developers to quickly build innovative IoT solutions. Customers can use managed
@@ -23,12 +27,20 @@ namespace IoTManagedIntegrations
    * allows developers to use a single user-interface to control, manage, and operate
    * a range of devices.</p>
    */
-  class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>
+  class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient : Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>,
+    smithy::client::AwsSmithyClientT<Aws::IoTManagedIntegrations::SERVICE_NAME,
+      Aws::IoTManagedIntegrations::IoTManagedIntegrationsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTManagedIntegrationsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTManagedIntegrationsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoT Managed Integrations"; }
 
       typedef IoTManagedIntegrationsClientConfiguration ClientConfigurationType;
       typedef IoTManagedIntegrationsEndpointProvider EndpointProviderType;
@@ -1565,10 +1577,7 @@ namespace IoTManagedIntegrations
       std::shared_ptr<IoTManagedIntegrationsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>;
-      void init(const IoTManagedIntegrationsClientConfiguration& clientConfiguration);
 
-      IoTManagedIntegrationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTManagedIntegrationsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTManagedIntegrations

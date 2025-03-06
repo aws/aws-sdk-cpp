@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ds/DirectoryServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ds/DirectoryServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DirectoryService
 {
+  AWS_DIRECTORYSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Directory Service</fullname> <p>Directory Service is a web service
    * that makes it easy for you to setup and run directories in the Amazon Web
@@ -33,12 +37,20 @@ namespace DirectoryService
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
    * 
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>
+  class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::DirectoryService::SERVICE_NAME,
+      Aws::DirectoryService::DirectoryServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DirectoryServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DirectoryServiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Directory Service"; }
 
       typedef DirectoryServiceClientConfiguration ClientConfigurationType;
       typedef DirectoryServiceEndpointProvider EndpointProviderType;
@@ -2034,10 +2046,7 @@ namespace DirectoryService
       std::shared_ptr<DirectoryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>;
-      void init(const DirectoryServiceClientConfiguration& clientConfiguration);
 
-      DirectoryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DirectoryServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DirectoryService

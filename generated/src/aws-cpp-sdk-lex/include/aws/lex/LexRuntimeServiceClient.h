@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex/LexRuntimeServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/lex/LexRuntimeServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LexRuntimeService
 {
+  AWS_LEXRUNTIMESERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Lex provides both build and runtime endpoints. Each endpoint provides
    * a set of operations (API). Your conversational bot uses the runtime API to
@@ -28,12 +32,20 @@ namespace LexRuntimeService
    * and manage your Amazon Lex bot. For a list of build-time operations, see the
    * build-time API, . </p>
    */
-  class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>
+  class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::LexRuntimeService::SERVICE_NAME,
+      Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LexRuntimeServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LexRuntimeServiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Lex Runtime Service"; }
 
       typedef LexRuntimeServiceClientConfiguration ClientConfigurationType;
       typedef LexRuntimeServiceEndpointProvider EndpointProviderType;
@@ -295,10 +307,7 @@ namespace LexRuntimeService
       std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>;
-      void init(const LexRuntimeServiceClientConfiguration& clientConfiguration);
 
-      LexRuntimeServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LexRuntimeServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexRuntimeService

@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sms-voice/PinpointSMSVoiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sms-voice/PinpointSMSVoiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PinpointSMSVoice
 {
+  AWS_PINPOINTSMSVOICE_API extern const char SERVICE_NAME[];
   /**
    * Pinpoint SMS and Voice Messaging public facing APIs
    */
-  class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>
+  class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceClient : Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::PinpointSMSVoice::SERVICE_NAME,
+      Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PinpointSMSVoiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PinpointSMSVoiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Pinpoint SMS Voice"; }
 
       typedef PinpointSMSVoiceClientConfiguration ClientConfigurationType;
       typedef PinpointSMSVoiceEndpointProvider EndpointProviderType;
@@ -289,10 +301,7 @@ namespace PinpointSMSVoice
       std::shared_ptr<PinpointSMSVoiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>;
-      void init(const PinpointSMSVoiceClientConfiguration& clientConfiguration);
 
-      PinpointSMSVoiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PinpointSMSVoice

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeartifact/CodeArtifactServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/codeartifact/CodeArtifactErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeArtifact
 {
+  AWS_CODEARTIFACT_API extern const char SERVICE_NAME[];
   /**
    * <p> CodeArtifact is a fully managed artifact repository compatible with
    * language-native package managers and build tools such as npm, Apache Maven, pip,
@@ -172,12 +176,20 @@ namespace CodeArtifact
    * versions of a package.</p> </li> <li> <p> <code>UpdateRepository</code>: Updates
    * the properties of a repository.</p> </li> </ul>
    */
-  class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>
+  class AWS_CODEARTIFACT_API CodeArtifactClient : Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>,
+    smithy::client::AwsSmithyClientT<Aws::CodeArtifact::SERVICE_NAME,
+      Aws::CodeArtifact::CodeArtifactClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CodeArtifactEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CodeArtifactErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "codeartifact"; }
 
       typedef CodeArtifactClientConfiguration ClientConfigurationType;
       typedef CodeArtifactEndpointProvider EndpointProviderType;
@@ -1649,10 +1661,7 @@ namespace CodeArtifact
       std::shared_ptr<CodeArtifactEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>;
-      void init(const CodeArtifactClientConfiguration& clientConfiguration);
 
-      CodeArtifactClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CodeArtifactEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeArtifact

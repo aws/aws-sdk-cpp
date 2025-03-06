@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gameliftstreams/GameLiftStreamsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/gameliftstreams/GameLiftStreamsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GameLiftStreams
 {
+  AWS_GAMELIFTSTREAMS_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Amazon GameLift Streams</fullname> <p>Amazon GameLift Streams
    * provides a global cloud solution for content streaming experiences. Use Amazon
@@ -27,12 +31,20 @@ namespace GameLiftStreams
    * Guide</i> for more information on how Amazon GameLift Streams works and how to
    * work with it.</p></p>
    */
-  class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftStreamsClient>
+  class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : Aws::Client::ClientWithAsyncTemplateMethods<GameLiftStreamsClient>,
+    smithy::client::AwsSmithyClientT<Aws::GameLiftStreams::SERVICE_NAME,
+      Aws::GameLiftStreams::GameLiftStreamsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GameLiftStreamsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GameLiftStreamsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "GameLiftStreams"; }
 
       typedef GameLiftStreamsClientConfiguration ClientConfigurationType;
       typedef GameLiftStreamsEndpointProvider EndpointProviderType;
@@ -919,10 +931,7 @@ namespace GameLiftStreams
       std::shared_ptr<GameLiftStreamsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftStreamsClient>;
-      void init(const GameLiftStreamsClientConfiguration& clientConfiguration);
 
-      GameLiftStreamsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GameLiftStreamsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GameLiftStreams

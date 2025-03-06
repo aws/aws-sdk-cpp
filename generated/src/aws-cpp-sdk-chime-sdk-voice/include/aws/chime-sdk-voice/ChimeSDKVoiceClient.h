@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/chime-sdk-voice/ChimeSDKVoiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ChimeSDKVoice
 {
+  AWS_CHIMESDKVOICE_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Chime SDK telephony APIs in this section enable developers to
    * create PSTN calling solutions that use Amazon Chime SDK Voice Connectors, and
@@ -22,12 +26,20 @@ namespace ChimeSDKVoice
    * phone numbers, create and manage Voice Connectors and SIP media applications,
    * and run voice analytics.</p>
    */
-  class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>
+  class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::ChimeSDKVoice::SERVICE_NAME,
+      Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ChimeSDKVoiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ChimeSDKVoiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Chime SDK Voice"; }
 
       typedef ChimeSDKVoiceClientConfiguration ClientConfigurationType;
       typedef ChimeSDKVoiceEndpointProvider EndpointProviderType;
@@ -2605,10 +2617,7 @@ namespace ChimeSDKVoice
       std::shared_ptr<ChimeSDKVoiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>;
-      void init(const ChimeSDKVoiceClientConfiguration& clientConfiguration);
 
-      ChimeSDKVoiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKVoice

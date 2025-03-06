@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/neptune-graph/NeptuneGraphServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/neptune-graph/NeptuneGraphErrorMarshaller.h>
 
 namespace Aws
 {
 namespace NeptuneGraph
 {
+  AWS_NEPTUNEGRAPH_API extern const char SERVICE_NAME[];
   /**
    * <p>Neptune Analytics is a new analytics database engine for Amazon Neptune that
    * helps customers get to insights faster by quickly processing large amounts of
    * graph data, invoking popular graph analytic algorithms in low-latency queries,
    * and getting analytics results in seconds.</p>
    */
-  class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient>
+  class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient>,
+    smithy::client::AwsSmithyClientT<Aws::NeptuneGraph::SERVICE_NAME,
+      Aws::NeptuneGraph::NeptuneGraphClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NeptuneGraphEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NeptuneGraphErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Neptune Graph"; }
 
       typedef NeptuneGraphClientConfiguration ClientConfigurationType;
       typedef NeptuneGraphEndpointProvider EndpointProviderType;
@@ -913,10 +925,7 @@ namespace NeptuneGraph
       std::shared_ptr<NeptuneGraphEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient>;
-      void init(const NeptuneGraphClientConfiguration& clientConfiguration);
 
-      NeptuneGraphClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NeptuneGraphEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace NeptuneGraph

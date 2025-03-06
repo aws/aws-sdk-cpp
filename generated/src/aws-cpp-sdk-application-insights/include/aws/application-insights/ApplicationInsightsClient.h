@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/application-insights/ApplicationInsightsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ApplicationInsights
 {
+  AWS_APPLICATIONINSIGHTS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon CloudWatch Application Insights</fullname> <p> Amazon
    * CloudWatch Application Insights is a service that helps you detect common
@@ -30,12 +34,20 @@ namespace ApplicationInsights
    * SQL Server database is occurring. It bases this analysis on impactful metrics
    * and log errors. </p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>
+  class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>,
+    smithy::client::AwsSmithyClientT<Aws::ApplicationInsights::SERVICE_NAME,
+      Aws::ApplicationInsights::ApplicationInsightsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ApplicationInsightsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ApplicationInsightsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Application Insights"; }
 
       typedef ApplicationInsightsClientConfiguration ClientConfigurationType;
       typedef ApplicationInsightsEndpointProvider EndpointProviderType;
@@ -963,10 +975,7 @@ namespace ApplicationInsights
       std::shared_ptr<ApplicationInsightsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>;
-      void init(const ApplicationInsightsClientConfiguration& clientConfiguration);
 
-      ApplicationInsightsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ApplicationInsightsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationInsights

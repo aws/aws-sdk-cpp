@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/location/LocationServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LocationService
 {
+  AWS_LOCATIONSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>"Suite of geospatial services including Maps, Places, Routes, Tracking, and
    * Geofencing"</p>
    */
-  class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>
+  class AWS_LOCATIONSERVICE_API LocationServiceClient : Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::LocationService::SERVICE_NAME,
+      Aws::LocationService::LocationServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LocationServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LocationServiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Location"; }
 
       typedef LocationServiceClientConfiguration ClientConfigurationType;
       typedef LocationServiceEndpointProvider EndpointProviderType;
@@ -1812,10 +1824,7 @@ namespace LocationService
       std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>;
-      void init(const LocationServiceClientConfiguration& clientConfiguration);
 
-      LocationServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LocationServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LocationService

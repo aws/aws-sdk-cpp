@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptionsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LicenseManagerLinuxSubscriptions
 {
+  AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API extern const char SERVICE_NAME[];
   /**
    * <p>With License Manager, you can discover and track your commercial Linux
    * subscriptions on running Amazon EC2 instances.</p>
    */
-  class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerLinuxSubscriptionsClient>
+  class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsClient : Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerLinuxSubscriptionsClient>,
+    smithy::client::AwsSmithyClientT<Aws::LicenseManagerLinuxSubscriptions::SERVICE_NAME,
+      Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LicenseManagerLinuxSubscriptionsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LicenseManagerLinuxSubscriptionsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "License Manager Linux Subscriptions"; }
 
       typedef LicenseManagerLinuxSubscriptionsClientConfiguration ClientConfigurationType;
       typedef LicenseManagerLinuxSubscriptionsEndpointProvider EndpointProviderType;
@@ -369,10 +381,7 @@ namespace LicenseManagerLinuxSubscriptions
       std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerLinuxSubscriptionsClient>;
-      void init(const LicenseManagerLinuxSubscriptionsClientConfiguration& clientConfiguration);
 
-      LicenseManagerLinuxSubscriptionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LicenseManagerLinuxSubscriptions

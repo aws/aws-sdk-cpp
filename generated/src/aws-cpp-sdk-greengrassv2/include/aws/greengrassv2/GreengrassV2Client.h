@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/greengrassv2/GreengrassV2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/greengrassv2/GreengrassV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace GreengrassV2
 {
+  AWS_GREENGRASSV2_API extern const char SERVICE_NAME[];
   /**
    * <p>IoT Greengrass brings local compute, messaging, data management, sync, and ML
    * inference capabilities to edge devices. This enables devices to collect and
@@ -31,12 +35,20 @@ namespace GreengrassV2
    * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html">What
    * is IoT Greengrass?</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
    */
-  class AWS_GREENGRASSV2_API GreengrassV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassV2Client>
+  class AWS_GREENGRASSV2_API GreengrassV2Client : Aws::Client::ClientWithAsyncTemplateMethods<GreengrassV2Client>,
+    smithy::client::AwsSmithyClientT<Aws::GreengrassV2::SERVICE_NAME,
+      Aws::GreengrassV2::GreengrassV2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GreengrassV2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GreengrassV2ErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "GreengrassV2"; }
 
       typedef GreengrassV2ClientConfiguration ClientConfigurationType;
       typedef GreengrassV2EndpointProvider EndpointProviderType;
@@ -1005,10 +1017,7 @@ namespace GreengrassV2
       std::shared_ptr<GreengrassV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GreengrassV2Client>;
-      void init(const GreengrassV2ClientConfiguration& clientConfiguration);
 
-      GreengrassV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GreengrassV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GreengrassV2

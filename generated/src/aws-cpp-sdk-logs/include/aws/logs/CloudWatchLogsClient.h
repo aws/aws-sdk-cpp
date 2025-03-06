@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/logs/CloudWatchLogsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudWatchLogs
 {
+  AWS_CLOUDWATCHLOGS_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use Amazon CloudWatch Logs to monitor, store, and access your log
    * files from EC2 instances, CloudTrail, and other sources. You can then retrieve
@@ -42,12 +46,20 @@ namespace CloudWatchLogs
    * log service. You can then access the raw log data when you need it.</p> </li>
    * </ul>
    */
-  class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>
+  class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>,
+    smithy::client::AwsSmithyClientT<Aws::CloudWatchLogs::SERVICE_NAME,
+      Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudWatchLogsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudWatchLogsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudWatch Logs"; }
 
       typedef CloudWatchLogsClientConfiguration ClientConfigurationType;
       typedef CloudWatchLogsEndpointProvider EndpointProviderType;
@@ -3243,10 +3255,7 @@ namespace CloudWatchLogs
       std::shared_ptr<CloudWatchLogsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
-      void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
-      CloudWatchLogsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudWatchLogs

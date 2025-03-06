@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/dsql/DSQL_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dsql/DSQLServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/dsql/DSQLErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DSQL
 {
+  AWS_DSQL_API extern const char SERVICE_NAME[];
   /**
    * <p>This is an interface reference for Amazon Aurora DSQL. It contains
    * documentation for one of the programming or command line interfaces you can use
@@ -25,12 +29,20 @@ namespace DSQL
    * Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using
    * your data to acquire new insights for your business and customers.</p>
    */
-  class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>
+  class AWS_DSQL_API DSQLClient : Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>,
+    smithy::client::AwsSmithyClientT<Aws::DSQL::SERVICE_NAME,
+      Aws::DSQL::DSQLClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DSQLEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DSQLErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DSQL"; }
 
       typedef DSQLClientConfiguration ClientConfigurationType;
       typedef DSQLEndpointProvider EndpointProviderType;
@@ -337,17 +349,14 @@ namespace DSQL
             return SubmitAsync(&DSQLClient::UpdateCluster, request, handler, context);
         }
 
+
         Aws::Utils::Outcome<String, DSQLError> GenerateDBConnectAuthToken(const Aws::String& hostname, const Aws::String& region, long long expiresIn = 900);
         Aws::Utils::Outcome<String, DSQLError> GenerateDBConnectAdminAuthToken(const Aws::String& hostname, const Aws::String& region, long long expiresIn = 900);
-
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DSQLEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>;
-      void init(const DSQLClientConfiguration& clientConfiguration);
 
-      DSQLClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DSQLEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DSQL

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/keyspaces/KeyspacesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/keyspaces/KeyspacesErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Keyspaces
 {
+  AWS_KEYSPACES_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and
    * managed Apache Cassandra-compatible database service. Amazon Keyspaces makes it
@@ -40,12 +44,20 @@ namespace Keyspaces
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon Web
    * Services APIs</a> in the <i>General Reference</i>.</p>
    */
-  class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>
+  class AWS_KEYSPACES_API KeyspacesClient : Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>,
+    smithy::client::AwsSmithyClientT<Aws::Keyspaces::SERVICE_NAME,
+      Aws::Keyspaces::KeyspacesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      KeyspacesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::KeyspacesErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Keyspaces"; }
 
       typedef KeyspacesClientConfiguration ClientConfigurationType;
       typedef KeyspacesEndpointProvider EndpointProviderType;
@@ -737,10 +749,7 @@ namespace Keyspaces
       std::shared_ptr<KeyspacesEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>;
-      void init(const KeyspacesClientConfiguration& clientConfiguration);
 
-      KeyspacesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<KeyspacesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Keyspaces

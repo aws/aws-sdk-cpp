@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/pinpoint-email/PinpointEmailErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PinpointEmail
 {
+  AWS_PINPOINTEMAIL_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Pinpoint Email Service</fullname> <p>Welcome to the <i>Amazon
    * Pinpoint Email API Reference</i>. This guide provides information about the
@@ -51,12 +55,20 @@ namespace PinpointEmail
    * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global
    * Infrastructure</a>.</p>
    */
-  class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>
+  class AWS_PINPOINTEMAIL_API PinpointEmailClient : Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>,
+    smithy::client::AwsSmithyClientT<Aws::PinpointEmail::SERVICE_NAME,
+      Aws::PinpointEmail::PinpointEmailClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PinpointEmailEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PinpointEmailErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Pinpoint Email"; }
 
       typedef PinpointEmailClientConfiguration ClientConfigurationType;
       typedef PinpointEmailEndpointProvider EndpointProviderType;
@@ -1326,10 +1338,7 @@ namespace PinpointEmail
       std::shared_ptr<PinpointEmailEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>;
-      void init(const PinpointEmailClientConfiguration& clientConfiguration);
 
-      PinpointEmailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PinpointEmailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PinpointEmail

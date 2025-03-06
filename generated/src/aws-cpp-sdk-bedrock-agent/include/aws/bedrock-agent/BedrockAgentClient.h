@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bedrock-agent/BedrockAgentServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bedrock-agent/BedrockAgentErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BedrockAgent
 {
+  AWS_BEDROCKAGENT_API extern const char SERVICE_NAME[];
   /**
    * <p>Describes the API operations for creating and managing Amazon Bedrock
    * agents.</p>
    */
-  class AWS_BEDROCKAGENT_API BedrockAgentClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>
+  class AWS_BEDROCKAGENT_API BedrockAgentClient : Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>,
+    smithy::client::AwsSmithyClientT<Aws::BedrockAgent::SERVICE_NAME,
+      Aws::BedrockAgent::BedrockAgentClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BedrockAgentEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BedrockAgentErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Bedrock Agent"; }
 
       typedef BedrockAgentClientConfiguration ClientConfigurationType;
       typedef BedrockAgentEndpointProvider EndpointProviderType;
@@ -2100,10 +2112,7 @@ namespace BedrockAgent
       std::shared_ptr<BedrockAgentEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>;
-      void init(const BedrockAgentClientConfiguration& clientConfiguration);
 
-      BedrockAgentClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BedrockAgentEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BedrockAgent

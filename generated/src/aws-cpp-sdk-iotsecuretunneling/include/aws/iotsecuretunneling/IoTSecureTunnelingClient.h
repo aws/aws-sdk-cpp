@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTSecureTunneling
 {
+  AWS_IOTSECURETUNNELING_API extern const char SERVICE_NAME[];
   /**
    * <fullname>IoT Secure Tunneling</fullname> <p>IoT Secure Tunneling creates remote
    * connections to devices deployed in the field.</p> <p>For more information about
@@ -22,12 +26,20 @@ namespace IoTSecureTunneling
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT
    * Secure Tunneling</a>.</p>
    */
-  class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>
+  class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>,
+    smithy::client::AwsSmithyClientT<Aws::IoTSecureTunneling::SERVICE_NAME,
+      Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTSecureTunnelingEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTSecureTunnelingErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoTSecureTunneling"; }
 
       typedef IoTSecureTunnelingClientConfiguration ClientConfigurationType;
       typedef IoTSecureTunnelingEndpointProvider EndpointProviderType;
@@ -309,10 +321,7 @@ namespace IoTSecureTunneling
       std::shared_ptr<IoTSecureTunnelingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>;
-      void init(const IoTSecureTunnelingClientConfiguration& clientConfiguration);
 
-      IoTSecureTunnelingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTSecureTunneling

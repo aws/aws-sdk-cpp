@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MigrationHubStrategyRecommendations
 {
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Migration Hub Strategy Recommendations</fullname> <p>This API
    * reference provides descriptions, syntax, and other details about each of the
@@ -25,12 +29,20 @@ namespace MigrationHubStrategyRecommendations
    * more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
    * SDKs</a>.</p></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>
+  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>,
+    smithy::client::AwsSmithyClientT<Aws::MigrationHubStrategyRecommendations::SERVICE_NAME,
+      Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MigrationHubStrategyRecommendationsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MigrationHubStrategyRecommendationsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MigrationHubStrategy"; }
 
       typedef MigrationHubStrategyRecommendationsClientConfiguration ClientConfigurationType;
       typedef MigrationHubStrategyRecommendationsEndpointProvider EndpointProviderType;
@@ -657,10 +669,7 @@ namespace MigrationHubStrategyRecommendations
       std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;
-      void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
 
-      MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MigrationHubStrategyRecommendations

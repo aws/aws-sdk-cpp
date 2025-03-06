@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mailmanager/MailManagerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mailmanager/MailManagerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MailManager
 {
+  AWS_MAILMANAGER_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Amazon SES Mail Manager API</fullname> <p>The Amazon SES Mail
    * Manager API contains operations and data types that comprise the Mail Manager
@@ -26,12 +30,20 @@ namespace MailManager
    * href="https://docs.aws.amazon.com/ses/latest/dg/eb.html">Mail Manager
    * chapter</a> in the <i>Amazon SES Developer Guide</i>.</p></p>
    */
-  class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>
+  class AWS_MAILMANAGER_API MailManagerClient : Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>,
+    smithy::client::AwsSmithyClientT<Aws::MailManager::SERVICE_NAME,
+      Aws::MailManager::MailManagerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MailManagerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MailManagerErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MailManager"; }
 
       typedef MailManagerClientConfiguration ClientConfigurationType;
       typedef MailManagerEndpointProvider EndpointProviderType;
@@ -1622,10 +1634,7 @@ namespace MailManager
       std::shared_ptr<MailManagerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>;
-      void init(const MailManagerClientConfiguration& clientConfiguration);
 
-      MailManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MailManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MailManager

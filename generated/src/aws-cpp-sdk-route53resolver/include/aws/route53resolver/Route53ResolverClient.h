@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/route53resolver/Route53ResolverErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Route53Resolver
 {
+  AWS_ROUTE53RESOLVER_API extern const char SERVICE_NAME[];
   /**
    * <p>When you create a VPC using Amazon VPC, you automatically get DNS resolution
    * within the VPC from Route 53 Resolver. By default, Resolver answers DNS queries
@@ -46,12 +50,20 @@ namespace Route53Resolver
    * queries from your VPCs to your network (outbound queries), from your network to
    * your VPCs (inbound queries), or both.</p>
    */
-  class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>
+  class AWS_ROUTE53RESOLVER_API Route53ResolverClient : Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>,
+    smithy::client::AwsSmithyClientT<Aws::Route53Resolver::SERVICE_NAME,
+      Aws::Route53Resolver::Route53ResolverClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Route53ResolverEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Route53ResolverErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Route53Resolver"; }
 
       typedef Route53ResolverClientConfiguration ClientConfigurationType;
       typedef Route53ResolverEndpointProvider EndpointProviderType;
@@ -1982,10 +1994,7 @@ namespace Route53Resolver
       std::shared_ptr<Route53ResolverEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>;
-      void init(const Route53ResolverClientConfiguration& clientConfiguration);
 
-      Route53ResolverClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Route53ResolverEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53Resolver

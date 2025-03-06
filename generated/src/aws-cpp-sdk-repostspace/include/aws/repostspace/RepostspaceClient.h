@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/repostspace/RepostspaceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/repostspace/RepostspaceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace repostspace
 {
+  AWS_REPOSTSPACE_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS re:Post Private is a private version of AWS re:Post for enterprises with
    * Enterprise Support or Enterprise On-Ramp Support plans. It provides access to
@@ -27,12 +31,20 @@ namespace repostspace
    * technical obstacles, accelerate innovation, and scale more efficiently in the
    * cloud.</p>
    */
-  class AWS_REPOSTSPACE_API RepostspaceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>
+  class AWS_REPOSTSPACE_API RepostspaceClient : Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>,
+    smithy::client::AwsSmithyClientT<Aws::repostspace::SERVICE_NAME,
+      Aws::repostspace::RepostspaceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      RepostspaceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::RepostspaceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "repostspace"; }
 
       typedef RepostspaceClientConfiguration ClientConfigurationType;
       typedef RepostspaceEndpointProvider EndpointProviderType;
@@ -431,10 +443,7 @@ namespace repostspace
       std::shared_ptr<RepostspaceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>;
-      void init(const RepostspaceClientConfiguration& clientConfiguration);
 
-      RepostspaceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<RepostspaceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace repostspace

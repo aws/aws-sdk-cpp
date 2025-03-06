@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/schemas/SchemasErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Schemas
 {
+  AWS_SCHEMAS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon EventBridge Schema Registry</p>
    */
-  class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>
+  class AWS_SCHEMAS_API SchemasClient : Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>,
+    smithy::client::AwsSmithyClientT<Aws::Schemas::SERVICE_NAME,
+      Aws::Schemas::SchemasClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SchemasEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SchemasErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "schemas"; }
 
       typedef SchemasClientConfiguration ClientConfigurationType;
       typedef SchemasEndpointProvider EndpointProviderType;
@@ -860,10 +872,7 @@ namespace Schemas
       std::shared_ptr<SchemasEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>;
-      void init(const SchemasClientConfiguration& clientConfiguration);
 
-      SchemasClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SchemasEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Schemas

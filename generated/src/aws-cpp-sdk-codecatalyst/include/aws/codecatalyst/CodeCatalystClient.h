@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecatalyst/CodeCatalystServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/codecatalyst/CodeCatalystErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeCatalyst
 {
+  AWS_CODECATALYST_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the Amazon CodeCatalyst API reference. This reference provides
    * descriptions of operations and data types for Amazon CodeCatalyst. You can use
@@ -84,12 +88,20 @@ namespace CodeCatalyst
    * up to use the CLI with Amazon CodeCatalyst</a> and the SSO documentation for
    * your SDK.</p> 
    */
-  class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>
+  class AWS_CODECATALYST_API CodeCatalystClient : Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>,
+    smithy::client::AwsSmithyClientT<Aws::CodeCatalyst::SERVICE_NAME,
+      Aws::CodeCatalyst::CodeCatalystClientConfiguration,
+      smithy::BearerTokenAuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::BearerTokenAuthScheme>,
+      CodeCatalystEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CodeCatalystErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CodeCatalyst"; }
 
       typedef CodeCatalystClientConfiguration ClientConfigurationType;
       typedef CodeCatalystEndpointProvider EndpointProviderType;
@@ -1125,10 +1137,7 @@ namespace CodeCatalyst
       std::shared_ptr<CodeCatalystEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>;
-      void init(const CodeCatalystClientConfiguration& clientConfiguration);
 
-      CodeCatalystClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CodeCatalystEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeCatalyst

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/rum/CloudWatchRUMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudWatchRUM
 {
+  AWS_CLOUDWATCHRUM_API extern const char SERVICE_NAME[];
   /**
    * <p>With Amazon CloudWatch RUM, you can perform real-user monitoring to collect
    * client-side data about your web application performance from actual user
@@ -28,12 +32,20 @@ namespace CloudWatchRUM
    * understand the range of end-user impact including the number of users,
    * geolocations, and browsers used.</p>
    */
-  class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>
+  class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>,
+    smithy::client::AwsSmithyClientT<Aws::CloudWatchRUM::SERVICE_NAME,
+      Aws::CloudWatchRUM::CloudWatchRUMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudWatchRUMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudWatchRUMErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "RUM"; }
 
       typedef CloudWatchRUMClientConfiguration ClientConfigurationType;
       typedef CloudWatchRUMEndpointProvider EndpointProviderType;
@@ -705,10 +717,7 @@ namespace CloudWatchRUM
       std::shared_ptr<CloudWatchRUMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>;
-      void init(const CloudWatchRUMClientConfiguration& clientConfiguration);
 
-      CloudWatchRUMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudWatchRUMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudWatchRUM

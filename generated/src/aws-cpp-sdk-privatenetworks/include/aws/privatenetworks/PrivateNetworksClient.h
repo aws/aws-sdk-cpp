@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/privatenetworks/PrivateNetworks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/privatenetworks/PrivateNetworksServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/privatenetworks/PrivateNetworksErrorMarshaller.h>
 
 namespace Aws
 {
 namespace PrivateNetworks
 {
+  AWS_PRIVATENETWORKS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Private 5G is a managed service that makes it easy to
    * deploy, operate, and scale your own private mobile network at your on-premises
@@ -22,12 +26,20 @@ namespace PrivateNetworks
    * mobile networks, helps automate setup, and scales capacity on demand to support
    * additional devices as needed.</p>
    */
-  class AWS_PRIVATENETWORKS_API PrivateNetworksClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PrivateNetworksClient>
+  class AWS_PRIVATENETWORKS_API PrivateNetworksClient : Aws::Client::ClientWithAsyncTemplateMethods<PrivateNetworksClient>,
+    smithy::client::AwsSmithyClientT<Aws::PrivateNetworks::SERVICE_NAME,
+      Aws::PrivateNetworks::PrivateNetworksClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      PrivateNetworksEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::PrivateNetworksErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "PrivateNetworks"; }
 
       typedef PrivateNetworksClientConfiguration ClientConfigurationType;
       typedef PrivateNetworksEndpointProvider EndpointProviderType;
@@ -779,10 +791,7 @@ namespace PrivateNetworks
       std::shared_ptr<PrivateNetworksEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<PrivateNetworksClient>;
-      void init(const PrivateNetworksClientConfiguration& clientConfiguration);
 
-      PrivateNetworksClientConfiguration m_clientConfiguration;
-      std::shared_ptr<PrivateNetworksEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PrivateNetworks

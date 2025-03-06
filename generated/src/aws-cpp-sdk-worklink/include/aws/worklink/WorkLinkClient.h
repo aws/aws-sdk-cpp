@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/worklink/WorkLink_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/worklink/WorkLinkServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/worklink/WorkLinkErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkLink
 {
+  AWS_WORKLINK_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon WorkLink is a cloud-based service that provides secure access to
    * internal websites and web apps from iOS and Android phones. In a single step,
@@ -25,12 +29,20 @@ namespace WorkLink
    * secure rendering service in the AWS cloud. Amazon WorkLink doesn't download or
    * store any internal web content on mobile devices.</p>
    */
-  class AWS_WORKLINK_API WorkLinkClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkLinkClient>
+  class AWS_WORKLINK_API WorkLinkClient : Aws::Client::ClientWithAsyncTemplateMethods<WorkLinkClient>,
+    smithy::client::AwsSmithyClientT<Aws::WorkLink::SERVICE_NAME,
+      Aws::WorkLink::WorkLinkClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WorkLinkEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WorkLinkErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WorkLink"; }
 
       typedef WorkLinkClientConfiguration ClientConfigurationType;
       typedef WorkLinkEndpointProvider EndpointProviderType;
@@ -88,10 +100,7 @@ namespace WorkLink
       std::shared_ptr<WorkLinkEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkLinkClient>;
-      void init(const WorkLinkClientConfiguration& clientConfiguration);
 
-      WorkLinkClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WorkLinkEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkLink

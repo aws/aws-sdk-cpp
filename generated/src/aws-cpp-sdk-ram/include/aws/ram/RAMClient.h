@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ram/RAMServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ram/RAMErrorMarshaller.h>
 
 namespace Aws
 {
 namespace RAM
 {
+  AWS_RAM_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Resource Access Manager API Reference</i>. This documentation
    * provides descriptions and syntax for each of the actions and data types in RAM.
@@ -29,12 +33,20 @@ namespace RAM
    * href="https://docs.aws.amazon.com/ram/latest/userguide/">Resource Access Manager
    * User Guide</a> </p> </li> </ul>
    */
-  class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>
+  class AWS_RAM_API RAMClient : Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>,
+    smithy::client::AwsSmithyClientT<Aws::RAM::SERVICE_NAME,
+      Aws::RAM::RAMClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      RAMEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::RAMErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "RAM"; }
 
       typedef RAMClientConfiguration ClientConfigurationType;
       typedef RAMEndpointProvider EndpointProviderType;
@@ -1076,10 +1088,7 @@ namespace RAM
       std::shared_ptr<RAMEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>;
-      void init(const RAMClientConfiguration& clientConfiguration);
 
-      RAMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<RAMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RAM

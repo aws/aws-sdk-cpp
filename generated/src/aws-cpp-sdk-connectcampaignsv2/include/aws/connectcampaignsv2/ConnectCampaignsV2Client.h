@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ConnectCampaignsV2
 {
+  AWS_CONNECTCAMPAIGNSV2_API extern const char SERVICE_NAME[];
   /**
    * <p>Provide APIs to create and manage Amazon Connect Campaigns.</p>
    */
-  class AWS_CONNECTCAMPAIGNSV2_API ConnectCampaignsV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsV2Client>
+  class AWS_CONNECTCAMPAIGNSV2_API ConnectCampaignsV2Client : Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsV2Client>,
+    smithy::client::AwsSmithyClientT<Aws::ConnectCampaignsV2::SERVICE_NAME,
+      Aws::ConnectCampaignsV2::ConnectCampaignsV2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ConnectCampaignsV2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ConnectCampaignsV2ErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ConnectCampaignsV2"; }
 
       typedef ConnectCampaignsV2ClientConfiguration ClientConfigurationType;
       typedef ConnectCampaignsV2EndpointProvider EndpointProviderType;
@@ -934,10 +946,7 @@ namespace ConnectCampaignsV2
       std::shared_ptr<ConnectCampaignsV2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsV2Client>;
-      void init(const ConnectCampaignsV2ClientConfiguration& clientConfiguration);
 
-      ConnectCampaignsV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ConnectCampaignsV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectCampaignsV2

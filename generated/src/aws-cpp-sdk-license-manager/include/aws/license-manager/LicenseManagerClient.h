@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager/LicenseManagerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/license-manager/LicenseManagerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace LicenseManager
 {
+  AWS_LICENSEMANAGER_API extern const char SERVICE_NAME[];
   /**
    * <p>License Manager makes it easier to manage licenses from software vendors
    * across multiple Amazon Web Services accounts and on-premises servers.</p>
    */
-  class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>
+  class AWS_LICENSEMANAGER_API LicenseManagerClient : Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>,
+    smithy::client::AwsSmithyClientT<Aws::LicenseManager::SERVICE_NAME,
+      Aws::LicenseManager::LicenseManagerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LicenseManagerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LicenseManagerErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "License Manager"; }
 
       typedef LicenseManagerClientConfiguration ClientConfigurationType;
       typedef LicenseManagerEndpointProvider EndpointProviderType;
@@ -1395,10 +1407,7 @@ namespace LicenseManager
       std::shared_ptr<LicenseManagerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>;
-      void init(const LicenseManagerClientConfiguration& clientConfiguration);
 
-      LicenseManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LicenseManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LicenseManager

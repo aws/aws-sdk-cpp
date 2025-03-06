@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/redshift-data/RedshiftDataAPIServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace RedshiftDataAPIService
 {
+  AWS_REDSHIFTDATAAPISERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift
    * tables. You can run SQL statements, which are committed if the statement
@@ -24,12 +28,20 @@ namespace RedshiftDataAPIService
    * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
    * </p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>
+  class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient : Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::RedshiftDataAPIService::SERVICE_NAME,
+      Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      RedshiftDataAPIServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::RedshiftDataAPIServiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Redshift Data"; }
 
       typedef RedshiftDataAPIServiceClientConfiguration ClientConfigurationType;
       typedef RedshiftDataAPIServiceEndpointProvider EndpointProviderType;
@@ -572,10 +584,7 @@ namespace RedshiftDataAPIService
       std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>;
-      void init(const RedshiftDataAPIServiceClientConfiguration& clientConfiguration);
 
-      RedshiftDataAPIServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RedshiftDataAPIService

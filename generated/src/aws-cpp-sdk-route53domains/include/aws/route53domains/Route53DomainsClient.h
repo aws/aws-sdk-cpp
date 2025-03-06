@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/route53domains/Route53DomainsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Route53Domains
 {
+  AWS_ROUTE53DOMAINS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Route 53 API actions let you register domain names and perform related
    * operations.</p>
    */
-  class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>
+  class AWS_ROUTE53DOMAINS_API Route53DomainsClient : Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>,
+    smithy::client::AwsSmithyClientT<Aws::Route53Domains::SERVICE_NAME,
+      Aws::Route53Domains::Route53DomainsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Route53DomainsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Route53DomainsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Route 53 Domains"; }
 
       typedef Route53DomainsClientConfiguration ClientConfigurationType;
       typedef Route53DomainsEndpointProvider EndpointProviderType;
@@ -1169,10 +1181,7 @@ namespace Route53Domains
       std::shared_ptr<Route53DomainsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>;
-      void init(const Route53DomainsClientConfiguration& clientConfiguration);
 
-      Route53DomainsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Route53DomainsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53Domains

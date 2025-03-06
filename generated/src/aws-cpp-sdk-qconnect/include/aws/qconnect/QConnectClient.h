@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qconnect/QConnectServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/qconnect/QConnectErrorMarshaller.h>
 
 namespace Aws
 {
 namespace QConnect
 {
+  AWS_QCONNECT_API extern const char SERVICE_NAME[];
   /**
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Q_Connect.html">Amazon
@@ -42,12 +46,20 @@ namespace QConnect
    * Amazon Q in Connect for generative AI powered agent assistance in real-time</a>
    * in the <i>Amazon Connect Administrator Guide</i>.</p>
    */
-  class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient>
+  class AWS_QCONNECT_API QConnectClient : Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient>,
+    smithy::client::AwsSmithyClientT<Aws::QConnect::SERVICE_NAME,
+      Aws::QConnect::QConnectClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      QConnectEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::QConnectErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "QConnect"; }
 
       typedef QConnectClientConfiguration ClientConfigurationType;
       typedef QConnectEndpointProvider EndpointProviderType;
@@ -2498,10 +2510,7 @@ namespace QConnect
       std::shared_ptr<QConnectEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient>;
-      void init(const QConnectClientConfiguration& clientConfiguration);
 
-      QConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<QConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace QConnect

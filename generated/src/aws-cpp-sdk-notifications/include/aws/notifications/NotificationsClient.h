@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/notifications/NotificationsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/notifications/NotificationsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Notifications
 {
+  AWS_NOTIFICATIONS_API extern const char SERVICE_NAME[];
   /**
    * <p>The <i>Amazon Web Services User Notifications API Reference</i> provides
    * descriptions, API request parameters, and the JSON response for each of the User
@@ -31,12 +35,20 @@ namespace Notifications
    * href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">notification
    * hub</a> in addition to US East (Virginia).</p>
    */
-  class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>
+  class AWS_NOTIFICATIONS_API NotificationsClient : Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>,
+    smithy::client::AwsSmithyClientT<Aws::Notifications::SERVICE_NAME,
+      Aws::Notifications::NotificationsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NotificationsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NotificationsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Notifications"; }
 
       typedef NotificationsClientConfiguration ClientConfigurationType;
       typedef NotificationsEndpointProvider EndpointProviderType;
@@ -1053,10 +1065,7 @@ namespace Notifications
       std::shared_ptr<NotificationsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>;
-      void init(const NotificationsClientConfiguration& clientConfiguration);
 
-      NotificationsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NotificationsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Notifications

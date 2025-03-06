@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/managedblockchain/ManagedBlockchainServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/managedblockchain/ManagedBlockchainErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ManagedBlockchain
 {
+  AWS_MANAGEDBLOCKCHAIN_API extern const char SERVICE_NAME[];
   /**
    * <p/> <p>Amazon Managed Blockchain is a fully managed service for creating and
    * managing blockchain networks using open-source frameworks. Blockchain allows you
@@ -29,12 +33,20 @@ namespace ManagedBlockchain
    * framework or frameworks to which it applies. Data types and properties that
    * apply only in the context of a particular framework are similarly indicated.</p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>
+  class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>,
+    smithy::client::AwsSmithyClientT<Aws::ManagedBlockchain::SERVICE_NAME,
+      Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ManagedBlockchainEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ManagedBlockchainErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ManagedBlockchain"; }
 
       typedef ManagedBlockchainClientConfiguration ClientConfigurationType;
       typedef ManagedBlockchainEndpointProvider EndpointProviderType;
@@ -845,10 +857,7 @@ namespace ManagedBlockchain
       std::shared_ptr<ManagedBlockchainEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>;
-      void init(const ManagedBlockchainClientConfiguration& clientConfiguration);
 
-      ManagedBlockchainClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ManagedBlockchainEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ManagedBlockchain

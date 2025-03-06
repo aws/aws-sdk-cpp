@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestratorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MigrationHubOrchestrator
 {
+  AWS_MIGRATIONHUBORCHESTRATOR_API extern const char SERVICE_NAME[];
   /**
    * <p>This API reference provides descriptions, syntax, and other details about
    * each of the actions and data types for AWS Migration Hub Orchestrator. The topic
@@ -22,12 +26,20 @@ namespace MigrationHubOrchestrator
    * you can use one of the AWS SDKs to access an API that is tailored to the
    * programming language or platform that you're using.</p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>
+  class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient : Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>,
+    smithy::client::AwsSmithyClientT<Aws::MigrationHubOrchestrator::SERVICE_NAME,
+      Aws::MigrationHubOrchestrator::MigrationHubOrchestratorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MigrationHubOrchestratorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MigrationHubOrchestratorErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MigrationHubOrchestrator"; }
 
       typedef MigrationHubOrchestratorClientConfiguration ClientConfigurationType;
       typedef MigrationHubOrchestratorEndpointProvider EndpointProviderType;
@@ -866,10 +878,7 @@ namespace MigrationHubOrchestrator
       std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>;
-      void init(const MigrationHubOrchestratorClientConfiguration& clientConfiguration);
 
-      MigrationHubOrchestratorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MigrationHubOrchestrator

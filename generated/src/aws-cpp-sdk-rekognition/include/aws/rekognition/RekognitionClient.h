@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/RekognitionServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/rekognition/RekognitionErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Rekognition
 {
+  AWS_REKOGNITION_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the API Reference for <a
    * href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
@@ -171,12 +175,20 @@ namespace Rekognition
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">UpdateStreamProcessor</a>
    * </p> </li> </ul>
    */
-  class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>
+  class AWS_REKOGNITION_API RekognitionClient : Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>,
+    smithy::client::AwsSmithyClientT<Aws::Rekognition::SERVICE_NAME,
+      Aws::Rekognition::RekognitionClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      RekognitionEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::RekognitionErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Rekognition"; }
 
       typedef RekognitionClientConfiguration ClientConfigurationType;
       typedef RekognitionEndpointProvider EndpointProviderType;
@@ -3232,10 +3244,7 @@ namespace Rekognition
       std::shared_ptr<RekognitionEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>;
-      void init(const RekognitionClientConfiguration& clientConfiguration);
 
-      RekognitionClientConfiguration m_clientConfiguration;
-      std::shared_ptr<RekognitionEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Rekognition

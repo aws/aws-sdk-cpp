@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bedrock/BedrockServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bedrock/BedrockErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Bedrock
 {
+  AWS_BEDROCK_API extern const char SERVICE_NAME[];
   /**
    * <p>Describes the API operations for creating, managing, fine-turning, and
    * evaluating Amazon Bedrock models.</p>
    */
-  class AWS_BEDROCK_API BedrockClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockClient>
+  class AWS_BEDROCK_API BedrockClient : Aws::Client::ClientWithAsyncTemplateMethods<BedrockClient>,
+    smithy::client::AwsSmithyClientT<Aws::Bedrock::SERVICE_NAME,
+      Aws::Bedrock::BedrockClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BedrockEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BedrockErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Bedrock"; }
 
       typedef BedrockClientConfiguration ClientConfigurationType;
       typedef BedrockEndpointProvider EndpointProviderType;
@@ -1746,10 +1758,7 @@ namespace Bedrock
       std::shared_ptr<BedrockEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockClient>;
-      void init(const BedrockClientConfiguration& clientConfiguration);
 
-      BedrockClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BedrockEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Bedrock

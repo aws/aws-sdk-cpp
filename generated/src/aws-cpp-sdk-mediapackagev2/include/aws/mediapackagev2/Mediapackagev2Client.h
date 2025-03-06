@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackagev2/Mediapackagev2ServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mediapackagev2/Mediapackagev2ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace mediapackagev2
 {
+  AWS_MEDIAPACKAGEV2_API extern const char SERVICE_NAME[];
   /**
    *  <p>This guide is intended for creating AWS Elemental MediaPackage
    * resources in MediaPackage Version 2 (v2) starting from May 2023. To get started
@@ -36,12 +40,20 @@ namespace mediapackagev2
    * that you are familiar with the features and operations of MediaPackage, as
    * described in the AWS Elemental MediaPackage User Guide.</p>
    */
-  class AWS_MEDIAPACKAGEV2_API Mediapackagev2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client>
+  class AWS_MEDIAPACKAGEV2_API Mediapackagev2Client : Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client>,
+    smithy::client::AwsSmithyClientT<Aws::mediapackagev2::SERVICE_NAME,
+      Aws::mediapackagev2::Mediapackagev2ClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Mediapackagev2EndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Mediapackagev2ErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MediaPackageV2"; }
 
       typedef Mediapackagev2ClientConfiguration ClientConfigurationType;
       typedef Mediapackagev2EndpointProvider EndpointProviderType;
@@ -866,10 +878,7 @@ namespace mediapackagev2
       std::shared_ptr<Mediapackagev2EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client>;
-      void init(const Mediapackagev2ClientConfiguration& clientConfiguration);
 
-      Mediapackagev2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Mediapackagev2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace mediapackagev2
