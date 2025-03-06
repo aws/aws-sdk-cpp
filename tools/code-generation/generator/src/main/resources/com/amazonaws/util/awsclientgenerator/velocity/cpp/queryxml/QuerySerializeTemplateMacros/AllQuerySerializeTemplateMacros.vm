@@ -1,0 +1,7 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeQuerySingleElementToText.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeSubObjQuerySingleElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeSubObjQueryListElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeSubObjQueryMapElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeRequestQuerySingleElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeRequestQueryListElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/serializeRequestQueryMapElement.vm")

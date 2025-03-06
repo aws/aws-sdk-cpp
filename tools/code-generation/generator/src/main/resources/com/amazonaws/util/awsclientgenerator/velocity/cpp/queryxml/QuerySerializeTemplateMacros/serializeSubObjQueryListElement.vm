@@ -1,0 +1,42 @@
+##-------------------- serializeSubObjQueryListElement macro
+#macro( serializeSubObjQueryListElement $spaces $member $location $memberVarName )
+##  // /* --- the actual shape member is $member; */
+##  // /* --- the actual shape is $member.shape; --- */
+##  // /* --- list member: ${member.shape.listMember} */
+#set($macro.lowerCaseVarName = $CppViewHelper.computeVariableName($location))
+  ${spaces}unsigned ${macro.lowerCaseVarName}Idx = 1;
+  ${spaces}for(auto& item : ${memberVarName})
+  ${spaces}{
+#if($metadata.findFirstSupportedProtocol() == "ec2")
+#if($member.queryName)
+#set($location = $member.queryName)
+#elseif($member.locationName)
+#set($location = $CppViewHelper.capitalizeFirstChar($member.locationName))
+#else
+#set($location = $memberName)
+#end
+#else
+#if($member.shape.listMember.locationName)
+#set($location = $memberName + "." + $member.shape.listMember.locationName)
+#else
+#set($location = $memberName + ".member")
+#end
+#end
+#if($member.shape.listMember.shape.structure)
+  ${spaces}  Aws::StringStream ${macro.lowerCaseVarName}Ss;
+  ${spaces}  ${macro.lowerCaseVarName}Ss << location << index << locationValue << ".${location}." << ${macro.lowerCaseVarName}Idx++;
+  ${spaces}  item.OutputToStream(oStream, ${macro.lowerCaseVarName}Ss.str().c_str());
+#elseif($member.shape.listMember.shape.string ||
+        $member.shape.listMember.shape.timeStamp ||
+        $member.shape.listMember.shape.blob ||
+        $member.shape.listMember.shape.double ||
+        $member.shape.listMember.shape.boolean ||
+        $member.shape.listMember.shape.primitive ||
+        $member.shape.listMember.shape.enum)
+#set($listLocation = '".' + "${location}." + '"' + " << ${macro.lowerCaseVarName}Idx++ << " + '"="')
+  ${spaces}  oStream << location << index << locationValue << #serializeSubObjQuerySingleElement($member.shape.listMember, $listLocation, "item") << "&";
+#else
+  static_assert(false, "Code generation failure: failed to generate list element serialization of ${member.shape.listMember}");
+#end
+  ${spaces}}
+#end##macro serializeSubObjQueryListElement

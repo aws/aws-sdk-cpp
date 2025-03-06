@@ -1,0 +1,28 @@
+##-------------------- serializeQuerySingleElementToText macro
+#macro( serializeQuerySingleElementToText $member $memberVarName )
+##/* --- the actual shape member is $member; the actual shape is $member.shape; --- */
+#if($member.shape.string)
+StringUtils::URLEncode(${memberVarName}.c_str())##
+#elseif($member.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
+StringUtils::URLEncode(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str())##
+#else
+StringUtils::to_string(${memberVarName}.Seconds())##
+#end
+#elseif($member.shape.blob)
+StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str())##
+#elseif($member.shape.double)
+StringUtils::URLEncode(${memberVarName})##
+#elseif($member.shape.boolean)
+std::boolalpha << ${memberVarName}##
+#elseif($member.shape.primitive)
+${memberVarName}##
+#elseif($member.shape.enum)
+${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName})##
+#elseif($member.shape.list || $member.shape.map)
+/* CODEGEN FAIL: inner element is list or map */
+${memberVarName}##
+#else
+[&]() {static_assert(false, "Code generation failure: unknown how to serialize ${member}"); return ${memberVarName}}()##
+#end
+#end##macro serializeQuerySingleElementToText
