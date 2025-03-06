@@ -237,7 +237,11 @@ namespace Model
     /**
      * <p>S3 prefix of the S3 bucket where the participant is being recorded, if
      * individual participant recording is enabled, or <code>""</code> (empty string),
-     * if recording is not enabled.</p>
+     * if recording is not enabled. If individual participant recording merge is
+     * enabled, and if a stage publisher disconnects from a stage and then reconnects,
+     * IVS tries to record to the same S3 prefix as the previous session. See <a
+     * href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag">
+     * Merge Fragmented Individual Participant Recordings</a>.</p>
      */
     inline const Aws::String& GetRecordingS3Prefix() const{ return m_recordingS3Prefix; }
     inline bool RecordingS3PrefixHasBeenSet() const { return m_recordingS3PrefixHasBeenSet; }

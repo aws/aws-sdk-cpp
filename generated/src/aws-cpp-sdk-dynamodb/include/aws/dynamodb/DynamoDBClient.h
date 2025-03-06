@@ -37,15 +37,15 @@ namespace DynamoDB
    * Zones in an Amazon Web Services Region, providing built-in high availability and
    * data durability.</p>
    */
-  class AWS_DYNAMODB_API DynamoDBClient : smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
+  class AWS_DYNAMODB_API DynamoDBClient : Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>,
+    smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
       Aws::DynamoDB::DynamoDBClientConfiguration,
       smithy::SigV4AuthSchemeResolver<>,
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       DynamoDBEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
       smithy::client::JsonOutcome,
-      Aws::Client::DynamoDBErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>
+      Aws::Client::DynamoDBErrorMarshaller>
   {
     public:
       static const char* GetServiceName();

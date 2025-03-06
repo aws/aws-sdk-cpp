@@ -55,8 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Array of tags to be removed. Array of maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
+     * <p>Array of tag keys (strings) for the tags to be removed. See <a
      * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
      * practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for
      * details, including restrictions that apply to tags and "Tag naming limits and

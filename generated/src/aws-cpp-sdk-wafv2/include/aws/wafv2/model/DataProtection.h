@@ -69,10 +69,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to also protect any rule match details from the web ACL
-     * logs when applying data protection this field type and keys. WAF logs these
-     * details for non-terminating matching rules and for the terminating matching
-     * rule. For additional information, see <a
+     * <p>Specifies whether to also exclude any rule match details from the data
+     * protection you have enabled for a given field. WAF logs these details for
+     * non-terminating matching rules and for the terminating matching rule. For
+     * additional information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
      * <p>Default: <code>FALSE</code> </p>
@@ -85,9 +85,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to also protect any rate-based rule details from the web
-     * ACL logs when applying data protection for this field type and keys. For
-     * additional information, see the log field <code>rateBasedRuleList</code> at <a
+     * <p>Specifies whether to also exclude any rate-based rule details from the data
+     * protection you have enabled for a given field. If you specify this exception,
+     * RateBasedDetails will show the value of the field. For additional information,
+     * see the log field <code>rateBasedRuleList</code> at <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
      * <p>Default: <code>FALSE</code> </p>
