@@ -74,7 +74,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_infoTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InfoType=" << EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType) << "&";
+      oStream << location << index << locationValue << ".InfoType=" << StringUtils::URLEncode(EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType)) << "&";
   }
 
   if(m_ec2InstanceIdHasBeenSet)
@@ -98,7 +98,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_infoTypeHasBeenSet)
   {
-      oStream << location << ".InfoType=" << EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType) << "&";
+      oStream << location << ".InfoType=" << StringUtils::URLEncode(EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType)) << "&";
   }
   if(m_ec2InstanceIdHasBeenSet)
   {

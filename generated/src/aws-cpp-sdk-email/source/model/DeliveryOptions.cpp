@@ -53,7 +53,7 @@ void DeliveryOptions::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_tlsPolicyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
+      oStream << location << index << locationValue << ".TlsPolicy=" << StringUtils::URLEncode(TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void DeliveryOptions::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_tlsPolicyHasBeenSet)
   {
-      oStream << location << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
+      oStream << location << ".TlsPolicy=" << StringUtils::URLEncode(TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy)) << "&";
   }
 }
 

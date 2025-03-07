@@ -134,12 +134,12 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << LocalGatewayRouteTypeMapper::GetNameForLocalGatewayRouteType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(LocalGatewayRouteTypeMapper::GetNameForLocalGatewayRouteType(m_type)) << "&";
   }
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << LocalGatewayRouteStateMapper::GetNameForLocalGatewayRouteState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(LocalGatewayRouteStateMapper::GetNameForLocalGatewayRouteState(m_state)) << "&";
   }
 
   if(m_localGatewayRouteTableIdHasBeenSet)
@@ -191,11 +191,11 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << LocalGatewayRouteTypeMapper::GetNameForLocalGatewayRouteType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(LocalGatewayRouteTypeMapper::GetNameForLocalGatewayRouteType(m_type)) << "&";
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << LocalGatewayRouteStateMapper::GetNameForLocalGatewayRouteState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(LocalGatewayRouteStateMapper::GetNameForLocalGatewayRouteState(m_state)) << "&";
   }
   if(m_localGatewayRouteTableIdHasBeenSet)
   {

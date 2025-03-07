@@ -24,7 +24,7 @@ Aws::String EnableAllowedImagesSettingsRequest::SerializePayload() const
   ss << "Action=EnableAllowedImagesSettings&";
   if(m_allowedImagesSettingsStateHasBeenSet)
   {
-    ss << "AllowedImagesSettingsState=" << AllowedImagesSettingsEnabledStateMapper::GetNameForAllowedImagesSettingsEnabledState(m_allowedImagesSettingsState) << "&";
+    ss << "AllowedImagesSettingsState=" << StringUtils::URLEncode(AllowedImagesSettingsEnabledStateMapper::GetNameForAllowedImagesSettingsEnabledState(m_allowedImagesSettingsState)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

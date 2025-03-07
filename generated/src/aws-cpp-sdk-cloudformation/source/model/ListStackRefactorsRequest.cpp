@@ -34,7 +34,7 @@ Aws::String ListStackRefactorsRequest::SerializePayload() const
       for(auto& item : m_executionStatusFilter)
       {
         ss << "ExecutionStatusFilter.member." << executionStatusFilterCount << "="
-            << StringUtils::URLEncode(StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(item)) << "&";
         executionStatusFilterCount++;
       }
     }

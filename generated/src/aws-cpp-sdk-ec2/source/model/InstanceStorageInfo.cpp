@@ -98,12 +98,12 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_nvmeSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
+      oStream << location << index << locationValue << ".NvmeSupport=" << StringUtils::URLEncode(EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport)) << "&";
   }
 
   if(m_encryptionSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EncryptionSupport=" << InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport) << "&";
+      oStream << location << index << locationValue << ".EncryptionSupport=" << StringUtils::URLEncode(InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport)) << "&";
   }
 
 }
@@ -120,17 +120,17 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_disks)
       {
         Aws::StringStream disksSs;
-        disksSs << location <<  ".Disks." << disksIdx++;
+        disksSs << location << ".Disks." << disksIdx++;
         item.OutputToStream(oStream, disksSs.str().c_str());
       }
   }
   if(m_nvmeSupportHasBeenSet)
   {
-      oStream << location << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
+      oStream << location << ".NvmeSupport=" << StringUtils::URLEncode(EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport)) << "&";
   }
   if(m_encryptionSupportHasBeenSet)
   {
-      oStream << location << ".EncryptionSupport=" << InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport) << "&";
+      oStream << location << ".EncryptionSupport=" << StringUtils::URLEncode(InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport)) << "&";
   }
 }
 

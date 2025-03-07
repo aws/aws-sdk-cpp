@@ -66,7 +66,7 @@ void LaunchTemplateTagSpecification::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << ResourceTypeMapper::GetNameForResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(ResourceTypeMapper::GetNameForResourceType(m_resourceType)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -86,7 +86,7 @@ void LaunchTemplateTagSpecification::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << ResourceTypeMapper::GetNameForResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(ResourceTypeMapper::GetNameForResourceType(m_resourceType)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -94,7 +94,7 @@ void LaunchTemplateTagSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

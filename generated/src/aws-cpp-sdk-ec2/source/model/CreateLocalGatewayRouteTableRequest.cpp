@@ -31,7 +31,7 @@ Aws::String CreateLocalGatewayRouteTableRequest::SerializePayload() const
 
   if(m_modeHasBeenSet)
   {
-    ss << "Mode=" << LocalGatewayRouteTableModeMapper::GetNameForLocalGatewayRouteTableMode(m_mode) << "&";
+    ss << "Mode=" << StringUtils::URLEncode(LocalGatewayRouteTableModeMapper::GetNameForLocalGatewayRouteTableMode(m_mode)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

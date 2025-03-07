@@ -60,7 +60,7 @@ void UnsuccessfulInstanceCreditSpecificationItemError::OutputToStream(Aws::OStre
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetNameForUnsuccessfulInstanceCreditSpecificationErrorCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetNameForUnsuccessfulInstanceCreditSpecificationErrorCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void UnsuccessfulInstanceCreditSpecificationItemError::OutputToStream(Aws::OStre
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetNameForUnsuccessfulInstanceCreditSpecificationErrorCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetNameForUnsuccessfulInstanceCreditSpecificationErrorCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

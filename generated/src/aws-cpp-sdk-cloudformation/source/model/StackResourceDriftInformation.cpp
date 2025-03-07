@@ -60,7 +60,7 @@ void StackResourceDriftInformation::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_stackResourceDriftStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StackResourceDriftStatus=" << StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus) << "&";
+      oStream << location << index << locationValue << ".StackResourceDriftStatus=" << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus)) << "&";
   }
 
   if(m_lastCheckTimestampHasBeenSet)
@@ -74,7 +74,7 @@ void StackResourceDriftInformation::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_stackResourceDriftStatusHasBeenSet)
   {
-      oStream << location << ".StackResourceDriftStatus=" << StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus) << "&";
+      oStream << location << ".StackResourceDriftStatus=" << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus)) << "&";
   }
   if(m_lastCheckTimestampHasBeenSet)
   {

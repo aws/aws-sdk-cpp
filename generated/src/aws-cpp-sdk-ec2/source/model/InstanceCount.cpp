@@ -66,7 +66,7 @@ void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(ListingStateMapper::GetNameForListingState(m_state)) << "&";
   }
 
 }
@@ -79,7 +79,7 @@ void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(ListingStateMapper::GetNameForListingState(m_state)) << "&";
   }
 }
 

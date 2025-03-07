@@ -34,7 +34,7 @@ Aws::String GetSSHPublicKeyRequest::SerializePayload() const
 
   if(m_encodingHasBeenSet)
   {
-    ss << "Encoding=" << EncodingTypeMapper::GetNameForEncodingType(m_encoding) << "&";
+    ss << "Encoding=" << StringUtils::URLEncode(EncodingTypeMapper::GetNameForEncodingType(m_encoding)) << "&";
   }
 
   ss << "Version=2010-05-08";

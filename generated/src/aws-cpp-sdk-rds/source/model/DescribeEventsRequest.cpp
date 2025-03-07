@@ -37,7 +37,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
 
   if(m_sourceTypeHasBeenSet)
   {
-    ss << "SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+    ss << "SourceType=" << StringUtils::URLEncode(SourceTypeMapper::GetNameForSourceType(m_sourceType)) << "&";
   }
 
   if(m_startTimeHasBeenSet)

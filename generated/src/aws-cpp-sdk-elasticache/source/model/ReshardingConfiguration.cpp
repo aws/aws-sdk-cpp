@@ -90,7 +90,7 @@ void ReshardingConfiguration::OutputToStream(Aws::OStream& oStream, const char* 
       unsigned preferredAvailabilityZonesIdx = 1;
       for(auto& item : m_preferredAvailabilityZones)
       {
-        oStream << location << ".AvailabilityZone." << preferredAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PreferredAvailabilityZones.AvailabilityZone." << preferredAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

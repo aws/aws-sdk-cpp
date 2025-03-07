@@ -30,7 +30,7 @@ Aws::String ModifySnapshotTierRequest::SerializePayload() const
 
   if(m_storageTierHasBeenSet)
   {
-    ss << "StorageTier=" << TargetStorageTierMapper::GetNameForTargetStorageTier(m_storageTier) << "&";
+    ss << "StorageTier=" << StringUtils::URLEncode(TargetStorageTierMapper::GetNameForTargetStorageTier(m_storageTier)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

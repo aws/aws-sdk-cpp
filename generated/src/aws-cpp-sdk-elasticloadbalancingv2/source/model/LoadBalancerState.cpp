@@ -60,7 +60,7 @@ void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code)) << "&";
   }
 
   if(m_reasonHasBeenSet)
@@ -74,7 +74,7 @@ void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code)) << "&";
   }
   if(m_reasonHasBeenSet)
   {

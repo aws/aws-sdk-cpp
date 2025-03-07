@@ -180,7 +180,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_unitHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
   if(m_storageResolutionHasBeenSet)
@@ -202,7 +202,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
@@ -212,7 +212,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_valueHasBeenSet)
   {
-        oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+      oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
   if(m_statisticValuesHasBeenSet)
   {
@@ -225,7 +225,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-          oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+        oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
   if(m_countsHasBeenSet)
@@ -233,12 +233,12 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
       unsigned countsIdx = 1;
       for(auto& item : m_counts)
       {
-          oStream << location << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+        oStream << location << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
   if(m_unitHasBeenSet)
   {
-      oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
   if(m_storageResolutionHasBeenSet)
   {

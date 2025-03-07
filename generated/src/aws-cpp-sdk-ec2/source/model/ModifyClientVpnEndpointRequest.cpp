@@ -97,7 +97,7 @@ Aws::String ModifyClientVpnEndpointRequest::SerializePayload() const
 
   if(m_selfServicePortalHasBeenSet)
   {
-    ss << "SelfServicePortal=" << SelfServicePortalMapper::GetNameForSelfServicePortal(m_selfServicePortal) << "&";
+    ss << "SelfServicePortal=" << StringUtils::URLEncode(SelfServicePortalMapper::GetNameForSelfServicePortal(m_selfServicePortal)) << "&";
   }
 
   if(m_clientConnectOptionsHasBeenSet)

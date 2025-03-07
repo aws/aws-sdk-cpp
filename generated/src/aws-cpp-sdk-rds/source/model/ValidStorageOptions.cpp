@@ -202,7 +202,7 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_storageSize)
       {
         Aws::StringStream storageSizeSs;
-        storageSizeSs << location <<  ".Range." << storageSizeIdx++;
+        storageSizeSs << location << ".StorageSize.Range." << storageSizeIdx++;
         item.OutputToStream(oStream, storageSizeSs.str().c_str());
       }
   }
@@ -212,7 +212,7 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_provisionedIops)
       {
         Aws::StringStream provisionedIopsSs;
-        provisionedIopsSs << location <<  ".Range." << provisionedIopsIdx++;
+        provisionedIopsSs << location << ".ProvisionedIops.Range." << provisionedIopsIdx++;
         item.OutputToStream(oStream, provisionedIopsSs.str().c_str());
       }
   }
@@ -222,7 +222,7 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_iopsToStorageRatio)
       {
         Aws::StringStream iopsToStorageRatioSs;
-        iopsToStorageRatioSs << location <<  ".DoubleRange." << iopsToStorageRatioIdx++;
+        iopsToStorageRatioSs << location << ".IopsToStorageRatio.DoubleRange." << iopsToStorageRatioIdx++;
         item.OutputToStream(oStream, iopsToStorageRatioSs.str().c_str());
       }
   }
@@ -236,7 +236,7 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_provisionedStorageThroughput)
       {
         Aws::StringStream provisionedStorageThroughputSs;
-        provisionedStorageThroughputSs << location <<  ".Range." << provisionedStorageThroughputIdx++;
+        provisionedStorageThroughputSs << location << ".ProvisionedStorageThroughput.Range." << provisionedStorageThroughputIdx++;
         item.OutputToStream(oStream, provisionedStorageThroughputSs.str().c_str());
       }
   }
@@ -246,7 +246,7 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_storageThroughputToIopsRatio)
       {
         Aws::StringStream storageThroughputToIopsRatioSs;
-        storageThroughputToIopsRatioSs << location <<  ".DoubleRange." << storageThroughputToIopsRatioIdx++;
+        storageThroughputToIopsRatioSs << location << ".StorageThroughputToIopsRatio.DoubleRange." << storageThroughputToIopsRatioIdx++;
         item.OutputToStream(oStream, storageThroughputToIopsRatioSs.str().c_str());
       }
   }

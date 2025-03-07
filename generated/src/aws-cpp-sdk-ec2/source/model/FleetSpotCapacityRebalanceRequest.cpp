@@ -61,7 +61,7 @@ void FleetSpotCapacityRebalanceRequest::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_replacementStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReplacementStrategy=" << FleetReplacementStrategyMapper::GetNameForFleetReplacementStrategy(m_replacementStrategy) << "&";
+      oStream << location << index << locationValue << ".ReplacementStrategy=" << StringUtils::URLEncode(FleetReplacementStrategyMapper::GetNameForFleetReplacementStrategy(m_replacementStrategy)) << "&";
   }
 
   if(m_terminationDelayHasBeenSet)
@@ -75,7 +75,7 @@ void FleetSpotCapacityRebalanceRequest::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_replacementStrategyHasBeenSet)
   {
-      oStream << location << ".ReplacementStrategy=" << FleetReplacementStrategyMapper::GetNameForFleetReplacementStrategy(m_replacementStrategy) << "&";
+      oStream << location << ".ReplacementStrategy=" << StringUtils::URLEncode(FleetReplacementStrategyMapper::GetNameForFleetReplacementStrategy(m_replacementStrategy)) << "&";
   }
   if(m_terminationDelayHasBeenSet)
   {

@@ -142,7 +142,7 @@ void FleetEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << index << locationValue << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 
 }
@@ -179,7 +179,7 @@ void FleetEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 }
 

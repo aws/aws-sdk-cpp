@@ -158,7 +158,7 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
 
   if(m_valueTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValueType=" << ConfigurationOptionValueTypeMapper::GetNameForConfigurationOptionValueType(m_valueType) << "&";
+      oStream << location << index << locationValue << ".ValueType=" << StringUtils::URLEncode(ConfigurationOptionValueTypeMapper::GetNameForConfigurationOptionValueType(m_valueType)) << "&";
   }
 
   if(m_valueOptionsHasBeenSet)
@@ -218,7 +218,7 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_valueTypeHasBeenSet)
   {
-      oStream << location << ".ValueType=" << ConfigurationOptionValueTypeMapper::GetNameForConfigurationOptionValueType(m_valueType) << "&";
+      oStream << location << ".ValueType=" << StringUtils::URLEncode(ConfigurationOptionValueTypeMapper::GetNameForConfigurationOptionValueType(m_valueType)) << "&";
   }
   if(m_valueOptionsHasBeenSet)
   {

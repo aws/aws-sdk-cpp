@@ -130,7 +130,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_optInStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OptInStatus=" << AvailabilityZoneOptInStatusMapper::GetNameForAvailabilityZoneOptInStatus(m_optInStatus) << "&";
+      oStream << location << index << locationValue << ".OptInStatus=" << StringUtils::URLEncode(AvailabilityZoneOptInStatusMapper::GetNameForAvailabilityZoneOptInStatus(m_optInStatus)) << "&";
   }
 
   if(m_messagesHasBeenSet)
@@ -186,7 +186,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state)) << "&";
   }
 
 }
@@ -195,7 +195,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_optInStatusHasBeenSet)
   {
-      oStream << location << ".OptInStatus=" << AvailabilityZoneOptInStatusMapper::GetNameForAvailabilityZoneOptInStatus(m_optInStatus) << "&";
+      oStream << location << ".OptInStatus=" << StringUtils::URLEncode(AvailabilityZoneOptInStatusMapper::GetNameForAvailabilityZoneOptInStatus(m_optInStatus)) << "&";
   }
   if(m_messagesHasBeenSet)
   {
@@ -203,7 +203,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_messages)
       {
         Aws::StringStream messagesSs;
-        messagesSs << location <<  ".MessageSet." << messagesIdx++;
+        messagesSs << location << ".MessageSet." << messagesIdx++;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }
@@ -241,7 +241,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state)) << "&";
   }
 }
 

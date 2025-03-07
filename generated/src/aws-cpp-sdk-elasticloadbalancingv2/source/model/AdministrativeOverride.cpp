@@ -68,12 +68,12 @@ void AdministrativeOverride::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TargetAdministrativeOverrideStateEnumMapper::GetNameForTargetAdministrativeOverrideStateEnum(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TargetAdministrativeOverrideStateEnumMapper::GetNameForTargetAdministrativeOverrideStateEnum(m_state)) << "&";
   }
 
   if(m_reasonHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Reason=" << TargetAdministrativeOverrideReasonEnumMapper::GetNameForTargetAdministrativeOverrideReasonEnum(m_reason) << "&";
+      oStream << location << index << locationValue << ".Reason=" << StringUtils::URLEncode(TargetAdministrativeOverrideReasonEnumMapper::GetNameForTargetAdministrativeOverrideReasonEnum(m_reason)) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -87,11 +87,11 @@ void AdministrativeOverride::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TargetAdministrativeOverrideStateEnumMapper::GetNameForTargetAdministrativeOverrideStateEnum(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TargetAdministrativeOverrideStateEnumMapper::GetNameForTargetAdministrativeOverrideStateEnum(m_state)) << "&";
   }
   if(m_reasonHasBeenSet)
   {
-      oStream << location << ".Reason=" << TargetAdministrativeOverrideReasonEnumMapper::GetNameForTargetAdministrativeOverrideReasonEnum(m_reason) << "&";
+      oStream << location << ".Reason=" << StringUtils::URLEncode(TargetAdministrativeOverrideReasonEnumMapper::GetNameForTargetAdministrativeOverrideReasonEnum(m_reason)) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

@@ -39,7 +39,7 @@ Aws::String DescribeUsageLimitsRequest::SerializePayload() const
 
   if(m_featureTypeHasBeenSet)
   {
-    ss << "FeatureType=" << UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType) << "&";
+    ss << "FeatureType=" << StringUtils::URLEncode(UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType)) << "&";
   }
 
   if(m_maxRecordsHasBeenSet)

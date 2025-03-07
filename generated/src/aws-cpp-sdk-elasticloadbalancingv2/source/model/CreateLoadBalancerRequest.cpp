@@ -93,7 +93,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_schemeHasBeenSet)
   {
-    ss << "Scheme=" << LoadBalancerSchemeEnumMapper::GetNameForLoadBalancerSchemeEnum(m_scheme) << "&";
+    ss << "Scheme=" << StringUtils::URLEncode(LoadBalancerSchemeEnumMapper::GetNameForLoadBalancerSchemeEnum(m_scheme)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -115,12 +115,12 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type)) << "&";
   }
 
   if(m_ipAddressTypeHasBeenSet)
   {
-    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+    ss << "IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   if(m_customerOwnedIpv4PoolHasBeenSet)
@@ -130,7 +130,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
 
   if(m_enablePrefixForIpv6SourceNatHasBeenSet)
   {
-    ss << "EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+    ss << "EnablePrefixForIpv6SourceNat=" << StringUtils::URLEncode(EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat)) << "&";
   }
 
   if(m_ipamPoolsHasBeenSet)

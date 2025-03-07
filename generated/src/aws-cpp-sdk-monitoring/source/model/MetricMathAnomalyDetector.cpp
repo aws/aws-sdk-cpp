@@ -77,7 +77,7 @@ void MetricMathAnomalyDetector::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_metricDataQueries)
       {
         Aws::StringStream metricDataQueriesSs;
-        metricDataQueriesSs << location <<  ".MetricDataQueries.member." << metricDataQueriesIdx++;
+        metricDataQueriesSs << location << ".MetricDataQueries.member." << metricDataQueriesIdx++;
         item.OutputToStream(oStream, metricDataQueriesSs.str().c_str());
       }
   }

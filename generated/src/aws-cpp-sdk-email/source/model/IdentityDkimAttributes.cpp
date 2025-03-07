@@ -79,7 +79,7 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_dkimVerificationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
+      oStream << location << index << locationValue << ".DkimVerificationStatus=" << StringUtils::URLEncode(VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus)) << "&";
   }
 
   if(m_dkimTokensHasBeenSet)
@@ -101,7 +101,7 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_dkimVerificationStatusHasBeenSet)
   {
-      oStream << location << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
+      oStream << location << ".DkimVerificationStatus=" << StringUtils::URLEncode(VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus)) << "&";
   }
   if(m_dkimTokensHasBeenSet)
   {

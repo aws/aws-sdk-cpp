@@ -47,7 +47,7 @@ Aws::String SetSecurityGroupsRequest::SerializePayload() const
 
   if(m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet)
   {
-    ss << "EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumMapper::GetNameForEnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic) << "&";
+    ss << "EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << StringUtils::URLEncode(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumMapper::GetNameForEnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic)) << "&";
   }
 
   ss << "Version=2015-12-01";

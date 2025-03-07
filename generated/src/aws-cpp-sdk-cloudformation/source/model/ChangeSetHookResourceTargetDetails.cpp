@@ -77,7 +77,7 @@ void ChangeSetHookResourceTargetDetails::OutputToStream(Aws::OStream& oStream, c
 
   if(m_resourceActionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceAction=" << ChangeActionMapper::GetNameForChangeAction(m_resourceAction) << "&";
+      oStream << location << index << locationValue << ".ResourceAction=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_resourceAction)) << "&";
   }
 
 }
@@ -94,7 +94,7 @@ void ChangeSetHookResourceTargetDetails::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_resourceActionHasBeenSet)
   {
-      oStream << location << ".ResourceAction=" << ChangeActionMapper::GetNameForChangeAction(m_resourceAction) << "&";
+      oStream << location << ".ResourceAction=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_resourceAction)) << "&";
   }
 }
 

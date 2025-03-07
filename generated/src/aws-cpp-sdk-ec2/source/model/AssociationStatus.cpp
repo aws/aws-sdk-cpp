@@ -60,7 +60,7 @@ void AssociationStatus::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << AssociationStatusCodeMapper::GetNameForAssociationStatusCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(AssociationStatusCodeMapper::GetNameForAssociationStatusCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void AssociationStatus::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << AssociationStatusCodeMapper::GetNameForAssociationStatusCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(AssociationStatusCodeMapper::GetNameForAssociationStatusCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

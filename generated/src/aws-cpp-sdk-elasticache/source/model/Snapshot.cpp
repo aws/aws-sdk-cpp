@@ -369,7 +369,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_automaticFailoverHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+      oStream << location << index << locationValue << ".AutomaticFailover=" << StringUtils::URLEncode(AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover)) << "&";
   }
 
   if(m_nodeSnapshotsHasBeenSet)
@@ -395,7 +395,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_dataTieringHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+      oStream << location << index << locationValue << ".DataTiering=" << StringUtils::URLEncode(DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering)) << "&";
   }
 
 }
@@ -496,7 +496,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_automaticFailoverHasBeenSet)
   {
-      oStream << location << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+      oStream << location << ".AutomaticFailover=" << StringUtils::URLEncode(AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover)) << "&";
   }
   if(m_nodeSnapshotsHasBeenSet)
   {
@@ -504,7 +504,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_nodeSnapshots)
       {
         Aws::StringStream nodeSnapshotsSs;
-        nodeSnapshotsSs << location <<  ".NodeSnapshot." << nodeSnapshotsIdx++;
+        nodeSnapshotsSs << location << ".NodeSnapshots.NodeSnapshot." << nodeSnapshotsIdx++;
         item.OutputToStream(oStream, nodeSnapshotsSs.str().c_str());
       }
   }
@@ -518,7 +518,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_dataTieringHasBeenSet)
   {
-      oStream << location << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+      oStream << location << ".DataTiering=" << StringUtils::URLEncode(DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering)) << "&";
   }
 }
 

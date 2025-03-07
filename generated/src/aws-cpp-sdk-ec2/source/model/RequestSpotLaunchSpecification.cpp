@@ -234,7 +234,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_kernelIdHasBeenSet)
@@ -317,7 +317,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -337,7 +337,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_kernelIdHasBeenSet)
   {
@@ -359,7 +359,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".NetworkInterface." << networkInterfacesIdx++;
+        networkInterfacesSs << location << ".NetworkInterface." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }

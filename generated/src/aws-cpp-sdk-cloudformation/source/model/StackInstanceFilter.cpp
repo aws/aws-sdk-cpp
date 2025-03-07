@@ -60,7 +60,7 @@ void StackInstanceFilter::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << StackInstanceFilterNameMapper::GetNameForStackInstanceFilterName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(StackInstanceFilterNameMapper::GetNameForStackInstanceFilterName(m_name)) << "&";
   }
 
   if(m_valuesHasBeenSet)
@@ -74,7 +74,7 @@ void StackInstanceFilter::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << StackInstanceFilterNameMapper::GetNameForStackInstanceFilterName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(StackInstanceFilterNameMapper::GetNameForStackInstanceFilterName(m_name)) << "&";
   }
   if(m_valuesHasBeenSet)
   {

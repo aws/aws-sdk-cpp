@@ -125,7 +125,7 @@ void OrderableClusterOption::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location <<  ".AvailabilityZone." << availabilityZonesIdx++;
+        availabilityZonesSs << location << ".AvailabilityZones.AvailabilityZone." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }

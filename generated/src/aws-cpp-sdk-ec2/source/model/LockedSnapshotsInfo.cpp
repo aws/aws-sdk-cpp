@@ -121,7 +121,7 @@ void LockedSnapshotsInfo::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_lockStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LockState=" << LockStateMapper::GetNameForLockState(m_lockState) << "&";
+      oStream << location << index << locationValue << ".LockState=" << StringUtils::URLEncode(LockStateMapper::GetNameForLockState(m_lockState)) << "&";
   }
 
   if(m_lockDurationHasBeenSet)
@@ -168,7 +168,7 @@ void LockedSnapshotsInfo::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lockStateHasBeenSet)
   {
-      oStream << location << ".LockState=" << LockStateMapper::GetNameForLockState(m_lockState) << "&";
+      oStream << location << ".LockState=" << StringUtils::URLEncode(LockStateMapper::GetNameForLockState(m_lockState)) << "&";
   }
   if(m_lockDurationHasBeenSet)
   {

@@ -72,7 +72,7 @@ void DocumentSuggesterOptions::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_fuzzyMatchingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FuzzyMatching=" << SuggesterFuzzyMatchingMapper::GetNameForSuggesterFuzzyMatching(m_fuzzyMatching) << "&";
+      oStream << location << index << locationValue << ".FuzzyMatching=" << StringUtils::URLEncode(SuggesterFuzzyMatchingMapper::GetNameForSuggesterFuzzyMatching(m_fuzzyMatching)) << "&";
   }
 
   if(m_sortExpressionHasBeenSet)
@@ -90,7 +90,7 @@ void DocumentSuggesterOptions::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_fuzzyMatchingHasBeenSet)
   {
-      oStream << location << ".FuzzyMatching=" << SuggesterFuzzyMatchingMapper::GetNameForSuggesterFuzzyMatching(m_fuzzyMatching) << "&";
+      oStream << location << ".FuzzyMatching=" << StringUtils::URLEncode(SuggesterFuzzyMatchingMapper::GetNameForSuggesterFuzzyMatching(m_fuzzyMatching)) << "&";
   }
   if(m_sortExpressionHasBeenSet)
   {

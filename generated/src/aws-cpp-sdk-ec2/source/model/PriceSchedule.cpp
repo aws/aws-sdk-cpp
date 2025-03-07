@@ -82,7 +82,7 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 
   if(m_priceHasBeenSet)
@@ -105,11 +105,11 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
   if(m_priceHasBeenSet)
   {
-        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
+      oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_termHasBeenSet)
   {

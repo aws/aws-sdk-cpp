@@ -61,7 +61,7 @@ void SpotCapacityRebalance::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_replacementStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReplacementStrategy=" << ReplacementStrategyMapper::GetNameForReplacementStrategy(m_replacementStrategy) << "&";
+      oStream << location << index << locationValue << ".ReplacementStrategy=" << StringUtils::URLEncode(ReplacementStrategyMapper::GetNameForReplacementStrategy(m_replacementStrategy)) << "&";
   }
 
   if(m_terminationDelayHasBeenSet)
@@ -75,7 +75,7 @@ void SpotCapacityRebalance::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_replacementStrategyHasBeenSet)
   {
-      oStream << location << ".ReplacementStrategy=" << ReplacementStrategyMapper::GetNameForReplacementStrategy(m_replacementStrategy) << "&";
+      oStream << location << ".ReplacementStrategy=" << StringUtils::URLEncode(ReplacementStrategyMapper::GetNameForReplacementStrategy(m_replacementStrategy)) << "&";
   }
   if(m_terminationDelayHasBeenSet)
   {

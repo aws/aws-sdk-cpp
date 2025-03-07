@@ -150,7 +150,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_changeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
+      oStream << location << index << locationValue << ".ChangeType=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_changeType)) << "&";
   }
 
 }
@@ -191,7 +191,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_changeTypeHasBeenSet)
   {
-      oStream << location << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
+      oStream << location << ".ChangeType=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_changeType)) << "&";
   }
 }
 

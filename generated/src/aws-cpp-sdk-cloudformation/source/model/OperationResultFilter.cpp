@@ -60,7 +60,7 @@ void OperationResultFilter::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << OperationResultFilterNameMapper::GetNameForOperationResultFilterName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(OperationResultFilterNameMapper::GetNameForOperationResultFilterName(m_name)) << "&";
   }
 
   if(m_valuesHasBeenSet)
@@ -74,7 +74,7 @@ void OperationResultFilter::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << OperationResultFilterNameMapper::GetNameForOperationResultFilterName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(OperationResultFilterNameMapper::GetNameForOperationResultFilterName(m_name)) << "&";
   }
   if(m_valuesHasBeenSet)
   {

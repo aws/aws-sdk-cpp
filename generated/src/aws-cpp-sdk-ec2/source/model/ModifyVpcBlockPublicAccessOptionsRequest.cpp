@@ -29,7 +29,7 @@ Aws::String ModifyVpcBlockPublicAccessOptionsRequest::SerializePayload() const
 
   if(m_internetGatewayBlockModeHasBeenSet)
   {
-    ss << "InternetGatewayBlockMode=" << InternetGatewayBlockModeMapper::GetNameForInternetGatewayBlockMode(m_internetGatewayBlockMode) << "&";
+    ss << "InternetGatewayBlockMode=" << StringUtils::URLEncode(InternetGatewayBlockModeMapper::GetNameForInternetGatewayBlockMode(m_internetGatewayBlockMode)) << "&";
   }
 
   ss << "Version=2016-11-15";

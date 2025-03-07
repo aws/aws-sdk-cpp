@@ -43,12 +43,12 @@ Aws::String ModifyFpgaImageAttributeRequest::SerializePayload() const
 
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << FpgaImageAttributeNameMapper::GetNameForFpgaImageAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(FpgaImageAttributeNameMapper::GetNameForFpgaImageAttributeName(m_attribute)) << "&";
   }
 
   if(m_operationTypeHasBeenSet)
   {
-    ss << "OperationType=" << OperationTypeMapper::GetNameForOperationType(m_operationType) << "&";
+    ss << "OperationType=" << StringUtils::URLEncode(OperationTypeMapper::GetNameForOperationType(m_operationType)) << "&";
   }
 
   if(m_userIdsHasBeenSet)

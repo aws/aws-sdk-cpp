@@ -109,7 +109,7 @@ void UpdateTarget::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_supportedOperations)
       {
         Aws::StringStream supportedOperationsSs;
-        supportedOperationsSs << location <<  ".SupportedOperation." << supportedOperationsIdx++;
+        supportedOperationsSs << location << ".SupportedOperations.SupportedOperation." << supportedOperationsIdx++;
         item.OutputToStream(oStream, supportedOperationsSs.str().c_str());
       }
   }

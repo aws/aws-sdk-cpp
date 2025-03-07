@@ -310,7 +310,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_stackStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StackStatus=" << StackStatusMapper::GetNameForStackStatus(m_stackStatus) << "&";
+      oStream << location << index << locationValue << ".StackStatus=" << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(m_stackStatus)) << "&";
   }
 
   if(m_stackStatusReasonHasBeenSet)
@@ -342,7 +342,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       unsigned capabilitiesIdx = 1;
       for(auto& item : m_capabilities)
       {
-        oStream << location << index << locationValue << ".Capabilities.member." << capabilitiesIdx++ << "=" << CapabilityMapper::GetNameForCapability(item) << "&";
+        oStream << location << index << locationValue << ".Capabilities.member." << capabilitiesIdx++ << "=" << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
       }
   }
 
@@ -402,12 +402,12 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_deletionModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeletionMode=" << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode) << "&";
+      oStream << location << index << locationValue << ".DeletionMode=" << StringUtils::URLEncode(DeletionModeMapper::GetNameForDeletionMode(m_deletionMode)) << "&";
   }
 
   if(m_detailedStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
+      oStream << location << index << locationValue << ".DetailedStatus=" << StringUtils::URLEncode(DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus)) << "&";
   }
 
 }
@@ -436,7 +436,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location <<  ".Parameters.member." << parametersIdx++;
+        parametersSs << location << ".Parameters.member." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
@@ -460,7 +460,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_stackStatusHasBeenSet)
   {
-      oStream << location << ".StackStatus=" << StackStatusMapper::GetNameForStackStatus(m_stackStatus) << "&";
+      oStream << location << ".StackStatus=" << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(m_stackStatus)) << "&";
   }
   if(m_stackStatusReasonHasBeenSet)
   {
@@ -487,7 +487,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
       unsigned capabilitiesIdx = 1;
       for(auto& item : m_capabilities)
       {
-        oStream << location << ".Capabilities.member." << capabilitiesIdx++ << "=" << CapabilityMapper::GetNameForCapability(item) << "&";
+        oStream << location << ".Capabilities.member." << capabilitiesIdx++ << "=" << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
       }
   }
   if(m_outputsHasBeenSet)
@@ -496,7 +496,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_outputs)
       {
         Aws::StringStream outputsSs;
-        outputsSs << location <<  ".Outputs.member." << outputsIdx++;
+        outputsSs << location << ".Outputs.member." << outputsIdx++;
         item.OutputToStream(oStream, outputsSs.str().c_str());
       }
   }
@@ -510,7 +510,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        tagsSs << location << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -538,11 +538,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_deletionModeHasBeenSet)
   {
-      oStream << location << ".DeletionMode=" << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode) << "&";
+      oStream << location << ".DeletionMode=" << StringUtils::URLEncode(DeletionModeMapper::GetNameForDeletionMode(m_deletionMode)) << "&";
   }
   if(m_detailedStatusHasBeenSet)
   {
-      oStream << location << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
+      oStream << location << ".DetailedStatus=" << StringUtils::URLEncode(DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus)) << "&";
   }
 }
 

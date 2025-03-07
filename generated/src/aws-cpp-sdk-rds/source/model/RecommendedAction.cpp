@@ -213,7 +213,7 @@ void RecommendedAction::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location <<  ".Parameters.member." << parametersIdx++;
+        parametersSs << location << ".Parameters.member." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
@@ -241,7 +241,7 @@ void RecommendedAction::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_contextAttributes)
       {
         Aws::StringStream contextAttributesSs;
-        contextAttributesSs << location <<  ".ContextAttributes.member." << contextAttributesIdx++;
+        contextAttributesSs << location << ".ContextAttributes.member." << contextAttributesIdx++;
         item.OutputToStream(oStream, contextAttributesSs.str().c_str());
       }
   }

@@ -48,7 +48,7 @@ Aws::String ModifyVolumeRequest::SerializePayload() const
 
   if(m_volumeTypeHasBeenSet)
   {
-    ss << "VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+    ss << "VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 
   if(m_iopsHasBeenSet)

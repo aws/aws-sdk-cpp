@@ -109,7 +109,7 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_actionTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
+      oStream << location << index << locationValue << ".ActionType=" << StringUtils::URLEncode(ActionTypeMapper::GetNameForActionType(m_actionType)) << "&";
   }
 
   if(m_actionDescriptionHasBeenSet)
@@ -119,12 +119,12 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_failureTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FailureType=" << FailureTypeMapper::GetNameForFailureType(m_failureType) << "&";
+      oStream << location << index << locationValue << ".FailureType=" << StringUtils::URLEncode(FailureTypeMapper::GetNameForFailureType(m_failureType)) << "&";
   }
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ActionHistoryStatusMapper::GetNameForActionHistoryStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ActionHistoryStatusMapper::GetNameForActionHistoryStatus(m_status)) << "&";
   }
 
   if(m_failureDescriptionHasBeenSet)
@@ -152,7 +152,7 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_actionTypeHasBeenSet)
   {
-      oStream << location << ".ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
+      oStream << location << ".ActionType=" << StringUtils::URLEncode(ActionTypeMapper::GetNameForActionType(m_actionType)) << "&";
   }
   if(m_actionDescriptionHasBeenSet)
   {
@@ -160,11 +160,11 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_failureTypeHasBeenSet)
   {
-      oStream << location << ".FailureType=" << FailureTypeMapper::GetNameForFailureType(m_failureType) << "&";
+      oStream << location << ".FailureType=" << StringUtils::URLEncode(FailureTypeMapper::GetNameForFailureType(m_failureType)) << "&";
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ActionHistoryStatusMapper::GetNameForActionHistoryStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ActionHistoryStatusMapper::GetNameForActionHistoryStatus(m_status)) << "&";
   }
   if(m_failureDescriptionHasBeenSet)
   {

@@ -85,7 +85,7 @@ void LaunchTemplateInstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& 
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpTokens=" << LaunchTemplateHttpTokensStateMapper::GetNameForLaunchTemplateHttpTokensState(m_httpTokens) << "&";
+      oStream << location << index << locationValue << ".HttpTokens=" << StringUtils::URLEncode(LaunchTemplateHttpTokensStateMapper::GetNameForLaunchTemplateHttpTokensState(m_httpTokens)) << "&";
   }
 
   if(m_httpPutResponseHopLimitHasBeenSet)
@@ -95,17 +95,17 @@ void LaunchTemplateInstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& 
 
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpEndpoint=" << LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << index << locationValue << ".HttpEndpoint=" << StringUtils::URLEncode(LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
 
   if(m_httpProtocolIpv6HasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6) << "&";
+      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << StringUtils::URLEncode(LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6)) << "&";
   }
 
   if(m_instanceMetadataTagsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceMetadataTags=" << LaunchTemplateInstanceMetadataTagsStateMapper::GetNameForLaunchTemplateInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+      oStream << location << index << locationValue << ".InstanceMetadataTags=" << StringUtils::URLEncode(LaunchTemplateInstanceMetadataTagsStateMapper::GetNameForLaunchTemplateInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
 
 }
@@ -114,7 +114,7 @@ void LaunchTemplateInstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& 
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << ".HttpTokens=" << LaunchTemplateHttpTokensStateMapper::GetNameForLaunchTemplateHttpTokensState(m_httpTokens) << "&";
+      oStream << location << ".HttpTokens=" << StringUtils::URLEncode(LaunchTemplateHttpTokensStateMapper::GetNameForLaunchTemplateHttpTokensState(m_httpTokens)) << "&";
   }
   if(m_httpPutResponseHopLimitHasBeenSet)
   {
@@ -122,15 +122,15 @@ void LaunchTemplateInstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& 
   }
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << ".HttpEndpoint=" << LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << ".HttpEndpoint=" << StringUtils::URLEncode(LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
   if(m_httpProtocolIpv6HasBeenSet)
   {
-      oStream << location << ".HttpProtocolIpv6=" << LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6) << "&";
+      oStream << location << ".HttpProtocolIpv6=" << StringUtils::URLEncode(LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6)) << "&";
   }
   if(m_instanceMetadataTagsHasBeenSet)
   {
-      oStream << location << ".InstanceMetadataTags=" << LaunchTemplateInstanceMetadataTagsStateMapper::GetNameForLaunchTemplateInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+      oStream << location << ".InstanceMetadataTags=" << StringUtils::URLEncode(LaunchTemplateInstanceMetadataTagsStateMapper::GetNameForLaunchTemplateInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
 }
 

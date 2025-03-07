@@ -77,7 +77,7 @@ void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(SummaryStatusMapper::GetNameForSummaryStatus(m_status)) << "&";
   }
 
 }
@@ -90,13 +90,13 @@ void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_details)
       {
         Aws::StringStream detailsSs;
-        detailsSs << location <<  ".Details." << detailsIdx++;
+        detailsSs << location << ".Details." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(SummaryStatusMapper::GetNameForSummaryStatus(m_status)) << "&";
   }
 }
 

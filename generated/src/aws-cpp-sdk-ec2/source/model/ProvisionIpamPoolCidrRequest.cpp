@@ -62,7 +62,7 @@ Aws::String ProvisionIpamPoolCidrRequest::SerializePayload() const
 
   if(m_verificationMethodHasBeenSet)
   {
-    ss << "VerificationMethod=" << VerificationMethodMapper::GetNameForVerificationMethod(m_verificationMethod) << "&";
+    ss << "VerificationMethod=" << StringUtils::URLEncode(VerificationMethodMapper::GetNameForVerificationMethod(m_verificationMethod)) << "&";
   }
 
   if(m_ipamExternalResourceVerificationTokenIdHasBeenSet)

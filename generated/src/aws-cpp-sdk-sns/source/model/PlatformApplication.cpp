@@ -98,13 +98,12 @@ void PlatformApplication::OutputToStream(Aws::OStream& oStream, const char* loca
       unsigned attributesIdx = 1;
       for(auto& item : m_attributes)
       {
-        oStream << location << ".Attributes.entry."  << attributesIdx << ".key="
+        oStream << location << ".Attributes.entry." << attributesIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".Attributes.entry." << attributesIdx << ".value="
+        oStream << location << ".Attributes.entry." << attributesIdx << ".value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         attributesIdx++;
       }
-
   }
 }
 

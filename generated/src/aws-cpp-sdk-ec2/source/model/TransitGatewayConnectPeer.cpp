@@ -104,7 +104,7 @@ void TransitGatewayConnectPeer::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayConnectPeerStateMapper::GetNameForTransitGatewayConnectPeerState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayConnectPeerStateMapper::GetNameForTransitGatewayConnectPeerState(m_state)) << "&";
   }
 
   if(m_creationTimeHasBeenSet)
@@ -144,7 +144,7 @@ void TransitGatewayConnectPeer::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayConnectPeerStateMapper::GetNameForTransitGatewayConnectPeerState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayConnectPeerStateMapper::GetNameForTransitGatewayConnectPeerState(m_state)) << "&";
   }
   if(m_creationTimeHasBeenSet)
   {
@@ -162,7 +162,7 @@ void TransitGatewayConnectPeer::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

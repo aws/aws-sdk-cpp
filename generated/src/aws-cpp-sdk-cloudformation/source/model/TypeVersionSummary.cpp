@@ -103,7 +103,7 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
   if(m_typeNameHasBeenSet)
@@ -147,7 +147,7 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
   if(m_typeNameHasBeenSet)
   {

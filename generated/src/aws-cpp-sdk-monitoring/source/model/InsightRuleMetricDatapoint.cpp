@@ -156,31 +156,31 @@ void InsightRuleMetricDatapoint::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_uniqueContributorsHasBeenSet)
   {
-        oStream << location << ".UniqueContributors=" << StringUtils::URLEncode(m_uniqueContributors) << "&";
+      oStream << location << ".UniqueContributors=" << StringUtils::URLEncode(m_uniqueContributors) << "&";
   }
   if(m_maxContributorValueHasBeenSet)
   {
-        oStream << location << ".MaxContributorValue=" << StringUtils::URLEncode(m_maxContributorValue) << "&";
+      oStream << location << ".MaxContributorValue=" << StringUtils::URLEncode(m_maxContributorValue) << "&";
   }
   if(m_sampleCountHasBeenSet)
   {
-        oStream << location << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
+      oStream << location << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
   if(m_averageHasBeenSet)
   {
-        oStream << location << ".Average=" << StringUtils::URLEncode(m_average) << "&";
+      oStream << location << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
   if(m_sumHasBeenSet)
   {
-        oStream << location << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
+      oStream << location << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
   if(m_minimumHasBeenSet)
   {
-        oStream << location << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
+      oStream << location << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
   if(m_maximumHasBeenSet)
   {
-        oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
+      oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
 }
 

@@ -141,7 +141,7 @@ void TransitGatewayVpcAttachment::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state)) << "&";
   }
 
   if(m_subnetIdsHasBeenSet)
@@ -198,7 +198,7 @@ void TransitGatewayVpcAttachment::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state)) << "&";
   }
   if(m_subnetIdsHasBeenSet)
   {
@@ -224,7 +224,7 @@ void TransitGatewayVpcAttachment::OutputToStream(Aws::OStream& oStream, const ch
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

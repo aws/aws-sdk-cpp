@@ -73,12 +73,12 @@ void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_sourceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Source=" << VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source) << "&";
+      oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source)) << "&";
   }
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
   }
 
 }
@@ -91,11 +91,11 @@ void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_sourceHasBeenSet)
   {
-      oStream << location << ".Source=" << VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source) << "&";
+      oStream << location << ".Source=" << StringUtils::URLEncode(VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source)) << "&";
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
   }
 }
 

@@ -134,7 +134,7 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << index << locationValue << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -179,7 +179,7 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
   if(m_kmsKeyIdHasBeenSet)
   {

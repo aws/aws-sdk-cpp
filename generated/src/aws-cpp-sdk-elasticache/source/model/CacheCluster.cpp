@@ -492,17 +492,17 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_networkTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
 
   if(m_ipDiscoveryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+      oStream << location << index << locationValue << ".IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
   if(m_transitEncryptionModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+      oStream << location << index << locationValue << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
 
 }
@@ -577,7 +577,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_cacheSecurityGroups)
       {
         Aws::StringStream cacheSecurityGroupsSs;
-        cacheSecurityGroupsSs << location <<  ".CacheSecurityGroup." << cacheSecurityGroupsIdx++;
+        cacheSecurityGroupsSs << location << ".CacheSecurityGroups.CacheSecurityGroup." << cacheSecurityGroupsIdx++;
         item.OutputToStream(oStream, cacheSecurityGroupsSs.str().c_str());
       }
   }
@@ -597,7 +597,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_cacheNodes)
       {
         Aws::StringStream cacheNodesSs;
-        cacheNodesSs << location <<  ".CacheNode." << cacheNodesIdx++;
+        cacheNodesSs << location << ".CacheNodes.CacheNode." << cacheNodesIdx++;
         item.OutputToStream(oStream, cacheNodesSs.str().c_str());
       }
   }
@@ -611,7 +611,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".SecurityGroups.member." << securityGroupsIdx++;
+        securityGroupsSs << location << ".SecurityGroups.member." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -657,21 +657,21 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_logDeliveryConfigurations)
       {
         Aws::StringStream logDeliveryConfigurationsSs;
-        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        logDeliveryConfigurationsSs << location << ".LogDeliveryConfigurations.LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
   }
   if(m_networkTypeHasBeenSet)
   {
-      oStream << location << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+      oStream << location << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
   if(m_ipDiscoveryHasBeenSet)
   {
-      oStream << location << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+      oStream << location << ".IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
   if(m_transitEncryptionModeHasBeenSet)
   {
-      oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+      oStream << location << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
 }
 

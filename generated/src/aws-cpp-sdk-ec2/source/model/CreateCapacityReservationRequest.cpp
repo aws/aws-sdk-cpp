@@ -59,7 +59,7 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
 
   if(m_instancePlatformHasBeenSet)
   {
-    ss << "InstancePlatform=" << CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform) << "&";
+    ss << "InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -74,7 +74,7 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
 
   if(m_tenancyHasBeenSet)
   {
-    ss << "Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
+    ss << "Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
   }
 
   if(m_instanceCountHasBeenSet)
@@ -99,12 +99,12 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
 
   if(m_endDateTypeHasBeenSet)
   {
-    ss << "EndDateType=" << EndDateTypeMapper::GetNameForEndDateType(m_endDateType) << "&";
+    ss << "EndDateType=" << StringUtils::URLEncode(EndDateTypeMapper::GetNameForEndDateType(m_endDateType)) << "&";
   }
 
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-    ss << "InstanceMatchCriteria=" << InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+    ss << "InstanceMatchCriteria=" << StringUtils::URLEncode(InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)
@@ -144,7 +144,7 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
 
   if(m_deliveryPreferenceHasBeenSet)
   {
-    ss << "DeliveryPreference=" << CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference) << "&";
+    ss << "DeliveryPreference=" << StringUtils::URLEncode(CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference)) << "&";
   }
 
   ss << "Version=2016-11-15";

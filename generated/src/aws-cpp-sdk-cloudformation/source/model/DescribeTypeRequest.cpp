@@ -27,7 +27,7 @@ Aws::String DescribeTypeRequest::SerializePayload() const
   ss << "Action=DescribeType&";
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
   if(m_typeNameHasBeenSet)

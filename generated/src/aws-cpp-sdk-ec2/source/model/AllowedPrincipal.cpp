@@ -87,7 +87,7 @@ void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_principalTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PrincipalType=" << PrincipalTypeMapper::GetNameForPrincipalType(m_principalType) << "&";
+      oStream << location << index << locationValue << ".PrincipalType=" << StringUtils::URLEncode(PrincipalTypeMapper::GetNameForPrincipalType(m_principalType)) << "&";
   }
 
   if(m_principalHasBeenSet)
@@ -122,7 +122,7 @@ void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_principalTypeHasBeenSet)
   {
-      oStream << location << ".PrincipalType=" << PrincipalTypeMapper::GetNameForPrincipalType(m_principalType) << "&";
+      oStream << location << ".PrincipalType=" << StringUtils::URLEncode(PrincipalTypeMapper::GetNameForPrincipalType(m_principalType)) << "&";
   }
   if(m_principalHasBeenSet)
   {
@@ -138,7 +138,7 @@ void AllowedPrincipal::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

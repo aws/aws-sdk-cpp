@@ -93,7 +93,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_supportedPlatforms)
       {
         Aws::StringStream supportedPlatformsSs;
-        supportedPlatformsSs << location <<  ".SupportedPlatform." << supportedPlatformsIdx++;
+        supportedPlatformsSs << location << ".SupportedPlatforms.SupportedPlatform." << supportedPlatformsIdx++;
         item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
       }
   }

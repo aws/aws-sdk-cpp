@@ -103,7 +103,7 @@ void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state)) << "&";
   }
 
 }
@@ -130,7 +130,7 @@ void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state)) << "&";
   }
 }
 

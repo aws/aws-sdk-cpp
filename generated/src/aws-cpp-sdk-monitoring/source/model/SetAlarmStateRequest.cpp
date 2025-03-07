@@ -30,7 +30,7 @@ Aws::String SetAlarmStateRequest::SerializePayload() const
 
   if(m_stateValueHasBeenSet)
   {
-    ss << "StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+    ss << "StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
 
   if(m_stateReasonHasBeenSet)

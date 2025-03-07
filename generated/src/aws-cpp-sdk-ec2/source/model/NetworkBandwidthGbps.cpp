@@ -75,11 +75,11 @@ void NetworkBandwidthGbps::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_minHasBeenSet)
   {
-        oStream << location << ".Min=" << StringUtils::URLEncode(m_min) << "&";
+      oStream << location << ".Min=" << StringUtils::URLEncode(m_min) << "&";
   }
   if(m_maxHasBeenSet)
   {
-        oStream << location << ".Max=" << StringUtils::URLEncode(m_max) << "&";
+      oStream << location << ".Max=" << StringUtils::URLEncode(m_max) << "&";
   }
 }
 

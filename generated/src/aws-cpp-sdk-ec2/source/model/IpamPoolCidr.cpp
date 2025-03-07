@@ -87,7 +87,7 @@ void IpamPoolCidr::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IpamPoolCidrStateMapper::GetNameForIpamPoolCidrState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamPoolCidrStateMapper::GetNameForIpamPoolCidrState(m_state)) << "&";
   }
 
   if(m_failureReasonHasBeenSet)
@@ -117,7 +117,7 @@ void IpamPoolCidr::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IpamPoolCidrStateMapper::GetNameForIpamPoolCidrState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IpamPoolCidrStateMapper::GetNameForIpamPoolCidrState(m_state)) << "&";
   }
   if(m_failureReasonHasBeenSet)
   {

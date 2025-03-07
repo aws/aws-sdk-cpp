@@ -25,7 +25,7 @@ Aws::String DescribeVpcAttributeRequest::SerializePayload() const
   ss << "Action=DescribeVpcAttribute&";
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << VpcAttributeNameMapper::GetNameForVpcAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(VpcAttributeNameMapper::GetNameForVpcAttributeName(m_attribute)) << "&";
   }
 
   if(m_vpcIdHasBeenSet)

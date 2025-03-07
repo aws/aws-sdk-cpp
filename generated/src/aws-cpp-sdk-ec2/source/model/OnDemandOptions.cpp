@@ -91,7 +91,7 @@ void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_allocationStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllocationStrategy=" << FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy) << "&";
+      oStream << location << index << locationValue << ".AllocationStrategy=" << StringUtils::URLEncode(FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy)) << "&";
   }
 
   if(m_capacityReservationOptionsHasBeenSet)
@@ -127,7 +127,7 @@ void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_allocationStrategyHasBeenSet)
   {
-      oStream << location << ".AllocationStrategy=" << FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy) << "&";
+      oStream << location << ".AllocationStrategy=" << StringUtils::URLEncode(FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy)) << "&";
   }
   if(m_capacityReservationOptionsHasBeenSet)
   {

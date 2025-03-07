@@ -52,7 +52,7 @@ Aws::String ImportInstanceRequest::SerializePayload() const
 
   if(m_platformHasBeenSet)
   {
-    ss << "Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+    ss << "Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
 
   ss << "Version=2016-11-15";

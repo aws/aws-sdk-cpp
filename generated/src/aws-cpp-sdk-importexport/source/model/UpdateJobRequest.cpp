@@ -37,7 +37,7 @@ Aws::String UpdateJobRequest::SerializePayload() const
 
   if(m_jobTypeHasBeenSet)
   {
-    ss << "JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
+    ss << "JobType=" << StringUtils::URLEncode(JobTypeMapper::GetNameForJobType(m_jobType)) << "&";
   }
 
   if(m_validateOnlyHasBeenSet)

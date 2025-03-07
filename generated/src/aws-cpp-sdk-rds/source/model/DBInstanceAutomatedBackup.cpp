@@ -550,7 +550,7 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_dBInstanceAutomatedBackupsReplications)
       {
         Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
-        dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        dBInstanceAutomatedBackupsReplicationsSs << location << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
         item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
       }
   }

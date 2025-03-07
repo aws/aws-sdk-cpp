@@ -36,7 +36,7 @@ Aws::String DescribeInstanceTypesRequest::SerializePayload() const
     for(auto& item : m_instanceTypes)
     {
       ss << "InstanceType." << instanceTypesCount << "="
-          << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(item).c_str()) << "&";
+          << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(item)) << "&";
       instanceTypesCount++;
     }
   }

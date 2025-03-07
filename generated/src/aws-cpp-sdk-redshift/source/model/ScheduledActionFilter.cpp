@@ -66,7 +66,7 @@ void ScheduledActionFilter::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << ScheduledActionFilterNameMapper::GetNameForScheduledActionFilterName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(ScheduledActionFilterNameMapper::GetNameForScheduledActionFilterName(m_name)) << "&";
   }
 
   if(m_valuesHasBeenSet)
@@ -84,14 +84,14 @@ void ScheduledActionFilter::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << ScheduledActionFilterNameMapper::GetNameForScheduledActionFilterName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(ScheduledActionFilterNameMapper::GetNameForScheduledActionFilterName(m_name)) << "&";
   }
   if(m_valuesHasBeenSet)
   {
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        oStream << location << ".item." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Values.item." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

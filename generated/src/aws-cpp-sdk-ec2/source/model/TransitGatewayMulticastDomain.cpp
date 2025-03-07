@@ -135,7 +135,7 @@ void TransitGatewayMulticastDomain::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayMulticastDomainStateMapper::GetNameForTransitGatewayMulticastDomainState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayMulticastDomainStateMapper::GetNameForTransitGatewayMulticastDomainState(m_state)) << "&";
   }
 
   if(m_creationTimeHasBeenSet)
@@ -182,7 +182,7 @@ void TransitGatewayMulticastDomain::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayMulticastDomainStateMapper::GetNameForTransitGatewayMulticastDomainState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayMulticastDomainStateMapper::GetNameForTransitGatewayMulticastDomainState(m_state)) << "&";
   }
   if(m_creationTimeHasBeenSet)
   {
@@ -194,7 +194,7 @@ void TransitGatewayMulticastDomain::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

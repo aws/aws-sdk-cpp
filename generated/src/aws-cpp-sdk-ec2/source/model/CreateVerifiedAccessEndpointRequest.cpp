@@ -46,12 +46,12 @@ Aws::String CreateVerifiedAccessEndpointRequest::SerializePayload() const
 
   if(m_endpointTypeHasBeenSet)
   {
-    ss << "EndpointType=" << VerifiedAccessEndpointTypeMapper::GetNameForVerifiedAccessEndpointType(m_endpointType) << "&";
+    ss << "EndpointType=" << StringUtils::URLEncode(VerifiedAccessEndpointTypeMapper::GetNameForVerifiedAccessEndpointType(m_endpointType)) << "&";
   }
 
   if(m_attachmentTypeHasBeenSet)
   {
-    ss << "AttachmentType=" << VerifiedAccessEndpointAttachmentTypeMapper::GetNameForVerifiedAccessEndpointAttachmentType(m_attachmentType) << "&";
+    ss << "AttachmentType=" << StringUtils::URLEncode(VerifiedAccessEndpointAttachmentTypeMapper::GetNameForVerifiedAccessEndpointAttachmentType(m_attachmentType)) << "&";
   }
 
   if(m_domainCertificateArnHasBeenSet)

@@ -66,7 +66,7 @@ void AvailabilityZoneImpairmentPolicy::OutputToStream(Aws::OStream& oStream, con
 
   if(m_impairedZoneHealthCheckBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ImpairedZoneHealthCheckBehavior=" << ImpairedZoneHealthCheckBehaviorMapper::GetNameForImpairedZoneHealthCheckBehavior(m_impairedZoneHealthCheckBehavior) << "&";
+      oStream << location << index << locationValue << ".ImpairedZoneHealthCheckBehavior=" << StringUtils::URLEncode(ImpairedZoneHealthCheckBehaviorMapper::GetNameForImpairedZoneHealthCheckBehavior(m_impairedZoneHealthCheckBehavior)) << "&";
   }
 
 }
@@ -79,7 +79,7 @@ void AvailabilityZoneImpairmentPolicy::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_impairedZoneHealthCheckBehaviorHasBeenSet)
   {
-      oStream << location << ".ImpairedZoneHealthCheckBehavior=" << ImpairedZoneHealthCheckBehaviorMapper::GetNameForImpairedZoneHealthCheckBehavior(m_impairedZoneHealthCheckBehavior) << "&";
+      oStream << location << ".ImpairedZoneHealthCheckBehavior=" << StringUtils::URLEncode(ImpairedZoneHealthCheckBehaviorMapper::GetNameForImpairedZoneHealthCheckBehavior(m_impairedZoneHealthCheckBehavior)) << "&";
   }
 }
 

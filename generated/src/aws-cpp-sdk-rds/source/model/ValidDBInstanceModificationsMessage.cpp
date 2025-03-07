@@ -114,7 +114,7 @@ void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, 
       for(auto& item : m_storage)
       {
         Aws::StringStream storageSs;
-        storageSs << location <<  ".ValidStorageOptions." << storageIdx++;
+        storageSs << location << ".Storage.ValidStorageOptions." << storageIdx++;
         item.OutputToStream(oStream, storageSs.str().c_str());
       }
   }
@@ -124,7 +124,7 @@ void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, 
       for(auto& item : m_validProcessorFeatures)
       {
         Aws::StringStream validProcessorFeaturesSs;
-        validProcessorFeaturesSs << location <<  ".AvailableProcessorFeature." << validProcessorFeaturesIdx++;
+        validProcessorFeaturesSs << location << ".ValidProcessorFeatures.AvailableProcessorFeature." << validProcessorFeaturesIdx++;
         item.OutputToStream(oStream, validProcessorFeaturesSs.str().c_str());
       }
   }

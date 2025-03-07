@@ -79,7 +79,7 @@ void DataStorage::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_unitHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Unit=" << DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit) << "&";
+      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit)) << "&";
   }
 
 }
@@ -96,7 +96,7 @@ void DataStorage::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_unitHasBeenSet)
   {
-      oStream << location << ".Unit=" << DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit) << "&";
+      oStream << location << ".Unit=" << StringUtils::URLEncode(DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit)) << "&";
   }
 }
 

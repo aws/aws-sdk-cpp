@@ -98,7 +98,7 @@ Aws::String UpdateStackRequest::SerializePayload() const
       for(auto& item : m_capabilities)
       {
         ss << "Capabilities.member." << capabilitiesCount << "="
-            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
+            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
         capabilitiesCount++;
       }
     }

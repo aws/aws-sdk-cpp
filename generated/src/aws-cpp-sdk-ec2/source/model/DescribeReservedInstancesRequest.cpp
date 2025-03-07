@@ -28,7 +28,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
   ss << "Action=DescribeReservedInstances&";
   if(m_offeringClassHasBeenSet)
   {
-    ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+    ss << "OfferingClass=" << StringUtils::URLEncode(OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass)) << "&";
   }
 
   if(m_reservedInstancesIdsHasBeenSet)
@@ -59,7 +59,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
 
   if(m_offeringTypeHasBeenSet)
   {
-    ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
+    ss << "OfferingType=" << StringUtils::URLEncode(OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType)) << "&";
   }
 
   ss << "Version=2016-11-15";

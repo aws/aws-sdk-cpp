@@ -30,7 +30,7 @@ Aws::String ModifyInstanceMaintenanceOptionsRequest::SerializePayload() const
 
   if(m_autoRecoveryHasBeenSet)
   {
-    ss << "AutoRecovery=" << InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery) << "&";
+    ss << "AutoRecovery=" << StringUtils::URLEncode(InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

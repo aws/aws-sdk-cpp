@@ -420,7 +420,7 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_additionalDetails)
       {
         Aws::StringStream additionalDetailsSs;
-        additionalDetailsSs << location <<  ".AdditionalDetailSet." << additionalDetailsIdx++;
+        additionalDetailsSs << location << ".AdditionalDetailSet." << additionalDetailsIdx++;
         item.OutputToStream(oStream, additionalDetailsSs.str().c_str());
       }
   }
@@ -442,7 +442,7 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_explanations)
       {
         Aws::StringStream explanationsSs;
-        explanationsSs << location <<  ".ExplanationSet." << explanationsIdx++;
+        explanationsSs << location << ".ExplanationSet." << explanationsIdx++;
         item.OutputToStream(oStream, explanationsSs.str().c_str());
       }
   }

@@ -46,7 +46,7 @@ Aws::String ModifyLaunchTemplateRequest::SerializePayload() const
 
   if(m_defaultVersionHasBeenSet)
   {
-    ss << "SetDefaultVersion=" << StringUtils::URLEncode(m_defaultVersion.c_str()) << "&";
+    ss << "DefaultVersion=" << StringUtils::URLEncode(m_defaultVersion.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

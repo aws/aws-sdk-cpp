@@ -34,7 +34,7 @@ Aws::String ListEntitiesForPolicyRequest::SerializePayload() const
 
   if(m_entityFilterHasBeenSet)
   {
-    ss << "EntityFilter=" << EntityTypeMapper::GetNameForEntityType(m_entityFilter) << "&";
+    ss << "EntityFilter=" << StringUtils::URLEncode(EntityTypeMapper::GetNameForEntityType(m_entityFilter)) << "&";
   }
 
   if(m_pathPrefixHasBeenSet)
@@ -44,7 +44,7 @@ Aws::String ListEntitiesForPolicyRequest::SerializePayload() const
 
   if(m_policyUsageFilterHasBeenSet)
   {
-    ss << "PolicyUsageFilter=" << PolicyUsageTypeMapper::GetNameForPolicyUsageType(m_policyUsageFilter) << "&";
+    ss << "PolicyUsageFilter=" << StringUtils::URLEncode(PolicyUsageTypeMapper::GetNameForPolicyUsageType(m_policyUsageFilter)) << "&";
   }
 
   if(m_markerHasBeenSet)

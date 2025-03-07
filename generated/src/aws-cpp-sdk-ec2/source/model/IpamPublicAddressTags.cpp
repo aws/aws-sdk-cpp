@@ -77,7 +77,7 @@ void IpamPublicAddressTags::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_eipTags)
       {
         Aws::StringStream eipTagsSs;
-        eipTagsSs << location <<  ".EipTagSet." << eipTagsIdx++;
+        eipTagsSs << location << ".EipTagSet." << eipTagsIdx++;
         item.OutputToStream(oStream, eipTagsSs.str().c_str());
       }
   }

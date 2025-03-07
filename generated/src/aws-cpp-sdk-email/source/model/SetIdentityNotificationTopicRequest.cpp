@@ -29,7 +29,7 @@ Aws::String SetIdentityNotificationTopicRequest::SerializePayload() const
 
   if(m_notificationTypeHasBeenSet)
   {
-    ss << "NotificationType=" << NotificationTypeMapper::GetNameForNotificationType(m_notificationType) << "&";
+    ss << "NotificationType=" << StringUtils::URLEncode(NotificationTypeMapper::GetNameForNotificationType(m_notificationType)) << "&";
   }
 
   if(m_snsTopicHasBeenSet)

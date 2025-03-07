@@ -256,7 +256,7 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
 
   if(m_databaseInsightsModeHasBeenSet)
   {
-    ss << "DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+    ss << "DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
 
   if(m_enablePerformanceInsightsHasBeenSet)

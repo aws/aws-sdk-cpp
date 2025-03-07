@@ -98,7 +98,7 @@ void IamInstanceProfileAssociation::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IamInstanceProfileAssociationStateMapper::GetNameForIamInstanceProfileAssociationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IamInstanceProfileAssociationStateMapper::GetNameForIamInstanceProfileAssociationState(m_state)) << "&";
   }
 
   if(m_timestampHasBeenSet)
@@ -126,7 +126,7 @@ void IamInstanceProfileAssociation::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IamInstanceProfileAssociationStateMapper::GetNameForIamInstanceProfileAssociationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IamInstanceProfileAssociationStateMapper::GetNameForIamInstanceProfileAssociationState(m_state)) << "&";
   }
   if(m_timestampHasBeenSet)
   {

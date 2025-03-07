@@ -60,7 +60,7 @@ void NetworkInterfacePermissionState::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << NetworkInterfacePermissionStateCodeMapper::GetNameForNetworkInterfacePermissionStateCode(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(NetworkInterfacePermissionStateCodeMapper::GetNameForNetworkInterfacePermissionStateCode(m_state)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -74,7 +74,7 @@ void NetworkInterfacePermissionState::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << NetworkInterfacePermissionStateCodeMapper::GetNameForNetworkInterfacePermissionStateCode(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(NetworkInterfacePermissionStateCodeMapper::GetNameForNetworkInterfacePermissionStateCode(m_state)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

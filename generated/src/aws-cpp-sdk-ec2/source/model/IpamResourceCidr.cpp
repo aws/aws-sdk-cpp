@@ -208,7 +208,7 @@ void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType)) << "&";
   }
 
   if(m_resourceTagsHasBeenSet)
@@ -229,17 +229,17 @@ void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_complianceStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ComplianceStatus=" << IpamComplianceStatusMapper::GetNameForIpamComplianceStatus(m_complianceStatus) << "&";
+      oStream << location << index << locationValue << ".ComplianceStatus=" << StringUtils::URLEncode(IpamComplianceStatusMapper::GetNameForIpamComplianceStatus(m_complianceStatus)) << "&";
   }
 
   if(m_managementStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ManagementState=" << IpamManagementStateMapper::GetNameForIpamManagementState(m_managementState) << "&";
+      oStream << location << index << locationValue << ".ManagementState=" << StringUtils::URLEncode(IpamManagementStateMapper::GetNameForIpamManagementState(m_managementState)) << "&";
   }
 
   if(m_overlapStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OverlapStatus=" << IpamOverlapStatusMapper::GetNameForIpamOverlapStatus(m_overlapStatus) << "&";
+      oStream << location << index << locationValue << ".OverlapStatus=" << StringUtils::URLEncode(IpamOverlapStatusMapper::GetNameForIpamOverlapStatus(m_overlapStatus)) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -290,7 +290,7 @@ void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType)) << "&";
   }
   if(m_resourceTagsHasBeenSet)
   {
@@ -298,25 +298,25 @@ void IpamResourceCidr::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_resourceTags)
       {
         Aws::StringStream resourceTagsSs;
-        resourceTagsSs << location <<  ".ResourceTagSet." << resourceTagsIdx++;
+        resourceTagsSs << location << ".ResourceTagSet." << resourceTagsIdx++;
         item.OutputToStream(oStream, resourceTagsSs.str().c_str());
       }
   }
   if(m_ipUsageHasBeenSet)
   {
-        oStream << location << ".IpUsage=" << StringUtils::URLEncode(m_ipUsage) << "&";
+      oStream << location << ".IpUsage=" << StringUtils::URLEncode(m_ipUsage) << "&";
   }
   if(m_complianceStatusHasBeenSet)
   {
-      oStream << location << ".ComplianceStatus=" << IpamComplianceStatusMapper::GetNameForIpamComplianceStatus(m_complianceStatus) << "&";
+      oStream << location << ".ComplianceStatus=" << StringUtils::URLEncode(IpamComplianceStatusMapper::GetNameForIpamComplianceStatus(m_complianceStatus)) << "&";
   }
   if(m_managementStateHasBeenSet)
   {
-      oStream << location << ".ManagementState=" << IpamManagementStateMapper::GetNameForIpamManagementState(m_managementState) << "&";
+      oStream << location << ".ManagementState=" << StringUtils::URLEncode(IpamManagementStateMapper::GetNameForIpamManagementState(m_managementState)) << "&";
   }
   if(m_overlapStatusHasBeenSet)
   {
-      oStream << location << ".OverlapStatus=" << IpamOverlapStatusMapper::GetNameForIpamOverlapStatus(m_overlapStatus) << "&";
+      oStream << location << ".OverlapStatus=" << StringUtils::URLEncode(IpamOverlapStatusMapper::GetNameForIpamOverlapStatus(m_overlapStatus)) << "&";
   }
   if(m_vpcIdHasBeenSet)
   {

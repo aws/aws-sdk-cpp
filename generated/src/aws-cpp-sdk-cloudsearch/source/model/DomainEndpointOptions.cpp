@@ -66,7 +66,7 @@ void DomainEndpointOptions::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_tLSSecurityPolicyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TLSSecurityPolicy=" << TLSSecurityPolicyMapper::GetNameForTLSSecurityPolicy(m_tLSSecurityPolicy) << "&";
+      oStream << location << index << locationValue << ".TLSSecurityPolicy=" << StringUtils::URLEncode(TLSSecurityPolicyMapper::GetNameForTLSSecurityPolicy(m_tLSSecurityPolicy)) << "&";
   }
 
 }
@@ -79,7 +79,7 @@ void DomainEndpointOptions::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_tLSSecurityPolicyHasBeenSet)
   {
-      oStream << location << ".TLSSecurityPolicy=" << TLSSecurityPolicyMapper::GetNameForTLSSecurityPolicy(m_tLSSecurityPolicy) << "&";
+      oStream << location << ".TLSSecurityPolicy=" << StringUtils::URLEncode(TLSSecurityPolicyMapper::GetNameForTLSSecurityPolicy(m_tLSSecurityPolicy)) << "&";
   }
 }
 

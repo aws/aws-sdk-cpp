@@ -23,7 +23,7 @@ Aws::String GetGeneratedTemplateRequest::SerializePayload() const
   ss << "Action=GetGeneratedTemplate&";
   if(m_formatHasBeenSet)
   {
-    ss << "Format=" << TemplateFormatMapper::GetNameForTemplateFormat(m_format) << "&";
+    ss << "Format=" << StringUtils::URLEncode(TemplateFormatMapper::GetNameForTemplateFormat(m_format)) << "&";
   }
 
   if(m_generatedTemplateNameHasBeenSet)

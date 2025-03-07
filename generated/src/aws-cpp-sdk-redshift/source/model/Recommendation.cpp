@@ -182,7 +182,7 @@ void Recommendation::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_impactRankingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ImpactRanking=" << ImpactRankingTypeMapper::GetNameForImpactRankingType(m_impactRanking) << "&";
+      oStream << location << index << locationValue << ".ImpactRanking=" << StringUtils::URLEncode(ImpactRankingTypeMapper::GetNameForImpactRankingType(m_impactRanking)) << "&";
   }
 
   if(m_recommendationTextHasBeenSet)
@@ -250,7 +250,7 @@ void Recommendation::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_impactRankingHasBeenSet)
   {
-      oStream << location << ".ImpactRanking=" << ImpactRankingTypeMapper::GetNameForImpactRankingType(m_impactRanking) << "&";
+      oStream << location << ".ImpactRanking=" << StringUtils::URLEncode(ImpactRankingTypeMapper::GetNameForImpactRankingType(m_impactRanking)) << "&";
   }
   if(m_recommendationTextHasBeenSet)
   {
@@ -262,7 +262,7 @@ void Recommendation::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_recommendedActions)
       {
         Aws::StringStream recommendedActionsSs;
-        recommendedActionsSs << location <<  ".RecommendedAction." << recommendedActionsIdx++;
+        recommendedActionsSs << location << ".RecommendedActions.RecommendedAction." << recommendedActionsIdx++;
         item.OutputToStream(oStream, recommendedActionsSs.str().c_str());
       }
   }
@@ -272,7 +272,7 @@ void Recommendation::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_referenceLinks)
       {
         Aws::StringStream referenceLinksSs;
-        referenceLinksSs << location <<  ".ReferenceLink." << referenceLinksIdx++;
+        referenceLinksSs << location << ".ReferenceLinks.ReferenceLink." << referenceLinksIdx++;
         item.OutputToStream(oStream, referenceLinksSs.str().c_str());
       }
   }

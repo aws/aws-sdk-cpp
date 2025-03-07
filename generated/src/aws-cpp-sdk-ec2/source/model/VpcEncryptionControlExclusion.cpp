@@ -60,7 +60,7 @@ void VpcEncryptionControlExclusion::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state)) << "&";
   }
 
   if(m_stateMessageHasBeenSet)
@@ -74,7 +74,7 @@ void VpcEncryptionControlExclusion::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state)) << "&";
   }
   if(m_stateMessageHasBeenSet)
   {

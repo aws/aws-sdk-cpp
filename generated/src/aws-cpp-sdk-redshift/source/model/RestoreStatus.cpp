@@ -130,7 +130,7 @@ void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_currentRestoreRateInMegaBytesPerSecondHasBeenSet)
   {
-        oStream << location << ".CurrentRestoreRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRestoreRateInMegaBytesPerSecond) << "&";
+      oStream << location << ".CurrentRestoreRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRestoreRateInMegaBytesPerSecond) << "&";
   }
   if(m_snapshotSizeInMegaBytesHasBeenSet)
   {

@@ -125,11 +125,11 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_baselineBandwidthInGbpsHasBeenSet)
   {
-        oStream << location << ".BaselineBandwidthInGbps=" << StringUtils::URLEncode(m_baselineBandwidthInGbps) << "&";
+      oStream << location << ".BaselineBandwidthInGbps=" << StringUtils::URLEncode(m_baselineBandwidthInGbps) << "&";
   }
   if(m_peakBandwidthInGbpsHasBeenSet)
   {
-        oStream << location << ".PeakBandwidthInGbps=" << StringUtils::URLEncode(m_peakBandwidthInGbps) << "&";
+      oStream << location << ".PeakBandwidthInGbps=" << StringUtils::URLEncode(m_peakBandwidthInGbps) << "&";
   }
 }
 

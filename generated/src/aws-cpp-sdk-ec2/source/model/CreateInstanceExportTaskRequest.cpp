@@ -46,12 +46,12 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
 
   if(m_targetEnvironmentHasBeenSet)
   {
-    ss << "TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
+    ss << "TargetEnvironment=" << StringUtils::URLEncode(ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment)) << "&";
   }
 
   if(m_exportToS3TaskHasBeenSet)
   {
-    m_exportToS3Task.OutputToStream(ss, "ExportToS3");
+    m_exportToS3Task.OutputToStream(ss, "ExportToS3Task");
   }
 
   ss << "Version=2016-11-15";

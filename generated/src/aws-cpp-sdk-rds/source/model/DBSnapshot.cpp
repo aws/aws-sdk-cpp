@@ -622,7 +622,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_processorFeatures)
       {
         Aws::StringStream processorFeaturesSs;
-        processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
+        processorFeaturesSs << location << ".ProcessorFeatures.ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
@@ -636,7 +636,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location <<  ".Tag." << tagListIdx++;
+        tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }

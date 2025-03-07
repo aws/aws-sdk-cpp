@@ -33,7 +33,7 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
 
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(GatewayTypeMapper::GetNameForGatewayType(m_type)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

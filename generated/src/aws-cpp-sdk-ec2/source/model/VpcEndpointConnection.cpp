@@ -170,7 +170,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_vpcEndpointStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VpcEndpointState=" << StateMapper::GetNameForState(m_vpcEndpointState) << "&";
+      oStream << location << index << locationValue << ".VpcEndpointState=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_vpcEndpointState)) << "&";
   }
 
   if(m_creationTimestampHasBeenSet)
@@ -209,7 +209,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   if(m_vpcEndpointConnectionIdHasBeenSet)
@@ -251,7 +251,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_vpcEndpointStateHasBeenSet)
   {
-      oStream << location << ".VpcEndpointState=" << StateMapper::GetNameForState(m_vpcEndpointState) << "&";
+      oStream << location << ".VpcEndpointState=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_vpcEndpointState)) << "&";
   }
   if(m_creationTimestampHasBeenSet)
   {
@@ -263,7 +263,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_dnsEntries)
       {
         Aws::StringStream dnsEntriesSs;
-        dnsEntriesSs << location <<  ".DnsEntrySet." << dnsEntriesIdx++;
+        dnsEntriesSs << location << ".DnsEntrySet." << dnsEntriesIdx++;
         item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
       }
   }
@@ -285,7 +285,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
   if(m_vpcEndpointConnectionIdHasBeenSet)
   {
@@ -297,7 +297,7 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

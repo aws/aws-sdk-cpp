@@ -496,7 +496,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << ".VpcSecurityGroups.VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -542,7 +542,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_statusInfos)
       {
         Aws::StringStream statusInfosSs;
-        statusInfosSs << location <<  ".DBInstanceStatusInfo." << statusInfosIdx++;
+        statusInfosSs << location << ".StatusInfos.DBInstanceStatusInfo." << statusInfosIdx++;
         item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }

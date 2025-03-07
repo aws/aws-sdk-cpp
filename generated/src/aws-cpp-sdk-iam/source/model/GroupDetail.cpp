@@ -181,7 +181,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_groupPolicyList)
       {
         Aws::StringStream groupPolicyListSs;
-        groupPolicyListSs << location <<  ".GroupPolicyList.member." << groupPolicyListIdx++;
+        groupPolicyListSs << location << ".GroupPolicyList.member." << groupPolicyListIdx++;
         item.OutputToStream(oStream, groupPolicyListSs.str().c_str());
       }
   }
@@ -191,7 +191,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_attachedManagedPolicies)
       {
         Aws::StringStream attachedManagedPoliciesSs;
-        attachedManagedPoliciesSs << location <<  ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
+        attachedManagedPoliciesSs << location << ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }

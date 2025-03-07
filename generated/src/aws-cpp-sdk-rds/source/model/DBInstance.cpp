@@ -922,7 +922,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_replicaModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+      oStream << location << index << locationValue << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 
   if(m_licenseModelHasBeenSet)
@@ -1070,7 +1070,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_databaseInsightsModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+      oStream << location << index << locationValue << ".DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
 
   if(m_performanceInsightsEnabledHasBeenSet)
@@ -1170,7 +1170,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_activityStreamStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+      oStream << location << index << locationValue << ".ActivityStreamStatus=" << StringUtils::URLEncode(ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus)) << "&";
   }
 
   if(m_activityStreamKmsKeyIdHasBeenSet)
@@ -1185,7 +1185,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_activityStreamModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+      oStream << location << index << locationValue << ".ActivityStreamMode=" << StringUtils::URLEncode(ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode)) << "&";
   }
 
   if(m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet)
@@ -1195,7 +1195,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_automationModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+      oStream << location << index << locationValue << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
   }
 
   if(m_resumeFullAutomationModeTimeHasBeenSet)
@@ -1220,7 +1220,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_activityStreamPolicyStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActivityStreamPolicyStatus=" << ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus) << "&";
+      oStream << location << index << locationValue << ".ActivityStreamPolicyStatus=" << StringUtils::URLEncode(ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus)) << "&";
   }
 
   if(m_storageThroughputHasBeenSet)
@@ -1337,7 +1337,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_dBSecurityGroups)
       {
         Aws::StringStream dBSecurityGroupsSs;
-        dBSecurityGroupsSs << location <<  ".DBSecurityGroup." << dBSecurityGroupsIdx++;
+        dBSecurityGroupsSs << location << ".DBSecurityGroups.DBSecurityGroup." << dBSecurityGroupsIdx++;
         item.OutputToStream(oStream, dBSecurityGroupsSs.str().c_str());
       }
   }
@@ -1347,7 +1347,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << ".VpcSecurityGroups.VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -1357,7 +1357,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_dBParameterGroups)
       {
         Aws::StringStream dBParameterGroupsSs;
-        dBParameterGroupsSs << location <<  ".DBParameterGroup." << dBParameterGroupsIdx++;
+        dBParameterGroupsSs << location << ".DBParameterGroups.DBParameterGroup." << dBParameterGroupsIdx++;
         item.OutputToStream(oStream, dBParameterGroupsSs.str().c_str());
       }
   }
@@ -1406,7 +1406,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       unsigned readReplicaDBInstanceIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBInstanceIdentifiers)
       {
-        oStream << location << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaDBInstanceIdentifiers.ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_readReplicaDBClusterIdentifiersHasBeenSet)
@@ -1414,12 +1414,12 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       unsigned readReplicaDBClusterIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBClusterIdentifiers)
       {
-        oStream << location << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaDBClusterIdentifiers.ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_replicaModeHasBeenSet)
   {
-      oStream << location << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+      oStream << location << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
   if(m_licenseModelHasBeenSet)
   {
@@ -1435,7 +1435,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_optionGroupMemberships)
       {
         Aws::StringStream optionGroupMembershipsSs;
-        optionGroupMembershipsSs << location <<  ".OptionGroupMembership." << optionGroupMembershipsIdx++;
+        optionGroupMembershipsSs << location << ".OptionGroupMemberships.OptionGroupMembership." << optionGroupMembershipsIdx++;
         item.OutputToStream(oStream, optionGroupMembershipsSs.str().c_str());
       }
   }
@@ -1461,7 +1461,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_statusInfos)
       {
         Aws::StringStream statusInfosSs;
-        statusInfosSs << location <<  ".DBInstanceStatusInfo." << statusInfosIdx++;
+        statusInfosSs << location << ".StatusInfos.DBInstanceStatusInfo." << statusInfosIdx++;
         item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }
@@ -1503,7 +1503,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_domainMemberships)
       {
         Aws::StringStream domainMembershipsSs;
-        domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
+        domainMembershipsSs << location << ".DomainMemberships.DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
   }
@@ -1541,7 +1541,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_databaseInsightsModeHasBeenSet)
   {
-      oStream << location << ".DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+      oStream << location << ".DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
   if(m_performanceInsightsEnabledHasBeenSet)
   {
@@ -1569,7 +1569,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_processorFeatures)
       {
         Aws::StringStream processorFeaturesSs;
-        processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
+        processorFeaturesSs << location << ".ProcessorFeatures.ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
@@ -1583,7 +1583,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_associatedRoles)
       {
         Aws::StringStream associatedRolesSs;
-        associatedRolesSs << location <<  ".DBInstanceRole." << associatedRolesIdx++;
+        associatedRolesSs << location << ".AssociatedRoles.DBInstanceRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
   }
@@ -1603,7 +1603,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location <<  ".Tag." << tagListIdx++;
+        tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }
@@ -1613,7 +1613,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_dBInstanceAutomatedBackupsReplications)
       {
         Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
-        dBInstanceAutomatedBackupsReplicationsSs << location <<  ".DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        dBInstanceAutomatedBackupsReplicationsSs << location << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
         item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
       }
   }
@@ -1627,7 +1627,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_activityStreamStatusHasBeenSet)
   {
-      oStream << location << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+      oStream << location << ".ActivityStreamStatus=" << StringUtils::URLEncode(ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus)) << "&";
   }
   if(m_activityStreamKmsKeyIdHasBeenSet)
   {
@@ -1639,7 +1639,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_activityStreamModeHasBeenSet)
   {
-      oStream << location << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+      oStream << location << ".ActivityStreamMode=" << StringUtils::URLEncode(ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode)) << "&";
   }
   if(m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet)
   {
@@ -1647,7 +1647,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_automationModeHasBeenSet)
   {
-      oStream << location << ".AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+      oStream << location << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
   }
   if(m_resumeFullAutomationModeTimeHasBeenSet)
   {
@@ -1667,7 +1667,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_activityStreamPolicyStatusHasBeenSet)
   {
-      oStream << location << ".ActivityStreamPolicyStatus=" << ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus) << "&";
+      oStream << location << ".ActivityStreamPolicyStatus=" << StringUtils::URLEncode(ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus)) << "&";
   }
   if(m_storageThroughputHasBeenSet)
   {

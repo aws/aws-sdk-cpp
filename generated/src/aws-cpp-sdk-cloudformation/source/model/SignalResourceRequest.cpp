@@ -40,7 +40,7 @@ Aws::String SignalResourceRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << ResourceSignalStatusMapper::GetNameForResourceSignalStatus(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(ResourceSignalStatusMapper::GetNameForResourceSignalStatus(m_status)) << "&";
   }
 
   ss << "Version=2010-05-15";

@@ -60,7 +60,7 @@ void LoadPermissionRequest::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_groupHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
+      oStream << location << index << locationValue << ".Group=" << StringUtils::URLEncode(PermissionGroupMapper::GetNameForPermissionGroup(m_group)) << "&";
   }
 
   if(m_userIdHasBeenSet)
@@ -74,7 +74,7 @@ void LoadPermissionRequest::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_groupHasBeenSet)
   {
-      oStream << location << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
+      oStream << location << ".Group=" << StringUtils::URLEncode(PermissionGroupMapper::GetNameForPermissionGroup(m_group)) << "&";
   }
   if(m_userIdHasBeenSet)
   {

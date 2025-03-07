@@ -94,7 +94,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_alarmTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AlarmType=" << AlarmTypeMapper::GetNameForAlarmType(m_alarmType) << "&";
+      oStream << location << index << locationValue << ".AlarmType=" << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(m_alarmType)) << "&";
   }
 
   if(m_timestampHasBeenSet)
@@ -104,7 +104,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_historyItemTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HistoryItemType=" << HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType) << "&";
+      oStream << location << index << locationValue << ".HistoryItemType=" << StringUtils::URLEncode(HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType)) << "&";
   }
 
   if(m_historySummaryHasBeenSet)
@@ -127,7 +127,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_alarmTypeHasBeenSet)
   {
-      oStream << location << ".AlarmType=" << AlarmTypeMapper::GetNameForAlarmType(m_alarmType) << "&";
+      oStream << location << ".AlarmType=" << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(m_alarmType)) << "&";
   }
   if(m_timestampHasBeenSet)
   {
@@ -135,7 +135,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_historyItemTypeHasBeenSet)
   {
-      oStream << location << ".HistoryItemType=" << HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType) << "&";
+      oStream << location << ".HistoryItemType=" << StringUtils::URLEncode(HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType)) << "&";
   }
   if(m_historySummaryHasBeenSet)
   {

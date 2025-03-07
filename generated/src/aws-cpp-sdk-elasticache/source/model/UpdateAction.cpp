@@ -201,12 +201,12 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_serviceUpdateSeverityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateSeverity=" << ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateSeverity=" << StringUtils::URLEncode(ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity)) << "&";
   }
 
   if(m_serviceUpdateStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateStatus=" << ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateStatus=" << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus)) << "&";
   }
 
   if(m_serviceUpdateRecommendedApplyByDateHasBeenSet)
@@ -216,7 +216,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_serviceUpdateTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateType=" << ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateType=" << StringUtils::URLEncode(ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType)) << "&";
   }
 
   if(m_updateActionAvailableDateHasBeenSet)
@@ -226,7 +226,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_updateActionStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateActionStatus=" << UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus) << "&";
+      oStream << location << index << locationValue << ".UpdateActionStatus=" << StringUtils::URLEncode(UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus)) << "&";
   }
 
   if(m_nodesUpdatedHasBeenSet)
@@ -241,7 +241,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_slaMetHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SlaMet=" << SlaMetMapper::GetNameForSlaMet(m_slaMet) << "&";
+      oStream << location << index << locationValue << ".SlaMet=" << StringUtils::URLEncode(SlaMetMapper::GetNameForSlaMet(m_slaMet)) << "&";
   }
 
   if(m_nodeGroupUpdateStatusHasBeenSet)
@@ -298,11 +298,11 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_serviceUpdateSeverityHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateSeverity=" << ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity) << "&";
+      oStream << location << ".ServiceUpdateSeverity=" << StringUtils::URLEncode(ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity)) << "&";
   }
   if(m_serviceUpdateStatusHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateStatus=" << ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus) << "&";
+      oStream << location << ".ServiceUpdateStatus=" << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus)) << "&";
   }
   if(m_serviceUpdateRecommendedApplyByDateHasBeenSet)
   {
@@ -310,7 +310,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_serviceUpdateTypeHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateType=" << ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType) << "&";
+      oStream << location << ".ServiceUpdateType=" << StringUtils::URLEncode(ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType)) << "&";
   }
   if(m_updateActionAvailableDateHasBeenSet)
   {
@@ -318,7 +318,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_updateActionStatusHasBeenSet)
   {
-      oStream << location << ".UpdateActionStatus=" << UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus) << "&";
+      oStream << location << ".UpdateActionStatus=" << StringUtils::URLEncode(UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus)) << "&";
   }
   if(m_nodesUpdatedHasBeenSet)
   {
@@ -330,7 +330,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_slaMetHasBeenSet)
   {
-      oStream << location << ".SlaMet=" << SlaMetMapper::GetNameForSlaMet(m_slaMet) << "&";
+      oStream << location << ".SlaMet=" << StringUtils::URLEncode(SlaMetMapper::GetNameForSlaMet(m_slaMet)) << "&";
   }
   if(m_nodeGroupUpdateStatusHasBeenSet)
   {
@@ -338,7 +338,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_nodeGroupUpdateStatus)
       {
         Aws::StringStream nodeGroupUpdateStatusSs;
-        nodeGroupUpdateStatusSs << location <<  ".NodeGroupUpdateStatus." << nodeGroupUpdateStatusIdx++;
+        nodeGroupUpdateStatusSs << location << ".NodeGroupUpdateStatus.NodeGroupUpdateStatus." << nodeGroupUpdateStatusIdx++;
         item.OutputToStream(oStream, nodeGroupUpdateStatusSs.str().c_str());
       }
   }
@@ -348,7 +348,7 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_cacheNodeUpdateStatus)
       {
         Aws::StringStream cacheNodeUpdateStatusSs;
-        cacheNodeUpdateStatusSs << location <<  ".CacheNodeUpdateStatus." << cacheNodeUpdateStatusIdx++;
+        cacheNodeUpdateStatusSs << location << ".CacheNodeUpdateStatus.CacheNodeUpdateStatus." << cacheNodeUpdateStatusIdx++;
         item.OutputToStream(oStream, cacheNodeUpdateStatusSs.str().c_str());
       }
   }

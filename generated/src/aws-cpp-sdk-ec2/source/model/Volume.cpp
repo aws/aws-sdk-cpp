@@ -213,7 +213,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << index << locationValue << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 
   if(m_fastRestoredHasBeenSet)
@@ -233,7 +233,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_sseTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+      oStream << location << index << locationValue << ".SseType=" << StringUtils::URLEncode(SSETypeMapper::GetNameForSSEType(m_sseType)) << "&";
   }
 
   if(m_operatorHasBeenSet)
@@ -265,7 +265,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VolumeStateMapper::GetNameForVolumeState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VolumeStateMapper::GetNameForVolumeState(m_state)) << "&";
   }
 
   if(m_createTimeHasBeenSet)
@@ -315,13 +315,13 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
   if(m_fastRestoredHasBeenSet)
   {
@@ -337,7 +337,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_sseTypeHasBeenSet)
   {
-      oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+      oStream << location << ".SseType=" << StringUtils::URLEncode(SSETypeMapper::GetNameForSSEType(m_sseType)) << "&";
   }
   if(m_operatorHasBeenSet)
   {
@@ -363,7 +363,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VolumeStateMapper::GetNameForVolumeState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VolumeStateMapper::GetNameForVolumeState(m_state)) << "&";
   }
   if(m_createTimeHasBeenSet)
   {
@@ -375,7 +375,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_attachments)
       {
         Aws::StringStream attachmentsSs;
-        attachmentsSs << location <<  ".AttachmentSet." << attachmentsIdx++;
+        attachmentsSs << location << ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }

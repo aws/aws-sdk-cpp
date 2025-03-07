@@ -34,7 +34,7 @@ Aws::String UpdateServiceSpecificCredentialRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
   }
 
   ss << "Version=2010-05-08";

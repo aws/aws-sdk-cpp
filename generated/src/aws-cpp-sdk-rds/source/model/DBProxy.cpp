@@ -182,7 +182,7 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << DBProxyStatusMapper::GetNameForDBProxyStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(DBProxyStatusMapper::GetNameForDBProxyStatus(m_status)) << "&";
   }
 
   if(m_engineFamilyHasBeenSet)
@@ -273,7 +273,7 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << DBProxyStatusMapper::GetNameForDBProxyStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(DBProxyStatusMapper::GetNameForDBProxyStatus(m_status)) << "&";
   }
   if(m_engineFamilyHasBeenSet)
   {
@@ -305,7 +305,7 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_auth)
       {
         Aws::StringStream authSs;
-        authSs << location <<  ".Auth.member." << authIdx++;
+        authSs << location << ".Auth.member." << authIdx++;
         item.OutputToStream(oStream, authSs.str().c_str());
       }
   }

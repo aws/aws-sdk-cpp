@@ -47,7 +47,7 @@ Aws::String UpdatePartnerStatusRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << PartnerIntegrationStatusMapper::GetNameForPartnerIntegrationStatus(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(PartnerIntegrationStatusMapper::GetNameForPartnerIntegrationStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)

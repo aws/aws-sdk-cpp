@@ -130,7 +130,7 @@ void DataTransferProgress::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_currentRateInMegaBytesPerSecondHasBeenSet)
   {
-        oStream << location << ".CurrentRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRateInMegaBytesPerSecond) << "&";
+      oStream << location << ".CurrentRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRateInMegaBytesPerSecond) << "&";
   }
   if(m_totalDataInMegaBytesHasBeenSet)
   {

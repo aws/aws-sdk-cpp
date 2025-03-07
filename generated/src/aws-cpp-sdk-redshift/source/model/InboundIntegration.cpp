@@ -109,7 +109,7 @@ void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status)) << "&";
   }
 
   if(m_errorsHasBeenSet)
@@ -146,7 +146,7 @@ void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status)) << "&";
   }
   if(m_errorsHasBeenSet)
   {
@@ -154,7 +154,7 @@ void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_errors)
       {
         Aws::StringStream errorsSs;
-        errorsSs << location <<  ".IntegrationError." << errorsIdx++;
+        errorsSs << location << ".Errors.IntegrationError." << errorsIdx++;
         item.OutputToStream(oStream, errorsSs.str().c_str());
       }
   }
