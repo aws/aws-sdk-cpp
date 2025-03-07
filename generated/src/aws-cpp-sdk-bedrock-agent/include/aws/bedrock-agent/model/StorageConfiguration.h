@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/MongoDbAtlasConfiguration.h>
+#include <aws/bedrock-agent/model/NeptuneAnalyticsConfiguration.h>
 #include <aws/bedrock-agent/model/OpenSearchServerlessConfiguration.h>
 #include <aws/bedrock-agent/model/PineconeConfiguration.h>
 #include <aws/bedrock-agent/model/RdsConfiguration.h>
@@ -54,6 +55,21 @@ namespace Model
     inline void SetMongoDbAtlasConfiguration(MongoDbAtlasConfiguration&& value) { m_mongoDbAtlasConfigurationHasBeenSet = true; m_mongoDbAtlasConfiguration = std::move(value); }
     inline StorageConfiguration& WithMongoDbAtlasConfiguration(const MongoDbAtlasConfiguration& value) { SetMongoDbAtlasConfiguration(value); return *this;}
     inline StorageConfiguration& WithMongoDbAtlasConfiguration(MongoDbAtlasConfiguration&& value) { SetMongoDbAtlasConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the Neptune Analytics configuration of the knowledge
+     * base in Amazon Neptune. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create
+     * a vector index in Amazon Neptune Analytics.</a>.</p>
+     */
+    inline const NeptuneAnalyticsConfiguration& GetNeptuneAnalyticsConfiguration() const{ return m_neptuneAnalyticsConfiguration; }
+    inline bool NeptuneAnalyticsConfigurationHasBeenSet() const { return m_neptuneAnalyticsConfigurationHasBeenSet; }
+    inline void SetNeptuneAnalyticsConfiguration(const NeptuneAnalyticsConfiguration& value) { m_neptuneAnalyticsConfigurationHasBeenSet = true; m_neptuneAnalyticsConfiguration = value; }
+    inline void SetNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfiguration&& value) { m_neptuneAnalyticsConfigurationHasBeenSet = true; m_neptuneAnalyticsConfiguration = std::move(value); }
+    inline StorageConfiguration& WithNeptuneAnalyticsConfiguration(const NeptuneAnalyticsConfiguration& value) { SetNeptuneAnalyticsConfiguration(value); return *this;}
+    inline StorageConfiguration& WithNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfiguration&& value) { SetNeptuneAnalyticsConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,6 +140,9 @@ namespace Model
 
     MongoDbAtlasConfiguration m_mongoDbAtlasConfiguration;
     bool m_mongoDbAtlasConfigurationHasBeenSet = false;
+
+    NeptuneAnalyticsConfiguration m_neptuneAnalyticsConfiguration;
+    bool m_neptuneAnalyticsConfigurationHasBeenSet = false;
 
     OpenSearchServerlessConfiguration m_opensearchServerlessConfiguration;
     bool m_opensearchServerlessConfigurationHasBeenSet = false;

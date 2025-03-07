@@ -34,6 +34,8 @@ Address::Address() :
     m_customerOwnedIpHasBeenSet(false),
     m_customerOwnedIpv4PoolHasBeenSet(false),
     m_carrierIpHasBeenSet(false),
+    m_serviceManaged(ServiceManaged::NOT_SET),
+    m_serviceManagedHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_publicIpHasBeenSet(false)
 {
@@ -129,6 +131,12 @@ Address& Address::operator =(const XmlNode& xmlNode)
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
       m_carrierIpHasBeenSet = true;
     }
+    XmlNode serviceManagedNode = resultNode.FirstChild("serviceManaged");
+    if(!serviceManagedNode.IsNull())
+    {
+      m_serviceManaged = ServiceManagedMapper::GetServiceManagedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceManagedNode.GetText()).c_str()).c_str());
+      m_serviceManagedHasBeenSet = true;
+    }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
@@ -214,6 +222,11 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 
+  if(m_serviceManagedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceManaged=" << ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged) << "&";
+  }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
@@ -281,6 +294,10 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_carrierIpHasBeenSet)
   {
       oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+  if(m_serviceManagedHasBeenSet)
+  {
+      oStream << location << ".ServiceManaged=" << ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged) << "&";
   }
   if(m_instanceIdHasBeenSet)
   {

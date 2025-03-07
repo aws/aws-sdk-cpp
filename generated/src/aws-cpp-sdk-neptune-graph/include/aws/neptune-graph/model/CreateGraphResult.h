@@ -53,7 +53,7 @@ namespace Model
      * <p>The graph name. For example: <code>my-graph-1</code>.</p> <p>The name must
      * contain from 1 to 63 letters, numbers, or hyphens, and its first character must
      * be a letter. It cannot end with a hyphen or contain two consecutive hyphens.
-     * </p>
+     * Only lowercase letters are allowed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }
@@ -115,7 +115,7 @@ namespace Model
     ///@{
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph.</p> <p>Min = 128</p>
+     * the graph.</p> <p>Min = 16</p>
      */
     inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
     inline void SetProvisionedMemory(int value) { m_provisionedMemory = value; }

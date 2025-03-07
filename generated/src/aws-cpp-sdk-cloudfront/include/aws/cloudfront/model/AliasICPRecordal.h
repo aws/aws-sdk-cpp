@@ -63,18 +63,19 @@ namespace Model
     ///@{
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
-     * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
-     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
-     * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
-     * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
-     * to use with China region, a CNAME must have one ICP recordal number associated
-     * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
-     * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
-     * associated with the distribution because there was an error in trying to
-     * determine the status. You can try again to see if the error is resolved in which
-     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
+     * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in Amazon Web
+     * Services Regions outside of China.</p> <p>The status values returned are the
+     * following:</p> <ul> <li> <p> <b>APPROVED</b> indicates that the associated CNAME
+     * has a valid ICP recordal number. Multiple CNAMEs can be associated with a
+     * distribution, and CNAMEs can correspond to different ICP recordals. To be marked
+     * as APPROVED, that is, valid to use with the China Regions, a CNAME must have one
+     * ICP recordal number associated with it.</p> </li> <li> <p> <b>SUSPENDED</b>
+     * indicates that the associated CNAME does not have a valid ICP recordal
+     * number.</p> </li> <li> <p> <b>PENDING</b> indicates that CloudFront can't
+     * determine the ICP recordal status of the CNAME associated with the distribution
+     * because there was an error in trying to determine the status. You can try again
+     * to see if the error is resolved in which case CloudFront returns an APPROVED or
+     * SUSPENDED status.</p> </li> </ul>
      */
     inline const ICPRecordalStatus& GetICPRecordalStatus() const{ return m_iCPRecordalStatus; }
     inline bool ICPRecordalStatusHasBeenSet() const { return m_iCPRecordalStatusHasBeenSet; }

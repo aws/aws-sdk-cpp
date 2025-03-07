@@ -1133,6 +1133,32 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
+         * <p>[Application Load Balancers] Modify the IP pool associated to a load
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIpPoolsOutcome ModifyIpPools(const Model::ModifyIpPoolsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyIpPools that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyIpPoolsRequestT = Model::ModifyIpPoolsRequest>
+        Model::ModifyIpPoolsOutcomeCallable ModifyIpPoolsCallable(const ModifyIpPoolsRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::ModifyIpPools, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyIpPools that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyIpPoolsRequestT = Model::ModifyIpPoolsRequest>
+        void ModifyIpPoolsAsync(const ModifyIpPoolsRequestT& request, const ModifyIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::ModifyIpPools, request, handler, context);
+        }
+
+        /**
          * <p>Replaces the specified properties of the specified listener. Any properties
          * that you do not specify remain unchanged.</p> <p>Changing the protocol from
          * HTTPS to HTTP, or from TLS to TCP, removes the security policy and default

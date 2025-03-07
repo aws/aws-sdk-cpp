@@ -21,6 +21,7 @@ namespace Model
 PromptConfiguration::PromptConfiguration() : 
     m_additionalModelRequestFieldsHasBeenSet(false),
     m_basePromptTemplateHasBeenSet(false),
+    m_foundationModelHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
     m_parserMode(CreationMode::NOT_SET),
     m_parserModeHasBeenSet(false),
@@ -53,6 +54,13 @@ PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
     m_basePromptTemplate = jsonValue.GetString("basePromptTemplate");
 
     m_basePromptTemplateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("foundationModel"))
+  {
+    m_foundationModel = jsonValue.GetString("foundationModel");
+
+    m_foundationModelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inferenceConfiguration"))
@@ -108,6 +116,12 @@ JsonValue PromptConfiguration::Jsonize() const
   if(m_basePromptTemplateHasBeenSet)
   {
    payload.WithString("basePromptTemplate", m_basePromptTemplate);
+
+  }
+
+  if(m_foundationModelHasBeenSet)
+  {
+   payload.WithString("foundationModel", m_foundationModel);
 
   }
 

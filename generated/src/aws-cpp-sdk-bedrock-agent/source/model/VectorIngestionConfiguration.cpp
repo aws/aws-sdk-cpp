@@ -20,6 +20,7 @@ namespace Model
 
 VectorIngestionConfiguration::VectorIngestionConfiguration() : 
     m_chunkingConfigurationHasBeenSet(false),
+    m_contextEnrichmentConfigurationHasBeenSet(false),
     m_customTransformationConfigurationHasBeenSet(false),
     m_parsingConfigurationHasBeenSet(false)
 {
@@ -38,6 +39,13 @@ VectorIngestionConfiguration& VectorIngestionConfiguration::operator =(JsonView 
     m_chunkingConfiguration = jsonValue.GetObject("chunkingConfiguration");
 
     m_chunkingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("contextEnrichmentConfiguration"))
+  {
+    m_contextEnrichmentConfiguration = jsonValue.GetObject("contextEnrichmentConfiguration");
+
+    m_contextEnrichmentConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customTransformationConfiguration"))
@@ -64,6 +72,12 @@ JsonValue VectorIngestionConfiguration::Jsonize() const
   if(m_chunkingConfigurationHasBeenSet)
   {
    payload.WithObject("chunkingConfiguration", m_chunkingConfiguration.Jsonize());
+
+  }
+
+  if(m_contextEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("contextEnrichmentConfiguration", m_contextEnrichmentConfiguration.Jsonize());
 
   }
 

@@ -20,7 +20,8 @@ namespace Model
     PINECONE,
     REDIS_ENTERPRISE_CLOUD,
     RDS,
-    MONGO_DB_ATLAS
+    MONGO_DB_ATLAS,
+    NEPTUNE_ANALYTICS
   };
 
 namespace KnowledgeBaseStorageTypeMapper

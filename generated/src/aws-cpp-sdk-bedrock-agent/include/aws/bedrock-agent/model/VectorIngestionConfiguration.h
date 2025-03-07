@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/ChunkingConfiguration.h>
+#include <aws/bedrock-agent/model/ContextEnrichmentConfiguration.h>
 #include <aws/bedrock-agent/model/CustomTransformationConfiguration.h>
 #include <aws/bedrock-agent/model/ParsingConfiguration.h>
 #include <utility>
@@ -56,6 +57,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The context enrichment configuration used for ingestion of the data into the
+     * vector store.</p>
+     */
+    inline const ContextEnrichmentConfiguration& GetContextEnrichmentConfiguration() const{ return m_contextEnrichmentConfiguration; }
+    inline bool ContextEnrichmentConfigurationHasBeenSet() const { return m_contextEnrichmentConfigurationHasBeenSet; }
+    inline void SetContextEnrichmentConfiguration(const ContextEnrichmentConfiguration& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = value; }
+    inline void SetContextEnrichmentConfiguration(ContextEnrichmentConfiguration&& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = std::move(value); }
+    inline VectorIngestionConfiguration& WithContextEnrichmentConfiguration(const ContextEnrichmentConfiguration& value) { SetContextEnrichmentConfiguration(value); return *this;}
+    inline VectorIngestionConfiguration& WithContextEnrichmentConfiguration(ContextEnrichmentConfiguration&& value) { SetContextEnrichmentConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A custom document transformer for parsed data source documents.</p>
      */
     inline const CustomTransformationConfiguration& GetCustomTransformationConfiguration() const{ return m_customTransformationConfiguration; }
@@ -82,6 +96,9 @@ namespace Model
 
     ChunkingConfiguration m_chunkingConfiguration;
     bool m_chunkingConfigurationHasBeenSet = false;
+
+    ContextEnrichmentConfiguration m_contextEnrichmentConfiguration;
+    bool m_contextEnrichmentConfigurationHasBeenSet = false;
 
     CustomTransformationConfiguration m_customTransformationConfiguration;
     bool m_customTransformationConfigurationHasBeenSet = false;

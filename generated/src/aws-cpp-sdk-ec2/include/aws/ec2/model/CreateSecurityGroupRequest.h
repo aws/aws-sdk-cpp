@@ -56,9 +56,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the security group.</p> <p>Constraints: Up to 255 characters in
-     * length. Cannot start with <code>sg-</code>.</p> <p>Valid characters: a-z, A-Z,
-     * 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+     * <p>The name of the security group. Names are case-insensitive and must be unique
+     * within the VPC.</p> <p>Constraints: Up to 255 characters in length. Can't start
+     * with <code>sg-</code>.</p> <p>Valid characters: a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }

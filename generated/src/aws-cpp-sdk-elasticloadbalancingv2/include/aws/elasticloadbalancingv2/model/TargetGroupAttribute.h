@@ -139,7 +139,8 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> <li> <p>
+     * <code>true</code>. This attribute can't be enabled for UDP and TCP_UDP target
+     * groups.</p> </li> <li> <p>
      * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
      * amount of time for Elastic Load Balancing to wait before changing the state of
      * an unhealthy target from <code>unhealthy.draining</code> to

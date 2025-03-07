@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/EnablePrefixForIpv6SourceNatEnum.h>
+#include <aws/elasticloadbalancingv2/model/IpamPools.h>
 #include <aws/elasticloadbalancingv2/model/AvailabilityZone.h>
 #include <utility>
 
@@ -264,6 +265,19 @@ namespace Model
     inline LoadBalancer& WithEnablePrefixForIpv6SourceNat(const EnablePrefixForIpv6SourceNatEnum& value) { SetEnablePrefixForIpv6SourceNat(value); return *this;}
     inline LoadBalancer& WithEnablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum&& value) { SetEnablePrefixForIpv6SourceNat(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>[Application Load Balancers] The IPAM pool in use by the load balancer, if
+     * configured.</p>
+     */
+    inline const IpamPools& GetIpamPools() const{ return m_ipamPools; }
+    inline bool IpamPoolsHasBeenSet() const { return m_ipamPoolsHasBeenSet; }
+    inline void SetIpamPools(const IpamPools& value) { m_ipamPoolsHasBeenSet = true; m_ipamPools = value; }
+    inline void SetIpamPools(IpamPools&& value) { m_ipamPoolsHasBeenSet = true; m_ipamPools = std::move(value); }
+    inline LoadBalancer& WithIpamPools(const IpamPools& value) { SetIpamPools(value); return *this;}
+    inline LoadBalancer& WithIpamPools(IpamPools&& value) { SetIpamPools(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_loadBalancerArn;
@@ -310,6 +324,9 @@ namespace Model
 
     EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat;
     bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
+
+    IpamPools m_ipamPools;
+    bool m_ipamPoolsHasBeenSet = false;
   };
 
 } // namespace Model

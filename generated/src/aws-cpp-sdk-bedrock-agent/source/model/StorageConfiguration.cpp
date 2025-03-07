@@ -20,6 +20,7 @@ namespace Model
 
 StorageConfiguration::StorageConfiguration() : 
     m_mongoDbAtlasConfigurationHasBeenSet(false),
+    m_neptuneAnalyticsConfigurationHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
     m_rdsConfigurationHasBeenSet(false),
@@ -42,6 +43,13 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     m_mongoDbAtlasConfiguration = jsonValue.GetObject("mongoDbAtlasConfiguration");
 
     m_mongoDbAtlasConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("neptuneAnalyticsConfiguration"))
+  {
+    m_neptuneAnalyticsConfiguration = jsonValue.GetObject("neptuneAnalyticsConfiguration");
+
+    m_neptuneAnalyticsConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("opensearchServerlessConfiguration"))
@@ -89,6 +97,12 @@ JsonValue StorageConfiguration::Jsonize() const
   if(m_mongoDbAtlasConfigurationHasBeenSet)
   {
    payload.WithObject("mongoDbAtlasConfiguration", m_mongoDbAtlasConfiguration.Jsonize());
+
+  }
+
+  if(m_neptuneAnalyticsConfigurationHasBeenSet)
+  {
+   payload.WithObject("neptuneAnalyticsConfiguration", m_neptuneAnalyticsConfiguration.Jsonize());
 
   }
 
