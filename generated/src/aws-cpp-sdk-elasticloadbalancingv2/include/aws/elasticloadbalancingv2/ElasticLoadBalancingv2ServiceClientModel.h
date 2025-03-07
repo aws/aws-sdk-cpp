@@ -53,6 +53,7 @@
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreCaCertificatesBundleResult.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyCapacityReservationResult.h>
+#include <aws/elasticloadbalancingv2/model/ModifyIpPoolsResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesResult.h>
@@ -150,6 +151,7 @@ namespace Aws
       class GetTrustStoreCaCertificatesBundleRequest;
       class GetTrustStoreRevocationContentRequest;
       class ModifyCapacityReservationRequest;
+      class ModifyIpPoolsRequest;
       class ModifyListenerRequest;
       class ModifyListenerAttributesRequest;
       class ModifyLoadBalancerAttributesRequest;
@@ -203,6 +205,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetTrustStoreCaCertificatesBundleResult, ElasticLoadBalancingv2Error> GetTrustStoreCaCertificatesBundleOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreRevocationContentResult, ElasticLoadBalancingv2Error> GetTrustStoreRevocationContentOutcome;
       typedef Aws::Utils::Outcome<ModifyCapacityReservationResult, ElasticLoadBalancingv2Error> ModifyCapacityReservationOutcome;
+      typedef Aws::Utils::Outcome<ModifyIpPoolsResult, ElasticLoadBalancingv2Error> ModifyIpPoolsOutcome;
       typedef Aws::Utils::Outcome<ModifyListenerResult, ElasticLoadBalancingv2Error> ModifyListenerOutcome;
       typedef Aws::Utils::Outcome<ModifyListenerAttributesResult, ElasticLoadBalancingv2Error> ModifyListenerAttributesOutcome;
       typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, ElasticLoadBalancingv2Error> ModifyLoadBalancerAttributesOutcome;
@@ -256,6 +259,7 @@ namespace Aws
       typedef std::future<GetTrustStoreCaCertificatesBundleOutcome> GetTrustStoreCaCertificatesBundleOutcomeCallable;
       typedef std::future<GetTrustStoreRevocationContentOutcome> GetTrustStoreRevocationContentOutcomeCallable;
       typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
+      typedef std::future<ModifyIpPoolsOutcome> ModifyIpPoolsOutcomeCallable;
       typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
       typedef std::future<ModifyListenerAttributesOutcome> ModifyListenerAttributesOutcomeCallable;
       typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
@@ -312,6 +316,7 @@ namespace Aws
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetTrustStoreCaCertificatesBundleRequest&, const Model::GetTrustStoreCaCertificatesBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreCaCertificatesBundleResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetTrustStoreRevocationContentRequest&, const Model::GetTrustStoreRevocationContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreRevocationContentResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyIpPoolsRequest&, const Model::ModifyIpPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpPoolsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyListenerRequest&, const Model::ModifyListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyListenerResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyListenerAttributesRequest&, const Model::ModifyListenerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyListenerAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyLoadBalancerAttributesRequest&, const Model::ModifyLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLoadBalancerAttributesResponseReceivedHandler;

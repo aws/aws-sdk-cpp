@@ -156,7 +156,7 @@ namespace Model
     ///@{
     /**
      * <p>The status of the knowledge base. The following statuses are possible:</p>
-     * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
+     * <ul> <li> <p>CREATING ��� The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
      * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
      * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
