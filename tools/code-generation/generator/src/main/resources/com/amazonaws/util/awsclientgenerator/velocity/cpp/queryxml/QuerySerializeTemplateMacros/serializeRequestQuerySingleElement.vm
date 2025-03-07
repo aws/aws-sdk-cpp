@@ -16,6 +16,6 @@
   ${spaces}${memberVarName}.OutputToStream(ss, "${macro.memberLocation}");
 #end
 #else
-  ${spaces}ss << "${macro.memberLocation}=" << #serializeQuerySingleElementToText($member, $memberVarName) << "&";
+  ${spaces}ss << "${macro.memberLocation}=" << #serializeQuerySingleElementToText($spaces, $member, $memberVarName) << "&";
 #end
 #end##macro serializeRequestQuerySingleElement

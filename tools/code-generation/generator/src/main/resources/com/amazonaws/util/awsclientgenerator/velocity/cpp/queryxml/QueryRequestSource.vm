@@ -1,3 +1,4 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/AllQuerySerializeTemplateMacros.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)

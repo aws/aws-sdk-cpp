@@ -1,5 +1,5 @@
 ##-------------------- serializeQuerySingleElementToText macro
-#macro( serializeQuerySingleElementToText $member $memberVarName )
+#macro( serializeQuerySingleElementToText $spaces $member $memberVarName )
 ##/* --- the actual shape member is $member; the actual shape is $member.shape; --- */
 #if($member.shape.string)
 StringUtils::URLEncode(${memberVarName}.c_str())##
@@ -18,10 +18,19 @@ std::boolalpha << ${memberVarName}##
 #elseif($member.shape.primitive)
 ${memberVarName}##
 #elseif($member.shape.enum)
-${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName})##
+StringUtils::URLEncode(${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}))##
 #elseif($member.shape.list || $member.shape.map)
-/* CODEGEN FAIL: inner element is list or map */
-${memberVarName}##
+#set($macro.spaces = "${spaces}      ")
+[&item]() {
+${macro.spaces}  Aws::StringStream oStream;
+${macro.spaces}  Aws::String location; // dummy for nested codegen template
+#if($member.shape.list)
+#serializeSubObjQueryListElement($macro.spaces, $member, "member", $memberVarName, false, true)
+#elseif($member.shape.map)
+#serializeSubObjQueryMapElement($macro.spaces, $member, "member", $memberVarName, false)
+#end
+${macro.spaces}  return oStream.str();
+  ${spaces}  } ()##
 #else
 [&]() {static_assert(false, "Code generation failure: unknown how to serialize ${member}"); return ${memberVarName}}()##
 #end
