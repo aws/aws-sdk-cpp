@@ -3,8 +3,8 @@
 #set($macro.memberLocation = $location)
 #if($member.queryName)
 #set($macro.memberLocation = $member.queryName)
-#elseif($member.macro.memberLocationName)
-#set($macro.memberLocation = $member.macro.memberLocationName)
+#elseif($member.locationName)
+#set($macro.memberLocation = $member.locationName)
 #if($metadata.findFirstSupportedProtocol() == "ec2")
 #set($macro.memberLocation = $CppViewHelper.capitalizeFirstChar($macro.memberLocation))
 #end
@@ -16,6 +16,6 @@
   ${spaces}${memberVarName}.OutputToStream(ss, "${macro.memberLocation}");
 #end
 #else
-  ${spaces}ss << "${macro.memberLocation}=" << #serializeQuerySingleElementToText($member, $memberVarName) << "&";
+  ${spaces}ss << "${macro.memberLocation}=" << #serializeQuerySingleElementToText($spaces, $member, $memberVarName) << "&";
 #end
 #end##macro serializeRequestQuerySingleElement

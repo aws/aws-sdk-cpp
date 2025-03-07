@@ -48,7 +48,7 @@
   ${macro.spaces}  item.OutputToStream(ss, "${macro.listLocation}.", ${varName}Count, "");
 #else
   ${macro.spaces}  ss << "${macro.listLocation}." << ${varName}Count << "="
-  ${macro.spaces}      << #serializeQuerySingleElementToText($member.shape.listMember, "item") << "&";
+  ${macro.spaces}      << #serializeQuerySingleElementToText($macro.spaces, $member.shape.listMember, "item") << "&";
 #end
   ${macro.spaces}  ${varName}Count++;
   ${macro.spaces}}

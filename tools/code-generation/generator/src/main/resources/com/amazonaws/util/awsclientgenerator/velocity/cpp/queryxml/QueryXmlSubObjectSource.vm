@@ -77,16 +77,16 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #else
   ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMemberSs.str().c_str());
 #end
-#elseif($member.shape.string || $member.shape.timeStamp || $member.shape.blob || $member.shape.double || $member.shape.boolean || $member.shape.primitive || $member.shape.enum)
+#elseif($member.shape.list)
+#serializeSubObjQueryListElement($spaces, $member, $memberName, $memberVarName)
+#elseif($member.shape.map)
+#serializeSubObjQueryMapElement($spaces, $member, $memberName, $memberVarName)
+#else
 #set($memberLocation = '".' + $memberName + '="')
 #if($member.shape.double)
 #set($spaces = "${spaces}  ")##avoiding huge diff on generation
 #end
   ${spaces}oStream << location << index << locationValue << #serializeSubObjQuerySingleElement($member, $memberLocation, $memberVarName) << "&";
-#elseif($member.shape.list)
-#serializeSubObjQueryListElement($spaces, $member, $memberName, $memberVarName)
-#elseif($member.shape.map)
-#serializeSubObjQueryMapElement($spaces, $member, $memberName, $memberVarName)
 #end
 #if(!$member.required)
   }
@@ -121,116 +121,12 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #else
   ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMember.c_str());
 #end
-#elseif($member.shape.string)
-  ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
-#elseif($member.shape.timeStamp)
-  ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str()) << "&";
-#elseif($member.shape.blob)
-  ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
-#elseif($member.shape.double)
-    ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}) << "&";
-#elseif($member.shape.boolean)
-  ${spaces}oStream << location << ".${memberName}=" << std::boolalpha << ${memberVarName} << "&";
-#elseif($member.shape.primitive)
-  ${spaces}oStream << location << ".${memberName}=" << ${memberVarName} << "&";
-#elseif($member.shape.enum)
-  ${spaces}oStream << location << ".${memberName}=" << ${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}) << "&";
 #elseif($member.shape.list)
-  ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
-  ${spaces}for(auto& item : ${memberVarName})
-  ${spaces}{
-#if($member.queryName)
-#set($location = $member.queryName)
-#elseif($member.locationName)
-#set($location = $CppViewHelper.capitalizeFirstChar($member.locationName))
-#elseif($member.shape.listMember.queryName)
-#set($location = $member.shape.listMember.queryName)
-#elseif($member.shape.listMember.locationName)
-#set($location = $member.shape.listMember.locationName)
-#if($metadata.findFirstSupportedProtocol() == "ec2")
-#set($location = $CppViewHelper.capitalizeFirstChar($location))
-#end
-#elseif($metadata.findFirstSupportedProtocol() == "ec2")
-#set($location = $memberName)
-#else
-#set($location = $memberName + ".member")
-#end
-#if($member.shape.listMember.shape.structure)
-  ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
-  ${spaces}  ${lowerCaseVarName}Ss << location <<  ".${location}." << ${lowerCaseVarName}Idx++;
-  ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
-#elseif($member.shape.listMember.shape.string)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-#elseif($member.shape.listMember.shape.timeStamp)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.listMember.shape)).c_str()) << "&";
-#elseif($member.shape.listMember.shape.blob)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
-#elseif($member.shape.listMember.shape.double)
-    ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item) << "&";
-#elseif($member.shape.listMember.shape.boolean)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << std::boolalpha << item << "&";
-#elseif($member.shape.listMember.shape.primitive)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
-#elseif($member.shape.listMember.shape.enum)
-  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item) << "&";
-#end
-  ${spaces}}
+#serializeSubObjQueryListElement($spaces, $member, $memberName, $memberVarName, false)
 #elseif($member.shape.map)
-#if($member.locationName)
-#set($mapLocationName = $member.locationName)
+#serializeSubObjQueryMapElement($spaces, $member, $memberName, $memberVarName, false)
 #else
-#set($mapLocationName = $memberName + ".entry")
-#end
-#if($member.shape.mapKey.locationName)
-#set($mapKeyLocationName = $member.shape.mapKey.locationName)
-#else
-#set($mapKeyLocationName = "key")
-#end
-#if($member.shape.mapValue.locationName)
-#set($mapValueLocationName = $member.shape.mapValue.locationName)
-#else
-#set($mapValueLocationName = "value")
-#end
-  ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
-  ${spaces}for(auto& item : ${memberVarName})
-  ${spaces}{
-  ${spaces}  oStream << location << ".${mapLocationName}."  << ${lowerCaseVarName}Idx << ".${mapKeyLocationName}="
-#if($member.shape.mapKey.shape.string)
-  ${spaces}      << StringUtils::URLEncode(item.first.c_str()) << "&";
-#elseif($member.shape.mapKey.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapKey.shape)).c_str()) << "&";
-#elseif($member.shape.mapKey.shape.enum)
-  ${spaces}      << StringUtils::URLEncode(${member.shape.mapKey.shape.name}Mapper::GetNameFor${member.shape.mapKey.shape.name}(item.first).c_str()) << "&";
-#elseif($member.shape.mapKey.shape.double)
-  ${spaces}      << StringUtils::URLEncode(item.first) << "&";
-#elseif($member.shape.mapKey.shape.boolean)
-  ${spaces}      << std::boolalpha << item.first << "&";
-#else
-  ${spaces}      << item.first << "&";
-#end
-#if(!$member.shape.mapValue.shape.structure)
-  ${spaces}  oStream << location <<  ".${mapLocationName}." << ${lowerCaseVarName}Idx << ".${mapValueLocationName}="
-#end
-#if($member.shape.mapValue.shape.string)
-  ${spaces}      << StringUtils::URLEncode(item.second.c_str()) << "&";
-#elseif($member.shape.mapValue.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape.mapValue.shape)).c_str()) << "&";
-#elseif($member.shape.mapValue.shape.enum)
-  ${spaces}      << StringUtils::URLEncode(${member.shape.mapValue.shape.name}Mapper::GetNameFor${member.shape.mapValue.shape.name}(item.second).c_str()) << "&";
-#elseif($member.shape.mapValue.shape.structure)
-  ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
-  ${spaces}  ${lowerCaseVarName}Ss << location << ".${mapLocationName}." << ${lowerCaseVarName}Idx << ".${mapValueLocationName}";
-  ${spaces}  item.second.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
-#elseif($member.shape.mapValue.shape.double)
-  ${spaces}      << StringUtils::URLEncode(item.second) << "&";
-#elseif($member.shape.mapValue.shape.boolean)
-  ${spaces}      << std::boolalpha << item.second << "&";
-#else
-  ${spaces}      << item.second << "&";
-#end
-  ${spaces}  ${lowerCaseVarName}Idx++;
-  ${spaces}}
-
+  ${spaces}oStream << location << ".${memberName}=" << #serializeQuerySingleElementToText($spaces, $member, $memberVarName) << "&";
 #end
 #if(!$member.required)
   }
