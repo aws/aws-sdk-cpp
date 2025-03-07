@@ -74,16 +74,16 @@ namespace client
         using HttpRequest = Aws::Http::HttpRequest;
         using HttpResponse = Aws::Http::HttpResponse;
         using CoreErrors = Aws::Client::CoreErrors;
-        using AWSError = Aws::Client::AWSError<CoreErrors>;
-        using ClientError = AWSError;
-        using SigningError = AWSError;
+        using AWSCoreError = Aws::Client::AWSError<CoreErrors>;
+        using ClientError = AWSCoreError;
+        using SigningError = AWSCoreError;
         using SigningOutcome = Aws::Utils::FutureOutcome<std::shared_ptr<Aws::Http::HttpRequest>, SigningError>;
         using EndpointUpdateCallback = std::function<void(Aws::Endpoint::AWSEndpoint&)>;
-        using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError>;
+        using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSCoreError>;
         using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
-        using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
-        using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
-        using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSError >;
+        using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSCoreError>;
+        using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSCoreError>;
+        using StreamOutcome = Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>, AWSCoreError >;
 
         /* primary constructor */
         AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
@@ -149,6 +149,13 @@ namespace client
         void AppendToUserAgent(const Aws::String& valueToAppend);
 
     protected:
+        
+        //for backwards compatibility
+        const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& GetErrorMarshaller() const
+        {
+            return m_errorMarshaller;
+        }
+
         /**
          * Initialize client configuration with their factory method, unless the user has explicitly set the
          * configuration, and it is to be shallow copied between different clients, in which case, delete the

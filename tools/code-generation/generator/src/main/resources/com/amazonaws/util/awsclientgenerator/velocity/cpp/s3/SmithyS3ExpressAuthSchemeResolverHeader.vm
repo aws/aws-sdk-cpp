@@ -35,30 +35,41 @@ namespace ${serviceNamespace} {
             //resolve endpoint first time to fetch auth schemes
             if(m_endpointProviderForAuth)
             {
+                Aws::Vector<smithy::AuthSchemeOption> authSchemes{};
+                Aws::UnorderedMap<Aws::String, smithy::AuthSchemeOption> authSchemeMap = 
+                {   
+                    {Aws::Auth::ASYMMETRIC_SIGV4_SIGNER, smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption},
+                    {Aws::Auth::SIGV4_SIGNER, smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption},
+                    {S3::S3_EXPRESS_SIGNER_NAME, S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption}
+                };
+                authSchemes.reserve(authSchemeMap.size());
+                auto authschemeMapper = [&](const Aws::String& schemeId){
+                    auto it = authSchemeMap.find(schemeId);
+                    if (it != authSchemeMap.end())
+                    {
+                        authSchemes.emplace_back(it->second);
+                        authSchemeMap.erase(it);
+                    }
+                };
                 auto epResolutionOutcome = m_endpointProviderForAuth->ResolveEndpoint(epParams);
+
                 if (epResolutionOutcome.IsSuccess())
                 {
                     auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
                     if (endpoint.GetAttributes())
                     {
                         auto authSchemeName = endpoint.GetAttributes()->authScheme.GetName();
-                        if(strcmp(authSchemeName.c_str(),Aws::Auth::ASYMMETRIC_SIGV4_SIGNER) == 0)
-                        {
-                        return {smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption};
-                        }
-                        else if(strcmp(authSchemeName.c_str(),Aws::Auth::SIGV4_SIGNER) == 0)
-                        {
-                        return {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption};
-                        }
-                        else if(strcmp(authSchemeName.c_str(), S3::S3_EXPRESS_SIGNER_NAME) == 0)
-                        {
-                            return {S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption};
-                        }
+                        authschemeMapper(authSchemeName);
                     }
                 }
+                std::transform(authSchemeMap.begin(), 
+                  authSchemeMap.end(), 
+                  std::back_inserter(authSchemes), 
+                  [&](const std::pair<Aws::String, smithy::AuthSchemeOption>& elem){return elem.second;} );
+                return authSchemes;
             }
 
-            return {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption};
+            return {};
         }
     };
 }

@@ -24,6 +24,8 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
+#include <smithy/client/AwsLegacyClient.h>
 
 namespace smithy {
 namespace client
@@ -36,7 +38,15 @@ namespace client
              typename SerializerT,
              typename ResponseT,
              typename ErrorMarshallerT>
-    class AwsSmithyClientT : public AwsSmithyClientBase
+    class AwsSmithyClientT : public AwsSmithyClientBase, public AwsLegacyClientT<ServiceNameT, ResponseT, 
+        AwsSmithyClientT<ServiceNameT, 
+            ServiceClientConfigurationT,
+            ServiceAuthSchemeResolverT,
+            AuthSchemesVariantT,
+            EndpointProviderT,
+            SerializerT,
+            ResponseT,
+            ErrorMarshallerT>>
     {
     public:
         static_assert(std::is_base_of<Aws::Client::AWSErrorMarshaller, ErrorMarshallerT>::value, "MarshallerT must be derived from class Aws::Client::AWSErrorMarshaller");
@@ -213,6 +223,68 @@ namespace client
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 
+        Aws::String GeneratePresignedUrl(
+            EndpointUpdateCallback&& endpointCallback,
+            Aws::Http::HttpMethod method,
+            const Aws::String& region,
+            const Aws::String& serviceName,
+            long long expirationInSeconds,
+            const Aws::Http::HeaderValueCollection& customizedHeaders,
+            const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            AwsSmithyClientAsyncRequestContext ctx;
+            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
+            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+            
+            Aws::Endpoint::EndpointParameters epParams = Aws::Endpoint::EndpointParameters();
+            const auto authSchemeEpParams = authSchemeOption.endpointParameters();
+            epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+            if(serviceSpecificParameters)
+            {
+                auto bucketIt = serviceSpecificParameters->parameterMap.find("bucketName");
+                if(bucketIt != serviceSpecificParameters->parameterMap.end())
+                {
+                    auto bucket = bucketIt->second;
+                    epParams.emplace_back(Aws::String("Bucket"), bucket);
+                }
+            }
+
+            auto epResolutionOutcome = this->ResolveEndpoint(std::move(epParams), std::move(endpointCallback));
+            if (!epResolutionOutcome.IsSuccess())
+            {
+                AWS_LOGSTREAM_ERROR(ServiceNameT, "Presigned URL generating failed. Encountered error: " << epResolutionOutcome.GetError().GetMessage());
+                return {};
+            }
+            auto endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
+            const Aws::Http::URI& uri = endpoint.GetURI();
+            auto signerRegionOverride = region;
+            auto signerServiceNameOverride = serviceName;
+            //signer name is needed for some identity resolvers
+            if (endpoint.GetAttributes()) {
+                if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+                }
+                if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+                    signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+                }
+                if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+                    signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+                }
+            }
+            std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            request->SetServiceSpecificParameters(serviceSpecificParameters);
+            for (const auto& it: customizedHeaders)
+            {
+                request->SetHeaderValue(it.first.c_str(), it.second);
+            }
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(request, authSchemeOption, m_authSchemes, signerRegionOverride, signerServiceNameOverride, expirationInSeconds).IsSuccess())
+            {
+                return request->GetURIString();
+            }
+            return {};
+        }
+
+        //legacy
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::String& region,
@@ -237,7 +309,7 @@ namespace client
             return {};
         }
 
-
+        
         Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
                                                   Aws::Http::HttpMethod method,
                                                   const Aws::String& region,
@@ -263,8 +335,7 @@ namespace client
             }
             return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
         }
-
-    protected:
+    
         /* Service client specific config, the actual object is stored in AwsSmithyClientBase by pointer
          * In order to avoid config object duplication, smithy template client access it by a reference.
          * So that base client has it by base config pointer, child smithy client has it by child config reference.
@@ -274,6 +345,15 @@ namespace client
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
         std::shared_ptr<SerializerT> m_serializer{};
+    private:
+        friend class AwsLegacyClientT<ServiceNameT, ResponseT, AwsSmithyClientT<ServiceNameT, 
+            ServiceClientConfigurationT,
+            ServiceAuthSchemeResolverT,
+            AuthSchemesVariantT,
+            EndpointProviderT,
+            SerializerT,
+            ResponseT,
+            ErrorMarshallerT>>;
     };
 
 } // namespace client
