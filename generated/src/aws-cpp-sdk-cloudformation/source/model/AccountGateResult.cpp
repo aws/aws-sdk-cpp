@@ -60,7 +60,7 @@ void AccountGateResult::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << AccountGateStatusMapper::GetNameForAccountGateStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(AccountGateStatusMapper::GetNameForAccountGateStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -74,7 +74,7 @@ void AccountGateResult::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << AccountGateStatusMapper::GetNameForAccountGateStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(AccountGateStatusMapper::GetNameForAccountGateStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

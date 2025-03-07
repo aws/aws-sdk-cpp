@@ -40,7 +40,7 @@ Aws::String GetFlowLogsIntegrationTemplateRequest::SerializePayload() const
 
   if(m_integrateServicesHasBeenSet)
   {
-    m_integrateServices.OutputToStream(ss, "IntegrateService");
+    m_integrateServices.OutputToStream(ss, "IntegrateServices");
   }
 
   ss << "Version=2016-11-15";

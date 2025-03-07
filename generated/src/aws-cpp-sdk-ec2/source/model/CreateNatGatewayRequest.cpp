@@ -64,7 +64,7 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
 
   if(m_connectivityTypeHasBeenSet)
   {
-    ss << "ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
+    ss << "ConnectivityType=" << StringUtils::URLEncode(ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType)) << "&";
   }
 
   if(m_privateIpAddressHasBeenSet)

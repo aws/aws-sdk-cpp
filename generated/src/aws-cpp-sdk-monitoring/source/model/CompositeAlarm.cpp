@@ -273,7 +273,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_stateValueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+      oStream << location << index << locationValue << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
 
   if(m_stateTransitionedTimestampHasBeenSet)
@@ -283,7 +283,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_actionsSuppressedByHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActionsSuppressedBy=" << ActionsSuppressedByMapper::GetNameForActionsSuppressedBy(m_actionsSuppressedBy) << "&";
+      oStream << location << index << locationValue << ".ActionsSuppressedBy=" << StringUtils::URLEncode(ActionsSuppressedByMapper::GetNameForActionsSuppressedBy(m_actionsSuppressedBy)) << "&";
   }
 
   if(m_actionsSuppressedReasonHasBeenSet)
@@ -372,7 +372,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_stateValueHasBeenSet)
   {
-      oStream << location << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+      oStream << location << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
   if(m_stateTransitionedTimestampHasBeenSet)
   {
@@ -380,7 +380,7 @@ void CompositeAlarm::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_actionsSuppressedByHasBeenSet)
   {
-      oStream << location << ".ActionsSuppressedBy=" << ActionsSuppressedByMapper::GetNameForActionsSuppressedBy(m_actionsSuppressedBy) << "&";
+      oStream << location << ".ActionsSuppressedBy=" << StringUtils::URLEncode(ActionsSuppressedByMapper::GetNameForActionsSuppressedBy(m_actionsSuppressedBy)) << "&";
   }
   if(m_actionsSuppressedReasonHasBeenSet)
   {

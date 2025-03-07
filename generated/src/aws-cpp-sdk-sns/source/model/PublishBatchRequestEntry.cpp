@@ -171,14 +171,13 @@ void PublishBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char*
       unsigned messageAttributesIdx = 1;
       for(auto& item : m_messageAttributes)
       {
-        oStream << location << ".MessageAttributes.entry."  << messageAttributesIdx << ".Name="
+        oStream << location << ".MessageAttributes.entry." << messageAttributesIdx << ".Name="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
         Aws::StringStream messageAttributesSs;
         messageAttributesSs << location << ".MessageAttributes.entry." << messageAttributesIdx << ".Value";
         item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
         messageAttributesIdx++;
       }
-
   }
   if(m_messageDeduplicationIdHasBeenSet)
   {

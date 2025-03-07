@@ -126,7 +126,7 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_dataShareTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DataShareType=" << DataShareTypeMapper::GetNameForDataShareType(m_dataShareType) << "&";
+      oStream << location << index << locationValue << ".DataShareType=" << StringUtils::URLEncode(DataShareTypeMapper::GetNameForDataShareType(m_dataShareType)) << "&";
   }
 
   Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -154,7 +154,7 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_dataShareAssociations)
       {
         Aws::StringStream dataShareAssociationsSs;
-        dataShareAssociationsSs << location <<  ".DataShareAssociations.member." << dataShareAssociationsIdx++;
+        dataShareAssociationsSs << location << ".DataShareAssociations.member." << dataShareAssociationsIdx++;
         item.OutputToStream(oStream, dataShareAssociationsSs.str().c_str());
       }
   }
@@ -164,7 +164,7 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_dataShareTypeHasBeenSet)
   {
-      oStream << location << ".DataShareType=" << DataShareTypeMapper::GetNameForDataShareType(m_dataShareType) << "&";
+      oStream << location << ".DataShareType=" << StringUtils::URLEncode(DataShareTypeMapper::GetNameForDataShareType(m_dataShareType)) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

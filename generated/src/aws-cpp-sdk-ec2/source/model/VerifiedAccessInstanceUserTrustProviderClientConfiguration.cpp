@@ -117,7 +117,7 @@ void VerifiedAccessInstanceUserTrustProviderClientConfiguration::OutputToStream(
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_type)) << "&";
   }
 
   if(m_scopesHasBeenSet)
@@ -171,7 +171,7 @@ void VerifiedAccessInstanceUserTrustProviderClientConfiguration::OutputToStream(
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_type)) << "&";
   }
   if(m_scopesHasBeenSet)
   {

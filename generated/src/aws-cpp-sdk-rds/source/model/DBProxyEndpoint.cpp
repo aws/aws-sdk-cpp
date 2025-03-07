@@ -152,7 +152,7 @@ void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << DBProxyEndpointStatusMapper::GetNameForDBProxyEndpointStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(DBProxyEndpointStatusMapper::GetNameForDBProxyEndpointStatus(m_status)) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -190,7 +190,7 @@ void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_targetRoleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetRole=" << DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole) << "&";
+      oStream << location << index << locationValue << ".TargetRole=" << StringUtils::URLEncode(DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole)) << "&";
   }
 
   if(m_isDefaultHasBeenSet)
@@ -216,7 +216,7 @@ void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << DBProxyEndpointStatusMapper::GetNameForDBProxyEndpointStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(DBProxyEndpointStatusMapper::GetNameForDBProxyEndpointStatus(m_status)) << "&";
   }
   if(m_vpcIdHasBeenSet)
   {
@@ -248,7 +248,7 @@ void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_targetRoleHasBeenSet)
   {
-      oStream << location << ".TargetRole=" << DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole) << "&";
+      oStream << location << ".TargetRole=" << StringUtils::URLEncode(DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole)) << "&";
   }
   if(m_isDefaultHasBeenSet)
   {

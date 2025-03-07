@@ -102,7 +102,7 @@ void CreateVerifiedAccessEndpointRdsOptions::OutputToStream(Aws::OStream& oStrea
 {
   if(m_protocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Protocol=" << VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol) << "&";
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol)) << "&";
   }
 
   if(m_portHasBeenSet)
@@ -145,7 +145,7 @@ void CreateVerifiedAccessEndpointRdsOptions::OutputToStream(Aws::OStream& oStrea
 {
   if(m_protocolHasBeenSet)
   {
-      oStream << location << ".Protocol=" << VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol) << "&";
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol)) << "&";
   }
   if(m_portHasBeenSet)
   {

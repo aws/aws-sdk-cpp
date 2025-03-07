@@ -229,7 +229,7 @@ void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_authorizedTokenIssuerList)
       {
         Aws::StringStream authorizedTokenIssuerListSs;
-        authorizedTokenIssuerListSs << location <<  ".AuthorizedTokenIssuerList.member." << authorizedTokenIssuerListIdx++;
+        authorizedTokenIssuerListSs << location << ".AuthorizedTokenIssuerList.member." << authorizedTokenIssuerListIdx++;
         item.OutputToStream(oStream, authorizedTokenIssuerListSs.str().c_str());
       }
   }
@@ -239,7 +239,7 @@ void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_serviceIntegrations)
       {
         Aws::StringStream serviceIntegrationsSs;
-        serviceIntegrationsSs << location <<  ".ServiceIntegrations.member." << serviceIntegrationsIdx++;
+        serviceIntegrationsSs << location << ".ServiceIntegrations.member." << serviceIntegrationsIdx++;
         item.OutputToStream(oStream, serviceIntegrationsSs.str().c_str());
       }
   }

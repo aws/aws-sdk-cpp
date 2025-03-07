@@ -60,7 +60,7 @@ void FpgaImageState::OutputToStream(Aws::OStream& oStream, const char* location,
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << FpgaImageStateCodeMapper::GetNameForFpgaImageStateCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(FpgaImageStateCodeMapper::GetNameForFpgaImageStateCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void FpgaImageState::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << FpgaImageStateCodeMapper::GetNameForFpgaImageStateCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(FpgaImageStateCodeMapper::GetNameForFpgaImageStateCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

@@ -77,7 +77,7 @@ void InstanceEventWindowTimeRangeRequest::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_startWeekDayHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartWeekDay=" << WeekDayMapper::GetNameForWeekDay(m_startWeekDay) << "&";
+      oStream << location << index << locationValue << ".StartWeekDay=" << StringUtils::URLEncode(WeekDayMapper::GetNameForWeekDay(m_startWeekDay)) << "&";
   }
 
   if(m_startHourHasBeenSet)
@@ -87,7 +87,7 @@ void InstanceEventWindowTimeRangeRequest::OutputToStream(Aws::OStream& oStream, 
 
   if(m_endWeekDayHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndWeekDay=" << WeekDayMapper::GetNameForWeekDay(m_endWeekDay) << "&";
+      oStream << location << index << locationValue << ".EndWeekDay=" << StringUtils::URLEncode(WeekDayMapper::GetNameForWeekDay(m_endWeekDay)) << "&";
   }
 
   if(m_endHourHasBeenSet)
@@ -101,7 +101,7 @@ void InstanceEventWindowTimeRangeRequest::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_startWeekDayHasBeenSet)
   {
-      oStream << location << ".StartWeekDay=" << WeekDayMapper::GetNameForWeekDay(m_startWeekDay) << "&";
+      oStream << location << ".StartWeekDay=" << StringUtils::URLEncode(WeekDayMapper::GetNameForWeekDay(m_startWeekDay)) << "&";
   }
   if(m_startHourHasBeenSet)
   {
@@ -109,7 +109,7 @@ void InstanceEventWindowTimeRangeRequest::OutputToStream(Aws::OStream& oStream, 
   }
   if(m_endWeekDayHasBeenSet)
   {
-      oStream << location << ".EndWeekDay=" << WeekDayMapper::GetNameForWeekDay(m_endWeekDay) << "&";
+      oStream << location << ".EndWeekDay=" << StringUtils::URLEncode(WeekDayMapper::GetNameForWeekDay(m_endWeekDay)) << "&";
   }
   if(m_endHourHasBeenSet)
   {

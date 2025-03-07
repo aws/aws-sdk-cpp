@@ -93,7 +93,7 @@ void DashboardInvalidInputError::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_dashboardValidationMessages)
       {
         Aws::StringStream dashboardValidationMessagesSs;
-        dashboardValidationMessagesSs << location <<  ".dashboardValidationMessages.member." << dashboardValidationMessagesIdx++;
+        dashboardValidationMessagesSs << location << ".dashboardValidationMessages.member." << dashboardValidationMessagesIdx++;
         item.OutputToStream(oStream, dashboardValidationMessagesSs.str().c_str());
       }
   }

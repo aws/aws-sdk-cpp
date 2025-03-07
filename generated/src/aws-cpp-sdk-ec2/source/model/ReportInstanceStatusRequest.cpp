@@ -44,7 +44,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << ReportStatusTypeMapper::GetNameForReportStatusType(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(ReportStatusTypeMapper::GetNameForReportStatusType(m_status)) << "&";
   }
 
   if(m_startTimeHasBeenSet)
@@ -63,7 +63,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
     for(auto& item : m_reasonCodes)
     {
       ss << "ReasonCode." << reasonCodesCount << "="
-          << StringUtils::URLEncode(ReportInstanceReasonCodesMapper::GetNameForReportInstanceReasonCodes(item).c_str()) << "&";
+          << StringUtils::URLEncode(ReportInstanceReasonCodesMapper::GetNameForReportInstanceReasonCodes(item)) << "&";
       reasonCodesCount++;
     }
   }

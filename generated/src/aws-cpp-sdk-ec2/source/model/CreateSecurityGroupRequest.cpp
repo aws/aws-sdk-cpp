@@ -26,7 +26,7 @@ Aws::String CreateSecurityGroupRequest::SerializePayload() const
   ss << "Action=CreateSecurityGroup&";
   if(m_descriptionHasBeenSet)
   {
-    ss << "GroupDescription=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_groupNameHasBeenSet)

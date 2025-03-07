@@ -39,7 +39,7 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
 
   if(m_eventTypeHasBeenSet)
   {
-    ss << "EventType=" << EventTypeMapper::GetNameForEventType(m_eventType) << "&";
+    ss << "EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
   }
 
   if(m_startTimeHasBeenSet)

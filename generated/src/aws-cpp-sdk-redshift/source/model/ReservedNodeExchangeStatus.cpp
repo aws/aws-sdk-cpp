@@ -116,7 +116,7 @@ void ReservedNodeExchangeStatus::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ReservedNodeExchangeStatusTypeMapper::GetNameForReservedNodeExchangeStatusType(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ReservedNodeExchangeStatusTypeMapper::GetNameForReservedNodeExchangeStatusType(m_status)) << "&";
   }
 
   if(m_requestTimeHasBeenSet)
@@ -164,7 +164,7 @@ void ReservedNodeExchangeStatus::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ReservedNodeExchangeStatusTypeMapper::GetNameForReservedNodeExchangeStatusType(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ReservedNodeExchangeStatusTypeMapper::GetNameForReservedNodeExchangeStatusType(m_status)) << "&";
   }
   if(m_requestTimeHasBeenSet)
   {

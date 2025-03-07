@@ -95,7 +95,7 @@ Aws::String UpdateStackSetRequest::SerializePayload() const
       for(auto& item : m_capabilities)
       {
         ss << "Capabilities.member." << capabilitiesCount << "="
-            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
+            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
         capabilitiesCount++;
       }
     }
@@ -140,7 +140,7 @@ Aws::String UpdateStackSetRequest::SerializePayload() const
 
   if(m_permissionModelHasBeenSet)
   {
-    ss << "PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+    ss << "PermissionModel=" << StringUtils::URLEncode(PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel)) << "&";
   }
 
   if(m_autoDeploymentHasBeenSet)
@@ -191,7 +191,7 @@ Aws::String UpdateStackSetRequest::SerializePayload() const
 
   if(m_callAsHasBeenSet)
   {
-    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+    ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
   if(m_managedExecutionHasBeenSet)

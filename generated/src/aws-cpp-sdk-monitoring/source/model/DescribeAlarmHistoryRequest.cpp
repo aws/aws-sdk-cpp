@@ -46,7 +46,7 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
       for(auto& item : m_alarmTypes)
       {
         ss << "AlarmTypes.member." << alarmTypesCount << "="
-            << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item).c_str()) << "&";
+            << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item)) << "&";
         alarmTypesCount++;
       }
     }
@@ -54,7 +54,7 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
 
   if(m_historyItemTypeHasBeenSet)
   {
-    ss << "HistoryItemType=" << HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType) << "&";
+    ss << "HistoryItemType=" << StringUtils::URLEncode(HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType)) << "&";
   }
 
   if(m_startDateHasBeenSet)
@@ -79,7 +79,7 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
 
   if(m_scanByHasBeenSet)
   {
-    ss << "ScanBy=" << ScanByMapper::GetNameForScanBy(m_scanBy) << "&";
+    ss << "ScanBy=" << StringUtils::URLEncode(ScanByMapper::GetNameForScanBy(m_scanBy)) << "&";
   }
 
   ss << "Version=2010-08-01";

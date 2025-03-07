@@ -123,7 +123,7 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_appCookieStickinessPolicies)
       {
         Aws::StringStream appCookieStickinessPoliciesSs;
-        appCookieStickinessPoliciesSs << location <<  ".AppCookieStickinessPolicies.member." << appCookieStickinessPoliciesIdx++;
+        appCookieStickinessPoliciesSs << location << ".AppCookieStickinessPolicies.member." << appCookieStickinessPoliciesIdx++;
         item.OutputToStream(oStream, appCookieStickinessPoliciesSs.str().c_str());
       }
   }
@@ -133,7 +133,7 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_lBCookieStickinessPolicies)
       {
         Aws::StringStream lBCookieStickinessPoliciesSs;
-        lBCookieStickinessPoliciesSs << location <<  ".LBCookieStickinessPolicies.member." << lBCookieStickinessPoliciesIdx++;
+        lBCookieStickinessPoliciesSs << location << ".LBCookieStickinessPolicies.member." << lBCookieStickinessPoliciesIdx++;
         item.OutputToStream(oStream, lBCookieStickinessPoliciesSs.str().c_str());
       }
   }

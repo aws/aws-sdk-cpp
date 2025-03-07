@@ -241,7 +241,7 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_userPolicyList)
       {
         Aws::StringStream userPolicyListSs;
-        userPolicyListSs << location <<  ".UserPolicyList.member." << userPolicyListIdx++;
+        userPolicyListSs << location << ".UserPolicyList.member." << userPolicyListIdx++;
         item.OutputToStream(oStream, userPolicyListSs.str().c_str());
       }
   }
@@ -259,7 +259,7 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_attachedManagedPolicies)
       {
         Aws::StringStream attachedManagedPoliciesSs;
-        attachedManagedPoliciesSs << location <<  ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
+        attachedManagedPoliciesSs << location << ".AttachedManagedPolicies.member." << attachedManagedPoliciesIdx++;
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
@@ -275,7 +275,7 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        tagsSs << location << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

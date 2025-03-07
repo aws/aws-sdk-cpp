@@ -101,7 +101,7 @@ void PredictiveScalingConfiguration::OutputToStream(Aws::OStream& oStream, const
 
   if(m_modeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Mode=" << PredictiveScalingModeMapper::GetNameForPredictiveScalingMode(m_mode) << "&";
+      oStream << location << index << locationValue << ".Mode=" << StringUtils::URLEncode(PredictiveScalingModeMapper::GetNameForPredictiveScalingMode(m_mode)) << "&";
   }
 
   if(m_schedulingBufferTimeHasBeenSet)
@@ -111,7 +111,7 @@ void PredictiveScalingConfiguration::OutputToStream(Aws::OStream& oStream, const
 
   if(m_maxCapacityBreachBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MaxCapacityBreachBehavior=" << PredictiveScalingMaxCapacityBreachBehaviorMapper::GetNameForPredictiveScalingMaxCapacityBreachBehavior(m_maxCapacityBreachBehavior) << "&";
+      oStream << location << index << locationValue << ".MaxCapacityBreachBehavior=" << StringUtils::URLEncode(PredictiveScalingMaxCapacityBreachBehaviorMapper::GetNameForPredictiveScalingMaxCapacityBreachBehavior(m_maxCapacityBreachBehavior)) << "&";
   }
 
   if(m_maxCapacityBufferHasBeenSet)
@@ -129,13 +129,13 @@ void PredictiveScalingConfiguration::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_metricSpecifications)
       {
         Aws::StringStream metricSpecificationsSs;
-        metricSpecificationsSs << location <<  ".MetricSpecifications.member." << metricSpecificationsIdx++;
+        metricSpecificationsSs << location << ".MetricSpecifications.member." << metricSpecificationsIdx++;
         item.OutputToStream(oStream, metricSpecificationsSs.str().c_str());
       }
   }
   if(m_modeHasBeenSet)
   {
-      oStream << location << ".Mode=" << PredictiveScalingModeMapper::GetNameForPredictiveScalingMode(m_mode) << "&";
+      oStream << location << ".Mode=" << StringUtils::URLEncode(PredictiveScalingModeMapper::GetNameForPredictiveScalingMode(m_mode)) << "&";
   }
   if(m_schedulingBufferTimeHasBeenSet)
   {
@@ -143,7 +143,7 @@ void PredictiveScalingConfiguration::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_maxCapacityBreachBehaviorHasBeenSet)
   {
-      oStream << location << ".MaxCapacityBreachBehavior=" << PredictiveScalingMaxCapacityBreachBehaviorMapper::GetNameForPredictiveScalingMaxCapacityBreachBehavior(m_maxCapacityBreachBehavior) << "&";
+      oStream << location << ".MaxCapacityBreachBehavior=" << StringUtils::URLEncode(PredictiveScalingMaxCapacityBreachBehaviorMapper::GetNameForPredictiveScalingMaxCapacityBreachBehavior(m_maxCapacityBreachBehavior)) << "&";
   }
   if(m_maxCapacityBufferHasBeenSet)
   {

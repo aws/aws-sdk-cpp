@@ -37,7 +37,7 @@ Aws::String ListStacksRequest::SerializePayload() const
       for(auto& item : m_stackStatusFilter)
       {
         ss << "StackStatusFilter.member." << stackStatusFilterCount << "="
-            << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(item)) << "&";
         stackStatusFilterCount++;
       }
     }

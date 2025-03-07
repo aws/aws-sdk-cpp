@@ -147,7 +147,7 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_evalDecisionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EvalDecision=" << PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalDecision) << "&";
+      oStream << location << index << locationValue << ".EvalDecision=" << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalDecision)) << "&";
   }
 
   if(m_matchedStatementsHasBeenSet)
@@ -192,7 +192,7 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
         oStream << location << index << locationValue << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".value="
-            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second).c_str()) << "&";
+            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second)) << "&";
         evalDecisionDetailsIdx++;
       }
   }
@@ -222,7 +222,7 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_evalDecisionHasBeenSet)
   {
-      oStream << location << ".EvalDecision=" << PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalDecision) << "&";
+      oStream << location << ".EvalDecision=" << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalDecision)) << "&";
   }
   if(m_matchedStatementsHasBeenSet)
   {
@@ -230,7 +230,7 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_matchedStatements)
       {
         Aws::StringStream matchedStatementsSs;
-        matchedStatementsSs << location <<  ".MatchedStatements.member." << matchedStatementsIdx++;
+        matchedStatementsSs << location << ".MatchedStatements.member." << matchedStatementsIdx++;
         item.OutputToStream(oStream, matchedStatementsSs.str().c_str());
       }
   }
@@ -259,13 +259,12 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned evalDecisionDetailsIdx = 1;
       for(auto& item : m_evalDecisionDetails)
       {
-        oStream << location << ".EvalDecisionDetails.entry."  << evalDecisionDetailsIdx << ".key="
+        oStream << location << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".value="
-            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second).c_str()) << "&";
+        oStream << location << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".value="
+            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second)) << "&";
         evalDecisionDetailsIdx++;
       }
-
   }
   if(m_resourceSpecificResultsHasBeenSet)
   {
@@ -273,7 +272,7 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_resourceSpecificResults)
       {
         Aws::StringStream resourceSpecificResultsSs;
-        resourceSpecificResultsSs << location <<  ".ResourceSpecificResults.member." << resourceSpecificResultsIdx++;
+        resourceSpecificResultsSs << location << ".ResourceSpecificResults.member." << resourceSpecificResultsIdx++;
         item.OutputToStream(oStream, resourceSpecificResultsSs.str().c_str());
       }
   }

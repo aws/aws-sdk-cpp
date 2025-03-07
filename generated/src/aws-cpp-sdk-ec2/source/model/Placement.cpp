@@ -130,7 +130,7 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Tenancy=" << TenancyMapper::GetNameForTenancy(m_tenancy) << "&";
+      oStream << location << index << locationValue << ".Tenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_tenancy)) << "&";
   }
 
   if(m_spreadDomainHasBeenSet)
@@ -175,7 +175,7 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << ".Tenancy=" << TenancyMapper::GetNameForTenancy(m_tenancy) << "&";
+      oStream << location << ".Tenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_tenancy)) << "&";
   }
   if(m_spreadDomainHasBeenSet)
   {

@@ -238,7 +238,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_productDescriptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+      oStream << location << index << locationValue << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
   }
 
   if(m_spotInstanceRequestIdHasBeenSet)
@@ -253,7 +253,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state)) << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -276,7 +276,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
   }
 
   if(m_validFromHasBeenSet)
@@ -291,7 +291,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 
 }
@@ -340,7 +340,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_productDescriptionHasBeenSet)
   {
-      oStream << location << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+      oStream << location << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
   }
   if(m_spotInstanceRequestIdHasBeenSet)
   {
@@ -352,7 +352,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state)) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -366,13 +366,13 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
   }
   if(m_validFromHasBeenSet)
   {
@@ -384,7 +384,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 }
 

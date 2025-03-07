@@ -67,7 +67,7 @@ void BulkEmailDestinationStatus::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status)) << "&";
   }
 
   if(m_errorHasBeenSet)
@@ -86,7 +86,7 @@ void BulkEmailDestinationStatus::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(BulkEmailStatusMapper::GetNameForBulkEmailStatus(m_status)) << "&";
   }
   if(m_errorHasBeenSet)
   {

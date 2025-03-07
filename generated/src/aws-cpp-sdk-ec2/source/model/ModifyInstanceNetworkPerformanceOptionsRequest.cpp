@@ -30,7 +30,7 @@ Aws::String ModifyInstanceNetworkPerformanceOptionsRequest::SerializePayload() c
 
   if(m_bandwidthWeightingHasBeenSet)
   {
-    ss << "BandwidthWeighting=" << InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting) << "&";
+    ss << "BandwidthWeighting=" << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

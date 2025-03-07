@@ -37,7 +37,7 @@ Aws::String GetInstanceTypesFromInstanceRequirementsRequest::SerializePayload() 
     for(auto& item : m_architectureTypes)
     {
       ss << "ArchitectureType." << architectureTypesCount << "="
-          << StringUtils::URLEncode(ArchitectureTypeMapper::GetNameForArchitectureType(item).c_str()) << "&";
+          << StringUtils::URLEncode(ArchitectureTypeMapper::GetNameForArchitectureType(item)) << "&";
       architectureTypesCount++;
     }
   }
@@ -48,7 +48,7 @@ Aws::String GetInstanceTypesFromInstanceRequirementsRequest::SerializePayload() 
     for(auto& item : m_virtualizationTypes)
     {
       ss << "VirtualizationType." << virtualizationTypesCount << "="
-          << StringUtils::URLEncode(VirtualizationTypeMapper::GetNameForVirtualizationType(item).c_str()) << "&";
+          << StringUtils::URLEncode(VirtualizationTypeMapper::GetNameForVirtualizationType(item)) << "&";
       virtualizationTypesCount++;
     }
   }

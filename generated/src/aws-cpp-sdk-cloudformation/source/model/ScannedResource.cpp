@@ -111,13 +111,12 @@ void ScannedResource::OutputToStream(Aws::OStream& oStream, const char* location
       unsigned resourceIdentifierIdx = 1;
       for(auto& item : m_resourceIdentifier)
       {
-        oStream << location << ".ResourceIdentifier.entry."  << resourceIdentifierIdx << ".key="
+        oStream << location << ".ResourceIdentifier.entry." << resourceIdentifierIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".ResourceIdentifier.entry." << resourceIdentifierIdx << ".value="
+        oStream << location << ".ResourceIdentifier.entry." << resourceIdentifierIdx << ".value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         resourceIdentifierIdx++;
       }
-
   }
   if(m_managedByStackHasBeenSet)
   {

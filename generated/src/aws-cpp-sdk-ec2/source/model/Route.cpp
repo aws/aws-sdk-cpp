@@ -219,12 +219,12 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_originHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Origin=" << RouteOriginMapper::GetNameForRouteOrigin(m_origin) << "&";
+      oStream << location << index << locationValue << ".Origin=" << StringUtils::URLEncode(RouteOriginMapper::GetNameForRouteOrigin(m_origin)) << "&";
   }
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(RouteStateMapper::GetNameForRouteState(m_state)) << "&";
   }
 
   if(m_vpcPeeringConnectionIdHasBeenSet)
@@ -291,11 +291,11 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_originHasBeenSet)
   {
-      oStream << location << ".Origin=" << RouteOriginMapper::GetNameForRouteOrigin(m_origin) << "&";
+      oStream << location << ".Origin=" << StringUtils::URLEncode(RouteOriginMapper::GetNameForRouteOrigin(m_origin)) << "&";
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(RouteStateMapper::GetNameForRouteState(m_state)) << "&";
   }
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {

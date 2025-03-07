@@ -60,7 +60,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
-    ss << "ExcessCapacityTerminationPolicy=" << FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+    ss << "ExcessCapacityTerminationPolicy=" << StringUtils::URLEncode(FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy)) << "&";
   }
 
   if(m_launchTemplateConfigsHasBeenSet)
@@ -85,7 +85,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(FleetTypeMapper::GetNameForFleetType(m_type)) << "&";
   }
 
   if(m_validFromHasBeenSet)

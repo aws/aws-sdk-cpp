@@ -66,7 +66,7 @@ void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 
 }
@@ -75,11 +75,11 @@ void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_amountHasBeenSet)
   {
-        oStream << location << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
+      oStream << location << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 }
 

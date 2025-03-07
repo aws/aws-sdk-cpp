@@ -160,7 +160,7 @@ void TransitGatewayRouteTableAnnouncement::OutputToStream(Aws::OStream& oStream,
 
   if(m_announcementDirectionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AnnouncementDirection=" << TransitGatewayRouteTableAnnouncementDirectionMapper::GetNameForTransitGatewayRouteTableAnnouncementDirection(m_announcementDirection) << "&";
+      oStream << location << index << locationValue << ".AnnouncementDirection=" << StringUtils::URLEncode(TransitGatewayRouteTableAnnouncementDirectionMapper::GetNameForTransitGatewayRouteTableAnnouncementDirection(m_announcementDirection)) << "&";
   }
 
   if(m_transitGatewayRouteTableIdHasBeenSet)
@@ -170,7 +170,7 @@ void TransitGatewayRouteTableAnnouncement::OutputToStream(Aws::OStream& oStream,
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayRouteTableAnnouncementStateMapper::GetNameForTransitGatewayRouteTableAnnouncementState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayRouteTableAnnouncementStateMapper::GetNameForTransitGatewayRouteTableAnnouncementState(m_state)) << "&";
   }
 
   if(m_creationTimeHasBeenSet)
@@ -219,7 +219,7 @@ void TransitGatewayRouteTableAnnouncement::OutputToStream(Aws::OStream& oStream,
   }
   if(m_announcementDirectionHasBeenSet)
   {
-      oStream << location << ".AnnouncementDirection=" << TransitGatewayRouteTableAnnouncementDirectionMapper::GetNameForTransitGatewayRouteTableAnnouncementDirection(m_announcementDirection) << "&";
+      oStream << location << ".AnnouncementDirection=" << StringUtils::URLEncode(TransitGatewayRouteTableAnnouncementDirectionMapper::GetNameForTransitGatewayRouteTableAnnouncementDirection(m_announcementDirection)) << "&";
   }
   if(m_transitGatewayRouteTableIdHasBeenSet)
   {
@@ -227,7 +227,7 @@ void TransitGatewayRouteTableAnnouncement::OutputToStream(Aws::OStream& oStream,
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayRouteTableAnnouncementStateMapper::GetNameForTransitGatewayRouteTableAnnouncementState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayRouteTableAnnouncementStateMapper::GetNameForTransitGatewayRouteTableAnnouncementState(m_state)) << "&";
   }
   if(m_creationTimeHasBeenSet)
   {
@@ -239,7 +239,7 @@ void TransitGatewayRouteTableAnnouncement::OutputToStream(Aws::OStream& oStream,
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

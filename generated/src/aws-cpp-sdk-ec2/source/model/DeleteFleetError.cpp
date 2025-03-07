@@ -60,7 +60,7 @@ void DeleteFleetError::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << DeleteFleetErrorCodeMapper::GetNameForDeleteFleetErrorCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(DeleteFleetErrorCodeMapper::GetNameForDeleteFleetErrorCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void DeleteFleetError::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << DeleteFleetErrorCodeMapper::GetNameForDeleteFleetErrorCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(DeleteFleetErrorCodeMapper::GetNameForDeleteFleetErrorCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

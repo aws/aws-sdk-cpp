@@ -97,7 +97,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
 {
   if(m_attributeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Attribute=" << ResourceAttributeMapper::GetNameForResourceAttribute(m_attribute) << "&";
+      oStream << location << index << locationValue << ".Attribute=" << StringUtils::URLEncode(ResourceAttributeMapper::GetNameForResourceAttribute(m_attribute)) << "&";
   }
 
   if(m_nameHasBeenSet)
@@ -107,7 +107,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_requiresRecreationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequiresRecreation=" << RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation) << "&";
+      oStream << location << index << locationValue << ".RequiresRecreation=" << StringUtils::URLEncode(RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation)) << "&";
   }
 
   if(m_pathHasBeenSet)
@@ -127,7 +127,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_attributeChangeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttributeChangeType=" << AttributeChangeTypeMapper::GetNameForAttributeChangeType(m_attributeChangeType) << "&";
+      oStream << location << index << locationValue << ".AttributeChangeType=" << StringUtils::URLEncode(AttributeChangeTypeMapper::GetNameForAttributeChangeType(m_attributeChangeType)) << "&";
   }
 
 }
@@ -136,7 +136,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
 {
   if(m_attributeHasBeenSet)
   {
-      oStream << location << ".Attribute=" << ResourceAttributeMapper::GetNameForResourceAttribute(m_attribute) << "&";
+      oStream << location << ".Attribute=" << StringUtils::URLEncode(ResourceAttributeMapper::GetNameForResourceAttribute(m_attribute)) << "&";
   }
   if(m_nameHasBeenSet)
   {
@@ -144,7 +144,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_requiresRecreationHasBeenSet)
   {
-      oStream << location << ".RequiresRecreation=" << RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation) << "&";
+      oStream << location << ".RequiresRecreation=" << StringUtils::URLEncode(RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation)) << "&";
   }
   if(m_pathHasBeenSet)
   {
@@ -160,7 +160,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_attributeChangeTypeHasBeenSet)
   {
-      oStream << location << ".AttributeChangeType=" << AttributeChangeTypeMapper::GetNameForAttributeChangeType(m_attributeChangeType) << "&";
+      oStream << location << ".AttributeChangeType=" << StringUtils::URLEncode(AttributeChangeTypeMapper::GetNameForAttributeChangeType(m_attributeChangeType)) << "&";
   }
 }
 

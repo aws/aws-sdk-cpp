@@ -37,12 +37,12 @@ Aws::String CreateUsageLimitRequest::SerializePayload() const
 
   if(m_featureTypeHasBeenSet)
   {
-    ss << "FeatureType=" << UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType) << "&";
+    ss << "FeatureType=" << StringUtils::URLEncode(UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType)) << "&";
   }
 
   if(m_limitTypeHasBeenSet)
   {
-    ss << "LimitType=" << UsageLimitLimitTypeMapper::GetNameForUsageLimitLimitType(m_limitType) << "&";
+    ss << "LimitType=" << StringUtils::URLEncode(UsageLimitLimitTypeMapper::GetNameForUsageLimitLimitType(m_limitType)) << "&";
   }
 
   if(m_amountHasBeenSet)
@@ -52,12 +52,12 @@ Aws::String CreateUsageLimitRequest::SerializePayload() const
 
   if(m_periodHasBeenSet)
   {
-    ss << "Period=" << UsageLimitPeriodMapper::GetNameForUsageLimitPeriod(m_period) << "&";
+    ss << "Period=" << StringUtils::URLEncode(UsageLimitPeriodMapper::GetNameForUsageLimitPeriod(m_period)) << "&";
   }
 
   if(m_breachActionHasBeenSet)
   {
-    ss << "BreachAction=" << UsageLimitBreachActionMapper::GetNameForUsageLimitBreachAction(m_breachAction) << "&";
+    ss << "BreachAction=" << StringUtils::URLEncode(UsageLimitBreachActionMapper::GetNameForUsageLimitBreachAction(m_breachAction)) << "&";
   }
 
   if(m_tagsHasBeenSet)

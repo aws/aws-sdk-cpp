@@ -91,7 +91,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       for(auto& item : m_capabilities)
       {
         ss << "Capabilities.member." << capabilitiesCount << "="
-            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
+            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
         capabilitiesCount++;
       }
     }
@@ -177,7 +177,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
 
   if(m_changeSetTypeHasBeenSet)
   {
-    ss << "ChangeSetType=" << ChangeSetTypeMapper::GetNameForChangeSetType(m_changeSetType) << "&";
+    ss << "ChangeSetType=" << StringUtils::URLEncode(ChangeSetTypeMapper::GetNameForChangeSetType(m_changeSetType)) << "&";
   }
 
   if(m_resourcesToImportHasBeenSet)
@@ -204,7 +204,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
 
   if(m_onStackFailureHasBeenSet)
   {
-    ss << "OnStackFailure=" << OnStackFailureMapper::GetNameForOnStackFailure(m_onStackFailure) << "&";
+    ss << "OnStackFailure=" << StringUtils::URLEncode(OnStackFailureMapper::GetNameForOnStackFailure(m_onStackFailure)) << "&";
   }
 
   if(m_importExistingResourcesHasBeenSet)

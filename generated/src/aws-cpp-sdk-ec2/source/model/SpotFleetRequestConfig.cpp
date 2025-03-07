@@ -95,7 +95,7 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_activityStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActivityStatus=" << ActivityStatusMapper::GetNameForActivityStatus(m_activityStatus) << "&";
+      oStream << location << index << locationValue << ".ActivityStatus=" << StringUtils::URLEncode(ActivityStatusMapper::GetNameForActivityStatus(m_activityStatus)) << "&";
   }
 
   if(m_createTimeHasBeenSet)
@@ -117,7 +117,7 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_spotFleetRequestStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_spotFleetRequestState) << "&";
+      oStream << location << index << locationValue << ".SpotFleetRequestState=" << StringUtils::URLEncode(BatchStateMapper::GetNameForBatchState(m_spotFleetRequestState)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -137,7 +137,7 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_activityStatusHasBeenSet)
   {
-      oStream << location << ".ActivityStatus=" << ActivityStatusMapper::GetNameForActivityStatus(m_activityStatus) << "&";
+      oStream << location << ".ActivityStatus=" << StringUtils::URLEncode(ActivityStatusMapper::GetNameForActivityStatus(m_activityStatus)) << "&";
   }
   if(m_createTimeHasBeenSet)
   {
@@ -155,7 +155,7 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_spotFleetRequestStateHasBeenSet)
   {
-      oStream << location << ".SpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_spotFleetRequestState) << "&";
+      oStream << location << ".SpotFleetRequestState=" << StringUtils::URLEncode(BatchStateMapper::GetNameForBatchState(m_spotFleetRequestState)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -163,7 +163,7 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

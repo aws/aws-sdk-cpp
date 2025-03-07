@@ -84,7 +84,7 @@ void BouncedRecipientInfo::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_bounceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BounceType=" << BounceTypeMapper::GetNameForBounceType(m_bounceType) << "&";
+      oStream << location << index << locationValue << ".BounceType=" << StringUtils::URLEncode(BounceTypeMapper::GetNameForBounceType(m_bounceType)) << "&";
   }
 
   if(m_recipientDsnFieldsHasBeenSet)
@@ -108,7 +108,7 @@ void BouncedRecipientInfo::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_bounceTypeHasBeenSet)
   {
-      oStream << location << ".BounceType=" << BounceTypeMapper::GetNameForBounceType(m_bounceType) << "&";
+      oStream << location << ".BounceType=" << StringUtils::URLEncode(BounceTypeMapper::GetNameForBounceType(m_bounceType)) << "&";
   }
   if(m_recipientDsnFieldsHasBeenSet)
   {

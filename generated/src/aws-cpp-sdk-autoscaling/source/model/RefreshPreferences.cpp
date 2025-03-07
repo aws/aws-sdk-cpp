@@ -171,12 +171,12 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_scaleInProtectedInstancesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ScaleInProtectedInstances=" << ScaleInProtectedInstancesMapper::GetNameForScaleInProtectedInstances(m_scaleInProtectedInstances) << "&";
+      oStream << location << index << locationValue << ".ScaleInProtectedInstances=" << StringUtils::URLEncode(ScaleInProtectedInstancesMapper::GetNameForScaleInProtectedInstances(m_scaleInProtectedInstances)) << "&";
   }
 
   if(m_standbyInstancesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StandbyInstances=" << StandbyInstancesMapper::GetNameForStandbyInstances(m_standbyInstances) << "&";
+      oStream << location << index << locationValue << ".StandbyInstances=" << StringUtils::URLEncode(StandbyInstancesMapper::GetNameForStandbyInstances(m_standbyInstances)) << "&";
   }
 
   if(m_alarmSpecificationHasBeenSet)
@@ -230,11 +230,11 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_scaleInProtectedInstancesHasBeenSet)
   {
-      oStream << location << ".ScaleInProtectedInstances=" << ScaleInProtectedInstancesMapper::GetNameForScaleInProtectedInstances(m_scaleInProtectedInstances) << "&";
+      oStream << location << ".ScaleInProtectedInstances=" << StringUtils::URLEncode(ScaleInProtectedInstancesMapper::GetNameForScaleInProtectedInstances(m_scaleInProtectedInstances)) << "&";
   }
   if(m_standbyInstancesHasBeenSet)
   {
-      oStream << location << ".StandbyInstances=" << StandbyInstancesMapper::GetNameForStandbyInstances(m_standbyInstances) << "&";
+      oStream << location << ".StandbyInstances=" << StringUtils::URLEncode(StandbyInstancesMapper::GetNameForStandbyInstances(m_standbyInstances)) << "&";
   }
   if(m_alarmSpecificationHasBeenSet)
   {

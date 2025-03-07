@@ -40,7 +40,7 @@ Aws::String ModifyCustomDBEngineVersionRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << CustomEngineVersionStatusMapper::GetNameForCustomEngineVersionStatus(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(CustomEngineVersionStatusMapper::GetNameForCustomEngineVersionStatus(m_status)) << "&";
   }
 
   ss << "Version=2014-10-31";

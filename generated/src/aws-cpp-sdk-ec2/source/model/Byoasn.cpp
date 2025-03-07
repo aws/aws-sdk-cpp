@@ -89,7 +89,7 @@ void Byoasn::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << AsnStateMapper::GetNameForAsnState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(AsnStateMapper::GetNameForAsnState(m_state)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void Byoasn::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << AsnStateMapper::GetNameForAsnState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(AsnStateMapper::GetNameForAsnState(m_state)) << "&";
   }
 }
 

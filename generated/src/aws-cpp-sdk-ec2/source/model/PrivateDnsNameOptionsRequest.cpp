@@ -69,7 +69,7 @@ void PrivateDnsNameOptionsRequest::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_hostnameTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HostnameType=" << HostnameTypeMapper::GetNameForHostnameType(m_hostnameType) << "&";
+      oStream << location << index << locationValue << ".HostnameType=" << StringUtils::URLEncode(HostnameTypeMapper::GetNameForHostnameType(m_hostnameType)) << "&";
   }
 
   if(m_enableResourceNameDnsARecordHasBeenSet)
@@ -88,7 +88,7 @@ void PrivateDnsNameOptionsRequest::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_hostnameTypeHasBeenSet)
   {
-      oStream << location << ".HostnameType=" << HostnameTypeMapper::GetNameForHostnameType(m_hostnameType) << "&";
+      oStream << location << ".HostnameType=" << StringUtils::URLEncode(HostnameTypeMapper::GetNameForHostnameType(m_hostnameType)) << "&";
   }
   if(m_enableResourceNameDnsARecordHasBeenSet)
   {

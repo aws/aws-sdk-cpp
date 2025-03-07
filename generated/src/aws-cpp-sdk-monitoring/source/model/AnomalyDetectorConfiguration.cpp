@@ -89,7 +89,7 @@ void AnomalyDetectorConfiguration::OutputToStream(Aws::OStream& oStream, const c
       for(auto& item : m_excludedTimeRanges)
       {
         Aws::StringStream excludedTimeRangesSs;
-        excludedTimeRangesSs << location <<  ".ExcludedTimeRanges.member." << excludedTimeRangesIdx++;
+        excludedTimeRangesSs << location << ".ExcludedTimeRanges.member." << excludedTimeRangesIdx++;
         item.OutputToStream(oStream, excludedTimeRangesSs.str().c_str());
       }
   }

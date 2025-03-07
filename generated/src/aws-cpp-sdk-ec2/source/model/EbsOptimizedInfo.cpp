@@ -131,7 +131,7 @@ void EbsOptimizedInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_baselineThroughputInMBpsHasBeenSet)
   {
-        oStream << location << ".BaselineThroughputInMBps=" << StringUtils::URLEncode(m_baselineThroughputInMBps) << "&";
+      oStream << location << ".BaselineThroughputInMBps=" << StringUtils::URLEncode(m_baselineThroughputInMBps) << "&";
   }
   if(m_baselineIopsHasBeenSet)
   {
@@ -143,7 +143,7 @@ void EbsOptimizedInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_maximumThroughputInMBpsHasBeenSet)
   {
-        oStream << location << ".MaximumThroughputInMBps=" << StringUtils::URLEncode(m_maximumThroughputInMBps) << "&";
+      oStream << location << ".MaximumThroughputInMBps=" << StringUtils::URLEncode(m_maximumThroughputInMBps) << "&";
   }
   if(m_maximumIopsHasBeenSet)
   {

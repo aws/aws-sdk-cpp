@@ -79,7 +79,7 @@ void LaunchTemplateCpuOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
 
   if(m_amdSevSnpHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AmdSevSnp=" << AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp) << "&";
+      oStream << location << index << locationValue << ".AmdSevSnp=" << StringUtils::URLEncode(AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp)) << "&";
   }
 
 }
@@ -96,7 +96,7 @@ void LaunchTemplateCpuOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
   }
   if(m_amdSevSnpHasBeenSet)
   {
-      oStream << location << ".AmdSevSnp=" << AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp) << "&";
+      oStream << location << ".AmdSevSnp=" << StringUtils::URLEncode(AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp)) << "&";
   }
 }
 

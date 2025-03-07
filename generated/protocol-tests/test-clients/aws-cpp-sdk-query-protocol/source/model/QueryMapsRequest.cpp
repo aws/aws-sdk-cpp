@@ -110,8 +110,17 @@ Aws::String QueryMapsRequest::SerializePayload() const
     {
       ss << "MapOfLists.entry." << mapOfListsCount << ".key="
           << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "MapOfLists.entry." << mapOfListsCount << ".value="
-          << item.second << "&";
+      ss << "MapOfLists.entry." << mapOfListsCount << ".value"
+          << [&item]() {
+          Aws::StringStream oStream;
+          Aws::String location; // dummy for nested codegen template
+          unsigned memberIdx = 1;
+          for(auto& stringListNestedItem : item.second)
+          {
+            oStream << location << ".member." << memberIdx++ << "=" << StringUtils::URLEncode(stringListNestedItem.c_str()) << "&";
+          }
+          return oStream.str();
+      } () << "&";
       mapOfListsCount++;
     }
   }

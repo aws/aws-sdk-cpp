@@ -77,7 +77,7 @@ void ModifyVerifiedAccessEndpointCidrOptions::OutputToStream(Aws::OStream& oStre
       for(auto& item : m_portRanges)
       {
         Aws::StringStream portRangesSs;
-        portRangesSs << location <<  ".PortRange." << portRangesIdx++;
+        portRangesSs << location << ".PortRange." << portRangesIdx++;
         item.OutputToStream(oStream, portRangesSs.str().c_str());
       }
   }

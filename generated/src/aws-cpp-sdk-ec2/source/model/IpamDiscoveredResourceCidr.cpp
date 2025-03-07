@@ -178,12 +178,12 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_ipSourceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpSource=" << IpamResourceCidrIpSourceMapper::GetNameForIpamResourceCidrIpSource(m_ipSource) << "&";
+      oStream << location << index << locationValue << ".IpSource=" << StringUtils::URLEncode(IpamResourceCidrIpSourceMapper::GetNameForIpamResourceCidrIpSource(m_ipSource)) << "&";
   }
 
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType)) << "&";
   }
 
   if(m_resourceTagsHasBeenSet)
@@ -214,7 +214,7 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_networkInterfaceAttachmentStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NetworkInterfaceAttachmentStatus=" << IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus) << "&";
+      oStream << location << index << locationValue << ".NetworkInterfaceAttachmentStatus=" << StringUtils::URLEncode(IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus)) << "&";
   }
 
   if(m_sampleTimeHasBeenSet)
@@ -253,11 +253,11 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_ipSourceHasBeenSet)
   {
-      oStream << location << ".IpSource=" << IpamResourceCidrIpSourceMapper::GetNameForIpamResourceCidrIpSource(m_ipSource) << "&";
+      oStream << location << ".IpSource=" << StringUtils::URLEncode(IpamResourceCidrIpSourceMapper::GetNameForIpamResourceCidrIpSource(m_ipSource)) << "&";
   }
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType)) << "&";
   }
   if(m_resourceTagsHasBeenSet)
   {
@@ -265,13 +265,13 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_resourceTags)
       {
         Aws::StringStream resourceTagsSs;
-        resourceTagsSs << location <<  ".ResourceTagSet." << resourceTagsIdx++;
+        resourceTagsSs << location << ".ResourceTagSet." << resourceTagsIdx++;
         item.OutputToStream(oStream, resourceTagsSs.str().c_str());
       }
   }
   if(m_ipUsageHasBeenSet)
   {
-        oStream << location << ".IpUsage=" << StringUtils::URLEncode(m_ipUsage) << "&";
+      oStream << location << ".IpUsage=" << StringUtils::URLEncode(m_ipUsage) << "&";
   }
   if(m_vpcIdHasBeenSet)
   {
@@ -283,7 +283,7 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_networkInterfaceAttachmentStatusHasBeenSet)
   {
-      oStream << location << ".NetworkInterfaceAttachmentStatus=" << IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus) << "&";
+      oStream << location << ".NetworkInterfaceAttachmentStatus=" << StringUtils::URLEncode(IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus)) << "&";
   }
   if(m_sampleTimeHasBeenSet)
   {

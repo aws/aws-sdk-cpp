@@ -30,7 +30,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
   ss << "Action=ModifySnapshotAttribute&";
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute)) << "&";
   }
 
   if(m_createVolumePermissionHasBeenSet)
@@ -51,7 +51,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
 
   if(m_operationTypeHasBeenSet)
   {
-    ss << "OperationType=" << OperationTypeMapper::GetNameForOperationType(m_operationType) << "&";
+    ss << "OperationType=" << StringUtils::URLEncode(OperationTypeMapper::GetNameForOperationType(m_operationType)) << "&";
   }
 
   if(m_snapshotIdHasBeenSet)

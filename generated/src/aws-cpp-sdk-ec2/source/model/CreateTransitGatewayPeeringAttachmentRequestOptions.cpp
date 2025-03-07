@@ -53,7 +53,7 @@ void CreateTransitGatewayPeeringAttachmentRequestOptions::OutputToStream(Aws::OS
 {
   if(m_dynamicRoutingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DynamicRouting=" << DynamicRoutingValueMapper::GetNameForDynamicRoutingValue(m_dynamicRouting) << "&";
+      oStream << location << index << locationValue << ".DynamicRouting=" << StringUtils::URLEncode(DynamicRoutingValueMapper::GetNameForDynamicRoutingValue(m_dynamicRouting)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void CreateTransitGatewayPeeringAttachmentRequestOptions::OutputToStream(Aws::OS
 {
   if(m_dynamicRoutingHasBeenSet)
   {
-      oStream << location << ".DynamicRouting=" << DynamicRoutingValueMapper::GetNameForDynamicRoutingValue(m_dynamicRouting) << "&";
+      oStream << location << ".DynamicRouting=" << StringUtils::URLEncode(DynamicRoutingValueMapper::GetNameForDynamicRoutingValue(m_dynamicRouting)) << "&";
   }
 }
 

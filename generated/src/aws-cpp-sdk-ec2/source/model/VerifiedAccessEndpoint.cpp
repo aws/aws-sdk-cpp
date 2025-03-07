@@ -226,12 +226,12 @@ void VerifiedAccessEndpoint::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_endpointTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndpointType=" << VerifiedAccessEndpointTypeMapper::GetNameForVerifiedAccessEndpointType(m_endpointType) << "&";
+      oStream << location << index << locationValue << ".EndpointType=" << StringUtils::URLEncode(VerifiedAccessEndpointTypeMapper::GetNameForVerifiedAccessEndpointType(m_endpointType)) << "&";
   }
 
   if(m_attachmentTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachmentType=" << VerifiedAccessEndpointAttachmentTypeMapper::GetNameForVerifiedAccessEndpointAttachmentType(m_attachmentType) << "&";
+      oStream << location << index << locationValue << ".AttachmentType=" << StringUtils::URLEncode(VerifiedAccessEndpointAttachmentTypeMapper::GetNameForVerifiedAccessEndpointAttachmentType(m_attachmentType)) << "&";
   }
 
   if(m_domainCertificateArnHasBeenSet)
@@ -353,11 +353,11 @@ void VerifiedAccessEndpoint::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_endpointTypeHasBeenSet)
   {
-      oStream << location << ".EndpointType=" << VerifiedAccessEndpointTypeMapper::GetNameForVerifiedAccessEndpointType(m_endpointType) << "&";
+      oStream << location << ".EndpointType=" << StringUtils::URLEncode(VerifiedAccessEndpointTypeMapper::GetNameForVerifiedAccessEndpointType(m_endpointType)) << "&";
   }
   if(m_attachmentTypeHasBeenSet)
   {
-      oStream << location << ".AttachmentType=" << VerifiedAccessEndpointAttachmentTypeMapper::GetNameForVerifiedAccessEndpointAttachmentType(m_attachmentType) << "&";
+      oStream << location << ".AttachmentType=" << StringUtils::URLEncode(VerifiedAccessEndpointAttachmentTypeMapper::GetNameForVerifiedAccessEndpointAttachmentType(m_attachmentType)) << "&";
   }
   if(m_domainCertificateArnHasBeenSet)
   {
@@ -419,7 +419,7 @@ void VerifiedAccessEndpoint::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

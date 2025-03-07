@@ -262,7 +262,7 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status)) << "&";
   }
 
   if(m_abortableOperationInProgressHasBeenSet)
@@ -272,12 +272,12 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_healthHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
+      oStream << location << index << locationValue << ".Health=" << StringUtils::URLEncode(EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health)) << "&";
   }
 
   if(m_healthStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HealthStatus=" << EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus) << "&";
+      oStream << location << index << locationValue << ".HealthStatus=" << StringUtils::URLEncode(EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus)) << "&";
   }
 
   if(m_resourcesHasBeenSet)
@@ -372,7 +372,7 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status)) << "&";
   }
   if(m_abortableOperationInProgressHasBeenSet)
   {
@@ -380,11 +380,11 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_healthHasBeenSet)
   {
-      oStream << location << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
+      oStream << location << ".Health=" << StringUtils::URLEncode(EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health)) << "&";
   }
   if(m_healthStatusHasBeenSet)
   {
-      oStream << location << ".HealthStatus=" << EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus) << "&";
+      oStream << location << ".HealthStatus=" << StringUtils::URLEncode(EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus)) << "&";
   }
   if(m_resourcesHasBeenSet)
   {
@@ -404,7 +404,7 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_environmentLinks)
       {
         Aws::StringStream environmentLinksSs;
-        environmentLinksSs << location <<  ".EnvironmentLinks.member." << environmentLinksIdx++;
+        environmentLinksSs << location << ".EnvironmentLinks.member." << environmentLinksIdx++;
         item.OutputToStream(oStream, environmentLinksSs.str().c_str());
       }
   }

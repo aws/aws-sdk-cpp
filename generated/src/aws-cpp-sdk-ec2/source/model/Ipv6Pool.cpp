@@ -133,7 +133,7 @@ void Ipv6Pool::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_poolCidrBlocks)
       {
         Aws::StringStream poolCidrBlocksSs;
-        poolCidrBlocksSs << location <<  ".PoolCidrBlockSet." << poolCidrBlocksIdx++;
+        poolCidrBlocksSs << location << ".PoolCidrBlockSet." << poolCidrBlocksIdx++;
         item.OutputToStream(oStream, poolCidrBlocksSs.str().c_str());
       }
   }
@@ -143,7 +143,7 @@ void Ipv6Pool::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

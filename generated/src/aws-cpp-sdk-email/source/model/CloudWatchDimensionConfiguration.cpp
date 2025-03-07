@@ -72,7 +72,7 @@ void CloudWatchDimensionConfiguration::OutputToStream(Aws::OStream& oStream, con
 
   if(m_dimensionValueSourceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DimensionValueSource=" << DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource) << "&";
+      oStream << location << index << locationValue << ".DimensionValueSource=" << StringUtils::URLEncode(DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource)) << "&";
   }
 
   if(m_defaultDimensionValueHasBeenSet)
@@ -90,7 +90,7 @@ void CloudWatchDimensionConfiguration::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_dimensionValueSourceHasBeenSet)
   {
-      oStream << location << ".DimensionValueSource=" << DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource) << "&";
+      oStream << location << ".DimensionValueSource=" << StringUtils::URLEncode(DimensionValueSourceMapper::GetNameForDimensionValueSource(m_dimensionValueSource)) << "&";
   }
   if(m_defaultDimensionValueHasBeenSet)
   {

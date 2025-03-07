@@ -61,7 +61,7 @@ void CapacityAllocation::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_allocationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllocationType=" << AllocationTypeMapper::GetNameForAllocationType(m_allocationType) << "&";
+      oStream << location << index << locationValue << ".AllocationType=" << StringUtils::URLEncode(AllocationTypeMapper::GetNameForAllocationType(m_allocationType)) << "&";
   }
 
   if(m_countHasBeenSet)
@@ -75,7 +75,7 @@ void CapacityAllocation::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_allocationTypeHasBeenSet)
   {
-      oStream << location << ".AllocationType=" << AllocationTypeMapper::GetNameForAllocationType(m_allocationType) << "&";
+      oStream << location << ".AllocationType=" << StringUtils::URLEncode(AllocationTypeMapper::GetNameForAllocationType(m_allocationType)) << "&";
   }
   if(m_countHasBeenSet)
   {

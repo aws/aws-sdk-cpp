@@ -75,12 +75,12 @@ void ExportToS3TaskSpecification::OutputToStream(Aws::OStream& oStream, const ch
 {
   if(m_diskImageFormatHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DiskImageFormat=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat) << "&";
+      oStream << location << index << locationValue << ".DiskImageFormat=" << StringUtils::URLEncode(DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat)) << "&";
   }
 
   if(m_containerFormatHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ContainerFormat=" << ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat) << "&";
+      oStream << location << index << locationValue << ".ContainerFormat=" << StringUtils::URLEncode(ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat)) << "&";
   }
 
   if(m_s3BucketHasBeenSet)
@@ -99,11 +99,11 @@ void ExportToS3TaskSpecification::OutputToStream(Aws::OStream& oStream, const ch
 {
   if(m_diskImageFormatHasBeenSet)
   {
-      oStream << location << ".DiskImageFormat=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat) << "&";
+      oStream << location << ".DiskImageFormat=" << StringUtils::URLEncode(DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat)) << "&";
   }
   if(m_containerFormatHasBeenSet)
   {
-      oStream << location << ".ContainerFormat=" << ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat) << "&";
+      oStream << location << ".ContainerFormat=" << StringUtils::URLEncode(ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat)) << "&";
   }
   if(m_s3BucketHasBeenSet)
   {

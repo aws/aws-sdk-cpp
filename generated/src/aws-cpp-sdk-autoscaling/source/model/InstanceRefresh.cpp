@@ -142,7 +142,7 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << InstanceRefreshStatusMapper::GetNameForInstanceRefreshStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(InstanceRefreshStatusMapper::GetNameForInstanceRefreshStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -212,7 +212,7 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << InstanceRefreshStatusMapper::GetNameForInstanceRefreshStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(InstanceRefreshStatusMapper::GetNameForInstanceRefreshStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

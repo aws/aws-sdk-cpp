@@ -52,7 +52,7 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
 
   if(m_protocolHasBeenSet)
   {
-    ss << "Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+    ss << "Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
 
   if(m_protocolVersionHasBeenSet)
@@ -72,7 +72,7 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
 
   if(m_healthCheckProtocolHasBeenSet)
   {
-    ss << "HealthCheckProtocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol) << "&";
+    ss << "HealthCheckProtocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol)) << "&";
   }
 
   if(m_healthCheckPortHasBeenSet)
@@ -117,7 +117,7 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
 
   if(m_targetTypeHasBeenSet)
   {
-    ss << "TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+    ss << "TargetType=" << StringUtils::URLEncode(TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -139,7 +139,7 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
 
   if(m_ipAddressTypeHasBeenSet)
   {
-    ss << "IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
+    ss << "IpAddressType=" << StringUtils::URLEncode(TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType)) << "&";
   }
 
   ss << "Version=2015-12-01";

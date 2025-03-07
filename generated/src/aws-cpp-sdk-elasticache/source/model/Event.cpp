@@ -79,7 +79,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+      oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(SourceTypeMapper::GetNameForSourceType(m_sourceType)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -102,7 +102,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+      oStream << location << ".SourceType=" << StringUtils::URLEncode(SourceTypeMapper::GetNameForSourceType(m_sourceType)) << "&";
   }
   if(m_messageHasBeenSet)
   {

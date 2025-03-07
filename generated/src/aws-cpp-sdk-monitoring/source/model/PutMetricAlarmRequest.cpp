@@ -129,7 +129,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_statisticHasBeenSet)
   {
-    ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
+    ss << "Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
   }
 
   if(m_extendedStatisticHasBeenSet)
@@ -161,7 +161,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_unitHasBeenSet)
   {
-    ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+    ss << "Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
   if(m_evaluationPeriodsHasBeenSet)
@@ -181,7 +181,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_comparisonOperatorHasBeenSet)
   {
-    ss << "ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
+    ss << "ComparisonOperator=" << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
   }
 
   if(m_treatMissingDataHasBeenSet)

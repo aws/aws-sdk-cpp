@@ -68,7 +68,7 @@ void DiskImageDetail::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_formatHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Format=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_format) << "&";
+      oStream << location << index << locationValue << ".Format=" << StringUtils::URLEncode(DiskImageFormatMapper::GetNameForDiskImageFormat(m_format)) << "&";
   }
 
   if(m_bytesHasBeenSet)
@@ -87,7 +87,7 @@ void DiskImageDetail::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_formatHasBeenSet)
   {
-      oStream << location << ".Format=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_format) << "&";
+      oStream << location << ".Format=" << StringUtils::URLEncode(DiskImageFormatMapper::GetNameForDiskImageFormat(m_format)) << "&";
   }
   if(m_bytesHasBeenSet)
   {

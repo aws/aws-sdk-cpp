@@ -54,7 +54,7 @@ Aws::String CreateNetworkAclEntryRequest::SerializePayload() const
 
   if(m_ruleActionHasBeenSet)
   {
-    ss << "RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
+    ss << "RuleAction=" << StringUtils::URLEncode(RuleActionMapper::GetNameForRuleAction(m_ruleAction)) << "&";
   }
 
   if(m_egressHasBeenSet)
@@ -74,7 +74,7 @@ Aws::String CreateNetworkAclEntryRequest::SerializePayload() const
 
   if(m_icmpTypeCodeHasBeenSet)
   {
-    m_icmpTypeCode.OutputToStream(ss, "Icmp");
+    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode");
   }
 
   if(m_portRangeHasBeenSet)

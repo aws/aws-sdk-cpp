@@ -710,7 +710,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location <<  ".Instances.member." << instancesIdx++;
+        instancesSs << location << ".Instances.member." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
@@ -724,7 +724,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_suspendedProcesses)
       {
         Aws::StringStream suspendedProcessesSs;
-        suspendedProcessesSs << location <<  ".SuspendedProcesses.member." << suspendedProcessesIdx++;
+        suspendedProcessesSs << location << ".SuspendedProcesses.member." << suspendedProcessesIdx++;
         item.OutputToStream(oStream, suspendedProcessesSs.str().c_str());
       }
   }
@@ -742,7 +742,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_enabledMetrics)
       {
         Aws::StringStream enabledMetricsSs;
-        enabledMetricsSs << location <<  ".EnabledMetrics.member." << enabledMetricsIdx++;
+        enabledMetricsSs << location << ".EnabledMetrics.member." << enabledMetricsIdx++;
         item.OutputToStream(oStream, enabledMetricsSs.str().c_str());
       }
   }
@@ -756,7 +756,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        tagsSs << location << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -812,7 +812,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_trafficSources)
       {
         Aws::StringStream trafficSourcesSs;
-        trafficSourcesSs << location <<  ".TrafficSources.member." << trafficSourcesIdx++;
+        trafficSourcesSs << location << ".TrafficSources.member." << trafficSourcesIdx++;
         item.OutputToStream(oStream, trafficSourcesSs.str().c_str());
       }
   }

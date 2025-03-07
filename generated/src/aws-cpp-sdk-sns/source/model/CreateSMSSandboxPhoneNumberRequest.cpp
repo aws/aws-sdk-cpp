@@ -28,7 +28,7 @@ Aws::String CreateSMSSandboxPhoneNumberRequest::SerializePayload() const
 
   if(m_languageCodeHasBeenSet)
   {
-    ss << "LanguageCode=" << LanguageCodeStringMapper::GetNameForLanguageCodeString(m_languageCode) << "&";
+    ss << "LanguageCode=" << StringUtils::URLEncode(LanguageCodeStringMapper::GetNameForLanguageCodeString(m_languageCode)) << "&";
   }
 
   ss << "Version=2010-03-31";

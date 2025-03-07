@@ -97,7 +97,7 @@ void FleetLaunchTemplateConfigRequest::OutputToStream(Aws::OStream& oStream, con
       for(auto& item : m_overrides)
       {
         Aws::StringStream overridesSs;
-        overridesSs << location <<  ".Item." << overridesIdx++;
+        overridesSs << location << ".Overrides." << overridesIdx++;
         item.OutputToStream(oStream, overridesSs.str().c_str());
       }
   }

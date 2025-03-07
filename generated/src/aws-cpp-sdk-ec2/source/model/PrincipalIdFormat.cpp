@@ -93,7 +93,7 @@ void PrincipalIdFormat::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_statuses)
       {
         Aws::StringStream statusesSs;
-        statusesSs << location <<  ".StatusSet." << statusesIdx++;
+        statusesSs << location << ".StatusSet." << statusesIdx++;
         item.OutputToStream(oStream, statusesSs.str().c_str());
       }
   }

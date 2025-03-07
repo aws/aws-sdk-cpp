@@ -46,7 +46,7 @@ Aws::String PurchaseCapacityBlockRequest::SerializePayload() const
 
   if(m_instancePlatformHasBeenSet)
   {
-    ss << "InstancePlatform=" << CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform) << "&";
+    ss << "InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
   }
 
   ss << "Version=2016-11-15";

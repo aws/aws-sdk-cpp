@@ -153,35 +153,35 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_userHasBeenSet)
   {
-        oStream << location << ".User=" << StringUtils::URLEncode(m_user) << "&";
+      oStream << location << ".User=" << StringUtils::URLEncode(m_user) << "&";
   }
   if(m_niceHasBeenSet)
   {
-        oStream << location << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
+      oStream << location << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
   }
   if(m_systemHasBeenSet)
   {
-        oStream << location << ".System=" << StringUtils::URLEncode(m_system) << "&";
+      oStream << location << ".System=" << StringUtils::URLEncode(m_system) << "&";
   }
   if(m_idleHasBeenSet)
   {
-        oStream << location << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
+      oStream << location << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
   }
   if(m_iOWaitHasBeenSet)
   {
-        oStream << location << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
+      oStream << location << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
   }
   if(m_iRQHasBeenSet)
   {
-        oStream << location << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
+      oStream << location << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
   }
   if(m_softIRQHasBeenSet)
   {
-        oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
+      oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
   if(m_privilegedHasBeenSet)
   {
-        oStream << location << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
+      oStream << location << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
   }
 }
 

@@ -186,7 +186,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
 
   if(m_authTokenUpdateStrategyHasBeenSet)
   {
-    ss << "AuthTokenUpdateStrategy=" << AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy) << "&";
+    ss << "AuthTokenUpdateStrategy=" << StringUtils::URLEncode(AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy)) << "&";
   }
 
   if(m_userGroupIdsToAddHasBeenSet)
@@ -249,7 +249,7 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
 
   if(m_ipDiscoveryHasBeenSet)
   {
-    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+    ss << "IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
   if(m_transitEncryptionEnabledHasBeenSet)
@@ -259,12 +259,12 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
 
   if(m_transitEncryptionModeHasBeenSet)
   {
-    ss << "TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+    ss << "TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
 
   if(m_clusterModeHasBeenSet)
   {
-    ss << "ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+    ss << "ClusterMode=" << StringUtils::URLEncode(ClusterModeMapper::GetNameForClusterMode(m_clusterMode)) << "&";
   }
 
   ss << "Version=2015-02-02";

@@ -197,7 +197,7 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_events)
       {
         Aws::StringStream eventsSs;
-        eventsSs << location <<  ".EventsSet." << eventsIdx++;
+        eventsSs << location << ".EventsSet." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }

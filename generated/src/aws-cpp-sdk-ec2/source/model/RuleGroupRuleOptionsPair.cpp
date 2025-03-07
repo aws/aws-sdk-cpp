@@ -93,7 +93,7 @@ void RuleGroupRuleOptionsPair::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_ruleOptions)
       {
         Aws::StringStream ruleOptionsSs;
-        ruleOptionsSs << location <<  ".RuleOptionSet." << ruleOptionsIdx++;
+        ruleOptionsSs << location << ".RuleOptionSet." << ruleOptionsIdx++;
         item.OutputToStream(oStream, ruleOptionsSs.str().c_str());
       }
   }

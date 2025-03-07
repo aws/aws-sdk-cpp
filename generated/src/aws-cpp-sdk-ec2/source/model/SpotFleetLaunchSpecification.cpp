@@ -238,7 +238,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_kernelIdHasBeenSet)
@@ -344,7 +344,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -364,7 +364,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_kernelIdHasBeenSet)
   {
@@ -386,7 +386,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".NetworkInterfaceSet." << networkInterfacesIdx++;
+        networkInterfacesSs << location << ".NetworkInterfaceSet." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -414,7 +414,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_weightedCapacityHasBeenSet)
   {
-        oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
+      oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
   }
   if(m_tagSpecificationsHasBeenSet)
   {
@@ -422,7 +422,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       for(auto& item : m_tagSpecifications)
       {
         Aws::StringStream tagSpecificationsSs;
-        tagSpecificationsSs << location <<  ".TagSpecificationSet." << tagSpecificationsIdx++;
+        tagSpecificationsSs << location << ".TagSpecificationSet." << tagSpecificationsIdx++;
         item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
       }
   }
@@ -438,7 +438,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".GroupSet." << securityGroupsIdx++;
+        securityGroupsSs << location << ".GroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }

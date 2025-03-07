@@ -109,7 +109,7 @@ void RegionalConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_reshardingConfiguration)
       {
         Aws::StringStream reshardingConfigurationSs;
-        reshardingConfigurationSs << location <<  ".ReshardingConfiguration." << reshardingConfigurationIdx++;
+        reshardingConfigurationSs << location << ".ReshardingConfiguration.ReshardingConfiguration." << reshardingConfigurationIdx++;
         item.OutputToStream(oStream, reshardingConfigurationSs.str().c_str());
       }
   }

@@ -340,7 +340,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_databaseInsightsModeHasBeenSet)
   {
-    ss << "DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+    ss << "DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
 
   if(m_enablePerformanceInsightsHasBeenSet)
@@ -402,7 +402,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_replicaModeHasBeenSet)
   {
-    ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+    ss << "ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 
   if(m_enableCustomerOwnedIpHasBeenSet)
@@ -417,7 +417,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_automationModeHasBeenSet)
   {
-    ss << "AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+    ss << "AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
   }
 
   if(m_resumeFullAutomationModeMinutesHasBeenSet)

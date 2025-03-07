@@ -81,7 +81,7 @@ void InstanceRequirementsWithMetadataRequest::OutputToStream(Aws::OStream& oStre
       unsigned architectureTypesIdx = 1;
       for(auto& item : m_architectureTypes)
       {
-        oStream << location << index << locationValue << ".ArchitectureType." << architectureTypesIdx++ << "=" << ArchitectureTypeMapper::GetNameForArchitectureType(item) << "&";
+        oStream << location << index << locationValue << ".ArchitectureType." << architectureTypesIdx++ << "=" << StringUtils::URLEncode(ArchitectureTypeMapper::GetNameForArchitectureType(item)) << "&";
       }
   }
 
@@ -90,7 +90,7 @@ void InstanceRequirementsWithMetadataRequest::OutputToStream(Aws::OStream& oStre
       unsigned virtualizationTypesIdx = 1;
       for(auto& item : m_virtualizationTypes)
       {
-        oStream << location << index << locationValue << ".VirtualizationType." << virtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
+        oStream << location << index << locationValue << ".VirtualizationType." << virtualizationTypesIdx++ << "=" << StringUtils::URLEncode(VirtualizationTypeMapper::GetNameForVirtualizationType(item)) << "&";
       }
   }
 
@@ -110,7 +110,7 @@ void InstanceRequirementsWithMetadataRequest::OutputToStream(Aws::OStream& oStre
       unsigned architectureTypesIdx = 1;
       for(auto& item : m_architectureTypes)
       {
-        oStream << location << ".ArchitectureType." << architectureTypesIdx++ << "=" << ArchitectureTypeMapper::GetNameForArchitectureType(item) << "&";
+        oStream << location << ".ArchitectureType." << architectureTypesIdx++ << "=" << StringUtils::URLEncode(ArchitectureTypeMapper::GetNameForArchitectureType(item)) << "&";
       }
   }
   if(m_virtualizationTypesHasBeenSet)
@@ -118,7 +118,7 @@ void InstanceRequirementsWithMetadataRequest::OutputToStream(Aws::OStream& oStre
       unsigned virtualizationTypesIdx = 1;
       for(auto& item : m_virtualizationTypes)
       {
-        oStream << location << ".VirtualizationType." << virtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
+        oStream << location << ".VirtualizationType." << virtualizationTypesIdx++ << "=" << StringUtils::URLEncode(VirtualizationTypeMapper::GetNameForVirtualizationType(item)) << "&";
       }
   }
   if(m_instanceRequirementsHasBeenSet)

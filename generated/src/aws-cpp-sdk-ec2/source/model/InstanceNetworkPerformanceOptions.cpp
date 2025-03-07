@@ -53,7 +53,7 @@ void InstanceNetworkPerformanceOptions::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_bandwidthWeightingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BandwidthWeighting=" << InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting) << "&";
+      oStream << location << index << locationValue << ".BandwidthWeighting=" << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void InstanceNetworkPerformanceOptions::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_bandwidthWeightingHasBeenSet)
   {
-      oStream << location << ".BandwidthWeighting=" << InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting) << "&";
+      oStream << location << ".BandwidthWeighting=" << StringUtils::URLEncode(InstanceBandwidthWeightingMapper::GetNameForInstanceBandwidthWeighting(m_bandwidthWeighting)) << "&";
   }
 }
 

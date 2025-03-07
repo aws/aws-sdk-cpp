@@ -60,7 +60,7 @@ void CapacityReservationStatus::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << CapacityReservationStateEnumMapper::GetNameForCapacityReservationStateEnum(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(CapacityReservationStateEnumMapper::GetNameForCapacityReservationStateEnum(m_code)) << "&";
   }
 
   if(m_reasonHasBeenSet)
@@ -74,7 +74,7 @@ void CapacityReservationStatus::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << CapacityReservationStateEnumMapper::GetNameForCapacityReservationStateEnum(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(CapacityReservationStateEnumMapper::GetNameForCapacityReservationStateEnum(m_code)) << "&";
   }
   if(m_reasonHasBeenSet)
   {

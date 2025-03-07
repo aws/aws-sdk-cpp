@@ -27,7 +27,7 @@ Aws::String CreateJobRequest::SerializePayload() const
   ss << "Action=CreateJob&";
   if(m_jobTypeHasBeenSet)
   {
-    ss << "JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
+    ss << "JobType=" << StringUtils::URLEncode(JobTypeMapper::GetNameForJobType(m_jobType)) << "&";
   }
 
   if(m_manifestHasBeenSet)

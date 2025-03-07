@@ -174,7 +174,7 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_modificationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ModificationState=" << VolumeModificationStateMapper::GetNameForVolumeModificationState(m_modificationState) << "&";
+      oStream << location << index << locationValue << ".ModificationState=" << StringUtils::URLEncode(VolumeModificationStateMapper::GetNameForVolumeModificationState(m_modificationState)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -194,7 +194,7 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_targetVolumeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_targetVolumeType) << "&";
+      oStream << location << index << locationValue << ".TargetVolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_targetVolumeType)) << "&";
   }
 
   if(m_targetThroughputHasBeenSet)
@@ -219,7 +219,7 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_originalVolumeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OriginalVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_originalVolumeType) << "&";
+      oStream << location << index << locationValue << ".OriginalVolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_originalVolumeType)) << "&";
   }
 
   if(m_originalThroughputHasBeenSet)
@@ -257,7 +257,7 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_modificationStateHasBeenSet)
   {
-      oStream << location << ".ModificationState=" << VolumeModificationStateMapper::GetNameForVolumeModificationState(m_modificationState) << "&";
+      oStream << location << ".ModificationState=" << StringUtils::URLEncode(VolumeModificationStateMapper::GetNameForVolumeModificationState(m_modificationState)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -273,7 +273,7 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_targetVolumeTypeHasBeenSet)
   {
-      oStream << location << ".TargetVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_targetVolumeType) << "&";
+      oStream << location << ".TargetVolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_targetVolumeType)) << "&";
   }
   if(m_targetThroughputHasBeenSet)
   {
@@ -293,7 +293,7 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_originalVolumeTypeHasBeenSet)
   {
-      oStream << location << ".OriginalVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_originalVolumeType) << "&";
+      oStream << location << ".OriginalVolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_originalVolumeType)) << "&";
   }
   if(m_originalThroughputHasBeenSet)
   {

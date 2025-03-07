@@ -43,7 +43,7 @@ Aws::String ModifyIpPoolsRequest::SerializePayload() const
       for(auto& item : m_removeIpamPools)
       {
         ss << "RemoveIpamPools.member." << removeIpamPoolsCount << "="
-            << StringUtils::URLEncode(RemoveIpamPoolEnumMapper::GetNameForRemoveIpamPoolEnum(item).c_str()) << "&";
+            << StringUtils::URLEncode(RemoveIpamPoolEnumMapper::GetNameForRemoveIpamPoolEnum(item)) << "&";
         removeIpamPoolsCount++;
       }
     }

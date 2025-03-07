@@ -153,7 +153,7 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_stackStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StackStatus=" << StackStatusMapper::GetNameForStackStatus(m_stackStatus) << "&";
+      oStream << location << index << locationValue << ".StackStatus=" << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(m_stackStatus)) << "&";
   }
 
   if(m_stackStatusReasonHasBeenSet)
@@ -208,7 +208,7 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_stackStatusHasBeenSet)
   {
-      oStream << location << ".StackStatus=" << StackStatusMapper::GetNameForStackStatus(m_stackStatus) << "&";
+      oStream << location << ".StackStatus=" << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(m_stackStatus)) << "&";
   }
   if(m_stackStatusReasonHasBeenSet)
   {

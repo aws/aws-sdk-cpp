@@ -61,12 +61,12 @@ void AnomalyDetection::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_resultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Result=" << AnomalyResultEnumMapper::GetNameForAnomalyResultEnum(m_result) << "&";
+      oStream << location << index << locationValue << ".Result=" << StringUtils::URLEncode(AnomalyResultEnumMapper::GetNameForAnomalyResultEnum(m_result)) << "&";
   }
 
   if(m_mitigationInEffectHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MitigationInEffect=" << MitigationInEffectEnumMapper::GetNameForMitigationInEffectEnum(m_mitigationInEffect) << "&";
+      oStream << location << index << locationValue << ".MitigationInEffect=" << StringUtils::URLEncode(MitigationInEffectEnumMapper::GetNameForMitigationInEffectEnum(m_mitigationInEffect)) << "&";
   }
 
 }
@@ -75,11 +75,11 @@ void AnomalyDetection::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_resultHasBeenSet)
   {
-      oStream << location << ".Result=" << AnomalyResultEnumMapper::GetNameForAnomalyResultEnum(m_result) << "&";
+      oStream << location << ".Result=" << StringUtils::URLEncode(AnomalyResultEnumMapper::GetNameForAnomalyResultEnum(m_result)) << "&";
   }
   if(m_mitigationInEffectHasBeenSet)
   {
-      oStream << location << ".MitigationInEffect=" << MitigationInEffectEnumMapper::GetNameForMitigationInEffectEnum(m_mitigationInEffect) << "&";
+      oStream << location << ".MitigationInEffect=" << StringUtils::URLEncode(MitigationInEffectEnumMapper::GetNameForMitigationInEffectEnum(m_mitigationInEffect)) << "&";
   }
 }
 

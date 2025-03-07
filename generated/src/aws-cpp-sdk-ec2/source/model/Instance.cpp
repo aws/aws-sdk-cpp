@@ -519,7 +519,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 {
   if(m_architectureHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+      oStream << location << index << locationValue << ".Architecture=" << StringUtils::URLEncode(ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture)) << "&";
   }
 
   if(m_blockDeviceMappingsHasBeenSet)
@@ -550,7 +550,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_hypervisorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
+      oStream << location << index << locationValue << ".Hypervisor=" << StringUtils::URLEncode(HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor)) << "&";
   }
 
   if(m_iamInstanceProfileHasBeenSet)
@@ -562,7 +562,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_instanceLifecycleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceLifecycle=" << InstanceLifecycleTypeMapper::GetNameForInstanceLifecycleType(m_instanceLifecycle) << "&";
+      oStream << location << index << locationValue << ".InstanceLifecycle=" << StringUtils::URLEncode(InstanceLifecycleTypeMapper::GetNameForInstanceLifecycleType(m_instanceLifecycle)) << "&";
   }
 
   if(m_elasticGpuAssociationsHasBeenSet)
@@ -610,7 +610,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_rootDeviceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
+      oStream << location << index << locationValue << ".RootDeviceType=" << StringUtils::URLEncode(DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType)) << "&";
   }
 
   if(m_securityGroupsHasBeenSet)
@@ -659,7 +659,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_virtualizationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+      oStream << location << index << locationValue << ".VirtualizationType=" << StringUtils::URLEncode(VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType)) << "&";
   }
 
   if(m_cpuOptionsHasBeenSet)
@@ -715,7 +715,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_bootModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+      oStream << location << index << locationValue << ".BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
 
   if(m_platformDetailsHasBeenSet)
@@ -759,7 +759,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_currentInstanceBootModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
+      oStream << location << index << locationValue << ".CurrentInstanceBootMode=" << StringUtils::URLEncode(InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode)) << "&";
   }
 
   if(m_networkPerformanceOptionsHasBeenSet)
@@ -831,7 +831,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_launchTimeHasBeenSet)
@@ -858,7 +858,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_platformHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
 
   if(m_monitoringHasBeenSet)
@@ -894,7 +894,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_architectureHasBeenSet)
   {
-      oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+      oStream << location << ".Architecture=" << StringUtils::URLEncode(ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture)) << "&";
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
@@ -902,7 +902,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -920,7 +920,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_hypervisorHasBeenSet)
   {
-      oStream << location << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
+      oStream << location << ".Hypervisor=" << StringUtils::URLEncode(HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor)) << "&";
   }
   if(m_iamInstanceProfileHasBeenSet)
   {
@@ -930,7 +930,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_instanceLifecycleHasBeenSet)
   {
-      oStream << location << ".InstanceLifecycle=" << InstanceLifecycleTypeMapper::GetNameForInstanceLifecycleType(m_instanceLifecycle) << "&";
+      oStream << location << ".InstanceLifecycle=" << StringUtils::URLEncode(InstanceLifecycleTypeMapper::GetNameForInstanceLifecycleType(m_instanceLifecycle)) << "&";
   }
   if(m_elasticGpuAssociationsHasBeenSet)
   {
@@ -938,7 +938,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_elasticGpuAssociations)
       {
         Aws::StringStream elasticGpuAssociationsSs;
-        elasticGpuAssociationsSs << location <<  ".ElasticGpuAssociationSet." << elasticGpuAssociationsIdx++;
+        elasticGpuAssociationsSs << location << ".ElasticGpuAssociationSet." << elasticGpuAssociationsIdx++;
         item.OutputToStream(oStream, elasticGpuAssociationsSs.str().c_str());
       }
   }
@@ -948,7 +948,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_elasticInferenceAcceleratorAssociations)
       {
         Aws::StringStream elasticInferenceAcceleratorAssociationsSs;
-        elasticInferenceAcceleratorAssociationsSs << location <<  ".ElasticInferenceAcceleratorAssociationSet." << elasticInferenceAcceleratorAssociationsIdx++;
+        elasticInferenceAcceleratorAssociationsSs << location << ".ElasticInferenceAcceleratorAssociationSet." << elasticInferenceAcceleratorAssociationsIdx++;
         item.OutputToStream(oStream, elasticInferenceAcceleratorAssociationsSs.str().c_str());
       }
   }
@@ -958,7 +958,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".NetworkInterfaceSet." << networkInterfacesIdx++;
+        networkInterfacesSs << location << ".NetworkInterfaceSet." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -972,7 +972,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_rootDeviceTypeHasBeenSet)
   {
-      oStream << location << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
+      oStream << location << ".RootDeviceType=" << StringUtils::URLEncode(DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType)) << "&";
   }
   if(m_securityGroupsHasBeenSet)
   {
@@ -980,7 +980,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".GroupSet." << securityGroupsIdx++;
+        securityGroupsSs << location << ".GroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -1008,13 +1008,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_virtualizationTypeHasBeenSet)
   {
-      oStream << location << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+      oStream << location << ".VirtualizationType=" << StringUtils::URLEncode(VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType)) << "&";
   }
   if(m_cpuOptionsHasBeenSet)
   {
@@ -1044,7 +1044,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_licenses)
       {
         Aws::StringStream licensesSs;
-        licensesSs << location <<  ".LicenseSet." << licensesIdx++;
+        licensesSs << location << ".LicenseSet." << licensesIdx++;
         item.OutputToStream(oStream, licensesSs.str().c_str());
       }
   }
@@ -1062,7 +1062,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_bootModeHasBeenSet)
   {
-      oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+      oStream << location << ".BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
   if(m_platformDetailsHasBeenSet)
   {
@@ -1098,7 +1098,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_currentInstanceBootModeHasBeenSet)
   {
-      oStream << location << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
+      oStream << location << ".CurrentInstanceBootMode=" << StringUtils::URLEncode(InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode)) << "&";
   }
   if(m_networkPerformanceOptionsHasBeenSet)
   {
@@ -1152,13 +1152,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_productCodes)
       {
         Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".ProductCodes." << productCodesIdx++;
+        productCodesSs << location << ".ProductCodes." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_launchTimeHasBeenSet)
   {
@@ -1180,7 +1180,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_platformHasBeenSet)
   {
-      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+      oStream << location << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
   if(m_monitoringHasBeenSet)
   {

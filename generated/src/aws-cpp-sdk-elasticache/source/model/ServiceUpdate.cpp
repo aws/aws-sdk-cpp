@@ -148,7 +148,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_serviceUpdateSeverityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateSeverity=" << ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateSeverity=" << StringUtils::URLEncode(ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity)) << "&";
   }
 
   if(m_serviceUpdateRecommendedApplyByDateHasBeenSet)
@@ -158,7 +158,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_serviceUpdateStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateStatus=" << ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateStatus=" << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus)) << "&";
   }
 
   if(m_serviceUpdateDescriptionHasBeenSet)
@@ -168,7 +168,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_serviceUpdateTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceUpdateType=" << ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType) << "&";
+      oStream << location << index << locationValue << ".ServiceUpdateType=" << StringUtils::URLEncode(ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType)) << "&";
   }
 
   if(m_engineHasBeenSet)
@@ -209,7 +209,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_serviceUpdateSeverityHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateSeverity=" << ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity) << "&";
+      oStream << location << ".ServiceUpdateSeverity=" << StringUtils::URLEncode(ServiceUpdateSeverityMapper::GetNameForServiceUpdateSeverity(m_serviceUpdateSeverity)) << "&";
   }
   if(m_serviceUpdateRecommendedApplyByDateHasBeenSet)
   {
@@ -217,7 +217,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_serviceUpdateStatusHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateStatus=" << ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus) << "&";
+      oStream << location << ".ServiceUpdateStatus=" << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(m_serviceUpdateStatus)) << "&";
   }
   if(m_serviceUpdateDescriptionHasBeenSet)
   {
@@ -225,7 +225,7 @@ void ServiceUpdate::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_serviceUpdateTypeHasBeenSet)
   {
-      oStream << location << ".ServiceUpdateType=" << ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType) << "&";
+      oStream << location << ".ServiceUpdateType=" << StringUtils::URLEncode(ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_serviceUpdateType)) << "&";
   }
   if(m_engineHasBeenSet)
   {

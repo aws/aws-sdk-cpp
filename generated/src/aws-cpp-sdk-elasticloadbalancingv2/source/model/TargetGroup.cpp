@@ -197,7 +197,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_protocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
 
   if(m_portHasBeenSet)
@@ -212,7 +212,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_healthCheckProtocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HealthCheckProtocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol) << "&";
+      oStream << location << index << locationValue << ".HealthCheckProtocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol)) << "&";
   }
 
   if(m_healthCheckPortHasBeenSet)
@@ -268,7 +268,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_targetTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+      oStream << location << index << locationValue << ".TargetType=" << StringUtils::URLEncode(TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType)) << "&";
   }
 
   if(m_protocolVersionHasBeenSet)
@@ -278,7 +278,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType)) << "&";
   }
 
 }
@@ -295,7 +295,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_protocolHasBeenSet)
   {
-      oStream << location << ".Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
   if(m_portHasBeenSet)
   {
@@ -307,7 +307,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_healthCheckProtocolHasBeenSet)
   {
-      oStream << location << ".HealthCheckProtocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol) << "&";
+      oStream << location << ".HealthCheckProtocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol)) << "&";
   }
   if(m_healthCheckPortHasBeenSet)
   {
@@ -353,7 +353,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_targetTypeHasBeenSet)
   {
-      oStream << location << ".TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+      oStream << location << ".TargetType=" << StringUtils::URLEncode(TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType)) << "&";
   }
   if(m_protocolVersionHasBeenSet)
   {
@@ -361,7 +361,7 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << ".IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType)) << "&";
   }
 }
 

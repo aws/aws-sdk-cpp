@@ -176,7 +176,7 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -231,7 +231,7 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_operatingRegions)
       {
         Aws::StringStream operatingRegionsSs;
-        operatingRegionsSs << location <<  ".OperatingRegionSet." << operatingRegionsIdx++;
+        operatingRegionsSs << location << ".OperatingRegionSet." << operatingRegionsIdx++;
         item.OutputToStream(oStream, operatingRegionsSs.str().c_str());
       }
   }
@@ -241,7 +241,7 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -249,7 +249,7 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -259,7 +259,7 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_organizationalUnitExclusions)
       {
         Aws::StringStream organizationalUnitExclusionsSs;
-        organizationalUnitExclusionsSs << location <<  ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
+        organizationalUnitExclusionsSs << location << ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
         item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
       }
   }

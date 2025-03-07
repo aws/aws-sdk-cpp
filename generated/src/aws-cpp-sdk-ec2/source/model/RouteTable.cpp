@@ -185,7 +185,7 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_associations)
       {
         Aws::StringStream associationsSs;
-        associationsSs << location <<  ".AssociationSet." << associationsIdx++;
+        associationsSs << location << ".AssociationSet." << associationsIdx++;
         item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
@@ -195,7 +195,7 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_propagatingVgws)
       {
         Aws::StringStream propagatingVgwsSs;
-        propagatingVgwsSs << location <<  ".PropagatingVgwSet." << propagatingVgwsIdx++;
+        propagatingVgwsSs << location << ".PropagatingVgwSet." << propagatingVgwsIdx++;
         item.OutputToStream(oStream, propagatingVgwsSs.str().c_str());
       }
   }
@@ -209,7 +209,7 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_routes)
       {
         Aws::StringStream routesSs;
-        routesSs << location <<  ".RouteSet." << routesIdx++;
+        routesSs << location << ".RouteSet." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
@@ -219,7 +219,7 @@ void RouteTable::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

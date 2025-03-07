@@ -102,7 +102,7 @@ void VerifiedAccessEndpointCidrOptions::OutputToStream(Aws::OStream& oStream, co
 
   if(m_protocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Protocol=" << VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol) << "&";
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol)) << "&";
   }
 
   if(m_subnetIdsHasBeenSet)
@@ -128,13 +128,13 @@ void VerifiedAccessEndpointCidrOptions::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_portRanges)
       {
         Aws::StringStream portRangesSs;
-        portRangesSs << location <<  ".PortRangeSet." << portRangesIdx++;
+        portRangesSs << location << ".PortRangeSet." << portRangesIdx++;
         item.OutputToStream(oStream, portRangesSs.str().c_str());
       }
   }
   if(m_protocolHasBeenSet)
   {
-      oStream << location << ".Protocol=" << VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol) << "&";
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol)) << "&";
   }
   if(m_subnetIdsHasBeenSet)
   {

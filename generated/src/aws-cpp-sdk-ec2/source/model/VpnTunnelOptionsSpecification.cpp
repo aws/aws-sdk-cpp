@@ -426,7 +426,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_phase1EncryptionAlgorithms)
       {
         Aws::StringStream phase1EncryptionAlgorithmsSs;
-        phase1EncryptionAlgorithmsSs << location <<  ".Phase1EncryptionAlgorithm." << phase1EncryptionAlgorithmsIdx++;
+        phase1EncryptionAlgorithmsSs << location << ".Phase1EncryptionAlgorithm." << phase1EncryptionAlgorithmsIdx++;
         item.OutputToStream(oStream, phase1EncryptionAlgorithmsSs.str().c_str());
       }
   }
@@ -436,7 +436,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_phase2EncryptionAlgorithms)
       {
         Aws::StringStream phase2EncryptionAlgorithmsSs;
-        phase2EncryptionAlgorithmsSs << location <<  ".Phase2EncryptionAlgorithm." << phase2EncryptionAlgorithmsIdx++;
+        phase2EncryptionAlgorithmsSs << location << ".Phase2EncryptionAlgorithm." << phase2EncryptionAlgorithmsIdx++;
         item.OutputToStream(oStream, phase2EncryptionAlgorithmsSs.str().c_str());
       }
   }
@@ -446,7 +446,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_phase1IntegrityAlgorithms)
       {
         Aws::StringStream phase1IntegrityAlgorithmsSs;
-        phase1IntegrityAlgorithmsSs << location <<  ".Phase1IntegrityAlgorithm." << phase1IntegrityAlgorithmsIdx++;
+        phase1IntegrityAlgorithmsSs << location << ".Phase1IntegrityAlgorithm." << phase1IntegrityAlgorithmsIdx++;
         item.OutputToStream(oStream, phase1IntegrityAlgorithmsSs.str().c_str());
       }
   }
@@ -456,7 +456,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_phase2IntegrityAlgorithms)
       {
         Aws::StringStream phase2IntegrityAlgorithmsSs;
-        phase2IntegrityAlgorithmsSs << location <<  ".Phase2IntegrityAlgorithm." << phase2IntegrityAlgorithmsIdx++;
+        phase2IntegrityAlgorithmsSs << location << ".Phase2IntegrityAlgorithm." << phase2IntegrityAlgorithmsIdx++;
         item.OutputToStream(oStream, phase2IntegrityAlgorithmsSs.str().c_str());
       }
   }
@@ -466,7 +466,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_phase1DHGroupNumbers)
       {
         Aws::StringStream phase1DHGroupNumbersSs;
-        phase1DHGroupNumbersSs << location <<  ".Phase1DHGroupNumber." << phase1DHGroupNumbersIdx++;
+        phase1DHGroupNumbersSs << location << ".Phase1DHGroupNumber." << phase1DHGroupNumbersIdx++;
         item.OutputToStream(oStream, phase1DHGroupNumbersSs.str().c_str());
       }
   }
@@ -476,7 +476,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_phase2DHGroupNumbers)
       {
         Aws::StringStream phase2DHGroupNumbersSs;
-        phase2DHGroupNumbersSs << location <<  ".Phase2DHGroupNumber." << phase2DHGroupNumbersIdx++;
+        phase2DHGroupNumbersSs << location << ".Phase2DHGroupNumber." << phase2DHGroupNumbersIdx++;
         item.OutputToStream(oStream, phase2DHGroupNumbersSs.str().c_str());
       }
   }
@@ -486,7 +486,7 @@ void VpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_iKEVersions)
       {
         Aws::StringStream iKEVersionsSs;
-        iKEVersionsSs << location <<  ".IKEVersion." << iKEVersionsIdx++;
+        iKEVersionsSs << location << ".IKEVersion." << iKEVersionsIdx++;
         item.OutputToStream(oStream, iKEVersionsSs.str().c_str());
       }
   }

@@ -134,7 +134,7 @@ void ManagedPrefixList::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << PrefixListStateMapper::GetNameForPrefixListState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(PrefixListStateMapper::GetNameForPrefixListState(m_state)) << "&";
   }
 
   if(m_stateMessageHasBeenSet)
@@ -192,7 +192,7 @@ void ManagedPrefixList::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << PrefixListStateMapper::GetNameForPrefixListState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(PrefixListStateMapper::GetNameForPrefixListState(m_state)) << "&";
   }
   if(m_stateMessageHasBeenSet)
   {
@@ -220,7 +220,7 @@ void ManagedPrefixList::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

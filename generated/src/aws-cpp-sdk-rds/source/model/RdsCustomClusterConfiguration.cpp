@@ -77,7 +77,7 @@ void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_replicaModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+      oStream << location << index << locationValue << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 
 }
@@ -94,7 +94,7 @@ void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_replicaModeHasBeenSet)
   {
-      oStream << location << ".ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+      oStream << location << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 }
 

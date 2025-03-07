@@ -241,7 +241,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_storageTierHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageTier=" << StorageTierMapper::GetNameForStorageTier(m_storageTier) << "&";
+      oStream << location << index << locationValue << ".StorageTier=" << StringUtils::URLEncode(StorageTierMapper::GetNameForStorageTier(m_storageTier)) << "&";
   }
 
   if(m_restoreExpiryTimeHasBeenSet)
@@ -251,7 +251,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_sseTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+      oStream << location << index << locationValue << ".SseType=" << StringUtils::URLEncode(SSETypeMapper::GetNameForSSEType(m_sseType)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -261,7 +261,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_transferTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TransferType=" << TransferTypeMapper::GetNameForTransferType(m_transferType) << "&";
+      oStream << location << index << locationValue << ".TransferType=" << StringUtils::URLEncode(TransferTypeMapper::GetNameForTransferType(m_transferType)) << "&";
   }
 
   if(m_completionDurationMinutesHasBeenSet)
@@ -291,7 +291,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << SnapshotStateMapper::GetNameForSnapshotState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(SnapshotStateMapper::GetNameForSnapshotState(m_state)) << "&";
   }
 
   if(m_stateMessageHasBeenSet)
@@ -360,13 +360,13 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_storageTierHasBeenSet)
   {
-      oStream << location << ".StorageTier=" << StorageTierMapper::GetNameForStorageTier(m_storageTier) << "&";
+      oStream << location << ".StorageTier=" << StringUtils::URLEncode(StorageTierMapper::GetNameForStorageTier(m_storageTier)) << "&";
   }
   if(m_restoreExpiryTimeHasBeenSet)
   {
@@ -374,7 +374,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_sseTypeHasBeenSet)
   {
-      oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+      oStream << location << ".SseType=" << StringUtils::URLEncode(SSETypeMapper::GetNameForSSEType(m_sseType)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {
@@ -382,7 +382,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_transferTypeHasBeenSet)
   {
-      oStream << location << ".TransferType=" << TransferTypeMapper::GetNameForTransferType(m_transferType) << "&";
+      oStream << location << ".TransferType=" << StringUtils::URLEncode(TransferTypeMapper::GetNameForTransferType(m_transferType)) << "&";
   }
   if(m_completionDurationMinutesHasBeenSet)
   {
@@ -406,7 +406,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << SnapshotStateMapper::GetNameForSnapshotState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(SnapshotStateMapper::GetNameForSnapshotState(m_state)) << "&";
   }
   if(m_stateMessageHasBeenSet)
   {

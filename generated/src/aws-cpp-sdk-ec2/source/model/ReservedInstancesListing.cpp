@@ -176,7 +176,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ListingStatusMapper::GetNameForListingStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ListingStatusMapper::GetNameForListingStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -218,7 +218,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_instanceCounts)
       {
         Aws::StringStream instanceCountsSs;
-        instanceCountsSs << location <<  ".InstanceCounts." << instanceCountsIdx++;
+        instanceCountsSs << location << ".InstanceCounts." << instanceCountsIdx++;
         item.OutputToStream(oStream, instanceCountsSs.str().c_str());
       }
   }
@@ -228,7 +228,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_priceSchedules)
       {
         Aws::StringStream priceSchedulesSs;
-        priceSchedulesSs << location <<  ".PriceSchedules." << priceSchedulesIdx++;
+        priceSchedulesSs << location << ".PriceSchedules." << priceSchedulesIdx++;
         item.OutputToStream(oStream, priceSchedulesSs.str().c_str());
       }
   }
@@ -242,7 +242,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ListingStatusMapper::GetNameForListingStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ListingStatusMapper::GetNameForListingStatus(m_status)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -254,7 +254,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

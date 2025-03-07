@@ -48,7 +48,7 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const
 
   if(m_endDateTypeHasBeenSet)
   {
-    ss << "EndDateType=" << EndDateTypeMapper::GetNameForEndDateType(m_endDateType) << "&";
+    ss << "EndDateType=" << StringUtils::URLEncode(EndDateTypeMapper::GetNameForEndDateType(m_endDateType)) << "&";
   }
 
   if(m_acceptHasBeenSet)
@@ -68,7 +68,7 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const
 
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-    ss << "InstanceMatchCriteria=" << InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+    ss << "InstanceMatchCriteria=" << StringUtils::URLEncode(InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
 
   ss << "Version=2016-11-15";

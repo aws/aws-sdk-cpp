@@ -125,7 +125,7 @@ void ClusterDbRevision::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_revisionTargets)
       {
         Aws::StringStream revisionTargetsSs;
-        revisionTargetsSs << location <<  ".RevisionTarget." << revisionTargetsIdx++;
+        revisionTargetsSs << location << ".RevisionTargets.RevisionTarget." << revisionTargetsIdx++;
         item.OutputToStream(oStream, revisionTargetsSs.str().c_str());
       }
   }

@@ -211,7 +211,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StackSetStatusMapper::GetNameForStackSetStatus(m_status)) << "&";
   }
 
   if(m_templateBodyHasBeenSet)
@@ -235,7 +235,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       unsigned capabilitiesIdx = 1;
       for(auto& item : m_capabilities)
       {
-        oStream << location << index << locationValue << ".Capabilities.member." << capabilitiesIdx++ << "=" << CapabilityMapper::GetNameForCapability(item) << "&";
+        oStream << location << index << locationValue << ".Capabilities.member." << capabilitiesIdx++ << "=" << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
       }
   }
 
@@ -281,7 +281,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_permissionModelHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+      oStream << location << index << locationValue << ".PermissionModel=" << StringUtils::URLEncode(PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel)) << "&";
   }
 
   if(m_organizationalUnitIdsHasBeenSet)
@@ -327,7 +327,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StackSetStatusMapper::GetNameForStackSetStatus(m_status)) << "&";
   }
   if(m_templateBodyHasBeenSet)
   {
@@ -339,7 +339,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location <<  ".Parameters.member." << parametersIdx++;
+        parametersSs << location << ".Parameters.member." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
@@ -348,7 +348,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
       unsigned capabilitiesIdx = 1;
       for(auto& item : m_capabilities)
       {
-        oStream << location << ".Capabilities.member." << capabilitiesIdx++ << "=" << CapabilityMapper::GetNameForCapability(item) << "&";
+        oStream << location << ".Capabilities.member." << capabilitiesIdx++ << "=" << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
       }
   }
   if(m_tagsHasBeenSet)
@@ -357,7 +357,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        tagsSs << location << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -387,7 +387,7 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_permissionModelHasBeenSet)
   {
-      oStream << location << ".PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+      oStream << location << ".PermissionModel=" << StringUtils::URLEncode(PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel)) << "&";
   }
   if(m_organizationalUnitIdsHasBeenSet)
   {

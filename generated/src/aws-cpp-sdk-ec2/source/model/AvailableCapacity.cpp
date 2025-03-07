@@ -90,7 +90,7 @@ void AvailableCapacity::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_availableInstanceCapacity)
       {
         Aws::StringStream availableInstanceCapacitySs;
-        availableInstanceCapacitySs << location <<  ".AvailableInstanceCapacity." << availableInstanceCapacityIdx++;
+        availableInstanceCapacitySs << location << ".AvailableInstanceCapacity." << availableInstanceCapacityIdx++;
         item.OutputToStream(oStream, availableInstanceCapacitySs.str().c_str());
       }
   }

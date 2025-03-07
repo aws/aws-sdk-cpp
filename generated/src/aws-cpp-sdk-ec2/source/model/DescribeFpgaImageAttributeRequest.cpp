@@ -35,7 +35,7 @@ Aws::String DescribeFpgaImageAttributeRequest::SerializePayload() const
 
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << FpgaImageAttributeNameMapper::GetNameForFpgaImageAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(FpgaImageAttributeNameMapper::GetNameForFpgaImageAttributeName(m_attribute)) << "&";
   }
 
   ss << "Version=2016-11-15";

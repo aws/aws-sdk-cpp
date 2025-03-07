@@ -348,7 +348,7 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location <<  ".AvailabilityZone." << availabilityZonesIdx++;
+        availabilityZonesSs << location << ".AvailabilityZones.AvailabilityZone." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
@@ -406,11 +406,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_minIopsPerGibHasBeenSet)
   {
-        oStream << location << ".MinIopsPerGib=" << StringUtils::URLEncode(m_minIopsPerGib) << "&";
+      oStream << location << ".MinIopsPerGib=" << StringUtils::URLEncode(m_minIopsPerGib) << "&";
   }
   if(m_maxIopsPerGibHasBeenSet)
   {
-        oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
+      oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
   }
   if(m_supportsGlobalDatabasesHasBeenSet)
   {

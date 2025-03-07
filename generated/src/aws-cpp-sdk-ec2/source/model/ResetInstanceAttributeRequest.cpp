@@ -35,7 +35,7 @@ Aws::String ResetInstanceAttributeRequest::SerializePayload() const
 
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << InstanceAttributeNameMapper::GetNameForInstanceAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(InstanceAttributeNameMapper::GetNameForInstanceAttributeName(m_attribute)) << "&";
   }
 
   ss << "Version=2016-11-15";

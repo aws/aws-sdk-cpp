@@ -43,7 +43,7 @@ Aws::String PutWarmPoolRequest::SerializePayload() const
 
   if(m_poolStateHasBeenSet)
   {
-    ss << "PoolState=" << WarmPoolStateMapper::GetNameForWarmPoolState(m_poolState) << "&";
+    ss << "PoolState=" << StringUtils::URLEncode(WarmPoolStateMapper::GetNameForWarmPoolState(m_poolState)) << "&";
   }
 
   if(m_instanceReusePolicyHasBeenSet)

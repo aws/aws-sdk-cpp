@@ -171,7 +171,7 @@ void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_poolAddressRanges)
       {
         Aws::StringStream poolAddressRangesSs;
-        poolAddressRangesSs << location <<  ".PoolAddressRangeSet." << poolAddressRangesIdx++;
+        poolAddressRangesSs << location << ".PoolAddressRangeSet." << poolAddressRangesIdx++;
         item.OutputToStream(oStream, poolAddressRangesSs.str().c_str());
       }
   }
@@ -193,7 +193,7 @@ void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -90,7 +90,7 @@ void RollbackConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_rollbackTriggers)
       {
         Aws::StringStream rollbackTriggersSs;
-        rollbackTriggersSs << location <<  ".RollbackTriggers.member." << rollbackTriggersIdx++;
+        rollbackTriggersSs << location << ".RollbackTriggers.member." << rollbackTriggersIdx++;
         item.OutputToStream(oStream, rollbackTriggersSs.str().c_str());
       }
   }

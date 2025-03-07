@@ -74,7 +74,7 @@ void PrivateDnsNameConfiguration::OutputToStream(Aws::OStream& oStream, const ch
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << DnsNameStateMapper::GetNameForDnsNameState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(DnsNameStateMapper::GetNameForDnsNameState(m_state)) << "&";
   }
 
   if(m_typeHasBeenSet)
@@ -98,7 +98,7 @@ void PrivateDnsNameConfiguration::OutputToStream(Aws::OStream& oStream, const ch
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << DnsNameStateMapper::GetNameForDnsNameState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(DnsNameStateMapper::GetNameForDnsNameState(m_state)) << "&";
   }
   if(m_typeHasBeenSet)
   {

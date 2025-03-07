@@ -104,7 +104,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << TelemetryStatusMapper::GetNameForTelemetryStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(TelemetryStatusMapper::GetNameForTelemetryStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -135,7 +135,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << TelemetryStatusMapper::GetNameForTelemetryStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(TelemetryStatusMapper::GetNameForTelemetryStatus(m_status)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

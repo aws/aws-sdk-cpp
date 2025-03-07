@@ -198,7 +198,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_schemeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Scheme=" << LoadBalancerSchemeEnumMapper::GetNameForLoadBalancerSchemeEnum(m_scheme) << "&";
+      oStream << location << index << locationValue << ".Scheme=" << StringUtils::URLEncode(LoadBalancerSchemeEnumMapper::GetNameForLoadBalancerSchemeEnum(m_scheme)) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -215,7 +215,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type)) << "&";
   }
 
   if(m_availabilityZonesHasBeenSet)
@@ -240,7 +240,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   if(m_customerOwnedIpv4PoolHasBeenSet)
@@ -255,7 +255,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_enablePrefixForIpv6SourceNatHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+      oStream << location << index << locationValue << ".EnablePrefixForIpv6SourceNat=" << StringUtils::URLEncode(EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat)) << "&";
   }
 
   if(m_ipamPoolsHasBeenSet)
@@ -291,7 +291,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_schemeHasBeenSet)
   {
-      oStream << location << ".Scheme=" << LoadBalancerSchemeEnumMapper::GetNameForLoadBalancerSchemeEnum(m_scheme) << "&";
+      oStream << location << ".Scheme=" << StringUtils::URLEncode(LoadBalancerSchemeEnumMapper::GetNameForLoadBalancerSchemeEnum(m_scheme)) << "&";
   }
   if(m_vpcIdHasBeenSet)
   {
@@ -305,7 +305,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_type)) << "&";
   }
   if(m_availabilityZonesHasBeenSet)
   {
@@ -313,7 +313,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location <<  ".AvailabilityZones.member." << availabilityZonesIdx++;
+        availabilityZonesSs << location << ".AvailabilityZones.member." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
@@ -327,7 +327,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
@@ -339,7 +339,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_enablePrefixForIpv6SourceNatHasBeenSet)
   {
-      oStream << location << ".EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+      oStream << location << ".EnablePrefixForIpv6SourceNat=" << StringUtils::URLEncode(EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat)) << "&";
   }
   if(m_ipamPoolsHasBeenSet)
   {

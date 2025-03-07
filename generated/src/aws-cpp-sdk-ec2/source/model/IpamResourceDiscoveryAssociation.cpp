@@ -171,12 +171,12 @@ void IpamResourceDiscoveryAssociation::OutputToStream(Aws::OStream& oStream, con
 
   if(m_resourceDiscoveryStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceDiscoveryStatus=" << IpamAssociatedResourceDiscoveryStatusMapper::GetNameForIpamAssociatedResourceDiscoveryStatus(m_resourceDiscoveryStatus) << "&";
+      oStream << location << index << locationValue << ".ResourceDiscoveryStatus=" << StringUtils::URLEncode(IpamAssociatedResourceDiscoveryStatusMapper::GetNameForIpamAssociatedResourceDiscoveryStatus(m_resourceDiscoveryStatus)) << "&";
   }
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IpamResourceDiscoveryAssociationStateMapper::GetNameForIpamResourceDiscoveryAssociationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryAssociationStateMapper::GetNameForIpamResourceDiscoveryAssociationState(m_state)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -228,11 +228,11 @@ void IpamResourceDiscoveryAssociation::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_resourceDiscoveryStatusHasBeenSet)
   {
-      oStream << location << ".ResourceDiscoveryStatus=" << IpamAssociatedResourceDiscoveryStatusMapper::GetNameForIpamAssociatedResourceDiscoveryStatus(m_resourceDiscoveryStatus) << "&";
+      oStream << location << ".ResourceDiscoveryStatus=" << StringUtils::URLEncode(IpamAssociatedResourceDiscoveryStatusMapper::GetNameForIpamAssociatedResourceDiscoveryStatus(m_resourceDiscoveryStatus)) << "&";
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IpamResourceDiscoveryAssociationStateMapper::GetNameForIpamResourceDiscoveryAssociationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryAssociationStateMapper::GetNameForIpamResourceDiscoveryAssociationState(m_state)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -240,7 +240,7 @@ void IpamResourceDiscoveryAssociation::OutputToStream(Aws::OStream& oStream, con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

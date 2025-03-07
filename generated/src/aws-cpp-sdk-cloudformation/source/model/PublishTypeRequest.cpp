@@ -25,7 +25,7 @@ Aws::String PublishTypeRequest::SerializePayload() const
   ss << "Action=PublishType&";
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
 
   if(m_arnHasBeenSet)

@@ -34,7 +34,7 @@ Aws::String RetrieveEnvironmentInfoRequest::SerializePayload() const
 
   if(m_infoTypeHasBeenSet)
   {
-    ss << "InfoType=" << EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType) << "&";
+    ss << "InfoType=" << StringUtils::URLEncode(EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType)) << "&";
   }
 
   ss << "Version=2010-12-01";

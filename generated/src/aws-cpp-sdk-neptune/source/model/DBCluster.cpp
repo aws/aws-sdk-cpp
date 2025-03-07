@@ -687,7 +687,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        oStream << location << ".AvailabilityZone." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AvailabilityZones.AvailabilityZone." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_backupRetentionPeriodHasBeenSet)
@@ -764,7 +764,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_dBClusterOptionGroupMemberships)
       {
         Aws::StringStream dBClusterOptionGroupMembershipsSs;
-        dBClusterOptionGroupMembershipsSs << location <<  ".DBClusterOptionGroup." << dBClusterOptionGroupMembershipsIdx++;
+        dBClusterOptionGroupMembershipsSs << location << ".DBClusterOptionGroupMemberships.DBClusterOptionGroup." << dBClusterOptionGroupMembershipsIdx++;
         item.OutputToStream(oStream, dBClusterOptionGroupMembershipsSs.str().c_str());
       }
   }
@@ -785,7 +785,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       unsigned readReplicaIdentifiersIdx = 1;
       for(auto& item : m_readReplicaIdentifiers)
       {
-        oStream << location << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaIdentifiers.ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_dBClusterMembersHasBeenSet)
@@ -794,7 +794,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_dBClusterMembers)
       {
         Aws::StringStream dBClusterMembersSs;
-        dBClusterMembersSs << location <<  ".DBClusterMember." << dBClusterMembersIdx++;
+        dBClusterMembersSs << location << ".DBClusterMembers.DBClusterMember." << dBClusterMembersIdx++;
         item.OutputToStream(oStream, dBClusterMembersSs.str().c_str());
       }
   }
@@ -804,7 +804,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << ".VpcSecurityGroups.VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -834,7 +834,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_associatedRoles)
       {
         Aws::StringStream associatedRolesSs;
-        associatedRolesSs << location <<  ".DBClusterRole." << associatedRolesIdx++;
+        associatedRolesSs << location << ".AssociatedRoles.DBClusterRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
   }

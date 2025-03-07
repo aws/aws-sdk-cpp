@@ -90,7 +90,7 @@ void Filter::OutputToStream(Aws::OStream& oStream, const char* location) const
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        oStream << location << ".Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Values.Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

@@ -373,7 +373,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_keyNameHasBeenSet)
@@ -407,7 +407,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
+      oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << StringUtils::URLEncode(ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior)) << "&";
   }
 
   if(m_userDataHasBeenSet)
@@ -590,7 +590,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location << ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -600,7 +600,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".NetworkInterface." << networkInterfacesIdx++;
+        networkInterfacesSs << location << ".NetworkInterface." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -610,7 +610,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_keyNameHasBeenSet)
   {
@@ -638,7 +638,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-      oStream << location << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
+      oStream << location << ".InstanceInitiatedShutdownBehavior=" << StringUtils::URLEncode(ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior)) << "&";
   }
   if(m_userDataHasBeenSet)
   {
@@ -650,7 +650,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_tagSpecifications)
       {
         Aws::StringStream tagSpecificationsSs;
-        tagSpecificationsSs << location <<  ".TagSpecification." << tagSpecificationsIdx++;
+        tagSpecificationsSs << location << ".TagSpecification." << tagSpecificationsIdx++;
         item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
       }
   }
@@ -660,7 +660,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_elasticGpuSpecifications)
       {
         Aws::StringStream elasticGpuSpecificationsSs;
-        elasticGpuSpecificationsSs << location <<  ".ElasticGpuSpecification." << elasticGpuSpecificationsIdx++;
+        elasticGpuSpecificationsSs << location << ".ElasticGpuSpecification." << elasticGpuSpecificationsIdx++;
         item.OutputToStream(oStream, elasticGpuSpecificationsSs.str().c_str());
       }
   }
@@ -670,7 +670,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_elasticInferenceAccelerators)
       {
         Aws::StringStream elasticInferenceAcceleratorsSs;
-        elasticInferenceAcceleratorsSs << location <<  ".ElasticInferenceAccelerator." << elasticInferenceAcceleratorsIdx++;
+        elasticInferenceAcceleratorsSs << location << ".ElasticInferenceAccelerator." << elasticInferenceAcceleratorsIdx++;
         item.OutputToStream(oStream, elasticInferenceAcceleratorsSs.str().c_str());
       }
   }
@@ -720,7 +720,7 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_licenseSpecifications)
       {
         Aws::StringStream licenseSpecificationsSs;
-        licenseSpecificationsSs << location <<  ".LicenseSpecification." << licenseSpecificationsIdx++;
+        licenseSpecificationsSs << location << ".LicenseSpecification." << licenseSpecificationsIdx++;
         item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
       }
   }

@@ -245,7 +245,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << AnalysisStatusMapper::GetNameForAnalysisStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(AnalysisStatusMapper::GetNameForAnalysisStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -365,7 +365,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << AnalysisStatusMapper::GetNameForAnalysisStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(AnalysisStatusMapper::GetNameForAnalysisStatus(m_status)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -385,7 +385,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_forwardPathComponents)
       {
         Aws::StringStream forwardPathComponentsSs;
-        forwardPathComponentsSs << location <<  ".ForwardPathComponentSet." << forwardPathComponentsIdx++;
+        forwardPathComponentsSs << location << ".ForwardPathComponentSet." << forwardPathComponentsIdx++;
         item.OutputToStream(oStream, forwardPathComponentsSs.str().c_str());
       }
   }
@@ -395,7 +395,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_returnPathComponents)
       {
         Aws::StringStream returnPathComponentsSs;
-        returnPathComponentsSs << location <<  ".ReturnPathComponentSet." << returnPathComponentsIdx++;
+        returnPathComponentsSs << location << ".ReturnPathComponentSet." << returnPathComponentsIdx++;
         item.OutputToStream(oStream, returnPathComponentsSs.str().c_str());
       }
   }
@@ -405,7 +405,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_explanations)
       {
         Aws::StringStream explanationsSs;
-        explanationsSs << location <<  ".ExplanationSet." << explanationsIdx++;
+        explanationsSs << location << ".ExplanationSet." << explanationsIdx++;
         item.OutputToStream(oStream, explanationsSs.str().c_str());
       }
   }
@@ -415,7 +415,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_alternatePathHints)
       {
         Aws::StringStream alternatePathHintsSs;
-        alternatePathHintsSs << location <<  ".AlternatePathHintSet." << alternatePathHintsIdx++;
+        alternatePathHintsSs << location << ".AlternatePathHintSet." << alternatePathHintsIdx++;
         item.OutputToStream(oStream, alternatePathHintsSs.str().c_str());
       }
   }
@@ -433,7 +433,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

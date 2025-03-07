@@ -29,7 +29,7 @@ Aws::String ModifyHostsRequest::SerializePayload() const
   ss << "Action=ModifyHosts&";
   if(m_hostRecoveryHasBeenSet)
   {
-    ss << "HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+    ss << "HostRecovery=" << StringUtils::URLEncode(HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery)) << "&";
   }
 
   if(m_instanceTypeHasBeenSet)
@@ -44,7 +44,7 @@ Aws::String ModifyHostsRequest::SerializePayload() const
 
   if(m_hostMaintenanceHasBeenSet)
   {
-    ss << "HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
+    ss << "HostMaintenance=" << StringUtils::URLEncode(HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance)) << "&";
   }
 
   if(m_hostIdsHasBeenSet)
@@ -60,7 +60,7 @@ Aws::String ModifyHostsRequest::SerializePayload() const
 
   if(m_autoPlacementHasBeenSet)
   {
-    ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
+    ss << "AutoPlacement=" << StringUtils::URLEncode(AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement)) << "&";
   }
 
   ss << "Version=2016-11-15";

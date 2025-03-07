@@ -112,12 +112,12 @@ void VpcEncryptionControl::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_modeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Mode=" << VpcEncryptionControlModeMapper::GetNameForVpcEncryptionControlMode(m_mode) << "&";
+      oStream << location << index << locationValue << ".Mode=" << StringUtils::URLEncode(VpcEncryptionControlModeMapper::GetNameForVpcEncryptionControlMode(m_mode)) << "&";
   }
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpcEncryptionControlStateMapper::GetNameForVpcEncryptionControlState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcEncryptionControlStateMapper::GetNameForVpcEncryptionControlState(m_state)) << "&";
   }
 
   if(m_stateMessageHasBeenSet)
@@ -157,11 +157,11 @@ void VpcEncryptionControl::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_modeHasBeenSet)
   {
-      oStream << location << ".Mode=" << VpcEncryptionControlModeMapper::GetNameForVpcEncryptionControlMode(m_mode) << "&";
+      oStream << location << ".Mode=" << StringUtils::URLEncode(VpcEncryptionControlModeMapper::GetNameForVpcEncryptionControlMode(m_mode)) << "&";
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpcEncryptionControlStateMapper::GetNameForVpcEncryptionControlState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpcEncryptionControlStateMapper::GetNameForVpcEncryptionControlState(m_state)) << "&";
   }
   if(m_stateMessageHasBeenSet)
   {
@@ -179,7 +179,7 @@ void VpcEncryptionControl::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
