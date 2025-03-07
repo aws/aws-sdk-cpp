@@ -141,8 +141,7 @@ namespace Aws
 
             /**
              * Set the Checksum Algorithm for the transfer manager to use for multipart
-             * upload. Defaults to CRC32. Will be overwritten to use MD5 if computeContentMD5
-             * is set to true.
+             * upload. Defaults to CRC64-NVME.
              */
             Aws::S3::Model::ChecksumAlgorithm checksumAlgorithm = S3::Model::ChecksumAlgorithm::CRC64NVME;
         };        
