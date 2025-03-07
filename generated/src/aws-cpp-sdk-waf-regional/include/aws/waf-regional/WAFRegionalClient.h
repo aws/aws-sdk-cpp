@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/waf-regional/WAFRegionalErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WAFRegional
 {
+  AWS_WAFREGIONAL_API extern const char SERVICE_NAME[];
   /**
    *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
    * information, see <a
@@ -38,12 +42,20 @@ namespace WAFRegional
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
    * WAF Classic</a> in the developer guide.</p>
    */
-  class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>
+  class AWS_WAFREGIONAL_API WAFRegionalClient : Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>,
+    smithy::client::AwsSmithyClientT<Aws::WAFRegional::SERVICE_NAME,
+      Aws::WAFRegional::WAFRegionalClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WAFRegionalEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WAFRegionalErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WAF Regional"; }
 
       typedef WAFRegionalClientConfiguration ClientConfigurationType;
       typedef WAFRegionalEndpointProvider EndpointProviderType;
@@ -3554,10 +3566,7 @@ namespace WAFRegional
       std::shared_ptr<WAFRegionalEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>;
-      void init(const WAFRegionalClientConfiguration& clientConfiguration);
 
-      WAFRegionalClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WAFRegionalEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WAFRegional

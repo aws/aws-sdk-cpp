@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/entityresolution/EntityResolutionServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/entityresolution/EntityResolutionErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EntityResolution
 {
+  AWS_ENTITYRESOLUTION_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the <i>Entity Resolution API Reference</i>.</p> <p>Entity
    * Resolution is an Amazon Web Services service that provides pre-configured entity
@@ -30,12 +34,20 @@ namespace EntityResolution
    * href="https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html">Entity
    * Resolution User Guide</a>.</p>
    */
-  class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>
+  class AWS_ENTITYRESOLUTION_API EntityResolutionClient : Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>,
+    smithy::client::AwsSmithyClientT<Aws::EntityResolution::SERVICE_NAME,
+      Aws::EntityResolution::EntityResolutionClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EntityResolutionEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EntityResolutionErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EntityResolution"; }
 
       typedef EntityResolutionClientConfiguration ClientConfigurationType;
       typedef EntityResolutionEndpointProvider EndpointProviderType;
@@ -1083,10 +1095,7 @@ namespace EntityResolution
       std::shared_ptr<EntityResolutionEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>;
-      void init(const EntityResolutionClientConfiguration& clientConfiguration);
 
-      EntityResolutionClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EntityResolutionEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EntityResolution

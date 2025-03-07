@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-containers/EMRContainersServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/emr-containers/EMRContainersErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EMRContainers
 {
+  AWS_EMRCONTAINERS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you
    * to run open-source big data frameworks on Amazon Elastic Kubernetes Service
@@ -38,12 +42,20 @@ namespace EMRContainers
    * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">Amazon
    * EMR on EKSService Endpoints</a>.</p> </li> </ul>
    */
-  class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>
+  class AWS_EMRCONTAINERS_API EMRContainersClient : Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>,
+    smithy::client::AwsSmithyClientT<Aws::EMRContainers::SERVICE_NAME,
+      Aws::EMRContainers::EMRContainersClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EMRContainersEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EMRContainersErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EMR containers"; }
 
       typedef EMRContainersClientConfiguration ClientConfigurationType;
       typedef EMRContainersEndpointProvider EndpointProviderType;
@@ -750,10 +762,7 @@ namespace EMRContainers
       std::shared_ptr<EMRContainersEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>;
-      void init(const EMRContainersClientConfiguration& clientConfiguration);
 
-      EMRContainersClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EMRContainersEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EMRContainers

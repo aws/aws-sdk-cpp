@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/sagemaker/SageMakerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SageMaker
 {
+  AWS_SAGEMAKER_API extern const char SERVICE_NAME[];
   /**
    * <p>Provides APIs for creating and managing SageMaker resources. </p> <p>Other
    * Resources:</p> <ul> <li> <p> <a
@@ -23,12 +27,20 @@ namespace SageMaker
    * href="https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html">Amazon
    * Augmented AI Runtime API Reference</a> </p> </li> </ul>
    */
-  class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>
+  class AWS_SAGEMAKER_API SageMakerClient : Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>,
+    smithy::client::AwsSmithyClientT<Aws::SageMaker::SERVICE_NAME,
+      Aws::SageMaker::SageMakerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SageMakerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SageMakerErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SageMaker"; }
 
       typedef SageMakerClientConfiguration ClientConfigurationType;
       typedef SageMakerEndpointProvider EndpointProviderType;
@@ -10282,10 +10294,7 @@ namespace SageMaker
       std::shared_ptr<SageMakerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>;
-      void init(const SageMakerClientConfiguration& clientConfiguration);
 
-      SageMakerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SageMakerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SageMaker

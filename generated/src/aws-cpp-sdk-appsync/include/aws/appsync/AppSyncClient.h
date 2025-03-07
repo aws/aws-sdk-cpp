@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/appsync/AppSyncErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppSync
 {
+  AWS_APPSYNC_API extern const char SERVICE_NAME[];
   /**
    * <p>AppSync provides API actions for creating and interacting with data sources
    * using GraphQL from your application.</p>
    */
-  class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>
+  class AWS_APPSYNC_API AppSyncClient : Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>,
+    smithy::client::AwsSmithyClientT<Aws::AppSync::SERVICE_NAME,
+      Aws::AppSync::AppSyncClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppSyncEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppSyncErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppSync"; }
 
       typedef AppSyncClientConfiguration ClientConfigurationType;
       typedef AppSyncEndpointProvider EndpointProviderType;
@@ -2010,10 +2022,7 @@ namespace AppSync
       std::shared_ptr<AppSyncEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>;
-      void init(const AppSyncClientConfiguration& clientConfiguration);
 
-      AppSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppSyncEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppSync

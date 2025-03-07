@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MarketplaceCommerceAnalytics
 {
+  AWS_MARKETPLACECOMMERCEANALYTICS_API extern const char SERVICE_NAME[];
   /**
    * Provides AWS Marketplace business intelligence data on-demand.
    */
-  class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>
+  class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient : Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>,
+    smithy::client::AwsSmithyClientT<Aws::MarketplaceCommerceAnalytics::SERVICE_NAME,
+      Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MarketplaceCommerceAnalyticsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MarketplaceCommerceAnalyticsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Marketplace Commerce Analytics"; }
 
       typedef MarketplaceCommerceAnalyticsClientConfiguration ClientConfigurationType;
       typedef MarketplaceCommerceAnalyticsEndpointProvider EndpointProviderType;
@@ -116,10 +128,7 @@ namespace MarketplaceCommerceAnalytics
       std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>;
-      void init(const MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration);
 
-      MarketplaceCommerceAnalyticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MarketplaceCommerceAnalytics

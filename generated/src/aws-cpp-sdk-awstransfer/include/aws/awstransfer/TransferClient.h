@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/awstransfer/TransferErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Transfer
 {
+  AWS_TRANSFER_API extern const char SERVICE_NAME[];
   /**
    * <p>Transfer Family is a fully managed service that enables the transfer of files
    * over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
@@ -29,12 +33,20 @@ namespace Transfer
    * and archiving. Getting started with Transfer Family is easy since there is no
    * infrastructure to buy and set up.</p>
    */
-  class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>
+  class AWS_TRANSFER_API TransferClient : Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>,
+    smithy::client::AwsSmithyClientT<Aws::Transfer::SERVICE_NAME,
+      Aws::Transfer::TransferClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      TransferEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::TransferErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Transfer"; }
 
       typedef TransferClientConfiguration ClientConfigurationType;
       typedef TransferEndpointProvider EndpointProviderType;
@@ -2072,10 +2084,7 @@ namespace Transfer
       std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>;
-      void init(const TransferClientConfiguration& clientConfiguration);
 
-      TransferClientConfiguration m_clientConfiguration;
-      std::shared_ptr<TransferEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Transfer

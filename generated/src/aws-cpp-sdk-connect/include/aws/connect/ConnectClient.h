@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connect/ConnectServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/connect/ConnectErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Connect
 {
+  AWS_CONNECT_API extern const char SERVICE_NAME[];
   /**
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
@@ -36,12 +40,20 @@ namespace Connect
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect Endpoints</a>.</p>
    */
-  class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>
+  class AWS_CONNECT_API ConnectClient : Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>,
+    smithy::client::AwsSmithyClientT<Aws::Connect::SERVICE_NAME,
+      Aws::Connect::ConnectClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ConnectEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ConnectErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Connect"; }
 
       typedef ConnectClientConfiguration ClientConfigurationType;
       typedef ConnectEndpointProvider EndpointProviderType;
@@ -8204,10 +8216,7 @@ namespace Connect
       std::shared_ptr<ConnectEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>;
-      void init(const ConnectClientConfiguration& clientConfiguration);
 
-      ConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Connect

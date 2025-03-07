@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/frauddetector/FraudDetectorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace FraudDetector
 {
+  AWS_FRAUDDETECTOR_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the Amazon Fraud Detector API Reference. This guide is for developers
    * who need detailed information about Amazon Fraud Detector API actions, data
@@ -35,12 +39,20 @@ namespace FraudDetector
    * scroll down to the <b>SDK</b> section, and choose plus (+) sign to expand the
    * section. </p>
    */
-  class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>
+  class AWS_FRAUDDETECTOR_API FraudDetectorClient : Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>,
+    smithy::client::AwsSmithyClientT<Aws::FraudDetector::SERVICE_NAME,
+      Aws::FraudDetector::FraudDetectorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      FraudDetectorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::FraudDetectorErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "FraudDetector"; }
 
       typedef FraudDetectorClientConfiguration ClientConfigurationType;
       typedef FraudDetectorEndpointProvider EndpointProviderType;
@@ -2111,10 +2123,7 @@ namespace FraudDetector
       std::shared_ptr<FraudDetectorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>;
-      void init(const FraudDetectorClientConfiguration& clientConfiguration);
 
-      FraudDetectorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<FraudDetectorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FraudDetector

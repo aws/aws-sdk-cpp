@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BedrockDataAutomationRuntime
 {
+  AWS_BEDROCKDATAAUTOMATIONRUNTIME_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Bedrock Data Automation Runtime</p>
    */
-  class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationRuntimeClient>
+  class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient : Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationRuntimeClient>,
+    smithy::client::AwsSmithyClientT<Aws::BedrockDataAutomationRuntime::SERVICE_NAME,
+      Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BedrockDataAutomationRuntimeEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BedrockDataAutomationRuntimeErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Bedrock Data Automation Runtime"; }
 
       typedef BedrockDataAutomationRuntimeClientConfiguration ClientConfigurationType;
       typedef BedrockDataAutomationRuntimeEndpointProvider EndpointProviderType;
@@ -208,10 +220,7 @@ namespace BedrockDataAutomationRuntime
       std::shared_ptr<BedrockDataAutomationRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationRuntimeClient>;
-      void init(const BedrockDataAutomationRuntimeClientConfiguration& clientConfiguration);
 
-      BedrockDataAutomationRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BedrockDataAutomationRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BedrockDataAutomationRuntime

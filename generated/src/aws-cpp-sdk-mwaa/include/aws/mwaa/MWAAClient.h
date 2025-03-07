@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/mwaa/MWAA_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mwaa/MWAAErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MWAA
 {
+  AWS_MWAA_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Amazon Managed Workflows for Apache Airflow</fullname> <p>This
    * section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API
@@ -51,12 +55,20 @@ namespace MWAA
    * endpoints and quotas</a> in the <i>Amazon Web Services General
    * Reference</i>.</p></p>
    */
-  class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>
+  class AWS_MWAA_API MWAAClient : Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>,
+    smithy::client::AwsSmithyClientT<Aws::MWAA::SERVICE_NAME,
+      Aws::MWAA::MWAAClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MWAAEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MWAAErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MWAA"; }
 
       typedef MWAAClientConfiguration ClientConfigurationType;
       typedef MWAAEndpointProvider EndpointProviderType;
@@ -406,10 +418,7 @@ namespace MWAA
       std::shared_ptr<MWAAEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>;
-      void init(const MWAAClientConfiguration& clientConfiguration);
 
-      MWAAClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MWAAEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MWAA

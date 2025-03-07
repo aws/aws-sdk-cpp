@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediatailor/MediaTailorServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mediatailor/MediaTailorErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MediaTailor
 {
+  AWS_MEDIATAILOR_API extern const char SERVICE_NAME[];
   /**
    * <p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad
    * insertion and linear channels. With MediaTailor, you can assemble existing
@@ -28,12 +32,20 @@ namespace MediaTailor
    * console. For example, you specify ad insertion behavior and mapping information
    * for the origin server and the ad decision server (ADS).</p>
    */
-  class AWS_MEDIATAILOR_API MediaTailorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaTailorClient>
+  class AWS_MEDIATAILOR_API MediaTailorClient : Aws::Client::ClientWithAsyncTemplateMethods<MediaTailorClient>,
+    smithy::client::AwsSmithyClientT<Aws::MediaTailor::SERVICE_NAME,
+      Aws::MediaTailor::MediaTailorClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MediaTailorEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MediaTailorErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MediaTailor"; }
 
       typedef MediaTailorClientConfiguration ClientConfigurationType;
       typedef MediaTailorEndpointProvider EndpointProviderType;
@@ -1286,10 +1298,7 @@ namespace MediaTailor
       std::shared_ptr<MediaTailorEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaTailorClient>;
-      void init(const MediaTailorClientConfiguration& clientConfiguration);
 
-      MediaTailorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MediaTailorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaTailor

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appfabric/AppFabricServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/appfabric/AppFabricErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppFabric
 {
+  AWS_APPFABRIC_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services AppFabric quickly connects software as a service (SaaS)
    * applications across your organization. This allows IT and security teams to
@@ -29,12 +33,20 @@ namespace AppFabric
    * href="https://docs.aws.amazon.com/cli/latest/reference/appfabric/index.html">AppFabric
    * section of the CLI Reference</a>.</p>
    */
-  class AWS_APPFABRIC_API AppFabricClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>
+  class AWS_APPFABRIC_API AppFabricClient : Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>,
+    smithy::client::AwsSmithyClientT<Aws::AppFabric::SERVICE_NAME,
+      Aws::AppFabric::AppFabricClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppFabricEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppFabricErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppFabric"; }
 
       typedef AppFabricClientConfiguration ClientConfigurationType;
       typedef AppFabricEndpointProvider EndpointProviderType;
@@ -773,10 +785,7 @@ namespace AppFabric
       std::shared_ptr<AppFabricEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>;
-      void init(const AppFabricClientConfiguration& clientConfiguration);
 
-      AppFabricClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppFabricEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppFabric

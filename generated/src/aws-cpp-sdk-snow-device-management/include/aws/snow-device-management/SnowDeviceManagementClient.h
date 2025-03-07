@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/snow-device-management/SnowDeviceManagementErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SnowDeviceManagement
 {
+  AWS_SNOWDEVICEMANAGEMENT_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services Snow Device Management documentation.</p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>
+  class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient : Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>,
+    smithy::client::AwsSmithyClientT<Aws::SnowDeviceManagement::SERVICE_NAME,
+      Aws::SnowDeviceManagement::SnowDeviceManagementClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SnowDeviceManagementEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SnowDeviceManagementErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Snow Device Management"; }
 
       typedef SnowDeviceManagementClientConfiguration ClientConfigurationType;
       typedef SnowDeviceManagementEndpointProvider EndpointProviderType;
@@ -424,10 +436,7 @@ namespace SnowDeviceManagement
       std::shared_ptr<SnowDeviceManagementEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>;
-      void init(const SnowDeviceManagementClientConfiguration& clientConfiguration);
 
-      SnowDeviceManagementClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SnowDeviceManagementEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SnowDeviceManagement

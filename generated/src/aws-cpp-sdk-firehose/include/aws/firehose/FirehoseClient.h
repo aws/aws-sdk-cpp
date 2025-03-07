@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/firehose/FirehoseServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/firehose/FirehoseErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Firehose
 {
+  AWS_FIREHOSE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Data Firehose</fullname>  <p>Amazon Data Firehose was
    * previously known as Amazon Kinesis Data Firehose.</p>  <p>Amazon Data
@@ -23,12 +27,20 @@ namespace Firehose
    * OpenSearch Service, Amazon Redshift, Splunk, and various other supported
    * destinations.</p>
    */
-  class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>
+  class AWS_FIREHOSE_API FirehoseClient : Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>,
+    smithy::client::AwsSmithyClientT<Aws::Firehose::SERVICE_NAME,
+      Aws::Firehose::FirehoseClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      FirehoseEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::FirehoseErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Firehose"; }
 
       typedef FirehoseClientConfiguration ClientConfigurationType;
       typedef FirehoseEndpointProvider EndpointProviderType;
@@ -686,10 +698,7 @@ namespace Firehose
       std::shared_ptr<FirehoseEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>;
-      void init(const FirehoseClientConfiguration& clientConfiguration);
 
-      FirehoseClientConfiguration m_clientConfiguration;
-      std::shared_ptr<FirehoseEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Firehose

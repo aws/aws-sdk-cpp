@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-serverless/EMRServerlessServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/emr-serverless/EMRServerlessErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EMRServerless
 {
+  AWS_EMRSERVERLESS_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR
    * Serverless provides a serverless runtime environment that simplifies running
@@ -33,12 +37,20 @@ namespace EMRServerless
    * in Amazon EMR Serverless service endpoints. For example,
    * <code>emr-serverless.us-east-2.amazonaws.com</code>.</p> </li> </ul>
    */
-  class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>
+  class AWS_EMRSERVERLESS_API EMRServerlessClient : Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>,
+    smithy::client::AwsSmithyClientT<Aws::EMRServerless::SERVICE_NAME,
+      Aws::EMRServerless::EMRServerlessClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EMRServerlessEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EMRServerlessErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EMR Serverless"; }
 
       typedef EMRServerlessClientConfiguration ClientConfigurationType;
       typedef EMRServerlessEndpointProvider EndpointProviderType;
@@ -515,10 +527,7 @@ namespace EMRServerless
       std::shared_ptr<EMRServerlessEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>;
-      void init(const EMRServerlessClientConfiguration& clientConfiguration);
 
-      EMRServerlessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EMRServerlessEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EMRServerless

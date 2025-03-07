@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AmplifyUIBuilder
 {
+  AWS_AMPLIFYUIBUILDER_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amplify UI Builder API provides a programmatic interface for creating and
    * configuring user interface (UI) component libraries and themes for use in your
@@ -31,12 +35,20 @@ namespace AmplifyUIBuilder
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
    * User Guide</a>.</p>
    */
-  class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>
+  class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>,
+    smithy::client::AwsSmithyClientT<Aws::AmplifyUIBuilder::SERVICE_NAME,
+      Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AmplifyUIBuilderEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AmplifyUIBuilderErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AmplifyUIBuilder"; }
 
       typedef AmplifyUIBuilderClientConfiguration ClientConfigurationType;
       typedef AmplifyUIBuilderEndpointProvider EndpointProviderType;
@@ -810,10 +822,7 @@ namespace AmplifyUIBuilder
       std::shared_ptr<AmplifyUIBuilderEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>;
-      void init(const AmplifyUIBuilderClientConfiguration& clientConfiguration);
 
-      AmplifyUIBuilderClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AmplifyUIBuilder

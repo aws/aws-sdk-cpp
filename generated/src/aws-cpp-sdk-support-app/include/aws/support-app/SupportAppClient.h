@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/support-app/SupportApp_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/support-app/SupportAppErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SupportApp
 {
+  AWS_SUPPORTAPP_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Amazon Web Services Support App in Slack</fullname> <p>You can use
    * the Amazon Web Services Support App in Slack API to manage your support cases in
@@ -47,12 +51,20 @@ namespace SupportApp
    * Web Services Support App in Slack endpoints</a> in the <i>Amazon Web Services
    * General Reference</i>.</p> </li> </ul> </p>
    */
-  class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>
+  class AWS_SUPPORTAPP_API SupportAppClient : Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>,
+    smithy::client::AwsSmithyClientT<Aws::SupportApp::SERVICE_NAME,
+      Aws::SupportApp::SupportAppClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SupportAppEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SupportAppErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Support App"; }
 
       typedef SupportAppClientConfiguration ClientConfigurationType;
       typedef SupportAppEndpointProvider EndpointProviderType;
@@ -412,10 +424,7 @@ namespace SupportApp
       std::shared_ptr<SupportAppEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>;
-      void init(const SupportAppClientConfiguration& clientConfiguration);
 
-      SupportAppClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SupportAppEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SupportApp

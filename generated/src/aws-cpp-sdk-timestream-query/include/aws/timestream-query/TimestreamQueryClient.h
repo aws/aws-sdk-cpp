@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/timestream-query/TimestreamQueryErrorMarshaller.h>
 
 namespace Aws
 {
 namespace TimestreamQuery
 {
+  AWS_TIMESTREAMQUERY_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Timestream Query </fullname> <p/>
    */
-  class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>
+  class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>,
+    smithy::client::AwsSmithyClientT<Aws::TimestreamQuery::SERVICE_NAME,
+      Aws::TimestreamQuery::TimestreamQueryClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      TimestreamQueryEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::TimestreamQueryErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Timestream Query"; }
 
       typedef TimestreamQueryClientConfiguration ClientConfigurationType;
       typedef TimestreamQueryEndpointProvider EndpointProviderType;
@@ -530,11 +542,13 @@ namespace TimestreamQuery
       std::shared_ptr<TimestreamQueryEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>;
-      void init(const TimestreamQueryClientConfiguration& clientConfiguration);
 
+      void OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint,
+        const Aws::String& operationName,
+        const Aws::String& endpointKey,
+        const Aws::TimestreamQuery::Model::DescribeEndpointsRequest& endpointRequest,
+        bool enforceDiscovery) const;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      TimestreamQueryClientConfiguration m_clientConfiguration;
-      std::shared_ptr<TimestreamQueryEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TimestreamQuery

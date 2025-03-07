@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup/BackupServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/backup/BackupErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Backup
 {
+  AWS_BACKUP_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Backup</fullname> <p>Backup is a unified backup service designed to
    * protect Amazon Web Services services and their associated data. Backup
    * simplifies the creation, migration, restoration, and deletion of backups, while
    * also providing reporting and auditing.</p>
    */
-  class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>
+  class AWS_BACKUP_API BackupClient : Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>,
+    smithy::client::AwsSmithyClientT<Aws::Backup::SERVICE_NAME,
+      Aws::Backup::BackupClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BackupEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BackupErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Backup"; }
 
       typedef BackupClientConfiguration ClientConfigurationType;
       typedef BackupEndpointProvider EndpointProviderType;
@@ -2663,10 +2675,7 @@ namespace Backup
       std::shared_ptr<BackupEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>;
-      void init(const BackupClientConfiguration& clientConfiguration);
 
-      BackupClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BackupEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Backup

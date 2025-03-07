@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworks/OpsWorksServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/opsworks/OpsWorksErrorMarshaller.h>
 
 namespace Aws
 {
 namespace OpsWorks
 {
+  AWS_OPSWORKS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>OpsWorks</fullname> <p>Welcome to the <i>OpsWorks Stacks API
    * Reference</i>. This guide provides descriptions, syntax, and usage examples for
@@ -68,12 +72,20 @@ namespace OpsWorks
    * Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as
    * soon as possible.</p> 
    */
-  class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>
+  class AWS_OPSWORKS_API OpsWorksClient : Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>,
+    smithy::client::AwsSmithyClientT<Aws::OpsWorks::SERVICE_NAME,
+      Aws::OpsWorks::OpsWorksClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      OpsWorksEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::OpsWorksErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "OpsWorks"; }
 
       typedef OpsWorksClientConfiguration ClientConfigurationType;
       typedef OpsWorksEndpointProvider EndpointProviderType;
@@ -2477,10 +2489,7 @@ namespace OpsWorks
       std::shared_ptr<OpsWorksEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>;
-      void init(const OpsWorksClientConfiguration& clientConfiguration);
 
-      OpsWorksClientConfiguration m_clientConfiguration;
-      std::shared_ptr<OpsWorksEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpsWorks

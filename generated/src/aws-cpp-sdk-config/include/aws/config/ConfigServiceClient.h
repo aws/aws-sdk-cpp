@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/config/ConfigServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ConfigService
 {
+  AWS_CONFIGSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Config</fullname> <p>Config provides a way to keep track of the
    * configurations of all the Amazon Web Services resources associated with your
@@ -40,12 +44,20 @@ namespace ConfigService
    * href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
    * Is Config</a> in the <i>Config Developer Guide</i>.</p>
    */
-  class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>
+  class AWS_CONFIGSERVICE_API ConfigServiceClient : Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::ConfigService::SERVICE_NAME,
+      Aws::ConfigService::ConfigServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ConfigServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ConfigServiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Config Service"; }
 
       typedef ConfigServiceClientConfiguration ClientConfigurationType;
       typedef ConfigServiceEndpointProvider EndpointProviderType;
@@ -3290,10 +3302,7 @@ namespace ConfigService
       std::shared_ptr<ConfigServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>;
-      void init(const ConfigServiceClientConfiguration& clientConfiguration);
 
-      ConfigServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ConfigServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConfigService

@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconnect/MediaConnectServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mediaconnect/MediaConnectErrorMarshaller.h>
 
 namespace Aws
 {
 namespace MediaConnect
 {
+  AWS_MEDIACONNECT_API extern const char SERVICE_NAME[];
   /**
    * API for AWS Elemental MediaConnect
    */
-  class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>
+  class AWS_MEDIACONNECT_API MediaConnectClient : Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>,
+    smithy::client::AwsSmithyClientT<Aws::MediaConnect::SERVICE_NAME,
+      Aws::MediaConnect::MediaConnectClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MediaConnectEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MediaConnectErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MediaConnect"; }
 
       typedef MediaConnectClientConfiguration ClientConfigurationType;
       typedef MediaConnectEndpointProvider EndpointProviderType;
@@ -1437,10 +1449,7 @@ namespace MediaConnect
       std::shared_ptr<MediaConnectEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>;
-      void init(const MediaConnectClientConfiguration& clientConfiguration);
 
-      MediaConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MediaConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaConnect

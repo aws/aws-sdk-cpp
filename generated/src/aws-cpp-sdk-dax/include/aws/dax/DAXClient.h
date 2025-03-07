@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/dax/DAX_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dax/DAXServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/dax/DAXErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DAX
 {
+  AWS_DAX_API extern const char SERVICE_NAME[];
   /**
    * <p>DAX is a managed caching service engineered for Amazon DynamoDB. DAX
    * dramatically speeds up database reads by caching frequently-accessed data from
@@ -23,12 +27,20 @@ namespace DAX
    * simple modifications to your code, your application can begin taking advantage
    * of the DAX cluster and realize significant improvements in read performance.</p>
    */
-  class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>
+  class AWS_DAX_API DAXClient : Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>,
+    smithy::client::AwsSmithyClientT<Aws::DAX::SERVICE_NAME,
+      Aws::DAX::DAXClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DAXEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DAXErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DAX"; }
 
       typedef DAXClientConfiguration ClientConfigurationType;
       typedef DAXEndpointProvider EndpointProviderType;
@@ -655,10 +667,7 @@ namespace DAX
       std::shared_ptr<DAXEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>;
-      void init(const DAXClientConfiguration& clientConfiguration);
 
-      DAXClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DAXEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DAX

@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/glue/GlueServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/glue/GlueErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Glue
 {
+  AWS_GLUE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue
    * service.</p>
    */
-  class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlueClient>
+  class AWS_GLUE_API GlueClient : Aws::Client::ClientWithAsyncTemplateMethods<GlueClient>,
+    smithy::client::AwsSmithyClientT<Aws::Glue::SERVICE_NAME,
+      Aws::Glue::GlueClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GlueEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::GlueErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Glue"; }
 
       typedef GlueClientConfiguration ClientConfigurationType;
       typedef GlueEndpointProvider EndpointProviderType;
@@ -6945,10 +6957,7 @@ namespace Glue
       std::shared_ptr<GlueEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GlueClient>;
-      void init(const GlueClientConfiguration& clientConfiguration);
 
-      GlueClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GlueEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Glue
