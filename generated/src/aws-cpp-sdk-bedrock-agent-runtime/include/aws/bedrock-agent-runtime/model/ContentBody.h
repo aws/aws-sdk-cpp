@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/ImageInput.h>
 #include <utility>
 
 namespace Aws
@@ -54,10 +56,32 @@ namespace Model
     inline ContentBody& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
     inline ContentBody& WithBody(const char* value) { SetBody(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Lists details, including format and source, for the image in the response
+     * from the function call. You can specify only one image and the function in the
+     * <code>returnControlInvocationResults</code> must be a computer use action. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+     * an Amazon Bedrock Agent to complete tasks with computer use tools</a>. </p>
+     */
+    inline const Aws::Vector<ImageInput>& GetImages() const{ return m_images; }
+    inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
+    inline void SetImages(const Aws::Vector<ImageInput>& value) { m_imagesHasBeenSet = true; m_images = value; }
+    inline void SetImages(Aws::Vector<ImageInput>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
+    inline ContentBody& WithImages(const Aws::Vector<ImageInput>& value) { SetImages(value); return *this;}
+    inline ContentBody& WithImages(Aws::Vector<ImageInput>&& value) { SetImages(std::move(value)); return *this;}
+    inline ContentBody& AddImages(const ImageInput& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
+    inline ContentBody& AddImages(ImageInput&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_body;
     bool m_bodyHasBeenSet = false;
+
+    Aws::Vector<ImageInput> m_images;
+    bool m_imagesHasBeenSet = false;
   };
 
 } // namespace Model

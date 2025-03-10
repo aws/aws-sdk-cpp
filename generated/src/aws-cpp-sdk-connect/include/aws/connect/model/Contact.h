@@ -225,8 +225,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the customer endpoint disconnected from Amazon
-     * Connect.</p>
+     * <p>The date and time that the customer endpoint disconnected from the current
+     * contact, in UTC time. In transfer scenarios, the DisconnectTimestamp of the
+     * previous contact indicates the date and time when that contact ended.</p>
      */
     inline const Aws::Utils::DateTime& GetDisconnectTimestamp() const{ return m_disconnectTimestamp; }
     inline bool DisconnectTimestampHasBeenSet() const { return m_disconnectTimestampHasBeenSet; }

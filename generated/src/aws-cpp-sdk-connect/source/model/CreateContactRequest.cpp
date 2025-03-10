@@ -30,7 +30,8 @@ CreateContactRequest::CreateContactRequest() :
     m_initiateAsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false)
+    m_segmentAttributesHasBeenSet(false),
+    m_previousContactIdHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,12 @@ Aws::String CreateContactRequest::SerializePayload() const
      segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
    }
    payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
+
+  }
+
+  if(m_previousContactIdHasBeenSet)
+  {
+   payload.WithString("PreviousContactId", m_previousContactId);
 
   }
 

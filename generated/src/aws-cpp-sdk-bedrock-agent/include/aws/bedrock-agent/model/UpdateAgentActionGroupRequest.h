@@ -12,6 +12,7 @@
 #include <aws/bedrock-agent/model/APISchema.h>
 #include <aws/bedrock-agent/model/FunctionSchema.h>
 #include <aws/bedrock-agent/model/ActionGroupSignature.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -167,13 +168,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>To allow your agent to request the user for additional information when
-     * trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You
-     * must leave the <code>description</code>, <code>apiSchema</code>, and
-     * <code>actionGroupExecutor</code> fields blank for this action group.</p>
-     * <p>During orchestration, if your agent determines that it needs to invoke an API
-     * in an action group, but doesn't have enough information to complete the API
-     * request, it will invoke this action group instead and return an <a
+     * <p>Update the built-in or computer use action for this action group. If you
+     * specify a value, you must leave the <code>description</code>,
+     * <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields empty for
+     * this action group. </p> <ul> <li> <p>To allow your agent to request the user for
+     * additional information when trying to complete a task, set this field to
+     * <code>AMAZON.UserInput</code>. </p> </li> <li> <p>To allow your agent to
+     * generate, run, and troubleshoot code when trying to complete a task, set this
+     * field to <code>AMAZON.CodeInterpreter</code>.</p> </li> <li> <p>To allow your
+     * agent to use an Anthropic computer use tool, specify one of the following
+     * values. </p>  <p> Computer use is a new Anthropic Claude model
+     * capability (in beta) available with Anthropic Claude 3.7 Sonnet and Claude 3.5
+     * Sonnet v2 only. When operating computer use functionality, we recommend taking
+     * additional security precautions, such as executing computer actions in virtual
+     * environments with restricted data access and limited internet connectivity. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+     * an Amazon Bedrock Agent to complete tasks with computer use tools</a>. </p>
+     *  <ul> <li> <p> <code>ANTHROPIC.Computer</code> - Gives the agent
+     * permission to use the mouse and keyboard and take screenshots.</p> </li> <li>
+     * <p> <code>ANTHROPIC.TextEditor</code> - Gives the agent permission to view,
+     * create and edit files.</p> </li> <li> <p> <code>ANTHROPIC.Bash</code> - Gives
+     * the agent permission to run commands in a bash shell.</p> </li> </ul> </li>
+     * </ul> <p>During orchestration, if your agent determines that it needs to invoke
+     * an API in an action group, but doesn't have enough information to complete the
+     * API request, it will invoke this action group instead and return an <a
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
      * reprompting the user for more information.</p>
      */
@@ -183,6 +202,30 @@ namespace Model
     inline void SetParentActionGroupSignature(ActionGroupSignature&& value) { m_parentActionGroupSignatureHasBeenSet = true; m_parentActionGroupSignature = std::move(value); }
     inline UpdateAgentActionGroupRequest& WithParentActionGroupSignature(const ActionGroupSignature& value) { SetParentActionGroupSignature(value); return *this;}
     inline UpdateAgentActionGroupRequest& WithParentActionGroupSignature(ActionGroupSignature&& value) { SetParentActionGroupSignature(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration settings for a computer use action.</p>  <p>
+     * Computer use is a new Anthropic Claude model capability (in beta) available with
+     * Claude 3.7 and Claude 3.5 Sonnet v2 only. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+     * an Amazon Bedrock Agent to complete tasks with computer use tools</a>. </p>
+     * 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetParentActionGroupSignatureParams() const{ return m_parentActionGroupSignatureParams; }
+    inline bool ParentActionGroupSignatureParamsHasBeenSet() const { return m_parentActionGroupSignatureParamsHasBeenSet; }
+    inline void SetParentActionGroupSignatureParams(const Aws::Map<Aws::String, Aws::String>& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams = value; }
+    inline void SetParentActionGroupSignatureParams(Aws::Map<Aws::String, Aws::String>&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams = std::move(value); }
+    inline UpdateAgentActionGroupRequest& WithParentActionGroupSignatureParams(const Aws::Map<Aws::String, Aws::String>& value) { SetParentActionGroupSignatureParams(value); return *this;}
+    inline UpdateAgentActionGroupRequest& WithParentActionGroupSignatureParams(Aws::Map<Aws::String, Aws::String>&& value) { SetParentActionGroupSignatureParams(std::move(value)); return *this;}
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(const Aws::String& key, const Aws::String& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, value); return *this; }
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(Aws::String&& key, const Aws::String& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(std::move(key), value); return *this; }
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(const Aws::String& key, Aws::String&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, std::move(value)); return *this; }
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(Aws::String&& key, Aws::String&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(std::move(key), std::move(value)); return *this; }
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(const char* key, Aws::String&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, std::move(value)); return *this; }
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(Aws::String&& key, const char* value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(std::move(key), value); return *this; }
+    inline UpdateAgentActionGroupRequest& AddParentActionGroupSignatureParams(const char* key, const char* value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, value); return *this; }
     ///@}
   private:
 
@@ -215,6 +258,9 @@ namespace Model
 
     ActionGroupSignature m_parentActionGroupSignature;
     bool m_parentActionGroupSignatureHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_parentActionGroupSignatureParams;
+    bool m_parentActionGroupSignatureParamsHasBeenSet = false;
   };
 
 } // namespace Model
