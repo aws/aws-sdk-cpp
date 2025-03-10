@@ -6,6 +6,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
+#include <chrono>
 
 using namespace Aws::Utils::RateLimits;
 
@@ -203,7 +204,7 @@ TEST_F(DefaultRateLimitTest, renormalizedChangeRateLimitTest)
 TEST_F(DefaultRateLimitTest, unnormalizedChangeRateLimitTest)
 {
     // same operations as the normalized test, just with different assert values
-    DefaultRateLimiter<std::chrono::high_resolution_clock, std::chrono::seconds, false> limiter(100, DefaultRateLimitTest::GetTestTime);
+    DefaultRateLimiter<std::chrono::steady_clock, std::chrono::seconds, false> limiter(100, DefaultRateLimitTest::GetTestTime);
 
     // cost to -600
     limiter.ApplyCost(700);
@@ -266,4 +267,28 @@ TEST_F(DefaultRateLimitTest, fractionalLimitTest)
     SetMillisecondsElapsed(10);
     delay = limiter.ApplyCost(0);
     ASSERT_TRUE(delay.count() == 0);    
+}
+
+TEST_F(DefaultRateLimitTest, clockRollbackValidation) {  
+    auto baseline_time = std::chrono::system_clock::now();
+    int call_count = 0;
+    constexpr int kRollbackTriggerCount = 3;
+    constexpr int kRollbackDurationMs = 100;
+    auto clock_lambda = [&]() {
+        call_count++;
+        if (call_count <= kRollbackTriggerCount) {
+            return baseline_time;
+        }
+        return baseline_time - std::chrono::milliseconds(kRollbackDurationMs);
+    };
+
+    DefaultRateLimiter<std::chrono::system_clock, std::chrono::seconds, false> limiter(100, clock_lambda);
+
+    limiter.ApplyCost(101);
+    auto delay = limiter.ApplyCost(0);
+    ASSERT_TRUE(delay.count() == 10);
+
+    // The clock rollback introduced an error in the calculation results
+    delay = limiter.ApplyCost(0);
+    ASSERT_TRUE(delay.count() == 10 + kRollbackDurationMs);
 }

@@ -10,7 +10,6 @@
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 
 #include <algorithm>
-#include <chrono>
 #include <mutex>
 #include <thread>
 #include <functional>
