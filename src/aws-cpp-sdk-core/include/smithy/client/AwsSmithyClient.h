@@ -212,49 +212,6 @@ namespace client
             return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
         }
 
-        ResolveEndpointOutcome ResolveEndpoint(
-            Aws::AmazonWebServiceRequest const * const request,
-            const char* requestName,
-            Aws::Http::HttpMethod method,
-            EndpointUpdateCallback&& endpointCallback) const
-        {
-            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
-            assert(pExecutor);
-        
-            ResolveEndpointOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
-            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
-            {
-                outcome = std::move(asyncOutcome);
-            }
-            std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
-            Aws::MakeShared<AwsSmithyClientAsyncRequestContext>(AWS_SMITHY_CLIENT_LOG);
-            if (!pRequestCtx)
-            {
-                AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG, "Failed to allocate an AwsSmithyClientAsyncRequestContext under a shared ptr");
-                auto outcome = HttpResponseOutcome(ClientError(CoreErrors::MEMORY_ALLOCATION, "", "Failed to allocate async request context", false/*retryable*/));
-                pExecutor->Submit([outcome, responseHandler]() mutable
-                {
-                    responseHandler(std::move(outcome));
-                } );
-                return;
-            }
-        
-            pExecutor->Submit([&]()
-            {            
-                this->ResolveAuthEndpoint(
-                    pRequestCtx,
-                    request,
-                    requestName,
-                    method,
-                    std::move(responseHandler),
-                    std::move(endpointCallback),
-                    pExecutor
-                )
-            });
-            pExecutor->WaitUntilStopped();
-            return outcome;
-        }
-
         IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const override {
           return AwsClientRequestSigning<AuthSchemesVariantT>::ResolveIdentity(ctx, m_authSchemes);
         }

@@ -40,7 +40,7 @@ namespace ${serviceNamespace} {
                 {   
                     {Aws::Auth::ASYMMETRIC_SIGV4_SIGNER, smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption},
                     {Aws::Auth::SIGV4_SIGNER, smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption},
-                    {S3::S3_EXPRESS_SIGNER_NAME, S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption}
+                    {${serviceNamespace}::S3_EXPRESS_SIGNER_NAME, S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption}
                 };
                 authSchemes.reserve(authSchemeMap.size());
                 auto authschemeMapper = [&](const Aws::String& schemeId){

@@ -209,10 +209,10 @@ void S3CrtClient::S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_re
 Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const
 {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (AWSClient::DoesResponseGenerateError(response))
+  if (smithy::client::Utils::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-    auto error = BuildAWSError(response);
+    auto error = GetErrorMarshaller()->BuildAWSError(response);
     httpOutcome = HttpResponseOutcome(std::move(error));
   }
   else
@@ -245,10 +245,10 @@ Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<Ht
 Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const
 {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (AWSClient::DoesResponseGenerateError(response))
+  if (smithy::client::Utils::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-    auto error = BuildAWSError(response);
+    auto error = GetErrorMarshaller()->BuildAWSError(response);
     httpOutcome = HttpResponseOutcome(std::move(error));
   }
   else
@@ -279,15 +279,15 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
                                              Aws::Http::HttpMethod method) const
 {
   std::shared_ptr<HttpRequest> httpRequest(nullptr);
-  if (request)
-  {
-    httpRequest = CreateHttpRequest(uri, method, request->GetResponseStreamFactory());
-    BuildHttpRequest(*request, httpRequest);
-  }
-  else
-  {
-    httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-  }
+
+  std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> pRequestCtx =
+        Aws::MakeShared<smithy::client::AwsSmithyClientAsyncRequestContext>(ALLOCATION_TAG);
+  assert(pRequestCtx);
+  pRequestCtx->m_pRequest = request;
+  pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+  pRequestCtx->m_requestInfo.attempt = 1;
+  pRequestCtx->m_requestInfo.maxAttempts = 0;
+  httpRequest = BuildHttpRequest(pRequestCtx, uri, method);
 
   std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
 
@@ -386,18 +386,32 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   //return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #end
 #end
+  request.SetServiceSpecificParameters(
+      [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+      }());
   EndpointUpdateCallback endpointCallback = [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint){
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
     };
-  auto endpointResolutionOutcome = ResolveEndpoint(
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+  [&]() -> ResolveEndpointOutcome {
+    return AwsSmithyClientT::ResolveEndpointFromRequest(
     &request,
     request.GetServiceRequestName(),
-    Aws::Http::HttpMethod method,
     std::move(endpointCallback));
-  if (!endpointResolutionOutcome.IsSuccess()) {
-      handler(this, request, PutObjectOutcome(Aws::Client::AWSError<CoreErrors>(
-          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
-      return;
+   },
+  TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+  *meter,
+  {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
+  if(!endpointResolutionOutcome.IsSuccess())
+  {
+    AWS_LOGSTREAM_ERROR("${operation.name}", "Endpoint Resolution Failed");
+    return handler(this, request, ${operation.name}Outcome(endpointResolutionOutcome.GetError()), handlerContext);
   }
 
   // make aws_s3_meta_request with callbacks
@@ -528,8 +542,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
   AWS_OPERATION_GUARD(${operation.name});
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
     [&]()-> ${operation.name}Outcome {
