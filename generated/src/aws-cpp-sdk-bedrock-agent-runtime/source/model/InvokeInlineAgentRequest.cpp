@@ -14,7 +14,11 @@ using namespace Aws::Utils;
 
 InvokeInlineAgentRequest::InvokeInlineAgentRequest() : 
     m_actionGroupsHasBeenSet(false),
+    m_agentCollaboration(AgentCollaboration::NOT_SET),
+    m_agentCollaborationHasBeenSet(false),
     m_bedrockModelConfigurationsHasBeenSet(false),
+    m_collaboratorConfigurationsHasBeenSet(false),
+    m_collaboratorsHasBeenSet(false),
     m_customerEncryptionKeyArnHasBeenSet(false),
     m_enableTrace(false),
     m_enableTraceHasBeenSet(false),
@@ -50,9 +54,36 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
 
   }
 
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
+
   if(m_bedrockModelConfigurationsHasBeenSet)
   {
    payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
+
+  }
+
+  if(m_collaboratorConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> collaboratorConfigurationsJsonList(m_collaboratorConfigurations.size());
+   for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
+   {
+     collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject(m_collaboratorConfigurations[collaboratorConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("collaboratorConfigurations", std::move(collaboratorConfigurationsJsonList));
+
+  }
+
+  if(m_collaboratorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> collaboratorsJsonList(m_collaborators.size());
+   for(unsigned collaboratorsIndex = 0; collaboratorsIndex < collaboratorsJsonList.GetLength(); ++collaboratorsIndex)
+   {
+     collaboratorsJsonList[collaboratorsIndex].AsObject(m_collaborators[collaboratorsIndex].Jsonize());
+   }
+   payload.WithArray("collaborators", std::move(collaboratorsJsonList));
 
   }
 

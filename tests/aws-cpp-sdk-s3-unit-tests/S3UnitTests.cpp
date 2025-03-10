@@ -12,6 +12,7 @@
 #include <aws/testing/MemoryTesting.h>
 #include <memory>
 #include <aws/s3/S3ErrorMarshaller.h>
+#include <aws/s3/model/HeadBucketRequest.h>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -31,11 +32,34 @@ class S3TestClient : public S3Client
     template <typename ...Args>
     S3TestClient(Args&& ...args): S3Client(std::forward<Args>(args)...){
     }
+    XmlOutcome MakeRequest(const Aws::Http::URI& uri,
+      const Aws::AmazonWebServiceRequest& request,
+      Aws::Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
+      const char* signerName = Aws::Auth::SIGV4_SIGNER,
+      const char* signerRegionOverride = nullptr,
+      const char* signerServiceNameOverride = nullptr) const
+    {
+        return S3Client::MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+    }
+
+
+    XmlOutcome MakeRequest(const Aws::Http::URI& uri,
+      Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+      const char* signerName = Aws::Auth::SIGV4_SIGNER,
+      const char* requestName = "",
+      const char* signerRegionOverride = nullptr,
+      const char* signerServiceNameOverride = nullptr) const
+    {
+        return S3Client::MakeRequest(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
+    }
+
 
     private:
     S3TestClient() = default;
 
     friend class S3UnitTest_S3EmbeddedErrorTestNonOKResponse_Test;
+
+   
 };
 
 class NoRetry: public RetryStrategy
@@ -459,4 +483,41 @@ TEST_F(S3UnitTest, RequestShouldNotIncludeAChecksumIfRequiredWithMD5Header) {
     [](const std::pair<Aws::String, Aws::String>& keyValue) { return keyValue.first.find("x-amz-checksum") != Aws::String::npos; }));
   EXPECT_TRUE(std::any_of(headers.begin(), headers.end(),
     [](const std::pair<Aws::String, Aws::String>& keyValue) { return keyValue.first.find("content-md5") != Aws::String::npos; }));
+}
+
+TEST_F(S3UnitTest, testLegacyApi)
+{
+    HeadBucketRequest headBucketRequest;
+    headBucketRequest.SetBucket("dummy");
+
+    auto uri = _s3Client->GeneratePresignedUrl("dummy",
+      /*key=*/"", Aws::Http::HttpMethod::HTTP_HEAD);
+
+    //We have to mock requset because it is used to create the return body, it actually isnt used.
+    auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+      return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
+    });
+
+    {
+      auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+        mockResponse->SetResponseCode(HttpResponseCode::OK);
+        _mockHttpClient->AddResponseToReturn(mockResponse);
+    }
+
+    auto outcome = _s3Client->MakeRequest(uri, headBucketRequest, Aws::Http::HttpMethod::HTTP_HEAD,
+      "SignatureV4");
+
+    EXPECT_TRUE(outcome.IsSuccess());
+
+    {
+        auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+        mockResponse->SetResponseCode(HttpResponseCode::OK);
+        _mockHttpClient->AddResponseToReturn(mockResponse);
+    }
+
+    auto outcome2 = _s3Client->MakeRequest(uri, Aws::Http::HttpMethod::HTTP_HEAD,
+      "SignatureV4");
+    
+    EXPECT_TRUE(outcome2.IsSuccess());
 }

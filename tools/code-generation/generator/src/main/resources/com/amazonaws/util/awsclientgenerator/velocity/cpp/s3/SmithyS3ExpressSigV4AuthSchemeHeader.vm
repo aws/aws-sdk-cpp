@@ -15,7 +15,7 @@ namespace ${rootNamespace} {
 namespace ${serviceNamespace} {
     constexpr char SIGV4_EXPRESS[] = "sigv4-s3express";
 
-    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigV4AuthScheme : public smithy::AuthScheme< smithy::AwsCredentialIdentityBase>
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigV4AuthScheme : public smithy::AuthScheme<S3ExpressIdentity>
     {
     public:
         using AwsCredentialIdentityResolverT =  smithy::IdentityResolverBase<IdentityT>;
@@ -29,7 +29,7 @@ namespace ${serviceNamespace} {
                                  bool urlEscapePath)
             : AuthScheme(SIGV4_EXPRESS), 
             m_identityResolver{identityResolver}, 
-            m_signer{Aws::MakeShared<S3ExpressSignerBase< smithy::AwsSigV4Signer>>("S3ExpressSigV4AuthScheme", serviceName, region, policy, urlEscapePath)}
+            m_signer{Aws::MakeShared<SmithyS3ExpressSigner<smithy::AwsSigV4Signer>>("S3ExpressSigV4AuthScheme", serviceName, region, policy, urlEscapePath)}
         {
             assert(m_identityResolver);
             assert(m_signer);

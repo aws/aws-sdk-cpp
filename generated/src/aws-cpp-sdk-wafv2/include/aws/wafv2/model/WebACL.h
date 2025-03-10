@@ -162,13 +162,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies data protection to apply to the web request data that WAF stores
-     * for the web ACL. This is a web ACL level data protection option. </p> <p>The
-     * data protection that you configure for the web ACL alters the data that's
-     * available for any other data collection activity, including WAF logging, web ACL
-     * request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake
-     * data collection and management. Your other option for data protection is in the
-     * logging configuration, which only affects logging. </p>
+     * <p>Specifies data protection to apply to the web request data for the web ACL.
+     * This is a web ACL level data protection option. </p> <p>The data protection that
+     * you configure for the web ACL alters the data that's available for any other
+     * data collection activity, including your WAF logging destinations, web ACL
+     * request sampling, and Amazon Security Lake data collection and management. Your
+     * other option for data protection is in the logging configuration, which only
+     * affects logging. </p>
      */
     inline const DataProtectionConfig& GetDataProtectionConfig() const{ return m_dataProtectionConfig; }
     inline bool DataProtectionConfigHasBeenSet() const { return m_dataProtectionConfigHasBeenSet; }

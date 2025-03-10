@@ -82,6 +82,35 @@ namespace {
         mutable std::mutex m_requestProcessing;
     };
 
+    template <typename SIGNER>
+    class SmithyS3ExpressSigner : public smithy::AwsSignerBase<S3ExpressIdentity> {
+
+        public:
+        explicit SmithyS3ExpressSigner(const Aws::String& serviceName, const Aws::String& region)
+        : m_signer(serviceName, region)
+        {
+        }
+
+        explicit SmithyS3ExpressSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool escapeUrl)
+            : m_signer(serviceName, region, policy, escapeUrl)
+        {
+        }
+
+        SigningFutureOutcome sign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const S3ExpressIdentity& identity, SigningProperties properties)
+        {
+            const smithy::AwsCredentialIdentity identityToUse{identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken(), identity.expiration(), identity.accountId()};
+            return m_signer.sign(httpRequest, identityToUse, properties);
+        }
+
+        SigningFutureOutcome presign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const S3ExpressIdentity& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds)
+        {
+            const smithy::AwsCredentialIdentity identityToUse{identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken(), identity.expiration(), identity.accountId()};
+            return m_signer.presign(httpRequest, identityToUse, properties, region, serviceName, expirationTimeInSeconds);
+        }
+
+        private:
+        S3ExpressSignerBase<SIGNER> m_signer;
+    };
 
     class AWS_S3_API S3ExpressSigner : public Aws::Client::AWSAuthV4Signer {
         public:
@@ -138,6 +167,5 @@ namespace {
             const Aws::String m_region;
             const Aws::String m_endpoint;
     };
-
 }
 }

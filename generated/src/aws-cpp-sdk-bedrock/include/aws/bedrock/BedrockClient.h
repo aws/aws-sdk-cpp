@@ -391,6 +391,32 @@ namespace Bedrock
         }
 
         /**
+         * <p>Creates a prompt router that manages the routing of requests between multiple
+         * foundation models based on the routing criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePromptRouterOutcome CreatePromptRouter(const Model::CreatePromptRouterRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePromptRouter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePromptRouterRequestT = Model::CreatePromptRouterRequest>
+        Model::CreatePromptRouterOutcomeCallable CreatePromptRouterCallable(const CreatePromptRouterRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreatePromptRouter, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePromptRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePromptRouterRequestT = Model::CreatePromptRouterRequest>
+        void CreatePromptRouterAsync(const CreatePromptRouterRequestT& request, const CreatePromptRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreatePromptRouter, request, handler, context);
+        }
+
+        /**
          * <p>Creates dedicated throughput for a base or custom model with the model units
          * and for the duration that you specify. For pricing details, see <a
          * href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>. For
@@ -588,6 +614,32 @@ namespace Bedrock
         void DeleteModelInvocationLoggingConfigurationAsync(const DeleteModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteModelInvocationLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::DeleteModelInvocationLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a specified prompt router. This action cannot be
+         * undone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePromptRouterOutcome DeletePromptRouter(const Model::DeletePromptRouterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePromptRouter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePromptRouterRequestT = Model::DeletePromptRouterRequest>
+        Model::DeletePromptRouterOutcomeCallable DeletePromptRouterCallable(const DeletePromptRouterRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeletePromptRouter, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePromptRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePromptRouterRequestT = Model::DeletePromptRouterRequest>
+        void DeletePromptRouterAsync(const DeletePromptRouterRequestT& request, const DeletePromptRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeletePromptRouter, request, handler, context);
         }
 
         /**
