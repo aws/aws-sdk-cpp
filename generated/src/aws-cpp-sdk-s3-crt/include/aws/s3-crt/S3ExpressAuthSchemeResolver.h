@@ -1,19 +1,18 @@
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
-#set($metadata = $serviceModel.metadata)
-#set($rootNamespace = $serviceModel.namespace)
-#set($serviceNamespace = $metadata.namespace)
-#set($clientConfiguration = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #pragma once
 
-\#include <aws/${metadata.projectName}/S3ExpressSigner.h>
-\#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
-\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthSchemeOption.h>
-\#include <aws/${metadata.projectName}/S3ExpressSigV4AuthScheme.h>
+#include <aws/s3-crt/S3ExpressSigner.h>
+#include <smithy/identity/auth/built-in/SigV4MultiAuthResolver.h>
+#include <aws/s3-crt/S3ExpressSigV4AuthSchemeOption.h>
+#include <aws/s3-crt/S3ExpressSigV4AuthScheme.h>
 
-namespace ${rootNamespace} {
-namespace ${serviceNamespace} {
-    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<${metadata.classNamePrefix}EndpointProvider, ${clientConfiguration}>{
+namespace Aws {
+namespace S3Crt {
+    class AWS_S3CRT_API S3ExpressAuthSchemeResolver : public  smithy::SigV4MultiAuthSchemeResolver<S3CrtEndpointProvider, S3Crt::S3CrtClientConfiguration>{
 
         public:
         Aws::Vector<smithy::AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
@@ -40,7 +39,7 @@ namespace ${serviceNamespace} {
                 {   
                     {Aws::Auth::ASYMMETRIC_SIGV4_SIGNER, smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption},
                     {Aws::Auth::SIGV4_SIGNER, smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption},
-                    {${serviceNamespace}::S3_EXPRESS_SIGNER_NAME, S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption}
+                    {S3Crt::S3_EXPRESS_SIGNER_NAME, S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption}
                 };
                 authSchemes.reserve(authSchemeMap.size());
                 auto authschemeMapper = [&](const Aws::String& schemeId){

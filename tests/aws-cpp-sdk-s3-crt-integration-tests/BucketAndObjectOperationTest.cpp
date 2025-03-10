@@ -1530,6 +1530,47 @@ namespace
         }
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestCopyMove)
+    {
+        const Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        //Test copy and move
+        auto origClient = *Client;
+        S3CrtClient&& movedClient = std::move(origClient);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+
+        std::shared_ptr<Aws::IOStream> bigStream = CreateStreamForUploadPart(25, "La");
+        putObjectRequest.SetBody(bigStream);
+        long long contentLength = static_cast<long long>(putObjectRequest.GetBody()->tellp());
+        putObjectRequest.SetContentLength(contentLength);
+        // putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+
+        PutObjectOutcome putObjectOutcome = movedClient.PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+
+
+        DeleteObjectRequest deleteObjectRequest;
+        deleteObjectRequest.SetBucket(fullBucketName);
+        deleteObjectRequest.SetKey(TEST_OBJ_KEY);
+        DeleteObjectOutcome deleteObjectOutcome = movedClient.DeleteObject(deleteObjectRequest);
+        AWS_ASSERT_SUCCESS(deleteObjectOutcome);
+
+        WaitForBucketToEmpty(fullBucketName);
+    }
+
     class TestMonitoring: public Aws::Monitoring::MonitoringInterface
     {
         mutable std::shared_ptr<Aws::Vector<Aws::String>> m_sequence;
