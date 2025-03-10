@@ -6,7 +6,6 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
-#include <chrono>
 
 using namespace Aws::Utils::RateLimits;
 
