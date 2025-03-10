@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NO_AVAILABLE_CONFIGURATION_RECORDER");
+        static const int MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED");
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 
 
@@ -30,6 +31,10 @@ namespace Aws
           if (hashCode == NO_AVAILABLE_CONFIGURATION_RECORDER_HASH)
           {
             return StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER;
+          }
+          else if (hashCode == MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH)
+          {
+            return StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED;
           }
           else if (hashCode == INTERNAL_ERROR_HASH)
           {
@@ -53,6 +58,8 @@ namespace Aws
             return {};
           case StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER:
             return "NO_AVAILABLE_CONFIGURATION_RECORDER";
+          case StatusReasonCode::MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED:
+            return "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED";
           case StatusReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           default:

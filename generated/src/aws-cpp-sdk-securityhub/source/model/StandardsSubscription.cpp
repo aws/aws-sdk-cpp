@@ -24,6 +24,8 @@ StandardsSubscription::StandardsSubscription() :
     m_standardsInputHasBeenSet(false),
     m_standardsStatus(StandardsStatus::NOT_SET),
     m_standardsStatusHasBeenSet(false),
+    m_standardsControlsUpdatable(StandardsControlsUpdatable::NOT_SET),
+    m_standardsControlsUpdatableHasBeenSet(false),
     m_standardsStatusReasonHasBeenSet(false)
 {
 }
@@ -67,6 +69,13 @@ StandardsSubscription& StandardsSubscription::operator =(JsonView jsonValue)
     m_standardsStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StandardsControlsUpdatable"))
+  {
+    m_standardsControlsUpdatable = StandardsControlsUpdatableMapper::GetStandardsControlsUpdatableForName(jsonValue.GetString("StandardsControlsUpdatable"));
+
+    m_standardsControlsUpdatableHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("StandardsStatusReason"))
   {
     m_standardsStatusReason = jsonValue.GetObject("StandardsStatusReason");
@@ -107,6 +116,11 @@ JsonValue StandardsSubscription::Jsonize() const
   if(m_standardsStatusHasBeenSet)
   {
    payload.WithString("StandardsStatus", StandardsStatusMapper::GetNameForStandardsStatus(m_standardsStatus));
+  }
+
+  if(m_standardsControlsUpdatableHasBeenSet)
+  {
+   payload.WithString("StandardsControlsUpdatable", StandardsControlsUpdatableMapper::GetNameForStandardsControlsUpdatable(m_standardsControlsUpdatable));
   }
 
   if(m_standardsStatusReasonHasBeenSet)

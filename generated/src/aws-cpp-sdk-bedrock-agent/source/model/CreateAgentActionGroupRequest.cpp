@@ -25,7 +25,8 @@ CreateAgentActionGroupRequest::CreateAgentActionGroupRequest() :
     m_descriptionHasBeenSet(false),
     m_functionSchemaHasBeenSet(false),
     m_parentActionGroupSignature(ActionGroupSignature::NOT_SET),
-    m_parentActionGroupSignatureHasBeenSet(false)
+    m_parentActionGroupSignatureHasBeenSet(false),
+    m_parentActionGroupSignatureParamsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,17 @@ Aws::String CreateAgentActionGroupRequest::SerializePayload() const
   if(m_parentActionGroupSignatureHasBeenSet)
   {
    payload.WithString("parentActionGroupSignature", ActionGroupSignatureMapper::GetNameForActionGroupSignature(m_parentActionGroupSignature));
+  }
+
+  if(m_parentActionGroupSignatureParamsHasBeenSet)
+  {
+   JsonValue parentActionGroupSignatureParamsJsonMap;
+   for(auto& parentActionGroupSignatureParamsItem : m_parentActionGroupSignatureParams)
+   {
+     parentActionGroupSignatureParamsJsonMap.WithString(parentActionGroupSignatureParamsItem.first, parentActionGroupSignatureParamsItem.second);
+   }
+   payload.WithObject("parentActionGroupSignatureParams", std::move(parentActionGroupSignatureParamsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

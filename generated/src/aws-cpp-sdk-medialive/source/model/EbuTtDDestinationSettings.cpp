@@ -24,7 +24,11 @@ EbuTtDDestinationSettings::EbuTtDDestinationSettings() :
     m_fillLineGapHasBeenSet(false),
     m_fontFamilyHasBeenSet(false),
     m_styleControl(EbuTtDDestinationStyleControl::NOT_SET),
-    m_styleControlHasBeenSet(false)
+    m_styleControlHasBeenSet(false),
+    m_defaultFontSize(0),
+    m_defaultFontSizeHasBeenSet(false),
+    m_defaultLineHeight(0),
+    m_defaultLineHeightHasBeenSet(false)
 {
 }
 
@@ -64,6 +68,20 @@ EbuTtDDestinationSettings& EbuTtDDestinationSettings::operator =(JsonView jsonVa
     m_styleControlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("defaultFontSize"))
+  {
+    m_defaultFontSize = jsonValue.GetInteger("defaultFontSize");
+
+    m_defaultFontSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("defaultLineHeight"))
+  {
+    m_defaultLineHeight = jsonValue.GetInteger("defaultLineHeight");
+
+    m_defaultLineHeightHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -91,6 +109,18 @@ JsonValue EbuTtDDestinationSettings::Jsonize() const
   if(m_styleControlHasBeenSet)
   {
    payload.WithString("styleControl", EbuTtDDestinationStyleControlMapper::GetNameForEbuTtDDestinationStyleControl(m_styleControl));
+  }
+
+  if(m_defaultFontSizeHasBeenSet)
+  {
+   payload.WithInteger("defaultFontSize", m_defaultFontSize);
+
+  }
+
+  if(m_defaultLineHeightHasBeenSet)
+  {
+   payload.WithInteger("defaultLineHeight", m_defaultLineHeight);
+
   }
 
   return payload;

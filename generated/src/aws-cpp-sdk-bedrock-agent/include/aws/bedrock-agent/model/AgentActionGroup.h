@@ -11,6 +11,7 @@
 #include <aws/bedrock-agent/model/APISchema.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/FunctionSchema.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent/model/ActionGroupSignature.h>
 #include <utility>
 
@@ -203,6 +204,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration settings for a computer use action.</p>  <p>
+     * Computer use is a new Anthropic Claude model capability (in beta) available with
+     * Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+     * an Amazon Bedrock Agent to complete tasks with computer use tools</a>. </p>
+     * 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetParentActionGroupSignatureParams() const{ return m_parentActionGroupSignatureParams; }
+    inline bool ParentActionGroupSignatureParamsHasBeenSet() const { return m_parentActionGroupSignatureParamsHasBeenSet; }
+    inline void SetParentActionGroupSignatureParams(const Aws::Map<Aws::String, Aws::String>& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams = value; }
+    inline void SetParentActionGroupSignatureParams(Aws::Map<Aws::String, Aws::String>&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams = std::move(value); }
+    inline AgentActionGroup& WithParentActionGroupSignatureParams(const Aws::Map<Aws::String, Aws::String>& value) { SetParentActionGroupSignatureParams(value); return *this;}
+    inline AgentActionGroup& WithParentActionGroupSignatureParams(Aws::Map<Aws::String, Aws::String>&& value) { SetParentActionGroupSignatureParams(std::move(value)); return *this;}
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(const Aws::String& key, const Aws::String& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, value); return *this; }
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(Aws::String&& key, const Aws::String& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(std::move(key), value); return *this; }
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(const Aws::String& key, Aws::String&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, std::move(value)); return *this; }
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(Aws::String&& key, Aws::String&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(std::move(key), std::move(value)); return *this; }
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(const char* key, Aws::String&& value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, std::move(value)); return *this; }
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(Aws::String&& key, const char* value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(std::move(key), value); return *this; }
+    inline AgentActionGroup& AddParentActionGroupSignatureParams(const char* key, const char* value) { m_parentActionGroupSignatureParamsHasBeenSet = true; m_parentActionGroupSignatureParams.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If this field is set as <code>AMAZON.UserInput</code>, the agent can request
      * the user for additional information when trying to complete a task. The
      * <code>description</code>, <code>apiSchema</code>, and
@@ -266,6 +291,9 @@ namespace Model
 
     FunctionSchema m_functionSchema;
     bool m_functionSchemaHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_parentActionGroupSignatureParams;
+    bool m_parentActionGroupSignatureParamsHasBeenSet = false;
 
     ActionGroupSignature m_parentActionSignature;
     bool m_parentActionSignatureHasBeenSet = false;

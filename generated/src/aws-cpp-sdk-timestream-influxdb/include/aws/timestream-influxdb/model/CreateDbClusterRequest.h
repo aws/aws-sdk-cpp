@@ -65,8 +65,8 @@ namespace Model
      * letter and can't end with a hyphen or contain two consecutive hyphens. For
      * example, my-user1. This username will allow you to access the InfluxDB UI to
      * perform various administrative tasks and also use the InfluxDB CLI to create an
-     * operator token. These attributes will be stored in a secret created in Amazon
-     * Web Services Secrets Manager in your account.</p>
+     * operator token. These attributes will be stored in a secret created in Secrets
+     * Manager in your account.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
@@ -83,8 +83,7 @@ namespace Model
      * <p>The password of the initial admin user created in InfluxDB. This password
      * will allow you to access the InfluxDB UI to perform various administrative tasks
      * and also use the InfluxDB CLI to create an operator token. These attributes will
-     * be stored in a secret created in Amazon Web Services Secrets Manager in your
-     * account.</p>
+     * be stored in a secret created in Secrets Manager in your account.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }

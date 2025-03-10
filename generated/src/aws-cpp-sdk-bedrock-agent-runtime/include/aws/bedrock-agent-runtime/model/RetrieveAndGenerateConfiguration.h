@@ -72,9 +72,9 @@ namespace Model
     ///@{
     /**
      * <p>The type of resource that contains your data for retrieving information and
-     * generating responses.</p> <p>If you choose to use <code>EXTERNAL_SOURCES</code>,
-     * then currently only Anthropic Claude 3 Sonnet models for knowledge bases are
-     * supported.</p>
+     * generating responses.</p>  <p>If you choose to use
+     * <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet
+     * models for knowledge bases are supported.</p> 
      */
     inline const RetrieveAndGenerateType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

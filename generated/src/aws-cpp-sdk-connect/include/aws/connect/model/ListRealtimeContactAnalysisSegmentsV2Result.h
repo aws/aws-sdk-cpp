@@ -38,7 +38,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The channel of the contact. <code>Voice</code> will not be returned. </p>
+     * <p>The channel of the contact. </p>  <p>Only <code>CHAT</code> is
+     * supported. This API does not support <code>VOICE</code>. If you attempt to use
+     * it for the VOICE channel, an <code>InvalidRequestException</code> error
+     * occurs.</p> 
      */
     inline const RealTimeContactAnalysisSupportedChannel& GetChannel() const{ return m_channel; }
     inline void SetChannel(const RealTimeContactAnalysisSupportedChannel& value) { m_channel = value; }

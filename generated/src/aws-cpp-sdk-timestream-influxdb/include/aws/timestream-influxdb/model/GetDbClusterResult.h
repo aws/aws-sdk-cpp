@@ -219,10 +219,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret containing the initial InfluxDB authorization parameters. The secret
-     * value is a JSON formatted key-value pair holding InfluxDB authorization values:
-     * organization, bucket, username, and password.</p>
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the
+     * initial InfluxDB authorization parameters. The secret value is a JSON formatted
+     * key-value pair holding InfluxDB authorization values: organization, bucket,
+     * username, and password.</p>
      */
     inline const Aws::String& GetInfluxAuthParametersSecretArn() const{ return m_influxAuthParametersSecretArn; }
     inline void SetInfluxAuthParametersSecretArn(const Aws::String& value) { m_influxAuthParametersSecretArn = value; }

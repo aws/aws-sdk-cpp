@@ -31,6 +31,7 @@ AgentActionGroup::AgentActionGroup() :
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_functionSchemaHasBeenSet(false),
+    m_parentActionGroupSignatureParamsHasBeenSet(false),
     m_parentActionSignature(ActionGroupSignature::NOT_SET),
     m_parentActionSignatureHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -122,6 +123,16 @@ AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
     m_functionSchemaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parentActionGroupSignatureParams"))
+  {
+    Aws::Map<Aws::String, JsonView> parentActionGroupSignatureParamsJsonMap = jsonValue.GetObject("parentActionGroupSignatureParams").GetAllObjects();
+    for(auto& parentActionGroupSignatureParamsItem : parentActionGroupSignatureParamsJsonMap)
+    {
+      m_parentActionGroupSignatureParams[parentActionGroupSignatureParamsItem.first] = parentActionGroupSignatureParamsItem.second.AsString();
+    }
+    m_parentActionGroupSignatureParamsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("parentActionSignature"))
   {
     m_parentActionSignature = ActionGroupSignatureMapper::GetActionGroupSignatureForName(jsonValue.GetString("parentActionSignature"));
@@ -204,6 +215,17 @@ JsonValue AgentActionGroup::Jsonize() const
   if(m_functionSchemaHasBeenSet)
   {
    payload.WithObject("functionSchema", m_functionSchema.Jsonize());
+
+  }
+
+  if(m_parentActionGroupSignatureParamsHasBeenSet)
+  {
+   JsonValue parentActionGroupSignatureParamsJsonMap;
+   for(auto& parentActionGroupSignatureParamsItem : m_parentActionGroupSignatureParams)
+   {
+     parentActionGroupSignatureParamsJsonMap.WithString(parentActionGroupSignatureParamsItem.first, parentActionGroupSignatureParamsItem.second);
+   }
+   payload.WithObject("parentActionGroupSignatureParams", std::move(parentActionGroupSignatureParamsJsonMap));
 
   }
 

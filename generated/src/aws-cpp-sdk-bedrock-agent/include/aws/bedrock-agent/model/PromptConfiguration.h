@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>Specifies whether to override the default parser Lambda function when parsing
      * the raw foundation model output in the part of the agent sequence defined by the
-     * <code>promptType</code>. If you set the field as <code>OVERRIDEN</code>, the
+     * <code>promptType</code>. If you set the field as <code>OVERRIDDEN</code>, the
      * <code>overrideLambda</code> field in the <a
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
      * must be specified with the ARN of a Lambda function.</p>

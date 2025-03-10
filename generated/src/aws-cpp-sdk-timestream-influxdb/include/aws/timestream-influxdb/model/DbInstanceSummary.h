@@ -59,8 +59,7 @@ namespace Model
     ///@{
     /**
      * <p>This customer-supplied name uniquely identifies the DB instance when
-     * interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services
-     * CLI commands.</p>
+     * interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
