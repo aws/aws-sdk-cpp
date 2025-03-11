@@ -118,10 +118,15 @@ namespace Model
     ///@{
     /**
      * <p>Contains attributes that persist across a prompt and the values of those
-     * attributes. These attributes replace the $prompt_session_attributes$ placeholder
-     * variable in the orchestration prompt template. For more information, see <a
+     * attributes. </p> <ul> <li> <p>In orchestration prompt template, these attributes
+     * replace the $prompt_session_attributes$ placeholder variable. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>.</p> </li> <li> <p>In <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent
+     * collaboration</a>, the <code>promptSessionAttributes</code> will only be used by
+     * supervisor agent when $prompt_session_attributes$ is present in prompt template.
+     * </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPromptSessionAttributes() const{ return m_promptSessionAttributes; }
     inline bool PromptSessionAttributesHasBeenSet() const { return m_promptSessionAttributesHasBeenSet; }
@@ -161,7 +166,10 @@ namespace Model
     ///@{
     /**
      * <p>Contains attributes that persist across a session and the values of those
-     * attributes.</p>
+     * attributes. If <code>sessionAttributes</code> are passed to a supervisor agent
+     * in <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent
+     * collaboration</a>, it will be forwarded to all agent collaborators.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const{ return m_sessionAttributes; }
     inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }

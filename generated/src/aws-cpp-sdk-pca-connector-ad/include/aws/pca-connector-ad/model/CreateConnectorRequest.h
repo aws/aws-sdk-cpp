@@ -98,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Security group IDs that describe the inbound and outbound rules.</p>
+     * <p>Information about your VPC and security groups used with the connector.</p>
      */
     inline const VpcInformation& GetVpcInformation() const{ return m_vpcInformation; }
     inline bool VpcInformationHasBeenSet() const { return m_vpcInformationHasBeenSet; }

@@ -346,8 +346,11 @@ namespace SecurityHub
 
         /**
          * <p> For a batch of security controls and standards, identifies whether each
-         * control is currently enabled or disabled in a standard. </p><p><h3>See
-         * Also:</h3>   <a
+         * control is currently enabled or disabled in a standard. </p> <p> Calls to this
+         * operation return a <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the
+         * standard subscription for the association has a
+         * <code>NOT_READY_FOR_UPDATES</code> value for
+         * <code>StandardsControlsUpdatable</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">AWS
          * API Reference</a></p>
          */
@@ -1061,7 +1064,9 @@ namespace SecurityHub
         /**
          * <p>Returns a list of security standards controls.</p> <p>For each control, the
          * results include information about whether it is currently enabled, the severity,
-         * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
+         * and a link to remediation information.</p> <p>This operation returns an empty
+         * list for standard subscriptions where <code>StandardsControlsUpdatable</code>
+         * has value <code>NOT_READY_FOR_UPDATES</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
          * API Reference</a></p>
          */
@@ -1945,7 +1950,10 @@ namespace SecurityHub
 
         /**
          * <p> Specifies whether a control is currently enabled or disabled in each enabled
-         * standard in the calling account. </p><p><h3>See Also:</h3>   <a
+         * standard in the calling account. </p> <p>This operation omits standards control
+         * associations for standard subscriptions where
+         * <code>StandardsControlsUpdatable</code> has value
+         * <code>NOT_READY_FOR_UPDATES</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">AWS
          * API Reference</a></p>
          */
@@ -2327,7 +2335,10 @@ namespace SecurityHub
 
         /**
          * <p>Used to control whether an individual security standard control is enabled or
-         * disabled.</p><p><h3>See Also:</h3>   <a
+         * disabled.</p> <p>Calls to this operation return a
+         * <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the standard subscription
+         * for the control has <code>StandardsControlsUpdatable</code> value
+         * <code>NOT_READY_FOR_UPDATES</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
          * API Reference</a></p>
          */

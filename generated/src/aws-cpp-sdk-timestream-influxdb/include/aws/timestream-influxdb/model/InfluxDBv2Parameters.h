@@ -213,7 +213,7 @@ namespace Model
     ///@{
     /**
      * <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime
-     * profiling data and can be helpful when debugging.</p> <p>Default: false</p>
+     * profiling data and can be helpful when debugging.</p> <p>Default: true</p>
      */
     inline bool GetPprofDisabled() const{ return m_pprofDisabled; }
     inline bool PprofDisabledHasBeenSet() const { return m_pprofDisabledHasBeenSet; }
