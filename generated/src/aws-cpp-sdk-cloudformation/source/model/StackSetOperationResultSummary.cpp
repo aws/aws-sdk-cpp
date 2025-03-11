@@ -98,7 +98,7 @@ void StackSetOperationResultSummary::OutputToStream(Aws::OStream& oStream, const
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StackSetOperationResultStatusMapper::GetNameForStackSetOperationResultStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StackSetOperationResultStatusMapper::GetNameForStackSetOperationResultStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -132,7 +132,7 @@ void StackSetOperationResultSummary::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StackSetOperationResultStatusMapper::GetNameForStackSetOperationResultStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StackSetOperationResultStatusMapper::GetNameForStackSetOperationResultStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

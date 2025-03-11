@@ -87,7 +87,7 @@ void DnsServersOptionsModifyStructure::OutputToStream(Aws::OStream& oStream, con
       unsigned customDnsServersIdx = 1;
       for(auto& item : m_customDnsServers)
       {
-        oStream << location << ".Item." << customDnsServersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".CustomDnsServers." << customDnsServersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_enabledHasBeenSet)

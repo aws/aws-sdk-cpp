@@ -214,7 +214,7 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_options)
       {
         Aws::StringStream optionsSs;
-        optionsSs << location <<  ".Option." << optionsIdx++;
+        optionsSs << location << ".Options.Option." << optionsIdx++;
         item.OutputToStream(oStream, optionsSs.str().c_str());
       }
   }

@@ -142,7 +142,7 @@ void ScheduledAction::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ScheduledActionStateMapper::GetNameForScheduledActionState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(ScheduledActionStateMapper::GetNameForScheduledActionState(m_state)) << "&";
   }
 
   if(m_nextInvocationsHasBeenSet)
@@ -195,14 +195,14 @@ void ScheduledAction::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << ScheduledActionStateMapper::GetNameForScheduledActionState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(ScheduledActionStateMapper::GetNameForScheduledActionState(m_state)) << "&";
   }
   if(m_nextInvocationsHasBeenSet)
   {
       unsigned nextInvocationsIdx = 1;
       for(auto& item : m_nextInvocations)
       {
-        oStream << location << ".ScheduledActionTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << ".NextInvocations.ScheduledActionTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
   if(m_startTimeHasBeenSet)

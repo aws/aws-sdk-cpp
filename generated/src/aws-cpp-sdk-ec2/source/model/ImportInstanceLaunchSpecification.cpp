@@ -138,7 +138,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_architectureHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+      oStream << location << index << locationValue << ".Architecture=" << StringUtils::URLEncode(ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture)) << "&";
   }
 
   if(m_groupNamesHasBeenSet)
@@ -173,7 +173,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_placementHasBeenSet)
@@ -195,7 +195,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
 
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
+      oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << StringUtils::URLEncode(ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior)) << "&";
   }
 
   if(m_privateIpAddressHasBeenSet)
@@ -209,7 +209,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_architectureHasBeenSet)
   {
-      oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+      oStream << location << ".Architecture=" << StringUtils::URLEncode(ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture)) << "&";
   }
   if(m_groupNamesHasBeenSet)
   {
@@ -239,7 +239,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_placementHasBeenSet)
   {
@@ -257,7 +257,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-      oStream << location << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
+      oStream << location << ".InstanceInitiatedShutdownBehavior=" << StringUtils::URLEncode(ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior)) << "&";
   }
   if(m_privateIpAddressHasBeenSet)
   {

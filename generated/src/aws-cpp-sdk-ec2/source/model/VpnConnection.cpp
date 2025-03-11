@@ -191,7 +191,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_gatewayAssociationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".GatewayAssociationState=" << GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState) << "&";
+      oStream << location << index << locationValue << ".GatewayAssociationState=" << StringUtils::URLEncode(GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState)) << "&";
   }
 
   if(m_optionsHasBeenSet)
@@ -241,7 +241,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
   }
 
   if(m_customerGatewayConfigurationHasBeenSet)
@@ -251,7 +251,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(GatewayTypeMapper::GetNameForGatewayType(m_type)) << "&";
   }
 
   if(m_customerGatewayIdHasBeenSet)
@@ -286,7 +286,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_gatewayAssociationStateHasBeenSet)
   {
-      oStream << location << ".GatewayAssociationState=" << GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState) << "&";
+      oStream << location << ".GatewayAssociationState=" << StringUtils::URLEncode(GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState)) << "&";
   }
   if(m_optionsHasBeenSet)
   {
@@ -300,7 +300,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_routes)
       {
         Aws::StringStream routesSs;
-        routesSs << location <<  ".Routes." << routesIdx++;
+        routesSs << location << ".Routes." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
@@ -310,7 +310,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -320,7 +320,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_vgwTelemetry)
       {
         Aws::StringStream vgwTelemetrySs;
-        vgwTelemetrySs << location <<  ".VgwTelemetry." << vgwTelemetryIdx++;
+        vgwTelemetrySs << location << ".VgwTelemetry." << vgwTelemetryIdx++;
         item.OutputToStream(oStream, vgwTelemetrySs.str().c_str());
       }
   }
@@ -330,7 +330,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
   }
   if(m_customerGatewayConfigurationHasBeenSet)
   {
@@ -338,7 +338,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(GatewayTypeMapper::GetNameForGatewayType(m_type)) << "&";
   }
   if(m_customerGatewayIdHasBeenSet)
   {

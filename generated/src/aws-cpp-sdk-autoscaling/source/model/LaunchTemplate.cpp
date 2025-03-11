@@ -97,7 +97,7 @@ void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_overrides)
       {
         Aws::StringStream overridesSs;
-        overridesSs << location <<  ".Overrides.member." << overridesIdx++;
+        overridesSs << location << ".Overrides.member." << overridesIdx++;
         item.OutputToStream(oStream, overridesSs.str().c_str());
       }
   }

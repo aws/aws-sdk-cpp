@@ -33,7 +33,7 @@ Aws::String StartActivityStreamRequest::SerializePayload() const
 
   if(m_modeHasBeenSet)
   {
-    ss << "Mode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_mode) << "&";
+    ss << "Mode=" << StringUtils::URLEncode(ActivityStreamModeMapper::GetNameForActivityStreamMode(m_mode)) << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)

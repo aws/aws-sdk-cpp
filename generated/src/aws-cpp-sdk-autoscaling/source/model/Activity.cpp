@@ -161,7 +161,7 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_statusCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StatusCode=" << ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode) << "&";
+      oStream << location << index << locationValue << ".StatusCode=" << StringUtils::URLEncode(ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -219,7 +219,7 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_statusCodeHasBeenSet)
   {
-      oStream << location << ".StatusCode=" << ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode) << "&";
+      oStream << location << ".StatusCode=" << StringUtils::URLEncode(ScalingActivityStatusCodeMapper::GetNameForScalingActivityStatusCode(m_statusCode)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

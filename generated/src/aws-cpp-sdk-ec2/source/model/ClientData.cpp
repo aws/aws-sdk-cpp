@@ -106,7 +106,7 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_uploadSizeHasBeenSet)
   {
-        oStream << location << ".UploadSize=" << StringUtils::URLEncode(m_uploadSize) << "&";
+      oStream << location << ".UploadSize=" << StringUtils::URLEncode(m_uploadSize) << "&";
   }
   if(m_uploadStartHasBeenSet)
   {

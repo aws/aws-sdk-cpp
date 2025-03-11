@@ -156,7 +156,7 @@ void AuthenticateCognitoActionConfig::OutputToStream(Aws::OStream& oStream, cons
 
   if(m_onUnauthenticatedRequestHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OnUnauthenticatedRequest=" << AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(m_onUnauthenticatedRequest) << "&";
+      oStream << location << index << locationValue << ".OnUnauthenticatedRequest=" << StringUtils::URLEncode(AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(m_onUnauthenticatedRequest)) << "&";
   }
 
 }
@@ -192,17 +192,16 @@ void AuthenticateCognitoActionConfig::OutputToStream(Aws::OStream& oStream, cons
       unsigned authenticationRequestExtraParamsIdx = 1;
       for(auto& item : m_authenticationRequestExtraParams)
       {
-        oStream << location << ".AuthenticationRequestExtraParams.entry."  << authenticationRequestExtraParamsIdx << ".key="
+        oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".value="
+        oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         authenticationRequestExtraParamsIdx++;
       }
-
   }
   if(m_onUnauthenticatedRequestHasBeenSet)
   {
-      oStream << location << ".OnUnauthenticatedRequest=" << AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(m_onUnauthenticatedRequest) << "&";
+      oStream << location << ".OnUnauthenticatedRequest=" << StringUtils::URLEncode(AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(m_onUnauthenticatedRequest)) << "&";
   }
 }
 

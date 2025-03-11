@@ -165,7 +165,7 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_nodeGroupMembers)
       {
         Aws::StringStream nodeGroupMembersSs;
-        nodeGroupMembersSs << location <<  ".NodeGroupMember." << nodeGroupMembersIdx++;
+        nodeGroupMembersSs << location << ".NodeGroupMembers.NodeGroupMember." << nodeGroupMembersIdx++;
         item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
       }
   }

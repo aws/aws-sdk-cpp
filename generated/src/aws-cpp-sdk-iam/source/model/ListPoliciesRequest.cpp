@@ -30,7 +30,7 @@ Aws::String ListPoliciesRequest::SerializePayload() const
   ss << "Action=ListPolicies&";
   if(m_scopeHasBeenSet)
   {
-    ss << "Scope=" << PolicyScopeTypeMapper::GetNameForPolicyScopeType(m_scope) << "&";
+    ss << "Scope=" << StringUtils::URLEncode(PolicyScopeTypeMapper::GetNameForPolicyScopeType(m_scope)) << "&";
   }
 
   if(m_onlyAttachedHasBeenSet)
@@ -45,7 +45,7 @@ Aws::String ListPoliciesRequest::SerializePayload() const
 
   if(m_policyUsageFilterHasBeenSet)
   {
-    ss << "PolicyUsageFilter=" << PolicyUsageTypeMapper::GetNameForPolicyUsageType(m_policyUsageFilter) << "&";
+    ss << "PolicyUsageFilter=" << StringUtils::URLEncode(PolicyUsageTypeMapper::GetNameForPolicyUsageType(m_policyUsageFilter)) << "&";
   }
 
   if(m_markerHasBeenSet)

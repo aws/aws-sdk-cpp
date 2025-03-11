@@ -73,7 +73,7 @@ Aws::String CreateDBProxyEndpointRequest::SerializePayload() const
 
   if(m_targetRoleHasBeenSet)
   {
-    ss << "TargetRole=" << DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole) << "&";
+    ss << "TargetRole=" << StringUtils::URLEncode(DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole)) << "&";
   }
 
   if(m_tagsHasBeenSet)

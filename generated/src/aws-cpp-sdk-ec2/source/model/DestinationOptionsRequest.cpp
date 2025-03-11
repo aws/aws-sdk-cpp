@@ -69,7 +69,7 @@ void DestinationOptionsRequest::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_fileFormatHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FileFormat=" << DestinationFileFormatMapper::GetNameForDestinationFileFormat(m_fileFormat) << "&";
+      oStream << location << index << locationValue << ".FileFormat=" << StringUtils::URLEncode(DestinationFileFormatMapper::GetNameForDestinationFileFormat(m_fileFormat)) << "&";
   }
 
   if(m_hiveCompatiblePartitionsHasBeenSet)
@@ -88,7 +88,7 @@ void DestinationOptionsRequest::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_fileFormatHasBeenSet)
   {
-      oStream << location << ".FileFormat=" << DestinationFileFormatMapper::GetNameForDestinationFileFormat(m_fileFormat) << "&";
+      oStream << location << ".FileFormat=" << StringUtils::URLEncode(DestinationFileFormatMapper::GetNameForDestinationFileFormat(m_fileFormat)) << "&";
   }
   if(m_hiveCompatiblePartitionsHasBeenSet)
   {

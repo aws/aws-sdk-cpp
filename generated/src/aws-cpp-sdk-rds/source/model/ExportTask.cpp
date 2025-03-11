@@ -245,7 +245,7 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
+      oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType)) << "&";
   }
 
   Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -321,7 +321,7 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
+      oStream << location << ".SourceType=" << StringUtils::URLEncode(ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType)) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

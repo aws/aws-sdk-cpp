@@ -33,7 +33,7 @@ Aws::String ModifyFleetRequest::SerializePayload() const
 
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
-    ss << "ExcessCapacityTerminationPolicy=" << FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+    ss << "ExcessCapacityTerminationPolicy=" << StringUtils::URLEncode(FleetExcessCapacityTerminationPolicyMapper::GetNameForFleetExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy)) << "&";
   }
 
   if(m_launchTemplateConfigsHasBeenSet)

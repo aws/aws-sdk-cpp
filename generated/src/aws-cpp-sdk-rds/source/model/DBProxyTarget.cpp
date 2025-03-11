@@ -129,12 +129,12 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(TargetTypeMapper::GetNameForTargetType(m_type)) << "&";
   }
 
   if(m_roleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Role=" << TargetRoleMapper::GetNameForTargetRole(m_role) << "&";
+      oStream << location << index << locationValue << ".Role=" << StringUtils::URLEncode(TargetRoleMapper::GetNameForTargetRole(m_role)) << "&";
   }
 
   if(m_targetHealthHasBeenSet)
@@ -170,11 +170,11 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(TargetTypeMapper::GetNameForTargetType(m_type)) << "&";
   }
   if(m_roleHasBeenSet)
   {
-      oStream << location << ".Role=" << TargetRoleMapper::GetNameForTargetRole(m_role) << "&";
+      oStream << location << ".Role=" << StringUtils::URLEncode(TargetRoleMapper::GetNameForTargetRole(m_role)) << "&";
   }
   if(m_targetHealthHasBeenSet)
   {

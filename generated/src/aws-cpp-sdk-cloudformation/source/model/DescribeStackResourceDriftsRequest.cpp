@@ -40,7 +40,7 @@ Aws::String DescribeStackResourceDriftsRequest::SerializePayload() const
       for(auto& item : m_stackResourceDriftStatusFilters)
       {
         ss << "StackResourceDriftStatusFilters.member." << stackResourceDriftStatusFiltersCount << "="
-            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item)) << "&";
         stackResourceDriftStatusFiltersCount++;
       }
     }

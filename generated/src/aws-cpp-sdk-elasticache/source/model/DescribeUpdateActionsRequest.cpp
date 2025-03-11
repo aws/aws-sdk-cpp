@@ -88,7 +88,7 @@ Aws::String DescribeUpdateActionsRequest::SerializePayload() const
       for(auto& item : m_serviceUpdateStatus)
       {
         ss << "ServiceUpdateStatus.member." << serviceUpdateStatusCount << "="
-            << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(item)) << "&";
         serviceUpdateStatusCount++;
       }
     }
@@ -111,7 +111,7 @@ Aws::String DescribeUpdateActionsRequest::SerializePayload() const
       for(auto& item : m_updateActionStatus)
       {
         ss << "UpdateActionStatus.member." << updateActionStatusCount << "="
-            << StringUtils::URLEncode(UpdateActionStatusMapper::GetNameForUpdateActionStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(UpdateActionStatusMapper::GetNameForUpdateActionStatus(item)) << "&";
         updateActionStatusCount++;
       }
     }

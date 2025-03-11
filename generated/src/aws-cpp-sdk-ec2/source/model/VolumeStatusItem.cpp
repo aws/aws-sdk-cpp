@@ -175,7 +175,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_actions)
       {
         Aws::StringStream actionsSs;
-        actionsSs << location <<  ".ActionsSet." << actionsIdx++;
+        actionsSs << location << ".ActionsSet." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
@@ -193,7 +193,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_events)
       {
         Aws::StringStream eventsSs;
-        eventsSs << location <<  ".EventsSet." << eventsIdx++;
+        eventsSs << location << ".EventsSet." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
@@ -213,7 +213,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_attachmentStatuses)
       {
         Aws::StringStream attachmentStatusesSs;
-        attachmentStatusesSs << location <<  ".AttachmentStatuses." << attachmentStatusesIdx++;
+        attachmentStatusesSs << location << ".AttachmentStatuses." << attachmentStatusesIdx++;
         item.OutputToStream(oStream, attachmentStatusesSs.str().c_str());
       }
   }

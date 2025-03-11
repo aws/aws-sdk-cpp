@@ -84,7 +84,7 @@ void TagDescription::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << ResourceTypeMapper::GetNameForResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(ResourceTypeMapper::GetNameForResourceType(m_resourceType)) << "&";
   }
 
   if(m_valueHasBeenSet)
@@ -106,7 +106,7 @@ void TagDescription::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << ResourceTypeMapper::GetNameForResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(ResourceTypeMapper::GetNameForResourceType(m_resourceType)) << "&";
   }
   if(m_valueHasBeenSet)
   {

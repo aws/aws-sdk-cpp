@@ -151,7 +151,7 @@ void TableRestoreStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << TableRestoreStatusTypeMapper::GetNameForTableRestoreStatusType(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(TableRestoreStatusTypeMapper::GetNameForTableRestoreStatusType(m_status)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -224,7 +224,7 @@ void TableRestoreStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << TableRestoreStatusTypeMapper::GetNameForTableRestoreStatusType(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(TableRestoreStatusTypeMapper::GetNameForTableRestoreStatusType(m_status)) << "&";
   }
   if(m_messageHasBeenSet)
   {

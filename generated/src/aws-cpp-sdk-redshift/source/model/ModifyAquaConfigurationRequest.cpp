@@ -28,7 +28,7 @@ Aws::String ModifyAquaConfigurationRequest::SerializePayload() const
 
   if(m_aquaConfigurationStatusHasBeenSet)
   {
-    ss << "AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
+    ss << "AquaConfigurationStatus=" << StringUtils::URLEncode(AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus)) << "&";
   }
 
   ss << "Version=2012-12-01";

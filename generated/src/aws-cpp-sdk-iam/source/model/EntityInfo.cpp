@@ -91,7 +91,7 @@ void EntityInfo::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_type)) << "&";
   }
 
   if(m_idHasBeenSet)
@@ -118,7 +118,7 @@ void EntityInfo::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_type)) << "&";
   }
   if(m_idHasBeenSet)
   {

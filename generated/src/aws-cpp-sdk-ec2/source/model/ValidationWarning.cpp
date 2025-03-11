@@ -77,7 +77,7 @@ void ValidationWarning::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_errors)
       {
         Aws::StringStream errorsSs;
-        errorsSs << location <<  ".ErrorSet." << errorsIdx++;
+        errorsSs << location << ".ErrorSet." << errorsIdx++;
         item.OutputToStream(oStream, errorsSs.str().c_str());
       }
   }

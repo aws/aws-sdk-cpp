@@ -89,7 +89,7 @@ void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_groupHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
+      oStream << location << index << locationValue << ".Group=" << StringUtils::URLEncode(PermissionGroupMapper::GetNameForPermissionGroup(m_group)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_groupHasBeenSet)
   {
-      oStream << location << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
+      oStream << location << ".Group=" << StringUtils::URLEncode(PermissionGroupMapper::GetNameForPermissionGroup(m_group)) << "&";
   }
 }
 

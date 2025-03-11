@@ -100,12 +100,12 @@ void TargetCapacitySpecification::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_defaultTargetCapacityTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DefaultTargetCapacityType=" << DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType) << "&";
+      oStream << location << index << locationValue << ".DefaultTargetCapacityType=" << StringUtils::URLEncode(DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType)) << "&";
   }
 
   if(m_targetCapacityUnitTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
+      oStream << location << index << locationValue << ".TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
   }
 
 }
@@ -126,11 +126,11 @@ void TargetCapacitySpecification::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_defaultTargetCapacityTypeHasBeenSet)
   {
-      oStream << location << ".DefaultTargetCapacityType=" << DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType) << "&";
+      oStream << location << ".DefaultTargetCapacityType=" << StringUtils::URLEncode(DefaultTargetCapacityTypeMapper::GetNameForDefaultTargetCapacityType(m_defaultTargetCapacityType)) << "&";
   }
   if(m_targetCapacityUnitTypeHasBeenSet)
   {
-      oStream << location << ".TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
+      oStream << location << ".TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
   }
 }
 

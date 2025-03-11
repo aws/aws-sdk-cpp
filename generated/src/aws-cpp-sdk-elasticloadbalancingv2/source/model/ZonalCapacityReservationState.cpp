@@ -98,7 +98,7 @@ void ZonalCapacityReservationState::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_effectiveCapacityUnitsHasBeenSet)
   {
-        oStream << location << ".EffectiveCapacityUnits=" << StringUtils::URLEncode(m_effectiveCapacityUnits) << "&";
+      oStream << location << ".EffectiveCapacityUnits=" << StringUtils::URLEncode(m_effectiveCapacityUnits) << "&";
   }
 }
 

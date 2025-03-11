@@ -92,7 +92,7 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpTokens=" << HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens) << "&";
+      oStream << location << index << locationValue << ".HttpTokens=" << StringUtils::URLEncode(HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens)) << "&";
   }
 
   if(m_httpPutResponseHopLimitHasBeenSet)
@@ -102,17 +102,17 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
 
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << index << locationValue << ".HttpEndpoint=" << StringUtils::URLEncode(InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
 
   if(m_instanceMetadataTagsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+      oStream << location << index << locationValue << ".InstanceMetadataTags=" << StringUtils::URLEncode(InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
 
   if(m_managedByHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+      oStream << location << index << locationValue << ".ManagedBy=" << StringUtils::URLEncode(ManagedByMapper::GetNameForManagedBy(m_managedBy)) << "&";
   }
 
   if(m_managedExceptionMessageHasBeenSet)
@@ -126,7 +126,7 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << ".HttpTokens=" << HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens) << "&";
+      oStream << location << ".HttpTokens=" << StringUtils::URLEncode(HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens)) << "&";
   }
   if(m_httpPutResponseHopLimitHasBeenSet)
   {
@@ -134,15 +134,15 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << ".HttpEndpoint=" << StringUtils::URLEncode(InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
   if(m_instanceMetadataTagsHasBeenSet)
   {
-      oStream << location << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+      oStream << location << ".InstanceMetadataTags=" << StringUtils::URLEncode(InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
   if(m_managedByHasBeenSet)
   {
-      oStream << location << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+      oStream << location << ".ManagedBy=" << StringUtils::URLEncode(ManagedByMapper::GetNameForManagedBy(m_managedBy)) << "&";
   }
   if(m_managedExceptionMessageHasBeenSet)
   {

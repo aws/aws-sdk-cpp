@@ -89,12 +89,12 @@ void ChangeSetHook::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_invocationPointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InvocationPoint=" << HookInvocationPointMapper::GetNameForHookInvocationPoint(m_invocationPoint) << "&";
+      oStream << location << index << locationValue << ".InvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_invocationPoint)) << "&";
   }
 
   if(m_failureModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FailureMode=" << HookFailureModeMapper::GetNameForHookFailureMode(m_failureMode) << "&";
+      oStream << location << index << locationValue << ".FailureMode=" << StringUtils::URLEncode(HookFailureModeMapper::GetNameForHookFailureMode(m_failureMode)) << "&";
   }
 
   if(m_typeNameHasBeenSet)
@@ -125,11 +125,11 @@ void ChangeSetHook::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_invocationPointHasBeenSet)
   {
-      oStream << location << ".InvocationPoint=" << HookInvocationPointMapper::GetNameForHookInvocationPoint(m_invocationPoint) << "&";
+      oStream << location << ".InvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_invocationPoint)) << "&";
   }
   if(m_failureModeHasBeenSet)
   {
-      oStream << location << ".FailureMode=" << HookFailureModeMapper::GetNameForHookFailureMode(m_failureMode) << "&";
+      oStream << location << ".FailureMode=" << StringUtils::URLEncode(HookFailureModeMapper::GetNameForHookFailureMode(m_failureMode)) << "&";
   }
   if(m_typeNameHasBeenSet)
   {

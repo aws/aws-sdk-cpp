@@ -77,22 +77,22 @@ void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, c
 {
   if(m_dnsSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
+      oStream << location << index << locationValue << ".DnsSupport=" << StringUtils::URLEncode(DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport)) << "&";
   }
 
   if(m_securityGroupReferencingSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
+      oStream << location << index << locationValue << ".SecurityGroupReferencingSupport=" << StringUtils::URLEncode(SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport)) << "&";
   }
 
   if(m_ipv6SupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
+      oStream << location << index << locationValue << ".Ipv6Support=" << StringUtils::URLEncode(Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support)) << "&";
   }
 
   if(m_applianceModeSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ApplianceModeSupport=" << ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport) << "&";
+      oStream << location << index << locationValue << ".ApplianceModeSupport=" << StringUtils::URLEncode(ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport)) << "&";
   }
 
 }
@@ -101,19 +101,19 @@ void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, c
 {
   if(m_dnsSupportHasBeenSet)
   {
-      oStream << location << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
+      oStream << location << ".DnsSupport=" << StringUtils::URLEncode(DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport)) << "&";
   }
   if(m_securityGroupReferencingSupportHasBeenSet)
   {
-      oStream << location << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
+      oStream << location << ".SecurityGroupReferencingSupport=" << StringUtils::URLEncode(SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport)) << "&";
   }
   if(m_ipv6SupportHasBeenSet)
   {
-      oStream << location << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
+      oStream << location << ".Ipv6Support=" << StringUtils::URLEncode(Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support)) << "&";
   }
   if(m_applianceModeSupportHasBeenSet)
   {
-      oStream << location << ".ApplianceModeSupport=" << ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport) << "&";
+      oStream << location << ".ApplianceModeSupport=" << StringUtils::URLEncode(ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport)) << "&";
   }
 }
 

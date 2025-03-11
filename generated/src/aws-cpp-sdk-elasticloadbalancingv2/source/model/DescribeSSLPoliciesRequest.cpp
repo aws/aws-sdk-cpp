@@ -54,7 +54,7 @@ Aws::String DescribeSSLPoliciesRequest::SerializePayload() const
 
   if(m_loadBalancerTypeHasBeenSet)
   {
-    ss << "LoadBalancerType=" << LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_loadBalancerType) << "&";
+    ss << "LoadBalancerType=" << StringUtils::URLEncode(LoadBalancerTypeEnumMapper::GetNameForLoadBalancerTypeEnum(m_loadBalancerType)) << "&";
   }
 
   ss << "Version=2015-12-01";

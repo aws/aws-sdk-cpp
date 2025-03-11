@@ -149,7 +149,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_severityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Severity=" << EventSeverityMapper::GetNameForEventSeverity(m_severity) << "&";
+      oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(EventSeverityMapper::GetNameForEventSeverity(m_severity)) << "&";
   }
 
 }
@@ -190,7 +190,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_severityHasBeenSet)
   {
-      oStream << location << ".Severity=" << EventSeverityMapper::GetNameForEventSeverity(m_severity) << "&";
+      oStream << location << ".Severity=" << StringUtils::URLEncode(EventSeverityMapper::GetNameForEventSeverity(m_severity)) << "&";
   }
 }
 

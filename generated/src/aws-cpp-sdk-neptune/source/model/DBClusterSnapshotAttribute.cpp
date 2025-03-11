@@ -90,7 +90,7 @@ void DBClusterSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const cha
       unsigned attributeValuesIdx = 1;
       for(auto& item : m_attributeValues)
       {
-        oStream << location << ".AttributeValue." << attributeValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AttributeValues.AttributeValue." << attributeValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

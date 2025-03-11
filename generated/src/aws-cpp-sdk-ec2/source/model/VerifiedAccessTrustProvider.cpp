@@ -155,17 +155,17 @@ void VerifiedAccessTrustProvider::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_trustProviderTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TrustProviderType=" << TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType) << "&";
+      oStream << location << index << locationValue << ".TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType)) << "&";
   }
 
   if(m_userTrustProviderTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UserTrustProviderType=" << UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType) << "&";
+      oStream << location << index << locationValue << ".UserTrustProviderType=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
   }
 
   if(m_deviceTrustProviderTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeviceTrustProviderType=" << DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType) << "&";
+      oStream << location << index << locationValue << ".DeviceTrustProviderType=" << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
   }
 
   if(m_oidcOptionsHasBeenSet)
@@ -236,15 +236,15 @@ void VerifiedAccessTrustProvider::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_trustProviderTypeHasBeenSet)
   {
-      oStream << location << ".TrustProviderType=" << TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType) << "&";
+      oStream << location << ".TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType)) << "&";
   }
   if(m_userTrustProviderTypeHasBeenSet)
   {
-      oStream << location << ".UserTrustProviderType=" << UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType) << "&";
+      oStream << location << ".UserTrustProviderType=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
   }
   if(m_deviceTrustProviderTypeHasBeenSet)
   {
-      oStream << location << ".DeviceTrustProviderType=" << DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType) << "&";
+      oStream << location << ".DeviceTrustProviderType=" << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
   }
   if(m_oidcOptionsHasBeenSet)
   {
@@ -276,7 +276,7 @@ void VerifiedAccessTrustProvider::OutputToStream(Aws::OStream& oStream, const ch
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

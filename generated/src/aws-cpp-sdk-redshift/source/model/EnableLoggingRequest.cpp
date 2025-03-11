@@ -41,7 +41,7 @@ Aws::String EnableLoggingRequest::SerializePayload() const
 
   if(m_logDestinationTypeHasBeenSet)
   {
-    ss << "LogDestinationType=" << LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType) << "&";
+    ss << "LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType)) << "&";
   }
 
   if(m_logExportsHasBeenSet)

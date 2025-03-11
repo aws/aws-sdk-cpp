@@ -88,7 +88,7 @@ void SpotMarketOptions::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_spotInstanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SpotInstanceType=" << SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_spotInstanceType) << "&";
+      oStream << location << index << locationValue << ".SpotInstanceType=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_spotInstanceType)) << "&";
   }
 
   if(m_blockDurationMinutesHasBeenSet)
@@ -103,7 +103,7 @@ void SpotMarketOptions::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 
 }
@@ -116,7 +116,7 @@ void SpotMarketOptions::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_spotInstanceTypeHasBeenSet)
   {
-      oStream << location << ".SpotInstanceType=" << SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_spotInstanceType) << "&";
+      oStream << location << ".SpotInstanceType=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_spotInstanceType)) << "&";
   }
   if(m_blockDurationMinutesHasBeenSet)
   {
@@ -128,7 +128,7 @@ void SpotMarketOptions::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 }
 

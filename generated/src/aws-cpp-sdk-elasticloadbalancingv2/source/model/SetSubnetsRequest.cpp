@@ -67,12 +67,12 @@ Aws::String SetSubnetsRequest::SerializePayload() const
 
   if(m_ipAddressTypeHasBeenSet)
   {
-    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+    ss << "IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   if(m_enablePrefixForIpv6SourceNatHasBeenSet)
   {
-    ss << "EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+    ss << "EnablePrefixForIpv6SourceNat=" << StringUtils::URLEncode(EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat)) << "&";
   }
 
   ss << "Version=2015-12-01";

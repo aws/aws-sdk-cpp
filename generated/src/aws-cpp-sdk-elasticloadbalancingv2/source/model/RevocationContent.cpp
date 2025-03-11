@@ -89,7 +89,7 @@ void RevocationContent::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_revocationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RevocationType=" << RevocationTypeMapper::GetNameForRevocationType(m_revocationType) << "&";
+      oStream << location << index << locationValue << ".RevocationType=" << StringUtils::URLEncode(RevocationTypeMapper::GetNameForRevocationType(m_revocationType)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void RevocationContent::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_revocationTypeHasBeenSet)
   {
-      oStream << location << ".RevocationType=" << RevocationTypeMapper::GetNameForRevocationType(m_revocationType) << "&";
+      oStream << location << ".RevocationType=" << StringUtils::URLEncode(RevocationTypeMapper::GetNameForRevocationType(m_revocationType)) << "&";
   }
 }
 

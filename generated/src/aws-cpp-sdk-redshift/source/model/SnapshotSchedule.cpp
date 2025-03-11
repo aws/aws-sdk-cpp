@@ -184,7 +184,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned scheduleDefinitionsIdx = 1;
       for(auto& item : m_scheduleDefinitions)
       {
-        oStream << location << ".ScheduleDefinition." << scheduleDefinitionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ScheduleDefinitions.ScheduleDefinition." << scheduleDefinitionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_scheduleIdentifierHasBeenSet)
@@ -201,7 +201,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -210,7 +210,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned nextInvocationsIdx = 1;
       for(auto& item : m_nextInvocations)
       {
-        oStream << location << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << ".NextInvocations.SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
   if(m_associatedClusterCountHasBeenSet)
@@ -223,7 +223,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_associatedClusters)
       {
         Aws::StringStream associatedClustersSs;
-        associatedClustersSs << location <<  ".ClusterAssociatedToSchedule." << associatedClustersIdx++;
+        associatedClustersSs << location << ".AssociatedClusters.ClusterAssociatedToSchedule." << associatedClustersIdx++;
         item.OutputToStream(oStream, associatedClustersSs.str().c_str());
       }
   }

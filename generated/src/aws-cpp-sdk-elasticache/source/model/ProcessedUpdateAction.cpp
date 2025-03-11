@@ -89,7 +89,7 @@ void ProcessedUpdateAction::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_updateActionStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateActionStatus=" << UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus) << "&";
+      oStream << location << index << locationValue << ".UpdateActionStatus=" << StringUtils::URLEncode(UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void ProcessedUpdateAction::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_updateActionStatusHasBeenSet)
   {
-      oStream << location << ".UpdateActionStatus=" << UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus) << "&";
+      oStream << location << ".UpdateActionStatus=" << StringUtils::URLEncode(UpdateActionStatusMapper::GetNameForUpdateActionStatus(m_updateActionStatus)) << "&";
   }
 }
 

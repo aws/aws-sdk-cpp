@@ -224,7 +224,7 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_optionSettings)
       {
         Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location <<  ".OptionSetting." << optionSettingsIdx++;
+        optionSettingsSs << location << ".OptionSettings.OptionSetting." << optionSettingsIdx++;
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
@@ -234,7 +234,7 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_dBSecurityGroupMemberships)
       {
         Aws::StringStream dBSecurityGroupMembershipsSs;
-        dBSecurityGroupMembershipsSs << location <<  ".DBSecurityGroup." << dBSecurityGroupMembershipsIdx++;
+        dBSecurityGroupMembershipsSs << location << ".DBSecurityGroupMemberships.DBSecurityGroup." << dBSecurityGroupMembershipsIdx++;
         item.OutputToStream(oStream, dBSecurityGroupMembershipsSs.str().c_str());
       }
   }
@@ -244,7 +244,7 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_vpcSecurityGroupMemberships)
       {
         Aws::StringStream vpcSecurityGroupMembershipsSs;
-        vpcSecurityGroupMembershipsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupMembershipsIdx++;
+        vpcSecurityGroupMembershipsSs << location << ".VpcSecurityGroupMemberships.VpcSecurityGroupMembership." << vpcSecurityGroupMembershipsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupMembershipsSs.str().c_str());
       }
   }

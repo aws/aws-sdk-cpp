@@ -93,7 +93,7 @@ void SecondaryClusterInfo::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_clusterNodes)
       {
         Aws::StringStream clusterNodesSs;
-        clusterNodesSs << location <<  ".ClusterNodes.member." << clusterNodesIdx++;
+        clusterNodesSs << location << ".ClusterNodes.member." << clusterNodesIdx++;
         item.OutputToStream(oStream, clusterNodesSs.str().c_str());
       }
   }

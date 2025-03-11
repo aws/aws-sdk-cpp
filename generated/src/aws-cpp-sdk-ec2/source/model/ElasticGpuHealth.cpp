@@ -53,7 +53,7 @@ void ElasticGpuHealth::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ElasticGpuStatusMapper::GetNameForElasticGpuStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ElasticGpuStatusMapper::GetNameForElasticGpuStatus(m_status)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void ElasticGpuHealth::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ElasticGpuStatusMapper::GetNameForElasticGpuStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ElasticGpuStatusMapper::GetNameForElasticGpuStatus(m_status)) << "&";
   }
 }
 

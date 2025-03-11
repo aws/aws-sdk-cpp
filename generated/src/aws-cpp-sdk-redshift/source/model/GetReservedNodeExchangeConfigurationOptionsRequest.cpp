@@ -27,7 +27,7 @@ Aws::String GetReservedNodeExchangeConfigurationOptionsRequest::SerializePayload
   ss << "Action=GetReservedNodeExchangeConfigurationOptions&";
   if(m_actionTypeHasBeenSet)
   {
-    ss << "ActionType=" << ReservedNodeExchangeActionTypeMapper::GetNameForReservedNodeExchangeActionType(m_actionType) << "&";
+    ss << "ActionType=" << StringUtils::URLEncode(ReservedNodeExchangeActionTypeMapper::GetNameForReservedNodeExchangeActionType(m_actionType)) << "&";
   }
 
   if(m_clusterIdentifierHasBeenSet)

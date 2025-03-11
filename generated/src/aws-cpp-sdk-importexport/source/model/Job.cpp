@@ -90,7 +90,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_jobTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
+      oStream << location << index << locationValue << ".JobType=" << StringUtils::URLEncode(JobTypeMapper::GetNameForJobType(m_jobType)) << "&";
   }
 
 }
@@ -111,7 +111,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_jobTypeHasBeenSet)
   {
-      oStream << location << ".JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
+      oStream << location << ".JobType=" << StringUtils::URLEncode(JobTypeMapper::GetNameForJobType(m_jobType)) << "&";
   }
 }
 

@@ -59,7 +59,7 @@ Aws::String DeleteStackRequest::SerializePayload() const
 
   if(m_deletionModeHasBeenSet)
   {
-    ss << "DeletionMode=" << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode) << "&";
+    ss << "DeletionMode=" << StringUtils::URLEncode(DeletionModeMapper::GetNameForDeletionMode(m_deletionMode)) << "&";
   }
 
   ss << "Version=2010-05-15";

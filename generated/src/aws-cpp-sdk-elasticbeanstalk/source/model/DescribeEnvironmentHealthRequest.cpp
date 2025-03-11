@@ -43,7 +43,7 @@ Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const
       for(auto& item : m_attributeNames)
       {
         ss << "AttributeNames.member." << attributeNamesCount << "="
-            << StringUtils::URLEncode(EnvironmentHealthAttributeMapper::GetNameForEnvironmentHealthAttribute(item).c_str()) << "&";
+            << StringUtils::URLEncode(EnvironmentHealthAttributeMapper::GetNameForEnvironmentHealthAttribute(item)) << "&";
         attributeNamesCount++;
       }
     }

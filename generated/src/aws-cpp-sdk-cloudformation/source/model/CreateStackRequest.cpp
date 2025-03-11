@@ -118,7 +118,7 @@ Aws::String CreateStackRequest::SerializePayload() const
       for(auto& item : m_capabilities)
       {
         ss << "Capabilities.member." << capabilitiesCount << "="
-            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
+            << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item)) << "&";
         capabilitiesCount++;
       }
     }
@@ -149,7 +149,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_onFailureHasBeenSet)
   {
-    ss << "OnFailure=" << OnFailureMapper::GetNameForOnFailure(m_onFailure) << "&";
+    ss << "OnFailure=" << StringUtils::URLEncode(OnFailureMapper::GetNameForOnFailure(m_onFailure)) << "&";
   }
 
   if(m_stackPolicyBodyHasBeenSet)

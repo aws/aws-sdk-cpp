@@ -28,7 +28,7 @@ Aws::String SetIpAddressTypeRequest::SerializePayload() const
 
   if(m_ipAddressTypeHasBeenSet)
   {
-    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+    ss << "IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   ss << "Version=2015-12-01";

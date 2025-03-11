@@ -65,7 +65,7 @@ void VpcAttachment::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(AttachmentStatusMapper::GetNameForAttachmentStatus(m_state)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void VpcAttachment::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(AttachmentStatusMapper::GetNameForAttachmentStatus(m_state)) << "&";
   }
 }
 

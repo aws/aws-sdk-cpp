@@ -65,7 +65,7 @@ void InstanceEventWindowStateChange::OutputToStream(Aws::OStream& oStream, const
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << InstanceEventWindowStateMapper::GetNameForInstanceEventWindowState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(InstanceEventWindowStateMapper::GetNameForInstanceEventWindowState(m_state)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void InstanceEventWindowStateChange::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << InstanceEventWindowStateMapper::GetNameForInstanceEventWindowState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(InstanceEventWindowStateMapper::GetNameForInstanceEventWindowState(m_state)) << "&";
   }
 }
 

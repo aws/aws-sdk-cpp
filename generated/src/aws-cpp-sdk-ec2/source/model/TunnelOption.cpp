@@ -442,7 +442,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_phase1EncryptionAlgorithms)
       {
         Aws::StringStream phase1EncryptionAlgorithmsSs;
-        phase1EncryptionAlgorithmsSs << location <<  ".Phase1EncryptionAlgorithmSet." << phase1EncryptionAlgorithmsIdx++;
+        phase1EncryptionAlgorithmsSs << location << ".Phase1EncryptionAlgorithmSet." << phase1EncryptionAlgorithmsIdx++;
         item.OutputToStream(oStream, phase1EncryptionAlgorithmsSs.str().c_str());
       }
   }
@@ -452,7 +452,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_phase2EncryptionAlgorithms)
       {
         Aws::StringStream phase2EncryptionAlgorithmsSs;
-        phase2EncryptionAlgorithmsSs << location <<  ".Phase2EncryptionAlgorithmSet." << phase2EncryptionAlgorithmsIdx++;
+        phase2EncryptionAlgorithmsSs << location << ".Phase2EncryptionAlgorithmSet." << phase2EncryptionAlgorithmsIdx++;
         item.OutputToStream(oStream, phase2EncryptionAlgorithmsSs.str().c_str());
       }
   }
@@ -462,7 +462,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_phase1IntegrityAlgorithms)
       {
         Aws::StringStream phase1IntegrityAlgorithmsSs;
-        phase1IntegrityAlgorithmsSs << location <<  ".Phase1IntegrityAlgorithmSet." << phase1IntegrityAlgorithmsIdx++;
+        phase1IntegrityAlgorithmsSs << location << ".Phase1IntegrityAlgorithmSet." << phase1IntegrityAlgorithmsIdx++;
         item.OutputToStream(oStream, phase1IntegrityAlgorithmsSs.str().c_str());
       }
   }
@@ -472,7 +472,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_phase2IntegrityAlgorithms)
       {
         Aws::StringStream phase2IntegrityAlgorithmsSs;
-        phase2IntegrityAlgorithmsSs << location <<  ".Phase2IntegrityAlgorithmSet." << phase2IntegrityAlgorithmsIdx++;
+        phase2IntegrityAlgorithmsSs << location << ".Phase2IntegrityAlgorithmSet." << phase2IntegrityAlgorithmsIdx++;
         item.OutputToStream(oStream, phase2IntegrityAlgorithmsSs.str().c_str());
       }
   }
@@ -482,7 +482,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_phase1DHGroupNumbers)
       {
         Aws::StringStream phase1DHGroupNumbersSs;
-        phase1DHGroupNumbersSs << location <<  ".Phase1DHGroupNumberSet." << phase1DHGroupNumbersIdx++;
+        phase1DHGroupNumbersSs << location << ".Phase1DHGroupNumberSet." << phase1DHGroupNumbersIdx++;
         item.OutputToStream(oStream, phase1DHGroupNumbersSs.str().c_str());
       }
   }
@@ -492,7 +492,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_phase2DHGroupNumbers)
       {
         Aws::StringStream phase2DHGroupNumbersSs;
-        phase2DHGroupNumbersSs << location <<  ".Phase2DHGroupNumberSet." << phase2DHGroupNumbersIdx++;
+        phase2DHGroupNumbersSs << location << ".Phase2DHGroupNumberSet." << phase2DHGroupNumbersIdx++;
         item.OutputToStream(oStream, phase2DHGroupNumbersSs.str().c_str());
       }
   }
@@ -502,7 +502,7 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_ikeVersions)
       {
         Aws::StringStream ikeVersionsSs;
-        ikeVersionsSs << location <<  ".IkeVersionSet." << ikeVersionsIdx++;
+        ikeVersionsSs << location << ".IkeVersionSet." << ikeVersionsIdx++;
         item.OutputToStream(oStream, ikeVersionsSs.str().c_str());
       }
   }

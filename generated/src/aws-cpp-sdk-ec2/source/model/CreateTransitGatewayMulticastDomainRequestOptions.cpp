@@ -69,17 +69,17 @@ void CreateTransitGatewayMulticastDomainRequestOptions::OutputToStream(Aws::OStr
 {
   if(m_igmpv2SupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Igmpv2Support=" << Igmpv2SupportValueMapper::GetNameForIgmpv2SupportValue(m_igmpv2Support) << "&";
+      oStream << location << index << locationValue << ".Igmpv2Support=" << StringUtils::URLEncode(Igmpv2SupportValueMapper::GetNameForIgmpv2SupportValue(m_igmpv2Support)) << "&";
   }
 
   if(m_staticSourcesSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StaticSourcesSupport=" << StaticSourcesSupportValueMapper::GetNameForStaticSourcesSupportValue(m_staticSourcesSupport) << "&";
+      oStream << location << index << locationValue << ".StaticSourcesSupport=" << StringUtils::URLEncode(StaticSourcesSupportValueMapper::GetNameForStaticSourcesSupportValue(m_staticSourcesSupport)) << "&";
   }
 
   if(m_autoAcceptSharedAssociationsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoAcceptSharedAssociations=" << AutoAcceptSharedAssociationsValueMapper::GetNameForAutoAcceptSharedAssociationsValue(m_autoAcceptSharedAssociations) << "&";
+      oStream << location << index << locationValue << ".AutoAcceptSharedAssociations=" << StringUtils::URLEncode(AutoAcceptSharedAssociationsValueMapper::GetNameForAutoAcceptSharedAssociationsValue(m_autoAcceptSharedAssociations)) << "&";
   }
 
 }
@@ -88,15 +88,15 @@ void CreateTransitGatewayMulticastDomainRequestOptions::OutputToStream(Aws::OStr
 {
   if(m_igmpv2SupportHasBeenSet)
   {
-      oStream << location << ".Igmpv2Support=" << Igmpv2SupportValueMapper::GetNameForIgmpv2SupportValue(m_igmpv2Support) << "&";
+      oStream << location << ".Igmpv2Support=" << StringUtils::URLEncode(Igmpv2SupportValueMapper::GetNameForIgmpv2SupportValue(m_igmpv2Support)) << "&";
   }
   if(m_staticSourcesSupportHasBeenSet)
   {
-      oStream << location << ".StaticSourcesSupport=" << StaticSourcesSupportValueMapper::GetNameForStaticSourcesSupportValue(m_staticSourcesSupport) << "&";
+      oStream << location << ".StaticSourcesSupport=" << StringUtils::URLEncode(StaticSourcesSupportValueMapper::GetNameForStaticSourcesSupportValue(m_staticSourcesSupport)) << "&";
   }
   if(m_autoAcceptSharedAssociationsHasBeenSet)
   {
-      oStream << location << ".AutoAcceptSharedAssociations=" << AutoAcceptSharedAssociationsValueMapper::GetNameForAutoAcceptSharedAssociationsValue(m_autoAcceptSharedAssociations) << "&";
+      oStream << location << ".AutoAcceptSharedAssociations=" << StringUtils::URLEncode(AutoAcceptSharedAssociationsValueMapper::GetNameForAutoAcceptSharedAssociationsValue(m_autoAcceptSharedAssociations)) << "&";
   }
 }
 

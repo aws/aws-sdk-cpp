@@ -172,7 +172,7 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << SnapshotStateMapper::GetNameForSnapshotState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(SnapshotStateMapper::GetNameForSnapshotState(m_state)) << "&";
   }
 
   if(m_volumeSizeHasBeenSet)
@@ -207,7 +207,7 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_sseTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+      oStream << location << index << locationValue << ".SseType=" << StringUtils::URLEncode(SSETypeMapper::GetNameForSSEType(m_sseType)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -229,7 +229,7 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -243,7 +243,7 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << SnapshotStateMapper::GetNameForSnapshotState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(SnapshotStateMapper::GetNameForSnapshotState(m_state)) << "&";
   }
   if(m_volumeSizeHasBeenSet)
   {
@@ -271,7 +271,7 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_sseTypeHasBeenSet)
   {
-      oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+      oStream << location << ".SseType=" << StringUtils::URLEncode(SSETypeMapper::GetNameForSSEType(m_sseType)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {

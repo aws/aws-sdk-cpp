@@ -94,12 +94,12 @@ void WarmPoolConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_poolStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PoolState=" << WarmPoolStateMapper::GetNameForWarmPoolState(m_poolState) << "&";
+      oStream << location << index << locationValue << ".PoolState=" << StringUtils::URLEncode(WarmPoolStateMapper::GetNameForWarmPoolState(m_poolState)) << "&";
   }
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << WarmPoolStatusMapper::GetNameForWarmPoolStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(WarmPoolStatusMapper::GetNameForWarmPoolStatus(m_status)) << "&";
   }
 
   if(m_instanceReusePolicyHasBeenSet)
@@ -123,11 +123,11 @@ void WarmPoolConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_poolStateHasBeenSet)
   {
-      oStream << location << ".PoolState=" << WarmPoolStateMapper::GetNameForWarmPoolState(m_poolState) << "&";
+      oStream << location << ".PoolState=" << StringUtils::URLEncode(WarmPoolStateMapper::GetNameForWarmPoolState(m_poolState)) << "&";
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << WarmPoolStatusMapper::GetNameForWarmPoolStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(WarmPoolStatusMapper::GetNameForWarmPoolStatus(m_status)) << "&";
   }
   if(m_instanceReusePolicyHasBeenSet)
   {

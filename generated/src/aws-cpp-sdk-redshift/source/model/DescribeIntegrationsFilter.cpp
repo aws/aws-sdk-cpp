@@ -66,7 +66,7 @@ void DescribeIntegrationsFilter::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << DescribeIntegrationsFilterNameMapper::GetNameForDescribeIntegrationsFilterName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(DescribeIntegrationsFilterNameMapper::GetNameForDescribeIntegrationsFilterName(m_name)) << "&";
   }
 
   if(m_valuesHasBeenSet)
@@ -84,14 +84,14 @@ void DescribeIntegrationsFilter::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << DescribeIntegrationsFilterNameMapper::GetNameForDescribeIntegrationsFilterName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(DescribeIntegrationsFilterNameMapper::GetNameForDescribeIntegrationsFilterName(m_name)) << "&";
   }
   if(m_valuesHasBeenSet)
   {
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        oStream << location << ".Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Values.Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

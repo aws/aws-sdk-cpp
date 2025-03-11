@@ -142,7 +142,7 @@ void IndexField::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_indexFieldTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IndexFieldType=" << IndexFieldTypeMapper::GetNameForIndexFieldType(m_indexFieldType) << "&";
+      oStream << location << index << locationValue << ".IndexFieldType=" << StringUtils::URLEncode(IndexFieldTypeMapper::GetNameForIndexFieldType(m_indexFieldType)) << "&";
   }
 
   if(m_intOptionsHasBeenSet)
@@ -232,7 +232,7 @@ void IndexField::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_indexFieldTypeHasBeenSet)
   {
-      oStream << location << ".IndexFieldType=" << IndexFieldTypeMapper::GetNameForIndexFieldType(m_indexFieldType) << "&";
+      oStream << location << ".IndexFieldType=" << StringUtils::URLEncode(IndexFieldTypeMapper::GetNameForIndexFieldType(m_indexFieldType)) << "&";
   }
   if(m_intOptionsHasBeenSet)
   {

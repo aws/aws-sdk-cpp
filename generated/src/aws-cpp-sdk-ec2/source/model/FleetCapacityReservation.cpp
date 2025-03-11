@@ -139,12 +139,12 @@ void FleetCapacityReservation::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_instancePlatformHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstancePlatform=" << CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform) << "&";
+      oStream << location << index << locationValue << ".InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -196,11 +196,11 @@ void FleetCapacityReservation::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_instancePlatformHasBeenSet)
   {
-      oStream << location << ".InstancePlatform=" << CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform) << "&";
+      oStream << location << ".InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {
@@ -212,7 +212,7 @@ void FleetCapacityReservation::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_fulfilledCapacityHasBeenSet)
   {
-        oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
+      oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
   }
   if(m_ebsOptimizedHasBeenSet)
   {
@@ -224,7 +224,7 @@ void FleetCapacityReservation::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_weightHasBeenSet)
   {
-        oStream << location << ".Weight=" << StringUtils::URLEncode(m_weight) << "&";
+      oStream << location << ".Weight=" << StringUtils::URLEncode(m_weight) << "&";
   }
   if(m_priorityHasBeenSet)
   {

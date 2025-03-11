@@ -142,7 +142,7 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << AuthorizationStatusMapper::GetNameForAuthorizationStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(AuthorizationStatusMapper::GetNameForAuthorizationStatus(m_status)) << "&";
   }
 
   if(m_allowedAllVPCsHasBeenSet)
@@ -193,7 +193,7 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << AuthorizationStatusMapper::GetNameForAuthorizationStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(AuthorizationStatusMapper::GetNameForAuthorizationStatus(m_status)) << "&";
   }
   if(m_allowedAllVPCsHasBeenSet)
   {
@@ -204,7 +204,7 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
       unsigned allowedVPCsIdx = 1;
       for(auto& item : m_allowedVPCs)
       {
-        oStream << location << ".VpcIdentifier." << allowedVPCsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AllowedVPCs.VpcIdentifier." << allowedVPCsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_endpointCountHasBeenSet)

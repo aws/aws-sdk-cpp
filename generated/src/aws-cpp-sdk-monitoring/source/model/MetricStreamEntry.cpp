@@ -125,7 +125,7 @@ void MetricStreamEntry::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_outputFormatHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OutputFormat=" << MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat) << "&";
+      oStream << location << index << locationValue << ".OutputFormat=" << StringUtils::URLEncode(MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat)) << "&";
   }
 
 }
@@ -158,7 +158,7 @@ void MetricStreamEntry::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_outputFormatHasBeenSet)
   {
-      oStream << location << ".OutputFormat=" << MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat) << "&";
+      oStream << location << ".OutputFormat=" << StringUtils::URLEncode(MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat)) << "&";
   }
 }
 

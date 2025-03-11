@@ -35,12 +35,12 @@ Aws::String RecordHandlerProgressRequest::SerializePayload() const
 
   if(m_operationStatusHasBeenSet)
   {
-    ss << "OperationStatus=" << OperationStatusMapper::GetNameForOperationStatus(m_operationStatus) << "&";
+    ss << "OperationStatus=" << StringUtils::URLEncode(OperationStatusMapper::GetNameForOperationStatus(m_operationStatus)) << "&";
   }
 
   if(m_currentOperationStatusHasBeenSet)
   {
-    ss << "CurrentOperationStatus=" << OperationStatusMapper::GetNameForOperationStatus(m_currentOperationStatus) << "&";
+    ss << "CurrentOperationStatus=" << StringUtils::URLEncode(OperationStatusMapper::GetNameForOperationStatus(m_currentOperationStatus)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -50,7 +50,7 @@ Aws::String RecordHandlerProgressRequest::SerializePayload() const
 
   if(m_errorCodeHasBeenSet)
   {
-    ss << "ErrorCode=" << HandlerErrorCodeMapper::GetNameForHandlerErrorCode(m_errorCode) << "&";
+    ss << "ErrorCode=" << StringUtils::URLEncode(HandlerErrorCodeMapper::GetNameForHandlerErrorCode(m_errorCode)) << "&";
   }
 
   if(m_resourceModelHasBeenSet)

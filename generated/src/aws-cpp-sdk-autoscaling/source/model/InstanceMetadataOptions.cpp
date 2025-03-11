@@ -69,7 +69,7 @@ void InstanceMetadataOptions::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpTokens=" << InstanceMetadataHttpTokensStateMapper::GetNameForInstanceMetadataHttpTokensState(m_httpTokens) << "&";
+      oStream << location << index << locationValue << ".HttpTokens=" << StringUtils::URLEncode(InstanceMetadataHttpTokensStateMapper::GetNameForInstanceMetadataHttpTokensState(m_httpTokens)) << "&";
   }
 
   if(m_httpPutResponseHopLimitHasBeenSet)
@@ -79,7 +79,7 @@ void InstanceMetadataOptions::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << index << locationValue << ".HttpEndpoint=" << StringUtils::URLEncode(InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
 
 }
@@ -88,7 +88,7 @@ void InstanceMetadataOptions::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << ".HttpTokens=" << InstanceMetadataHttpTokensStateMapper::GetNameForInstanceMetadataHttpTokensState(m_httpTokens) << "&";
+      oStream << location << ".HttpTokens=" << StringUtils::URLEncode(InstanceMetadataHttpTokensStateMapper::GetNameForInstanceMetadataHttpTokensState(m_httpTokens)) << "&";
   }
   if(m_httpPutResponseHopLimitHasBeenSet)
   {
@@ -96,7 +96,7 @@ void InstanceMetadataOptions::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << ".HttpEndpoint=" << StringUtils::URLEncode(InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
 }
 

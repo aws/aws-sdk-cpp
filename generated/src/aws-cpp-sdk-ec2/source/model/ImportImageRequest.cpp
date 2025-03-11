@@ -129,7 +129,7 @@ Aws::String ImportImageRequest::SerializePayload() const
 
   if(m_bootModeHasBeenSet)
   {
-    ss << "BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+    ss << "BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
 
   ss << "Version=2016-11-15";

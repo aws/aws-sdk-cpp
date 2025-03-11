@@ -147,7 +147,7 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_unitHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
   if(m_extendedStatisticsHasBeenSet)
@@ -173,40 +173,39 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_sampleCountHasBeenSet)
   {
-        oStream << location << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
+      oStream << location << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
   if(m_averageHasBeenSet)
   {
-        oStream << location << ".Average=" << StringUtils::URLEncode(m_average) << "&";
+      oStream << location << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
   if(m_sumHasBeenSet)
   {
-        oStream << location << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
+      oStream << location << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
   if(m_minimumHasBeenSet)
   {
-        oStream << location << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
+      oStream << location << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
   if(m_maximumHasBeenSet)
   {
-        oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
+      oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
   if(m_unitHasBeenSet)
   {
-      oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
   if(m_extendedStatisticsHasBeenSet)
   {
       unsigned extendedStatisticsIdx = 1;
       for(auto& item : m_extendedStatistics)
       {
-        oStream << location << ".ExtendedStatistics.entry."  << extendedStatisticsIdx << ".key="
+        oStream << location << ".ExtendedStatistics.entry." << extendedStatisticsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".ExtendedStatistics.entry." << extendedStatisticsIdx << ".value="
+        oStream << location << ".ExtendedStatistics.entry." << extendedStatisticsIdx << ".value="
             << StringUtils::URLEncode(item.second) << "&";
         extendedStatisticsIdx++;
       }
-
   }
 }
 

@@ -60,7 +60,7 @@ void ClientVpnEndpointStatus::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << ClientVpnEndpointStatusCodeMapper::GetNameForClientVpnEndpointStatusCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(ClientVpnEndpointStatusCodeMapper::GetNameForClientVpnEndpointStatusCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void ClientVpnEndpointStatus::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << ClientVpnEndpointStatusCodeMapper::GetNameForClientVpnEndpointStatusCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(ClientVpnEndpointStatusCodeMapper::GetNameForClientVpnEndpointStatusCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

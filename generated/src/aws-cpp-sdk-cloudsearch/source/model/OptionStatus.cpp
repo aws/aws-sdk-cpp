@@ -98,7 +98,7 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << OptionStateMapper::GetNameForOptionState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(OptionStateMapper::GetNameForOptionState(m_state)) << "&";
   }
 
   if(m_pendingDeletionHasBeenSet)
@@ -124,7 +124,7 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << OptionStateMapper::GetNameForOptionState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(OptionStateMapper::GetNameForOptionState(m_state)) << "&";
   }
   if(m_pendingDeletionHasBeenSet)
   {

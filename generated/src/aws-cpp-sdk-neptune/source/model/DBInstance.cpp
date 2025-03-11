@@ -844,7 +844,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_dBSecurityGroups)
       {
         Aws::StringStream dBSecurityGroupsSs;
-        dBSecurityGroupsSs << location <<  ".DBSecurityGroup." << dBSecurityGroupsIdx++;
+        dBSecurityGroupsSs << location << ".DBSecurityGroups.DBSecurityGroup." << dBSecurityGroupsIdx++;
         item.OutputToStream(oStream, dBSecurityGroupsSs.str().c_str());
       }
   }
@@ -854,7 +854,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << ".VpcSecurityGroups.VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -864,7 +864,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_dBParameterGroups)
       {
         Aws::StringStream dBParameterGroupsSs;
-        dBParameterGroupsSs << location <<  ".DBParameterGroup." << dBParameterGroupsIdx++;
+        dBParameterGroupsSs << location << ".DBParameterGroups.DBParameterGroup." << dBParameterGroupsIdx++;
         item.OutputToStream(oStream, dBParameterGroupsSs.str().c_str());
       }
   }
@@ -913,7 +913,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       unsigned readReplicaDBInstanceIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBInstanceIdentifiers)
       {
-        oStream << location << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaDBInstanceIdentifiers.ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_readReplicaDBClusterIdentifiersHasBeenSet)
@@ -921,7 +921,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       unsigned readReplicaDBClusterIdentifiersIdx = 1;
       for(auto& item : m_readReplicaDBClusterIdentifiers)
       {
-        oStream << location << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaDBClusterIdentifiers.ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_licenseModelHasBeenSet)
@@ -938,7 +938,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_optionGroupMemberships)
       {
         Aws::StringStream optionGroupMembershipsSs;
-        optionGroupMembershipsSs << location <<  ".OptionGroupMembership." << optionGroupMembershipsIdx++;
+        optionGroupMembershipsSs << location << ".OptionGroupMemberships.OptionGroupMembership." << optionGroupMembershipsIdx++;
         item.OutputToStream(oStream, optionGroupMembershipsSs.str().c_str());
       }
   }
@@ -956,7 +956,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_statusInfos)
       {
         Aws::StringStream statusInfosSs;
-        statusInfosSs << location <<  ".DBInstanceStatusInfo." << statusInfosIdx++;
+        statusInfosSs << location << ".StatusInfos.DBInstanceStatusInfo." << statusInfosIdx++;
         item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }
@@ -998,7 +998,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_domainMemberships)
       {
         Aws::StringStream domainMembershipsSs;
-        domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
+        domainMembershipsSs << location << ".DomainMemberships.DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
   }

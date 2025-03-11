@@ -241,7 +241,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
       unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SourceIdsList.SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_eventCategoriesListHasBeenSet)
@@ -249,7 +249,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
       unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategoriesList.EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_severityHasBeenSet)
@@ -266,7 +266,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

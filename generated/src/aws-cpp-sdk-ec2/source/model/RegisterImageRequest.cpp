@@ -60,12 +60,12 @@ Aws::String RegisterImageRequest::SerializePayload() const
 
   if(m_bootModeHasBeenSet)
   {
-    ss << "BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+    ss << "BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
 
   if(m_tpmSupportHasBeenSet)
   {
-    ss << "TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
+    ss << "TpmSupport=" << StringUtils::URLEncode(TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport)) << "&";
   }
 
   if(m_uefiDataHasBeenSet)
@@ -75,7 +75,7 @@ Aws::String RegisterImageRequest::SerializePayload() const
 
   if(m_imdsSupportHasBeenSet)
   {
-    ss << "ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
+    ss << "ImdsSupport=" << StringUtils::URLEncode(ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)
@@ -105,7 +105,7 @@ Aws::String RegisterImageRequest::SerializePayload() const
 
   if(m_architectureHasBeenSet)
   {
-    ss << "Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+    ss << "Architecture=" << StringUtils::URLEncode(ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture)) << "&";
   }
 
   if(m_kernelIdHasBeenSet)

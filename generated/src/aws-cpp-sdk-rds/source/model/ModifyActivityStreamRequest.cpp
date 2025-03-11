@@ -28,7 +28,7 @@ Aws::String ModifyActivityStreamRequest::SerializePayload() const
 
   if(m_auditPolicyStateHasBeenSet)
   {
-    ss << "AuditPolicyState=" << AuditPolicyStateMapper::GetNameForAuditPolicyState(m_auditPolicyState) << "&";
+    ss << "AuditPolicyState=" << StringUtils::URLEncode(AuditPolicyStateMapper::GetNameForAuditPolicyState(m_auditPolicyState)) << "&";
   }
 
   ss << "Version=2014-10-31";

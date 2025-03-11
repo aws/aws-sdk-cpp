@@ -53,7 +53,7 @@ void TransitGatewayConnectOptions::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_protocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Protocol=" << ProtocolValueMapper::GetNameForProtocolValue(m_protocol) << "&";
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(ProtocolValueMapper::GetNameForProtocolValue(m_protocol)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void TransitGatewayConnectOptions::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_protocolHasBeenSet)
   {
-      oStream << location << ".Protocol=" << ProtocolValueMapper::GetNameForProtocolValue(m_protocol) << "&";
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(ProtocolValueMapper::GetNameForProtocolValue(m_protocol)) << "&";
   }
 }
 

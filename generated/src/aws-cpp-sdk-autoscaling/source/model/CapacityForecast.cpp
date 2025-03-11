@@ -104,7 +104,7 @@ void CapacityForecast::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-          oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+        oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
 }

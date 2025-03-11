@@ -61,7 +61,7 @@ Aws::String GetMetricDataRequest::SerializePayload() const
 
   if(m_scanByHasBeenSet)
   {
-    ss << "ScanBy=" << ScanByMapper::GetNameForScanBy(m_scanBy) << "&";
+    ss << "ScanBy=" << StringUtils::URLEncode(ScanByMapper::GetNameForScanBy(m_scanBy)) << "&";
   }
 
   if(m_maxDatapointsHasBeenSet)

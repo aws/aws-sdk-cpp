@@ -137,7 +137,7 @@ void LaunchTemplateEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, 
 
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << index << locationValue << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
 
   if(m_throughputHasBeenSet)
@@ -175,7 +175,7 @@ void LaunchTemplateEbsBlockDeviceRequest::OutputToStream(Aws::OStream& oStream, 
   }
   if(m_volumeTypeHasBeenSet)
   {
-      oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+      oStream << location << ".VolumeType=" << StringUtils::URLEncode(VolumeTypeMapper::GetNameForVolumeType(m_volumeType)) << "&";
   }
   if(m_throughputHasBeenSet)
   {

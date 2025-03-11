@@ -115,7 +115,7 @@ void CapacityReservationBillingRequest::OutputToStream(Aws::OStream& oStream, co
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << CapacityReservationBillingRequestStatusMapper::GetNameForCapacityReservationBillingRequestStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(CapacityReservationBillingRequestStatusMapper::GetNameForCapacityReservationBillingRequestStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -152,7 +152,7 @@ void CapacityReservationBillingRequest::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << CapacityReservationBillingRequestStatusMapper::GetNameForCapacityReservationBillingRequestStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(CapacityReservationBillingRequestStatusMapper::GetNameForCapacityReservationBillingRequestStatus(m_status)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
