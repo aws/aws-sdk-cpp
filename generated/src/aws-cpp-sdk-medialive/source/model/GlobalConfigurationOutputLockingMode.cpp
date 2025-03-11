@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EPOCH_LOCKING_HASH = HashingUtils::HashString("EPOCH_LOCKING");
         static const int PIPELINE_LOCKING_HASH = HashingUtils::HashString("PIPELINE_LOCKING");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
         GlobalConfigurationOutputLockingMode GetGlobalConfigurationOutputLockingModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == PIPELINE_LOCKING_HASH)
           {
             return GlobalConfigurationOutputLockingMode::PIPELINE_LOCKING;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return GlobalConfigurationOutputLockingMode::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "EPOCH_LOCKING";
           case GlobalConfigurationOutputLockingMode::PIPELINE_LOCKING:
             return "PIPELINE_LOCKING";
+          case GlobalConfigurationOutputLockingMode::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

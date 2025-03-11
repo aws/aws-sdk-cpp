@@ -87,6 +87,33 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+     */
+    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArn = value; }
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArn = std::move(value); }
+    inline void SetCustomRoleArn(const char* value) { m_customRoleArn.assign(value); }
+    inline UpdatePullThroughCacheRuleResult& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
+    inline UpdatePullThroughCacheRuleResult& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
+    inline UpdatePullThroughCacheRuleResult& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The upstream repository prefix associated with the pull through cache
+     * rule.</p>
+     */
+    inline const Aws::String& GetUpstreamRepositoryPrefix() const{ return m_upstreamRepositoryPrefix; }
+    inline void SetUpstreamRepositoryPrefix(const Aws::String& value) { m_upstreamRepositoryPrefix = value; }
+    inline void SetUpstreamRepositoryPrefix(Aws::String&& value) { m_upstreamRepositoryPrefix = std::move(value); }
+    inline void SetUpstreamRepositoryPrefix(const char* value) { m_upstreamRepositoryPrefix.assign(value); }
+    inline UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(const Aws::String& value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    inline UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(Aws::String&& value) { SetUpstreamRepositoryPrefix(std::move(value)); return *this;}
+    inline UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(const char* value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -105,6 +132,10 @@ namespace Model
     Aws::Utils::DateTime m_updatedAt;
 
     Aws::String m_credentialArn;
+
+    Aws::String m_customRoleArn;
+
+    Aws::String m_upstreamRepositoryPrefix;
 
     Aws::String m_requestId;
   };
