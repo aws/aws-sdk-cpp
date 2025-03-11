@@ -38,7 +38,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Macie2Errors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Macie2Errors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
   {

@@ -55,7 +55,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::CONCURRENT_MODIFICATION), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
@@ -83,7 +83,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INTERNAL_SERVICE_ERROR), RetryableType::RETRYABLE);
   }
   else if (hashCode == ACCOUNT_SUSPENDED_HASH)
   {

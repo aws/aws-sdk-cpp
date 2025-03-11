@@ -31,7 +31,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::INTERNAL_SERVICE), RetryableType::RETRYABLE);
   }
   else if (hashCode == DUPLICATE_RESOURCE_HASH)
   {

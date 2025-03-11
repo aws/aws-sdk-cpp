@@ -109,6 +109,11 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     /**
+     * HTTP response status codes that should be retried if found in a modeled error.
+     */
+    private static Set<Integer> RESPONSE_CODES_TO_RETRY = ImmutableSet.of(500, 502, 503, 504);
+
+    /**
      * Type representing what a member should be remapped to and services that it
      * cannot be renamed to, to preserve backwards compat.
      */
@@ -936,12 +941,14 @@ public class C2jModelToGeneratorModelTransformer {
         error.setCoreError(CoreErrors.VARIANTS.containsKey(error.getName()));
 
         //query xml loads this inner structure to do this work.
-        if (c2jError.getError() != null && c2jError.getError().getCode() != null) {
-            if(c2jError.getError().getHttpStatusCode() >= 500 || !c2jError.getError().isSenderFault()) {
+        if (c2jError.getError() != null) {
+            if(RESPONSE_CODES_TO_RETRY.contains(c2jError.getError().getHttpStatusCode()) && !c2jError.getError().isSenderFault()) {
                 error.setRetryable(true);
             }
 
-            error.setText(c2jError.getError().getCode());
+            if (c2jError.getError().getCode() != null) {
+                error.setText(c2jError.getError().getCode());
+            }
         }
 
         allErrors.add(error);

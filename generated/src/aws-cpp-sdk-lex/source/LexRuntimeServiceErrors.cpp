@@ -47,7 +47,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == BAD_GATEWAY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::BAD_GATEWAY), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::BAD_GATEWAY), RetryableType::RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {

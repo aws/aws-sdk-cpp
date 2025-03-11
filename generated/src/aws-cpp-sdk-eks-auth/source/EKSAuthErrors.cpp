@@ -31,7 +31,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_TOKEN_HASH)
   {

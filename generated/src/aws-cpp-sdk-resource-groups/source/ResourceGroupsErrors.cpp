@@ -53,7 +53,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsErrors::INTERNAL_SERVER_ERROR), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsErrors::INTERNAL_SERVER_ERROR), RetryableType::RETRYABLE);
   }
   else if (hashCode == METHOD_NOT_ALLOWED_HASH)
   {

@@ -110,7 +110,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INTERNAL_SERVICE), RetryableType::RETRYABLE);
   }
   else if (hashCode == FACET_ALREADY_EXISTS_HASH)
   {

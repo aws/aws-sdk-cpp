@@ -44,7 +44,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MWAAErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MWAAErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == REST_API_SERVER_HASH)
   {

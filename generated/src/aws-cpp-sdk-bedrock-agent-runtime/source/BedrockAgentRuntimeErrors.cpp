@@ -58,7 +58,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == BAD_GATEWAY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::BAD_GATEWAY), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::BAD_GATEWAY), RetryableType::RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
@@ -66,7 +66,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == DEPENDENCY_FAILED_HASH)
   {

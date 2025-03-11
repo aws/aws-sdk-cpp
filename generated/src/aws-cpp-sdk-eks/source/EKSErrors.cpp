@@ -113,7 +113,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == RESOURCE_PROPAGATION_DELAY_HASH)
   {

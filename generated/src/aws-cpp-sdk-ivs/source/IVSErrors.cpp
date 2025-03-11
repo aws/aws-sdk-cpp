@@ -111,11 +111,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == STREAM_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::STREAM_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::STREAM_UNAVAILABLE), RetryableType::RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == PENDING_VERIFICATION_HASH)
   {
