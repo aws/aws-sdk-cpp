@@ -85,7 +85,7 @@ namespace smithy {
                 }
                 return {identity.accessKeyId(), identity.secretAccessKey()};
             }();
-            auto result = legacySigner.PresignRequest(*httpRequest, legacyCreds, region.c_str(), serviceName.c_str(), expirationTimeInSeconds);
+            auto result = legacySigner.PresignRequest(*httpRequest, legacyCreds, region.empty() ? nullptr : region.c_str(), serviceName.empty() ? nullptr : serviceName.c_str(), expirationTimeInSeconds);
 
             return (result ? SigningFutureOutcome(std::move(httpRequest)) :
                             SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "presign failed",

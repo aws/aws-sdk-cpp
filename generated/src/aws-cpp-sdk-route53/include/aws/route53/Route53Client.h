@@ -32,15 +32,15 @@ namespace Route53
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
    * Route 53 checks the health of your resources</a>.</p> </li> </ul>
    */
-  class AWS_ROUTE53_API Route53Client : smithy::client::AwsSmithyClientT<Aws::Route53::SERVICE_NAME,
+  class AWS_ROUTE53_API Route53Client : Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>,
+    smithy::client::AwsSmithyClientT<Aws::Route53::SERVICE_NAME,
       Aws::Route53::Route53ClientConfiguration,
       smithy::SigV4AuthSchemeResolver<>,
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       Route53EndpointProviderBase,
       smithy::client::XmlOutcomeSerializer,
       smithy::client::XmlOutcome,
-      Aws::Client::Route53ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>
+      Aws::Client::Route53ErrorMarshaller>
   {
     public:
       static const char* GetServiceName();
