@@ -261,6 +261,7 @@ public class C2jModelToGeneratorModelTransformer {
             metadata.setProtocol(c2jMetadata.getProtocol());
         }
         metadata.setProtocols(c2jMetadata.getProtocols());
+        metadata.setAuth(c2jMetadata.getAuth());
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
         metadata.setServiceFullName(c2jMetadata.getServiceFullName());
         metadata.setSignatureVersion(c2jMetadata.getSignatureVersion());
