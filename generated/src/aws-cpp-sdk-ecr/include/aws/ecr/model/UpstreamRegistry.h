@@ -16,6 +16,7 @@ namespace Model
   enum class UpstreamRegistry
   {
     NOT_SET,
+    ecr,
     ecr_public,
     quay,
     k8s,

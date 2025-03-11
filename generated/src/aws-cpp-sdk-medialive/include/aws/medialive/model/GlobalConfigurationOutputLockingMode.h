@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EPOCH_LOCKING,
-    PIPELINE_LOCKING
+    PIPELINE_LOCKING,
+    DISABLED
   };
 
 namespace GlobalConfigurationOutputLockingModeMapper

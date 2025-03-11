@@ -72,6 +72,9 @@
 #if($getterFunctionName == ${member.value.shape.name})
 #set($getterFunctionName = "Get${getterFunctionName}")
 #end
+#if($shape.request)
+#set($getterFunctionName = $CppViewHelper.checkForCollision($getterFunctionName, "GetMember", $memberKeyWithFirstLetterCapitalized))
+#end
     ///@{
     $memberDocumentation
 #if($isStream)
@@ -87,9 +90,6 @@
 #set($override = "")
 #if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)
 #set($override = " override ")
-#end
-#if($shape.request)
-#set($getterFunctionName = $CppViewHelper.checkForCollision($getterFunctionName, "GetMember", $memberKeyWithFirstLetterCapitalized))
 #end
     ${inline}${returnType} ${getterFunctionName}() const$override${getterBody}
 #end

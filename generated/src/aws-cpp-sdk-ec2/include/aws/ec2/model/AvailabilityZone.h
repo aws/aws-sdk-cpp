@@ -193,6 +193,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The long name of the Availability Zone group, Local Zone group, or Wavelength
+     * Zone group.</p>
+     */
+    inline const Aws::String& GetGroupLongName() const{ return m_groupLongName; }
+    inline bool GroupLongNameHasBeenSet() const { return m_groupLongNameHasBeenSet; }
+    inline void SetGroupLongName(const Aws::String& value) { m_groupLongNameHasBeenSet = true; m_groupLongName = value; }
+    inline void SetGroupLongName(Aws::String&& value) { m_groupLongNameHasBeenSet = true; m_groupLongName = std::move(value); }
+    inline void SetGroupLongName(const char* value) { m_groupLongNameHasBeenSet = true; m_groupLongName.assign(value); }
+    inline AvailabilityZone& WithGroupLongName(const Aws::String& value) { SetGroupLongName(value); return *this;}
+    inline AvailabilityZone& WithGroupLongName(Aws::String&& value) { SetGroupLongName(std::move(value)); return *this;}
+    inline AvailabilityZone& WithGroupLongName(const char* value) { SetGroupLongName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
      * value is always <code>available</code>.</p>
      */
@@ -234,6 +249,9 @@ namespace Model
 
     Aws::String m_parentZoneId;
     bool m_parentZoneIdHasBeenSet = false;
+
+    Aws::String m_groupLongName;
+    bool m_groupLongNameHasBeenSet = false;
 
     AvailabilityZoneState m_state;
     bool m_stateHasBeenSet = false;

@@ -20,6 +20,7 @@ namespace Aws
       namespace UpstreamRegistryMapper
       {
 
+        static const int ecr_HASH = HashingUtils::HashString("ecr");
         static const int ecr_public_HASH = HashingUtils::HashString("ecr-public");
         static const int quay_HASH = HashingUtils::HashString("quay");
         static const int k8s_HASH = HashingUtils::HashString("k8s");
@@ -32,7 +33,11 @@ namespace Aws
         UpstreamRegistry GetUpstreamRegistryForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ecr_public_HASH)
+          if (hashCode == ecr_HASH)
+          {
+            return UpstreamRegistry::ecr;
+          }
+          else if (hashCode == ecr_public_HASH)
           {
             return UpstreamRegistry::ecr_public;
           }
@@ -76,6 +81,8 @@ namespace Aws
           {
           case UpstreamRegistry::NOT_SET:
             return {};
+          case UpstreamRegistry::ecr:
+            return "ecr";
           case UpstreamRegistry::ecr_public:
             return "ecr-public";
           case UpstreamRegistry::quay:
