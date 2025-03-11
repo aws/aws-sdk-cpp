@@ -121,7 +121,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == SERVICE_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::SERVICE_FAILURE), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::SERVICE_FAILURE), RetryableType::RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {

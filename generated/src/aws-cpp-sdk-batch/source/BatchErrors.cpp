@@ -32,7 +32,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::SERVER), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

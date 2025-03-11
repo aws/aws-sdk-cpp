@@ -300,11 +300,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == DEPENDENCY_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::DEPENDENCY_TIMEOUT), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::DEPENDENCY_TIMEOUT), RetryableType::RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_THROUGHPUT_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INSUFFICIENT_THROUGHPUT_CAPACITY), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::INSUFFICIENT_THROUGHPUT_CAPACITY), RetryableType::RETRYABLE);
   }
   else if (hashCode == MOUNT_TARGET_NOT_FOUND_HASH)
   {

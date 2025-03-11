@@ -144,7 +144,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == SERVER_INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), RetryableType::RETRYABLE);
   }
   else if (hashCode == TAG_POLICY_VIOLATION_HASH)
   {
