@@ -47,7 +47,9 @@ namespace Model
      * participant recording. Default: <code>""</code> (empty string, no storage
      * configuration is specified). Individual participant recording cannot be started
      * unless a storage configuration is specified, when a <a>Stage</a> is created or
-     * updated.</p>
+     * updated. To disable individual participant recording, set this to
+     * <code>""</code>; other fields in this object will get reset to their defaults
+     * when sending <code>""</code>. </p>
      */
     inline const Aws::String& GetStorageConfigurationArn() const{ return m_storageConfigurationArn; }
     inline bool StorageConfigurationArnHasBeenSet() const { return m_storageConfigurationArnHasBeenSet; }
@@ -86,6 +88,18 @@ namespace Model
     inline AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(const ParticipantThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
     inline AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(ParticipantThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If a stage publisher disconnects and then reconnects within the specified
+     * interval, the multiple recordings will be considered a single recording and
+     * merged together.</p> <p>The default value is 0, which disables merging.</p>
+     */
+    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
+    inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
+    inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
+    inline AutoParticipantRecordingConfiguration& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_storageConfigurationArn;
@@ -96,6 +110,9 @@ namespace Model
 
     ParticipantThumbnailConfiguration m_thumbnailConfiguration;
     bool m_thumbnailConfigurationHasBeenSet = false;
+
+    int m_recordingReconnectWindowSeconds;
+    bool m_recordingReconnectWindowSecondsHasBeenSet = false;
   };
 
 } // namespace Model

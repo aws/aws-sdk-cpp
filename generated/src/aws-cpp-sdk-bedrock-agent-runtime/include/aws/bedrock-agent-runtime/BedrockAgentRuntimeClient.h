@@ -130,7 +130,7 @@ namespace BedrockAgentRuntime
          * frameworks. For Amazon Bedrock Agents, the service automatically manages
          * conversation context and associates them with the agent-specific sessionId you
          * specify in the <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
          * API operation. </p>  <p>Related APIs:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
          * </p> </li> <li> <p> <a

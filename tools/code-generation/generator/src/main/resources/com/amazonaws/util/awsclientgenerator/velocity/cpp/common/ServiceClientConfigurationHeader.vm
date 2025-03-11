@@ -167,12 +167,6 @@ namespace ${rootNamespace}
             IdentityProviderSupplier identityProviderSupplier = [](const ${metadata.classNamePrefix}Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
                 return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
             };
-#if($serviceModel.isUseSmithyClient())
-            using SmithyIdentityProviderSupplier = std::function<std::shared_ptr<SmithyS3ExpressIdentityProvider> (const ${metadata.classNamePrefix}Client &)>;
-            SmithyIdentityProviderSupplier smithyIdentityProviderSupplier = [](const ${metadata.classNamePrefix}Client &client) -> std::shared_ptr<SmithyS3ExpressIdentityProvider> {
-                return Aws::MakeShared<SmithyDefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
-            };
-#end
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
 

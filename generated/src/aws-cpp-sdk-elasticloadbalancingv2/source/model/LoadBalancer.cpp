@@ -39,7 +39,8 @@ LoadBalancer::LoadBalancer() :
     m_customerOwnedIpv4PoolHasBeenSet(false),
     m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false),
     m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
-    m_enablePrefixForIpv6SourceNatHasBeenSet(false)
+    m_enablePrefixForIpv6SourceNatHasBeenSet(false),
+    m_ipamPoolsHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,12 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
       m_enablePrefixForIpv6SourceNat = EnablePrefixForIpv6SourceNatEnumMapper::GetEnablePrefixForIpv6SourceNatEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrefixForIpv6SourceNatNode.GetText()).c_str()).c_str());
       m_enablePrefixForIpv6SourceNatHasBeenSet = true;
     }
+    XmlNode ipamPoolsNode = resultNode.FirstChild("IpamPools");
+    if(!ipamPoolsNode.IsNull())
+    {
+      m_ipamPools = ipamPoolsNode;
+      m_ipamPoolsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -251,6 +258,13 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
   }
 
+  if(m_ipamPoolsHasBeenSet)
+  {
+      Aws::StringStream ipamPoolsLocationAndMemberSs;
+      ipamPoolsLocationAndMemberSs << location << index << locationValue << ".IpamPools";
+      m_ipamPools.OutputToStream(oStream, ipamPoolsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -326,6 +340,12 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_enablePrefixForIpv6SourceNatHasBeenSet)
   {
       oStream << location << ".EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+  }
+  if(m_ipamPoolsHasBeenSet)
+  {
+      Aws::String ipamPoolsLocationAndMember(location);
+      ipamPoolsLocationAndMember += ".IpamPools";
+      m_ipamPools.OutputToStream(oStream, ipamPoolsLocationAndMember.c_str());
   }
 }
 

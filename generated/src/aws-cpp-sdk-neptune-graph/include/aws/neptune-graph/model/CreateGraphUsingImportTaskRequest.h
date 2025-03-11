@@ -47,7 +47,7 @@ namespace Model
      * <p>A name for the new Neptune Analytics graph to be created.</p> <p>The name
      * must contain from 1 to 63 letters, numbers, or hyphens, and its first character
      * must be a letter. It cannot end with a hyphen or contain two consecutive
-     * hyphens. </p>
+     * hyphens. Only lowercase letters are allowed.</p>
      */
     inline const Aws::String& GetGraphName() const{ return m_graphName; }
     inline bool GraphNameHasBeenSet() const { return m_graphNameHasBeenSet; }
@@ -177,7 +177,7 @@ namespace Model
     ///@{
     /**
      * <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to
-     * use for the graph. Default: 128</p>
+     * use for the graph. Default: 16</p>
      */
     inline int GetMinProvisionedMemory() const{ return m_minProvisionedMemory; }
     inline bool MinProvisionedMemoryHasBeenSet() const { return m_minProvisionedMemoryHasBeenSet; }

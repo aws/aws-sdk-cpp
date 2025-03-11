@@ -9,6 +9,7 @@
 #include <aws/bedrock-agent-runtime/model/InvokeInlineAgentHandler.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/AgentCollaboration.h>
 #include <aws/bedrock-agent-runtime/model/InlineBedrockModelConfigurations.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailConfigurationWithArn.h>
@@ -16,6 +17,8 @@
 #include <aws/bedrock-agent-runtime/model/PromptOverrideConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/AgentActionGroup.h>
+#include <aws/bedrock-agent-runtime/model/CollaboratorConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/Collaborator.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBase.h>
 #include <utility>
 
@@ -80,6 +83,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> Defines how the inline collaborator agent handles information across
+     * multiple collaborator agents to coordinate a final response. The inline
+     * collaborator agent can also be the supervisor. </p>
+     */
+    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
+    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
+    inline InvokeInlineAgentRequest& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
+    inline InvokeInlineAgentRequest& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Model settings for the request.</p>
      */
     inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const{ return m_bedrockModelConfigurations; }
@@ -88,6 +105,36 @@ namespace Model
     inline void SetBedrockModelConfigurations(InlineBedrockModelConfigurations&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::move(value); }
     inline InvokeInlineAgentRequest& WithBedrockModelConfigurations(const InlineBedrockModelConfigurations& value) { SetBedrockModelConfigurations(value); return *this;}
     inline InvokeInlineAgentRequest& WithBedrockModelConfigurations(InlineBedrockModelConfigurations&& value) { SetBedrockModelConfigurations(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Settings for an inline agent collaborator called with <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.
+     * </p>
+     */
+    inline const Aws::Vector<CollaboratorConfiguration>& GetCollaboratorConfigurations() const{ return m_collaboratorConfigurations; }
+    inline bool CollaboratorConfigurationsHasBeenSet() const { return m_collaboratorConfigurationsHasBeenSet; }
+    inline void SetCollaboratorConfigurations(const Aws::Vector<CollaboratorConfiguration>& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = value; }
+    inline void SetCollaboratorConfigurations(Aws::Vector<CollaboratorConfiguration>&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = std::move(value); }
+    inline InvokeInlineAgentRequest& WithCollaboratorConfigurations(const Aws::Vector<CollaboratorConfiguration>& value) { SetCollaboratorConfigurations(value); return *this;}
+    inline InvokeInlineAgentRequest& WithCollaboratorConfigurations(Aws::Vector<CollaboratorConfiguration>&& value) { SetCollaboratorConfigurations(std::move(value)); return *this;}
+    inline InvokeInlineAgentRequest& AddCollaboratorConfigurations(const CollaboratorConfiguration& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.push_back(value); return *this; }
+    inline InvokeInlineAgentRequest& AddCollaboratorConfigurations(CollaboratorConfiguration&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> List of collaborator inline agents. </p>
+     */
+    inline const Aws::Vector<Collaborator>& GetCollaborators() const{ return m_collaborators; }
+    inline bool CollaboratorsHasBeenSet() const { return m_collaboratorsHasBeenSet; }
+    inline void SetCollaborators(const Aws::Vector<Collaborator>& value) { m_collaboratorsHasBeenSet = true; m_collaborators = value; }
+    inline void SetCollaborators(Aws::Vector<Collaborator>&& value) { m_collaboratorsHasBeenSet = true; m_collaborators = std::move(value); }
+    inline InvokeInlineAgentRequest& WithCollaborators(const Aws::Vector<Collaborator>& value) { SetCollaborators(value); return *this;}
+    inline InvokeInlineAgentRequest& WithCollaborators(Aws::Vector<Collaborator>&& value) { SetCollaborators(std::move(value)); return *this;}
+    inline InvokeInlineAgentRequest& AddCollaborators(const Collaborator& value) { m_collaboratorsHasBeenSet = true; m_collaborators.push_back(value); return *this; }
+    inline InvokeInlineAgentRequest& AddCollaborators(Collaborator&& value) { m_collaboratorsHasBeenSet = true; m_collaborators.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -284,8 +331,17 @@ namespace Model
     Aws::Vector<AgentActionGroup> m_actionGroups;
     bool m_actionGroupsHasBeenSet = false;
 
+    AgentCollaboration m_agentCollaboration;
+    bool m_agentCollaborationHasBeenSet = false;
+
     InlineBedrockModelConfigurations m_bedrockModelConfigurations;
     bool m_bedrockModelConfigurationsHasBeenSet = false;
+
+    Aws::Vector<CollaboratorConfiguration> m_collaboratorConfigurations;
+    bool m_collaboratorConfigurationsHasBeenSet = false;
+
+    Aws::Vector<Collaborator> m_collaborators;
+    bool m_collaboratorsHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
