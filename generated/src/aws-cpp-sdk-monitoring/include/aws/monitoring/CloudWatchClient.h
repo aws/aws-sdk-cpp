@@ -34,15 +34,15 @@ namespace CloudWatch
    * system-wide visibility into resource utilization, application performance, and
    * operational health.</p>
    */
-  class AWS_CLOUDWATCH_API CloudWatchClient : smithy::client::AwsSmithyClientT<Aws::CloudWatch::SERVICE_NAME,
+  class AWS_CLOUDWATCH_API CloudWatchClient : Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>,
+    smithy::client::AwsSmithyClientT<Aws::CloudWatch::SERVICE_NAME,
       Aws::CloudWatch::CloudWatchClientConfiguration,
       smithy::SigV4AuthSchemeResolver<>,
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       CloudWatchEndpointProviderBase,
       smithy::client::XmlOutcomeSerializer,
       smithy::client::XmlOutcome,
-      Aws::Client::CloudWatchErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>
+      Aws::Client::CloudWatchErrorMarshaller>
   {
     public:
       static const char* GetServiceName();
@@ -104,7 +104,6 @@ namespace CloudWatch
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
-
 
         /**
          * <p>Deletes the specified alarms. You can delete up to 100 alarms in one

@@ -192,26 +192,13 @@ void CloudWatchClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 Aws::String CloudWatchClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
 {
-  if (!m_endpointProvider)
-  {
-    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Endpoint provider is not initialized.");
-    return "";
-  }
-  Aws::Endpoint::EndpointParameters endpointParameters;
-  endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", Aws::String(region)));
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
-  if (!endpointResolutionOutcome.IsSuccess())
-  {
-    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Endpoint resolution failed: " << endpointResolutionOutcome.GetError().GetMessage());
-    return "";
-  }
-  Aws::StringStream ss;
-  ss << "?" << requestToConvert.SerializePayload();
-  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
-
-  return GeneratePresignedUrl(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, region, GetServiceName(), 3600, {}, {});
+  EndpointUpdateCallback endpointCallback = [&](Aws::Endpoint::AWSEndpoint& endpoint){
+    Aws::StringStream ss;
+    ss << "?" << requestToConvert.SerializePayload();
+    endpoint.SetQueryString(ss.str());
+  };
+  return AwsSmithyClientT::GeneratePresignedUrl(std::move(endpointCallback), Aws::Http::HttpMethod::HTTP_GET, region,  GetServiceName(), 3600, {}, {});
 }
-
 DeleteAlarmsOutcome CloudWatchClient::DeleteAlarms(const DeleteAlarmsRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteAlarms);

@@ -27,15 +27,15 @@ namespace CloudFront
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
    * CloudFront Developer Guide</a>.</p></p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontClient : smithy::client::AwsSmithyClientT<Aws::CloudFront::SERVICE_NAME,
+  class AWS_CLOUDFRONT_API CloudFrontClient : Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>,
+    smithy::client::AwsSmithyClientT<Aws::CloudFront::SERVICE_NAME,
       Aws::CloudFront::CloudFrontClientConfiguration,
       smithy::SigV4AuthSchemeResolver<>,
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       CloudFrontEndpointProviderBase,
       smithy::client::XmlOutcomeSerializer,
       smithy::client::XmlOutcome,
-      Aws::Client::CloudFrontErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>
+      Aws::Client::CloudFrontErrorMarshaller>
   {
     public:
       static const char* GetServiceName();

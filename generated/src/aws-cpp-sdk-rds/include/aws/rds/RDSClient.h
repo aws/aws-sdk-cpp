@@ -6,18 +6,21 @@
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rds/RDSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <aws/rds/RDSErrorMarshaller.h>
 
 namespace Aws
 {
-  namespace RDS
-  {
-        /**
-     * <fullname>Amazon Relational Database Service</fullname> <p/> <p>Amazon
+namespace RDS
+{
+  AWS_RDS_API extern const char SERVICE_NAME[];
+  /**
+   * <fullname>Amazon Relational Database Service</fullname> <p/> <p>Amazon
    * Relational Database Service (Amazon RDS) is a web service that makes it easier
    * to set up, operate, and scale a relational database in the cloud. It provides
    * cost-efficient, resizeable capacity for an industry-standard relational database
@@ -54,13 +57,21 @@ namespace Aws
    * Query API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
    * the Query API</a>.</p> </li> </ul>
-     */
-                class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>
-    {
+   */
+  class AWS_RDS_API RDSClient : Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>,
+    smithy::client::AwsSmithyClientT<Aws::RDS::SERVICE_NAME,
+      Aws::RDS::RDSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      RDSEndpointProviderBase,
+      smithy::client::XmlOutcomeSerializer,
+      smithy::client::XmlOutcome,
+      Aws::Client::RDSErrorMarshaller>
+  {
     public:
-        typedef Aws::Client::AWSXMLClient BASECLASS;
-        static const char* GetServiceName();
-        static const char* GetAllocationTag();
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "RDS"; }
 
       typedef RDSClientConfiguration ClientConfigurationType;
       typedef RDSEndpointProvider EndpointProviderType;
@@ -113,7 +124,6 @@ namespace Aws
         /* End of legacy constructors due deprecation */
         virtual ~RDSClient();
 
-    
         /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -124,7 +134,7 @@ namespace Aws
         */
         Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
 
-        
+
         /**
          * <p>Associates an Identity and Access Management (IAM) role with a DB
          * cluster.</p><p><h3>See Also:</h3>   <a
@@ -5248,14 +5258,12 @@ namespace Aws
         }
 
 
-        void OverrideEndpoint(const Aws::String& endpoint);
-        std::shared_ptr<RDSEndpointProviderBase>& accessEndpointProvider();
+      void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<RDSEndpointProviderBase>& accessEndpointProvider();
     private:
-        friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>;
-        void init(const RDSClientConfiguration& clientConfiguration);
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>;
 
-        RDSClientConfiguration m_clientConfiguration;
-        std::shared_ptr<RDSEndpointProviderBase> m_endpointProvider;
-    };
-  } // namespace RDS
+  };
+
+} // namespace RDS
 } // namespace Aws

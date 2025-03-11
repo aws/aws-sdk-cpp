@@ -290,6 +290,49 @@ namespace client
             return {};
         }
 
+        Aws::String GeneratePresignedUrl(
+            const Aws::AmazonWebServiceRequest& request,
+            const Aws::Http::URI& uri,
+            Aws::Http::HttpMethod method,
+            const Aws::String& region,
+            const Aws::String& serviceName,
+            const Aws::Http::QueryStringParameterCollection& extraParams,
+            long long expirationInSeconds,
+            const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameters) const
+        {
+            AwsSmithyClientAsyncRequestContext ctx;
+            auto authSchemeOptionOutcome = SelectAuthSchemeOption( ctx);
+            auto authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
+            
+            Aws::Endpoint::EndpointParameters epParams = Aws::Endpoint::EndpointParameters();
+            const auto authSchemeEpParams = authSchemeOption.endpointParameters();
+            epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
+            if(serviceSpecificParameters)
+            {
+                auto bucketIt = serviceSpecificParameters->parameterMap.find("bucketName");
+                if(bucketIt != serviceSpecificParameters->parameterMap.end())
+                {
+                    auto bucket = bucketIt->second;
+                    epParams.emplace_back(Aws::String("Bucket"), bucket);
+                }
+            }
+            Aws::Http::URI uriCopy = uri;
+            request.PutToPresignedUrl(uriCopy);
+            std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uriCopy, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+            for (auto& param : extraParams)
+            {
+                httpRequest->AddQueryStringParameter(param.first.c_str(), param.second);
+            }
+            httpRequest->SetServiceSpecificParameters(serviceSpecificParameters);
+
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::PreSignRequest(httpRequest, authSchemeOption, m_authSchemes, region, serviceName, expirationInSeconds).IsSuccess())
+            {
+                return httpRequest->GetURIString();
+            }
+            return {};
+        }
+    
         //legacy
         Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri,
                                                   Aws::Http::HttpMethod method,
@@ -341,7 +384,7 @@ namespace client
             }
             return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, expirationInSeconds, customizedHeaders, serviceSpecificParameters);
         }
-    
+
         /* Service client specific config, the actual object is stored in AwsSmithyClientBase by pointer
          * In order to avoid config object duplication, smithy template client access it by a reference.
          * So that base client has it by base config pointer, child smithy client has it by child config reference.
