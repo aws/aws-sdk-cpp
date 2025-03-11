@@ -91,7 +91,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVICE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OAMErrors::INTERNAL_SERVICE_FAULT), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OAMErrors::INTERNAL_SERVICE_FAULT), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {

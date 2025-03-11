@@ -66,7 +66,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PipesErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PipesErrors::INTERNAL), RetryableType::RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
