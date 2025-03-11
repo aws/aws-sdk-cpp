@@ -24,6 +24,8 @@ PullThroughCacheRule::PullThroughCacheRule() :
     m_createdAtHasBeenSet(false),
     m_registryIdHasBeenSet(false),
     m_credentialArnHasBeenSet(false),
+    m_customRoleArnHasBeenSet(false),
+    m_upstreamRepositoryPrefixHasBeenSet(false),
     m_upstreamRegistry(UpstreamRegistry::NOT_SET),
     m_upstreamRegistryHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -73,6 +75,20 @@ PullThroughCacheRule& PullThroughCacheRule::operator =(JsonView jsonValue)
     m_credentialArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customRoleArn"))
+  {
+    m_customRoleArn = jsonValue.GetString("customRoleArn");
+
+    m_customRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("upstreamRepositoryPrefix"))
+  {
+    m_upstreamRepositoryPrefix = jsonValue.GetString("upstreamRepositoryPrefix");
+
+    m_upstreamRepositoryPrefixHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("upstreamRegistry"))
   {
     m_upstreamRegistry = UpstreamRegistryMapper::GetUpstreamRegistryForName(jsonValue.GetString("upstreamRegistry"));
@@ -120,6 +136,18 @@ JsonValue PullThroughCacheRule::Jsonize() const
   if(m_credentialArnHasBeenSet)
   {
    payload.WithString("credentialArn", m_credentialArn);
+
+  }
+
+  if(m_customRoleArnHasBeenSet)
+  {
+   payload.WithString("customRoleArn", m_customRoleArn);
+
+  }
+
+  if(m_upstreamRepositoryPrefixHasBeenSet)
+  {
+   payload.WithString("upstreamRepositoryPrefix", m_upstreamRepositoryPrefix);
 
   }
 

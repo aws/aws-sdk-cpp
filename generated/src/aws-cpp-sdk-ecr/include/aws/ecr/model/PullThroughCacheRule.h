@@ -112,6 +112,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+     */
+    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+    inline bool CustomRoleArnHasBeenSet() const { return m_customRoleArnHasBeenSet; }
+    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = value; }
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = std::move(value); }
+    inline void SetCustomRoleArn(const char* value) { m_customRoleArnHasBeenSet = true; m_customRoleArn.assign(value); }
+    inline PullThroughCacheRule& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
+    inline PullThroughCacheRule& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
+    inline PullThroughCacheRule& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The upstream repository prefix associated with the pull through cache
+     * rule.</p>
+     */
+    inline const Aws::String& GetUpstreamRepositoryPrefix() const{ return m_upstreamRepositoryPrefix; }
+    inline bool UpstreamRepositoryPrefixHasBeenSet() const { return m_upstreamRepositoryPrefixHasBeenSet; }
+    inline void SetUpstreamRepositoryPrefix(const Aws::String& value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix = value; }
+    inline void SetUpstreamRepositoryPrefix(Aws::String&& value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix = std::move(value); }
+    inline void SetUpstreamRepositoryPrefix(const char* value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix.assign(value); }
+    inline PullThroughCacheRule& WithUpstreamRepositoryPrefix(const Aws::String& value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    inline PullThroughCacheRule& WithUpstreamRepositoryPrefix(Aws::String&& value) { SetUpstreamRepositoryPrefix(std::move(value)); return *this;}
+    inline PullThroughCacheRule& WithUpstreamRepositoryPrefix(const char* value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the upstream source registry associated with the pull through
      * cache rule.</p>
      */
@@ -151,6 +180,12 @@ namespace Model
 
     Aws::String m_credentialArn;
     bool m_credentialArnHasBeenSet = false;
+
+    Aws::String m_customRoleArn;
+    bool m_customRoleArnHasBeenSet = false;
+
+    Aws::String m_upstreamRepositoryPrefix;
+    bool m_upstreamRepositoryPrefixHasBeenSet = false;
 
     UpstreamRegistry m_upstreamRegistry;
     bool m_upstreamRegistryHasBeenSet = false;

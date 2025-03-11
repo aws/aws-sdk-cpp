@@ -19,6 +19,7 @@ namespace Model
 {
 
 Step::Step() : 
+    m_componentArnHasBeenSet(false),
     m_componentIdHasBeenSet(false),
     m_componentTypeHasBeenSet(false)
 {
@@ -32,6 +33,13 @@ Step::Step(JsonView jsonValue)
 
 Step& Step::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("componentArn"))
+  {
+    m_componentArn = jsonValue.GetString("componentArn");
+
+    m_componentArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("componentId"))
   {
     m_componentId = jsonValue.GetString("componentId");
@@ -52,6 +60,12 @@ Step& Step::operator =(JsonView jsonValue)
 JsonValue Step::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_componentArnHasBeenSet)
+  {
+   payload.WithString("componentArn", m_componentArn);
+
+  }
 
   if(m_componentIdHasBeenSet)
   {

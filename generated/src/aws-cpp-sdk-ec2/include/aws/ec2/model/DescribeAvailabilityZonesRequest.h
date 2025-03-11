@@ -96,17 +96,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the zone
-     * group for the Availability Zone (for example, <code>us-east-1-zg-1</code>), the
-     * Local Zone (for example, <code>us-west-2-lax-1</code>), or the Wavelength Zone
-     * (for example, <code>us-east-1-wl1</code>).</p> </li> <li> <p>
-     * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
-     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
-     * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
-     * some of the Local Zone and Wavelength Zone control plane operations, such as API
+     * <p>The filters.</p> <ul> <li> <p> <code>group-long-name</code> - The long name
+     * of the zone group for the Availability Zone (for example, <code>US West (Oregon)
+     * 1</code>), the Local Zone (for example, for Zone group
+     * <code>us-west-2-lax-1</code>, it is <code>US West (Los Angeles)</code>, or the
+     * Wavelength Zone (for example, for Zone group <code>us-east-1-wl1</code>, it is
+     * <code>US East (Verizon)</code>.</p> </li> <li> <p> <code>group-name</code> - The
+     * name of the zone group for the Availability Zone (for example,
+     * <code>us-east-1-zg-1</code>), the Local Zone (for example,
+     * <code>us-west-2-lax-1</code>), or the Wavelength Zone (for example,
+     * <code>us-east-1-wl1</code>).</p> </li> <li> <p> <code>message</code> - The Zone
+     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt-in status
+     * (<code>opted-in</code> | <code>not-opted-in</code> |
+     * <code>opt-in-not-required</code>).</p> </li> <li> <p>
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local
+     * Zone and Wavelength Zone control plane operations, such as API calls.</p> </li>
+     * <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles some of
+     * the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the Availability Zone, the Local Zone, or the

@@ -38,7 +38,9 @@ namespace Model
     ///@{
     /**
      * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
+     * registry.</p>  <p>There is always an assumed <code>/</code> applied
+     * to the end of the prefix. If you specify <code>ecr-public</code> as the prefix,
+     * Amazon ECR treats that as <code>ecr-public/</code>.</p> 
      */
     inline const Aws::String& GetEcrRepositoryPrefix() const{ return m_ecrRepositoryPrefix; }
     inline bool EcrRepositoryPrefixHasBeenSet() const { return m_ecrRepositoryPrefixHasBeenSet; }
@@ -54,15 +56,18 @@ namespace Model
     /**
      * <p>The registry URL of the upstream public registry to use as the source for the
      * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * upstream registry.</p> <ul> <li> <p>Amazon ECR (<code>ecr</code>) –
+     * <code>dkr.ecr.&lt;region&gt;.amazonaws.com</code> </p> </li> <li> <p>Amazon ECR
+     * Public (<code>ecr-public</code>) – <code>public.ecr.aws</code> </p> </li> <li>
+     * <p>Docker Hub (<code>docker-hub</code>) – <code>registry-1.docker.io</code> </p>
+     * </li> <li> <p>GitHub Container Registry (<code>github-container-registry</code>)
+     * – <code>ghcr.io</code> </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) – <code>registry.gitlab.com</code> </p>
+     * </li> <li> <p>Kubernetes (<code>k8s</code>) – <code>registry.k8s.io</code> </p>
+     * </li> <li> <p>Microsoft Azure Container Registry
+     * (<code>azure-container-registry</code>) – <code>&lt;custom&gt;.azurecr.io</code>
+     * </p> </li> <li> <p>Quay (<code>quay</code>) – <code>quay.io</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetUpstreamRegistryUrl() const{ return m_upstreamRegistryUrl; }
     inline bool UpstreamRegistryUrlHasBeenSet() const { return m_upstreamRegistryUrlHasBeenSet; }
@@ -117,6 +122,38 @@ namespace Model
     inline CreatePullThroughCacheRuleRequest& WithCredentialArn(Aws::String&& value) { SetCredentialArn(std::move(value)); return *this;}
     inline CreatePullThroughCacheRuleRequest& WithCredentialArn(const char* value) { SetCredentialArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to
+     * authenticate to the ECR upstream registry. This role must be in the same account
+     * as the registry that you are configuring.</p>
+     */
+    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+    inline bool CustomRoleArnHasBeenSet() const { return m_customRoleArnHasBeenSet; }
+    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = value; }
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = std::move(value); }
+    inline void SetCustomRoleArn(const char* value) { m_customRoleArnHasBeenSet = true; m_customRoleArn.assign(value); }
+    inline CreatePullThroughCacheRuleRequest& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
+    inline CreatePullThroughCacheRuleRequest& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
+    inline CreatePullThroughCacheRuleRequest& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The repository name prefix of the upstream registry to match with the
+     * upstream repository name. When this field isn't specified, Amazon ECR will use
+     * the <code>ROOT</code>.</p>
+     */
+    inline const Aws::String& GetUpstreamRepositoryPrefix() const{ return m_upstreamRepositoryPrefix; }
+    inline bool UpstreamRepositoryPrefixHasBeenSet() const { return m_upstreamRepositoryPrefixHasBeenSet; }
+    inline void SetUpstreamRepositoryPrefix(const Aws::String& value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix = value; }
+    inline void SetUpstreamRepositoryPrefix(Aws::String&& value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix = std::move(value); }
+    inline void SetUpstreamRepositoryPrefix(const char* value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix.assign(value); }
+    inline CreatePullThroughCacheRuleRequest& WithUpstreamRepositoryPrefix(const Aws::String& value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    inline CreatePullThroughCacheRuleRequest& WithUpstreamRepositoryPrefix(Aws::String&& value) { SetUpstreamRepositoryPrefix(std::move(value)); return *this;}
+    inline CreatePullThroughCacheRuleRequest& WithUpstreamRepositoryPrefix(const char* value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ecrRepositoryPrefix;
@@ -133,6 +170,12 @@ namespace Model
 
     Aws::String m_credentialArn;
     bool m_credentialArnHasBeenSet = false;
+
+    Aws::String m_customRoleArn;
+    bool m_customRoleArnHasBeenSet = false;
+
+    Aws::String m_upstreamRepositoryPrefix;
+    bool m_upstreamRepositoryPrefixHasBeenSet = false;
   };
 
 } // namespace Model

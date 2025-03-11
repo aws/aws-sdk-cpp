@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether the resource is managed by an service provider and, if so,
+   * <p>Describes whether the resource is managed by a service provider and, if so,
    * describes the service provider that manages it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OperatorResponse">AWS
    * API Reference</a></p>
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If <code>true</code>, the resource is managed by an service provider.</p>
+     * <p>If <code>true</code>, the resource is managed by a service provider.</p>
      */
     inline bool GetManaged() const{ return m_managed; }
     inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }

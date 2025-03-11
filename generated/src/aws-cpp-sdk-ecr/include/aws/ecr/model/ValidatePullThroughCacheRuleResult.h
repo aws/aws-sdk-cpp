@@ -88,6 +88,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+     */
+    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArn = value; }
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArn = std::move(value); }
+    inline void SetCustomRoleArn(const char* value) { m_customRoleArn.assign(value); }
+    inline ValidatePullThroughCacheRuleResult& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
+    inline ValidatePullThroughCacheRuleResult& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
+    inline ValidatePullThroughCacheRuleResult& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The upstream repository prefix associated with the pull through cache
+     * rule.</p>
+     */
+    inline const Aws::String& GetUpstreamRepositoryPrefix() const{ return m_upstreamRepositoryPrefix; }
+    inline void SetUpstreamRepositoryPrefix(const Aws::String& value) { m_upstreamRepositoryPrefix = value; }
+    inline void SetUpstreamRepositoryPrefix(Aws::String&& value) { m_upstreamRepositoryPrefix = std::move(value); }
+    inline void SetUpstreamRepositoryPrefix(const char* value) { m_upstreamRepositoryPrefix.assign(value); }
+    inline ValidatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(const Aws::String& value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    inline ValidatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(Aws::String&& value) { SetUpstreamRepositoryPrefix(std::move(value)); return *this;}
+    inline ValidatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(const char* value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Whether or not the pull through cache rule was validated. If
      * <code>true</code>, Amazon ECR was able to reach the upstream registry and
      * authentication was successful. If <code>false</code>, there was an issue and
@@ -134,6 +161,10 @@ namespace Model
     Aws::String m_upstreamRegistryUrl;
 
     Aws::String m_credentialArn;
+
+    Aws::String m_customRoleArn;
+
+    Aws::String m_upstreamRepositoryPrefix;
 
     bool m_isValid;
 

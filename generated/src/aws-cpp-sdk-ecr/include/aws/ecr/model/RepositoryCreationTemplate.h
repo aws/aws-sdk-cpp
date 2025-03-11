@@ -120,7 +120,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>he repository policy to apply to repositories created using the template. A
+     * <p>The repository policy to apply to repositories created using the template. A
      * repository policy is a permissions policy associated with a repository to
      * control access permissions. </p>
      */

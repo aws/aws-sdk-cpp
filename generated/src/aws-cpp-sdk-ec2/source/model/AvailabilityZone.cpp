@@ -32,6 +32,7 @@ AvailabilityZone::AvailabilityZone() :
     m_zoneTypeHasBeenSet(false),
     m_parentZoneNameHasBeenSet(false),
     m_parentZoneIdHasBeenSet(false),
+    m_groupLongNameHasBeenSet(false),
     m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false)
 {
@@ -115,6 +116,12 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_parentZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(parentZoneIdNode.GetText());
       m_parentZoneIdHasBeenSet = true;
     }
+    XmlNode groupLongNameNode = resultNode.FirstChild("groupLongName");
+    if(!groupLongNameNode.IsNull())
+    {
+      m_groupLongName = Aws::Utils::Xml::DecodeEscapedXmlText(groupLongNameNode.GetText());
+      m_groupLongNameHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("zoneState");
     if(!stateNode.IsNull())
     {
@@ -184,6 +191,11 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ParentZoneId=" << StringUtils::URLEncode(m_parentZoneId.c_str()) << "&";
   }
 
+  if(m_groupLongNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupLongName=" << StringUtils::URLEncode(m_groupLongName.c_str()) << "&";
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
@@ -238,6 +250,10 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_parentZoneIdHasBeenSet)
   {
       oStream << location << ".ParentZoneId=" << StringUtils::URLEncode(m_parentZoneId.c_str()) << "&";
+  }
+  if(m_groupLongNameHasBeenSet)
+  {
+      oStream << location << ".GroupLongName=" << StringUtils::URLEncode(m_groupLongName.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {
