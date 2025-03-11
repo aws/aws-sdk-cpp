@@ -84,9 +84,7 @@ namespace Model
      * you use <code>create-service</code> or <code>update-service</code>, the default
      * is <code>DISABLED</code>. </p> </li> <li> <p>When the service
      * <code>deploymentController</code> is <code>ECS</code>, the value must be
-     * <code>DISABLED</code>. </p> </li> <li> <p>When you use
-     * <code>create-service</code> or <code>update-service</code>, the default is
-     * <code>ENABLED</code>. </p> </li> </ul>
+     * <code>DISABLED</code>. </p> </li> </ul>
      */
     inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
     inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }

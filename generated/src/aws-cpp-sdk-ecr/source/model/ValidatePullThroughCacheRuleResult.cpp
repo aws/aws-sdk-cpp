@@ -55,6 +55,18 @@ ValidatePullThroughCacheRuleResult& ValidatePullThroughCacheRuleResult::operator
 
   }
 
+  if(jsonValue.ValueExists("customRoleArn"))
+  {
+    m_customRoleArn = jsonValue.GetString("customRoleArn");
+
+  }
+
+  if(jsonValue.ValueExists("upstreamRepositoryPrefix"))
+  {
+    m_upstreamRepositoryPrefix = jsonValue.GetString("upstreamRepositoryPrefix");
+
+  }
+
   if(jsonValue.ValueExists("isValid"))
   {
     m_isValid = jsonValue.GetBool("isValid");
