@@ -5,6 +5,7 @@
 
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/crt/DnsUtils.h>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Aws
                 return false;
             }
 
-            return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); });
+            return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); }) || Aws::Crt::DnsUtils::IsValidIpV6(host.c_str(), false);
         }
     }
 }
