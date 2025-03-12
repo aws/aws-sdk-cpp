@@ -61,3 +61,29 @@ TEST_F(DnsTest, TestHost)
     ASSERT_FALSE(IsValidHost("0123456789012345678901234567890123456789012345678901234567890123.com")); // 64 characters
 
 }
+
+TEST_F(DnsTest, TestIPV6)
+{
+    Aws::Vector< std::pair<Aws::String, bool> > inputs = {
+        {"2001:0db8:85a3:0000:0000:8a2e:0370:7334", true},
+        {"2001:DB8:85A3::8A2E:370:7334", true},
+        {"::ffff", true},
+        {"::", true},
+        {"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",true},
+        {"2001:db8:85a3:0:0:8a2e:370:7334",true},
+        {"2001:db8:85a3:0000:0000:8a2e:0370:7334:1", false},
+        {"2001:db8:85a3:0000", false},
+        {"2001:0db8:85a3:0000:0000:8a2e:0370:7334:", false},
+        {"g001:0db8:85a3:0000:0000:8a2e:0370:7334", false},
+        {"2001:db8::85a3::1", false},
+        {":2001:db8:85a3:0000:0000:8a2e:0370:7334", false},
+        {"0:0:0:0:0:0:0:0", true},
+        {"2001:db8::", true}
+    };
+
+    for(auto t : inputs)
+    {
+        ASSERT_EQ(IsValidHost(t.first), t.second);
+    }
+
+}
