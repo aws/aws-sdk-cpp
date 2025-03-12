@@ -19,7 +19,7 @@ namespace RateLimits {
 /**
  * High precision rate limiter. If you need to limit your bandwidth by a budget, this is very likely the implementation you want.
  */
-template <typename CLOCK = std::chrono::high_resolution_clock, typename DUR = std::chrono::seconds, bool RENORMALIZE_RATE_CHANGES = true>
+template <typename CLOCK = std::chrono::steady_clock, typename DUR = std::chrono::seconds, bool RENORMALIZE_RATE_CHANGES = true>
 class DefaultRateLimiter : public RateLimiterInterface {
  public:
   using Base = RateLimiterInterface;
