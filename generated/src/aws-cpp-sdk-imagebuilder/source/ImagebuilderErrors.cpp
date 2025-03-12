@@ -83,7 +83,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

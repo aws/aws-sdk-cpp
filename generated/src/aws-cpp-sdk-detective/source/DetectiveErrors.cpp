@@ -60,7 +60,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DetectiveErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {

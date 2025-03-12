@@ -46,7 +46,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelsV2Errors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelsV2Errors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {

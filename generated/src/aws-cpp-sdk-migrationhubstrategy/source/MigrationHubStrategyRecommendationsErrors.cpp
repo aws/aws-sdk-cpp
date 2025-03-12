@@ -39,11 +39,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == DEPENDENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::DEPENDENCY), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::DEPENDENCY), RetryableType::RETRYABLE);
   }
   else if (hashCode == SERVICE_LINKED_ROLE_LOCK_CLIENT_HASH)
   {

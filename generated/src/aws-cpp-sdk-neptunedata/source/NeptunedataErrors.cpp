@@ -311,7 +311,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == CANCELLED_BY_USER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CANCELLED_BY_USER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CANCELLED_BY_USER), RetryableType::RETRYABLE);
   }
   else if (hashCode == STREAM_RECORDS_NOT_FOUND_HASH)
   {
@@ -347,7 +347,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == SERVER_SHUTDOWN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::SERVER_SHUTDOWN), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::SERVER_SHUTDOWN), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
