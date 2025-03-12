@@ -106,7 +106,7 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_keyTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
+      oStream << location << index << locationValue << ".KeyType=" << StringUtils::URLEncode(KeyTypeMapper::GetNameForKeyType(m_keyType)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -150,7 +150,7 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_keyTypeHasBeenSet)
   {
-      oStream << location << ".KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
+      oStream << location << ".KeyType=" << StringUtils::URLEncode(KeyTypeMapper::GetNameForKeyType(m_keyType)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -158,7 +158,7 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

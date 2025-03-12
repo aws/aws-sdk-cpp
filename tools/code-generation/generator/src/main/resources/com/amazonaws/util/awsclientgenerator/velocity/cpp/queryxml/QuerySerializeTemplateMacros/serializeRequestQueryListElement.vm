@@ -1,0 +1,58 @@
+##-------------------- serializeRequestQueryListElement macro
+#macro( serializeRequestQueryListElement $spaces $member $location $memberVarName )
+##  // /* --- the actual shape member is $member; */
+##  // /* --- the actual shape is $member.shape; --- */
+##  // /* --- list member: ${member.shape.listMember} */
+#set($macro.spaces = "${spaces}")
+#if($metadata.findFirstSupportedProtocol() != "ec2")
+#set($macro.spaces = "${macro.spaces}  ")
+    if (${memberVarName}.empty())
+    {
+      ss << "${location}=&";
+    }
+    else
+    {
+#end
+  ${macro.spaces}unsigned ${varName}Count = 1;
+  ${macro.spaces}for(auto& item : $memberVarName)
+  ${macro.spaces}{
+#set($macro.listLocation = $location)
+#if($member.shape.flattened)
+#if($member.shape.listMember.queryName)
+#set($macro.listLocation = $member.shape.listMember.queryName)
+#elseif($member.shape.listMember.locationName)
+#set($macro.listLocation = $member.shape.listMember.locationName)
+#if($metadata.findFirstSupportedProtocol() == "ec2")
+#set($macro.listLocation = $CppViewHelper.capitalizeFirstChar($macro.listLocation))
+#end
+#else
+#set($macro.listLocation = $location)
+#end
+#else
+#if($member.queryName)
+#set($macro.listLocation = $member.queryName)
+#elseif($member.locationName)
+#set($macro.listLocation = $member.locationName)
+#if($metadata.findFirstSupportedProtocol() == "ec2")
+#set($macro.listLocation = $CppViewHelper.capitalizeFirstChar($macro.listLocation))
+#end
+#elseif($metadata.findFirstSupportedProtocol() == "ec2")
+#set($macro.listLocation = $location)
+#elseif($member.shape.listMember.locationName)
+#set($macro.listLocation = $location + "." + $member.shape.listMember.locationName)
+#else
+#set($macro.listLocation = $location + ".member")
+#end
+#end
+#if($member.shape.listMember.shape.structure)
+  ${macro.spaces}  item.OutputToStream(ss, "${macro.listLocation}.", ${varName}Count, "");
+#else
+  ${macro.spaces}  ss << "${macro.listLocation}." << ${varName}Count << "="
+  ${macro.spaces}      << #serializeQuerySingleElementToText($macro.spaces, $member.shape.listMember, "item") << "&";
+#end
+  ${macro.spaces}  ${varName}Count++;
+  ${macro.spaces}}
+#if($metadata.findFirstSupportedProtocol() != "ec2")
+${macro.spaces}}
+#end
+#end##macro serializeRequestQueryListElement

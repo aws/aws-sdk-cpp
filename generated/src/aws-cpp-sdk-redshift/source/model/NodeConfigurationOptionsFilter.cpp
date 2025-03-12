@@ -74,12 +74,12 @@ void NodeConfigurationOptionsFilter::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << NodeConfigurationOptionsFilterNameMapper::GetNameForNodeConfigurationOptionsFilterName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(NodeConfigurationOptionsFilterNameMapper::GetNameForNodeConfigurationOptionsFilterName(m_name)) << "&";
   }
 
   if(m_operatorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Operator=" << OperatorTypeMapper::GetNameForOperatorType(m_operator) << "&";
+      oStream << location << index << locationValue << ".Operator=" << StringUtils::URLEncode(OperatorTypeMapper::GetNameForOperatorType(m_operator)) << "&";
   }
 
   if(m_valuesHasBeenSet)
@@ -97,18 +97,18 @@ void NodeConfigurationOptionsFilter::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << NodeConfigurationOptionsFilterNameMapper::GetNameForNodeConfigurationOptionsFilterName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(NodeConfigurationOptionsFilterNameMapper::GetNameForNodeConfigurationOptionsFilterName(m_name)) << "&";
   }
   if(m_operatorHasBeenSet)
   {
-      oStream << location << ".Operator=" << OperatorTypeMapper::GetNameForOperatorType(m_operator) << "&";
+      oStream << location << ".Operator=" << StringUtils::URLEncode(OperatorTypeMapper::GetNameForOperatorType(m_operator)) << "&";
   }
   if(m_valuesHasBeenSet)
   {
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        oStream << location << ".Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Values.item." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

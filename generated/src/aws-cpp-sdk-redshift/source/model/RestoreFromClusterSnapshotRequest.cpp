@@ -248,7 +248,7 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
 
   if(m_aquaConfigurationStatusHasBeenSet)
   {
-    ss << "AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
+    ss << "AquaConfigurationStatus=" << StringUtils::URLEncode(AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus)) << "&";
   }
 
   if(m_defaultIamRoleArnHasBeenSet)

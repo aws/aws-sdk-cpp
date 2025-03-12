@@ -1,0 +1,46 @@
+##-------------------- serializeSubObjQueryMapElement macro
+#macro( serializeSubObjQueryMapElement $spaces $member $location $memberVarName $needsLocationIndex=true )
+#set($macro.lowerCaseVarName = $CppViewHelper.computeVariableName($location))
+#set($macro.mapLocationName = $memberName + ".entry")
+#if($member.locationName)
+#set($macro.mapLocationName = $member.locationName)
+#end
+#set($macro.mapKeyLocationName = "key")
+#if($member.shape.mapKey.locationName)
+#set($macro.mapKeyLocationName = $member.shape.mapKey.locationName)
+#end
+#set($macro.mapValueLocationName = "value")
+#if($member.shape.mapValue.locationName)
+#set($macro.mapValueLocationName = $member.shape.mapValue.locationName)
+#end
+#set($macro.locationIndexValue = "index << locationValue << ")
+#if(!$needsLocationIndex)
+#set($macro.locationIndexValue = "")
+#end
+  ${spaces}unsigned ${macro.lowerCaseVarName}Idx = 1;
+  ${spaces}for(auto& item : ${memberVarName})
+  ${spaces}{
+## --- MAP KEY ---
+#if($member.shape.mapKey.shape.structure)
+  ${spaces}  oStream << location << ${macro.locationIndexValue}".${macro.mapLocationName}." << ${macro.lowerCaseVarName}Idx << ".${macro.mapKeyLocationName}="
+  ${spaces}  item.first.OutputToStream(oStream, "${macro.mapLocationName}.", ${macro.lowerCaseVarName}Idx, ".${macro.mapKeyLocationName}");
+#else
+#set($mapKeyLocation = '".' + "${macro.mapLocationName}." + '"' + " << ${macro.lowerCaseVarName}Idx << " + '".' + ${macro.mapKeyLocationName} + '="' + $nl + "  ${spaces}     ")
+  ${spaces}  oStream << location << ${macro.locationIndexValue}#serializeSubObjQuerySingleElement($member.shape.mapKey, $mapKeyLocation, "item.first") << "&";
+#end
+## --- MAP VALUE ---
+#if($member.shape.mapValue.shape.structure)
+  ${spaces}  Aws::StringStream ${macro.lowerCaseVarName}Ss;
+  ${spaces}  ${macro.lowerCaseVarName}Ss << location << ${macro.locationIndexValue}".${macro.mapLocationName}." << ${macro.lowerCaseVarName}Idx << ".${macro.mapValueLocationName}";
+  ${spaces}  item.second.OutputToStream(oStream, ${macro.lowerCaseVarName}Ss.str().c_str());
+#else
+#set($macro.equals='="')
+#if($member.shape.mapValue.shape.list || $member.shape.mapValue.shape.map)
+#set($macro.equals='"')
+#end
+#set($mapValueLocation = '".' + "${macro.mapLocationName}." + '"' + " << ${macro.lowerCaseVarName}Idx << " + '".' + ${macro.mapValueLocationName} + $macro.equals + $nl + "  ${spaces}     ")
+  ${spaces}  oStream << location << ${macro.locationIndexValue}#serializeSubObjQuerySingleElement($member.shape.mapValue, $mapValueLocation, "item.second") << "&";
+#end
+  ${spaces}  ${macro.lowerCaseVarName}Idx++;
+  ${spaces}}
+#end##macro serializeSubObjQueryMapElement

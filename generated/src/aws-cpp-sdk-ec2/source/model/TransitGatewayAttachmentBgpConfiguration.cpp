@@ -103,7 +103,7 @@ void TransitGatewayAttachmentBgpConfiguration::OutputToStream(Aws::OStream& oStr
 
   if(m_bgpStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BgpStatus=" << BgpStatusMapper::GetNameForBgpStatus(m_bgpStatus) << "&";
+      oStream << location << index << locationValue << ".BgpStatus=" << StringUtils::URLEncode(BgpStatusMapper::GetNameForBgpStatus(m_bgpStatus)) << "&";
   }
 
 }
@@ -128,7 +128,7 @@ void TransitGatewayAttachmentBgpConfiguration::OutputToStream(Aws::OStream& oStr
   }
   if(m_bgpStatusHasBeenSet)
   {
-      oStream << location << ".BgpStatus=" << BgpStatusMapper::GetNameForBgpStatus(m_bgpStatus) << "&";
+      oStream << location << ".BgpStatus=" << StringUtils::URLEncode(BgpStatusMapper::GetNameForBgpStatus(m_bgpStatus)) << "&";
   }
 }
 

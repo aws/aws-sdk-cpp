@@ -1002,12 +1002,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_activityStreamModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+      oStream << location << index << locationValue << ".ActivityStreamMode=" << StringUtils::URLEncode(ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode)) << "&";
   }
 
   if(m_activityStreamStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+      oStream << location << index << locationValue << ".ActivityStreamStatus=" << StringUtils::URLEncode(ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus)) << "&";
   }
 
   if(m_activityStreamKmsKeyIdHasBeenSet)
@@ -1054,7 +1054,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << StringUtils::URLEncode(WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus)) << "&";
   }
 
   if(m_globalWriteForwardingRequestedHasBeenSet)
@@ -1106,7 +1106,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_databaseInsightsModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+      oStream << location << index << locationValue << ".DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
 
   if(m_performanceInsightsEnabledHasBeenSet)
@@ -1155,7 +1155,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_localWriteForwardingStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LocalWriteForwardingStatus=" << LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus) << "&";
+      oStream << location << index << locationValue << ".LocalWriteForwardingStatus=" << StringUtils::URLEncode(LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus)) << "&";
   }
 
   if(m_awsBackupRecoveryPointArnHasBeenSet)
@@ -1177,7 +1177,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_clusterScalabilityTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClusterScalabilityType=" << ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType) << "&";
+      oStream << location << index << locationValue << ".ClusterScalabilityType=" << StringUtils::URLEncode(ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType)) << "&";
   }
 
   if(m_certificateDetailsHasBeenSet)
@@ -1205,7 +1205,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        oStream << location << ".AvailabilityZone." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AvailabilityZones.AvailabilityZone." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_backupRetentionPeriodHasBeenSet)
@@ -1294,7 +1294,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_dBClusterOptionGroupMemberships)
       {
         Aws::StringStream dBClusterOptionGroupMembershipsSs;
-        dBClusterOptionGroupMembershipsSs << location <<  ".DBClusterOptionGroup." << dBClusterOptionGroupMembershipsIdx++;
+        dBClusterOptionGroupMembershipsSs << location << ".DBClusterOptionGroupMemberships.DBClusterOptionGroup." << dBClusterOptionGroupMembershipsIdx++;
         item.OutputToStream(oStream, dBClusterOptionGroupMembershipsSs.str().c_str());
       }
   }
@@ -1315,7 +1315,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       unsigned readReplicaIdentifiersIdx = 1;
       for(auto& item : m_readReplicaIdentifiers)
       {
-        oStream << location << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReadReplicaIdentifiers.ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_statusInfosHasBeenSet)
@@ -1324,7 +1324,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_statusInfos)
       {
         Aws::StringStream statusInfosSs;
-        statusInfosSs << location <<  ".DBClusterStatusInfo." << statusInfosIdx++;
+        statusInfosSs << location << ".StatusInfos.DBClusterStatusInfo." << statusInfosIdx++;
         item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }
@@ -1334,7 +1334,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_dBClusterMembers)
       {
         Aws::StringStream dBClusterMembersSs;
-        dBClusterMembersSs << location <<  ".DBClusterMember." << dBClusterMembersIdx++;
+        dBClusterMembersSs << location << ".DBClusterMembers.DBClusterMember." << dBClusterMembersIdx++;
         item.OutputToStream(oStream, dBClusterMembersSs.str().c_str());
       }
   }
@@ -1344,7 +1344,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << ".VpcSecurityGroups.VpcSecurityGroupMembership." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -1374,7 +1374,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_associatedRoles)
       {
         Aws::StringStream associatedRolesSs;
-        associatedRolesSs << location <<  ".DBClusterRole." << associatedRolesIdx++;
+        associatedRolesSs << location << ".AssociatedRoles.DBClusterRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
   }
@@ -1440,11 +1440,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_activityStreamModeHasBeenSet)
   {
-      oStream << location << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+      oStream << location << ".ActivityStreamMode=" << StringUtils::URLEncode(ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode)) << "&";
   }
   if(m_activityStreamStatusHasBeenSet)
   {
-      oStream << location << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+      oStream << location << ".ActivityStreamStatus=" << StringUtils::URLEncode(ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus)) << "&";
   }
   if(m_activityStreamKmsKeyIdHasBeenSet)
   {
@@ -1468,7 +1468,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_domainMemberships)
       {
         Aws::StringStream domainMembershipsSs;
-        domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
+        domainMembershipsSs << location << ".DomainMemberships.DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
   }
@@ -1478,13 +1478,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location <<  ".Tag." << tagListIdx++;
+        tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
-      oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+      oStream << location << ".GlobalWriteForwardingStatus=" << StringUtils::URLEncode(WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus)) << "&";
   }
   if(m_globalWriteForwardingRequestedHasBeenSet)
   {
@@ -1526,7 +1526,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_databaseInsightsModeHasBeenSet)
   {
-      oStream << location << ".DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+      oStream << location << ".DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
   if(m_performanceInsightsEnabledHasBeenSet)
   {
@@ -1566,7 +1566,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_localWriteForwardingStatusHasBeenSet)
   {
-      oStream << location << ".LocalWriteForwardingStatus=" << LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus) << "&";
+      oStream << location << ".LocalWriteForwardingStatus=" << StringUtils::URLEncode(LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus)) << "&";
   }
   if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
@@ -1584,7 +1584,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_clusterScalabilityTypeHasBeenSet)
   {
-      oStream << location << ".ClusterScalabilityType=" << ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType) << "&";
+      oStream << location << ".ClusterScalabilityType=" << StringUtils::URLEncode(ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType)) << "&";
   }
   if(m_certificateDetailsHasBeenSet)
   {

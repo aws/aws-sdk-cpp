@@ -134,7 +134,7 @@ void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_statusCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StatusCode=" << StatusCodeMapper::GetNameForStatusCode(m_statusCode) << "&";
+      oStream << location << index << locationValue << ".StatusCode=" << StringUtils::URLEncode(StatusCodeMapper::GetNameForStatusCode(m_statusCode)) << "&";
   }
 
   if(m_messagesHasBeenSet)
@@ -173,12 +173,12 @@ void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-          oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+        oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
   if(m_statusCodeHasBeenSet)
   {
-      oStream << location << ".StatusCode=" << StatusCodeMapper::GetNameForStatusCode(m_statusCode) << "&";
+      oStream << location << ".StatusCode=" << StringUtils::URLEncode(StatusCodeMapper::GetNameForStatusCode(m_statusCode)) << "&";
   }
   if(m_messagesHasBeenSet)
   {
@@ -186,7 +186,7 @@ void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_messages)
       {
         Aws::StringStream messagesSs;
-        messagesSs << location <<  ".Messages.member." << messagesIdx++;
+        messagesSs << location << ".Messages.member." << messagesIdx++;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }

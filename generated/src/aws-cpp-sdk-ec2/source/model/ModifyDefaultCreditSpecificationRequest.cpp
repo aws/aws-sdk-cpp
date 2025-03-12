@@ -30,7 +30,7 @@ Aws::String ModifyDefaultCreditSpecificationRequest::SerializePayload() const
 
   if(m_instanceFamilyHasBeenSet)
   {
-    ss << "InstanceFamily=" << UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily) << "&";
+    ss << "InstanceFamily=" << StringUtils::URLEncode(UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily)) << "&";
   }
 
   if(m_cpuCreditsHasBeenSet)

@@ -77,7 +77,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_aZModeHasBeenSet)
   {
-    ss << "AZMode=" << AZModeMapper::GetNameForAZMode(m_aZMode) << "&";
+    ss << "AZMode=" << StringUtils::URLEncode(AZModeMapper::GetNameForAZMode(m_aZMode)) << "&";
   }
 
   if(m_newAvailabilityZonesHasBeenSet)
@@ -196,7 +196,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_authTokenUpdateStrategyHasBeenSet)
   {
-    ss << "AuthTokenUpdateStrategy=" << AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy) << "&";
+    ss << "AuthTokenUpdateStrategy=" << StringUtils::URLEncode(AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy)) << "&";
   }
 
   if(m_logDeliveryConfigurationsHasBeenSet)
@@ -218,7 +218,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_ipDiscoveryHasBeenSet)
   {
-    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+    ss << "IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
   ss << "Version=2015-02-02";

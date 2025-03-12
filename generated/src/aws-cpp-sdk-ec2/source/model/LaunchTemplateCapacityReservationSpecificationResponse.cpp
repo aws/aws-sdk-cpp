@@ -60,7 +60,7 @@ void LaunchTemplateCapacityReservationSpecificationResponse::OutputToStream(Aws:
 {
   if(m_capacityReservationPreferenceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CapacityReservationPreference=" << CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference) << "&";
+      oStream << location << index << locationValue << ".CapacityReservationPreference=" << StringUtils::URLEncode(CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference)) << "&";
   }
 
   if(m_capacityReservationTargetHasBeenSet)
@@ -76,7 +76,7 @@ void LaunchTemplateCapacityReservationSpecificationResponse::OutputToStream(Aws:
 {
   if(m_capacityReservationPreferenceHasBeenSet)
   {
-      oStream << location << ".CapacityReservationPreference=" << CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference) << "&";
+      oStream << location << ".CapacityReservationPreference=" << StringUtils::URLEncode(CapacityReservationPreferenceMapper::GetNameForCapacityReservationPreference(m_capacityReservationPreference)) << "&";
   }
   if(m_capacityReservationTargetHasBeenSet)
   {

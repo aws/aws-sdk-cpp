@@ -108,12 +108,12 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_actionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Action=" << StackSetOperationActionMapper::GetNameForStackSetOperationAction(m_action) << "&";
+      oStream << location << index << locationValue << ".Action=" << StringUtils::URLEncode(StackSetOperationActionMapper::GetNameForStackSetOperationAction(m_action)) << "&";
   }
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StackSetOperationStatusMapper::GetNameForStackSetOperationStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StackSetOperationStatusMapper::GetNameForStackSetOperationStatus(m_status)) << "&";
   }
 
   if(m_creationTimestampHasBeenSet)
@@ -155,11 +155,11 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_actionHasBeenSet)
   {
-      oStream << location << ".Action=" << StackSetOperationActionMapper::GetNameForStackSetOperationAction(m_action) << "&";
+      oStream << location << ".Action=" << StringUtils::URLEncode(StackSetOperationActionMapper::GetNameForStackSetOperationAction(m_action)) << "&";
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StackSetOperationStatusMapper::GetNameForStackSetOperationStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StackSetOperationStatusMapper::GetNameForStackSetOperationStatus(m_status)) << "&";
   }
   if(m_creationTimestampHasBeenSet)
   {

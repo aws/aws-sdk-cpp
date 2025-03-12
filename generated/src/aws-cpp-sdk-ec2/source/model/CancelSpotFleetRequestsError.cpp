@@ -60,7 +60,7 @@ void CancelSpotFleetRequestsError::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << CancelBatchErrorCodeMapper::GetNameForCancelBatchErrorCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(CancelBatchErrorCodeMapper::GetNameForCancelBatchErrorCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void CancelSpotFleetRequestsError::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << CancelBatchErrorCodeMapper::GetNameForCancelBatchErrorCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(CancelBatchErrorCodeMapper::GetNameForCancelBatchErrorCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

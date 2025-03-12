@@ -25,7 +25,7 @@ Aws::String DescribeVolumeAttributeRequest::SerializePayload() const
   ss << "Action=DescribeVolumeAttribute&";
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << VolumeAttributeNameMapper::GetNameForVolumeAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(VolumeAttributeNameMapper::GetNameForVolumeAttributeName(m_attribute)) << "&";
   }
 
   if(m_volumeIdHasBeenSet)

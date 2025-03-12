@@ -60,7 +60,7 @@ void StopAction::OutputToStream(Aws::OStream& oStream, const char* location, uns
 {
   if(m_scopeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Scope=" << StopScopeMapper::GetNameForStopScope(m_scope) << "&";
+      oStream << location << index << locationValue << ".Scope=" << StringUtils::URLEncode(StopScopeMapper::GetNameForStopScope(m_scope)) << "&";
   }
 
   if(m_topicArnHasBeenSet)
@@ -74,7 +74,7 @@ void StopAction::OutputToStream(Aws::OStream& oStream, const char* location) con
 {
   if(m_scopeHasBeenSet)
   {
-      oStream << location << ".Scope=" << StopScopeMapper::GetNameForStopScope(m_scope) << "&";
+      oStream << location << ".Scope=" << StringUtils::URLEncode(StopScopeMapper::GetNameForStopScope(m_scope)) << "&";
   }
   if(m_topicArnHasBeenSet)
   {

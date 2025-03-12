@@ -53,7 +53,7 @@ void AvailabilityZoneDistribution::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_capacityDistributionStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CapacityDistributionStrategy=" << CapacityDistributionStrategyMapper::GetNameForCapacityDistributionStrategy(m_capacityDistributionStrategy) << "&";
+      oStream << location << index << locationValue << ".CapacityDistributionStrategy=" << StringUtils::URLEncode(CapacityDistributionStrategyMapper::GetNameForCapacityDistributionStrategy(m_capacityDistributionStrategy)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void AvailabilityZoneDistribution::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_capacityDistributionStrategyHasBeenSet)
   {
-      oStream << location << ".CapacityDistributionStrategy=" << CapacityDistributionStrategyMapper::GetNameForCapacityDistributionStrategy(m_capacityDistributionStrategy) << "&";
+      oStream << location << ".CapacityDistributionStrategy=" << StringUtils::URLEncode(CapacityDistributionStrategyMapper::GetNameForCapacityDistributionStrategy(m_capacityDistributionStrategy)) << "&";
   }
 }
 

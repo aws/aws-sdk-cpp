@@ -78,7 +78,7 @@ void InsightRuleContributorDatapoint::OutputToStream(Aws::OStream& oStream, cons
   }
   if(m_approximateValueHasBeenSet)
   {
-        oStream << location << ".ApproximateValue=" << StringUtils::URLEncode(m_approximateValue) << "&";
+      oStream << location << ".ApproximateValue=" << StringUtils::URLEncode(m_approximateValue) << "&";
   }
 }
 

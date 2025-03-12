@@ -37,7 +37,7 @@ Aws::String DescribeConfigurationSetRequest::SerializePayload() const
       for(auto& item : m_configurationSetAttributeNames)
       {
         ss << "ConfigurationSetAttributeNames.member." << configurationSetAttributeNamesCount << "="
-            << StringUtils::URLEncode(ConfigurationSetAttributeMapper::GetNameForConfigurationSetAttribute(item).c_str()) << "&";
+            << StringUtils::URLEncode(ConfigurationSetAttributeMapper::GetNameForConfigurationSetAttribute(item)) << "&";
         configurationSetAttributeNamesCount++;
       }
     }

@@ -91,7 +91,7 @@ void NodeConfigurationOption::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_modeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Mode=" << ModeMapper::GetNameForMode(m_mode) << "&";
+      oStream << location << index << locationValue << ".Mode=" << StringUtils::URLEncode(ModeMapper::GetNameForMode(m_mode)) << "&";
   }
 
 }
@@ -108,11 +108,11 @@ void NodeConfigurationOption::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_estimatedDiskUtilizationPercentHasBeenSet)
   {
-        oStream << location << ".EstimatedDiskUtilizationPercent=" << StringUtils::URLEncode(m_estimatedDiskUtilizationPercent) << "&";
+      oStream << location << ".EstimatedDiskUtilizationPercent=" << StringUtils::URLEncode(m_estimatedDiskUtilizationPercent) << "&";
   }
   if(m_modeHasBeenSet)
   {
-      oStream << location << ".Mode=" << ModeMapper::GetNameForMode(m_mode) << "&";
+      oStream << location << ".Mode=" << StringUtils::URLEncode(ModeMapper::GetNameForMode(m_mode)) << "&";
   }
 }
 

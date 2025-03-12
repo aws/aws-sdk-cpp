@@ -173,7 +173,7 @@ void NodeGroupConfiguration::OutputToStream(Aws::OStream& oStream, const char* l
       unsigned replicaAvailabilityZonesIdx = 1;
       for(auto& item : m_replicaAvailabilityZones)
       {
-        oStream << location << ".AvailabilityZone." << replicaAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReplicaAvailabilityZones.AvailabilityZone." << replicaAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_primaryOutpostArnHasBeenSet)
@@ -185,7 +185,7 @@ void NodeGroupConfiguration::OutputToStream(Aws::OStream& oStream, const char* l
       unsigned replicaOutpostArnsIdx = 1;
       for(auto& item : m_replicaOutpostArns)
       {
-        oStream << location << ".OutpostArn." << replicaOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ReplicaOutpostArns.OutpostArn." << replicaOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

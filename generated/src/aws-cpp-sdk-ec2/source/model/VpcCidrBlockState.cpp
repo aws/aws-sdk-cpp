@@ -60,7 +60,7 @@ void VpcCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -74,7 +74,7 @@ void VpcCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

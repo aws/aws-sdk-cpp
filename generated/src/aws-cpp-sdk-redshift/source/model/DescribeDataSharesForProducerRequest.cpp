@@ -31,7 +31,7 @@ Aws::String DescribeDataSharesForProducerRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << DataShareStatusForProducerMapper::GetNameForDataShareStatusForProducer(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(DataShareStatusForProducerMapper::GetNameForDataShareStatusForProducer(m_status)) << "&";
   }
 
   if(m_maxRecordsHasBeenSet)

@@ -60,7 +60,7 @@ void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name)) << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -74,7 +74,7 @@ void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name)) << "&";
   }
   if(m_statusHasBeenSet)
   {

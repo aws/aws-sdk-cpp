@@ -82,13 +82,12 @@ void NestedStructWithMap::OutputToStream(Aws::OStream& oStream, const char* loca
       unsigned mapArgIdx = 1;
       for(auto& item : m_mapArg)
       {
-        oStream << location << ".MapArg.entry."  << mapArgIdx << ".key="
+        oStream << location << ".MapArg.entry." << mapArgIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".MapArg.entry." << mapArgIdx << ".value="
+        oStream << location << ".MapArg.entry." << mapArgIdx << ".value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         mapArgIdx++;
       }
-
   }
 }
 

@@ -59,7 +59,7 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
 
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
-    ss << "ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+    ss << "ExcessCapacityTerminationPolicy=" << StringUtils::URLEncode(ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy)) << "&";
   }
 
   ss << "Version=2016-11-15";

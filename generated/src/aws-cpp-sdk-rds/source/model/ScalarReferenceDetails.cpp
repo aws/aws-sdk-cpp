@@ -62,7 +62,7 @@ void ScalarReferenceDetails::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_valueHasBeenSet)
   {
-        oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+      oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
 }
 

@@ -90,7 +90,7 @@ void InferenceAcceleratorInfo::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_accelerators)
       {
         Aws::StringStream acceleratorsSs;
-        acceleratorsSs << location <<  ".Accelerators." << acceleratorsIdx++;
+        acceleratorsSs << location << ".Accelerators." << acceleratorsIdx++;
         item.OutputToStream(oStream, acceleratorsSs.str().c_str());
       }
   }

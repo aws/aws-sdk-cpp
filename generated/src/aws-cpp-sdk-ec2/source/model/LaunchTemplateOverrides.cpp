@@ -97,7 +97,7 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_spotPriceHasBeenSet)
@@ -138,7 +138,7 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_spotPriceHasBeenSet)
   {
@@ -154,11 +154,11 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_weightedCapacityHasBeenSet)
   {
-        oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
+      oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
   }
   if(m_priorityHasBeenSet)
   {
-        oStream << location << ".Priority=" << StringUtils::URLEncode(m_priority) << "&";
+      oStream << location << ".Priority=" << StringUtils::URLEncode(m_priority) << "&";
   }
   if(m_instanceRequirementsHasBeenSet)
   {

@@ -157,7 +157,7 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_ipamScopeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpamScopeType=" << IpamScopeTypeMapper::GetNameForIpamScopeType(m_ipamScopeType) << "&";
+      oStream << location << index << locationValue << ".IpamScopeType=" << StringUtils::URLEncode(IpamScopeTypeMapper::GetNameForIpamScopeType(m_ipamScopeType)) << "&";
   }
 
   if(m_isDefaultHasBeenSet)
@@ -177,7 +177,7 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IpamScopeStateMapper::GetNameForIpamScopeState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamScopeStateMapper::GetNameForIpamScopeState(m_state)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -217,7 +217,7 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_ipamScopeTypeHasBeenSet)
   {
-      oStream << location << ".IpamScopeType=" << IpamScopeTypeMapper::GetNameForIpamScopeType(m_ipamScopeType) << "&";
+      oStream << location << ".IpamScopeType=" << StringUtils::URLEncode(IpamScopeTypeMapper::GetNameForIpamScopeType(m_ipamScopeType)) << "&";
   }
   if(m_isDefaultHasBeenSet)
   {
@@ -233,7 +233,7 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IpamScopeStateMapper::GetNameForIpamScopeState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IpamScopeStateMapper::GetNameForIpamScopeState(m_state)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -241,7 +241,7 @@ void IpamScope::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

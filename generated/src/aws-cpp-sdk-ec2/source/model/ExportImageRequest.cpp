@@ -41,7 +41,7 @@ Aws::String ExportImageRequest::SerializePayload() const
 
   if(m_diskImageFormatHasBeenSet)
   {
-    ss << "DiskImageFormat=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat) << "&";
+    ss << "DiskImageFormat=" << StringUtils::URLEncode(DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

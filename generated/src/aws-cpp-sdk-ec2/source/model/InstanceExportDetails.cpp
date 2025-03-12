@@ -65,7 +65,7 @@ void InstanceExportDetails::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_targetEnvironmentHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
+      oStream << location << index << locationValue << ".TargetEnvironment=" << StringUtils::URLEncode(ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void InstanceExportDetails::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_targetEnvironmentHasBeenSet)
   {
-      oStream << location << ".TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
+      oStream << location << ".TargetEnvironment=" << StringUtils::URLEncode(ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment)) << "&";
   }
 }
 

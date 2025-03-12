@@ -112,7 +112,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_tlsPolicyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
+      oStream << location << index << locationValue << ".TlsPolicy=" << StringUtils::URLEncode(TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy)) << "&";
   }
 
   if(m_recipientsHasBeenSet)
@@ -154,7 +154,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_tlsPolicyHasBeenSet)
   {
-      oStream << location << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
+      oStream << location << ".TlsPolicy=" << StringUtils::URLEncode(TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy)) << "&";
   }
   if(m_recipientsHasBeenSet)
   {
@@ -170,7 +170,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_actions)
       {
         Aws::StringStream actionsSs;
-        actionsSs << location <<  ".Actions.member." << actionsIdx++;
+        actionsSs << location << ".Actions.member." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }

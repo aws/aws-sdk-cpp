@@ -37,17 +37,17 @@ Aws::String CreateVerifiedAccessTrustProviderRequest::SerializePayload() const
   ss << "Action=CreateVerifiedAccessTrustProvider&";
   if(m_trustProviderTypeHasBeenSet)
   {
-    ss << "TrustProviderType=" << TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType) << "&";
+    ss << "TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType)) << "&";
   }
 
   if(m_userTrustProviderTypeHasBeenSet)
   {
-    ss << "UserTrustProviderType=" << UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType) << "&";
+    ss << "UserTrustProviderType=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
   }
 
   if(m_deviceTrustProviderTypeHasBeenSet)
   {
-    ss << "DeviceTrustProviderType=" << DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType) << "&";
+    ss << "DeviceTrustProviderType=" << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
   }
 
   if(m_oidcOptionsHasBeenSet)

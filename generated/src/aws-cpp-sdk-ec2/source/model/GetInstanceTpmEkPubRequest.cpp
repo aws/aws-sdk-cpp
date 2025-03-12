@@ -32,12 +32,12 @@ Aws::String GetInstanceTpmEkPubRequest::SerializePayload() const
 
   if(m_keyTypeHasBeenSet)
   {
-    ss << "KeyType=" << EkPubKeyTypeMapper::GetNameForEkPubKeyType(m_keyType) << "&";
+    ss << "KeyType=" << StringUtils::URLEncode(EkPubKeyTypeMapper::GetNameForEkPubKeyType(m_keyType)) << "&";
   }
 
   if(m_keyFormatHasBeenSet)
   {
-    ss << "KeyFormat=" << EkPubKeyFormatMapper::GetNameForEkPubKeyFormat(m_keyFormat) << "&";
+    ss << "KeyFormat=" << StringUtils::URLEncode(EkPubKeyFormatMapper::GetNameForEkPubKeyFormat(m_keyFormat)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

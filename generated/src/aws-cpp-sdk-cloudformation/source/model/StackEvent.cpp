@@ -204,7 +204,7 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_resourceStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
+      oStream << location << index << locationValue << ".ResourceStatus=" << StringUtils::URLEncode(ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus)) << "&";
   }
 
   if(m_resourceStatusReasonHasBeenSet)
@@ -229,7 +229,7 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_hookStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HookStatus=" << HookStatusMapper::GetNameForHookStatus(m_hookStatus) << "&";
+      oStream << location << index << locationValue << ".HookStatus=" << StringUtils::URLEncode(HookStatusMapper::GetNameForHookStatus(m_hookStatus)) << "&";
   }
 
   if(m_hookStatusReasonHasBeenSet)
@@ -239,17 +239,17 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_hookInvocationPointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HookInvocationPoint=" << HookInvocationPointMapper::GetNameForHookInvocationPoint(m_hookInvocationPoint) << "&";
+      oStream << location << index << locationValue << ".HookInvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_hookInvocationPoint)) << "&";
   }
 
   if(m_hookFailureModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HookFailureMode=" << HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode) << "&";
+      oStream << location << index << locationValue << ".HookFailureMode=" << StringUtils::URLEncode(HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode)) << "&";
   }
 
   if(m_detailedStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
+      oStream << location << index << locationValue << ".DetailedStatus=" << StringUtils::URLEncode(DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus)) << "&";
   }
 
 }
@@ -286,7 +286,7 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_resourceStatusHasBeenSet)
   {
-      oStream << location << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
+      oStream << location << ".ResourceStatus=" << StringUtils::URLEncode(ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus)) << "&";
   }
   if(m_resourceStatusReasonHasBeenSet)
   {
@@ -306,7 +306,7 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_hookStatusHasBeenSet)
   {
-      oStream << location << ".HookStatus=" << HookStatusMapper::GetNameForHookStatus(m_hookStatus) << "&";
+      oStream << location << ".HookStatus=" << StringUtils::URLEncode(HookStatusMapper::GetNameForHookStatus(m_hookStatus)) << "&";
   }
   if(m_hookStatusReasonHasBeenSet)
   {
@@ -314,15 +314,15 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_hookInvocationPointHasBeenSet)
   {
-      oStream << location << ".HookInvocationPoint=" << HookInvocationPointMapper::GetNameForHookInvocationPoint(m_hookInvocationPoint) << "&";
+      oStream << location << ".HookInvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_hookInvocationPoint)) << "&";
   }
   if(m_hookFailureModeHasBeenSet)
   {
-      oStream << location << ".HookFailureMode=" << HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode) << "&";
+      oStream << location << ".HookFailureMode=" << StringUtils::URLEncode(HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode)) << "&";
   }
   if(m_detailedStatusHasBeenSet)
   {
-      oStream << location << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
+      oStream << location << ".DetailedStatus=" << StringUtils::URLEncode(DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus)) << "&";
   }
 }
 

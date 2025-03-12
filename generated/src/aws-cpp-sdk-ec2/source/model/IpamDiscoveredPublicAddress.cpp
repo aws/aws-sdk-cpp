@@ -212,17 +212,17 @@ void IpamDiscoveredPublicAddress::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_associationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AssociationStatus=" << IpamPublicAddressAssociationStatusMapper::GetNameForIpamPublicAddressAssociationStatus(m_associationStatus) << "&";
+      oStream << location << index << locationValue << ".AssociationStatus=" << StringUtils::URLEncode(IpamPublicAddressAssociationStatusMapper::GetNameForIpamPublicAddressAssociationStatus(m_associationStatus)) << "&";
   }
 
   if(m_addressTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AddressType=" << IpamPublicAddressTypeMapper::GetNameForIpamPublicAddressType(m_addressType) << "&";
+      oStream << location << index << locationValue << ".AddressType=" << StringUtils::URLEncode(IpamPublicAddressTypeMapper::GetNameForIpamPublicAddressType(m_addressType)) << "&";
   }
 
   if(m_serviceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Service=" << IpamPublicAddressAwsServiceMapper::GetNameForIpamPublicAddressAwsService(m_service) << "&";
+      oStream << location << index << locationValue << ".Service=" << StringUtils::URLEncode(IpamPublicAddressAwsServiceMapper::GetNameForIpamPublicAddressAwsService(m_service)) << "&";
   }
 
   if(m_serviceResourceHasBeenSet)
@@ -314,15 +314,15 @@ void IpamDiscoveredPublicAddress::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_associationStatusHasBeenSet)
   {
-      oStream << location << ".AssociationStatus=" << IpamPublicAddressAssociationStatusMapper::GetNameForIpamPublicAddressAssociationStatus(m_associationStatus) << "&";
+      oStream << location << ".AssociationStatus=" << StringUtils::URLEncode(IpamPublicAddressAssociationStatusMapper::GetNameForIpamPublicAddressAssociationStatus(m_associationStatus)) << "&";
   }
   if(m_addressTypeHasBeenSet)
   {
-      oStream << location << ".AddressType=" << IpamPublicAddressTypeMapper::GetNameForIpamPublicAddressType(m_addressType) << "&";
+      oStream << location << ".AddressType=" << StringUtils::URLEncode(IpamPublicAddressTypeMapper::GetNameForIpamPublicAddressType(m_addressType)) << "&";
   }
   if(m_serviceHasBeenSet)
   {
-      oStream << location << ".Service=" << IpamPublicAddressAwsServiceMapper::GetNameForIpamPublicAddressAwsService(m_service) << "&";
+      oStream << location << ".Service=" << StringUtils::URLEncode(IpamPublicAddressAwsServiceMapper::GetNameForIpamPublicAddressAwsService(m_service)) << "&";
   }
   if(m_serviceResourceHasBeenSet)
   {
@@ -368,7 +368,7 @@ void IpamDiscoveredPublicAddress::OutputToStream(Aws::OStream& oStream, const ch
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".SecurityGroupSet." << securityGroupsIdx++;
+        securityGroupsSs << location << ".SecurityGroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }

@@ -40,7 +40,7 @@ Aws::String DescribeServiceUpdatesRequest::SerializePayload() const
       for(auto& item : m_serviceUpdateStatus)
       {
         ss << "ServiceUpdateStatus.member." << serviceUpdateStatusCount << "="
-            << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(ServiceUpdateStatusMapper::GetNameForServiceUpdateStatus(item)) << "&";
         serviceUpdateStatusCount++;
       }
     }

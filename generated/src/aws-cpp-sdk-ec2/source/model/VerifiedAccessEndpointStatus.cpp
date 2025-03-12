@@ -60,7 +60,7 @@ void VerifiedAccessEndpointStatus::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << VerifiedAccessEndpointStatusCodeMapper::GetNameForVerifiedAccessEndpointStatusCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(VerifiedAccessEndpointStatusCodeMapper::GetNameForVerifiedAccessEndpointStatusCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void VerifiedAccessEndpointStatus::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << VerifiedAccessEndpointStatusCodeMapper::GetNameForVerifiedAccessEndpointStatusCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(VerifiedAccessEndpointStatusCodeMapper::GetNameForVerifiedAccessEndpointStatusCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

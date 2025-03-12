@@ -65,7 +65,7 @@ void SubnetAssociation::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayMulitcastDomainAssociationStateMapper::GetNameForTransitGatewayMulitcastDomainAssociationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayMulitcastDomainAssociationStateMapper::GetNameForTransitGatewayMulitcastDomainAssociationState(m_state)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void SubnetAssociation::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayMulitcastDomainAssociationStateMapper::GetNameForTransitGatewayMulitcastDomainAssociationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayMulitcastDomainAssociationStateMapper::GetNameForTransitGatewayMulitcastDomainAssociationState(m_state)) << "&";
   }
 }
 

@@ -30,7 +30,7 @@ Aws::String AllocateAddressRequest::SerializePayload() const
   ss << "Action=AllocateAddress&";
   if(m_domainHasBeenSet)
   {
-    ss << "Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
+    ss << "Domain=" << StringUtils::URLEncode(DomainTypeMapper::GetNameForDomainType(m_domain)) << "&";
   }
 
   if(m_addressHasBeenSet)

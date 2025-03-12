@@ -53,7 +53,7 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
 
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-    ss << "InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+    ss << "InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 
   if(m_dryRunHasBeenSet)
@@ -78,7 +78,7 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
 
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
   }
 
   if(m_validFromHasBeenSet)

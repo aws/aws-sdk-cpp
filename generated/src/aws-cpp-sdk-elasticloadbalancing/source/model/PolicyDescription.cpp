@@ -109,7 +109,7 @@ void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_policyAttributeDescriptions)
       {
         Aws::StringStream policyAttributeDescriptionsSs;
-        policyAttributeDescriptionsSs << location <<  ".PolicyAttributeDescriptions.member." << policyAttributeDescriptionsIdx++;
+        policyAttributeDescriptionsSs << location << ".PolicyAttributeDescriptions.member." << policyAttributeDescriptionsIdx++;
         item.OutputToStream(oStream, policyAttributeDescriptionsSs.str().c_str());
       }
   }

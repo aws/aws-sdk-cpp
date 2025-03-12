@@ -126,7 +126,7 @@ void DoubleOptions::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_defaultValueHasBeenSet)
   {
-        oStream << location << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue) << "&";
+      oStream << location << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue) << "&";
   }
   if(m_sourceFieldHasBeenSet)
   {

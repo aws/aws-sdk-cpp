@@ -72,7 +72,7 @@ void AnalysisScheme::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_analysisSchemeLanguageHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AnalysisSchemeLanguage=" << AnalysisSchemeLanguageMapper::GetNameForAnalysisSchemeLanguage(m_analysisSchemeLanguage) << "&";
+      oStream << location << index << locationValue << ".AnalysisSchemeLanguage=" << StringUtils::URLEncode(AnalysisSchemeLanguageMapper::GetNameForAnalysisSchemeLanguage(m_analysisSchemeLanguage)) << "&";
   }
 
   if(m_analysisOptionsHasBeenSet)
@@ -92,7 +92,7 @@ void AnalysisScheme::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_analysisSchemeLanguageHasBeenSet)
   {
-      oStream << location << ".AnalysisSchemeLanguage=" << AnalysisSchemeLanguageMapper::GetNameForAnalysisSchemeLanguage(m_analysisSchemeLanguage) << "&";
+      oStream << location << ".AnalysisSchemeLanguage=" << StringUtils::URLEncode(AnalysisSchemeLanguageMapper::GetNameForAnalysisSchemeLanguage(m_analysisSchemeLanguage)) << "&";
   }
   if(m_analysisOptionsHasBeenSet)
   {

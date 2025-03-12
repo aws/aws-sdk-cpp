@@ -146,7 +146,7 @@ void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_conditions)
       {
         Aws::StringStream conditionsSs;
-        conditionsSs << location <<  ".Conditions.member." << conditionsIdx++;
+        conditionsSs << location << ".Conditions.member." << conditionsIdx++;
         item.OutputToStream(oStream, conditionsSs.str().c_str());
       }
   }
@@ -156,7 +156,7 @@ void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_actions)
       {
         Aws::StringStream actionsSs;
-        actionsSs << location <<  ".Actions.member." << actionsIdx++;
+        actionsSs << location << ".Actions.member." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }

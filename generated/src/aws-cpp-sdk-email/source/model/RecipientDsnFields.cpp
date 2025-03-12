@@ -106,7 +106,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_actionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Action=" << DsnActionMapper::GetNameForDsnAction(m_action) << "&";
+      oStream << location << index << locationValue << ".Action=" << StringUtils::URLEncode(DsnActionMapper::GetNameForDsnAction(m_action)) << "&";
   }
 
   if(m_remoteMtaHasBeenSet)
@@ -150,7 +150,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_actionHasBeenSet)
   {
-      oStream << location << ".Action=" << DsnActionMapper::GetNameForDsnAction(m_action) << "&";
+      oStream << location << ".Action=" << StringUtils::URLEncode(DsnActionMapper::GetNameForDsnAction(m_action)) << "&";
   }
   if(m_remoteMtaHasBeenSet)
   {
@@ -174,7 +174,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_extensionFields)
       {
         Aws::StringStream extensionFieldsSs;
-        extensionFieldsSs << location <<  ".ExtensionFields.member." << extensionFieldsIdx++;
+        extensionFieldsSs << location << ".ExtensionFields.member." << extensionFieldsIdx++;
         item.OutputToStream(oStream, extensionFieldsSs.str().c_str());
       }
   }

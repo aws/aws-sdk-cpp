@@ -30,7 +30,7 @@ Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() 
 
   if(m_notificationTypeHasBeenSet)
   {
-    ss << "NotificationType=" << NotificationTypeMapper::GetNameForNotificationType(m_notificationType) << "&";
+    ss << "NotificationType=" << StringUtils::URLEncode(NotificationTypeMapper::GetNameForNotificationType(m_notificationType)) << "&";
   }
 
   if(m_enabledHasBeenSet)

@@ -44,7 +44,7 @@ Aws::String CreateTrafficMirrorFilterRuleRequest::SerializePayload() const
 
   if(m_trafficDirectionHasBeenSet)
   {
-    ss << "TrafficDirection=" << TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection) << "&";
+    ss << "TrafficDirection=" << StringUtils::URLEncode(TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection)) << "&";
   }
 
   if(m_ruleNumberHasBeenSet)
@@ -54,7 +54,7 @@ Aws::String CreateTrafficMirrorFilterRuleRequest::SerializePayload() const
 
   if(m_ruleActionHasBeenSet)
   {
-    ss << "RuleAction=" << TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction) << "&";
+    ss << "RuleAction=" << StringUtils::URLEncode(TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction)) << "&";
   }
 
   if(m_destinationPortRangeHasBeenSet)

@@ -116,12 +116,12 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state)) << "&";
   }
 
   if(m_strategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
+      oStream << location << index << locationValue << ".Strategy=" << StringUtils::URLEncode(PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy)) << "&";
   }
 
   if(m_partitionCountHasBeenSet)
@@ -152,7 +152,7 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_spreadLevelHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SpreadLevel=" << SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel) << "&";
+      oStream << location << index << locationValue << ".SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
   }
 
 }
@@ -165,11 +165,11 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state)) << "&";
   }
   if(m_strategyHasBeenSet)
   {
-      oStream << location << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
+      oStream << location << ".Strategy=" << StringUtils::URLEncode(PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy)) << "&";
   }
   if(m_partitionCountHasBeenSet)
   {
@@ -185,7 +185,7 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -195,7 +195,7 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_spreadLevelHasBeenSet)
   {
-      oStream << location << ".SpreadLevel=" << SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel) << "&";
+      oStream << location << ".SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
   }
 }
 

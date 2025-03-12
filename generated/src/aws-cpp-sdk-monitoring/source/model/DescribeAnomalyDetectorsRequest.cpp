@@ -74,7 +74,7 @@ Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const
       for(auto& item : m_anomalyDetectorTypes)
       {
         ss << "AnomalyDetectorTypes.member." << anomalyDetectorTypesCount << "="
-            << StringUtils::URLEncode(AnomalyDetectorTypeMapper::GetNameForAnomalyDetectorType(item).c_str()) << "&";
+            << StringUtils::URLEncode(AnomalyDetectorTypeMapper::GetNameForAnomalyDetectorType(item)) << "&";
         anomalyDetectorTypesCount++;
       }
     }

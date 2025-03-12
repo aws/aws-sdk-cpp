@@ -152,7 +152,7 @@ void PlatformSummary::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_platformStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PlatformStatus=" << PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus) << "&";
+      oStream << location << index << locationValue << ".PlatformStatus=" << StringUtils::URLEncode(PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus)) << "&";
   }
 
   if(m_platformCategoryHasBeenSet)
@@ -222,7 +222,7 @@ void PlatformSummary::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_platformStatusHasBeenSet)
   {
-      oStream << location << ".PlatformStatus=" << PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus) << "&";
+      oStream << location << ".PlatformStatus=" << StringUtils::URLEncode(PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus)) << "&";
   }
   if(m_platformCategoryHasBeenSet)
   {

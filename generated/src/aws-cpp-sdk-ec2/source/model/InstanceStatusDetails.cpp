@@ -73,12 +73,12 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << StatusNameMapper::GetNameForStatusName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(StatusNameMapper::GetNameForStatusName(m_name)) << "&";
   }
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
   }
 
 }
@@ -91,11 +91,11 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << StatusNameMapper::GetNameForStatusName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(StatusNameMapper::GetNameForStatusName(m_name)) << "&";
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
   }
 }
 

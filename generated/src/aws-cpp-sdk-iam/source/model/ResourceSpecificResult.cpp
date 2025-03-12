@@ -115,7 +115,7 @@ void ResourceSpecificResult::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_evalResourceDecisionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EvalResourceDecision=" << PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalResourceDecision) << "&";
+      oStream << location << index << locationValue << ".EvalResourceDecision=" << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalResourceDecision)) << "&";
   }
 
   if(m_matchedStatementsHasBeenSet)
@@ -146,7 +146,7 @@ void ResourceSpecificResult::OutputToStream(Aws::OStream& oStream, const char* l
         oStream << location << index << locationValue << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
         oStream << location << index << locationValue << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".value="
-            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second).c_str()) << "&";
+            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second)) << "&";
         evalDecisionDetailsIdx++;
       }
   }
@@ -168,7 +168,7 @@ void ResourceSpecificResult::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_evalResourceDecisionHasBeenSet)
   {
-      oStream << location << ".EvalResourceDecision=" << PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalResourceDecision) << "&";
+      oStream << location << ".EvalResourceDecision=" << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(m_evalResourceDecision)) << "&";
   }
   if(m_matchedStatementsHasBeenSet)
   {
@@ -176,7 +176,7 @@ void ResourceSpecificResult::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_matchedStatements)
       {
         Aws::StringStream matchedStatementsSs;
-        matchedStatementsSs << location <<  ".MatchedStatements.member." << matchedStatementsIdx++;
+        matchedStatementsSs << location << ".MatchedStatements.member." << matchedStatementsIdx++;
         item.OutputToStream(oStream, matchedStatementsSs.str().c_str());
       }
   }
@@ -193,13 +193,12 @@ void ResourceSpecificResult::OutputToStream(Aws::OStream& oStream, const char* l
       unsigned evalDecisionDetailsIdx = 1;
       for(auto& item : m_evalDecisionDetails)
       {
-        oStream << location << ".EvalDecisionDetails.entry."  << evalDecisionDetailsIdx << ".key="
+        oStream << location << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".value="
-            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second).c_str()) << "&";
+        oStream << location << ".EvalDecisionDetails.entry." << evalDecisionDetailsIdx << ".value="
+            << StringUtils::URLEncode(PolicyEvaluationDecisionTypeMapper::GetNameForPolicyEvaluationDecisionType(item.second)) << "&";
         evalDecisionDetailsIdx++;
       }
-
   }
   if(m_permissionsBoundaryDecisionDetailHasBeenSet)
   {

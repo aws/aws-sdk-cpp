@@ -60,7 +60,7 @@ void SubnetCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << SubnetCidrBlockStateCodeMapper::GetNameForSubnetCidrBlockStateCode(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(SubnetCidrBlockStateCodeMapper::GetNameForSubnetCidrBlockStateCode(m_state)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -74,7 +74,7 @@ void SubnetCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << SubnetCidrBlockStateCodeMapper::GetNameForSubnetCidrBlockStateCode(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(SubnetCidrBlockStateCodeMapper::GetNameForSubnetCidrBlockStateCode(m_state)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

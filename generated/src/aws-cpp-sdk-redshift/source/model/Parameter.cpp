@@ -140,7 +140,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_applyTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ApplyType=" << ParameterApplyTypeMapper::GetNameForParameterApplyType(m_applyType) << "&";
+      oStream << location << index << locationValue << ".ApplyType=" << StringUtils::URLEncode(ParameterApplyTypeMapper::GetNameForParameterApplyType(m_applyType)) << "&";
   }
 
   if(m_isModifiableHasBeenSet)
@@ -183,7 +183,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_applyTypeHasBeenSet)
   {
-      oStream << location << ".ApplyType=" << ParameterApplyTypeMapper::GetNameForParameterApplyType(m_applyType) << "&";
+      oStream << location << ".ApplyType=" << StringUtils::URLEncode(ParameterApplyTypeMapper::GetNameForParameterApplyType(m_applyType)) << "&";
   }
   if(m_isModifiableHasBeenSet)
   {

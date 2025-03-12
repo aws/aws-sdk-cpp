@@ -55,7 +55,7 @@ Aws::String CreateNetworkInsightsPathRequest::SerializePayload() const
 
   if(m_protocolHasBeenSet)
   {
-    ss << "Protocol=" << ProtocolMapper::GetNameForProtocol(m_protocol) << "&";
+    ss << "Protocol=" << StringUtils::URLEncode(ProtocolMapper::GetNameForProtocol(m_protocol)) << "&";
   }
 
   if(m_destinationPortHasBeenSet)

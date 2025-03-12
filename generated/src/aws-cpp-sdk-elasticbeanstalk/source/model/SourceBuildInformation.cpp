@@ -68,12 +68,12 @@ void SourceBuildInformation::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+      oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(SourceTypeMapper::GetNameForSourceType(m_sourceType)) << "&";
   }
 
   if(m_sourceRepositoryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceRepository=" << SourceRepositoryMapper::GetNameForSourceRepository(m_sourceRepository) << "&";
+      oStream << location << index << locationValue << ".SourceRepository=" << StringUtils::URLEncode(SourceRepositoryMapper::GetNameForSourceRepository(m_sourceRepository)) << "&";
   }
 
   if(m_sourceLocationHasBeenSet)
@@ -87,11 +87,11 @@ void SourceBuildInformation::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
+      oStream << location << ".SourceType=" << StringUtils::URLEncode(SourceTypeMapper::GetNameForSourceType(m_sourceType)) << "&";
   }
   if(m_sourceRepositoryHasBeenSet)
   {
-      oStream << location << ".SourceRepository=" << SourceRepositoryMapper::GetNameForSourceRepository(m_sourceRepository) << "&";
+      oStream << location << ".SourceRepository=" << StringUtils::URLEncode(SourceRepositoryMapper::GetNameForSourceRepository(m_sourceRepository)) << "&";
   }
   if(m_sourceLocationHasBeenSet)
   {

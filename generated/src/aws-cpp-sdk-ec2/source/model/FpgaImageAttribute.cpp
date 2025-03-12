@@ -149,7 +149,7 @@ void FpgaImageAttribute::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_loadPermissions)
       {
         Aws::StringStream loadPermissionsSs;
-        loadPermissionsSs << location <<  ".LoadPermissions." << loadPermissionsIdx++;
+        loadPermissionsSs << location << ".LoadPermissions." << loadPermissionsIdx++;
         item.OutputToStream(oStream, loadPermissionsSs.str().c_str());
       }
   }
@@ -159,7 +159,7 @@ void FpgaImageAttribute::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_productCodes)
       {
         Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".ProductCodes." << productCodesIdx++;
+        productCodesSs << location << ".ProductCodes." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }

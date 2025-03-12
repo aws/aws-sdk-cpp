@@ -53,7 +53,7 @@ void LaunchTemplateInstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStr
 {
   if(m_autoRecoveryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoRecovery=" << LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery) << "&";
+      oStream << location << index << locationValue << ".AutoRecovery=" << StringUtils::URLEncode(LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void LaunchTemplateInstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStr
 {
   if(m_autoRecoveryHasBeenSet)
   {
-      oStream << location << ".AutoRecovery=" << LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery) << "&";
+      oStream << location << ".AutoRecovery=" << StringUtils::URLEncode(LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery)) << "&";
   }
 }
 

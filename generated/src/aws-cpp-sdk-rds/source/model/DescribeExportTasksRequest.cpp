@@ -65,7 +65,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
 
   if(m_sourceTypeHasBeenSet)
   {
-    ss << "SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
+    ss << "SourceType=" << StringUtils::URLEncode(ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType)) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -129,7 +129,7 @@ void ConfigureShard::OutputToStream(Aws::OStream& oStream, const char* location)
       unsigned preferredAvailabilityZonesIdx = 1;
       for(auto& item : m_preferredAvailabilityZones)
       {
-        oStream << location << ".PreferredAvailabilityZone." << preferredAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PreferredAvailabilityZones.PreferredAvailabilityZone." << preferredAvailabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_preferredOutpostArnsHasBeenSet)
@@ -137,7 +137,7 @@ void ConfigureShard::OutputToStream(Aws::OStream& oStream, const char* location)
       unsigned preferredOutpostArnsIdx = 1;
       for(auto& item : m_preferredOutpostArns)
       {
-        oStream << location << ".PreferredOutpostArn." << preferredOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PreferredOutpostArns.PreferredOutpostArn." << preferredOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

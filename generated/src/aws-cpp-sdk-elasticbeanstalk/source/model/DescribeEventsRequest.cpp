@@ -69,7 +69,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
 
   if(m_severityHasBeenSet)
   {
-    ss << "Severity=" << EventSeverityMapper::GetNameForEventSeverity(m_severity) << "&";
+    ss << "Severity=" << StringUtils::URLEncode(EventSeverityMapper::GetNameForEventSeverity(m_severity)) << "&";
   }
 
   if(m_startTimeHasBeenSet)

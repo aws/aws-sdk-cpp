@@ -60,7 +60,7 @@ void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_moveStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MoveStatus=" << MoveStatusMapper::GetNameForMoveStatus(m_moveStatus) << "&";
+      oStream << location << index << locationValue << ".MoveStatus=" << StringUtils::URLEncode(MoveStatusMapper::GetNameForMoveStatus(m_moveStatus)) << "&";
   }
 
   if(m_publicIpHasBeenSet)
@@ -74,7 +74,7 @@ void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_moveStatusHasBeenSet)
   {
-      oStream << location << ".MoveStatus=" << MoveStatusMapper::GetNameForMoveStatus(m_moveStatus) << "&";
+      oStream << location << ".MoveStatus=" << StringUtils::URLEncode(MoveStatusMapper::GetNameForMoveStatus(m_moveStatus)) << "&";
   }
   if(m_publicIpHasBeenSet)
   {

@@ -108,7 +108,7 @@ void CacheNodeUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_nodeUpdateStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NodeUpdateStatus=" << NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus) << "&";
+      oStream << location << index << locationValue << ".NodeUpdateStatus=" << StringUtils::URLEncode(NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus)) << "&";
   }
 
   if(m_nodeDeletionDateHasBeenSet)
@@ -128,7 +128,7 @@ void CacheNodeUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_nodeUpdateInitiatedByHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NodeUpdateInitiatedBy=" << NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy) << "&";
+      oStream << location << index << locationValue << ".NodeUpdateInitiatedBy=" << StringUtils::URLEncode(NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy)) << "&";
   }
 
   if(m_nodeUpdateInitiatedDateHasBeenSet)
@@ -151,7 +151,7 @@ void CacheNodeUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_nodeUpdateStatusHasBeenSet)
   {
-      oStream << location << ".NodeUpdateStatus=" << NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus) << "&";
+      oStream << location << ".NodeUpdateStatus=" << StringUtils::URLEncode(NodeUpdateStatusMapper::GetNameForNodeUpdateStatus(m_nodeUpdateStatus)) << "&";
   }
   if(m_nodeDeletionDateHasBeenSet)
   {
@@ -167,7 +167,7 @@ void CacheNodeUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_nodeUpdateInitiatedByHasBeenSet)
   {
-      oStream << location << ".NodeUpdateInitiatedBy=" << NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy) << "&";
+      oStream << location << ".NodeUpdateInitiatedBy=" << StringUtils::URLEncode(NodeUpdateInitiatedByMapper::GetNameForNodeUpdateInitiatedBy(m_nodeUpdateInitiatedBy)) << "&";
   }
   if(m_nodeUpdateInitiatedDateHasBeenSet)
   {

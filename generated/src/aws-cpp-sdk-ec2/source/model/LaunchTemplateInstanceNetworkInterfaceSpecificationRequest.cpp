@@ -425,7 +425,7 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".InstanceIpv6Address." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location << ".Ipv6Addresses." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
@@ -443,7 +443,7 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".Item." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location << ".PrivateIpAddresses." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -465,7 +465,7 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       for(auto& item : m_ipv4Prefixes)
       {
         Aws::StringStream ipv4PrefixesSs;
-        ipv4PrefixesSs << location <<  ".Ipv4Prefix." << ipv4PrefixesIdx++;
+        ipv4PrefixesSs << location << ".Ipv4Prefix." << ipv4PrefixesIdx++;
         item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
       }
   }
@@ -479,7 +479,7 @@ void LaunchTemplateInstanceNetworkInterfaceSpecificationRequest::OutputToStream(
       for(auto& item : m_ipv6Prefixes)
       {
         Aws::StringStream ipv6PrefixesSs;
-        ipv6PrefixesSs << location <<  ".Ipv6Prefix." << ipv6PrefixesIdx++;
+        ipv6PrefixesSs << location << ".Ipv6Prefix." << ipv6PrefixesIdx++;
         item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
       }
   }

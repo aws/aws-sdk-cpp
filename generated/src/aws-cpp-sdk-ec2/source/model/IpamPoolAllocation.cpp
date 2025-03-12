@@ -115,7 +115,7 @@ void IpamPoolAllocation::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << IpamPoolAllocationResourceTypeMapper::GetNameForIpamPoolAllocationResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(IpamPoolAllocationResourceTypeMapper::GetNameForIpamPoolAllocationResourceType(m_resourceType)) << "&";
   }
 
   if(m_resourceRegionHasBeenSet)
@@ -150,7 +150,7 @@ void IpamPoolAllocation::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << IpamPoolAllocationResourceTypeMapper::GetNameForIpamPoolAllocationResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(IpamPoolAllocationResourceTypeMapper::GetNameForIpamPoolAllocationResourceType(m_resourceType)) << "&";
   }
   if(m_resourceRegionHasBeenSet)
   {

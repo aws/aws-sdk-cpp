@@ -149,7 +149,7 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_trafficDirectionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TrafficDirection=" << TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection) << "&";
+      oStream << location << index << locationValue << ".TrafficDirection=" << StringUtils::URLEncode(TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection)) << "&";
   }
 
   if(m_ruleNumberHasBeenSet)
@@ -159,7 +159,7 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_ruleActionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RuleAction=" << TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction) << "&";
+      oStream << location << index << locationValue << ".RuleAction=" << StringUtils::URLEncode(TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction)) << "&";
   }
 
   if(m_protocolHasBeenSet)
@@ -221,7 +221,7 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_trafficDirectionHasBeenSet)
   {
-      oStream << location << ".TrafficDirection=" << TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection) << "&";
+      oStream << location << ".TrafficDirection=" << StringUtils::URLEncode(TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection)) << "&";
   }
   if(m_ruleNumberHasBeenSet)
   {
@@ -229,7 +229,7 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_ruleActionHasBeenSet)
   {
-      oStream << location << ".RuleAction=" << TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction) << "&";
+      oStream << location << ".RuleAction=" << StringUtils::URLEncode(TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction)) << "&";
   }
   if(m_protocolHasBeenSet)
   {
@@ -265,7 +265,7 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

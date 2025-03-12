@@ -117,7 +117,7 @@ void NetworkInsightsAccessScopeContent::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_matchPaths)
       {
         Aws::StringStream matchPathsSs;
-        matchPathsSs << location <<  ".MatchPathSet." << matchPathsIdx++;
+        matchPathsSs << location << ".MatchPathSet." << matchPathsIdx++;
         item.OutputToStream(oStream, matchPathsSs.str().c_str());
       }
   }
@@ -127,7 +127,7 @@ void NetworkInsightsAccessScopeContent::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_excludePaths)
       {
         Aws::StringStream excludePathsSs;
-        excludePathsSs << location <<  ".ExcludePathSet." << excludePathsIdx++;
+        excludePathsSs << location << ".ExcludePathSet." << excludePathsIdx++;
         item.OutputToStream(oStream, excludePathsSs.str().c_str());
       }
   }

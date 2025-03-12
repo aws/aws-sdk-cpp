@@ -124,7 +124,7 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
 
   if(m_automaticFailoverStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutomaticFailoverStatus=" << PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus) << "&";
+      oStream << location << index << locationValue << ".AutomaticFailoverStatus=" << StringUtils::URLEncode(PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus)) << "&";
   }
 
   if(m_reshardingHasBeenSet)
@@ -136,7 +136,7 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
 
   if(m_authTokenStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+      oStream << location << index << locationValue << ".AuthTokenStatus=" << StringUtils::URLEncode(AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus)) << "&";
   }
 
   if(m_userGroupsHasBeenSet)
@@ -164,12 +164,12 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
 
   if(m_transitEncryptionModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+      oStream << location << index << locationValue << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
 
   if(m_clusterModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+      oStream << location << index << locationValue << ".ClusterMode=" << StringUtils::URLEncode(ClusterModeMapper::GetNameForClusterMode(m_clusterMode)) << "&";
   }
 
 }
@@ -182,7 +182,7 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   }
   if(m_automaticFailoverStatusHasBeenSet)
   {
-      oStream << location << ".AutomaticFailoverStatus=" << PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus) << "&";
+      oStream << location << ".AutomaticFailoverStatus=" << StringUtils::URLEncode(PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus)) << "&";
   }
   if(m_reshardingHasBeenSet)
   {
@@ -192,7 +192,7 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   }
   if(m_authTokenStatusHasBeenSet)
   {
-      oStream << location << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+      oStream << location << ".AuthTokenStatus=" << StringUtils::URLEncode(AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus)) << "&";
   }
   if(m_userGroupsHasBeenSet)
   {
@@ -206,7 +206,7 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_logDeliveryConfigurations)
       {
         Aws::StringStream logDeliveryConfigurationsSs;
-        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
+        logDeliveryConfigurationsSs << location << ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
   }
@@ -216,11 +216,11 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   }
   if(m_transitEncryptionModeHasBeenSet)
   {
-      oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+      oStream << location << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
   if(m_clusterModeHasBeenSet)
   {
-      oStream << location << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+      oStream << location << ".ClusterMode=" << StringUtils::URLEncode(ClusterModeMapper::GetNameForClusterMode(m_clusterMode)) << "&";
   }
 }
 

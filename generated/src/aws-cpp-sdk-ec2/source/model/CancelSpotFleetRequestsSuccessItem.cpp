@@ -68,12 +68,12 @@ void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, c
 {
   if(m_currentSpotFleetRequestStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrentSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState) << "&";
+      oStream << location << index << locationValue << ".CurrentSpotFleetRequestState=" << StringUtils::URLEncode(BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState)) << "&";
   }
 
   if(m_previousSpotFleetRequestStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PreviousSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState) << "&";
+      oStream << location << index << locationValue << ".PreviousSpotFleetRequestState=" << StringUtils::URLEncode(BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState)) << "&";
   }
 
   if(m_spotFleetRequestIdHasBeenSet)
@@ -87,11 +87,11 @@ void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, c
 {
   if(m_currentSpotFleetRequestStateHasBeenSet)
   {
-      oStream << location << ".CurrentSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState) << "&";
+      oStream << location << ".CurrentSpotFleetRequestState=" << StringUtils::URLEncode(BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState)) << "&";
   }
   if(m_previousSpotFleetRequestStateHasBeenSet)
   {
-      oStream << location << ".PreviousSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState) << "&";
+      oStream << location << ".PreviousSpotFleetRequestState=" << StringUtils::URLEncode(BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState)) << "&";
   }
   if(m_spotFleetRequestIdHasBeenSet)
   {

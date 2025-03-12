@@ -77,7 +77,7 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
 
   if(m_interfaceTypeHasBeenSet)
   {
-    ss << "InterfaceType=" << NetworkInterfaceCreationTypeMapper::GetNameForNetworkInterfaceCreationType(m_interfaceType) << "&";
+    ss << "InterfaceType=" << StringUtils::URLEncode(NetworkInterfaceCreationTypeMapper::GetNameForNetworkInterfaceCreationType(m_interfaceType)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

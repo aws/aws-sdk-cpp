@@ -55,7 +55,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
 
   if(m_operationTypeHasBeenSet)
   {
-    ss << "OperationType=" << OperationTypeMapper::GetNameForOperationType(m_operationType) << "&";
+    ss << "OperationType=" << StringUtils::URLEncode(OperationTypeMapper::GetNameForOperationType(m_operationType)) << "&";
   }
 
   if(m_productCodesHasBeenSet)

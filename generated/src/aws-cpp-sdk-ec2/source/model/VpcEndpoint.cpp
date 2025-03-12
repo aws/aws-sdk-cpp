@@ -278,7 +278,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_vpcEndpointTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VpcEndpointType=" << VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType) << "&";
+      oStream << location << index << locationValue << ".VpcEndpointType=" << StringUtils::URLEncode(VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType)) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -293,7 +293,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << StateMapper::GetNameForState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_state)) << "&";
   }
 
   if(m_policyDocumentHasBeenSet)
@@ -332,7 +332,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   if(m_dnsOptionsHasBeenSet)
@@ -452,7 +452,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_vpcEndpointTypeHasBeenSet)
   {
-      oStream << location << ".VpcEndpointType=" << VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType) << "&";
+      oStream << location << ".VpcEndpointType=" << StringUtils::URLEncode(VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType)) << "&";
   }
   if(m_vpcIdHasBeenSet)
   {
@@ -464,7 +464,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << StateMapper::GetNameForState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_state)) << "&";
   }
   if(m_policyDocumentHasBeenSet)
   {
@@ -492,13 +492,13 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".GroupSet." << groupsIdx++;
+        groupsSs << location << ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
   if(m_ipAddressTypeHasBeenSet)
   {
-      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
   if(m_dnsOptionsHasBeenSet)
   {
@@ -528,7 +528,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_dnsEntries)
       {
         Aws::StringStream dnsEntriesSs;
-        dnsEntriesSs << location <<  ".DnsEntrySet." << dnsEntriesIdx++;
+        dnsEntriesSs << location << ".DnsEntrySet." << dnsEntriesIdx++;
         item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
       }
   }
@@ -542,7 +542,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -562,7 +562,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_ipv4Prefixes)
       {
         Aws::StringStream ipv4PrefixesSs;
-        ipv4PrefixesSs << location <<  ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
+        ipv4PrefixesSs << location << ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
         item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
       }
   }
@@ -572,7 +572,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_ipv6Prefixes)
       {
         Aws::StringStream ipv6PrefixesSs;
-        ipv6PrefixesSs << location <<  ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
+        ipv6PrefixesSs << location << ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
         item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
       }
   }

@@ -133,7 +133,7 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state)) << "&";
   }
 
   if(m_attachTimeHasBeenSet)
@@ -174,7 +174,7 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state)) << "&";
   }
   if(m_attachTimeHasBeenSet)
   {

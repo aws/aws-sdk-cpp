@@ -55,7 +55,7 @@ Aws::String DescribeTargetHealthRequest::SerializePayload() const
       for(auto& item : m_include)
       {
         ss << "Include.member." << includeCount << "="
-            << StringUtils::URLEncode(DescribeTargetHealthInputIncludeEnumMapper::GetNameForDescribeTargetHealthInputIncludeEnum(item).c_str()) << "&";
+            << StringUtils::URLEncode(DescribeTargetHealthInputIncludeEnumMapper::GetNameForDescribeTargetHealthInputIncludeEnum(item)) << "&";
         includeCount++;
       }
     }

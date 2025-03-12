@@ -97,7 +97,7 @@ void EntityMetricData::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_metricData)
       {
         Aws::StringStream metricDataSs;
-        metricDataSs << location <<  ".MetricData.member." << metricDataIdx++;
+        metricDataSs << location << ".MetricData.member." << metricDataIdx++;
         item.OutputToStream(oStream, metricDataSs.str().c_str());
       }
   }

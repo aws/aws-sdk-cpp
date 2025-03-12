@@ -122,7 +122,7 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_resourceStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
+      oStream << location << index << locationValue << ".ResourceStatus=" << StringUtils::URLEncode(ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus)) << "&";
   }
 
   if(m_resourceStatusReasonHasBeenSet)
@@ -166,7 +166,7 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_resourceStatusHasBeenSet)
   {
-      oStream << location << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
+      oStream << location << ".ResourceStatus=" << StringUtils::URLEncode(ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus)) << "&";
   }
   if(m_resourceStatusReasonHasBeenSet)
   {

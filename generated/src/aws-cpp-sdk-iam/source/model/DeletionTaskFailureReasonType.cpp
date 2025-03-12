@@ -93,7 +93,7 @@ void DeletionTaskFailureReasonType::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_roleUsageList)
       {
         Aws::StringStream roleUsageListSs;
-        roleUsageListSs << location <<  ".RoleUsageList.member." << roleUsageListIdx++;
+        roleUsageListSs << location << ".RoleUsageList.member." << roleUsageListIdx++;
         item.OutputToStream(oStream, roleUsageListSs.str().c_str());
       }
   }

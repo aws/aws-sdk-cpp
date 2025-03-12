@@ -238,7 +238,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_serviceStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceState=" << ServiceStateMapper::GetNameForServiceState(m_serviceState) << "&";
+      oStream << location << index << locationValue << ".ServiceState=" << StringUtils::URLEncode(ServiceStateMapper::GetNameForServiceState(m_serviceState)) << "&";
   }
 
   if(m_availabilityZonesHasBeenSet)
@@ -283,7 +283,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned supportedIpAddressTypesIdx = 1;
       for(auto& item : m_supportedIpAddressTypes)
       {
-        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << StringUtils::URLEncode(ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item)) << "&";
       }
   }
 
@@ -310,7 +310,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_payerResponsibilityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+      oStream << location << index << locationValue << ".PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -350,7 +350,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_serviceType)
       {
         Aws::StringStream serviceTypeSs;
-        serviceTypeSs << location <<  ".ServiceType." << serviceTypeIdx++;
+        serviceTypeSs << location << ".ServiceType." << serviceTypeIdx++;
         item.OutputToStream(oStream, serviceTypeSs.str().c_str());
       }
   }
@@ -364,7 +364,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_serviceStateHasBeenSet)
   {
-      oStream << location << ".ServiceState=" << ServiceStateMapper::GetNameForServiceState(m_serviceState) << "&";
+      oStream << location << ".ServiceState=" << StringUtils::URLEncode(ServiceStateMapper::GetNameForServiceState(m_serviceState)) << "&";
   }
   if(m_availabilityZonesHasBeenSet)
   {
@@ -403,7 +403,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned supportedIpAddressTypesIdx = 1;
       for(auto& item : m_supportedIpAddressTypes)
       {
-        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << StringUtils::URLEncode(ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item)) << "&";
       }
   }
   if(m_baseEndpointDnsNamesHasBeenSet)
@@ -426,7 +426,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_payerResponsibilityHasBeenSet)
   {
-      oStream << location << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+      oStream << location << ".PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -434,7 +434,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -444,7 +444,7 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_supportedRegions)
       {
         Aws::StringStream supportedRegionsSs;
-        supportedRegionsSs << location <<  ".SupportedRegionSet." << supportedRegionsIdx++;
+        supportedRegionsSs << location << ".SupportedRegionSet." << supportedRegionsIdx++;
         item.OutputToStream(oStream, supportedRegionsSs.str().c_str());
       }
   }

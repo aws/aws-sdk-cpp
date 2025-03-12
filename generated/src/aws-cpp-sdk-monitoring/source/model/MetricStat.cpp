@@ -92,7 +92,7 @@ void MetricStat::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_unitHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
 }
@@ -115,7 +115,7 @@ void MetricStat::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_unitHasBeenSet)
   {
-      oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 }
 

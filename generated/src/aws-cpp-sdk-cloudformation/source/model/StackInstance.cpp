@@ -168,7 +168,7 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status)) << "&";
   }
 
   if(m_stackInstanceStatusHasBeenSet)
@@ -190,7 +190,7 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_driftStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus) << "&";
+      oStream << location << index << locationValue << ".DriftStatus=" << StringUtils::URLEncode(StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus)) << "&";
   }
 
   if(m_lastDriftCheckTimestampHasBeenSet)
@@ -229,13 +229,13 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_parameterOverrides)
       {
         Aws::StringStream parameterOverridesSs;
-        parameterOverridesSs << location <<  ".ParameterOverrides.member." << parameterOverridesIdx++;
+        parameterOverridesSs << location << ".ParameterOverrides.member." << parameterOverridesIdx++;
         item.OutputToStream(oStream, parameterOverridesSs.str().c_str());
       }
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status)) << "&";
   }
   if(m_stackInstanceStatusHasBeenSet)
   {
@@ -253,7 +253,7 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_driftStatusHasBeenSet)
   {
-      oStream << location << ".DriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus) << "&";
+      oStream << location << ".DriftStatus=" << StringUtils::URLEncode(StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus)) << "&";
   }
   if(m_lastDriftCheckTimestampHasBeenSet)
   {

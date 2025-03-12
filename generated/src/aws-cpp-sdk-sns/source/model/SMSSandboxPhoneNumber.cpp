@@ -65,7 +65,7 @@ void SMSSandboxPhoneNumber::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << SMSSandboxPhoneNumberVerificationStatusMapper::GetNameForSMSSandboxPhoneNumberVerificationStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(SMSSandboxPhoneNumberVerificationStatusMapper::GetNameForSMSSandboxPhoneNumberVerificationStatus(m_status)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void SMSSandboxPhoneNumber::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << SMSSandboxPhoneNumberVerificationStatusMapper::GetNameForSMSSandboxPhoneNumberVerificationStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(SMSSandboxPhoneNumberVerificationStatusMapper::GetNameForSMSSandboxPhoneNumberVerificationStatus(m_status)) << "&";
   }
 }
 

@@ -213,7 +213,7 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_reservedNodeOfferingTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReservedNodeOfferingType=" << ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType) << "&";
+      oStream << location << index << locationValue << ".ReservedNodeOfferingType=" << StringUtils::URLEncode(ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType)) << "&";
   }
 
 }
@@ -242,11 +242,11 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_fixedPriceHasBeenSet)
   {
-        oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
+      oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
   if(m_usagePriceHasBeenSet)
   {
-        oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
+      oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -270,13 +270,13 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location <<  ".RecurringCharge." << recurringChargesIdx++;
+        recurringChargesSs << location << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
   if(m_reservedNodeOfferingTypeHasBeenSet)
   {
-      oStream << location << ".ReservedNodeOfferingType=" << ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType) << "&";
+      oStream << location << ".ReservedNodeOfferingType=" << StringUtils::URLEncode(ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType)) << "&";
   }
 }
 

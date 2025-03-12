@@ -1,0 +1,21 @@
+##-------------------- serializeRequestQuerySingleElement macro
+#macro( serializeRequestQuerySingleElement $spaces $member $location $memberVarName $parentShapeName="" )
+#set($macro.memberLocation = $location)
+#if($member.queryName)
+#set($macro.memberLocation = $member.queryName)
+#elseif($member.locationName)
+#set($macro.memberLocation = $member.locationName)
+#if($metadata.findFirstSupportedProtocol() == "ec2")
+#set($macro.memberLocation = $CppViewHelper.capitalizeFirstChar($macro.memberLocation))
+#end
+#end
+#if($member.shape.structure)
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->OutputToStream(ss, "${macro.memberLocation}");
+#else
+  ${spaces}${memberVarName}.OutputToStream(ss, "${macro.memberLocation}");
+#end
+#else
+  ${spaces}ss << "${macro.memberLocation}=" << #serializeQuerySingleElementToText($spaces, $member, $memberVarName) << "&";
+#end
+#end##macro serializeRequestQuerySingleElement
