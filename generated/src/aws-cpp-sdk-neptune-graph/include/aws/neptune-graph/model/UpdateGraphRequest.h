@@ -65,7 +65,7 @@ namespace Model
     ///@{
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph.</p> <p>Min = 128</p>
+     * the graph.</p> <p>Min = 16</p>
      */
     inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
     inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }

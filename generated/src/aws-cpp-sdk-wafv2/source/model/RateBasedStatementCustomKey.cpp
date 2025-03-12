@@ -27,7 +27,9 @@ RateBasedStatementCustomKey::RateBasedStatementCustomKey() :
     m_forwardedIPHasBeenSet(false),
     m_iPHasBeenSet(false),
     m_labelNamespaceHasBeenSet(false),
-    m_uriPathHasBeenSet(false)
+    m_uriPathHasBeenSet(false),
+    m_jA3FingerprintHasBeenSet(false),
+    m_jA4FingerprintHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,20 @@ RateBasedStatementCustomKey& RateBasedStatementCustomKey::operator =(JsonView js
     m_uriPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JA3Fingerprint"))
+  {
+    m_jA3Fingerprint = jsonValue.GetObject("JA3Fingerprint");
+
+    m_jA3FingerprintHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JA4Fingerprint"))
+  {
+    m_jA4Fingerprint = jsonValue.GetObject("JA4Fingerprint");
+
+    m_jA4FingerprintHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +176,18 @@ JsonValue RateBasedStatementCustomKey::Jsonize() const
   if(m_uriPathHasBeenSet)
   {
    payload.WithObject("UriPath", m_uriPath.Jsonize());
+
+  }
+
+  if(m_jA3FingerprintHasBeenSet)
+  {
+   payload.WithObject("JA3Fingerprint", m_jA3Fingerprint.Jsonize());
+
+  }
+
+  if(m_jA4FingerprintHasBeenSet)
+  {
+   payload.WithObject("JA4Fingerprint", m_jA4Fingerprint.Jsonize());
 
   }
 

@@ -21,7 +21,9 @@ namespace Model
 AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration() : 
     m_storageConfigurationArnHasBeenSet(false),
     m_mediaTypesHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false)
+    m_thumbnailConfigurationHasBeenSet(false),
+    m_recordingReconnectWindowSeconds(0),
+    m_recordingReconnectWindowSecondsHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,13 @@ AutoParticipantRecordingConfiguration& AutoParticipantRecordingConfiguration::op
     m_thumbnailConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recordingReconnectWindowSeconds"))
+  {
+    m_recordingReconnectWindowSeconds = jsonValue.GetInteger("recordingReconnectWindowSeconds");
+
+    m_recordingReconnectWindowSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +93,12 @@ JsonValue AutoParticipantRecordingConfiguration::Jsonize() const
   if(m_thumbnailConfigurationHasBeenSet)
   {
    payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
+
+  }
+
+  if(m_recordingReconnectWindowSecondsHasBeenSet)
+  {
+   payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
 
   }
 

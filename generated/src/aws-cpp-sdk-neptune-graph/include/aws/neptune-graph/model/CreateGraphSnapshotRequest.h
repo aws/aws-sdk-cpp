@@ -56,7 +56,7 @@ namespace Model
      * <p>The snapshot name. For example: <code>my-snapshot-1</code>.</p> <p>The name
      * must contain from 1 to 63 letters, numbers, or hyphens, and its first character
      * must be a letter. It cannot end with a hyphen or contain two consecutive
-     * hyphens.</p>
+     * hyphens. Only lowercase letters are allowed.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }

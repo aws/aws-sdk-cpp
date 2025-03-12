@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent-runtime/model/Trace.h>
 #include <aws/bedrock-agent-runtime/model/Caller.h>
 #include <utility>
@@ -118,6 +119,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> The time of the trace. </p>
+     */
+    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
+    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
+    inline TracePart& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
+    inline TracePart& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the session with the agent.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
@@ -162,6 +175,9 @@ namespace Model
 
     Aws::String m_collaboratorName;
     bool m_collaboratorNameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_eventTime;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

@@ -64,7 +64,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of items to return.</p>
+     * <p>The maximum size of each page of results. The default value is 20 and the
+     * maximum value is 50.</p>
      */
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

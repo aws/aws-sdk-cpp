@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>Indicates the veracity of a finding.</p> <p>The available values for
      * <code>VerificationState</code> are as follows.</p> <ul> <li> <p>
-     * <code>UNKNOWN</code> ��� The default disposition of a security finding</p> </li>
+     * <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
      * <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
      * </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined
      * to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special

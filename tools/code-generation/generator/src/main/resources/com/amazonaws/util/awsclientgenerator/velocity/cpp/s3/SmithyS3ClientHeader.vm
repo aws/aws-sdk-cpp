@@ -118,7 +118,7 @@ namespace ${rootNamespace}
         ${metadata.classNamePrefix}EndpointProviderBase,
         smithy::client::$serializer,
         smithy::client::$serializerOutcome,
-        Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
+        Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>
     {
     public:
         static const char* GetServiceName();

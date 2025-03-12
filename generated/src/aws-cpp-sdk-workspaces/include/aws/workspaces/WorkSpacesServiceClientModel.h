@@ -80,6 +80,7 @@
 #include <aws/workspaces/model/ModifyAccountResult.h>
 #include <aws/workspaces/model/ModifyCertificateBasedAuthPropertiesResult.h>
 #include <aws/workspaces/model/ModifyClientPropertiesResult.h>
+#include <aws/workspaces/model/ModifyEndpointEncryptionModeResult.h>
 #include <aws/workspaces/model/ModifySamlPropertiesResult.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsResult.h>
 #include <aws/workspaces/model/ModifyStreamingPropertiesResult.h>
@@ -225,6 +226,7 @@ namespace Aws
       class ModifyAccountRequest;
       class ModifyCertificateBasedAuthPropertiesRequest;
       class ModifyClientPropertiesRequest;
+      class ModifyEndpointEncryptionModeRequest;
       class ModifySamlPropertiesRequest;
       class ModifySelfservicePermissionsRequest;
       class ModifyStreamingPropertiesRequest;
@@ -316,6 +318,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyAccountResult, WorkSpacesError> ModifyAccountOutcome;
       typedef Aws::Utils::Outcome<ModifyCertificateBasedAuthPropertiesResult, WorkSpacesError> ModifyCertificateBasedAuthPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, WorkSpacesError> ModifyClientPropertiesOutcome;
+      typedef Aws::Utils::Outcome<ModifyEndpointEncryptionModeResult, WorkSpacesError> ModifyEndpointEncryptionModeOutcome;
       typedef Aws::Utils::Outcome<ModifySamlPropertiesResult, WorkSpacesError> ModifySamlPropertiesOutcome;
       typedef Aws::Utils::Outcome<ModifySelfservicePermissionsResult, WorkSpacesError> ModifySelfservicePermissionsOutcome;
       typedef Aws::Utils::Outcome<ModifyStreamingPropertiesResult, WorkSpacesError> ModifyStreamingPropertiesOutcome;
@@ -407,6 +410,7 @@ namespace Aws
       typedef std::future<ModifyAccountOutcome> ModifyAccountOutcomeCallable;
       typedef std::future<ModifyCertificateBasedAuthPropertiesOutcome> ModifyCertificateBasedAuthPropertiesOutcomeCallable;
       typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
+      typedef std::future<ModifyEndpointEncryptionModeOutcome> ModifyEndpointEncryptionModeOutcomeCallable;
       typedef std::future<ModifySamlPropertiesOutcome> ModifySamlPropertiesOutcomeCallable;
       typedef std::future<ModifySelfservicePermissionsOutcome> ModifySelfservicePermissionsOutcomeCallable;
       typedef std::future<ModifyStreamingPropertiesOutcome> ModifyStreamingPropertiesOutcomeCallable;
@@ -501,6 +505,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyAccountRequest&, const Model::ModifyAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyCertificateBasedAuthPropertiesRequest&, const Model::ModifyCertificateBasedAuthPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCertificateBasedAuthPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyEndpointEncryptionModeRequest&, const Model::ModifyEndpointEncryptionModeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEndpointEncryptionModeResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySamlPropertiesRequest&, const Model::ModifySamlPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySamlPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySelfservicePermissionsRequest&, const Model::ModifySelfservicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySelfservicePermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyStreamingPropertiesRequest&, const Model::ModifyStreamingPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyStreamingPropertiesResponseReceivedHandler;

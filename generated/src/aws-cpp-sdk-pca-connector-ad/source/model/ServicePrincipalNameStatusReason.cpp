@@ -24,6 +24,7 @@ namespace Aws
         static const int DIRECTORY_NOT_REACHABLE_HASH = HashingUtils::HashString("DIRECTORY_NOT_REACHABLE");
         static const int DIRECTORY_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("DIRECTORY_RESOURCE_NOT_FOUND");
         static const int SPN_EXISTS_ON_DIFFERENT_AD_OBJECT_HASH = HashingUtils::HashString("SPN_EXISTS_ON_DIFFERENT_AD_OBJECT");
+        static const int SPN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SPN_LIMIT_EXCEEDED");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == SPN_EXISTS_ON_DIFFERENT_AD_OBJECT_HASH)
           {
             return ServicePrincipalNameStatusReason::SPN_EXISTS_ON_DIFFERENT_AD_OBJECT;
+          }
+          else if (hashCode == SPN_LIMIT_EXCEEDED_HASH)
+          {
+            return ServicePrincipalNameStatusReason::SPN_LIMIT_EXCEEDED;
           }
           else if (hashCode == INTERNAL_FAILURE_HASH)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "DIRECTORY_RESOURCE_NOT_FOUND";
           case ServicePrincipalNameStatusReason::SPN_EXISTS_ON_DIFFERENT_AD_OBJECT:
             return "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT";
+          case ServicePrincipalNameStatusReason::SPN_LIMIT_EXCEEDED:
+            return "SPN_LIMIT_EXCEEDED";
           case ServicePrincipalNameStatusReason::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           default:

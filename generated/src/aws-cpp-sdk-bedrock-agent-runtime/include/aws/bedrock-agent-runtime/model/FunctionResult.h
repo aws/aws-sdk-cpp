@@ -103,9 +103,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The response from the function call using the parameters. The key of the
-     * object is the content type (currently, only <code>TEXT</code> is supported). The
-     * response may be returned directly or from the Lambda function.</p>
+     * <p>The response from the function call using the parameters. The response might
+     * be returned directly or from the Lambda function. Specify <code>TEXT</code> or
+     * <code>IMAGES</code>. The key of the object is the content type. You can only
+     * specify one type. If you specify <code>IMAGES</code>, you can specify only one
+     * image. You can specify images only when the function in the
+     * <code>returnControlInvocationResults</code> is a computer use action. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+     * an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
      */
     inline const Aws::Map<Aws::String, ContentBody>& GetResponseBody() const{ return m_responseBody; }
     inline bool ResponseBodyHasBeenSet() const { return m_responseBodyHasBeenSet; }

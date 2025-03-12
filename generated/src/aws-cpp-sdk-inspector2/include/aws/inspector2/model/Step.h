@@ -39,6 +39,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web
+     * Services console.</p>
+     */
+    inline const Aws::String& GetComponentArn() const{ return m_componentArn; }
+    inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }
+    inline void SetComponentArn(const Aws::String& value) { m_componentArnHasBeenSet = true; m_componentArn = value; }
+    inline void SetComponentArn(Aws::String&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::move(value); }
+    inline void SetComponentArn(const char* value) { m_componentArnHasBeenSet = true; m_componentArn.assign(value); }
+    inline Step& WithComponentArn(const Aws::String& value) { SetComponentArn(value); return *this;}
+    inline Step& WithComponentArn(Aws::String&& value) { SetComponentArn(std::move(value)); return *this;}
+    inline Step& WithComponentArn(const char* value) { SetComponentArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The component ID.</p>
      */
     inline const Aws::String& GetComponentId() const{ return m_componentId; }
@@ -65,6 +80,9 @@ namespace Model
     inline Step& WithComponentType(const char* value) { SetComponentType(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_componentArn;
+    bool m_componentArnHasBeenSet = false;
 
     Aws::String m_componentId;
     bool m_componentIdHasBeenSet = false;

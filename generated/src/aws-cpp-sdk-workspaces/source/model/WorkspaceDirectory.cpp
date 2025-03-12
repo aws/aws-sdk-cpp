@@ -40,6 +40,8 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_selfservicePermissionsHasBeenSet(false),
     m_samlPropertiesHasBeenSet(false),
     m_certificateBasedAuthPropertiesHasBeenSet(false),
+    m_endpointEncryptionMode(EndpointEncryptionMode::NOT_SET),
+    m_endpointEncryptionModeHasBeenSet(false),
     m_microsoftEntraConfigHasBeenSet(false),
     m_workspaceDirectoryNameHasBeenSet(false),
     m_workspaceDirectoryDescriptionHasBeenSet(false),
@@ -195,6 +197,13 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_certificateBasedAuthProperties = jsonValue.GetObject("CertificateBasedAuthProperties");
 
     m_certificateBasedAuthPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointEncryptionMode"))
+  {
+    m_endpointEncryptionMode = EndpointEncryptionModeMapper::GetEndpointEncryptionModeForName(jsonValue.GetString("EndpointEncryptionMode"));
+
+    m_endpointEncryptionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MicrosoftEntraConfig"))
@@ -385,6 +394,11 @@ JsonValue WorkspaceDirectory::Jsonize() const
   {
    payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
 
+  }
+
+  if(m_endpointEncryptionModeHasBeenSet)
+  {
+   payload.WithString("EndpointEncryptionMode", EndpointEncryptionModeMapper::GetNameForEndpointEncryptionMode(m_endpointEncryptionMode));
   }
 
   if(m_microsoftEntraConfigHasBeenSet)
