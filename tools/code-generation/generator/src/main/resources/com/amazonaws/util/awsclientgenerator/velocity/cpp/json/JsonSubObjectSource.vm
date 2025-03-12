@@ -26,11 +26,6 @@ namespace Model
 {
 
 #set($useRequiredField = true)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
-
 ${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)
 #if($initializers)
   : ${typeInfo.className}()
@@ -38,7 +33,6 @@ ${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)
 {
   *this = jsonValue;
 }
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersImplementations.vm")
 
 ${typeInfo.className}& ${typeInfo.className}::operator =(JsonView jsonValue)
 {

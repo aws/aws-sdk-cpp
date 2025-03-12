@@ -371,11 +371,12 @@ public class CppViewHelper {
         if(shape.isEvent() && shape.getName().endsWith("InitialResponse")) {
             headers.add("<aws/core/http/HttpTypes.h>");
         }
+        if(includeMemoryHeader) {
+            // Aws::MakeShared and std::shared_ptr
+            headers.add("<aws/core/utils/memory/stl/AWSAllocator.h>");
+        }
         if(includeUtilityHeader) {
             headers.add("<utility>");
-        }
-        if(includeMemoryHeader) {
-            headers.add("<memory>");
         }
 
         headers.addAll(shape.getMembers().values().stream().filter(member -> member.isIdempotencyToken()).map(member -> "<aws/core/utils/UUID.h>").collect(Collectors.toList()));

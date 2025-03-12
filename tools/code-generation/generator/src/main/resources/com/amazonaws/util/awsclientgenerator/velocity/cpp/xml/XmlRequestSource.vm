@@ -31,11 +31,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 #end
 
-#set($useRequiredField = true)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
 #if($shape.hasEmbeddedErrors())
 
 bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
@@ -139,3 +134,4 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompression.vm")

@@ -50,6 +50,7 @@
     ${macro.spaces}XmlNode ${macro.listVarName} = ${lowerCaseVarName}Node.FirstChild("${macro.listMemberName}");
 #end
 #end
+    ${macro.spaces}${CppViewHelper.computeVariableHasBeenSetName($memberName)} = !${macro.listVarName}.IsNull();
     ${macro.spaces}while(!${macro.listVarName}.IsNull())
     ${macro.spaces}{
 #set($macro.memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
