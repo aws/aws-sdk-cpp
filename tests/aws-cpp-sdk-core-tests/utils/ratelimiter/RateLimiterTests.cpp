@@ -15,7 +15,7 @@ class DefaultRateLimitTest : public Aws::Testing::AwsCppSdkGTestSuite {
   static TestDefaultRateLimiter::InternalTimePointType m_currentTime;
 
   static TestDefaultRateLimiter::InternalTimePointType GetTestTime() { return m_currentTime; }
-  
+
   static void SetTestTime(TestDefaultRateLimiter::InternalTimePointType currentTime) { m_currentTime = currentTime; }
 
   using Clock = TestDefaultRateLimiter::InternalTimePointType::clock;
@@ -242,6 +242,7 @@ TEST_F(DefaultRateLimitTest, overflowTest) {
   SetMillisecondsElapsed(time_elapsed);
   delay = limiter.ApplyCost(0);
   ASSERT_TRUE(delay.count() == 0);
+}
 
 TEST_F(DefaultRateLimitTest, fractionalLimitTest) {
   TestDefaultRateLimiter limiter(100, DefaultRateLimitTest::GetTestTime);
