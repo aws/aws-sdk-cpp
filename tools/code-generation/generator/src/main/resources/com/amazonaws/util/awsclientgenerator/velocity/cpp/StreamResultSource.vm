@@ -17,38 +17,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-#set($useRequiredField = false)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
-
-#set($useRequiredField = false)
-#set($container = "toMove")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateMoveInitializers.vm")
-${typeInfo.className}::${typeInfo.className}(${typeInfo.className}&& toMove)$moveInitializers
-{
-}
-
-${typeInfo.className}& ${typeInfo.className}::operator=(${typeInfo.className}&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-#foreach($memberEntry in $shape.members.entrySet())
-#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberEntry.key))
-#if($memberEntry.value.shape.primitive || $memberEntry.value.shape.enum)
-   ${memberVarName} = toMove.${memberVarName};
-#else
-   ${memberVarName} = std::move(toMove.${memberVarName});
-#end
-#end
-
-   return *this;
-}
-
 ${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 #if($initializers)
   : ${typeInfo.className}()
@@ -60,13 +28,14 @@ ${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<Respons
 ${typeInfo.className}& ${typeInfo.className}::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   ${CppViewHelper.computeMemberVariableName($shape.payload)} = result.TakeOwnershipOfPayload();
+  ${CppViewHelper.computeVariableHasBeenSetName($shape.payload)} = true;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ResultClassHeadersDeserialize.vm")
 #if($shape.hasStatusCodeMembers())
 #foreach($memberEntry in $shape.members.entrySet())
 #if($memberEntry.value.usedForHttpStatusCode)
   ${CppViewHelper.computeMemberVariableName($memberEntry.key)} = static_cast<int>(result.GetResponseCode());
-
+  ${CppViewHelper.computeVariableHasBeenSetName($memberEntry.key)} = true;
 #end
 #end
 #end
