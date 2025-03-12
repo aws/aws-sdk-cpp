@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/comprehend/ComprehendErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Comprehend
 {
+  AWS_COMPREHEND_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Comprehend is an Amazon Web Services service for gaining insight into
    * the content of documents. Use these actions to determine the topics contained in
    * your documents, the topics they discuss, the predominant sentiment expressed in
    * them, the predominant language used, and more.</p>
    */
-  class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>
+  class AWS_COMPREHEND_API ComprehendClient : Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>,
+    smithy::client::AwsSmithyClientT<Aws::Comprehend::SERVICE_NAME,
+      Aws::Comprehend::ComprehendClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ComprehendEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ComprehendErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Comprehend"; }
 
       typedef ComprehendClientConfiguration ClientConfigurationType;
       typedef ComprehendEndpointProvider EndpointProviderType;
@@ -2494,10 +2506,7 @@ namespace Comprehend
       std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;
-      void init(const ComprehendClientConfiguration& clientConfiguration);
 
-      ComprehendClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ComprehendEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Comprehend

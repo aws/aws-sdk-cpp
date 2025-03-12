@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backupsearch/BackupSearchServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/backupsearch/BackupSearchErrorMarshaller.h>
 
 namespace Aws
 {
 namespace BackupSearch
 {
+  AWS_BACKUPSEARCH_API extern const char SERVICE_NAME[];
   /**
    * <p><fullname>Backup Search</fullname> <p>Backup Search is the recovery point and
    * item level search for Backup.</p> <p>For additional information, see:</p> <ul>
@@ -24,12 +28,20 @@ namespace BackupSearch
    * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">Backup
    * Developer Guide</a> </p> </li> </ul></p>
    */
-  class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>
+  class AWS_BACKUPSEARCH_API BackupSearchClient : Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>,
+    smithy::client::AwsSmithyClientT<Aws::BackupSearch::SERVICE_NAME,
+      Aws::BackupSearch::BackupSearchClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      BackupSearchEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::BackupSearchErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "BackupSearch"; }
 
       typedef BackupSearchClientConfiguration ClientConfigurationType;
       typedef BackupSearchEndpointProvider EndpointProviderType;
@@ -410,10 +422,7 @@ namespace BackupSearch
       std::shared_ptr<BackupSearchEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>;
-      void init(const BackupSearchClientConfiguration& clientConfiguration);
 
-      BackupSearchClientConfiguration m_clientConfiguration;
-      std::shared_ptr<BackupSearchEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BackupSearch

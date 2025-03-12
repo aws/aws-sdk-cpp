@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-signals/ApplicationSignalsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/application-signals/ApplicationSignalsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ApplicationSignals
 {
+  AWS_APPLICATIONSIGNALS_API extern const char SERVICE_NAME[];
   /**
    * <p>Use CloudWatch Application Signals for comprehensive observability of your
    * cloud-based applications. It enables real-time service health dashboards and
@@ -34,12 +38,20 @@ namespace ApplicationSignals
    * client pages, Synthetics canaries, and application names within dashboards and
    * maps.</p>
    */
-  class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>
+  class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>,
+    smithy::client::AwsSmithyClientT<Aws::ApplicationSignals::SERVICE_NAME,
+      Aws::ApplicationSignals::ApplicationSignalsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ApplicationSignalsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ApplicationSignalsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Application Signals"; }
 
       typedef ApplicationSignalsClientConfiguration ClientConfigurationType;
       typedef ApplicationSignalsEndpointProvider EndpointProviderType;
@@ -579,10 +591,7 @@ namespace ApplicationSignals
       std::shared_ptr<ApplicationSignalsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>;
-      void init(const ApplicationSignalsClientConfiguration& clientConfiguration);
 
-      ApplicationSignalsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ApplicationSignalsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationSignals

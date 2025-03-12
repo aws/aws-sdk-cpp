@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/security-ir/SecurityIRServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/security-ir/SecurityIRErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SecurityIR
 {
+  AWS_SECURITYIR_API extern const char SERVICE_NAME[];
   /**
    * <p>This guide provides documents the action and response elements for customer
    * use of the service.</p>
    */
-  class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>
+  class AWS_SECURITYIR_API SecurityIRClient : Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>,
+    smithy::client::AwsSmithyClientT<Aws::SecurityIR::SERVICE_NAME,
+      Aws::SecurityIR::SecurityIRClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SecurityIREndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SecurityIRErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Security IR"; }
 
       typedef SecurityIRClientConfiguration ClientConfigurationType;
       typedef SecurityIREndpointProvider EndpointProviderType;
@@ -652,10 +664,7 @@ namespace SecurityIR
       std::shared_ptr<SecurityIREndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>;
-      void init(const SecurityIRClientConfiguration& clientConfiguration);
 
-      SecurityIRClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SecurityIREndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SecurityIR

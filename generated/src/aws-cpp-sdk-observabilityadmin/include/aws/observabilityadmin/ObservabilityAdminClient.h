@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/observabilityadmin/ObservabilityAdminServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/observabilityadmin/ObservabilityAdminErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ObservabilityAdmin
 {
+  AWS_OBSERVABILITYADMIN_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon CloudWatch Obsersavability Admin to control temletry config for your
    * AWS Organization or account. Telemetry config conﬁg to discover and understand
@@ -29,12 +33,20 @@ namespace ObservabilityAdmin
    * and access management for Amazon CloudWatch</a> in the CloudWatch User
    * Guide.</p>
    */
-  class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>
+  class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>,
+    smithy::client::AwsSmithyClientT<Aws::ObservabilityAdmin::SERVICE_NAME,
+      Aws::ObservabilityAdmin::ObservabilityAdminClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ObservabilityAdminEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ObservabilityAdminErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ObservabilityAdmin"; }
 
       typedef ObservabilityAdminClientConfiguration ClientConfigurationType;
       typedef ObservabilityAdminEndpointProvider EndpointProviderType;
@@ -305,10 +317,7 @@ namespace ObservabilityAdmin
       std::shared_ptr<ObservabilityAdminEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>;
-      void init(const ObservabilityAdminClientConfiguration& clientConfiguration);
 
-      ObservabilityAdminClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ObservabilityAdminEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ObservabilityAdmin

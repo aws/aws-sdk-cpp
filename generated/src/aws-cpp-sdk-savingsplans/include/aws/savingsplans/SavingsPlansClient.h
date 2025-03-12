@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/savingsplans/SavingsPlansServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/savingsplans/SavingsPlansErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SavingsPlans
 {
+  AWS_SAVINGSPLANS_API extern const char SERVICE_NAME[];
   /**
    * <p>Savings Plans are a pricing model that offer significant savings on Amazon
    * Web Services usage (for example, on Amazon EC2 instances). You commit to a
@@ -24,12 +28,20 @@ namespace SavingsPlans
    * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon Web
    * Services Savings Plans User Guide</a>.</p>
    */
-  class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>
+  class AWS_SAVINGSPLANS_API SavingsPlansClient : Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>,
+    smithy::client::AwsSmithyClientT<Aws::SavingsPlans::SERVICE_NAME,
+      Aws::SavingsPlans::SavingsPlansClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SavingsPlansEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SavingsPlansErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "savingsplans"; }
 
       typedef SavingsPlansClientConfiguration ClientConfigurationType;
       typedef SavingsPlansEndpointProvider EndpointProviderType;
@@ -343,10 +355,7 @@ namespace SavingsPlans
       std::shared_ptr<SavingsPlansEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>;
-      void init(const SavingsPlansClientConfiguration& clientConfiguration);
 
-      SavingsPlansClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SavingsPlansEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SavingsPlans

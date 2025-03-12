@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/grafana/ManagedGrafanaErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ManagedGrafana
 {
+  AWS_MANAGEDGRAFANA_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Managed Grafana is a fully managed and secure data visualization
    * service that you can use to instantly query, correlate, and visualize
@@ -26,12 +30,20 @@ namespace ManagedGrafana
    * visualizations to analyze your metrics, logs, and traces without having to
    * build, package, or deploy any hardware to run Grafana servers. </p>
    */
-  class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>
+  class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>,
+    smithy::client::AwsSmithyClientT<Aws::ManagedGrafana::SERVICE_NAME,
+      Aws::ManagedGrafana::ManagedGrafanaClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ManagedGrafanaEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ManagedGrafanaErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "grafana"; }
 
       typedef ManagedGrafanaClientConfiguration ClientConfigurationType;
       typedef ManagedGrafanaEndpointProvider EndpointProviderType;
@@ -811,10 +823,7 @@ namespace ManagedGrafana
       std::shared_ptr<ManagedGrafanaEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>;
-      void init(const ManagedGrafanaClientConfiguration& clientConfiguration);
 
-      ManagedGrafanaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ManagedGrafanaEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ManagedGrafana

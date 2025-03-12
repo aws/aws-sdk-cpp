@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/apprunner/AppRunnerErrorMarshaller.h>
 
 namespace Aws
 {
 namespace AppRunner
 {
+  AWS_APPRUNNER_API extern const char SERVICE_NAME[];
   /**
    * <fullname>App Runner</fullname> <p>App Runner is an application service that
    * provides a fast, simple, and cost-effective way to go directly from an existing
@@ -37,12 +41,20 @@ namespace AppRunner
    * endpoints and quotas</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
    */
-  class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>
+  class AWS_APPRUNNER_API AppRunnerClient : Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>,
+    smithy::client::AwsSmithyClientT<Aws::AppRunner::SERVICE_NAME,
+      Aws::AppRunner::AppRunnerClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppRunnerEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AppRunnerErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppRunner"; }
 
       typedef AppRunnerClientConfiguration ClientConfigurationType;
       typedef AppRunnerEndpointProvider EndpointProviderType;
@@ -1156,10 +1168,7 @@ namespace AppRunner
       std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;
-      void init(const AppRunnerClientConfiguration& clientConfiguration);
 
-      AppRunnerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppRunnerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppRunner

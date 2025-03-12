@@ -6,27 +6,39 @@
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents/IoTEventsServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iotevents/IoTEventsErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTEvents
 {
+  AWS_IOTEVENTS_API extern const char SERVICE_NAME[];
   /**
    * <p>AWS IoT Events monitors your equipment or device fleets for failures or
    * changes in operation, and triggers actions when such events occur. You can use
    * AWS IoT Events API operations to create, read, update, and delete inputs and
    * detector models, and to list their versions.</p>
    */
-  class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>
+  class AWS_IOTEVENTS_API IoTEventsClient : Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>,
+    smithy::client::AwsSmithyClientT<Aws::IoTEvents::SERVICE_NAME,
+      Aws::IoTEvents::IoTEventsClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTEventsEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTEventsErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoT Events"; }
 
       typedef IoTEventsClientConfiguration ClientConfigurationType;
       typedef IoTEventsEndpointProvider EndpointProviderType;
@@ -770,10 +782,7 @@ namespace IoTEvents
       std::shared_ptr<IoTEventsEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>;
-      void init(const IoTEventsClientConfiguration& clientConfiguration);
 
-      IoTEventsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTEventsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTEvents

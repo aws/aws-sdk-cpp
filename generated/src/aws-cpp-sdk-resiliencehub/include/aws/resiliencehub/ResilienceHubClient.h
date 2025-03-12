@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resiliencehub/ResilienceHubServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/resiliencehub/ResilienceHubErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ResilienceHub
 {
+  AWS_RESILIENCEHUB_API extern const char SERVICE_NAME[];
   /**
    * <p>Resilience Hub helps you proactively prepare and protect your Amazon Web
    * Services applications from disruptions. It offers continual resiliency
@@ -24,12 +28,20 @@ namespace ResilienceHub
    * applications are met, and resolve issues before they are released into
    * production. </p>
    */
-  class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>
+  class AWS_RESILIENCEHUB_API ResilienceHubClient : Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>,
+    smithy::client::AwsSmithyClientT<Aws::ResilienceHub::SERVICE_NAME,
+      Aws::ResilienceHub::ResilienceHubClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      ResilienceHubEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::ResilienceHubErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "resiliencehub"; }
 
       typedef ResilienceHubClientConfiguration ClientConfigurationType;
       typedef ResilienceHubEndpointProvider EndpointProviderType;
@@ -1810,10 +1822,7 @@ namespace ResilienceHub
       std::shared_ptr<ResilienceHubEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>;
-      void init(const ResilienceHubClientConfiguration& clientConfiguration);
 
-      ResilienceHubClientConfiguration m_clientConfiguration;
-      std::shared_ptr<ResilienceHubEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ResilienceHub

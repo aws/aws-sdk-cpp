@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivs-realtime/IvsrealtimeServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ivs-realtime/IvsrealtimeErrorMarshaller.h>
 
 namespace Aws
 {
 namespace ivsrealtime
 {
+  AWS_IVSREALTIME_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon Interactive Video Service (IVS) real-time API is REST compatible,
    * using a standard HTTP API and an AWS EventBridge event stream for responses.
@@ -52,12 +56,20 @@ namespace ivsrealtime
    * following resource supports tagging: Stage.</p> <p>At most 50 tags can be
    * applied to a resource.</p>
    */
-  class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>
+  class AWS_IVSREALTIME_API IvsrealtimeClient : Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>,
+    smithy::client::AwsSmithyClientT<Aws::ivsrealtime::SERVICE_NAME,
+      Aws::ivsrealtime::IvsrealtimeClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IvsrealtimeEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IvsrealtimeErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IVS RealTime"; }
 
       typedef IvsrealtimeClientConfiguration ClientConfigurationType;
       typedef IvsrealtimeEndpointProvider EndpointProviderType;
@@ -1070,10 +1082,7 @@ namespace ivsrealtime
       std::shared_ptr<IvsrealtimeEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>;
-      void init(const IvsrealtimeClientConfiguration& clientConfiguration);
 
-      IvsrealtimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IvsrealtimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ivsrealtime

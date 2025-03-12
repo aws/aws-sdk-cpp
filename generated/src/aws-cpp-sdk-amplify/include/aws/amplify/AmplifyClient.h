@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplify/AmplifyServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/amplify/AmplifyErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Amplify
 {
+  AWS_AMPLIFY_API extern const char SERVICE_NAME[];
   /**
    * <p>Amplify enables developers to develop and deploy cloud-powered mobile and web
    * apps. Amplify Hosting provides a continuous delivery and hosting service for web
@@ -25,12 +29,20 @@ namespace Amplify
    * information, see the <a href="https://docs.amplify.aws/">Amplify Framework.</a>
    * </p>
    */
-  class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>
+  class AWS_AMPLIFY_API AmplifyClient : Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>,
+    smithy::client::AwsSmithyClientT<Aws::Amplify::SERVICE_NAME,
+      Aws::Amplify::AmplifyClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AmplifyEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::AmplifyErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Amplify"; }
 
       typedef AmplifyClientConfiguration ClientConfigurationType;
       typedef AmplifyEndpointProvider EndpointProviderType;
@@ -1057,10 +1069,7 @@ namespace Amplify
       std::shared_ptr<AmplifyEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>;
-      void init(const AmplifyClientConfiguration& clientConfiguration);
 
-      AmplifyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AmplifyEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Amplify

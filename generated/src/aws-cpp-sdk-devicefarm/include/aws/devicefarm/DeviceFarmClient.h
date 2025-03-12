@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devicefarm/DeviceFarmServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/devicefarm/DeviceFarmErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DeviceFarm
 {
+  AWS_DEVICEFARM_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the AWS Device Farm API documentation, which contains APIs
    * for:</p> <ul> <li> <p>Testing on desktop browsers</p> <p> Device Farm makes it
@@ -29,12 +33,20 @@ namespace DeviceFarm
    * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
    * Developer Guide</a>.</p> </li> </ul>
    */
-  class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>
+  class AWS_DEVICEFARM_API DeviceFarmClient : Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>,
+    smithy::client::AwsSmithyClientT<Aws::DeviceFarm::SERVICE_NAME,
+      Aws::DeviceFarm::DeviceFarmClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DeviceFarmEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DeviceFarmErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Device Farm"; }
 
       typedef DeviceFarmClientConfiguration ClientConfigurationType;
       typedef DeviceFarmEndpointProvider EndpointProviderType;
@@ -2119,10 +2131,7 @@ namespace DeviceFarm
       std::shared_ptr<DeviceFarmEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>;
-      void init(const DeviceFarmClientConfiguration& clientConfiguration);
 
-      DeviceFarmClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DeviceFarmEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DeviceFarm

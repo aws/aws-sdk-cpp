@@ -6,25 +6,37 @@
 #pragma once
 #include <aws/eks-auth/EKSAuth_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks-auth/EKSAuthServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/eks-auth/EKSAuthErrorMarshaller.h>
 
 namespace Aws
 {
 namespace EKSAuth
 {
+  AWS_EKSAUTH_API extern const char SERVICE_NAME[];
   /**
    * <p>The Amazon EKS Auth API and the <code>AssumeRoleForPodIdentity</code> action
    * are only used by the EKS Pod Identity Agent.</p>
    */
-  class AWS_EKSAUTH_API EKSAuthClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient>
+  class AWS_EKSAUTH_API EKSAuthClient : Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient>,
+    smithy::client::AwsSmithyClientT<Aws::EKSAuth::SERVICE_NAME,
+      Aws::EKSAuth::EKSAuthClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EKSAuthEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::EKSAuthErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EKS Auth"; }
 
       typedef EKSAuthClientConfiguration ClientConfigurationType;
       typedef EKSAuthEndpointProvider EndpointProviderType;
@@ -112,10 +124,7 @@ namespace EKSAuth
       std::shared_ptr<EKSAuthEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient>;
-      void init(const EKSAuthClientConfiguration& clientConfiguration);
 
-      EKSAuthClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EKSAuthEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EKSAuth

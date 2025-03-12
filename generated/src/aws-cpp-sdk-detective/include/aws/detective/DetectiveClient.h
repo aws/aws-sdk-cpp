@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/detective/DetectiveErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Detective
 {
+  AWS_DETECTIVE_API extern const char SERVICE_NAME[];
   /**
    * <p>Detective uses machine learning and purpose-built visualizations to help you
    * to analyze and investigate security issues across your Amazon Web Services
@@ -62,12 +66,20 @@ namespace Detective
    * is used to centrally manage multiple accounts. In the case of Detective, the
    * administrator account manages the accounts in their behavior graph.</p> 
    */
-  class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>
+  class AWS_DETECTIVE_API DetectiveClient : Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>,
+    smithy::client::AwsSmithyClientT<Aws::Detective::SERVICE_NAME,
+      Aws::Detective::DetectiveClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DetectiveEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DetectiveErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Detective"; }
 
       typedef DetectiveClientConfiguration ClientConfigurationType;
       typedef DetectiveEndpointProvider EndpointProviderType;
@@ -980,10 +992,7 @@ namespace Detective
       std::shared_ptr<DetectiveEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>;
-      void init(const DetectiveClientConfiguration& clientConfiguration);
 
-      DetectiveClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DetectiveEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Detective

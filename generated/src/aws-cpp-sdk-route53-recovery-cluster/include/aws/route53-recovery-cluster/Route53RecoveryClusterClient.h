@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Route53RecoveryCluster
 {
+  AWS_ROUTE53RECOVERYCLUSTER_API extern const char SERVICE_NAME[];
   /**
    * <p>Welcome to the Routing Control (Recovery Cluster) API Reference Guide for
    * Amazon Route 53 Application Recovery Controller.</p> <p>With Route 53 ARC, you
@@ -60,12 +64,20 @@ namespace Route53RecoveryCluster
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/">Amazon Route 53
    * Application Recovery Controller Developer Guide</a>.</p> </li> </ul>
    */
-  class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>
+  class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient : Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>,
+    smithy::client::AwsSmithyClientT<Aws::Route53RecoveryCluster::SERVICE_NAME,
+      Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Route53RecoveryClusterEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::Route53RecoveryClusterErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Route53 Recovery Cluster"; }
 
       typedef Route53RecoveryClusterClientConfiguration ClientConfigurationType;
       typedef Route53RecoveryClusterEndpointProvider EndpointProviderType;
@@ -323,10 +335,7 @@ namespace Route53RecoveryCluster
       std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>;
-      void init(const Route53RecoveryClusterClientConfiguration& clientConfiguration);
 
-      Route53RecoveryClusterClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53RecoveryCluster

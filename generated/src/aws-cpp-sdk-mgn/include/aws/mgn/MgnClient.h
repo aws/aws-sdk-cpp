@@ -6,24 +6,36 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mgn/MgnServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/mgn/MgnErrorMarshaller.h>
 
 namespace Aws
 {
 namespace mgn
 {
+  AWS_MGN_API extern const char SERVICE_NAME[];
   /**
    * <p>The Application Migration Service service.</p>
    */
-  class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>
+  class AWS_MGN_API MgnClient : Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>,
+    smithy::client::AwsSmithyClientT<Aws::mgn::SERVICE_NAME,
+      Aws::mgn::MgnClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MgnEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::MgnErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "mgn"; }
 
       typedef MgnClientConfiguration ClientConfigurationType;
       typedef MgnEndpointProvider EndpointProviderType;
@@ -1896,10 +1908,7 @@ namespace mgn
       std::shared_ptr<MgnEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>;
-      void init(const MgnClientConfiguration& clientConfiguration);
 
-      MgnClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MgnEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace mgn

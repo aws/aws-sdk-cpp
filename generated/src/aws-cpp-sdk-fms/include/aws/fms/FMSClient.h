@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fms/FMSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/fms/FMSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace FMS
 {
+  AWS_FMS_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Firewall Manager API Reference</i>. This guide is for
    * developers who need detailed information about the Firewall Manager API actions,
@@ -26,12 +30,20 @@ namespace FMS
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
    * roles for Firewall Manager</a>. </p>
    */
-  class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>
+  class AWS_FMS_API FMSClient : Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>,
+    smithy::client::AwsSmithyClientT<Aws::FMS::SERVICE_NAME,
+      Aws::FMS::FMSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      FMSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::FMSErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "FMS"; }
 
       typedef FMSClientConfiguration ClientConfigurationType;
       typedef FMSEndpointProvider EndpointProviderType;
@@ -1260,10 +1272,7 @@ namespace FMS
       std::shared_ptr<FMSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>;
-      void init(const FMSClientConfiguration& clientConfiguration);
 
-      FMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<FMSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FMS

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/socialmessaging/SocialMessagingServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/socialmessaging/SocialMessagingErrorMarshaller.h>
 
 namespace Aws
 {
 namespace SocialMessaging
 {
+  AWS_SOCIALMESSAGING_API extern const char SERVICE_NAME[];
   /**
    * <p> <i>Amazon Web Services End User Messaging Social</i>, also referred to as
    * Social messaging, is a messaging service that enables application developers to
@@ -56,12 +60,20 @@ namespace SocialMessaging
    * href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web
    * Services Global Infrastructure.</a> </p>
    */
-  class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient>
+  class AWS_SOCIALMESSAGING_API SocialMessagingClient : Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient>,
+    smithy::client::AwsSmithyClientT<Aws::SocialMessaging::SERVICE_NAME,
+      Aws::SocialMessaging::SocialMessagingClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      SocialMessagingEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::SocialMessagingErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "SocialMessaging"; }
 
       typedef SocialMessagingClientConfiguration ClientConfigurationType;
       typedef SocialMessagingEndpointProvider EndpointProviderType;
@@ -474,10 +486,7 @@ namespace SocialMessaging
       std::shared_ptr<SocialMessagingEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient>;
-      void init(const SocialMessagingClientConfiguration& clientConfiguration);
 
-      SocialMessagingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<SocialMessagingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SocialMessaging

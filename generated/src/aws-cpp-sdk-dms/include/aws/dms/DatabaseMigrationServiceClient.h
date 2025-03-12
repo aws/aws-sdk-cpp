@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/dms/DatabaseMigrationServiceErrorMarshaller.h>
 
 namespace Aws
 {
 namespace DatabaseMigrationService
 {
+  AWS_DATABASEMIGRATIONSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Database Migration Service</fullname> <p>Database Migration Service
    * (DMS) can migrate your data to and from the most widely used commercial and
@@ -28,12 +32,20 @@ namespace DatabaseMigrationService
    * Database Migration Service?</a> in the <i>Database Migration Service User
    * Guide.</i> </p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>
+  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>,
+    smithy::client::AwsSmithyClientT<Aws::DatabaseMigrationService::SERVICE_NAME,
+      Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      DatabaseMigrationServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::DatabaseMigrationServiceErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Database Migration Service"; }
 
       typedef DatabaseMigrationServiceClientConfiguration ClientConfigurationType;
       typedef DatabaseMigrationServiceEndpointProvider EndpointProviderType;
@@ -3189,10 +3201,7 @@ namespace DatabaseMigrationService
       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>;
-      void init(const DatabaseMigrationServiceClientConfiguration& clientConfiguration);
 
-      DatabaseMigrationServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DatabaseMigrationService

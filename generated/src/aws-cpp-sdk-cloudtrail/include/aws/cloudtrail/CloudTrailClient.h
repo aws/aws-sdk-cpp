@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/cloudtrail/CloudTrailErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CloudTrail
 {
+  AWS_CLOUDTRAIL_API extern const char SERVICE_NAME[];
   /**
    * <fullname>CloudTrail</fullname> <p>This is the CloudTrail API Reference. It
    * provides descriptions of actions, data types, common parameters, and common
@@ -36,12 +40,20 @@ namespace CloudTrail
    * User Guide</a> for information about the data that is included with each Amazon
    * Web Services API call listed in the log files.</p>
    */
-  class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>
+  class AWS_CLOUDTRAIL_API CloudTrailClient : Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>,
+    smithy::client::AwsSmithyClientT<Aws::CloudTrail::SERVICE_NAME,
+      Aws::CloudTrail::CloudTrailClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CloudTrailEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CloudTrailErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CloudTrail"; }
 
       typedef CloudTrailClientConfiguration ClientConfigurationType;
       typedef CloudTrailEndpointProvider EndpointProviderType;
@@ -1899,10 +1911,7 @@ namespace CloudTrail
       std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;
-      void init(const CloudTrailClientConfiguration& clientConfiguration);
 
-      CloudTrailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudTrail

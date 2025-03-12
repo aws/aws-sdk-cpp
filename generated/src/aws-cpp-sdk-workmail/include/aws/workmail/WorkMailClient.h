@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmail/WorkMailServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/workmail/WorkMailErrorMarshaller.h>
 
 namespace Aws
 {
 namespace WorkMail
 {
+  AWS_WORKMAIL_API extern const char SERVICE_NAME[];
   /**
    * <p>WorkMail is a secure, managed business email and calendaring service with
    * support for existing desktop and mobile email clients. You can access your
@@ -36,12 +40,20 @@ namespace WorkMail
    * perform the scenarios listed above, as well as give users the ability to grant
    * access on a selective basis using the IAM model.</p>
    */
-  class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>
+  class AWS_WORKMAIL_API WorkMailClient : Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>,
+    smithy::client::AwsSmithyClientT<Aws::WorkMail::SERVICE_NAME,
+      Aws::WorkMail::WorkMailClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      WorkMailEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::WorkMailErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "WorkMail"; }
 
       typedef WorkMailClientConfiguration ClientConfigurationType;
       typedef WorkMailEndpointProvider EndpointProviderType;
@@ -2569,10 +2581,7 @@ namespace WorkMail
       std::shared_ptr<WorkMailEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>;
-      void init(const WorkMailClientConfiguration& clientConfiguration);
 
-      WorkMailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<WorkMailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkMail

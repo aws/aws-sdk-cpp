@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/b2bi/B2BIServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/b2bi/B2BIErrorMarshaller.h>
 
 namespace Aws
 {
 namespace B2BI
 {
+  AWS_B2BI_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Amazon Web Services B2B Data Interchange API Reference</i>. It
    * provides descriptions, API request parameters, and the XML response for each of
@@ -30,12 +34,20 @@ namespace B2BI
    * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-skeleton.html#cli-usage-skeleton-generate">Generate
    * and use a parameter skeleton file</a>.</p> 
    */
-  class AWS_B2BI_API B2BIClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>
+  class AWS_B2BI_API B2BIClient : Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>,
+    smithy::client::AwsSmithyClientT<Aws::B2BI::SERVICE_NAME,
+      Aws::B2BI::B2BIClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      B2BIEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::B2BIErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "b2bi"; }
 
       typedef B2BIClientConfiguration ClientConfigurationType;
       typedef B2BIEndpointProvider EndpointProviderType;
@@ -946,10 +958,7 @@ namespace B2BI
       std::shared_ptr<B2BIEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>;
-      void init(const B2BIClientConfiguration& clientConfiguration);
 
-      B2BIClientConfiguration m_clientConfiguration;
-      std::shared_ptr<B2BIEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace B2BI

@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/iotfleetwise/IoTFleetWiseErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IoTFleetWise
 {
+  AWS_IOTFLEETWISE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Web Services IoT FleetWise is a fully managed service that you can use
    * to collect, model, and transfer vehicle data to the Amazon Web Services cloud at
@@ -30,12 +34,20 @@ namespace IoTFleetWise
    * Web Services Region and feature availability</a> in the <i>Amazon Web Services
    * IoT FleetWise Developer Guide</i>.</p> 
    */
-  class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>
+  class AWS_IOTFLEETWISE_API IoTFleetWiseClient : Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>,
+    smithy::client::AwsSmithyClientT<Aws::IoTFleetWise::SERVICE_NAME,
+      Aws::IoTFleetWise::IoTFleetWiseClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IoTFleetWiseEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IoTFleetWiseErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "IoTFleetWise"; }
 
       typedef IoTFleetWiseClientConfiguration ClientConfigurationType;
       typedef IoTFleetWiseEndpointProvider EndpointProviderType;
@@ -1686,10 +1698,7 @@ namespace IoTFleetWise
       std::shared_ptr<IoTFleetWiseEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>;
-      void init(const IoTFleetWiseClientConfiguration& clientConfiguration);
 
-      IoTFleetWiseClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IoTFleetWiseEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTFleetWise

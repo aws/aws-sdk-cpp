@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lightsail/LightsailServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/lightsail/LightsailErrorMarshaller.h>
 
 namespace Aws
 {
 namespace Lightsail
 {
+  AWS_LIGHTSAIL_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Lightsail is the easiest way to get started with Amazon Web Services
    * (Amazon Web Services) for developers who need to build websites or web
@@ -35,12 +39,20 @@ namespace Lightsail
    * Lightsail Endpoints and Quotas</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
    */
-  class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>
+  class AWS_LIGHTSAIL_API LightsailClient : Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>,
+    smithy::client::AwsSmithyClientT<Aws::Lightsail::SERVICE_NAME,
+      Aws::Lightsail::LightsailClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      LightsailEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::LightsailErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Lightsail"; }
 
       typedef LightsailClientConfiguration ClientConfigurationType;
       typedef LightsailEndpointProvider EndpointProviderType;
@@ -4908,10 +4920,7 @@ namespace Lightsail
       std::shared_ptr<LightsailEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>;
-      void init(const LightsailClientConfiguration& clientConfiguration);
 
-      LightsailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<LightsailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Lightsail

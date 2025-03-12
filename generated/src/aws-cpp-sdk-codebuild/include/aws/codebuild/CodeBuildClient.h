@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codebuild/CodeBuildServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/codebuild/CodeBuildErrorMarshaller.h>
 
 namespace Aws
 {
 namespace CodeBuild
 {
+  AWS_CODEBUILD_API extern const char SERVICE_NAME[];
   /**
    * <fullname>CodeBuild</fullname> <p>CodeBuild is a fully managed build service in
    * the cloud. CodeBuild compiles your source code, runs unit tests, and produces
@@ -28,12 +32,20 @@ namespace CodeBuild
    * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild
    * User Guide</a>.</i> </p>
    */
-  class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>
+  class AWS_CODEBUILD_API CodeBuildClient : Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>,
+    smithy::client::AwsSmithyClientT<Aws::CodeBuild::SERVICE_NAME,
+      Aws::CodeBuild::CodeBuildClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      CodeBuildEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::CodeBuildErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "CodeBuild"; }
 
       typedef CodeBuildClientConfiguration ClientConfigurationType;
       typedef CodeBuildEndpointProvider EndpointProviderType;
@@ -1416,10 +1428,7 @@ namespace CodeBuild
       std::shared_ptr<CodeBuildEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>;
-      void init(const CodeBuildClientConfiguration& clientConfiguration);
 
-      CodeBuildClientConfiguration m_clientConfiguration;
-      std::shared_ptr<CodeBuildEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeBuild

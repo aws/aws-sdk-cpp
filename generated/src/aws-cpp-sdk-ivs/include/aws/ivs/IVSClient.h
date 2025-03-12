@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivs/IVSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/ivs/IVSErrorMarshaller.h>
 
 namespace Aws
 {
 namespace IVS
 {
+  AWS_IVS_API extern const char SERVICE_NAME[];
   /**
    * <p> <b>Introduction</b> </p> <p>The Amazon Interactive Video Service (IVS) API
    * is REST compatible, using a standard HTTP API and an Amazon Web Services
@@ -95,12 +99,20 @@ namespace IVS
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names</a> in the <i>AWS General Reference</i>.</p>
    */
-  class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>
+  class AWS_IVS_API IVSClient : Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>,
+    smithy::client::AwsSmithyClientT<Aws::IVS::SERVICE_NAME,
+      Aws::IVS::IVSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      IVSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::IVSErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "ivs"; }
 
       typedef IVSClientConfiguration ClientConfigurationType;
       typedef IVSEndpointProvider EndpointProviderType;
@@ -1124,10 +1136,7 @@ namespace IVS
       std::shared_ptr<IVSEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>;
-      void init(const IVSClientConfiguration& clientConfiguration);
 
-      IVSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<IVSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IVS

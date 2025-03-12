@@ -6,15 +6,19 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <aws/network-firewall/NetworkFirewallErrorMarshaller.h>
 
 namespace Aws
 {
 namespace NetworkFirewall
 {
+  AWS_NETWORKFIREWALL_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the API Reference for Network Firewall. This guide is for developers
    * who need detailed information about the Network Firewall API actions, data
@@ -74,12 +78,20 @@ namespace NetworkFirewall
    * <p>In Amazon VPC, use ingress routing enhancements to route traffic through the
    * new firewall endpoints.</p> </li> </ol>
    */
-  class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>
+  class AWS_NETWORKFIREWALL_API NetworkFirewallClient : Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>,
+    smithy::client::AwsSmithyClientT<Aws::NetworkFirewall::SERVICE_NAME,
+      Aws::NetworkFirewall::NetworkFirewallClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      NetworkFirewallEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome,
+      Aws::Client::NetworkFirewallErrorMarshaller>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Network Firewall"; }
 
       typedef NetworkFirewallClientConfiguration ClientConfigurationType;
       typedef NetworkFirewallEndpointProvider EndpointProviderType;
@@ -1304,10 +1316,7 @@ namespace NetworkFirewall
       std::shared_ptr<NetworkFirewallEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>;
-      void init(const NetworkFirewallClientConfiguration& clientConfiguration);
 
-      NetworkFirewallClientConfiguration m_clientConfiguration;
-      std::shared_ptr<NetworkFirewallEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace NetworkFirewall
