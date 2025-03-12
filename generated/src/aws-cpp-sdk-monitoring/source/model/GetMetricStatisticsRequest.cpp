@@ -83,7 +83,7 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
       for(auto& item : m_statistics)
       {
         ss << "Statistics.member." << statisticsCount << "="
-            << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item).c_str()) << "&";
+            << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(item)) << "&";
         statisticsCount++;
       }
     }
@@ -109,7 +109,7 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
 
   if(m_unitHasBeenSet)
   {
-    ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+    ss << "Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
   ss << "Version=2010-08-01";

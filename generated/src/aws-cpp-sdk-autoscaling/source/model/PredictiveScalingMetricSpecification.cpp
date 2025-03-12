@@ -146,7 +146,7 @@ void PredictiveScalingMetricSpecification::OutputToStream(Aws::OStream& oStream,
 {
   if(m_targetValueHasBeenSet)
   {
-        oStream << location << ".TargetValue=" << StringUtils::URLEncode(m_targetValue) << "&";
+      oStream << location << ".TargetValue=" << StringUtils::URLEncode(m_targetValue) << "&";
   }
   if(m_predefinedMetricPairSpecificationHasBeenSet)
   {

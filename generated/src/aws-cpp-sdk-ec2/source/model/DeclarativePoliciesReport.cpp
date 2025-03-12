@@ -138,7 +138,7 @@ void DeclarativePoliciesReport::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ReportStateMapper::GetNameForReportState(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ReportStateMapper::GetNameForReportState(m_status)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -182,7 +182,7 @@ void DeclarativePoliciesReport::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ReportStateMapper::GetNameForReportState(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ReportStateMapper::GetNameForReportState(m_status)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -190,7 +190,7 @@ void DeclarativePoliciesReport::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

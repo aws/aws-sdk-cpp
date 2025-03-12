@@ -153,7 +153,7 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state)) << "&";
   }
 
   if(m_creationTimeHasBeenSet)
@@ -210,7 +210,7 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayAttachmentStateMapper::GetNameForTransitGatewayAttachmentState(m_state)) << "&";
   }
   if(m_creationTimeHasBeenSet)
   {
@@ -222,7 +222,7 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -30,7 +30,7 @@ Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const
   ss << "Action=ModifyInstanceMetadataDefaults&";
   if(m_httpTokensHasBeenSet)
   {
-    ss << "HttpTokens=" << MetadataDefaultHttpTokensStateMapper::GetNameForMetadataDefaultHttpTokensState(m_httpTokens) << "&";
+    ss << "HttpTokens=" << StringUtils::URLEncode(MetadataDefaultHttpTokensStateMapper::GetNameForMetadataDefaultHttpTokensState(m_httpTokens)) << "&";
   }
 
   if(m_httpPutResponseHopLimitHasBeenSet)
@@ -40,12 +40,12 @@ Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const
 
   if(m_httpEndpointHasBeenSet)
   {
-    ss << "HttpEndpoint=" << DefaultInstanceMetadataEndpointStateMapper::GetNameForDefaultInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+    ss << "HttpEndpoint=" << StringUtils::URLEncode(DefaultInstanceMetadataEndpointStateMapper::GetNameForDefaultInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
 
   if(m_instanceMetadataTagsHasBeenSet)
   {
-    ss << "InstanceMetadataTags=" << DefaultInstanceMetadataTagsStateMapper::GetNameForDefaultInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+    ss << "InstanceMetadataTags=" << StringUtils::URLEncode(DefaultInstanceMetadataTagsStateMapper::GetNameForDefaultInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

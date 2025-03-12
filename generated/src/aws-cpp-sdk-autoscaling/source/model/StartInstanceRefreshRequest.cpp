@@ -30,7 +30,7 @@ Aws::String StartInstanceRefreshRequest::SerializePayload() const
 
   if(m_strategyHasBeenSet)
   {
-    ss << "Strategy=" << RefreshStrategyMapper::GetNameForRefreshStrategy(m_strategy) << "&";
+    ss << "Strategy=" << StringUtils::URLEncode(RefreshStrategyMapper::GetNameForRefreshStrategy(m_strategy)) << "&";
   }
 
   if(m_desiredConfigurationHasBeenSet)

@@ -256,7 +256,7 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_policyVersionList)
       {
         Aws::StringStream policyVersionListSs;
-        policyVersionListSs << location <<  ".PolicyVersionList.member." << policyVersionListIdx++;
+        policyVersionListSs << location << ".PolicyVersionList.member." << policyVersionListIdx++;
         item.OutputToStream(oStream, policyVersionListSs.str().c_str());
       }
   }

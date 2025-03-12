@@ -237,7 +237,7 @@ void BlueGreenDeployment::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_switchoverDetails)
       {
         Aws::StringStream switchoverDetailsSs;
-        switchoverDetailsSs << location <<  ".SwitchoverDetails.member." << switchoverDetailsIdx++;
+        switchoverDetailsSs << location << ".SwitchoverDetails.member." << switchoverDetailsIdx++;
         item.OutputToStream(oStream, switchoverDetailsSs.str().c_str());
       }
   }
@@ -247,7 +247,7 @@ void BlueGreenDeployment::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tasks)
       {
         Aws::StringStream tasksSs;
-        tasksSs << location <<  ".Tasks.member." << tasksIdx++;
+        tasksSs << location << ".Tasks.member." << tasksIdx++;
         item.OutputToStream(oStream, tasksSs.str().c_str());
       }
   }
@@ -273,7 +273,7 @@ void BlueGreenDeployment::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location <<  ".Tag." << tagListIdx++;
+        tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }

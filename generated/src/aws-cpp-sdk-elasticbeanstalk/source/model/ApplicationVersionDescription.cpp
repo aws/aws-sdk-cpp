@@ -165,7 +165,7 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status)) << "&";
   }
 
 }
@@ -214,7 +214,7 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status)) << "&";
   }
 }
 

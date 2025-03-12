@@ -30,7 +30,7 @@ Aws::String ModifyVpcTenancyRequest::SerializePayload() const
 
   if(m_instanceTenancyHasBeenSet)
   {
-    ss << "InstanceTenancy=" << VpcTenancyMapper::GetNameForVpcTenancy(m_instanceTenancy) << "&";
+    ss << "InstanceTenancy=" << StringUtils::URLEncode(VpcTenancyMapper::GetNameForVpcTenancy(m_instanceTenancy)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

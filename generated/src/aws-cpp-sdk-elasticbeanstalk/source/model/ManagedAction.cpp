@@ -92,12 +92,12 @@ void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_actionTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
+      oStream << location << index << locationValue << ".ActionType=" << StringUtils::URLEncode(ActionTypeMapper::GetNameForActionType(m_actionType)) << "&";
   }
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ActionStatusMapper::GetNameForActionStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ActionStatusMapper::GetNameForActionStatus(m_status)) << "&";
   }
 
   if(m_windowStartTimeHasBeenSet)
@@ -119,11 +119,11 @@ void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_actionTypeHasBeenSet)
   {
-      oStream << location << ".ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
+      oStream << location << ".ActionType=" << StringUtils::URLEncode(ActionTypeMapper::GetNameForActionType(m_actionType)) << "&";
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ActionStatusMapper::GetNameForActionStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ActionStatusMapper::GetNameForActionStatus(m_status)) << "&";
   }
   if(m_windowStartTimeHasBeenSet)
   {

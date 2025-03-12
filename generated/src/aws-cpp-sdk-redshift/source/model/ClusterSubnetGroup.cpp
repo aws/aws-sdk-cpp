@@ -187,7 +187,7 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_subnets)
       {
         Aws::StringStream subnetsSs;
-        subnetsSs << location <<  ".Subnet." << subnetsIdx++;
+        subnetsSs << location << ".Subnets.Subnet." << subnetsIdx++;
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
@@ -197,7 +197,7 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -206,7 +206,7 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       unsigned supportedClusterIpAddressTypesIdx = 1;
       for(auto& item : m_supportedClusterIpAddressTypes)
       {
-        oStream << location << ".item." << supportedClusterIpAddressTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SupportedClusterIpAddressTypes.item." << supportedClusterIpAddressTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

@@ -79,7 +79,7 @@ void DiskInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << DiskTypeMapper::GetNameForDiskType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(DiskTypeMapper::GetNameForDiskType(m_type)) << "&";
   }
 
 }
@@ -96,7 +96,7 @@ void DiskInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << DiskTypeMapper::GetNameForDiskType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(DiskTypeMapper::GetNameForDiskType(m_type)) << "&";
   }
 }
 

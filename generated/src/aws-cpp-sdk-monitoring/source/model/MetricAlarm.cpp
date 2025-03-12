@@ -340,7 +340,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_stateValueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+      oStream << location << index << locationValue << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
 
   if(m_stateReasonHasBeenSet)
@@ -370,7 +370,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_statisticHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
+      oStream << location << index << locationValue << ".Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
   }
 
   if(m_extendedStatisticHasBeenSet)
@@ -396,7 +396,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_unitHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
   if(m_evaluationPeriodsHasBeenSet)
@@ -416,7 +416,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_comparisonOperatorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
+      oStream << location << index << locationValue << ".ComparisonOperator=" << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
   }
 
   if(m_treatMissingDataHasBeenSet)
@@ -447,7 +447,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_evaluationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EvaluationState=" << EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState) << "&";
+      oStream << location << index << locationValue << ".EvaluationState=" << StringUtils::URLEncode(EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState)) << "&";
   }
 
   if(m_stateTransitionedTimestampHasBeenSet)
@@ -505,7 +505,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_stateValueHasBeenSet)
   {
-      oStream << location << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+      oStream << location << ".StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
   if(m_stateReasonHasBeenSet)
   {
@@ -529,7 +529,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_statisticHasBeenSet)
   {
-      oStream << location << ".Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
+      oStream << location << ".Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
   }
   if(m_extendedStatisticHasBeenSet)
   {
@@ -541,7 +541,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
@@ -551,7 +551,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_unitHasBeenSet)
   {
-      oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+      oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
   if(m_evaluationPeriodsHasBeenSet)
   {
@@ -563,11 +563,11 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_thresholdHasBeenSet)
   {
-        oStream << location << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
+      oStream << location << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
   if(m_comparisonOperatorHasBeenSet)
   {
-      oStream << location << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
+      oStream << location << ".ComparisonOperator=" << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator)) << "&";
   }
   if(m_treatMissingDataHasBeenSet)
   {
@@ -583,7 +583,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_metrics)
       {
         Aws::StringStream metricsSs;
-        metricsSs << location <<  ".Metrics.member." << metricsIdx++;
+        metricsSs << location << ".Metrics.member." << metricsIdx++;
         item.OutputToStream(oStream, metricsSs.str().c_str());
       }
   }
@@ -593,7 +593,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_evaluationStateHasBeenSet)
   {
-      oStream << location << ".EvaluationState=" << EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState) << "&";
+      oStream << location << ".EvaluationState=" << StringUtils::URLEncode(EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState)) << "&";
   }
   if(m_stateTransitionedTimestampHasBeenSet)
   {

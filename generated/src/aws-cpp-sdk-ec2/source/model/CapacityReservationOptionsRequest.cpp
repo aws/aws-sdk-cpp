@@ -53,7 +53,7 @@ void CapacityReservationOptionsRequest::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_usageStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UsageStrategy=" << FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy) << "&";
+      oStream << location << index << locationValue << ".UsageStrategy=" << StringUtils::URLEncode(FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void CapacityReservationOptionsRequest::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_usageStrategyHasBeenSet)
   {
-      oStream << location << ".UsageStrategy=" << FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy) << "&";
+      oStream << location << ".UsageStrategy=" << StringUtils::URLEncode(FleetCapacityReservationUsageStrategyMapper::GetNameForFleetCapacityReservationUsageStrategy(m_usageStrategy)) << "&";
   }
 }
 

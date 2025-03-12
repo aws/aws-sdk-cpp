@@ -81,7 +81,7 @@ void DescribeFleetError::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_lifecycleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Lifecycle=" << InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle) << "&";
+      oStream << location << index << locationValue << ".Lifecycle=" << StringUtils::URLEncode(InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle)) << "&";
   }
 
   if(m_errorCodeHasBeenSet)
@@ -106,7 +106,7 @@ void DescribeFleetError::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lifecycleHasBeenSet)
   {
-      oStream << location << ".Lifecycle=" << InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle) << "&";
+      oStream << location << ".Lifecycle=" << StringUtils::URLEncode(InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle)) << "&";
   }
   if(m_errorCodeHasBeenSet)
   {

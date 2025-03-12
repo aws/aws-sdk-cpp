@@ -25,7 +25,7 @@ Aws::String DescribeImageAttributeRequest::SerializePayload() const
   ss << "Action=DescribeImageAttribute&";
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << ImageAttributeNameMapper::GetNameForImageAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(ImageAttributeNameMapper::GetNameForImageAttributeName(m_attribute)) << "&";
   }
 
   if(m_imageIdHasBeenSet)

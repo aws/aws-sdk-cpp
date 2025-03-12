@@ -40,7 +40,7 @@ Aws::String DescribeCapacityReservationBillingRequestsRequest::SerializePayload(
 
   if(m_roleHasBeenSet)
   {
-    ss << "Role=" << CallerRoleMapper::GetNameForCallerRole(m_role) << "&";
+    ss << "Role=" << StringUtils::URLEncode(CallerRoleMapper::GetNameForCallerRole(m_role)) << "&";
   }
 
   if(m_nextTokenHasBeenSet)

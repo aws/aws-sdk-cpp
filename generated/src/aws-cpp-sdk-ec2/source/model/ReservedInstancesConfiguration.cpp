@@ -93,7 +93,7 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_platformHasBeenSet)
@@ -103,7 +103,7 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
 
   if(m_scopeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
+      oStream << location << index << locationValue << ".Scope=" << StringUtils::URLEncode(ScopeMapper::GetNameForScope(m_scope)) << "&";
   }
 
 }
@@ -120,7 +120,7 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_platformHasBeenSet)
   {
@@ -128,7 +128,7 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_scopeHasBeenSet)
   {
-      oStream << location << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
+      oStream << location << ".Scope=" << StringUtils::URLEncode(ScopeMapper::GetNameForScope(m_scope)) << "&";
   }
 }
 

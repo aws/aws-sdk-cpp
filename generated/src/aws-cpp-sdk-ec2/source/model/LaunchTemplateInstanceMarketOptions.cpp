@@ -60,7 +60,7 @@ void LaunchTemplateInstanceMarketOptions::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_marketTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MarketType=" << MarketTypeMapper::GetNameForMarketType(m_marketType) << "&";
+      oStream << location << index << locationValue << ".MarketType=" << StringUtils::URLEncode(MarketTypeMapper::GetNameForMarketType(m_marketType)) << "&";
   }
 
   if(m_spotOptionsHasBeenSet)
@@ -76,7 +76,7 @@ void LaunchTemplateInstanceMarketOptions::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_marketTypeHasBeenSet)
   {
-      oStream << location << ".MarketType=" << MarketTypeMapper::GetNameForMarketType(m_marketType) << "&";
+      oStream << location << ".MarketType=" << StringUtils::URLEncode(MarketTypeMapper::GetNameForMarketType(m_marketType)) << "&";
   }
   if(m_spotOptionsHasBeenSet)
   {

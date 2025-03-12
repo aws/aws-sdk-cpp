@@ -1,0 +1,37 @@
+##-------------------- serializeQuerySingleElementToText macro
+#macro( serializeQuerySingleElementToText $spaces $member $memberVarName )
+##/* --- the actual shape member is $member; the actual shape is $member.shape; --- */
+#if($member.shape.string)
+StringUtils::URLEncode(${memberVarName}.c_str())##
+#elseif($member.shape.timeStamp)
+#if($member.shape.timestampFormat != "unixTimestamp")
+StringUtils::URLEncode(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.shape)).c_str())##
+#else
+StringUtils::to_string(${memberVarName}.Seconds())##
+#end
+#elseif($member.shape.blob)
+StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str())##
+#elseif($member.shape.double)
+StringUtils::URLEncode(${memberVarName})##
+#elseif($member.shape.boolean)
+std::boolalpha << ${memberVarName}##
+#elseif($member.shape.primitive)
+${memberVarName}##
+#elseif($member.shape.enum)
+StringUtils::URLEncode(${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}))##
+#elseif($member.shape.list || $member.shape.map)
+#set($macro.spaces = "${spaces}      ")
+[&item]() {
+${macro.spaces}  Aws::StringStream oStream;
+${macro.spaces}  Aws::String location; // dummy for nested codegen template
+#if($member.shape.list)
+#serializeSubObjQueryListElement($macro.spaces, $member, "member", $memberVarName, false, true)
+#elseif($member.shape.map)
+#serializeSubObjQueryMapElement($macro.spaces, $member, "member", $memberVarName, false)
+#end
+${macro.spaces}  return oStream.str();
+  ${spaces}  } ()##
+#else
+[&]() {static_assert(false, "Code generation failure: unknown how to serialize ${member}"); return ${memberVarName}}()##
+#end
+#end##macro serializeQuerySingleElementToText

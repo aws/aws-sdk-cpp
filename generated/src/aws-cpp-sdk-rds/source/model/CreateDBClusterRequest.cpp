@@ -359,7 +359,7 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
 
   if(m_databaseInsightsModeHasBeenSet)
   {
-    ss << "DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+    ss << "DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
 
   if(m_enablePerformanceInsightsHasBeenSet)
@@ -394,7 +394,7 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
 
   if(m_clusterScalabilityTypeHasBeenSet)
   {
-    ss << "ClusterScalabilityType=" << ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType) << "&";
+    ss << "ClusterScalabilityType=" << StringUtils::URLEncode(ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType)) << "&";
   }
 
   if(m_dBSystemIdHasBeenSet)

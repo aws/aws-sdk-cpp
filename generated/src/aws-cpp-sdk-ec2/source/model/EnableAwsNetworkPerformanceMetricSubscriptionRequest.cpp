@@ -38,12 +38,12 @@ Aws::String EnableAwsNetworkPerformanceMetricSubscriptionRequest::SerializePaylo
 
   if(m_metricHasBeenSet)
   {
-    ss << "Metric=" << MetricTypeMapper::GetNameForMetricType(m_metric) << "&";
+    ss << "Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
   }
 
   if(m_statisticHasBeenSet)
   {
-    ss << "Statistic=" << StatisticTypeMapper::GetNameForStatisticType(m_statistic) << "&";
+    ss << "Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

@@ -124,7 +124,7 @@ void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_connectionNotificationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ConnectionNotificationType=" << ConnectionNotificationTypeMapper::GetNameForConnectionNotificationType(m_connectionNotificationType) << "&";
+      oStream << location << index << locationValue << ".ConnectionNotificationType=" << StringUtils::URLEncode(ConnectionNotificationTypeMapper::GetNameForConnectionNotificationType(m_connectionNotificationType)) << "&";
   }
 
   if(m_connectionNotificationArnHasBeenSet)
@@ -143,7 +143,7 @@ void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_connectionNotificationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ConnectionNotificationState=" << ConnectionNotificationStateMapper::GetNameForConnectionNotificationState(m_connectionNotificationState) << "&";
+      oStream << location << index << locationValue << ".ConnectionNotificationState=" << StringUtils::URLEncode(ConnectionNotificationStateMapper::GetNameForConnectionNotificationState(m_connectionNotificationState)) << "&";
   }
 
   if(m_serviceRegionHasBeenSet)
@@ -169,7 +169,7 @@ void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_connectionNotificationTypeHasBeenSet)
   {
-      oStream << location << ".ConnectionNotificationType=" << ConnectionNotificationTypeMapper::GetNameForConnectionNotificationType(m_connectionNotificationType) << "&";
+      oStream << location << ".ConnectionNotificationType=" << StringUtils::URLEncode(ConnectionNotificationTypeMapper::GetNameForConnectionNotificationType(m_connectionNotificationType)) << "&";
   }
   if(m_connectionNotificationArnHasBeenSet)
   {
@@ -185,7 +185,7 @@ void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_connectionNotificationStateHasBeenSet)
   {
-      oStream << location << ".ConnectionNotificationState=" << ConnectionNotificationStateMapper::GetNameForConnectionNotificationState(m_connectionNotificationState) << "&";
+      oStream << location << ".ConnectionNotificationState=" << StringUtils::URLEncode(ConnectionNotificationStateMapper::GetNameForConnectionNotificationState(m_connectionNotificationState)) << "&";
   }
   if(m_serviceRegionHasBeenSet)
   {

@@ -60,7 +60,7 @@ void ClientVpnAuthorizationRuleStatus::OutputToStream(Aws::OStream& oStream, con
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << ClientVpnAuthorizationRuleStatusCodeMapper::GetNameForClientVpnAuthorizationRuleStatusCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(ClientVpnAuthorizationRuleStatusCodeMapper::GetNameForClientVpnAuthorizationRuleStatusCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void ClientVpnAuthorizationRuleStatus::OutputToStream(Aws::OStream& oStream, con
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << ClientVpnAuthorizationRuleStatusCodeMapper::GetNameForClientVpnAuthorizationRuleStatusCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(ClientVpnAuthorizationRuleStatusCodeMapper::GetNameForClientVpnAuthorizationRuleStatusCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

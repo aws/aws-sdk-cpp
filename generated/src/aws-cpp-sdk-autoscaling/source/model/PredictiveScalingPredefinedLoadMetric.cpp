@@ -60,7 +60,7 @@ void PredictiveScalingPredefinedLoadMetric::OutputToStream(Aws::OStream& oStream
 {
   if(m_predefinedMetricTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PredefinedMetricType=" << PredefinedLoadMetricTypeMapper::GetNameForPredefinedLoadMetricType(m_predefinedMetricType) << "&";
+      oStream << location << index << locationValue << ".PredefinedMetricType=" << StringUtils::URLEncode(PredefinedLoadMetricTypeMapper::GetNameForPredefinedLoadMetricType(m_predefinedMetricType)) << "&";
   }
 
   if(m_resourceLabelHasBeenSet)
@@ -74,7 +74,7 @@ void PredictiveScalingPredefinedLoadMetric::OutputToStream(Aws::OStream& oStream
 {
   if(m_predefinedMetricTypeHasBeenSet)
   {
-      oStream << location << ".PredefinedMetricType=" << PredefinedLoadMetricTypeMapper::GetNameForPredefinedLoadMetricType(m_predefinedMetricType) << "&";
+      oStream << location << ".PredefinedMetricType=" << StringUtils::URLEncode(PredefinedLoadMetricTypeMapper::GetNameForPredefinedLoadMetricType(m_predefinedMetricType)) << "&";
   }
   if(m_resourceLabelHasBeenSet)
   {

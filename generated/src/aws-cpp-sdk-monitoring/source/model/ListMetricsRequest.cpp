@@ -61,7 +61,7 @@ Aws::String ListMetricsRequest::SerializePayload() const
 
   if(m_recentlyActiveHasBeenSet)
   {
-    ss << "RecentlyActive=" << RecentlyActiveMapper::GetNameForRecentlyActive(m_recentlyActive) << "&";
+    ss << "RecentlyActive=" << StringUtils::URLEncode(RecentlyActiveMapper::GetNameForRecentlyActive(m_recentlyActive)) << "&";
   }
 
   if(m_includeLinkedAccountsHasBeenSet)

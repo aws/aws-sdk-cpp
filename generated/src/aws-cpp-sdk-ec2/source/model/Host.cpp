@@ -203,7 +203,7 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 {
   if(m_autoPlacementHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
+      oStream << location << index << locationValue << ".AutoPlacement=" << StringUtils::URLEncode(AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -253,7 +253,7 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(AllocationStateMapper::GetNameForAllocationState(m_state)) << "&";
   }
 
   if(m_allocationTimeHasBeenSet)
@@ -279,12 +279,12 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_hostRecoveryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+      oStream << location << index << locationValue << ".HostRecovery=" << StringUtils::URLEncode(HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery)) << "&";
   }
 
   if(m_allowsMultipleInstanceTypesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowsMultipleInstanceTypes=" << AllowsMultipleInstanceTypesMapper::GetNameForAllowsMultipleInstanceTypes(m_allowsMultipleInstanceTypes) << "&";
+      oStream << location << index << locationValue << ".AllowsMultipleInstanceTypes=" << StringUtils::URLEncode(AllowsMultipleInstanceTypesMapper::GetNameForAllowsMultipleInstanceTypes(m_allowsMultipleInstanceTypes)) << "&";
   }
 
   if(m_ownerIdHasBeenSet)
@@ -309,7 +309,7 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_hostMaintenanceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
+      oStream << location << index << locationValue << ".HostMaintenance=" << StringUtils::URLEncode(HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance)) << "&";
   }
 
   if(m_assetIdHasBeenSet)
@@ -323,7 +323,7 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_autoPlacementHasBeenSet)
   {
-      oStream << location << ".AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
+      oStream << location << ".AutoPlacement=" << StringUtils::URLEncode(AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {
@@ -359,13 +359,13 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location <<  ".Instances." << instancesIdx++;
+        instancesSs << location << ".Instances." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(AllocationStateMapper::GetNameForAllocationState(m_state)) << "&";
   }
   if(m_allocationTimeHasBeenSet)
   {
@@ -381,17 +381,17 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_hostRecoveryHasBeenSet)
   {
-      oStream << location << ".HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+      oStream << location << ".HostRecovery=" << StringUtils::URLEncode(HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery)) << "&";
   }
   if(m_allowsMultipleInstanceTypesHasBeenSet)
   {
-      oStream << location << ".AllowsMultipleInstanceTypes=" << AllowsMultipleInstanceTypesMapper::GetNameForAllowsMultipleInstanceTypes(m_allowsMultipleInstanceTypes) << "&";
+      oStream << location << ".AllowsMultipleInstanceTypes=" << StringUtils::URLEncode(AllowsMultipleInstanceTypesMapper::GetNameForAllowsMultipleInstanceTypes(m_allowsMultipleInstanceTypes)) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
@@ -411,7 +411,7 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_hostMaintenanceHasBeenSet)
   {
-      oStream << location << ".HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
+      oStream << location << ".HostMaintenance=" << StringUtils::URLEncode(HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance)) << "&";
   }
   if(m_assetIdHasBeenSet)
   {

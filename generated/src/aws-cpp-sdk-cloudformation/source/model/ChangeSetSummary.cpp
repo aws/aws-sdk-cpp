@@ -160,12 +160,12 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_executionStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExecutionStatus=" << ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus) << "&";
+      oStream << location << index << locationValue << ".ExecutionStatus=" << StringUtils::URLEncode(ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus)) << "&";
   }
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ChangeSetStatusMapper::GetNameForChangeSetStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ChangeSetStatusMapper::GetNameForChangeSetStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -225,11 +225,11 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_executionStatusHasBeenSet)
   {
-      oStream << location << ".ExecutionStatus=" << ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus) << "&";
+      oStream << location << ".ExecutionStatus=" << StringUtils::URLEncode(ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus)) << "&";
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ChangeSetStatusMapper::GetNameForChangeSetStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ChangeSetStatusMapper::GetNameForChangeSetStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

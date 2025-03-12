@@ -24,7 +24,7 @@ Aws::String EnableSnapshotBlockPublicAccessRequest::SerializePayload() const
   ss << "Action=EnableSnapshotBlockPublicAccess&";
   if(m_stateHasBeenSet)
   {
-    ss << "State=" << SnapshotBlockPublicAccessStateMapper::GetNameForSnapshotBlockPublicAccessState(m_state) << "&";
+    ss << "State=" << StringUtils::URLEncode(SnapshotBlockPublicAccessStateMapper::GetNameForSnapshotBlockPublicAccessState(m_state)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

@@ -143,7 +143,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_protocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
 
   if(m_certificatesHasBeenSet)
@@ -207,7 +207,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_protocolHasBeenSet)
   {
-      oStream << location << ".Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
   if(m_certificatesHasBeenSet)
   {
@@ -215,7 +215,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_certificates)
       {
         Aws::StringStream certificatesSs;
-        certificatesSs << location <<  ".Certificates.member." << certificatesIdx++;
+        certificatesSs << location << ".Certificates.member." << certificatesIdx++;
         item.OutputToStream(oStream, certificatesSs.str().c_str());
       }
   }
@@ -229,7 +229,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_defaultActions)
       {
         Aws::StringStream defaultActionsSs;
-        defaultActionsSs << location <<  ".DefaultActions.member." << defaultActionsIdx++;
+        defaultActionsSs << location << ".DefaultActions.member." << defaultActionsIdx++;
         item.OutputToStream(oStream, defaultActionsSs.str().c_str());
       }
   }

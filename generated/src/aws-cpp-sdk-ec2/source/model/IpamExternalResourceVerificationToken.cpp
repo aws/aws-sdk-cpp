@@ -170,7 +170,7 @@ void IpamExternalResourceVerificationToken::OutputToStream(Aws::OStream& oStream
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << TokenStateMapper::GetNameForTokenState(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(TokenStateMapper::GetNameForTokenState(m_status)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -186,7 +186,7 @@ void IpamExternalResourceVerificationToken::OutputToStream(Aws::OStream& oStream
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IpamExternalResourceVerificationTokenStateMapper::GetNameForIpamExternalResourceVerificationTokenState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamExternalResourceVerificationTokenStateMapper::GetNameForIpamExternalResourceVerificationTokenState(m_state)) << "&";
   }
 
 }
@@ -227,7 +227,7 @@ void IpamExternalResourceVerificationToken::OutputToStream(Aws::OStream& oStream
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << TokenStateMapper::GetNameForTokenState(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(TokenStateMapper::GetNameForTokenState(m_status)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -235,13 +235,13 @@ void IpamExternalResourceVerificationToken::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IpamExternalResourceVerificationTokenStateMapper::GetNameForIpamExternalResourceVerificationTokenState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IpamExternalResourceVerificationTokenStateMapper::GetNameForIpamExternalResourceVerificationTokenState(m_state)) << "&";
   }
 }
 

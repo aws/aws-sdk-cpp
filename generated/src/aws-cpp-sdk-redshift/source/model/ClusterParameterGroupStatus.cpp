@@ -109,7 +109,7 @@ void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const ch
       for(auto& item : m_clusterParameterStatusList)
       {
         Aws::StringStream clusterParameterStatusListSs;
-        clusterParameterStatusListSs << location <<  ".ClusterParameterStatusList.member." << clusterParameterStatusListIdx++;
+        clusterParameterStatusListSs << location << ".ClusterParameterStatusList.member." << clusterParameterStatusListIdx++;
         item.OutputToStream(oStream, clusterParameterStatusListSs.str().c_str());
       }
   }

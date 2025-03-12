@@ -6,33 +6,21 @@
 #pragma once
 #include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/json-rpc-10/JSONRPC10ServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/json-rpc-10/JSONRPC10ErrorMarshaller.h>
 
 namespace Aws
 {
 namespace JSONRPC10
 {
-  AWS_JSONRPC10_API extern const char SERVICE_NAME[];
-  class AWS_JSONRPC10_API JSONRPC10Client : smithy::client::AwsSmithyClientT<Aws::JSONRPC10::SERVICE_NAME,
-      Aws::JSONRPC10::JSONRPC10ClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      JSONRPC10EndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::JSONRPC10ErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<JSONRPC10Client>
+  class AWS_JSONRPC10_API JSONRPC10Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<JSONRPC10Client>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "JSON RPC 10"; }
 
       typedef JSONRPC10ClientConfiguration ClientConfigurationType;
       typedef JSONRPC10EndpointProvider EndpointProviderType;
@@ -370,7 +358,10 @@ namespace JSONRPC10
       std::shared_ptr<JSONRPC10EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<JSONRPC10Client>;
+      void init(const JSONRPC10ClientConfiguration& clientConfiguration);
 
+      JSONRPC10ClientConfiguration m_clientConfiguration;
+      std::shared_ptr<JSONRPC10EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace JSONRPC10

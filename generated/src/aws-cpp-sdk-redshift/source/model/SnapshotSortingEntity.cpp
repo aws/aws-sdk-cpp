@@ -61,12 +61,12 @@ void SnapshotSortingEntity::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_attributeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Attribute=" << SnapshotAttributeToSortByMapper::GetNameForSnapshotAttributeToSortBy(m_attribute) << "&";
+      oStream << location << index << locationValue << ".Attribute=" << StringUtils::URLEncode(SnapshotAttributeToSortByMapper::GetNameForSnapshotAttributeToSortBy(m_attribute)) << "&";
   }
 
   if(m_sortOrderHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SortOrder=" << SortByOrderMapper::GetNameForSortByOrder(m_sortOrder) << "&";
+      oStream << location << index << locationValue << ".SortOrder=" << StringUtils::URLEncode(SortByOrderMapper::GetNameForSortByOrder(m_sortOrder)) << "&";
   }
 
 }
@@ -75,11 +75,11 @@ void SnapshotSortingEntity::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_attributeHasBeenSet)
   {
-      oStream << location << ".Attribute=" << SnapshotAttributeToSortByMapper::GetNameForSnapshotAttributeToSortBy(m_attribute) << "&";
+      oStream << location << ".Attribute=" << StringUtils::URLEncode(SnapshotAttributeToSortByMapper::GetNameForSnapshotAttributeToSortBy(m_attribute)) << "&";
   }
   if(m_sortOrderHasBeenSet)
   {
-      oStream << location << ".SortOrder=" << SortByOrderMapper::GetNameForSortByOrder(m_sortOrder) << "&";
+      oStream << location << ".SortOrder=" << StringUtils::URLEncode(SortByOrderMapper::GetNameForSortByOrder(m_sortOrder)) << "&";
   }
 }
 

@@ -42,7 +42,7 @@ Aws::String CreateNetworkInterfacePermissionRequest::SerializePayload() const
 
   if(m_permissionHasBeenSet)
   {
-    ss << "Permission=" << InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission) << "&";
+    ss << "Permission=" << StringUtils::URLEncode(InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

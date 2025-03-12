@@ -287,12 +287,12 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_vpnProtocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VpnProtocol=" << VpnProtocolMapper::GetNameForVpnProtocol(m_vpnProtocol) << "&";
+      oStream << location << index << locationValue << ".VpnProtocol=" << StringUtils::URLEncode(VpnProtocolMapper::GetNameForVpnProtocol(m_vpnProtocol)) << "&";
   }
 
   if(m_transportProtocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
+      oStream << location << index << locationValue << ".TransportProtocol=" << StringUtils::URLEncode(TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol)) << "&";
   }
 
   if(m_vpnPortHasBeenSet)
@@ -425,11 +425,11 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_vpnProtocolHasBeenSet)
   {
-      oStream << location << ".VpnProtocol=" << VpnProtocolMapper::GetNameForVpnProtocol(m_vpnProtocol) << "&";
+      oStream << location << ".VpnProtocol=" << StringUtils::URLEncode(VpnProtocolMapper::GetNameForVpnProtocol(m_vpnProtocol)) << "&";
   }
   if(m_transportProtocolHasBeenSet)
   {
-      oStream << location << ".TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
+      oStream << location << ".TransportProtocol=" << StringUtils::URLEncode(TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol)) << "&";
   }
   if(m_vpnPortHasBeenSet)
   {
@@ -445,7 +445,7 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_authenticationOptions)
       {
         Aws::StringStream authenticationOptionsSs;
-        authenticationOptionsSs << location <<  ".AuthenticationOptions." << authenticationOptionsIdx++;
+        authenticationOptionsSs << location << ".AuthenticationOptions." << authenticationOptionsIdx++;
         item.OutputToStream(oStream, authenticationOptionsSs.str().c_str());
       }
   }
@@ -461,7 +461,7 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -87,7 +87,7 @@ void PolicyGrantingServiceAccess::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_policyTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PolicyType=" << PolicyTypeMapper::GetNameForPolicyType(m_policyType) << "&";
+      oStream << location << index << locationValue << ".PolicyType=" << StringUtils::URLEncode(PolicyTypeMapper::GetNameForPolicyType(m_policyType)) << "&";
   }
 
   if(m_policyArnHasBeenSet)
@@ -97,7 +97,7 @@ void PolicyGrantingServiceAccess::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_entityTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EntityType=" << PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_entityType) << "&";
+      oStream << location << index << locationValue << ".EntityType=" << StringUtils::URLEncode(PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_entityType)) << "&";
   }
 
   if(m_entityNameHasBeenSet)
@@ -115,7 +115,7 @@ void PolicyGrantingServiceAccess::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_policyTypeHasBeenSet)
   {
-      oStream << location << ".PolicyType=" << PolicyTypeMapper::GetNameForPolicyType(m_policyType) << "&";
+      oStream << location << ".PolicyType=" << StringUtils::URLEncode(PolicyTypeMapper::GetNameForPolicyType(m_policyType)) << "&";
   }
   if(m_policyArnHasBeenSet)
   {
@@ -123,7 +123,7 @@ void PolicyGrantingServiceAccess::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_entityTypeHasBeenSet)
   {
-      oStream << location << ".EntityType=" << PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_entityType) << "&";
+      oStream << location << ".EntityType=" << StringUtils::URLEncode(PolicyOwnerEntityTypeMapper::GetNameForPolicyOwnerEntityType(m_entityType)) << "&";
   }
   if(m_entityNameHasBeenSet)
   {

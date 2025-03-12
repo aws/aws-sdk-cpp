@@ -101,7 +101,7 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       unsigned supportedNetworkTypesIdx = 1;
       for(auto& item : m_supportedNetworkTypes)
       {
-        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << NetworkTypeMapper::GetNameForNetworkType(item) << "&";
+        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(item)) << "&";
       }
   }
 
@@ -130,7 +130,7 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       unsigned supportedNetworkTypesIdx = 1;
       for(auto& item : m_supportedNetworkTypes)
       {
-        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << NetworkTypeMapper::GetNameForNetworkType(item) << "&";
+        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(item)) << "&";
       }
   }
 }

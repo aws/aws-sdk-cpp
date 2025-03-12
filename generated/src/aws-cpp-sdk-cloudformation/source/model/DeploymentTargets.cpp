@@ -109,7 +109,7 @@ void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_accountFilterTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AccountFilterType=" << AccountFilterTypeMapper::GetNameForAccountFilterType(m_accountFilterType) << "&";
+      oStream << location << index << locationValue << ".AccountFilterType=" << StringUtils::URLEncode(AccountFilterTypeMapper::GetNameForAccountFilterType(m_accountFilterType)) << "&";
   }
 
 }
@@ -138,7 +138,7 @@ void DeploymentTargets::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_accountFilterTypeHasBeenSet)
   {
-      oStream << location << ".AccountFilterType=" << AccountFilterTypeMapper::GetNameForAccountFilterType(m_accountFilterType) << "&";
+      oStream << location << ".AccountFilterType=" << StringUtils::URLEncode(AccountFilterTypeMapper::GetNameForAccountFilterType(m_accountFilterType)) << "&";
   }
 }
 

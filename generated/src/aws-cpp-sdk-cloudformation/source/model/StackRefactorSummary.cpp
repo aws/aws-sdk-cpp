@@ -99,7 +99,7 @@ void StackRefactorSummary::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_executionStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExecutionStatus=" << StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(m_executionStatus) << "&";
+      oStream << location << index << locationValue << ".ExecutionStatus=" << StringUtils::URLEncode(StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(m_executionStatus)) << "&";
   }
 
   if(m_executionStatusReasonHasBeenSet)
@@ -109,7 +109,7 @@ void StackRefactorSummary::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StackRefactorStatusMapper::GetNameForStackRefactorStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StackRefactorStatusMapper::GetNameForStackRefactorStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -131,7 +131,7 @@ void StackRefactorSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_executionStatusHasBeenSet)
   {
-      oStream << location << ".ExecutionStatus=" << StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(m_executionStatus) << "&";
+      oStream << location << ".ExecutionStatus=" << StringUtils::URLEncode(StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(m_executionStatus)) << "&";
   }
   if(m_executionStatusReasonHasBeenSet)
   {
@@ -139,7 +139,7 @@ void StackRefactorSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StackRefactorStatusMapper::GetNameForStackRefactorStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StackRefactorStatusMapper::GetNameForStackRefactorStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

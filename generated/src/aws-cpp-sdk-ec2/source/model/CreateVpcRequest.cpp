@@ -92,7 +92,7 @@ Aws::String CreateVpcRequest::SerializePayload() const
 
   if(m_instanceTenancyHasBeenSet)
   {
-    ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+    ss << "InstanceTenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_instanceTenancy)) << "&";
   }
 
   if(m_amazonProvidedIpv6CidrBlockHasBeenSet)

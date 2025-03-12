@@ -77,7 +77,7 @@ void QueryStringConditionConfig::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_values)
       {
         Aws::StringStream valuesSs;
-        valuesSs << location <<  ".Values.member." << valuesIdx++;
+        valuesSs << location << ".Values.member." << valuesIdx++;
         item.OutputToStream(oStream, valuesSs.str().c_str());
       }
   }

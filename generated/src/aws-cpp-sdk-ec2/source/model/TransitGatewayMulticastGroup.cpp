@@ -147,7 +147,7 @@ void TransitGatewayMulticastGroup::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType)) << "&";
   }
 
   if(m_resourceOwnerIdHasBeenSet)
@@ -172,12 +172,12 @@ void TransitGatewayMulticastGroup::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_memberTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MemberType=" << MembershipTypeMapper::GetNameForMembershipType(m_memberType) << "&";
+      oStream << location << index << locationValue << ".MemberType=" << StringUtils::URLEncode(MembershipTypeMapper::GetNameForMembershipType(m_memberType)) << "&";
   }
 
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceType=" << MembershipTypeMapper::GetNameForMembershipType(m_sourceType) << "&";
+      oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(MembershipTypeMapper::GetNameForMembershipType(m_sourceType)) << "&";
   }
 
 }
@@ -202,7 +202,7 @@ void TransitGatewayMulticastGroup::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType)) << "&";
   }
   if(m_resourceOwnerIdHasBeenSet)
   {
@@ -222,11 +222,11 @@ void TransitGatewayMulticastGroup::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_memberTypeHasBeenSet)
   {
-      oStream << location << ".MemberType=" << MembershipTypeMapper::GetNameForMembershipType(m_memberType) << "&";
+      oStream << location << ".MemberType=" << StringUtils::URLEncode(MembershipTypeMapper::GetNameForMembershipType(m_memberType)) << "&";
   }
   if(m_sourceTypeHasBeenSet)
   {
-      oStream << location << ".SourceType=" << MembershipTypeMapper::GetNameForMembershipType(m_sourceType) << "&";
+      oStream << location << ".SourceType=" << StringUtils::URLEncode(MembershipTypeMapper::GetNameForMembershipType(m_sourceType)) << "&";
   }
 }
 

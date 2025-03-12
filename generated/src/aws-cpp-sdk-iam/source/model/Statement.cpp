@@ -79,7 +79,7 @@ void Statement::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_sourcePolicyTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourcePolicyType=" << PolicySourceTypeMapper::GetNameForPolicySourceType(m_sourcePolicyType) << "&";
+      oStream << location << index << locationValue << ".SourcePolicyType=" << StringUtils::URLEncode(PolicySourceTypeMapper::GetNameForPolicySourceType(m_sourcePolicyType)) << "&";
   }
 
   if(m_startPositionHasBeenSet)
@@ -106,7 +106,7 @@ void Statement::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_sourcePolicyTypeHasBeenSet)
   {
-      oStream << location << ".SourcePolicyType=" << PolicySourceTypeMapper::GetNameForPolicySourceType(m_sourcePolicyType) << "&";
+      oStream << location << ".SourcePolicyType=" << StringUtils::URLEncode(PolicySourceTypeMapper::GetNameForPolicySourceType(m_sourcePolicyType)) << "&";
   }
   if(m_startPositionHasBeenSet)
   {

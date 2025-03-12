@@ -264,7 +264,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".Ipv6Address." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location << ".Ipv6Address." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
@@ -282,7 +282,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
       for(auto& item : m_privateIpAddressConfigs)
       {
         Aws::StringStream privateIpAddressConfigsSs;
-        privateIpAddressConfigsSs << location <<  ".PrivateIpAddressConfig." << privateIpAddressConfigsIdx++;
+        privateIpAddressConfigsSs << location << ".PrivateIpAddressConfig." << privateIpAddressConfigsIdx++;
         item.OutputToStream(oStream, privateIpAddressConfigsSs.str().c_str());
       }
   }

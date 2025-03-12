@@ -102,7 +102,7 @@ void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << DataShareStatusMapper::GetNameForDataShareStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(DataShareStatusMapper::GetNameForDataShareStatus(m_status)) << "&";
   }
 
   if(m_consumerRegionHasBeenSet)
@@ -140,7 +140,7 @@ void DataShareAssociation::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << DataShareStatusMapper::GetNameForDataShareStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(DataShareStatusMapper::GetNameForDataShareStatus(m_status)) << "&";
   }
   if(m_consumerRegionHasBeenSet)
   {

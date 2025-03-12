@@ -143,7 +143,7 @@ void AttributeSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_regionalSummaries)
       {
         Aws::StringStream regionalSummariesSs;
-        regionalSummariesSs << location <<  ".RegionalSummarySet." << regionalSummariesIdx++;
+        regionalSummariesSs << location << ".RegionalSummarySet." << regionalSummariesIdx++;
         item.OutputToStream(oStream, regionalSummariesSs.str().c_str());
       }
   }

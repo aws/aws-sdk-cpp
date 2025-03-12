@@ -110,7 +110,7 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_vpcEndpoints)
       {
         Aws::StringStream vpcEndpointsSs;
-        vpcEndpointsSs << location <<  ".VpcEndpoint." << vpcEndpointsIdx++;
+        vpcEndpointsSs << location << ".VpcEndpoints.VpcEndpoint." << vpcEndpointsIdx++;
         item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
       }
   }

@@ -171,7 +171,7 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
+      oStream << location << index << locationValue << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
   }
 
   if(m_capacityBlockDurationMinutesHasBeenSet)
@@ -221,7 +221,7 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << ".Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
+      oStream << location << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
   }
   if(m_capacityBlockDurationMinutesHasBeenSet)
   {

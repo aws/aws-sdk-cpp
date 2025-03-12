@@ -66,7 +66,7 @@ void WarningDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << WarningTypeMapper::GetNameForWarningType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(WarningTypeMapper::GetNameForWarningType(m_type)) << "&";
   }
 
   if(m_propertiesHasBeenSet)
@@ -86,7 +86,7 @@ void WarningDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << WarningTypeMapper::GetNameForWarningType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(WarningTypeMapper::GetNameForWarningType(m_type)) << "&";
   }
   if(m_propertiesHasBeenSet)
   {
@@ -94,7 +94,7 @@ void WarningDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_properties)
       {
         Aws::StringStream propertiesSs;
-        propertiesSs << location <<  ".Properties.member." << propertiesIdx++;
+        propertiesSs << location << ".Properties.member." << propertiesIdx++;
         item.OutputToStream(oStream, propertiesSs.str().c_str());
       }
   }

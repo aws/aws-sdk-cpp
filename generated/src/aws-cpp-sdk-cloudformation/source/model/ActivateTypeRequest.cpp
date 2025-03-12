@@ -34,7 +34,7 @@ Aws::String ActivateTypeRequest::SerializePayload() const
   ss << "Action=ActivateType&";
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
 
   if(m_publicTypeArnHasBeenSet)
@@ -74,7 +74,7 @@ Aws::String ActivateTypeRequest::SerializePayload() const
 
   if(m_versionBumpHasBeenSet)
   {
-    ss << "VersionBump=" << VersionBumpMapper::GetNameForVersionBump(m_versionBump) << "&";
+    ss << "VersionBump=" << StringUtils::URLEncode(VersionBumpMapper::GetNameForVersionBump(m_versionBump)) << "&";
   }
 
   if(m_majorVersionHasBeenSet)

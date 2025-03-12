@@ -60,7 +60,7 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_verificationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
+      oStream << location << index << locationValue << ".VerificationStatus=" << StringUtils::URLEncode(VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus)) << "&";
   }
 
   if(m_verificationTokenHasBeenSet)
@@ -74,7 +74,7 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_verificationStatusHasBeenSet)
   {
-      oStream << location << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
+      oStream << location << ".VerificationStatus=" << StringUtils::URLEncode(VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus)) << "&";
   }
   if(m_verificationTokenHasBeenSet)
   {

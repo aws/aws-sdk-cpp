@@ -80,7 +80,7 @@ Aws::String PutMetricStreamRequest::SerializePayload() const
 
   if(m_outputFormatHasBeenSet)
   {
-    ss << "OutputFormat=" << MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat) << "&";
+    ss << "OutputFormat=" << StringUtils::URLEncode(MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat)) << "&";
   }
 
   if(m_tagsHasBeenSet)

@@ -72,7 +72,7 @@ Aws::String CreateIpamPoolRequest::SerializePayload() const
 
   if(m_addressFamilyHasBeenSet)
   {
-    ss << "AddressFamily=" << AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily) << "&";
+    ss << "AddressFamily=" << StringUtils::URLEncode(AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily)) << "&";
   }
 
   if(m_autoImportHasBeenSet)
@@ -127,12 +127,12 @@ Aws::String CreateIpamPoolRequest::SerializePayload() const
 
   if(m_awsServiceHasBeenSet)
   {
-    ss << "AwsService=" << IpamPoolAwsServiceMapper::GetNameForIpamPoolAwsService(m_awsService) << "&";
+    ss << "AwsService=" << StringUtils::URLEncode(IpamPoolAwsServiceMapper::GetNameForIpamPoolAwsService(m_awsService)) << "&";
   }
 
   if(m_publicIpSourceHasBeenSet)
   {
-    ss << "PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
+    ss << "PublicIpSource=" << StringUtils::URLEncode(IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource)) << "&";
   }
 
   if(m_sourceResourceHasBeenSet)

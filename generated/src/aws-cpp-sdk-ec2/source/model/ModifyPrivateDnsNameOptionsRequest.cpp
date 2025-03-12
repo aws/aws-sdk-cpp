@@ -39,7 +39,7 @@ Aws::String ModifyPrivateDnsNameOptionsRequest::SerializePayload() const
 
   if(m_privateDnsHostnameTypeHasBeenSet)
   {
-    ss << "PrivateDnsHostnameType=" << HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameType) << "&";
+    ss << "PrivateDnsHostnameType=" << StringUtils::URLEncode(HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameType)) << "&";
   }
 
   if(m_enableResourceNameDnsARecordHasBeenSet)

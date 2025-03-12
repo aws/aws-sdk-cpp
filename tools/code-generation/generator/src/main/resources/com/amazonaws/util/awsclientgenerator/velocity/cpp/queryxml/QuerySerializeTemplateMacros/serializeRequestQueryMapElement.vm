@@ -1,0 +1,49 @@
+##-------------------- serializeRequestQueryMapElement macro
+#macro( serializeRequestQueryMapElement $spaces $member $location $memberVarName )
+#set($macro.varName = $CppViewHelper.computeVariableName($location))
+#if($member.locationName)
+#set($macro.mapLocationName = $member.locationName)
+#elseif($member.shape.flattened)
+#set($macro.mapLocationName = $member.shape.locationName)## The xmlFlattened trait can be used to unwrap the values into a containing structure or union, with the key not containing the initial "." separator and "entry" segment.
+#else
+#set($macro.mapLocationName = $location + ".entry")
+#end##--#if($member.locationName)--#elseif($member.shape.flattened)
+#if($member.shape.mapKey.locationName)
+#set($macro.keyLocationName = $member.shape.mapKey.locationName)
+#else
+#set($macro.keyLocationName = "key")
+#end
+#if($member.shape.mapValue.locationName)
+#set($macro.valueLocationName = $member.shape.mapValue.locationName)
+#else
+#set($macro.valueLocationName = "value")
+#end
+  ${spaces}unsigned ${macro.varName}Count = 1;
+  ${spaces}for(auto& item : $memberVarName)
+  ${spaces}{
+  ${spaces}  ss << "${macro.mapLocationName}." << ${macro.varName}Count << ".${macro.keyLocationName}="
+## --- MAP KEY ---
+#if($member.shape.mapKey.shape.structure)
+  ${spaces}  item.first.OutputToStream(ss, "${macro.mapLocationName}.", ${macro.varName}Count, ".${macro.keyLocationName}");
+#else
+#if($member.shape.double)
+##avoiding diff on generation
+    ${spaces}      << #serializeQuerySingleElementToText($spaces, $member.shape.mapKey, "item.first") << "&";
+#else
+  ${spaces}      << #serializeQuerySingleElementToText($spaces, $member.shape.mapKey, "item.first") << "&";
+#end
+#end
+## --- MAP VALUE ---
+#if($member.shape.mapValue.shape.structure)
+  ${spaces}  item.second.OutputToStream(ss, "${macro.mapLocationName}.", ${macro.varName}Count, ".${macro.valueLocationName}");
+#else
+#set($macro.equals='=')
+#if($member.shape.mapValue.shape.list || $member.shape.mapValue.shape.map)
+#set($macro.equals='')
+#end
+  ${spaces}  ss << "${macro.mapLocationName}." << ${macro.varName}Count << ".${macro.valueLocationName}${macro.equals}"
+  ${spaces}      << #serializeQuerySingleElementToText($spaces, $member.shape.mapValue, "item.second") << "&";
+#end
+  ${spaces}  ${macro.varName}Count++;
+  ${spaces}}
+#end##macro serializeRequestQueryMapElement

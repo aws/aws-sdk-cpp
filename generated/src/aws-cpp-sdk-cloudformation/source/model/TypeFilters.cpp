@@ -67,7 +67,7 @@ void TypeFilters::OutputToStream(Aws::OStream& oStream, const char* location, un
 {
   if(m_categoryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Category=" << CategoryMapper::GetNameForCategory(m_category) << "&";
+      oStream << location << index << locationValue << ".Category=" << StringUtils::URLEncode(CategoryMapper::GetNameForCategory(m_category)) << "&";
   }
 
   if(m_publisherIdHasBeenSet)
@@ -86,7 +86,7 @@ void TypeFilters::OutputToStream(Aws::OStream& oStream, const char* location) co
 {
   if(m_categoryHasBeenSet)
   {
-      oStream << location << ".Category=" << CategoryMapper::GetNameForCategory(m_category) << "&";
+      oStream << location << ".Category=" << StringUtils::URLEncode(CategoryMapper::GetNameForCategory(m_category)) << "&";
   }
   if(m_publisherIdHasBeenSet)
   {

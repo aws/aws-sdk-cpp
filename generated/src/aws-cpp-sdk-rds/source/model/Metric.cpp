@@ -119,7 +119,7 @@ void Metric::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_references)
       {
         Aws::StringStream referencesSs;
-        referencesSs << location <<  ".References.member." << referencesIdx++;
+        referencesSs << location << ".References.member." << referencesIdx++;
         item.OutputToStream(oStream, referencesSs.str().c_str());
       }
   }

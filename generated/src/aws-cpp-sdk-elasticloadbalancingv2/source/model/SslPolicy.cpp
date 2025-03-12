@@ -141,7 +141,7 @@ void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_ciphers)
       {
         Aws::StringStream ciphersSs;
-        ciphersSs << location <<  ".Ciphers.member." << ciphersIdx++;
+        ciphersSs << location << ".Ciphers.member." << ciphersIdx++;
         item.OutputToStream(oStream, ciphersSs.str().c_str());
       }
   }

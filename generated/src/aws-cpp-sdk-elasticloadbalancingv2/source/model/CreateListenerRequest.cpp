@@ -36,7 +36,7 @@ Aws::String CreateListenerRequest::SerializePayload() const
 
   if(m_protocolHasBeenSet)
   {
-    ss << "Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+    ss << "Protocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol)) << "&";
   }
 
   if(m_portHasBeenSet)

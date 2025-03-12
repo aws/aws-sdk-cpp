@@ -83,7 +83,7 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
 
   if(m_transportProtocolHasBeenSet)
   {
-    ss << "TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
+    ss << "TransportProtocol=" << StringUtils::URLEncode(TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol)) << "&";
   }
 
   if(m_vpnPortHasBeenSet)
@@ -139,7 +139,7 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
 
   if(m_selfServicePortalHasBeenSet)
   {
-    ss << "SelfServicePortal=" << SelfServicePortalMapper::GetNameForSelfServicePortal(m_selfServicePortal) << "&";
+    ss << "SelfServicePortal=" << StringUtils::URLEncode(SelfServicePortalMapper::GetNameForSelfServicePortal(m_selfServicePortal)) << "&";
   }
 
   if(m_clientConnectOptionsHasBeenSet)

@@ -126,7 +126,7 @@ void ReplaceRootVolumeTask::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_taskStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TaskState=" << ReplaceRootVolumeTaskStateMapper::GetNameForReplaceRootVolumeTaskState(m_taskState) << "&";
+      oStream << location << index << locationValue << ".TaskState=" << StringUtils::URLEncode(ReplaceRootVolumeTaskStateMapper::GetNameForReplaceRootVolumeTaskState(m_taskState)) << "&";
   }
 
   if(m_startTimeHasBeenSet)
@@ -179,7 +179,7 @@ void ReplaceRootVolumeTask::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_taskStateHasBeenSet)
   {
-      oStream << location << ".TaskState=" << ReplaceRootVolumeTaskStateMapper::GetNameForReplaceRootVolumeTaskState(m_taskState) << "&";
+      oStream << location << ".TaskState=" << StringUtils::URLEncode(ReplaceRootVolumeTaskStateMapper::GetNameForReplaceRootVolumeTaskState(m_taskState)) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
@@ -195,7 +195,7 @@ void ReplaceRootVolumeTask::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

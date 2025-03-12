@@ -185,7 +185,7 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << Ec2InstanceConnectEndpointStateMapper::GetNameForEc2InstanceConnectEndpointState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(Ec2InstanceConnectEndpointStateMapper::GetNameForEc2InstanceConnectEndpointState(m_state)) << "&";
   }
 
   if(m_stateMessageHasBeenSet)
@@ -275,7 +275,7 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << Ec2InstanceConnectEndpointStateMapper::GetNameForEc2InstanceConnectEndpointState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(Ec2InstanceConnectEndpointStateMapper::GetNameForEc2InstanceConnectEndpointState(m_state)) << "&";
   }
   if(m_stateMessageHasBeenSet)
   {
@@ -331,7 +331,7 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

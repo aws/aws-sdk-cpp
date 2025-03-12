@@ -30,7 +30,7 @@ Aws::String ModifyAvailabilityZoneGroupRequest::SerializePayload() const
 
   if(m_optInStatusHasBeenSet)
   {
-    ss << "OptInStatus=" << ModifyAvailabilityZoneOptInStatusMapper::GetNameForModifyAvailabilityZoneOptInStatus(m_optInStatus) << "&";
+    ss << "OptInStatus=" << StringUtils::URLEncode(ModifyAvailabilityZoneOptInStatusMapper::GetNameForModifyAvailabilityZoneOptInStatus(m_optInStatus)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

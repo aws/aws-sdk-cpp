@@ -321,7 +321,7 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
       unsigned securityGroupIdsIdx = 1;
       for(auto& item : m_securityGroupIds)
       {
-        oStream << location << ".SecurityGroupId." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroupIds.SecurityGroupId." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_endpointHasBeenSet)
@@ -349,7 +349,7 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
       unsigned subnetIdsIdx = 1;
       for(auto& item : m_subnetIds)
       {
-        oStream << location << ".SubnetId." << subnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SubnetIds.SubnetId." << subnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_snapshotRetentionLimitHasBeenSet)

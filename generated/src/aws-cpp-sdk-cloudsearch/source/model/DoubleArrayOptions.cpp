@@ -113,7 +113,7 @@ void DoubleArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_defaultValueHasBeenSet)
   {
-        oStream << location << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue) << "&";
+      oStream << location << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue) << "&";
   }
   if(m_sourceFieldsHasBeenSet)
   {

@@ -211,12 +211,12 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_trafficTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
+      oStream << location << index << locationValue << ".TrafficType=" << StringUtils::URLEncode(TrafficTypeMapper::GetNameForTrafficType(m_trafficType)) << "&";
   }
 
   if(m_logDestinationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LogDestinationType=" << LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType) << "&";
+      oStream << location << index << locationValue << ".LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType)) << "&";
   }
 
   if(m_logDestinationHasBeenSet)
@@ -294,11 +294,11 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_trafficTypeHasBeenSet)
   {
-      oStream << location << ".TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
+      oStream << location << ".TrafficType=" << StringUtils::URLEncode(TrafficTypeMapper::GetNameForTrafficType(m_trafficType)) << "&";
   }
   if(m_logDestinationTypeHasBeenSet)
   {
-      oStream << location << ".LogDestinationType=" << LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType) << "&";
+      oStream << location << ".LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType)) << "&";
   }
   if(m_logDestinationHasBeenSet)
   {
@@ -314,7 +314,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

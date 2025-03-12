@@ -30,7 +30,7 @@ Aws::String ListTypeVersionsRequest::SerializePayload() const
   ss << "Action=ListTypeVersions&";
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
   if(m_typeNameHasBeenSet)
@@ -55,7 +55,7 @@ Aws::String ListTypeVersionsRequest::SerializePayload() const
 
   if(m_deprecatedStatusHasBeenSet)
   {
-    ss << "DeprecatedStatus=" << DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus) << "&";
+    ss << "DeprecatedStatus=" << StringUtils::URLEncode(DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus)) << "&";
   }
 
   if(m_publisherIdHasBeenSet)

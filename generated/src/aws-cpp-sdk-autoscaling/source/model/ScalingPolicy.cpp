@@ -315,7 +315,7 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_stepAdjustments)
       {
         Aws::StringStream stepAdjustmentsSs;
-        stepAdjustmentsSs << location <<  ".StepAdjustments.member." << stepAdjustmentsIdx++;
+        stepAdjustmentsSs << location << ".StepAdjustments.member." << stepAdjustmentsIdx++;
         item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
       }
   }
@@ -333,7 +333,7 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_alarms)
       {
         Aws::StringStream alarmsSs;
-        alarmsSs << location <<  ".Alarms.member." << alarmsIdx++;
+        alarmsSs << location << ".Alarms.member." << alarmsIdx++;
         item.OutputToStream(oStream, alarmsSs.str().c_str());
       }
   }

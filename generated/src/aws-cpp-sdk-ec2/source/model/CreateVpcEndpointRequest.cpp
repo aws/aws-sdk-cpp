@@ -46,7 +46,7 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
 
   if(m_vpcEndpointTypeHasBeenSet)
   {
-    ss << "VpcEndpointType=" << VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType) << "&";
+    ss << "VpcEndpointType=" << StringUtils::URLEncode(VpcEndpointTypeMapper::GetNameForVpcEndpointType(m_vpcEndpointType)) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -99,7 +99,7 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
 
   if(m_ipAddressTypeHasBeenSet)
   {
-    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+    ss << "IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
   if(m_dnsOptionsHasBeenSet)

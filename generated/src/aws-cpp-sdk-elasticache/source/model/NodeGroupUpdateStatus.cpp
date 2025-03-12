@@ -93,7 +93,7 @@ void NodeGroupUpdateStatus::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_nodeGroupMemberUpdateStatus)
       {
         Aws::StringStream nodeGroupMemberUpdateStatusSs;
-        nodeGroupMemberUpdateStatusSs << location <<  ".NodeGroupMemberUpdateStatus." << nodeGroupMemberUpdateStatusIdx++;
+        nodeGroupMemberUpdateStatusSs << location << ".NodeGroupMemberUpdateStatus.NodeGroupMemberUpdateStatus." << nodeGroupMemberUpdateStatusIdx++;
         item.OutputToStream(oStream, nodeGroupMemberUpdateStatusSs.str().c_str());
       }
   }

@@ -193,7 +193,7 @@ void PacketHeaderStatementRequest::OutputToStream(Aws::OStream& oStream, const c
       unsigned protocolsIdx = 1;
       for(auto& item : m_protocols)
       {
-        oStream << location << index << locationValue << ".Protocol." << protocolsIdx++ << "=" << ProtocolMapper::GetNameForProtocol(item) << "&";
+        oStream << location << index << locationValue << ".Protocol." << protocolsIdx++ << "=" << StringUtils::URLEncode(ProtocolMapper::GetNameForProtocol(item)) << "&";
       }
   }
 
@@ -254,7 +254,7 @@ void PacketHeaderStatementRequest::OutputToStream(Aws::OStream& oStream, const c
       unsigned protocolsIdx = 1;
       for(auto& item : m_protocols)
       {
-        oStream << location << ".Protocol." << protocolsIdx++ << "=" << ProtocolMapper::GetNameForProtocol(item) << "&";
+        oStream << location << ".Protocol." << protocolsIdx++ << "=" << StringUtils::URLEncode(ProtocolMapper::GetNameForProtocol(item)) << "&";
       }
   }
 }

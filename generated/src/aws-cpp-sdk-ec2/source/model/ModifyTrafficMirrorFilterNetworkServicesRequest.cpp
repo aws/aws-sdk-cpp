@@ -34,7 +34,7 @@ Aws::String ModifyTrafficMirrorFilterNetworkServicesRequest::SerializePayload() 
     for(auto& item : m_addNetworkServices)
     {
       ss << "AddNetworkService." << addNetworkServicesCount << "="
-          << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item).c_str()) << "&";
+          << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
       addNetworkServicesCount++;
     }
   }
@@ -45,7 +45,7 @@ Aws::String ModifyTrafficMirrorFilterNetworkServicesRequest::SerializePayload() 
     for(auto& item : m_removeNetworkServices)
     {
       ss << "RemoveNetworkService." << removeNetworkServicesCount << "="
-          << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item).c_str()) << "&";
+          << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
       removeNetworkServicesCount++;
     }
   }

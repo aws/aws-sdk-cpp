@@ -77,7 +77,7 @@ void IntegrateServices::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_athenaIntegrations)
       {
         Aws::StringStream athenaIntegrationsSs;
-        athenaIntegrationsSs << location <<  ".AthenaIntegration." << athenaIntegrationsIdx++;
+        athenaIntegrationsSs << location << ".AthenaIntegration." << athenaIntegrationsIdx++;
         item.OutputToStream(oStream, athenaIntegrationsSs.str().c_str());
       }
   }

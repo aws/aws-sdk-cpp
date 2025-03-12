@@ -333,7 +333,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_listenerDescriptions)
       {
         Aws::StringStream listenerDescriptionsSs;
-        listenerDescriptionsSs << location <<  ".ListenerDescriptions.member." << listenerDescriptionsIdx++;
+        listenerDescriptionsSs << location << ".ListenerDescriptions.member." << listenerDescriptionsIdx++;
         item.OutputToStream(oStream, listenerDescriptionsSs.str().c_str());
       }
   }
@@ -349,7 +349,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_backendServerDescriptions)
       {
         Aws::StringStream backendServerDescriptionsSs;
-        backendServerDescriptionsSs << location <<  ".BackendServerDescriptions.member." << backendServerDescriptionsIdx++;
+        backendServerDescriptionsSs << location << ".BackendServerDescriptions.member." << backendServerDescriptionsIdx++;
         item.OutputToStream(oStream, backendServerDescriptionsSs.str().c_str());
       }
   }
@@ -379,7 +379,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location <<  ".Instances.member." << instancesIdx++;
+        instancesSs << location << ".Instances.member." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }

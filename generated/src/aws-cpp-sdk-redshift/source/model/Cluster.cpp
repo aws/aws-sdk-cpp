@@ -787,7 +787,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_snapshotScheduleStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SnapshotScheduleState=" << ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState) << "&";
+      oStream << location << index << locationValue << ".SnapshotScheduleState=" << StringUtils::URLEncode(ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState)) << "&";
   }
 
   if(m_expectedNextSnapshotScheduleTimeHasBeenSet)
@@ -944,7 +944,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_clusterSecurityGroups)
       {
         Aws::StringStream clusterSecurityGroupsSs;
-        clusterSecurityGroupsSs << location <<  ".ClusterSecurityGroup." << clusterSecurityGroupsIdx++;
+        clusterSecurityGroupsSs << location << ".ClusterSecurityGroups.ClusterSecurityGroup." << clusterSecurityGroupsIdx++;
         item.OutputToStream(oStream, clusterSecurityGroupsSs.str().c_str());
       }
   }
@@ -954,7 +954,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_vpcSecurityGroups)
       {
         Aws::StringStream vpcSecurityGroupsSs;
-        vpcSecurityGroupsSs << location <<  ".VpcSecurityGroup." << vpcSecurityGroupsIdx++;
+        vpcSecurityGroupsSs << location << ".VpcSecurityGroups.VpcSecurityGroup." << vpcSecurityGroupsIdx++;
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
@@ -964,7 +964,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_clusterParameterGroups)
       {
         Aws::StringStream clusterParameterGroupsSs;
-        clusterParameterGroupsSs << location <<  ".ClusterParameterGroup." << clusterParameterGroupsIdx++;
+        clusterParameterGroupsSs << location << ".ClusterParameterGroups.ClusterParameterGroup." << clusterParameterGroupsIdx++;
         item.OutputToStream(oStream, clusterParameterGroupsSs.str().c_str());
       }
   }
@@ -1044,7 +1044,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_clusterNodes)
       {
         Aws::StringStream clusterNodesSs;
-        clusterNodesSs << location <<  ".ClusterNodes.member." << clusterNodesIdx++;
+        clusterNodesSs << location << ".ClusterNodes.member." << clusterNodesIdx++;
         item.OutputToStream(oStream, clusterNodesSs.str().c_str());
       }
   }
@@ -1064,7 +1064,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -1082,7 +1082,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_iamRoles)
       {
         Aws::StringStream iamRolesSs;
-        iamRolesSs << location <<  ".ClusterIamRole." << iamRolesIdx++;
+        iamRolesSs << location << ".IamRoles.ClusterIamRole." << iamRolesIdx++;
         item.OutputToStream(oStream, iamRolesSs.str().c_str());
       }
   }
@@ -1108,7 +1108,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_deferredMaintenanceWindows)
       {
         Aws::StringStream deferredMaintenanceWindowsSs;
-        deferredMaintenanceWindowsSs << location <<  ".DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
+        deferredMaintenanceWindowsSs << location << ".DeferredMaintenanceWindows.DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
         item.OutputToStream(oStream, deferredMaintenanceWindowsSs.str().c_str());
       }
   }
@@ -1118,7 +1118,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_snapshotScheduleStateHasBeenSet)
   {
-      oStream << location << ".SnapshotScheduleState=" << ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState) << "&";
+      oStream << location << ".SnapshotScheduleState=" << StringUtils::URLEncode(ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState)) << "&";
   }
   if(m_expectedNextSnapshotScheduleTimeHasBeenSet)
   {

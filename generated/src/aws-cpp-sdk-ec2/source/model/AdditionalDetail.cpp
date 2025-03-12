@@ -217,7 +217,7 @@ void AdditionalDetail::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ruleOptions)
       {
         Aws::StringStream ruleOptionsSs;
-        ruleOptionsSs << location <<  ".RuleOptionSet." << ruleOptionsIdx++;
+        ruleOptionsSs << location << ".RuleOptionSet." << ruleOptionsIdx++;
         item.OutputToStream(oStream, ruleOptionsSs.str().c_str());
       }
   }
@@ -227,7 +227,7 @@ void AdditionalDetail::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ruleGroupTypePairs)
       {
         Aws::StringStream ruleGroupTypePairsSs;
-        ruleGroupTypePairsSs << location <<  ".RuleGroupTypePairSet." << ruleGroupTypePairsIdx++;
+        ruleGroupTypePairsSs << location << ".RuleGroupTypePairSet." << ruleGroupTypePairsIdx++;
         item.OutputToStream(oStream, ruleGroupTypePairsSs.str().c_str());
       }
   }
@@ -237,7 +237,7 @@ void AdditionalDetail::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ruleGroupRuleOptionsPairs)
       {
         Aws::StringStream ruleGroupRuleOptionsPairsSs;
-        ruleGroupRuleOptionsPairsSs << location <<  ".RuleGroupRuleOptionsPairSet." << ruleGroupRuleOptionsPairsIdx++;
+        ruleGroupRuleOptionsPairsSs << location << ".RuleGroupRuleOptionsPairSet." << ruleGroupRuleOptionsPairsIdx++;
         item.OutputToStream(oStream, ruleGroupRuleOptionsPairsSs.str().c_str());
       }
   }
@@ -251,7 +251,7 @@ void AdditionalDetail::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_loadBalancers)
       {
         Aws::StringStream loadBalancersSs;
-        loadBalancersSs << location <<  ".LoadBalancerSet." << loadBalancersIdx++;
+        loadBalancersSs << location << ".LoadBalancerSet." << loadBalancersIdx++;
         item.OutputToStream(oStream, loadBalancersSs.str().c_str());
       }
   }

@@ -68,12 +68,12 @@ void TargetHealth::OutputToStream(Aws::OStream& oStream, const char* location, u
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TargetStateMapper::GetNameForTargetState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TargetStateMapper::GetNameForTargetState(m_state)) << "&";
   }
 
   if(m_reasonHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Reason=" << TargetHealthReasonMapper::GetNameForTargetHealthReason(m_reason) << "&";
+      oStream << location << index << locationValue << ".Reason=" << StringUtils::URLEncode(TargetHealthReasonMapper::GetNameForTargetHealthReason(m_reason)) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -87,11 +87,11 @@ void TargetHealth::OutputToStream(Aws::OStream& oStream, const char* location) c
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TargetStateMapper::GetNameForTargetState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TargetStateMapper::GetNameForTargetState(m_state)) << "&";
   }
   if(m_reasonHasBeenSet)
   {
-      oStream << location << ".Reason=" << TargetHealthReasonMapper::GetNameForTargetHealthReason(m_reason) << "&";
+      oStream << location << ".Reason=" << StringUtils::URLEncode(TargetHealthReasonMapper::GetNameForTargetHealthReason(m_reason)) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

@@ -116,7 +116,7 @@ void SubnetCidrReservation::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_reservationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReservationType=" << SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType) << "&";
+      oStream << location << index << locationValue << ".ReservationType=" << StringUtils::URLEncode(SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType)) << "&";
   }
 
   if(m_ownerIdHasBeenSet)
@@ -158,7 +158,7 @@ void SubnetCidrReservation::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_reservationTypeHasBeenSet)
   {
-      oStream << location << ".ReservationType=" << SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType) << "&";
+      oStream << location << ".ReservationType=" << StringUtils::URLEncode(SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType)) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
@@ -174,7 +174,7 @@ void SubnetCidrReservation::OutputToStream(Aws::OStream& oStream, const char* lo
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -25,7 +25,7 @@ Aws::String ListIdentitiesRequest::SerializePayload() const
   ss << "Action=ListIdentities&";
   if(m_identityTypeHasBeenSet)
   {
-    ss << "IdentityType=" << IdentityTypeMapper::GetNameForIdentityType(m_identityType) << "&";
+    ss << "IdentityType=" << StringUtils::URLEncode(IdentityTypeMapper::GetNameForIdentityType(m_identityType)) << "&";
   }
 
   if(m_nextTokenHasBeenSet)

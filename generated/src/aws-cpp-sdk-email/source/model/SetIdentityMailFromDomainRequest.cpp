@@ -34,7 +34,7 @@ Aws::String SetIdentityMailFromDomainRequest::SerializePayload() const
 
   if(m_behaviorOnMXFailureHasBeenSet)
   {
-    ss << "BehaviorOnMXFailure=" << BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure) << "&";
+    ss << "BehaviorOnMXFailure=" << StringUtils::URLEncode(BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure)) << "&";
   }
 
   ss << "Version=2010-12-01";

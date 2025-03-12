@@ -109,7 +109,7 @@ void BulkEmailDestination::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_replacementTags)
       {
         Aws::StringStream replacementTagsSs;
-        replacementTagsSs << location <<  ".ReplacementTags.member." << replacementTagsIdx++;
+        replacementTagsSs << location << ".ReplacementTags.member." << replacementTagsIdx++;
         item.OutputToStream(oStream, replacementTagsSs.str().c_str());
       }
   }

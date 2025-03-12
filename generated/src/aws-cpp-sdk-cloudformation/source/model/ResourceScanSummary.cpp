@@ -94,7 +94,7 @@ void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -127,7 +127,7 @@ void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(ResourceScanStatusMapper::GetNameForResourceScanStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {
@@ -143,7 +143,7 @@ void ResourceScanSummary::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_percentageCompletedHasBeenSet)
   {
-        oStream << location << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
+      oStream << location << ".PercentageCompleted=" << StringUtils::URLEncode(m_percentageCompleted) << "&";
   }
 }
 

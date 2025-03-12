@@ -93,7 +93,7 @@ void VerifiedAccessInstanceOpenVpnClientConfiguration::OutputToStream(Aws::OStre
       for(auto& item : m_routes)
       {
         Aws::StringStream routesSs;
-        routesSs << location <<  ".RouteSet." << routesIdx++;
+        routesSs << location << ".RouteSet." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }

@@ -60,7 +60,7 @@ void VpcPeeringConnectionStateReason::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << VpcPeeringConnectionStateReasonCodeMapper::GetNameForVpcPeeringConnectionStateReasonCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(VpcPeeringConnectionStateReasonCodeMapper::GetNameForVpcPeeringConnectionStateReasonCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void VpcPeeringConnectionStateReason::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << VpcPeeringConnectionStateReasonCodeMapper::GetNameForVpcPeeringConnectionStateReasonCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(VpcPeeringConnectionStateReasonCodeMapper::GetNameForVpcPeeringConnectionStateReasonCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

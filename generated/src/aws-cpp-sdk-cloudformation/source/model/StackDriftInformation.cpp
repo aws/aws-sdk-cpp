@@ -60,7 +60,7 @@ void StackDriftInformation::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_stackDriftStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StackDriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_stackDriftStatus) << "&";
+      oStream << location << index << locationValue << ".StackDriftStatus=" << StringUtils::URLEncode(StackDriftStatusMapper::GetNameForStackDriftStatus(m_stackDriftStatus)) << "&";
   }
 
   if(m_lastCheckTimestampHasBeenSet)
@@ -74,7 +74,7 @@ void StackDriftInformation::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_stackDriftStatusHasBeenSet)
   {
-      oStream << location << ".StackDriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_stackDriftStatus) << "&";
+      oStream << location << ".StackDriftStatus=" << StringUtils::URLEncode(StackDriftStatusMapper::GetNameForStackDriftStatus(m_stackDriftStatus)) << "&";
   }
   if(m_lastCheckTimestampHasBeenSet)
   {

@@ -200,7 +200,7 @@ void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_onUnauthenticatedRequestHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OnUnauthenticatedRequest=" << AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest) << "&";
+      oStream << location << index << locationValue << ".OnUnauthenticatedRequest=" << StringUtils::URLEncode(AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest)) << "&";
   }
 
   if(m_useExistingClientSecretHasBeenSet)
@@ -253,17 +253,16 @@ void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const c
       unsigned authenticationRequestExtraParamsIdx = 1;
       for(auto& item : m_authenticationRequestExtraParams)
       {
-        oStream << location << ".AuthenticationRequestExtraParams.entry."  << authenticationRequestExtraParamsIdx << ".key="
+        oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".value="
+        oStream << location << ".AuthenticationRequestExtraParams.entry." << authenticationRequestExtraParamsIdx << ".value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         authenticationRequestExtraParamsIdx++;
       }
-
   }
   if(m_onUnauthenticatedRequestHasBeenSet)
   {
-      oStream << location << ".OnUnauthenticatedRequest=" << AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest) << "&";
+      oStream << location << ".OnUnauthenticatedRequest=" << StringUtils::URLEncode(AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest)) << "&";
   }
   if(m_useExistingClientSecretHasBeenSet)
   {

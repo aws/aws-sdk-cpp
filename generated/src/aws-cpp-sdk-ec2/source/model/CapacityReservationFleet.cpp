@@ -156,7 +156,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << CapacityReservationFleetStateMapper::GetNameForCapacityReservationFleetState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(CapacityReservationFleetStateMapper::GetNameForCapacityReservationFleetState(m_state)) << "&";
   }
 
   if(m_totalTargetCapacityHasBeenSet)
@@ -171,7 +171,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Tenancy=" << FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy) << "&";
+      oStream << location << index << locationValue << ".Tenancy=" << StringUtils::URLEncode(FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy)) << "&";
   }
 
   if(m_endDateHasBeenSet)
@@ -186,7 +186,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceMatchCriteria=" << FleetInstanceMatchCriteriaMapper::GetNameForFleetInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+      oStream << location << index << locationValue << ".InstanceMatchCriteria=" << StringUtils::URLEncode(FleetInstanceMatchCriteriaMapper::GetNameForFleetInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
 
   if(m_allocationStrategyHasBeenSet)
@@ -230,7 +230,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << CapacityReservationFleetStateMapper::GetNameForCapacityReservationFleetState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(CapacityReservationFleetStateMapper::GetNameForCapacityReservationFleetState(m_state)) << "&";
   }
   if(m_totalTargetCapacityHasBeenSet)
   {
@@ -238,11 +238,11 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_totalFulfilledCapacityHasBeenSet)
   {
-        oStream << location << ".TotalFulfilledCapacity=" << StringUtils::URLEncode(m_totalFulfilledCapacity) << "&";
+      oStream << location << ".TotalFulfilledCapacity=" << StringUtils::URLEncode(m_totalFulfilledCapacity) << "&";
   }
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << ".Tenancy=" << FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy) << "&";
+      oStream << location << ".Tenancy=" << StringUtils::URLEncode(FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy)) << "&";
   }
   if(m_endDateHasBeenSet)
   {
@@ -254,7 +254,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-      oStream << location << ".InstanceMatchCriteria=" << FleetInstanceMatchCriteriaMapper::GetNameForFleetInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+      oStream << location << ".InstanceMatchCriteria=" << StringUtils::URLEncode(FleetInstanceMatchCriteriaMapper::GetNameForFleetInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
   if(m_allocationStrategyHasBeenSet)
   {
@@ -266,7 +266,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_instanceTypeSpecifications)
       {
         Aws::StringStream instanceTypeSpecificationsSs;
-        instanceTypeSpecificationsSs << location <<  ".InstanceTypeSpecificationSet." << instanceTypeSpecificationsIdx++;
+        instanceTypeSpecificationsSs << location << ".InstanceTypeSpecificationSet." << instanceTypeSpecificationsIdx++;
         item.OutputToStream(oStream, instanceTypeSpecificationsSs.str().c_str());
       }
   }
@@ -276,7 +276,7 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

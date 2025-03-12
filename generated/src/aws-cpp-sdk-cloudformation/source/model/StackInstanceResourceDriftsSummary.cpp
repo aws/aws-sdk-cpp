@@ -156,7 +156,7 @@ void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, c
 
   if(m_stackResourceDriftStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StackResourceDriftStatus=" << StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus) << "&";
+      oStream << location << index << locationValue << ".StackResourceDriftStatus=" << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus)) << "&";
   }
 
   if(m_timestampHasBeenSet)
@@ -186,7 +186,7 @@ void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, c
       for(auto& item : m_physicalResourceIdContext)
       {
         Aws::StringStream physicalResourceIdContextSs;
-        physicalResourceIdContextSs << location <<  ".PhysicalResourceIdContext.member." << physicalResourceIdContextIdx++;
+        physicalResourceIdContextSs << location << ".PhysicalResourceIdContext.member." << physicalResourceIdContextIdx++;
         item.OutputToStream(oStream, physicalResourceIdContextSs.str().c_str());
       }
   }
@@ -200,13 +200,13 @@ void StackInstanceResourceDriftsSummary::OutputToStream(Aws::OStream& oStream, c
       for(auto& item : m_propertyDifferences)
       {
         Aws::StringStream propertyDifferencesSs;
-        propertyDifferencesSs << location <<  ".PropertyDifferences.member." << propertyDifferencesIdx++;
+        propertyDifferencesSs << location << ".PropertyDifferences.member." << propertyDifferencesIdx++;
         item.OutputToStream(oStream, propertyDifferencesSs.str().c_str());
       }
   }
   if(m_stackResourceDriftStatusHasBeenSet)
   {
-      oStream << location << ".StackResourceDriftStatus=" << StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus) << "&";
+      oStream << location << ".StackResourceDriftStatus=" << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(m_stackResourceDriftStatus)) << "&";
   }
   if(m_timestampHasBeenSet)
   {

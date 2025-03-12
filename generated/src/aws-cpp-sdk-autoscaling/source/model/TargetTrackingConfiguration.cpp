@@ -115,7 +115,7 @@ void TargetTrackingConfiguration::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_targetValueHasBeenSet)
   {
-        oStream << location << ".TargetValue=" << StringUtils::URLEncode(m_targetValue) << "&";
+      oStream << location << ".TargetValue=" << StringUtils::URLEncode(m_targetValue) << "&";
   }
   if(m_disableScaleInHasBeenSet)
   {

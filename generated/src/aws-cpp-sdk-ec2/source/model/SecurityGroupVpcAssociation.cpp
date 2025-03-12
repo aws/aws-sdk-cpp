@@ -96,7 +96,7 @@ void SecurityGroupVpcAssociation::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << SecurityGroupVpcAssociationStateMapper::GetNameForSecurityGroupVpcAssociationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(SecurityGroupVpcAssociationStateMapper::GetNameForSecurityGroupVpcAssociationState(m_state)) << "&";
   }
 
   if(m_stateReasonHasBeenSet)
@@ -122,7 +122,7 @@ void SecurityGroupVpcAssociation::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << SecurityGroupVpcAssociationStateMapper::GetNameForSecurityGroupVpcAssociationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(SecurityGroupVpcAssociationStateMapper::GetNameForSecurityGroupVpcAssociationState(m_state)) << "&";
   }
   if(m_stateReasonHasBeenSet)
   {

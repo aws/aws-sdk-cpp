@@ -90,7 +90,7 @@ void NeuronInfo::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_neuronDevices)
       {
         Aws::StringStream neuronDevicesSs;
-        neuronDevicesSs << location <<  ".NeuronDevices." << neuronDevicesIdx++;
+        neuronDevicesSs << location << ".NeuronDevices." << neuronDevicesIdx++;
         item.OutputToStream(oStream, neuronDevicesSs.str().c_str());
       }
   }

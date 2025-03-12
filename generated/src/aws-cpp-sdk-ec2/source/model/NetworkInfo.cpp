@@ -211,7 +211,7 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_enaSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnaSupport=" << EnaSupportMapper::GetNameForEnaSupport(m_enaSupport) << "&";
+      oStream << location << index << locationValue << ".EnaSupport=" << StringUtils::URLEncode(EnaSupportMapper::GetNameForEnaSupport(m_enaSupport)) << "&";
   }
 
   if(m_efaSupportedHasBeenSet)
@@ -241,7 +241,7 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       unsigned bandwidthWeightingsIdx = 1;
       for(auto& item : m_bandwidthWeightings)
       {
-        oStream << location << index << locationValue << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item) << "&";
+        oStream << location << index << locationValue << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << StringUtils::URLEncode(BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item)) << "&";
       }
   }
 
@@ -271,7 +271,7 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_networkCards)
       {
         Aws::StringStream networkCardsSs;
-        networkCardsSs << location <<  ".NetworkCards." << networkCardsIdx++;
+        networkCardsSs << location << ".NetworkCards." << networkCardsIdx++;
         item.OutputToStream(oStream, networkCardsSs.str().c_str());
       }
   }
@@ -289,7 +289,7 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_enaSupportHasBeenSet)
   {
-      oStream << location << ".EnaSupport=" << EnaSupportMapper::GetNameForEnaSupport(m_enaSupport) << "&";
+      oStream << location << ".EnaSupport=" << StringUtils::URLEncode(EnaSupportMapper::GetNameForEnaSupport(m_enaSupport)) << "&";
   }
   if(m_efaSupportedHasBeenSet)
   {
@@ -314,7 +314,7 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
       unsigned bandwidthWeightingsIdx = 1;
       for(auto& item : m_bandwidthWeightings)
       {
-        oStream << location << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item) << "&";
+        oStream << location << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << StringUtils::URLEncode(BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item)) << "&";
       }
   }
 }

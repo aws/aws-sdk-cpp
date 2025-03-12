@@ -108,12 +108,12 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << StringUtils::URLEncode(WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus)) << "&";
   }
 
   if(m_synchronizationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SynchronizationStatus=" << GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(m_synchronizationStatus) << "&";
+      oStream << location << index << locationValue << ".SynchronizationStatus=" << StringUtils::URLEncode(GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(m_synchronizationStatus)) << "&";
   }
 
 }
@@ -138,11 +138,11 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
-      oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+      oStream << location << ".GlobalWriteForwardingStatus=" << StringUtils::URLEncode(WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus)) << "&";
   }
   if(m_synchronizationStatusHasBeenSet)
   {
-      oStream << location << ".SynchronizationStatus=" << GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(m_synchronizationStatus) << "&";
+      oStream << location << ".SynchronizationStatus=" << StringUtils::URLEncode(GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(m_synchronizationStatus)) << "&";
   }
 }
 

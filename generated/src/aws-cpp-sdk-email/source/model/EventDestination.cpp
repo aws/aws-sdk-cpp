@@ -107,7 +107,7 @@ void EventDestination::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned matchingEventTypesIdx = 1;
       for(auto& item : m_matchingEventTypes)
       {
-        oStream << location << index << locationValue << ".MatchingEventTypes.member." << matchingEventTypesIdx++ << "=" << EventTypeMapper::GetNameForEventType(item) << "&";
+        oStream << location << index << locationValue << ".MatchingEventTypes.member." << matchingEventTypesIdx++ << "=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(item)) << "&";
       }
   }
 
@@ -149,7 +149,7 @@ void EventDestination::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned matchingEventTypesIdx = 1;
       for(auto& item : m_matchingEventTypes)
       {
-        oStream << location << ".MatchingEventTypes.member." << matchingEventTypesIdx++ << "=" << EventTypeMapper::GetNameForEventType(item) << "&";
+        oStream << location << ".MatchingEventTypes.member." << matchingEventTypesIdx++ << "=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(item)) << "&";
       }
   }
   if(m_kinesisFirehoseDestinationHasBeenSet)

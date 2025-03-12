@@ -34,7 +34,7 @@ Aws::String GetTemplateRequest::SerializePayload() const
 
   if(m_templateStageHasBeenSet)
   {
-    ss << "TemplateStage=" << TemplateStageMapper::GetNameForTemplateStage(m_templateStage) << "&";
+    ss << "TemplateStage=" << StringUtils::URLEncode(TemplateStageMapper::GetNameForTemplateStage(m_templateStage)) << "&";
   }
 
   ss << "Version=2010-05-15";

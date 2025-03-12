@@ -53,7 +53,7 @@ void ReadWriteAccess::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_authorizationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Authorization=" << ServiceAuthorizationMapper::GetNameForServiceAuthorization(m_authorization) << "&";
+      oStream << location << index << locationValue << ".Authorization=" << StringUtils::URLEncode(ServiceAuthorizationMapper::GetNameForServiceAuthorization(m_authorization)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void ReadWriteAccess::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_authorizationHasBeenSet)
   {
-      oStream << location << ".Authorization=" << ServiceAuthorizationMapper::GetNameForServiceAuthorization(m_authorization) << "&";
+      oStream << location << ".Authorization=" << StringUtils::URLEncode(ServiceAuthorizationMapper::GetNameForServiceAuthorization(m_authorization)) << "&";
   }
 }
 

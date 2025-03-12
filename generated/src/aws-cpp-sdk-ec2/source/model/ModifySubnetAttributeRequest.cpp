@@ -63,7 +63,7 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
 
   if(m_privateDnsHostnameTypeOnLaunchHasBeenSet)
   {
-    ss << "PrivateDnsHostnameTypeOnLaunch=" << HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameTypeOnLaunch) << "&";
+    ss << "PrivateDnsHostnameTypeOnLaunch=" << StringUtils::URLEncode(HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameTypeOnLaunch)) << "&";
   }
 
   if(m_enableResourceNameDnsARecordOnLaunchHasBeenSet)

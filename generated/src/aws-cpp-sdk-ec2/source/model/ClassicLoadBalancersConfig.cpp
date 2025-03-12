@@ -77,7 +77,7 @@ void ClassicLoadBalancersConfig::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_classicLoadBalancers)
       {
         Aws::StringStream classicLoadBalancersSs;
-        classicLoadBalancersSs << location <<  ".ClassicLoadBalancers." << classicLoadBalancersIdx++;
+        classicLoadBalancersSs << location << ".ClassicLoadBalancers." << classicLoadBalancersIdx++;
         item.OutputToStream(oStream, classicLoadBalancersSs.str().c_str());
       }
   }

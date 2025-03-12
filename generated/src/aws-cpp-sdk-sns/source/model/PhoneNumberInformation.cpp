@@ -114,7 +114,7 @@ void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_routeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RouteType=" << RouteTypeMapper::GetNameForRouteType(m_routeType) << "&";
+      oStream << location << index << locationValue << ".RouteType=" << StringUtils::URLEncode(RouteTypeMapper::GetNameForRouteType(m_routeType)) << "&";
   }
 
   if(m_numberCapabilitiesHasBeenSet)
@@ -122,7 +122,7 @@ void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* l
       unsigned numberCapabilitiesIdx = 1;
       for(auto& item : m_numberCapabilities)
       {
-        oStream << location << index << locationValue << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "=" << NumberCapabilityMapper::GetNameForNumberCapability(item) << "&";
+        oStream << location << index << locationValue << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "=" << StringUtils::URLEncode(NumberCapabilityMapper::GetNameForNumberCapability(item)) << "&";
       }
   }
 
@@ -148,14 +148,14 @@ void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_routeTypeHasBeenSet)
   {
-      oStream << location << ".RouteType=" << RouteTypeMapper::GetNameForRouteType(m_routeType) << "&";
+      oStream << location << ".RouteType=" << StringUtils::URLEncode(RouteTypeMapper::GetNameForRouteType(m_routeType)) << "&";
   }
   if(m_numberCapabilitiesHasBeenSet)
   {
       unsigned numberCapabilitiesIdx = 1;
       for(auto& item : m_numberCapabilities)
       {
-        oStream << location << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "=" << NumberCapabilityMapper::GetNameForNumberCapability(item) << "&";
+        oStream << location << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "=" << StringUtils::URLEncode(NumberCapabilityMapper::GetNameForNumberCapability(item)) << "&";
       }
   }
 }

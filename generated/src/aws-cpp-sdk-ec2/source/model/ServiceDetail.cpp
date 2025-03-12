@@ -278,7 +278,7 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_payerResponsibilityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+      oStream << location << index << locationValue << ".PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -294,7 +294,7 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_privateDnsNameVerificationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
+      oStream << location << index << locationValue << ".PrivateDnsNameVerificationState=" << StringUtils::URLEncode(DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState)) << "&";
   }
 
   if(m_supportedIpAddressTypesHasBeenSet)
@@ -302,7 +302,7 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       unsigned supportedIpAddressTypesIdx = 1;
       for(auto& item : m_supportedIpAddressTypes)
       {
-        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << StringUtils::URLEncode(ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item)) << "&";
       }
   }
 
@@ -324,7 +324,7 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_serviceType)
       {
         Aws::StringStream serviceTypeSs;
-        serviceTypeSs << location <<  ".ServiceType." << serviceTypeIdx++;
+        serviceTypeSs << location << ".ServiceType." << serviceTypeIdx++;
         item.OutputToStream(oStream, serviceTypeSs.str().c_str());
       }
   }
@@ -362,7 +362,7 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_privateDnsNames)
       {
         Aws::StringStream privateDnsNamesSs;
-        privateDnsNamesSs << location <<  ".PrivateDnsNameSet." << privateDnsNamesIdx++;
+        privateDnsNamesSs << location << ".PrivateDnsNameSet." << privateDnsNamesIdx++;
         item.OutputToStream(oStream, privateDnsNamesSs.str().c_str());
       }
   }
@@ -380,7 +380,7 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_payerResponsibilityHasBeenSet)
   {
-      oStream << location << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+      oStream << location << ".PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -388,20 +388,20 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_privateDnsNameVerificationStateHasBeenSet)
   {
-      oStream << location << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
+      oStream << location << ".PrivateDnsNameVerificationState=" << StringUtils::URLEncode(DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState)) << "&";
   }
   if(m_supportedIpAddressTypesHasBeenSet)
   {
       unsigned supportedIpAddressTypesIdx = 1;
       for(auto& item : m_supportedIpAddressTypes)
       {
-        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << StringUtils::URLEncode(ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item)) << "&";
       }
   }
 }

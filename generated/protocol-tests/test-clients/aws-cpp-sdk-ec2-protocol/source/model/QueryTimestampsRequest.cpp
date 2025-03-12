@@ -28,12 +28,12 @@ Aws::String QueryTimestampsRequest::SerializePayload() const
 
   if(m_epochMemberHasBeenSet)
   {
-    ss << "epochMember=" << StringUtils::URLEncode(m_epochMember.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape)).c_str()) << "&";
+    ss << "epochMember=" << StringUtils::to_string(m_epochMember.Seconds()) << "&";
   }
 
   if(m_epochTargetHasBeenSet)
   {
-    ss << "epochTarget=" << StringUtils::URLEncode(m_epochTarget.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape)).c_str()) << "&";
+    ss << "epochTarget=" << StringUtils::to_string(m_epochTarget.Seconds()) << "&";
   }
 
   ss << "Version=2020-01-08";

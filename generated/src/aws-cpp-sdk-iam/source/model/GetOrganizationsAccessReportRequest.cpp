@@ -41,7 +41,7 @@ Aws::String GetOrganizationsAccessReportRequest::SerializePayload() const
 
   if(m_sortKeyHasBeenSet)
   {
-    ss << "SortKey=" << SortKeyTypeMapper::GetNameForSortKeyType(m_sortKey) << "&";
+    ss << "SortKey=" << StringUtils::URLEncode(SortKeyTypeMapper::GetNameForSortKeyType(m_sortKey)) << "&";
   }
 
   ss << "Version=2010-05-08";

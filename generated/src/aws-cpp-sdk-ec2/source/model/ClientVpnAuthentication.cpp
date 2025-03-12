@@ -74,7 +74,7 @@ void ClientVpnAuthentication::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << ClientVpnAuthenticationTypeMapper::GetNameForClientVpnAuthenticationType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(ClientVpnAuthenticationTypeMapper::GetNameForClientVpnAuthenticationType(m_type)) << "&";
   }
 
   if(m_activeDirectoryHasBeenSet)
@@ -104,7 +104,7 @@ void ClientVpnAuthentication::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << ClientVpnAuthenticationTypeMapper::GetNameForClientVpnAuthenticationType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(ClientVpnAuthenticationTypeMapper::GetNameForClientVpnAuthenticationType(m_type)) << "&";
   }
   if(m_activeDirectoryHasBeenSet)
   {

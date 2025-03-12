@@ -106,7 +106,7 @@ void CacheParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char
       unsigned cacheNodeIdsToRebootIdx = 1;
       for(auto& item : m_cacheNodeIdsToReboot)
       {
-        oStream << location << ".CacheNodeId." << cacheNodeIdsToRebootIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".CacheNodeIdsToReboot.CacheNodeId." << cacheNodeIdsToRebootIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

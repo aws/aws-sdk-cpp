@@ -99,12 +99,12 @@ void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const
 
   if(m_ipv6AddressAttributeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Ipv6AddressAttribute=" << Ipv6AddressAttributeMapper::GetNameForIpv6AddressAttribute(m_ipv6AddressAttribute) << "&";
+      oStream << location << index << locationValue << ".Ipv6AddressAttribute=" << StringUtils::URLEncode(Ipv6AddressAttributeMapper::GetNameForIpv6AddressAttribute(m_ipv6AddressAttribute)) << "&";
   }
 
   if(m_ipSourceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpSource=" << IpSourceMapper::GetNameForIpSource(m_ipSource) << "&";
+      oStream << location << index << locationValue << ".IpSource=" << StringUtils::URLEncode(IpSourceMapper::GetNameForIpSource(m_ipSource)) << "&";
   }
 
 }
@@ -127,11 +127,11 @@ void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_ipv6AddressAttributeHasBeenSet)
   {
-      oStream << location << ".Ipv6AddressAttribute=" << Ipv6AddressAttributeMapper::GetNameForIpv6AddressAttribute(m_ipv6AddressAttribute) << "&";
+      oStream << location << ".Ipv6AddressAttribute=" << StringUtils::URLEncode(Ipv6AddressAttributeMapper::GetNameForIpv6AddressAttribute(m_ipv6AddressAttribute)) << "&";
   }
   if(m_ipSourceHasBeenSet)
   {
-      oStream << location << ".IpSource=" << IpSourceMapper::GetNameForIpSource(m_ipSource) << "&";
+      oStream << location << ".IpSource=" << StringUtils::URLEncode(IpSourceMapper::GetNameForIpSource(m_ipSource)) << "&";
   }
 }
 

@@ -77,7 +77,7 @@ void CpuPerformanceFactor::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_references)
       {
         Aws::StringStream referencesSs;
-        referencesSs << location <<  ".ReferenceSet." << referencesIdx++;
+        referencesSs << location << ".ReferenceSet." << referencesIdx++;
         item.OutputToStream(oStream, referencesSs.str().c_str());
       }
   }

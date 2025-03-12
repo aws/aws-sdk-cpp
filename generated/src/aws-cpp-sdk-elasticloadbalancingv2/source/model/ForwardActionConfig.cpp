@@ -91,7 +91,7 @@ void ForwardActionConfig::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_targetGroups)
       {
         Aws::StringStream targetGroupsSs;
-        targetGroupsSs << location <<  ".TargetGroups.member." << targetGroupsIdx++;
+        targetGroupsSs << location << ".TargetGroups.member." << targetGroupsIdx++;
         item.OutputToStream(oStream, targetGroupsSs.str().c_str());
       }
   }

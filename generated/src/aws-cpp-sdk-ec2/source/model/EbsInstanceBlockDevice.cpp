@@ -106,7 +106,7 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(AttachmentStatusMapper::GetNameForAttachmentStatus(m_status)) << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -145,7 +145,7 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(AttachmentStatusMapper::GetNameForAttachmentStatus(m_status)) << "&";
   }
   if(m_volumeIdHasBeenSet)
   {

@@ -97,7 +97,7 @@ void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location, u
 {
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 
   if(m_durationHasBeenSet)
@@ -122,7 +122,7 @@ void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_paymentOptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PaymentOption=" << PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption) << "&";
+      oStream << location << index << locationValue << ".PaymentOption=" << StringUtils::URLEncode(PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption)) << "&";
   }
 
   if(m_upfrontPriceHasBeenSet)
@@ -136,7 +136,7 @@ void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location) c
 {
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -156,7 +156,7 @@ void HostOffering::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_paymentOptionHasBeenSet)
   {
-      oStream << location << ".PaymentOption=" << PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption) << "&";
+      oStream << location << ".PaymentOption=" << StringUtils::URLEncode(PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption)) << "&";
   }
   if(m_upfrontPriceHasBeenSet)
   {

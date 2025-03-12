@@ -108,12 +108,12 @@ void StackSetDriftDetectionDetails::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_driftStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DriftStatus=" << StackSetDriftStatusMapper::GetNameForStackSetDriftStatus(m_driftStatus) << "&";
+      oStream << location << index << locationValue << ".DriftStatus=" << StringUtils::URLEncode(StackSetDriftStatusMapper::GetNameForStackSetDriftStatus(m_driftStatus)) << "&";
   }
 
   if(m_driftDetectionStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DriftDetectionStatus=" << StackSetDriftDetectionStatusMapper::GetNameForStackSetDriftDetectionStatus(m_driftDetectionStatus) << "&";
+      oStream << location << index << locationValue << ".DriftDetectionStatus=" << StringUtils::URLEncode(StackSetDriftDetectionStatusMapper::GetNameForStackSetDriftDetectionStatus(m_driftDetectionStatus)) << "&";
   }
 
   if(m_lastDriftCheckTimestampHasBeenSet)
@@ -152,11 +152,11 @@ void StackSetDriftDetectionDetails::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_driftStatusHasBeenSet)
   {
-      oStream << location << ".DriftStatus=" << StackSetDriftStatusMapper::GetNameForStackSetDriftStatus(m_driftStatus) << "&";
+      oStream << location << ".DriftStatus=" << StringUtils::URLEncode(StackSetDriftStatusMapper::GetNameForStackSetDriftStatus(m_driftStatus)) << "&";
   }
   if(m_driftDetectionStatusHasBeenSet)
   {
-      oStream << location << ".DriftDetectionStatus=" << StackSetDriftDetectionStatusMapper::GetNameForStackSetDriftDetectionStatus(m_driftDetectionStatus) << "&";
+      oStream << location << ".DriftDetectionStatus=" << StringUtils::URLEncode(StackSetDriftDetectionStatusMapper::GetNameForStackSetDriftDetectionStatus(m_driftDetectionStatus)) << "&";
   }
   if(m_lastDriftCheckTimestampHasBeenSet)
   {

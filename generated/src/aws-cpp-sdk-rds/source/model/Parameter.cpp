@@ -175,7 +175,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_applyMethodHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ApplyMethod=" << ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod) << "&";
+      oStream << location << index << locationValue << ".ApplyMethod=" << StringUtils::URLEncode(ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod)) << "&";
   }
 
   if(m_supportedEngineModesHasBeenSet)
@@ -229,7 +229,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_applyMethodHasBeenSet)
   {
-      oStream << location << ".ApplyMethod=" << ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod) << "&";
+      oStream << location << ".ApplyMethod=" << StringUtils::URLEncode(ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod)) << "&";
   }
   if(m_supportedEngineModesHasBeenSet)
   {

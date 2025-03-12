@@ -89,7 +89,7 @@ void AsnAssociation::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << AsnAssociationStateMapper::GetNameForAsnAssociationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(AsnAssociationStateMapper::GetNameForAsnAssociationState(m_state)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void AsnAssociation::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << AsnAssociationStateMapper::GetNameForAsnAssociationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(AsnAssociationStateMapper::GetNameForAsnAssociationState(m_state)) << "&";
   }
 }
 

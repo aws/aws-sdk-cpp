@@ -212,11 +212,11 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_maxACUHasBeenSet)
   {
-        oStream << location << ".MaxACU=" << StringUtils::URLEncode(m_maxACU) << "&";
+      oStream << location << ".MaxACU=" << StringUtils::URLEncode(m_maxACU) << "&";
   }
   if(m_minACUHasBeenSet)
   {
-        oStream << location << ".MinACU=" << StringUtils::URLEncode(m_minACU) << "&";
+      oStream << location << ".MinACU=" << StringUtils::URLEncode(m_minACU) << "&";
   }
   if(m_computeRedundancyHasBeenSet)
   {
@@ -244,7 +244,7 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location <<  ".Tag." << tagListIdx++;
+        tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }

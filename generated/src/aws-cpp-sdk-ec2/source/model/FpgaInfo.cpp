@@ -90,7 +90,7 @@ void FpgaInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_fpgas)
       {
         Aws::StringStream fpgasSs;
-        fpgasSs << location <<  ".Fpgas." << fpgasIdx++;
+        fpgasSs << location << ".Fpgas." << fpgasIdx++;
         item.OutputToStream(oStream, fpgasSs.str().c_str());
       }
   }

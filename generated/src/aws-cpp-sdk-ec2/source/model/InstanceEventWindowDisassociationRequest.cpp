@@ -129,7 +129,7 @@ void InstanceEventWindowDisassociationRequest::OutputToStream(Aws::OStream& oStr
       for(auto& item : m_instanceTags)
       {
         Aws::StringStream instanceTagsSs;
-        instanceTagsSs << location <<  ".InstanceTag." << instanceTagsIdx++;
+        instanceTagsSs << location << ".InstanceTag." << instanceTagsIdx++;
         item.OutputToStream(oStream, instanceTagsSs.str().c_str());
       }
   }

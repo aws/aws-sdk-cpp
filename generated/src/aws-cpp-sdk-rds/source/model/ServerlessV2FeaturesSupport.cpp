@@ -75,11 +75,11 @@ void ServerlessV2FeaturesSupport::OutputToStream(Aws::OStream& oStream, const ch
 {
   if(m_minCapacityHasBeenSet)
   {
-        oStream << location << ".MinCapacity=" << StringUtils::URLEncode(m_minCapacity) << "&";
+      oStream << location << ".MinCapacity=" << StringUtils::URLEncode(m_minCapacity) << "&";
   }
   if(m_maxCapacityHasBeenSet)
   {
-        oStream << location << ".MaxCapacity=" << StringUtils::URLEncode(m_maxCapacity) << "&";
+      oStream << location << ".MaxCapacity=" << StringUtils::URLEncode(m_maxCapacity) << "&";
   }
 }
 

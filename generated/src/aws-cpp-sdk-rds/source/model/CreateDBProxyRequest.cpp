@@ -39,7 +39,7 @@ Aws::String CreateDBProxyRequest::SerializePayload() const
 
   if(m_engineFamilyHasBeenSet)
   {
-    ss << "EngineFamily=" << EngineFamilyMapper::GetNameForEngineFamily(m_engineFamily) << "&";
+    ss << "EngineFamily=" << StringUtils::URLEncode(EngineFamilyMapper::GetNameForEngineFamily(m_engineFamily)) << "&";
   }
 
   if(m_authHasBeenSet)

@@ -88,11 +88,11 @@ void StepAdjustment::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_metricIntervalLowerBoundHasBeenSet)
   {
-        oStream << location << ".MetricIntervalLowerBound=" << StringUtils::URLEncode(m_metricIntervalLowerBound) << "&";
+      oStream << location << ".MetricIntervalLowerBound=" << StringUtils::URLEncode(m_metricIntervalLowerBound) << "&";
   }
   if(m_metricIntervalUpperBoundHasBeenSet)
   {
-        oStream << location << ".MetricIntervalUpperBound=" << StringUtils::URLEncode(m_metricIntervalUpperBound) << "&";
+      oStream << location << ".MetricIntervalUpperBound=" << StringUtils::URLEncode(m_metricIntervalUpperBound) << "&";
   }
   if(m_scalingAdjustmentHasBeenSet)
   {

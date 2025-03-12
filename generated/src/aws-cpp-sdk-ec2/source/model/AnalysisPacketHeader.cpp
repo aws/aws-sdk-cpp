@@ -165,7 +165,7 @@ void AnalysisPacketHeader::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_destinationPortRanges)
       {
         Aws::StringStream destinationPortRangesSs;
-        destinationPortRangesSs << location <<  ".DestinationPortRangeSet." << destinationPortRangesIdx++;
+        destinationPortRangesSs << location << ".DestinationPortRangeSet." << destinationPortRangesIdx++;
         item.OutputToStream(oStream, destinationPortRangesSs.str().c_str());
       }
   }
@@ -187,7 +187,7 @@ void AnalysisPacketHeader::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_sourcePortRanges)
       {
         Aws::StringStream sourcePortRangesSs;
-        sourcePortRangesSs << location <<  ".SourcePortRangeSet." << sourcePortRangesIdx++;
+        sourcePortRangesSs << location << ".SourcePortRangeSet." << sourcePortRangesIdx++;
         item.OutputToStream(oStream, sourcePortRangesSs.str().c_str());
       }
   }

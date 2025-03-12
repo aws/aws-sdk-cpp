@@ -190,7 +190,7 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << IntegrationStatusMapper::GetNameForIntegrationStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(IntegrationStatusMapper::GetNameForIntegrationStatus(m_status)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -262,17 +262,16 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location) co
       unsigned additionalEncryptionContextIdx = 1;
       for(auto& item : m_additionalEncryptionContext)
       {
-        oStream << location << ".AdditionalEncryptionContext.entry."  << additionalEncryptionContextIdx << ".key="
+        oStream << location << ".AdditionalEncryptionContext.entry." << additionalEncryptionContextIdx << ".key="
             << StringUtils::URLEncode(item.first.c_str()) << "&";
-        oStream << location <<  ".AdditionalEncryptionContext.entry." << additionalEncryptionContextIdx << ".value="
+        oStream << location << ".AdditionalEncryptionContext.entry." << additionalEncryptionContextIdx << ".value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         additionalEncryptionContextIdx++;
       }
-
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << IntegrationStatusMapper::GetNameForIntegrationStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(IntegrationStatusMapper::GetNameForIntegrationStatus(m_status)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -280,7 +279,7 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -294,7 +293,7 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_errors)
       {
         Aws::StringStream errorsSs;
-        errorsSs << location <<  ".IntegrationError." << errorsIdx++;
+        errorsSs << location << ".Errors.IntegrationError." << errorsIdx++;
         item.OutputToStream(oStream, errorsSs.str().c_str());
       }
   }

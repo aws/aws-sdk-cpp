@@ -107,7 +107,7 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_allocationStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllocationStrategy=" << SpotAllocationStrategyMapper::GetNameForSpotAllocationStrategy(m_allocationStrategy) << "&";
+      oStream << location << index << locationValue << ".AllocationStrategy=" << StringUtils::URLEncode(SpotAllocationStrategyMapper::GetNameForSpotAllocationStrategy(m_allocationStrategy)) << "&";
   }
 
   if(m_maintenanceStrategiesHasBeenSet)
@@ -119,7 +119,7 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 
   if(m_instancePoolsToUseCountHasBeenSet)
@@ -153,7 +153,7 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_allocationStrategyHasBeenSet)
   {
-      oStream << location << ".AllocationStrategy=" << SpotAllocationStrategyMapper::GetNameForSpotAllocationStrategy(m_allocationStrategy) << "&";
+      oStream << location << ".AllocationStrategy=" << StringUtils::URLEncode(SpotAllocationStrategyMapper::GetNameForSpotAllocationStrategy(m_allocationStrategy)) << "&";
   }
   if(m_maintenanceStrategiesHasBeenSet)
   {
@@ -163,7 +163,7 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << ".InstanceInterruptionBehavior=" << SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(SpotInstanceInterruptionBehaviorMapper::GetNameForSpotInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
   if(m_instancePoolsToUseCountHasBeenSet)
   {

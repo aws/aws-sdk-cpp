@@ -146,7 +146,7 @@ void NetworkInsightsAccessScopeAnalysis::OutputToStream(Aws::OStream& oStream, c
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << AnalysisStatusMapper::GetNameForAnalysisStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(AnalysisStatusMapper::GetNameForAnalysisStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -171,7 +171,7 @@ void NetworkInsightsAccessScopeAnalysis::OutputToStream(Aws::OStream& oStream, c
 
   if(m_findingsFoundHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FindingsFound=" << FindingsFoundMapper::GetNameForFindingsFound(m_findingsFound) << "&";
+      oStream << location << index << locationValue << ".FindingsFound=" << StringUtils::URLEncode(FindingsFoundMapper::GetNameForFindingsFound(m_findingsFound)) << "&";
   }
 
   if(m_analyzedEniCountHasBeenSet)
@@ -208,7 +208,7 @@ void NetworkInsightsAccessScopeAnalysis::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << AnalysisStatusMapper::GetNameForAnalysisStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(AnalysisStatusMapper::GetNameForAnalysisStatus(m_status)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -228,7 +228,7 @@ void NetworkInsightsAccessScopeAnalysis::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_findingsFoundHasBeenSet)
   {
-      oStream << location << ".FindingsFound=" << FindingsFoundMapper::GetNameForFindingsFound(m_findingsFound) << "&";
+      oStream << location << ".FindingsFound=" << StringUtils::URLEncode(FindingsFoundMapper::GetNameForFindingsFound(m_findingsFound)) << "&";
   }
   if(m_analyzedEniCountHasBeenSet)
   {
@@ -240,7 +240,7 @@ void NetworkInsightsAccessScopeAnalysis::OutputToStream(Aws::OStream& oStream, c
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

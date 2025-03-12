@@ -130,12 +130,12 @@ void StackRefactorAction::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_actionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Action=" << StackRefactorActionTypeMapper::GetNameForStackRefactorActionType(m_action) << "&";
+      oStream << location << index << locationValue << ".Action=" << StringUtils::URLEncode(StackRefactorActionTypeMapper::GetNameForStackRefactorActionType(m_action)) << "&";
   }
 
   if(m_entityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Entity=" << StackRefactorActionEntityMapper::GetNameForStackRefactorActionEntity(m_entity) << "&";
+      oStream << location << index << locationValue << ".Entity=" << StringUtils::URLEncode(StackRefactorActionEntityMapper::GetNameForStackRefactorActionEntity(m_entity)) << "&";
   }
 
   if(m_physicalResourceIdHasBeenSet)
@@ -155,7 +155,7 @@ void StackRefactorAction::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_detectionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Detection=" << StackRefactorDetectionMapper::GetNameForStackRefactorDetection(m_detection) << "&";
+      oStream << location << index << locationValue << ".Detection=" << StringUtils::URLEncode(StackRefactorDetectionMapper::GetNameForStackRefactorDetection(m_detection)) << "&";
   }
 
   if(m_detectionReasonHasBeenSet)
@@ -196,11 +196,11 @@ void StackRefactorAction::OutputToStream(Aws::OStream& oStream, const char* loca
 {
   if(m_actionHasBeenSet)
   {
-      oStream << location << ".Action=" << StackRefactorActionTypeMapper::GetNameForStackRefactorActionType(m_action) << "&";
+      oStream << location << ".Action=" << StringUtils::URLEncode(StackRefactorActionTypeMapper::GetNameForStackRefactorActionType(m_action)) << "&";
   }
   if(m_entityHasBeenSet)
   {
-      oStream << location << ".Entity=" << StackRefactorActionEntityMapper::GetNameForStackRefactorActionEntity(m_entity) << "&";
+      oStream << location << ".Entity=" << StringUtils::URLEncode(StackRefactorActionEntityMapper::GetNameForStackRefactorActionEntity(m_entity)) << "&";
   }
   if(m_physicalResourceIdHasBeenSet)
   {
@@ -216,7 +216,7 @@ void StackRefactorAction::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_detectionHasBeenSet)
   {
-      oStream << location << ".Detection=" << StackRefactorDetectionMapper::GetNameForStackRefactorDetection(m_detection) << "&";
+      oStream << location << ".Detection=" << StringUtils::URLEncode(StackRefactorDetectionMapper::GetNameForStackRefactorDetection(m_detection)) << "&";
   }
   if(m_detectionReasonHasBeenSet)
   {
@@ -228,7 +228,7 @@ void StackRefactorAction::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tagResources)
       {
         Aws::StringStream tagResourcesSs;
-        tagResourcesSs << location <<  ".TagResources.member." << tagResourcesIdx++;
+        tagResourcesSs << location << ".TagResources.member." << tagResourcesIdx++;
         item.OutputToStream(oStream, tagResourcesSs.str().c_str());
       }
   }

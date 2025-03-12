@@ -66,7 +66,7 @@ void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_frequencyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Frequency=" << RecurringChargeFrequencyMapper::GetNameForRecurringChargeFrequency(m_frequency) << "&";
+      oStream << location << index << locationValue << ".Frequency=" << StringUtils::URLEncode(RecurringChargeFrequencyMapper::GetNameForRecurringChargeFrequency(m_frequency)) << "&";
   }
 
 }
@@ -75,11 +75,11 @@ void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_amountHasBeenSet)
   {
-        oStream << location << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
+      oStream << location << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
   if(m_frequencyHasBeenSet)
   {
-      oStream << location << ".Frequency=" << RecurringChargeFrequencyMapper::GetNameForRecurringChargeFrequency(m_frequency) << "&";
+      oStream << location << ".Frequency=" << StringUtils::URLEncode(RecurringChargeFrequencyMapper::GetNameForRecurringChargeFrequency(m_frequency)) << "&";
   }
 }
 

@@ -90,7 +90,7 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_platformHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
 
   if(m_volumesHasBeenSet)
@@ -118,7 +118,7 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_platformHasBeenSet)
   {
-      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+      oStream << location << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
   if(m_volumesHasBeenSet)
   {
@@ -126,7 +126,7 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_volumes)
       {
         Aws::StringStream volumesSs;
-        volumesSs << location <<  ".Volumes." << volumesIdx++;
+        volumesSs << location << ".Volumes." << volumesIdx++;
         item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }

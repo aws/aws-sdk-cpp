@@ -147,7 +147,7 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(AttachmentStatusMapper::GetNameForAttachmentStatus(m_status)) << "&";
   }
 
   if(m_enaSrdSpecificationHasBeenSet)
@@ -191,7 +191,7 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(AttachmentStatusMapper::GetNameForAttachmentStatus(m_status)) << "&";
   }
   if(m_enaSrdSpecificationHasBeenSet)
   {

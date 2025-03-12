@@ -125,7 +125,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_lifecycleStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LifecycleState=" << LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState) << "&";
+      oStream << location << index << locationValue << ".LifecycleState=" << StringUtils::URLEncode(LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState)) << "&";
   }
 
   if(m_healthStatusHasBeenSet)
@@ -173,7 +173,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_lifecycleStateHasBeenSet)
   {
-      oStream << location << ".LifecycleState=" << LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState) << "&";
+      oStream << location << ".LifecycleState=" << StringUtils::URLEncode(LifecycleStateMapper::GetNameForLifecycleState(m_lifecycleState)) << "&";
   }
   if(m_healthStatusHasBeenSet)
   {

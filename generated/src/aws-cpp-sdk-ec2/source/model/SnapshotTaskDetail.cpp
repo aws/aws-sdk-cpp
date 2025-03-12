@@ -189,7 +189,7 @@ void SnapshotTaskDetail::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_diskImageSizeHasBeenSet)
   {
-        oStream << location << ".DiskImageSize=" << StringUtils::URLEncode(m_diskImageSize) << "&";
+      oStream << location << ".DiskImageSize=" << StringUtils::URLEncode(m_diskImageSize) << "&";
   }
   if(m_encryptedHasBeenSet)
   {

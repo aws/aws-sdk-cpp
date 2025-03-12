@@ -248,7 +248,7 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_platformStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PlatformStatus=" << PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus) << "&";
+      oStream << location << index << locationValue << ".PlatformStatus=" << StringUtils::URLEncode(PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus)) << "&";
   }
 
   if(m_dateCreatedHasBeenSet)
@@ -378,7 +378,7 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_platformStatusHasBeenSet)
   {
-      oStream << location << ".PlatformStatus=" << PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus) << "&";
+      oStream << location << ".PlatformStatus=" << StringUtils::URLEncode(PlatformStatusMapper::GetNameForPlatformStatus(m_platformStatus)) << "&";
   }
   if(m_dateCreatedHasBeenSet)
   {
@@ -414,7 +414,7 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_programmingLanguages)
       {
         Aws::StringStream programmingLanguagesSs;
-        programmingLanguagesSs << location <<  ".ProgrammingLanguages.member." << programmingLanguagesIdx++;
+        programmingLanguagesSs << location << ".ProgrammingLanguages.member." << programmingLanguagesIdx++;
         item.OutputToStream(oStream, programmingLanguagesSs.str().c_str());
       }
   }
@@ -424,7 +424,7 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_frameworks)
       {
         Aws::StringStream frameworksSs;
-        frameworksSs << location <<  ".Frameworks.member." << frameworksIdx++;
+        frameworksSs << location << ".Frameworks.member." << frameworksIdx++;
         item.OutputToStream(oStream, frameworksSs.str().c_str());
       }
   }
@@ -434,7 +434,7 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_customAmiList)
       {
         Aws::StringStream customAmiListSs;
-        customAmiListSs << location <<  ".CustomAmiList.member." << customAmiListIdx++;
+        customAmiListSs << location << ".CustomAmiList.member." << customAmiListIdx++;
         item.OutputToStream(oStream, customAmiListSs.str().c_str());
       }
   }

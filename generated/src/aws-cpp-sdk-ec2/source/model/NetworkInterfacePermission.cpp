@@ -108,7 +108,7 @@ void NetworkInterfacePermission::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_permissionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Permission=" << InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission) << "&";
+      oStream << location << index << locationValue << ".Permission=" << StringUtils::URLEncode(InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission)) << "&";
   }
 
   if(m_permissionStateHasBeenSet)
@@ -140,7 +140,7 @@ void NetworkInterfacePermission::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_permissionHasBeenSet)
   {
-      oStream << location << ".Permission=" << InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission) << "&";
+      oStream << location << ".Permission=" << StringUtils::URLEncode(InterfacePermissionTypeMapper::GetNameForInterfacePermissionType(m_permission)) << "&";
   }
   if(m_permissionStateHasBeenSet)
   {

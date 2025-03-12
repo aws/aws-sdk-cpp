@@ -120,7 +120,7 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ByoipCidrStateMapper::GetNameForByoipCidrState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(ByoipCidrStateMapper::GetNameForByoipCidrState(m_state)) << "&";
   }
 
   if(m_networkBorderGroupHasBeenSet)
@@ -146,7 +146,7 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_asnAssociations)
       {
         Aws::StringStream asnAssociationsSs;
-        asnAssociationsSs << location <<  ".AsnAssociationSet." << asnAssociationsIdx++;
+        asnAssociationsSs << location << ".AsnAssociationSet." << asnAssociationsIdx++;
         item.OutputToStream(oStream, asnAssociationsSs.str().c_str());
       }
   }
@@ -156,7 +156,7 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << ByoipCidrStateMapper::GetNameForByoipCidrState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(ByoipCidrStateMapper::GetNameForByoipCidrState(m_state)) << "&";
   }
   if(m_networkBorderGroupHasBeenSet)
   {

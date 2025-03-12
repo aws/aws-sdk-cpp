@@ -133,7 +133,7 @@ void DisableFastSnapshotRestoreSuccessItem::OutputToStream(Aws::OStream& oStream
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << FastSnapshotRestoreStateCodeMapper::GetNameForFastSnapshotRestoreStateCode(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(FastSnapshotRestoreStateCodeMapper::GetNameForFastSnapshotRestoreStateCode(m_state)) << "&";
   }
 
   if(m_stateTransitionReasonHasBeenSet)
@@ -190,7 +190,7 @@ void DisableFastSnapshotRestoreSuccessItem::OutputToStream(Aws::OStream& oStream
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << FastSnapshotRestoreStateCodeMapper::GetNameForFastSnapshotRestoreStateCode(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(FastSnapshotRestoreStateCodeMapper::GetNameForFastSnapshotRestoreStateCode(m_state)) << "&";
   }
   if(m_stateTransitionReasonHasBeenSet)
   {

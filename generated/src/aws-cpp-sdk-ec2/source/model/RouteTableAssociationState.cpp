@@ -60,7 +60,7 @@ void RouteTableAssociationState::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << RouteTableAssociationStateCodeMapper::GetNameForRouteTableAssociationStateCode(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(RouteTableAssociationStateCodeMapper::GetNameForRouteTableAssociationStateCode(m_state)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -74,7 +74,7 @@ void RouteTableAssociationState::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << RouteTableAssociationStateCodeMapper::GetNameForRouteTableAssociationStateCode(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(RouteTableAssociationStateCodeMapper::GetNameForRouteTableAssociationStateCode(m_state)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

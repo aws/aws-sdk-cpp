@@ -53,7 +53,7 @@ void ServiceTypeDetail::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_serviceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceType=" << ServiceTypeMapper::GetNameForServiceType(m_serviceType) << "&";
+      oStream << location << index << locationValue << ".ServiceType=" << StringUtils::URLEncode(ServiceTypeMapper::GetNameForServiceType(m_serviceType)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void ServiceTypeDetail::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_serviceTypeHasBeenSet)
   {
-      oStream << location << ".ServiceType=" << ServiceTypeMapper::GetNameForServiceType(m_serviceType) << "&";
+      oStream << location << ".ServiceType=" << StringUtils::URLEncode(ServiceTypeMapper::GetNameForServiceType(m_serviceType)) << "&";
   }
 }
 

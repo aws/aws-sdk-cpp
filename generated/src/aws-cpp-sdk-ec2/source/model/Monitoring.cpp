@@ -53,7 +53,7 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location, uns
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << MonitoringStateMapper::GetNameForMonitoringState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(MonitoringStateMapper::GetNameForMonitoringState(m_state)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location) con
 {
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << MonitoringStateMapper::GetNameForMonitoringState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(MonitoringStateMapper::GetNameForMonitoringState(m_state)) << "&";
   }
 }
 

@@ -325,7 +325,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_interfaceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
+      oStream << location << index << locationValue << ".InterfaceType=" << StringUtils::URLEncode(NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType)) << "&";
   }
 
   if(m_ipv6AddressesHasBeenSet)
@@ -419,7 +419,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << NetworkInterfaceStatusMapper::GetNameForNetworkInterfaceStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(NetworkInterfaceStatusMapper::GetNameForNetworkInterfaceStatus(m_status)) << "&";
   }
 
   if(m_subnetIdHasBeenSet)
@@ -501,13 +501,13 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".GroupSet." << groupsIdx++;
+        groupsSs << location << ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
   if(m_interfaceTypeHasBeenSet)
   {
-      oStream << location << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
+      oStream << location << ".InterfaceType=" << StringUtils::URLEncode(NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType)) << "&";
   }
   if(m_ipv6AddressesHasBeenSet)
   {
@@ -515,7 +515,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".Ipv6AddressesSet." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location << ".Ipv6AddressesSet." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
@@ -549,7 +549,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location << ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -559,7 +559,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ipv4Prefixes)
       {
         Aws::StringStream ipv4PrefixesSs;
-        ipv4PrefixesSs << location <<  ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
+        ipv4PrefixesSs << location << ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
         item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
       }
   }
@@ -569,7 +569,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ipv6Prefixes)
       {
         Aws::StringStream ipv6PrefixesSs;
-        ipv6PrefixesSs << location <<  ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
+        ipv6PrefixesSs << location << ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
         item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
       }
   }
@@ -587,7 +587,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << NetworkInterfaceStatusMapper::GetNameForNetworkInterfaceStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(NetworkInterfaceStatusMapper::GetNameForNetworkInterfaceStatus(m_status)) << "&";
   }
   if(m_subnetIdHasBeenSet)
   {
@@ -599,7 +599,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tagSet)
       {
         Aws::StringStream tagSetSs;
-        tagSetSs << location <<  ".TagSet." << tagSetIdx++;
+        tagSetSs << location << ".TagSet." << tagSetIdx++;
         item.OutputToStream(oStream, tagSetSs.str().c_str());
       }
   }

@@ -66,7 +66,7 @@ void AuthenticationMode::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << InputAuthenticationTypeMapper::GetNameForInputAuthenticationType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(InputAuthenticationTypeMapper::GetNameForInputAuthenticationType(m_type)) << "&";
   }
 
   if(m_passwordsHasBeenSet)
@@ -84,7 +84,7 @@ void AuthenticationMode::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << InputAuthenticationTypeMapper::GetNameForInputAuthenticationType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(InputAuthenticationTypeMapper::GetNameForInputAuthenticationType(m_type)) << "&";
   }
   if(m_passwordsHasBeenSet)
   {

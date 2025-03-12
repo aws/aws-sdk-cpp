@@ -65,7 +65,7 @@ void ClusterAssociatedToSchedule::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_scheduleAssociationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ScheduleAssociationState=" << ScheduleStateMapper::GetNameForScheduleState(m_scheduleAssociationState) << "&";
+      oStream << location << index << locationValue << ".ScheduleAssociationState=" << StringUtils::URLEncode(ScheduleStateMapper::GetNameForScheduleState(m_scheduleAssociationState)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void ClusterAssociatedToSchedule::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_scheduleAssociationStateHasBeenSet)
   {
-      oStream << location << ".ScheduleAssociationState=" << ScheduleStateMapper::GetNameForScheduleState(m_scheduleAssociationState) << "&";
+      oStream << location << ".ScheduleAssociationState=" << StringUtils::URLEncode(ScheduleStateMapper::GetNameForScheduleState(m_scheduleAssociationState)) << "&";
   }
 }
 

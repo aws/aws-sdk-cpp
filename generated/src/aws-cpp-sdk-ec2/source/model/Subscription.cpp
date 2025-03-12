@@ -93,17 +93,17 @@ void Subscription::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_metricHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Metric=" << MetricTypeMapper::GetNameForMetricType(m_metric) << "&";
+      oStream << location << index << locationValue << ".Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
   }
 
   if(m_statisticHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Statistic=" << StatisticTypeMapper::GetNameForStatisticType(m_statistic) << "&";
+      oStream << location << index << locationValue << ".Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
   }
 
   if(m_periodHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Period=" << PeriodTypeMapper::GetNameForPeriodType(m_period) << "&";
+      oStream << location << index << locationValue << ".Period=" << StringUtils::URLEncode(PeriodTypeMapper::GetNameForPeriodType(m_period)) << "&";
   }
 
 }
@@ -120,15 +120,15 @@ void Subscription::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_metricHasBeenSet)
   {
-      oStream << location << ".Metric=" << MetricTypeMapper::GetNameForMetricType(m_metric) << "&";
+      oStream << location << ".Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
   }
   if(m_statisticHasBeenSet)
   {
-      oStream << location << ".Statistic=" << StatisticTypeMapper::GetNameForStatisticType(m_statistic) << "&";
+      oStream << location << ".Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
   }
   if(m_periodHasBeenSet)
   {
-      oStream << location << ".Period=" << PeriodTypeMapper::GetNameForPeriodType(m_period) << "&";
+      oStream << location << ".Period=" << StringUtils::URLEncode(PeriodTypeMapper::GetNameForPeriodType(m_period)) << "&";
   }
 }
 

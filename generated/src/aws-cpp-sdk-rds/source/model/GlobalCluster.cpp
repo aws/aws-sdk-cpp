@@ -289,7 +289,7 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_globalClusterMembers)
       {
         Aws::StringStream globalClusterMembersSs;
-        globalClusterMembersSs << location <<  ".GlobalClusterMember." << globalClusterMembersIdx++;
+        globalClusterMembersSs << location << ".GlobalClusterMembers.GlobalClusterMember." << globalClusterMembersIdx++;
         item.OutputToStream(oStream, globalClusterMembersSs.str().c_str());
       }
   }
@@ -309,7 +309,7 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_tagList)
       {
         Aws::StringStream tagListSs;
-        tagListSs << location <<  ".Tag." << tagListIdx++;
+        tagListSs << location << ".TagList.Tag." << tagListIdx++;
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }

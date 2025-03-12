@@ -34,7 +34,7 @@ Aws::String DescribeEnvironmentManagedActionsRequest::SerializePayload() const
 
   if(m_statusHasBeenSet)
   {
-    ss << "Status=" << ActionStatusMapper::GetNameForActionStatus(m_status) << "&";
+    ss << "Status=" << StringUtils::URLEncode(ActionStatusMapper::GetNameForActionStatus(m_status)) << "&";
   }
 
   ss << "Version=2010-12-01";

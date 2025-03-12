@@ -74,7 +74,7 @@ void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location,
 {
   if(m_principalTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PrincipalType=" << PrincipalTypeMapper::GetNameForPrincipalType(m_principalType) << "&";
+      oStream << location << index << locationValue << ".PrincipalType=" << StringUtils::URLEncode(PrincipalTypeMapper::GetNameForPrincipalType(m_principalType)) << "&";
   }
 
   if(m_principalHasBeenSet)
@@ -98,7 +98,7 @@ void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_principalTypeHasBeenSet)
   {
-      oStream << location << ".PrincipalType=" << PrincipalTypeMapper::GetNameForPrincipalType(m_principalType) << "&";
+      oStream << location << ".PrincipalType=" << StringUtils::URLEncode(PrincipalTypeMapper::GetNameForPrincipalType(m_principalType)) << "&";
   }
   if(m_principalHasBeenSet)
   {

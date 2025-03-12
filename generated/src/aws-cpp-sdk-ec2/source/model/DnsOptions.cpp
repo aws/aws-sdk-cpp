@@ -61,7 +61,7 @@ void DnsOptions::OutputToStream(Aws::OStream& oStream, const char* location, uns
 {
   if(m_dnsRecordIpTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DnsRecordIpType=" << DnsRecordIpTypeMapper::GetNameForDnsRecordIpType(m_dnsRecordIpType) << "&";
+      oStream << location << index << locationValue << ".DnsRecordIpType=" << StringUtils::URLEncode(DnsRecordIpTypeMapper::GetNameForDnsRecordIpType(m_dnsRecordIpType)) << "&";
   }
 
   if(m_privateDnsOnlyForInboundResolverEndpointHasBeenSet)
@@ -75,7 +75,7 @@ void DnsOptions::OutputToStream(Aws::OStream& oStream, const char* location) con
 {
   if(m_dnsRecordIpTypeHasBeenSet)
   {
-      oStream << location << ".DnsRecordIpType=" << DnsRecordIpTypeMapper::GetNameForDnsRecordIpType(m_dnsRecordIpType) << "&";
+      oStream << location << ".DnsRecordIpType=" << StringUtils::URLEncode(DnsRecordIpTypeMapper::GetNameForDnsRecordIpType(m_dnsRecordIpType)) << "&";
   }
   if(m_privateDnsOnlyForInboundResolverEndpointHasBeenSet)
   {

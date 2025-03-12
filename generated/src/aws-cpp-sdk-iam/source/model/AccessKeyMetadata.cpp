@@ -84,7 +84,7 @@ void AccessKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
   }
 
   if(m_createDateHasBeenSet)
@@ -106,7 +106,7 @@ void AccessKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
   }
   if(m_createDateHasBeenSet)
   {

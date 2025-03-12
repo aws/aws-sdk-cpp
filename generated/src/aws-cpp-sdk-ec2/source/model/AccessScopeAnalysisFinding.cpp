@@ -125,7 +125,7 @@ void AccessScopeAnalysisFinding::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_findingComponents)
       {
         Aws::StringStream findingComponentsSs;
-        findingComponentsSs << location <<  ".FindingComponentSet." << findingComponentsIdx++;
+        findingComponentsSs << location << ".FindingComponentSet." << findingComponentsIdx++;
         item.OutputToStream(oStream, findingComponentsSs.str().c_str());
       }
   }

@@ -101,7 +101,7 @@ void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_algorithmicStemmingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AlgorithmicStemming=" << AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming) << "&";
+      oStream << location << index << locationValue << ".AlgorithmicStemming=" << StringUtils::URLEncode(AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming)) << "&";
   }
 
 }
@@ -126,7 +126,7 @@ void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_algorithmicStemmingHasBeenSet)
   {
-      oStream << location << ".AlgorithmicStemming=" << AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming) << "&";
+      oStream << location << ".AlgorithmicStemming=" << StringUtils::URLEncode(AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming)) << "&";
   }
 }
 

@@ -93,7 +93,7 @@ void DisableFastSnapshotRestoreErrorItem::OutputToStream(Aws::OStream& oStream, 
       for(auto& item : m_fastSnapshotRestoreStateErrors)
       {
         Aws::StringStream fastSnapshotRestoreStateErrorsSs;
-        fastSnapshotRestoreStateErrorsSs << location <<  ".FastSnapshotRestoreStateErrorSet." << fastSnapshotRestoreStateErrorsIdx++;
+        fastSnapshotRestoreStateErrorsSs << location << ".FastSnapshotRestoreStateErrorSet." << fastSnapshotRestoreStateErrorsIdx++;
         item.OutputToStream(oStream, fastSnapshotRestoreStateErrorsSs.str().c_str());
       }
   }

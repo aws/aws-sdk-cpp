@@ -93,7 +93,7 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << EventCodeMapper::GetNameForEventCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(EventCodeMapper::GetNameForEventCode(m_code)) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -126,7 +126,7 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << EventCodeMapper::GetNameForEventCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(EventCodeMapper::GetNameForEventCode(m_code)) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

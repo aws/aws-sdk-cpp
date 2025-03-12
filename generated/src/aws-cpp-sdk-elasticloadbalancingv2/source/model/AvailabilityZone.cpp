@@ -147,7 +147,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_loadBalancerAddresses)
       {
         Aws::StringStream loadBalancerAddressesSs;
-        loadBalancerAddressesSs << location <<  ".LoadBalancerAddresses.member." << loadBalancerAddressesIdx++;
+        loadBalancerAddressesSs << location << ".LoadBalancerAddresses.member." << loadBalancerAddressesIdx++;
         item.OutputToStream(oStream, loadBalancerAddressesSs.str().c_str());
       }
   }

@@ -60,7 +60,7 @@ void ClientCertificateRevocationListStatus::OutputToStream(Aws::OStream& oStream
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << ClientCertificateRevocationListStatusCodeMapper::GetNameForClientCertificateRevocationListStatusCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(ClientCertificateRevocationListStatusCodeMapper::GetNameForClientCertificateRevocationListStatusCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void ClientCertificateRevocationListStatus::OutputToStream(Aws::OStream& oStream
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << ClientCertificateRevocationListStatusCodeMapper::GetNameForClientCertificateRevocationListStatusCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(ClientCertificateRevocationListStatusCodeMapper::GetNameForClientCertificateRevocationListStatusCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

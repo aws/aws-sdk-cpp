@@ -292,7 +292,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned cpuManufacturersIdx = 1;
       for(auto& item : m_cpuManufacturers)
       {
-        oStream << location << index << locationValue << ".CpuManufacturers.member." << cpuManufacturersIdx++ << "=" << CpuManufacturerMapper::GetNameForCpuManufacturer(item) << "&";
+        oStream << location << index << locationValue << ".CpuManufacturers.member." << cpuManufacturersIdx++ << "=" << StringUtils::URLEncode(CpuManufacturerMapper::GetNameForCpuManufacturer(item)) << "&";
       }
   }
 
@@ -317,7 +317,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned instanceGenerationsIdx = 1;
       for(auto& item : m_instanceGenerations)
       {
-        oStream << location << index << locationValue << ".InstanceGenerations.member." << instanceGenerationsIdx++ << "=" << InstanceGenerationMapper::GetNameForInstanceGeneration(item) << "&";
+        oStream << location << index << locationValue << ".InstanceGenerations.member." << instanceGenerationsIdx++ << "=" << StringUtils::URLEncode(InstanceGenerationMapper::GetNameForInstanceGeneration(item)) << "&";
       }
   }
 
@@ -338,12 +338,12 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_bareMetalHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BareMetal=" << BareMetalMapper::GetNameForBareMetal(m_bareMetal) << "&";
+      oStream << location << index << locationValue << ".BareMetal=" << StringUtils::URLEncode(BareMetalMapper::GetNameForBareMetal(m_bareMetal)) << "&";
   }
 
   if(m_burstablePerformanceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BurstablePerformance=" << BurstablePerformanceMapper::GetNameForBurstablePerformance(m_burstablePerformance) << "&";
+      oStream << location << index << locationValue << ".BurstablePerformance=" << StringUtils::URLEncode(BurstablePerformanceMapper::GetNameForBurstablePerformance(m_burstablePerformance)) << "&";
   }
 
   if(m_requireHibernateSupportHasBeenSet)
@@ -360,7 +360,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_localStorageHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LocalStorage=" << LocalStorageMapper::GetNameForLocalStorage(m_localStorage) << "&";
+      oStream << location << index << locationValue << ".LocalStorage=" << StringUtils::URLEncode(LocalStorageMapper::GetNameForLocalStorage(m_localStorage)) << "&";
   }
 
   if(m_localStorageTypesHasBeenSet)
@@ -368,7 +368,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned localStorageTypesIdx = 1;
       for(auto& item : m_localStorageTypes)
       {
-        oStream << location << index << locationValue << ".LocalStorageTypes.member." << localStorageTypesIdx++ << "=" << LocalStorageTypeMapper::GetNameForLocalStorageType(item) << "&";
+        oStream << location << index << locationValue << ".LocalStorageTypes.member." << localStorageTypesIdx++ << "=" << StringUtils::URLEncode(LocalStorageTypeMapper::GetNameForLocalStorageType(item)) << "&";
       }
   }
 
@@ -391,7 +391,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned acceleratorTypesIdx = 1;
       for(auto& item : m_acceleratorTypes)
       {
-        oStream << location << index << locationValue << ".AcceleratorTypes.member." << acceleratorTypesIdx++ << "=" << AcceleratorTypeMapper::GetNameForAcceleratorType(item) << "&";
+        oStream << location << index << locationValue << ".AcceleratorTypes.member." << acceleratorTypesIdx++ << "=" << StringUtils::URLEncode(AcceleratorTypeMapper::GetNameForAcceleratorType(item)) << "&";
       }
   }
 
@@ -407,7 +407,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned acceleratorManufacturersIdx = 1;
       for(auto& item : m_acceleratorManufacturers)
       {
-        oStream << location << index << locationValue << ".AcceleratorManufacturers.member." << acceleratorManufacturersIdx++ << "=" << AcceleratorManufacturerMapper::GetNameForAcceleratorManufacturer(item) << "&";
+        oStream << location << index << locationValue << ".AcceleratorManufacturers.member." << acceleratorManufacturersIdx++ << "=" << StringUtils::URLEncode(AcceleratorManufacturerMapper::GetNameForAcceleratorManufacturer(item)) << "&";
       }
   }
 
@@ -416,7 +416,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned acceleratorNamesIdx = 1;
       for(auto& item : m_acceleratorNames)
       {
-        oStream << location << index << locationValue << ".AcceleratorNames.member." << acceleratorNamesIdx++ << "=" << AcceleratorNameMapper::GetNameForAcceleratorName(item) << "&";
+        oStream << location << index << locationValue << ".AcceleratorNames.member." << acceleratorNamesIdx++ << "=" << StringUtils::URLEncode(AcceleratorNameMapper::GetNameForAcceleratorName(item)) << "&";
       }
   }
 
@@ -471,7 +471,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned cpuManufacturersIdx = 1;
       for(auto& item : m_cpuManufacturers)
       {
-        oStream << location << ".CpuManufacturers.member." << cpuManufacturersIdx++ << "=" << CpuManufacturerMapper::GetNameForCpuManufacturer(item) << "&";
+        oStream << location << ".CpuManufacturers.member." << cpuManufacturersIdx++ << "=" << StringUtils::URLEncode(CpuManufacturerMapper::GetNameForCpuManufacturer(item)) << "&";
       }
   }
   if(m_memoryGiBPerVCpuHasBeenSet)
@@ -493,7 +493,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned instanceGenerationsIdx = 1;
       for(auto& item : m_instanceGenerations)
       {
-        oStream << location << ".InstanceGenerations.member." << instanceGenerationsIdx++ << "=" << InstanceGenerationMapper::GetNameForInstanceGeneration(item) << "&";
+        oStream << location << ".InstanceGenerations.member." << instanceGenerationsIdx++ << "=" << StringUtils::URLEncode(InstanceGenerationMapper::GetNameForInstanceGeneration(item)) << "&";
       }
   }
   if(m_spotMaxPricePercentageOverLowestPriceHasBeenSet)
@@ -510,11 +510,11 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_bareMetalHasBeenSet)
   {
-      oStream << location << ".BareMetal=" << BareMetalMapper::GetNameForBareMetal(m_bareMetal) << "&";
+      oStream << location << ".BareMetal=" << StringUtils::URLEncode(BareMetalMapper::GetNameForBareMetal(m_bareMetal)) << "&";
   }
   if(m_burstablePerformanceHasBeenSet)
   {
-      oStream << location << ".BurstablePerformance=" << BurstablePerformanceMapper::GetNameForBurstablePerformance(m_burstablePerformance) << "&";
+      oStream << location << ".BurstablePerformance=" << StringUtils::URLEncode(BurstablePerformanceMapper::GetNameForBurstablePerformance(m_burstablePerformance)) << "&";
   }
   if(m_requireHibernateSupportHasBeenSet)
   {
@@ -528,14 +528,14 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_localStorageHasBeenSet)
   {
-      oStream << location << ".LocalStorage=" << LocalStorageMapper::GetNameForLocalStorage(m_localStorage) << "&";
+      oStream << location << ".LocalStorage=" << StringUtils::URLEncode(LocalStorageMapper::GetNameForLocalStorage(m_localStorage)) << "&";
   }
   if(m_localStorageTypesHasBeenSet)
   {
       unsigned localStorageTypesIdx = 1;
       for(auto& item : m_localStorageTypes)
       {
-        oStream << location << ".LocalStorageTypes.member." << localStorageTypesIdx++ << "=" << LocalStorageTypeMapper::GetNameForLocalStorageType(item) << "&";
+        oStream << location << ".LocalStorageTypes.member." << localStorageTypesIdx++ << "=" << StringUtils::URLEncode(LocalStorageTypeMapper::GetNameForLocalStorageType(item)) << "&";
       }
   }
   if(m_totalLocalStorageGBHasBeenSet)
@@ -555,7 +555,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned acceleratorTypesIdx = 1;
       for(auto& item : m_acceleratorTypes)
       {
-        oStream << location << ".AcceleratorTypes.member." << acceleratorTypesIdx++ << "=" << AcceleratorTypeMapper::GetNameForAcceleratorType(item) << "&";
+        oStream << location << ".AcceleratorTypes.member." << acceleratorTypesIdx++ << "=" << StringUtils::URLEncode(AcceleratorTypeMapper::GetNameForAcceleratorType(item)) << "&";
       }
   }
   if(m_acceleratorCountHasBeenSet)
@@ -569,7 +569,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned acceleratorManufacturersIdx = 1;
       for(auto& item : m_acceleratorManufacturers)
       {
-        oStream << location << ".AcceleratorManufacturers.member." << acceleratorManufacturersIdx++ << "=" << AcceleratorManufacturerMapper::GetNameForAcceleratorManufacturer(item) << "&";
+        oStream << location << ".AcceleratorManufacturers.member." << acceleratorManufacturersIdx++ << "=" << StringUtils::URLEncode(AcceleratorManufacturerMapper::GetNameForAcceleratorManufacturer(item)) << "&";
       }
   }
   if(m_acceleratorNamesHasBeenSet)
@@ -577,7 +577,7 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       unsigned acceleratorNamesIdx = 1;
       for(auto& item : m_acceleratorNames)
       {
-        oStream << location << ".AcceleratorNames.member." << acceleratorNamesIdx++ << "=" << AcceleratorNameMapper::GetNameForAcceleratorName(item) << "&";
+        oStream << location << ".AcceleratorNames.member." << acceleratorNamesIdx++ << "=" << StringUtils::URLEncode(AcceleratorNameMapper::GetNameForAcceleratorName(item)) << "&";
       }
   }
   if(m_acceleratorTotalMemoryMiBHasBeenSet)

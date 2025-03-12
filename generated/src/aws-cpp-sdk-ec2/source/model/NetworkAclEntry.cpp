@@ -138,7 +138,7 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_ruleActionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
+      oStream << location << index << locationValue << ".RuleAction=" << StringUtils::URLEncode(RuleActionMapper::GetNameForRuleAction(m_ruleAction)) << "&";
   }
 
   if(m_ruleNumberHasBeenSet)
@@ -180,7 +180,7 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_ruleActionHasBeenSet)
   {
-      oStream << location << ".RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
+      oStream << location << ".RuleAction=" << StringUtils::URLEncode(RuleActionMapper::GetNameForRuleAction(m_ruleAction)) << "&";
   }
   if(m_ruleNumberHasBeenSet)
   {

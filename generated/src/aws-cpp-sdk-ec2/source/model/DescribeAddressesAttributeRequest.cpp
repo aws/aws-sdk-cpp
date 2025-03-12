@@ -39,7 +39,7 @@ Aws::String DescribeAddressesAttributeRequest::SerializePayload() const
 
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << AddressAttributeNameMapper::GetNameForAddressAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(AddressAttributeNameMapper::GetNameForAddressAttributeName(m_attribute)) << "&";
   }
 
   if(m_nextTokenHasBeenSet)

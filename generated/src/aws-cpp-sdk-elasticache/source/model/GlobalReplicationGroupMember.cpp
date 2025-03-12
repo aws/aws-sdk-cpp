@@ -96,7 +96,7 @@ void GlobalReplicationGroupMember::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_automaticFailoverHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+      oStream << location << index << locationValue << ".AutomaticFailover=" << StringUtils::URLEncode(AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover)) << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -122,7 +122,7 @@ void GlobalReplicationGroupMember::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_automaticFailoverHasBeenSet)
   {
-      oStream << location << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+      oStream << location << ".AutomaticFailover=" << StringUtils::URLEncode(AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover)) << "&";
   }
   if(m_statusHasBeenSet)
   {

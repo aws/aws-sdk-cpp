@@ -217,7 +217,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
 
   if(m_databaseInsightsModeHasBeenSet)
   {
-    ss << "DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
+    ss << "DatabaseInsightsMode=" << StringUtils::URLEncode(DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode)) << "&";
   }
 
   if(m_enablePerformanceInsightsHasBeenSet)
@@ -325,7 +325,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
 
   if(m_replicaModeHasBeenSet)
   {
-    ss << "ReplicaMode=" << ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode) << "&";
+    ss << "ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 
   if(m_maxAllocatedStorageHasBeenSet)

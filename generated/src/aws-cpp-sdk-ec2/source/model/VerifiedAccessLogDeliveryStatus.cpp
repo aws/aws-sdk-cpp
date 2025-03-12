@@ -60,7 +60,7 @@ void VerifiedAccessLogDeliveryStatus::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << VerifiedAccessLogDeliveryStatusCodeMapper::GetNameForVerifiedAccessLogDeliveryStatusCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(VerifiedAccessLogDeliveryStatusCodeMapper::GetNameForVerifiedAccessLogDeliveryStatusCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void VerifiedAccessLogDeliveryStatus::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << VerifiedAccessLogDeliveryStatusCodeMapper::GetNameForVerifiedAccessLogDeliveryStatusCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(VerifiedAccessLogDeliveryStatusCodeMapper::GetNameForVerifiedAccessLogDeliveryStatusCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

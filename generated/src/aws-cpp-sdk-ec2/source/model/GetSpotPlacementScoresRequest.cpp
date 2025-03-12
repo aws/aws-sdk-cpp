@@ -50,7 +50,7 @@ Aws::String GetSpotPlacementScoresRequest::SerializePayload() const
 
   if(m_targetCapacityUnitTypeHasBeenSet)
   {
-    ss << "TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
+    ss << "TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
   }
 
   if(m_singleAvailabilityZoneHasBeenSet)

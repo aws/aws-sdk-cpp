@@ -45,7 +45,7 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
 
   if(m_spreadLevelHasBeenSet)
   {
-    ss << "SpreadLevel=" << SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel) << "&";
+    ss << "SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
   }
 
   if(m_dryRunHasBeenSet)
@@ -60,7 +60,7 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
 
   if(m_strategyHasBeenSet)
   {
-    ss << "Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
+    ss << "Strategy=" << StringUtils::URLEncode(PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy)) << "&";
   }
 
   ss << "Version=2016-11-15";

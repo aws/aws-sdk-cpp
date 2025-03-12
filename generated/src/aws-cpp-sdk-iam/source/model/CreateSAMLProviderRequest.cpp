@@ -53,7 +53,7 @@ Aws::String CreateSAMLProviderRequest::SerializePayload() const
 
   if(m_assertionEncryptionModeHasBeenSet)
   {
-    ss << "AssertionEncryptionMode=" << AssertionEncryptionModeTypeMapper::GetNameForAssertionEncryptionModeType(m_assertionEncryptionMode) << "&";
+    ss << "AssertionEncryptionMode=" << StringUtils::URLEncode(AssertionEncryptionModeTypeMapper::GetNameForAssertionEncryptionModeType(m_assertionEncryptionMode)) << "&";
   }
 
   if(m_addPrivateKeyHasBeenSet)

@@ -25,7 +25,7 @@ Aws::String ResetImageAttributeRequest::SerializePayload() const
   ss << "Action=ResetImageAttribute&";
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << ResetImageAttributeNameMapper::GetNameForResetImageAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(ResetImageAttributeNameMapper::GetNameForResetImageAttributeName(m_attribute)) << "&";
   }
 
   if(m_imageIdHasBeenSet)

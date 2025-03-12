@@ -60,7 +60,7 @@ void ResponseError::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << LaunchTemplateErrorCodeMapper::GetNameForLaunchTemplateErrorCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(LaunchTemplateErrorCodeMapper::GetNameForLaunchTemplateErrorCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void ResponseError::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << LaunchTemplateErrorCodeMapper::GetNameForLaunchTemplateErrorCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(LaunchTemplateErrorCodeMapper::GetNameForLaunchTemplateErrorCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

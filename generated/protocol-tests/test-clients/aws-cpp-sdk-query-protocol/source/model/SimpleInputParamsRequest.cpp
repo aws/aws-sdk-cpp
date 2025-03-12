@@ -66,12 +66,12 @@ Aws::String SimpleInputParamsRequest::SerializePayload() const
 
   if(m_quxHasBeenSet)
   {
-    ss << "Qux=" << HashingUtils::Base64Encode(m_qux) << "&";
+    ss << "Qux=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_qux).c_str()) << "&";
   }
 
   if(m_fooEnumHasBeenSet)
   {
-    ss << "FooEnum=" << FooEnumMapper::GetNameForFooEnum(m_fooEnum) << "&";
+    ss << "FooEnum=" << StringUtils::URLEncode(FooEnumMapper::GetNameForFooEnum(m_fooEnum)) << "&";
   }
 
   if(m_integerEnumHasBeenSet)

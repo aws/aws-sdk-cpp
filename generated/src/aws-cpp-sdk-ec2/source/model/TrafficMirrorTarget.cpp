@@ -123,7 +123,7 @@ void TrafficMirrorTarget::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << TrafficMirrorTargetTypeMapper::GetNameForTrafficMirrorTargetType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(TrafficMirrorTargetTypeMapper::GetNameForTrafficMirrorTargetType(m_type)) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -170,7 +170,7 @@ void TrafficMirrorTarget::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << TrafficMirrorTargetTypeMapper::GetNameForTrafficMirrorTargetType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(TrafficMirrorTargetTypeMapper::GetNameForTrafficMirrorTargetType(m_type)) << "&";
   }
   if(m_descriptionHasBeenSet)
   {
@@ -186,7 +186,7 @@ void TrafficMirrorTarget::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

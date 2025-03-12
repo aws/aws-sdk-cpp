@@ -152,7 +152,7 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
 
   if(m_deploymentStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeploymentStatus=" << ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus) << "&";
+      oStream << location << index << locationValue << ".DeploymentStatus=" << StringUtils::URLEncode(ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus)) << "&";
   }
 
   if(m_dateCreatedHasBeenSet)
@@ -209,7 +209,7 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_deploymentStatusHasBeenSet)
   {
-      oStream << location << ".DeploymentStatus=" << ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus) << "&";
+      oStream << location << ".DeploymentStatus=" << StringUtils::URLEncode(ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus)) << "&";
   }
   if(m_dateCreatedHasBeenSet)
   {
@@ -225,7 +225,7 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
       for(auto& item : m_optionSettings)
       {
         Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location <<  ".OptionSettings.member." << optionSettingsIdx++;
+        optionSettingsSs << location << ".OptionSettings.member." << optionSettingsIdx++;
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }

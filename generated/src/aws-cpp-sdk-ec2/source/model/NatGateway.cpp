@@ -186,7 +186,7 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(NatGatewayStateMapper::GetNameForNatGatewayState(m_state)) << "&";
   }
 
   if(m_subnetIdHasBeenSet)
@@ -212,7 +212,7 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_connectivityTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
+      oStream << location << index << locationValue << ".ConnectivityType=" << StringUtils::URLEncode(ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType)) << "&";
   }
 
 }
@@ -241,7 +241,7 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_natGatewayAddresses)
       {
         Aws::StringStream natGatewayAddressesSs;
-        natGatewayAddressesSs << location <<  ".NatGatewayAddressSet." << natGatewayAddressesIdx++;
+        natGatewayAddressesSs << location << ".NatGatewayAddressSet." << natGatewayAddressesIdx++;
         item.OutputToStream(oStream, natGatewayAddressesSs.str().c_str());
       }
   }
@@ -257,7 +257,7 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(NatGatewayStateMapper::GetNameForNatGatewayState(m_state)) << "&";
   }
   if(m_subnetIdHasBeenSet)
   {
@@ -273,13 +273,13 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_connectivityTypeHasBeenSet)
   {
-      oStream << location << ".ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
+      oStream << location << ".ConnectivityType=" << StringUtils::URLEncode(ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType)) << "&";
   }
 }
 

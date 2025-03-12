@@ -30,7 +30,7 @@ Aws::String DescribeNodeConfigurationOptionsRequest::SerializePayload() const
   ss << "Action=DescribeNodeConfigurationOptions&";
   if(m_actionTypeHasBeenSet)
   {
-    ss << "ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
+    ss << "ActionType=" << StringUtils::URLEncode(ActionTypeMapper::GetNameForActionType(m_actionType)) << "&";
   }
 
   if(m_clusterIdentifierHasBeenSet)

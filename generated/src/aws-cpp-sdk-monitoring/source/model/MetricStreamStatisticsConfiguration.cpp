@@ -99,7 +99,7 @@ void MetricStreamStatisticsConfiguration::OutputToStream(Aws::OStream& oStream, 
       for(auto& item : m_includeMetrics)
       {
         Aws::StringStream includeMetricsSs;
-        includeMetricsSs << location <<  ".IncludeMetrics.member." << includeMetricsIdx++;
+        includeMetricsSs << location << ".IncludeMetrics.member." << includeMetricsIdx++;
         item.OutputToStream(oStream, includeMetricsSs.str().c_str());
       }
   }

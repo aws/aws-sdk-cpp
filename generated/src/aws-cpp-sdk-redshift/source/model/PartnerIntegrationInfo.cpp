@@ -98,7 +98,7 @@ void PartnerIntegrationInfo::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << PartnerIntegrationStatusMapper::GetNameForPartnerIntegrationStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(PartnerIntegrationStatusMapper::GetNameForPartnerIntegrationStatus(m_status)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -130,7 +130,7 @@ void PartnerIntegrationInfo::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << PartnerIntegrationStatusMapper::GetNameForPartnerIntegrationStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(PartnerIntegrationStatusMapper::GetNameForPartnerIntegrationStatus(m_status)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

@@ -40,7 +40,7 @@ Aws::String LockSnapshotRequest::SerializePayload() const
 
   if(m_lockModeHasBeenSet)
   {
-    ss << "LockMode=" << LockModeMapper::GetNameForLockMode(m_lockMode) << "&";
+    ss << "LockMode=" << StringUtils::URLEncode(LockModeMapper::GetNameForLockMode(m_lockMode)) << "&";
   }
 
   if(m_coolOffPeriodHasBeenSet)

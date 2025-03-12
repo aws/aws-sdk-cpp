@@ -54,7 +54,7 @@ Aws::String CreateCapacityReservationFleetRequest::SerializePayload() const
 
   if(m_tenancyHasBeenSet)
   {
-    ss << "Tenancy=" << FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy) << "&";
+    ss << "Tenancy=" << StringUtils::URLEncode(FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy)) << "&";
   }
 
   if(m_totalTargetCapacityHasBeenSet)
@@ -69,7 +69,7 @@ Aws::String CreateCapacityReservationFleetRequest::SerializePayload() const
 
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-    ss << "InstanceMatchCriteria=" << FleetInstanceMatchCriteriaMapper::GetNameForFleetInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+    ss << "InstanceMatchCriteria=" << StringUtils::URLEncode(FleetInstanceMatchCriteriaMapper::GetNameForFleetInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

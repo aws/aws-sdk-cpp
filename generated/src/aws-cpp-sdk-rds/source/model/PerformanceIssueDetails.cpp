@@ -121,7 +121,7 @@ void PerformanceIssueDetails::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_metrics)
       {
         Aws::StringStream metricsSs;
-        metricsSs << location <<  ".Metrics.member." << metricsIdx++;
+        metricsSs << location << ".Metrics.member." << metricsIdx++;
         item.OutputToStream(oStream, metricsSs.str().c_str());
       }
   }

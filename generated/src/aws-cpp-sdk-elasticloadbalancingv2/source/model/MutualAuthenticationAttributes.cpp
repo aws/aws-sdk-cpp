@@ -98,12 +98,12 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
 
   if(m_trustStoreAssociationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TrustStoreAssociationStatus=" << TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus) << "&";
+      oStream << location << index << locationValue << ".TrustStoreAssociationStatus=" << StringUtils::URLEncode(TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus)) << "&";
   }
 
   if(m_advertiseTrustStoreCaNamesHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AdvertiseTrustStoreCaNames=" << AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames) << "&";
+      oStream << location << index << locationValue << ".AdvertiseTrustStoreCaNames=" << StringUtils::URLEncode(AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames)) << "&";
   }
 
 }
@@ -124,11 +124,11 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_trustStoreAssociationStatusHasBeenSet)
   {
-      oStream << location << ".TrustStoreAssociationStatus=" << TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus) << "&";
+      oStream << location << ".TrustStoreAssociationStatus=" << StringUtils::URLEncode(TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus)) << "&";
   }
   if(m_advertiseTrustStoreCaNamesHasBeenSet)
   {
-      oStream << location << ".AdvertiseTrustStoreCaNames=" << AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames) << "&";
+      oStream << location << ".AdvertiseTrustStoreCaNames=" << StringUtils::URLEncode(AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames)) << "&";
   }
 }
 

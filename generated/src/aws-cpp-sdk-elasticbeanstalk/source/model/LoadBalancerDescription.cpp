@@ -109,7 +109,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
       for(auto& item : m_listeners)
       {
         Aws::StringStream listenersSs;
-        listenersSs << location <<  ".Listeners.member." << listenersIdx++;
+        listenersSs << location << ".Listeners.member." << listenersIdx++;
         item.OutputToStream(oStream, listenersSs.str().c_str());
       }
   }

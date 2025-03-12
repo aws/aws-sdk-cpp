@@ -77,7 +77,7 @@ void LambdaAction::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_invocationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InvocationType=" << InvocationTypeMapper::GetNameForInvocationType(m_invocationType) << "&";
+      oStream << location << index << locationValue << ".InvocationType=" << StringUtils::URLEncode(InvocationTypeMapper::GetNameForInvocationType(m_invocationType)) << "&";
   }
 
 }
@@ -94,7 +94,7 @@ void LambdaAction::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_invocationTypeHasBeenSet)
   {
-      oStream << location << ".InvocationType=" << InvocationTypeMapper::GetNameForInvocationType(m_invocationType) << "&";
+      oStream << location << ".InvocationType=" << StringUtils::URLEncode(InvocationTypeMapper::GetNameForInvocationType(m_invocationType)) << "&";
   }
 }
 

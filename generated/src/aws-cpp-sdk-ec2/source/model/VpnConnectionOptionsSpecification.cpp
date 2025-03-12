@@ -129,7 +129,7 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
 
   if(m_tunnelInsideIpVersionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
+      oStream << location << index << locationValue << ".TunnelInsideIpVersion=" << StringUtils::URLEncode(TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion)) << "&";
   }
 
   if(m_tunnelOptionsHasBeenSet)
@@ -188,7 +188,7 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_tunnelInsideIpVersionHasBeenSet)
   {
-      oStream << location << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
+      oStream << location << ".TunnelInsideIpVersion=" << StringUtils::URLEncode(TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion)) << "&";
   }
   if(m_tunnelOptionsHasBeenSet)
   {
@@ -196,7 +196,7 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_tunnelOptions)
       {
         Aws::StringStream tunnelOptionsSs;
-        tunnelOptionsSs << location <<  ".TunnelOptions." << tunnelOptionsIdx++;
+        tunnelOptionsSs << location << ".TunnelOptions." << tunnelOptionsIdx++;
         item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
       }
   }

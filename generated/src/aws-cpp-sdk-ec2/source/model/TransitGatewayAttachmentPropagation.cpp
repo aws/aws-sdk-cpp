@@ -65,7 +65,7 @@ void TransitGatewayAttachmentPropagation::OutputToStream(Aws::OStream& oStream, 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayPropagationStateMapper::GetNameForTransitGatewayPropagationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayPropagationStateMapper::GetNameForTransitGatewayPropagationState(m_state)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void TransitGatewayAttachmentPropagation::OutputToStream(Aws::OStream& oStream, 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayPropagationStateMapper::GetNameForTransitGatewayPropagationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayPropagationStateMapper::GetNameForTransitGatewayPropagationState(m_state)) << "&";
   }
 }
 

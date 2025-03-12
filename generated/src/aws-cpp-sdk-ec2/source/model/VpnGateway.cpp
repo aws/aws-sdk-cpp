@@ -130,12 +130,12 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
   }
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(GatewayTypeMapper::GetNameForGatewayType(m_type)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -168,7 +168,7 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -178,11 +178,11 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(GatewayTypeMapper::GetNameForGatewayType(m_type)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {
@@ -194,7 +194,7 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_vpcAttachments)
       {
         Aws::StringStream vpcAttachmentsSs;
-        vpcAttachmentsSs << location <<  ".Attachments." << vpcAttachmentsIdx++;
+        vpcAttachmentsSs << location << ".Attachments." << vpcAttachmentsIdx++;
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
   }

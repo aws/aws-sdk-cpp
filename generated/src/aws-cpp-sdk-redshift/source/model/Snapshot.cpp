@@ -616,7 +616,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_accountsWithRestoreAccess)
       {
         Aws::StringStream accountsWithRestoreAccessSs;
-        accountsWithRestoreAccessSs << location <<  ".AccountWithRestoreAccess." << accountsWithRestoreAccessIdx++;
+        accountsWithRestoreAccessSs << location << ".AccountsWithRestoreAccess.AccountWithRestoreAccess." << accountsWithRestoreAccessIdx++;
         item.OutputToStream(oStream, accountsWithRestoreAccessSs.str().c_str());
       }
   }
@@ -626,19 +626,19 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_totalBackupSizeInMegaBytesHasBeenSet)
   {
-        oStream << location << ".TotalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_totalBackupSizeInMegaBytes) << "&";
+      oStream << location << ".TotalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_totalBackupSizeInMegaBytes) << "&";
   }
   if(m_actualIncrementalBackupSizeInMegaBytesHasBeenSet)
   {
-        oStream << location << ".ActualIncrementalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_actualIncrementalBackupSizeInMegaBytes) << "&";
+      oStream << location << ".ActualIncrementalBackupSizeInMegaBytes=" << StringUtils::URLEncode(m_actualIncrementalBackupSizeInMegaBytes) << "&";
   }
   if(m_backupProgressInMegaBytesHasBeenSet)
   {
-        oStream << location << ".BackupProgressInMegaBytes=" << StringUtils::URLEncode(m_backupProgressInMegaBytes) << "&";
+      oStream << location << ".BackupProgressInMegaBytes=" << StringUtils::URLEncode(m_backupProgressInMegaBytes) << "&";
   }
   if(m_currentBackupRateInMegaBytesPerSecondHasBeenSet)
   {
-        oStream << location << ".CurrentBackupRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentBackupRateInMegaBytesPerSecond) << "&";
+      oStream << location << ".CurrentBackupRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentBackupRateInMegaBytesPerSecond) << "&";
   }
   if(m_estimatedSecondsToCompletionHasBeenSet)
   {
@@ -658,7 +658,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -667,7 +667,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       unsigned restorableNodeTypesIdx = 1;
       for(auto& item : m_restorableNodeTypes)
       {
-        oStream << location << ".NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".RestorableNodeTypes.NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_enhancedVpcRoutingHasBeenSet)

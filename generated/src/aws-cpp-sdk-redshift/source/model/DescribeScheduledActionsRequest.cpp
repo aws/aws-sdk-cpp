@@ -36,7 +36,7 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const
 
   if(m_targetActionTypeHasBeenSet)
   {
-    ss << "TargetActionType=" << ScheduledActionTypeValuesMapper::GetNameForScheduledActionTypeValues(m_targetActionType) << "&";
+    ss << "TargetActionType=" << StringUtils::URLEncode(ScheduledActionTypeValuesMapper::GetNameForScheduledActionTypeValues(m_targetActionType)) << "&";
   }
 
   if(m_startTimeHasBeenSet)

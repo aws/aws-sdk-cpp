@@ -66,7 +66,7 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_nameHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Name=" << InstanceStateNameMapper::GetNameForInstanceStateName(m_name) << "&";
+      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(InstanceStateNameMapper::GetNameForInstanceStateName(m_name)) << "&";
   }
 
 }
@@ -79,7 +79,7 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_nameHasBeenSet)
   {
-      oStream << location << ".Name=" << InstanceStateNameMapper::GetNameForInstanceStateName(m_name) << "&";
+      oStream << location << ".Name=" << StringUtils::URLEncode(InstanceStateNameMapper::GetNameForInstanceStateName(m_name)) << "&";
   }
 }
 

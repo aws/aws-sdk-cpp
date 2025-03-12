@@ -162,7 +162,7 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
 
   if(m_changeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
+      oStream << location << index << locationValue << ".ChangeType=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_changeType)) << "&";
   }
 
 }
@@ -203,13 +203,13 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_cacheNodeTypeSpecificValues)
       {
         Aws::StringStream cacheNodeTypeSpecificValuesSs;
-        cacheNodeTypeSpecificValuesSs << location <<  ".CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
+        cacheNodeTypeSpecificValuesSs << location << ".CacheNodeTypeSpecificValues.CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
   }
   if(m_changeTypeHasBeenSet)
   {
-      oStream << location << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
+      oStream << location << ".ChangeType=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_changeType)) << "&";
   }
 }
 

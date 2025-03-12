@@ -68,7 +68,7 @@ void Change::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << ChangeTypeMapper::GetNameForChangeType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_type)) << "&";
   }
 
   if(m_hookInvocationCountHasBeenSet)
@@ -89,7 +89,7 @@ void Change::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << ChangeTypeMapper::GetNameForChangeType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_type)) << "&";
   }
   if(m_hookInvocationCountHasBeenSet)
   {

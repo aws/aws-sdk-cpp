@@ -89,7 +89,7 @@ void RecommendedAction::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << RecommendedActionTypeMapper::GetNameForRecommendedActionType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(RecommendedActionTypeMapper::GetNameForRecommendedActionType(m_type)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void RecommendedAction::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << RecommendedActionTypeMapper::GetNameForRecommendedActionType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(RecommendedActionTypeMapper::GetNameForRecommendedActionType(m_type)) << "&";
   }
 }
 

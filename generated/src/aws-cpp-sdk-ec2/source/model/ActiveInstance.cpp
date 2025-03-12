@@ -89,7 +89,7 @@ void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_instanceHealthHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceHealth=" << InstanceHealthStatusMapper::GetNameForInstanceHealthStatus(m_instanceHealth) << "&";
+      oStream << location << index << locationValue << ".InstanceHealth=" << StringUtils::URLEncode(InstanceHealthStatusMapper::GetNameForInstanceHealthStatus(m_instanceHealth)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_instanceHealthHasBeenSet)
   {
-      oStream << location << ".InstanceHealth=" << InstanceHealthStatusMapper::GetNameForInstanceHealthStatus(m_instanceHealth) << "&";
+      oStream << location << ".InstanceHealth=" << StringUtils::URLEncode(InstanceHealthStatusMapper::GetNameForInstanceHealthStatus(m_instanceHealth)) << "&";
   }
 }
 

@@ -60,7 +60,7 @@ void IpamPoolCidrFailureReason::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << IpamPoolCidrFailureCodeMapper::GetNameForIpamPoolCidrFailureCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(IpamPoolCidrFailureCodeMapper::GetNameForIpamPoolCidrFailureCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void IpamPoolCidrFailureReason::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << IpamPoolCidrFailureCodeMapper::GetNameForIpamPoolCidrFailureCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(IpamPoolCidrFailureCodeMapper::GetNameForIpamPoolCidrFailureCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

@@ -90,7 +90,7 @@ void GpuInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_gpus)
       {
         Aws::StringStream gpusSs;
-        gpusSs << location <<  ".Gpus." << gpusIdx++;
+        gpusSs << location << ".Gpus." << gpusIdx++;
         item.OutputToStream(oStream, gpusSs.str().c_str());
       }
   }

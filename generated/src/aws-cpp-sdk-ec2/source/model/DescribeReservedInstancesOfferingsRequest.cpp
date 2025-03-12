@@ -56,7 +56,7 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
 
   if(m_instanceTypeHasBeenSet)
   {
-    ss << "InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+    ss << "InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_maxDurationHasBeenSet)
@@ -76,12 +76,12 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
 
   if(m_offeringClassHasBeenSet)
   {
-    ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+    ss << "OfferingClass=" << StringUtils::URLEncode(OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass)) << "&";
   }
 
   if(m_productDescriptionHasBeenSet)
   {
-    ss << "ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+    ss << "ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
   }
 
   if(m_reservedInstancesOfferingIdsHasBeenSet)
@@ -112,12 +112,12 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
 
   if(m_instanceTenancyHasBeenSet)
   {
-    ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+    ss << "InstanceTenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_instanceTenancy)) << "&";
   }
 
   if(m_offeringTypeHasBeenSet)
   {
-    ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
+    ss << "OfferingType=" << StringUtils::URLEncode(OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType)) << "&";
   }
 
   if(m_nextTokenHasBeenSet)

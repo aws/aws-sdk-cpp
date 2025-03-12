@@ -35,7 +35,7 @@ Aws::String ModifyVpcEndpointServicePayerResponsibilityRequest::SerializePayload
 
   if(m_payerResponsibilityHasBeenSet)
   {
-    ss << "PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+    ss << "PayerResponsibility=" << StringUtils::URLEncode(PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility)) << "&";
   }
 
   ss << "Version=2016-11-15";

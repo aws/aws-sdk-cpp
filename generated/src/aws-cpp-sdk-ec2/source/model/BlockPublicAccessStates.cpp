@@ -53,7 +53,7 @@ void BlockPublicAccessStates::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_internetGatewayBlockModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InternetGatewayBlockMode=" << BlockPublicAccessModeMapper::GetNameForBlockPublicAccessMode(m_internetGatewayBlockMode) << "&";
+      oStream << location << index << locationValue << ".InternetGatewayBlockMode=" << StringUtils::URLEncode(BlockPublicAccessModeMapper::GetNameForBlockPublicAccessMode(m_internetGatewayBlockMode)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void BlockPublicAccessStates::OutputToStream(Aws::OStream& oStream, const char* 
 {
   if(m_internetGatewayBlockModeHasBeenSet)
   {
-      oStream << location << ".InternetGatewayBlockMode=" << BlockPublicAccessModeMapper::GetNameForBlockPublicAccessMode(m_internetGatewayBlockMode) << "&";
+      oStream << location << ".InternetGatewayBlockMode=" << StringUtils::URLEncode(BlockPublicAccessModeMapper::GetNameForBlockPublicAccessMode(m_internetGatewayBlockMode)) << "&";
   }
 }
 

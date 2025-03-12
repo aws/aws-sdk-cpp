@@ -62,7 +62,7 @@ void SlotMigration::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_progressPercentageHasBeenSet)
   {
-        oStream << location << ".ProgressPercentage=" << StringUtils::URLEncode(m_progressPercentage) << "&";
+      oStream << location << ".ProgressPercentage=" << StringUtils::URLEncode(m_progressPercentage) << "&";
   }
 }
 

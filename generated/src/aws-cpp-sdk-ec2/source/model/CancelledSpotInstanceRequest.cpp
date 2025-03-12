@@ -65,7 +65,7 @@ void CancelledSpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << CancelSpotInstanceRequestStateMapper::GetNameForCancelSpotInstanceRequestState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(CancelSpotInstanceRequestStateMapper::GetNameForCancelSpotInstanceRequestState(m_state)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void CancelledSpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << CancelSpotInstanceRequestStateMapper::GetNameForCancelSpotInstanceRequestState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(CancelSpotInstanceRequestStateMapper::GetNameForCancelSpotInstanceRequestState(m_state)) << "&";
   }
 }
 

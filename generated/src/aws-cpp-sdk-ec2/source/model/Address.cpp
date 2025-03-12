@@ -168,7 +168,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_domainHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
+      oStream << location << index << locationValue << ".Domain=" << StringUtils::URLEncode(DomainTypeMapper::GetNameForDomainType(m_domain)) << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)
@@ -224,7 +224,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_serviceManagedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ServiceManaged=" << ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged) << "&";
+      oStream << location << index << locationValue << ".ServiceManaged=" << StringUtils::URLEncode(ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged)) << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -251,7 +251,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_domainHasBeenSet)
   {
-      oStream << location << ".Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
+      oStream << location << ".Domain=" << StringUtils::URLEncode(DomainTypeMapper::GetNameForDomainType(m_domain)) << "&";
   }
   if(m_networkInterfaceIdHasBeenSet)
   {
@@ -271,7 +271,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -297,7 +297,7 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_serviceManagedHasBeenSet)
   {
-      oStream << location << ".ServiceManaged=" << ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged) << "&";
+      oStream << location << ".ServiceManaged=" << StringUtils::URLEncode(ServiceManagedMapper::GetNameForServiceManaged(m_serviceManaged)) << "&";
   }
   if(m_instanceIdHasBeenSet)
   {

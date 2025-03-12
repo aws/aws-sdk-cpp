@@ -6,33 +6,21 @@
 #pragma once
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/json-protocol/JsonProtocolServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
-#include <aws/json-protocol/JsonProtocolErrorMarshaller.h>
 
 namespace Aws
 {
 namespace JsonProtocol
 {
-  AWS_JSONPROTOCOL_API extern const char SERVICE_NAME[];
-  class AWS_JSONPROTOCOL_API JsonProtocolClient : smithy::client::AwsSmithyClientT<Aws::JsonProtocol::SERVICE_NAME,
-      Aws::JsonProtocol::JsonProtocolClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      JsonProtocolEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome,
-      Aws::Client::JsonProtocolErrorMarshaller>,
-    Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>
+  class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Json Protocol"; }
 
       typedef JsonProtocolClientConfiguration ClientConfigurationType;
       typedef JsonProtocolEndpointProvider EndpointProviderType;
@@ -502,7 +490,10 @@ namespace JsonProtocol
       std::shared_ptr<JsonProtocolEndpointProviderBase>& accessEndpointProvider();
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>;
+      void init(const JsonProtocolClientConfiguration& clientConfiguration);
 
+      JsonProtocolClientConfiguration m_clientConfiguration;
+      std::shared_ptr<JsonProtocolEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace JsonProtocol

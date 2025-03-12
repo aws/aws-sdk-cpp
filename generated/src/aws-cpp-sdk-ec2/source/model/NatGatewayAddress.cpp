@@ -138,7 +138,7 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status)) << "&";
   }
 
 }
@@ -175,7 +175,7 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status)) << "&";
   }
 }
 

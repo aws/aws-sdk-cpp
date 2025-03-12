@@ -139,7 +139,7 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location, un
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
   if(m_typeNameHasBeenSet)
@@ -189,7 +189,7 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_publisherIdentityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PublisherIdentity=" << IdentityProviderMapper::GetNameForIdentityProvider(m_publisherIdentity) << "&";
+      oStream << location << index << locationValue << ".PublisherIdentity=" << StringUtils::URLEncode(IdentityProviderMapper::GetNameForIdentityProvider(m_publisherIdentity)) << "&";
   }
 
   if(m_publisherNameHasBeenSet)
@@ -208,7 +208,7 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location) co
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
   if(m_typeNameHasBeenSet)
   {
@@ -248,7 +248,7 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_publisherIdentityHasBeenSet)
   {
-      oStream << location << ".PublisherIdentity=" << IdentityProviderMapper::GetNameForIdentityProvider(m_publisherIdentity) << "&";
+      oStream << location << ".PublisherIdentity=" << StringUtils::URLEncode(IdentityProviderMapper::GetNameForIdentityProvider(m_publisherIdentity)) << "&";
   }
   if(m_publisherNameHasBeenSet)
   {

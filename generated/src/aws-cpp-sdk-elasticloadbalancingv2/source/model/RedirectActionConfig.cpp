@@ -113,7 +113,7 @@ void RedirectActionConfig::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_statusCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StatusCode=" << RedirectActionStatusCodeEnumMapper::GetNameForRedirectActionStatusCodeEnum(m_statusCode) << "&";
+      oStream << location << index << locationValue << ".StatusCode=" << StringUtils::URLEncode(RedirectActionStatusCodeEnumMapper::GetNameForRedirectActionStatusCodeEnum(m_statusCode)) << "&";
   }
 
 }
@@ -142,7 +142,7 @@ void RedirectActionConfig::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_statusCodeHasBeenSet)
   {
-      oStream << location << ".StatusCode=" << RedirectActionStatusCodeEnumMapper::GetNameForRedirectActionStatusCodeEnum(m_statusCode) << "&";
+      oStream << location << ".StatusCode=" << StringUtils::URLEncode(RedirectActionStatusCodeEnumMapper::GetNameForRedirectActionStatusCodeEnum(m_statusCode)) << "&";
   }
 }
 

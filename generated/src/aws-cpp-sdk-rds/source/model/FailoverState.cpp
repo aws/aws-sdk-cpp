@@ -75,7 +75,7 @@ void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << FailoverStatusMapper::GetNameForFailoverStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(FailoverStatusMapper::GetNameForFailoverStatus(m_status)) << "&";
   }
 
   if(m_fromDbClusterArnHasBeenSet)
@@ -99,7 +99,7 @@ void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << FailoverStatusMapper::GetNameForFailoverStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(FailoverStatusMapper::GetNameForFailoverStatus(m_status)) << "&";
   }
   if(m_fromDbClusterArnHasBeenSet)
   {

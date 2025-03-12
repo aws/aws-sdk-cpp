@@ -165,7 +165,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 
   if(m_durationHasBeenSet)
@@ -209,7 +209,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_paymentOptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PaymentOption=" << PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption) << "&";
+      oStream << location << index << locationValue << ".PaymentOption=" << StringUtils::URLEncode(PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption)) << "&";
   }
 
   if(m_startHasBeenSet)
@@ -219,7 +219,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ReservationStateMapper::GetNameForReservationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(ReservationStateMapper::GetNameForReservationState(m_state)) << "&";
   }
 
   if(m_upfrontPriceHasBeenSet)
@@ -248,7 +248,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -284,7 +284,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_paymentOptionHasBeenSet)
   {
-      oStream << location << ".PaymentOption=" << PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption) << "&";
+      oStream << location << ".PaymentOption=" << StringUtils::URLEncode(PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption)) << "&";
   }
   if(m_startHasBeenSet)
   {
@@ -292,7 +292,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << ReservationStateMapper::GetNameForReservationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(ReservationStateMapper::GetNameForReservationState(m_state)) << "&";
   }
   if(m_upfrontPriceHasBeenSet)
   {
@@ -304,7 +304,7 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

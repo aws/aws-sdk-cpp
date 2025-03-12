@@ -336,7 +336,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       unsigned optionsDependedOnIdx = 1;
       for(auto& item : m_optionsDependedOn)
       {
-        oStream << location << ".OptionName." << optionsDependedOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".OptionsDependedOn.OptionName." << optionsDependedOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_optionsConflictsWithHasBeenSet)
@@ -344,7 +344,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       unsigned optionsConflictsWithIdx = 1;
       for(auto& item : m_optionsConflictsWith)
       {
-        oStream << location << ".OptionConflictName." << optionsConflictsWithIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".OptionsConflictsWith.OptionConflictName." << optionsConflictsWithIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_persistentHasBeenSet)
@@ -373,7 +373,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_optionGroupOptionSettings)
       {
         Aws::StringStream optionGroupOptionSettingsSs;
-        optionGroupOptionSettingsSs << location <<  ".OptionGroupOptionSetting." << optionGroupOptionSettingsIdx++;
+        optionGroupOptionSettingsSs << location << ".OptionGroupOptionSettings.OptionGroupOptionSetting." << optionGroupOptionSettingsIdx++;
         item.OutputToStream(oStream, optionGroupOptionSettingsSs.str().c_str());
       }
   }
@@ -383,7 +383,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_optionGroupOptionVersions)
       {
         Aws::StringStream optionGroupOptionVersionsSs;
-        optionGroupOptionVersionsSs << location <<  ".OptionVersion." << optionGroupOptionVersionsIdx++;
+        optionGroupOptionVersionsSs << location << ".OptionGroupOptionVersions.OptionVersion." << optionGroupOptionVersionsIdx++;
         item.OutputToStream(oStream, optionGroupOptionVersionsSs.str().c_str());
       }
   }

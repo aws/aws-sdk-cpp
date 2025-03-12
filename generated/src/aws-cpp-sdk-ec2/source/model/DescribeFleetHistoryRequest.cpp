@@ -34,7 +34,7 @@ Aws::String DescribeFleetHistoryRequest::SerializePayload() const
 
   if(m_eventTypeHasBeenSet)
   {
-    ss << "EventType=" << FleetEventTypeMapper::GetNameForFleetEventType(m_eventType) << "&";
+    ss << "EventType=" << StringUtils::URLEncode(FleetEventTypeMapper::GetNameForFleetEventType(m_eventType)) << "&";
   }
 
   if(m_maxResultsHasBeenSet)

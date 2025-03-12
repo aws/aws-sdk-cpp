@@ -155,7 +155,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_instanceTenancyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+      oStream << location << index << locationValue << ".InstanceTenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_instanceTenancy)) << "&";
   }
 
   if(m_ipv6CidrBlockAssociationSetHasBeenSet)
@@ -217,7 +217,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpcStateMapper::GetNameForVpcState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcStateMapper::GetNameForVpcState(m_state)) << "&";
   }
 
   if(m_cidrBlockHasBeenSet)
@@ -240,7 +240,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_instanceTenancyHasBeenSet)
   {
-      oStream << location << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+      oStream << location << ".InstanceTenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_instanceTenancy)) << "&";
   }
   if(m_ipv6CidrBlockAssociationSetHasBeenSet)
   {
@@ -248,7 +248,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_ipv6CidrBlockAssociationSet)
       {
         Aws::StringStream ipv6CidrBlockAssociationSetSs;
-        ipv6CidrBlockAssociationSetSs << location <<  ".Ipv6CidrBlockAssociationSet." << ipv6CidrBlockAssociationSetIdx++;
+        ipv6CidrBlockAssociationSetSs << location << ".Ipv6CidrBlockAssociationSet." << ipv6CidrBlockAssociationSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
       }
   }
@@ -258,7 +258,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_cidrBlockAssociationSet)
       {
         Aws::StringStream cidrBlockAssociationSetSs;
-        cidrBlockAssociationSetSs << location <<  ".CidrBlockAssociationSet." << cidrBlockAssociationSetIdx++;
+        cidrBlockAssociationSetSs << location << ".CidrBlockAssociationSet." << cidrBlockAssociationSetIdx++;
         item.OutputToStream(oStream, cidrBlockAssociationSetSs.str().c_str());
       }
   }
@@ -278,7 +278,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -294,7 +294,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpcStateMapper::GetNameForVpcState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpcStateMapper::GetNameForVpcState(m_state)) << "&";
   }
   if(m_cidrBlockHasBeenSet)
   {

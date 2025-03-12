@@ -33,7 +33,7 @@ Aws::String DescribeInstanceTypeOfferingsRequest::SerializePayload() const
 
   if(m_locationTypeHasBeenSet)
   {
-    ss << "LocationType=" << LocationTypeMapper::GetNameForLocationType(m_locationType) << "&";
+    ss << "LocationType=" << StringUtils::URLEncode(LocationTypeMapper::GetNameForLocationType(m_locationType)) << "&";
   }
 
   if(m_filtersHasBeenSet)

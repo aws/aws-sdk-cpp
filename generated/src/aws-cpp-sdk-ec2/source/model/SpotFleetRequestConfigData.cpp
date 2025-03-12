@@ -258,12 +258,12 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_allocationStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
+      oStream << location << index << locationValue << ".AllocationStrategy=" << StringUtils::URLEncode(AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy)) << "&";
   }
 
   if(m_onDemandAllocationStrategyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OnDemandAllocationStrategy=" << OnDemandAllocationStrategyMapper::GetNameForOnDemandAllocationStrategy(m_onDemandAllocationStrategy) << "&";
+      oStream << location << index << locationValue << ".OnDemandAllocationStrategy=" << StringUtils::URLEncode(OnDemandAllocationStrategyMapper::GetNameForOnDemandAllocationStrategy(m_onDemandAllocationStrategy)) << "&";
   }
 
   if(m_spotMaintenanceStrategiesHasBeenSet)
@@ -280,7 +280,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+      oStream << location << index << locationValue << ".ExcessCapacityTerminationPolicy=" << StringUtils::URLEncode(ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy)) << "&";
   }
 
   if(m_fulfilledCapacityHasBeenSet)
@@ -352,7 +352,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(FleetTypeMapper::GetNameForFleetType(m_type)) << "&";
   }
 
   if(m_validFromHasBeenSet)
@@ -372,7 +372,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
 
   if(m_loadBalancersConfigHasBeenSet)
@@ -394,7 +394,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_targetCapacityUnitTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
+      oStream << location << index << locationValue << ".TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)
@@ -414,11 +414,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_allocationStrategyHasBeenSet)
   {
-      oStream << location << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
+      oStream << location << ".AllocationStrategy=" << StringUtils::URLEncode(AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy)) << "&";
   }
   if(m_onDemandAllocationStrategyHasBeenSet)
   {
-      oStream << location << ".OnDemandAllocationStrategy=" << OnDemandAllocationStrategyMapper::GetNameForOnDemandAllocationStrategy(m_onDemandAllocationStrategy) << "&";
+      oStream << location << ".OnDemandAllocationStrategy=" << StringUtils::URLEncode(OnDemandAllocationStrategyMapper::GetNameForOnDemandAllocationStrategy(m_onDemandAllocationStrategy)) << "&";
   }
   if(m_spotMaintenanceStrategiesHasBeenSet)
   {
@@ -432,15 +432,15 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
-      oStream << location << ".ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+      oStream << location << ".ExcessCapacityTerminationPolicy=" << StringUtils::URLEncode(ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy)) << "&";
   }
   if(m_fulfilledCapacityHasBeenSet)
   {
-        oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
+      oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
   }
   if(m_onDemandFulfilledCapacityHasBeenSet)
   {
-        oStream << location << ".OnDemandFulfilledCapacity=" << StringUtils::URLEncode(m_onDemandFulfilledCapacity) << "&";
+      oStream << location << ".OnDemandFulfilledCapacity=" << StringUtils::URLEncode(m_onDemandFulfilledCapacity) << "&";
   }
   if(m_iamFleetRoleHasBeenSet)
   {
@@ -452,7 +452,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_launchSpecifications)
       {
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location <<  ".LaunchSpecifications." << launchSpecificationsIdx++;
+        launchSpecificationsSs << location << ".LaunchSpecifications." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
@@ -462,7 +462,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_launchTemplateConfigs)
       {
         Aws::StringStream launchTemplateConfigsSs;
-        launchTemplateConfigsSs << location <<  ".LaunchTemplateConfigs." << launchTemplateConfigsIdx++;
+        launchTemplateConfigsSs << location << ".LaunchTemplateConfigs." << launchTemplateConfigsIdx++;
         item.OutputToStream(oStream, launchTemplateConfigsSs.str().c_str());
       }
   }
@@ -492,7 +492,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(FleetTypeMapper::GetNameForFleetType(m_type)) << "&";
   }
   if(m_validFromHasBeenSet)
   {
@@ -508,7 +508,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {
-      oStream << location << ".InstanceInterruptionBehavior=" << InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior) << "&";
+      oStream << location << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
   }
   if(m_loadBalancersConfigHasBeenSet)
   {
@@ -526,7 +526,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_targetCapacityUnitTypeHasBeenSet)
   {
-      oStream << location << ".TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
+      oStream << location << ".TargetCapacityUnitType=" << StringUtils::URLEncode(TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType)) << "&";
   }
   if(m_tagSpecificationsHasBeenSet)
   {
@@ -534,7 +534,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_tagSpecifications)
       {
         Aws::StringStream tagSpecificationsSs;
-        tagSpecificationsSs << location <<  ".TagSpecification." << tagSpecificationsIdx++;
+        tagSpecificationsSs << location << ".TagSpecification." << tagSpecificationsIdx++;
         item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
       }
   }

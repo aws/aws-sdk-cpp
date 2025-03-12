@@ -46,7 +46,7 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
 
   if(m_targetEnvironmentHasBeenSet)
   {
-    ss << "TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
+    ss << "TargetEnvironment=" << StringUtils::URLEncode(ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment)) << "&";
   }
 
   if(m_exportToS3TaskHasBeenSet)

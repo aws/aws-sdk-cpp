@@ -181,7 +181,7 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_roles)
       {
         Aws::StringStream rolesSs;
-        rolesSs << location <<  ".Roles.member." << rolesIdx++;
+        rolesSs << location << ".Roles.member." << rolesIdx++;
         item.OutputToStream(oStream, rolesSs.str().c_str());
       }
   }
@@ -191,7 +191,7 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        tagsSs << location << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

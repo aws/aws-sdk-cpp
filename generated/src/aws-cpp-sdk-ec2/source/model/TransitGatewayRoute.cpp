@@ -121,12 +121,12 @@ void TransitGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << TransitGatewayRouteTypeMapper::GetNameForTransitGatewayRouteType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(TransitGatewayRouteTypeMapper::GetNameForTransitGatewayRouteType(m_type)) << "&";
   }
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayRouteStateMapper::GetNameForTransitGatewayRouteState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayRouteStateMapper::GetNameForTransitGatewayRouteState(m_state)) << "&";
   }
 
 }
@@ -151,17 +151,17 @@ void TransitGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_transitGatewayAttachments)
       {
         Aws::StringStream transitGatewayAttachmentsSs;
-        transitGatewayAttachmentsSs << location <<  ".TransitGatewayAttachments." << transitGatewayAttachmentsIdx++;
+        transitGatewayAttachmentsSs << location << ".TransitGatewayAttachments." << transitGatewayAttachmentsIdx++;
         item.OutputToStream(oStream, transitGatewayAttachmentsSs.str().c_str());
       }
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << TransitGatewayRouteTypeMapper::GetNameForTransitGatewayRouteType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(TransitGatewayRouteTypeMapper::GetNameForTransitGatewayRouteType(m_type)) << "&";
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayRouteStateMapper::GetNameForTransitGatewayRouteState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayRouteStateMapper::GetNameForTransitGatewayRouteState(m_state)) << "&";
   }
 }
 

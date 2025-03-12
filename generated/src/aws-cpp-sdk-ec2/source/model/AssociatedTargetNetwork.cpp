@@ -65,7 +65,7 @@ void AssociatedTargetNetwork::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_networkTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NetworkType=" << AssociatedNetworkTypeMapper::GetNameForAssociatedNetworkType(m_networkType) << "&";
+      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(AssociatedNetworkTypeMapper::GetNameForAssociatedNetworkType(m_networkType)) << "&";
   }
 
 }
@@ -78,7 +78,7 @@ void AssociatedTargetNetwork::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_networkTypeHasBeenSet)
   {
-      oStream << location << ".NetworkType=" << AssociatedNetworkTypeMapper::GetNameForAssociatedNetworkType(m_networkType) << "&";
+      oStream << location << ".NetworkType=" << StringUtils::URLEncode(AssociatedNetworkTypeMapper::GetNameForAssociatedNetworkType(m_networkType)) << "&";
   }
 }
 

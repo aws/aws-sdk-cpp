@@ -73,12 +73,12 @@ void IdentityMailFromDomainAttributes::OutputToStream(Aws::OStream& oStream, con
 
   if(m_mailFromDomainStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MailFromDomainStatus=" << CustomMailFromStatusMapper::GetNameForCustomMailFromStatus(m_mailFromDomainStatus) << "&";
+      oStream << location << index << locationValue << ".MailFromDomainStatus=" << StringUtils::URLEncode(CustomMailFromStatusMapper::GetNameForCustomMailFromStatus(m_mailFromDomainStatus)) << "&";
   }
 
   if(m_behaviorOnMXFailureHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BehaviorOnMXFailure=" << BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure) << "&";
+      oStream << location << index << locationValue << ".BehaviorOnMXFailure=" << StringUtils::URLEncode(BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure)) << "&";
   }
 
 }
@@ -91,11 +91,11 @@ void IdentityMailFromDomainAttributes::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_mailFromDomainStatusHasBeenSet)
   {
-      oStream << location << ".MailFromDomainStatus=" << CustomMailFromStatusMapper::GetNameForCustomMailFromStatus(m_mailFromDomainStatus) << "&";
+      oStream << location << ".MailFromDomainStatus=" << StringUtils::URLEncode(CustomMailFromStatusMapper::GetNameForCustomMailFromStatus(m_mailFromDomainStatus)) << "&";
   }
   if(m_behaviorOnMXFailureHasBeenSet)
   {
-      oStream << location << ".BehaviorOnMXFailure=" << BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure) << "&";
+      oStream << location << ".BehaviorOnMXFailure=" << StringUtils::URLEncode(BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure)) << "&";
   }
 }
 

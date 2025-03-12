@@ -75,17 +75,17 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
 
   if(m_resourceTypeHasBeenSet)
   {
-    ss << "ResourceType=" << FlowLogsResourceTypeMapper::GetNameForFlowLogsResourceType(m_resourceType) << "&";
+    ss << "ResourceType=" << StringUtils::URLEncode(FlowLogsResourceTypeMapper::GetNameForFlowLogsResourceType(m_resourceType)) << "&";
   }
 
   if(m_trafficTypeHasBeenSet)
   {
-    ss << "TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
+    ss << "TrafficType=" << StringUtils::URLEncode(TrafficTypeMapper::GetNameForTrafficType(m_trafficType)) << "&";
   }
 
   if(m_logDestinationTypeHasBeenSet)
   {
-    ss << "LogDestinationType=" << LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType) << "&";
+    ss << "LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType)) << "&";
   }
 
   if(m_logDestinationHasBeenSet)

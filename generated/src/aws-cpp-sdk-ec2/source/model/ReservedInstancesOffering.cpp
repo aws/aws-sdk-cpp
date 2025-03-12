@@ -173,12 +173,12 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 
   if(m_instanceTenancyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+      oStream << location << index << locationValue << ".InstanceTenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_instanceTenancy)) << "&";
   }
 
   if(m_marketplaceHasBeenSet)
@@ -188,12 +188,12 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_offeringClassHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+      oStream << location << index << locationValue << ".OfferingClass=" << StringUtils::URLEncode(OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass)) << "&";
   }
 
   if(m_offeringTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
+      oStream << location << index << locationValue << ".OfferingType=" << StringUtils::URLEncode(OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType)) << "&";
   }
 
   if(m_pricingDetailsHasBeenSet)
@@ -220,7 +220,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_scopeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
+      oStream << location << index << locationValue << ".Scope=" << StringUtils::URLEncode(ScopeMapper::GetNameForScope(m_scope)) << "&";
   }
 
   if(m_reservedInstancesOfferingIdHasBeenSet)
@@ -230,7 +230,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -255,7 +255,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_productDescriptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+      oStream << location << index << locationValue << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
   }
 
 }
@@ -264,11 +264,11 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_currencyCodeHasBeenSet)
   {
-      oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
   if(m_instanceTenancyHasBeenSet)
   {
-      oStream << location << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+      oStream << location << ".InstanceTenancy=" << StringUtils::URLEncode(TenancyMapper::GetNameForTenancy(m_instanceTenancy)) << "&";
   }
   if(m_marketplaceHasBeenSet)
   {
@@ -276,11 +276,11 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_offeringClassHasBeenSet)
   {
-      oStream << location << ".OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+      oStream << location << ".OfferingClass=" << StringUtils::URLEncode(OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass)) << "&";
   }
   if(m_offeringTypeHasBeenSet)
   {
-      oStream << location << ".OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
+      oStream << location << ".OfferingType=" << StringUtils::URLEncode(OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType)) << "&";
   }
   if(m_pricingDetailsHasBeenSet)
   {
@@ -288,7 +288,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_pricingDetails)
       {
         Aws::StringStream pricingDetailsSs;
-        pricingDetailsSs << location <<  ".PricingDetailsSet." << pricingDetailsIdx++;
+        pricingDetailsSs << location << ".PricingDetailsSet." << pricingDetailsIdx++;
         item.OutputToStream(oStream, pricingDetailsSs.str().c_str());
       }
   }
@@ -298,13 +298,13 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location <<  ".RecurringCharges." << recurringChargesIdx++;
+        recurringChargesSs << location << ".RecurringCharges." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
   if(m_scopeHasBeenSet)
   {
-      oStream << location << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
+      oStream << location << ".Scope=" << StringUtils::URLEncode(ScopeMapper::GetNameForScope(m_scope)) << "&";
   }
   if(m_reservedInstancesOfferingIdHasBeenSet)
   {
@@ -312,7 +312,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {
@@ -332,7 +332,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_productDescriptionHasBeenSet)
   {
-      oStream << location << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+      oStream << location << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
   }
 }
 

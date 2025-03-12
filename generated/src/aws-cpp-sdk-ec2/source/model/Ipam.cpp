@@ -232,7 +232,7 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << IpamStateMapper::GetNameForIpamState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamStateMapper::GetNameForIpamState(m_state)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -268,7 +268,7 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_tierHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
+      oStream << location << index << locationValue << ".Tier=" << StringUtils::URLEncode(IpamTierMapper::GetNameForIpamTier(m_tier)) << "&";
   }
 
   if(m_enablePrivateGuaHasBeenSet)
@@ -318,13 +318,13 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_operatingRegions)
       {
         Aws::StringStream operatingRegionsSs;
-        operatingRegionsSs << location <<  ".OperatingRegionSet." << operatingRegionsIdx++;
+        operatingRegionsSs << location << ".OperatingRegionSet." << operatingRegionsIdx++;
         item.OutputToStream(oStream, operatingRegionsSs.str().c_str());
       }
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << IpamStateMapper::GetNameForIpamState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(IpamStateMapper::GetNameForIpamState(m_state)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -332,7 +332,7 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -354,7 +354,7 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_tierHasBeenSet)
   {
-      oStream << location << ".Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
+      oStream << location << ".Tier=" << StringUtils::URLEncode(IpamTierMapper::GetNameForIpamTier(m_tier)) << "&";
   }
   if(m_enablePrivateGuaHasBeenSet)
   {

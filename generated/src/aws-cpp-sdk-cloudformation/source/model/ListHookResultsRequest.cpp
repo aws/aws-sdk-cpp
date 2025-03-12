@@ -24,7 +24,7 @@ Aws::String ListHookResultsRequest::SerializePayload() const
   ss << "Action=ListHookResults&";
   if(m_targetTypeHasBeenSet)
   {
-    ss << "TargetType=" << ListHookResultsTargetTypeMapper::GetNameForListHookResultsTargetType(m_targetType) << "&";
+    ss << "TargetType=" << StringUtils::URLEncode(ListHookResultsTargetTypeMapper::GetNameForListHookResultsTargetType(m_targetType)) << "&";
   }
 
   if(m_targetIdHasBeenSet)

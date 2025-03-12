@@ -93,7 +93,7 @@ void TrustStore::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << TrustStoreStatusMapper::GetNameForTrustStoreStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(TrustStoreStatusMapper::GetNameForTrustStoreStatus(m_status)) << "&";
   }
 
   if(m_numberOfCaCertificatesHasBeenSet)
@@ -120,7 +120,7 @@ void TrustStore::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << TrustStoreStatusMapper::GetNameForTrustStoreStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(TrustStoreStatusMapper::GetNameForTrustStoreStatus(m_status)) << "&";
   }
   if(m_numberOfCaCertificatesHasBeenSet)
   {

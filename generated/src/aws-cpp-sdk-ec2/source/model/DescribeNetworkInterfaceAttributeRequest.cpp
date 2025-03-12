@@ -35,7 +35,7 @@ Aws::String DescribeNetworkInterfaceAttributeRequest::SerializePayload() const
 
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << NetworkInterfaceAttributeMapper::GetNameForNetworkInterfaceAttribute(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(NetworkInterfaceAttributeMapper::GetNameForNetworkInterfaceAttribute(m_attribute)) << "&";
   }
 
   ss << "Version=2016-11-15";

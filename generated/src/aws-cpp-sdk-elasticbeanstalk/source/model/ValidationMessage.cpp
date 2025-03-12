@@ -79,7 +79,7 @@ void ValidationMessage::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_severityHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Severity=" << ValidationSeverityMapper::GetNameForValidationSeverity(m_severity) << "&";
+      oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(ValidationSeverityMapper::GetNameForValidationSeverity(m_severity)) << "&";
   }
 
   if(m_namespaceHasBeenSet)
@@ -102,7 +102,7 @@ void ValidationMessage::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_severityHasBeenSet)
   {
-      oStream << location << ".Severity=" << ValidationSeverityMapper::GetNameForValidationSeverity(m_severity) << "&";
+      oStream << location << ".Severity=" << StringUtils::URLEncode(ValidationSeverityMapper::GetNameForValidationSeverity(m_severity)) << "&";
   }
   if(m_namespaceHasBeenSet)
   {

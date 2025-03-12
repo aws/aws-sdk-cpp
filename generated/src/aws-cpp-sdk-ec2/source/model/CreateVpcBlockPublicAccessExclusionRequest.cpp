@@ -42,7 +42,7 @@ Aws::String CreateVpcBlockPublicAccessExclusionRequest::SerializePayload() const
 
   if(m_internetGatewayExclusionModeHasBeenSet)
   {
-    ss << "InternetGatewayExclusionMode=" << InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode) << "&";
+    ss << "InternetGatewayExclusionMode=" << StringUtils::URLEncode(InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

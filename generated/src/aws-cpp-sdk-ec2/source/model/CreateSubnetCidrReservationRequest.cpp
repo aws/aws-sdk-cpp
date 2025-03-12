@@ -38,7 +38,7 @@ Aws::String CreateSubnetCidrReservationRequest::SerializePayload() const
 
   if(m_reservationTypeHasBeenSet)
   {
-    ss << "ReservationType=" << SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType) << "&";
+    ss << "ReservationType=" << StringUtils::URLEncode(SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType)) << "&";
   }
 
   if(m_descriptionHasBeenSet)

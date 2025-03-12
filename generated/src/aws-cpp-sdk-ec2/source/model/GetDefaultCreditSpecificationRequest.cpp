@@ -29,7 +29,7 @@ Aws::String GetDefaultCreditSpecificationRequest::SerializePayload() const
 
   if(m_instanceFamilyHasBeenSet)
   {
-    ss << "InstanceFamily=" << UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily) << "&";
+    ss << "InstanceFamily=" << StringUtils::URLEncode(UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily)) << "&";
   }
 
   ss << "Version=2016-11-15";

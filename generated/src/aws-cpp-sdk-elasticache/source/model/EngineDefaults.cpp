@@ -133,7 +133,7 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location <<  ".Parameter." << parametersIdx++;
+        parametersSs << location << ".Parameters.Parameter." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
@@ -143,7 +143,7 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_cacheNodeTypeSpecificParameters)
       {
         Aws::StringStream cacheNodeTypeSpecificParametersSs;
-        cacheNodeTypeSpecificParametersSs << location <<  ".CacheNodeTypeSpecificParameter." << cacheNodeTypeSpecificParametersIdx++;
+        cacheNodeTypeSpecificParametersSs << location << ".CacheNodeTypeSpecificParameters.CacheNodeTypeSpecificParameter." << cacheNodeTypeSpecificParametersIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificParametersSs.str().c_str());
       }
   }

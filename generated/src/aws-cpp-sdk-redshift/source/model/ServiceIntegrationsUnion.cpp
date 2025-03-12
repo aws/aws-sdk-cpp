@@ -101,7 +101,7 @@ void ServiceIntegrationsUnion::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_lakeFormation)
       {
         Aws::StringStream lakeFormationSs;
-        lakeFormationSs << location <<  ".LakeFormation.member." << lakeFormationIdx++;
+        lakeFormationSs << location << ".LakeFormation.member." << lakeFormationIdx++;
         item.OutputToStream(oStream, lakeFormationSs.str().c_str());
       }
   }
@@ -111,7 +111,7 @@ void ServiceIntegrationsUnion::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_s3AccessGrants)
       {
         Aws::StringStream s3AccessGrantsSs;
-        s3AccessGrantsSs << location <<  ".S3AccessGrants.member." << s3AccessGrantsIdx++;
+        s3AccessGrantsSs << location << ".S3AccessGrants.member." << s3AccessGrantsIdx++;
         item.OutputToStream(oStream, s3AccessGrantsSs.str().c_str());
       }
   }

@@ -77,7 +77,7 @@ void TargetGroupsConfig::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_targetGroups)
       {
         Aws::StringStream targetGroupsSs;
-        targetGroupsSs << location <<  ".TargetGroups." << targetGroupsIdx++;
+        targetGroupsSs << location << ".TargetGroups." << targetGroupsIdx++;
         item.OutputToStream(oStream, targetGroupsSs.str().c_str());
       }
   }

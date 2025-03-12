@@ -363,7 +363,7 @@ void DBRecommendation::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_recommendedActions)
       {
         Aws::StringStream recommendedActionsSs;
-        recommendedActionsSs << location <<  ".RecommendedActions.member." << recommendedActionsIdx++;
+        recommendedActionsSs << location << ".RecommendedActions.member." << recommendedActionsIdx++;
         item.OutputToStream(oStream, recommendedActionsSs.str().c_str());
       }
   }
@@ -397,7 +397,7 @@ void DBRecommendation::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_links)
       {
         Aws::StringStream linksSs;
-        linksSs << location <<  ".Links.member." << linksIdx++;
+        linksSs << location << ".Links.member." << linksIdx++;
         item.OutputToStream(oStream, linksSs.str().c_str());
       }
   }

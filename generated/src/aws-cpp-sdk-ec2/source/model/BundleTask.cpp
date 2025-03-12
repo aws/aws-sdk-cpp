@@ -112,7 +112,7 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(BundleTaskStateMapper::GetNameForBundleTaskState(m_state)) << "&";
   }
 
   if(m_startTimeHasBeenSet)
@@ -158,7 +158,7 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(BundleTaskStateMapper::GetNameForBundleTaskState(m_state)) << "&";
   }
   if(m_startTimeHasBeenSet)
   {

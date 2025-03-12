@@ -60,7 +60,7 @@ void PredefinedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_predefinedMetricTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PredefinedMetricType=" << MetricTypeMapper::GetNameForMetricType(m_predefinedMetricType) << "&";
+      oStream << location << index << locationValue << ".PredefinedMetricType=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_predefinedMetricType)) << "&";
   }
 
   if(m_resourceLabelHasBeenSet)
@@ -74,7 +74,7 @@ void PredefinedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_predefinedMetricTypeHasBeenSet)
   {
-      oStream << location << ".PredefinedMetricType=" << MetricTypeMapper::GetNameForMetricType(m_predefinedMetricType) << "&";
+      oStream << location << ".PredefinedMetricType=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_predefinedMetricType)) << "&";
   }
   if(m_resourceLabelHasBeenSet)
   {

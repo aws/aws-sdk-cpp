@@ -261,7 +261,7 @@ void GlobalReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_members)
       {
         Aws::StringStream membersSs;
-        membersSs << location <<  ".GlobalReplicationGroupMember." << membersIdx++;
+        membersSs << location << ".Members.GlobalReplicationGroupMember." << membersIdx++;
         item.OutputToStream(oStream, membersSs.str().c_str());
       }
   }
@@ -275,7 +275,7 @@ void GlobalReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_globalNodeGroups)
       {
         Aws::StringStream globalNodeGroupsSs;
-        globalNodeGroupsSs << location <<  ".GlobalNodeGroup." << globalNodeGroupsIdx++;
+        globalNodeGroupsSs << location << ".GlobalNodeGroups.GlobalNodeGroup." << globalNodeGroupsIdx++;
         item.OutputToStream(oStream, globalNodeGroupsSs.str().c_str());
       }
   }

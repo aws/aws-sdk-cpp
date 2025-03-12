@@ -88,7 +88,7 @@ void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_stateValueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateValue=" << AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue) << "&";
+      oStream << location << index << locationValue << ".StateValue=" << StringUtils::URLEncode(AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue)) << "&";
   }
 
   if(m_metricCharacteristicsHasBeenSet)
@@ -124,7 +124,7 @@ void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_stateValueHasBeenSet)
   {
-      oStream << location << ".StateValue=" << AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue) << "&";
+      oStream << location << ".StateValue=" << StringUtils::URLEncode(AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue)) << "&";
   }
   if(m_metricCharacteristicsHasBeenSet)
   {

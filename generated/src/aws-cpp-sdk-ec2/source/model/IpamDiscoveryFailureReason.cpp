@@ -60,7 +60,7 @@ void IpamDiscoveryFailureReason::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << IpamDiscoveryFailureCodeMapper::GetNameForIpamDiscoveryFailureCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(IpamDiscoveryFailureCodeMapper::GetNameForIpamDiscoveryFailureCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void IpamDiscoveryFailureReason::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << IpamDiscoveryFailureCodeMapper::GetNameForIpamDiscoveryFailureCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(IpamDiscoveryFailureCodeMapper::GetNameForIpamDiscoveryFailureCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

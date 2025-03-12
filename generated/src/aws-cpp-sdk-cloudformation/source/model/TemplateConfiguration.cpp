@@ -61,12 +61,12 @@ void TemplateConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_deletionPolicyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeletionPolicy=" << GeneratedTemplateDeletionPolicyMapper::GetNameForGeneratedTemplateDeletionPolicy(m_deletionPolicy) << "&";
+      oStream << location << index << locationValue << ".DeletionPolicy=" << StringUtils::URLEncode(GeneratedTemplateDeletionPolicyMapper::GetNameForGeneratedTemplateDeletionPolicy(m_deletionPolicy)) << "&";
   }
 
   if(m_updateReplacePolicyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateReplacePolicy=" << GeneratedTemplateUpdateReplacePolicyMapper::GetNameForGeneratedTemplateUpdateReplacePolicy(m_updateReplacePolicy) << "&";
+      oStream << location << index << locationValue << ".UpdateReplacePolicy=" << StringUtils::URLEncode(GeneratedTemplateUpdateReplacePolicyMapper::GetNameForGeneratedTemplateUpdateReplacePolicy(m_updateReplacePolicy)) << "&";
   }
 
 }
@@ -75,11 +75,11 @@ void TemplateConfiguration::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_deletionPolicyHasBeenSet)
   {
-      oStream << location << ".DeletionPolicy=" << GeneratedTemplateDeletionPolicyMapper::GetNameForGeneratedTemplateDeletionPolicy(m_deletionPolicy) << "&";
+      oStream << location << ".DeletionPolicy=" << StringUtils::URLEncode(GeneratedTemplateDeletionPolicyMapper::GetNameForGeneratedTemplateDeletionPolicy(m_deletionPolicy)) << "&";
   }
   if(m_updateReplacePolicyHasBeenSet)
   {
-      oStream << location << ".UpdateReplacePolicy=" << GeneratedTemplateUpdateReplacePolicyMapper::GetNameForGeneratedTemplateUpdateReplacePolicy(m_updateReplacePolicy) << "&";
+      oStream << location << ".UpdateReplacePolicy=" << StringUtils::URLEncode(GeneratedTemplateUpdateReplacePolicyMapper::GetNameForGeneratedTemplateUpdateReplacePolicy(m_updateReplacePolicy)) << "&";
   }
 }
 

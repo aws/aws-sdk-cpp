@@ -174,7 +174,7 @@ void CapacityBlockExtension::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_capacityBlockExtensionStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CapacityBlockExtensionStatus=" << CapacityBlockExtensionStatusMapper::GetNameForCapacityBlockExtensionStatus(m_capacityBlockExtensionStatus) << "&";
+      oStream << location << index << locationValue << ".CapacityBlockExtensionStatus=" << StringUtils::URLEncode(CapacityBlockExtensionStatusMapper::GetNameForCapacityBlockExtensionStatus(m_capacityBlockExtensionStatus)) << "&";
   }
 
   if(m_capacityBlockExtensionPurchaseDateHasBeenSet)
@@ -236,7 +236,7 @@ void CapacityBlockExtension::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_capacityBlockExtensionStatusHasBeenSet)
   {
-      oStream << location << ".CapacityBlockExtensionStatus=" << CapacityBlockExtensionStatusMapper::GetNameForCapacityBlockExtensionStatus(m_capacityBlockExtensionStatus) << "&";
+      oStream << location << ".CapacityBlockExtensionStatus=" << StringUtils::URLEncode(CapacityBlockExtensionStatusMapper::GetNameForCapacityBlockExtensionStatus(m_capacityBlockExtensionStatus)) << "&";
   }
   if(m_capacityBlockExtensionPurchaseDateHasBeenSet)
   {

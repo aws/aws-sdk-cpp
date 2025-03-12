@@ -61,12 +61,12 @@ void AquaConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_aquaStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AquaStatus=" << AquaStatusMapper::GetNameForAquaStatus(m_aquaStatus) << "&";
+      oStream << location << index << locationValue << ".AquaStatus=" << StringUtils::URLEncode(AquaStatusMapper::GetNameForAquaStatus(m_aquaStatus)) << "&";
   }
 
   if(m_aquaConfigurationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
+      oStream << location << index << locationValue << ".AquaConfigurationStatus=" << StringUtils::URLEncode(AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus)) << "&";
   }
 
 }
@@ -75,11 +75,11 @@ void AquaConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_aquaStatusHasBeenSet)
   {
-      oStream << location << ".AquaStatus=" << AquaStatusMapper::GetNameForAquaStatus(m_aquaStatus) << "&";
+      oStream << location << ".AquaStatus=" << StringUtils::URLEncode(AquaStatusMapper::GetNameForAquaStatus(m_aquaStatus)) << "&";
   }
   if(m_aquaConfigurationStatusHasBeenSet)
   {
-      oStream << location << ".AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
+      oStream << location << ".AquaConfigurationStatus=" << StringUtils::URLEncode(AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus)) << "&";
   }
 }
 
