@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/DomainType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/ServiceManaged.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -215,6 +216,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The service that manages the elastic IP address.</p>  <p>The only
+     * option supported today is <code>alb</code>.</p> 
+     */
+    inline const ServiceManaged& GetServiceManaged() const{ return m_serviceManaged; }
+    inline bool ServiceManagedHasBeenSet() const { return m_serviceManagedHasBeenSet; }
+    inline void SetServiceManaged(const ServiceManaged& value) { m_serviceManagedHasBeenSet = true; m_serviceManaged = value; }
+    inline void SetServiceManaged(ServiceManaged&& value) { m_serviceManagedHasBeenSet = true; m_serviceManaged = std::move(value); }
+    inline Address& WithServiceManaged(const ServiceManaged& value) { SetServiceManaged(value); return *this;}
+    inline Address& WithServiceManaged(ServiceManaged&& value) { SetServiceManaged(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the instance that the address is associated with (if any).</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -277,6 +291,9 @@ namespace Model
 
     Aws::String m_carrierIp;
     bool m_carrierIpHasBeenSet = false;
+
+    ServiceManaged m_serviceManaged;
+    bool m_serviceManagedHasBeenSet = false;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;

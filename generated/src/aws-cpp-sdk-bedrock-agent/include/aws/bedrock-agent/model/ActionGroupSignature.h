@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     AMAZON_UserInput,
-    AMAZON_CodeInterpreter
+    AMAZON_CodeInterpreter,
+    ANTHROPIC_Computer,
+    ANTHROPIC_Bash,
+    ANTHROPIC_TextEditor
   };
 
 namespace ActionGroupSignatureMapper

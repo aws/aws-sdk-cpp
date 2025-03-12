@@ -4739,8 +4739,11 @@ namespace Connect
         }
 
         /**
-         * <p>Provides a list of analysis segments for a real-time analysis session.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Provides a list of analysis segments for a real-time chat analysis session.
+         * This API supports CHAT channels only. </p>  <p>This API does not
+         * support VOICE. If you attempt to use it for VOICE, an
+         * <code>InvalidRequestException</code> occurs.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">AWS
          * API Reference</a></p>
          */
@@ -6642,12 +6645,13 @@ namespace Connect
         }
 
         /**
-         * <p>Transfers contacts from one agent or queue to another agent or queue at any
-         * point after a contact is created. You can transfer a contact to another queue by
-         * providing the flow which orchestrates the contact to the destination queue. This
-         * gives you more control over contact handling and helps you adhere to the service
-         * level agreement (SLA) guaranteed to your customers.</p> <p>Note the following
-         * requirements:</p> <ul> <li> <p>Transfer is supported for only <code>TASK</code>
+         * <p>Transfers <code>TASK</code> or <code>EMAIL</code> contacts from one agent or
+         * queue to another agent or queue at any point after a contact is created. You can
+         * transfer a contact to another queue by providing the flow which orchestrates the
+         * contact to the destination queue. This gives you more control over contact
+         * handling and helps you adhere to the service level agreement (SLA) guaranteed to
+         * your customers.</p> <p>Note the following requirements:</p> <ul> <li>
+         * <p>Transfer is supported for only <code>TASK</code> and <code>EMAIL</code>
          * contacts.</p> </li> <li> <p>Do not use both <code>QueueId</code> and
          * <code>UserId</code> in the same call.</p> </li> <li> <p>The following flow types
          * are supported: Inbound flow, Transfer to agent flow, and Transfer to queue

@@ -76,7 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the contact starting.</p>
      */
     inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
@@ -247,6 +248,24 @@ namespace Model
     inline CreateContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
     inline CreateContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the previous contact when creating a transfer contact. This value
+     * can be provided only for external audio contacts. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate
+     * Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon
+     * Connect Administrator Guide</i>.</p>
+     */
+    inline const Aws::String& GetPreviousContactId() const{ return m_previousContactId; }
+    inline bool PreviousContactIdHasBeenSet() const { return m_previousContactIdHasBeenSet; }
+    inline void SetPreviousContactId(const Aws::String& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = value; }
+    inline void SetPreviousContactId(Aws::String&& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = std::move(value); }
+    inline void SetPreviousContactId(const char* value) { m_previousContactIdHasBeenSet = true; m_previousContactId.assign(value); }
+    inline CreateContactRequest& WithPreviousContactId(const Aws::String& value) { SetPreviousContactId(value); return *this;}
+    inline CreateContactRequest& WithPreviousContactId(Aws::String&& value) { SetPreviousContactId(std::move(value)); return *this;}
+    inline CreateContactRequest& WithPreviousContactId(const char* value) { SetPreviousContactId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -287,6 +306,9 @@ namespace Model
 
     Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
     bool m_segmentAttributesHasBeenSet = false;
+
+    Aws::String m_previousContactId;
+    bool m_previousContactIdHasBeenSet = false;
   };
 
 } // namespace Model

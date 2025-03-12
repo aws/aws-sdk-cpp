@@ -19,7 +19,8 @@ namespace Model
 {
 
 ContentBody::ContentBody() : 
-    m_bodyHasBeenSet(false)
+    m_bodyHasBeenSet(false),
+    m_imagesHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,16 @@ ContentBody& ContentBody::operator =(JsonView jsonValue)
     m_bodyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("images"))
+  {
+    Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
+    for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
+    {
+      m_images.push_back(imagesJsonList[imagesIndex].AsObject());
+    }
+    m_imagesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +59,17 @@ JsonValue ContentBody::Jsonize() const
   if(m_bodyHasBeenSet)
   {
    payload.WithString("body", m_body);
+
+  }
+
+  if(m_imagesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> imagesJsonList(m_images.size());
+   for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
+   {
+     imagesJsonList[imagesIndex].AsObject(m_images[imagesIndex].Jsonize());
+   }
+   payload.WithArray("images", std::move(imagesJsonList));
 
   }
 

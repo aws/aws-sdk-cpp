@@ -6,6 +6,7 @@
 
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/queues/Queues_EXPORTS.h>
+#include <chrono>
 #include <thread>
 #include <atomic>
 #include <functional>

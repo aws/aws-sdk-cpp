@@ -24,7 +24,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_ipAddressTypeHasBeenSet(false),
     m_customerOwnedIpv4PoolHasBeenSet(false),
     m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
-    m_enablePrefixForIpv6SourceNatHasBeenSet(false)
+    m_enablePrefixForIpv6SourceNatHasBeenSet(false),
+    m_ipamPoolsHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,11 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
   if(m_enablePrefixForIpv6SourceNatHasBeenSet)
   {
     ss << "EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+  }
+
+  if(m_ipamPoolsHasBeenSet)
+  {
+    m_ipamPools.OutputToStream(ss, "IpamPools");
   }
 
   ss << "Version=2015-12-01";

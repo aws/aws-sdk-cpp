@@ -37,6 +37,37 @@ namespace Model
 
     ///@{
     /**
+     * <p>The cluster identifier. Only statements that ran on this cluster are
+     * returned. When providing <code>ClusterIdentifier</code>, then
+     * <code>WorkgroupName</code> can't be specified.</p>
+     */
+    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
+    inline ListStatementsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+    inline ListStatementsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
+    inline ListStatementsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the database when listing statements run against a
+     * <code>ClusterIdentifier</code> or <code>WorkgroupName</code>. </p>
+     */
+    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
+    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
+    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
+    inline ListStatementsRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
+    inline ListStatementsRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
+    inline ListStatementsRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of SQL statements to return in the response. If more SQL
      * statements exist than fit in one response, then <code>NextToken</code> is
      * returned to page through the results. </p>
@@ -116,7 +147,30 @@ namespace Model
     inline ListStatementsRequest& WithStatus(const StatusString& value) { SetStatus(value); return *this;}
     inline ListStatementsRequest& WithStatus(StatusString&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements
+     * that ran on this workgroup are returned. When providing
+     * <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be
+     * specified.</p>
+     */
+    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
+    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
+    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
+    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
+    inline ListStatementsRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
+    inline ListStatementsRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
+    inline ListStatementsRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    ///@}
   private:
+
+    Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet = false;
+
+    Aws::String m_database;
+    bool m_databaseHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -132,6 +186,9 @@ namespace Model
 
     StatusString m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_workgroupName;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

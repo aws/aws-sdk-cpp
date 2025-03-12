@@ -110,24 +110,14 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
     return AwsSmithyClientT::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
         computeEndpointOutcome.GetResult().signerServiceName.c_str(), expirationInSeconds, customizedHeaders, nullptr);
 #else
-    if (!m_endpointProvider)
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Endpoint provider is not initialized.");
-        return {};
-    }
-    ResolveEndpointOutcome computeEndpointOutcome = m_endpointProvider->ResolveEndpoint({{Aws::String("Bucket"), bucket}});
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError().GetMessage());
-        return {};
-    }
-    Aws::Endpoint::AWSEndpoint& endpoint = computeEndpointOutcome.GetResult();
-    endpoint.AddPathSegments(key);
     Aws::Map<Aws::String, Aws::String> params;
     params.emplace("bucketName", bucket);
     ServiceSpecificParameters serviceSpecificParameters{params};
     auto serviceParams = Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
-    return AwsSmithyClientT::GeneratePresignedUrl(endpoint, method, {}, {}, expirationInSeconds, customizedHeaders, serviceParams);
+    EndpointUpdateCallback endpointCallback = [&](Aws::Endpoint::AWSEndpoint& endpoint){
+      endpoint.AddPathSegments(key);
+    };
+    return AwsSmithyClientT::GeneratePresignedUrl(std::move(endpointCallback), method, {}, {}, expirationInSeconds, customizedHeaders, serviceParams);
 #end
 }
 

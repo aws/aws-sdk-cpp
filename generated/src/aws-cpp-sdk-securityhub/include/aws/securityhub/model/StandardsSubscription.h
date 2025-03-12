@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/securityhub/model/StandardsStatus.h>
+#include <aws/securityhub/model/StandardsControlsUpdatable.h>
 #include <aws/securityhub/model/StandardsStatusReason.h>
 #include <utility>
 
@@ -109,6 +110,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the controls associated with this standards subscription
+     * can be viewed and updated.</p> <p>The values are as follows:</p> <ul> <li> <p>
+     * <code>READY_FOR_UPDATES</code> - Controls associated with this standards
+     * subscription can be viewed and updated.</p> </li> <li> <p>
+     * <code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards
+     * subscription cannot be retrieved or updated yet. Security Hub is still
+     * processing a request to create the controls.</p> </li> </ul>
+     */
+    inline const StandardsControlsUpdatable& GetStandardsControlsUpdatable() const{ return m_standardsControlsUpdatable; }
+    inline bool StandardsControlsUpdatableHasBeenSet() const { return m_standardsControlsUpdatableHasBeenSet; }
+    inline void SetStandardsControlsUpdatable(const StandardsControlsUpdatable& value) { m_standardsControlsUpdatableHasBeenSet = true; m_standardsControlsUpdatable = value; }
+    inline void SetStandardsControlsUpdatable(StandardsControlsUpdatable&& value) { m_standardsControlsUpdatableHasBeenSet = true; m_standardsControlsUpdatable = std::move(value); }
+    inline StandardsSubscription& WithStandardsControlsUpdatable(const StandardsControlsUpdatable& value) { SetStandardsControlsUpdatable(value); return *this;}
+    inline StandardsSubscription& WithStandardsControlsUpdatable(StandardsControlsUpdatable&& value) { SetStandardsControlsUpdatable(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The reason for the current status.</p>
      */
     inline const StandardsStatusReason& GetStandardsStatusReason() const{ return m_standardsStatusReason; }
@@ -131,6 +150,9 @@ namespace Model
 
     StandardsStatus m_standardsStatus;
     bool m_standardsStatusHasBeenSet = false;
+
+    StandardsControlsUpdatable m_standardsControlsUpdatable;
+    bool m_standardsControlsUpdatableHasBeenSet = false;
 
     StandardsStatusReason m_standardsStatusReason;
     bool m_standardsStatusReasonHasBeenSet = false;

@@ -36,7 +36,10 @@ namespace Model
     ///@{
     /**
      * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
+     * </p> <p> Calls to this operation return a
+     * <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the standard subscription
+     * for the control has <code>StandardsControlsUpdatable</code> value
+     * <code>NOT_READY_FOR_UPDATES</code>. </p>
      */
     inline const Aws::Vector<StandardsControlAssociationUpdate>& GetStandardsControlAssociationUpdates() const{ return m_standardsControlAssociationUpdates; }
     inline bool StandardsControlAssociationUpdatesHasBeenSet() const { return m_standardsControlAssociationUpdatesHasBeenSet; }

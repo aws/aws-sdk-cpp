@@ -247,7 +247,8 @@ namespace Aws
              *  (2) Never go backwards, in spite of part upload/download failures.  Negative progress (canceling a highly concurrent transfer can
              *      lead to an enormous step backwards if many parts are aborted at once) is a confusing and undesirable user experience.
              * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the
-             * necessary retries exceed the previous high-water mark.
+             * necessary retries exceed the previous high-water mark. The amount of bytes transferred is the amount of bytes sent by the http client. If
+             * the user input stream is adapted as it is with aws-chunked, there will be a larger amount of bytes transferred than the original object.
              */
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }
             /**

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
+        static const int INVALID_CA_SUBJECT_HASH = HashingUtils::HashString("INVALID_CA_SUBJECT");
         static const int INVALID_PERMISSION_HASH = HashingUtils::HashString("INVALID_PERMISSION");
         static const int INVALID_STATE_HASH = HashingUtils::HashString("INVALID_STATE");
         static const int MISMATCHED_CONNECTOR_HASH = HashingUtils::HashString("MISMATCHED_CONNECTOR");
@@ -36,6 +37,10 @@ namespace Aws
           if (hashCode == FIELD_VALIDATION_FAILED_HASH)
           {
             return ValidationExceptionReason::FIELD_VALIDATION_FAILED;
+          }
+          else if (hashCode == INVALID_CA_SUBJECT_HASH)
+          {
+            return ValidationExceptionReason::INVALID_CA_SUBJECT;
           }
           else if (hashCode == INVALID_PERMISSION_HASH)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return {};
           case ValidationExceptionReason::FIELD_VALIDATION_FAILED:
             return "FIELD_VALIDATION_FAILED";
+          case ValidationExceptionReason::INVALID_CA_SUBJECT:
+            return "INVALID_CA_SUBJECT";
           case ValidationExceptionReason::INVALID_PERMISSION:
             return "INVALID_PERMISSION";
           case ValidationExceptionReason::INVALID_STATE:

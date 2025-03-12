@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
+#include <aws/pca-connector-ad/model/IpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -41,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The VPC IP address type.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+    inline VpcInformation& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+    inline VpcInformation& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The security groups used with the connector. You can use a maximum of 4
      * security groups with a connector.</p>
      */
@@ -55,6 +68,9 @@ namespace Model
     inline VpcInformation& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
     ///@}
   private:
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;

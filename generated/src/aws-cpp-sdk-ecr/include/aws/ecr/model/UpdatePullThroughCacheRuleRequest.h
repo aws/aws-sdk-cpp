@@ -80,6 +80,22 @@ namespace Model
     inline UpdatePullThroughCacheRuleRequest& WithCredentialArn(Aws::String&& value) { SetCredentialArn(std::move(value)); return *this;}
     inline UpdatePullThroughCacheRuleRequest& WithCredentialArn(const char* value) { SetCredentialArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to
+     * authenticate to the ECR upstream registry. This role must be in the same account
+     * as the registry that you are configuring.</p>
+     */
+    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+    inline bool CustomRoleArnHasBeenSet() const { return m_customRoleArnHasBeenSet; }
+    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = value; }
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = std::move(value); }
+    inline void SetCustomRoleArn(const char* value) { m_customRoleArnHasBeenSet = true; m_customRoleArn.assign(value); }
+    inline UpdatePullThroughCacheRuleRequest& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
+    inline UpdatePullThroughCacheRuleRequest& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
+    inline UpdatePullThroughCacheRuleRequest& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_registryId;
@@ -90,6 +106,9 @@ namespace Model
 
     Aws::String m_credentialArn;
     bool m_credentialArnHasBeenSet = false;
+
+    Aws::String m_customRoleArn;
+    bool m_customRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

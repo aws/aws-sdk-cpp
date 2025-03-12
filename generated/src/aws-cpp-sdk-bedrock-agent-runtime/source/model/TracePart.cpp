@@ -24,6 +24,7 @@ TracePart::TracePart() :
     m_agentVersionHasBeenSet(false),
     m_callerChainHasBeenSet(false),
     m_collaboratorNameHasBeenSet(false),
+    m_eventTimeHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_traceHasBeenSet(false)
 {
@@ -73,6 +74,13 @@ TracePart& TracePart::operator =(JsonView jsonValue)
     m_collaboratorName = jsonValue.GetString("collaboratorName");
 
     m_collaboratorNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventTime"))
+  {
+    m_eventTime = jsonValue.GetString("eventTime");
+
+    m_eventTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sessionId"))
@@ -129,6 +137,11 @@ JsonValue TracePart::Jsonize() const
   {
    payload.WithString("collaboratorName", m_collaboratorName);
 
+  }
+
+  if(m_eventTimeHasBeenSet)
+  {
+   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_sessionIdHasBeenSet)

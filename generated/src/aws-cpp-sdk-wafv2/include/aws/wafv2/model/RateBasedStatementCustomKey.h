@@ -14,6 +14,8 @@
 #include <aws/wafv2/model/RateLimitIP.h>
 #include <aws/wafv2/model/RateLimitLabelNamespace.h>
 #include <aws/wafv2/model/RateLimitUriPath.h>
+#include <aws/wafv2/model/RateLimitJA3Fingerprint.h>
+#include <aws/wafv2/model/RateLimitJA4Fingerprint.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +192,34 @@ namespace Model
     inline RateBasedStatementCustomKey& WithUriPath(const RateLimitUriPath& value) { SetUriPath(value); return *this;}
     inline RateBasedStatementCustomKey& WithUriPath(RateLimitUriPath&& value) { SetUriPath(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Use the request's JA3 fingerprint as an aggregate key. If you use a single
+     * JA3 fingerprint as your custom key, then each value fully defines an aggregation
+     * instance. </p>
+     */
+    inline const RateLimitJA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
+    inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
+    inline void SetJA3Fingerprint(const RateLimitJA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
+    inline void SetJA3Fingerprint(RateLimitJA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
+    inline RateBasedStatementCustomKey& WithJA3Fingerprint(const RateLimitJA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
+    inline RateBasedStatementCustomKey& WithJA3Fingerprint(RateLimitJA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single
+     * JA4 fingerprint as your custom key, then each value fully defines an aggregation
+     * instance. </p>
+     */
+    inline const RateLimitJA4Fingerprint& GetJA4Fingerprint() const{ return m_jA4Fingerprint; }
+    inline bool JA4FingerprintHasBeenSet() const { return m_jA4FingerprintHasBeenSet; }
+    inline void SetJA4Fingerprint(const RateLimitJA4Fingerprint& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = value; }
+    inline void SetJA4Fingerprint(RateLimitJA4Fingerprint&& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = std::move(value); }
+    inline RateBasedStatementCustomKey& WithJA4Fingerprint(const RateLimitJA4Fingerprint& value) { SetJA4Fingerprint(value); return *this;}
+    inline RateBasedStatementCustomKey& WithJA4Fingerprint(RateLimitJA4Fingerprint&& value) { SetJA4Fingerprint(std::move(value)); return *this;}
+    ///@}
   private:
 
     RateLimitHeader m_header;
@@ -218,6 +248,12 @@ namespace Model
 
     RateLimitUriPath m_uriPath;
     bool m_uriPathHasBeenSet = false;
+
+    RateLimitJA3Fingerprint m_jA3Fingerprint;
+    bool m_jA3FingerprintHasBeenSet = false;
+
+    RateLimitJA4Fingerprint m_jA4Fingerprint;
+    bool m_jA4FingerprintHasBeenSet = false;
   };
 
 } // namespace Model
