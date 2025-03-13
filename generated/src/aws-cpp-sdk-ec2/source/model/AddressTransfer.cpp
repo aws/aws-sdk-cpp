@@ -113,7 +113,7 @@ void AddressTransfer::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_addressTransferStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AddressTransferStatus=" << AddressTransferStatusMapper::GetNameForAddressTransferStatus(m_addressTransferStatus) << "&";
+      oStream << location << index << locationValue << ".AddressTransferStatus=" << StringUtils::URLEncode(AddressTransferStatusMapper::GetNameForAddressTransferStatus(m_addressTransferStatus)) << "&";
   }
 
 }
@@ -142,7 +142,7 @@ void AddressTransfer::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_addressTransferStatusHasBeenSet)
   {
-      oStream << location << ".AddressTransferStatus=" << AddressTransferStatusMapper::GetNameForAddressTransferStatus(m_addressTransferStatus) << "&";
+      oStream << location << ".AddressTransferStatus=" << StringUtils::URLEncode(AddressTransferStatusMapper::GetNameForAddressTransferStatus(m_addressTransferStatus)) << "&";
   }
 }
 

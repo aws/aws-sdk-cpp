@@ -32,22 +32,22 @@ Aws::String ListTypesRequest::SerializePayload() const
   ss << "Action=ListTypes&";
   if(m_visibilityHasBeenSet)
   {
-    ss << "Visibility=" << VisibilityMapper::GetNameForVisibility(m_visibility) << "&";
+    ss << "Visibility=" << StringUtils::URLEncode(VisibilityMapper::GetNameForVisibility(m_visibility)) << "&";
   }
 
   if(m_provisioningTypeHasBeenSet)
   {
-    ss << "ProvisioningType=" << ProvisioningTypeMapper::GetNameForProvisioningType(m_provisioningType) << "&";
+    ss << "ProvisioningType=" << StringUtils::URLEncode(ProvisioningTypeMapper::GetNameForProvisioningType(m_provisioningType)) << "&";
   }
 
   if(m_deprecatedStatusHasBeenSet)
   {
-    ss << "DeprecatedStatus=" << DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus) << "&";
+    ss << "DeprecatedStatus=" << StringUtils::URLEncode(DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus)) << "&";
   }
 
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
   if(m_filtersHasBeenSet)

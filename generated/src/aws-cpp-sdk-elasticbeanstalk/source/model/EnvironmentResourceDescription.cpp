@@ -237,7 +237,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_autoScalingGroups)
       {
         Aws::StringStream autoScalingGroupsSs;
-        autoScalingGroupsSs << location <<  ".AutoScalingGroups.member." << autoScalingGroupsIdx++;
+        autoScalingGroupsSs << location << ".AutoScalingGroups.member." << autoScalingGroupsIdx++;
         item.OutputToStream(oStream, autoScalingGroupsSs.str().c_str());
       }
   }
@@ -247,7 +247,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location <<  ".Instances.member." << instancesIdx++;
+        instancesSs << location << ".Instances.member." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
@@ -257,7 +257,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_launchConfigurations)
       {
         Aws::StringStream launchConfigurationsSs;
-        launchConfigurationsSs << location <<  ".LaunchConfigurations.member." << launchConfigurationsIdx++;
+        launchConfigurationsSs << location << ".LaunchConfigurations.member." << launchConfigurationsIdx++;
         item.OutputToStream(oStream, launchConfigurationsSs.str().c_str());
       }
   }
@@ -267,7 +267,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_launchTemplates)
       {
         Aws::StringStream launchTemplatesSs;
-        launchTemplatesSs << location <<  ".LaunchTemplates.member." << launchTemplatesIdx++;
+        launchTemplatesSs << location << ".LaunchTemplates.member." << launchTemplatesIdx++;
         item.OutputToStream(oStream, launchTemplatesSs.str().c_str());
       }
   }
@@ -277,7 +277,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_loadBalancers)
       {
         Aws::StringStream loadBalancersSs;
-        loadBalancersSs << location <<  ".LoadBalancers.member." << loadBalancersIdx++;
+        loadBalancersSs << location << ".LoadBalancers.member." << loadBalancersIdx++;
         item.OutputToStream(oStream, loadBalancersSs.str().c_str());
       }
   }
@@ -287,7 +287,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_triggers)
       {
         Aws::StringStream triggersSs;
-        triggersSs << location <<  ".Triggers.member." << triggersIdx++;
+        triggersSs << location << ".Triggers.member." << triggersIdx++;
         item.OutputToStream(oStream, triggersSs.str().c_str());
       }
   }
@@ -297,7 +297,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_queues)
       {
         Aws::StringStream queuesSs;
-        queuesSs << location <<  ".Queues.member." << queuesIdx++;
+        queuesSs << location << ".Queues.member." << queuesIdx++;
         item.OutputToStream(oStream, queuesSs.str().c_str());
       }
   }

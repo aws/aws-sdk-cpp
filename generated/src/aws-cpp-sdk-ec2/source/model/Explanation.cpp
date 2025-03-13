@@ -952,7 +952,7 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_loadBalancerTargetGroups)
       {
         Aws::StringStream loadBalancerTargetGroupsSs;
-        loadBalancerTargetGroupsSs << location <<  ".LoadBalancerTargetGroupSet." << loadBalancerTargetGroupsIdx++;
+        loadBalancerTargetGroupsSs << location << ".LoadBalancerTargetGroupSet." << loadBalancerTargetGroupsIdx++;
         item.OutputToStream(oStream, loadBalancerTargetGroupsSs.str().c_str());
       }
   }
@@ -1002,7 +1002,7 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_portRanges)
       {
         Aws::StringStream portRangesSs;
-        portRangesSs << location <<  ".PortRangeSet." << portRangesIdx++;
+        portRangesSs << location << ".PortRangeSet." << portRangesIdx++;
         item.OutputToStream(oStream, portRangesSs.str().c_str());
       }
   }
@@ -1050,7 +1050,7 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".SecurityGroupSet." << securityGroupsIdx++;
+        securityGroupsSs << location << ".SecurityGroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }

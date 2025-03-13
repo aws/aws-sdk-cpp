@@ -60,7 +60,7 @@ void DeleteQueuedReservedInstancesError::OutputToStream(Aws::OStream& oStream, c
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Code=" << DeleteQueuedReservedInstancesErrorCodeMapper::GetNameForDeleteQueuedReservedInstancesErrorCode(m_code) << "&";
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(DeleteQueuedReservedInstancesErrorCodeMapper::GetNameForDeleteQueuedReservedInstancesErrorCode(m_code)) << "&";
   }
 
   if(m_messageHasBeenSet)
@@ -74,7 +74,7 @@ void DeleteQueuedReservedInstancesError::OutputToStream(Aws::OStream& oStream, c
 {
   if(m_codeHasBeenSet)
   {
-      oStream << location << ".Code=" << DeleteQueuedReservedInstancesErrorCodeMapper::GetNameForDeleteQueuedReservedInstancesErrorCode(m_code) << "&";
+      oStream << location << ".Code=" << StringUtils::URLEncode(DeleteQueuedReservedInstancesErrorCodeMapper::GetNameForDeleteQueuedReservedInstancesErrorCode(m_code)) << "&";
   }
   if(m_messageHasBeenSet)
   {

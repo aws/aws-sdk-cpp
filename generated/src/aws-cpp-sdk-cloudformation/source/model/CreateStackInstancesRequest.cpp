@@ -103,7 +103,7 @@ Aws::String CreateStackInstancesRequest::SerializePayload() const
 
   if(m_callAsHasBeenSet)
   {
-    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+    ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
   ss << "Version=2010-05-15";

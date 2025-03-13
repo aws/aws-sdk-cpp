@@ -93,7 +93,7 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_events)
       {
         Aws::StringStream eventsSs;
-        eventsSs << location <<  ".EventInfoMap." << eventsIdx++;
+        eventsSs << location << ".Events.EventInfoMap." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }

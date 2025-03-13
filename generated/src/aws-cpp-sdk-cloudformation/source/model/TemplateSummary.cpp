@@ -106,7 +106,7 @@ void TemplateSummary::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << GeneratedTemplateStatusMapper::GetNameForGeneratedTemplateStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(GeneratedTemplateStatusMapper::GetNameForGeneratedTemplateStatus(m_status)) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -143,7 +143,7 @@ void TemplateSummary::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << GeneratedTemplateStatusMapper::GetNameForGeneratedTemplateStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(GeneratedTemplateStatusMapper::GetNameForGeneratedTemplateStatus(m_status)) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

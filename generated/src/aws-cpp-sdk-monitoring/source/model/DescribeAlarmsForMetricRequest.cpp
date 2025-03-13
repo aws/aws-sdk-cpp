@@ -40,7 +40,7 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
 
   if(m_statisticHasBeenSet)
   {
-    ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
+    ss << "Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
   }
 
   if(m_extendedStatisticHasBeenSet)
@@ -72,7 +72,7 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
 
   if(m_unitHasBeenSet)
   {
-    ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+    ss << "Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
   }
 
   ss << "Version=2010-08-01";

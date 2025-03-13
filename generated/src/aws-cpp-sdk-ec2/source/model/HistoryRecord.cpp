@@ -74,7 +74,7 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_eventTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EventType=" << EventTypeMapper::GetNameForEventType(m_eventType) << "&";
+      oStream << location << index << locationValue << ".EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
   }
 
   if(m_timestampHasBeenSet)
@@ -94,7 +94,7 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_eventTypeHasBeenSet)
   {
-      oStream << location << ".EventType=" << EventTypeMapper::GetNameForEventType(m_eventType) << "&";
+      oStream << location << ".EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
   }
   if(m_timestampHasBeenSet)
   {

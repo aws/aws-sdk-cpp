@@ -129,7 +129,7 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_statisticHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Statistic=" << MetricStatisticMapper::GetNameForMetricStatistic(m_statistic) << "&";
+      oStream << location << index << locationValue << ".Statistic=" << StringUtils::URLEncode(MetricStatisticMapper::GetNameForMetricStatistic(m_statistic)) << "&";
   }
 
   if(m_unitHasBeenSet)
@@ -171,13 +171,13 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
   if(m_statisticHasBeenSet)
   {
-      oStream << location << ".Statistic=" << MetricStatisticMapper::GetNameForMetricStatistic(m_statistic) << "&";
+      oStream << location << ".Statistic=" << StringUtils::URLEncode(MetricStatisticMapper::GetNameForMetricStatistic(m_statistic)) << "&";
   }
   if(m_unitHasBeenSet)
   {
@@ -193,7 +193,7 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_metrics)
       {
         Aws::StringStream metricsSs;
-        metricsSs << location <<  ".Metrics.member." << metricsIdx++;
+        metricsSs << location << ".Metrics.member." << metricsIdx++;
         item.OutputToStream(oStream, metricsSs.str().c_str());
       }
   }

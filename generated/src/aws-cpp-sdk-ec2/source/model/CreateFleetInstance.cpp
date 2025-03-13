@@ -96,7 +96,7 @@ void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_lifecycleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Lifecycle=" << InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle) << "&";
+      oStream << location << index << locationValue << ".Lifecycle=" << StringUtils::URLEncode(InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle)) << "&";
   }
 
   if(m_instanceIdsHasBeenSet)
@@ -110,12 +110,12 @@ void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_platformHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+      oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
 
 }
@@ -130,7 +130,7 @@ void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lifecycleHasBeenSet)
   {
-      oStream << location << ".Lifecycle=" << InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle) << "&";
+      oStream << location << ".Lifecycle=" << StringUtils::URLEncode(InstanceLifecycleMapper::GetNameForInstanceLifecycle(m_lifecycle)) << "&";
   }
   if(m_instanceIdsHasBeenSet)
   {
@@ -142,11 +142,11 @@ void CreateFleetInstance::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_platformHasBeenSet)
   {
-      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+      oStream << location << ".Platform=" << StringUtils::URLEncode(PlatformValuesMapper::GetNameForPlatformValues(m_platform)) << "&";
   }
 }
 

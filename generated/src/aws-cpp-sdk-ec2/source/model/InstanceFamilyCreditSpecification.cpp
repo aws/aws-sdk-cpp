@@ -60,7 +60,7 @@ void InstanceFamilyCreditSpecification::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_instanceFamilyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceFamily=" << UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily) << "&";
+      oStream << location << index << locationValue << ".InstanceFamily=" << StringUtils::URLEncode(UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily)) << "&";
   }
 
   if(m_cpuCreditsHasBeenSet)
@@ -74,7 +74,7 @@ void InstanceFamilyCreditSpecification::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_instanceFamilyHasBeenSet)
   {
-      oStream << location << ".InstanceFamily=" << UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily) << "&";
+      oStream << location << ".InstanceFamily=" << StringUtils::URLEncode(UnlimitedSupportedInstanceFamilyMapper::GetNameForUnlimitedSupportedInstanceFamily(m_instanceFamily)) << "&";
   }
   if(m_cpuCreditsHasBeenSet)
   {

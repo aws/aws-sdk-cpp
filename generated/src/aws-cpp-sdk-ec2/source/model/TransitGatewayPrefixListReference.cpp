@@ -104,7 +104,7 @@ void TransitGatewayPrefixListReference::OutputToStream(Aws::OStream& oStream, co
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << TransitGatewayPrefixListReferenceStateMapper::GetNameForTransitGatewayPrefixListReferenceState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(TransitGatewayPrefixListReferenceStateMapper::GetNameForTransitGatewayPrefixListReferenceState(m_state)) << "&";
   }
 
   if(m_blackholeHasBeenSet)
@@ -137,7 +137,7 @@ void TransitGatewayPrefixListReference::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << TransitGatewayPrefixListReferenceStateMapper::GetNameForTransitGatewayPrefixListReferenceState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(TransitGatewayPrefixListReferenceStateMapper::GetNameForTransitGatewayPrefixListReferenceState(m_state)) << "&";
   }
   if(m_blackholeHasBeenSet)
   {

@@ -72,7 +72,7 @@ Aws::String ModifyTrafficMirrorSessionRequest::SerializePayload() const
     for(auto& item : m_removeFields)
     {
       ss << "RemoveField." << removeFieldsCount << "="
-          << StringUtils::URLEncode(TrafficMirrorSessionFieldMapper::GetNameForTrafficMirrorSessionField(item).c_str()) << "&";
+          << StringUtils::URLEncode(TrafficMirrorSessionFieldMapper::GetNameForTrafficMirrorSessionField(item)) << "&";
       removeFieldsCount++;
     }
   }

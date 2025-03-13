@@ -73,7 +73,7 @@ Aws::String GetIpamResourceCidrsRequest::SerializePayload() const
 
   if(m_resourceTypeHasBeenSet)
   {
-    ss << "ResourceType=" << IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType) << "&";
+    ss << "ResourceType=" << StringUtils::URLEncode(IpamResourceTypeMapper::GetNameForIpamResourceType(m_resourceType)) << "&";
   }
 
   if(m_resourceTagHasBeenSet)

@@ -89,7 +89,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_instanceTypeHasBeenSet)
   {
-    ss << "InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+    ss << "InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_ipv6AddressCountHasBeenSet)
@@ -296,7 +296,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-    ss << "InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
+    ss << "InstanceInitiatedShutdownBehavior=" << StringUtils::URLEncode(ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior)) << "&";
   }
 
   if(m_privateIpAddressHasBeenSet)

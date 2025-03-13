@@ -53,7 +53,7 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
 
   if(m_locationHasBeenSet)
   {
-    ss << "Location=" << SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_location) << "&";
+    ss << "Location=" << StringUtils::URLEncode(SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_location)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

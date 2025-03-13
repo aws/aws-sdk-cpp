@@ -41,7 +41,7 @@ Aws::String ModifyTargetGroupRequest::SerializePayload() const
 
   if(m_healthCheckProtocolHasBeenSet)
   {
-    ss << "HealthCheckProtocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol) << "&";
+    ss << "HealthCheckProtocol=" << StringUtils::URLEncode(ProtocolEnumMapper::GetNameForProtocolEnum(m_healthCheckProtocol)) << "&";
   }
 
   if(m_healthCheckPortHasBeenSet)

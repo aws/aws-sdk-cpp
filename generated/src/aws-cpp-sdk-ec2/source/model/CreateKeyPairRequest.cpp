@@ -33,7 +33,7 @@ Aws::String CreateKeyPairRequest::SerializePayload() const
 
   if(m_keyTypeHasBeenSet)
   {
-    ss << "KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
+    ss << "KeyType=" << StringUtils::URLEncode(KeyTypeMapper::GetNameForKeyType(m_keyType)) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)
@@ -48,7 +48,7 @@ Aws::String CreateKeyPairRequest::SerializePayload() const
 
   if(m_keyFormatHasBeenSet)
   {
-    ss << "KeyFormat=" << KeyFormatMapper::GetNameForKeyFormat(m_keyFormat) << "&";
+    ss << "KeyFormat=" << StringUtils::URLEncode(KeyFormatMapper::GetNameForKeyFormat(m_keyFormat)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

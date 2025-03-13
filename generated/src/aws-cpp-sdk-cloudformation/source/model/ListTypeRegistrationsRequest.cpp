@@ -29,7 +29,7 @@ Aws::String ListTypeRegistrationsRequest::SerializePayload() const
   ss << "Action=ListTypeRegistrations&";
   if(m_typeHasBeenSet)
   {
-    ss << "Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+    ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
   if(m_typeNameHasBeenSet)
@@ -44,7 +44,7 @@ Aws::String ListTypeRegistrationsRequest::SerializePayload() const
 
   if(m_registrationStatusFilterHasBeenSet)
   {
-    ss << "RegistrationStatusFilter=" << RegistrationStatusMapper::GetNameForRegistrationStatus(m_registrationStatusFilter) << "&";
+    ss << "RegistrationStatusFilter=" << StringUtils::URLEncode(RegistrationStatusMapper::GetNameForRegistrationStatus(m_registrationStatusFilter)) << "&";
   }
 
   if(m_maxResultsHasBeenSet)

@@ -59,7 +59,7 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
 
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << InstanceAttributeNameMapper::GetNameForInstanceAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(InstanceAttributeNameMapper::GetNameForInstanceAttributeName(m_attribute)) << "&";
   }
 
   if(m_valueHasBeenSet)

@@ -125,7 +125,7 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ExportTaskStateMapper::GetNameForExportTaskState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(ExportTaskStateMapper::GetNameForExportTaskState(m_state)) << "&";
   }
 
   if(m_statusMessageHasBeenSet)
@@ -170,7 +170,7 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << ExportTaskStateMapper::GetNameForExportTaskState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(ExportTaskStateMapper::GetNameForExportTaskState(m_state)) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -182,7 +182,7 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -55,7 +55,7 @@ Aws::String ListStackInstanceResourceDriftsRequest::SerializePayload() const
       for(auto& item : m_stackInstanceResourceDriftStatuses)
       {
         ss << "StackInstanceResourceDriftStatuses.member." << stackInstanceResourceDriftStatusesCount << "="
-            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item).c_str()) << "&";
+            << StringUtils::URLEncode(StackResourceDriftStatusMapper::GetNameForStackResourceDriftStatus(item)) << "&";
         stackInstanceResourceDriftStatusesCount++;
       }
     }
@@ -78,7 +78,7 @@ Aws::String ListStackInstanceResourceDriftsRequest::SerializePayload() const
 
   if(m_callAsHasBeenSet)
   {
-    ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+    ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
   ss << "Version=2010-05-15";

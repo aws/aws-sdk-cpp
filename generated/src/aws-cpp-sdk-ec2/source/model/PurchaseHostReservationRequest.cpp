@@ -32,7 +32,7 @@ Aws::String PurchaseHostReservationRequest::SerializePayload() const
 
   if(m_currencyCodeHasBeenSet)
   {
-    ss << "CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
+    ss << "CurrencyCode=" << StringUtils::URLEncode(CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode)) << "&";
   }
 
   if(m_hostIdSetHasBeenSet)

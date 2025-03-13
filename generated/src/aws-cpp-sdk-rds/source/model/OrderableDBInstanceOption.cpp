@@ -584,7 +584,7 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location <<  ".AvailabilityZone." << availabilityZonesIdx++;
+        availabilityZonesSs << location << ".AvailabilityZones.AvailabilityZone." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
@@ -642,11 +642,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_minIopsPerGibHasBeenSet)
   {
-        oStream << location << ".MinIopsPerGib=" << StringUtils::URLEncode(m_minIopsPerGib) << "&";
+      oStream << location << ".MinIopsPerGib=" << StringUtils::URLEncode(m_minIopsPerGib) << "&";
   }
   if(m_maxIopsPerGibHasBeenSet)
   {
-        oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
+      oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
   }
   if(m_availableProcessorFeaturesHasBeenSet)
   {
@@ -654,7 +654,7 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_availableProcessorFeatures)
       {
         Aws::StringStream availableProcessorFeaturesSs;
-        availableProcessorFeaturesSs << location <<  ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
+        availableProcessorFeaturesSs << location << ".AvailableProcessorFeatures.AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
         item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
       }
   }
@@ -716,11 +716,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_minStorageThroughputPerIopsHasBeenSet)
   {
-        oStream << location << ".MinStorageThroughputPerIops=" << StringUtils::URLEncode(m_minStorageThroughputPerIops) << "&";
+      oStream << location << ".MinStorageThroughputPerIops=" << StringUtils::URLEncode(m_minStorageThroughputPerIops) << "&";
   }
   if(m_maxStorageThroughputPerIopsHasBeenSet)
   {
-        oStream << location << ".MaxStorageThroughputPerIops=" << StringUtils::URLEncode(m_maxStorageThroughputPerIops) << "&";
+      oStream << location << ".MaxStorageThroughputPerIops=" << StringUtils::URLEncode(m_maxStorageThroughputPerIops) << "&";
   }
   if(m_supportsDedicatedLogVolumeHasBeenSet)
   {

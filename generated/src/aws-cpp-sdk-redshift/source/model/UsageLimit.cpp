@@ -122,12 +122,12 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_featureTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FeatureType=" << UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType) << "&";
+      oStream << location << index << locationValue << ".FeatureType=" << StringUtils::URLEncode(UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType)) << "&";
   }
 
   if(m_limitTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LimitType=" << UsageLimitLimitTypeMapper::GetNameForUsageLimitLimitType(m_limitType) << "&";
+      oStream << location << index << locationValue << ".LimitType=" << StringUtils::URLEncode(UsageLimitLimitTypeMapper::GetNameForUsageLimitLimitType(m_limitType)) << "&";
   }
 
   if(m_amountHasBeenSet)
@@ -137,12 +137,12 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_periodHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Period=" << UsageLimitPeriodMapper::GetNameForUsageLimitPeriod(m_period) << "&";
+      oStream << location << index << locationValue << ".Period=" << StringUtils::URLEncode(UsageLimitPeriodMapper::GetNameForUsageLimitPeriod(m_period)) << "&";
   }
 
   if(m_breachActionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BreachAction=" << UsageLimitBreachActionMapper::GetNameForUsageLimitBreachAction(m_breachAction) << "&";
+      oStream << location << index << locationValue << ".BreachAction=" << StringUtils::URLEncode(UsageLimitBreachActionMapper::GetNameForUsageLimitBreachAction(m_breachAction)) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -173,11 +173,11 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_featureTypeHasBeenSet)
   {
-      oStream << location << ".FeatureType=" << UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType) << "&";
+      oStream << location << ".FeatureType=" << StringUtils::URLEncode(UsageLimitFeatureTypeMapper::GetNameForUsageLimitFeatureType(m_featureType)) << "&";
   }
   if(m_limitTypeHasBeenSet)
   {
-      oStream << location << ".LimitType=" << UsageLimitLimitTypeMapper::GetNameForUsageLimitLimitType(m_limitType) << "&";
+      oStream << location << ".LimitType=" << StringUtils::URLEncode(UsageLimitLimitTypeMapper::GetNameForUsageLimitLimitType(m_limitType)) << "&";
   }
   if(m_amountHasBeenSet)
   {
@@ -185,11 +185,11 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_periodHasBeenSet)
   {
-      oStream << location << ".Period=" << UsageLimitPeriodMapper::GetNameForUsageLimitPeriod(m_period) << "&";
+      oStream << location << ".Period=" << StringUtils::URLEncode(UsageLimitPeriodMapper::GetNameForUsageLimitPeriod(m_period)) << "&";
   }
   if(m_breachActionHasBeenSet)
   {
-      oStream << location << ".BreachAction=" << UsageLimitBreachActionMapper::GetNameForUsageLimitBreachAction(m_breachAction) << "&";
+      oStream << location << ".BreachAction=" << StringUtils::URLEncode(UsageLimitBreachActionMapper::GetNameForUsageLimitBreachAction(m_breachAction)) << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -197,7 +197,7 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tag." << tagsIdx++;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

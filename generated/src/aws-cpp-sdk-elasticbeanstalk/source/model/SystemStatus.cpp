@@ -94,7 +94,7 @@ void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
       unsigned loadAverageIdx = 1;
       for(auto& item : m_loadAverage)
       {
-          oStream << location << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+        oStream << location << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
 }

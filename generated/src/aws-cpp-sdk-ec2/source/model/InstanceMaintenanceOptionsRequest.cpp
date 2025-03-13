@@ -53,7 +53,7 @@ void InstanceMaintenanceOptionsRequest::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_autoRecoveryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoRecovery=" << InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery) << "&";
+      oStream << location << index << locationValue << ".AutoRecovery=" << StringUtils::URLEncode(InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery)) << "&";
   }
 
 }
@@ -62,7 +62,7 @@ void InstanceMaintenanceOptionsRequest::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_autoRecoveryHasBeenSet)
   {
-      oStream << location << ".AutoRecovery=" << InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery) << "&";
+      oStream << location << ".AutoRecovery=" << StringUtils::URLEncode(InstanceAutoRecoveryStateMapper::GetNameForInstanceAutoRecoveryState(m_autoRecovery)) << "&";
   }
 }
 

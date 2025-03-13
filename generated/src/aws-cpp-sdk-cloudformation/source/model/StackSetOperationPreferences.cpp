@@ -106,7 +106,7 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_regionConcurrencyTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RegionConcurrencyType=" << RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType) << "&";
+      oStream << location << index << locationValue << ".RegionConcurrencyType=" << StringUtils::URLEncode(RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType)) << "&";
   }
 
   if(m_regionOrderHasBeenSet)
@@ -140,7 +140,7 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
 
   if(m_concurrencyModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ConcurrencyMode=" << ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode) << "&";
+      oStream << location << index << locationValue << ".ConcurrencyMode=" << StringUtils::URLEncode(ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode)) << "&";
   }
 
 }
@@ -149,7 +149,7 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
 {
   if(m_regionConcurrencyTypeHasBeenSet)
   {
-      oStream << location << ".RegionConcurrencyType=" << RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType) << "&";
+      oStream << location << ".RegionConcurrencyType=" << StringUtils::URLEncode(RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType)) << "&";
   }
   if(m_regionOrderHasBeenSet)
   {
@@ -177,7 +177,7 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_concurrencyModeHasBeenSet)
   {
-      oStream << location << ".ConcurrencyMode=" << ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode) << "&";
+      oStream << location << ".ConcurrencyMode=" << StringUtils::URLEncode(ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode)) << "&";
   }
 }
 

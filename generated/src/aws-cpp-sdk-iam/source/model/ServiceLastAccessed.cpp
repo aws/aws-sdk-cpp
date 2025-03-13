@@ -174,7 +174,7 @@ void ServiceLastAccessed::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_trackedActionsLastAccessed)
       {
         Aws::StringStream trackedActionsLastAccessedSs;
-        trackedActionsLastAccessedSs << location <<  ".TrackedActionsLastAccessed.member." << trackedActionsLastAccessedIdx++;
+        trackedActionsLastAccessedSs << location << ".TrackedActionsLastAccessed.member." << trackedActionsLastAccessedIdx++;
         item.OutputToStream(oStream, trackedActionsLastAccessedSs.str().c_str());
       }
   }

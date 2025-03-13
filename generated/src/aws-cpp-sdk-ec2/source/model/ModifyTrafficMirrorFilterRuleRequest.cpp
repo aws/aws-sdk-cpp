@@ -42,7 +42,7 @@ Aws::String ModifyTrafficMirrorFilterRuleRequest::SerializePayload() const
 
   if(m_trafficDirectionHasBeenSet)
   {
-    ss << "TrafficDirection=" << TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection) << "&";
+    ss << "TrafficDirection=" << StringUtils::URLEncode(TrafficDirectionMapper::GetNameForTrafficDirection(m_trafficDirection)) << "&";
   }
 
   if(m_ruleNumberHasBeenSet)
@@ -52,7 +52,7 @@ Aws::String ModifyTrafficMirrorFilterRuleRequest::SerializePayload() const
 
   if(m_ruleActionHasBeenSet)
   {
-    ss << "RuleAction=" << TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction) << "&";
+    ss << "RuleAction=" << StringUtils::URLEncode(TrafficMirrorRuleActionMapper::GetNameForTrafficMirrorRuleAction(m_ruleAction)) << "&";
   }
 
   if(m_destinationPortRangeHasBeenSet)
@@ -91,7 +91,7 @@ Aws::String ModifyTrafficMirrorFilterRuleRequest::SerializePayload() const
     for(auto& item : m_removeFields)
     {
       ss << "RemoveField." << removeFieldsCount << "="
-          << StringUtils::URLEncode(TrafficMirrorFilterRuleFieldMapper::GetNameForTrafficMirrorFilterRuleField(item).c_str()) << "&";
+          << StringUtils::URLEncode(TrafficMirrorFilterRuleFieldMapper::GetNameForTrafficMirrorFilterRuleField(item)) << "&";
       removeFieldsCount++;
     }
   }

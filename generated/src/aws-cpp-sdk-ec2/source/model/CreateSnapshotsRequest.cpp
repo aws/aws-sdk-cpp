@@ -60,12 +60,12 @@ Aws::String CreateSnapshotsRequest::SerializePayload() const
 
   if(m_copyTagsFromSourceHasBeenSet)
   {
-    ss << "CopyTagsFromSource=" << CopyTagsFromSourceMapper::GetNameForCopyTagsFromSource(m_copyTagsFromSource) << "&";
+    ss << "CopyTagsFromSource=" << StringUtils::URLEncode(CopyTagsFromSourceMapper::GetNameForCopyTagsFromSource(m_copyTagsFromSource)) << "&";
   }
 
   if(m_locationHasBeenSet)
   {
-    ss << "Location=" << SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_location) << "&";
+    ss << "Location=" << StringUtils::URLEncode(SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_location)) << "&";
   }
 
   ss << "Version=2016-11-15";

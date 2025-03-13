@@ -162,7 +162,7 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        tagsSs << location << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

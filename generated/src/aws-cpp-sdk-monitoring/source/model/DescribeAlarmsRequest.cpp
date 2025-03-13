@@ -64,7 +64,7 @@ Aws::String DescribeAlarmsRequest::SerializePayload() const
       for(auto& item : m_alarmTypes)
       {
         ss << "AlarmTypes.member." << alarmTypesCount << "="
-            << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item).c_str()) << "&";
+            << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item)) << "&";
         alarmTypesCount++;
       }
     }
@@ -82,7 +82,7 @@ Aws::String DescribeAlarmsRequest::SerializePayload() const
 
   if(m_stateValueHasBeenSet)
   {
-    ss << "StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
+    ss << "StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
   }
 
   if(m_actionPrefixHasBeenSet)

@@ -126,7 +126,7 @@ void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(ImageStateMapper::GetNameForImageState(m_state)) << "&";
   }
 
   if(m_imageOwnerAliasHasBeenSet)
@@ -172,7 +172,7 @@ void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(ImageStateMapper::GetNameForImageState(m_state)) << "&";
   }
   if(m_imageOwnerAliasHasBeenSet)
   {

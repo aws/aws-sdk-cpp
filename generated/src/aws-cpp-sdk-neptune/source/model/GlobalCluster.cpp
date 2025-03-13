@@ -207,7 +207,7 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_globalClusterMembers)
       {
         Aws::StringStream globalClusterMembersSs;
-        globalClusterMembersSs << location <<  ".GlobalClusterMember." << globalClusterMembersIdx++;
+        globalClusterMembersSs << location << ".GlobalClusterMembers.GlobalClusterMember." << globalClusterMembersIdx++;
         item.OutputToStream(oStream, globalClusterMembersSs.str().c_str());
       }
   }

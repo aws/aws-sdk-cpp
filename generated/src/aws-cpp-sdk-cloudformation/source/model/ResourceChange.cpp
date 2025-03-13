@@ -144,12 +144,12 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
 {
   if(m_policyActionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PolicyAction=" << PolicyActionMapper::GetNameForPolicyAction(m_policyAction) << "&";
+      oStream << location << index << locationValue << ".PolicyAction=" << StringUtils::URLEncode(PolicyActionMapper::GetNameForPolicyAction(m_policyAction)) << "&";
   }
 
   if(m_actionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Action=" << ChangeActionMapper::GetNameForChangeAction(m_action) << "&";
+      oStream << location << index << locationValue << ".Action=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_action)) << "&";
   }
 
   if(m_logicalResourceIdHasBeenSet)
@@ -169,7 +169,7 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_replacementHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Replacement=" << ReplacementMapper::GetNameForReplacement(m_replacement) << "&";
+      oStream << location << index << locationValue << ".Replacement=" << StringUtils::URLEncode(ReplacementMapper::GetNameForReplacement(m_replacement)) << "&";
   }
 
   if(m_scopeHasBeenSet)
@@ -177,7 +177,7 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
       unsigned scopeIdx = 1;
       for(auto& item : m_scope)
       {
-        oStream << location << index << locationValue << ".Scope.member." << scopeIdx++ << "=" << ResourceAttributeMapper::GetNameForResourceAttribute(item) << "&";
+        oStream << location << index << locationValue << ".Scope.member." << scopeIdx++ << "=" << StringUtils::URLEncode(ResourceAttributeMapper::GetNameForResourceAttribute(item)) << "&";
       }
   }
 
@@ -220,11 +220,11 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
 {
   if(m_policyActionHasBeenSet)
   {
-      oStream << location << ".PolicyAction=" << PolicyActionMapper::GetNameForPolicyAction(m_policyAction) << "&";
+      oStream << location << ".PolicyAction=" << StringUtils::URLEncode(PolicyActionMapper::GetNameForPolicyAction(m_policyAction)) << "&";
   }
   if(m_actionHasBeenSet)
   {
-      oStream << location << ".Action=" << ChangeActionMapper::GetNameForChangeAction(m_action) << "&";
+      oStream << location << ".Action=" << StringUtils::URLEncode(ChangeActionMapper::GetNameForChangeAction(m_action)) << "&";
   }
   if(m_logicalResourceIdHasBeenSet)
   {
@@ -240,14 +240,14 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_replacementHasBeenSet)
   {
-      oStream << location << ".Replacement=" << ReplacementMapper::GetNameForReplacement(m_replacement) << "&";
+      oStream << location << ".Replacement=" << StringUtils::URLEncode(ReplacementMapper::GetNameForReplacement(m_replacement)) << "&";
   }
   if(m_scopeHasBeenSet)
   {
       unsigned scopeIdx = 1;
       for(auto& item : m_scope)
       {
-        oStream << location << ".Scope.member." << scopeIdx++ << "=" << ResourceAttributeMapper::GetNameForResourceAttribute(item) << "&";
+        oStream << location << ".Scope.member." << scopeIdx++ << "=" << StringUtils::URLEncode(ResourceAttributeMapper::GetNameForResourceAttribute(item)) << "&";
       }
   }
   if(m_detailsHasBeenSet)
@@ -256,7 +256,7 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_details)
       {
         Aws::StringStream detailsSs;
-        detailsSs << location <<  ".Details.member." << detailsIdx++;
+        detailsSs << location << ".Details.member." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }

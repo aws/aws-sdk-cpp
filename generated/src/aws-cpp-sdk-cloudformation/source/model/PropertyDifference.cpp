@@ -89,7 +89,7 @@ void PropertyDifference::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_differenceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DifferenceType=" << DifferenceTypeMapper::GetNameForDifferenceType(m_differenceType) << "&";
+      oStream << location << index << locationValue << ".DifferenceType=" << StringUtils::URLEncode(DifferenceTypeMapper::GetNameForDifferenceType(m_differenceType)) << "&";
   }
 
 }
@@ -110,7 +110,7 @@ void PropertyDifference::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_differenceTypeHasBeenSet)
   {
-      oStream << location << ".DifferenceType=" << DifferenceTypeMapper::GetNameForDifferenceType(m_differenceType) << "&";
+      oStream << location << ".DifferenceType=" << StringUtils::URLEncode(DifferenceTypeMapper::GetNameForDifferenceType(m_differenceType)) << "&";
   }
 }
 

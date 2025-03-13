@@ -68,12 +68,12 @@ void InstanceTypeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
 
   if(m_locationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LocationType=" << LocationTypeMapper::GetNameForLocationType(m_locationType) << "&";
+      oStream << location << index << locationValue << ".LocationType=" << StringUtils::URLEncode(LocationTypeMapper::GetNameForLocationType(m_locationType)) << "&";
   }
 
   if(m_locationHasBeenSet)
@@ -87,11 +87,11 @@ void InstanceTypeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
 {
   if(m_instanceTypeHasBeenSet)
   {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(InstanceTypeMapper::GetNameForInstanceType(m_instanceType)) << "&";
   }
   if(m_locationTypeHasBeenSet)
   {
-      oStream << location << ".LocationType=" << LocationTypeMapper::GetNameForLocationType(m_locationType) << "&";
+      oStream << location << ".LocationType=" << StringUtils::URLEncode(LocationTypeMapper::GetNameForLocationType(m_locationType)) << "&";
   }
   if(m_locationHasBeenSet)
   {

@@ -366,12 +366,12 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_automaticFailoverHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+      oStream << location << index << locationValue << ".AutomaticFailover=" << StringUtils::URLEncode(AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover)) << "&";
   }
 
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiAZ=" << MultiAZStatusMapper::GetNameForMultiAZStatus(m_multiAZ) << "&";
+      oStream << location << index << locationValue << ".MultiAZ=" << StringUtils::URLEncode(MultiAZStatusMapper::GetNameForMultiAZStatus(m_multiAZ)) << "&";
   }
 
   if(m_configurationEndpointHasBeenSet)
@@ -467,7 +467,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_dataTieringHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+      oStream << location << index << locationValue << ".DataTiering=" << StringUtils::URLEncode(DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering)) << "&";
   }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
@@ -477,22 +477,22 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_networkTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
 
   if(m_ipDiscoveryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+      oStream << location << index << locationValue << ".IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
   if(m_transitEncryptionModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+      oStream << location << index << locationValue << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
 
   if(m_clusterModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+      oStream << location << index << locationValue << ".ClusterMode=" << StringUtils::URLEncode(ClusterModeMapper::GetNameForClusterMode(m_clusterMode)) << "&";
   }
 
   if(m_engineHasBeenSet)
@@ -533,7 +533,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned memberClustersIdx = 1;
       for(auto& item : m_memberClusters)
       {
-        oStream << location << ".ClusterId." << memberClustersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".MemberClusters.ClusterId." << memberClustersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_nodeGroupsHasBeenSet)
@@ -542,7 +542,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_nodeGroups)
       {
         Aws::StringStream nodeGroupsSs;
-        nodeGroupsSs << location <<  ".NodeGroup." << nodeGroupsIdx++;
+        nodeGroupsSs << location << ".NodeGroups.NodeGroup." << nodeGroupsIdx++;
         item.OutputToStream(oStream, nodeGroupsSs.str().c_str());
       }
   }
@@ -552,11 +552,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_automaticFailoverHasBeenSet)
   {
-      oStream << location << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+      oStream << location << ".AutomaticFailover=" << StringUtils::URLEncode(AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover)) << "&";
   }
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << ".MultiAZ=" << MultiAZStatusMapper::GetNameForMultiAZStatus(m_multiAZ) << "&";
+      oStream << location << ".MultiAZ=" << StringUtils::URLEncode(MultiAZStatusMapper::GetNameForMultiAZStatus(m_multiAZ)) << "&";
   }
   if(m_configurationEndpointHasBeenSet)
   {
@@ -601,7 +601,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned memberClustersOutpostArnsIdx = 1;
       for(auto& item : m_memberClustersOutpostArns)
       {
-        oStream << location << ".ReplicationGroupOutpostArn." << memberClustersOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".MemberClustersOutpostArns.ReplicationGroupOutpostArn." << memberClustersOutpostArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_kmsKeyIdHasBeenSet)
@@ -626,7 +626,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_logDeliveryConfigurations)
       {
         Aws::StringStream logDeliveryConfigurationsSs;
-        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        logDeliveryConfigurationsSs << location << ".LogDeliveryConfigurations.LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
   }
@@ -636,7 +636,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_dataTieringHasBeenSet)
   {
-      oStream << location << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+      oStream << location << ".DataTiering=" << StringUtils::URLEncode(DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering)) << "&";
   }
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
@@ -644,19 +644,19 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_networkTypeHasBeenSet)
   {
-      oStream << location << ".NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+      oStream << location << ".NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
   if(m_ipDiscoveryHasBeenSet)
   {
-      oStream << location << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+      oStream << location << ".IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
   if(m_transitEncryptionModeHasBeenSet)
   {
-      oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+      oStream << location << ".TransitEncryptionMode=" << StringUtils::URLEncode(TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode)) << "&";
   }
   if(m_clusterModeHasBeenSet)
   {
-      oStream << location << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+      oStream << location << ".ClusterMode=" << StringUtils::URLEncode(ClusterModeMapper::GetNameForClusterMode(m_clusterMode)) << "&";
   }
   if(m_engineHasBeenSet)
   {

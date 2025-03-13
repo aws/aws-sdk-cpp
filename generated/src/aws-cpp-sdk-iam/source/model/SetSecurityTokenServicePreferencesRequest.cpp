@@ -22,7 +22,7 @@ Aws::String SetSecurityTokenServicePreferencesRequest::SerializePayload() const
   ss << "Action=SetSecurityTokenServicePreferences&";
   if(m_globalEndpointTokenVersionHasBeenSet)
   {
-    ss << "GlobalEndpointTokenVersion=" << GlobalEndpointTokenVersionMapper::GetNameForGlobalEndpointTokenVersion(m_globalEndpointTokenVersion) << "&";
+    ss << "GlobalEndpointTokenVersion=" << StringUtils::URLEncode(GlobalEndpointTokenVersionMapper::GetNameForGlobalEndpointTokenVersion(m_globalEndpointTokenVersion)) << "&";
   }
 
   ss << "Version=2010-05-08";

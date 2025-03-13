@@ -121,7 +121,7 @@ void VpcBlockPublicAccessExclusion::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_internetGatewayExclusionModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InternetGatewayExclusionMode=" << InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode) << "&";
+      oStream << location << index << locationValue << ".InternetGatewayExclusionMode=" << StringUtils::URLEncode(InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode)) << "&";
   }
 
   if(m_resourceArnHasBeenSet)
@@ -131,7 +131,7 @@ void VpcBlockPublicAccessExclusion::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpcBlockPublicAccessExclusionStateMapper::GetNameForVpcBlockPublicAccessExclusionState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcBlockPublicAccessExclusionStateMapper::GetNameForVpcBlockPublicAccessExclusionState(m_state)) << "&";
   }
 
   if(m_reasonHasBeenSet)
@@ -175,7 +175,7 @@ void VpcBlockPublicAccessExclusion::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_internetGatewayExclusionModeHasBeenSet)
   {
-      oStream << location << ".InternetGatewayExclusionMode=" << InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode) << "&";
+      oStream << location << ".InternetGatewayExclusionMode=" << StringUtils::URLEncode(InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode)) << "&";
   }
   if(m_resourceArnHasBeenSet)
   {
@@ -183,7 +183,7 @@ void VpcBlockPublicAccessExclusion::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpcBlockPublicAccessExclusionStateMapper::GetNameForVpcBlockPublicAccessExclusionState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpcBlockPublicAccessExclusionStateMapper::GetNameForVpcBlockPublicAccessExclusionState(m_state)) << "&";
   }
   if(m_reasonHasBeenSet)
   {
@@ -207,7 +207,7 @@ void VpcBlockPublicAccessExclusion::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

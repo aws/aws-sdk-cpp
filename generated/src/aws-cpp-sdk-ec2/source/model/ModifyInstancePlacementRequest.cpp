@@ -56,12 +56,12 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
 
   if(m_tenancyHasBeenSet)
   {
-    ss << "Tenancy=" << HostTenancyMapper::GetNameForHostTenancy(m_tenancy) << "&";
+    ss << "Tenancy=" << StringUtils::URLEncode(HostTenancyMapper::GetNameForHostTenancy(m_tenancy)) << "&";
   }
 
   if(m_affinityHasBeenSet)
   {
-    ss << "Affinity=" << AffinityMapper::GetNameForAffinity(m_affinity) << "&";
+    ss << "Affinity=" << StringUtils::URLEncode(AffinityMapper::GetNameForAffinity(m_affinity)) << "&";
   }
 
   if(m_hostIdHasBeenSet)

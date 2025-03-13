@@ -282,7 +282,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_instancePlatformHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstancePlatform=" << CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform) << "&";
+      oStream << location << index << locationValue << ".InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
   }
 
   if(m_availabilityZoneHasBeenSet)
@@ -292,7 +292,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
+      oStream << location << index << locationValue << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
   }
 
   if(m_totalInstanceCountHasBeenSet)
@@ -317,7 +317,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << CapacityReservationStateMapper::GetNameForCapacityReservationState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(CapacityReservationStateMapper::GetNameForCapacityReservationState(m_state)) << "&";
   }
 
   if(m_startDateHasBeenSet)
@@ -332,12 +332,12 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_endDateTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndDateType=" << EndDateTypeMapper::GetNameForEndDateType(m_endDateType) << "&";
+      oStream << location << index << locationValue << ".EndDateType=" << StringUtils::URLEncode(EndDateTypeMapper::GetNameForEndDateType(m_endDateType)) << "&";
   }
 
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceMatchCriteria=" << InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+      oStream << location << index << locationValue << ".InstanceMatchCriteria=" << StringUtils::URLEncode(InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
 
   if(m_createDateHasBeenSet)
@@ -384,7 +384,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_reservationTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReservationType=" << CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType) << "&";
+      oStream << location << index << locationValue << ".ReservationType=" << StringUtils::URLEncode(CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType)) << "&";
   }
 
   if(m_unusedReservationBillingOwnerIdHasBeenSet)
@@ -401,7 +401,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_deliveryPreferenceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeliveryPreference=" << CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference) << "&";
+      oStream << location << index << locationValue << ".DeliveryPreference=" << StringUtils::URLEncode(CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference)) << "&";
   }
 
 }
@@ -430,7 +430,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_instancePlatformHasBeenSet)
   {
-      oStream << location << ".InstancePlatform=" << CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform) << "&";
+      oStream << location << ".InstancePlatform=" << StringUtils::URLEncode(CapacityReservationInstancePlatformMapper::GetNameForCapacityReservationInstancePlatform(m_instancePlatform)) << "&";
   }
   if(m_availabilityZoneHasBeenSet)
   {
@@ -438,7 +438,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_tenancyHasBeenSet)
   {
-      oStream << location << ".Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
+      oStream << location << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy)) << "&";
   }
   if(m_totalInstanceCountHasBeenSet)
   {
@@ -458,7 +458,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << CapacityReservationStateMapper::GetNameForCapacityReservationState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(CapacityReservationStateMapper::GetNameForCapacityReservationState(m_state)) << "&";
   }
   if(m_startDateHasBeenSet)
   {
@@ -470,11 +470,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_endDateTypeHasBeenSet)
   {
-      oStream << location << ".EndDateType=" << EndDateTypeMapper::GetNameForEndDateType(m_endDateType) << "&";
+      oStream << location << ".EndDateType=" << StringUtils::URLEncode(EndDateTypeMapper::GetNameForEndDateType(m_endDateType)) << "&";
   }
   if(m_instanceMatchCriteriaHasBeenSet)
   {
-      oStream << location << ".InstanceMatchCriteria=" << InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria) << "&";
+      oStream << location << ".InstanceMatchCriteria=" << StringUtils::URLEncode(InstanceMatchCriteriaMapper::GetNameForInstanceMatchCriteria(m_instanceMatchCriteria)) << "&";
   }
   if(m_createDateHasBeenSet)
   {
@@ -486,7 +486,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -508,13 +508,13 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_capacityAllocations)
       {
         Aws::StringStream capacityAllocationsSs;
-        capacityAllocationsSs << location <<  ".CapacityAllocationSet." << capacityAllocationsIdx++;
+        capacityAllocationsSs << location << ".CapacityAllocationSet." << capacityAllocationsIdx++;
         item.OutputToStream(oStream, capacityAllocationsSs.str().c_str());
       }
   }
   if(m_reservationTypeHasBeenSet)
   {
-      oStream << location << ".ReservationType=" << CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType) << "&";
+      oStream << location << ".ReservationType=" << StringUtils::URLEncode(CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType)) << "&";
   }
   if(m_unusedReservationBillingOwnerIdHasBeenSet)
   {
@@ -528,7 +528,7 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_deliveryPreferenceHasBeenSet)
   {
-      oStream << location << ".DeliveryPreference=" << CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference) << "&";
+      oStream << location << ".DeliveryPreference=" << StringUtils::URLEncode(CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference)) << "&";
   }
 }
 

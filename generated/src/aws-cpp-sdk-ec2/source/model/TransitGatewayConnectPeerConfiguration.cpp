@@ -112,7 +112,7 @@ void TransitGatewayConnectPeerConfiguration::OutputToStream(Aws::OStream& oStrea
 
   if(m_protocolHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Protocol=" << ProtocolValueMapper::GetNameForProtocolValue(m_protocol) << "&";
+      oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(ProtocolValueMapper::GetNameForProtocolValue(m_protocol)) << "&";
   }
 
   if(m_bgpConfigurationsHasBeenSet)
@@ -148,7 +148,7 @@ void TransitGatewayConnectPeerConfiguration::OutputToStream(Aws::OStream& oStrea
   }
   if(m_protocolHasBeenSet)
   {
-      oStream << location << ".Protocol=" << ProtocolValueMapper::GetNameForProtocolValue(m_protocol) << "&";
+      oStream << location << ".Protocol=" << StringUtils::URLEncode(ProtocolValueMapper::GetNameForProtocolValue(m_protocol)) << "&";
   }
   if(m_bgpConfigurationsHasBeenSet)
   {
@@ -156,7 +156,7 @@ void TransitGatewayConnectPeerConfiguration::OutputToStream(Aws::OStream& oStrea
       for(auto& item : m_bgpConfigurations)
       {
         Aws::StringStream bgpConfigurationsSs;
-        bgpConfigurationsSs << location <<  ".BgpConfigurations." << bgpConfigurationsIdx++;
+        bgpConfigurationsSs << location << ".BgpConfigurations." << bgpConfigurationsIdx++;
         item.OutputToStream(oStream, bgpConfigurationsSs.str().c_str());
       }
   }

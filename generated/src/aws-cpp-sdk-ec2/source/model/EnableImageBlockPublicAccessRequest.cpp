@@ -24,7 +24,7 @@ Aws::String EnableImageBlockPublicAccessRequest::SerializePayload() const
   ss << "Action=EnableImageBlockPublicAccess&";
   if(m_imageBlockPublicAccessStateHasBeenSet)
   {
-    ss << "ImageBlockPublicAccessState=" << ImageBlockPublicAccessEnabledStateMapper::GetNameForImageBlockPublicAccessEnabledState(m_imageBlockPublicAccessState) << "&";
+    ss << "ImageBlockPublicAccessState=" << StringUtils::URLEncode(ImageBlockPublicAccessEnabledStateMapper::GetNameForImageBlockPublicAccessEnabledState(m_imageBlockPublicAccessState)) << "&";
   }
 
   if(m_dryRunHasBeenSet)

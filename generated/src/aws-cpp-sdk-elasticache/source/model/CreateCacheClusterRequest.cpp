@@ -69,7 +69,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 
   if(m_aZModeHasBeenSet)
   {
-    ss << "AZMode=" << AZModeMapper::GetNameForAZMode(m_aZMode) << "&";
+    ss << "AZMode=" << StringUtils::URLEncode(AZModeMapper::GetNameForAZMode(m_aZMode)) << "&";
   }
 
   if(m_preferredAvailabilityZoneHasBeenSet)
@@ -238,7 +238,7 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 
   if(m_outpostModeHasBeenSet)
   {
-    ss << "OutpostMode=" << OutpostModeMapper::GetNameForOutpostMode(m_outpostMode) << "&";
+    ss << "OutpostMode=" << StringUtils::URLEncode(OutpostModeMapper::GetNameForOutpostMode(m_outpostMode)) << "&";
   }
 
   if(m_preferredOutpostArnHasBeenSet)
@@ -288,12 +288,12 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
 
   if(m_networkTypeHasBeenSet)
   {
-    ss << "NetworkType=" << NetworkTypeMapper::GetNameForNetworkType(m_networkType) << "&";
+    ss << "NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
 
   if(m_ipDiscoveryHasBeenSet)
   {
-    ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+    ss << "IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
   ss << "Version=2015-02-02";

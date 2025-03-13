@@ -79,7 +79,7 @@ void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_priceHasBeenSet)
   {
-        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
+      oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
 }
 

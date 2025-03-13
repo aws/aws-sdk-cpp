@@ -116,7 +116,7 @@ void InsightRuleContributor::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_approximateAggregateValueHasBeenSet)
   {
-        oStream << location << ".ApproximateAggregateValue=" << StringUtils::URLEncode(m_approximateAggregateValue) << "&";
+      oStream << location << ".ApproximateAggregateValue=" << StringUtils::URLEncode(m_approximateAggregateValue) << "&";
   }
   if(m_datapointsHasBeenSet)
   {
@@ -124,7 +124,7 @@ void InsightRuleContributor::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_datapoints)
       {
         Aws::StringStream datapointsSs;
-        datapointsSs << location <<  ".Datapoints.member." << datapointsIdx++;
+        datapointsSs << location << ".Datapoints.member." << datapointsIdx++;
         item.OutputToStream(oStream, datapointsSs.str().c_str());
       }
   }

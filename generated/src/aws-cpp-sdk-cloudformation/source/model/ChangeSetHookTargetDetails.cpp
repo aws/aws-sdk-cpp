@@ -60,7 +60,7 @@ void ChangeSetHookTargetDetails::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_targetTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TargetType=" << HookTargetTypeMapper::GetNameForHookTargetType(m_targetType) << "&";
+      oStream << location << index << locationValue << ".TargetType=" << StringUtils::URLEncode(HookTargetTypeMapper::GetNameForHookTargetType(m_targetType)) << "&";
   }
 
   if(m_resourceTargetDetailsHasBeenSet)
@@ -76,7 +76,7 @@ void ChangeSetHookTargetDetails::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_targetTypeHasBeenSet)
   {
-      oStream << location << ".TargetType=" << HookTargetTypeMapper::GetNameForHookTargetType(m_targetType) << "&";
+      oStream << location << ".TargetType=" << StringUtils::URLEncode(HookTargetTypeMapper::GetNameForHookTargetType(m_targetType)) << "&";
   }
   if(m_resourceTargetDetailsHasBeenSet)
   {

@@ -117,7 +117,7 @@ void AccessScopePathRequest::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_throughResources)
       {
         Aws::StringStream throughResourcesSs;
-        throughResourcesSs << location <<  ".ThroughResource." << throughResourcesIdx++;
+        throughResourcesSs << location << ".ThroughResource." << throughResourcesIdx++;
         item.OutputToStream(oStream, throughResourcesSs.str().c_str());
       }
   }

@@ -282,7 +282,7 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_bootModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+      oStream << location << index << locationValue << ".BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
 
 }
@@ -335,7 +335,7 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_snapshotDetails)
       {
         Aws::StringStream snapshotDetailsSs;
-        snapshotDetailsSs << location <<  ".SnapshotDetailSet." << snapshotDetailsIdx++;
+        snapshotDetailsSs << location << ".SnapshotDetailSet." << snapshotDetailsIdx++;
         item.OutputToStream(oStream, snapshotDetailsSs.str().c_str());
       }
   }
@@ -353,7 +353,7 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -363,7 +363,7 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_licenseSpecifications)
       {
         Aws::StringStream licenseSpecificationsSs;
-        licenseSpecificationsSs << location <<  ".LicenseSpecifications." << licenseSpecificationsIdx++;
+        licenseSpecificationsSs << location << ".LicenseSpecifications." << licenseSpecificationsIdx++;
         item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
       }
   }
@@ -373,7 +373,7 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_bootModeHasBeenSet)
   {
-      oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+      oStream << location << ".BootMode=" << StringUtils::URLEncode(BootModeValuesMapper::GetNameForBootModeValues(m_bootMode)) << "&";
   }
 }
 

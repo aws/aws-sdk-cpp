@@ -85,7 +85,7 @@ void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpTokens=" << HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens) << "&";
+      oStream << location << index << locationValue << ".HttpTokens=" << StringUtils::URLEncode(HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens)) << "&";
   }
 
   if(m_httpPutResponseHopLimitHasBeenSet)
@@ -95,17 +95,17 @@ void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const
 
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << index << locationValue << ".HttpEndpoint=" << StringUtils::URLEncode(InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
 
   if(m_httpProtocolIpv6HasBeenSet)
   {
-      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
+      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << StringUtils::URLEncode(InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6)) << "&";
   }
 
   if(m_instanceMetadataTagsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+      oStream << location << index << locationValue << ".InstanceMetadataTags=" << StringUtils::URLEncode(InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
 
 }
@@ -114,7 +114,7 @@ void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const
 {
   if(m_httpTokensHasBeenSet)
   {
-      oStream << location << ".HttpTokens=" << HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens) << "&";
+      oStream << location << ".HttpTokens=" << StringUtils::URLEncode(HttpTokensStateMapper::GetNameForHttpTokensState(m_httpTokens)) << "&";
   }
   if(m_httpPutResponseHopLimitHasBeenSet)
   {
@@ -122,15 +122,15 @@ void InstanceMetadataOptionsRequest::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_httpEndpointHasBeenSet)
   {
-      oStream << location << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+      oStream << location << ".HttpEndpoint=" << StringUtils::URLEncode(InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint)) << "&";
   }
   if(m_httpProtocolIpv6HasBeenSet)
   {
-      oStream << location << ".HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
+      oStream << location << ".HttpProtocolIpv6=" << StringUtils::URLEncode(InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6)) << "&";
   }
   if(m_instanceMetadataTagsHasBeenSet)
   {
-      oStream << location << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+      oStream << location << ".InstanceMetadataTags=" << StringUtils::URLEncode(InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags)) << "&";
   }
 }
 

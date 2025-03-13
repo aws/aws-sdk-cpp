@@ -118,7 +118,7 @@ void LoadForecast::OutputToStream(Aws::OStream& oStream, const char* location) c
       unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-          oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+        oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
   if(m_metricSpecificationHasBeenSet)

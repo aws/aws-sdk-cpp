@@ -149,7 +149,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << SnapshotStateMapper::GetNameForSnapshotState(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(SnapshotStateMapper::GetNameForSnapshotState(m_status)) << "&";
   }
 
   if(m_ownerIdHasBeenSet)
@@ -170,7 +170,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_storageTierHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageTier=" << StorageTierMapper::GetNameForStorageTier(m_storageTier) << "&";
+      oStream << location << index << locationValue << ".StorageTier=" << StringUtils::URLEncode(StorageTierMapper::GetNameForStorageTier(m_storageTier)) << "&";
   }
 
   if(m_lastTieringStartTimeHasBeenSet)
@@ -185,7 +185,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_lastTieringOperationStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastTieringOperationStatus=" << TieringOperationStatusMapper::GetNameForTieringOperationStatus(m_lastTieringOperationStatus) << "&";
+      oStream << location << index << locationValue << ".LastTieringOperationStatus=" << StringUtils::URLEncode(TieringOperationStatusMapper::GetNameForTieringOperationStatus(m_lastTieringOperationStatus)) << "&";
   }
 
   if(m_lastTieringOperationStatusDetailHasBeenSet)
@@ -217,7 +217,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << SnapshotStateMapper::GetNameForSnapshotState(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(SnapshotStateMapper::GetNameForSnapshotState(m_status)) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
@@ -229,13 +229,13 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        tagsSs << location << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_storageTierHasBeenSet)
   {
-      oStream << location << ".StorageTier=" << StorageTierMapper::GetNameForStorageTier(m_storageTier) << "&";
+      oStream << location << ".StorageTier=" << StringUtils::URLEncode(StorageTierMapper::GetNameForStorageTier(m_storageTier)) << "&";
   }
   if(m_lastTieringStartTimeHasBeenSet)
   {
@@ -247,7 +247,7 @@ void SnapshotTierStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lastTieringOperationStatusHasBeenSet)
   {
-      oStream << location << ".LastTieringOperationStatus=" << TieringOperationStatusMapper::GetNameForTieringOperationStatus(m_lastTieringOperationStatus) << "&";
+      oStream << location << ".LastTieringOperationStatus=" << StringUtils::URLEncode(TieringOperationStatusMapper::GetNameForTieringOperationStatus(m_lastTieringOperationStatus)) << "&";
   }
   if(m_lastTieringOperationStatusDetailHasBeenSet)
   {

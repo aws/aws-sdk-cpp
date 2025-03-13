@@ -72,7 +72,7 @@ void TransitGatewayPrefixListAttachment::OutputToStream(Aws::OStream& oStream, c
 
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
+      oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType)) << "&";
   }
 
   if(m_resourceIdHasBeenSet)
@@ -90,7 +90,7 @@ void TransitGatewayPrefixListAttachment::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_resourceTypeHasBeenSet)
   {
-      oStream << location << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
+      oStream << location << ".ResourceType=" << StringUtils::URLEncode(TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType)) << "&";
   }
   if(m_resourceIdHasBeenSet)
   {

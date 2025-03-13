@@ -66,7 +66,7 @@ Aws::String CreateIpamRequest::SerializePayload() const
 
   if(m_tierHasBeenSet)
   {
-    ss << "Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
+    ss << "Tier=" << StringUtils::URLEncode(IpamTierMapper::GetNameForIpamTier(m_tier)) << "&";
   }
 
   if(m_enablePrivateGuaHasBeenSet)

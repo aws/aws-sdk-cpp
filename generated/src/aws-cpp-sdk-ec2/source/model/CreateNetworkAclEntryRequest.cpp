@@ -54,7 +54,7 @@ Aws::String CreateNetworkAclEntryRequest::SerializePayload() const
 
   if(m_ruleActionHasBeenSet)
   {
-    ss << "RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
+    ss << "RuleAction=" << StringUtils::URLEncode(RuleActionMapper::GetNameForRuleAction(m_ruleAction)) << "&";
   }
 
   if(m_egressHasBeenSet)

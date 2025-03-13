@@ -115,12 +115,12 @@ void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_stateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".State=" << VpcBlockPublicAccessStateMapper::GetNameForVpcBlockPublicAccessState(m_state) << "&";
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcBlockPublicAccessStateMapper::GetNameForVpcBlockPublicAccessState(m_state)) << "&";
   }
 
   if(m_internetGatewayBlockModeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".InternetGatewayBlockMode=" << InternetGatewayBlockModeMapper::GetNameForInternetGatewayBlockMode(m_internetGatewayBlockMode) << "&";
+      oStream << location << index << locationValue << ".InternetGatewayBlockMode=" << StringUtils::URLEncode(InternetGatewayBlockModeMapper::GetNameForInternetGatewayBlockMode(m_internetGatewayBlockMode)) << "&";
   }
 
   if(m_reasonHasBeenSet)
@@ -135,12 +135,12 @@ void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_managedByHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+      oStream << location << index << locationValue << ".ManagedBy=" << StringUtils::URLEncode(ManagedByMapper::GetNameForManagedBy(m_managedBy)) << "&";
   }
 
   if(m_exclusionsAllowedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExclusionsAllowed=" << VpcBlockPublicAccessExclusionsAllowedMapper::GetNameForVpcBlockPublicAccessExclusionsAllowed(m_exclusionsAllowed) << "&";
+      oStream << location << index << locationValue << ".ExclusionsAllowed=" << StringUtils::URLEncode(VpcBlockPublicAccessExclusionsAllowedMapper::GetNameForVpcBlockPublicAccessExclusionsAllowed(m_exclusionsAllowed)) << "&";
   }
 
 }
@@ -157,11 +157,11 @@ void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_stateHasBeenSet)
   {
-      oStream << location << ".State=" << VpcBlockPublicAccessStateMapper::GetNameForVpcBlockPublicAccessState(m_state) << "&";
+      oStream << location << ".State=" << StringUtils::URLEncode(VpcBlockPublicAccessStateMapper::GetNameForVpcBlockPublicAccessState(m_state)) << "&";
   }
   if(m_internetGatewayBlockModeHasBeenSet)
   {
-      oStream << location << ".InternetGatewayBlockMode=" << InternetGatewayBlockModeMapper::GetNameForInternetGatewayBlockMode(m_internetGatewayBlockMode) << "&";
+      oStream << location << ".InternetGatewayBlockMode=" << StringUtils::URLEncode(InternetGatewayBlockModeMapper::GetNameForInternetGatewayBlockMode(m_internetGatewayBlockMode)) << "&";
   }
   if(m_reasonHasBeenSet)
   {
@@ -173,11 +173,11 @@ void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_managedByHasBeenSet)
   {
-      oStream << location << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+      oStream << location << ".ManagedBy=" << StringUtils::URLEncode(ManagedByMapper::GetNameForManagedBy(m_managedBy)) << "&";
   }
   if(m_exclusionsAllowedHasBeenSet)
   {
-      oStream << location << ".ExclusionsAllowed=" << VpcBlockPublicAccessExclusionsAllowedMapper::GetNameForVpcBlockPublicAccessExclusionsAllowed(m_exclusionsAllowed) << "&";
+      oStream << location << ".ExclusionsAllowed=" << StringUtils::URLEncode(VpcBlockPublicAccessExclusionsAllowedMapper::GetNameForVpcBlockPublicAccessExclusionsAllowed(m_exclusionsAllowed)) << "&";
   }
 }
 

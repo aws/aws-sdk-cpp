@@ -25,7 +25,7 @@ Aws::String DescribeSnapshotAttributeRequest::SerializePayload() const
   ss << "Action=DescribeSnapshotAttribute&";
   if(m_attributeHasBeenSet)
   {
-    ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
+    ss << "Attribute=" << StringUtils::URLEncode(SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute)) << "&";
   }
 
   if(m_snapshotIdHasBeenSet)

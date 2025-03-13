@@ -333,7 +333,7 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_productCodes)
       {
         Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".ProductCodes." << productCodesIdx++;
+        productCodesSs << location << ".ProductCodes." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -343,7 +343,7 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) cons
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags." << tagsIdx++;
+        tagsSs << location << ".Tags." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

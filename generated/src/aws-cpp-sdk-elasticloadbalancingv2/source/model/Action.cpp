@@ -103,7 +103,7 @@ void Action::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << ActionTypeEnumMapper::GetNameForActionTypeEnum(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(ActionTypeEnumMapper::GetNameForActionTypeEnum(m_type)) << "&";
   }
 
   if(m_targetGroupArnHasBeenSet)
@@ -157,7 +157,7 @@ void Action::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << ActionTypeEnumMapper::GetNameForActionTypeEnum(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(ActionTypeEnumMapper::GetNameForActionTypeEnum(m_type)) << "&";
   }
   if(m_targetGroupArnHasBeenSet)
   {

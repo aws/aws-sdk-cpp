@@ -109,7 +109,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_extensionFields)
       {
         Aws::StringStream extensionFieldsSs;
-        extensionFieldsSs << location <<  ".ExtensionFields.member." << extensionFieldsIdx++;
+        extensionFieldsSs << location << ".ExtensionFields.member." << extensionFieldsIdx++;
         item.OutputToStream(oStream, extensionFieldsSs.str().c_str());
       }
   }

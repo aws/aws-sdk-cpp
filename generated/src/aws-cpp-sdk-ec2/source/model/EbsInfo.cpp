@@ -76,12 +76,12 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_ebsOptimizedSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EbsOptimizedSupport=" << EbsOptimizedSupportMapper::GetNameForEbsOptimizedSupport(m_ebsOptimizedSupport) << "&";
+      oStream << location << index << locationValue << ".EbsOptimizedSupport=" << StringUtils::URLEncode(EbsOptimizedSupportMapper::GetNameForEbsOptimizedSupport(m_ebsOptimizedSupport)) << "&";
   }
 
   if(m_encryptionSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EncryptionSupport=" << EbsEncryptionSupportMapper::GetNameForEbsEncryptionSupport(m_encryptionSupport) << "&";
+      oStream << location << index << locationValue << ".EncryptionSupport=" << StringUtils::URLEncode(EbsEncryptionSupportMapper::GetNameForEbsEncryptionSupport(m_encryptionSupport)) << "&";
   }
 
   if(m_ebsOptimizedInfoHasBeenSet)
@@ -93,7 +93,7 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_nvmeSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NvmeSupport=" << EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport) << "&";
+      oStream << location << index << locationValue << ".NvmeSupport=" << StringUtils::URLEncode(EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport)) << "&";
   }
 
 }
@@ -102,11 +102,11 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_ebsOptimizedSupportHasBeenSet)
   {
-      oStream << location << ".EbsOptimizedSupport=" << EbsOptimizedSupportMapper::GetNameForEbsOptimizedSupport(m_ebsOptimizedSupport) << "&";
+      oStream << location << ".EbsOptimizedSupport=" << StringUtils::URLEncode(EbsOptimizedSupportMapper::GetNameForEbsOptimizedSupport(m_ebsOptimizedSupport)) << "&";
   }
   if(m_encryptionSupportHasBeenSet)
   {
-      oStream << location << ".EncryptionSupport=" << EbsEncryptionSupportMapper::GetNameForEbsEncryptionSupport(m_encryptionSupport) << "&";
+      oStream << location << ".EncryptionSupport=" << StringUtils::URLEncode(EbsEncryptionSupportMapper::GetNameForEbsEncryptionSupport(m_encryptionSupport)) << "&";
   }
   if(m_ebsOptimizedInfoHasBeenSet)
   {
@@ -116,7 +116,7 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_nvmeSupportHasBeenSet)
   {
-      oStream << location << ".NvmeSupport=" << EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport) << "&";
+      oStream << location << ".NvmeSupport=" << StringUtils::URLEncode(EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport)) << "&";
   }
 }
 

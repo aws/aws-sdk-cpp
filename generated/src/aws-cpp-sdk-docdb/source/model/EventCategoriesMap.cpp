@@ -90,7 +90,7 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
       unsigned eventCategoriesIdx = 1;
       for(auto& item : m_eventCategories)
       {
-        oStream << location << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategories.EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

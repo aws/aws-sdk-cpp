@@ -93,7 +93,7 @@ void ListPoliciesGrantingServiceAccessEntry::OutputToStream(Aws::OStream& oStrea
       for(auto& item : m_policies)
       {
         Aws::StringStream policiesSs;
-        policiesSs << location <<  ".Policies.member." << policiesIdx++;
+        policiesSs << location << ".Policies.member." << policiesIdx++;
         item.OutputToStream(oStream, policiesSs.str().c_str());
       }
   }

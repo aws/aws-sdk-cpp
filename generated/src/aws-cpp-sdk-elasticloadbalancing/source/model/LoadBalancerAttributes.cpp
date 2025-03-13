@@ -157,7 +157,7 @@ void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* l
       for(auto& item : m_additionalAttributes)
       {
         Aws::StringStream additionalAttributesSs;
-        additionalAttributesSs << location <<  ".AdditionalAttributes.member." << additionalAttributesIdx++;
+        additionalAttributesSs << location << ".AdditionalAttributes.member." << additionalAttributesIdx++;
         item.OutputToStream(oStream, additionalAttributesSs.str().c_str());
       }
   }

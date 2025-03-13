@@ -75,11 +75,11 @@ void DoubleRange::OutputToStream(Aws::OStream& oStream, const char* location) co
 {
   if(m_fromHasBeenSet)
   {
-        oStream << location << ".From=" << StringUtils::URLEncode(m_from) << "&";
+      oStream << location << ".From=" << StringUtils::URLEncode(m_from) << "&";
   }
   if(m_toHasBeenSet)
   {
-        oStream << location << ".To=" << StringUtils::URLEncode(m_to) << "&";
+      oStream << location << ".To=" << StringUtils::URLEncode(m_to) << "&";
   }
 }
 

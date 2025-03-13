@@ -92,7 +92,7 @@ void BuildConfiguration::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_computeTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ComputeType=" << ComputeTypeMapper::GetNameForComputeType(m_computeType) << "&";
+      oStream << location << index << locationValue << ".ComputeType=" << StringUtils::URLEncode(ComputeTypeMapper::GetNameForComputeType(m_computeType)) << "&";
   }
 
   if(m_imageHasBeenSet)
@@ -119,7 +119,7 @@ void BuildConfiguration::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_computeTypeHasBeenSet)
   {
-      oStream << location << ".ComputeType=" << ComputeTypeMapper::GetNameForComputeType(m_computeType) << "&";
+      oStream << location << ".ComputeType=" << StringUtils::URLEncode(ComputeTypeMapper::GetNameForComputeType(m_computeType)) << "&";
   }
   if(m_imageHasBeenSet)
   {

@@ -28,7 +28,7 @@ Aws::String GenerateServiceLastAccessedDetailsRequest::SerializePayload() const
 
   if(m_granularityHasBeenSet)
   {
-    ss << "Granularity=" << AccessAdvisorUsageGranularityTypeMapper::GetNameForAccessAdvisorUsageGranularityType(m_granularity) << "&";
+    ss << "Granularity=" << StringUtils::URLEncode(AccessAdvisorUsageGranularityTypeMapper::GetNameForAccessAdvisorUsageGranularityType(m_granularity)) << "&";
   }
 
   ss << "Version=2010-05-08";

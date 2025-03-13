@@ -61,7 +61,7 @@ void LimitlessDatabase::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Status=" << LimitlessDatabaseStatusMapper::GetNameForLimitlessDatabaseStatus(m_status) << "&";
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(LimitlessDatabaseStatusMapper::GetNameForLimitlessDatabaseStatus(m_status)) << "&";
   }
 
   if(m_minRequiredACUHasBeenSet)
@@ -75,11 +75,11 @@ void LimitlessDatabase::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_statusHasBeenSet)
   {
-      oStream << location << ".Status=" << LimitlessDatabaseStatusMapper::GetNameForLimitlessDatabaseStatus(m_status) << "&";
+      oStream << location << ".Status=" << StringUtils::URLEncode(LimitlessDatabaseStatusMapper::GetNameForLimitlessDatabaseStatus(m_status)) << "&";
   }
   if(m_minRequiredACUHasBeenSet)
   {
-        oStream << location << ".MinRequiredACU=" << StringUtils::URLEncode(m_minRequiredACU) << "&";
+      oStream << location << ".MinRequiredACU=" << StringUtils::URLEncode(m_minRequiredACU) << "&";
   }
 }
 

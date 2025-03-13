@@ -213,7 +213,7 @@ void FirewallStatefulRule::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_sourcePorts)
       {
         Aws::StringStream sourcePortsSs;
-        sourcePortsSs << location <<  ".SourcePortSet." << sourcePortsIdx++;
+        sourcePortsSs << location << ".SourcePortSet." << sourcePortsIdx++;
         item.OutputToStream(oStream, sourcePortsSs.str().c_str());
       }
   }
@@ -223,7 +223,7 @@ void FirewallStatefulRule::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_destinationPorts)
       {
         Aws::StringStream destinationPortsSs;
-        destinationPortsSs << location <<  ".DestinationPortSet." << destinationPortsIdx++;
+        destinationPortsSs << location << ".DestinationPortSet." << destinationPortsIdx++;
         item.OutputToStream(oStream, destinationPortsSs.str().c_str());
       }
   }

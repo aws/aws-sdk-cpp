@@ -100,7 +100,7 @@ void UserAuthConfigInfo::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_authSchemeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AuthScheme=" << AuthSchemeMapper::GetNameForAuthScheme(m_authScheme) << "&";
+      oStream << location << index << locationValue << ".AuthScheme=" << StringUtils::URLEncode(AuthSchemeMapper::GetNameForAuthScheme(m_authScheme)) << "&";
   }
 
   if(m_secretArnHasBeenSet)
@@ -110,12 +110,12 @@ void UserAuthConfigInfo::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_iAMAuthHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IAMAuth=" << IAMAuthModeMapper::GetNameForIAMAuthMode(m_iAMAuth) << "&";
+      oStream << location << index << locationValue << ".IAMAuth=" << StringUtils::URLEncode(IAMAuthModeMapper::GetNameForIAMAuthMode(m_iAMAuth)) << "&";
   }
 
   if(m_clientPasswordAuthTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClientPasswordAuthType=" << ClientPasswordAuthTypeMapper::GetNameForClientPasswordAuthType(m_clientPasswordAuthType) << "&";
+      oStream << location << index << locationValue << ".ClientPasswordAuthType=" << StringUtils::URLEncode(ClientPasswordAuthTypeMapper::GetNameForClientPasswordAuthType(m_clientPasswordAuthType)) << "&";
   }
 
 }
@@ -132,7 +132,7 @@ void UserAuthConfigInfo::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_authSchemeHasBeenSet)
   {
-      oStream << location << ".AuthScheme=" << AuthSchemeMapper::GetNameForAuthScheme(m_authScheme) << "&";
+      oStream << location << ".AuthScheme=" << StringUtils::URLEncode(AuthSchemeMapper::GetNameForAuthScheme(m_authScheme)) << "&";
   }
   if(m_secretArnHasBeenSet)
   {
@@ -140,11 +140,11 @@ void UserAuthConfigInfo::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_iAMAuthHasBeenSet)
   {
-      oStream << location << ".IAMAuth=" << IAMAuthModeMapper::GetNameForIAMAuthMode(m_iAMAuth) << "&";
+      oStream << location << ".IAMAuth=" << StringUtils::URLEncode(IAMAuthModeMapper::GetNameForIAMAuthMode(m_iAMAuth)) << "&";
   }
   if(m_clientPasswordAuthTypeHasBeenSet)
   {
-      oStream << location << ".ClientPasswordAuthType=" << ClientPasswordAuthTypeMapper::GetNameForClientPasswordAuthType(m_clientPasswordAuthType) << "&";
+      oStream << location << ".ClientPasswordAuthType=" << StringUtils::URLEncode(ClientPasswordAuthTypeMapper::GetNameForClientPasswordAuthType(m_clientPasswordAuthType)) << "&";
   }
 }
 

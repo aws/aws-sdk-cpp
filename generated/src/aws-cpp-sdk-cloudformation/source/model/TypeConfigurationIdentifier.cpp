@@ -96,7 +96,7 @@ void TypeConfigurationIdentifier::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_typeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Type=" << ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type) << "&";
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
 
   if(m_typeNameHasBeenSet)
@@ -122,7 +122,7 @@ void TypeConfigurationIdentifier::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_typeHasBeenSet)
   {
-      oStream << location << ".Type=" << ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type) << "&";
+      oStream << location << ".Type=" << StringUtils::URLEncode(ThirdPartyTypeMapper::GetNameForThirdPartyType(m_type)) << "&";
   }
   if(m_typeNameHasBeenSet)
   {
